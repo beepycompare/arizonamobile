@@ -6,7 +6,7 @@ import kotlinx.metadata.internal.metadata.jvm.deserialization.JvmProtoBufUtil;
 public final class I4 implements Y6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f602a;
+    public final String f616a;
     public final String b;
 
     public I4(R4 r4) {
@@ -16,7 +16,7 @@ public final class I4 implements Y6 {
         } else {
             b = r4.b();
         }
-        this.f602a = String.format("component_%s.db", Arrays.copyOf(new Object[]{b}, 1));
+        this.f616a = String.format("component_%s.db", Arrays.copyOf(new Object[]{b}, 1));
         this.b = "db_metrica_" + r4;
     }
 
@@ -27,6 +27,6 @@ public final class I4 implements Y6 {
 
     @Override // io.appmetrica.analytics.impl.Y6
     public final String b() {
-        return this.f602a;
+        return this.f616a;
     }
 }

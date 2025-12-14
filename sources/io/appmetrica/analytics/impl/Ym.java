@@ -8,7 +8,7 @@ public final class Ym extends N2 {
     }
 
     public final int b() {
-        return this.f679a;
+        return this.f693a;
     }
 
     public Ym(int i, String str, PublicLogger publicLogger) {
@@ -19,10 +19,10 @@ public final class Ym extends N2 {
     public final String a(String str) {
         if (str != null) {
             int length = str.length();
-            int i = this.f679a;
+            int i = this.f693a;
             if (length > i) {
                 String substring = str.substring(0, i);
-                this.c.warning("\"%s\" %s size exceeded limit of %d characters", this.b, str, Integer.valueOf(this.f679a));
+                this.c.warning("\"%s\" %s size exceeded limit of %d characters", this.b, str, Integer.valueOf(this.f693a));
                 return substring;
             }
         }

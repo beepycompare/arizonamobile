@@ -23,20 +23,20 @@ public final class UArraysKt___UArraysJvmKt$asList$4 extends AbstractList<UShort
     @Override // kotlin.collections.AbstractCollection, java.util.Collection, java.util.List
     public final /* bridge */ boolean contains(Object obj) {
         if (obj instanceof UShort) {
-            return m10728containsxj2QHRw(((UShort) obj).m10535unboximpl());
+            return m10744containsxj2QHRw(((UShort) obj).m10551unboximpl());
         }
         return false;
     }
 
     @Override // kotlin.collections.AbstractList, java.util.List
     public /* bridge */ /* synthetic */ Object get(int i) {
-        return UShort.m10479boximpl(m10729getMh2AYeg(i));
+        return UShort.m10495boximpl(m10745getMh2AYeg(i));
     }
 
     @Override // kotlin.collections.AbstractList, java.util.List
     public final /* bridge */ int indexOf(Object obj) {
         if (obj instanceof UShort) {
-            return m10730indexOfxj2QHRw(((UShort) obj).m10535unboximpl());
+            return m10746indexOfxj2QHRw(((UShort) obj).m10551unboximpl());
         }
         return -1;
     }
@@ -44,38 +44,38 @@ public final class UArraysKt___UArraysJvmKt$asList$4 extends AbstractList<UShort
     @Override // kotlin.collections.AbstractList, java.util.List
     public final /* bridge */ int lastIndexOf(Object obj) {
         if (obj instanceof UShort) {
-            return m10731lastIndexOfxj2QHRw(((UShort) obj).m10535unboximpl());
+            return m10747lastIndexOfxj2QHRw(((UShort) obj).m10551unboximpl());
         }
         return -1;
     }
 
     @Override // kotlin.collections.AbstractList, kotlin.collections.AbstractCollection
     public int getSize() {
-        return UShortArray.m10544getSizeimpl(this.f154$$v$c$kotlinUShortArray$$this$asList$0);
+        return UShortArray.m10560getSizeimpl(this.f154$$v$c$kotlinUShortArray$$this$asList$0);
     }
 
     @Override // kotlin.collections.AbstractCollection, java.util.Collection
     public boolean isEmpty() {
-        return UShortArray.m10546isEmptyimpl(this.f154$$v$c$kotlinUShortArray$$this$asList$0);
+        return UShortArray.m10562isEmptyimpl(this.f154$$v$c$kotlinUShortArray$$this$asList$0);
     }
 
     /* renamed from: contains-xj2QHRw  reason: not valid java name */
-    public boolean m10728containsxj2QHRw(short s) {
-        return UShortArray.m10539containsxj2QHRw(this.f154$$v$c$kotlinUShortArray$$this$asList$0, s);
+    public boolean m10744containsxj2QHRw(short s) {
+        return UShortArray.m10555containsxj2QHRw(this.f154$$v$c$kotlinUShortArray$$this$asList$0, s);
     }
 
     /* renamed from: get-Mh2AYeg  reason: not valid java name */
-    public short m10729getMh2AYeg(int i) {
-        return UShortArray.m10543getMh2AYeg(this.f154$$v$c$kotlinUShortArray$$this$asList$0, i);
+    public short m10745getMh2AYeg(int i) {
+        return UShortArray.m10559getMh2AYeg(this.f154$$v$c$kotlinUShortArray$$this$asList$0, i);
     }
 
     /* renamed from: indexOf-xj2QHRw  reason: not valid java name */
-    public int m10730indexOfxj2QHRw(short s) {
+    public int m10746indexOfxj2QHRw(short s) {
         return ArraysKt.indexOf(this.f154$$v$c$kotlinUShortArray$$this$asList$0, s);
     }
 
     /* renamed from: lastIndexOf-xj2QHRw  reason: not valid java name */
-    public int m10731lastIndexOfxj2QHRw(short s) {
+    public int m10747lastIndexOfxj2QHRw(short s) {
         return ArraysKt.lastIndexOf(this.f154$$v$c$kotlinUShortArray$$this$asList$0, s);
     }
 }

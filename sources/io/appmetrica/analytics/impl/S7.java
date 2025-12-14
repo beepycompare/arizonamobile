@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 public abstract class S7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ec f757a;
+    public final Ec f771a;
 
     public S7() {
         Ec ec = new Ec(0);
@@ -11,11 +11,11 @@ public abstract class S7 {
         ec.a(T7.c, 1);
         ec.a(T7.d, 2);
         ec.a(T7.e, 3);
-        this.f757a = ec;
+        this.f771a = ec;
     }
 
     public final Ec a() {
-        return this.f757a;
+        return this.f771a;
     }
 
     public abstract boolean a(Object obj, Object obj2);

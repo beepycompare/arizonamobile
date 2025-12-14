@@ -6,7 +6,7 @@ import java.util.Map;
 public class ResponseDataHolder {
 
     /* renamed from: a  reason: collision with root package name */
-    private int f1392a;
+    private int f1406a;
     private byte[] b;
     private Map c;
     private final ResponseValidityChecker d;
@@ -16,7 +16,7 @@ public class ResponseDataHolder {
     }
 
     public int getResponseCode() {
-        return this.f1392a;
+        return this.f1406a;
     }
 
     public byte[] getResponseData() {
@@ -28,11 +28,11 @@ public class ResponseDataHolder {
     }
 
     public boolean isValidResponse() {
-        return this.d.isResponseValid(this.f1392a);
+        return this.d.isResponseValid(this.f1406a);
     }
 
     public void setResponseCode(int i) {
-        this.f1392a = i;
+        this.f1406a = i;
     }
 
     public void setResponseData(byte[] bArr) {

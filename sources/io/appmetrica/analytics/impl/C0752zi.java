@@ -15,7 +15,7 @@ public final class C0752zi implements InterfaceC0224ek {
     public static final long g;
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0485p0 f1316a;
+    public final C0485p0 f1330a;
     public final Zj b;
     public final TimeProvider c;
     public final ICommonExecutor d;
@@ -27,7 +27,7 @@ public final class C0752zi implements InterfaceC0224ek {
     }
 
     public C0752zi(C0485p0 c0485p0, Zj zj, TimeProvider timeProvider) {
-        this.f1316a = c0485p0;
+        this.f1330a = c0485p0;
         this.b = zj;
         this.c = timeProvider;
         this.d = C0157c4.l().g().b();
@@ -38,7 +38,7 @@ public final class C0752zi implements InterfaceC0224ek {
         ICommonExecutor iCommonExecutor = this.d;
         if (c0676wh.b) {
             Zj zj = this.b;
-            qg = new C0185d6(zj.f866a, zj.b, zj.c, c0676wh);
+            qg = new C0185d6(zj.f880a, zj.b, zj.c, c0676wh);
         } else {
             Zj zj2 = this.b;
             qg = new Qg(zj2.b, zj2.c, c0676wh);
@@ -49,9 +49,9 @@ public final class C0752zi implements InterfaceC0224ek {
     public final void b(C0676wh c0676wh) {
         long uptimeMillis = this.c.uptimeMillis();
         Zj zj = this.b;
-        C0185d6 c0185d6 = new C0185d6(zj.f866a, zj.b, zj.c, c0676wh);
+        C0185d6 c0185d6 = new C0185d6(zj.f880a, zj.b, zj.c, c0676wh);
         long j = Intrinsics.areEqual(Looper.myLooper(), Looper.getMainLooper()) ? f : g;
-        if (this.f1316a.a()) {
+        if (this.f1330a.a()) {
             try {
                 this.d.submit(c0185d6).get(j, TimeUnit.MILLISECONDS);
             } catch (Throwable unused) {

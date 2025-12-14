@@ -7,7 +7,7 @@ public abstract class AbstractC0747zd extends Ye implements InterfaceC0655vl {
     }
 
     public final String c(String str, String str2) {
-        return this.f848a.getString(f(str), str2);
+        return this.f862a.getString(f(str), str2);
     }
 
     public final InterfaceC0655vl d(String str, String str2) {
@@ -15,7 +15,7 @@ public abstract class AbstractC0747zd extends Ye implements InterfaceC0655vl {
     }
 
     public final boolean e(String str) {
-        return this.f848a.a(f(str));
+        return this.f862a.a(f(str));
     }
 
     public abstract String f(String str);
@@ -33,7 +33,7 @@ public abstract class AbstractC0747zd extends Ye implements InterfaceC0655vl {
     }
 
     public final int c(String str, int i) {
-        return this.f848a.getInt(f(str), i);
+        return this.f862a.getInt(f(str), i);
     }
 
     public final InterfaceC0655vl d(String str, long j) {
@@ -45,10 +45,10 @@ public abstract class AbstractC0747zd extends Ye implements InterfaceC0655vl {
     }
 
     public final long c(String str, long j) {
-        return this.f848a.getLong(f(str), j);
+        return this.f862a.getLong(f(str), j);
     }
 
     public final boolean c(String str, boolean z) {
-        return this.f848a.getBoolean(f(str), z);
+        return this.f862a.getBoolean(f(str), z);
     }
 }

@@ -107,7 +107,7 @@ public final class AndroidParagraph implements Paragraph {
     /* JADX WARN: Type inference failed for: r13v30 */
     /* JADX WARN: Type inference failed for: r13v4 */
     /* JADX WARN: Type inference failed for: r15v1 */
-    /* JADX WARN: Type inference failed for: r15v2, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r15v2, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r15v3 */
     /* JADX WARN: Type inference failed for: r2v1 */
     /* JADX WARN: Type inference failed for: r2v11, types: [android.text.Spanned] */

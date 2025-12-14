@@ -16,12 +16,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class j extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ k f332a;
+    public final /* synthetic */ k f346a;
     public final /* synthetic */ BillingResult b;
     public final /* synthetic */ List c;
 
     public j(k kVar, BillingResult billingResult, List list) {
-        this.f332a = kVar;
+        this.f346a = kVar;
         this.b = billingResult;
         this.c = list;
     }
@@ -39,7 +39,7 @@ public final class j extends SafeRunnable {
         String originalJson;
         ProductType productType2;
         String originalJson2;
-        k kVar = this.f332a;
+        k kVar = this.f346a;
         BillingResult billingResult = this.b;
         List<Purchase> list = this.c;
         kVar.getClass();
@@ -102,11 +102,11 @@ public final class j extends SafeRunnable {
                 if (productInfo2 == null) {
                 }
             }
-            kVar.f333a.getBillingInfoSender().sendInfo(arrayList);
+            kVar.f347a.getBillingInfoSender().sendInfo(arrayList);
             kVar.b.invoke();
             kVar.f.onUpdateFinished();
         }
-        k kVar2 = this.f332a;
+        k kVar2 = this.f346a;
         kVar2.e.a(kVar2);
     }
 }

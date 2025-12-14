@@ -10,7 +10,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class C0174cl extends ECommerceEvent {
 
     /* renamed from: a  reason: collision with root package name */
-    public final If f920a;
+    public final If f934a;
     public final C0198dj b;
     public final InterfaceC0161c8 c;
 
@@ -33,11 +33,11 @@ public final class C0174cl extends ECommerceEvent {
     }
 
     public final String toString() {
-        return "ShownProductCardInfoEvent{product=" + this.f920a + ", screen=" + this.b + ", converter=" + this.c + AbstractJsonLexerKt.END_OBJ;
+        return "ShownProductCardInfoEvent{product=" + this.f934a + ", screen=" + this.b + ", converter=" + this.c + AbstractJsonLexerKt.END_OBJ;
     }
 
     public C0174cl(If r1, C0198dj c0198dj, InterfaceC0161c8 interfaceC0161c8) {
-        this.f920a = r1;
+        this.f934a = r1;
         this.b = c0198dj;
         this.c = interfaceC0161c8;
     }

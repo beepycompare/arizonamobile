@@ -6,19 +6,19 @@ import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 public final class B0 implements InterfaceC0696xc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0 f486a;
+    public final /* synthetic */ C0 f500a;
     public final /* synthetic */ AppMetricaConfig b;
     public final /* synthetic */ PublicLogger c;
 
     public B0(C0 c0, AppMetricaConfig appMetricaConfig, PublicLogger publicLogger) {
-        this.f486a = c0;
+        this.f500a = c0;
         this.b = appMetricaConfig;
         this.c = publicLogger;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0696xc
     public final C0320ic a() {
-        C0 c0 = this.f486a;
+        C0 c0 = this.f500a;
         C0377ki c0377ki = c0.g;
         AppMetricaConfig appMetricaConfig = this.b;
         PublicLogger publicLogger = this.c;

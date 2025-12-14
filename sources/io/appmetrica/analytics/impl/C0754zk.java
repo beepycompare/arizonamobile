@@ -16,7 +16,7 @@ import kotlinx.metadata.internal.metadata.jvm.deserialization.JvmProtoBufUtil;
 public final class C0754zk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0134b7 f1318a;
+    public final C0134b7 f1332a;
     public Z6 b;
     public T2 c;
     public U2 d;
@@ -29,7 +29,7 @@ public final class C0754zk {
     public final LinkedHashMap k = new LinkedHashMap();
 
     public C0754zk(File file) {
-        this.f1318a = new C0134b7(file);
+        this.f1332a = new C0134b7(file);
     }
 
     public final IBinaryDataHelper a(Context context) {
@@ -85,21 +85,21 @@ public final class C0754zk {
         Z6 z6;
         z6 = this.b;
         if (z6 == null) {
-            C0134b7 c0134b7 = this.f1318a;
-            String a2 = new C0108a7(c0134b7.f896a, c0134b7.b, true).a(context, new C0276gk());
+            C0134b7 c0134b7 = this.f1332a;
+            String a2 = new C0108a7(c0134b7.f910a, c0134b7.b, true).a(context, new C0276gk());
             N6 n6 = AbstractC0689x5.c;
             n6.getClass();
             HashMap hashMap = new HashMap();
-            hashMap.put("preferences", InterfaceC0614u5.f1226a);
-            hashMap.put("binary_data", AbstractC0564s5.f1196a);
-            hashMap.put("temp_cache", AbstractC0682wn.f1271a);
+            hashMap.put("preferences", InterfaceC0614u5.f1240a);
+            hashMap.put("binary_data", AbstractC0564s5.f1210a);
+            hashMap.put("temp_cache", AbstractC0682wn.f1285a);
             for (ModuleServicesDatabase moduleServicesDatabase : C0470oa.I.p().b()) {
                 for (TableDescription tableDescription : moduleServicesDatabase.getTables()) {
                     hashMap.put(tableDescription.getTableName(), tableDescription.getColumnNames());
                 }
             }
             C0330in c0330in = n6.c;
-            X6 x6 = n6.f682a;
+            X6 x6 = n6.f696a;
             V6 v6 = x6.e;
             W6 w6 = x6.f;
             C0520qa c0520qa = new C0520qa(false);
@@ -121,12 +121,12 @@ public final class C0754zk {
 
     public final synchronized Z6 c(Context context, R4 r4) {
         Object obj;
-        String str = new I4(r4).f602a;
+        String str = new I4(r4).f616a;
         LinkedHashMap linkedHashMap = this.i;
         obj = linkedHashMap.get(str);
         if (obj == null) {
-            C0134b7 c0134b7 = this.f1318a;
-            String a2 = new C0108a7(c0134b7.f896a, c0134b7.b, false).a(context, new I4(r4));
+            C0134b7 c0134b7 = this.f1332a;
+            String a2 = new C0108a7(c0134b7.f910a, c0134b7.b, false).a(context, new I4(r4));
             N6 n6 = AbstractC0689x5.c;
             n6.getClass();
             String str2 = r4.b;
@@ -135,12 +135,12 @@ public final class C0754zk {
             }
             String format = String.format("component-%s", str2);
             C0330in c0330in = n6.c;
-            X6 x6 = n6.f682a;
-            P6 p6 = x6.f831a;
+            X6 x6 = n6.f696a;
+            P6 p6 = x6.f845a;
             Q6 q6 = x6.b;
             C0520qa c0520qa = new C0520qa(false);
             c0520qa.a(112, new L4());
-            C0408ln c0408ln = new C0408ln(format, n6.b.f1247a);
+            C0408ln c0408ln = new C0408ln(format, n6.b.f1261a);
             c0330in.getClass();
             obj = new Z6(context, a2, new C0356jn(p6, q6, c0520qa, c0408ln), PublicLogger.getAnonymousInstance());
             linkedHashMap.put(str, obj);
@@ -150,7 +150,7 @@ public final class C0754zk {
 
     public final synchronized IBinaryDataHelper a(Context context, R4 r4) {
         Object obj;
-        String str = new I4(r4).f602a;
+        String str = new I4(r4).f616a;
         LinkedHashMap linkedHashMap = this.k;
         obj = linkedHashMap.get(str);
         if (obj == null) {
@@ -162,7 +162,7 @@ public final class C0754zk {
 
     public final synchronized Ia b(Context context, R4 r4) {
         Object obj;
-        String str = new I4(r4).f602a;
+        String str = new I4(r4).f616a;
         LinkedHashMap linkedHashMap = this.j;
         obj = linkedHashMap.get(str);
         if (obj == null) {

@@ -6,7 +6,7 @@ public abstract class H9 {
     public static final B9 a(int i, String str) {
         byte[] bArr;
         B9 b9 = new B9();
-        b9.f491a = i;
+        b9.f505a = i;
         if (str == null || (bArr = str.getBytes(Charsets.UTF_8)) == null) {
             bArr = b9.b;
         }

@@ -19,7 +19,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class Xl {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashSet f837a;
+    public final HashSet f851a;
     public final HashMap b;
     public final Ul c;
     public List d;
@@ -42,7 +42,7 @@ public final class Xl {
     public final synchronized boolean a(List list) {
         boolean z;
         boolean z2;
-        boolean a2 = a(CollectionsKt.intersect(list, AbstractC0201dm.f940a));
+        boolean a2 = a(CollectionsKt.intersect(list, AbstractC0201dm.f954a));
         Iterator it = list.iterator();
         while (true) {
             z = true;
@@ -50,7 +50,7 @@ public final class Xl {
                 z2 = false;
                 break;
             }
-            if (this.f837a.contains((String) it.next())) {
+            if (this.f851a.contains((String) it.next())) {
                 z2 = true;
                 break;
             }
@@ -98,7 +98,7 @@ public final class Xl {
 
     public Xl(We we, P p, D3 d3, C0672wd c0672wd, C0715y6 c0715y6, U9 u9, T9 t9, qo qoVar) {
         HashSet hashSet = new HashSet();
-        this.f837a = hashSet;
+        this.f851a = hashSet;
         this.b = new HashMap();
         this.c = new Ul();
         hashSet.add("appmetrica_google_adv_id");
@@ -162,7 +162,7 @@ public final class Xl {
             }
             if (identifiersResult == null) {
                 W9 w9 = this.m.b;
-                if (!Intrinsics.areEqual(str2, "appmetrica_lib_ssl_enabled") || (bool = w9.f820a) == null) {
+                if (!Intrinsics.areEqual(str2, "appmetrica_lib_ssl_enabled") || (bool = w9.f834a) == null) {
                     identifiersResult = null;
                 } else {
                     boolean booleanValue = bool.booleanValue();

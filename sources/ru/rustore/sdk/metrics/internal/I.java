@@ -17,7 +17,7 @@ import ru.rustore.sdk.metrics.internal.X;
 public final class I {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0824o f1557a;
+    public final C0824o f1571a;
     public final InterfaceC0816g b;
     public final Lazy c;
 
@@ -25,17 +25,17 @@ public final class I {
     public static final class a extends Lambda implements Function0<String> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ String f1558a;
+        public final /* synthetic */ String f1572a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public a(String str) {
             super(0);
-            this.f1558a = str;
+            this.f1572a = str;
         }
 
         @Override // kotlin.jvm.functions.Function0
         public final String invoke() {
-            return this.f1558a;
+            return this.f1572a;
         }
     }
 
@@ -43,31 +43,31 @@ public final class I {
     public static final class b extends Lambda implements Function0<String> {
 
         /* renamed from: a  reason: collision with root package name */
-        public final /* synthetic */ J f1559a;
+        public final /* synthetic */ J f1573a;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public b(J j) {
             super(0);
-            this.f1559a = j;
+            this.f1573a = j;
         }
 
         @Override // kotlin.jvm.functions.Function0
         public final String invoke() {
-            return "Create row in storage " + ((Object) ("MetricsEventUuid(value=" + this.f1559a.f1560a + ')'));
+            return "Create row in storage " + ((Object) ("MetricsEventUuid(value=" + this.f1573a.f1574a + ')'));
         }
     }
 
     public I(C0824o metricsEventDataBaseHelper, X.b logger) {
         Intrinsics.checkNotNullParameter(metricsEventDataBaseHelper, "metricsEventDataBaseHelper");
         Intrinsics.checkNotNullParameter(logger, "logger");
-        this.f1557a = metricsEventDataBaseHelper;
+        this.f1571a = metricsEventDataBaseHelper;
         this.b = logger;
         this.c = LazyKt.lazy(new E(this));
     }
 
     public final void a(ArrayList persistentMetricsEventsDto) {
         Intrinsics.checkNotNullParameter(persistentMetricsEventsDto, "persistentMetricsEventsDto");
-        String joinToString$default = CollectionsKt.joinToString$default(persistentMetricsEventsDto, null, null, null, 0, null, G.f1555a, 31, null);
+        String joinToString$default = CollectionsKt.joinToString$default(persistentMetricsEventsDto, null, null, null, 0, null, G.f1569a, 31, null);
         String trimIndent = StringsKt.trimIndent("\n            DELETE FROM metrics_event_table\n            WHERE _id IN (\n                SELECT _id FROM metrics_event_table\n                WHERE uuid IN (" + joinToString$default + ")\n            )\n        ");
         try {
             ((SQLiteDatabase) this.c.getValue()).beginTransactionNonExclusive();
@@ -82,7 +82,7 @@ public final class I {
     public final void a(J persistentMetricsEventDto) {
         Intrinsics.checkNotNullParameter(persistentMetricsEventDto, "persistentMetricsEventDto");
         ContentValues contentValues = new ContentValues();
-        contentValues.put(CommonUrlParts.UUID, persistentMetricsEventDto.f1560a);
+        contentValues.put(CommonUrlParts.UUID, persistentMetricsEventDto.f1574a);
         contentValues.put("metrics_event", persistentMetricsEventDto.b);
         try {
             ((SQLiteDatabase) this.c.getValue()).beginTransactionNonExclusive();
@@ -93,7 +93,7 @@ public final class I {
                 this.b.a(new b(persistentMetricsEventDto));
                 return;
             }
-            String str = "Saving error " + ((Object) ("MetricsEventUuid(value=" + persistentMetricsEventDto.f1560a + ')'));
+            String str = "Saving error " + ((Object) ("MetricsEventUuid(value=" + persistentMetricsEventDto.f1574a + ')'));
             this.b.a(new a(str));
             throw new MetricsException.SaveMetricsEventError(str);
         } finally {

@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes5.dex */
 public final class UShortArrayKt {
     /* renamed from: ushortArrayOf-rL5Bavg  reason: not valid java name */
-    private static final short[] m10554ushortArrayOfrL5Bavg(short... sArr) {
+    private static final short[] m10570ushortArrayOfrL5Bavg(short... sArr) {
         Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-elements$0");
         return sArr;
     }
@@ -16,8 +16,8 @@ public final class UShortArrayKt {
         Intrinsics.checkNotNullParameter(init, "init");
         short[] sArr = new short[i];
         for (int i2 = 0; i2 < i; i2++) {
-            sArr[i2] = init.invoke(Integer.valueOf(i2)).m10535unboximpl();
+            sArr[i2] = init.invoke(Integer.valueOf(i2)).m10551unboximpl();
         }
-        return UShortArray.m10538constructorimpl(sArr);
+        return UShortArray.m10554constructorimpl(sArr);
     }
 }

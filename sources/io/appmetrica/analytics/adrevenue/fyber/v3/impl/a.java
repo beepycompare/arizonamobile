@@ -5,21 +5,21 @@ import com.fyber.fairbid.ads.PlacementType;
 public abstract /* synthetic */ class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int[] f281a;
+    public static final /* synthetic */ int[] f295a;
 
     static {
         int[] iArr = new int[PlacementType.values().length];
-        f281a = iArr;
+        f295a = iArr;
         try {
             iArr[PlacementType.BANNER.ordinal()] = 1;
         } catch (NoSuchFieldError unused) {
         }
         try {
-            f281a[PlacementType.REWARDED.ordinal()] = 2;
+            f295a[PlacementType.REWARDED.ordinal()] = 2;
         } catch (NoSuchFieldError unused2) {
         }
         try {
-            f281a[PlacementType.INTERSTITIAL.ordinal()] = 3;
+            f295a[PlacementType.INTERSTITIAL.ordinal()] = 3;
         } catch (NoSuchFieldError unused3) {
         }
     }

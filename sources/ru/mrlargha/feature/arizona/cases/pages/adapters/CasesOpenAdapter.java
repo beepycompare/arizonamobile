@@ -204,7 +204,7 @@ public final class CasesOpenAdapter extends ListAdapter<CasesGuaranteedPrizeMode
                     Intrinsics.checkNotNullExpressionValue(ivPrize2, "ivPrize");
                     CasesResponseKt.getCaseImageUrl(ivPrize2, itemsInfo.getIcon());
                 }
-                arizonaCasesOpenItemBinding.tvTitle.setText(itemsInfo.getName() + "\n" + casesGuaranteedPrizeModel.m12365getCount());
+                arizonaCasesOpenItemBinding.tvTitle.setText(itemsInfo.getName() + "\n" + casesGuaranteedPrizeModel.m12381getCount());
             }
             arizonaCasesOpenItemBinding.tvCost.setText("+" + casesGuaranteedPrizeModel.getShards());
             TextView tvClose = arizonaCasesOpenItemBinding.tvClose;

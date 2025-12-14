@@ -38,19 +38,19 @@ public final class ExceptionsConstructorKt {
 
     /* JADX WARN: Multi-variable type inference failed */
     public static final <E extends Throwable> E tryCopyException(E e) {
-        Object m10199constructorimpl;
+        Object m10215constructorimpl;
         if (e instanceof CopyableThrowable) {
             try {
                 Result.Companion companion = Result.Companion;
-                m10199constructorimpl = Result.m10199constructorimpl(((CopyableThrowable) e).createCopy());
+                m10215constructorimpl = Result.m10215constructorimpl(((CopyableThrowable) e).createCopy());
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m10199constructorimpl = Result.m10199constructorimpl(ResultKt.createFailure(th));
+                m10215constructorimpl = Result.m10215constructorimpl(ResultKt.createFailure(th));
             }
-            if (Result.m10205isFailureimpl(m10199constructorimpl)) {
-                m10199constructorimpl = null;
+            if (Result.m10221isFailureimpl(m10215constructorimpl)) {
+                m10215constructorimpl = null;
             }
-            return (E) m10199constructorimpl;
+            return (E) m10215constructorimpl;
         }
         return (E) ctorCache.get(e.getClass()).invoke(e);
     }
@@ -192,36 +192,36 @@ public final class ExceptionsConstructorKt {
     }
 
     public static final Throwable safeCtor$lambda$9(Function1 function1, Throwable th) {
-        Object m10199constructorimpl;
+        Object m10215constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
             Throwable th2 = (Throwable) function1.invoke(th);
             if (!Intrinsics.areEqual(th.getMessage(), th2.getMessage()) && !Intrinsics.areEqual(th2.getMessage(), th.toString())) {
                 th2 = null;
             }
-            m10199constructorimpl = Result.m10199constructorimpl(th2);
+            m10215constructorimpl = Result.m10215constructorimpl(th2);
         } catch (Throwable th3) {
             Result.Companion companion2 = Result.Companion;
-            m10199constructorimpl = Result.m10199constructorimpl(ResultKt.createFailure(th3));
+            m10215constructorimpl = Result.m10215constructorimpl(ResultKt.createFailure(th3));
         }
-        return Result.m10205isFailureimpl(m10199constructorimpl) ? null : m10199constructorimpl;
+        return Result.m10221isFailureimpl(m10215constructorimpl) ? null : m10215constructorimpl;
     }
 
     private static final int fieldsCountOrDefault(Class<?> cls, int i) {
-        Integer m10199constructorimpl;
+        Integer m10215constructorimpl;
         JvmClassMappingKt.getKotlinClass(cls);
         try {
             Result.Companion companion = Result.Companion;
-            m10199constructorimpl = Result.m10199constructorimpl(Integer.valueOf(fieldsCount$default(cls, 0, 1, null)));
+            m10215constructorimpl = Result.m10215constructorimpl(Integer.valueOf(fieldsCount$default(cls, 0, 1, null)));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m10199constructorimpl = Result.m10199constructorimpl(ResultKt.createFailure(th));
+            m10215constructorimpl = Result.m10215constructorimpl(ResultKt.createFailure(th));
         }
         Integer valueOf = Integer.valueOf(i);
-        if (Result.m10205isFailureimpl(m10199constructorimpl)) {
-            m10199constructorimpl = valueOf;
+        if (Result.m10221isFailureimpl(m10215constructorimpl)) {
+            m10215constructorimpl = valueOf;
         }
-        return ((Number) m10199constructorimpl).intValue();
+        return ((Number) m10215constructorimpl).intValue();
     }
 
     static /* synthetic */ int fieldsCount$default(Class cls, int i, int i2, Object obj) {

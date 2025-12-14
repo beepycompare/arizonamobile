@@ -5,7 +5,7 @@ import kotlin.NoWhenBranchMatchedException;
 /* loaded from: classes5.dex */
 public final class C0337j4 {
     public static InterfaceC0286h4 a(Q3 q3) {
-        switch (AbstractC0312i4.f1017a[q3.e.ordinal()]) {
+        switch (AbstractC0312i4.f1031a[q3.e.ordinal()]) {
             case 1:
                 return new C0139bc();
             case 2:

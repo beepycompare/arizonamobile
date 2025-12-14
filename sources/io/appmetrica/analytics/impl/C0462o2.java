@@ -11,11 +11,11 @@ public final class C0462o2 implements ProtobufConverter {
     public final C0482om fromModel(C0437n2 c0437n2) {
         C0432mm c0432mm;
         C0482om c0482om = new C0482om();
-        c0482om.f1138a = new C0457nm[c0437n2.f1103a.size()];
-        for (int i = 0; i < c0437n2.f1103a.size(); i++) {
+        c0482om.f1152a = new C0457nm[c0437n2.f1117a.size()];
+        for (int i = 0; i < c0437n2.f1117a.size(); i++) {
             C0457nm c0457nm = new C0457nm();
-            Pair pair = (Pair) c0437n2.f1103a.get(i);
-            c0457nm.f1119a = (String) pair.first;
+            Pair pair = (Pair) c0437n2.f1117a.get(i);
+            c0457nm.f1133a = (String) pair.first;
             if (pair.second != null) {
                 c0457nm.b = new C0432mm();
                 C0412m2 c0412m2 = (C0412m2) pair.second;
@@ -23,12 +23,12 @@ public final class C0462o2 implements ProtobufConverter {
                     c0432mm = null;
                 } else {
                     C0432mm c0432mm2 = new C0432mm();
-                    c0432mm2.f1098a = c0412m2.f1084a;
+                    c0432mm2.f1112a = c0412m2.f1098a;
                     c0432mm = c0432mm2;
                 }
                 c0457nm.b = c0432mm;
             }
-            c0482om.f1138a[i] = c0457nm;
+            c0482om.f1152a[i] = c0457nm;
         }
         return c0482om;
     }
@@ -38,10 +38,10 @@ public final class C0462o2 implements ProtobufConverter {
     public final C0437n2 toModel(C0482om c0482om) {
         C0457nm[] c0457nmArr;
         ArrayList arrayList = new ArrayList();
-        for (C0457nm c0457nm : c0482om.f1138a) {
-            String str = c0457nm.f1119a;
+        for (C0457nm c0457nm : c0482om.f1152a) {
+            String str = c0457nm.f1133a;
             C0432mm c0432mm = c0457nm.b;
-            arrayList.add(new Pair(str, c0432mm == null ? null : new C0412m2(c0432mm.f1098a)));
+            arrayList.add(new Pair(str, c0432mm == null ? null : new C0412m2(c0432mm.f1112a)));
         }
         return new C0437n2(arrayList);
     }

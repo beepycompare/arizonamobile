@@ -10,7 +10,7 @@ import kotlin.jvm.functions.Function0;
 public final class f implements ProductDetailsResponseListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f328a;
+    public final String f342a;
     public final BillingClient b;
     public final UtilsProvider c;
     public final Function0 d;
@@ -19,7 +19,7 @@ public final class f implements ProductDetailsResponseListener {
     public final n g;
 
     public f(String str, BillingClient billingClient, UtilsProvider utilsProvider, h hVar, List list, d dVar, n nVar) {
-        this.f328a = str;
+        this.f342a = str;
         this.b = billingClient;
         this.c = utilsProvider;
         this.d = hVar;

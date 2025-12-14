@@ -7,17 +7,17 @@ import io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable;
 public final class C0456nl implements FunctionWithThrowable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0481ol f1118a;
+    public final /* synthetic */ C0481ol f1132a;
 
     public C0456nl(C0481ol c0481ol) {
-        this.f1118a = c0481ol;
+        this.f1132a = c0481ol;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable
     public final Object apply(Object obj) {
         TelephonyManager telephonyManager = (TelephonyManager) obj;
-        C0481ol c0481ol = this.f1118a;
-        if (c0481ol.b.hasPermission(c0481ol.f1137a, "android.permission.READ_PHONE_STATE")) {
+        C0481ol c0481ol = this.f1132a;
+        if (c0481ol.b.hasPermission(c0481ol.f1151a, "android.permission.READ_PHONE_STATE")) {
             return Boolean.valueOf(telephonyManager.isNetworkRoaming());
         }
         return null;

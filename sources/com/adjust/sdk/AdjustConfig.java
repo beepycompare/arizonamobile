@@ -11,7 +11,9 @@ public class AdjustConfig {
     String appToken;
     String basePath;
     ArrayList<OnAdidReadListener> cachedAdidReadCallbacks = new ArrayList<>();
+    ArrayList<AdjustTimeoutCallback> cachedAdidReadTimeoutCallbacks = new ArrayList<>();
     ArrayList<OnAttributionReadListener> cachedAttributionReadCallbacks = new ArrayList<>();
+    ArrayList<AdjustTimeoutCallback> cachedAttributionReadTimeoutCallbacks = new ArrayList<>();
     OnDeeplinkResolvedListener cachedDeeplinkResolutionCallback;
     Context context;
     boolean coppaComplianceEnabled;
@@ -21,6 +23,7 @@ public class AdjustConfig {
     String externalDeviceId;
     String fbAppId;
     String gdprPath;
+    boolean isAppSetIdReadingEnabled;
     Boolean isCostDataInAttributionEnabled;
     boolean isDataResidency;
     boolean isDeviceIdsReadingOnceEnabled;
@@ -111,6 +114,11 @@ public class AdjustConfig {
         this.coppaComplianceEnabled = false;
         this.playStoreKidsComplianceEnabled = false;
         this.isFirstSessionDelayEnabled = false;
+        this.isAppSetIdReadingEnabled = true;
+    }
+
+    public void disableAppSetIdReading() {
+        this.isAppSetIdReadingEnabled = false;
     }
 
     public void enableCoppaCompliance() {
@@ -219,6 +227,10 @@ public class AdjustConfig {
 
     public List<String> getUrlStrategyDomains() {
         return this.urlStrategyDomains;
+    }
+
+    public boolean isAppSetIdReadingEnabled() {
+        return this.isAppSetIdReadingEnabled;
     }
 
     public boolean isCoppaComplianceEnabled() {

@@ -44,7 +44,7 @@ public class PackageBuilder {
     public static class ActivityStateCopy {
 
         /* renamed from: a  reason: collision with root package name */
-        public final int f221a;
+        public final int f235a;
         public final int b;
         public final int c;
         public final long d;
@@ -53,7 +53,7 @@ public class PackageBuilder {
         public final String g;
 
         public ActivityStateCopy(ActivityState activityState) {
-            this.f221a = -1;
+            this.f235a = -1;
             this.b = -1;
             this.c = -1;
             this.d = -1L;
@@ -63,7 +63,7 @@ public class PackageBuilder {
             if (activityState == null) {
                 return;
             }
-            this.f221a = activityState.eventCount;
+            this.f235a = activityState.eventCount;
             this.b = activityState.sessionCount;
             this.c = activityState.subsessionCount;
             this.d = activityState.timeSpent;
@@ -902,10 +902,13 @@ public class PackageBuilder {
             addLong(map, "ff_play_store_kids_app", 1L);
         }
         int i = this.firstSessionDelayManager.c;
-        if (i == 2 || i == 0) {
+        if (i != 2 && i != 0) {
+            addBoolean(map, "ff_first_session_delay", Boolean.TRUE);
+        }
+        if (this.adjustConfig.isAppSetIdReadingEnabled) {
             return;
         }
-        addBoolean(map, "ff_first_session_delay", Boolean.TRUE);
+        addBoolean(map, "ff_app_set_id_disabled", Boolean.TRUE);
     }
 
     private void injectStoreInfoToParameters(Map<String, String> map) {
@@ -956,8 +959,8 @@ public class PackageBuilder {
         return defaultActivityPackage;
     }
 
-    public ActivityPackage buildEventPackage(AdjustEvent adjustEvent) {
-        Map<String, String> eventParameters = getEventParameters(adjustEvent);
+    public ActivityPackage buildEventPackage(AdjustEvent adjustEvent, int i) {
+        Map<String, String> eventParameters = getEventParameters(adjustEvent, i);
         ActivityPackage defaultActivityPackage = getDefaultActivityPackage(ActivityKind.EVENT);
         defaultActivityPackage.setPath("/event");
         defaultActivityPackage.setSuffix(getEventSuffix(adjustEvent));
@@ -1031,7 +1034,7 @@ public class PackageBuilder {
         return defaultActivityPackage;
     }
 
-    public Map<String, String> getEventParameters(AdjustEvent adjustEvent) {
+    public Map<String, String> getEventParameters(AdjustEvent adjustEvent, int i) {
         HashMap hashMap = new HashMap();
         this.deviceInfo.reloadOtherDeviceInfoParams(this.adjustConfig, logger);
         Map<String, String> map = this.deviceInfo.imeiParameters;
@@ -1077,7 +1080,7 @@ public class PackageBuilder {
         addString(hashMap, "display_width", this.deviceInfo.displayWidth);
         addString(hashMap, "environment", this.adjustConfig.environment);
         addString(hashMap, "event_callback_id", adjustEvent.callbackId);
-        addLong(hashMap, AppEventsLogger.SessionEventsState.EVENT_COUNT_KEY, this.activityStateCopy.f221a);
+        addLong(hashMap, AppEventsLogger.SessionEventsState.EVENT_COUNT_KEY, this.activityStateCopy.f235a);
         addString(hashMap, "event_token", adjustEvent.eventToken);
         addString(hashMap, "external_device_id", this.adjustConfig.externalDeviceId);
         addString(hashMap, "fb_id", this.deviceInfo.fbAttributionId);
@@ -1103,6 +1106,7 @@ public class PackageBuilder {
         addDuration(hashMap, "session_length", this.activityStateCopy.e);
         addLong(hashMap, "subsession_count", this.activityStateCopy.c);
         addDuration(hashMap, "time_spent", this.activityStateCopy.d);
+        addInteger(hashMap, "seq", Integer.valueOf(i));
         if (!this.deviceInfo.isGooglePlayGamesForPC) {
             bool = null;
         }

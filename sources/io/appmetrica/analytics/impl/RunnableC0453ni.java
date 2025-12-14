@@ -6,18 +6,18 @@ import android.content.Context;
 public final class RunnableC0453ni implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Context f1115a;
+    public final /* synthetic */ Context f1129a;
     public final /* synthetic */ C0503pi b;
 
     public RunnableC0453ni(C0503pi c0503pi, Context context) {
         this.b = c0503pi;
-        this.f1115a = context;
+        this.f1129a = context;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         C0734z0 c0734z0 = this.b.b;
-        Context context = this.f1115a;
+        Context context = this.f1129a;
         c0734z0.getClass();
         C0709y0.a(context);
     }

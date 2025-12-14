@@ -7,7 +7,7 @@ import io.appmetrica.analytics.coreutils.internal.StringUtils;
 public final class C0665w6 implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Fg f1264a;
+    public final Fg f1278a;
 
     public C0665w6() {
         this(new Fg());
@@ -16,11 +16,11 @@ public final class C0665w6 implements ProtobufConverter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final Y5 fromModel(C0640v6 c0640v6) {
-        Y5 fromModel = this.f1264a.fromModel(c0640v6.f1246a);
+        Y5 fromModel = this.f1278a.fromModel(c0640v6.f1260a);
         fromModel.g = 1;
         X5 x5 = new X5();
         fromModel.h = x5;
-        x5.f830a = StringUtils.correctIllFormedString(c0640v6.b);
+        x5.f844a = StringUtils.correctIllFormedString(c0640v6.b);
         return fromModel;
     }
 
@@ -31,7 +31,7 @@ public final class C0665w6 implements ProtobufConverter {
     }
 
     public C0665w6(Fg fg) {
-        this.f1264a = fg;
+        this.f1278a = fg;
     }
 
     public final C0640v6 a(Y5 y5) {

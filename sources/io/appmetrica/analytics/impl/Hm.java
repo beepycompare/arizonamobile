@@ -5,25 +5,25 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class Hm {
 
     /* renamed from: a  reason: collision with root package name */
-    public final long f596a;
+    public final long f610a;
 
     public Hm(long j) {
-        this.f596a = j;
+        this.f610a = j;
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return obj != null && Hm.class == obj.getClass() && this.f596a == ((Hm) obj).f596a;
+        return obj != null && Hm.class == obj.getClass() && this.f610a == ((Hm) obj).f610a;
     }
 
     public final int hashCode() {
-        long j = this.f596a;
+        long j = this.f610a;
         return (int) (j ^ (j >>> 32));
     }
 
     public final String toString() {
-        return "StatSending{disabledReportingInterval=" + this.f596a + AbstractJsonLexerKt.END_OBJ;
+        return "StatSending{disabledReportingInterval=" + this.f610a + AbstractJsonLexerKt.END_OBJ;
     }
 }

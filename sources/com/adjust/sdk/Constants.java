@@ -2,6 +2,7 @@ package com.adjust.sdk;
 /* loaded from: classes3.dex */
 public interface Constants {
     public static final String ACTIVITY_STATE_FILENAME = "AdjustIoActivityState";
+    public static final String ADID_TIMEOUT_TIMER_NAME = "Get Adid timeout timer";
     public static final String ADJUST_PREINSTALL_CONTENT_PROVIDER_INTENT_ACTION = "com.attribution.REFERRAL_PROVIDER";
     public static final String ADJUST_PREINSTALL_CONTENT_URI_AUTHORITY = "com.adjust.preinstall";
     public static final String ADJUST_PREINSTALL_CONTENT_URI_PATH = "trackers";
@@ -9,12 +10,13 @@ public interface Constants {
     public static final String ADJUST_PREINSTALL_SYSTEM_PROPERTY_PATH = "adjust.preinstall.path";
     public static final String ADJUST_PREINSTALL_SYSTEM_PROPERTY_PREFIX = "adjust.preinstall.";
     public static final String ATTRIBUTION_FILENAME = "AdjustAttribution";
+    public static final String ATTRIBUTION_TIMEOUT_TIMER_NAME = "Get Attribution timeout timer";
     public static final String AUTHORITY = "app.adjust.com";
     public static final String BASE_URL = "https://app.adjust.com";
     public static final String BASE_URL_FORMAT = "https://app.%s";
     public static final String BASE_URL_NO_SUB_DOMAIN_FORMAT = "https://%s";
     public static final String CALLBACK_PARAMETERS = "callback_params";
-    public static final String CLIENT_SDK = "android5.4.6";
+    public static final String CLIENT_SDK = "android5.5.0";
     public static final int CONNECTION_TIMEOUT = 60000;
     public static final int CONNECTION_TIMEOUT_VERIFY = 30000;
     public static final String CONTENT_PROVIDER = "content_provider";
@@ -22,6 +24,7 @@ public interface Constants {
     public static final String CONTENT_PROVIDER_NO_PERMISSION = "content_provider_no_permission";
     public static final String DEEPLINK = "deeplink";
     public static final String ENCODING = "UTF-8";
+    public static final String EVENT_METADATA_FILENAME = "AdjustEventMetadata";
     public static final String EXTRA_SYSTEM_INSTALLER_REFERRER = "com.attribution.EXTRA_SYSTEM_INSTALLER_REFERRER";
     public static final String FB_AUTH_REGEX = "^(fb|vk)[0-9]{5,}[^:]*://authorize.*access_token=.*";
     public static final String FCM_PAYLOAD_KEY = "adjust_purpose";

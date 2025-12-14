@@ -13,7 +13,7 @@ public final class C0637v3 extends MessageNano {
     public static volatile C0637v3[] c;
 
     /* renamed from: a  reason: collision with root package name */
-    public C0687x3 f1243a;
+    public C0687x3 f1257a;
     public int b;
 
     public C0637v3() {
@@ -32,7 +32,7 @@ public final class C0637v3 extends MessageNano {
     }
 
     public final C0637v3 a() {
-        this.f1243a = null;
+        this.f1257a = null;
         this.b = 0;
         this.cachedSize = -1;
         return this;
@@ -41,7 +41,7 @@ public final class C0637v3 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        C0687x3 c0687x3 = this.f1243a;
+        C0687x3 c0687x3 = this.f1257a;
         if (c0687x3 != null) {
             computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(1, c0687x3);
         }
@@ -51,7 +51,7 @@ public final class C0637v3 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        C0687x3 c0687x3 = this.f1243a;
+        C0687x3 c0687x3 = this.f1257a;
         if (c0687x3 != null) {
             codedOutputByteBufferNano.writeMessage(1, c0687x3);
         }
@@ -70,10 +70,10 @@ public final class C0637v3 extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                if (this.f1243a == null) {
-                    this.f1243a = new C0687x3();
+                if (this.f1257a == null) {
+                    this.f1257a = new C0687x3();
                 }
-                codedInputByteBufferNano.readMessage(this.f1243a);
+                codedInputByteBufferNano.readMessage(this.f1257a);
             } else if (readTag != 16) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;

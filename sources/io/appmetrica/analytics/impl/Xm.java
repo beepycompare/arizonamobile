@@ -9,7 +9,7 @@ import kotlin.collections.CollectionsKt;
 public final class Xm implements InterfaceC0254fo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f838a;
+    public final ArrayList f852a;
 
     public Xm(String str, List<String> list, int i, Mn mn, to toVar, K2 k2) {
         List take = CollectionsKt.take(CollectionsKt.toList(CollectionsKt.toSet(list)), i);
@@ -23,12 +23,12 @@ public final class Xm implements InterfaceC0254fo {
             arrayList.add(new Zm(str + '_' + i2, (String) obj, mn, toVar, k2));
             i2 = i3;
         }
-        this.f838a = arrayList;
+        this.f852a = arrayList;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0254fo
     public final void a(C0228eo c0228eo) {
-        Iterator it = this.f838a.iterator();
+        Iterator it = this.f852a.iterator();
         while (it.hasNext()) {
             ((Zm) it.next()).a(c0228eo);
         }
@@ -36,7 +36,7 @@ public final class Xm implements InterfaceC0254fo {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0254fo
     public final void a(PublicLogger publicLogger) {
-        Iterator it = this.f838a.iterator();
+        Iterator it = this.f852a.iterator();
         while (it.hasNext()) {
             ((Zm) it.next()).e = publicLogger;
         }

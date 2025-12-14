@@ -14,7 +14,7 @@ import io.appmetrica.analytics.logger.common.BaseReleaseLogger;
 public final class C0510q0 implements Ca {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1160a;
+    public final Context f1174a;
     public final IHandlerExecutor b;
     public final C0234f4 c = new C0234f4();
     public final Handler d = f().getHandler();
@@ -22,7 +22,7 @@ public final class C0510q0 implements Ca {
     public final C0396lb f = new C0396lb();
 
     public C0510q0(Context context, S3 s3) {
-        this.f1160a = context;
+        this.f1174a = context;
         this.b = s3.a();
         BaseReleaseLogger.init(context);
         f().execute(new Runnable() { // from class: io.appmetrica.analytics.impl.q0$$ExternalSyntheticLambda0
@@ -103,7 +103,7 @@ public final class C0510q0 implements Ca {
             this.f.c();
             this.f.b();
             if (appMetricaConfig != null) {
-                this.f.a(this.f1160a, appMetricaConfig, ua);
+                this.f.a(this.f1174a, appMetricaConfig, ua);
             }
             if (appMetricaConfig != null) {
             }

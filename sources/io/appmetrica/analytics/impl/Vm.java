@@ -10,7 +10,7 @@ public final class Vm extends N2 {
     }
 
     public final int b() {
-        return this.f679a;
+        return this.f693a;
     }
 
     public Vm(int i, String str, PublicLogger publicLogger) {
@@ -29,11 +29,11 @@ public final class Vm extends N2 {
         try {
             byte[] bytes = str.getBytes("UTF-8");
             int length = bytes.length;
-            int i = this.f679a;
+            int i = this.f693a;
             if (length > i) {
                 String str2 = new String(bytes, 0, i, "UTF-8");
                 try {
-                    this.c.warning("\"%s\" %s exceeded limit of %d bytes", this.b, str, Integer.valueOf(this.f679a));
+                    this.c.warning("\"%s\" %s exceeded limit of %d bytes", this.b, str, Integer.valueOf(this.f693a));
                 } catch (UnsupportedEncodingException unused) {
                 }
                 return str2;

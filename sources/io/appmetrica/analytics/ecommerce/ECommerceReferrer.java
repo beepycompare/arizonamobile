@@ -5,7 +5,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public class ECommerceReferrer {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f421a;
+    private String f435a;
     private String b;
     private ECommerceScreen c;
 
@@ -18,7 +18,7 @@ public class ECommerceReferrer {
     }
 
     public String getType() {
-        return this.f421a;
+        return this.f435a;
     }
 
     public ECommerceReferrer setIdentifier(String str) {
@@ -32,11 +32,11 @@ public class ECommerceReferrer {
     }
 
     public ECommerceReferrer setType(String str) {
-        this.f421a = str;
+        this.f435a = str;
         return this;
     }
 
     public String toString() {
-        return "ECommerceReferrer{type='" + this.f421a + "', identifier='" + this.b + "', screen=" + this.c + AbstractJsonLexerKt.END_OBJ;
+        return "ECommerceReferrer{type='" + this.f435a + "', identifier='" + this.b + "', screen=" + this.c + AbstractJsonLexerKt.END_OBJ;
     }
 }

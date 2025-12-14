@@ -7,12 +7,12 @@ import android.os.ResultReceiver;
 public final class C0638v4 implements InterfaceC0260g4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1244a;
+    public final Context f1258a;
     public final C0713y4 b;
     public final ResultReceiver c;
 
     public C0638v4(Context context, C0713y4 c0713y4, C0514q4 c0514q4) {
-        this.f1244a = context;
+        this.f1258a = context;
         this.b = c0713y4;
         this.c = c0514q4.c;
         c0713y4.a(this);
@@ -29,7 +29,7 @@ public final class C0638v4 implements InterfaceC0260g4 {
     }
 
     public final Context c() {
-        return this.f1244a;
+        return this.f1258a;
     }
 
     public final ResultReceiver d() {

@@ -24,20 +24,20 @@ public class C0544ra extends D2 {
     public final Nn a(List<Object> list) {
         int i;
         int i2 = 0;
-        if (list == null || (list.size() <= this.f522a && this.b == null)) {
+        if (list == null || (list.size() <= this.f536a && this.b == null)) {
             i = 0;
         } else {
             ArrayList arrayList = new ArrayList();
             i = 0;
             int i3 = 0;
             for (Object obj : list) {
-                if (i3 < this.f522a) {
+                if (i3 < this.f536a) {
                     InterfaceC0619ua interfaceC0619ua = this.b;
                     if (interfaceC0619ua != null) {
                         Nn a2 = interfaceC0619ua.a(obj);
-                        Object obj2 = a2.f694a;
+                        Object obj2 = a2.f708a;
                         i += a2.b.getBytesTruncated();
-                        mo.a(obj, a2.f694a);
+                        mo.a(obj, a2.f708a);
                         obj = obj2;
                     }
                     arrayList.add(obj);

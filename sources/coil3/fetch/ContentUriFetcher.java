@@ -74,13 +74,13 @@ public final class ContentUriFetcher implements Fetcher {
         Dimension width = this.options.getSize().getWidth();
         Dimension.Pixels pixels = width instanceof Dimension.Pixels ? (Dimension.Pixels) width : null;
         if (pixels != null) {
-            int m9450unboximpl = pixels.m9450unboximpl();
+            int m9466unboximpl = pixels.m9466unboximpl();
             Dimension height = this.options.getSize().getHeight();
             Dimension.Pixels pixels2 = height instanceof Dimension.Pixels ? (Dimension.Pixels) height : null;
             if (pixels2 != null) {
-                int m9450unboximpl2 = pixels2.m9450unboximpl();
+                int m9466unboximpl2 = pixels2.m9466unboximpl();
                 Bundle bundle = new Bundle(1);
-                bundle.putParcelable("android.content.extra.SIZE", new Point(m9450unboximpl, m9450unboximpl2));
+                bundle.putParcelable("android.content.extra.SIZE", new Point(m9466unboximpl, m9466unboximpl2));
                 return bundle;
             }
             return null;

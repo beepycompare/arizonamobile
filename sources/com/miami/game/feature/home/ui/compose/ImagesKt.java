@@ -462,7 +462,7 @@ public final class ImagesKt {
                 BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1132758621, "C130@3754L101,129@3717L264,139@4165L13,140@4211L13,136@3998L285:Images.kt#dswm0d");
                 ImageKt.Image(PainterResources_androidKt.painterResource(com.miami.game.feature.home.R.drawable.btn_notification_count, startRestartGroup, 0), (String) null, (Modifier) null, (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 24624, 108);
-                TextKt.m3255TextNvy7gAk(String.valueOf(notificationState.getValue().intValue()), Modifier.Companion, Color.Companion.m5461getWhite0d7_KjU(), null, TypeKt.m10152dpToSp8Feqmps(Dp.m8258constructorimpl(f), startRestartGroup, 6), null, null, null, 0L, null, null, TypeKt.m10152dpToSp8Feqmps(Dp.m8258constructorimpl(f), startRestartGroup, 6), 0, false, 0, 0, null, null, startRestartGroup, 432, 0, 260072);
+                TextKt.m3255TextNvy7gAk(String.valueOf(notificationState.getValue().intValue()), Modifier.Companion, Color.Companion.m5461getWhite0d7_KjU(), null, TypeKt.m10168dpToSp8Feqmps(Dp.m8258constructorimpl(f), startRestartGroup, 6), null, null, null, 0L, null, null, TypeKt.m10168dpToSp8Feqmps(Dp.m8258constructorimpl(f), startRestartGroup, 6), 0, false, 0, 0, null, null, startRestartGroup, 432, 0, 260072);
                 startRestartGroup = startRestartGroup;
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -603,7 +603,7 @@ public final class ImagesKt {
                 ComposerKt.sourceInformationMarkerStart(startRestartGroup, -493011394, "C181@5328L100,178@5211L283,189@5674L13,190@5720L13,193@5868L10,186@5511L397:Images.kt#dswm0d");
                 ImageKt.Image(PainterResources_androidKt.painterResource(com.miami.game.feature.home.R.drawable.shop_notificaiotns_bg, startRestartGroup, 0), (String) null, SizeKt.m962height3ABfNKs(Modifier.Companion, Dp.m8258constructorimpl(20)), (Alignment) null, (ContentScale) null, 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 432, 120);
                 float f2 = 12;
-                TextKt.m3255TextNvy7gAk("АКЦИЯ Х" + i + " ДОНАТ", Modifier.Companion, Color.Companion.m5461getWhite0d7_KjU(), null, TypeKt.m10152dpToSp8Feqmps(Dp.m8258constructorimpl(f2), startRestartGroup, 6), null, FontWeight.Companion.getW900(), null, 0L, null, null, TypeKt.m10152dpToSp8Feqmps(Dp.m8258constructorimpl(f2), startRestartGroup, 6), 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getLabelMedium(), startRestartGroup, 1573296, 0, 128936);
+                TextKt.m3255TextNvy7gAk("АКЦИЯ Х" + i + " ДОНАТ", Modifier.Companion, Color.Companion.m5461getWhite0d7_KjU(), null, TypeKt.m10168dpToSp8Feqmps(Dp.m8258constructorimpl(f2), startRestartGroup, 6), null, FontWeight.Companion.getW900(), null, 0L, null, null, TypeKt.m10168dpToSp8Feqmps(Dp.m8258constructorimpl(f2), startRestartGroup, 6), 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getLabelMedium(), startRestartGroup, 1573296, 0, 128936);
                 startRestartGroup = startRestartGroup;
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);

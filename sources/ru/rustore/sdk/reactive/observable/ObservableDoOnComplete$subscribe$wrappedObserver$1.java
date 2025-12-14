@@ -39,7 +39,7 @@ public final class ObservableDoOnComplete$subscribe$wrappedObserver$1<T> impleme
 
     @Override // ru.rustore.sdk.reactive.observable.ObservableObserver
     public void onComplete() {
-        Object m10199constructorimpl;
+        Object m10215constructorimpl;
         Function0 function0;
         if (this.disposed.compareAndSet(false, true)) {
             ObservableDoOnComplete<T> observableDoOnComplete = this.this$0;
@@ -48,26 +48,26 @@ public final class ObservableDoOnComplete$subscribe$wrappedObserver$1<T> impleme
                 ObservableDoOnComplete$subscribe$wrappedObserver$1<T> observableDoOnComplete$subscribe$wrappedObserver$1 = this;
                 function0 = ((ObservableDoOnComplete) observableDoOnComplete).block;
                 function0.invoke();
-                m10199constructorimpl = Result.m10199constructorimpl(Unit.INSTANCE);
+                m10215constructorimpl = Result.m10215constructorimpl(Unit.INSTANCE);
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m10199constructorimpl = Result.m10199constructorimpl(ResultKt.createFailure(th));
+                m10215constructorimpl = Result.m10215constructorimpl(ResultKt.createFailure(th));
             }
             ObservableObserver<T> observableObserver = this.$downstream;
-            if (Result.m10206isSuccessimpl(m10199constructorimpl)) {
-                Unit unit = (Unit) m10199constructorimpl;
+            if (Result.m10222isSuccessimpl(m10215constructorimpl)) {
+                Unit unit = (Unit) m10215constructorimpl;
                 observableObserver.onComplete();
             }
             ObservableObserver<T> observableObserver2 = this.$downstream;
-            Throwable m10202exceptionOrNullimpl = Result.m10202exceptionOrNullimpl(m10199constructorimpl);
-            if (m10202exceptionOrNullimpl == null || !this.disposed.compareAndSet(false, true)) {
+            Throwable m10218exceptionOrNullimpl = Result.m10218exceptionOrNullimpl(m10215constructorimpl);
+            if (m10218exceptionOrNullimpl == null || !this.disposed.compareAndSet(false, true)) {
                 return;
             }
             Disposable andSet = this.upstreamDisposable.getAndSet(null);
             if (andSet != null) {
                 andSet.dispose();
             }
-            observableObserver2.onError(m10202exceptionOrNullimpl);
+            observableObserver2.onError(m10218exceptionOrNullimpl);
         }
     }
 

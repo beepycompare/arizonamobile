@@ -131,14 +131,14 @@ public final class PreloadMediaSource extends WrappingMediaSource {
         this.preloadHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreloadMediaSource$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                PreloadMediaSource.this.m9018xf99e9a56(j);
+                PreloadMediaSource.this.m9034xf99e9a56(j);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$preload$0$androidx-media3-exoplayer-source-preload-PreloadMediaSource  reason: not valid java name */
-    public /* synthetic */ void m9018xf99e9a56(long j) {
+    public /* synthetic */ void m9034xf99e9a56(long j) {
         this.preloadCalled = true;
         this.startPositionUs = j;
         this.onSourcePreparedNotified = false;
@@ -155,14 +155,14 @@ public final class PreloadMediaSource extends WrappingMediaSource {
         Util.postOrRun(this.preloadHandler, new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreloadMediaSource$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                PreloadMediaSource.this.m9016xcf4780db();
+                PreloadMediaSource.this.m9032xcf4780db();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$clear$1$androidx-media3-exoplayer-source-preload-PreloadMediaSource  reason: not valid java name */
-    public /* synthetic */ void m9016xcf4780db() {
+    public /* synthetic */ void m9032xcf4780db() {
         if (this.preloadingMediaPeriodAndKey != null) {
             this.mediaSource.releasePeriod(((PreloadMediaPeriod) this.preloadingMediaPeriodAndKey.first).mediaPeriod);
             this.preloadingMediaPeriodAndKey = null;
@@ -192,14 +192,14 @@ public final class PreloadMediaSource extends WrappingMediaSource {
         this.preloadHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreloadMediaSource$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                PreloadMediaSource.this.m9017xd674fafd(timeline);
+                PreloadMediaSource.this.m9033xd674fafd(timeline);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onChildSourceInfoRefreshed$2$androidx-media3-exoplayer-source-preload-PreloadMediaSource  reason: not valid java name */
-    public /* synthetic */ void m9017xd674fafd(Timeline timeline) {
+    public /* synthetic */ void m9033xd674fafd(Timeline timeline) {
         if (isUsedByPlayer() || this.onSourcePreparedNotified) {
             return;
         }
@@ -275,14 +275,14 @@ public final class PreloadMediaSource extends WrappingMediaSource {
         this.releaseHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreloadMediaSource$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                PreloadMediaSource.this.m9019xd9831bcd();
+                PreloadMediaSource.this.m9035xd9831bcd();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$releasePreloadMediaSource$3$androidx-media3-exoplayer-source-preload-PreloadMediaSource  reason: not valid java name */
-    public /* synthetic */ void m9019xd9831bcd() {
+    public /* synthetic */ void m9035xd9831bcd() {
         this.preloadCalled = false;
         this.startPositionUs = C.TIME_UNSET;
         this.onSourcePreparedNotified = false;
@@ -357,14 +357,14 @@ public final class PreloadMediaSource extends WrappingMediaSource {
             PreloadMediaSource.this.preloadHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreloadMediaSource$PreloadMediaPeriodCallback$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PreloadMediaSource.PreloadMediaPeriodCallback.this.m9021x5a2a8722(mediaPeriod);
+                    PreloadMediaSource.PreloadMediaPeriodCallback.this.m9037x5a2a8722(mediaPeriod);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onPrepared$0$androidx-media3-exoplayer-source-preload-PreloadMediaSource$PreloadMediaPeriodCallback  reason: not valid java name */
-        public /* synthetic */ void m9021x5a2a8722(MediaPeriod mediaPeriod) {
+        public /* synthetic */ void m9037x5a2a8722(MediaPeriod mediaPeriod) {
             TrackSelectorResult trackSelectorResult;
             if (PreloadMediaSource.this.isUsedByPlayer()) {
                 return;
@@ -393,14 +393,14 @@ public final class PreloadMediaSource extends WrappingMediaSource {
             PreloadMediaSource.this.preloadHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreloadMediaSource$PreloadMediaPeriodCallback$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PreloadMediaSource.PreloadMediaPeriodCallback.this.m9020xba37e565(mediaPeriod);
+                    PreloadMediaSource.PreloadMediaPeriodCallback.this.m9036xba37e565(mediaPeriod);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onContinueLoadingRequested$1$androidx-media3-exoplayer-source-preload-PreloadMediaSource$PreloadMediaPeriodCallback  reason: not valid java name */
-        public /* synthetic */ void m9020xba37e565(MediaPeriod mediaPeriod) {
+        public /* synthetic */ void m9036xba37e565(MediaPeriod mediaPeriod) {
             if (PreloadMediaSource.this.isUsedByPlayer()) {
                 return;
             }

@@ -10,7 +10,7 @@ public final class C0629uk {
         q5.d = serviceModuleCounterReport.getType();
         String name = serviceModuleCounterReport.getName();
         if (name != null) {
-            q5.f731a = name;
+            q5.f745a = name;
         }
         if (serviceModuleCounterReport.getValueBytes() == null && (value = serviceModuleCounterReport.getValue()) != null) {
             q5.b = value;

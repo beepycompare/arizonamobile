@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class IronSourceV9ClientModuleEntryPoint extends ModuleClientEntryPoint<Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    private ClientContext f287a = null;
+    private ClientContext f301a = null;
     private final AtomicBoolean b = new AtomicBoolean(false);
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ModuleClientEntryPoint
@@ -26,13 +26,13 @@ public class IronSourceV9ClientModuleEntryPoint extends ModuleClientEntryPoint<O
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ModuleClientEntryPoint
     public void initClientSide(ClientContext clientContext) {
-        this.f287a = clientContext;
+        this.f301a = clientContext;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ModuleClientEntryPoint
     public void onActivated() {
         ClientContext clientContext;
-        if (!ReflectionUtils.detectClassExists("com.unity3d.mediation.LevelPlay") || (clientContext = this.f287a) == null) {
+        if (!ReflectionUtils.detectClassExists("com.unity3d.mediation.LevelPlay") || (clientContext = this.f301a) == null) {
             return;
         }
         LevelPlay.addImpressionDataListener(new c(clientContext));

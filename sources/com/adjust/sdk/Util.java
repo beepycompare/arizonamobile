@@ -78,6 +78,13 @@ public class Util {
         return adjustAttribution;
     }
 
+    public static boolean canReadAppSetId(AdjustConfig adjustConfig) {
+        if (adjustConfig.isAppSetIdReadingEnabled) {
+            return canReadPlayIds(adjustConfig);
+        }
+        return false;
+    }
+
     public static boolean canReadNonPlayIds(AdjustConfig adjustConfig) {
         return (adjustConfig.coppaComplianceEnabled || adjustConfig.playStoreKidsComplianceEnabled) ? false : true;
     }
@@ -138,6 +145,14 @@ public class Util {
         return String.format(Locale.US, str, objArr);
     }
 
+    public static String getAdidFromActivityStateFile(Context context) {
+        ActivityState activityState = (ActivityState) readObject(context, Constants.ACTIVITY_STATE_FILENAME, "Activity state", ActivityState.class);
+        if (activityState == null) {
+            return null;
+        }
+        return activityState.adid;
+    }
+
     public static Object getAdvertisingInfoObject(final Context context, long j) {
         return runSyncInPlayAdIdSchedulerWithTimeout(context, new Callable<Object>() { // from class: com.adjust.sdk.Util.1
             @Override // java.util.concurrent.Callable
@@ -153,6 +168,10 @@ public class Util {
 
     public static String getAndroidId(Context context) {
         return AndroidIdUtil.getAndroidId(context);
+    }
+
+    public static AdjustAttribution getAttributionFromAttributionFile(Context context) {
+        return (AdjustAttribution) readObject(context, Constants.ATTRIBUTION_FILENAME, "Attribution", AdjustAttribution.class);
     }
 
     public static String getCpuAbi() {

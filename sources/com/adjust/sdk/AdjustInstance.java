@@ -2,6 +2,7 @@ package com.adjust.sdk;
 
 import android.content.Context;
 import android.net.Uri;
+import android.os.Handler;
 import com.adjust.sdk.scheduler.AsyncTaskExecutor;
 import com.adjust.sdk.scheduler.SingleThreadCachedScheduler;
 import java.util.ArrayList;
@@ -18,8 +19,10 @@ public class AdjustInstance {
     private Boolean startEnabled = null;
     private boolean startOffline = false;
     private PreLaunchActions preLaunchActions = new PreLaunchActions();
-    private ArrayList<OnAdidReadListener> cachedAdidReadCallbacks = new ArrayList<>();
-    private ArrayList<OnAttributionReadListener> cachedAttributionReadCallbacks = new ArrayList<>();
+    private final ArrayList<OnAdidReadListener> cachedAdidReadCallbacks = new ArrayList<>();
+    private final ArrayList<AdjustTimeoutCallback> cachedAdidReadTimeoutCallbacks = new ArrayList<>();
+    private final ArrayList<OnAttributionReadListener> cachedAttributionReadCallbacks = new ArrayList<>();
+    private final ArrayList<AdjustTimeoutCallback> cachedAttributionReadTimeoutCallbacks = new ArrayList<>();
 
     /* loaded from: classes3.dex */
     public static class PreLaunchActions {
@@ -158,6 +161,29 @@ public class AdjustInstance {
         }
     }
 
+    public void getAdidWithTimeout(final Context context, final long j, final OnAdidReadListener onAdidReadListener) {
+        if (!checkActivityHandler("getAdidWithTimeout")) {
+            new SingleThreadCachedScheduler("getAdidWithTimeout").submit(new Runnable() { // from class: com.adjust.sdk.AdjustInstance.8
+                @Override // java.lang.Runnable
+                public final void run() {
+                    final String adidFromActivityStateFile = Util.getAdidFromActivityStateFile(context);
+                    if (adidFromActivityStateFile == null) {
+                        ActivityHandler.queueGetAdidWithTimeout(j, onAdidReadListener, AdjustInstance.this.cachedAdidReadTimeoutCallbacks, context);
+                    } else {
+                        new Handler(context.getMainLooper()).post(new Runnable() { // from class: com.adjust.sdk.AdjustInstance.8.1
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                onAdidReadListener.onAdidRead(adidFromActivityStateFile);
+                            }
+                        });
+                    }
+                }
+            });
+        } else {
+            this.activityHandler.getAdidWithTimeout(j, onAdidReadListener);
+        }
+    }
+
     public void getAmazonAdId(Context context, OnAmazonAdIdReadListener onAmazonAdIdReadListener) {
         DeviceInfo.getFireAdvertisingIdBypassConditions(context.getContentResolver(), onAmazonAdIdReadListener);
     }
@@ -170,8 +196,31 @@ public class AdjustInstance {
         }
     }
 
+    public void getAttributionWithTimeout(final Context context, final long j, final OnAttributionReadListener onAttributionReadListener) {
+        if (!checkActivityHandler("getAttributionWithTimeout")) {
+            new SingleThreadCachedScheduler("getAttributionWithTimeout").submit(new Runnable() { // from class: com.adjust.sdk.AdjustInstance.9
+                @Override // java.lang.Runnable
+                public final void run() {
+                    final AdjustAttribution attributionFromAttributionFile = Util.getAttributionFromAttributionFile(context);
+                    if (attributionFromAttributionFile == null) {
+                        ActivityHandler.queueGetAttributionWithTimeout(j, onAttributionReadListener, AdjustInstance.this.cachedAttributionReadTimeoutCallbacks, context);
+                    } else {
+                        new Handler(context.getMainLooper()).post(new Runnable() { // from class: com.adjust.sdk.AdjustInstance.9.1
+                            @Override // java.lang.Runnable
+                            public final void run() {
+                                onAttributionReadListener.onAttributionRead(attributionFromAttributionFile);
+                            }
+                        });
+                    }
+                }
+            });
+        } else {
+            this.activityHandler.getAttributionWithTimeout(j, onAttributionReadListener);
+        }
+    }
+
     public void getGooglePlayInstallReferrer(Context context, final OnGooglePlayInstallReferrerReadListener onGooglePlayInstallReferrerReadListener) {
-        new InstallReferrer(context, new InstallReferrerReadListener() { // from class: com.adjust.sdk.AdjustInstance.9
+        new InstallReferrer(context, new InstallReferrerReadListener() { // from class: com.adjust.sdk.AdjustInstance.11
             @Override // com.adjust.sdk.InstallReferrerReadListener
             public final void onFail(String str) {
                 OnGooglePlayInstallReferrerReadListener.this.onFail(str);
@@ -185,7 +234,7 @@ public class AdjustInstance {
     }
 
     public void getLastDeeplink(final Context context, final OnLastDeeplinkReadListener onLastDeeplinkReadListener) {
-        new AsyncTaskExecutor<Void, Uri>() { // from class: com.adjust.sdk.AdjustInstance.10
+        new AsyncTaskExecutor<Void, Uri>() { // from class: com.adjust.sdk.AdjustInstance.12
             @Override // com.adjust.sdk.scheduler.AsyncTaskExecutor
             public final Uri doInBackground(Void[] voidArr) {
                 try {
@@ -203,7 +252,7 @@ public class AdjustInstance {
     }
 
     public void getSdkVersion(final OnSdkVersionReadListener onSdkVersionReadListener) {
-        new AsyncTaskExecutor<Void, String>() { // from class: com.adjust.sdk.AdjustInstance.8
+        new AsyncTaskExecutor<Void, String>() { // from class: com.adjust.sdk.AdjustInstance.10
             @Override // com.adjust.sdk.scheduler.AsyncTaskExecutor
             public final String doInBackground(Void[] voidArr) {
                 return Util.getSdkVersion();
@@ -236,7 +285,9 @@ public class AdjustInstance {
             adjustConfig.purchaseVerificationPath = this.purchaseVerificationPath;
             adjustConfig.cachedDeeplinkResolutionCallback = this.cachedDeeplinkResolutionCallback;
             adjustConfig.cachedAdidReadCallbacks = this.cachedAdidReadCallbacks;
+            adjustConfig.cachedAdidReadTimeoutCallbacks = this.cachedAdidReadTimeoutCallbacks;
             adjustConfig.cachedAttributionReadCallbacks = this.cachedAttributionReadCallbacks;
+            adjustConfig.cachedAttributionReadTimeoutCallbacks = this.cachedAttributionReadTimeoutCallbacks;
             this.activityHandler = AdjustFactory.getActivityHandler(adjustConfig);
             setSendingReferrersAsNotSent(adjustConfig.context);
         }

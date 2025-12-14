@@ -6,7 +6,7 @@ import java.util.List;
 public final class Cl implements ListConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Dl f519a = new Dl();
+    public final Dl f533a = new Dl();
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
@@ -14,7 +14,7 @@ public final class Cl implements ListConverter {
         C0107a6[] c0107a6Arr = new C0107a6[list.size()];
         int i = 0;
         for (El el : list) {
-            c0107a6Arr[i] = this.f519a.fromModel(el);
+            c0107a6Arr[i] = this.f533a.fromModel(el);
             i++;
         }
         return c0107a6Arr;

@@ -78,7 +78,7 @@ public final class ConstraintsSizeResolver implements SizeResolver, LayoutModifi
                             throw th;
                         }
                     }
-                    return UtilsKt.m9399toSizeBRTryo0(this.latestConstraints);
+                    return UtilsKt.m9415toSizeBRTryo0(this.latestConstraints);
                 } else if (i != 1) {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 } else {
@@ -93,7 +93,7 @@ public final class ConstraintsSizeResolver implements SizeResolver, LayoutModifi
                     }
                 }
                 TypeIntrinsics.asMutableCollection(this.continuations).remove(objectRef.element);
-                return UtilsKt.m9399toSizeBRTryo0(this.latestConstraints);
+                return UtilsKt.m9415toSizeBRTryo0(this.latestConstraints);
             }
         }
         constraintsSizeResolver$size$1 = new ConstraintsSizeResolver$size$1(this, continuation);
@@ -103,13 +103,13 @@ public final class ConstraintsSizeResolver implements SizeResolver, LayoutModifi
         if (i != 0) {
         }
         TypeIntrinsics.asMutableCollection(this.continuations).remove(objectRef.element);
-        return UtilsKt.m9399toSizeBRTryo0(this.latestConstraints);
+        return UtilsKt.m9415toSizeBRTryo0(this.latestConstraints);
     }
 
     @Override // androidx.compose.ui.layout.LayoutModifier
     /* renamed from: measure-3p2s80s */
     public MeasureResult mo1371measure3p2s80s(MeasureScope measureScope, Measurable measurable, long j) {
-        m9371setConstraintsBRTryo0(j);
+        m9387setConstraintsBRTryo0(j);
         final Placeable mo6875measureBRTryo0 = measurable.mo6875measureBRTryo0(j);
         return MeasureScope.layout$default(measureScope, mo6875measureBRTryo0.getWidth(), mo6875measureBRTryo0.getHeight(), null, new Function1() { // from class: coil3.compose.ConstraintsSizeResolver$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function1
@@ -128,7 +128,7 @@ public final class ConstraintsSizeResolver implements SizeResolver, LayoutModifi
     }
 
     /* renamed from: setConstraints-BRTryo0  reason: not valid java name */
-    public final void m9371setConstraintsBRTryo0(long j) {
+    public final void m9387setConstraintsBRTryo0(long j) {
         this.latestConstraints = j;
         if (Constraints.m8215isZeroimpl(j)) {
             return;
@@ -141,7 +141,7 @@ public final class ConstraintsSizeResolver implements SizeResolver, LayoutModifi
         Iterator<T> it = list.iterator();
         while (it.hasNext()) {
             Result.Companion companion = Result.Companion;
-            ((Continuation) it.next()).resumeWith(Result.m10199constructorimpl(Unit.INSTANCE));
+            ((Continuation) it.next()).resumeWith(Result.m10215constructorimpl(Unit.INSTANCE));
         }
     }
 }

@@ -23,8 +23,8 @@ public final class C0604tk implements Jc {
         });
         C0754zk B = C0470oa.I.B();
         synchronized (B) {
-            C0134b7 c0134b7 = B.f1318a;
-            z6 = new Z6(context, new C0108a7(c0134b7.f896a, c0134b7.b, false).a(context, c0579sk), c0356jn, PublicLogger.getAnonymousInstance());
+            C0134b7 c0134b7 = B.f1332a;
+            z6 = new Z6(context, new C0108a7(c0134b7.f910a, c0134b7.b, false).a(context, c0579sk), c0356jn, PublicLogger.getAnonymousInstance());
         }
         byte[] bArr = new T2(new C0555rl(z6), "binary_data").get("auto_inapp_collecting_info_data");
         if (bArr != null) {

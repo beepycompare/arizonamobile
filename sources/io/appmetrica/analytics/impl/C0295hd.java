@@ -31,14 +31,14 @@ public final class C0295hd extends Sg {
 
     @Override // io.appmetrica.analytics.impl.Sg
     public final boolean a(Q5 q5) {
-        if (this.f762a.t.c()) {
+        if (this.f776a.t.c()) {
             ArrayList arrayList = this.b;
             if (!(arrayList instanceof Collection) || !arrayList.isEmpty()) {
                 Iterator it = arrayList.iterator();
                 while (it.hasNext()) {
                     Pair pair = (Pair) it.next();
                     Uc uc = (Uc) pair.component2();
-                    if (((ModuleServiceEventHandler) pair.component1()).handle(new Xc(uc.b, uc.f792a, new Wc(uc.d, uc.c, q5)), q5)) {
+                    if (((ModuleServiceEventHandler) pair.component1()).handle(new Xc(uc.b, uc.f806a, new Wc(uc.d, uc.c, q5)), q5)) {
                         return true;
                     }
                 }

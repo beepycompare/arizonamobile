@@ -6,14 +6,14 @@ import java.util.HashMap;
 public final class C0676wh {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Q5 f1267a;
+    public final Q5 f1281a;
     public final boolean b;
     public final int c;
     public final HashMap d;
     public final Gh e;
 
     public C0676wh(Q5 q5, boolean z, int i, HashMap hashMap, Gh gh) {
-        this.f1267a = q5;
+        this.f1281a = q5;
         this.b = z;
         this.c = i;
         this.d = hashMap;
@@ -21,6 +21,6 @@ public final class C0676wh {
     }
 
     public final String toString() {
-        return "ReportToSend(report=" + this.f1267a + ", serviceDataReporterType=" + this.c + ", environment=" + this.e + ", isCrashReport=" + this.b + ", trimmedFields=" + this.d + ')';
+        return "ReportToSend(report=" + this.f1281a + ", serviceDataReporterType=" + this.c + ", environment=" + this.e + ", isCrashReport=" + this.b + ", trimmedFields=" + this.d + ')';
     }
 }

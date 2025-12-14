@@ -174,12 +174,12 @@ public final class MetadataRetriever implements AutoCloseable {
             MetadataRetrieverInternal metadataRetrieverInternal = new MetadataRetrieverInternal(this.mediaSourceFactory, this.mediaItem, this.clock, new MetadataRetrieverInternal.OnPreparedListener() { // from class: androidx.media3.exoplayer.MetadataRetriever$$ExternalSyntheticLambda0
                 @Override // androidx.media3.exoplayer.MetadataRetriever.MetadataRetrieverInternal.OnPreparedListener
                 public final void onPrepared(TrackGroupArray trackGroupArray, Timeline timeline) {
-                    MetadataRetriever.this.m8914x61c6fc37(trackGroupArray, timeline);
+                    MetadataRetriever.this.m8930x61c6fc37(trackGroupArray, timeline);
                 }
             }, new MetadataRetrieverInternal.OnFailureListener() { // from class: androidx.media3.exoplayer.MetadataRetriever$$ExternalSyntheticLambda1
                 @Override // androidx.media3.exoplayer.MetadataRetriever.MetadataRetrieverInternal.OnFailureListener
                 public final void onFailure(Exception exc) {
-                    MetadataRetriever.this.m8915xfc67beb8(exc);
+                    MetadataRetriever.this.m8931xfc67beb8(exc);
                 }
             });
             this.internalRetriever = metadataRetrieverInternal;
@@ -189,7 +189,7 @@ public final class MetadataRetriever implements AutoCloseable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$startPreparation$0$androidx-media3-exoplayer-MetadataRetriever  reason: not valid java name */
-    public /* synthetic */ void m8914x61c6fc37(TrackGroupArray trackGroupArray, Timeline timeline) {
+    public /* synthetic */ void m8930x61c6fc37(TrackGroupArray trackGroupArray, Timeline timeline) {
         synchronized (this.lock) {
             ((SettableFuture) Assertions.checkNotNull(this.preparationFuture)).set(new InternalResult(trackGroupArray, timeline));
         }
@@ -197,7 +197,7 @@ public final class MetadataRetriever implements AutoCloseable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$startPreparation$1$androidx-media3-exoplayer-MetadataRetriever  reason: not valid java name */
-    public /* synthetic */ void m8915xfc67beb8(Exception exc) {
+    public /* synthetic */ void m8931xfc67beb8(Exception exc) {
         synchronized (this.lock) {
             ((SettableFuture) Assertions.checkNotNull(this.preparationFuture)).setException(exc);
         }
@@ -270,7 +270,7 @@ public final class MetadataRetriever implements AutoCloseable {
             Futures.whenAllComplete(this.allFutures).run(new Runnable() { // from class: androidx.media3.exoplayer.MetadataRetriever$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MetadataRetriever.this.m8913lambda$close$2$androidxmedia3exoplayerMetadataRetriever();
+                    MetadataRetriever.this.m8929lambda$close$2$androidxmedia3exoplayerMetadataRetriever();
                 }
             }, MoreExecutors.directExecutor());
         }
@@ -278,7 +278,7 @@ public final class MetadataRetriever implements AutoCloseable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$close$2$androidx-media3-exoplayer-MetadataRetriever  reason: not valid java name */
-    public /* synthetic */ void m8913lambda$close$2$androidxmedia3exoplayerMetadataRetriever() {
+    public /* synthetic */ void m8929lambda$close$2$androidxmedia3exoplayerMetadataRetriever() {
         synchronized (this.lock) {
             MetadataRetrieverInternal metadataRetrieverInternal = this.internalRetriever;
             if (metadataRetrieverInternal != null) {

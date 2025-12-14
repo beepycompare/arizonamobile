@@ -6,12 +6,13 @@ import kotlin.Metadata;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Utils.kt */
-@Metadata(d1 = {"\u00008\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0011\u001a\u0018\u0010\u0010\u001a\u00020\u00012\u0006\u0010\u0011\u001a\u00020\u00012\u0006\u0010\u0012\u001a\u00020\u0001H\u0000\u001a\"\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u00162\f\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00160\u0018H\u0080\bø\u0001\u0000\u001a\u0019\u0010\u0019\u001a\u00060\u000bj\u0002`\f2\u0006\u0010\u001a\u001a\u00020\u0001H\u0000¢\u0006\u0002\u0010\u001b\u001a!\u0010\u0019\u001a\u00060\u000bj\u0002`\f2\u0006\u0010\u0011\u001a\u00020\u00012\u0006\u0010\u0012\u001a\u00020\u0001H\u0000¢\u0006\u0002\u0010\u001c\u001a\u0018\u0010\u001d\u001a\u00020\u00012\u0006\u0010\u0011\u001a\u00020\u00012\u0006\u0010\u0012\u001a\u00020\u0001H\u0000\u001a\u0018\u0010\u001e\u001a\u00020\u00012\u0006\u0010\u0011\u001a\u00020\u00012\u0006\u0010\u0012\u001a\u00020\u0001H\u0000\u001a*\u0010\u001f\u001a\u00020\u00012\u0006\u0010 \u001a\u00020\u00012\u0006\u0010!\u001a\u00020\u00012\b\b\u0002\u0010\"\u001a\u00020\u00012\u0006\u0010#\u001a\u00020$H\u0000\u001a \u0010%\u001a\u00020\u00012\u0006\u0010&\u001a\u00020\u00012\u0006\u0010'\u001a\u00020\u00012\u0006\u0010(\u001a\u00020\u0001H\u0000\u001a\u0018\u0010)\u001a\u00020\u00012\u0006\u0010*\u001a\u00020\u00012\u0006\u0010+\u001a\u00020\u0001H\u0000\u001a4\u0010,\u001a\u00060\u000bj\u0002`\f2\u0006\u0010-\u001a\u00020\u00012\u0006\u0010\u001a\u001a\u00020\u00012\f\b\u0002\u0010.\u001a\u00060\u000bj\u0002`\fH\u0000ø\u0001\u0001¢\u0006\u0004\b/\u00100\u001a\u0010\u00101\u001a\u00020\u00012\u0006\u0010\u0011\u001a\u00020\u0001H\u0000\u001a\u001e\u00102\u001a\u00060\u000bj\u0002`\f*\u00060\u000bj\u0002`\fH\u0000ø\u0001\u0001¢\u0006\u0004\b3\u00104\"\u000e\u0010\u0000\u001a\u00020\u0001X\u0080T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0002\u001a\u00020\u0003X\u0080T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0004\u001a\u00020\u0001X\u0080T¢\u0006\u0002\n\u0000\"\u0014\u0010\u0005\u001a\u00020\u0001X\u0080D¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0014\u0010\b\u001a\u00020\u0001X\u0080D¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\u0007\"\u001a\u0010\n\u001a\u00060\u000bj\u0002`\fX\u0080\u0004¢\u0006\n\n\u0002\u0010\u000f\u001a\u0004\b\r\u0010\u000e\u0082\u0002\u000e\n\u0005\b\u009920\u0001\n\u0005\b¡\u001e0\u0001¨\u00065"}, d2 = {"AngleEpsilon", "", "DEBUG", "", "DistanceEpsilon", "FloatPi", "getFloatPi", "()F", "TwoPi", "getTwoPi", "Zero", "Landroidx/collection/FloatFloatPair;", "Landroidx/graphics/shapes/Point;", "getZero", "()J", "J", "angle", "x", "y", "debugLog", "", "tag", "", "messageFactory", "Lkotlin/Function0;", "directionVector", "angleRadians", "(F)J", "(FF)J", "distance", "distanceSquared", "findMinimum", "v0", "v1", "tolerance", "f", "Landroidx/graphics/shapes/FindMinimumFunction;", "interpolate", TtmlNode.START, "stop", "fraction", "positiveModulo", "num", "mod", "radialToCartesian", "radius", TtmlNode.CENTER, "radialToCartesian-L6JJ3z0", "(FFJ)J", "square", "rotate90", "rotate90-DnnuFBc", "(J)J", "graphics-shapes_release"}, k = 2, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u00008\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b \n\u0002\u0010\u000b\n\u0002\b\u0011\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a\u0018\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0001H\u0000\u001a\u0018\u0010\u0004\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0001H\u0000\u001a!\u0010\u0005\u001a\u00060\u0006j\u0002`\u00072\u0006\u0010\u0002\u001a\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0001H\u0000¢\u0006\u0002\u0010\b\u001a\u0019\u0010\u0005\u001a\u00060\u0006j\u0002`\u00072\u0006\u0010\t\u001a\u00020\u0001H\u0000¢\u0006\u0002\u0010\n\u001a1\u0010\u000b\u001a\u00060\u0006j\u0002`\u00072\u0006\u0010\f\u001a\u00020\u00012\u0006\u0010\t\u001a\u00020\u00012\f\b\u0002\u0010\r\u001a\u00060\u0006j\u0002`\u0007H\u0000¢\u0006\u0004\b\u000e\u0010\u000f\u001a\u001b\u0010\u0013\u001a\u00060\u0006j\u0002`\u0007*\u00060\u0006j\u0002`\u0007H\u0000¢\u0006\u0004\b\u0014\u0010\u0015\u001a\u0010\u0010\u001f\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0001H\u0000\u001a \u0010 \u001a\u00020\u00012\u0006\u0010!\u001a\u00020\u00012\u0006\u0010\"\u001a\u00020\u00012\u0006\u0010#\u001a\u00020\u0001H\u0000\u001a\u0018\u0010$\u001a\u00020\u00012\u0006\u0010%\u001a\u00020\u00012\u0006\u0010&\u001a\u00020\u0001H\u0000\u001aB\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020\u00012\u0006\u0010*\u001a\u00020\u00012\u0006\u0010+\u001a\u00020\u00012\u0006\u0010,\u001a\u00020\u00012\u0006\u0010-\u001a\u00020\u00012\u0006\u0010.\u001a\u00020\u00012\b\b\u0002\u0010/\u001a\u00020\u0001H\u0000\u001a3\u00100\u001a\u00020(2\n\u00101\u001a\u00060\u0006j\u0002`\u00072\n\u00102\u001a\u00060\u0006j\u0002`\u00072\n\u00103\u001a\u00060\u0006j\u0002`\u0007H\u0000¢\u0006\u0004\b4\u00105\u001a*\u00106\u001a\u00020\u00012\u0006\u00107\u001a\u00020\u00012\u0006\u00108\u001a\u00020\u00012\b\b\u0002\u0010/\u001a\u00020\u00012\u0006\u00109\u001a\u00020:H\u0000\u001a\"\u0010<\u001a\u00020=2\u0006\u0010>\u001a\u00020?2\f\u0010@\u001a\b\u0012\u0004\u0012\u00020?0AH\u0080\bø\u0001\u0000\"\u000e\u0010\u0010\u001a\u00020\u0001X\u0080T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0011\u001a\u00020\u0001X\u0080T¢\u0006\u0002\n\u0000\"\u000e\u0010\u0012\u001a\u00020\u0001X\u0080T¢\u0006\u0002\n\u0000\"\u001a\u0010\u0016\u001a\u00060\u0006j\u0002`\u0007X\u0080\u0004¢\u0006\n\n\u0002\u0010\u0019\u001a\u0004\b\u0017\u0010\u0018\"\u0014\u0010\u001a\u001a\u00020\u0001X\u0080D¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001c\"\u0014\u0010\u001d\u001a\u00020\u0001X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001c\"\u000e\u0010;\u001a\u00020(X\u0080T¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006B"}, d2 = {"distance", "", "x", "y", "distanceSquared", "directionVector", "Landroidx/collection/FloatFloatPair;", "Landroidx/graphics/shapes/Point;", "(FF)J", "angleRadians", "(F)J", "radialToCartesian", "radius", TtmlNode.CENTER, "radialToCartesian-L6JJ3z0", "(FFJ)J", "DistanceEpsilon", "AngleEpsilon", "RelaxedDistanceEpsilon", "rotate90", "rotate90-DnnuFBc", "(J)J", "Zero", "getZero", "()J", "J", "FloatPi", "getFloatPi", "()F", "TwoPi", "getTwoPi", "square", "interpolate", TtmlNode.START, "stop", "fraction", "positiveModulo", "num", "mod", "collinearIsh", "", "aX", "aY", "bX", "bY", "cX", "cY", "tolerance", "convex", "previous", "current", "next", "convex-b22R3LQ", "(JJJ)Z", "findMinimum", "v0", "v1", "f", "Landroidx/graphics/shapes/FindMinimumFunction;", "DEBUG", "debugLog", "", "tag", "", "messageFactory", "Lkotlin/Function0;", "graphics-shapes"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class Utils {
     public static final float AngleEpsilon = 1.0E-6f;
     public static final boolean DEBUG = false;
     public static final float DistanceEpsilon = 1.0E-4f;
+    public static final float RelaxedDistanceEpsilon = 0.005f;
     private static final long Zero = FloatFloatPair.m25constructorimpl(0.0f, 0.0f);
     private static final float FloatPi = 3.1415927f;
     private static final float TwoPi = 6.2831855f;
@@ -54,27 +55,22 @@ public final class Utils {
         return FloatFloatPair.m25constructorimpl((float) Math.cos(d), (float) Math.sin(d));
     }
 
-    public static final float angle(float f, float f2) {
-        float f3 = TwoPi;
-        return (((float) Math.atan2(f2, f)) + f3) % f3;
-    }
-
     /* renamed from: radialToCartesian-L6JJ3z0$default  reason: not valid java name */
-    public static /* synthetic */ long m8842radialToCartesianL6JJ3z0$default(float f, float f2, long j, int i, Object obj) {
+    public static /* synthetic */ long m8858radialToCartesianL6JJ3z0$default(float f, float f2, long j, int i, Object obj) {
         if ((i & 4) != 0) {
             j = Zero;
         }
-        return m8841radialToCartesianL6JJ3z0(f, f2, j);
+        return m8857radialToCartesianL6JJ3z0(f, f2, j);
     }
 
     /* renamed from: radialToCartesian-L6JJ3z0  reason: not valid java name */
-    public static final long m8841radialToCartesianL6JJ3z0(float f, float f2, long j) {
-        return PointKt.m8826plusybeJwSQ(PointKt.m8828timesso9K2fw(directionVector(f2), f), j);
+    public static final long m8857radialToCartesianL6JJ3z0(float f, float f2, long j) {
+        return PointKt.m8825plusybeJwSQ(PointKt.m8827timesso9K2fw(directionVector(f2), f), j);
     }
 
     /* renamed from: rotate90-DnnuFBc  reason: not valid java name */
-    public static final long m8843rotate90DnnuFBc(long j) {
-        return FloatFloatPair.m25constructorimpl(-PointKt.m8823getYDnnuFBc(j), PointKt.m8822getXDnnuFBc(j));
+    public static final long m8859rotate90DnnuFBc(long j) {
+        return FloatFloatPair.m25constructorimpl(-PointKt.m8822getYDnnuFBc(j), PointKt.m8821getXDnnuFBc(j));
     }
 
     public static final long getZero() {
@@ -87,6 +83,25 @@ public final class Utils {
 
     public static final float getTwoPi() {
         return TwoPi;
+    }
+
+    public static /* synthetic */ boolean collinearIsh$default(float f, float f2, float f3, float f4, float f5, float f6, float f7, int i, Object obj) {
+        if ((i & 64) != 0) {
+            f7 = 1.0E-4f;
+        }
+        return collinearIsh(f, f2, f3, f4, f5, f6, f7);
+    }
+
+    public static final boolean collinearIsh(float f, float f2, float f3, float f4, float f5, float f6, float f7) {
+        long m8859rotate90DnnuFBc = m8859rotate90DnnuFBc(FloatFloatPair.m25constructorimpl(f3 - f, f4 - f2));
+        long m25constructorimpl = FloatFloatPair.m25constructorimpl(f5 - f, f6 - f2);
+        float abs = Math.abs(PointKt.m8817dotProductybeJwSQ(m8859rotate90DnnuFBc, m25constructorimpl));
+        return abs < f7 || abs < (PointKt.m8819getDistanceDnnuFBc(m8859rotate90DnnuFBc) * f7) * PointKt.m8819getDistanceDnnuFBc(m25constructorimpl);
+    }
+
+    /* renamed from: convex-b22R3LQ  reason: not valid java name */
+    public static final boolean m8856convexb22R3LQ(long j, long j2, long j3) {
+        return PointKt.m8812clockwiseybeJwSQ(PointKt.m8824minusybeJwSQ(j2, j), PointKt.m8824minusybeJwSQ(j3, j2));
     }
 
     public static /* synthetic */ float findMinimum$default(float f, float f2, float f3, FindMinimumFunction findMinimumFunction, int i, Object obj) {

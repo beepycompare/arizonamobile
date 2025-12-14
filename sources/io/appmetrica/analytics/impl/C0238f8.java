@@ -13,7 +13,7 @@ public final class C0238f8 extends MessageNano {
     public static volatile C0238f8[] e;
 
     /* renamed from: a  reason: collision with root package name */
-    public C0468o8 f970a;
+    public C0468o8 f984a;
     public C0518q8 b;
     public C0290h8 c;
     public C0443n8 d;
@@ -34,7 +34,7 @@ public final class C0238f8 extends MessageNano {
     }
 
     public final C0238f8 a() {
-        this.f970a = null;
+        this.f984a = null;
         this.b = null;
         this.c = null;
         this.d = null;
@@ -45,7 +45,7 @@ public final class C0238f8 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        C0468o8 c0468o8 = this.f970a;
+        C0468o8 c0468o8 = this.f984a;
         if (c0468o8 != null) {
             computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(1, c0468o8);
         }
@@ -63,7 +63,7 @@ public final class C0238f8 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        C0468o8 c0468o8 = this.f970a;
+        C0468o8 c0468o8 = this.f984a;
         if (c0468o8 != null) {
             codedOutputByteBufferNano.writeMessage(1, c0468o8);
         }
@@ -90,10 +90,10 @@ public final class C0238f8 extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                if (this.f970a == null) {
-                    this.f970a = new C0468o8();
+                if (this.f984a == null) {
+                    this.f984a = new C0468o8();
                 }
-                codedInputByteBufferNano.readMessage(this.f970a);
+                codedInputByteBufferNano.readMessage(this.f984a);
             } else if (readTag == 18) {
                 if (this.b == null) {
                     this.b = new C0518q8();

@@ -12,7 +12,7 @@ public final class Yi extends Sg {
     public final boolean a(Q5 q5) {
         Object remove;
         for (Map.Entry entry : q5.p.entrySet()) {
-            Kk kk = this.f762a.u;
+            Kk kk = this.f776a.u;
             String str = (String) entry.getKey();
             byte[] bArr = (byte[]) entry.getValue();
             if (bArr != null) {
@@ -20,14 +20,14 @@ public final class Yi extends Sg {
                 if (bArr.length != 0) {
                     remove = kk.b.put(str, bArr);
                     byte[] bArr2 = (byte[]) remove;
-                    Ok ok = kk.f641a;
-                    ok.d.insert(ok.f708a, ok.c.toByteArray((Nk) ok.b.fromModel(kk.b)));
+                    Ok ok = kk.f655a;
+                    ok.d.insert(ok.f722a, ok.c.toByteArray((Nk) ok.b.fromModel(kk.b)));
                 }
             }
             remove = kk.b.remove(str);
             byte[] bArr22 = (byte[]) remove;
-            Ok ok2 = kk.f641a;
-            ok2.d.insert(ok2.f708a, ok2.c.toByteArray((Nk) ok2.b.fromModel(kk.b)));
+            Ok ok2 = kk.f655a;
+            ok2.d.insert(ok2.f722a, ok2.c.toByteArray((Nk) ok2.b.fromModel(kk.b)));
         }
         return true;
     }

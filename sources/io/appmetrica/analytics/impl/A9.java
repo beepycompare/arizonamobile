@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 public final class A9 implements IHandlerExecutor {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Looper f476a;
+    public final Looper f490a;
     public final Handler b;
     public final HandlerThreadC0190db c;
 
@@ -21,7 +21,7 @@ public final class A9 implements IHandlerExecutor {
     }
 
     public static HandlerThreadC0190db a(String str) {
-        HandlerThreadC0190db handlerThreadC0190db = new HandlerThreadC0190db(str + Constants.FILENAME_SEQUENCE_SEPARATOR + Ad.f478a.incrementAndGet());
+        HandlerThreadC0190db handlerThreadC0190db = new HandlerThreadC0190db(str + Constants.FILENAME_SEQUENCE_SEPARATOR + Ad.f492a.incrementAndGet());
         handlerThreadC0190db.start();
         return handlerThreadC0190db;
     }
@@ -43,7 +43,7 @@ public final class A9 implements IHandlerExecutor {
 
     @Override // io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor
     public final Looper getLooper() {
-        return this.f476a;
+        return this.f490a;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.executors.IInterruptionSafeThread
@@ -51,7 +51,7 @@ public final class A9 implements IHandlerExecutor {
         boolean z;
         HandlerThreadC0190db handlerThreadC0190db = this.c;
         synchronized (handlerThreadC0190db) {
-            z = handlerThreadC0190db.f931a;
+            z = handlerThreadC0190db.f945a;
         }
         return z;
     }
@@ -70,7 +70,7 @@ public final class A9 implements IHandlerExecutor {
     public final void stopRunning() {
         HandlerThreadC0190db handlerThreadC0190db = this.c;
         synchronized (handlerThreadC0190db) {
-            handlerThreadC0190db.f931a = false;
+            handlerThreadC0190db.f945a = false;
             handlerThreadC0190db.interrupt();
         }
     }
@@ -88,7 +88,7 @@ public final class A9 implements IHandlerExecutor {
 
     public A9(HandlerThreadC0190db handlerThreadC0190db, Looper looper, Handler handler) {
         this.c = handlerThreadC0190db;
-        this.f476a = looper;
+        this.f490a = looper;
         this.b = handler;
     }
 

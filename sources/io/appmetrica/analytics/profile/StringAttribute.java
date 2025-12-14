@@ -14,27 +14,27 @@ import io.appmetrica.analytics.impl.to;
 public class StringAttribute {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Mn f1407a;
+    private final Mn f1421a;
     private final C0615u6 b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public StringAttribute(String str, Ym ym, to toVar, InterfaceC0361k2 interfaceC0361k2) {
         this.b = new C0615u6(str, toVar, interfaceC0361k2);
-        this.f1407a = ym;
+        this.f1421a = ym;
     }
 
     public UserProfileUpdate<? extends InterfaceC0254fo> withValue(String str) {
         C0615u6 c0615u6 = this.b;
-        return new UserProfileUpdate<>(new Zm(c0615u6.c, str, this.f1407a, c0615u6.f1227a, new C0588t4(c0615u6.b)));
+        return new UserProfileUpdate<>(new Zm(c0615u6.c, str, this.f1421a, c0615u6.f1241a, new C0588t4(c0615u6.b)));
     }
 
     public UserProfileUpdate<? extends InterfaceC0254fo> withValueIfUndefined(String str) {
         C0615u6 c0615u6 = this.b;
-        return new UserProfileUpdate<>(new Zm(c0615u6.c, str, this.f1407a, c0615u6.f1227a, new Yk(c0615u6.b)));
+        return new UserProfileUpdate<>(new Zm(c0615u6.c, str, this.f1421a, c0615u6.f1241a, new Yk(c0615u6.b)));
     }
 
     public UserProfileUpdate<? extends InterfaceC0254fo> withValueReset() {
         C0615u6 c0615u6 = this.b;
-        return new UserProfileUpdate<>(new Ci(0, c0615u6.c, c0615u6.f1227a, c0615u6.b));
+        return new UserProfileUpdate<>(new Ci(0, c0615u6.c, c0615u6.f1241a, c0615u6.b));
     }
 }

@@ -9,14 +9,14 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0824o extends SQLiteOpenHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    public final B f1592a;
+    public final B f1606a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C0824o(Context context, B migrationVer1to2) {
         super(context, "MetricsEvent.db", (SQLiteDatabase.CursorFactory) null, 2);
         Intrinsics.checkNotNullParameter(context, "context");
         Intrinsics.checkNotNullParameter(migrationVer1to2, "migrationVer1to2");
-        this.f1592a = migrationVer1to2;
+        this.f1606a = migrationVer1to2;
     }
 
     @Override // android.database.sqlite.SQLiteOpenHelper
@@ -28,7 +28,7 @@ public final class C0824o extends SQLiteOpenHelper {
     @Override // android.database.sqlite.SQLiteOpenHelper
     public final void onUpgrade(SQLiteDatabase sQLiteDatabase, int i, int i2) {
         if (i == 1 && i2 == 2 && sQLiteDatabase != null) {
-            this.f1592a.a(sQLiteDatabase);
+            this.f1606a.a(sQLiteDatabase);
         }
     }
 }

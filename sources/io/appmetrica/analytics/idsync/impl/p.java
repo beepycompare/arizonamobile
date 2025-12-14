@@ -16,7 +16,7 @@ import kotlin.collections.CollectionsKt;
 public final class p {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ServiceContext f458a;
+    public final ServiceContext f472a;
     public final B b;
     public final SystemTimeProvider c = new SystemTimeProvider();
     public final q d;
@@ -24,7 +24,7 @@ public final class p {
     public final i f;
 
     public p(ServiceContext serviceContext, B b) {
-        this.f458a = serviceContext;
+        this.f472a = serviceContext;
         this.b = b;
         this.d = new q(serviceContext.getNetworkContext().getSslSocketFactoryProvider(), this);
         this.e = new s(serviceContext);
@@ -34,11 +34,11 @@ public final class p {
     public static final void a(y yVar, p pVar) {
         if (yVar.b) {
             B b = pVar.b;
-            String str = yVar.f464a;
+            String str = yVar.f478a;
             b.d.put(str, new z(str, pVar.c.currentTimeMillis(), yVar.d ? 2 : 4));
-            b.f444a.putString(b.c, b.b.fromModel(CollectionsKt.toList(b.d.values())));
+            b.f458a.putString(b.c, b.b.fromModel(CollectionsKt.toList(b.d.values())));
             i iVar = pVar.f;
-            ModuleSelfReporter selfReporter = iVar.f452a.getSelfReporter();
+            ModuleSelfReporter selfReporter = iVar.f466a.getSelfReporter();
             iVar.b.getClass();
             selfReporter.reportEvent("id_sync", j.a(yVar));
         }
@@ -49,8 +49,8 @@ public final class p {
         s sVar = pVar.e;
         Preconditions preconditions = requestConfig.getPreconditions();
         sVar.getClass();
-        if (r.f460a[preconditions.getNetworkType().ordinal()] == 1) {
-            c0098a = new C0099b(sVar.f461a);
+        if (r.f474a[preconditions.getNetworkType().ordinal()] == 1) {
+            c0098a = new C0099b(sVar.f475a);
         } else {
             c0098a = new C0098a();
         }
@@ -61,13 +61,13 @@ public final class p {
             for (Map.Entry<String, List<String>> entry : requestConfig.getHeaders().entrySet()) {
                 builder.addHeader(entry.getKey(), CollectionsKt.joinToString$default(entry.getValue(), ", ", null, null, 0, null, null, 62, null));
             }
-            Response execute = new NetworkClient.Builder().withSslSocketFactory(qVar.f459a.getSslSocketFactory()).withUseCaches(false).withInstanceFollowRedirects(true).withMaxResponseSize(102400).build().newCall(builder.build()).execute();
+            Response execute = new NetworkClient.Builder().withSslSocketFactory(qVar.f473a.getSslSocketFactory()).withUseCaches(false).withInstanceFollowRedirects(true).withMaxResponseSize(102400).build().newCall(builder.build()).execute();
             qVar.b.a(new y(requestConfig.getType(), execute.isCompleted(), execute.getUrl(), requestConfig.getValidResponseCodes().contains(Integer.valueOf(execute.getCode())), execute.getCode(), !(execute.getResponseData().length == 0) ? execute.getResponseData() : execute.getErrorData(), execute.getHeaders()));
         }
     }
 
     public final void a(final y yVar) {
-        this.f458a.getExecutorProvider().getModuleExecutor().execute(new Runnable() { // from class: io.appmetrica.analytics.idsync.impl.p$$ExternalSyntheticLambda1
+        this.f472a.getExecutorProvider().getModuleExecutor().execute(new Runnable() { // from class: io.appmetrica.analytics.idsync.impl.p$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
                 p.a(y.this, this);
@@ -93,7 +93,7 @@ public final class p {
                 return;
             }
         }
-        this.f458a.getExecutorProvider().getSupportIOExecutor().execute(new Runnable() { // from class: io.appmetrica.analytics.idsync.impl.p$$ExternalSyntheticLambda0
+        this.f472a.getExecutorProvider().getSupportIOExecutor().execute(new Runnable() { // from class: io.appmetrica.analytics.idsync.impl.p$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
                 p.a(p.this, requestConfig);

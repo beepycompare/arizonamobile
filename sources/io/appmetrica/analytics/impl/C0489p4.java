@@ -15,7 +15,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class C0489p4 implements ArgumentsMerger {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1142a;
+    public final String f1156a;
     public final Boolean b;
     public final Location c;
     public final Boolean d;
@@ -32,7 +32,7 @@ public final class C0489p4 implements ArgumentsMerger {
     public final Set<String> o;
 
     public C0489p4(String str, Boolean bool, Location location, Boolean bool2, Integer num, Integer num2, Integer num3, Boolean bool3, Boolean bool4, Map map, Integer num4, Boolean bool5, Boolean bool6, Boolean bool7, Set set) {
-        this.f1142a = str;
+        this.f1156a = str;
         this.b = bool;
         this.c = location;
         this.d = bool2;
@@ -56,7 +56,7 @@ public final class C0489p4 implements ArgumentsMerger {
     @Override // io.appmetrica.analytics.networktasks.internal.ArgumentsMerger
     /* renamed from: b */
     public final C0489p4 mergeFrom(C0489p4 c0489p4) {
-        return new C0489p4((String) WrapUtils.getOrDefaultNullable(this.f1142a, c0489p4.f1142a), (Boolean) WrapUtils.getOrDefaultNullable(this.b, c0489p4.b), (Location) WrapUtils.getOrDefaultNullable(this.c, c0489p4.c), (Boolean) WrapUtils.getOrDefaultNullable(this.d, c0489p4.d), (Integer) WrapUtils.getOrDefaultNullable(this.e, c0489p4.e), (Integer) WrapUtils.getOrDefaultNullable(this.f, c0489p4.f), (Integer) WrapUtils.getOrDefaultNullable(this.g, c0489p4.g), (Boolean) WrapUtils.getOrDefaultNullable(this.h, c0489p4.h), (Boolean) WrapUtils.getOrDefaultNullable(this.i, c0489p4.i), (Map) WrapUtils.getOrDefaultNullable(this.j, c0489p4.j), (Integer) WrapUtils.getOrDefaultNullable(this.k, c0489p4.k), (Boolean) WrapUtils.getOrDefaultNullable(this.l, c0489p4.l), (Boolean) WrapUtils.getOrDefaultNullable(this.m, c0489p4.m), (Boolean) WrapUtils.getOrDefaultNullable(this.n, c0489p4.n), CollectionUtils.merge(this.o, c0489p4.o));
+        return new C0489p4((String) WrapUtils.getOrDefaultNullable(this.f1156a, c0489p4.f1156a), (Boolean) WrapUtils.getOrDefaultNullable(this.b, c0489p4.b), (Location) WrapUtils.getOrDefaultNullable(this.c, c0489p4.c), (Boolean) WrapUtils.getOrDefaultNullable(this.d, c0489p4.d), (Integer) WrapUtils.getOrDefaultNullable(this.e, c0489p4.e), (Integer) WrapUtils.getOrDefaultNullable(this.f, c0489p4.f), (Integer) WrapUtils.getOrDefaultNullable(this.g, c0489p4.g), (Boolean) WrapUtils.getOrDefaultNullable(this.h, c0489p4.h), (Boolean) WrapUtils.getOrDefaultNullable(this.i, c0489p4.i), (Map) WrapUtils.getOrDefaultNullable(this.j, c0489p4.j), (Integer) WrapUtils.getOrDefaultNullable(this.k, c0489p4.k), (Boolean) WrapUtils.getOrDefaultNullable(this.l, c0489p4.l), (Boolean) WrapUtils.getOrDefaultNullable(this.m, c0489p4.m), (Boolean) WrapUtils.getOrDefaultNullable(this.n, c0489p4.n), CollectionUtils.merge(this.o, c0489p4.o));
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.ArgumentsMerger
@@ -67,7 +67,7 @@ public final class C0489p4 implements ArgumentsMerger {
     public final boolean equals(Object obj) {
         if (obj != null && C0489p4.class == obj.getClass()) {
             C0489p4 c0489p4 = (C0489p4) obj;
-            if (Objects.equals(this.f1142a, c0489p4.f1142a) && Objects.equals(this.b, c0489p4.b) && Objects.equals(this.c, c0489p4.c) && Objects.equals(this.d, c0489p4.d) && Objects.equals(this.e, c0489p4.e) && Objects.equals(this.f, c0489p4.f) && Objects.equals(this.g, c0489p4.g) && Objects.equals(this.h, c0489p4.h) && Objects.equals(this.i, c0489p4.i) && Objects.equals(this.j, c0489p4.j) && Objects.equals(this.k, c0489p4.k) && Objects.equals(this.l, c0489p4.l) && Objects.equals(this.m, c0489p4.m) && Objects.equals(this.n, c0489p4.n) && Objects.equals(this.o, c0489p4.o)) {
+            if (Objects.equals(this.f1156a, c0489p4.f1156a) && Objects.equals(this.b, c0489p4.b) && Objects.equals(this.c, c0489p4.c) && Objects.equals(this.d, c0489p4.d) && Objects.equals(this.e, c0489p4.e) && Objects.equals(this.f, c0489p4.f) && Objects.equals(this.g, c0489p4.g) && Objects.equals(this.h, c0489p4.h) && Objects.equals(this.i, c0489p4.i) && Objects.equals(this.j, c0489p4.j) && Objects.equals(this.k, c0489p4.k) && Objects.equals(this.l, c0489p4.l) && Objects.equals(this.m, c0489p4.m) && Objects.equals(this.n, c0489p4.n) && Objects.equals(this.o, c0489p4.o)) {
                 return true;
             }
         }
@@ -75,11 +75,11 @@ public final class C0489p4 implements ArgumentsMerger {
     }
 
     public final int hashCode() {
-        return Objects.hash(this.f1142a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o);
+        return Objects.hash(this.f1156a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, this.k, this.l, this.m, this.n, this.o);
     }
 
     public final String toString() {
-        return "ReporterArguments{apiKey='" + this.f1142a + "', locationTracking=" + this.b + ", manualLocation=" + this.c + ", firstActivationAsUpdate=" + this.d + ", sessionTimeout=" + this.e + ", maxReportsCount=" + this.f + ", dispatchPeriod=" + this.g + ", logEnabled=" + this.h + ", dataSendingEnabled=" + this.i + ", clidsFromClient=" + this.j + ", maxReportsInDbCount=" + this.k + ", nativeCrashesEnabled=" + this.l + ", revenueAutoTrackingEnabled=" + this.m + ", advIdentifiersTrackingEnabled=" + this.n + ", autoCollectedDataSubscribers=" + this.o + AbstractJsonLexerKt.END_OBJ;
+        return "ReporterArguments{apiKey='" + this.f1156a + "', locationTracking=" + this.b + ", manualLocation=" + this.c + ", firstActivationAsUpdate=" + this.d + ", sessionTimeout=" + this.e + ", maxReportsCount=" + this.f + ", dispatchPeriod=" + this.g + ", logEnabled=" + this.h + ", dataSendingEnabled=" + this.i + ", clidsFromClient=" + this.j + ", maxReportsInDbCount=" + this.k + ", nativeCrashesEnabled=" + this.l + ", revenueAutoTrackingEnabled=" + this.m + ", advIdentifiersTrackingEnabled=" + this.n + ", autoCollectedDataSubscribers=" + this.o + AbstractJsonLexerKt.END_OBJ;
     }
 
     public C0489p4(CounterConfiguration counterConfiguration, Map<String, String> map) {

@@ -14,7 +14,7 @@ public final class C0518q8 extends MessageNano {
     public static volatile C0518q8[] d;
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f1167a;
+    public byte[] f1181a;
     public byte[] b;
     public C0542r8 c;
 
@@ -35,7 +35,7 @@ public final class C0518q8 extends MessageNano {
 
     public final C0518q8 a() {
         byte[] bArr = WireFormatNano.EMPTY_BYTES;
-        this.f1167a = bArr;
+        this.f1181a = bArr;
         this.b = bArr;
         this.c = null;
         this.cachedSize = -1;
@@ -45,10 +45,10 @@ public final class C0518q8 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        byte[] bArr = this.f1167a;
+        byte[] bArr = this.f1181a;
         byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
         if (!Arrays.equals(bArr, bArr2)) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f1167a);
+            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f1181a);
         }
         if (!Arrays.equals(this.b, bArr2)) {
             computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(2, this.b);
@@ -59,10 +59,10 @@ public final class C0518q8 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        byte[] bArr = this.f1167a;
+        byte[] bArr = this.f1181a;
         byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
         if (!Arrays.equals(bArr, bArr2)) {
-            codedOutputByteBufferNano.writeBytes(1, this.f1167a);
+            codedOutputByteBufferNano.writeBytes(1, this.f1181a);
         }
         if (!Arrays.equals(this.b, bArr2)) {
             codedOutputByteBufferNano.writeBytes(2, this.b);
@@ -82,7 +82,7 @@ public final class C0518q8 extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                this.f1167a = codedInputByteBufferNano.readBytes();
+                this.f1181a = codedInputByteBufferNano.readBytes();
             } else if (readTag == 18) {
                 this.b = codedInputByteBufferNano.readBytes();
             } else if (readTag != 26) {

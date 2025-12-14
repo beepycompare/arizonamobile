@@ -8,17 +8,17 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0829u {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1603a;
+    public final String f1617a;
 
     public final boolean equals(Object obj) {
-        return (obj instanceof C0829u) && Intrinsics.areEqual(this.f1603a, ((C0829u) obj).f1603a);
+        return (obj instanceof C0829u) && Intrinsics.areEqual(this.f1617a, ((C0829u) obj).f1617a);
     }
 
     public final int hashCode() {
-        return this.f1603a.hashCode();
+        return this.f1617a.hashCode();
     }
 
     public final String toString() {
-        return "MetricsEventUuid(value=" + this.f1603a + ')';
+        return "MetricsEventUuid(value=" + this.f1617a + ')';
     }
 }

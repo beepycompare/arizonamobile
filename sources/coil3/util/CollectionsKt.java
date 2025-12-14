@@ -12,13 +12,13 @@ import kotlin.jvm.functions.Function2;
 /* loaded from: classes3.dex */
 public final class CollectionsKt {
     /* renamed from: component1-wuMLFU8  reason: not valid java name */
-    public static final int m9452component1wuMLFU8(long j) {
-        return IntPair.m9459getFirstimpl(j);
+    public static final int m9468component1wuMLFU8(long j) {
+        return IntPair.m9475getFirstimpl(j);
     }
 
     /* renamed from: component2-wuMLFU8  reason: not valid java name */
-    public static final int m9453component2wuMLFU8(long j) {
-        return IntPair.m9460getSecondimpl(j);
+    public static final int m9469component2wuMLFU8(long j) {
+        return IntPair.m9476getSecondimpl(j);
     }
 
     public static final <T> void forEachIndices(List<? extends T> list, Function1<? super T, Unit> function1) {

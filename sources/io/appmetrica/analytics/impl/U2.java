@@ -5,24 +5,24 @@ import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
 public final class U2 implements IBinaryDataHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    public final IBinaryDataHelper f786a;
+    public final IBinaryDataHelper f800a;
 
     public U2(IBinaryDataHelper iBinaryDataHelper) {
-        this.f786a = iBinaryDataHelper;
+        this.f800a = iBinaryDataHelper;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper
     public final byte[] get(String str) {
-        return this.f786a.get(str);
+        return this.f800a.get(str);
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper
     public final void insert(String str, byte[] bArr) {
-        this.f786a.insert(str, bArr);
+        this.f800a.insert(str, bArr);
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper
     public final void remove(String str) {
-        this.f786a.remove(str);
+        this.f800a.remove(str);
     }
 }

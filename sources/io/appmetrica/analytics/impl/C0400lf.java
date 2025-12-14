@@ -5,7 +5,7 @@ public final class C0400lf extends S7 {
     @Override // io.appmetrica.analytics.impl.S7
     public final boolean a(C0549rf c0549rf, C0549rf c0549rf2) {
         if (c0549rf.c) {
-            return !c0549rf2.c || ((Number) this.f757a.a(c0549rf.e)).intValue() > ((Number) this.f757a.a(c0549rf2.e)).intValue();
+            return !c0549rf2.c || ((Number) this.f771a.a(c0549rf.e)).intValue() > ((Number) this.f771a.a(c0549rf2.e)).intValue();
         }
         return false;
     }

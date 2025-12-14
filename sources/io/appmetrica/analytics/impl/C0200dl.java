@@ -7,7 +7,7 @@ import java.util.List;
 public final class C0200dl implements InterfaceC0161c8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Zi f939a;
+    public final Zi f953a;
     public final Hf b;
 
     public C0200dl() {
@@ -18,12 +18,12 @@ public final class C0200dl implements InterfaceC0161c8 {
     /* renamed from: a */
     public final List<Ei> fromModel(C0174cl c0174cl) {
         C0642v8 c0642v8 = new C0642v8();
-        c0642v8.f1248a = 2;
+        c0642v8.f1262a = 2;
         c0642v8.c = new C0567s8();
-        Ei fromModel = this.f939a.fromModel(c0174cl.b);
-        c0642v8.c.b = (C0542r8) fromModel.f546a;
-        Ei fromModel2 = this.b.fromModel(c0174cl.f920a);
-        c0642v8.c.f1199a = (C0468o8) fromModel2.f546a;
+        Ei fromModel = this.f953a.fromModel(c0174cl.b);
+        c0642v8.c.b = (C0542r8) fromModel.f560a;
+        Ei fromModel2 = this.b.fromModel(c0174cl.f934a);
+        c0642v8.c.f1213a = (C0468o8) fromModel2.f560a;
         return Collections.singletonList(new Ei(c0642v8, new C0130b3(C0130b3.b(fromModel, fromModel2))));
     }
 
@@ -34,7 +34,7 @@ public final class C0200dl implements InterfaceC0161c8 {
     }
 
     public C0200dl(Zi zi, Hf hf) {
-        this.f939a = zi;
+        this.f953a = zi;
         this.b = hf;
     }
 

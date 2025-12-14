@@ -16,7 +16,7 @@ public abstract class AbstractC0613u4 extends Bd {
         if (f()) {
             K2 k2 = this.d;
             int i = this.b;
-            C0280go a2 = k2.a(c0228eo, (C0280go) ((HashMap) c0228eo.f960a.get(i)).get(this.f493a), this);
+            C0280go a2 = k2.a(c0228eo, (C0280go) ((HashMap) c0228eo.f974a.get(i)).get(this.f507a), this);
             if (a2 != null) {
                 a(a2);
             }

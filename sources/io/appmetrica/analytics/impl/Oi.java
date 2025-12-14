@@ -7,12 +7,12 @@ import java.util.List;
 public final class Oi implements to {
 
     /* renamed from: a  reason: collision with root package name */
-    public final so f706a = new so();
+    public final so f720a = new so();
 
     @Override // io.appmetrica.analytics.impl.to
     public final ro a(Revenue revenue) {
         ro roVar;
-        so soVar = this.f706a;
+        so soVar = this.f720a;
         ro[] roVarArr = new ro[1];
         Tf tf = new Tf();
         Integer num = revenue.quantity;

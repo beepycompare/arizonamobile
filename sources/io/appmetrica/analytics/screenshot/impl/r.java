@@ -8,7 +8,7 @@ public final class r implements Converter {
     /* renamed from: a */
     public final O fromModel(C0773p c0773p) {
         O o = new O();
-        o.f1429a = c0773p.f1459a;
+        o.f1443a = c0773p.f1473a;
         Object[] array = c0773p.b.toArray(new String[0]);
         if (array != null) {
             o.c = (String[]) array;
@@ -21,6 +21,6 @@ public final class r implements Converter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final C0773p toModel(O o) {
-        return new C0773p(o.f1429a, ArraysKt.toList(o.c), o.b);
+        return new C0773p(o.f1443a, ArraysKt.toList(o.c), o.b);
     }
 }

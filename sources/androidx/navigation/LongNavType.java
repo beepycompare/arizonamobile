@@ -51,7 +51,7 @@ public final class LongNavType extends NavType<Long> {
     public void put(Bundle bundle, String key, long j) {
         Intrinsics.checkNotNullParameter(bundle, "bundle");
         Intrinsics.checkNotNullParameter(key, "key");
-        SavedStateWriter.m9285putLongimpl(SavedStateWriter.m9264constructorimpl(bundle), key, j);
+        SavedStateWriter.m9301putLongimpl(SavedStateWriter.m9280constructorimpl(bundle), key, j);
     }
 
     /* JADX WARN: Can't rename method to resolve collision */
@@ -59,6 +59,6 @@ public final class LongNavType extends NavType<Long> {
     public Long get(Bundle bundle, String key) {
         Intrinsics.checkNotNullParameter(bundle, "bundle");
         Intrinsics.checkNotNullParameter(key, "key");
-        return Long.valueOf(SavedStateReader.m9219getLongimpl(SavedStateReader.m9178constructorimpl(bundle), key));
+        return Long.valueOf(SavedStateReader.m9235getLongimpl(SavedStateReader.m9194constructorimpl(bundle), key));
     }
 }

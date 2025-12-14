@@ -875,23 +875,21 @@ public final class UtilsKt {
         Intrinsics.checkNotNullParameter(context, "context");
         Intrinsics.checkNotNullParameter(action, "action");
         int hashCode = action.hashCode();
-        if (hashCode != -690213213) {
-            if (hashCode == -689618847) {
-                if (!action.equals("first_topup")) {
+        if (hashCode != -689618847) {
+            if (hashCode != 443600344) {
+                if (hashCode != 2006065723 || !action.equals("effective_register")) {
                     return;
-                } else {
-                    str = ExifInterface.GPS_MEASUREMENT_2D;
                 }
+                str = "1";
+            } else if (!action.equals("third_topup")) {
+                return;
             } else {
-                if (hashCode != 443600344 || !action.equals("third_topup")) {
-                    return;
-                }
                 str = ExifInterface.GPS_MEASUREMENT_3D;
             }
-        } else if (!action.equals("register")) {
+        } else if (!action.equals("first_topup")) {
             return;
         } else {
-            str = "1";
+            str = ExifInterface.GPS_MEASUREMENT_2D;
         }
         String string = context.getSharedPreferences("SP_NAME", 0).getString("referrerUrl", "");
         if (string == null) {
@@ -942,23 +940,23 @@ public final class UtilsKt {
         Intrinsics.checkNotNullParameter(context, "context");
         Intrinsics.checkNotNullParameter(action, "action");
         int hashCode = action.hashCode();
-        if (hashCode != -690213213) {
-            if (hashCode == -689618847) {
-                if (!action.equals("first_topup")) {
+        if (hashCode != -689618847) {
+            if (hashCode == 443600344) {
+                if (!action.equals("third_topup")) {
                     return;
                 } else {
-                    str = ExifInterface.GPS_MEASUREMENT_2D;
+                    str = ExifInterface.GPS_MEASUREMENT_3D;
                 }
             } else {
-                if (hashCode != 443600344 || !action.equals("third_topup")) {
+                if (hashCode != 2006065723 || !action.equals("effective_register")) {
                     return;
                 }
-                str = ExifInterface.GPS_MEASUREMENT_3D;
+                str = "1";
             }
-        } else if (!action.equals("register")) {
+        } else if (!action.equals("first_topup")) {
             return;
         } else {
-            str = "1";
+            str = ExifInterface.GPS_MEASUREMENT_2D;
         }
         String string = context.getSharedPreferences("SP_NAME", 0).getString("referrerUrl", "");
         String str3 = string != null ? string : "";

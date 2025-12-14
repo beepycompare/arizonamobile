@@ -8,11 +8,11 @@ import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
 public final class C0323ig implements InstallReferrerStateListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0349jg f1023a;
+    public final /* synthetic */ C0349jg f1037a;
     public final /* synthetic */ InterfaceC0600tg b;
 
     public C0323ig(C0349jg c0349jg, InterfaceC0600tg interfaceC0600tg) {
-        this.f1023a = c0349jg;
+        this.f1037a = c0349jg;
         this.b = interfaceC0600tg;
     }
 
@@ -32,8 +32,8 @@ public final class C0323ig implements InstallReferrerStateListener {
     @Override // com.android.installreferrer.api.InstallReferrerStateListener
     public final void onInstallReferrerSetupFinished(int i) {
         if (i == 0) {
-            final C0349jg c0349jg = this.f1023a;
-            ICommonExecutor iCommonExecutor = c0349jg.f1040a;
+            final C0349jg c0349jg = this.f1037a;
+            ICommonExecutor iCommonExecutor = c0349jg.f1054a;
             final InterfaceC0600tg interfaceC0600tg = this.b;
             iCommonExecutor.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.ig$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
@@ -43,6 +43,6 @@ public final class C0323ig implements InstallReferrerStateListener {
             });
             return;
         }
-        this.f1023a.a(this.b, new IllegalStateException("Referrer check failed with error " + i));
+        this.f1037a.a(this.b, new IllegalStateException("Referrer check failed with error " + i));
     }
 }

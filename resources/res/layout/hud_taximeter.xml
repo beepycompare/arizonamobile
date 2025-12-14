@@ -13,4 +13,11 @@
     <include android:id="@+id/lord_rigns" android:visibility="gone" layout="@layout/hud_counter_lord_rings"/>
     <include android:id="@+id/ghosts" android:visibility="gone" layout="@layout/hud_counter_ghosts"/>
     <include android:id="@+id/franclin_stein" android:visibility="gone" layout="@layout/hud_counter_franclin_stein"/>
+    <include android:id="@+id/condition_sled" android:visibility="gone" layout="@layout/hud_counter_condition_sled"/>
+    <include android:id="@+id/condition_package" android:visibility="gone" layout="@layout/hud_counter_condition_package"/>
+    <include android:id="@+id/rolling_snowball" android:visibility="gone" layout="@layout/hud_counter_rolling_snowball"/>
+    <include android:id="@+id/delivery_gifts" android:visibility="gone" layout="@layout/hud_counter_delivery_gifts"/>
+    <include android:id="@+id/broking_ice" android:visibility="gone" layout="@layout/hud_counter_broking_ice"/>
+    <include android:id="@+id/new_year_taxi" android:visibility="gone" layout="@layout/hud_counter_new_year"/>
+    <include android:id="@+id/search_crystal" android:visibility="gone" layout="@layout/hud_counter_search_crystals"/>
 </FrameLayout>

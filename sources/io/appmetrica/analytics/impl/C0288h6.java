@@ -12,11 +12,11 @@ import kotlin.jvm.internal.Reflection;
 public final class C0288h6 implements Consumer {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Executor f1001a;
+    public final Executor f1015a;
     public final Vg b;
 
     public C0288h6(Context context, InterfaceC0210e6 interfaceC0210e6, EnumC0164cb enumC0164cb, InterfaceC0148bl interfaceC0148bl, Executor executor, String str) {
-        this.f1001a = executor;
+        this.f1015a = executor;
         this.b = new Vg(context, interfaceC0210e6, enumC0164cb, interfaceC0148bl);
     }
 
@@ -26,11 +26,11 @@ public final class C0288h6 implements Consumer {
         if (file == null) {
             return;
         }
-        Executor executor = this.f1001a;
+        Executor executor = this.f1015a;
         Vg vg = this.b;
         C0471ob c0471ob = vg.c;
         Consumer consumer = vg.e;
-        Context context = vg.f808a;
+        Context context = vg.f822a;
         if (C0111aa.c == null) {
             synchronized (Reflection.getOrCreateKotlinClass(C0111aa.class)) {
                 if (C0111aa.c == null) {

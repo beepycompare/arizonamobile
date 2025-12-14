@@ -5,7 +5,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class S {
 
     /* renamed from: a  reason: collision with root package name */
-    public final b0 f1567a;
+    public final b0 f1581a;
     public final C b;
     public final O c;
     public final e0 d;
@@ -15,7 +15,7 @@ public final class S {
         Intrinsics.checkNotNullParameter(packageNameDataSource, "packageNameDataSource");
         Intrinsics.checkNotNullParameter(remoteMetricsEventDataSource, "remoteMetricsEventDataSource");
         Intrinsics.checkNotNullParameter(versionNameDataSource, "versionNameDataSource");
-        this.f1567a = userIdDataSource;
+        this.f1581a = userIdDataSource;
         this.b = packageNameDataSource;
         this.c = remoteMetricsEventDataSource;
         this.d = versionNameDataSource;

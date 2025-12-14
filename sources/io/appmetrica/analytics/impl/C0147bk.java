@@ -8,18 +8,18 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class C0147bk implements ServiceComponentModuleReporter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Y4 f903a;
+    public final Y4 f917a;
     public final C0629uk b;
 
     public C0147bk(Y4 y4, C0629uk c0629uk) {
-        this.f903a = y4;
+        this.f917a = y4;
         this.b = c0629uk;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceComponentModuleReporter
     public final void handleReport(ServiceModuleCounterReport serviceModuleCounterReport) {
         this.b.getClass();
-        this.f903a.a(C0629uk.a(serviceModuleCounterReport));
+        this.f917a.a(C0629uk.a(serviceModuleCounterReport));
     }
 
     public /* synthetic */ C0147bk(Y4 y4, C0629uk c0629uk, int i, DefaultConstructorMarker defaultConstructorMarker) {

@@ -15,7 +15,7 @@ public final class Ge implements FunctionWithThrowable {
         }
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
         if (activeNetworkInfo != null && activeNetworkInfo.isConnected()) {
-            return (NetworkType) He.f590a.a(Integer.valueOf(activeNetworkInfo.getType()));
+            return (NetworkType) He.f604a.a(Integer.valueOf(activeNetworkInfo.getType()));
         }
         return NetworkType.OFFLINE;
     }

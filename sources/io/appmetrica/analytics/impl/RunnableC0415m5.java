@@ -4,23 +4,23 @@ package io.appmetrica.analytics.impl;
 public final class RunnableC0415m5 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ InterfaceC0141be f1087a;
+    public final /* synthetic */ InterfaceC0141be f1101a;
     public final /* synthetic */ C0440n5 b;
 
     public RunnableC0415m5(C0440n5 c0440n5, InterfaceC0141be interfaceC0141be) {
         this.b = c0440n5;
-        this.f1087a = interfaceC0141be;
+        this.f1101a = interfaceC0141be;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         synchronized (this.b) {
             C0440n5 c0440n5 = this.b;
-            Object obj = c0440n5.f1106a;
+            Object obj = c0440n5.f1120a;
             if (obj == null) {
-                c0440n5.b.add(this.f1087a);
+                c0440n5.b.add(this.f1101a);
             } else {
-                this.f1087a.consume(obj);
+                this.f1101a.consume(obj);
             }
         }
     }

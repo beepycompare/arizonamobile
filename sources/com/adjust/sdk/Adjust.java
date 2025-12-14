@@ -64,6 +64,18 @@ public class Adjust {
         }
     }
 
+    public static void getAdidWithTimeout(Context context, long j, OnAdidReadListener onAdidReadListener) {
+        if (context == null) {
+            AdjustFactory.getLogger().error("Context for getting adid can't be null", new Object[0]);
+        } else if (j < 0) {
+            AdjustFactory.getLogger().error("Timeout value for getting adid can't be negative", new Object[0]);
+        } else if (onAdidReadListener == null) {
+            AdjustFactory.getLogger().error("Callback for getting adid can't be null", new Object[0]);
+        } else {
+            getDefaultInstance().getAdidWithTimeout(extractApplicationContext(context), j, onAdidReadListener);
+        }
+    }
+
     public static void getAmazonAdId(Context context, OnAmazonAdIdReadListener onAmazonAdIdReadListener) {
         if (onAmazonAdIdReadListener == null) {
             AdjustFactory.getLogger().error("onAmazonAdIdReadListener cannot be null", new Object[0]);
@@ -82,6 +94,18 @@ public class Adjust {
             AdjustFactory.getLogger().error("Callback for getting attribution can't be null", new Object[0]);
         } else {
             getDefaultInstance().getAttribution(onAttributionReadListener);
+        }
+    }
+
+    public static void getAttributionWithTimeout(Context context, long j, OnAttributionReadListener onAttributionReadListener) {
+        if (context == null) {
+            AdjustFactory.getLogger().error("Context for getting attribution can't be null", new Object[0]);
+        } else if (j < 0) {
+            AdjustFactory.getLogger().error("Timeout value for getting attribution can't be negative", new Object[0]);
+        } else if (onAttributionReadListener == null) {
+            AdjustFactory.getLogger().error("Callback for getting attribution can't be null", new Object[0]);
+        } else {
+            getDefaultInstance().getAttributionWithTimeout(extractApplicationContext(context), j, onAttributionReadListener);
         }
     }
 

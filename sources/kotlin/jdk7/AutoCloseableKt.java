@@ -39,11 +39,11 @@ public final class AutoCloseableKt {
     public static final void closeFinally(AutoCloseable autoCloseable, Throwable th) {
         if (autoCloseable != null) {
             if (th == null) {
-                UByte$$ExternalSyntheticBackport0.m10272m((Object) autoCloseable);
+                UByte$$ExternalSyntheticBackport0.m10288m((Object) autoCloseable);
                 return;
             }
             try {
-                UByte$$ExternalSyntheticBackport0.m10272m((Object) autoCloseable);
+                UByte$$ExternalSyntheticBackport0.m10288m((Object) autoCloseable);
             } catch (Throwable th2) {
                 ExceptionsKt.addSuppressed(th, th2);
             }

@@ -8,12 +8,12 @@ import kotlin.text.Charsets;
 public final class C0343ja implements O9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final K8 f1037a = new K8();
+    public final K8 f1051a = new K8();
 
     public final C0188d9[] a(byte[] bArr) {
         int i = 0;
         if (bArr != null) {
-            Map<String, byte[]> model = this.f1037a.toModel(bArr);
+            Map<String, byte[]> model = this.f1051a.toModel(bArr);
             C0188d9[] c0188d9Arr = new C0188d9[model.size()];
             for (Object obj : model.entrySet()) {
                 int i2 = i + 1;
@@ -22,7 +22,7 @@ public final class C0343ja implements O9 {
                 }
                 Map.Entry entry = (Map.Entry) obj;
                 C0188d9 c0188d9 = new C0188d9();
-                c0188d9.f929a = ((String) entry.getKey()).getBytes(Charsets.UTF_8);
+                c0188d9.f943a = ((String) entry.getKey()).getBytes(Charsets.UTF_8);
                 c0188d9.b = (byte[]) entry.getValue();
                 c0188d9Arr[i] = c0188d9;
                 i = i2;

@@ -12,7 +12,7 @@ public final class S5 extends MessageNano {
     public static volatile S5[] d;
 
     /* renamed from: a  reason: collision with root package name */
-    public C0133b6 f756a;
+    public C0133b6 f770a;
     public C0133b6[] b;
     public String c;
 
@@ -32,7 +32,7 @@ public final class S5 extends MessageNano {
     }
 
     public final S5 a() {
-        this.f756a = null;
+        this.f770a = null;
         this.b = C0133b6.b();
         this.c = "";
         this.cachedSize = -1;
@@ -42,7 +42,7 @@ public final class S5 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        C0133b6 c0133b6 = this.f756a;
+        C0133b6 c0133b6 = this.f770a;
         if (c0133b6 != null) {
             computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(1, c0133b6);
         }
@@ -66,7 +66,7 @@ public final class S5 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        C0133b6 c0133b6 = this.f756a;
+        C0133b6 c0133b6 = this.f770a;
         if (c0133b6 != null) {
             codedOutputByteBufferNano.writeMessage(1, c0133b6);
         }
@@ -99,10 +99,10 @@ public final class S5 extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                if (this.f756a == null) {
-                    this.f756a = new C0133b6();
+                if (this.f770a == null) {
+                    this.f770a = new C0133b6();
                 }
-                codedInputByteBufferNano.readMessage(this.f756a);
+                codedInputByteBufferNano.readMessage(this.f770a);
             } else if (readTag == 18) {
                 int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 18);
                 C0133b6[] c0133b6Arr = this.b;

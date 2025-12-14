@@ -113,7 +113,7 @@ public final class AsyncImagePainter extends Painter implements RememberObserver
     }
 
     /* renamed from: setDrawSize-uvyYCjk */
-    private final void m9363setDrawSizeuvyYCjk(long j) {
+    private final void m9379setDrawSizeuvyYCjk(long j) {
         if (Size.m5244equalsimpl0(this.drawSize, j)) {
             return;
         }
@@ -162,12 +162,12 @@ public final class AsyncImagePainter extends Painter implements RememberObserver
     }
 
     /* renamed from: getFilterQuality-f-v9h1I$coil_compose_core_release */
-    public final int m9364getFilterQualityfv9h1I$coil_compose_core_release() {
+    public final int m9380getFilterQualityfv9h1I$coil_compose_core_release() {
         return this.filterQuality;
     }
 
     /* renamed from: setFilterQuality-vDHp3xo$coil_compose_core_release */
-    public final void m9365setFilterQualityvDHp3xo$coil_compose_core_release(int i) {
+    public final void m9381setFilterQualityvDHp3xo$coil_compose_core_release(int i) {
         this.filterQuality = i;
     }
 
@@ -211,7 +211,7 @@ public final class AsyncImagePainter extends Painter implements RememberObserver
 
     @Override // androidx.compose.ui.graphics.painter.Painter
     public void onDraw(DrawScope drawScope) {
-        m9363setDrawSizeuvyYCjk(drawScope.mo6005getSizeNHjbRc());
+        m9379setDrawSizeuvyYCjk(drawScope.mo6005getSizeNHjbRc());
         Painter painter = getPainter();
         if (painter != null) {
             painter.m6131drawx_KDEd0(drawScope, drawScope.mo6005getSizeNHjbRc(), this.alpha, this.colorFilter);
@@ -301,7 +301,7 @@ public final class AsyncImagePainter extends Painter implements RememberObserver
 
             @Override // coil3.target.Target
             public void onStart(Image image) {
-                this.updateState(new AsyncImagePainter.State.Loading(image != null ? ImagePainter_androidKt.m9375asPainter55t9rM(image, ImageRequest.this.getContext(), this.m9364getFilterQualityfv9h1I$coil_compose_core_release()) : null));
+                this.updateState(new AsyncImagePainter.State.Loading(image != null ? ImagePainter_androidKt.m9391asPainter55t9rM(image, ImageRequest.this.getContext(), this.m9380getFilterQualityfv9h1I$coil_compose_core_release()) : null));
             }
         });
         if (imageRequest.getDefined().getSizeResolver() == null) {
@@ -346,13 +346,13 @@ public final class AsyncImagePainter extends Painter implements RememberObserver
     public final State toState(ImageResult imageResult) {
         if (imageResult instanceof SuccessResult) {
             SuccessResult successResult = (SuccessResult) imageResult;
-            return new State.Success(ImagePainter_androidKt.m9375asPainter55t9rM(successResult.getImage(), successResult.getRequest().getContext(), this.filterQuality), successResult);
+            return new State.Success(ImagePainter_androidKt.m9391asPainter55t9rM(successResult.getImage(), successResult.getRequest().getContext(), this.filterQuality), successResult);
         } else if (!(imageResult instanceof ErrorResult)) {
             throw new NoWhenBranchMatchedException();
         } else {
             ErrorResult errorResult = (ErrorResult) imageResult;
             Image image = errorResult.getImage();
-            return new State.Error(image != null ? ImagePainter_androidKt.m9375asPainter55t9rM(image, errorResult.getRequest().getContext(), this.filterQuality) : null, errorResult);
+            return new State.Error(image != null ? ImagePainter_androidKt.m9391asPainter55t9rM(image, errorResult.getRequest().getContext(), this.filterQuality) : null, errorResult);
         }
     }
 

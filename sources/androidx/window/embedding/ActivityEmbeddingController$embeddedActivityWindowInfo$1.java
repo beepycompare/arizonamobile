@@ -54,7 +54,7 @@ final class ActivityEmbeddingController$embeddedActivityWindowInfo$1 extends Sus
             final Consumer<EmbeddedActivityWindowInfo> consumer = new Consumer() { // from class: androidx.window.embedding.ActivityEmbeddingController$embeddedActivityWindowInfo$1$$ExternalSyntheticLambda0
                 @Override // androidx.core.util.Consumer
                 public final void accept(Object obj2) {
-                    ProducerScope.this.mo9143trySendJP2dKIU((EmbeddedActivityWindowInfo) obj2);
+                    ProducerScope.this.mo9159trySendJP2dKIU((EmbeddedActivityWindowInfo) obj2);
                 }
             };
             embeddingBackend = this.this$0.backend;

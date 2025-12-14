@@ -4,6 +4,7 @@ import android.content.Context;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 /* loaded from: classes3.dex */
 public class Reflection {
     public static Object createDefaultInstance(String str) {
@@ -36,7 +37,7 @@ public class Reflection {
 
     public static String getAppSetId(Context context) {
         try {
-            return (String) invokeInstanceMethod(invokeStaticMethod("com.google.android.gms.tasks.Tasks", "await", new Class[]{forName("com.google.android.gms.tasks.Task")}, invokeInstanceMethod(invokeStaticMethod("com.google.android.gms.appset.AppSet", "getClient", new Class[]{Context.class}, context), "getAppSetIdInfo", null, new Object[0])), "getId", null, new Object[0]);
+            return (String) invokeInstanceMethod(invokeStaticMethod("com.google.android.gms.tasks.Tasks", "await", new Class[]{forName("com.google.android.gms.tasks.Task"), Long.TYPE, TimeUnit.class}, invokeInstanceMethod(invokeStaticMethod("com.google.android.gms.appset.AppSet", "getClient", new Class[]{Context.class}, context), "getAppSetIdInfo", null, new Object[0]), 1L, TimeUnit.SECONDS), "getId", null, new Object[0]);
         } catch (Throwable unused) {
             return null;
         }

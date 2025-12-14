@@ -10,8 +10,12 @@ import ru.mrlargha.commonui.R;
 /* loaded from: classes3.dex */
 public final class HudTaximeterBinding implements ViewBinding {
     public final HudCounterAccumulatedEnergyBinding accumulatedEnergy;
+    public final HudCounterBrokingIceBinding brokingIce;
     public final HudCounterBusConditionBinding busCondition;
+    public final HudCounterConditionPackageBinding conditionPackage;
+    public final HudCounterConditionSledBinding conditionSled;
     public final HudCounterBinding counter;
+    public final HudCounterDeliveryGiftsBinding deliveryGifts;
     public final HudCounterDistanceToHomeBinding distanceToHome;
     public final HudCounterFranclinSteinBinding franclinStein;
     public final HudCounterGhostsBinding ghosts;
@@ -20,15 +24,22 @@ public final class HudTaximeterBinding implements ViewBinding {
     public final HudTaximeterContainerBinding hudTaximeterLayoutContainer;
     public final HudCounterKilledZombiesBinding killedZombies;
     public final HudCounterLordRingsBinding lordRigns;
+    public final HudCounterNewYearBinding newYearTaxi;
     public final HudCounterNoiseLevelBinding noiseLevel;
+    public final HudCounterRollingSnowballBinding rollingSnowball;
     private final FrameLayout rootView;
+    public final HudCounterSearchCrystalsBinding searchCrystal;
     public final HudCounterZombieModeBinding zombieMode;
 
-    private HudTaximeterBinding(FrameLayout rootView, HudCounterAccumulatedEnergyBinding accumulatedEnergy, HudCounterBusConditionBinding busCondition, HudCounterBinding counter, HudCounterDistanceToHomeBinding distanceToHome, HudCounterFranclinSteinBinding franclinStein, HudCounterGhostsBinding ghosts, HudCounterHalloweenCoinsBinding halloweenCoins, HudTaximeterStopwatchBinding hudTaximeterArmySecond, HudTaximeterContainerBinding hudTaximeterLayoutContainer, HudCounterKilledZombiesBinding killedZombies, HudCounterLordRingsBinding lordRigns, HudCounterNoiseLevelBinding noiseLevel, HudCounterZombieModeBinding zombieMode) {
+    private HudTaximeterBinding(FrameLayout rootView, HudCounterAccumulatedEnergyBinding accumulatedEnergy, HudCounterBrokingIceBinding brokingIce, HudCounterBusConditionBinding busCondition, HudCounterConditionPackageBinding conditionPackage, HudCounterConditionSledBinding conditionSled, HudCounterBinding counter, HudCounterDeliveryGiftsBinding deliveryGifts, HudCounterDistanceToHomeBinding distanceToHome, HudCounterFranclinSteinBinding franclinStein, HudCounterGhostsBinding ghosts, HudCounterHalloweenCoinsBinding halloweenCoins, HudTaximeterStopwatchBinding hudTaximeterArmySecond, HudTaximeterContainerBinding hudTaximeterLayoutContainer, HudCounterKilledZombiesBinding killedZombies, HudCounterLordRingsBinding lordRigns, HudCounterNewYearBinding newYearTaxi, HudCounterNoiseLevelBinding noiseLevel, HudCounterRollingSnowballBinding rollingSnowball, HudCounterSearchCrystalsBinding searchCrystal, HudCounterZombieModeBinding zombieMode) {
         this.rootView = rootView;
         this.accumulatedEnergy = accumulatedEnergy;
+        this.brokingIce = brokingIce;
         this.busCondition = busCondition;
+        this.conditionPackage = conditionPackage;
+        this.conditionSled = conditionSled;
         this.counter = counter;
+        this.deliveryGifts = deliveryGifts;
         this.distanceToHome = distanceToHome;
         this.franclinStein = franclinStein;
         this.ghosts = ghosts;
@@ -37,7 +48,10 @@ public final class HudTaximeterBinding implements ViewBinding {
         this.hudTaximeterLayoutContainer = hudTaximeterLayoutContainer;
         this.killedZombies = killedZombies;
         this.lordRigns = lordRigns;
+        this.newYearTaxi = newYearTaxi;
         this.noiseLevel = noiseLevel;
+        this.rollingSnowball = rollingSnowball;
+        this.searchCrystal = searchCrystal;
         this.zombieMode = zombieMode;
     }
 
@@ -63,54 +77,89 @@ public final class HudTaximeterBinding implements ViewBinding {
         View findChildViewById = ViewBindings.findChildViewById(rootView, i);
         if (findChildViewById != null) {
             HudCounterAccumulatedEnergyBinding bind = HudCounterAccumulatedEnergyBinding.bind(findChildViewById);
-            i = R.id.bus_condition;
+            i = R.id.broking_ice;
             View findChildViewById2 = ViewBindings.findChildViewById(rootView, i);
             if (findChildViewById2 != null) {
-                HudCounterBusConditionBinding bind2 = HudCounterBusConditionBinding.bind(findChildViewById2);
-                i = R.id.counter;
+                HudCounterBrokingIceBinding bind2 = HudCounterBrokingIceBinding.bind(findChildViewById2);
+                i = R.id.bus_condition;
                 View findChildViewById3 = ViewBindings.findChildViewById(rootView, i);
                 if (findChildViewById3 != null) {
-                    HudCounterBinding bind3 = HudCounterBinding.bind(findChildViewById3);
-                    i = R.id.distance_to_home;
+                    HudCounterBusConditionBinding bind3 = HudCounterBusConditionBinding.bind(findChildViewById3);
+                    i = R.id.condition_package;
                     View findChildViewById4 = ViewBindings.findChildViewById(rootView, i);
                     if (findChildViewById4 != null) {
-                        HudCounterDistanceToHomeBinding bind4 = HudCounterDistanceToHomeBinding.bind(findChildViewById4);
-                        i = R.id.franclin_stein;
+                        HudCounterConditionPackageBinding bind4 = HudCounterConditionPackageBinding.bind(findChildViewById4);
+                        i = R.id.condition_sled;
                         View findChildViewById5 = ViewBindings.findChildViewById(rootView, i);
                         if (findChildViewById5 != null) {
-                            HudCounterFranclinSteinBinding bind5 = HudCounterFranclinSteinBinding.bind(findChildViewById5);
-                            i = R.id.ghosts;
+                            HudCounterConditionSledBinding bind5 = HudCounterConditionSledBinding.bind(findChildViewById5);
+                            i = R.id.counter;
                             View findChildViewById6 = ViewBindings.findChildViewById(rootView, i);
                             if (findChildViewById6 != null) {
-                                HudCounterGhostsBinding bind6 = HudCounterGhostsBinding.bind(findChildViewById6);
-                                i = R.id.halloween_coins;
+                                HudCounterBinding bind6 = HudCounterBinding.bind(findChildViewById6);
+                                i = R.id.delivery_gifts;
                                 View findChildViewById7 = ViewBindings.findChildViewById(rootView, i);
                                 if (findChildViewById7 != null) {
-                                    HudCounterHalloweenCoinsBinding bind7 = HudCounterHalloweenCoinsBinding.bind(findChildViewById7);
-                                    i = R.id.hud_taximeter_army_second;
+                                    HudCounterDeliveryGiftsBinding bind7 = HudCounterDeliveryGiftsBinding.bind(findChildViewById7);
+                                    i = R.id.distance_to_home;
                                     View findChildViewById8 = ViewBindings.findChildViewById(rootView, i);
                                     if (findChildViewById8 != null) {
-                                        HudTaximeterStopwatchBinding bind8 = HudTaximeterStopwatchBinding.bind(findChildViewById8);
-                                        i = R.id.hud_taximeter_layout_container;
+                                        HudCounterDistanceToHomeBinding bind8 = HudCounterDistanceToHomeBinding.bind(findChildViewById8);
+                                        i = R.id.franclin_stein;
                                         View findChildViewById9 = ViewBindings.findChildViewById(rootView, i);
                                         if (findChildViewById9 != null) {
-                                            HudTaximeterContainerBinding bind9 = HudTaximeterContainerBinding.bind(findChildViewById9);
-                                            i = R.id.killed_zombies;
+                                            HudCounterFranclinSteinBinding bind9 = HudCounterFranclinSteinBinding.bind(findChildViewById9);
+                                            i = R.id.ghosts;
                                             View findChildViewById10 = ViewBindings.findChildViewById(rootView, i);
                                             if (findChildViewById10 != null) {
-                                                HudCounterKilledZombiesBinding bind10 = HudCounterKilledZombiesBinding.bind(findChildViewById10);
-                                                i = R.id.lord_rigns;
+                                                HudCounterGhostsBinding bind10 = HudCounterGhostsBinding.bind(findChildViewById10);
+                                                i = R.id.halloween_coins;
                                                 View findChildViewById11 = ViewBindings.findChildViewById(rootView, i);
                                                 if (findChildViewById11 != null) {
-                                                    HudCounterLordRingsBinding bind11 = HudCounterLordRingsBinding.bind(findChildViewById11);
-                                                    i = R.id.noise_level;
+                                                    HudCounterHalloweenCoinsBinding bind11 = HudCounterHalloweenCoinsBinding.bind(findChildViewById11);
+                                                    i = R.id.hud_taximeter_army_second;
                                                     View findChildViewById12 = ViewBindings.findChildViewById(rootView, i);
                                                     if (findChildViewById12 != null) {
-                                                        HudCounterNoiseLevelBinding bind12 = HudCounterNoiseLevelBinding.bind(findChildViewById12);
-                                                        i = R.id.zombie_mode;
+                                                        HudTaximeterStopwatchBinding bind12 = HudTaximeterStopwatchBinding.bind(findChildViewById12);
+                                                        i = R.id.hud_taximeter_layout_container;
                                                         View findChildViewById13 = ViewBindings.findChildViewById(rootView, i);
                                                         if (findChildViewById13 != null) {
-                                                            return new HudTaximeterBinding((FrameLayout) rootView, bind, bind2, bind3, bind4, bind5, bind6, bind7, bind8, bind9, bind10, bind11, bind12, HudCounterZombieModeBinding.bind(findChildViewById13));
+                                                            HudTaximeterContainerBinding bind13 = HudTaximeterContainerBinding.bind(findChildViewById13);
+                                                            i = R.id.killed_zombies;
+                                                            View findChildViewById14 = ViewBindings.findChildViewById(rootView, i);
+                                                            if (findChildViewById14 != null) {
+                                                                HudCounterKilledZombiesBinding bind14 = HudCounterKilledZombiesBinding.bind(findChildViewById14);
+                                                                i = R.id.lord_rigns;
+                                                                View findChildViewById15 = ViewBindings.findChildViewById(rootView, i);
+                                                                if (findChildViewById15 != null) {
+                                                                    HudCounterLordRingsBinding bind15 = HudCounterLordRingsBinding.bind(findChildViewById15);
+                                                                    i = R.id.new_year_taxi;
+                                                                    View findChildViewById16 = ViewBindings.findChildViewById(rootView, i);
+                                                                    if (findChildViewById16 != null) {
+                                                                        HudCounterNewYearBinding bind16 = HudCounterNewYearBinding.bind(findChildViewById16);
+                                                                        i = R.id.noise_level;
+                                                                        View findChildViewById17 = ViewBindings.findChildViewById(rootView, i);
+                                                                        if (findChildViewById17 != null) {
+                                                                            HudCounterNoiseLevelBinding bind17 = HudCounterNoiseLevelBinding.bind(findChildViewById17);
+                                                                            i = R.id.rolling_snowball;
+                                                                            View findChildViewById18 = ViewBindings.findChildViewById(rootView, i);
+                                                                            if (findChildViewById18 != null) {
+                                                                                HudCounterRollingSnowballBinding bind18 = HudCounterRollingSnowballBinding.bind(findChildViewById18);
+                                                                                i = R.id.search_crystal;
+                                                                                View findChildViewById19 = ViewBindings.findChildViewById(rootView, i);
+                                                                                if (findChildViewById19 != null) {
+                                                                                    HudCounterSearchCrystalsBinding bind19 = HudCounterSearchCrystalsBinding.bind(findChildViewById19);
+                                                                                    i = R.id.zombie_mode;
+                                                                                    View findChildViewById20 = ViewBindings.findChildViewById(rootView, i);
+                                                                                    if (findChildViewById20 != null) {
+                                                                                        return new HudTaximeterBinding((FrameLayout) rootView, bind, bind2, bind3, bind4, bind5, bind6, bind7, bind8, bind9, bind10, bind11, bind12, bind13, bind14, bind15, bind16, bind17, bind18, bind19, HudCounterZombieModeBinding.bind(findChildViewById20));
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
                                                         }
                                                     }
                                                 }

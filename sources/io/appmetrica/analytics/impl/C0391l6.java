@@ -9,25 +9,25 @@ import kotlin.collections.CollectionsKt;
 public final class C0391l6 implements Ga {
 
     /* renamed from: a  reason: collision with root package name */
-    public final CopyOnWriteArrayList f1071a = new CopyOnWriteArrayList();
+    public final CopyOnWriteArrayList f1085a = new CopyOnWriteArrayList();
 
     @Override // io.appmetrica.analytics.impl.Ga
     public final void a(Throwable th, V v) {
-        Iterator it = this.f1071a.iterator();
+        Iterator it = this.f1085a.iterator();
         while (it.hasNext()) {
             ((Ga) it.next()).a(th, v);
         }
     }
 
     public final void a(Ga... gaArr) {
-        CollectionsKt.addAll(this.f1071a, gaArr);
+        CollectionsKt.addAll(this.f1085a, gaArr);
     }
 
     public final void a(List<? extends Ga> list) {
-        this.f1071a.addAll(list);
+        this.f1085a.addAll(list);
     }
 
     public final void a() {
-        this.f1071a.clear();
+        this.f1085a.clear();
     }
 }

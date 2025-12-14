@@ -8,18 +8,18 @@ import java.util.Map;
 public final class C0416m6 implements Va {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0441n6 f1088a;
+    public final C0441n6 f1102a;
     public final Gh b;
 
     public C0416m6(C0441n6 c0441n6) {
-        this.f1088a = c0441n6;
+        this.f1102a = c0441n6;
         this.b = c0441n6.a();
         C0157c4.l().getClass();
     }
 
     @Override // io.appmetrica.analytics.impl.Va
     public final void a(Rn rn) {
-        C0702xi c0702xi = this.f1088a.f1107a;
+        C0702xi c0702xi = this.f1102a.f1121a;
         C0676wh a2 = c0702xi.a(rn, this.b);
         Gh gh = a2.e;
         Ql ql = c0702xi.e;
@@ -41,7 +41,7 @@ public final class C0416m6 implements Va {
                 String value = entry.getValue();
                 synchronized (gh) {
                     E8 e8 = gh.c;
-                    e8.b.b(e8.f540a, key, value);
+                    e8.b.b(e8.f554a, key, value);
                 }
             }
         }

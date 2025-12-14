@@ -5,16 +5,16 @@ import java.util.Collection;
 public final class Zd implements to {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f861a;
+    public final String f875a;
 
     public Zd(String str) {
-        this.f861a = str;
+        this.f875a = str;
     }
 
     @Override // io.appmetrica.analytics.impl.to
     public final ro a(Collection<Object> collection) {
         if (mo.a((Collection) collection)) {
-            return new ro(this, false, this.f861a + " is null or empty.");
+            return new ro(this, false, this.f875a + " is null or empty.");
         }
         return new ro(this, true, "");
     }

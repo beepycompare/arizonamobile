@@ -10,7 +10,7 @@ public final class C0157c4 {
     public static volatile C0157c4 w;
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0565s6 f906a;
+    public final C0565s6 f920a;
     public final E7 b;
     public final S3 c;
     public final G1 d;
@@ -93,7 +93,7 @@ public final class C0157c4 {
     }
 
     public final C0565s6 i() {
-        return this.f906a;
+        return this.f920a;
     }
 
     public final E7 j() {
@@ -121,7 +121,7 @@ public final class C0157c4 {
     }
 
     public final C0565s6 n() {
-        return this.f906a;
+        return this.f920a;
     }
 
     public final Xk o() {
@@ -178,7 +178,7 @@ public final class C0157c4 {
         this.r = new C0189da();
         new D7();
         this.u = new H7();
-        this.f906a = c0565s6;
+        this.f920a = c0565s6;
         this.b = e7;
         this.c = s3;
         this.h = c0409m;

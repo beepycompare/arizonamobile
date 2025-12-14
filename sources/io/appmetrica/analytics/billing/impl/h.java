@@ -5,12 +5,12 @@ import io.appmetrica.analytics.billinginterface.internal.ProductType;
 public abstract /* synthetic */ class h {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int[] f297a;
+    public static final /* synthetic */ int[] f311a;
 
     static {
         int[] iArr = new int[ProductType.values().length];
         iArr[ProductType.INAPP.ordinal()] = 1;
         iArr[ProductType.SUBS.ordinal()] = 2;
-        f297a = iArr;
+        f311a = iArr;
     }
 }

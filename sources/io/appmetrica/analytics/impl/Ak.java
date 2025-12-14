@@ -15,30 +15,30 @@ import java.io.File;
 public final class Ak implements ServiceStorageProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f483a;
+    public final Context f497a;
     public final InterfaceC0655vl b;
     public final SQLiteOpenHelper c;
 
     public Ak(Context context, InterfaceC0655vl interfaceC0655vl, SQLiteOpenHelper sQLiteOpenHelper) {
-        this.f483a = context;
+        this.f497a = context;
         this.b = interfaceC0655vl;
         this.c = sQLiteOpenHelper;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
     public final <T, P extends MessageNano> ProtobufBinaryStateStorageFactory<T> createBinaryStateStorageFactory(String str, ProtobufStateSerializer<P> protobufStateSerializer, ProtobufConverter<T, P> protobufConverter) {
-        Pm.f724a.getClass();
+        Pm.f738a.getClass();
         return new Om(str, protobufStateSerializer, protobufConverter);
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
     public final File getAppDataStorage() {
-        return FileUtils.getAppDataDir(this.f483a);
+        return FileUtils.getAppDataDir(this.f497a);
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
     public final File getAppFileStorage() {
-        return FileUtils.getAppStorageDirectory(this.f483a);
+        return FileUtils.getAppStorageDirectory(this.f497a);
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
@@ -48,14 +48,14 @@ public final class Ak implements ServiceStorageProvider {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
     public final File getSdkDataStorage() {
-        return FileUtils.sdkStorage(this.f483a);
+        return FileUtils.sdkStorage(this.f497a);
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceStorageProvider
     public final TempCacheStorage getTempCacheStorage() {
         C0632un c0632un;
         C0754zk B = C0470oa.I.B();
-        Context context = this.f483a;
+        Context context = this.f497a;
         synchronized (B) {
             c0632un = B.h;
             if (c0632un == null) {

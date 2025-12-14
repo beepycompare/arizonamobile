@@ -5,7 +5,7 @@ import io.appmetrica.analytics.coreutils.internal.io.Base64Utils;
 public final class Qn implements uo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final I8 f739a;
+    public final I8 f753a;
 
     public Qn() {
         this(new I8());
@@ -18,15 +18,15 @@ public final class Qn implements uo {
             bArr = Base64Utils.decompressBase64GzipAsBytes(o8.b);
         } catch (Throwable unused) {
         }
-        byte[] a2 = ((H8) this.f739a.f605a.a(o8.o)).a(bArr);
+        byte[] a2 = ((H8) this.f753a.f619a.a(o8.o)).a(bArr);
         return a2 == null ? new byte[0] : a2;
     }
 
     public Qn(I8 i8) {
-        this.f739a = i8;
+        this.f753a = i8;
     }
 
     public final I8 a() {
-        return this.f739a;
+        return this.f753a;
     }
 }

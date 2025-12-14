@@ -185,19 +185,47 @@ public final class HudCounter {
                 iArr2[TypeTaximeter.FRANCLIN_STEIN.ordinal()] = 29;
             } catch (NoSuchFieldError unused31) {
             }
+            try {
+                iArr2[TypeTaximeter.CONDITION_SLED.ordinal()] = 30;
+            } catch (NoSuchFieldError unused32) {
+            }
+            try {
+                iArr2[TypeTaximeter.CONDITION_PACKAGE.ordinal()] = 31;
+            } catch (NoSuchFieldError unused33) {
+            }
+            try {
+                iArr2[TypeTaximeter.ROLLING_SNOWBALL.ordinal()] = 32;
+            } catch (NoSuchFieldError unused34) {
+            }
+            try {
+                iArr2[TypeTaximeter.DELIVERY_GIFTS.ordinal()] = 33;
+            } catch (NoSuchFieldError unused35) {
+            }
+            try {
+                iArr2[TypeTaximeter.BROKING_ICE.ordinal()] = 34;
+            } catch (NoSuchFieldError unused36) {
+            }
+            try {
+                iArr2[TypeTaximeter.NEW_YEAR_TAXI.ordinal()] = 35;
+            } catch (NoSuchFieldError unused37) {
+            }
+            try {
+                iArr2[TypeTaximeter.SEARCH_CRYSTALS.ordinal()] = 36;
+            } catch (NoSuchFieldError unused38) {
+            }
             $EnumSwitchMapping$1 = iArr2;
             int[] iArr3 = new int[HudCounterItemType.values().length];
             try {
                 iArr3[HudCounterItemType.SIMPLE_TEXT.ordinal()] = 1;
-            } catch (NoSuchFieldError unused32) {
+            } catch (NoSuchFieldError unused39) {
             }
             try {
                 iArr3[HudCounterItemType.ICON_WITH_TEXT.ordinal()] = 2;
-            } catch (NoSuchFieldError unused33) {
+            } catch (NoSuchFieldError unused40) {
             }
             try {
                 iArr3[HudCounterItemType.TITLE_WITH_TEXT.ordinal()] = 3;
-            } catch (NoSuchFieldError unused34) {
+            } catch (NoSuchFieldError unused41) {
             }
             $EnumSwitchMapping$2 = iArr3;
         }
@@ -490,6 +518,7 @@ public final class HudCounter {
         FrameLayout root4 = hudTaximeterBinding.counter.getRoot();
         Intrinsics.checkNotNullExpressionValue(root4, "getRoot(...)");
         root4.setVisibility(8);
+        this.isTimer = true;
         this.firstTextView = null;
         this.secondTextView = null;
         switch (WhenMappings.$EnumSwitchMapping$1[valueOf.ordinal()]) {
@@ -712,6 +741,45 @@ public final class HudCounter {
             case 29:
                 setVisible(valueOf);
                 this.secondTextView = hudTaximeterBinding.franclinStein.tvSecond;
+                hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
+                break;
+            case 30:
+                setVisible(valueOf);
+                this.secondTextView = hudTaximeterBinding.conditionSled.tvSecond;
+                hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
+                break;
+            case 31:
+                setVisible(valueOf);
+                this.secondTextView = hudTaximeterBinding.conditionPackage.tvSecond;
+                hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
+                break;
+            case 32:
+                setVisible(valueOf);
+                this.isTimer = false;
+                this.firstTextView = hudTaximeterBinding.rollingSnowball.tvFirst;
+                this.secondTextView = hudTaximeterBinding.rollingSnowball.tvSecond;
+                hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
+                break;
+            case 33:
+                setVisible(valueOf);
+                this.firstTextView = hudTaximeterBinding.deliveryGifts.tvFirst;
+                this.secondTextView = hudTaximeterBinding.deliveryGifts.tvSecond;
+                hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
+                break;
+            case 34:
+                setVisible(valueOf);
+                this.secondTextView = hudTaximeterBinding.brokingIce.tvSecond;
+                hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
+                break;
+            case 35:
+                setVisible(valueOf);
+                this.firstTextView = hudTaximeterBinding.newYearTaxi.tvFirst;
+                this.secondTextView = hudTaximeterBinding.newYearTaxi.tvSecond;
+                hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
+                break;
+            case 36:
+                setVisible(valueOf);
+                this.secondTextView = hudTaximeterBinding.searchCrystal.tvSecond;
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
                 break;
             default:
@@ -990,5 +1058,26 @@ public final class HudCounter {
         LinearLayout root13 = hudTaximeterBinding.franclinStein.getRoot();
         Intrinsics.checkNotNullExpressionValue(root13, "getRoot(...)");
         root13.setVisibility(typeTaximeter == TypeTaximeter.FRANCLIN_STEIN ? 0 : 8);
+        FrameLayout root14 = hudTaximeterBinding.conditionSled.getRoot();
+        Intrinsics.checkNotNullExpressionValue(root14, "getRoot(...)");
+        root14.setVisibility(typeTaximeter == TypeTaximeter.CONDITION_SLED ? 0 : 8);
+        FrameLayout root15 = hudTaximeterBinding.conditionPackage.getRoot();
+        Intrinsics.checkNotNullExpressionValue(root15, "getRoot(...)");
+        root15.setVisibility(typeTaximeter == TypeTaximeter.CONDITION_PACKAGE ? 0 : 8);
+        FrameLayout root16 = hudTaximeterBinding.rollingSnowball.getRoot();
+        Intrinsics.checkNotNullExpressionValue(root16, "getRoot(...)");
+        root16.setVisibility(typeTaximeter == TypeTaximeter.ROLLING_SNOWBALL ? 0 : 8);
+        FrameLayout root17 = hudTaximeterBinding.deliveryGifts.getRoot();
+        Intrinsics.checkNotNullExpressionValue(root17, "getRoot(...)");
+        root17.setVisibility(typeTaximeter == TypeTaximeter.DELIVERY_GIFTS ? 0 : 8);
+        FrameLayout root18 = hudTaximeterBinding.brokingIce.getRoot();
+        Intrinsics.checkNotNullExpressionValue(root18, "getRoot(...)");
+        root18.setVisibility(typeTaximeter == TypeTaximeter.BROKING_ICE ? 0 : 8);
+        FrameLayout root19 = hudTaximeterBinding.newYearTaxi.getRoot();
+        Intrinsics.checkNotNullExpressionValue(root19, "getRoot(...)");
+        root19.setVisibility(typeTaximeter == TypeTaximeter.NEW_YEAR_TAXI ? 0 : 8);
+        FrameLayout root20 = hudTaximeterBinding.searchCrystal.getRoot();
+        Intrinsics.checkNotNullExpressionValue(root20, "getRoot(...)");
+        root20.setVisibility(typeTaximeter == TypeTaximeter.SEARCH_CRYSTALS ? 0 : 8);
     }
 }

@@ -535,7 +535,7 @@ public abstract class DownloaderService extends CustomIntentService implements I
             float f = ((float) (j - this.mBytesAtSample)) / ((float) (uptimeMillis - j3));
             float f2 = this.mAverageDownloadSpeed;
             if (0.0f != f2) {
-                f = (f * SMOOTHING_FACTOR) + (f2 * 0.995f);
+                f = (f * 0.005f) + (f2 * 0.995f);
             }
             this.mAverageDownloadSpeed = f;
             j2 = ((float) (this.mTotalLength - j)) / this.mAverageDownloadSpeed;

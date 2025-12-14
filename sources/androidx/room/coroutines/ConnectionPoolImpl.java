@@ -36,12 +36,12 @@ public final class ConnectionPoolImpl implements ConnectionPool {
     private final Pool writers;
 
     /* renamed from: getTimeout-UwyO8pc$room_runtime  reason: not valid java name */
-    public final long m9161getTimeoutUwyO8pc$room_runtime() {
+    public final long m9177getTimeoutUwyO8pc$room_runtime() {
         return this.timeout;
     }
 
     /* renamed from: setTimeout-LRDsOJo$room_runtime  reason: not valid java name */
-    public final void m9162setTimeoutLRDsOJo$room_runtime(long j) {
+    public final void m9178setTimeoutLRDsOJo$room_runtime(long j) {
         this.timeout = j;
     }
 
@@ -204,12 +204,12 @@ public final class ConnectionPoolImpl implements ConnectionPool {
                                 connectionPoolImpl$useConnection$1.L$5 = connectionElementKey2;
                                 connectionPoolImpl$useConnection$1.Z$0 = z3;
                                 connectionPoolImpl$useConnection$1.label = 3;
-                                Object m9163acquireWithTimeoutKLykuaI = pool.m9163acquireWithTimeoutKLykuaI(j, function0, connectionPoolImpl$useConnection$1);
-                                if (m9163acquireWithTimeoutKLykuaI != coroutine_suspended) {
+                                Object m9179acquireWithTimeoutKLykuaI = pool.m9179acquireWithTimeoutKLykuaI(j, function0, connectionPoolImpl$useConnection$1);
+                                if (m9179acquireWithTimeoutKLykuaI != coroutine_suspended) {
                                     function22 = function2;
                                     connectionElementKey = connectionElementKey2;
                                     pool3 = pool;
-                                    obj = m9163acquireWithTimeoutKLykuaI;
+                                    obj = m9179acquireWithTimeoutKLykuaI;
                                     objectRef2 = objectRef;
                                 }
                             } catch (Throwable th2) {

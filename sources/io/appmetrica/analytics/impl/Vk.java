@@ -11,13 +11,13 @@ public final class Vk {
     public static final String i = "SESSION_IS_ALIVE_REPORT_NEEDED";
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f810a;
+    public final String f824a;
     protected final Xe b;
     public C0267gb c;
 
     public Vk(Xe xe, String str) {
         this.b = xe;
-        this.f810a = str;
+        this.f824a = str;
         C0267gb c0267gb = new C0267gb();
         try {
             String h2 = xe.h(str);
@@ -80,7 +80,7 @@ public final class Vk {
     }
 
     public final void b() {
-        this.b.e(this.f810a, this.c.toString());
+        this.b.e(this.f824a, this.c.toString());
         this.b.b();
     }
 

@@ -6,7 +6,7 @@ import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
 public final class C0577si {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0247fh f1204a;
+    public final C0247fh f1218a;
     public final C0477oh b;
     public final C0527qh c;
     public final C0551rh d;
@@ -29,7 +29,7 @@ public final class C0577si {
     public final I9 u;
 
     public C0577si(Y4 y4) {
-        this.f1204a = new C0247fh(y4);
+        this.f1218a = new C0247fh(y4);
         this.b = new C0477oh(y4);
         this.c = new C0527qh(y4);
         this.d = new C0551rh(y4);

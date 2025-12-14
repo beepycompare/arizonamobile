@@ -14,7 +14,7 @@ public final class V4 extends U4 {
 
     @Override // io.appmetrica.analytics.impl.U4
     public final void c() {
-        Xe xe = this.f788a.c;
+        Xe xe = this.f802a.c;
         try {
             Vk vk = new Vk(xe, A2.g);
             Long a2 = vk.c.a(Vk.d);

@@ -30,7 +30,7 @@ public final class C0185d6 extends Qg {
             return;
         }
         this.c = true;
-        String a2 = this.h.f1197a.a();
+        String a2 = this.h.f1211a.a();
         L1 l1 = this.i;
         Context context = this.f;
         l1.getClass();
@@ -38,7 +38,7 @@ public final class C0185d6 extends Qg {
         if (Intrinsics.areEqual(a2, serviceInfo != null ? serviceInfo.processName : null)) {
             this.j.a(this.g);
         } else {
-            this.f1304a.c();
+            this.f1318a.c();
             this.c = false;
             super.a();
         }

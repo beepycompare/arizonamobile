@@ -167,7 +167,7 @@ public abstract class BasePreloadManager<T, PreloadStatusT> {
                 this.applicationHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda2
                     @Override // java.lang.Runnable
                     public final void run() {
-                        BasePreloadManager.this.m8999xf9589f29(mediaSource);
+                        BasePreloadManager.this.m9015xf9589f29(mediaSource);
                     }
                 });
             }
@@ -176,14 +176,14 @@ public abstract class BasePreloadManager<T, PreloadStatusT> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onPreloadCompleted$2$androidx-media3-exoplayer-source-preload-BasePreloadManager  reason: not valid java name */
-    public /* synthetic */ void m8999xf9589f29(final MediaSource mediaSource) {
+    public /* synthetic */ void m9015xf9589f29(final MediaSource mediaSource) {
         this.listeners.sendEvent(-1, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda0
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((PreloadManagerListener) obj).onCompleted(MediaSource.this.getMediaItem());
             }
         });
-        m9001x7039cf91(mediaSource);
+        m9017x7039cf91(mediaSource);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -193,7 +193,7 @@ public abstract class BasePreloadManager<T, PreloadStatusT> {
                 this.applicationHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda4
                     @Override // java.lang.Runnable
                     public final void run() {
-                        BasePreloadManager.this.m9000x773570a8(preloadException, mediaSource);
+                        BasePreloadManager.this.m9016x773570a8(preloadException, mediaSource);
                     }
                 });
             }
@@ -202,14 +202,14 @@ public abstract class BasePreloadManager<T, PreloadStatusT> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onPreloadError$4$androidx-media3-exoplayer-source-preload-BasePreloadManager  reason: not valid java name */
-    public /* synthetic */ void m9000x773570a8(final PreloadException preloadException, MediaSource mediaSource) {
+    public /* synthetic */ void m9016x773570a8(final PreloadException preloadException, MediaSource mediaSource) {
         this.listeners.sendEvent(-1, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda1
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((PreloadManagerListener) obj).onError(PreloadException.this);
             }
         });
-        m9001x7039cf91(mediaSource);
+        m9017x7039cf91(mediaSource);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -219,7 +219,7 @@ public abstract class BasePreloadManager<T, PreloadStatusT> {
                 Util.postOrRun(this.applicationHandler, new Runnable() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda3
                     @Override // java.lang.Runnable
                     public final void run() {
-                        BasePreloadManager.this.m9001x7039cf91(mediaSource);
+                        BasePreloadManager.this.m9017x7039cf91(mediaSource);
                     }
                 });
             }
@@ -228,7 +228,7 @@ public abstract class BasePreloadManager<T, PreloadStatusT> {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: maybeAdvanceToNextSource */
-    public void m9001x7039cf91(MediaSource mediaSource) {
+    public void m9017x7039cf91(MediaSource mediaSource) {
         synchronized (this.lock) {
             if (isPreloading(mediaSource)) {
                 do {

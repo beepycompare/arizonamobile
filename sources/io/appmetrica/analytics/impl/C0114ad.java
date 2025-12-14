@@ -8,19 +8,19 @@ import java.util.Map;
 public final class C0114ad implements ModuleSelfReporter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Rj f881a = AbstractC0710y1.a();
+    public final Rj f895a = AbstractC0710y1.a();
     public final int b = 4;
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.ModuleSelfReporter
     public final void reportError(String str, Throwable th) {
-        Rj rj = this.f881a;
+        Rj rj = this.f895a;
         rj.getClass();
         rj.a(new C0529qj(str, th));
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.ModuleSelfReporter
     public final void reportEvent(String str) {
-        Rj rj = this.f881a;
+        Rj rj = this.f895a;
         ModuleEvent build = ModuleEvent.newBuilder(this.b).withName(str).build();
         rj.getClass();
         rj.a(new Gj(build));
@@ -28,12 +28,12 @@ public final class C0114ad implements ModuleSelfReporter {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.ModuleSelfReporter
     public final void reportError(String str, String str2) {
-        this.f881a.reportError(str, str2);
+        this.f895a.reportError(str, str2);
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.ModuleSelfReporter
     public final void reportEvent(String str, Map<String, ? extends Object> map) {
-        Rj rj = this.f881a;
+        Rj rj = this.f895a;
         ModuleEvent build = ModuleEvent.newBuilder(this.b).withName(str).withAttributes(map).build();
         rj.getClass();
         rj.a(new Gj(build));
@@ -41,7 +41,7 @@ public final class C0114ad implements ModuleSelfReporter {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.ModuleSelfReporter
     public final void reportEvent(String str, String str2) {
-        Rj rj = this.f881a;
+        Rj rj = this.f895a;
         ModuleEvent build = ModuleEvent.newBuilder(this.b).withName(str).withValue(str2).build();
         rj.getClass();
         rj.a(new Gj(build));
@@ -49,7 +49,7 @@ public final class C0114ad implements ModuleSelfReporter {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.ModuleSelfReporter
     public final void reportEvent(int i, String str, String str2) {
-        Rj rj = this.f881a;
+        Rj rj = this.f895a;
         ModuleEvent build = ModuleEvent.newBuilder(i).withName(str).withValue(str2).build();
         rj.getClass();
         rj.a(new Gj(build));

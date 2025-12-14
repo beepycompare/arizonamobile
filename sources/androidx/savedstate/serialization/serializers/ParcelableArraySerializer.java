@@ -36,7 +36,7 @@ public final class ParcelableArraySerializer implements KSerializer<Parcelable[]
             throw new IllegalArgumentException(BuiltInSerializerKt.encoderErrorMessage(INSTANCE.getDescriptor().getSerialName(), encoder).toString());
         }
         SavedStateEncoder savedStateEncoder = (SavedStateEncoder) encoder;
-        SavedStateWriter.m9289putParcelableArrayimpl(SavedStateWriter.m9264constructorimpl(savedStateEncoder.getSavedState$savedstate()), savedStateEncoder.getKey$savedstate(), value);
+        SavedStateWriter.m9305putParcelableArrayimpl(SavedStateWriter.m9280constructorimpl(savedStateEncoder.getSavedState$savedstate()), savedStateEncoder.getKey$savedstate(), value);
     }
 
     @Override // kotlinx.serialization.DeserializationStrategy
@@ -46,6 +46,6 @@ public final class ParcelableArraySerializer implements KSerializer<Parcelable[]
             throw new IllegalArgumentException(BuiltInSerializerKt.decoderErrorMessage(INSTANCE.getDescriptor().getSerialName(), decoder).toString());
         }
         SavedStateDecoder savedStateDecoder = (SavedStateDecoder) decoder;
-        return SavedStateReader.m9226getParcelableArrayimpl(SavedStateReader.m9178constructorimpl(savedStateDecoder.getSavedState$savedstate()), savedStateDecoder.getKey$savedstate(), Reflection.getOrCreateKotlinClass(Parcelable.class));
+        return SavedStateReader.m9242getParcelableArrayimpl(SavedStateReader.m9194constructorimpl(savedStateDecoder.getSavedState$savedstate()), savedStateDecoder.getKey$savedstate(), Reflection.getOrCreateKotlinClass(Parcelable.class));
     }
 }

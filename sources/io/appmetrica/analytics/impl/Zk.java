@@ -11,10 +11,10 @@ import kotlin.text.Charsets;
 public final class Zk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0387l2 f867a;
+    public final InterfaceC0387l2 f881a;
 
     public Zk(InterfaceC0387l2 interfaceC0387l2) {
-        this.f867a = interfaceC0387l2;
+        this.f881a = interfaceC0387l2;
     }
 
     public final ArrayList a(Iterable iterable) {
@@ -25,7 +25,7 @@ public final class Zk {
         while (it.hasNext()) {
             String str2 = (String) it.next();
             try {
-                a2 = this.f867a.a(str2);
+                a2 = this.f881a.a(str2);
             } catch (NoSuchAlgorithmException unused) {
             }
             if (a2 == null || (str = StringUtils.toHexString(MessageDigest.getInstance("SHA-256").digest(a2.getBytes(Charsets.UTF_8)))) == null) {

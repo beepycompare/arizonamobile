@@ -9,7 +9,7 @@ public final class F9 extends C0344jb {
 
     @Override // io.appmetrica.analytics.impl.C0344jb, io.appmetrica.analytics.impl.AbstractC0495pa
     public final void a(List<Sg> list) {
-        list.add(this.f1147a.u);
+        list.add(this.f1161a.u);
         super.a(list);
     }
 }

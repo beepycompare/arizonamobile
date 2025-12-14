@@ -25,7 +25,7 @@ public final class LocalSavedStateRegistryOwnerKt {
         r1 = null;
      */
     static {
-        Object m10199constructorimpl;
+        Object m10215constructorimpl;
         ProvidableCompositionLocal providableCompositionLocal;
         try {
             Result.Companion companion = Result.Companion;
@@ -50,12 +50,12 @@ public final class LocalSavedStateRegistryOwnerKt {
                     }
                 }
             }
-            m10199constructorimpl = Result.m10199constructorimpl(providableCompositionLocal);
+            m10215constructorimpl = Result.m10215constructorimpl(providableCompositionLocal);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m10199constructorimpl = Result.m10199constructorimpl(ResultKt.createFailure(th));
+            m10215constructorimpl = Result.m10215constructorimpl(ResultKt.createFailure(th));
         }
-        ProvidableCompositionLocal<SavedStateRegistryOwner> providableCompositionLocal2 = Result.m10205isFailureimpl(m10199constructorimpl) ? null : m10199constructorimpl;
+        ProvidableCompositionLocal<SavedStateRegistryOwner> providableCompositionLocal2 = Result.m10221isFailureimpl(m10215constructorimpl) ? null : m10215constructorimpl;
         if (providableCompositionLocal2 == null) {
             providableCompositionLocal2 = CompositionLocalKt.staticCompositionLocalOf(new Function0() { // from class: androidx.savedstate.compose.LocalSavedStateRegistryOwnerKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function0

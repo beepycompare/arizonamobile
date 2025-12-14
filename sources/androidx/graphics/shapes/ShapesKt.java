@@ -12,7 +12,7 @@ import kotlin.collections.IntIterator;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt;
 /* compiled from: Shapes.kt */
-@Metadata(d1 = {"\u00002\n\u0000\n\u0002\u0010\u0014\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0007\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\b\u0003\u001aH\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00052\u0006\u0010\u0007\u001a\u00020\u00052\u0006\u0010\b\u001a\u00020\u00052\u0006\u0010\t\u001a\u00020\u00052\u0006\u0010\n\u001a\u00020\u00052\u0006\u0010\u000b\u001a\u00020\u0005H\u0002\u001a0\u0010\f\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\r\u001a\u00020\u00052\u0006\u0010\u0007\u001a\u00020\u00052\u0006\u0010\n\u001a\u00020\u00052\u0006\u0010\u000b\u001a\u00020\u0005H\u0002\u001a4\u0010\u000e\u001a\u00020\u000f*\u00020\u00102\b\b\u0003\u0010\u0011\u001a\u00020\u00032\b\b\u0002\u0010\r\u001a\u00020\u00052\b\b\u0002\u0010\n\u001a\u00020\u00052\b\b\u0002\u0010\u000b\u001a\u00020\u0005H\u0007\u001a>\u0010\u0012\u001a\u00020\u000f*\u00020\u00102\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00052\b\b\u0002\u0010\u0013\u001a\u00020\u00052\b\b\u0002\u0010\n\u001a\u00020\u00052\b\b\u0002\u0010\u000b\u001a\u00020\u0005H\u0007\u001a\u0084\u0001\u0010\u0014\u001a\u00020\u000f*\u00020\u00102\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00052\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0003\u0010\u0015\u001a\u00020\u00052\b\b\u0002\u0010\u0016\u001a\u00020\u00172\n\b\u0002\u0010\u0018\u001a\u0004\u0018\u00010\u00172\u0010\b\u0002\u0010\u0019\u001a\n\u0012\u0004\u0012\u00020\u0017\u0018\u00010\u001a2\b\b\u0003\u0010\b\u001a\u00020\u00052\b\b\u0003\u0010\t\u001a\u00020\u00052\b\b\u0002\u0010\n\u001a\u00020\u00052\b\b\u0002\u0010\u000b\u001a\u00020\u0005H\u0007\u001aN\u0010\u001b\u001a\u00020\u000f*\u00020\u00102\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00052\b\b\u0002\u0010\u0016\u001a\u00020\u00172\u0010\b\u0002\u0010\u0019\u001a\n\u0012\u0004\u0012\u00020\u0017\u0018\u00010\u001a2\b\b\u0002\u0010\n\u001a\u00020\u00052\b\b\u0002\u0010\u000b\u001a\u00020\u0005\u001ad\u0010\u001c\u001a\u00020\u000f*\u00020\u00102\u0006\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\r\u001a\u00020\u00052\b\b\u0002\u0010\u0007\u001a\u00020\u00052\b\b\u0002\u0010\u0016\u001a\u00020\u00172\n\b\u0002\u0010\u0018\u001a\u0004\u0018\u00010\u00172\u0010\b\u0002\u0010\u0019\u001a\n\u0012\u0004\u0012\u00020\u0017\u0018\u00010\u001a2\b\b\u0002\u0010\n\u001a\u00020\u00052\b\b\u0002\u0010\u000b\u001a\u00020\u0005H\u0007¨\u0006\u001d"}, d2 = {"pillStarVerticesFromNumVerts", "", "numVerticesPerRadius", "", "width", "", "height", "innerRadius", "vertexSpacing", "startLocation", "centerX", "centerY", "starVerticesFromNumVerts", "radius", TtmlNode.TEXT_EMPHASIS_MARK_CIRCLE, "Landroidx/graphics/shapes/RoundedPolygon;", "Landroidx/graphics/shapes/RoundedPolygon$Companion;", "numVertices", "pill", "smoothing", "pillStar", "innerRadiusRatio", "rounding", "Landroidx/graphics/shapes/CornerRounding;", "innerRounding", "perVertexRounding", "", "rectangle", "star", "graphics-shapes_release"}, k = 2, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u00000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\u000b\n\u0002\u0010\u0014\n\u0002\b\u0002\u001a4\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\b\b\u0003\u0010\u0003\u001a\u00020\u00042\b\b\u0002\u0010\u0005\u001a\u00020\u00062\b\b\u0002\u0010\u0007\u001a\u00020\u00062\b\b\u0002\u0010\b\u001a\u00020\u0006H\u0007\u001aN\u0010\t\u001a\u00020\u0001*\u00020\u00022\b\b\u0002\u0010\n\u001a\u00020\u00062\b\b\u0002\u0010\u000b\u001a\u00020\u00062\b\b\u0002\u0010\f\u001a\u00020\r2\u0010\b\u0002\u0010\u000e\u001a\n\u0012\u0004\u0012\u00020\r\u0018\u00010\u000f2\b\b\u0002\u0010\u0007\u001a\u00020\u00062\b\b\u0002\u0010\b\u001a\u00020\u0006\u001ad\u0010\u0010\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0011\u001a\u00020\u00042\b\b\u0002\u0010\u0005\u001a\u00020\u00062\b\b\u0002\u0010\u0012\u001a\u00020\u00062\b\b\u0002\u0010\f\u001a\u00020\r2\n\b\u0002\u0010\u0013\u001a\u0004\u0018\u00010\r2\u0010\b\u0002\u0010\u000e\u001a\n\u0012\u0004\u0012\u00020\r\u0018\u00010\u000f2\b\b\u0002\u0010\u0007\u001a\u00020\u00062\b\b\u0002\u0010\b\u001a\u00020\u0006H\u0007\u001a>\u0010\u0014\u001a\u00020\u0001*\u00020\u00022\b\b\u0002\u0010\n\u001a\u00020\u00062\b\b\u0002\u0010\u000b\u001a\u00020\u00062\b\b\u0002\u0010\u0015\u001a\u00020\u00062\b\b\u0002\u0010\u0007\u001a\u00020\u00062\b\b\u0002\u0010\b\u001a\u00020\u0006H\u0007\u001a\u0084\u0001\u0010\u0016\u001a\u00020\u0001*\u00020\u00022\b\b\u0002\u0010\n\u001a\u00020\u00062\b\b\u0002\u0010\u000b\u001a\u00020\u00062\b\b\u0002\u0010\u0011\u001a\u00020\u00042\b\b\u0003\u0010\u0017\u001a\u00020\u00062\b\b\u0002\u0010\f\u001a\u00020\r2\n\b\u0002\u0010\u0013\u001a\u0004\u0018\u00010\r2\u0010\b\u0002\u0010\u000e\u001a\n\u0012\u0004\u0012\u00020\r\u0018\u00010\u000f2\b\b\u0003\u0010\u0018\u001a\u00020\u00062\b\b\u0003\u0010\u0019\u001a\u00020\u00062\b\b\u0002\u0010\u0007\u001a\u00020\u00062\b\b\u0002\u0010\b\u001a\u00020\u0006H\u0007\u001aH\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u0011\u001a\u00020\u00042\u0006\u0010\n\u001a\u00020\u00062\u0006\u0010\u000b\u001a\u00020\u00062\u0006\u0010\u0012\u001a\u00020\u00062\u0006\u0010\u0018\u001a\u00020\u00062\u0006\u0010\u0019\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00020\u0006H\u0002\u001a0\u0010\u001c\u001a\u00020\u001b2\u0006\u0010\u0011\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0012\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00020\u0006H\u0002¨\u0006\u001d"}, d2 = {TtmlNode.TEXT_EMPHASIS_MARK_CIRCLE, "Landroidx/graphics/shapes/RoundedPolygon;", "Landroidx/graphics/shapes/RoundedPolygon$Companion;", "numVertices", "", "radius", "", "centerX", "centerY", "rectangle", "width", "height", "rounding", "Landroidx/graphics/shapes/CornerRounding;", "perVertexRounding", "", "star", "numVerticesPerRadius", "innerRadius", "innerRounding", "pill", "smoothing", "pillStar", "innerRadiusRatio", "vertexSpacing", "startLocation", "pillStarVerticesFromNumVerts", "", "starVerticesFromNumVerts", "graphics-shapes"}, k = 2, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class ShapesKt {
     public static final RoundedPolygon circle(RoundedPolygon.Companion companion) {
@@ -454,7 +454,7 @@ public final class ShapesKt {
                         case 1:
                             f8 = f11;
                             f9 = f12;
-                            m25constructorimpl = PointKt.m8826plusybeJwSQ(Utils.m8842radialToCartesianL6JJ3z0$default(f31, (f30 * Utils.getFloatPi()) / f10, 0L, 4, null), m25constructorimpl2);
+                            m25constructorimpl = PointKt.m8825plusybeJwSQ(Utils.m8858radialToCartesianL6JJ3z0$default(f31, (f30 * Utils.getFloatPi()) / f10, 0L, 4, null), m25constructorimpl2);
                             break;
                         case 2:
                             f8 = f11;
@@ -464,7 +464,7 @@ public final class ShapesKt {
                         case 3:
                             f8 = f11;
                             f9 = f12;
-                            m25constructorimpl = PointKt.m8826plusybeJwSQ(Utils.m8842radialToCartesianL6JJ3z0$default(f31, (Utils.getFloatPi() / f10) + ((f30 * Utils.getFloatPi()) / f10), 0L, 4, null), m25constructorimpl3);
+                            m25constructorimpl = PointKt.m8825plusybeJwSQ(Utils.m8858radialToCartesianL6JJ3z0$default(f31, (Utils.getFloatPi() / f10) + ((f30 * Utils.getFloatPi()) / f10), 0L, 4, null), m25constructorimpl3);
                             break;
                         case 4:
                             f8 = f11;
@@ -474,7 +474,7 @@ public final class ShapesKt {
                         case 5:
                             f8 = f11;
                             f9 = f12;
-                            m25constructorimpl = PointKt.m8826plusybeJwSQ(Utils.m8842radialToCartesianL6JJ3z0$default(f31, Utils.getFloatPi() + ((f30 * Utils.getFloatPi()) / f10), 0L, 4, null), m25constructorimpl4);
+                            m25constructorimpl = PointKt.m8825plusybeJwSQ(Utils.m8858radialToCartesianL6JJ3z0$default(f31, Utils.getFloatPi() + ((f30 * Utils.getFloatPi()) / f10), 0L, 4, null), m25constructorimpl4);
                             break;
                         case 6:
                             f8 = f11;
@@ -484,7 +484,7 @@ public final class ShapesKt {
                         case 7:
                             f8 = f11;
                             f9 = f12;
-                            m25constructorimpl = PointKt.m8826plusybeJwSQ(Utils.m8842radialToCartesianL6JJ3z0$default(f31, (Utils.getFloatPi() * 1.5f) + ((f30 * Utils.getFloatPi()) / f10), 0L, 4, null), m25constructorimpl5);
+                            m25constructorimpl = PointKt.m8825plusybeJwSQ(Utils.m8858radialToCartesianL6JJ3z0$default(f31, (Utils.getFloatPi() * 1.5f) + ((f30 * Utils.getFloatPi()) / f10), 0L, 4, null), m25constructorimpl5);
                             break;
                         default:
                             f8 = f11;
@@ -493,9 +493,9 @@ public final class ShapesKt {
                             break;
                     }
                     int i7 = i5 + 1;
-                    fArr2[i5] = PointKt.m8822getXDnnuFBc(m25constructorimpl) + f6;
+                    fArr2[i5] = PointKt.m8821getXDnnuFBc(m25constructorimpl) + f6;
                     i5 += 2;
-                    fArr2[i7] = PointKt.m8823getYDnnuFBc(m25constructorimpl) + f7;
+                    fArr2[i7] = PointKt.m8822getYDnnuFBc(m25constructorimpl) + f7;
                     f23 += f22;
                     z = !z;
                     i3++;
@@ -512,14 +512,14 @@ public final class ShapesKt {
         int i2 = 0;
         for (int i3 = 0; i3 < i; i3++) {
             float f5 = i;
-            long m8842radialToCartesianL6JJ3z0$default = Utils.m8842radialToCartesianL6JJ3z0$default(f, (Utils.getFloatPi() / f5) * 2 * i3, 0L, 4, null);
-            fArr[i2] = PointKt.m8822getXDnnuFBc(m8842radialToCartesianL6JJ3z0$default) + f3;
-            fArr[i2 + 1] = PointKt.m8823getYDnnuFBc(m8842radialToCartesianL6JJ3z0$default) + f4;
-            long m8842radialToCartesianL6JJ3z0$default2 = Utils.m8842radialToCartesianL6JJ3z0$default(f2, (Utils.getFloatPi() / f5) * ((i3 * 2) + 1), 0L, 4, null);
+            long m8858radialToCartesianL6JJ3z0$default = Utils.m8858radialToCartesianL6JJ3z0$default(f, (Utils.getFloatPi() / f5) * 2 * i3, 0L, 4, null);
+            fArr[i2] = PointKt.m8821getXDnnuFBc(m8858radialToCartesianL6JJ3z0$default) + f3;
+            fArr[i2 + 1] = PointKt.m8822getYDnnuFBc(m8858radialToCartesianL6JJ3z0$default) + f4;
+            long m8858radialToCartesianL6JJ3z0$default2 = Utils.m8858radialToCartesianL6JJ3z0$default(f2, (Utils.getFloatPi() / f5) * ((i3 * 2) + 1), 0L, 4, null);
             int i4 = i2 + 3;
-            fArr[i2 + 2] = PointKt.m8822getXDnnuFBc(m8842radialToCartesianL6JJ3z0$default2) + f3;
+            fArr[i2 + 2] = PointKt.m8821getXDnnuFBc(m8858radialToCartesianL6JJ3z0$default2) + f3;
             i2 += 4;
-            fArr[i4] = PointKt.m8823getYDnnuFBc(m8842radialToCartesianL6JJ3z0$default2) + f4;
+            fArr[i4] = PointKt.m8822getYDnnuFBc(m8858radialToCartesianL6JJ3z0$default2) + f4;
         }
         return fArr;
     }

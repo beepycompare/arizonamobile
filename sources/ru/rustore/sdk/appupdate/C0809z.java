@@ -11,19 +11,19 @@ import ru.rustore.sdk.reactive.single.SingleEmitter;
 public final class C0809z extends Lambda implements Function1<AppUpdateInfo, Unit> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ SingleEmitter<AppUpdateInfo> f1548a;
+    public final /* synthetic */ SingleEmitter<AppUpdateInfo> f1562a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C0809z(SingleEmitter<AppUpdateInfo> singleEmitter) {
         super(1);
-        this.f1548a = singleEmitter;
+        this.f1562a = singleEmitter;
     }
 
     @Override // kotlin.jvm.functions.Function1
     public final Unit invoke(AppUpdateInfo appUpdateInfo) {
         AppUpdateInfo appUpdateInfo2 = appUpdateInfo;
         Intrinsics.checkNotNullParameter(appUpdateInfo2, "appUpdateInfo");
-        this.f1548a.success(appUpdateInfo2);
+        this.f1562a.success(appUpdateInfo2);
         return Unit.INSTANCE;
     }
 }

@@ -16,7 +16,7 @@ import java.util.Set;
 public final class C0595tb implements Ia, Closeable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashMap f1215a = new HashMap();
+    public final HashMap f1229a = new HashMap();
     public final HashMap b = new HashMap();
     public final String c = "preferences";
     public final C0570sb d;
@@ -72,7 +72,7 @@ public final class C0595tb implements Ia, Closeable {
                                         str = ParseUtils.parseLong(string2);
                                     }
                                     if (str == null) {
-                                        c0595tb.f1215a.put(string, str);
+                                        c0595tb.f1229a.put(string, str);
                                     }
                                 } else {
                                     if ("true".equals(string2)) {
@@ -113,7 +113,7 @@ public final class C0595tb implements Ia, Closeable {
             return;
         }
         try {
-            this.f1215a.wait();
+            this.f1229a.wait();
         } catch (InterruptedException unused) {
         }
     }
@@ -151,9 +151,9 @@ public final class C0595tb implements Ia, Closeable {
 
     @Override // io.appmetrica.analytics.impl.Ia
     public final Ia remove(String str) {
-        synchronized (this.f1215a) {
+        synchronized (this.f1229a) {
             c();
-            this.f1215a.remove(str);
+            this.f1229a.remove(str);
         }
         synchronized (this.d) {
             this.b.put(str, this);
@@ -164,9 +164,9 @@ public final class C0595tb implements Ia, Closeable {
 
     public final Object b(String str) {
         Object obj;
-        synchronized (this.f1215a) {
+        synchronized (this.f1229a) {
             c();
-            obj = this.f1215a.get(str);
+            obj = this.f1229a.get(str);
         }
         return obj;
     }
@@ -273,9 +273,9 @@ public final class C0595tb implements Ia, Closeable {
     @Override // io.appmetrica.analytics.impl.Ia
     public final boolean a(String str) {
         boolean containsKey;
-        synchronized (this.f1215a) {
+        synchronized (this.f1229a) {
             c();
-            containsKey = this.f1215a.containsKey(str);
+            containsKey = this.f1229a.containsKey(str);
         }
         return containsKey;
     }
@@ -283,16 +283,16 @@ public final class C0595tb implements Ia, Closeable {
     @Override // io.appmetrica.analytics.impl.Ia
     public final Set a() {
         HashSet hashSet;
-        synchronized (this.f1215a) {
-            hashSet = new HashSet(this.f1215a.keySet());
+        synchronized (this.f1229a) {
+            hashSet = new HashSet(this.f1229a.keySet());
         }
         return hashSet;
     }
 
     public final void a(String str, Object obj) {
-        synchronized (this.f1215a) {
+        synchronized (this.f1229a) {
             c();
-            this.f1215a.put(str, obj);
+            this.f1229a.put(str, obj);
         }
         synchronized (this.d) {
             this.b.put(str, obj);

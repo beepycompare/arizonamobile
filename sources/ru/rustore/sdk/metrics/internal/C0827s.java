@@ -26,7 +26,7 @@ import ru.rustore.sdk.metrics.internal.X;
 public final class C0827s {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0811b f1602a;
+    public final C0811b f1616a;
     public final Q b;
     public final InterfaceC0816g c;
     public final Lazy d;
@@ -35,7 +35,7 @@ public final class C0827s {
         Intrinsics.checkNotNullParameter(endpointProvider, "endpointProvider");
         Intrinsics.checkNotNullParameter(remoteMetricsEventDtoSerializer, "remoteMetricsEventDtoSerializer");
         Intrinsics.checkNotNullParameter(logger, "logger");
-        this.f1602a = endpointProvider;
+        this.f1616a = endpointProvider;
         this.b = remoteMetricsEventDtoSerializer;
         this.c = logger;
         this.d = LazyKt.lazy(new C0825p(this));
@@ -53,7 +53,7 @@ public final class C0827s {
             jSONObject2.put("event_name", remoteMetricsEventDto.e.getEventName());
             jSONObject2.put("user_id", remoteMetricsEventDto.c);
             JSONObject jSONObject3 = new JSONObject();
-            jSONObject3.put("package_name", remoteMetricsEventDto.f1566a);
+            jSONObject3.put("package_name", remoteMetricsEventDto.f1580a);
             String str = remoteMetricsEventDto.d;
             if (str == null) {
                 str = null;

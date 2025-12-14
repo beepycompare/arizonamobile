@@ -9,12 +9,12 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class C0433mn implements InterfaceC0430mk, InterfaceC0668w9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Fa f1099a;
+    public final Fa f1113a;
     public final Ll b;
     public final AtomicBoolean c = new AtomicBoolean(false);
 
     public C0433mn(Fa fa, Ll ll) {
-        this.f1099a = fa;
+        this.f1113a = fa;
         this.b = ll;
         Objects.toString(fa.b());
     }
@@ -38,7 +38,7 @@ public class C0433mn implements InterfaceC0430mk, InterfaceC0668w9 {
     }
 
     public final Fa d() {
-        return this.f1099a;
+        return this.f1113a;
     }
 
     public final boolean e() {

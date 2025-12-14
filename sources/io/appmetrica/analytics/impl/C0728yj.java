@@ -6,14 +6,14 @@ import io.appmetrica.analytics.ecommerce.ECommerceEvent;
 public final class C0728yj implements Ra {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ ECommerceEvent f1305a;
+    public final /* synthetic */ ECommerceEvent f1319a;
 
     public C0728yj(ECommerceEvent eCommerceEvent) {
-        this.f1305a = eCommerceEvent;
+        this.f1319a = eCommerceEvent;
     }
 
     @Override // io.appmetrica.analytics.impl.Ra
     public final void a(Sa sa) {
-        sa.reportECommerce(this.f1305a);
+        sa.reportECommerce(this.f1319a);
     }
 }

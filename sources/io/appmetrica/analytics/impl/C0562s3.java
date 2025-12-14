@@ -7,11 +7,11 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0562s3 implements U7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Map f1194a;
+    public final Map f1208a;
     public final T7 b;
 
     public C0562s3(Map<String, String> map, T7 t7) {
-        this.f1194a = map;
+        this.f1208a = map;
         this.b = t7;
     }
 
@@ -20,7 +20,7 @@ public final class C0562s3 implements U7 {
     }
 
     public final Map<String, String> b() {
-        return this.f1194a;
+        return this.f1208a;
     }
 
     public final T7 c() {
@@ -28,7 +28,7 @@ public final class C0562s3 implements U7 {
     }
 
     public final Map<String, String> d() {
-        return this.f1194a;
+        return this.f1208a;
     }
 
     public final boolean equals(Object obj) {
@@ -37,23 +37,23 @@ public final class C0562s3 implements U7 {
         }
         if (obj instanceof C0562s3) {
             C0562s3 c0562s3 = (C0562s3) obj;
-            return Intrinsics.areEqual(this.f1194a, c0562s3.f1194a) && this.b == c0562s3.b;
+            return Intrinsics.areEqual(this.f1208a, c0562s3.f1208a) && this.b == c0562s3.b;
         }
         return false;
     }
 
     public final int hashCode() {
-        Map map = this.f1194a;
+        Map map = this.f1208a;
         return this.b.hashCode() + ((map == null ? 0 : map.hashCode()) * 31);
     }
 
     public final String toString() {
-        return "Candidate(clids=" + this.f1194a + ", source=" + this.b + ')';
+        return "Candidate(clids=" + this.f1208a + ", source=" + this.b + ')';
     }
 
     public static C0562s3 a(C0562s3 c0562s3, Map map, T7 t7, int i, Object obj) {
         if ((i & 1) != 0) {
-            map = c0562s3.f1194a;
+            map = c0562s3.f1208a;
         }
         if ((i & 2) != 0) {
             t7 = c0562s3.b;

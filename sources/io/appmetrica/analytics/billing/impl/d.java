@@ -15,7 +15,7 @@ public final class d extends MessageNano {
     public static volatile d[] f;
 
     /* renamed from: a  reason: collision with root package name */
-    public c[] f296a;
+    public c[] f310a;
     public boolean b;
 
     public d() {
@@ -34,7 +34,7 @@ public final class d extends MessageNano {
     }
 
     public final d a() {
-        this.f296a = c.b();
+        this.f310a = c.b();
         this.b = false;
         this.cachedSize = -1;
         return this;
@@ -43,11 +43,11 @@ public final class d extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        c[] cVarArr = this.f296a;
+        c[] cVarArr = this.f310a;
         if (cVarArr != null && cVarArr.length > 0) {
             int i = 0;
             while (true) {
-                c[] cVarArr2 = this.f296a;
+                c[] cVarArr2 = this.f310a;
                 if (i >= cVarArr2.length) {
                     break;
                 }
@@ -63,11 +63,11 @@ public final class d extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        c[] cVarArr = this.f296a;
+        c[] cVarArr = this.f310a;
         if (cVarArr != null && cVarArr.length > 0) {
             int i = 0;
             while (true) {
-                c[] cVarArr2 = this.f296a;
+                c[] cVarArr2 = this.f310a;
                 if (i >= cVarArr2.length) {
                     break;
                 }
@@ -91,7 +91,7 @@ public final class d extends MessageNano {
                 break;
             } else if (readTag == 10) {
                 int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 10);
-                c[] cVarArr = this.f296a;
+                c[] cVarArr = this.f310a;
                 int length = cVarArr == null ? 0 : cVarArr.length;
                 int i = repeatedFieldArrayLength + length;
                 c[] cVarArr2 = new c[i];
@@ -108,7 +108,7 @@ public final class d extends MessageNano {
                 c cVar2 = new c();
                 cVarArr2[length] = cVar2;
                 codedInputByteBufferNano.readMessage(cVar2);
-                this.f296a = cVarArr2;
+                this.f310a = cVarArr2;
             } else if (readTag != 16) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;

@@ -151,19 +151,19 @@ public final class Response implements Closeable {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "request", imports = {}))
     /* renamed from: -deprecated_request  reason: not valid java name */
-    public final Request m12097deprecated_request() {
+    public final Request m12113deprecated_request() {
         return this.request;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "protocol", imports = {}))
     /* renamed from: -deprecated_protocol  reason: not valid java name */
-    public final Protocol m12095deprecated_protocol() {
+    public final Protocol m12111deprecated_protocol() {
         return this.protocol;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "code", imports = {}))
     /* renamed from: -deprecated_code  reason: not valid java name */
-    public final int m12089deprecated_code() {
+    public final int m12105deprecated_code() {
         return this.code;
     }
 
@@ -173,13 +173,13 @@ public final class Response implements Closeable {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "message", imports = {}))
     /* renamed from: -deprecated_message  reason: not valid java name */
-    public final String m12092deprecated_message() {
+    public final String m12108deprecated_message() {
         return this.message;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "handshake", imports = {}))
     /* renamed from: -deprecated_handshake  reason: not valid java name */
-    public final Handshake m12090deprecated_handshake() {
+    public final Handshake m12106deprecated_handshake() {
         return this.handshake;
     }
 
@@ -203,7 +203,7 @@ public final class Response implements Closeable {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "headers", imports = {}))
     /* renamed from: -deprecated_headers  reason: not valid java name */
-    public final Headers m12091deprecated_headers() {
+    public final Headers m12107deprecated_headers() {
         return this.headers;
     }
 
@@ -225,7 +225,7 @@ public final class Response implements Closeable {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = TtmlNode.TAG_BODY, imports = {}))
     /* renamed from: -deprecated_body  reason: not valid java name */
-    public final ResponseBody m12086deprecated_body() {
+    public final ResponseBody m12102deprecated_body() {
         return this.body;
     }
 
@@ -239,19 +239,19 @@ public final class Response implements Closeable {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "networkResponse", imports = {}))
     /* renamed from: -deprecated_networkResponse  reason: not valid java name */
-    public final Response m12093deprecated_networkResponse() {
+    public final Response m12109deprecated_networkResponse() {
         return this.networkResponse;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "cacheResponse", imports = {}))
     /* renamed from: -deprecated_cacheResponse  reason: not valid java name */
-    public final Response m12088deprecated_cacheResponse() {
+    public final Response m12104deprecated_cacheResponse() {
         return this.cacheResponse;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "priorResponse", imports = {}))
     /* renamed from: -deprecated_priorResponse  reason: not valid java name */
-    public final Response m12094deprecated_priorResponse() {
+    public final Response m12110deprecated_priorResponse() {
         return this.priorResponse;
     }
 
@@ -281,19 +281,19 @@ public final class Response implements Closeable {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "cacheControl", imports = {}))
     /* renamed from: -deprecated_cacheControl  reason: not valid java name */
-    public final CacheControl m12087deprecated_cacheControl() {
+    public final CacheControl m12103deprecated_cacheControl() {
         return cacheControl();
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "sentRequestAtMillis", imports = {}))
     /* renamed from: -deprecated_sentRequestAtMillis  reason: not valid java name */
-    public final long m12098deprecated_sentRequestAtMillis() {
+    public final long m12114deprecated_sentRequestAtMillis() {
         return this.sentRequestAtMillis;
     }
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "receivedResponseAtMillis", imports = {}))
     /* renamed from: -deprecated_receivedResponseAtMillis  reason: not valid java name */
-    public final long m12096deprecated_receivedResponseAtMillis() {
+    public final long m12112deprecated_receivedResponseAtMillis() {
         return this.receivedResponseAtMillis;
     }
 

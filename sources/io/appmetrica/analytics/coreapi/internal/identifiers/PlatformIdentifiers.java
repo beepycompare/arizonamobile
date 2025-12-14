@@ -8,17 +8,17 @@ import kotlin.jvm.internal.Intrinsics;
 public final class PlatformIdentifiers {
 
     /* renamed from: a  reason: collision with root package name */
-    private final SimpleAdvertisingIdGetter f357a;
+    private final SimpleAdvertisingIdGetter f371a;
     private final AppSetIdProvider b;
 
     public PlatformIdentifiers(SimpleAdvertisingIdGetter simpleAdvertisingIdGetter, AppSetIdProvider appSetIdProvider) {
-        this.f357a = simpleAdvertisingIdGetter;
+        this.f371a = simpleAdvertisingIdGetter;
         this.b = appSetIdProvider;
     }
 
     public static /* synthetic */ PlatformIdentifiers copy$default(PlatformIdentifiers platformIdentifiers, SimpleAdvertisingIdGetter simpleAdvertisingIdGetter, AppSetIdProvider appSetIdProvider, int i, Object obj) {
         if ((i & 1) != 0) {
-            simpleAdvertisingIdGetter = platformIdentifiers.f357a;
+            simpleAdvertisingIdGetter = platformIdentifiers.f371a;
         }
         if ((i & 2) != 0) {
             appSetIdProvider = platformIdentifiers.b;
@@ -27,7 +27,7 @@ public final class PlatformIdentifiers {
     }
 
     public final SimpleAdvertisingIdGetter component1() {
-        return this.f357a;
+        return this.f371a;
     }
 
     public final AppSetIdProvider component2() {
@@ -44,13 +44,13 @@ public final class PlatformIdentifiers {
         }
         if (obj instanceof PlatformIdentifiers) {
             PlatformIdentifiers platformIdentifiers = (PlatformIdentifiers) obj;
-            return Intrinsics.areEqual(this.f357a, platformIdentifiers.f357a) && Intrinsics.areEqual(this.b, platformIdentifiers.b);
+            return Intrinsics.areEqual(this.f371a, platformIdentifiers.f371a) && Intrinsics.areEqual(this.b, platformIdentifiers.b);
         }
         return false;
     }
 
     public final SimpleAdvertisingIdGetter getAdvIdentifiersProvider() {
-        return this.f357a;
+        return this.f371a;
     }
 
     public final AppSetIdProvider getAppSetIdProvider() {
@@ -58,10 +58,10 @@ public final class PlatformIdentifiers {
     }
 
     public int hashCode() {
-        return this.b.hashCode() + (this.f357a.hashCode() * 31);
+        return this.b.hashCode() + (this.f371a.hashCode() * 31);
     }
 
     public String toString() {
-        return "PlatformIdentifiers(advIdentifiersProvider=" + this.f357a + ", appSetIdProvider=" + this.b + ')';
+        return "PlatformIdentifiers(advIdentifiersProvider=" + this.f371a + ", appSetIdProvider=" + this.b + ')';
     }
 }

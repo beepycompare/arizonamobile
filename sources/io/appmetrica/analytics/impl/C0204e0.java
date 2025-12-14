@@ -6,25 +6,25 @@ import java.util.Map;
 public final class C0204e0 implements Dn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0230f0 f943a;
+    public final /* synthetic */ C0230f0 f957a;
 
     public C0204e0(C0230f0 c0230f0) {
-        this.f943a = c0230f0;
+        this.f957a = c0230f0;
     }
 
     @Override // io.appmetrica.analytics.impl.Dn
     public final Thread a() {
-        return this.f943a.b;
+        return this.f957a.b;
     }
 
     @Override // io.appmetrica.analytics.impl.Dn
     public final StackTraceElement[] b() {
-        C0230f0 c0230f0 = this.f943a;
-        return (StackTraceElement[]) c0230f0.f962a.get(c0230f0.b);
+        C0230f0 c0230f0 = this.f957a;
+        return (StackTraceElement[]) c0230f0.f976a.get(c0230f0.b);
     }
 
     @Override // io.appmetrica.analytics.impl.Dn
     public final Map<Thread, StackTraceElement[]> c() {
-        return this.f943a.f962a;
+        return this.f957a.f976a;
     }
 }

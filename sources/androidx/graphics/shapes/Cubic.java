@@ -11,7 +11,7 @@ import kotlin.jvm.JvmStatic;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Cubic.kt */
-@Metadata(d1 = {"\u0000V\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0014\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0002\b\u0013\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\b\u0016\u0018\u0000 ?2\u00020\u0001:\u0001?B7\b\u0010\u0012\n\u0010\u0002\u001a\u00060\u0003j\u0002`\u0004\u0012\n\u0010\u0005\u001a\u00060\u0003j\u0002`\u0004\u0012\n\u0010\u0006\u001a\u00060\u0003j\u0002`\u0004\u0012\n\u0010\u0007\u001a\u00060\u0003j\u0002`\u0004¢\u0006\u0002\u0010\bB\u0011\b\u0000\u0012\b\b\u0002\u0010\t\u001a\u00020\n¢\u0006\u0002\u0010\u000bJ!\u0010 \u001a\u00020!2\b\b\u0002\u0010\"\u001a\u00020\n2\b\b\u0002\u0010#\u001a\u00020$H\u0000¢\u0006\u0002\b%J\u0011\u0010&\u001a\u00020\u00002\u0006\u0010'\u001a\u00020\rH\u0086\u0002J\u0011\u0010&\u001a\u00020\u00002\u0006\u0010'\u001a\u00020(H\u0086\u0002J\u0013\u0010)\u001a\u00020$2\b\u0010*\u001a\u0004\u0018\u00010\u0001H\u0096\u0002J\b\u0010+\u001a\u00020(H\u0016J\u0011\u0010,\u001a\u00020\u00002\u0006\u0010-\u001a\u00020\u0000H\u0086\u0002J!\u0010.\u001a\u00060\u0003j\u0002`\u00042\u0006\u0010/\u001a\u00020\rH\u0000ø\u0001\u0000ø\u0001\u0001¢\u0006\u0004\b0\u00101J\u0006\u00102\u001a\u00020\u0000J\u001a\u00103\u001a\u000e\u0012\u0004\u0012\u00020\u0000\u0012\u0004\u0012\u00020\u0000042\u0006\u0010/\u001a\u00020\rJ\u0011\u00105\u001a\u00020\u00002\u0006\u0010'\u001a\u00020\rH\u0086\u0002J\u0011\u00105\u001a\u00020\u00002\u0006\u0010'\u001a\u00020(H\u0086\u0002J\b\u00106\u001a\u000207H\u0016J\u000e\u00108\u001a\u00020\u00002\u0006\u00109\u001a\u00020:J\u0010\u0010;\u001a\u00020$2\u0006\u0010<\u001a\u00020\rH\u0002J\r\u0010=\u001a\u00020$H\u0000¢\u0006\u0002\b>R\u0011\u0010\f\u001a\u00020\r8F¢\u0006\u0006\u001a\u0004\b\u000e\u0010\u000fR\u0011\u0010\u0010\u001a\u00020\r8F¢\u0006\u0006\u001a\u0004\b\u0011\u0010\u000fR\u0011\u0010\u0012\u001a\u00020\r8F¢\u0006\u0006\u001a\u0004\b\u0013\u0010\u000fR\u0011\u0010\u0014\u001a\u00020\r8F¢\u0006\u0006\u001a\u0004\b\u0015\u0010\u000fR\u0011\u0010\u0016\u001a\u00020\r8F¢\u0006\u0006\u001a\u0004\b\u0017\u0010\u000fR\u0011\u0010\u0018\u001a\u00020\r8F¢\u0006\u0006\u001a\u0004\b\u0019\u0010\u000fR\u0011\u0010\u001a\u001a\u00020\r8F¢\u0006\u0006\u001a\u0004\b\u001b\u0010\u000fR\u0011\u0010\u001c\u001a\u00020\r8F¢\u0006\u0006\u001a\u0004\b\u001d\u0010\u000fR\u0014\u0010\t\u001a\u00020\nX\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001f\u0082\u0002\u000b\n\u0002\b!\n\u0005\b¡\u001e0\u0001¨\u0006@"}, d2 = {"Landroidx/graphics/shapes/Cubic;", "", "anchor0", "Landroidx/collection/FloatFloatPair;", "Landroidx/graphics/shapes/Point;", "control0", "control1", "anchor1", "(JJJJLkotlin/jvm/internal/DefaultConstructorMarker;)V", "points", "", "([F)V", "anchor0X", "", "getAnchor0X", "()F", "anchor0Y", "getAnchor0Y", "anchor1X", "getAnchor1X", "anchor1Y", "getAnchor1Y", "control0X", "getControl0X", "control0Y", "getControl0Y", "control1X", "getControl1X", "control1Y", "getControl1Y", "getPoints$graphics_shapes_release", "()[F", "calculateBounds", "", "bounds", "approximate", "", "calculateBounds$graphics_shapes_release", TtmlNode.TAG_DIV, "x", "", "equals", "other", "hashCode", "plus", "o", "pointOnCurve", "t", "pointOnCurve-OOQOV4g$graphics_shapes_release", "(F)J", "reverse", "split", "Lkotlin/Pair;", "times", "toString", "", "transformed", "f", "Landroidx/graphics/shapes/PointTransformer;", "zeroIsh", "value", "zeroLength", "zeroLength$graphics_shapes_release", "Companion", "graphics-shapes_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000V\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0014\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u0007\n\u0002\b\u0015\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0016\u0018\u0000 C2\u00020\u0001:\u0001CB\u0013\b\u0000\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005B9\b\u0010\u0012\n\u0010\u0006\u001a\u00060\u0007j\u0002`\b\u0012\n\u0010\t\u001a\u00060\u0007j\u0002`\b\u0012\n\u0010\n\u001a\u00060\u0007j\u0002`\b\u0012\n\u0010\u000b\u001a\u00060\u0007j\u0002`\b¢\u0006\u0004\b\u0004\u0010\fJ\u001b\u0010!\u001a\u00060\u0007j\u0002`\b2\u0006\u0010\"\u001a\u00020\u0010H\u0000¢\u0006\u0004\b#\u0010$J\r\u0010%\u001a\u00020&H\u0000¢\u0006\u0002\b'J\u0015\u0010(\u001a\u00020&2\u0006\u0010)\u001a\u00020\u0000H\u0000¢\u0006\u0002\b*J\u0010\u0010+\u001a\u00020&2\u0006\u0010,\u001a\u00020\u0010H\u0002J!\u0010-\u001a\u00020.2\b\b\u0002\u0010/\u001a\u00020\u00032\b\b\u0002\u00100\u001a\u00020&H\u0000¢\u0006\u0002\b1J\u001a\u00102\u001a\u000e\u0012\u0004\u0012\u00020\u0000\u0012\u0004\u0012\u00020\u0000032\u0006\u0010\"\u001a\u00020\u0010J\u0006\u00104\u001a\u00020\u0000J\u0011\u00105\u001a\u00020\u00002\u0006\u00106\u001a\u00020\u0000H\u0086\u0002J\u0011\u00107\u001a\u00020\u00002\u0006\u00108\u001a\u00020\u0010H\u0086\u0002J\u0011\u00107\u001a\u00020\u00002\u0006\u00108\u001a\u000209H\u0086\u0002J\u0011\u0010:\u001a\u00020\u00002\u0006\u00108\u001a\u00020\u0010H\u0086\u0002J\u0011\u0010:\u001a\u00020\u00002\u0006\u00108\u001a\u000209H\u0086\u0002J\b\u0010;\u001a\u00020<H\u0016J\u0013\u0010=\u001a\u00020&2\b\u0010>\u001a\u0004\u0018\u00010\u0001H\u0096\u0002J\u000e\u0010?\u001a\u00020\u00002\u0006\u0010@\u001a\u00020AJ\b\u0010B\u001a\u000209H\u0016R\u0014\u0010\u0002\u001a\u00020\u0003X\u0080\u0004¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u0011\u0010\u000f\u001a\u00020\u00108F¢\u0006\u0006\u001a\u0004\b\u0011\u0010\u0012R\u0011\u0010\u0013\u001a\u00020\u00108F¢\u0006\u0006\u001a\u0004\b\u0014\u0010\u0012R\u0011\u0010\u0015\u001a\u00020\u00108F¢\u0006\u0006\u001a\u0004\b\u0016\u0010\u0012R\u0011\u0010\u0017\u001a\u00020\u00108F¢\u0006\u0006\u001a\u0004\b\u0018\u0010\u0012R\u0011\u0010\u0019\u001a\u00020\u00108F¢\u0006\u0006\u001a\u0004\b\u001a\u0010\u0012R\u0011\u0010\u001b\u001a\u00020\u00108F¢\u0006\u0006\u001a\u0004\b\u001c\u0010\u0012R\u0011\u0010\u001d\u001a\u00020\u00108F¢\u0006\u0006\u001a\u0004\b\u001e\u0010\u0012R\u0011\u0010\u001f\u001a\u00020\u00108F¢\u0006\u0006\u001a\u0004\b \u0010\u0012¨\u0006D"}, d2 = {"Landroidx/graphics/shapes/Cubic;", "", "points", "", "<init>", "([F)V", "anchor0", "Landroidx/collection/FloatFloatPair;", "Landroidx/graphics/shapes/Point;", "control0", "control1", "anchor1", "(JJJJLkotlin/jvm/internal/DefaultConstructorMarker;)V", "getPoints$graphics_shapes", "()[F", "anchor0X", "", "getAnchor0X", "()F", "anchor0Y", "getAnchor0Y", "control0X", "getControl0X", "control0Y", "getControl0Y", "control1X", "getControl1X", "control1Y", "getControl1Y", "anchor1X", "getAnchor1X", "anchor1Y", "getAnchor1Y", "pointOnCurve", "t", "pointOnCurve-OOQOV4g$graphics_shapes", "(F)J", "zeroLength", "", "zeroLength$graphics_shapes", "convexTo", "next", "convexTo$graphics_shapes", "zeroIsh", "value", "calculateBounds", "", "bounds", "approximate", "calculateBounds$graphics_shapes", "split", "Lkotlin/Pair;", "reverse", "plus", "o", "times", "x", "", TtmlNode.TAG_DIV, "toString", "", "equals", "other", "transformed", "f", "Landroidx/graphics/shapes/PointTransformer;", "hashCode", "Companion", "graphics-shapes"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public class Cubic {
     public static final Companion Companion = new Companion(null);
@@ -47,7 +47,7 @@ public class Cubic {
         this((i & 1) != 0 ? new float[8] : fArr);
     }
 
-    public final float[] getPoints$graphics_shapes_release() {
+    public final float[] getPoints$graphics_shapes() {
         return this.points;
     }
 
@@ -84,11 +84,11 @@ public class Cubic {
     }
 
     private Cubic(long j, long j2, long j3, long j4) {
-        this(new float[]{PointKt.m8822getXDnnuFBc(j), PointKt.m8823getYDnnuFBc(j), PointKt.m8822getXDnnuFBc(j2), PointKt.m8823getYDnnuFBc(j2), PointKt.m8822getXDnnuFBc(j3), PointKt.m8823getYDnnuFBc(j3), PointKt.m8822getXDnnuFBc(j4), PointKt.m8823getYDnnuFBc(j4)});
+        this(new float[]{PointKt.m8821getXDnnuFBc(j), PointKt.m8822getYDnnuFBc(j), PointKt.m8821getXDnnuFBc(j2), PointKt.m8822getYDnnuFBc(j2), PointKt.m8821getXDnnuFBc(j3), PointKt.m8822getYDnnuFBc(j3), PointKt.m8821getXDnnuFBc(j4), PointKt.m8822getYDnnuFBc(j4)});
     }
 
-    /* renamed from: pointOnCurve-OOQOV4g$graphics_shapes_release  reason: not valid java name */
-    public final long m8810pointOnCurveOOQOV4g$graphics_shapes_release(float f) {
+    /* renamed from: pointOnCurve-OOQOV4g$graphics_shapes  reason: not valid java name */
+    public final long m8809pointOnCurveOOQOV4g$graphics_shapes(float f) {
         float f2 = 1 - f;
         float f3 = f2 * f2 * f2;
         float f4 = 3 * f;
@@ -98,15 +98,20 @@ public class Cubic {
         return FloatFloatPair.m25constructorimpl((getAnchor0X() * f3) + (getControl0X() * f5) + (getControl1X() * f6) + (getAnchor1X() * f7), (getAnchor0Y() * f3) + (getControl0Y() * f5) + (getControl1Y() * f6) + (getAnchor1Y() * f7));
     }
 
-    public final boolean zeroLength$graphics_shapes_release() {
+    public final boolean zeroLength$graphics_shapes() {
         return Math.abs(getAnchor0X() - getAnchor1X()) < 1.0E-4f && Math.abs(getAnchor0Y() - getAnchor1Y()) < 1.0E-4f;
+    }
+
+    public final boolean convexTo$graphics_shapes(Cubic next) {
+        Intrinsics.checkNotNullParameter(next, "next");
+        return Utils.m8856convexb22R3LQ(FloatFloatPair.m25constructorimpl(getAnchor0X(), getAnchor0Y()), FloatFloatPair.m25constructorimpl(getAnchor1X(), getAnchor1Y()), FloatFloatPair.m25constructorimpl(next.getAnchor1X(), next.getAnchor1Y()));
     }
 
     private final boolean zeroIsh(float f) {
         return Math.abs(f) < 1.0E-4f;
     }
 
-    public static /* synthetic */ void calculateBounds$graphics_shapes_release$default(Cubic cubic, float[] fArr, boolean z, int i, Object obj) {
+    public static /* synthetic */ void calculateBounds$graphics_shapes$default(Cubic cubic, float[] fArr, boolean z, int i, Object obj) {
         if (obj != null) {
             throw new UnsupportedOperationException("Super calls with default arguments not supported in this target, function: calculateBounds");
         }
@@ -116,7 +121,7 @@ public class Cubic {
         if ((i & 2) != 0) {
             z = false;
         }
-        cubic.calculateBounds$graphics_shapes_release(fArr, z);
+        cubic.calculateBounds$graphics_shapes(fArr, z);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:62:0x01c7, code lost:
@@ -133,16 +138,16 @@ public class Cubic {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void calculateBounds$graphics_shapes_release(float[] bounds, boolean z) {
+    public final void calculateBounds$graphics_shapes(float[] bounds, boolean z) {
         char c;
         char c2;
         char c3;
         float f;
         float control0Y;
-        float m8823getYDnnuFBc;
+        float m8822getYDnnuFBc;
         float f2;
         Intrinsics.checkNotNullParameter(bounds, "bounds");
-        if (zeroLength$graphics_shapes_release()) {
+        if (zeroLength$graphics_shapes()) {
             bounds[0] = getAnchor0X();
             bounds[1] = getAnchor0Y();
             bounds[2] = getAnchor0X();
@@ -178,22 +183,22 @@ public class Cubic {
                 float f8 = control0X * f4;
                 float sqrt = (((float) Math.sqrt(d)) + f7) / f8;
                 if (0.0f <= sqrt && sqrt <= 1.0f) {
-                    float m8822getXDnnuFBc = PointKt.m8822getXDnnuFBc(m8810pointOnCurveOOQOV4g$graphics_shapes_release(sqrt));
-                    if (m8822getXDnnuFBc < min) {
-                        min = m8822getXDnnuFBc;
+                    float m8821getXDnnuFBc = PointKt.m8821getXDnnuFBc(m8809pointOnCurveOOQOV4g$graphics_shapes(sqrt));
+                    if (m8821getXDnnuFBc < min) {
+                        min = m8821getXDnnuFBc;
                     }
-                    if (m8822getXDnnuFBc > max) {
-                        max = m8822getXDnnuFBc;
+                    if (m8821getXDnnuFBc > max) {
+                        max = m8821getXDnnuFBc;
                     }
                 }
                 float sqrt2 = (f7 - ((float) Math.sqrt(d))) / f8;
                 if (0.0f <= sqrt2 && sqrt2 <= 1.0f) {
-                    float m8822getXDnnuFBc2 = PointKt.m8822getXDnnuFBc(m8810pointOnCurveOOQOV4g$graphics_shapes_release(sqrt2));
-                    if (m8822getXDnnuFBc2 < min) {
-                        min = m8822getXDnnuFBc2;
+                    float m8821getXDnnuFBc2 = PointKt.m8821getXDnnuFBc(m8809pointOnCurveOOQOV4g$graphics_shapes(sqrt2));
+                    if (m8821getXDnnuFBc2 < min) {
+                        min = m8821getXDnnuFBc2;
                     }
-                    if (m8822getXDnnuFBc2 > max) {
-                        max = m8822getXDnnuFBc2;
+                    if (m8821getXDnnuFBc2 > max) {
+                        max = m8821getXDnnuFBc2;
                     }
                 }
                 control0Y = (((-getAnchor0Y()) + (getControl0Y() * f3)) - (f3 * getControl1Y())) + getAnchor1Y();
@@ -207,18 +212,18 @@ public class Cubic {
                         float f11 = f4 * control0Y;
                         float sqrt3 = (((float) Math.sqrt(d2)) + f10) / f11;
                         if (0.0f <= sqrt3 && sqrt3 <= 1.0f) {
-                            float m8823getYDnnuFBc2 = PointKt.m8823getYDnnuFBc(m8810pointOnCurveOOQOV4g$graphics_shapes_release(sqrt3));
-                            if (m8823getYDnnuFBc2 < f) {
-                                f = m8823getYDnnuFBc2;
+                            float m8822getYDnnuFBc2 = PointKt.m8822getYDnnuFBc(m8809pointOnCurveOOQOV4g$graphics_shapes(sqrt3));
+                            if (m8822getYDnnuFBc2 < f) {
+                                f = m8822getYDnnuFBc2;
                             }
-                            if (m8823getYDnnuFBc2 > max2) {
-                                max2 = m8823getYDnnuFBc2;
+                            if (m8822getYDnnuFBc2 > max2) {
+                                max2 = m8822getYDnnuFBc2;
                             }
                         }
                         float sqrt4 = (f10 - ((float) Math.sqrt(d2))) / f11;
                         if (0.0f <= sqrt4 && sqrt4 <= 1.0f) {
-                            m8823getYDnnuFBc = PointKt.m8823getYDnnuFBc(m8810pointOnCurveOOQOV4g$graphics_shapes_release(sqrt4));
-                            f2 = m8823getYDnnuFBc < f ? m8823getYDnnuFBc : f;
+                            m8822getYDnnuFBc = PointKt.m8822getYDnnuFBc(m8809pointOnCurveOOQOV4g$graphics_shapes(sqrt4));
+                            f2 = m8822getYDnnuFBc < f ? m8822getYDnnuFBc : f;
                         }
                     }
                     f2 = f;
@@ -226,8 +231,8 @@ public class Cubic {
                     if (anchor0Y != 0.0f) {
                         float f12 = (f4 * control0Y2) / ((-2) * anchor0Y);
                         if (0.0f <= f12 && f12 <= 1.0f) {
-                            m8823getYDnnuFBc = PointKt.m8823getYDnnuFBc(m8810pointOnCurveOOQOV4g$graphics_shapes_release(f12));
-                            f2 = m8823getYDnnuFBc < f ? m8823getYDnnuFBc : f;
+                            m8822getYDnnuFBc = PointKt.m8822getYDnnuFBc(m8809pointOnCurveOOQOV4g$graphics_shapes(f12));
+                            f2 = m8822getYDnnuFBc < f ? m8822getYDnnuFBc : f;
                         }
                     }
                     f2 = f;
@@ -240,12 +245,12 @@ public class Cubic {
         } else if (anchor0X != 0.0f) {
             float f13 = (control0X2 * f4) / ((-2) * anchor0X);
             if (0.0f <= f13 && f13 <= 1.0f) {
-                float m8822getXDnnuFBc3 = PointKt.m8822getXDnnuFBc(m8810pointOnCurveOOQOV4g$graphics_shapes_release(f13));
-                if (m8822getXDnnuFBc3 < min) {
-                    min = m8822getXDnnuFBc3;
+                float m8821getXDnnuFBc3 = PointKt.m8821getXDnnuFBc(m8809pointOnCurveOOQOV4g$graphics_shapes(f13));
+                if (m8821getXDnnuFBc3 < min) {
+                    min = m8821getXDnnuFBc3;
                 }
-                if (m8822getXDnnuFBc3 > max) {
-                    max = m8822getXDnnuFBc3;
+                if (m8821getXDnnuFBc3 > max) {
+                    max = m8821getXDnnuFBc3;
                 }
             }
         }
@@ -266,11 +271,11 @@ public class Cubic {
 
     public final Pair<Cubic, Cubic> split(float f) {
         float f2 = 1 - f;
-        long m8810pointOnCurveOOQOV4g$graphics_shapes_release = m8810pointOnCurveOOQOV4g$graphics_shapes_release(f);
+        long m8809pointOnCurveOOQOV4g$graphics_shapes = m8809pointOnCurveOOQOV4g$graphics_shapes(f);
         float f3 = f2 * f2;
         float f4 = 2 * f2 * f;
         float f5 = f * f;
-        return TuplesKt.to(CubicKt.Cubic(getAnchor0X(), getAnchor0Y(), (getAnchor0X() * f2) + (getControl0X() * f), (getAnchor0Y() * f2) + (getControl0Y() * f), (getAnchor0X() * f3) + (getControl0X() * f4) + (getControl1X() * f5), (getAnchor0Y() * f3) + (getControl0Y() * f4) + (getControl1Y() * f5), PointKt.m8822getXDnnuFBc(m8810pointOnCurveOOQOV4g$graphics_shapes_release), PointKt.m8823getYDnnuFBc(m8810pointOnCurveOOQOV4g$graphics_shapes_release)), CubicKt.Cubic(PointKt.m8822getXDnnuFBc(m8810pointOnCurveOOQOV4g$graphics_shapes_release), PointKt.m8823getYDnnuFBc(m8810pointOnCurveOOQOV4g$graphics_shapes_release), (getControl0X() * f3) + (getControl1X() * f4) + (getAnchor1X() * f5), (getControl0Y() * f3) + (getControl1Y() * f4) + (getAnchor1Y() * f5), (getControl1X() * f2) + (getAnchor1X() * f), (getControl1Y() * f2) + (getAnchor1Y() * f), getAnchor1X(), getAnchor1Y()));
+        return TuplesKt.to(CubicKt.Cubic(getAnchor0X(), getAnchor0Y(), (getAnchor0X() * f2) + (getControl0X() * f), (getAnchor0Y() * f2) + (getControl0Y() * f), (getAnchor0X() * f3) + (getControl0X() * f4) + (getControl1X() * f5), (getAnchor0Y() * f3) + (getControl0Y() * f4) + (getControl1Y() * f5), PointKt.m8821getXDnnuFBc(m8809pointOnCurveOOQOV4g$graphics_shapes), PointKt.m8822getYDnnuFBc(m8809pointOnCurveOOQOV4g$graphics_shapes)), CubicKt.Cubic(PointKt.m8821getXDnnuFBc(m8809pointOnCurveOOQOV4g$graphics_shapes), PointKt.m8822getYDnnuFBc(m8809pointOnCurveOOQOV4g$graphics_shapes), (getControl0X() * f3) + (getControl1X() * f4) + (getAnchor1X() * f5), (getControl0Y() * f3) + (getControl1Y() * f4) + (getAnchor1Y() * f5), (getControl1X() * f2) + (getAnchor1X() * f), (getControl1Y() * f2) + (getAnchor1Y() * f), getAnchor1X(), getAnchor1Y()));
     }
 
     public final Cubic reverse() {
@@ -323,7 +328,7 @@ public class Cubic {
     public final Cubic transformed(PointTransformer f) {
         Intrinsics.checkNotNullParameter(f, "f");
         MutableCubic mutableCubic = new MutableCubic();
-        ArraysKt.copyInto$default(this.points, mutableCubic.getPoints$graphics_shapes_release(), 0, 0, 0, 14, (Object) null);
+        ArraysKt.copyInto$default(this.points, mutableCubic.getPoints$graphics_shapes(), 0, 0, 0, 14, (Object) null);
         mutableCubic.transform(f);
         return mutableCubic;
     }
@@ -333,7 +338,7 @@ public class Cubic {
     }
 
     /* compiled from: Cubic.kt */
-    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\u0007\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J8\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00020\u00062\u0006\u0010\t\u001a\u00020\u00062\u0006\u0010\n\u001a\u00020\u00062\u0006\u0010\u000b\u001a\u00020\u0006H\u0007J(\u0010\f\u001a\u00020\u00042\u0006\u0010\b\u001a\u00020\u00062\u0006\u0010\t\u001a\u00020\u00062\u0006\u0010\n\u001a\u00020\u00062\u0006\u0010\u000b\u001a\u00020\u0006H\u0007¨\u0006\r"}, d2 = {"Landroidx/graphics/shapes/Cubic$Companion;", "", "()V", "circularArc", "Landroidx/graphics/shapes/Cubic;", "centerX", "", "centerY", "x0", "y0", "x1", "y1", "straightLine", "graphics-shapes_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0002\b\t\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J(\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u00072\u0006\u0010\t\u001a\u00020\u00072\u0006\u0010\n\u001a\u00020\u0007H\u0007J8\u0010\u000b\u001a\u00020\u00052\u0006\u0010\f\u001a\u00020\u00072\u0006\u0010\r\u001a\u00020\u00072\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u00072\u0006\u0010\t\u001a\u00020\u00072\u0006\u0010\n\u001a\u00020\u0007H\u0007J\u001d\u0010\u000e\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\u0007H\u0001¢\u0006\u0002\b\u000f¨\u0006\u0010"}, d2 = {"Landroidx/graphics/shapes/Cubic$Companion;", "", "<init>", "()V", "straightLine", "Landroidx/graphics/shapes/Cubic;", "x0", "", "y0", "x1", "y1", "circularArc", "centerX", "centerY", "empty", "empty$graphics_shapes", "graphics-shapes"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -358,15 +363,20 @@ public class Cubic {
             float f11 = f5 - f;
             float f12 = f6 - f2;
             long directionVector2 = Utils.directionVector(f11, f12);
-            long m8843rotate90DnnuFBc = Utils.m8843rotate90DnnuFBc(directionVector);
-            long m8843rotate90DnnuFBc2 = Utils.m8843rotate90DnnuFBc(directionVector2);
-            boolean z = PointKt.m8817dotProduct5P9i7ZU(m8843rotate90DnnuFBc, f11, f12) >= 0.0f;
-            float m8818dotProductybeJwSQ = PointKt.m8818dotProductybeJwSQ(directionVector, directionVector2);
-            if (m8818dotProductybeJwSQ > 0.999f) {
+            long m8859rotate90DnnuFBc = Utils.m8859rotate90DnnuFBc(directionVector);
+            long m8859rotate90DnnuFBc2 = Utils.m8859rotate90DnnuFBc(directionVector2);
+            boolean z = PointKt.m8816dotProduct5P9i7ZU(m8859rotate90DnnuFBc, f11, f12) >= 0.0f;
+            float m8817dotProductybeJwSQ = PointKt.m8817dotProductybeJwSQ(directionVector, directionVector2);
+            if (m8817dotProductybeJwSQ > 0.999f) {
                 return straightLine(f3, f4, f5, f6);
             }
-            float distance = ((((Utils.distance(f9, f10) * 4.0f) / 3.0f) * (((float) Math.sqrt(2 * f8)) - ((float) Math.sqrt(f7 - (m8818dotProductybeJwSQ * m8818dotProductybeJwSQ))))) / (1 - m8818dotProductybeJwSQ)) * (z ? 1.0f : -1.0f);
-            return CubicKt.Cubic(f3, f4, f3 + (PointKt.m8822getXDnnuFBc(m8843rotate90DnnuFBc) * distance), f4 + (PointKt.m8823getYDnnuFBc(m8843rotate90DnnuFBc) * distance), f5 - (PointKt.m8822getXDnnuFBc(m8843rotate90DnnuFBc2) * distance), f6 - (PointKt.m8823getYDnnuFBc(m8843rotate90DnnuFBc2) * distance), f5, f6);
+            float distance = ((((Utils.distance(f9, f10) * 4.0f) / 3.0f) * (((float) Math.sqrt(2 * f8)) - ((float) Math.sqrt(f7 - (m8817dotProductybeJwSQ * m8817dotProductybeJwSQ))))) / (1 - m8817dotProductybeJwSQ)) * (z ? 1.0f : -1.0f);
+            return CubicKt.Cubic(f3, f4, f3 + (PointKt.m8821getXDnnuFBc(m8859rotate90DnnuFBc) * distance), f4 + (PointKt.m8822getYDnnuFBc(m8859rotate90DnnuFBc) * distance), f5 - (PointKt.m8821getXDnnuFBc(m8859rotate90DnnuFBc2) * distance), f6 - (PointKt.m8822getYDnnuFBc(m8859rotate90DnnuFBc2) * distance), f5, f6);
+        }
+
+        @JvmStatic
+        public final Cubic empty$graphics_shapes(float f, float f2) {
+            return CubicKt.Cubic(f, f2, f, f2, f, f2, f, f2);
         }
     }
 }

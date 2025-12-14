@@ -78,7 +78,7 @@ final class AnimatedShapeKt$rememberAnimatedShape$3$1 extends SuspendLambda impl
             ResultKt.throwOnFailure(obj);
             if (((Boolean) obj).booleanValue()) {
                 RoundedCornerShape next = it.next();
-                RoundedCornerShape roundedCornerShape = (RoundedCornerShape) ChannelResult.m11735getOrNullimpl(this.$channel.mo11723tryReceivePtdJZtk());
+                RoundedCornerShape roundedCornerShape = (RoundedCornerShape) ChannelResult.m11751getOrNullimpl(this.$channel.mo11739tryReceivePtdJZtk());
                 if (roundedCornerShape != null) {
                     next = roundedCornerShape;
                 }

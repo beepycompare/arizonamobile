@@ -7,5 +7,5 @@ import java.util.List;
 public interface InterfaceC0614u5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final List f1226a = CollectionUtils.createSortedListWithoutRepetitions("key", "value", "type");
+    public static final List f1240a = CollectionUtils.createSortedListWithoutRepetitions("key", "value", "type");
 }

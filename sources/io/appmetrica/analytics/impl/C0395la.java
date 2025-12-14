@@ -6,7 +6,7 @@ public final class C0395la implements Vd {
     public final C0213e9 a(Integer num, String str) {
         C0213e9 c0213e9 = new C0213e9();
         if (num != null) {
-            c0213e9.f951a = num.intValue();
+            c0213e9.f965a = num.intValue();
         }
         if (str != null) {
             c0213e9.b = str;

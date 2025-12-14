@@ -4,11 +4,11 @@ package io.appmetrica.analytics.impl;
 public final class C0691x7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final long f1279a;
+    public final long f1293a;
     public final int b;
 
     public C0691x7(long j, int i) {
-        this.f1279a = j;
+        this.f1293a = j;
         this.b = i;
     }
 
@@ -18,16 +18,16 @@ public final class C0691x7 {
         }
         if (obj instanceof C0691x7) {
             C0691x7 c0691x7 = (C0691x7) obj;
-            return this.f1279a == c0691x7.f1279a && this.b == c0691x7.b;
+            return this.f1293a == c0691x7.f1293a && this.b == c0691x7.b;
         }
         return false;
     }
 
     public final int hashCode() {
-        return Integer.hashCode(this.b) + (Long.hashCode(this.f1279a) * 31);
+        return Integer.hashCode(this.b) + (Long.hashCode(this.f1293a) * 31);
     }
 
     public final String toString() {
-        return "DecimalProtoModel(mantissa=" + this.f1279a + ", exponent=" + this.b + ')';
+        return "DecimalProtoModel(mantissa=" + this.f1293a + ", exponent=" + this.b + ')';
     }
 }

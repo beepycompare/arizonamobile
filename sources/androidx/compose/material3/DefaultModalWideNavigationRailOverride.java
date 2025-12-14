@@ -647,7 +647,7 @@ public final class DefaultModalWideNavigationRailOverride implements ModalWideNa
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit ModalWideNavigationRail$lambda$16$lambda$15(Channel channel, ModalWideNavigationRailOverrideScope modalWideNavigationRailOverrideScope) {
-        channel.mo9143trySendJP2dKIU(Boolean.valueOf(WideNavigationRailStateKt.isExpanded(modalWideNavigationRailOverrideScope.getState().getTargetValue())));
+        channel.mo9159trySendJP2dKIU(Boolean.valueOf(WideNavigationRailStateKt.isExpanded(modalWideNavigationRailOverrideScope.getState().getTargetValue())));
         return Unit.INSTANCE;
     }
 

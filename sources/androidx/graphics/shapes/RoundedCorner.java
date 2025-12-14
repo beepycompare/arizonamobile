@@ -8,7 +8,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: RoundedPolygon.kt */
-@Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u0007\n\u0002\b\u0018\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010 \n\u0002\b\u0007\b\u0002\u0018\u00002\u00020\u0001B5\u0012\n\u0010\u0002\u001a\u00060\u0003j\u0002`\u0004\u0012\n\u0010\u0005\u001a\u00060\u0003j\u0002`\u0004\u0012\n\u0010\u0006\u001a\u00060\u0003j\u0002`\u0004\u0012\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\b¢\u0006\u0002\u0010\tJ\u0010\u0010'\u001a\u00020\u00112\u0006\u0010(\u001a\u00020\u0011H\u0002Jf\u0010)\u001a\u00020*2\u0006\u0010+\u001a\u00020\u00112\u0006\u0010,\u001a\u00020\u00112\n\u0010-\u001a\u00060\u0003j\u0002`\u00042\n\u0010.\u001a\u00060\u0003j\u0002`\u00042\n\u0010/\u001a\u00060\u0003j\u0002`\u00042\n\u00100\u001a\u00060\u0003j\u0002`\u00042\n\u00101\u001a\u00060\u0003j\u0002`\u00042\u0006\u00102\u001a\u00020\u0011H\u0002ø\u0001\u0000¢\u0006\u0004\b3\u00104J \u00105\u001a\b\u0012\u0004\u0012\u00020*062\u0006\u00107\u001a\u00020\u00112\b\b\u0002\u00108\u001a\u00020\u0011H\u0007JJ\u00109\u001a\n\u0018\u00010\u0003j\u0004\u0018\u0001`\u00042\n\u0010\u0002\u001a\u00060\u0003j\u0002`\u00042\n\u0010:\u001a\u00060\u0003j\u0002`\u00042\n\u0010\u0005\u001a\u00060\u0003j\u0002`\u00042\n\u0010\u0016\u001a\u00060\u0003j\u0002`\u0004H\u0002ø\u0001\u0000¢\u0006\u0004\b;\u0010<R&\u0010\n\u001a\u00060\u0003j\u0002`\u0004X\u0086\u000eø\u0001\u0000ø\u0001\u0001¢\u0006\u0010\n\u0002\u0010\u000f\u001a\u0004\b\u000b\u0010\f\"\u0004\b\r\u0010\u000eR\u0011\u0010\u0010\u001a\u00020\u0011¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u0011\u0010\u0014\u001a\u00020\u0011¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0013R\u001d\u0010\u0016\u001a\u00060\u0003j\u0002`\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u000f\u001a\u0004\b\u0017\u0010\fR\u001d\u0010\u0018\u001a\u00060\u0003j\u0002`\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u000f\u001a\u0004\b\u0019\u0010\fR\u0011\u0010\u001a\u001a\u00020\u00118F¢\u0006\u0006\u001a\u0004\b\u001b\u0010\u0013R\u0011\u0010\u001c\u001a\u00020\u0011¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u0013R\u001d\u0010\u0002\u001a\u00060\u0003j\u0002`\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u000f\u001a\u0004\b\u001e\u0010\fR\u001d\u0010\u0005\u001a\u00060\u0003j\u0002`\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u000f\u001a\u0004\b\u001f\u0010\fR\u001d\u0010\u0006\u001a\u00060\u0003j\u0002`\u0004ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u000f\u001a\u0004\b \u0010\fR\u0013\u0010\u0007\u001a\u0004\u0018\u00010\b¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\"R\u0011\u0010#\u001a\u00020\u0011¢\u0006\b\n\u0000\u001a\u0004\b$\u0010\u0013R\u0011\u0010%\u001a\u00020\u0011¢\u0006\b\n\u0000\u001a\u0004\b&\u0010\u0013\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006="}, d2 = {"Landroidx/graphics/shapes/RoundedCorner;", "", "p0", "Landroidx/collection/FloatFloatPair;", "Landroidx/graphics/shapes/Point;", "p1", "p2", "rounding", "Landroidx/graphics/shapes/CornerRounding;", "(JJJLandroidx/graphics/shapes/CornerRounding;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", TtmlNode.CENTER, "getCenter-1ufDz9w", "()J", "setCenter-DnnuFBc", "(J)V", "J", "cornerRadius", "", "getCornerRadius", "()F", "cosAngle", "getCosAngle", "d1", "getD1-1ufDz9w", "d2", "getD2-1ufDz9w", "expectedCut", "getExpectedCut", "expectedRoundCut", "getExpectedRoundCut", "getP0-1ufDz9w", "getP1-1ufDz9w", "getP2-1ufDz9w", "getRounding", "()Landroidx/graphics/shapes/CornerRounding;", "sinAngle", "getSinAngle", "smoothing", "getSmoothing", "calculateActualSmoothingValue", "allowedCut", "computeFlankingCurve", "Landroidx/graphics/shapes/Cubic;", "actualRoundCut", "actualSmoothingValues", "corner", "sideStart", "circleSegmentIntersection", "otherCircleSegmentIntersection", "circleCenter", "actualR", "computeFlankingCurve-oAJzIJU", "(FFJJJJJF)Landroidx/graphics/shapes/Cubic;", "getCubics", "", "allowedCut0", "allowedCut1", "lineIntersection", "d0", "lineIntersection-CBFvKDc", "(JJJJ)Landroidx/collection/FloatFloatPair;", "graphics-shapes_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0010\u0007\n\u0002\b\u0011\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0014\b\u0002\u0018\u00002\u00020\u0001B7\u0012\n\u0010\u0002\u001a\u00060\u0003j\u0002`\u0004\u0012\n\u0010\u0005\u001a\u00060\u0003j\u0002`\u0004\u0012\n\u0010\u0006\u001a\u00060\u0003j\u0002`\u0004\u0012\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\b¢\u0006\u0004\b\t\u0010\nJ \u0010(\u001a\b\u0012\u0004\u0012\u00020*0)2\u0006\u0010+\u001a\u00020\u00172\b\b\u0002\u0010,\u001a\u00020\u0017H\u0007J\u0010\u0010-\u001a\u00020\u00172\u0006\u0010.\u001a\u00020\u0017H\u0002Jc\u0010/\u001a\u00020*2\u0006\u00100\u001a\u00020\u00172\u0006\u00101\u001a\u00020\u00172\n\u00102\u001a\u00060\u0003j\u0002`\u00042\n\u00103\u001a\u00060\u0003j\u0002`\u00042\n\u00104\u001a\u00060\u0003j\u0002`\u00042\n\u00105\u001a\u00060\u0003j\u0002`\u00042\n\u00106\u001a\u00060\u0003j\u0002`\u00042\u0006\u00107\u001a\u00020\u0017H\u0002¢\u0006\u0004\b8\u00109JG\u0010:\u001a\n\u0018\u00010\u0003j\u0004\u0018\u0001`\u00042\n\u0010\u0002\u001a\u00060\u0003j\u0002`\u00042\n\u0010;\u001a\u00060\u0003j\u0002`\u00042\n\u0010\u0005\u001a\u00060\u0003j\u0002`\u00042\n\u0010\u0012\u001a\u00060\u0003j\u0002`\u0004H\u0002¢\u0006\u0004\b<\u0010=R\u0017\u0010\u0002\u001a\u00060\u0003j\u0002`\u0004¢\u0006\n\n\u0002\u0010\r\u001a\u0004\b\u000b\u0010\fR\u0017\u0010\u0005\u001a\u00060\u0003j\u0002`\u0004¢\u0006\n\n\u0002\u0010\r\u001a\u0004\b\u000e\u0010\fR\u0017\u0010\u0006\u001a\u00060\u0003j\u0002`\u0004¢\u0006\n\n\u0002\u0010\r\u001a\u0004\b\u000f\u0010\fR\u0013\u0010\u0007\u001a\u0004\u0018\u00010\b¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u0017\u0010\u0012\u001a\u00060\u0003j\u0002`\u0004¢\u0006\n\n\u0002\u0010\r\u001a\u0004\b\u0013\u0010\fR\u0017\u0010\u0014\u001a\u00060\u0003j\u0002`\u0004¢\u0006\n\n\u0002\u0010\r\u001a\u0004\b\u0015\u0010\fR\u0011\u0010\u0016\u001a\u00020\u0017¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0019R\u0011\u0010\u001a\u001a\u00020\u0017¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u0019R\u0011\u0010\u001c\u001a\u00020\u0017¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u0019R\u0011\u0010\u001e\u001a\u00020\u0017¢\u0006\b\n\u0000\u001a\u0004\b\u001f\u0010\u0019R\u0011\u0010 \u001a\u00020\u0017¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\u0019R\u0011\u0010\"\u001a\u00020\u00178F¢\u0006\u0006\u001a\u0004\b#\u0010\u0019R \u0010$\u001a\u00060\u0003j\u0002`\u0004X\u0086\u000e¢\u0006\u0010\n\u0002\u0010\r\u001a\u0004\b%\u0010\f\"\u0004\b&\u0010'¨\u0006>"}, d2 = {"Landroidx/graphics/shapes/RoundedCorner;", "", "p0", "Landroidx/collection/FloatFloatPair;", "Landroidx/graphics/shapes/Point;", "p1", "p2", "rounding", "Landroidx/graphics/shapes/CornerRounding;", "<init>", "(JJJLandroidx/graphics/shapes/CornerRounding;Lkotlin/jvm/internal/DefaultConstructorMarker;)V", "getP0-1ufDz9w", "()J", "J", "getP1-1ufDz9w", "getP2-1ufDz9w", "getRounding", "()Landroidx/graphics/shapes/CornerRounding;", "d1", "getD1-1ufDz9w", "d2", "getD2-1ufDz9w", "cornerRadius", "", "getCornerRadius", "()F", "smoothing", "getSmoothing", "cosAngle", "getCosAngle", "sinAngle", "getSinAngle", "expectedRoundCut", "getExpectedRoundCut", "expectedCut", "getExpectedCut", TtmlNode.CENTER, "getCenter-1ufDz9w", "setCenter-DnnuFBc", "(J)V", "getCubics", "", "Landroidx/graphics/shapes/Cubic;", "allowedCut0", "allowedCut1", "calculateActualSmoothingValue", "allowedCut", "computeFlankingCurve", "actualRoundCut", "actualSmoothingValues", "corner", "sideStart", "circleSegmentIntersection", "otherCircleSegmentIntersection", "circleCenter", "actualR", "computeFlankingCurve-oAJzIJU", "(FFJJJJJF)Landroidx/graphics/shapes/Cubic;", "lineIntersection", "d0", "lineIntersection-CBFvKDc", "(JJJJ)Landroidx/collection/FloatFloatPair;", "graphics-shapes"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class RoundedCorner {
     private long center;
@@ -37,19 +37,33 @@ public final class RoundedCorner {
         this.p1 = j2;
         this.p2 = j3;
         this.rounding = cornerRounding;
-        long m8819getDirectionDnnuFBc = PointKt.m8819getDirectionDnnuFBc(PointKt.m8825minusybeJwSQ(j, j2));
-        this.d1 = m8819getDirectionDnnuFBc;
-        long m8819getDirectionDnnuFBc2 = PointKt.m8819getDirectionDnnuFBc(PointKt.m8825minusybeJwSQ(j3, j2));
-        this.d2 = m8819getDirectionDnnuFBc2;
-        float radius = cornerRounding != null ? cornerRounding.getRadius() : 0.0f;
-        this.cornerRadius = radius;
-        this.smoothing = cornerRounding != null ? cornerRounding.getSmoothing() : 0.0f;
-        float m8818dotProductybeJwSQ = PointKt.m8818dotProductybeJwSQ(m8819getDirectionDnnuFBc, m8819getDirectionDnnuFBc2);
-        this.cosAngle = m8818dotProductybeJwSQ;
-        float f = 1;
-        float sqrt = (float) Math.sqrt(f - Utils.square(m8818dotProductybeJwSQ));
-        this.sinAngle = sqrt;
-        this.expectedRoundCut = ((double) sqrt) > 0.001d ? (radius * (m8818dotProductybeJwSQ + f)) / sqrt : 0.0f;
+        long m8824minusybeJwSQ = PointKt.m8824minusybeJwSQ(j, j2);
+        long m8824minusybeJwSQ2 = PointKt.m8824minusybeJwSQ(j3, j2);
+        float m8819getDistanceDnnuFBc = PointKt.m8819getDistanceDnnuFBc(m8824minusybeJwSQ);
+        float m8819getDistanceDnnuFBc2 = PointKt.m8819getDistanceDnnuFBc(m8824minusybeJwSQ2);
+        if (m8819getDistanceDnnuFBc > 0.0f && m8819getDistanceDnnuFBc2 > 0.0f) {
+            long m8815divso9K2fw = PointKt.m8815divso9K2fw(m8824minusybeJwSQ, m8819getDistanceDnnuFBc);
+            this.d1 = m8815divso9K2fw;
+            long m8815divso9K2fw2 = PointKt.m8815divso9K2fw(m8824minusybeJwSQ2, m8819getDistanceDnnuFBc2);
+            this.d2 = m8815divso9K2fw2;
+            float radius = cornerRounding != null ? cornerRounding.getRadius() : 0.0f;
+            this.cornerRadius = radius;
+            this.smoothing = cornerRounding != null ? cornerRounding.getSmoothing() : 0.0f;
+            float m8817dotProductybeJwSQ = PointKt.m8817dotProductybeJwSQ(m8815divso9K2fw, m8815divso9K2fw2);
+            this.cosAngle = m8817dotProductybeJwSQ;
+            float f = 1;
+            float sqrt = (float) Math.sqrt(f - Utils.square(m8817dotProductybeJwSQ));
+            this.sinAngle = sqrt;
+            this.expectedRoundCut = ((double) sqrt) > 0.001d ? (radius * (m8817dotProductybeJwSQ + f)) / sqrt : 0.0f;
+        } else {
+            this.d1 = FloatFloatPair.m25constructorimpl(0.0f, 0.0f);
+            this.d2 = FloatFloatPair.m25constructorimpl(0.0f, 0.0f);
+            this.cornerRadius = 0.0f;
+            this.smoothing = 0.0f;
+            this.cosAngle = 0.0f;
+            this.sinAngle = 0.0f;
+            this.expectedRoundCut = 0.0f;
+        }
         this.center = FloatFloatPair.m25constructorimpl(0.0f, 0.0f);
     }
 
@@ -58,17 +72,17 @@ public final class RoundedCorner {
     }
 
     /* renamed from: getP0-1ufDz9w  reason: not valid java name */
-    public final long m8837getP01ufDz9w() {
+    public final long m8836getP01ufDz9w() {
         return this.p0;
     }
 
     /* renamed from: getP1-1ufDz9w  reason: not valid java name */
-    public final long m8838getP11ufDz9w() {
+    public final long m8837getP11ufDz9w() {
         return this.p1;
     }
 
     /* renamed from: getP2-1ufDz9w  reason: not valid java name */
-    public final long m8839getP21ufDz9w() {
+    public final long m8838getP21ufDz9w() {
         return this.p2;
     }
 
@@ -77,12 +91,12 @@ public final class RoundedCorner {
     }
 
     /* renamed from: getD1-1ufDz9w  reason: not valid java name */
-    public final long m8835getD11ufDz9w() {
+    public final long m8834getD11ufDz9w() {
         return this.d1;
     }
 
     /* renamed from: getD2-1ufDz9w  reason: not valid java name */
-    public final long m8836getD21ufDz9w() {
+    public final long m8835getD21ufDz9w() {
         return this.d2;
     }
 
@@ -111,12 +125,12 @@ public final class RoundedCorner {
     }
 
     /* renamed from: getCenter-1ufDz9w  reason: not valid java name */
-    public final long m8834getCenter1ufDz9w() {
+    public final long m8833getCenter1ufDz9w() {
         return this.center;
     }
 
     /* renamed from: setCenter-DnnuFBc  reason: not valid java name */
-    public final void m8840setCenterDnnuFBc(long j) {
+    public final void m8839setCenterDnnuFBc(long j) {
         this.center = j;
     }
 
@@ -132,18 +146,18 @@ public final class RoundedCorner {
         float f3 = this.expectedRoundCut;
         if (f3 < 1.0E-4f || min < 1.0E-4f || this.cornerRadius < 1.0E-4f) {
             this.center = this.p1;
-            return CollectionsKt.listOf(Cubic.Companion.straightLine(PointKt.m8822getXDnnuFBc(this.p1), PointKt.m8823getYDnnuFBc(this.p1), PointKt.m8822getXDnnuFBc(this.p1), PointKt.m8823getYDnnuFBc(this.p1)));
+            return CollectionsKt.listOf(Cubic.Companion.straightLine(PointKt.m8821getXDnnuFBc(this.p1), PointKt.m8822getYDnnuFBc(this.p1), PointKt.m8821getXDnnuFBc(this.p1), PointKt.m8822getYDnnuFBc(this.p1)));
         }
         float min2 = Math.min(min, f3);
         float calculateActualSmoothingValue = calculateActualSmoothingValue(f);
         float calculateActualSmoothingValue2 = calculateActualSmoothingValue(f2);
         float f4 = (this.cornerRadius * min2) / this.expectedRoundCut;
-        this.center = PointKt.m8826plusybeJwSQ(this.p1, PointKt.m8828timesso9K2fw(PointKt.m8819getDirectionDnnuFBc(PointKt.m8816divso9K2fw(PointKt.m8826plusybeJwSQ(this.d1, this.d2), 2.0f)), (float) Math.sqrt(Utils.square(f4) + Utils.square(min2))));
-        long m8826plusybeJwSQ = PointKt.m8826plusybeJwSQ(this.p1, PointKt.m8828timesso9K2fw(this.d1, min2));
-        long m8826plusybeJwSQ2 = PointKt.m8826plusybeJwSQ(this.p1, PointKt.m8828timesso9K2fw(this.d2, min2));
-        Cubic m8832computeFlankingCurveoAJzIJU = m8832computeFlankingCurveoAJzIJU(min2, calculateActualSmoothingValue, this.p1, this.p0, m8826plusybeJwSQ, m8826plusybeJwSQ2, this.center, f4);
-        Cubic reverse = m8832computeFlankingCurveoAJzIJU(min2, calculateActualSmoothingValue2, this.p1, this.p2, m8826plusybeJwSQ2, m8826plusybeJwSQ, this.center, f4).reverse();
-        return CollectionsKt.listOf((Object[]) new Cubic[]{m8832computeFlankingCurveoAJzIJU, Cubic.Companion.circularArc(PointKt.m8822getXDnnuFBc(this.center), PointKt.m8823getYDnnuFBc(this.center), m8832computeFlankingCurveoAJzIJU.getAnchor1X(), m8832computeFlankingCurveoAJzIJU.getAnchor1Y(), reverse.getAnchor0X(), reverse.getAnchor0Y()), reverse});
+        this.center = PointKt.m8825plusybeJwSQ(this.p1, PointKt.m8827timesso9K2fw(PointKt.m8818getDirectionDnnuFBc(PointKt.m8815divso9K2fw(PointKt.m8825plusybeJwSQ(this.d1, this.d2), 2.0f)), (float) Math.sqrt(Utils.square(f4) + Utils.square(min2))));
+        long m8825plusybeJwSQ = PointKt.m8825plusybeJwSQ(this.p1, PointKt.m8827timesso9K2fw(this.d1, min2));
+        long m8825plusybeJwSQ2 = PointKt.m8825plusybeJwSQ(this.p1, PointKt.m8827timesso9K2fw(this.d2, min2));
+        Cubic m8831computeFlankingCurveoAJzIJU = m8831computeFlankingCurveoAJzIJU(min2, calculateActualSmoothingValue, this.p1, this.p0, m8825plusybeJwSQ, m8825plusybeJwSQ2, this.center, f4);
+        Cubic reverse = m8831computeFlankingCurveoAJzIJU(min2, calculateActualSmoothingValue2, this.p1, this.p2, m8825plusybeJwSQ2, m8825plusybeJwSQ, this.center, f4).reverse();
+        return CollectionsKt.listOf((Object[]) new Cubic[]{m8831computeFlankingCurveoAJzIJU, Cubic.Companion.circularArc(PointKt.m8821getXDnnuFBc(this.center), PointKt.m8822getYDnnuFBc(this.center), m8831computeFlankingCurveoAJzIJU.getAnchor1X(), m8831computeFlankingCurveoAJzIJU.getAnchor1Y(), reverse.getAnchor0X(), reverse.getAnchor0Y()), reverse});
     }
 
     private final float calculateActualSmoothingValue(float f) {
@@ -158,30 +172,30 @@ public final class RoundedCorner {
     }
 
     /* renamed from: computeFlankingCurve-oAJzIJU  reason: not valid java name */
-    private final Cubic m8832computeFlankingCurveoAJzIJU(float f, float f2, long j, long j2, long j3, long j4, long j5, float f3) {
-        long m8819getDirectionDnnuFBc = PointKt.m8819getDirectionDnnuFBc(PointKt.m8825minusybeJwSQ(j2, j));
-        long m8826plusybeJwSQ = PointKt.m8826plusybeJwSQ(j, PointKt.m8828timesso9K2fw(PointKt.m8828timesso9K2fw(m8819getDirectionDnnuFBc, f), 1 + f2));
+    private final Cubic m8831computeFlankingCurveoAJzIJU(float f, float f2, long j, long j2, long j3, long j4, long j5, float f3) {
+        long m8818getDirectionDnnuFBc = PointKt.m8818getDirectionDnnuFBc(PointKt.m8824minusybeJwSQ(j2, j));
+        long m8825plusybeJwSQ = PointKt.m8825plusybeJwSQ(j, PointKt.m8827timesso9K2fw(PointKt.m8827timesso9K2fw(m8818getDirectionDnnuFBc, f), 1 + f2));
         long j6 = j3;
-        long m8824interpolatedLqxh1s = PointKt.m8824interpolatedLqxh1s(j6, PointKt.m8816divso9K2fw(PointKt.m8826plusybeJwSQ(j3, j4), 2.0f), f2);
-        long m8826plusybeJwSQ2 = PointKt.m8826plusybeJwSQ(j5, PointKt.m8828timesso9K2fw(Utils.directionVector(PointKt.m8822getXDnnuFBc(m8824interpolatedLqxh1s) - PointKt.m8822getXDnnuFBc(j5), PointKt.m8823getYDnnuFBc(m8824interpolatedLqxh1s) - PointKt.m8823getYDnnuFBc(j5)), f3));
-        FloatFloatPair m8833lineIntersectionCBFvKDc = m8833lineIntersectionCBFvKDc(j2, m8819getDirectionDnnuFBc, m8826plusybeJwSQ2, Utils.m8843rotate90DnnuFBc(PointKt.m8825minusybeJwSQ(m8826plusybeJwSQ2, j5)));
-        if (m8833lineIntersectionCBFvKDc != null) {
-            j6 = m8833lineIntersectionCBFvKDc.m33unboximpl();
+        long m8823interpolatedLqxh1s = PointKt.m8823interpolatedLqxh1s(j6, PointKt.m8815divso9K2fw(PointKt.m8825plusybeJwSQ(j3, j4), 2.0f), f2);
+        long m8825plusybeJwSQ2 = PointKt.m8825plusybeJwSQ(j5, PointKt.m8827timesso9K2fw(Utils.directionVector(PointKt.m8821getXDnnuFBc(m8823interpolatedLqxh1s) - PointKt.m8821getXDnnuFBc(j5), PointKt.m8822getYDnnuFBc(m8823interpolatedLqxh1s) - PointKt.m8822getYDnnuFBc(j5)), f3));
+        FloatFloatPair m8832lineIntersectionCBFvKDc = m8832lineIntersectionCBFvKDc(j2, m8818getDirectionDnnuFBc, m8825plusybeJwSQ2, Utils.m8859rotate90DnnuFBc(PointKt.m8824minusybeJwSQ(m8825plusybeJwSQ2, j5)));
+        if (m8832lineIntersectionCBFvKDc != null) {
+            j6 = m8832lineIntersectionCBFvKDc.m33unboximpl();
         }
-        return new Cubic(m8826plusybeJwSQ, PointKt.m8816divso9K2fw(PointKt.m8826plusybeJwSQ(m8826plusybeJwSQ, PointKt.m8828timesso9K2fw(j6, 2.0f)), 3.0f), j6, m8826plusybeJwSQ2, null);
+        return new Cubic(m8825plusybeJwSQ, PointKt.m8815divso9K2fw(PointKt.m8825plusybeJwSQ(m8825plusybeJwSQ, PointKt.m8827timesso9K2fw(j6, 2.0f)), 3.0f), j6, m8825plusybeJwSQ2, null);
     }
 
     /* renamed from: lineIntersection-CBFvKDc  reason: not valid java name */
-    private final FloatFloatPair m8833lineIntersectionCBFvKDc(long j, long j2, long j3, long j4) {
-        long m8843rotate90DnnuFBc = Utils.m8843rotate90DnnuFBc(j4);
-        float m8818dotProductybeJwSQ = PointKt.m8818dotProductybeJwSQ(j2, m8843rotate90DnnuFBc);
-        if (Math.abs(m8818dotProductybeJwSQ) < 1.0E-4f) {
+    private final FloatFloatPair m8832lineIntersectionCBFvKDc(long j, long j2, long j3, long j4) {
+        long m8859rotate90DnnuFBc = Utils.m8859rotate90DnnuFBc(j4);
+        float m8817dotProductybeJwSQ = PointKt.m8817dotProductybeJwSQ(j2, m8859rotate90DnnuFBc);
+        if (Math.abs(m8817dotProductybeJwSQ) < 1.0E-4f) {
             return null;
         }
-        float m8818dotProductybeJwSQ2 = PointKt.m8818dotProductybeJwSQ(PointKt.m8825minusybeJwSQ(j3, j), m8843rotate90DnnuFBc);
-        if (Math.abs(m8818dotProductybeJwSQ) < Math.abs(m8818dotProductybeJwSQ2) * 1.0E-4f) {
+        float m8817dotProductybeJwSQ2 = PointKt.m8817dotProductybeJwSQ(PointKt.m8824minusybeJwSQ(j3, j), m8859rotate90DnnuFBc);
+        if (Math.abs(m8817dotProductybeJwSQ) < Math.abs(m8817dotProductybeJwSQ2) * 1.0E-4f) {
             return null;
         }
-        return FloatFloatPair.m22boximpl(PointKt.m8826plusybeJwSQ(j, PointKt.m8828timesso9K2fw(j2, m8818dotProductybeJwSQ2 / m8818dotProductybeJwSQ)));
+        return FloatFloatPair.m22boximpl(PointKt.m8825plusybeJwSQ(j, PointKt.m8827timesso9K2fw(j2, m8817dotProductybeJwSQ2 / m8817dotProductybeJwSQ)));
     }
 }

@@ -10,7 +10,7 @@ import io.appmetrica.analytics.coreutils.internal.system.SystemServiceUtils;
 public abstract class O7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final SafePackageManager f701a = new SafePackageManager();
+    public static final SafePackageManager f715a = new SafePackageManager();
 
     public static boolean a(Context context) {
         Object systemService = context.getSystemService("uimode");
@@ -21,7 +21,7 @@ public abstract class O7 {
             }
         });
         boolean z = num != null && num.intValue() == 4;
-        SafePackageManager safePackageManager = f701a;
+        SafePackageManager safePackageManager = f715a;
         return z || safePackageManager.hasSystemFeature(context, "android.software.leanback") || (AndroidUtils.isApiAchieved(26) ? safePackageManager.hasSystemFeature(context, "android.software.leanback_only") : false);
     }
 

@@ -11,7 +11,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0246fg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0426mg f974a;
+    public final C0426mg f988a;
     public final Aa b;
     public final C0700xg c;
     public final Lazy d = LazyKt.lazy(new C0169cg(this));
@@ -20,7 +20,7 @@ public final class C0246fg {
     public final ArrayList g = new ArrayList();
 
     public C0246fg(C0426mg c0426mg, C0675wg c0675wg, Aa aa, C0700xg c0700xg) {
-        this.f974a = c0426mg;
+        this.f988a = c0426mg;
         this.b = aa;
         this.c = c0700xg;
     }
@@ -37,7 +37,7 @@ public final class C0246fg {
             c0700xg.getClass();
         } else {
             SafePackageManager safePackageManager = c0700xg.b;
-            Context context = c0700xg.f1283a;
+            Context context = c0700xg.f1297a;
             String installerPackageName = safePackageManager.getInstallerPackageName(context, context.getPackageName());
             int ordinal = c0476og.d.ordinal();
             if (ordinal == 1) {
@@ -54,7 +54,7 @@ public final class C0246fg {
     }
 
     public final void a(C0476og c0476og) {
-        C0426mg c0426mg = this.f974a;
+        C0426mg c0426mg = this.f988a;
         synchronized (c0426mg) {
             c0426mg.b = c0476og;
             c0426mg.c = true;

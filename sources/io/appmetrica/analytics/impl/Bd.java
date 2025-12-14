@@ -5,7 +5,7 @@ import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 public abstract class Bd implements InterfaceC0254fo, InterfaceC0335j2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f493a;
+    public final String f507a;
     public final int b;
     public final to c;
     public final K2 d;
@@ -13,7 +13,7 @@ public abstract class Bd implements InterfaceC0254fo, InterfaceC0335j2 {
 
     public Bd(int i, String str, to toVar, K2 k2) {
         this.b = i;
-        this.f493a = str;
+        this.f507a = str;
         this.c = toVar;
         this.d = k2;
     }
@@ -21,7 +21,7 @@ public abstract class Bd implements InterfaceC0254fo, InterfaceC0335j2 {
     public final C0280go a() {
         C0280go c0280go = new C0280go();
         c0280go.b = this.b;
-        c0280go.f996a = this.f493a.getBytes();
+        c0280go.f1010a = this.f507a.getBytes();
         c0280go.d = new C0331io();
         c0280go.c = new C0306ho();
         return c0280go;
@@ -35,7 +35,7 @@ public abstract class Bd implements InterfaceC0254fo, InterfaceC0335j2 {
     }
 
     public final String c() {
-        return this.f493a;
+        return this.f507a;
     }
 
     public final to d() {
@@ -47,11 +47,11 @@ public abstract class Bd implements InterfaceC0254fo, InterfaceC0335j2 {
     }
 
     public final boolean f() {
-        ro a2 = this.c.a(this.f493a);
-        if (a2.f1190a) {
+        ro a2 = this.c.a(this.f507a);
+        if (a2.f1204a) {
             return true;
         }
-        this.e.warning("Attribute " + this.f493a + " of type " + ((String) Pn.f725a.get(this.b)) + " is skipped because " + a2.b, new Object[0]);
+        this.e.warning("Attribute " + this.f507a + " of type " + ((String) Pn.f739a.get(this.b)) + " is skipped because " + a2.b, new Object[0]);
         return false;
     }
 

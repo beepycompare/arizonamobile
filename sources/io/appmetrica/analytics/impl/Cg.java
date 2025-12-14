@@ -5,17 +5,17 @@ import android.content.Context;
 public final class Cg implements Rl, Ha {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f516a;
+    public final Context f530a;
     public final R4 b;
     public final S4 c;
     public final Bm d;
     public final Qa e;
 
     public Cg(Context context, R4 r4, C0514q4 c0514q4, Z4 z4, S4 s4, Il il) {
-        this.f516a = context;
+        this.f530a = context;
         this.b = r4;
         this.c = s4;
-        Bm a2 = il.a(context, r4, c0514q4.f1163a);
+        Bm a2 = il.a(context, r4, c0514q4.f1177a);
         this.d = a2;
         this.e = z4.a(context, r4, c0514q4.b, a2);
         il.a(r4, this);
@@ -26,15 +26,15 @@ public final class Cg implements Rl, Ha {
     }
 
     public final Context b() {
-        return this.f516a;
+        return this.f530a;
     }
 
     public final void a(InterfaceC0260g4 interfaceC0260g4) {
-        this.c.f755a.add(interfaceC0260g4);
+        this.c.f769a.add(interfaceC0260g4);
     }
 
     public final void b(InterfaceC0260g4 interfaceC0260g4) {
-        this.c.f755a.remove(interfaceC0260g4);
+        this.c.f769a.remove(interfaceC0260g4);
     }
 
     @Override // io.appmetrica.analytics.impl.Rl
@@ -49,7 +49,7 @@ public final class Cg implements Rl, Ha {
 
     @Override // io.appmetrica.analytics.impl.Ha
     public final void a(C0514q4 c0514q4) {
-        this.d.a(c0514q4.f1163a);
+        this.d.a(c0514q4.f1177a);
         this.e.a(c0514q4.b);
     }
 

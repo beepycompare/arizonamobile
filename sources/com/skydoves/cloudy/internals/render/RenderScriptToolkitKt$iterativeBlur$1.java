@@ -11,8 +11,8 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: RenderScriptToolkit.kt */
-@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Landroid/graphics/Bitmap;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 1, 0}, xi = 48)
-@DebugMetadata(c = "com.skydoves.cloudy.internals.render.RenderScriptToolkitKt$iterativeBlur$1", f = "RenderScriptToolkit.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {})
+@Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Landroid/graphics/Bitmap;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
+@DebugMetadata(c = "com.skydoves.cloudy.internals.render.RenderScriptToolkitKt$iterativeBlur$1", f = "RenderScriptToolkit.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes4.dex */
 final class RenderScriptToolkitKt$iterativeBlur$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Bitmap>, Object> {
     final /* synthetic */ Bitmap $androidBitmap;
@@ -41,16 +41,25 @@ final class RenderScriptToolkitKt$iterativeBlur$1 extends SuspendLambda implemen
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
+        Bitmap blur$default;
         IntrinsicsKt.getCOROUTINE_SUSPENDED();
         if (this.label != 0) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
         ResultKt.throwOnFailure(obj);
-        int i = (this.$radius + 1) / 25;
-        Bitmap blur$default = RenderScriptToolkit.blur$default(RenderScriptToolkit.INSTANCE, this.$androidBitmap, this.$outputBitmap, (this.$radius + 1) % 25, null, 8, null);
-        for (int i2 = 0; i2 < i; i2++) {
-            blur$default = RenderScriptToolkit.blur$default(RenderScriptToolkit.INSTANCE, blur$default, this.$outputBitmap, 25, null, 8, null);
+        int i = this.$radius;
+        int i2 = i / 25;
+        int i3 = i % 25;
+        if (i3 == 0) {
+            blur$default = this.$androidBitmap;
+        } else {
+            blur$default = RenderScriptToolkit.blur$default(RenderScriptToolkit.INSTANCE, this.$androidBitmap, this.$outputBitmap, i3, null, 8, null);
         }
-        return blur$default;
+        Bitmap bitmap = this.$outputBitmap;
+        Bitmap bitmap2 = blur$default;
+        for (int i4 = 0; i4 < i2; i4++) {
+            bitmap2 = RenderScriptToolkit.blur$default(RenderScriptToolkit.INSTANCE, bitmap2, bitmap, 25, null, 8, null);
+        }
+        return bitmap2;
     }
 }

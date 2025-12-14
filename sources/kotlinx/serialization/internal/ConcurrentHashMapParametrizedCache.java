@@ -30,8 +30,8 @@ final class ConcurrentHashMapParametrizedCache<T> implements ParametrizedSeriali
 
     @Override // kotlinx.serialization.internal.ParametrizedSerializerCache
     /* renamed from: get-gIAlu-s */
-    public Object mo11906getgIAlus(KClass<Object> key, List<? extends KType> types) {
-        Object m10199constructorimpl;
+    public Object mo11922getgIAlus(KClass<Object> key, List<? extends KType> types) {
+        Object m10215constructorimpl;
         ParametrizedCacheEntry<T> putIfAbsent;
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(types, "types");
@@ -53,16 +53,16 @@ final class ConcurrentHashMapParametrizedCache<T> implements ParametrizedSeriali
         if (obj == null) {
             try {
                 Result.Companion companion = Result.Companion;
-                m10199constructorimpl = Result.m10199constructorimpl(this.compute.invoke(key, types));
+                m10215constructorimpl = Result.m10215constructorimpl(this.compute.invoke(key, types));
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m10199constructorimpl = Result.m10199constructorimpl(ResultKt.createFailure(th));
+                m10215constructorimpl = Result.m10215constructorimpl(ResultKt.createFailure(th));
             }
-            Result m10198boximpl = Result.m10198boximpl(m10199constructorimpl);
-            Object putIfAbsent2 = concurrentHashMap2.putIfAbsent(arrayList2, m10198boximpl);
-            obj = putIfAbsent2 == null ? m10198boximpl : putIfAbsent2;
+            Result m10214boximpl = Result.m10214boximpl(m10215constructorimpl);
+            Object putIfAbsent2 = concurrentHashMap2.putIfAbsent(arrayList2, m10214boximpl);
+            obj = putIfAbsent2 == null ? m10214boximpl : putIfAbsent2;
         }
         Intrinsics.checkNotNullExpressionValue(obj, "getOrPut(...)");
-        return ((Result) obj).m10208unboximpl();
+        return ((Result) obj).m10224unboximpl();
     }
 }

@@ -12,7 +12,7 @@ import java.util.Map;
 public class C0325ii implements Sa {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Qe f1024a = new Qe();
+    public final Qe f1038a = new Qe();
 
     @Override // io.appmetrica.analytics.impl.Sa, io.appmetrica.analytics.impl.Va
     public final void a(Rn rn) {
@@ -28,7 +28,7 @@ public class C0325ii implements Sa {
 
     @Override // io.appmetrica.analytics.IReporter
     public final IPluginReporter getPluginExtension() {
-        return this.f1024a;
+        return this.f1038a;
     }
 
     @Override // io.appmetrica.analytics.IReporter

@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 public final class Rd implements InterfaceC0646vc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final G8 f744a = new G8() { // from class: io.appmetrica.analytics.impl.Rd$$ExternalSyntheticLambda0
+    public final G8 f758a = new G8() { // from class: io.appmetrica.analytics.impl.Rd$$ExternalSyntheticLambda0
         @Override // io.appmetrica.analytics.impl.G8
         public final boolean b() {
             return Rd.b();
@@ -16,6 +16,6 @@ public final class Rd implements InterfaceC0646vc {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0646vc
     public final G8 a() {
-        return this.f744a;
+        return this.f758a;
     }
 }

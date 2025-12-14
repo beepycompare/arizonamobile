@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Lambda;
 public final class C0791h extends Lambda implements Function1<Unit, Unit> {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final C0791h f1524a = new C0791h();
+    public static final C0791h f1538a = new C0791h();
 
     public C0791h() {
         super(1);

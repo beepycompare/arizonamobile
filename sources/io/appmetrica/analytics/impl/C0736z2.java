@@ -6,7 +6,7 @@ import android.content.Context;
 public final class C0736z2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1311a;
+    public final Context f1325a;
     public final C0181d2 b;
 
     public C0736z2(Context context) {
@@ -14,7 +14,7 @@ public final class C0736z2 {
     }
 
     public C0736z2(Context context, C0181d2 c0181d2) {
-        this.f1311a = context;
+        this.f1325a = context;
         this.b = c0181d2;
     }
 }

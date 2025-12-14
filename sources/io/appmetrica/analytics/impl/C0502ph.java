@@ -8,7 +8,7 @@ public final class C0502ph extends Sg {
 
     @Override // io.appmetrica.analytics.impl.Sg
     public final boolean a(Q5 q5) {
-        this.f762a.j.c(q5);
+        this.f776a.j.c(q5);
         return false;
     }
 }

@@ -57,7 +57,7 @@ final class WindowInfoTrackerImpl$windowLayoutInfo$1 extends SuspendLambda imple
             final Consumer<WindowLayoutInfo> consumer = new Consumer() { // from class: androidx.window.layout.WindowInfoTrackerImpl$windowLayoutInfo$1$$ExternalSyntheticLambda0
                 @Override // androidx.core.util.Consumer
                 public final void accept(Object obj2) {
-                    ProducerScope.this.mo9143trySendJP2dKIU((WindowLayoutInfo) obj2);
+                    ProducerScope.this.mo9159trySendJP2dKIU((WindowLayoutInfo) obj2);
                 }
             };
             windowBackend = this.this$0.windowBackend;

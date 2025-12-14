@@ -11,7 +11,7 @@ import kotlin.jvm.JvmStatic;
 public final class C0531ql {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final C0531ql f1175a = new C0531ql();
+    public static final C0531ql f1189a = new C0531ql();
 
     private C0531ql() {
     }

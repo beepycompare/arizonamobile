@@ -106,7 +106,7 @@ public class DeviceInfo {
         this.appInstallTime = getAppInstallTime(packageInfo);
         this.appUpdateTime = getAppUpdateTime(packageInfo);
         this.uiMode = getDeviceUiMode(configuration);
-        if (Util.canReadPlayIds(adjustConfig)) {
+        if (Util.canReadAppSetId(adjustConfig)) {
             this.appSetId = Reflection.getAppSetId(context);
         }
         this.storeInfoFromClient = StoreInfoUtil.getStoreInfoFromClient(adjustConfig, context);

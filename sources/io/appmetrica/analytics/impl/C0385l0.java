@@ -6,15 +6,15 @@ import java.util.List;
 public final class C0385l0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f1066a;
+    public final List f1080a;
     public final boolean b;
 
     public C0385l0(List list, boolean z) {
-        this.f1066a = list;
+        this.f1080a = list;
         this.b = z;
     }
 
     public final String toString() {
-        return "AppMetricaConfigExtension(autoCollectedDataSubscribers=" + this.f1066a + ", needClearEnvironment=" + this.b + ')';
+        return "AppMetricaConfigExtension(autoCollectedDataSubscribers=" + this.f1080a + ", needClearEnvironment=" + this.b + ')';
     }
 }

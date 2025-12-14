@@ -58,8 +58,8 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class drawable {
-        public static int arizona_backgournd_home = 0x7f08031a;
-        public static int rodina_backgournd_home = 0x7f080d1e;
+        public static int arizona_backgournd_home = 0x7f08031d;
+        public static int rodina_backgournd_home = 0x7f080d33;
 
         private drawable() {
         }

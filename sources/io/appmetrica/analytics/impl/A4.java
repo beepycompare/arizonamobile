@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 public final class A4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Gb f474a;
+    public final Gb f488a;
 
     public A4() {
         this(C0470oa.k().l());
@@ -14,12 +14,12 @@ public final class A4 {
     }
 
     public A4(Gb gb) {
-        this.f474a = gb;
+        this.f488a = gb;
     }
 
     public final C0433mn a(C0713y4 c0713y4, Bm bm) {
         C0433mn c0433mn = new C0433mn(c0713y4, new Jg(bm));
-        Gb gb = this.f474a;
+        Gb gb = this.f488a;
         synchronized (gb) {
             gb.c.add(c0433mn);
         }

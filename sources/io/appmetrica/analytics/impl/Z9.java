@@ -11,7 +11,7 @@ import java.nio.channels.FileLock;
 public final class Z9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final File f859a;
+    public final File f873a;
     public FileLock b;
     public RandomAccessFile c;
     public FileChannel d;
@@ -22,7 +22,7 @@ public final class Z9 {
     }
 
     public final synchronized void a() {
-        RandomAccessFile randomAccessFile = new RandomAccessFile(this.f859a, "rw");
+        RandomAccessFile randomAccessFile = new RandomAccessFile(this.f873a, "rw");
         this.c = randomAccessFile;
         FileChannel channel = randomAccessFile.getChannel();
         this.d = channel;
@@ -33,7 +33,7 @@ public final class Z9 {
     }
 
     public final synchronized void b() {
-        this.f859a.getAbsolutePath();
+        this.f873a.getAbsolutePath();
         int i = this.e - 1;
         this.e = i;
         if (i == 0) {
@@ -52,7 +52,7 @@ public final class Z9 {
 
     public Z9(File file) {
         this.e = 0;
-        this.f859a = file;
+        this.f873a = file;
     }
 
     public static File a(Context context, String str) {

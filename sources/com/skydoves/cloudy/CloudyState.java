@@ -1,15 +1,14 @@
 package com.skydoves.cloudy;
 
-import android.graphics.Bitmap;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CloudyState.kt */
-@Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\bw\u0018\u00002\u00020\u0001:\u0004\u0002\u0003\u0004\u0005\u0082\u0001\u0004\u0006\u0007\b\t¨\u0006\n"}, d2 = {"Lcom/skydoves/cloudy/CloudyState;", "", "Nothing", "Loading", "Success", "Error", "Lcom/skydoves/cloudy/CloudyState$Error;", "Lcom/skydoves/cloudy/CloudyState$Loading;", "Lcom/skydoves/cloudy/CloudyState$Nothing;", "Lcom/skydoves/cloudy/CloudyState$Success;", "cloudy_release"}, k = 1, mv = {2, 1, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\bw\u0018\u00002\u00020\u0001:\u0004\u0002\u0003\u0004\u0005\u0082\u0001\u0004\u0006\u0007\b\t¨\u0006\nÀ\u0006\u0003"}, d2 = {"Lcom/skydoves/cloudy/CloudyState;", "", "Nothing", "Loading", "Success", "Error", "Lcom/skydoves/cloudy/CloudyState$Error;", "Lcom/skydoves/cloudy/CloudyState$Loading;", "Lcom/skydoves/cloudy/CloudyState$Nothing;", "Lcom/skydoves/cloudy/CloudyState$Success;", "cloudy_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public interface CloudyState {
 
     /* compiled from: CloudyState.kt */
-    @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\bÇ\n\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0013\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007HÖ\u0003J\t\u0010\b\u001a\u00020\tHÖ\u0001J\t\u0010\n\u001a\u00020\u000bHÖ\u0001¨\u0006\f"}, d2 = {"Lcom/skydoves/cloudy/CloudyState$Nothing;", "Lcom/skydoves/cloudy/CloudyState;", "<init>", "()V", "equals", "", "other", "", "hashCode", "", "toString", "", "cloudy_release"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\bÇ\n\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0013\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007HÖ\u0003J\t\u0010\b\u001a\u00020\tHÖ\u0001J\t\u0010\n\u001a\u00020\u000bHÖ\u0001¨\u0006\f"}, d2 = {"Lcom/skydoves/cloudy/CloudyState$Nothing;", "Lcom/skydoves/cloudy/CloudyState;", "<init>", "()V", "equals", "", "other", "", "hashCode", "", "toString", "", "cloudy_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes4.dex */
     public static final class Nothing implements CloudyState {
         public static final int $stable = 0;
@@ -39,7 +38,7 @@ public interface CloudyState {
     }
 
     /* compiled from: CloudyState.kt */
-    @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\bÇ\n\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0013\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007HÖ\u0003J\t\u0010\b\u001a\u00020\tHÖ\u0001J\t\u0010\n\u001a\u00020\u000bHÖ\u0001¨\u0006\f"}, d2 = {"Lcom/skydoves/cloudy/CloudyState$Loading;", "Lcom/skydoves/cloudy/CloudyState;", "<init>", "()V", "equals", "", "other", "", "hashCode", "", "toString", "", "cloudy_release"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\bÇ\n\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0013\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007HÖ\u0003J\t\u0010\b\u001a\u00020\tHÖ\u0001J\t\u0010\n\u001a\u00020\u000bHÖ\u0001¨\u0006\f"}, d2 = {"Lcom/skydoves/cloudy/CloudyState$Loading;", "Lcom/skydoves/cloudy/CloudyState;", "<init>", "()V", "equals", "", "other", "", "hashCode", "", "toString", "", "cloudy_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes4.dex */
     public static final class Loading implements CloudyState {
         public static final int $stable = 0;
@@ -69,57 +68,91 @@ public interface CloudyState {
     }
 
     /* compiled from: CloudyState.kt */
-    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0087\b\u0018\u00002\u00020\u0001B\u0011\u0012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000b\u0010\b\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u0015\u0010\t\u001a\u00020\u00002\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003HÆ\u0001J\u0013\u0010\n\u001a\u00020\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\rHÖ\u0003J\t\u0010\u000e\u001a\u00020\u000fHÖ\u0001J\t\u0010\u0010\u001a\u00020\u0011HÖ\u0001R\u0013\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\u0012"}, d2 = {"Lcom/skydoves/cloudy/CloudyState$Success;", "Lcom/skydoves/cloudy/CloudyState;", "bitmap", "Landroid/graphics/Bitmap;", "<init>", "(Landroid/graphics/Bitmap;)V", "getBitmap", "()Landroid/graphics/Bitmap;", "component1", "copy", "equals", "", "other", "", "hashCode", "", "toString", "", "cloudy_release"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\bw\u0018\u00002\u00020\u0001:\u0002\u0002\u0003\u0082\u0001\u0002\u0004\u0005¨\u0006\u0006À\u0006\u0003"}, d2 = {"Lcom/skydoves/cloudy/CloudyState$Success;", "Lcom/skydoves/cloudy/CloudyState;", "Applied", "Captured", "Lcom/skydoves/cloudy/CloudyState$Success$Applied;", "Lcom/skydoves/cloudy/CloudyState$Success$Captured;", "cloudy_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes4.dex */
-    public static final class Success implements CloudyState {
-        public static final int $stable = 0;
-        private final Bitmap bitmap;
+    public interface Success extends CloudyState {
 
-        public static /* synthetic */ Success copy$default(Success success, Bitmap bitmap, int i, Object obj) {
-            if ((i & 1) != 0) {
-                bitmap = success.bitmap;
+        /* compiled from: CloudyState.kt */
+        @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\bÇ\n\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0013\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007HÖ\u0003J\t\u0010\b\u001a\u00020\tHÖ\u0001J\t\u0010\n\u001a\u00020\u000bHÖ\u0001¨\u0006\f"}, d2 = {"Lcom/skydoves/cloudy/CloudyState$Success$Applied;", "Lcom/skydoves/cloudy/CloudyState$Success;", "<init>", "()V", "equals", "", "other", "", "hashCode", "", "toString", "", "cloudy_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+        /* loaded from: classes4.dex */
+        public static final class Applied implements Success {
+            public static final int $stable = 0;
+            public static final Applied INSTANCE = new Applied();
+
+            public boolean equals(Object obj) {
+                if (this == obj) {
+                    return true;
+                }
+                if (obj instanceof Applied) {
+                    Applied applied = (Applied) obj;
+                    return true;
+                }
+                return false;
             }
-            return success.copy(bitmap);
-        }
 
-        public final Bitmap component1() {
-            return this.bitmap;
-        }
-
-        public final Success copy(Bitmap bitmap) {
-            return new Success(bitmap);
-        }
-
-        public boolean equals(Object obj) {
-            if (this == obj) {
-                return true;
+            public int hashCode() {
+                return -373771440;
             }
-            return (obj instanceof Success) && Intrinsics.areEqual(this.bitmap, ((Success) obj).bitmap);
-        }
 
-        public int hashCode() {
-            Bitmap bitmap = this.bitmap;
-            if (bitmap == null) {
-                return 0;
+            public String toString() {
+                return "Applied";
             }
-            return bitmap.hashCode();
+
+            private Applied() {
+            }
         }
 
-        public String toString() {
-            return "Success(bitmap=" + this.bitmap + ')';
-        }
+        /* compiled from: CloudyState.kt */
+        @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0087\b\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\t\u0010\b\u001a\u00020\u0003HÆ\u0003J\u0013\u0010\t\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u0003HÆ\u0001J\u0013\u0010\n\u001a\u00020\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\rHÖ\u0003J\t\u0010\u000e\u001a\u00020\u000fHÖ\u0001J\t\u0010\u0010\u001a\u00020\u0011HÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\u0012"}, d2 = {"Lcom/skydoves/cloudy/CloudyState$Success$Captured;", "Lcom/skydoves/cloudy/CloudyState$Success;", "bitmap", "Lcom/skydoves/cloudy/PlatformBitmap;", "<init>", "(Lcom/skydoves/cloudy/PlatformBitmap;)V", "getBitmap", "()Lcom/skydoves/cloudy/PlatformBitmap;", "component1", "copy", "equals", "", "other", "", "hashCode", "", "toString", "", "cloudy_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+        /* loaded from: classes4.dex */
+        public static final class Captured implements Success {
+            public static final int $stable = 0;
+            private final PlatformBitmap bitmap;
 
-        public Success(Bitmap bitmap) {
-            this.bitmap = bitmap;
-        }
+            public static /* synthetic */ Captured copy$default(Captured captured, PlatformBitmap platformBitmap, int i, Object obj) {
+                if ((i & 1) != 0) {
+                    platformBitmap = captured.bitmap;
+                }
+                return captured.copy(platformBitmap);
+            }
 
-        public final Bitmap getBitmap() {
-            return this.bitmap;
+            public final PlatformBitmap component1() {
+                return this.bitmap;
+            }
+
+            public final Captured copy(PlatformBitmap bitmap) {
+                Intrinsics.checkNotNullParameter(bitmap, "bitmap");
+                return new Captured(bitmap);
+            }
+
+            public boolean equals(Object obj) {
+                if (this == obj) {
+                    return true;
+                }
+                return (obj instanceof Captured) && Intrinsics.areEqual(this.bitmap, ((Captured) obj).bitmap);
+            }
+
+            public int hashCode() {
+                return this.bitmap.hashCode();
+            }
+
+            public String toString() {
+                return "Captured(bitmap=" + this.bitmap + ')';
+            }
+
+            public Captured(PlatformBitmap bitmap) {
+                Intrinsics.checkNotNullParameter(bitmap, "bitmap");
+                this.bitmap = bitmap;
+            }
+
+            public final PlatformBitmap getBitmap() {
+                return this.bitmap;
+            }
         }
     }
 
     /* compiled from: CloudyState.kt */
-    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0003\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0087\b\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\t\u0010\b\u001a\u00020\u0003HÆ\u0003J\u0013\u0010\t\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u0003HÆ\u0001J\u0013\u0010\n\u001a\u00020\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\rHÖ\u0003J\t\u0010\u000e\u001a\u00020\u000fHÖ\u0001J\t\u0010\u0010\u001a\u00020\u0011HÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\u0012"}, d2 = {"Lcom/skydoves/cloudy/CloudyState$Error;", "Lcom/skydoves/cloudy/CloudyState;", "throwable", "", "<init>", "(Ljava/lang/Throwable;)V", "getThrowable", "()Ljava/lang/Throwable;", "component1", "copy", "equals", "", "other", "", "hashCode", "", "toString", "", "cloudy_release"}, k = 1, mv = {2, 1, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0003\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0087\b\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\t\u0010\b\u001a\u00020\u0003HÆ\u0003J\u0013\u0010\t\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u0003HÆ\u0001J\u0013\u0010\n\u001a\u00020\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\rHÖ\u0003J\t\u0010\u000e\u001a\u00020\u000fHÖ\u0001J\t\u0010\u0010\u001a\u00020\u0011HÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\u0012"}, d2 = {"Lcom/skydoves/cloudy/CloudyState$Error;", "Lcom/skydoves/cloudy/CloudyState;", "throwable", "", "<init>", "(Ljava/lang/Throwable;)V", "getThrowable", "()Ljava/lang/Throwable;", "component1", "copy", "equals", "", "other", "", "hashCode", "", "toString", "", "cloudy_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes4.dex */
     public static final class Error implements CloudyState {
         public static final int $stable = 0;

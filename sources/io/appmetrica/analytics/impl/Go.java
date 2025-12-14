@@ -6,10 +6,10 @@ import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 public final class Go implements Consumer {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f581a = "WebView interface setup failed because javascript is disabled for the WebView.";
+    public final /* synthetic */ String f595a = "WebView interface setup failed because javascript is disabled for the WebView.";
 
     @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
     public final void consume(Object obj) {
-        ((PublicLogger) obj).warning(this.f581a, new Object[0]);
+        ((PublicLogger) obj).warning(this.f595a, new Object[0]);
     }
 }

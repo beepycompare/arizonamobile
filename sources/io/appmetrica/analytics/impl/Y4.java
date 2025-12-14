@@ -14,7 +14,7 @@ import kotlin.collections.CollectionsKt;
 public class Y4 implements Qa, Fa, InterfaceC0376kh {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f843a;
+    public final Context f857a;
     public final R4 b;
     public final Xe c;
     public final C0116af d;
@@ -49,11 +49,11 @@ public class Y4 implements Qa, Fa, InterfaceC0376kh {
     public final boolean B() {
         C0278gm c0278gm;
         C0624uf c0624uf = this.s;
-        c0624uf.h.a(c0624uf.f732a);
+        c0624uf.h.a(c0624uf.f746a);
         boolean z = ((C0549rf) c0624uf.c()).d;
         Rg rg = this.k;
         synchronized (rg) {
-            c0278gm = rg.c.f666a;
+            c0278gm = rg.c.f680a;
         }
         return !(z && c0278gm.q);
     }
@@ -77,7 +77,7 @@ public class Y4 implements Qa, Fa, InterfaceC0376kh {
     public final void d() {
         C0333j0 c0333j0 = this.h;
         synchronized (c0333j0) {
-            c0333j0.f1030a = new Gc();
+            c0333j0.f1044a = new Gc();
         }
         this.i.a(this.h.a(), this.c);
     }
@@ -96,7 +96,7 @@ public class Y4 implements Qa, Fa, InterfaceC0376kh {
 
     @Override // io.appmetrica.analytics.impl.Fa
     public final Context getContext() {
-        return this.f843a;
+        return this.f857a;
     }
 
     public final Xe h() {
@@ -151,7 +151,7 @@ public class Y4 implements Qa, Fa, InterfaceC0376kh {
         C0278gm c0278gm;
         Rg rg = this.k;
         synchronized (rg) {
-            c0278gm = rg.c.f666a;
+            c0278gm = rg.c.f680a;
         }
         return c0278gm;
     }
@@ -164,7 +164,7 @@ public class Y4 implements Qa, Fa, InterfaceC0376kh {
         C0394l9 c0394l9 = this.n;
         int i = c0394l9.j;
         c0394l9.l = i;
-        c0394l9.f1074a.a(i).b();
+        c0394l9.f1088a.a(i).b();
     }
 
     public final void w() {
@@ -172,7 +172,7 @@ public class Y4 implements Qa, Fa, InterfaceC0376kh {
         int libraryApiLevel = AppMetrica.getLibraryApiLevel();
         yo yoVar = this.t;
         synchronized (yoVar) {
-            optInt = yoVar.f1308a.a().optInt("last_migration_api_level", 0);
+            optInt = yoVar.f1322a.a().optInt("last_migration_api_level", 0);
         }
         Integer valueOf = Integer.valueOf(optInt);
         if (valueOf.intValue() < libraryApiLevel) {
@@ -199,7 +199,7 @@ public class Y4 implements Qa, Fa, InterfaceC0376kh {
     public final void z() {
         Rg rg = this.k;
         synchronized (rg) {
-            rg.f1143a = null;
+            rg.f1157a = null;
         }
     }
 
@@ -211,7 +211,7 @@ public class Y4 implements Qa, Fa, InterfaceC0376kh {
         synchronized (c0359k0) {
             if (a2.b > xe.d().b) {
                 xe.a(a2).b();
-                this.m.info("Save new app environment for %s. Value: %s", this.b, a2.f1014a);
+                this.m.info("Save new app environment for %s. Value: %s", this.b, a2.f1028a);
             }
         }
     }
@@ -260,7 +260,7 @@ public class Y4 implements Qa, Fa, InterfaceC0376kh {
         }
         if (z) {
             c0512q2.a(c0512q2.e);
-            c0512q2.f1162a.a(c0512q2.e);
+            c0512q2.f1176a.a(c0512q2.e);
         }
         if (z2) {
             this.k.e();
@@ -268,7 +268,7 @@ public class Y4 implements Qa, Fa, InterfaceC0376kh {
     }
 
     public Y4(Context context, R4 r4, C0359k0 c0359k0, TimePassedChecker timePassedChecker, C0184d5 c0184d5, C0489p4 c0489p4) {
-        this.f843a = context.getApplicationContext();
+        this.f857a = context.getApplicationContext();
         this.b = r4;
         this.i = c0359k0;
         this.r = timePassedChecker;
@@ -293,7 +293,7 @@ public class Y4 implements Qa, Fa, InterfaceC0376kh {
         w();
         Sk a6 = C0184d5.a(this, f, new X4(this));
         this.j = a6;
-        a4.info("Read app environment for component %s. Value: %s", r4.toString(), a5.a().f1014a);
+        a4.info("Read app environment for component %s. Value: %s", r4.toString(), a5.a().f1028a);
         Kk c = c0184d5.c();
         this.u = c;
         this.n = c0184d5.a(a2, f, a6, b, a5, c, d);

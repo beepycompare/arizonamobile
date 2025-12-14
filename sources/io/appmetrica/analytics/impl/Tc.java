@@ -8,11 +8,11 @@ import kotlin.collections.CollectionsKt;
 public final class Tc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f775a = new ArrayList();
+    public final ArrayList f789a = new ArrayList();
 
     public final synchronized List a() {
         ArrayList arrayList;
-        ArrayList arrayList2 = this.f775a;
+        ArrayList arrayList2 = this.f789a;
         ArrayList arrayList3 = new ArrayList(CollectionsKt.collectionSizeOrDefault(arrayList2, 10));
         Iterator it = arrayList2.iterator();
         while (it.hasNext()) {
@@ -30,6 +30,6 @@ public final class Tc {
     }
 
     public final synchronized void a(Sc... scArr) {
-        CollectionsKt.addAll(this.f775a, scArr);
+        CollectionsKt.addAll(this.f789a, scArr);
     }
 }

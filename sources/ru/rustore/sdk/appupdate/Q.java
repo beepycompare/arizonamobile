@@ -8,12 +8,12 @@ import ru.rustore.sdk.reactive.subject.SubjectExtensionsKt;
 public final class Q {
 
     /* renamed from: a  reason: collision with root package name */
-    public final MutableStateSubject<InstallState> f1495a;
+    public final MutableStateSubject<InstallState> f1509a;
     public final StateSubject<InstallState> b;
 
     public Q() {
         MutableStateSubject<InstallState> mutableStateSubject = new MutableStateSubject<>(InstallState.Companion.empty$sdk_public_appupdate_release());
-        this.f1495a = mutableStateSubject;
+        this.f1509a = mutableStateSubject;
         this.b = SubjectExtensionsKt.asStateSubject(mutableStateSubject);
     }
 }

@@ -11,7 +11,7 @@ public final class C0311i3 extends ECommerceEvent {
     public static final int e = 5;
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f1016a;
+    public final int f1030a;
     public final C0388l3 b;
     public final InterfaceC0161c8 c;
 
@@ -25,7 +25,7 @@ public final class C0311i3 extends ECommerceEvent {
 
     @Override // io.appmetrica.analytics.ecommerce.ECommerceEvent
     public final String getPublicDescription() {
-        int i = this.f1016a;
+        int i = this.f1030a;
         if (i != 4) {
             if (i != 5) {
                 return "unknown cart action info";
@@ -41,11 +41,11 @@ public final class C0311i3 extends ECommerceEvent {
     }
 
     public final String toString() {
-        return "CartActionInfoEvent{eventType=" + this.f1016a + ", cartItem=" + this.b + ", converter=" + this.c + AbstractJsonLexerKt.END_OBJ;
+        return "CartActionInfoEvent{eventType=" + this.f1030a + ", cartItem=" + this.b + ", converter=" + this.c + AbstractJsonLexerKt.END_OBJ;
     }
 
     public C0311i3(int i, C0388l3 c0388l3, InterfaceC0161c8 interfaceC0161c8) {
-        this.f1016a = i;
+        this.f1030a = i;
         this.b = c0388l3;
         this.c = interfaceC0161c8;
     }

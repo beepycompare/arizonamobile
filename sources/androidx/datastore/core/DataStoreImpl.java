@@ -371,7 +371,7 @@ public final class DataStoreImpl<T> implements CurrentDataProviderStore<T> {
         int i;
         Throwable th;
         CompletableDeferred<T> completableDeferred;
-        Object m10199constructorimpl;
+        Object m10215constructorimpl;
         if (continuation instanceof DataStoreImpl$handleUpdate$1) {
             dataStoreImpl$handleUpdate$1 = (DataStoreImpl$handleUpdate$1) continuation;
             if ((dataStoreImpl$handleUpdate$1.label & Integer.MIN_VALUE) != 0) {
@@ -397,8 +397,8 @@ public final class DataStoreImpl<T> implements CurrentDataProviderStore<T> {
                         th = th2;
                         completableDeferred = ack;
                         Result.Companion companion2 = Result.Companion;
-                        m10199constructorimpl = Result.m10199constructorimpl(ResultKt.createFailure(th));
-                        CompletableDeferredKt.completeWith(completableDeferred, m10199constructorimpl);
+                        m10215constructorimpl = Result.m10215constructorimpl(ResultKt.createFailure(th));
+                        CompletableDeferredKt.completeWith(completableDeferred, m10215constructorimpl);
                         return Unit.INSTANCE;
                     }
                 } else if (i != 1) {
@@ -410,13 +410,13 @@ public final class DataStoreImpl<T> implements CurrentDataProviderStore<T> {
                     } catch (Throwable th3) {
                         th = th3;
                         Result.Companion companion22 = Result.Companion;
-                        m10199constructorimpl = Result.m10199constructorimpl(ResultKt.createFailure(th));
-                        CompletableDeferredKt.completeWith(completableDeferred, m10199constructorimpl);
+                        m10215constructorimpl = Result.m10215constructorimpl(ResultKt.createFailure(th));
+                        CompletableDeferredKt.completeWith(completableDeferred, m10215constructorimpl);
                         return Unit.INSTANCE;
                     }
                 }
-                m10199constructorimpl = Result.m10199constructorimpl(obj);
-                CompletableDeferredKt.completeWith(completableDeferred, m10199constructorimpl);
+                m10215constructorimpl = Result.m10215constructorimpl(obj);
+                CompletableDeferredKt.completeWith(completableDeferred, m10215constructorimpl);
                 return Unit.INSTANCE;
             }
         }
@@ -426,8 +426,8 @@ public final class DataStoreImpl<T> implements CurrentDataProviderStore<T> {
         i = dataStoreImpl$handleUpdate$1.label;
         if (i != 0) {
         }
-        m10199constructorimpl = Result.m10199constructorimpl(obj2);
-        CompletableDeferredKt.completeWith(completableDeferred, m10199constructorimpl);
+        m10215constructorimpl = Result.m10215constructorimpl(obj2);
+        CompletableDeferredKt.completeWith(completableDeferred, m10215constructorimpl);
         return Unit.INSTANCE;
     }
 

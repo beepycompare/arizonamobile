@@ -14,12 +14,12 @@ public final class C0310i2 extends Sg {
 
     @Override // io.appmetrica.analytics.impl.Sg
     public final boolean a(Q5 q5) {
-        Y4 y4 = this.f762a;
+        Y4 y4 = this.f776a;
         if (!this.b.c() && !this.b.d()) {
             if (((C0402lh) y4.k.a()).e) {
                 this.c.b();
             }
-            N8 n8 = this.f762a.l;
+            N8 n8 = this.f776a.l;
             if (n8.c == null) {
                 n8.a();
             }
@@ -28,11 +28,11 @@ public final class C0310i2 extends Sg {
             p8.b = new HashSet();
             p8.d = 0;
             P8 p82 = n8.c;
-            p82.f715a = true;
+            p82.f729a = true;
             S8 s8 = n8.b;
             IBinaryDataHelper iBinaryDataHelper = s8.c;
             R8 r8 = s8.b;
-            s8.f758a.getClass();
+            s8.f772a.getClass();
             iBinaryDataHelper.insert("event_hashes", r8.toByteArray((R8) Q8.a(p82)));
         }
         return false;

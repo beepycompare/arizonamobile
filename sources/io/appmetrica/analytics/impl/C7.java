@@ -9,13 +9,13 @@ import kotlin.collections.CollectionsKt;
 public final class C7 implements ClientComponentsInitializer {
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f508a = CollectionsKt.listOf((Object[]) new String[]{"io.appmetrica.analytics.adrevenue.admob.v23.internal.AdMobClientModuleEntryPoint", "io.appmetrica.analytics.adrevenue.applovin.v12.internal.AppLovinClientModuleEntryPoint", "io.appmetrica.analytics.adrevenue.fyber.v3.internal.FyberClientModuleEntryPoint", "io.appmetrica.analytics.adrevenue.ironsource.v7.internal.IronSourceClientModuleEntryPoint", "io.appmetrica.analytics.adrevenue.ironsource.v9.internal.IronSourceV9ClientModuleEntryPoint", "io.appmetrica.analytics.apphud.internal.ApphudClientModuleEntryPoint", "io.appmetrica.analytics.screenshot.internal.ScreenshotClientModuleEntryPoint", "io.appmetrica.analytics.reporterextension.internal.ReporterExtensionClientModuleEntryPoint"});
+    public final List f522a = CollectionsKt.listOf((Object[]) new String[]{"io.appmetrica.analytics.adrevenue.admob.v23.internal.AdMobClientModuleEntryPoint", "io.appmetrica.analytics.adrevenue.applovin.v12.internal.AppLovinClientModuleEntryPoint", "io.appmetrica.analytics.adrevenue.fyber.v3.internal.FyberClientModuleEntryPoint", "io.appmetrica.analytics.adrevenue.ironsource.v7.internal.IronSourceClientModuleEntryPoint", "io.appmetrica.analytics.adrevenue.ironsource.v9.internal.IronSourceV9ClientModuleEntryPoint", "io.appmetrica.analytics.apphud.internal.ApphudClientModuleEntryPoint", "io.appmetrica.analytics.screenshot.internal.ScreenshotClientModuleEntryPoint", "io.appmetrica.analytics.reporterextension.internal.ReporterExtensionClientModuleEntryPoint"});
 
     @Override // io.appmetrica.analytics.coreapi.internal.clientcomponents.ClientComponentsInitializer
     public final void onCreate() {
-        if (C0157c4.l().f906a.b()) {
+        if (C0157c4.l().f920a.b()) {
             Tc tc = C0157c4.l().m;
-            List<String> list = this.f508a;
+            List<String> list = this.f522a;
             ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
             for (String str : list) {
                 arrayList.add(new C0539r5(str));
@@ -25,7 +25,7 @@ public final class C7 implements ClientComponentsInitializer {
                 C0539r5[] c0539r5Arr = (C0539r5[]) array;
                 Sc[] scArr = (Sc[]) Arrays.copyOf(c0539r5Arr, c0539r5Arr.length);
                 synchronized (tc) {
-                    CollectionsKt.addAll(tc.f775a, scArr);
+                    CollectionsKt.addAll(tc.f789a, scArr);
                 }
                 return;
             }

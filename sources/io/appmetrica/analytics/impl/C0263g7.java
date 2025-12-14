@@ -9,7 +9,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class C0263g7 implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0186d7 f984a;
+    public final C0186d7 f998a;
 
     public C0263g7() {
         this(null, 1, null);
@@ -19,13 +19,13 @@ public final class C0263g7 implements Converter {
     /* renamed from: a */
     public final ContentValues fromModel(C0237f7 c0237f7) {
         ContentValues contentValues = new ContentValues();
-        Long l = c0237f7.f969a;
+        Long l = c0237f7.f983a;
         if (l != null) {
             contentValues.put("session_id", Long.valueOf(l.longValue()));
         }
         Wk wk = c0237f7.b;
         if (wk != null) {
-            contentValues.put("session_type", Integer.valueOf(wk.f825a));
+            contentValues.put("session_type", Integer.valueOf(wk.f839a));
         }
         Long l2 = c0237f7.c;
         if (l2 != null) {
@@ -33,7 +33,7 @@ public final class C0263g7 implements Converter {
         }
         EnumC0164cb enumC0164cb = c0237f7.d;
         if (enumC0164cb != null) {
-            contentValues.put("type", Integer.valueOf(enumC0164cb.f912a));
+            contentValues.put("type", Integer.valueOf(enumC0164cb.f926a));
         }
         Long l3 = c0237f7.e;
         if (l3 != null) {
@@ -43,13 +43,13 @@ public final class C0263g7 implements Converter {
         if (l4 != null) {
             contentValues.put("time", Long.valueOf(l4.longValue()));
         }
-        C0186d7 c0186d7 = this.f984a;
-        contentValues.put("event_description", MessageNano.toByteArray(c0186d7.f927a.fromModel(c0237f7.g)));
+        C0186d7 c0186d7 = this.f998a;
+        contentValues.put("event_description", MessageNano.toByteArray(c0186d7.f941a.fromModel(c0237f7.g)));
         return contentValues;
     }
 
     public C0263g7(C0186d7 c0186d7) {
-        this.f984a = c0186d7;
+        this.f998a = c0186d7;
     }
 
     public /* synthetic */ C0263g7(C0186d7 c0186d7, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -74,6 +74,6 @@ public final class C0263g7 implements Converter {
         }
         Long asLong2 = contentValues.getAsLong("number_in_session");
         Integer asInteger2 = contentValues.getAsInteger("type");
-        return new C0237f7(asLong, wk, asLong2, asInteger2 != null ? EnumC0164cb.a(asInteger2.intValue()) : null, contentValues.getAsLong("global_number"), contentValues.getAsLong("time"), this.f984a.toModel(contentValues.getAsByteArray("event_description")));
+        return new C0237f7(asLong, wk, asLong2, asInteger2 != null ? EnumC0164cb.a(asInteger2.intValue()) : null, contentValues.getAsLong("global_number"), contentValues.getAsLong("time"), this.f998a.toModel(contentValues.getAsByteArray("event_description")));
     }
 }

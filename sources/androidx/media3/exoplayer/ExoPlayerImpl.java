@@ -236,7 +236,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
             this.listeners = new ListenerSet<>(looper2, clock2, new ListenerSet.IterationFinishedEvent() { // from class: androidx.media3.exoplayer.ExoPlayerImpl$$ExternalSyntheticLambda16
                 @Override // androidx.media3.common.util.ListenerSet.IterationFinishedEvent
                 public final void invoke(Object obj, FlagSet flagSet) {
-                    ExoPlayerImpl.this.m8888lambda$new$0$androidxmedia3exoplayerExoPlayerImpl((Player.Listener) obj, flagSet);
+                    ExoPlayerImpl.this.m8904lambda$new$0$androidxmedia3exoplayerExoPlayerImpl((Player.Listener) obj, flagSet);
                 }
             });
             this.audioOffloadListeners = new CopyOnWriteArraySet<>();
@@ -254,7 +254,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
             ExoPlayerImplInternal.PlaybackInfoUpdateListener playbackInfoUpdateListener = new ExoPlayerImplInternal.PlaybackInfoUpdateListener() { // from class: androidx.media3.exoplayer.ExoPlayerImpl$$ExternalSyntheticLambda17
                 @Override // androidx.media3.exoplayer.ExoPlayerImplInternal.PlaybackInfoUpdateListener
                 public final void onPlaybackInfoUpdate(ExoPlayerImplInternal.PlaybackInfoUpdate playbackInfoUpdate) {
-                    ExoPlayerImpl.this.m8890lambda$new$2$androidxmedia3exoplayerExoPlayerImpl(playbackInfoUpdate);
+                    ExoPlayerImpl.this.m8906lambda$new$2$androidxmedia3exoplayerExoPlayerImpl(playbackInfoUpdate);
                 }
             };
             this.playbackInfoUpdateListener = playbackInfoUpdateListener;
@@ -291,7 +291,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
             backgroundThreadStateHandler.runInBackground(new Runnable() { // from class: androidx.media3.exoplayer.ExoPlayerImpl$$ExternalSyntheticLambda19
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ExoPlayerImpl.this.m8891lambda$new$3$androidxmedia3exoplayerExoPlayerImpl();
+                    ExoPlayerImpl.this.m8907lambda$new$3$androidxmedia3exoplayerExoPlayerImpl();
                 }
             });
             AudioBecomingNoisyManager audioBecomingNoisyManager = new AudioBecomingNoisyManager(builder.context, playbackLooper, builder.looper, this.componentListener, clock2);
@@ -346,24 +346,24 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$androidx-media3-exoplayer-ExoPlayerImpl  reason: not valid java name */
-    public /* synthetic */ void m8888lambda$new$0$androidxmedia3exoplayerExoPlayerImpl(Player.Listener listener, FlagSet flagSet) {
+    public /* synthetic */ void m8904lambda$new$0$androidxmedia3exoplayerExoPlayerImpl(Player.Listener listener, FlagSet flagSet) {
         listener.onEvents(this.wrappingPlayer, new Player.Events(flagSet));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$2$androidx-media3-exoplayer-ExoPlayerImpl  reason: not valid java name */
-    public /* synthetic */ void m8890lambda$new$2$androidxmedia3exoplayerExoPlayerImpl(final ExoPlayerImplInternal.PlaybackInfoUpdate playbackInfoUpdate) {
+    public /* synthetic */ void m8906lambda$new$2$androidxmedia3exoplayerExoPlayerImpl(final ExoPlayerImplInternal.PlaybackInfoUpdate playbackInfoUpdate) {
         this.playbackInfoUpdateHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.ExoPlayerImpl$$ExternalSyntheticLambda12
             @Override // java.lang.Runnable
             public final void run() {
-                ExoPlayerImpl.this.m8889lambda$new$1$androidxmedia3exoplayerExoPlayerImpl(playbackInfoUpdate);
+                ExoPlayerImpl.this.m8905lambda$new$1$androidxmedia3exoplayerExoPlayerImpl(playbackInfoUpdate);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$3$androidx-media3-exoplayer-ExoPlayerImpl  reason: not valid java name */
-    public /* synthetic */ void m8891lambda$new$3$androidxmedia3exoplayerExoPlayerImpl() {
+    public /* synthetic */ void m8907lambda$new$3$androidxmedia3exoplayerExoPlayerImpl() {
         this.audioSessionIdState.setStateInBackground(Integer.valueOf(Util.generateAudioSessionIdV21(this.applicationContext)));
     }
 
@@ -1081,14 +1081,14 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
         this.listeners.sendEvent(15, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.ExoPlayerImpl$$ExternalSyntheticLambda14
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
-                ExoPlayerImpl.this.m8893xd48e5d09((Player.Listener) obj);
+                ExoPlayerImpl.this.m8909xd48e5d09((Player.Listener) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setPlaylistMetadata$8$androidx-media3-exoplayer-ExoPlayerImpl  reason: not valid java name */
-    public /* synthetic */ void m8893xd48e5d09(Player.Listener listener) {
+    public /* synthetic */ void m8909xd48e5d09(Player.Listener listener) {
         listener.onPlaylistMetadataChanged(this.playlistMetadata);
     }
 
@@ -1308,7 +1308,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
         }, new Function() { // from class: androidx.media3.exoplayer.ExoPlayerImpl$$ExternalSyntheticLambda9
             @Override // com.google.common.base.Function
             public final Object apply(Object obj) {
-                return ExoPlayerImpl.this.m8892x6cd39d73(i, (Integer) obj);
+                return ExoPlayerImpl.this.m8908x6cd39d73(i, (Integer) obj);
             }
         });
     }
@@ -1323,7 +1323,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setAudioSessionId$11$androidx-media3-exoplayer-ExoPlayerImpl  reason: not valid java name */
-    public /* synthetic */ Integer m8892x6cd39d73(int i, Integer num) {
+    public /* synthetic */ Integer m8908x6cd39d73(int i, Integer num) {
         if (i == 0) {
             i = Util.generateAudioSessionIdV21(this.applicationContext);
         }
@@ -1787,7 +1787,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: handlePlaybackInfo */
-    public void m8889lambda$new$1$androidxmedia3exoplayerExoPlayerImpl(ExoPlayerImplInternal.PlaybackInfoUpdate playbackInfoUpdate) {
+    public void m8905lambda$new$1$androidxmedia3exoplayerExoPlayerImpl(ExoPlayerImplInternal.PlaybackInfoUpdate playbackInfoUpdate) {
         this.pendingOperationAcks -= playbackInfoUpdate.operationAcks;
         boolean z = true;
         if (playbackInfoUpdate.positionDiscontinuity) {
@@ -2115,14 +2115,14 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
         this.listeners.queueEvent(13, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.ExoPlayerImpl$$ExternalSyntheticLambda25
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
-                ExoPlayerImpl.this.m8894xb3c7aa6e((Player.Listener) obj);
+                ExoPlayerImpl.this.m8910xb3c7aa6e((Player.Listener) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$updateAvailableCommands$28$androidx-media3-exoplayer-ExoPlayerImpl  reason: not valid java name */
-    public /* synthetic */ void m8894xb3c7aa6e(Player.Listener listener) {
+    public /* synthetic */ void m8910xb3c7aa6e(Player.Listener listener) {
         listener.onAvailableCommandsChanged(this.availableCommands);
     }
 
@@ -2812,7 +2812,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
                 ExoPlayerImpl.this.listeners.queueEvent(14, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.ExoPlayerImpl$ComponentListener$$ExternalSyntheticLambda3
                     @Override // androidx.media3.common.util.ListenerSet.Event
                     public final void invoke(Object obj) {
-                        ExoPlayerImpl.ComponentListener.this.m8895x2c83eab9((Player.Listener) obj);
+                        ExoPlayerImpl.ComponentListener.this.m8911x2c83eab9((Player.Listener) obj);
                     }
                 });
             }
@@ -2827,7 +2827,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onMetadata$6$androidx-media3-exoplayer-ExoPlayerImpl$ComponentListener  reason: not valid java name */
-        public /* synthetic */ void m8895x2c83eab9(Player.Listener listener) {
+        public /* synthetic */ void m8911x2c83eab9(Player.Listener listener) {
             listener.onMediaMetadataChanged(ExoPlayerImpl.this.mediaMetadata);
         }
 

@@ -70,10 +70,10 @@ public final class FastFallbackExchangeFinder implements ExchangeFinder {
                             if (launchTcpConnect.isSuccess()) {
                                 cancelInFlightConnects();
                                 if (!launchTcpConnect.getPlan().isReady()) {
-                                    launchTcpConnect = launchTcpConnect.getPlan().mo12111connectTlsEtc();
+                                    launchTcpConnect = launchTcpConnect.getPlan().mo12127connectTlsEtc();
                                 }
                                 if (launchTcpConnect.isSuccess()) {
-                                    return launchTcpConnect.getPlan().mo12107handleSuccess();
+                                    return launchTcpConnect.getPlan().mo12123handleSuccess();
                                 }
                             }
                             throwable = launchTcpConnect.getThrowable();
@@ -141,7 +141,7 @@ public final class FastFallbackExchangeFinder implements ExchangeFinder {
                     CopyOnWriteArrayList copyOnWriteArrayList;
                     BlockingQueue blockingQueue;
                     try {
-                        connectResult = plan.mo12110connectTcp();
+                        connectResult = plan.mo12126connectTcp();
                     } catch (Throwable th2) {
                         connectResult = new RoutePlanner.ConnectResult(plan, null, th2, 2, null);
                     }
@@ -172,10 +172,10 @@ public final class FastFallbackExchangeFinder implements ExchangeFinder {
         Intrinsics.checkNotNullExpressionValue(it, "iterator(...)");
         while (it.hasNext()) {
             RoutePlanner.Plan next = it.next();
-            next.mo12106cancel();
-            RoutePlanner.Plan mo12108retry = next.mo12108retry();
-            if (mo12108retry != null) {
-                getRoutePlanner().getDeferredPlans().addLast(mo12108retry);
+            next.mo12122cancel();
+            RoutePlanner.Plan mo12124retry = next.mo12124retry();
+            if (mo12124retry != null) {
+                getRoutePlanner().getDeferredPlans().addLast(mo12124retry);
             }
         }
         this.tcpConnectsInFlight.clear();

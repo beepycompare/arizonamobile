@@ -35,7 +35,7 @@ public final class DefaultIoScheduler extends ExecutorCoroutineDispatcher implem
 
     @Override // java.util.concurrent.Executor
     public void execute(Runnable runnable) {
-        mo11783dispatch(EmptyCoroutineContext.INSTANCE, runnable);
+        mo11799dispatch(EmptyCoroutineContext.INSTANCE, runnable);
     }
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
@@ -45,8 +45,8 @@ public final class DefaultIoScheduler extends ExecutorCoroutineDispatcher implem
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public void mo11783dispatch(CoroutineContext coroutineContext, Runnable runnable) {
-        f155default.mo11783dispatch(coroutineContext, runnable);
+    public void mo11799dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+        f155default.mo11799dispatch(coroutineContext, runnable);
     }
 
     @Override // kotlinx.coroutines.CoroutineDispatcher

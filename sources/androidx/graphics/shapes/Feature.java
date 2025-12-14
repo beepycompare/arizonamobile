@@ -1,18 +1,32 @@
 package androidx.graphics.shapes;
 
-import androidx.collection.FloatFloatPair;
+import androidx.graphics.shapes.Feature;
+import java.util.ArrayList;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.collections.CollectionsKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* compiled from: Features.kt */
-@Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\b \u0018\u00002\u00020\u0001:\u0002\f\rB\u0013\u0012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003¢\u0006\u0002\u0010\u0005J\u0015\u0010\b\u001a\u00020\u00002\u0006\u0010\t\u001a\u00020\nH ¢\u0006\u0002\b\u000bR\u0017\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\u000e"}, d2 = {"Landroidx/graphics/shapes/Feature;", "", "cubics", "", "Landroidx/graphics/shapes/Cubic;", "(Ljava/util/List;)V", "getCubics", "()Ljava/util/List;", "transformed", "f", "Landroidx/graphics/shapes/PointTransformer;", "transformed$graphics_shapes_release", "Corner", "Edge", "graphics-shapes_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\b\b&\u0018\u0000 \u00132\u00020\u0001:\u0003\u0013\u0014\u0015B\u0015\u0012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\u0010\u0010\t\u001a\u00020\u00002\u0006\u0010\n\u001a\u00020\u000bH&J\b\u0010\f\u001a\u00020\u0000H&R\u0017\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0012\u0010\r\u001a\u00020\u000eX¦\u0004¢\u0006\u0006\u001a\u0004\b\r\u0010\u000fR\u0012\u0010\u0010\u001a\u00020\u000eX¦\u0004¢\u0006\u0006\u001a\u0004\b\u0010\u0010\u000fR\u0012\u0010\u0011\u001a\u00020\u000eX¦\u0004¢\u0006\u0006\u001a\u0004\b\u0011\u0010\u000fR\u0012\u0010\u0012\u001a\u00020\u000eX¦\u0004¢\u0006\u0006\u001a\u0004\b\u0012\u0010\u000f¨\u0006\u0016"}, d2 = {"Landroidx/graphics/shapes/Feature;", "", "cubics", "", "Landroidx/graphics/shapes/Cubic;", "<init>", "(Ljava/util/List;)V", "getCubics", "()Ljava/util/List;", "transformed", "f", "Landroidx/graphics/shapes/PointTransformer;", "reversed", "isIgnorableFeature", "", "()Z", "isEdge", "isConvexCorner", "isConcaveCorner", "Factory", "Edge", "Corner", "graphics-shapes"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public abstract class Feature {
+    public static final Factory Factory = new Factory(null);
     private final List<Cubic> cubics;
 
-    public abstract Feature transformed$graphics_shapes_release(PointTransformer pointTransformer);
+    public abstract boolean isConcaveCorner();
+
+    public abstract boolean isConvexCorner();
+
+    public abstract boolean isEdge();
+
+    public abstract boolean isIgnorableFeature();
+
+    public abstract Feature reversed();
+
+    public abstract Feature transformed(PointTransformer pointTransformer);
 
     /* JADX WARN: Multi-variable type inference failed */
     public Feature(List<? extends Cubic> cubics) {
@@ -25,17 +39,87 @@ public abstract class Feature {
     }
 
     /* compiled from: Features.kt */
-    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0000\u0018\u00002\u00020\u0001B\u0013\u0012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003¢\u0006\u0002\u0010\u0005J\b\u0010\u0006\u001a\u00020\u0007H\u0016J\u0015\u0010\b\u001a\u00020\u00002\u0006\u0010\t\u001a\u00020\nH\u0010¢\u0006\u0002\b\u000b¨\u0006\f"}, d2 = {"Landroidx/graphics/shapes/Feature$Edge;", "Landroidx/graphics/shapes/Feature;", "cubics", "", "Landroidx/graphics/shapes/Cubic;", "(Ljava/util/List;)V", "toString", "", "transformed", "f", "Landroidx/graphics/shapes/PointTransformer;", "transformed$graphics_shapes_release", "graphics-shapes_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0014\u0010\u0004\u001a\u00020\u00052\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007J\u000e\u0010\t\u001a\u00020\u00052\u0006\u0010\n\u001a\u00020\bJ\u0014\u0010\u000b\u001a\u00020\u00052\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007J\u0014\u0010\f\u001a\u00020\u00052\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007J\u0010\u0010\r\u001a\u00020\u00052\u0006\u0010\u000e\u001a\u00020\u0005H\u0002J\u0010\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u000e\u001a\u00020\u0005H\u0002¨\u0006\u0011"}, d2 = {"Landroidx/graphics/shapes/Feature$Factory;", "", "<init>", "()V", "buildIgnorableFeature", "Landroidx/graphics/shapes/Feature;", "cubics", "", "Landroidx/graphics/shapes/Cubic;", "buildEdge", "cubic", "buildConvexCorner", "buildConcaveCorner", "validated", "feature", "isContinuous", "", "graphics-shapes"}, k = 1, mv = {2, 0, 0}, xi = 48)
+    /* loaded from: classes2.dex */
+    public static final class Factory {
+        public /* synthetic */ Factory(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        private Factory() {
+        }
+
+        public final Feature buildIgnorableFeature(List<? extends Cubic> cubics) {
+            Intrinsics.checkNotNullParameter(cubics, "cubics");
+            return validated(new Edge(cubics));
+        }
+
+        public final Feature buildEdge(Cubic cubic) {
+            Intrinsics.checkNotNullParameter(cubic, "cubic");
+            return new Edge(CollectionsKt.listOf(cubic));
+        }
+
+        public final Feature buildConvexCorner(List<? extends Cubic> cubics) {
+            Intrinsics.checkNotNullParameter(cubics, "cubics");
+            return validated(new Corner(cubics, true));
+        }
+
+        public final Feature buildConcaveCorner(List<? extends Cubic> cubics) {
+            Intrinsics.checkNotNullParameter(cubics, "cubics");
+            return validated(new Corner(cubics, false));
+        }
+
+        private final Feature validated(Feature feature) {
+            if (feature.getCubics().isEmpty()) {
+                throw new IllegalArgumentException("Features need at least one cubic.".toString());
+            }
+            if (isContinuous(feature)) {
+                return feature;
+            }
+            throw new IllegalArgumentException("Feature must be continuous, with the anchor points of all cubics matching the anchor points of the preceding and succeeding cubics".toString());
+        }
+
+        private final boolean isContinuous(Feature feature) {
+            Cubic cubic = (Cubic) CollectionsKt.first((List<? extends Object>) feature.getCubics());
+            int lastIndex = CollectionsKt.getLastIndex(feature.getCubics());
+            if (1 <= lastIndex) {
+                int i = 1;
+                while (true) {
+                    Cubic cubic2 = feature.getCubics().get(i);
+                    if (Math.abs(cubic2.getAnchor0X() - cubic.getAnchor1X()) <= 1.0E-4f && Math.abs(cubic2.getAnchor0Y() - cubic.getAnchor1Y()) <= 1.0E-4f) {
+                        if (i == lastIndex) {
+                            break;
+                        }
+                        i++;
+                        cubic = cubic2;
+                    } else {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+    }
+
+    /* compiled from: Features.kt */
+    @Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0005\b\u0000\u0018\u00002\u00020\u0001B\u0015\u0012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\u0010\u0010\u0007\u001a\u00020\u00002\u0006\u0010\b\u001a\u00020\tH\u0016J\b\u0010\n\u001a\u00020\u0000H\u0016J\b\u0010\u000b\u001a\u00020\fH\u0016R\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000fR\u0014\u0010\u0010\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u000fR\u0014\u0010\u0011\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u000fR\u0014\u0010\u0012\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u000f¨\u0006\u0013"}, d2 = {"Landroidx/graphics/shapes/Feature$Edge;", "Landroidx/graphics/shapes/Feature;", "cubics", "", "Landroidx/graphics/shapes/Cubic;", "<init>", "(Ljava/util/List;)V", "transformed", "f", "Landroidx/graphics/shapes/PointTransformer;", "reversed", "toString", "", "isIgnorableFeature", "", "()Z", "isEdge", "isConvexCorner", "isConcaveCorner", "graphics-shapes"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final class Edge extends Feature {
+        private final boolean isConcaveCorner;
+        private final boolean isConvexCorner;
+        private final boolean isEdge;
+        private final boolean isIgnorableFeature;
+
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Edge(List<? extends Cubic> cubics) {
             super(cubics);
             Intrinsics.checkNotNullParameter(cubics, "cubics");
+            this.isIgnorableFeature = true;
+            this.isEdge = true;
         }
 
         @Override // androidx.graphics.shapes.Feature
-        public Edge transformed$graphics_shapes_release(PointTransformer f) {
+        public Edge transformed(PointTransformer f) {
             Intrinsics.checkNotNullParameter(f, "f");
             List createListBuilder = CollectionsKt.createListBuilder();
             int size = getCubics().size();
@@ -45,63 +129,122 @@ public abstract class Feature {
             return new Edge(CollectionsKt.build(createListBuilder));
         }
 
+        @Override // androidx.graphics.shapes.Feature
+        public Edge reversed() {
+            ArrayList arrayList = new ArrayList();
+            for (int lastIndex = CollectionsKt.getLastIndex(getCubics()); -1 < lastIndex; lastIndex--) {
+                arrayList.add(getCubics().get(lastIndex).reverse());
+            }
+            return new Edge(arrayList);
+        }
+
         public String toString() {
             return "Edge";
+        }
+
+        @Override // androidx.graphics.shapes.Feature
+        public boolean isIgnorableFeature() {
+            return this.isIgnorableFeature;
+        }
+
+        @Override // androidx.graphics.shapes.Feature
+        public boolean isEdge() {
+            return this.isEdge;
+        }
+
+        @Override // androidx.graphics.shapes.Feature
+        public boolean isConvexCorner() {
+            return this.isConvexCorner;
+        }
+
+        @Override // androidx.graphics.shapes.Feature
+        public boolean isConcaveCorner() {
+            return this.isConcaveCorner;
         }
     }
 
     /* compiled from: Features.kt */
-    @Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0000\u0018\u00002\u00020\u0001B5\u0012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003\u0012\n\u0010\u0005\u001a\u00060\u0006j\u0002`\u0007\u0012\n\u0010\b\u001a\u00060\u0006j\u0002`\u0007\u0012\b\b\u0002\u0010\t\u001a\u00020\n¢\u0006\u0002\u0010\u000bJ\b\u0010\u0012\u001a\u00020\u0013H\u0016J\u0015\u0010\u0014\u001a\u00020\u00012\u0006\u0010\u0015\u001a\u00020\u0016H\u0010¢\u0006\u0002\b\u0017R\u0011\u0010\t\u001a\u00020\n¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u001d\u0010\b\u001a\u00060\u0006j\u0002`\u0007ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0010\u001a\u0004\b\u000e\u0010\u000fR\u001d\u0010\u0005\u001a\u00060\u0006j\u0002`\u0007ø\u0001\u0000ø\u0001\u0001¢\u0006\n\n\u0002\u0010\u0010\u001a\u0004\b\u0011\u0010\u000f\u0082\u0002\u000b\n\u0005\b¡\u001e0\u0001\n\u0002\b!¨\u0006\u0018"}, d2 = {"Landroidx/graphics/shapes/Feature$Corner;", "Landroidx/graphics/shapes/Feature;", "cubics", "", "Landroidx/graphics/shapes/Cubic;", "vertex", "Landroidx/collection/FloatFloatPair;", "Landroidx/graphics/shapes/Point;", "roundedCenter", "convex", "", "(Ljava/util/List;JJZLkotlin/jvm/internal/DefaultConstructorMarker;)V", "getConvex", "()Z", "getRoundedCenter-1ufDz9w", "()J", "J", "getVertex-1ufDz9w", "toString", "", "transformed", "f", "Landroidx/graphics/shapes/PointTransformer;", "transformed$graphics_shapes_release", "graphics-shapes_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000,\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0005\b\u0000\u0018\u00002\u00020\u0001B\u001f\u0012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00040\u0003\u0012\b\b\u0002\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u000b\u001a\u00020\u00012\u0006\u0010\f\u001a\u00020\rH\u0016J\b\u0010\u000e\u001a\u00020\u0000H\u0016J\b\u0010\u000f\u001a\u00020\u0010H\u0016R\u0011\u0010\u0005\u001a\u00020\u0006¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u0014\u0010\u0011\u001a\u00020\u0006X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\nR\u0014\u0010\u0012\u001a\u00020\u0006X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\nR\u0014\u0010\u0013\u001a\u00020\u0006X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\nR\u0014\u0010\u0014\u001a\u00020\u0006X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\n¨\u0006\u0015"}, d2 = {"Landroidx/graphics/shapes/Feature$Corner;", "Landroidx/graphics/shapes/Feature;", "cubics", "", "Landroidx/graphics/shapes/Cubic;", "convex", "", "<init>", "(Ljava/util/List;Z)V", "getConvex", "()Z", "transformed", "f", "Landroidx/graphics/shapes/PointTransformer;", "reversed", "toString", "", "isIgnorableFeature", "isEdge", "isConvexCorner", "isConcaveCorner", "graphics-shapes"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final class Corner extends Feature {
         private final boolean convex;
-        private final long roundedCenter;
-        private final long vertex;
+        private final boolean isConcaveCorner;
+        private final boolean isConvexCorner;
+        private final boolean isEdge;
+        private final boolean isIgnorableFeature;
 
-        public /* synthetic */ Corner(List list, long j, long j2, boolean z, DefaultConstructorMarker defaultConstructorMarker) {
-            this(list, j, j2, z);
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        public Corner(List<? extends Cubic> cubics, boolean z) {
+            super(cubics);
+            Intrinsics.checkNotNullParameter(cubics, "cubics");
+            this.convex = z;
+            this.isConvexCorner = z;
+            this.isConcaveCorner = !z;
         }
 
-        public /* synthetic */ Corner(List list, long j, long j2, boolean z, int i, DefaultConstructorMarker defaultConstructorMarker) {
-            this(list, j, j2, (i & 8) != 0 ? true : z, null);
-        }
-
-        /* renamed from: getVertex-1ufDz9w  reason: not valid java name */
-        public final long m8812getVertex1ufDz9w() {
-            return this.vertex;
-        }
-
-        /* renamed from: getRoundedCenter-1ufDz9w  reason: not valid java name */
-        public final long m8811getRoundedCenter1ufDz9w() {
-            return this.roundedCenter;
+        public /* synthetic */ Corner(List list, boolean z, int i, DefaultConstructorMarker defaultConstructorMarker) {
+            this(list, (i & 2) != 0 ? true : z);
         }
 
         public final boolean getConvex() {
             return this.convex;
         }
 
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        private Corner(List<? extends Cubic> cubics, long j, long j2, boolean z) {
-            super(cubics);
-            Intrinsics.checkNotNullParameter(cubics, "cubics");
-            this.vertex = j;
-            this.roundedCenter = j2;
-            this.convex = z;
-        }
-
         @Override // androidx.graphics.shapes.Feature
-        public Feature transformed$graphics_shapes_release(PointTransformer f) {
+        public Feature transformed(PointTransformer f) {
             Intrinsics.checkNotNullParameter(f, "f");
             List createListBuilder = CollectionsKt.createListBuilder();
             int size = getCubics().size();
             for (int i = 0; i < size; i++) {
                 createListBuilder.add(getCubics().get(i).transformed(f));
             }
-            return new Corner(CollectionsKt.build(createListBuilder), PointKt.m8829transformedso9K2fw(this.vertex, f), PointKt.m8829transformedso9K2fw(this.roundedCenter, f), this.convex, null);
+            return new Corner(CollectionsKt.build(createListBuilder), this.convex);
+        }
+
+        @Override // androidx.graphics.shapes.Feature
+        public Corner reversed() {
+            ArrayList arrayList = new ArrayList();
+            for (int lastIndex = CollectionsKt.getLastIndex(getCubics()); -1 < lastIndex; lastIndex--) {
+                arrayList.add(getCubics().get(lastIndex).reverse());
+            }
+            return new Corner(arrayList, !this.convex);
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static final CharSequence toString$lambda$1(Cubic it) {
+            Intrinsics.checkNotNullParameter(it, "it");
+            return "[" + it + AbstractJsonLexerKt.END_LIST;
         }
 
         public String toString() {
-            return "Corner: vertex=" + ((Object) FloatFloatPair.m32toStringimpl(this.vertex)) + ", center=" + ((Object) FloatFloatPair.m32toStringimpl(this.roundedCenter)) + ", convex=" + this.convex;
+            return "Corner: cubics=" + CollectionsKt.joinToString$default(getCubics(), ", ", null, null, 0, null, new Function1() { // from class: androidx.graphics.shapes.Feature$Corner$$ExternalSyntheticLambda0
+                @Override // kotlin.jvm.functions.Function1
+                public final Object invoke(Object obj) {
+                    CharSequence string$lambda$1;
+                    string$lambda$1 = Feature.Corner.toString$lambda$1((Cubic) obj);
+                    return string$lambda$1;
+                }
+            }, 30, null) + " convex=" + this.convex;
+        }
+
+        @Override // androidx.graphics.shapes.Feature
+        public boolean isIgnorableFeature() {
+            return this.isIgnorableFeature;
+        }
+
+        @Override // androidx.graphics.shapes.Feature
+        public boolean isEdge() {
+            return this.isEdge;
+        }
+
+        @Override // androidx.graphics.shapes.Feature
+        public boolean isConvexCorner() {
+            return this.isConvexCorner;
+        }
+
+        @Override // androidx.graphics.shapes.Feature
+        public boolean isConcaveCorner() {
+            return this.isConcaveCorner;
         }
     }
 }

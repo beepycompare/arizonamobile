@@ -244,7 +244,7 @@ public final class SnackbarHostState {
         public void performAction() {
             if (this.continuation.isActive()) {
                 Result.Companion companion = Result.Companion;
-                this.continuation.resumeWith(Result.m10199constructorimpl(SnackbarResult.ActionPerformed));
+                this.continuation.resumeWith(Result.m10215constructorimpl(SnackbarResult.ActionPerformed));
             }
         }
 
@@ -252,7 +252,7 @@ public final class SnackbarHostState {
         public void dismiss() {
             if (this.continuation.isActive()) {
                 Result.Companion companion = Result.Companion;
-                this.continuation.resumeWith(Result.m10199constructorimpl(SnackbarResult.Dismissed));
+                this.continuation.resumeWith(Result.m10215constructorimpl(SnackbarResult.Dismissed));
             }
         }
 

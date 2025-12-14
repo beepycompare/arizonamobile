@@ -5,7 +5,7 @@ import io.appmetrica.analytics.coreutils.internal.StringUtils;
 public final class D8 implements uo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final I8 f525a;
+    public final I8 f539a;
 
     public D8() {
         this(new I8());
@@ -20,11 +20,11 @@ public final class D8 implements uo {
         } else {
             bArr = new byte[0];
         }
-        I8 i8 = this.f525a;
-        return ((H8) i8.f605a.a(o8.o)).a(bArr);
+        I8 i8 = this.f539a;
+        return ((H8) i8.f619a.a(o8.o)).a(bArr);
     }
 
     public D8(I8 i8) {
-        this.f525a = i8;
+        this.f539a = i8;
     }
 }

@@ -13,7 +13,7 @@ public final class C0317i9 extends MessageNano {
     public static volatile C0317i9[] e;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f1021a;
+    public int f1035a;
     public int b;
     public String c;
     public boolean d;
@@ -34,7 +34,7 @@ public final class C0317i9 extends MessageNano {
     }
 
     public final C0317i9 a() {
-        this.f1021a = 0;
+        this.f1035a = 0;
         this.b = 0;
         this.c = "";
         this.d = false;
@@ -45,7 +45,7 @@ public final class C0317i9 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        int i = this.f1021a;
+        int i = this.f1035a;
         if (i != 0) {
             computeSerializedSize += CodedOutputByteBufferNano.computeUInt32Size(1, i);
         }
@@ -62,7 +62,7 @@ public final class C0317i9 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        int i = this.f1021a;
+        int i = this.f1035a;
         if (i != 0) {
             codedOutputByteBufferNano.writeUInt32(1, i);
         }
@@ -88,7 +88,7 @@ public final class C0317i9 extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 8) {
-                this.f1021a = codedInputByteBufferNano.readUInt32();
+                this.f1035a = codedInputByteBufferNano.readUInt32();
             } else if (readTag == 16) {
                 this.b = codedInputByteBufferNano.readUInt32();
             } else if (readTag == 26) {

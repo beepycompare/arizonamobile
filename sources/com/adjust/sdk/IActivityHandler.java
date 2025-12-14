@@ -18,9 +18,13 @@ public interface IActivityHandler {
 
     void getAdid(OnAdidReadListener onAdidReadListener);
 
+    void getAdidWithTimeout(long j, OnAdidReadListener onAdidReadListener);
+
     AdjustConfig getAdjustConfig();
 
     void getAttribution(OnAttributionReadListener onAttributionReadListener);
+
+    void getAttributionWithTimeout(long j, OnAttributionReadListener onAttributionReadListener);
 
     Context getContext();
 

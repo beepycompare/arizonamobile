@@ -10,7 +10,7 @@ public final class so implements to {
         LinkedList linkedList = new LinkedList();
         boolean z = true;
         for (ro roVar : list) {
-            if (!roVar.f1190a) {
+            if (!roVar.f1204a) {
                 linkedList.add(roVar.b);
                 z = false;
             }

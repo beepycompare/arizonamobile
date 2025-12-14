@@ -6,13 +6,13 @@ import java.util.List;
 public final class W8 extends X8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f819a;
+    public final List f833a;
 
     public W8(List<Object> list) {
-        this.f819a = CollectionUtils.unmodifiableListCopy(list);
+        this.f833a = CollectionUtils.unmodifiableListCopy(list);
     }
 
     public final List<Object> a() {
-        return this.f819a;
+        return this.f833a;
     }
 }

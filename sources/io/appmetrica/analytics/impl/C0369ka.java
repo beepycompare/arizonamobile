@@ -11,7 +11,7 @@ public final class C0369ka implements Wb {
         if ((c0340j7 != null ? c0340j7.b : null) != null && c0340j7.c != null) {
             c0110a9 = new C0110a9();
             c0110a9.b = c0340j7.b.doubleValue();
-            c0110a9.f877a = c0340j7.c.doubleValue();
+            c0110a9.f891a = c0340j7.c.doubleValue();
             Integer num = c0340j7.d;
             if (num != null) {
                 c0110a9.g = num.intValue();

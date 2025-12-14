@@ -13,14 +13,14 @@ import io.appmetrica.analytics.internal.AppMetricaService;
 public final class H1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final SafePackageManager f583a = new SafePackageManager();
+    public final SafePackageManager f597a = new SafePackageManager();
 
     public final Intent a(Context context) {
         Bundle bundle;
         C0172cj c0172cj;
         C0157c4.l().u.getClass();
         Intent data = new Intent(context, AppMetricaService.class).setAction("io.appmetrica.analytics.IAppMetricaService").setData(new Uri.Builder().scheme(H7.b).authority(context.getPackageName()).path("client").appendQueryParameter("pid", String.valueOf(Process.myPid())).appendQueryParameter("psid", Cf.c).build());
-        ApplicationInfo applicationInfo = this.f583a.getApplicationInfo(context, context.getPackageName(), 128);
+        ApplicationInfo applicationInfo = this.f597a.getApplicationInfo(context, context.getPackageName(), 128);
         if (applicationInfo == null || (bundle = applicationInfo.metaData) == null) {
             bundle = new Bundle();
         }

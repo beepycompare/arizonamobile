@@ -24,7 +24,7 @@ public final class Pl implements Ql {
     public static final Map k = Collections.unmodifiableMap(new Ml());
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f723a;
+    public final List f737a;
     public final C0702xi b;
     public final Xl c;
     public final Handler d;
@@ -171,7 +171,7 @@ public final class Pl implements Ql {
             w9 = u9.b;
         }
         t9.getClass();
-        Boolean bool = w9.f820a;
+        Boolean bool = w9.f834a;
         return new Y9();
     }
 
@@ -208,13 +208,13 @@ public final class Pl implements Ql {
         synchronized (this.g) {
             if (!this.j || this.c.b()) {
                 this.j = true;
-                a(this.f723a, this.f, this.i, false);
+                a(this.f737a, this.f, this.i, false);
             }
         }
     }
 
     public Pl(C0702xi c0702xi, Xl xl, Handler handler) {
-        this.f723a = Arrays.asList(StartupParamsCallback.APPMETRICA_UUID, StartupParamsCallback.APPMETRICA_DEVICE_ID, StartupParamsCallback.APPMETRICA_DEVICE_ID_HASH, "appmetrica_get_ad_url", "appmetrica_report_ad_url", "appmetrica_clids");
+        this.f737a = Arrays.asList(StartupParamsCallback.APPMETRICA_UUID, StartupParamsCallback.APPMETRICA_DEVICE_ID, StartupParamsCallback.APPMETRICA_DEVICE_ID_HASH, "appmetrica_get_ad_url", "appmetrica_report_ad_url", "appmetrica_clids");
         this.g = new Object();
         this.h = new WeakHashMap();
         this.j = false;
@@ -240,10 +240,10 @@ public final class Pl implements Ql {
         bundle.putParcelable("io.appmetrica.analytics.impl.IdentifiersData", new Ya(c6, list, map, z));
         EnumC0164cb enumC0164cb = EnumC0164cb.EVENT_TYPE_UNDEFINED;
         PublicLogger anonymousInstance = PublicLogger.getAnonymousInstance();
-        Set set = AbstractC0693x9.f1280a;
+        Set set = AbstractC0693x9.f1294a;
         N3 n3 = new N3("", "", 1536, 0, anonymousInstance);
         n3.m = bundle;
-        G4 g4 = c0702xi.f1284a;
+        G4 g4 = c0702xi.f1298a;
         c0702xi.a(C0702xi.a(n3, g4), g4, 1, (Map) null);
     }
 

@@ -4,19 +4,19 @@ package kotlin;
 /* loaded from: classes5.dex */
 public final class UIntKt {
     private static final int toUInt(byte b) {
-        return UInt.m10299constructorimpl(b);
+        return UInt.m10315constructorimpl(b);
     }
 
     private static final int toUInt(short s) {
-        return UInt.m10299constructorimpl(s);
+        return UInt.m10315constructorimpl(s);
     }
 
     private static final int toUInt(int i) {
-        return UInt.m10299constructorimpl(i);
+        return UInt.m10315constructorimpl(i);
     }
 
     private static final int toUInt(long j) {
-        return UInt.m10299constructorimpl((int) j);
+        return UInt.m10315constructorimpl((int) j);
     }
 
     private static final int toUInt(float f) {

@@ -13,13 +13,13 @@ public final class S2 implements ChargeTypeProvider {
     public static final ChargeType d = ChargeType.UNKNOWN;
 
     /* renamed from: a  reason: collision with root package name */
-    public final ICommonExecutor f753a;
+    public final ICommonExecutor f767a;
     public volatile BatteryInfo b;
     public final ArrayList c = new ArrayList();
 
     public S2(ICommonExecutor iCommonExecutor, P2 p2) {
         R2 r2 = new R2(this);
-        this.f753a = iCommonExecutor;
+        this.f767a = iCommonExecutor;
         this.b = a(p2.a(r2));
     }
 

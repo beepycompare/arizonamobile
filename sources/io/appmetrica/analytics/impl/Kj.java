@@ -3,14 +3,14 @@ package io.appmetrica.analytics.impl;
 public final class Kj implements Ra {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ V f640a;
+    public final /* synthetic */ V f654a;
 
     public Kj(V v) {
-        this.f640a = v;
+        this.f654a = v;
     }
 
     @Override // io.appmetrica.analytics.impl.Ra
     public final void a(Sa sa) {
-        sa.a(this.f640a);
+        sa.a(this.f654a);
     }
 }

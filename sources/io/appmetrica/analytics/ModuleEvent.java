@@ -9,7 +9,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class ModuleEvent {
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f266a;
+    private final int f280a;
     private final String b;
     private final String c;
     private final int d;
@@ -22,7 +22,7 @@ public final class ModuleEvent {
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private final int f267a;
+        private final int f281a;
         private String b;
         private String c;
         private int d;
@@ -83,7 +83,7 @@ public final class ModuleEvent {
         private Builder(int i) {
             this.d = 1;
             this.e = Category.GENERAL;
-            this.f267a = i;
+            this.f281a = i;
         }
     }
 
@@ -126,7 +126,7 @@ public final class ModuleEvent {
     }
 
     public int getType() {
-        return this.f266a;
+        return this.f280a;
     }
 
     public String getValue() {
@@ -134,11 +134,11 @@ public final class ModuleEvent {
     }
 
     public String toString() {
-        return "ModuleEvent{type=" + this.f266a + ", name='" + this.b + "', value='" + this.c + "', serviceDataReporterType=" + this.d + ", category=" + this.e + ", environment=" + this.f + ", extras=" + this.g + ", attributes=" + this.h + AbstractJsonLexerKt.END_OBJ;
+        return "ModuleEvent{type=" + this.f280a + ", name='" + this.b + "', value='" + this.c + "', serviceDataReporterType=" + this.d + ", category=" + this.e + ", environment=" + this.f + ", extras=" + this.g + ", attributes=" + this.h + AbstractJsonLexerKt.END_OBJ;
     }
 
     private ModuleEvent(Builder builder) {
-        this.f266a = builder.f267a;
+        this.f280a = builder.f281a;
         this.b = builder.b;
         this.c = builder.c;
         this.d = builder.d;

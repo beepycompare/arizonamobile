@@ -13,12 +13,12 @@ public abstract class AbstractCallableC0726yh implements Callable {
     public static final C0701xh d = new C0701xh();
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0485p0 f1304a;
+    public final C0485p0 f1318a;
     public final InterfaceC0122al b;
     public boolean c;
 
     public AbstractCallableC0726yh(C0485p0 c0485p0, InterfaceC0122al interfaceC0122al) {
-        this.f1304a = c0485p0;
+        this.f1318a = c0485p0;
         this.b = interfaceC0122al;
     }
 
@@ -28,23 +28,23 @@ public abstract class AbstractCallableC0726yh implements Callable {
     }
 
     public final C0485p0 b() {
-        return this.f1304a;
+        return this.f1318a;
     }
 
     public boolean c() {
-        C0485p0 c0485p0 = this.f1304a;
+        C0485p0 c0485p0 = this.f1318a;
         synchronized (c0485p0) {
             if (c0485p0.d == null) {
                 c0485p0.e = new CountDownLatch(1);
-                Intent a2 = c0485p0.h.a(c0485p0.f1140a);
+                Intent a2 = c0485p0.h.a(c0485p0.f1154a);
                 try {
-                    c0485p0.g.b(c0485p0.f1140a);
-                    c0485p0.f1140a.bindService(a2, c0485p0.j, 1);
+                    c0485p0.g.b(c0485p0.f1154a);
+                    c0485p0.f1154a.bindService(a2, c0485p0.j, 1);
                 } catch (Throwable unused) {
                 }
             }
         }
-        this.f1304a.a(5000L);
+        this.f1318a.a(5000L);
         return true;
     }
 
@@ -71,7 +71,7 @@ public abstract class AbstractCallableC0726yh implements Callable {
             this.c = true;
             int i = 0;
             do {
-                C0485p0 c0485p0 = this.f1304a;
+                C0485p0 c0485p0 = this.f1318a;
                 synchronized (c0485p0) {
                     iAppMetricaService = c0485p0.d;
                 }
@@ -80,7 +80,7 @@ public abstract class AbstractCallableC0726yh implements Callable {
                         a(iAppMetricaService);
                         InterfaceC0122al interfaceC0122al = this.b;
                         if (interfaceC0122al == null || ((C0351ji) interfaceC0122al).a()) {
-                            this.f1304a.c();
+                            this.f1318a.c();
                             return;
                         }
                         return;

@@ -35,27 +35,27 @@ public final class R {
 
     /* loaded from: classes4.dex */
     public static final class drawable {
-        public static int common_full_open_on_phone = 0x7f080598;
-        public static int common_google_signin_btn_icon_dark = 0x7f080599;
-        public static int common_google_signin_btn_icon_dark_focused = 0x7f08059a;
-        public static int common_google_signin_btn_icon_dark_normal = 0x7f08059b;
-        public static int common_google_signin_btn_icon_dark_normal_background = 0x7f08059c;
-        public static int common_google_signin_btn_icon_disabled = 0x7f08059d;
-        public static int common_google_signin_btn_icon_light = 0x7f08059e;
-        public static int common_google_signin_btn_icon_light_focused = 0x7f08059f;
-        public static int common_google_signin_btn_icon_light_normal = 0x7f0805a0;
-        public static int common_google_signin_btn_icon_light_normal_background = 0x7f0805a1;
-        public static int common_google_signin_btn_text_dark = 0x7f0805a2;
-        public static int common_google_signin_btn_text_dark_focused = 0x7f0805a3;
-        public static int common_google_signin_btn_text_dark_normal = 0x7f0805a4;
-        public static int common_google_signin_btn_text_dark_normal_background = 0x7f0805a5;
-        public static int common_google_signin_btn_text_disabled = 0x7f0805a6;
-        public static int common_google_signin_btn_text_light = 0x7f0805a7;
-        public static int common_google_signin_btn_text_light_focused = 0x7f0805a8;
-        public static int common_google_signin_btn_text_light_normal = 0x7f0805a9;
-        public static int common_google_signin_btn_text_light_normal_background = 0x7f0805aa;
-        public static int googleg_disabled_color_18 = 0x7f080908;
-        public static int googleg_standard_color_18 = 0x7f080909;
+        public static int common_full_open_on_phone = 0x7f08059b;
+        public static int common_google_signin_btn_icon_dark = 0x7f08059c;
+        public static int common_google_signin_btn_icon_dark_focused = 0x7f08059d;
+        public static int common_google_signin_btn_icon_dark_normal = 0x7f08059e;
+        public static int common_google_signin_btn_icon_dark_normal_background = 0x7f08059f;
+        public static int common_google_signin_btn_icon_disabled = 0x7f0805a0;
+        public static int common_google_signin_btn_icon_light = 0x7f0805a1;
+        public static int common_google_signin_btn_icon_light_focused = 0x7f0805a2;
+        public static int common_google_signin_btn_icon_light_normal = 0x7f0805a3;
+        public static int common_google_signin_btn_icon_light_normal_background = 0x7f0805a4;
+        public static int common_google_signin_btn_text_dark = 0x7f0805a5;
+        public static int common_google_signin_btn_text_dark_focused = 0x7f0805a6;
+        public static int common_google_signin_btn_text_dark_normal = 0x7f0805a7;
+        public static int common_google_signin_btn_text_dark_normal_background = 0x7f0805a8;
+        public static int common_google_signin_btn_text_disabled = 0x7f0805a9;
+        public static int common_google_signin_btn_text_light = 0x7f0805aa;
+        public static int common_google_signin_btn_text_light_focused = 0x7f0805ab;
+        public static int common_google_signin_btn_text_light_normal = 0x7f0805ac;
+        public static int common_google_signin_btn_text_light_normal_background = 0x7f0805ad;
+        public static int googleg_disabled_color_18 = 0x7f08090b;
+        public static int googleg_standard_color_18 = 0x7f08090c;
 
         private drawable() {
         }
@@ -66,12 +66,12 @@ public final class R {
         public static int adjust_height = 0x7f0a00b6;
         public static int adjust_width = 0x7f0a00b7;
         public static int auto = 0x7f0a0135;
-        public static int dark = 0x7f0a03d3;
-        public static int icon_only = 0x7f0a068f;
-        public static int light = 0x7f0a07dc;
-        public static int none = 0x7f0a0998;
-        public static int standard = 0x7f0a0cc3;
-        public static int wide = 0x7f0a0f43;
+        public static int dark = 0x7f0a03d6;
+        public static int icon_only = 0x7f0a0693;
+        public static int light = 0x7f0a07e0;
+        public static int none = 0x7f0a099d;
+        public static int standard = 0x7f0a0cca;
+        public static int wide = 0x7f0a0f4a;
 
         private id() {
         }

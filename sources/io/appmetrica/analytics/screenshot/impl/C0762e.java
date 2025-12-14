@@ -4,21 +4,21 @@ package io.appmetrica.analytics.screenshot.impl;
 public final class C0762e {
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f1444a;
+    public final boolean f1458a;
 
     public C0762e(boolean z) {
-        this.f1444a = z;
+        this.f1458a = z;
     }
 
     public final boolean a() {
-        return this.f1444a;
+        return this.f1458a;
     }
 
     public final String toString() {
-        return "ApiCaptorConfig(enabled=" + this.f1444a + ')';
+        return "ApiCaptorConfig(enabled=" + this.f1458a + ')';
     }
 
     public C0762e() {
-        this(new N().f1428a);
+        this(new N().f1442a);
     }
 }

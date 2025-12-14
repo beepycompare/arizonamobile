@@ -11,7 +11,7 @@ public final class Ai extends B4 {
     @Override // io.appmetrica.analytics.impl.B4
     public final boolean a(Q5 q5, C0638v4 c0638v4) {
         Bundle bundle = q5.m;
-        this.f488a.k.a(new C0688x4(bundle != null ? (ResultReceiver) bundle.getParcelable("io.appmetrica.analytics.impl.referrer.common.ReferrerResultReceiver") : null));
+        this.f502a.k.a(new C0688x4(bundle != null ? (ResultReceiver) bundle.getParcelable("io.appmetrica.analytics.impl.referrer.common.ReferrerResultReceiver") : null));
         return false;
     }
 }

@@ -8,16 +8,16 @@ import kotlin.jvm.internal.Lambda;
 public final class C0547rd extends Lambda implements Function1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0267gb f1183a;
+    public final /* synthetic */ C0267gb f1197a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C0547rd(C0267gb c0267gb) {
         super(1);
-        this.f1183a = c0267gb;
+        this.f1197a = c0267gb;
     }
 
     @Override // kotlin.jvm.functions.Function1
     public final Object invoke(Object obj) {
-        return ((Zc) ((Map.Entry) obj).getValue()).b.parse(this.f1183a);
+        return ((Zc) ((Map.Entry) obj).getValue()).b.parse(this.f1197a);
     }
 }

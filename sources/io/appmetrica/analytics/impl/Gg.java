@@ -7,6 +7,6 @@ public final class Gg extends W4 {
 
     @Override // io.appmetrica.analytics.impl.W4
     public final <C extends Fa> Ll a() {
-        return new Jg(this.f817a);
+        return new Jg(this.f831a);
     }
 }

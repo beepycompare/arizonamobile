@@ -4,5 +4,5 @@ package io.appmetrica.analytics.impl;
 public final class C0572sd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0729yk f1201a = C0470oa.k().p();
+    public final C0729yk f1215a = C0470oa.k().p();
 }

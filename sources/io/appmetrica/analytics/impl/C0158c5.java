@@ -6,16 +6,16 @@ import android.content.Context;
 public final class C0158c5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f907a;
+    public final Context f921a;
     public final R4 b;
     public final C0754zk c = C0470oa.k().B();
 
     public C0158c5(Context context, R4 r4) {
-        this.f907a = context;
+        this.f921a = context;
         this.b = r4;
     }
 
     public final Xe a() {
-        return new Xe(this.c.b(this.f907a, this.b));
+        return new Xe(this.c.b(this.f921a, this.b));
     }
 }

@@ -11,8 +11,8 @@ public final class AndroidColor_androidKt {
     public static final long m5287toColorLong8_81llA(long j) {
         int compare;
         long j2 = 63 & j;
-        compare = Long.compare(ULong.m10378constructorimpl(j2) ^ Long.MIN_VALUE, 16 ^ Long.MIN_VALUE);
-        return compare < 0 ? j : ULong.m10378constructorimpl(ULong.m10378constructorimpl(j & ULong.m10378constructorimpl(-64L)) | ULong.m10378constructorimpl(ULong.m10378constructorimpl(j2) - 1));
+        compare = Long.compare(ULong.m10394constructorimpl(j2) ^ Long.MIN_VALUE, 16 ^ Long.MIN_VALUE);
+        return compare < 0 ? j : ULong.m10394constructorimpl(ULong.m10394constructorimpl(j & ULong.m10394constructorimpl(-64L)) | ULong.m10394constructorimpl(ULong.m10394constructorimpl(j2) - 1));
     }
 
     public static final long fromColorLong(Color.Companion companion, long j) {
@@ -20,6 +20,6 @@ public final class AndroidColor_androidKt {
         if (j2 >= 16) {
             j = (j & (-64)) | (j2 + 1);
         }
-        return Color.m5420constructorimpl(ULong.m10378constructorimpl(j));
+        return Color.m5420constructorimpl(ULong.m10394constructorimpl(j));
     }
 }

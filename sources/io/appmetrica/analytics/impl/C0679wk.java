@@ -8,11 +8,11 @@ import io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceModuleR
 public final class C0679wk implements ServiceModuleReporterComponentContext {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0147bk f1269a;
+    public final C0147bk f1283a;
     public final C0121ak b;
 
     public C0679wk(Y4 y4, C0489p4 c0489p4) {
-        this.f1269a = new C0147bk(y4, null, 2, null);
+        this.f1283a = new C0147bk(y4, null, 2, null);
         this.b = new C0121ak(c0489p4);
     }
 
@@ -21,7 +21,7 @@ public final class C0679wk implements ServiceModuleReporterComponentContext {
     }
 
     public final C0147bk b() {
-        return this.f1269a;
+        return this.f1283a;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceModuleReporterComponentContext
@@ -31,6 +31,6 @@ public final class C0679wk implements ServiceModuleReporterComponentContext {
 
     @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.ServiceModuleReporterComponentContext
     public final ServiceComponentModuleReporter getReporter() {
-        return this.f1269a;
+        return this.f1283a;
     }
 }

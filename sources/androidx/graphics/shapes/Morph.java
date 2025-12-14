@@ -1,5 +1,6 @@
 package androidx.graphics.shapes;
 
+import androidx.collection.FloatFloatPair;
 import androidx.graphics.shapes.MeasuredPolygon;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: Morph.kt */
-@Metadata(d1 = {"\u0000L\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\u0014\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u0000 \u001e2\u00020\u0001:\u0001\u001eB\u0015\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003¢\u0006\u0002\u0010\u0005J\u0014\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\t0\u00072\u0006\u0010\u0010\u001a\u00020\u0011J\u001c\u0010\u0012\u001a\u00020\u00132\b\b\u0002\u0010\u0014\u001a\u00020\u00132\b\b\u0002\u0010\u0015\u001a\u00020\u0016H\u0007J\u0010\u0010\u0017\u001a\u00020\u00132\b\b\u0002\u0010\u0014\u001a\u00020\u0013J2\u0010\u0018\u001a\u00020\u00192\u0006\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u001a\u001a\u00020\u001b2\u0012\u0010\u001c\u001a\u000e\u0012\u0004\u0012\u00020\u001b\u0012\u0004\u0012\u00020\u00190\u001dH\u0087\bø\u0001\u0000R \u0010\u0006\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\t0\b0\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R,\u0010\n\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\t0\b0\u00078@X\u0081\u0004¢\u0006\f\u0012\u0004\b\u000b\u0010\f\u001a\u0004\b\r\u0010\u000eR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006\u001f"}, d2 = {"Landroidx/graphics/shapes/Morph;", "", TtmlNode.START, "Landroidx/graphics/shapes/RoundedPolygon;", TtmlNode.END, "(Landroidx/graphics/shapes/RoundedPolygon;Landroidx/graphics/shapes/RoundedPolygon;)V", "_morphMatch", "", "Lkotlin/Pair;", "Landroidx/graphics/shapes/Cubic;", "morphMatch", "getMorphMatch$annotations", "()V", "getMorphMatch", "()Ljava/util/List;", "asCubics", "progress", "", "calculateBounds", "", "bounds", "approximate", "", "calculateMaxBounds", "forEachCubic", "", "mutableCubic", "Landroidx/graphics/shapes/MutableCubic;", "callback", "Lkotlin/Function1;", "Companion", "graphics-shapes_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+@Metadata(d1 = {"\u0000L\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0014\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u0000 \u001f2\u00020\u0001:\u0001\u001fB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\u001c\u0010\u0010\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u00112\b\b\u0002\u0010\u0013\u001a\u00020\u0014H\u0007J\u0010\u0010\u0015\u001a\u00020\u00112\b\b\u0002\u0010\u0012\u001a\u00020\u0011J\u0014\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\n0\b2\u0006\u0010\u0017\u001a\u00020\u0018J2\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u0017\u001a\u00020\u00182\b\b\u0002\u0010\u001b\u001a\u00020\u001c2\u0012\u0010\u001d\u001a\u000e\u0012\u0004\u0012\u00020\u001c\u0012\u0004\u0012\u00020\u001a0\u001eH\u0087\bø\u0001\u0000R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R,\u0010\u0007\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\n0\t0\b8@X\u0081\u0004¢\u0006\f\u0012\u0004\b\u000b\u0010\f\u001a\u0004\b\r\u0010\u000eR \u0010\u000f\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\n0\t0\bX\u0082\u0004¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006 "}, d2 = {"Landroidx/graphics/shapes/Morph;", "", TtmlNode.START, "Landroidx/graphics/shapes/RoundedPolygon;", TtmlNode.END, "<init>", "(Landroidx/graphics/shapes/RoundedPolygon;Landroidx/graphics/shapes/RoundedPolygon;)V", "morphMatch", "", "Lkotlin/Pair;", "Landroidx/graphics/shapes/Cubic;", "getMorphMatch$annotations", "()V", "getMorphMatch", "()Ljava/util/List;", "_morphMatch", "calculateBounds", "", "bounds", "approximate", "", "calculateMaxBounds", "asCubics", "progress", "", "forEachCubic", "", "mutableCubic", "Landroidx/graphics/shapes/MutableCubic;", "callback", "Lkotlin/Function1;", "Companion", "graphics-shapes"}, k = 1, mv = {2, 0, 0}, xi = 48)
 /* loaded from: classes2.dex */
 public final class Morph {
     public static final Companion Companion = new Companion(null);
@@ -39,7 +40,7 @@ public final class Morph {
         Intrinsics.checkNotNullParameter(end, "end");
         this.start = start;
         this.end = end;
-        this._morphMatch = Companion.match$graphics_shapes_release(start, end);
+        this._morphMatch = Companion.match$graphics_shapes(start, end);
     }
 
     public final List<Pair<Cubic, Cubic>> getMorphMatch() {
@@ -102,7 +103,7 @@ public final class Morph {
         while (i < size) {
             float[] fArr = new float[8];
             for (int i2 = 0; i2 < 8; i2++) {
-                fArr[i2] = Utils.interpolate(this._morphMatch.get(i).getFirst().getPoints$graphics_shapes_release()[i2], this._morphMatch.get(i).getSecond().getPoints$graphics_shapes_release()[i2], f);
+                fArr[i2] = Utils.interpolate(this._morphMatch.get(i).getFirst().getPoints$graphics_shapes()[i2], this._morphMatch.get(i).getSecond().getPoints$graphics_shapes()[i2], f);
             }
             Cubic cubic3 = new Cubic(fArr);
             if (cubic2 == null) {
@@ -144,7 +145,7 @@ public final class Morph {
     }
 
     /* compiled from: Morph.kt */
-    @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0080\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J/\u0010\u0003\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00060\u00050\u00042\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\bH\u0001¢\u0006\u0002\b\n¨\u0006\u000b"}, d2 = {"Landroidx/graphics/shapes/Morph$Companion;", "", "()V", "match", "", "Lkotlin/Pair;", "Landroidx/graphics/shapes/Cubic;", "p1", "Landroidx/graphics/shapes/RoundedPolygon;", "p2", "match$graphics_shapes_release", "graphics-shapes_release"}, k = 1, mv = {1, 8, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0080\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J/\u0010\u0004\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\u00070\u00060\u00052\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\tH\u0001¢\u0006\u0002\b\u000b¨\u0006\f"}, d2 = {"Landroidx/graphics/shapes/Morph$Companion;", "", "<init>", "()V", "match", "", "Lkotlin/Pair;", "Landroidx/graphics/shapes/Cubic;", "p1", "Landroidx/graphics/shapes/RoundedPolygon;", "p2", "match$graphics_shapes", "graphics-shapes"}, k = 1, mv = {2, 0, 0}, xi = 48)
     /* loaded from: classes2.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -155,7 +156,7 @@ public final class Morph {
         }
 
         @JvmStatic
-        public final List<Pair<Cubic, Cubic>> match$graphics_shapes_release(RoundedPolygon p1, RoundedPolygon p2) {
+        public final List<Pair<Cubic, Cubic>> match$graphics_shapes(RoundedPolygon p1, RoundedPolygon p2) {
             Pair<MeasuredPolygon.MeasuredCubic, MeasuredPolygon.MeasuredCubic> pair;
             Pair<MeasuredPolygon.MeasuredCubic, MeasuredPolygon.MeasuredCubic> pair2;
             String unused;
@@ -165,21 +166,21 @@ public final class Morph {
             String unused5;
             Intrinsics.checkNotNullParameter(p1, "p1");
             Intrinsics.checkNotNullParameter(p2, "p2");
-            MeasuredPolygon measurePolygon$graphics_shapes_release = MeasuredPolygon.Companion.measurePolygon$graphics_shapes_release(new AngleMeasurer(p1.getCenterX(), p1.getCenterY()), p1);
-            MeasuredPolygon measurePolygon$graphics_shapes_release2 = MeasuredPolygon.Companion.measurePolygon$graphics_shapes_release(new AngleMeasurer(p2.getCenterX(), p2.getCenterY()), p2);
-            DoubleMapper featureMapper = FeatureMappingKt.featureMapper(measurePolygon$graphics_shapes_release.getFeatures(), measurePolygon$graphics_shapes_release2.getFeatures());
+            MeasuredPolygon measurePolygon$graphics_shapes = MeasuredPolygon.Companion.measurePolygon$graphics_shapes(new LengthMeasurer(), p1);
+            MeasuredPolygon measurePolygon$graphics_shapes2 = MeasuredPolygon.Companion.measurePolygon$graphics_shapes(new LengthMeasurer(), p2);
+            DoubleMapper featureMapper = FeatureMappingKt.featureMapper(measurePolygon$graphics_shapes.getFeatures(), measurePolygon$graphics_shapes2.getFeatures());
             float map = featureMapper.map(0.0f);
             unused = MorphKt.LOG_TAG;
-            MeasuredPolygon cutAndShift = measurePolygon$graphics_shapes_release2.cutAndShift(map);
+            MeasuredPolygon cutAndShift = measurePolygon$graphics_shapes2.cutAndShift(map);
             ArrayList arrayList = new ArrayList();
-            MeasuredPolygon measuredPolygon = measurePolygon$graphics_shapes_release;
+            MeasuredPolygon measuredPolygon = measurePolygon$graphics_shapes;
             MeasuredPolygon.MeasuredCubic measuredCubic = (MeasuredPolygon.MeasuredCubic) CollectionsKt.getOrNull(measuredPolygon, 0);
             MeasuredPolygon measuredPolygon2 = cutAndShift;
             MeasuredPolygon.MeasuredCubic measuredCubic2 = (MeasuredPolygon.MeasuredCubic) CollectionsKt.getOrNull(measuredPolygon2, 0);
             int i = 1;
             int i2 = 1;
             while (measuredCubic != null && measuredCubic2 != null) {
-                float endOutlineProgress = i == measurePolygon$graphics_shapes_release.size() ? 1.0f : measuredCubic.getEndOutlineProgress();
+                float endOutlineProgress = i == measurePolygon$graphics_shapes.size() ? 1.0f : measuredCubic.getEndOutlineProgress();
                 float mapBack = i2 == cutAndShift.size() ? 1.0f : featureMapper.mapBack(Utils.positiveModulo(measuredCubic2.getEndOutlineProgress() + map, 1.0f));
                 float min = Math.min(endOutlineProgress, mapBack);
                 unused2 = MorphKt.LOG_TAG;
@@ -208,6 +209,16 @@ public final class Morph {
                 return arrayList;
             }
             throw new IllegalArgumentException("Expected both Polygon's Cubic to be fully matched".toString());
+        }
+
+        private static final String match$lambda$10(FloatFloatPair floatFloatPair) {
+            float f = 100;
+            return Format_jvmKt.toStringWithLessPrecision(PointKt.m8821getXDnnuFBc(floatFloatPair.m33unboximpl()) * f) + ' ' + Format_jvmKt.toStringWithLessPrecision(PointKt.m8822getYDnnuFBc(floatFloatPair.m33unboximpl()) * f);
+        }
+
+        private static final CharSequence match$lambda$14$lambda$13$lambda$12(Function1 function1, Cubic it) {
+            Intrinsics.checkNotNullParameter(it, "it");
+            return "C " + ((String) function1.invoke(FloatFloatPair.m22boximpl(FloatFloatPair.m25constructorimpl(it.getControl0X(), it.getControl0Y())))) + ", " + ((String) function1.invoke(FloatFloatPair.m22boximpl(FloatFloatPair.m25constructorimpl(it.getControl1X(), it.getControl1Y())))) + ", " + ((String) function1.invoke(FloatFloatPair.m22boximpl(FloatFloatPair.m25constructorimpl(it.getAnchor1X(), it.getAnchor1Y()))));
         }
     }
 

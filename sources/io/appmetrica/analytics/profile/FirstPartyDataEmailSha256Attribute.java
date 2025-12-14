@@ -16,7 +16,7 @@ import java.util.Arrays;
 public class FirstPartyDataEmailSha256Attribute {
 
     /* renamed from: a  reason: collision with root package name */
-    private final C0615u6 f1401a = new C0615u6("appmetrica_1pd_email_sha256", new C0135b8(), new Hb(new C0439n4(100)));
+    private final C0615u6 f1415a = new C0615u6("appmetrica_1pd_email_sha256", new C0135b8(), new Hb(new C0439n4(100)));
     private final Zk b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -29,10 +29,10 @@ public class FirstPartyDataEmailSha256Attribute {
     }
 
     public UserProfileUpdate<? extends InterfaceC0254fo> withEmailValues(Iterable<String> iterable) {
-        String str = this.f1401a.c;
+        String str = this.f1415a.c;
         ArrayList a2 = this.b.a(iterable);
         Ym ym = new Ym(200, "First party data emails attribute", PublicLogger.getAnonymousInstance());
-        C0615u6 c0615u6 = this.f1401a;
-        return new UserProfileUpdate<>(new Xm(str, a2, 10, ym, c0615u6.f1227a, new C0588t4(c0615u6.b)));
+        C0615u6 c0615u6 = this.f1415a;
+        return new UserProfileUpdate<>(new Xm(str, a2, 10, ym, c0615u6.f1241a, new C0588t4(c0615u6.b)));
     }
 }

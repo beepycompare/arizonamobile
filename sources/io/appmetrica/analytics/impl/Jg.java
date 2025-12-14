@@ -6,15 +6,15 @@ import io.appmetrica.analytics.networktasks.internal.NetworkTask;
 public final class Jg implements Ll {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Bm f624a;
+    public final Bm f638a;
 
     public Jg(Bm bm) {
-        this.f624a = bm;
+        this.f638a = bm;
     }
 
     @Override // io.appmetrica.analytics.impl.Ll
     public final void a() {
-        NetworkTask c = this.f624a.c();
+        NetworkTask c = this.f638a.c();
         if (c != null) {
             C0470oa.I.getClass();
             NetworkServiceLocator.getInstance().getNetworkCore().startTask(c);

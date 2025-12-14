@@ -6,18 +6,18 @@ import io.appmetrica.analytics.DeferredDeeplinkParametersListener;
 public final class RunnableC0102a1 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ DeferredDeeplinkParametersListener f871a;
+    public final /* synthetic */ DeferredDeeplinkParametersListener f885a;
     public final /* synthetic */ C0610u1 b;
 
     public RunnableC0102a1(C0610u1 c0610u1, DeferredDeeplinkParametersListener deferredDeeplinkParametersListener) {
         this.b = c0610u1;
-        this.f871a = deferredDeeplinkParametersListener;
+        this.f885a = deferredDeeplinkParametersListener;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.b.f1224a.getClass();
+        this.b.f1238a.getClass();
         C0709y0 c0709y0 = C0709y0.e;
-        c0709y0.f().a(this.f871a);
+        c0709y0.f().a(this.f885a);
     }
 }

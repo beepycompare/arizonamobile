@@ -2,23 +2,19 @@ package com.arizona.launcher;
 
 import android.content.Context;
 import android.os.Process;
+import androidx.media3.common.C;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import kotlin.Metadata;
-import kotlin.Unit;
-import kotlin.io.CloseableKt;
-import kotlin.io.TextStreamsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.sequences.SequencesKt;
 import kotlin.text.Charsets;
 import kotlin.text.StringsKt;
 /* compiled from: LogcatHelper.kt */
@@ -68,11 +64,10 @@ public final class LogcatHelper {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: LogcatHelper.kt */
     @Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\b\u0082\u0004\u0018\u00002\u00020\u0001B\u0019\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\u0010\u0004\u001a\u0004\u0018\u00010\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\b\u0010\u0012\u001a\u00020\u0013H\u0016J\b\u0010\u0014\u001a\u00020\u0013H\u0016R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\u000b\u001a\u0004\u0018\u00010\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\f\u0010\r\"\u0004\b\u000e\u0010\u000fR\u0010\u0010\u0010\u001a\u0004\u0018\u00010\u0011X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0015"}, d2 = {"Lcom/arizona/launcher/LogcatHelper$LogDumper;", "Ljava/lang/Thread;", "mPID", "", "dir", "<init>", "(Lcom/arizona/launcher/LogcatHelper;Ljava/lang/String;Ljava/lang/String;)V", "logcatProc", "Ljava/lang/Process;", "mRunning", "", "command", "getCommand", "()Ljava/lang/String;", "setCommand", "(Ljava/lang/String;)V", "out", "Ljava/io/FileOutputStream;", TtmlNode.START, "", "run", "app_arizonaRelease"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes3.dex */
-    public final class LogDumper extends Thread {
+    private final class LogDumper extends Thread {
         private String command;
         private Process logcatProc;
         private final String mPID;
@@ -85,49 +80,13 @@ public final class LogcatHelper {
             this.this$0 = logcatHelper;
             this.mPID = mPID;
             File file = new File(str, "samp.log");
-            if (file.exists()) {
-                if (file.length() > 33554432) {
-                    file.delete();
-                } else if (file.length() > 16777216) {
-                    try {
-                        File file2 = new File(str, "samp.log.tmp");
-                        InputStreamReader inputStreamReader = new InputStreamReader(new FileInputStream(file), Charsets.UTF_8);
-                        BufferedReader bufferedReader = inputStreamReader instanceof BufferedReader ? (BufferedReader) inputStreamReader : new BufferedReader(inputStreamReader, 8192);
-                        int count = SequencesKt.count(TextStreamsKt.lineSequence(bufferedReader));
-                        CloseableKt.closeFinally(bufferedReader, null);
-                        int i = count / 2;
-                        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(new FileOutputStream(file2), Charsets.UTF_8);
-                        BufferedWriter bufferedWriter = outputStreamWriter instanceof BufferedWriter ? (BufferedWriter) outputStreamWriter : new BufferedWriter(outputStreamWriter, 8192);
-                        BufferedWriter bufferedWriter2 = bufferedWriter;
-                        InputStreamReader inputStreamReader2 = new InputStreamReader(new FileInputStream(file), Charsets.UTF_8);
-                        BufferedReader bufferedReader2 = inputStreamReader2 instanceof BufferedReader ? (BufferedReader) inputStreamReader2 : new BufferedReader(inputStreamReader2, 8192);
-                        try {
-                            for (String str2 : SequencesKt.drop(TextStreamsKt.lineSequence(bufferedReader2), i)) {
-                                bufferedWriter2.write(str2);
-                                bufferedWriter2.newLine();
-                            }
-                            Unit unit = Unit.INSTANCE;
-                            CloseableKt.closeFinally(bufferedReader2, null);
-                            Unit unit2 = Unit.INSTANCE;
-                            CloseableKt.closeFinally(bufferedWriter, null);
-                            if (file.delete()) {
-                                if (!file2.renameTo(file)) {
-                                    System.out.println((Object) "The temporary file could not be renamed.");
-                                }
-                            } else {
-                                System.out.println((Object) "The temporary file could not be removed.");
-                            }
-                        } finally {
-                        }
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
+            if (file.exists() && file.length() > ((long) C.BUFFER_FLAG_FIRST_SAMPLE)) {
+                file.delete();
             }
             try {
                 this.out = new FileOutputStream(file, true);
-            } catch (FileNotFoundException e2) {
-                e2.printStackTrace();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
             }
             this.command = "logcat --pid=" + this.mPID;
         }
