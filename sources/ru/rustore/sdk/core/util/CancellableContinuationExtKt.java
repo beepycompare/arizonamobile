@@ -14,7 +14,7 @@ public final class CancellableContinuationExtKt {
         Intrinsics.checkNotNullParameter(cancellableContinuation, "<this>");
         if (cancellableContinuation.isActive()) {
             Result.Companion companion = Result.Companion;
-            cancellableContinuation.resumeWith(Result.m10215constructorimpl(t));
+            cancellableContinuation.resumeWith(Result.m10216constructorimpl(t));
         }
     }
 
@@ -23,7 +23,7 @@ public final class CancellableContinuationExtKt {
         Intrinsics.checkNotNullParameter(error, "error");
         if (cancellableContinuation.isActive()) {
             Result.Companion companion = Result.Companion;
-            cancellableContinuation.resumeWith(Result.m10215constructorimpl(ResultKt.createFailure(error)));
+            cancellableContinuation.resumeWith(Result.m10216constructorimpl(ResultKt.createFailure(error)));
         }
     }
 }

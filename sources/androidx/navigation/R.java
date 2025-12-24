@@ -17,7 +17,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class id {
-        public static int nav_controller_view_tag = 0x7f0a097e;
+        public static int nav_controller_view_tag = 0x7f0a09a9;
 
         private id() {
         }

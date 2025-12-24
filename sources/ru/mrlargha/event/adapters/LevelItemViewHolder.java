@@ -32,7 +32,7 @@ public final class LevelItemViewHolder extends RecyclerView.ViewHolder {
         Intrinsics.checkNotNullParameter(itemView, "itemView");
         Intrinsics.checkNotNullParameter(onClaimItem, "onClaimItem");
         this.onClaimItem = onClaimItem;
-        this.levelPassedColor = Color.parseColor("#FFD500");
+        this.levelPassedColor = Color.parseColor("#F7FBFF");
         this.levelNotPassedColor = Color.parseColor("#343940");
         EventAwardItemBinding bind = EventAwardItemBinding.bind(itemView);
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
@@ -63,8 +63,8 @@ public final class LevelItemViewHolder extends RecyclerView.ViewHolder {
             Job.DefaultImpls.cancel$default(job, (CancellationException) null, 1, (Object) null);
         }
         final EventAwardItemBinding eventAwardItemBinding = this.binding;
-        eventAwardItemBinding.levelText.setTextColor(-1);
         eventAwardItemBinding.levelText.setText(String.valueOf(i3));
+        eventAwardItemBinding.levelText.setTextColor(Color.parseColor("#16191D"));
         if (i3 < i2) {
             eventAwardItemBinding.viewBeforeLevel.setBackgroundColor(this.levelPassedColor);
             eventAwardItemBinding.levelContainer.setColorFilter(this.levelPassedColor);
@@ -74,6 +74,7 @@ public final class LevelItemViewHolder extends RecyclerView.ViewHolder {
             eventAwardItemBinding.levelContainer.setColorFilter(this.levelPassedColor);
             eventAwardItemBinding.viewAfterLevel.setBackgroundColor(this.levelNotPassedColor);
         } else {
+            eventAwardItemBinding.levelText.setTextColor(-1);
             eventAwardItemBinding.viewBeforeLevel.setBackgroundColor(this.levelNotPassedColor);
             eventAwardItemBinding.levelContainer.setColorFilter(this.levelNotPassedColor);
             eventAwardItemBinding.viewAfterLevel.setBackgroundColor(this.levelNotPassedColor);

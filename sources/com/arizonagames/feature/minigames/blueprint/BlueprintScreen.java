@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.media.AudioAttributes;
 import android.media.SoundPool;
 import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -19,6 +20,9 @@ import com.arizonagames.feature.minigames.blueprint.databinding.BlueprintPipeOne
 import com.arizonagames.feature.minigames.blueprint.databinding.BlueprintPipeThreeBinding;
 import com.arizonagames.feature.minigames.blueprint.databinding.BlueprintPipeTwoBinding;
 import com.arizonagames.feature.minigames.blueprint.databinding.BlueprintScreenBinding;
+import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
@@ -26,15 +30,17 @@ import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.SetsKt;
 import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.random.Random;
+import kotlin.text.StringsKt;
 import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: BlueprintScreen.kt */
-@Metadata(d1 = {"\u0000f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0002\u0018\u00002\u00020\u0001:\u00014B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0016\u0010\u0014\u001a\u00020\u00152\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00150\u0017H\u0002J\b\u0010\u0018\u001a\u00020\u0015H\u0002J\u0010\u0010\u0019\u001a\u00020\u00152\u0006\u0010\u001a\u001a\u00020\u001bH\u0002J\b\u0010\u001c\u001a\u00020\u0015H\u0002J\b\u0010\u001d\u001a\u00020\u0015H\u0002J\u0010\u0010\u001e\u001a\u00020\u00152\u0006\u0010\u001a\u001a\u00020\u001bH\u0002J\b\u0010\u001f\u001a\u00020\u0015H\u0002J\b\u0010 \u001a\u00020\u0015H\u0002J\b\u0010!\u001a\u00020\u0015H\u0002J\b\u0010\"\u001a\u00020\u0015H\u0002J\b\u0010#\u001a\u00020\u0015H\u0002J\b\u0010$\u001a\u00020\u0015H\u0002J\b\u0010%\u001a\u00020\u0015H\u0002J\b\u0010&\u001a\u00020\u0015H\u0002J&\u0010'\u001a\u00020\u0015*\u00020(2\n\b\u0002\u0010)\u001a\u0004\u0018\u00010(2\f\u0010*\u001a\b\u0012\u0004\u0012\u00020\u00150\u0017H\u0002J&\u0010+\u001a\u00020\u0015*\u00020(2\n\b\u0002\u0010)\u001a\u0004\u0018\u00010(2\f\u0010*\u001a\b\u0012\u0004\u0012\u00020\u00150\u0017H\u0002J\b\u0010,\u001a\u00020\u0015H\u0002J\u0018\u0010-\u001a\u00020\u00152\u0006\u0010.\u001a\u00020/2\u0006\u00100\u001a\u00020\u0005H\u0016J\u0010\u00101\u001a\u00020\u00152\u0006\u00102\u001a\u000203H\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\f\u001a\u0004\u0018\u00010\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u000e\u001a\n \u0010*\u0004\u0018\u00010\u000f0\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000¨\u00065"}, d2 = {"Lcom/arizonagames/feature/minigames/blueprint/BlueprintScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "blueprintScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "blueprintBinding", "Lcom/arizonagames/feature/minigames/blueprint/databinding/BlueprintScreenBinding;", "showLastAreaTimer", "Landroid/os/CountDownTimer;", "soundPool", "Landroid/media/SoundPool;", "kotlin.jvm.PlatformType", "soundId", "topHalloweenAdapter", "Lcom/arizonagames/feature/minigames/blueprint/HalloweenAdapter;", "startLastAreaTimer", "", "onFinish", "Lkotlin/Function0;", "closeScreen", "showBlueprintScreen", "response", "Lcom/arizonagames/feature/minigames/blueprint/BlueprintResponse;", "showHalloween", "showSnowmen", "rewardsPanelInitialize", "showAkWeapon", "showRpgWeapon", "showPMWeapon", "showPipeOne", "showPipeTwo", "showPipeThree", "showPipeFour", "showPipeFive", "clickOnPipe", "Landroid/view/View;", "touch", "onClick", "clickOnWeapon", "invisibleOtherWeaponPages", "onBackendMessage", "data", "", "subId", "setVisibility", "visible", "", "Spawner", "blueprint_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0002\u0018\u00002\u00020\u0001:\u00015B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0016\u0010\u0014\u001a\u00020\u00152\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00150\u0017H\u0002J\b\u0010\u0018\u001a\u00020\u0015H\u0002J\u0010\u0010\u0019\u001a\u00020\u00152\u0006\u0010\u001a\u001a\u00020\u001bH\u0002J\b\u0010\u001c\u001a\u00020\u0015H\u0002J\b\u0010\u001d\u001a\u00020\u0015H\u0002J\u0010\u0010\u001e\u001a\u00020\u00152\u0006\u0010\u001a\u001a\u00020\u001bH\u0002J\b\u0010\u001f\u001a\u00020\u0015H\u0002J\b\u0010 \u001a\u00020\u0015H\u0002J\b\u0010!\u001a\u00020\u0015H\u0002J\b\u0010\"\u001a\u00020\u0015H\u0002J\b\u0010#\u001a\u00020\u0015H\u0002J\b\u0010$\u001a\u00020\u0015H\u0002J\b\u0010%\u001a\u00020\u0015H\u0002J\b\u0010&\u001a\u00020\u0015H\u0002J&\u0010'\u001a\u00020\u0015*\u00020(2\n\b\u0002\u0010)\u001a\u0004\u0018\u00010(2\f\u0010*\u001a\b\u0012\u0004\u0012\u00020\u00150\u0017H\u0002J&\u0010+\u001a\u00020\u0015*\u00020(2\n\b\u0002\u0010)\u001a\u0004\u0018\u00010(2\f\u0010*\u001a\b\u0012\u0004\u0012\u00020\u00150\u0017H\u0002J\b\u0010,\u001a\u00020\u0015H\u0002J\u0018\u0010-\u001a\u00020\u00152\u0006\u0010.\u001a\u00020/2\u0006\u00100\u001a\u00020\u0005H\u0016J\u0010\u00101\u001a\u00020\u00152\u0006\u0010.\u001a\u00020/H\u0002J\u0010\u00102\u001a\u00020\u00152\u0006\u00103\u001a\u000204H\u0016R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\f\u001a\u0004\u0018\u00010\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u000e\u001a\n \u0010*\u0004\u0018\u00010\u000f0\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000¨\u00066"}, d2 = {"Lcom/arizonagames/feature/minigames/blueprint/BlueprintScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "blueprintScreen", "Landroidx/constraintlayout/widget/ConstraintLayout;", "blueprintBinding", "Lcom/arizonagames/feature/minigames/blueprint/databinding/BlueprintScreenBinding;", "showLastAreaTimer", "Landroid/os/CountDownTimer;", "soundPool", "Landroid/media/SoundPool;", "kotlin.jvm.PlatformType", "soundId", "topHalloweenAdapter", "Lcom/arizonagames/feature/minigames/blueprint/HalloweenAdapter;", "startLastAreaTimer", "", "onFinish", "Lkotlin/Function0;", "closeScreen", "showBlueprintScreen", "response", "Lcom/arizonagames/feature/minigames/blueprint/BlueprintResponse;", "showHalloween", "showSnowmen", "rewardsPanelInitialize", "showAkWeapon", "showRpgWeapon", "showPMWeapon", "showPipeOne", "showPipeTwo", "showPipeThree", "showPipeFour", "showPipeFive", "clickOnPipe", "Landroid/view/View;", "touch", "onClick", "clickOnWeapon", "invisibleOtherWeaponPages", "onBackendMessage", "data", "", "subId", "setSelectedItem", "setVisibility", "visible", "", "Spawner", "blueprint_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class BlueprintScreen extends SAMPUIElement {
     private final BlueprintScreenBinding blueprintBinding;
@@ -118,11 +124,11 @@ public final class BlueprintScreen extends SAMPUIElement {
         SoundPool build = new SoundPool.Builder().setMaxStreams(5).setAudioAttributes(new AudioAttributes.Builder().setUsage(14).setContentType(4).build()).build();
         this.soundPool = build;
         this.soundId = build.load(targetActivity, R.raw.road_pipe_click, 1);
-        this.topHalloweenAdapter = new HalloweenAdapter(new Function0() { // from class: com.arizonagames.feature.minigames.blueprint.BlueprintScreen$$ExternalSyntheticLambda40
-            @Override // kotlin.jvm.functions.Function0
-            public final Object invoke() {
+        this.topHalloweenAdapter = new HalloweenAdapter(new Function1() { // from class: com.arizonagames.feature.minigames.blueprint.BlueprintScreen$$ExternalSyntheticLambda40
+            @Override // kotlin.jvm.functions.Function1
+            public final Object invoke(Object obj) {
                 Unit unit;
-                unit = BlueprintScreen.topHalloweenAdapter$lambda$0(BlueprintScreen.this);
+                unit = BlueprintScreen.topHalloweenAdapter$lambda$0(BlueprintScreen.this, ((Integer) obj).intValue());
                 return unit;
             }
         }, new Function0() { // from class: com.arizonagames.feature.minigames.blueprint.BlueprintScreen$$ExternalSyntheticLambda41
@@ -148,8 +154,10 @@ public final class BlueprintScreen extends SAMPUIElement {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit topHalloweenAdapter$lambda$0(BlueprintScreen blueprintScreen) {
+    public static final Unit topHalloweenAdapter$lambda$0(BlueprintScreen blueprintScreen, int i) {
         blueprintScreen.soundPool.play(blueprintScreen.soundId, 1.0f, 1.0f, 0, 0, 1.0f);
+        SAMPUIElement.notifyClick$default(blueprintScreen, 2, i, null, 4, null);
+        Log.d("blueprint", "item id: " + i);
         return Unit.INSTANCE;
     }
 
@@ -1157,7 +1165,25 @@ public final class BlueprintScreen extends SAMPUIElement {
         Intrinsics.checkNotNullParameter(data, "data");
         if (i == 1) {
             showBlueprintScreen((BlueprintResponse) MapperKt.toModel(data, BlueprintResponse.class));
+        } else if (i != 2) {
+        } else {
+            setSelectedItem(data);
         }
+    }
+
+    private final void setSelectedItem(String str) {
+        List<String> split$default = StringsKt.split$default((CharSequence) StringsKt.removeSuffix(StringsKt.removePrefix(str, (CharSequence) "["), (CharSequence) "]"), new String[]{StringUtils.COMMA}, false, 0, 6, (Object) null);
+        ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(split$default, 10));
+        for (String str2 : split$default) {
+            arrayList.add(Integer.valueOf(Integer.parseInt(StringsKt.trim((CharSequence) str2).toString())));
+        }
+        Set set = CollectionsKt.toSet(arrayList);
+        List<HalloweenObject> itemList = this.topHalloweenAdapter.getItemList();
+        ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(itemList, 10));
+        for (HalloweenObject halloweenObject : itemList) {
+            arrayList2.add(HalloweenObject.copy$default(halloweenObject, 0, 0, 0, set.contains(Integer.valueOf(halloweenObject.getId())), 7, null));
+        }
+        this.topHalloweenAdapter.setItemList(arrayList2);
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement

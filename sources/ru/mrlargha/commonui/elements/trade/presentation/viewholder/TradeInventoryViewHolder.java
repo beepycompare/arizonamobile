@@ -174,12 +174,7 @@ public final class TradeInventoryViewHolder extends RecyclerView.ViewHolder {
             itemInventoryBinding.ivItemImage.setImageResource(R.drawable.ic_locked_item);
             itemInventoryBinding.tvTitleText.setText("");
         }
-        Integer item2 = itemVal.getItem();
-        ImageView ivEffectBackground = itemInventoryBinding.ivEffectBackground;
-        Intrinsics.checkNotNullExpressionValue(ivEffectBackground, "ivEffectBackground");
-        ImageView ivEffectForeground = itemInventoryBinding.ivEffectForeground;
-        Intrinsics.checkNotNullExpressionValue(ivEffectForeground, "ivEffectForeground");
-        UtilKt.setInventoryItemEffect(item2, ivEffectBackground, ivEffectForeground);
+        UtilKt.setInventoryItemEffect(itemInventoryBinding, itemVal.getItem());
     }
 
     /* JADX INFO: Access modifiers changed from: private */

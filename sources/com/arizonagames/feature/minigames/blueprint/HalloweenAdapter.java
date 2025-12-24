@@ -1,5 +1,6 @@
 package com.arizonagames.feature.minigames.blueprint;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,23 +13,25 @@ import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function0;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.random.Random;
 /* compiled from: HalloweenAdapter.kt */
-@Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0010!\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0001 B#\u0012\f\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004\u0012\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004¢\u0006\u0004\b\u0007\u0010\bJ\u0014\u0010\u0012\u001a\u00020\u00052\f\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010J\u0018\u0010\u0014\u001a\u00020\u00052\u0006\u0010\u0015\u001a\u00020\u00022\u0006\u0010\u0016\u001a\u00020\u000bH\u0016J\b\u0010\u0017\u001a\u00020\u0005H\u0002J\u0006\u0010\u0018\u001a\u00020\u0005J\u0014\u0010\u0019\u001a\u00020\u00052\f\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u000b0\u0010J\b\u0010\u001b\u001a\u00020\u000bH\u0016J\u0018\u0010\u001c\u001a\u00020\u00022\u0006\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020\u000bH\u0016R\u0014\u0010\u0003\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00050\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\t\u001a\b\u0012\u0004\u0012\u00020\u000b0\n¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u000e\u0010\u000e\u001a\u00020\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006!"}, d2 = {"Lcom/arizonagames/feature/minigames/blueprint/HalloweenAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lcom/arizonagames/feature/minigames/blueprint/HalloweenAdapter$ViewHolder;", "onItemClick", "Lkotlin/Function0;", "", "onClick", "<init>", "(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)V", "itemsList", "", "", "getItemsList", "()Ljava/util/List;", "toPress", "itemList", "", "Lcom/arizonagames/feature/minigames/blueprint/HalloweenObject;", "setItemList", "list", "onBindViewHolder", "holder", "position", "nestPress", "clearList", "addItems", "infoList", "getItemCount", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "ViewHolder", "blueprint_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\b\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010!\n\u0002\b\u0004\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0001#B)\u0012\u0012\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004\u0012\f\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\u00060\b¢\u0006\u0004\b\t\u0010\nJ\u0014\u0010\u0015\u001a\u00020\u00062\f\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011J\u0018\u0010\u0017\u001a\u00020\u00062\u0006\u0010\u0018\u001a\u00020\u00022\u0006\u0010\u0019\u001a\u00020\u0005H\u0016J\b\u0010\u001a\u001a\u00020\u0006H\u0002J\u0006\u0010\u001b\u001a\u00020\u0006J\u0014\u0010\u001c\u001a\u00020\u00062\f\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u00050\u0011J\b\u0010\u001e\u001a\u00020\u0005H\u0016J\u0018\u0010\u001f\u001a\u00020\u00022\u0006\u0010 \u001a\u00020!2\u0006\u0010\"\u001a\u00020\u0005H\u0016R\u001a\u0010\u0003\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00060\u0004X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0007\u001a\b\u0012\u0004\u0012\u00020\u00060\bX\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00050\f¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u000e\u0010\u000f\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R*\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00120\u00112\f\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u000e¨\u0006$"}, d2 = {"Lcom/arizonagames/feature/minigames/blueprint/HalloweenAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lcom/arizonagames/feature/minigames/blueprint/HalloweenAdapter$ViewHolder;", "onItemClick", "Lkotlin/Function1;", "", "", "onClick", "Lkotlin/Function0;", "<init>", "(Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function0;)V", "itemsList", "", "getItemsList", "()Ljava/util/List;", "toPress", "value", "", "Lcom/arizonagames/feature/minigames/blueprint/HalloweenObject;", "itemList", "getItemList", "setItemList", "list", "onBindViewHolder", "holder", "position", "nestPress", "clearList", "addItems", "infoList", "getItemCount", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "ViewHolder", "blueprint_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class HalloweenAdapter extends RecyclerView.Adapter<ViewHolder> {
     private List<HalloweenObject> itemList;
     private final List<Integer> itemsList;
     private final Function0<Unit> onClick;
-    private final Function0<Unit> onItemClick;
+    private final Function1<Integer, Unit> onItemClick;
     private int toPress;
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void onBindViewHolder$lambda$1$1(View view) {
     }
 
-    public HalloweenAdapter(Function0<Unit> onItemClick, Function0<Unit> onClick) {
+    /* JADX WARN: Multi-variable type inference failed */
+    public HalloweenAdapter(Function1<? super Integer, Unit> onItemClick, Function0<Unit> onClick) {
         Intrinsics.checkNotNullParameter(onItemClick, "onItemClick");
         Intrinsics.checkNotNullParameter(onClick, "onClick");
         this.onItemClick = onItemClick;
@@ -42,10 +45,15 @@ public final class HalloweenAdapter extends RecyclerView.Adapter<ViewHolder> {
         return this.itemsList;
     }
 
+    public final List<HalloweenObject> getItemList() {
+        return this.itemList;
+    }
+
     public final void setItemList(List<HalloweenObject> list) {
         Intrinsics.checkNotNullParameter(list, "list");
         this.itemList = list;
         notifyDataSetChanged();
+        nestPress();
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -98,7 +106,7 @@ public final class HalloweenAdapter extends RecyclerView.Adapter<ViewHolder> {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void onBindViewHolder$lambda$1$0(HalloweenAdapter halloweenAdapter, HalloweenObject halloweenObject, View view) {
-        halloweenAdapter.onItemClick.invoke();
+        halloweenAdapter.onItemClick.invoke(Integer.valueOf(halloweenObject.getId()));
         halloweenObject.setPressed(true);
         halloweenAdapter.nestPress();
     }
@@ -113,6 +121,7 @@ public final class HalloweenAdapter extends RecyclerView.Adapter<ViewHolder> {
             }
         }
         ArrayList arrayList2 = arrayList;
+        Log.d("BlueprintScreen", "adapter-nestPress-notPressedList: " + arrayList2 + " ");
         if (arrayList2.isEmpty()) {
             this.onClick.invoke();
             return;

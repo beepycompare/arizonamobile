@@ -15,25 +15,25 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Dispatchers;
-import ru.mrlargha.commonui.databinding.ItemLavkaTypeBinding;
+import ru.mrlargha.commonui.databinding.ItemInventoryBinding;
 import ru.mrlargha.commonui.elements.inventory.domain.models.InventoryItem;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: LavkaTypeViewHolder.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.shop.viewholder.LavkaTypeViewHolder$bind$1$2", f = "LavkaTypeViewHolder.kt", i = {}, l = {38}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.shop.viewholder.LavkaTypeViewHolder$bind$1$2", f = "LavkaTypeViewHolder.kt", i = {}, l = {39}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes6.dex */
 public final class LavkaTypeViewHolder$bind$1$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ InventoryItem $itemVal;
-    final /* synthetic */ ItemLavkaTypeBinding $this_with;
+    final /* synthetic */ ItemInventoryBinding $this_with;
     int label;
     final /* synthetic */ LavkaTypeViewHolder this$0;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public LavkaTypeViewHolder$bind$1$2(ItemLavkaTypeBinding itemLavkaTypeBinding, LavkaTypeViewHolder lavkaTypeViewHolder, InventoryItem inventoryItem, Continuation<? super LavkaTypeViewHolder$bind$1$2> continuation) {
+    public LavkaTypeViewHolder$bind$1$2(ItemInventoryBinding itemInventoryBinding, LavkaTypeViewHolder lavkaTypeViewHolder, InventoryItem inventoryItem, Continuation<? super LavkaTypeViewHolder$bind$1$2> continuation) {
         super(2, continuation);
-        this.$this_with = itemLavkaTypeBinding;
+        this.$this_with = itemInventoryBinding;
         this.this$0 = lavkaTypeViewHolder;
         this.$itemVal = inventoryItem;
     }
@@ -50,7 +50,7 @@ public final class LavkaTypeViewHolder$bind$1$2 extends SuspendLambda implements
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        ItemLavkaTypeBinding itemLavkaTypeBinding;
+        ItemInventoryBinding itemInventoryBinding;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
@@ -73,8 +73,8 @@ public final class LavkaTypeViewHolder$bind$1$2 extends SuspendLambda implements
         } else {
             ImageView ivItemImage2 = this.$this_with.ivItemImage;
             Intrinsics.checkNotNullExpressionValue(ivItemImage2, "ivItemImage");
-            itemLavkaTypeBinding = this.this$0.binding;
-            Context context = itemLavkaTypeBinding.getRoot().getContext();
+            itemInventoryBinding = this.this$0.binding;
+            Context context = itemInventoryBinding.getRoot().getContext();
             Intrinsics.checkNotNullExpressionValue(context, "getContext(...)");
             UtilsKt.setNotLoadedImage(ivItemImage2, context);
         }

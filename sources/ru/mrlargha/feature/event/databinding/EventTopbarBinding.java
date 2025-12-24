@@ -15,9 +15,9 @@ public final class EventTopbarBinding implements ViewBinding {
     public final LinearLayout moneyContainer;
     public final TextView moneyText;
     private final LinearLayout rootView;
-    public final TextView tabCase;
     public final TextView tabEvent;
     public final TextView tabMain;
+    public final TextView tabShip;
     public final TextView tabShop;
     public final TextView tabTask;
     public final LinearLayout tabVideoBack;
@@ -29,9 +29,9 @@ public final class EventTopbarBinding implements ViewBinding {
         this.backButton = imageView;
         this.moneyContainer = linearLayout2;
         this.moneyText = textView;
-        this.tabCase = textView2;
-        this.tabEvent = textView3;
-        this.tabMain = textView4;
+        this.tabEvent = textView2;
+        this.tabMain = textView3;
+        this.tabShip = textView4;
         this.tabShop = textView5;
         this.tabTask = textView6;
         this.tabVideoBack = linearLayout3;
@@ -66,13 +66,13 @@ public final class EventTopbarBinding implements ViewBinding {
                 i = R.id.money_text;
                 TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
                 if (textView != null) {
-                    i = R.id.tab_case;
+                    i = R.id.tab_event;
                     TextView textView2 = (TextView) ViewBindings.findChildViewById(view, i);
                     if (textView2 != null) {
-                        i = R.id.tab_event;
+                        i = R.id.tab_main;
                         TextView textView3 = (TextView) ViewBindings.findChildViewById(view, i);
                         if (textView3 != null) {
-                            i = R.id.tab_main;
+                            i = R.id.tab_ship;
                             TextView textView4 = (TextView) ViewBindings.findChildViewById(view, i);
                             if (textView4 != null) {
                                 i = R.id.tab_shop;

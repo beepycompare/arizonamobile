@@ -77,6 +77,8 @@ public final class TopIconOrIconOnlyMeasurePolicy implements MeasurePolicy {
     @Override // androidx.compose.ui.layout.MeasurePolicy
     /* renamed from: measure-3p2s80s */
     public MeasureResult mo54measure3p2s80s(MeasureScope measureScope, List<? extends Measurable> list, long j) {
+        MeasureResult m2761placeIconX9ElhV4;
+        MeasureResult m2763placeLabelAndTopIconqoqLrGI;
         MeasureScope measureScope2 = measureScope;
         float floatValue = this.indicatorAnimationProgress.invoke().floatValue();
         long m8201copyZbe2FdA$default = Constraints.m8201copyZbe2FdA$default(j, 0, 0, 0, 0, 10, null);
@@ -104,14 +106,16 @@ public final class TopIconOrIconOnlyMeasurePolicy implements MeasurePolicy {
                             if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable3), "indicator")) {
                                 Placeable mo6875measureBRTryo03 = measurable3.mo6875measureBRTryo0(ConstraintsKt.m8226constrainN9IONVI(m8201copyZbe2FdA$default, Constraints.Companion.m8221fixedJhjzzOo(roundToInt, height)));
                                 if (!this.hasLabel) {
-                                    return NavigationItemKt.m2761placeIconX9ElhV4(measureScope2, mo6875measureBRTryo0, mo6875measureBRTryo02, mo6875measureBRTryo03, j);
+                                    m2761placeIconX9ElhV4 = NavigationItemKt.m2761placeIconX9ElhV4(measureScope2, mo6875measureBRTryo0, mo6875measureBRTryo02, mo6875measureBRTryo03, j);
+                                    return m2761placeIconX9ElhV4;
                                 }
                                 int size4 = list2.size();
                                 int i4 = 0;
                                 while (i4 < size4) {
                                     Measurable measurable4 = list.get(i4);
                                     if (Intrinsics.areEqual(LayoutIdKt.getLayoutId(measurable4), Constants.ScionAnalytics.PARAM_LABEL)) {
-                                        return NavigationItemKt.m2763placeLabelAndTopIconqoqLrGI(measureScope2, measurable4.mo6875measureBRTryo0(ConstraintsKt.m8231offsetNN6EwU$default(m8201copyZbe2FdA$default, 0, -(mo6875measureBRTryo03.getHeight() + measureScope2.mo458roundToPx0680j_4(this.indicatorToLabelVerticalPadding)), 1, null)), mo6875measureBRTryo0, mo6875measureBRTryo02, mo6875measureBRTryo03, j, this.indicatorToLabelVerticalPadding, this.indicatorVerticalPadding, this.topIconItemVerticalPadding);
+                                        m2763placeLabelAndTopIconqoqLrGI = NavigationItemKt.m2763placeLabelAndTopIconqoqLrGI(measureScope2, measurable4.mo6875measureBRTryo0(ConstraintsKt.m8231offsetNN6EwU$default(m8201copyZbe2FdA$default, 0, -(mo6875measureBRTryo03.getHeight() + measureScope2.mo458roundToPx0680j_4(this.indicatorToLabelVerticalPadding)), 1, null)), mo6875measureBRTryo0, mo6875measureBRTryo02, mo6875measureBRTryo03, j, this.indicatorToLabelVerticalPadding, this.indicatorVerticalPadding, this.topIconItemVerticalPadding);
+                                        return m2763placeLabelAndTopIconqoqLrGI;
                                     }
                                     i4++;
                                     mo6875measureBRTryo0 = mo6875measureBRTryo0;

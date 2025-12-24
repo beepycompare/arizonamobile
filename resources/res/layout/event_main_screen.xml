@@ -12,7 +12,7 @@
                     <TextView android:textSize="@dimen/_6sdp" android:textColor="#b8b8b8" android:id="@+id/main_experience_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1200/2400"/>
                     <ImageView android:layout_width="@dimen/_9sdp" android:layout_height="@dimen/_9sdp" android:src="@drawable/event_exp_item" android:layout_marginStart="@dimen/_4sdp"/>
                 </LinearLayout>
-                <com.google.android.material.progressindicator.LinearProgressIndicator android:id="@+id/progress_experience" android:visibility="visible" android:layout_width="match_parent" android:layout_height="5dp" android:layout_marginTop="3dp" app:indicatorColor="#ffd500" app:trackColor="#484d53" app:trackCornerRadius="8dp" app:trackThickness="5dp"/>
+                <com.google.android.material.progressindicator.LinearProgressIndicator android:id="@+id/progress_experience" android:visibility="visible" android:layout_width="match_parent" android:layout_height="5dp" android:layout_marginTop="3dp" app:indicatorColor="#f7fbff" app:trackColor="#484d53" app:trackCornerRadius="8dp" app:trackThickness="5dp"/>
             </LinearLayout>
         </LinearLayout>
         <LinearLayout android:gravity="center" android:layout_gravity="center_horizontal" android:id="@+id/remaining_time" android:background="@drawable/event_main_grey_bg" android:paddingLeft="@dimen/_14sdp" android:paddingTop="@dimen/_4sdp" android:paddingRight="@dimen/_14sdp" android:paddingBottom="@dimen/_4sdp" android:layout_width="@dimen/_120sdp" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_2sdp" android:paddingHorizontal="@dimen/_14sdp" android:paddingVertical="@dimen/_4sdp">

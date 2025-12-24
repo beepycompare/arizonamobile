@@ -50,7 +50,7 @@ public final class C0801r {
 
         @Override // kotlin.jvm.functions.Function1
         public final Unit invoke(Object obj) {
-            Object m10215constructorimpl;
+            Object m10216constructorimpl;
             SingleEmitter<T> emitter = (SingleEmitter) obj;
             Intrinsics.checkNotNullParameter(emitter, "emitter");
             C0801r c0801r = C0801r.this;
@@ -60,14 +60,14 @@ public final class C0801r {
                 ServiceConnection invoke = function1.invoke(emitter);
                 emitter.onFinish(new C0799p(c0801r, invoke));
                 C0801r.a(c0801r, c0801r.f1552a, new C0800q(emitter), invoke);
-                m10215constructorimpl = Result.m10215constructorimpl(Unit.INSTANCE);
+                m10216constructorimpl = Result.m10216constructorimpl(Unit.INSTANCE);
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m10215constructorimpl = Result.m10215constructorimpl(ResultKt.createFailure(th));
+                m10216constructorimpl = Result.m10216constructorimpl(ResultKt.createFailure(th));
             }
-            Throwable m10218exceptionOrNullimpl = Result.m10218exceptionOrNullimpl(m10215constructorimpl);
-            if (m10218exceptionOrNullimpl != null) {
-                emitter.error(m10218exceptionOrNullimpl);
+            Throwable m10219exceptionOrNullimpl = Result.m10219exceptionOrNullimpl(m10216constructorimpl);
+            if (m10219exceptionOrNullimpl != null) {
+                emitter.error(m10219exceptionOrNullimpl);
             }
             return Unit.INSTANCE;
         }

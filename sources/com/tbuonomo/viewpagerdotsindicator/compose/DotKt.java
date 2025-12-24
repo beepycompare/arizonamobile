@@ -37,9 +37,9 @@ public final class DotKt {
             if (ComposerKt.isTraceInProgress()) {
                 ComposerKt.traceEventStart(1695287159, i2, -1, "com.tbuonomo.viewpagerdotsindicator.compose.Dot (Dot.kt:14)");
             }
-            Modifier m976size3ABfNKs = SizeKt.m976size3ABfNKs(BackgroundKt.m298backgroundbw27NRU(modifier, graphic.m10192getColor0d7_KjU(), graphic.getShape()), graphic.m10193getSizeD9Ej5fM());
-            Dp m10191getBorderWidthlTKBWiU = graphic.m10191getBorderWidthlTKBWiU();
-            if (m10191getBorderWidthlTKBWiU != null && (m314borderxT4_qwU = BorderKt.m314borderxT4_qwU(m976size3ABfNKs, m10191getBorderWidthlTKBWiU.m8272unboximpl(), graphic.m10190getBorderColor0d7_KjU(), graphic.getShape())) != null) {
+            Modifier m976size3ABfNKs = SizeKt.m976size3ABfNKs(BackgroundKt.m298backgroundbw27NRU(modifier, graphic.m10193getColor0d7_KjU(), graphic.getShape()), graphic.m10194getSizeD9Ej5fM());
+            Dp m10192getBorderWidthlTKBWiU = graphic.m10192getBorderWidthlTKBWiU();
+            if (m10192getBorderWidthlTKBWiU != null && (m314borderxT4_qwU = BorderKt.m314borderxT4_qwU(m976size3ABfNKs, m10192getBorderWidthlTKBWiU.m8272unboximpl(), graphic.m10191getBorderColor0d7_KjU(), graphic.getShape())) != null) {
                 m976size3ABfNKs = m314borderxT4_qwU;
             }
             BoxKt.Box(m976size3ABfNKs, startRestartGroup, 0);

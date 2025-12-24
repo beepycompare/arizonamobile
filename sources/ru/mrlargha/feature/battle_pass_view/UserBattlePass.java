@@ -116,11 +116,11 @@ public final class UserBattlePass extends SAMPUIElement implements InterfaceCont
                 try {
                     UserBattlepassBinding userBattlepassBinding2 = this.binding;
                     if (this.isArizonaType) {
-                        userBattlepassBinding2.tvTitleText.setTextColor(Color.parseColor("#D68FFF"));
+                        userBattlepassBinding2.tvTitleText.setTextColor(Color.parseColor("#59BCEB"));
                     } else {
-                        userBattlepassBinding2.tvTitleText.setTextColor(Color.parseColor("#CEFF2C"));
+                        userBattlepassBinding2.tvTitleText.setTextColor(Color.parseColor("#59BCEB"));
                     }
-                    this.binding.ivMainImage.setImageDrawable(ContextCompat.getDrawable(getTargetActivity(), this.isArizonaType ? ru.mrlargha.feature.event.R.drawable.event_icon : ru.mrlargha.commonui.R.drawable.event_pirates_icon));
+                    this.binding.ivMainImage.setImageDrawable(ContextCompat.getDrawable(getTargetActivity(), ru.mrlargha.feature.event.R.drawable.event_icon));
                     Unit unit = Unit.INSTANCE;
                 } catch (Exception e) {
                     Integer.valueOf(Log.e("Exception", String.valueOf(e.getMessage())));

@@ -27,19 +27,25 @@ import com.arizona.common.utils.EasyAnimation;
 import com.google.android.vending.expansion.downloader.Constants;
 import com.google.common.net.HttpHeaders;
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParseException;
 import com.google.gson.annotations.SerializedName;
 import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
 import com.squareup.picasso.Picasso;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 import kotlin.Metadata;
 import kotlin.Pair;
-import kotlin.TuplesKt;
 import kotlin.Unit;
+import kotlin.collections.CollectionsKt;
 import kotlin.collections.SetsKt;
 import kotlin.enums.EnumEntries;
 import kotlin.enums.EnumEntriesKt;
@@ -49,8 +55,6 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref;
 import kotlin.text.Charsets;
-import kotlin.text.MatchResult;
-import kotlin.text.Regex;
 import kotlin.text.StringsKt;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -65,6 +69,8 @@ import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.databinding.BannerElementBinding;
 import ru.mrlargha.commonui.databinding.HudCaptBinding;
 import ru.mrlargha.commonui.databinding.HudElementCasesTimerBinding;
+import ru.mrlargha.commonui.databinding.HudElementChickenChargeBinding;
+import ru.mrlargha.commonui.databinding.HudElementImposterGameBinding;
 import ru.mrlargha.commonui.databinding.HudElementPiratesBinding;
 import ru.mrlargha.commonui.databinding.HudElementPromoBinding;
 import ru.mrlargha.commonui.databinding.HudImprovingSkillsBinding;
@@ -89,7 +95,13 @@ import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.UnreadMessageM
 import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.banner.BannerElement;
 import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.capt.HudCapt;
 import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.case_timer.CaseTimerElement;
+import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.chicken_charge.ChickenChargeElement;
+import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.chicken_charge.HudChickenChargeResult;
+import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.chicken_game.HudChickenGame;
+import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.chicken_game.models.HudChickenGameModel;
+import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.chicken_game.models.HudChickenGameRatingModel;
 import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.counter.HudCounter;
+import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.imposter_game.ImposterGameElement;
 import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.pirates.PiratesElement;
 import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.pirates.SquidHpModel;
 import ru.mrlargha.commonui.elements.hud.presentation.hud_screens.promo.PromoElement;
@@ -102,9 +114,8 @@ import ru.mrlargha.commonui.utils.GsonStore;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.TokenManagerKt;
-import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: Hud.kt */
-@Metadata(d1 = {"\u0000Ð\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0016\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u000e\u0018\u0000 \u007f2\u00020\u0001:\u0005{|}~\u007fB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u00101\u001a\u0002022\u0006\u00103\u001a\u000204H\u0002J\u000e\u00105\u001a\u0002022\u0006\u00106\u001a\u000204J\u001e\u00107\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u000104\u0012\u0004\u0012\u000204082\u0006\u00109\u001a\u000204H\u0002J\u0010\u0010:\u001a\u0002022\u0006\u0010;\u001a\u00020\u0019H\u0016J&\u0010<\u001a\u0002022\u0006\u0010=\u001a\u00020\u00052\u0006\u0010>\u001a\u00020\u00052\u0006\u0010?\u001a\u00020\u00052\u0006\u0010@\u001a\u00020\u0005J\u000e\u0010A\u001a\u0002022\u0006\u0010B\u001a\u00020\u0005J\u000e\u0010C\u001a\u0002022\u0006\u0010D\u001a\u00020\u0015J\u000e\u0010E\u001a\u0002022\u0006\u0010F\u001a\u00020\u0005J\u000e\u0010G\u001a\u0002022\u0006\u0010H\u001a\u000204J\u000e\u0010I\u001a\u0002022\u0006\u0010H\u001a\u000204J\u0010\u0010J\u001a\u0002022\u0006\u0010;\u001a\u00020\u0005H\u0002J\u0010\u0010K\u001a\u0002022\u0006\u0010L\u001a\u00020\u0005H\u0002J\u0010\u0010M\u001a\u0002022\u0006\u0010N\u001a\u00020OH\u0002J\u0010\u0010P\u001a\u0002022\u0006\u0010Q\u001a\u000204H\u0002J\b\u0010R\u001a\u000202H\u0002J\u001e\u0010S\u001a\u0002022\u0006\u0010T\u001a\u0002042\f\u0010U\u001a\b\u0012\u0004\u0012\u00020W0VH\u0002J\b\u0010X\u001a\u000202H\u0002J\u0010\u0010Y\u001a\u0002022\u0006\u0010Z\u001a\u00020\u0005H\u0002J\u0010\u0010[\u001a\u0002022\u0006\u0010\\\u001a\u00020]H\u0002J\u0018\u0010^\u001a\u0002022\u0006\u0010H\u001a\u0002042\u0006\u0010_\u001a\u00020\u0005H\u0016J\u0010\u0010`\u001a\u0002022\u0006\u0010H\u001a\u000204H\u0002J\u0010\u0010a\u001a\u0002022\u0006\u0010N\u001a\u00020bH\u0002J\u0010\u0010c\u001a\u0002022\u0006\u0010;\u001a\u00020\u0005H\u0002J\b\u0010d\u001a\u000202H\u0002J\u0016\u0010e\u001a\u0002022\f\u0010H\u001a\b\u0012\u0004\u0012\u00020f0VH\u0002J\u0016\u0010g\u001a\u0002022\f\u0010h\u001a\b\u0012\u0004\u0012\u00020f0VH\u0002J\u0010\u0010i\u001a\u0002022\u0006\u0010F\u001a\u00020\u0005H\u0002J\u0010\u0010j\u001a\u0002022\u0006\u0010h\u001a\u00020fH\u0002J\b\u0010k\u001a\u000202H\u0002J\b\u0010l\u001a\u000202H\u0002J\b\u0010m\u001a\u000202H\u0002J\u0010\u0010n\u001a\u0002022\u0006\u0010o\u001a\u000204H\u0002J\b\u0010p\u001a\u000202H\u0002J\u0010\u0010q\u001a\u0002022\u0006\u0010H\u001a\u00020rH\u0002J\u0010\u0010s\u001a\u0002022\u0006\u0010t\u001a\u00020\u0005H\u0002J\u0010\u0010u\u001a\u0002022\u0006\u0010t\u001a\u00020\u0005H\u0002J\b\u0010v\u001a\u000202H\u0002J\b\u0010w\u001a\u000202H\u0002J\u0010\u0010x\u001a\u0002022\u0006\u0010y\u001a\u00020\u0005H\u0002J\b\u0010z\u001a\u000202H\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u0010\u001a\n \u0012*\u0004\u0018\u00010\u00110\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u0016\u001a\n \u0012*\u0004\u0018\u00010\u00170\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001bX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\"X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020&X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020(X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020*X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020,X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010-\u001a\u00020.X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010/\u001a\u000200X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0080\u0001"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/Hud;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "hud", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/HudPageBinding;", "backendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "retrofit", "Lretrofit2/Retrofit;", "api", "Lru/mrlargha/commonui/elements/hud/presentation/api/HudApi;", "kotlin.jvm.PlatformType", "xPayDay", "previousMoneyValue", "", "sharedPref", "Landroid/content/SharedPreferences;", "isArizonaType", "", "trainTimer", "Landroid/os/CountDownTimer;", "moneyTimer", "missionsProgressAdapter", "Lru/mrlargha/commonui/elements/hud/mission_progress/MissionProgressAdapter;", "interactionButtonId", "streamerState", "handler", "Landroid/os/Handler;", "remainedTime", "isGroupButtonPressed", "groupAdapter", "Lru/mrlargha/commonui/elements/hud/presentation/GroupAdapter;", "bannerElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/banner/BannerElement;", "promoElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/promo/PromoElement;", "counter", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/counter/HudCounter;", "radar", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/radar/RadarScreen;", "caseTimer", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/case_timer/CaseTimerElement;", "installServerLogotype", "", "uri", "", "setPlayerLocation", FirebaseAnalytics.Param.LOCATION, "parseString", "Lkotlin/Pair;", "input", "setVisibility", "visible", "installHud", "playerId", "serverId", "serverType", "isStreamerMode", "updateOnline", "currentOnline", "updateMoney", "money", "updateRouletteInfo", "id", "updateRouletteInfoText", "data", "updateMainRouletteText", "setTrainsVisibility", "startTrainTimer", "seconds", "setTrainInfo", "info", "Lru/mrlargha/commonui/elements/hud/presentation/Hud$Companion$TrainInfo;", "showInteractionButton", "text", "hideInteractionButton", "showMissionsProgress", "title", "missions", "", "Lru/mrlargha/commonui/elements/hud/mission_progress/MissionData;", "hideMissionsProgress", "setVip", "days", "setNoticeState", "noticeInfo", "Lru/mrlargha/commonui/elements/hud/presentation/Hud$Companion$NoticeInfo;", "onBackendMessage", "subId", "setLocationVisibility", "setServerID", "Lru/mrlargha/commonui/elements/hud/presentation/models/ServerInfoItem;", "setGroupButtonVisibility", "changeGroupTableVisibility", "setGroupData", "Lru/mrlargha/commonui/elements/hud/presentation/models/GroupItem;", "updateGroupData", "item", "deleteGroupMember", "addGroupMember", "showTimer", "updateTimer", "scheduleUpdateTimer", "showProgressBar", "next", "hideProgressBar", "setDataProgressBar", "Lru/mrlargha/commonui/elements/hud/presentation/models/ProgressBarModel;", "showOverlay", TypedValues.TransitionType.S_DURATION, "hideOverlay", "hideRouletteUi", "showRouletteUi", "setXPayDay", "value", "updatePayDay", "HudListener", "Spawner", "KaptGang", "KaptData", "Companion", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000Ú\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0017\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u000f\u0018\u0000 \u0083\u00012\u00020\u0001:\t\u007f\u0080\u0001\u0081\u0001\u0082\u0001\u0083\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u00107\u001a\u0002082\u0006\u00109\u001a\u00020:H\u0002J\u000e\u0010;\u001a\u0002082\u0006\u0010<\u001a\u00020:J\u0010\u0010=\u001a\u0002082\u0006\u0010>\u001a\u00020\u0019H\u0016J&\u0010?\u001a\u0002082\u0006\u0010@\u001a\u00020\u00052\u0006\u0010A\u001a\u00020\u00052\u0006\u0010B\u001a\u00020\u00052\u0006\u0010C\u001a\u00020\u0005J\u000e\u0010D\u001a\u0002082\u0006\u0010E\u001a\u00020\u0005J\u000e\u0010F\u001a\u0002082\u0006\u0010G\u001a\u00020\u0015J\u000e\u0010H\u001a\u0002082\u0006\u0010I\u001a\u00020\u0005J\u000e\u0010J\u001a\u0002082\u0006\u0010K\u001a\u00020:J\u000e\u0010L\u001a\u0002082\u0006\u0010K\u001a\u00020:J\u0010\u0010M\u001a\u0002082\u0006\u0010>\u001a\u00020\u0005H\u0002J\u0010\u0010N\u001a\u0002082\u0006\u0010O\u001a\u00020\u0005H\u0002J\u0010\u0010P\u001a\u0002082\u0006\u0010Q\u001a\u00020RH\u0002J\u0010\u0010S\u001a\u0002082\u0006\u0010T\u001a\u00020:H\u0002J\b\u0010U\u001a\u000208H\u0002J\u001e\u0010V\u001a\u0002082\u0006\u0010W\u001a\u00020:2\f\u0010X\u001a\b\u0012\u0004\u0012\u00020Z0YH\u0002J\b\u0010[\u001a\u000208H\u0002J\u0010\u0010\\\u001a\u0002082\u0006\u0010]\u001a\u00020\u0005H\u0002J\u0010\u0010^\u001a\u0002082\u0006\u0010_\u001a\u00020`H\u0002J\u0018\u0010a\u001a\u0002082\u0006\u0010K\u001a\u00020:2\u0006\u0010b\u001a\u00020\u0005H\u0016J\u0010\u0010c\u001a\u0002082\u0006\u0010K\u001a\u00020:H\u0002J\u0010\u0010d\u001a\u0002082\u0006\u0010Q\u001a\u00020eH\u0002J\u0010\u0010f\u001a\u0002082\u0006\u0010>\u001a\u00020\u0005H\u0002J\b\u0010g\u001a\u000208H\u0002J\u0016\u0010h\u001a\u0002082\f\u0010K\u001a\b\u0012\u0004\u0012\u00020i0YH\u0002J\u0016\u0010j\u001a\u0002082\f\u0010k\u001a\b\u0012\u0004\u0012\u00020i0YH\u0002J\u0010\u0010l\u001a\u0002082\u0006\u0010I\u001a\u00020\u0005H\u0002J\u0010\u0010m\u001a\u0002082\u0006\u0010k\u001a\u00020iH\u0002J\b\u0010n\u001a\u000208H\u0002J\b\u0010o\u001a\u000208H\u0002J\b\u0010p\u001a\u000208H\u0002J\u0010\u0010q\u001a\u0002082\u0006\u0010r\u001a\u00020:H\u0002J\b\u0010s\u001a\u000208H\u0002J\u0010\u0010t\u001a\u0002082\u0006\u0010K\u001a\u00020uH\u0002J\u0010\u0010v\u001a\u0002082\u0006\u0010w\u001a\u00020\u0005H\u0002J\u0010\u0010x\u001a\u0002082\u0006\u0010w\u001a\u00020\u0005H\u0002J\b\u0010y\u001a\u000208H\u0002J\b\u0010z\u001a\u000208H\u0002J\u0010\u0010{\u001a\u0002082\u0006\u0010|\u001a\u00020\u0005H\u0002J\b\u0010}\u001a\u000208H\u0002J\b\u0010~\u001a\u000208H\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u0010\u001a\n \u0012*\u0004\u0018\u00010\u00110\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u0016\u001a\n \u0012*\u0004\u0018\u00010\u00170\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001bX\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\"X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020&X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020(X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020*X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010+\u001a\u00020,X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010-\u001a\u00020.X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010/\u001a\u000200X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u000202X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00103\u001a\u000204X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00105\u001a\u000206X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0084\u0001"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/Hud;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "hud", "Landroidx/constraintlayout/widget/ConstraintLayout;", "binding", "Lru/mrlargha/commonui/databinding/HudPageBinding;", "backendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "retrofit", "Lretrofit2/Retrofit;", "api", "Lru/mrlargha/commonui/elements/hud/presentation/api/HudApi;", "kotlin.jvm.PlatformType", "xPayDay", "previousMoneyValue", "", "sharedPref", "Landroid/content/SharedPreferences;", "isArizonaType", "", "trainTimer", "Landroid/os/CountDownTimer;", "moneyTimer", "missionsProgressAdapter", "Lru/mrlargha/commonui/elements/hud/mission_progress/MissionProgressAdapter;", "interactionButtonId", "streamerState", "handler", "Landroid/os/Handler;", "remainedTime", "isGroupButtonPressed", "groupAdapter", "Lru/mrlargha/commonui/elements/hud/presentation/GroupAdapter;", "bannerElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/banner/BannerElement;", "promoElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/promo/PromoElement;", "counter", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/counter/HudCounter;", "radar", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/radar/RadarScreen;", "caseTimer", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/case_timer/CaseTimerElement;", "imposterGameElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/imposter_game/ImposterGameElement;", "chargeElement", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/ChickenChargeElement;", "chickenGame", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_game/HudChickenGame;", "installServerLogotype", "", "uri", "", "setPlayerLocation", FirebaseAnalytics.Param.LOCATION, "setVisibility", "visible", "installHud", "playerId", "serverId", "serverType", "isStreamerMode", "updateOnline", "currentOnline", "updateMoney", "money", "updateRouletteInfo", "id", "updateRouletteInfoText", "data", "updateMainRouletteText", "setTrainsVisibility", "startTrainTimer", "seconds", "setTrainInfo", "info", "Lru/mrlargha/commonui/elements/hud/presentation/Hud$Companion$TrainInfo;", "showInteractionButton", "text", "hideInteractionButton", "showMissionsProgress", "title", "missions", "", "Lru/mrlargha/commonui/elements/hud/mission_progress/MissionData;", "hideMissionsProgress", "setVip", "days", "setNoticeState", "noticeInfo", "Lru/mrlargha/commonui/elements/hud/presentation/Hud$Companion$NoticeInfo;", "onBackendMessage", "subId", "setLocationVisibility", "setServerID", "Lru/mrlargha/commonui/elements/hud/presentation/models/ServerInfoItem;", "setGroupButtonVisibility", "changeGroupTableVisibility", "setGroupData", "Lru/mrlargha/commonui/elements/hud/presentation/models/GroupItem;", "updateGroupData", "item", "deleteGroupMember", "addGroupMember", "showTimer", "updateTimer", "scheduleUpdateTimer", "showProgressBar", "next", "hideProgressBar", "setDataProgressBar", "Lru/mrlargha/commonui/elements/hud/presentation/models/ProgressBarModel;", "showOverlay", TypedValues.TransitionType.S_DURATION, "hideOverlay", "hideRouletteUi", "showRouletteUi", "setXPayDay", "value", "updatePayDay", "resetHud", "HudListener", "Spawner", "KaptGang", "KaptData", "Companion", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class Hud extends SAMPUIElement {
     public static final Companion Companion = new Companion(null);
@@ -113,10 +124,13 @@ public final class Hud extends SAMPUIElement {
     private final BannerElement bannerElement;
     private final HudPageBinding binding;
     private final CaseTimerElement caseTimer;
+    private final ChickenChargeElement chargeElement;
+    private final HudChickenGame chickenGame;
     private final HudCounter counter;
     private final GroupAdapter groupAdapter;
     private final Handler handler;
     private final ConstraintLayout hud;
+    private final ImposterGameElement imposterGameElement;
     private int interactionButtonId;
     private final boolean isArizonaType;
     private boolean isGroupButtonPressed;
@@ -133,9 +147,11 @@ public final class Hud extends SAMPUIElement {
     private int xPayDay;
 
     /* compiled from: Hud.kt */
-    @Metadata(d1 = {"\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\t\n\u0000\bf\u0018\u00002\u00020\u0001J\u0010\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H&¨\u0006\u0006À\u0006\u0003"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/Hud$HudListener;", "", "hudUpdateMoney", "", "money", "", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\bf\u0018\u00002\u00020\u0001J\u0010\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H&J\u0010\u0010\u0006\u001a\u00020\u00032\u0006\u0010\u0007\u001a\u00020\bH&¨\u0006\tÀ\u0006\u0003"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/Hud$HudListener;", "", "hudUpdateMoney", "", "money", "", "hudSetTimer", "seconds", "", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public interface HudListener {
+        void hudSetTimer(int i);
+
         void hudUpdateMoney(long j);
     }
 
@@ -198,6 +214,14 @@ public final class Hud extends SAMPUIElement {
         HudElementCasesTimerBinding casesTimer = bind.casesTimer;
         Intrinsics.checkNotNullExpressionValue(casesTimer, "casesTimer");
         this.caseTimer = new CaseTimerElement(casesTimer, hud);
+        HudElementImposterGameBinding imposterGame = bind.imposterGame;
+        Intrinsics.checkNotNullExpressionValue(imposterGame, "imposterGame");
+        HudListener hudListener = (HudListener) targetActivity;
+        this.imposterGameElement = new ImposterGameElement(imposterGame, hud, hudListener);
+        HudElementChickenChargeBinding chargeChiken = bind.chargeChiken;
+        Intrinsics.checkNotNullExpressionValue(chargeChiken, "chargeChiken");
+        this.chargeElement = new ChickenChargeElement(chargeChiken, hud);
+        this.chickenGame = new HudChickenGame(bind, hud, hudListener);
         if (z) {
             bind.hudMoneyIcon.setImageResource(R.drawable.hud_dollar_icon);
         }
@@ -410,7 +434,7 @@ public final class Hud extends SAMPUIElement {
     public final void setPlayerLocation(String location) {
         String str;
         Intrinsics.checkNotNullParameter(location, "location");
-        Pair<String, String> parseString = parseString(location);
+        Pair<String, String> parseString = UtilsKt.parseString(location);
         Log.d(HttpHeaders.LOCATION, "setPlayerLocation: " + parseString);
         HudPageBinding hudPageBinding = this.binding;
         String first = parseString.getFirst();
@@ -458,15 +482,6 @@ public final class Hud extends SAMPUIElement {
         Log.d(HttpHeaders.LOCATION, "setPlayerLocation: " + str + " " + str2);
         hudPageBinding.locationCity.setText(str);
         hudPageBinding.locationText.setText(str2);
-    }
-
-    private final Pair<String, String> parseString(String str) {
-        MatchResult matchEntire = new Regex("^\\[([^]]+)]\\s*(.*)$").matchEntire(str);
-        if (matchEntire != null) {
-            MatchResult.Destructured destructured = matchEntire.getDestructured();
-            return TuplesKt.to(destructured.getMatch().getGroupValues().get(1), destructured.getMatch().getGroupValues().get(2));
-        }
-        return TuplesKt.to(null, str);
     }
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
@@ -681,7 +696,7 @@ public final class Hud extends SAMPUIElement {
             public void onTick(long j) {
                 HudPageBinding hudPageBinding;
                 hudPageBinding = Hud.this.binding;
-                hudPageBinding.trainCurrentTime.setText(UtilsKt.formatTime(intRef.element * 1000) + " ");
+                hudPageBinding.trainCurrentTime.setText(ru.mrlargha.commonui.utils.UtilsKt.formatTime(intRef.element * 1000) + " ");
                 intRef.element++;
             }
         };
@@ -698,7 +713,7 @@ public final class Hud extends SAMPUIElement {
         if (trainInfo.getMaxTime() == 0) {
             hudPageBinding.trainMaxTime.setVisibility(8);
         } else {
-            hudPageBinding.trainMaxTime.setText("/ " + UtilsKt.formatTime(trainInfo.getMaxTime() * 1000));
+            hudPageBinding.trainMaxTime.setText("/ " + ru.mrlargha.commonui.utils.UtilsKt.formatTime(trainInfo.getMaxTime() * 1000));
         }
         String speedLimitType = trainInfo.getSpeedLimitType();
         int hashCode = speedLimitType.hashCode();
@@ -860,6 +875,7 @@ public final class Hud extends SAMPUIElement {
 
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
     public void onBackendMessage(String data, int i) {
+        ArrayList arrayList;
         Intrinsics.checkNotNullParameter(data, "data");
         Log.d("HUD", "onBackendMessage: " + data + ", subId: " + i);
         if (i == 0) {
@@ -968,6 +984,7 @@ public final class Hud extends SAMPUIElement {
                     ConstraintLayout root4 = this.binding.hudKaptScreen.getRoot();
                     Intrinsics.checkNotNullExpressionValue(root4, "getRoot(...)");
                     root4.setVisibility(8);
+                    Unit unit = Unit.INSTANCE;
                 } else {
                     RodinaKaptScreenBinding rodinaKaptScreenBinding2 = this.binding.hudKaptScreen;
                     rodinaKaptScreenBinding2.textView42.setVisibility(8);
@@ -1074,6 +1091,7 @@ public final class Hud extends SAMPUIElement {
                 addGroupMember((GroupItem) MapperKt.toModel(data, GroupItem.class));
             } else if (i == BackendHudIds.SET_SERVER_ID.getSubId()) {
                 setServerID((ServerInfoItem) MapperKt.toModel(data, ServerInfoItem.class));
+                resetHud();
             } else if (i == BackendHudIds.BANNER_INIT.getSubId()) {
                 this.bannerElement.initializeBanner(data);
             } else if (i == BackendHudIds.BANNER_SET_TYPE.getSubId()) {
@@ -1109,6 +1127,95 @@ public final class Hud extends SAMPUIElement {
                 hideRouletteUi();
             } else if (i == BackendHudIds.CASE_TIMER_HIDE.getSubId()) {
                 this.caseTimer.close();
+            } else if (i == BackendHudIds.IMPOSTER_GAME_VISIBILITY.getSubId()) {
+                if (Intrinsics.areEqual(data, "0")) {
+                    this.binding.hideAll.setVisibility(0);
+                } else {
+                    this.binding.hideAll.setVisibility(8);
+                }
+                this.imposterGameElement.setVisible(data);
+            } else if (i == BackendHudIds.IMPOSTER_GAME_ITEMS_LIST.getSubId()) {
+                this.binding.hideAll.setVisibility(8);
+                this.imposterGameElement.setItemsList(data);
+            } else if (i == BackendHudIds.IMPOSTER_GAME_INFO.getSubId()) {
+                this.binding.hideAll.setVisibility(8);
+                this.imposterGameElement.setPlayerInfo(data);
+            } else if (i == BackendHudIds.CHICKEN_GAME_SHOW.getSubId()) {
+                this.chickenGame.isVisible(true);
+            } else if (i == BackendHudIds.CHICKEN_GAME_HIDE.getSubId()) {
+                this.chickenGame.isVisible(false);
+            } else if (i != BackendHudIds.CHICKEN_GAME_RATING.getSubId()) {
+                if (i != BackendHudIds.CHICKEN_GAME_TOOLS_INFO.getSubId()) {
+                    if (i == BackendHudIds.CHICKEN_GAME_CHICKENS_KILLED.getSubId()) {
+                        HudChickenGame hudChickenGame = this.chickenGame;
+                        Integer intOrNull3 = StringsKt.toIntOrNull(data);
+                        hudChickenGame.setKilledChicken(intOrNull3 != null ? intOrNull3.intValue() : 0);
+                        return;
+                    } else if (i == BackendHudIds.CHICKEN_GAME_EVENT_ONLINE.getSubId()) {
+                        HudChickenGame hudChickenGame2 = this.chickenGame;
+                        Integer intOrNull4 = StringsKt.toIntOrNull(data);
+                        hudChickenGame2.setOnline(intOrNull4 != null ? intOrNull4.intValue() : 0);
+                        return;
+                    } else if (i != BackendHudIds.CHICKEN_GAME_PLAYER_RATING.getSubId()) {
+                        if (i == BackendHudIds.CHICKEN_GAME_COINS.getSubId()) {
+                            this.chickenGame.setMoney(data);
+                            return;
+                        } else if (i == BackendHudIds.CHICKEN_GAME_TIME_LEFT.getSubId()) {
+                            this.chickenGame.startTimer(data);
+                            return;
+                        } else if (i == BackendHudIds.CHICKEN_GAME_CHICKEN_SIZE.getSubId()) {
+                            this.chickenGame.setSize(data);
+                            return;
+                        } else if (i == BackendHudIds.CHICKEN_GAME_SAFE_ZONE.getSubId()) {
+                            this.chickenGame.setZone(data);
+                            return;
+                        } else if (i == BackendHudIds.CHICKEN_CHARGE_VISIBILITY.getSubId()) {
+                            this.chargeElement.setVisibility(data);
+                            return;
+                        } else if (i == BackendHudIds.CHICKEN_CHARGE_INFO.getSubId()) {
+                            this.chargeElement.setInfo(data);
+                            return;
+                        } else if (i == BackendHudIds.CHICKEN_CHARGE_RESULT.getSubId()) {
+                            ChickenChargeElement chickenChargeElement = this.chargeElement;
+                            if (MapperKt.isJsonValid(data)) {
+                                chickenChargeElement.setResult((HudChickenChargeResult) new GsonBuilder().setLenient().create().fromJson(data, (Class<Object>) HudChickenChargeResult.class));
+                                return;
+                            }
+                            throw new JsonParseException("Json is not valid");
+                        } else {
+                            return;
+                        }
+                    } else {
+                        HudChickenGame hudChickenGame3 = this.chickenGame;
+                        if (MapperKt.isJsonValid(data)) {
+                            hudChickenGame3.setPlayerRating((HudChickenGameRatingModel) new GsonBuilder().setLenient().create().fromJson(data, (Class<Object>) HudChickenGameRatingModel.class));
+                            return;
+                        }
+                        throw new JsonParseException("Json is not valid");
+                    }
+                }
+                HudChickenGame hudChickenGame4 = this.chickenGame;
+                if (MapperKt.isJsonValid(data)) {
+                    hudChickenGame4.setToolsInfo((HudChickenGameModel) new GsonBuilder().setLenient().create().fromJson(data, (Class<Object>) HudChickenGameModel.class));
+                    return;
+                }
+                throw new JsonParseException("Json is not valid");
+            } else {
+                HudChickenGame hudChickenGame5 = this.chickenGame;
+                if (MapperKt.isJsonValid(data)) {
+                    Gson create = new GsonBuilder().setLenient().create();
+                    JsonArray asJsonArray = ((JsonElement) create.fromJson(data, (Class<Object>) JsonElement.class)).getAsJsonArray();
+                    Intrinsics.checkNotNull(asJsonArray);
+                    JsonArray<JsonElement> jsonArray = asJsonArray;
+                    ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(jsonArray, 10));
+                    for (JsonElement jsonElement : jsonArray) {
+                        arrayList2.add(create.fromJson(jsonElement, (Class<Object>) HudChickenGameRatingModel.class));
+                    }
+                    arrayList = arrayList2;
+                } else {
+                    arrayList = CollectionsKt.emptyList();
+                }
+                hudChickenGame5.setRatingList(arrayList);
             }
         } else {
             Object fromJson = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) KaptData.class);
@@ -1769,6 +1876,13 @@ public final class Hud extends SAMPUIElement {
             }
         }
         this.binding.hudServerInfoMultiply.setVisibility(8);
+    }
+
+    private final void resetHud() {
+        this.binding.hideAll.setVisibility(0);
+        this.imposterGameElement.close();
+        this.chickenGame.isVisible(false);
+        this.chargeElement.setVisibility("0");
     }
 
     private final void scheduleUpdateTimer() {

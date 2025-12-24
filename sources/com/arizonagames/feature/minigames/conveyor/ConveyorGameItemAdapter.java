@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 import com.arizonagames.feature.minigames.conveyor.ConveyorGameItemAdapter;
 import com.arizonagames.feature.minigames.conveyor.databinding.ConveyorGameItemBinding;
+import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Metadata;
@@ -50,8 +51,56 @@ public final class ConveyorGameItemAdapter extends ListAdapter<ConveyorGameItemM
         this.isHasAnimation = true;
     }
 
+    public final void setIsHasAnimation(boolean z) {
+        this.isHasAnimation = z;
+    }
+
+    public final void correctSelectItem(ConveyorGameItemModel itemModel) {
+        Intrinsics.checkNotNullParameter(itemModel, "itemModel");
+        if (this.isItem) {
+            ArrayList arrayList = new ArrayList();
+            List<ConveyorGameItemModel> currentList = getCurrentList();
+            Intrinsics.checkNotNullExpressionValue(currentList, "getCurrentList(...)");
+            for (ConveyorGameItemModel conveyorGameItemModel : currentList) {
+                if (conveyorGameItemModel.getId() == itemModel.getId()) {
+                    arrayList.add(itemModel);
+                } else {
+                    Intrinsics.checkNotNull(conveyorGameItemModel);
+                    arrayList.add(conveyorGameItemModel);
+                }
+            }
+            submitList(arrayList);
+            notifyItemChanged(this.selectItemId);
+            this.selectItemId = -1;
+        }
+    }
+
+    public final void startAnimation() {
+        this.isStartAnimation = true;
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    public ConveyorGameViewHolder onCreateViewHolder(ViewGroup parent, int i) {
+        Intrinsics.checkNotNullParameter(parent, "parent");
+        ConveyorGameItemBinding inflate = ConveyorGameItemBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
+        Intrinsics.checkNotNullExpressionValue(inflate, "inflate(...)");
+        return new ConveyorGameViewHolder(this, inflate);
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
+    public void onBindViewHolder(ConveyorGameViewHolder holder, int i) {
+        Intrinsics.checkNotNullParameter(holder, "holder");
+        ConveyorGameItemModel conveyorGameItemModel = getCurrentList().get(i);
+        Intrinsics.checkNotNullExpressionValue(conveyorGameItemModel, "get(...)");
+        holder.onBind(conveyorGameItemModel, i);
+        if (i + 1 == getCurrentList().size() && this.isItem && this.isStartAnimation) {
+            ConveyorGameScreen.Companion.startAnimation();
+            this.isStartAnimation = false;
+        }
+    }
+
     /* compiled from: ConveyorGameItemAdapter.kt */
-    @Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\b\u0086\u0004\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\b\u0010\u0006\u001a\u00020\u0007H\u0002J\u0016\u0010\b\u001a\u00020\u00072\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\fJ\u0018\u0010\r\u001a\u00020\u00072\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\fH\u0002J\u0018\u0010\u000e\u001a\u00020\u00072\u0006\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012H\u0002J\b\u0010\u0013\u001a\u00020\u0007H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0014"}, d2 = {"Lcom/arizonagames/feature/minigames/conveyor/ConveyorGameItemAdapter$ConveyorGameViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "binding", "Lcom/arizonagames/feature/minigames/conveyor/databinding/ConveyorGameItemBinding;", "<init>", "(Lcom/arizonagames/feature/minigames/conveyor/ConveyorGameItemAdapter;Lcom/arizonagames/feature/minigames/conveyor/databinding/ConveyorGameItemBinding;)V", "startDownAndUpAnimation", "", "onBind", "itemModel", "Lcom/arizonagames/feature/minigames/conveyor/ConveyorGameItemModel;", "position", "", "setupListeners", "scaleAnimation", "view", "Landroid/view/View;", "isSelect", "", "checkIsAllItemSelect", "conveyor_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\b\u0086\u0004\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0016\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bJ\u0018\u0010\f\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0002J\u0018\u0010\r\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0002J\b\u0010\u000e\u001a\u00020\u0007H\u0002J\u0018\u0010\u000f\u001a\u00020\u00072\u0006\u0010\u0010\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0002J\u0018\u0010\u0011\u001a\u00020\u00072\u0006\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u0015H\u0002J\b\u0010\u0016\u001a\u00020\u0007H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0017"}, d2 = {"Lcom/arizonagames/feature/minigames/conveyor/ConveyorGameItemAdapter$ConveyorGameViewHolder;", "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;", "binding", "Lcom/arizonagames/feature/minigames/conveyor/databinding/ConveyorGameItemBinding;", "<init>", "(Lcom/arizonagames/feature/minigames/conveyor/ConveyorGameItemAdapter;Lcom/arizonagames/feature/minigames/conveyor/databinding/ConveyorGameItemBinding;)V", "onBind", "", CommonUrlParts.MODEL, "Lcom/arizonagames/feature/minigames/conveyor/ConveyorGameItemModel;", "position", "", "initBox", "initItem", "startDownAndUpAnimation", "setupListeners", "itemModel", "scaleAnimation", "view", "Landroid/view/View;", "isSelect", "", "checkIsAllItemSelect", "conveyor_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public final class ConveyorGameViewHolder extends RecyclerView.ViewHolder {
         private final ConveyorGameItemBinding binding;
@@ -65,17 +114,26 @@ public final class ConveyorGameItemAdapter extends ListAdapter<ConveyorGameItemM
             this.binding = binding;
         }
 
-        private final void startDownAndUpAnimation() {
-            this.binding.ivItem.startAnimation(AnimationUtils.loadAnimation(this.binding.ivItem.getContext(), ru.mrlargha.commonui.R.anim.fade_down_and_up));
+        public final void onBind(ConveyorGameItemModel model, int i) {
+            Intrinsics.checkNotNullParameter(model, "model");
+            if (this.this$0.isItem) {
+                initItem(model, i);
+            } else {
+                initBox(model, i);
+            }
         }
 
-        public final void onBind(ConveyorGameItemModel itemModel, int i) {
-            Intrinsics.checkNotNullParameter(itemModel, "itemModel");
+        private final void initBox(ConveyorGameItemModel conveyorGameItemModel, int i) {
+            this.binding.ivItem.setImageResource(conveyorGameItemModel.getImage());
+            setupListeners(conveyorGameItemModel, i);
+        }
+
+        private final void initItem(ConveyorGameItemModel conveyorGameItemModel, int i) {
             FrameLayout root = this.binding.getRoot();
             Intrinsics.checkNotNullExpressionValue(root, "getRoot(...)");
             root.setVisibility(0);
-            this.binding.ivItem.setImageResource(itemModel.getImage());
-            setupListeners(itemModel, i);
+            this.binding.ivItem.setImageResource(conveyorGameItemModel.getImage());
+            setupListeners(conveyorGameItemModel, i);
             if (i != this.this$0.selectItemId) {
                 if (this.this$0.isStartAnimation) {
                     this.binding.getRoot().setScaleX(1.0f);
@@ -94,6 +152,10 @@ public final class ConveyorGameItemAdapter extends ListAdapter<ConveyorGameItemM
                 return;
             }
             checkIsAllItemSelect();
+        }
+
+        private final void startDownAndUpAnimation() {
+            this.binding.ivItem.startAnimation(AnimationUtils.loadAnimation(this.binding.ivItem.getContext(), ru.mrlargha.commonui.R.anim.fade_down_and_up));
         }
 
         private final void setupListeners(final ConveyorGameItemModel conveyorGameItemModel, final int i) {
@@ -151,54 +213,6 @@ public final class ConveyorGameItemAdapter extends ListAdapter<ConveyorGameItemM
                 return;
             }
             function0.invoke();
-        }
-    }
-
-    public final void setIsHasAnimation(boolean z) {
-        this.isHasAnimation = z;
-    }
-
-    public final void correctSelectItem(ConveyorGameItemModel itemModel) {
-        Intrinsics.checkNotNullParameter(itemModel, "itemModel");
-        if (this.isItem) {
-            ArrayList arrayList = new ArrayList();
-            List<ConveyorGameItemModel> currentList = getCurrentList();
-            Intrinsics.checkNotNullExpressionValue(currentList, "getCurrentList(...)");
-            for (ConveyorGameItemModel conveyorGameItemModel : currentList) {
-                if (conveyorGameItemModel.getId() == itemModel.getId()) {
-                    arrayList.add(itemModel);
-                } else {
-                    Intrinsics.checkNotNull(conveyorGameItemModel);
-                    arrayList.add(conveyorGameItemModel);
-                }
-            }
-            submitList(arrayList);
-            notifyItemChanged(this.selectItemId);
-            this.selectItemId = -1;
-        }
-    }
-
-    public final void startAnimation() {
-        this.isStartAnimation = true;
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-    public ConveyorGameViewHolder onCreateViewHolder(ViewGroup parent, int i) {
-        Intrinsics.checkNotNullParameter(parent, "parent");
-        ConveyorGameItemBinding inflate = ConveyorGameItemBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
-        Intrinsics.checkNotNullExpressionValue(inflate, "inflate(...)");
-        return new ConveyorGameViewHolder(this, inflate);
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-    public void onBindViewHolder(ConveyorGameViewHolder holder, int i) {
-        Intrinsics.checkNotNullParameter(holder, "holder");
-        ConveyorGameItemModel conveyorGameItemModel = getCurrentList().get(i);
-        Intrinsics.checkNotNullExpressionValue(conveyorGameItemModel, "get(...)");
-        holder.onBind(conveyorGameItemModel, i);
-        if (i + 1 == getCurrentList().size() && this.isItem && this.isStartAnimation) {
-            ConveyorGameScreen.Companion.startAnimation();
-            this.isStartAnimation = false;
         }
     }
 

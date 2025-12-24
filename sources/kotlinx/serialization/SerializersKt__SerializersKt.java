@@ -122,7 +122,7 @@ public final /* synthetic */ class SerializersKt__SerializersKt {
         } else {
             if (!serializersModule.getHasInterfaceContextualSerializers$kotlinx_serialization_core()) {
                 Object findParametrizedCachedSerializer = SerializersCacheKt.findParametrizedCachedSerializer(kclass, arrayList2, isMarkedNullable);
-                if (Result.m10221isFailureimpl(findParametrizedCachedSerializer)) {
+                if (Result.m10222isFailureimpl(findParametrizedCachedSerializer)) {
                     findParametrizedCachedSerializer = null;
                 }
                 kSerializer = (KSerializer) findParametrizedCachedSerializer;

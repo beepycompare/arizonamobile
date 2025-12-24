@@ -41,21 +41,21 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class id {
-        public static int adjacent = 0x7f0a00b5;
-        public static int always = 0x7f0a00d4;
-        public static int alwaysAllow = 0x7f0a00d5;
-        public static int alwaysDisallow = 0x7f0a00d6;
-        public static int androidx_window_activity_scope = 0x7f0a00db;
-        public static int bottomToTop = 0x7f0a01d3;
-        public static int draggable = 0x7f0a0466;
-        public static int fixed = 0x7f0a053c;
-        public static int jumpCut = 0x7f0a0788;
-        public static int locale = 0x7f0a07ff;
-        public static int ltr = 0x7f0a0812;
-        public static int never = 0x7f0a098d;
-        public static int rtl = 0x7f0a0ba9;
-        public static int systemDefault = 0x7f0a0d0b;
-        public static int topToBottom = 0x7f0a0dc5;
+        public static int adjacent = 0x7f0a00b6;
+        public static int always = 0x7f0a00d5;
+        public static int alwaysAllow = 0x7f0a00d6;
+        public static int alwaysDisallow = 0x7f0a00d7;
+        public static int androidx_window_activity_scope = 0x7f0a00dc;
+        public static int bottomToTop = 0x7f0a01d6;
+        public static int draggable = 0x7f0a0472;
+        public static int fixed = 0x7f0a054a;
+        public static int jumpCut = 0x7f0a07af;
+        public static int locale = 0x7f0a0827;
+        public static int ltr = 0x7f0a083a;
+        public static int never = 0x7f0a09b8;
+        public static int rtl = 0x7f0a0bde;
+        public static int systemDefault = 0x7f0a0d44;
+        public static int topToBottom = 0x7f0a0e00;
 
         private id() {
         }

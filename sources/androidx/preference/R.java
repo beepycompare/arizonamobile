@@ -81,7 +81,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class color {
-        public static int preference_fallback_accent_color = 0x7f0603ff;
+        public static int preference_fallback_accent_color = 0x7f060402;
 
         private color() {
         }
@@ -103,8 +103,8 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class drawable {
-        public static int ic_arrow_down_24dp = 0x7f0809e4;
-        public static int preference_list_divider_material = 0x7f080ce0;
+        public static int ic_arrow_down_24dp = 0x7f080a0c;
+        public static int preference_list_divider_material = 0x7f080d10;
 
         private drawable() {
         }
@@ -112,15 +112,15 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class id {
-        public static int icon_frame = 0x7f0a0691;
-        public static int preferences_detail = 0x7f0a0a3a;
-        public static int preferences_header = 0x7f0a0a3b;
-        public static int preferences_sliding_pane_layout = 0x7f0a0a3c;
-        public static int recycler_view = 0x7f0a0ac6;
-        public static int seekbar = 0x7f0a0c25;
-        public static int seekbar_value = 0x7f0a0c26;
-        public static int spinner = 0x7f0a0c95;
-        public static int switchWidget = 0x7f0a0d05;
+        public static int icon_frame = 0x7f0a06b3;
+        public static int preferences_detail = 0x7f0a0a6c;
+        public static int preferences_header = 0x7f0a0a6d;
+        public static int preferences_sliding_pane_layout = 0x7f0a0a6e;
+        public static int recycler_view = 0x7f0a0af9;
+        public static int seekbar = 0x7f0a0c5c;
+        public static int seekbar_value = 0x7f0a0c5d;
+        public static int spinner = 0x7f0a0ccd;
+        public static int switchWidget = 0x7f0a0d3e;
 
         private id() {
         }
@@ -138,23 +138,23 @@ public final class R {
     /* loaded from: classes3.dex */
     public static final class layout {
         public static int expand_button = 0x7f0d00d5;
-        public static int image_frame = 0x7f0d0126;
-        public static int preference = 0x7f0d01f7;
-        public static int preference_category = 0x7f0d01f8;
-        public static int preference_category_material = 0x7f0d01f9;
-        public static int preference_dialog_edittext = 0x7f0d01fa;
-        public static int preference_dropdown = 0x7f0d01fb;
-        public static int preference_dropdown_material = 0x7f0d01fc;
-        public static int preference_information = 0x7f0d01fd;
-        public static int preference_information_material = 0x7f0d01fe;
-        public static int preference_list_fragment = 0x7f0d01ff;
-        public static int preference_material = 0x7f0d0200;
-        public static int preference_recyclerview = 0x7f0d0201;
-        public static int preference_widget_checkbox = 0x7f0d0202;
-        public static int preference_widget_seekbar = 0x7f0d0203;
-        public static int preference_widget_seekbar_material = 0x7f0d0204;
-        public static int preference_widget_switch = 0x7f0d0205;
-        public static int preference_widget_switch_compat = 0x7f0d0206;
+        public static int image_frame = 0x7f0d012c;
+        public static int preference = 0x7f0d0201;
+        public static int preference_category = 0x7f0d0202;
+        public static int preference_category_material = 0x7f0d0203;
+        public static int preference_dialog_edittext = 0x7f0d0204;
+        public static int preference_dropdown = 0x7f0d0205;
+        public static int preference_dropdown_material = 0x7f0d0206;
+        public static int preference_information = 0x7f0d0207;
+        public static int preference_information_material = 0x7f0d0208;
+        public static int preference_list_fragment = 0x7f0d0209;
+        public static int preference_material = 0x7f0d020a;
+        public static int preference_recyclerview = 0x7f0d020b;
+        public static int preference_widget_checkbox = 0x7f0d020c;
+        public static int preference_widget_seekbar = 0x7f0d020d;
+        public static int preference_widget_seekbar_material = 0x7f0d020e;
+        public static int preference_widget_switch = 0x7f0d020f;
+        public static int preference_widget_switch_compat = 0x7f0d0210;
 
         private layout() {
         }

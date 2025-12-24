@@ -18,15 +18,15 @@ public final /* synthetic */ class ChannelsKt__ChannelsKt {
         Object mo9159trySendJP2dKIU = sendChannel.mo9159trySendJP2dKIU(e);
         if (mo9159trySendJP2dKIU instanceof ChannelResult.Failed) {
             runBlocking$default = BuildersKt__BuildersKt.runBlocking$default(null, new ChannelsKt__ChannelsKt$trySendBlocking$2(sendChannel, e, null), 1, null);
-            return ((ChannelResult) runBlocking$default).m11758unboximpl();
+            return ((ChannelResult) runBlocking$default).m11759unboximpl();
         }
         Unit unit = (Unit) mo9159trySendJP2dKIU;
-        return ChannelResult.Companion.m11761successJP2dKIU(Unit.INSTANCE);
+        return ChannelResult.Companion.m11762successJP2dKIU(Unit.INSTANCE);
     }
 
     @Deprecated(level = DeprecationLevel.HIDDEN, message = "Deprecated in the favour of 'trySendBlocking'. Consider handling the result of 'trySendBlocking' explicitly and rethrow exception if necessary", replaceWith = @ReplaceWith(expression = "trySendBlocking(element)", imports = {}))
     public static final /* synthetic */ void sendBlocking(SendChannel sendChannel, Object obj) {
-        if (ChannelResult.m11756isSuccessimpl(sendChannel.mo9159trySendJP2dKIU(obj))) {
+        if (ChannelResult.m11757isSuccessimpl(sendChannel.mo9159trySendJP2dKIU(obj))) {
             return;
         }
         BuildersKt__BuildersKt.runBlocking$default(null, new ChannelsKt__ChannelsKt$sendBlocking$1(sendChannel, obj, null), 1, null);

@@ -40,7 +40,7 @@ public final class QuestAdapter extends RecyclerView.Adapter<PiratesTaskViewHold
         this.onClick = onClick;
         this.onClickPrise = onClickPrise;
         this.itemsList = new ArrayList();
-        this.completeColor = Color.parseColor("#FFE419");
+        this.completeColor = Color.parseColor("#F7FBFF");
     }
 
     public final boolean isArizona() {

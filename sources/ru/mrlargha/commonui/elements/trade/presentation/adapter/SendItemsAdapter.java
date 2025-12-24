@@ -12,7 +12,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.math.MathKt;
-import ru.mrlargha.commonui.databinding.ItemTradeBinding;
+import ru.mrlargha.commonui.databinding.ItemInventoryBinding;
 import ru.mrlargha.commonui.elements.inventory.domain.models.InventoryItem;
 import ru.mrlargha.commonui.elements.inventory.presentation.adapter.DraggedItem;
 import ru.mrlargha.commonui.elements.trade.presentation.viewholder.SendItemsViewHolder;
@@ -67,7 +67,7 @@ public final class SendItemsAdapter extends ListAdapter<InventoryItem, SendItems
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public SendItemsViewHolder onCreateViewHolder(ViewGroup parent, int i) {
         Intrinsics.checkNotNullParameter(parent, "parent");
-        ItemTradeBinding inflate = ItemTradeBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
+        ItemInventoryBinding inflate = ItemInventoryBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
         Intrinsics.checkNotNullExpressionValue(inflate, "inflate(...)");
         return new SendItemsViewHolder(inflate, this.onItemClicked, this.onItemDropped, this.context, this.recyclerView);
     }

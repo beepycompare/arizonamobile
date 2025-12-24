@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ru.mrlargha.commonui.utils.ui.CustomCardView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/_2sdp" app:backgroundMainColor="#801f2329" app:borderMainColor="#1affffff" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_4sdp">
+    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginLeft="@dimen/_12sdp" android:layout_marginTop="@dimen/_8sdp" android:layout_marginRight="@dimen/_12sdp" android:layout_marginBottom="@dimen/_8sdp" android:layout_marginHorizontal="@dimen/_12sdp" android:layout_marginVertical="@dimen/_8sdp">
+        <TextView android:textSize="@dimen/_9sdp" android:textColor="#ffffff" android:layout_gravity="center_horizontal" android:id="@+id/nick" android:layout_width="0dp" android:layout_height="wrap_content" android:text="1" android:layout_weight="1" android:fontFamily="@font/heading_now_65"/>
+        <TextView android:textSize="@dimen/_9sdp" android:textColor="#ffffff" android:layout_gravity="center_horizontal" android:id="@+id/points" android:layout_width="0dp" android:layout_height="wrap_content" android:text="" android:layout_weight="1" android:fontFamily="@font/heading_now_65"/>
+        <TextView android:textSize="@dimen/_9sdp" android:textColor="#ffffff" android:layout_gravity="center_horizontal" android:id="@+id/prize" android:layout_width="0dp" android:layout_height="wrap_content" android:text="" android:layout_weight="1" android:fontFamily="@font/heading_now_65"/>
+    </LinearLayout>
+</ru.mrlargha.commonui.utils.ui.CustomCardView>

@@ -18,7 +18,7 @@ import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.DelayKt;
 /* compiled from: MainEntrench.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.MainEntrench$sendRequests$1", f = "MainEntrench.kt", i = {0, 0, 0}, l = {1128}, m = "invokeSuspend", n = {"request", "it", "$i$a$-repeat-MainEntrench$sendRequests$1$1"}, s = {"L$2", "I$2", "I$3"}, v = 1)
+@DebugMetadata(c = "com.arizona.launcher.MainEntrench$sendRequests$1", f = "MainEntrench.kt", i = {0, 0, 0}, l = {1130}, m = "invokeSuspend", n = {"request", "it", "$i$a$-repeat-MainEntrench$sendRequests$1$1"}, s = {"L$2", "I$2", "I$3"}, v = 1)
 /* loaded from: classes3.dex */
 final class MainEntrench$sendRequests$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ int $iterations;

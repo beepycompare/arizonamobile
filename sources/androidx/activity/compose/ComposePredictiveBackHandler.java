@@ -80,7 +80,7 @@ public final class ComposePredictiveBackHandler extends BackHandlerCompat {
     public void onBackProgressed(BackEventCompat backEventCompat) {
         Channel<BackEventCompat> channel = this.activeChannel;
         if (channel != null) {
-            ChannelResult.m11746boximpl(channel.mo9159trySendJP2dKIU(backEventCompat));
+            ChannelResult.m11747boximpl(channel.mo9159trySendJP2dKIU(backEventCompat));
         }
     }
 

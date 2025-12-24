@@ -40,26 +40,26 @@ final class SingleMap<T, R> extends Single<R> {
 
             @Override // ru.rustore.sdk.reactive.single.SingleObserver
             public void onSuccess(T t) {
-                Object m10215constructorimpl;
+                Object m10216constructorimpl;
                 Function1 function1;
                 SingleMap<T, R> singleMap = this;
                 try {
                     Result.Companion companion = Result.Companion;
                     SingleMap$subscribe$wrappedObserver$1<T> singleMap$subscribe$wrappedObserver$1 = this;
                     function1 = ((SingleMap) singleMap).mapper;
-                    m10215constructorimpl = Result.m10215constructorimpl(function1.invoke(t));
+                    m10216constructorimpl = Result.m10216constructorimpl(function1.invoke(t));
                 } catch (Throwable th) {
                     Result.Companion companion2 = Result.Companion;
-                    m10215constructorimpl = Result.m10215constructorimpl(ResultKt.createFailure(th));
+                    m10216constructorimpl = Result.m10216constructorimpl(ResultKt.createFailure(th));
                 }
                 SingleObserver<R> singleObserver = downstream;
-                if (Result.m10222isSuccessimpl(m10215constructorimpl)) {
-                    singleObserver.onSuccess(m10215constructorimpl);
+                if (Result.m10223isSuccessimpl(m10216constructorimpl)) {
+                    singleObserver.onSuccess(m10216constructorimpl);
                 }
                 SingleObserver<R> singleObserver2 = downstream;
-                Throwable m10218exceptionOrNullimpl = Result.m10218exceptionOrNullimpl(m10215constructorimpl);
-                if (m10218exceptionOrNullimpl != null) {
-                    singleObserver2.onError(m10218exceptionOrNullimpl);
+                Throwable m10219exceptionOrNullimpl = Result.m10219exceptionOrNullimpl(m10216constructorimpl);
+                if (m10219exceptionOrNullimpl != null) {
+                    singleObserver2.onError(m10219exceptionOrNullimpl);
                 }
             }
         });

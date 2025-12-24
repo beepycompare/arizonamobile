@@ -13,20 +13,20 @@ import kotlin.ranges.ULongRange;
 public final class URandomKt {
     public static final int nextUInt(Random random) {
         Intrinsics.checkNotNullParameter(random, "<this>");
-        return UInt.m10315constructorimpl(random.nextInt());
+        return UInt.m10316constructorimpl(random.nextInt());
     }
 
     /* renamed from: nextUInt-qCasIEU  reason: not valid java name */
-    public static final int m11454nextUIntqCasIEU(Random nextUInt, int i) {
+    public static final int m11455nextUIntqCasIEU(Random nextUInt, int i) {
         Intrinsics.checkNotNullParameter(nextUInt, "$this$nextUInt");
-        return m11453nextUInta8DCA5k(nextUInt, 0, i);
+        return m11454nextUInta8DCA5k(nextUInt, 0, i);
     }
 
     /* renamed from: nextUInt-a8DCA5k  reason: not valid java name */
-    public static final int m11453nextUInta8DCA5k(Random nextUInt, int i, int i2) {
+    public static final int m11454nextUInta8DCA5k(Random nextUInt, int i, int i2) {
         Intrinsics.checkNotNullParameter(nextUInt, "$this$nextUInt");
-        m11448checkUIntRangeBoundsJ1ME1BU(i, i2);
-        return UInt.m10315constructorimpl(nextUInt.nextInt(i ^ Integer.MIN_VALUE, i2 ^ Integer.MIN_VALUE) ^ Integer.MIN_VALUE);
+        m11449checkUIntRangeBoundsJ1ME1BU(i, i2);
+        return UInt.m10316constructorimpl(nextUInt.nextInt(i ^ Integer.MIN_VALUE, i2 ^ Integer.MIN_VALUE) ^ Integer.MIN_VALUE);
     }
 
     public static final int nextUInt(Random random, UIntRange range) {
@@ -37,30 +37,30 @@ public final class URandomKt {
         if (range.isEmpty()) {
             throw new IllegalArgumentException("Cannot get random in empty range: " + range);
         }
-        compare = Integer.compare(range.m11458getLastpVg5ArA() ^ Integer.MIN_VALUE, (-1) ^ Integer.MIN_VALUE);
+        compare = Integer.compare(range.m11459getLastpVg5ArA() ^ Integer.MIN_VALUE, (-1) ^ Integer.MIN_VALUE);
         if (compare < 0) {
-            return m11453nextUInta8DCA5k(random, range.m11457getFirstpVg5ArA(), UInt.m10315constructorimpl(range.m11458getLastpVg5ArA() + 1));
+            return m11454nextUInta8DCA5k(random, range.m11458getFirstpVg5ArA(), UInt.m10316constructorimpl(range.m11459getLastpVg5ArA() + 1));
         }
-        compare2 = Integer.compare(range.m11457getFirstpVg5ArA() ^ Integer.MIN_VALUE, 0 ^ Integer.MIN_VALUE);
-        return compare2 > 0 ? UInt.m10315constructorimpl(m11453nextUInta8DCA5k(random, UInt.m10315constructorimpl(range.m11457getFirstpVg5ArA() - 1), range.m11458getLastpVg5ArA()) + 1) : nextUInt(random);
+        compare2 = Integer.compare(range.m11458getFirstpVg5ArA() ^ Integer.MIN_VALUE, 0 ^ Integer.MIN_VALUE);
+        return compare2 > 0 ? UInt.m10316constructorimpl(m11454nextUInta8DCA5k(random, UInt.m10316constructorimpl(range.m11458getFirstpVg5ArA() - 1), range.m11459getLastpVg5ArA()) + 1) : nextUInt(random);
     }
 
     public static final long nextULong(Random random) {
         Intrinsics.checkNotNullParameter(random, "<this>");
-        return ULong.m10394constructorimpl(random.nextLong());
+        return ULong.m10395constructorimpl(random.nextLong());
     }
 
     /* renamed from: nextULong-V1Xi4fY  reason: not valid java name */
-    public static final long m11455nextULongV1Xi4fY(Random nextULong, long j) {
+    public static final long m11456nextULongV1Xi4fY(Random nextULong, long j) {
         Intrinsics.checkNotNullParameter(nextULong, "$this$nextULong");
-        return m11456nextULongjmpaWc(nextULong, 0L, j);
+        return m11457nextULongjmpaWc(nextULong, 0L, j);
     }
 
     /* renamed from: nextULong-jmpaW-c  reason: not valid java name */
-    public static final long m11456nextULongjmpaWc(Random nextULong, long j, long j2) {
+    public static final long m11457nextULongjmpaWc(Random nextULong, long j, long j2) {
         Intrinsics.checkNotNullParameter(nextULong, "$this$nextULong");
-        m11449checkULongRangeBoundseb3DHEI(j, j2);
-        return ULong.m10394constructorimpl(nextULong.nextLong(j ^ Long.MIN_VALUE, j2 ^ Long.MIN_VALUE) ^ Long.MIN_VALUE);
+        m11450checkULongRangeBoundseb3DHEI(j, j2);
+        return ULong.m10395constructorimpl(nextULong.nextLong(j ^ Long.MIN_VALUE, j2 ^ Long.MIN_VALUE) ^ Long.MIN_VALUE);
     }
 
     public static final long nextULong(Random random, ULongRange range) {
@@ -71,20 +71,20 @@ public final class URandomKt {
         if (range.isEmpty()) {
             throw new IllegalArgumentException("Cannot get random in empty range: " + range);
         }
-        compare = Long.compare(range.m11467getLastsVKNKU() ^ Long.MIN_VALUE, (-1) ^ Long.MIN_VALUE);
+        compare = Long.compare(range.m11468getLastsVKNKU() ^ Long.MIN_VALUE, (-1) ^ Long.MIN_VALUE);
         if (compare < 0) {
-            return m11456nextULongjmpaWc(random, range.m11466getFirstsVKNKU(), ULong.m10394constructorimpl(range.m11467getLastsVKNKU() + ULong.m10394constructorimpl(1 & 4294967295L)));
+            return m11457nextULongjmpaWc(random, range.m11467getFirstsVKNKU(), ULong.m10395constructorimpl(range.m11468getLastsVKNKU() + ULong.m10395constructorimpl(1 & 4294967295L)));
         }
-        compare2 = Long.compare(range.m11466getFirstsVKNKU() ^ Long.MIN_VALUE, 0 ^ Long.MIN_VALUE);
+        compare2 = Long.compare(range.m11467getFirstsVKNKU() ^ Long.MIN_VALUE, 0 ^ Long.MIN_VALUE);
         if (compare2 > 0) {
             long j = 1 & 4294967295L;
-            return ULong.m10394constructorimpl(m11456nextULongjmpaWc(random, ULong.m10394constructorimpl(range.m11466getFirstsVKNKU() - ULong.m10394constructorimpl(j)), range.m11467getLastsVKNKU()) + ULong.m10394constructorimpl(j));
+            return ULong.m10395constructorimpl(m11457nextULongjmpaWc(random, ULong.m10395constructorimpl(range.m11467getFirstsVKNKU() - ULong.m10395constructorimpl(j)), range.m11468getLastsVKNKU()) + ULong.m10395constructorimpl(j));
         }
         return nextULong(random);
     }
 
     /* renamed from: nextUBytes-EVgfTAA  reason: not valid java name */
-    public static final byte[] m11450nextUBytesEVgfTAA(Random nextUBytes, byte[] bArr) {
+    public static final byte[] m11451nextUBytesEVgfTAA(Random nextUBytes, byte[] bArr) {
         Intrinsics.checkNotNullParameter(nextUBytes, "$this$nextUBytes");
         Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-array$0");
         nextUBytes.nextBytes(bArr);
@@ -93,22 +93,22 @@ public final class URandomKt {
 
     public static final byte[] nextUBytes(Random random, int i) {
         Intrinsics.checkNotNullParameter(random, "<this>");
-        return UByteArray.m10291constructorimpl(random.nextBytes(i));
+        return UByteArray.m10292constructorimpl(random.nextBytes(i));
     }
 
     /* renamed from: nextUBytes-Wvrt4B4$default  reason: not valid java name */
-    public static /* synthetic */ byte[] m11452nextUBytesWvrt4B4$default(Random random, byte[] bArr, int i, int i2, int i3, Object obj) {
+    public static /* synthetic */ byte[] m11453nextUBytesWvrt4B4$default(Random random, byte[] bArr, int i, int i2, int i3, Object obj) {
         if ((i3 & 2) != 0) {
             i = 0;
         }
         if ((i3 & 4) != 0) {
-            i2 = UByteArray.m10297getSizeimpl(bArr);
+            i2 = UByteArray.m10298getSizeimpl(bArr);
         }
-        return m11451nextUBytesWvrt4B4(random, bArr, i, i2);
+        return m11452nextUBytesWvrt4B4(random, bArr, i, i2);
     }
 
     /* renamed from: nextUBytes-Wvrt4B4  reason: not valid java name */
-    public static final byte[] m11451nextUBytesWvrt4B4(Random nextUBytes, byte[] bArr, int i, int i2) {
+    public static final byte[] m11452nextUBytesWvrt4B4(Random nextUBytes, byte[] bArr, int i, int i2) {
         Intrinsics.checkNotNullParameter(nextUBytes, "$this$nextUBytes");
         Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-array$0");
         nextUBytes.nextBytes(bArr, i, i2);
@@ -116,20 +116,20 @@ public final class URandomKt {
     }
 
     /* renamed from: checkUIntRangeBounds-J1ME1BU  reason: not valid java name */
-    public static final void m11448checkUIntRangeBoundsJ1ME1BU(int i, int i2) {
+    public static final void m11449checkUIntRangeBoundsJ1ME1BU(int i, int i2) {
         int compare;
         compare = Integer.compare(i2 ^ Integer.MIN_VALUE, i ^ Integer.MIN_VALUE);
         if (compare <= 0) {
-            throw new IllegalArgumentException(RandomKt.boundsErrorMessage(UInt.m10309boximpl(i), UInt.m10309boximpl(i2)).toString());
+            throw new IllegalArgumentException(RandomKt.boundsErrorMessage(UInt.m10310boximpl(i), UInt.m10310boximpl(i2)).toString());
         }
     }
 
     /* renamed from: checkULongRangeBounds-eb3DHEI  reason: not valid java name */
-    public static final void m11449checkULongRangeBoundseb3DHEI(long j, long j2) {
+    public static final void m11450checkULongRangeBoundseb3DHEI(long j, long j2) {
         int compare;
         compare = Long.compare(j2 ^ Long.MIN_VALUE, j ^ Long.MIN_VALUE);
         if (compare <= 0) {
-            throw new IllegalArgumentException(RandomKt.boundsErrorMessage(ULong.m10388boximpl(j), ULong.m10388boximpl(j2)).toString());
+            throw new IllegalArgumentException(RandomKt.boundsErrorMessage(ULong.m10389boximpl(j), ULong.m10389boximpl(j2)).toString());
         }
     }
 }

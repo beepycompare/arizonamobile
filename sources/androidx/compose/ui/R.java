@@ -4,8 +4,8 @@ public final class R {
 
     /* loaded from: classes.dex */
     public static final class color {
-        public static int vector_tint_color = 0x7f060432;
-        public static int vector_tint_theme_color = 0x7f060433;
+        public static int vector_tint_color = 0x7f060435;
+        public static int vector_tint_theme_color = 0x7f060436;
 
         private color() {
         }
@@ -45,13 +45,13 @@ public final class R {
         public static int accessibility_custom_action_7 = 0x7f0a0040;
         public static int accessibility_custom_action_8 = 0x7f0a0041;
         public static int accessibility_custom_action_9 = 0x7f0a0042;
-        public static int androidx_compose_ui_view_composition_context = 0x7f0a00da;
-        public static int auto_clear_focus_behavior_tag = 0x7f0a013b;
-        public static int compose_view_saveable_id_tag = 0x7f0a037c;
-        public static int consume_window_insets_tag = 0x7f0a0383;
-        public static int hide_in_inspector_tag = 0x7f0a0642;
-        public static int inspection_slot_table_set = 0x7f0a06e0;
-        public static int wrapped_composition_tag = 0x7f0a0f58;
+        public static int androidx_compose_ui_view_composition_context = 0x7f0a00db;
+        public static int auto_clear_focus_behavior_tag = 0x7f0a013c;
+        public static int compose_view_saveable_id_tag = 0x7f0a0385;
+        public static int consume_window_insets_tag = 0x7f0a038c;
+        public static int hide_in_inspector_tag = 0x7f0a0653;
+        public static int inspection_slot_table_set = 0x7f0a0703;
+        public static int wrapped_composition_tag = 0x7f0a0f9f;
 
         private id() {
         }

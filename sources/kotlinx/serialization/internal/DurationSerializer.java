@@ -20,12 +20,12 @@ public final class DurationSerializer implements KSerializer<Duration> {
 
     @Override // kotlinx.serialization.DeserializationStrategy
     public /* bridge */ /* synthetic */ Object deserialize(Decoder decoder) {
-        return Duration.m11570boximpl(m11924deserialize5sfh64U(decoder));
+        return Duration.m11571boximpl(m11925deserialize5sfh64U(decoder));
     }
 
     @Override // kotlinx.serialization.SerializationStrategy
     public /* bridge */ /* synthetic */ void serialize(Encoder encoder, Object obj) {
-        m11925serializeHG0u8IE(encoder, ((Duration) obj).m11618unboximpl());
+        m11926serializeHG0u8IE(encoder, ((Duration) obj).m11619unboximpl());
     }
 
     @Override // kotlinx.serialization.KSerializer, kotlinx.serialization.SerializationStrategy, kotlinx.serialization.DeserializationStrategy
@@ -34,14 +34,14 @@ public final class DurationSerializer implements KSerializer<Duration> {
     }
 
     /* renamed from: serialize-HG0u8IE  reason: not valid java name */
-    public void m11925serializeHG0u8IE(Encoder encoder, long j) {
+    public void m11926serializeHG0u8IE(Encoder encoder, long j) {
         Intrinsics.checkNotNullParameter(encoder, "encoder");
-        encoder.encodeString(Duration.m11610toIsoStringimpl(j));
+        encoder.encodeString(Duration.m11611toIsoStringimpl(j));
     }
 
     /* renamed from: deserialize-5sfh64U  reason: not valid java name */
-    public long m11924deserialize5sfh64U(Decoder decoder) {
+    public long m11925deserialize5sfh64U(Decoder decoder) {
         Intrinsics.checkNotNullParameter(decoder, "decoder");
-        return Duration.Companion.m11665parseIsoStringUwyO8pc(decoder.decodeString());
+        return Duration.Companion.m11666parseIsoStringUwyO8pc(decoder.decodeString());
     }
 }

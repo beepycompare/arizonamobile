@@ -153,7 +153,7 @@ public final class NotificationItemKt {
             BoxScopeInstance boxScopeInstance2 = BoxScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1889896846, "C56@2172L78,57@2264L255:NotificationItem.kt#21zkme");
             float f3 = 32;
-            AnimatedLoadingKt.m10048AnimatedLoadinguFdPcIQ(true, Dp.m8258constructorimpl(40), OffsetKt.m884offsetVpY3zN4(Modifier.Companion, Dp.m8258constructorimpl(f3), Dp.m8258constructorimpl(f3)), startRestartGroup, 438, 0);
+            AnimatedLoadingKt.m10049AnimatedLoadinguFdPcIQ(true, Dp.m8258constructorimpl(40), OffsetKt.m884offsetVpY3zN4(Modifier.Companion, Dp.m8258constructorimpl(f3), Dp.m8258constructorimpl(f3)), startRestartGroup, 438, 0);
             SingletonAsyncImageKt.m9395AsyncImage10Xjiaw(notificationModel.getImageUrl(), null, SizeKt.m976size3ABfNKs(Modifier.Companion, Dp.m8258constructorimpl(160)), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, 1573296, 0, 1976);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
@@ -244,9 +244,9 @@ public final class NotificationItemKt {
             SpacerKt.Spacer(SizeKt.m962height3ABfNKs(Modifier.Companion, Dp.m8258constructorimpl(2)), startRestartGroup, 6);
             float f4 = 24;
             composer2 = startRestartGroup;
-            TextKt.m3255TextNvy7gAk(notificationModel.getTitle(), null, ColorKt.Color(4294046193L), null, TypeKt.m10168dpToSp8Feqmps(Dp.m8258constructorimpl(f4), startRestartGroup, 6), null, null, null, 0L, null, null, TypeKt.m10168dpToSp8Feqmps(Dp.m8258constructorimpl(f4), startRestartGroup, 6), 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 129002);
+            TextKt.m3255TextNvy7gAk(notificationModel.getTitle(), null, ColorKt.Color(4294046193L), null, TypeKt.m10169dpToSp8Feqmps(Dp.m8258constructorimpl(f4), startRestartGroup, 6), null, null, null, 0L, null, null, TypeKt.m10169dpToSp8Feqmps(Dp.m8258constructorimpl(f4), startRestartGroup, 6), 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodySmall(), composer2, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 129002);
             float f5 = 11;
-            TextKt.m3255TextNvy7gAk(notificationModel.getText(), null, ColorKt.Color(4291150552L), null, TypeKt.m10168dpToSp8Feqmps(Dp.m8258constructorimpl(f5), composer2, 6), null, null, null, 0L, null, null, TypeKt.m10168dpToSp8Feqmps(Dp.m8258constructorimpl(f5), composer2, 6), 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer2, MaterialTheme.$stable).getBodySmall(), composer2, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 129002);
+            TextKt.m3255TextNvy7gAk(notificationModel.getText(), null, ColorKt.Color(4291150552L), null, TypeKt.m10169dpToSp8Feqmps(Dp.m8258constructorimpl(f5), composer2, 6), null, null, null, 0L, null, null, TypeKt.m10169dpToSp8Feqmps(Dp.m8258constructorimpl(f5), composer2, 6), 0, false, 0, 0, null, MaterialTheme.INSTANCE.getTypography(composer2, MaterialTheme.$stable).getBodySmall(), composer2, RendererCapabilities.DECODER_SUPPORT_MASK, 0, 129002);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             ComposerKt.sourceInformationMarkerEnd(composer2);
             composer2.endNode();

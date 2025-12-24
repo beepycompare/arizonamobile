@@ -17,6 +17,7 @@ public final class ItemInventoryBinding implements ViewBinding {
     public final AppCompatImageView ivActiveItem;
     public final ImageView ivDefaultItem;
     public final ImageView ivEffectBackground;
+    public final ImageView ivEffectBackgroundTop;
     public final ImageView ivEffectForeground;
     public final ImageView ivItemImage;
     private final CardView rootView;
@@ -24,13 +25,14 @@ public final class ItemInventoryBinding implements ViewBinding {
     public final TextView tvTitleText;
     public final View viewCenter;
 
-    private ItemInventoryBinding(CardView rootView, CardView cvColoredItem, CardView item, AppCompatImageView ivActiveItem, ImageView ivDefaultItem, ImageView ivEffectBackground, ImageView ivEffectForeground, ImageView ivItemImage, TextView tvNeedRes, TextView tvTitleText, View viewCenter) {
+    private ItemInventoryBinding(CardView rootView, CardView cvColoredItem, CardView item, AppCompatImageView ivActiveItem, ImageView ivDefaultItem, ImageView ivEffectBackground, ImageView ivEffectBackgroundTop, ImageView ivEffectForeground, ImageView ivItemImage, TextView tvNeedRes, TextView tvTitleText, View viewCenter) {
         this.rootView = rootView;
         this.cvColoredItem = cvColoredItem;
         this.item = item;
         this.ivActiveItem = ivActiveItem;
         this.ivDefaultItem = ivDefaultItem;
         this.ivEffectBackground = ivEffectBackground;
+        this.ivEffectBackgroundTop = ivEffectBackgroundTop;
         this.ivEffectForeground = ivEffectForeground;
         this.ivItemImage = ivItemImage;
         this.tvNeedRes = tvNeedRes;
@@ -70,19 +72,23 @@ public final class ItemInventoryBinding implements ViewBinding {
                     i = R.id.iv_effect_background;
                     ImageView imageView2 = (ImageView) ViewBindings.findChildViewById(rootView, i);
                     if (imageView2 != null) {
-                        i = R.id.iv_effect_foreground;
+                        i = R.id.iv_effect_background_top;
                         ImageView imageView3 = (ImageView) ViewBindings.findChildViewById(rootView, i);
                         if (imageView3 != null) {
-                            i = R.id.ivItemImage;
+                            i = R.id.iv_effect_foreground;
                             ImageView imageView4 = (ImageView) ViewBindings.findChildViewById(rootView, i);
                             if (imageView4 != null) {
-                                i = R.id.tvNeedRes;
-                                TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                if (textView != null) {
-                                    i = R.id.tvTitleText;
-                                    TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
-                                    if (textView2 != null && (findChildViewById = ViewBindings.findChildViewById(rootView, (i = R.id.viewCenter))) != null) {
-                                        return new ItemInventoryBinding(cardView2, cardView, cardView2, appCompatImageView, imageView, imageView2, imageView3, imageView4, textView, textView2, findChildViewById);
+                                i = R.id.ivItemImage;
+                                ImageView imageView5 = (ImageView) ViewBindings.findChildViewById(rootView, i);
+                                if (imageView5 != null) {
+                                    i = R.id.tvNeedRes;
+                                    TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                    if (textView != null) {
+                                        i = R.id.tvTitleText;
+                                        TextView textView2 = (TextView) ViewBindings.findChildViewById(rootView, i);
+                                        if (textView2 != null && (findChildViewById = ViewBindings.findChildViewById(rootView, (i = R.id.viewCenter))) != null) {
+                                            return new ItemInventoryBinding(cardView2, cardView, cardView2, appCompatImageView, imageView, imageView2, imageView3, imageView4, imageView5, textView, textView2, findChildViewById);
+                                        }
                                     }
                                 }
                             }

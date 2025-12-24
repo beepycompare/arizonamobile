@@ -43,7 +43,7 @@ import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 /* compiled from: ConveyorGameScreen.kt */
-@Metadata(d1 = {"\u0000\u0088\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010%\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010 \n\u0002\b\n\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\b\u0010\u0018\u0000 R2\u00020\u0001:\u0002RSB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010-\u001a\u00020.2\u0006\u0010/\u001a\u000200H\u0016J\u0018\u00101\u001a\u00020.2\u0006\u00102\u001a\u0002032\u0006\u00104\u001a\u00020\u0005H\u0016J\u0010\u00105\u001a\u00020.2\u0006\u00102\u001a\u000203H\u0002J\u0010\u00106\u001a\u00020.2\u0006\u00107\u001a\u000208H\u0002J\b\u00109\u001a\u00020.H\u0002J\b\u0010:\u001a\u00020.H\u0002J\b\u0010;\u001a\u00020.H\u0002J\b\u0010<\u001a\u00020.H\u0002J\u001c\u0010=\u001a\u00020.2\b\b\u0002\u0010>\u001a\u00020\u00052\b\b\u0002\u0010?\u001a\u00020\u0005H\u0002J\b\u0010@\u001a\u00020.H\u0002J\b\u0010A\u001a\u00020.H\u0002J\u0010\u0010B\u001a\u00020.2\u0006\u0010C\u001a\u00020DH\u0002J\u0010\u0010E\u001a\u00020.2\u0006\u0010C\u001a\u00020DH\u0002J\u0010\u0010F\u001a\u00020.2\u0006\u0010C\u001a\u00020DH\u0002J\u0010\u0010G\u001a\u00020.2\u0006\u0010H\u001a\u00020\u0017H\u0002J\u0010\u0010I\u001a\u00020.2\u0006\u0010H\u001a\u00020\u0017H\u0002J\b\u0010J\u001a\u00020.H\u0002J\b\u0010K\u001a\u00020.H\u0002J\u000e\u0010L\u001a\b\u0012\u0004\u0012\u00020\u00170#H\u0002J\u0018\u0010M\u001a\b\u0012\u0004\u0012\u00020\u00170#*\b\u0012\u0004\u0012\u00020\u00050#H\u0002J\u0010\u0010N\u001a\u00020.2\u0006\u0010O\u001a\u00020\u0005H\u0002J\b\u0010P\u001a\u00020.H\u0002J\b\u0010Q\u001a\u00020.H\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u000f\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00050\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0016\u001a\u0004\u0018\u00010\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u0018\u001a\n \u001a*\u0004\u0018\u00010\u00190\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001e\u001a\u0004\u0018\u00010\u001fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020!X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\"\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010$\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010%\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010&\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010'\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010(\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010)\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010*\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010+\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010,\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006T"}, d2 = {"Lcom/arizonagames/feature/minigames/conveyor/ConveyorGameScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendId", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/widget/FrameLayout;", "binding", "Lcom/arizonagames/feature/minigames/conveyor/databinding/ConveyorGameScreenBinding;", "boxAdapter", "Lcom/arizonagames/feature/minigames/conveyor/ConveyorGameItemAdapter;", "itemAdapter", "correctEggToBoxMap", "", "currentNeedItem", "scope", "Lkotlinx/coroutines/CoroutineScope;", "collectedEggsState", "Lkotlinx/coroutines/flow/MutableStateFlow;", "selectItemImage", "Lcom/arizonagames/feature/minigames/conveyor/ConveyorGameItemModel;", "soundPool", "Landroid/media/SoundPool;", "kotlin.jvm.PlatformType", "successSoundId", "failureSoundId", "clickEggSoundId", "mediaPlayer", "Landroid/media/MediaPlayer;", "animationScale", "", "itemEggList", "", "boxEggList", "itemDocumentList", "boxDocumentList", "itemCrystalList", "boxCrystalList", "itemHalloweenList", "boxHalloweenList", "itemImageList", "boxImageList", "setVisibility", "", "visible", "", "onBackendMessage", "data", "", "subId", "setCurrentNeedItem", "setGameType", "type", "Lcom/arizonagames/feature/minigames/conveyor/ConveyorGameScreen$Companion$ConveyorType;", "initEggType", "initDocumentType", "initCrystalType", "initHalloweenType", "updateLeftItem", "leftItem", "needItem", "openAgeLabel", "openScreen", "checkIsHasAnimation", "view", "Landroid/view/View;", "showItems", "startInfiniteAnimation", "onBoxClick", "itemModel", "onItemClick", "refreshItems", "getCorrectEggToBoxMap", "getRandomItemImageList", "toConveyorItemModel", "playSound", "soundId", "startBackgroundMelody", "closeScreen", "Companion", "Spawner", "conveyor_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0088\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010%\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010 \n\u0002\b\f\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0011\u0018\u0000 V2\u00020\u0001:\u0002VWB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u0010\u0010/\u001a\u0002002\u0006\u00101\u001a\u000202H\u0016J\u0018\u00103\u001a\u0002002\u0006\u00104\u001a\u0002052\u0006\u00106\u001a\u00020\u0005H\u0016J\u0010\u00107\u001a\u0002002\u0006\u00104\u001a\u000205H\u0002J\u0010\u00108\u001a\u0002002\u0006\u00109\u001a\u00020:H\u0002J\b\u0010;\u001a\u000200H\u0002J\b\u0010<\u001a\u000200H\u0002J\b\u0010=\u001a\u000200H\u0002J\b\u0010>\u001a\u000200H\u0002J\b\u0010?\u001a\u000200H\u0002J\u001c\u0010@\u001a\u0002002\b\b\u0002\u0010A\u001a\u00020\u00052\b\b\u0002\u0010B\u001a\u00020\u0005H\u0002J\b\u0010C\u001a\u000200H\u0002J\b\u0010D\u001a\u000200H\u0002J\u0010\u0010E\u001a\u0002002\u0006\u0010F\u001a\u00020GH\u0002J\u0010\u0010H\u001a\u0002002\u0006\u0010F\u001a\u00020GH\u0002J\u0010\u0010I\u001a\u0002002\u0006\u0010F\u001a\u00020GH\u0002J\u0010\u0010J\u001a\u0002002\u0006\u0010K\u001a\u00020\u0017H\u0002J\u0010\u0010L\u001a\u0002002\u0006\u0010K\u001a\u00020\u0017H\u0002J\b\u0010M\u001a\u000200H\u0002J\b\u0010N\u001a\u000200H\u0002J\u000e\u0010O\u001a\b\u0012\u0004\u0012\u00020\u00170#H\u0002J\u0018\u0010P\u001a\b\u0012\u0004\u0012\u00020\u00170#*\b\u0012\u0004\u0012\u00020\u00050#H\u0002J\u0010\u0010Q\u001a\u0002002\u0006\u0010R\u001a\u00020\u0005H\u0002J\u0010\u0010S\u001a\u0002002\u0006\u0010T\u001a\u00020\u0005H\u0002J\b\u0010U\u001a\u000200H\u0002R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u000f\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00050\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0016\u001a\u0004\u0018\u00010\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010\u0018\u001a\n \u001a*\u0004\u0018\u00010\u00190\u0019X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001e\u001a\u0004\u0018\u00010\u001fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020!X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\"\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010$\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010%\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010&\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010'\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010(\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010)\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010*\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010+\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010,\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010-\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010.\u001a\b\u0012\u0004\u0012\u00020\u00050#X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006X"}, d2 = {"Lcom/arizonagames/feature/minigames/conveyor/ConveyorGameScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "targetActivity", "Landroid/app/Activity;", "backendId", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/widget/FrameLayout;", "binding", "Lcom/arizonagames/feature/minigames/conveyor/databinding/ConveyorGameScreenBinding;", "boxAdapter", "Lcom/arizonagames/feature/minigames/conveyor/ConveyorGameItemAdapter;", "itemAdapter", "correctEggToBoxMap", "", "currentNeedItem", "scope", "Lkotlinx/coroutines/CoroutineScope;", "collectedEggsState", "Lkotlinx/coroutines/flow/MutableStateFlow;", "selectItemImage", "Lcom/arizonagames/feature/minigames/conveyor/ConveyorGameItemModel;", "soundPool", "Landroid/media/SoundPool;", "kotlin.jvm.PlatformType", "successSoundId", "failureSoundId", "clickEggSoundId", "mediaPlayer", "Landroid/media/MediaPlayer;", "animationScale", "", "itemEggList", "", "boxEggList", "itemDocumentList", "boxDocumentList", "itemCrystalList", "boxCrystalList", "itemHalloweenList", "boxHalloweenList", "itemNewYearList", "boxNewYearList", "itemImageList", "boxImageList", "setVisibility", "", "visible", "", "onBackendMessage", "data", "", "subId", "setCurrentNeedItem", "setGameType", "type", "Lcom/arizonagames/feature/minigames/conveyor/ConveyorGameScreen$Companion$ConveyorType;", "initEggType", "initDocumentType", "initCrystalType", "initHalloweenType", "initNewYearType", "updateLeftItem", "leftItem", "needItem", "openAgeLabel", "openScreen", "checkIsHasAnimation", "view", "Landroid/view/View;", "showItems", "startInfiniteAnimation", "onBoxClick", "itemModel", "onItemClick", "refreshItems", "getCorrectEggToBoxMap", "getRandomItemImageList", "toConveyorItemModel", "playSound", "soundId", "startBackgroundMelody", "melodyId", "closeScreen", "Companion", "Spawner", "conveyor_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes3.dex */
 public final class ConveyorGameScreen extends SAMPUIElement {
     private static final float CONVEYOR_SPEED = 350.0f;
@@ -59,6 +59,7 @@ public final class ConveyorGameScreen extends SAMPUIElement {
     private final List<Integer> boxEggList;
     private final List<Integer> boxHalloweenList;
     private List<Integer> boxImageList;
+    private final List<Integer> boxNewYearList;
     private int clickEggSoundId;
     private final MutableStateFlow<Integer> collectedEggsState;
     private Map<Integer, Integer> correctEggToBoxMap;
@@ -70,6 +71,7 @@ public final class ConveyorGameScreen extends SAMPUIElement {
     private final List<Integer> itemEggList;
     private final List<Integer> itemHalloweenList;
     private List<Integer> itemImageList;
+    private final List<Integer> itemNewYearList;
     private MediaPlayer mediaPlayer;
     private final CoroutineScope scope;
     private final FrameLayout screen;
@@ -100,6 +102,10 @@ public final class ConveyorGameScreen extends SAMPUIElement {
             try {
                 iArr[Companion.ConveyorType.Halloween.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
+            }
+            try {
+                iArr[Companion.ConveyorType.NEW_YEAR.ordinal()] = 5;
+            } catch (NoSuchFieldError unused5) {
             }
             $EnumSwitchMapping$0 = iArr;
         }
@@ -144,6 +150,8 @@ public final class ConveyorGameScreen extends SAMPUIElement {
         this.boxCrystalList = CollectionsKt.listOf((Object[]) new Integer[]{Integer.valueOf(R.drawable.conveyor_game_crystal_box_green), Integer.valueOf(R.drawable.conveyor_game_crystal_box_yellow), Integer.valueOf(R.drawable.conveyor_game_crystal_box_orange), Integer.valueOf(R.drawable.conveyor_game_crystal_box_red), Integer.valueOf(R.drawable.conveyor_game_crystal_box_pink), Integer.valueOf(R.drawable.conveyor_game_crystal_box_violet), Integer.valueOf(R.drawable.conveyor_game_crystal_box_blue)});
         this.itemHalloweenList = CollectionsKt.listOf((Object[]) new Integer[]{Integer.valueOf(R.drawable.conveyor_game_helloween_item_1), Integer.valueOf(R.drawable.conveyor_game_helloween_item_2), Integer.valueOf(R.drawable.conveyor_game_helloween_item_3), Integer.valueOf(R.drawable.conveyor_game_helloween_item_4), Integer.valueOf(R.drawable.conveyor_game_helloween_item_5), Integer.valueOf(R.drawable.conveyor_game_helloween_item_6), Integer.valueOf(R.drawable.conveyor_game_helloween_item_7)});
         this.boxHalloweenList = CollectionsKt.listOf((Object[]) new Integer[]{Integer.valueOf(R.drawable.conveyor_game_helloween_box_1), Integer.valueOf(R.drawable.conveyor_game_helloween_box_2), Integer.valueOf(R.drawable.conveyor_game_helloween_box_3), Integer.valueOf(R.drawable.conveyor_game_helloween_box_4), Integer.valueOf(R.drawable.conveyor_game_helloween_box_5), Integer.valueOf(R.drawable.conveyor_game_helloween_box_6), Integer.valueOf(R.drawable.conveyor_game_helloween_box_7)});
+        this.itemNewYearList = CollectionsKt.listOf((Object[]) new Integer[]{Integer.valueOf(R.drawable.conveyor_game_new_year_red), Integer.valueOf(R.drawable.conveyor_game_new_year_pink), Integer.valueOf(R.drawable.conveyor_game_new_year_blue), Integer.valueOf(R.drawable.conveyor_game_new_year_dark_blue), Integer.valueOf(R.drawable.conveyor_game_new_year_violet), Integer.valueOf(R.drawable.conveyor_game_new_year_green), Integer.valueOf(R.drawable.conveyor_game_new_year_yeallow)});
+        this.boxNewYearList = CollectionsKt.listOf((Object[]) new Integer[]{Integer.valueOf(R.drawable.conveyor_game_new_year_box_red), Integer.valueOf(R.drawable.conveyor_game_new_year_box_pink), Integer.valueOf(R.drawable.conveyor_game_new_year_box_blue), Integer.valueOf(R.drawable.conveyor_game_new_year_box_dark_blue), Integer.valueOf(R.drawable.conveyor_game_new_year_box_violet), Integer.valueOf(R.drawable.conveyor_game_new_year_box_green), Integer.valueOf(R.drawable.conveyor_game_new_year_box_yeallow)});
         this.itemImageList = CollectionsKt.emptyList();
         this.boxImageList = CollectionsKt.emptyList();
         addViewToConstraintLayout(frameLayout, -1, -1);
@@ -218,11 +226,14 @@ public final class ConveyorGameScreen extends SAMPUIElement {
         } else if (i == 3) {
             initCrystalType();
             openScreen();
-        } else if (i != 4) {
-            throw new NoWhenBranchMatchedException();
-        } else {
+        } else if (i == 4) {
             initHalloweenType();
             openAgeLabel();
+        } else if (i != 5) {
+            throw new NoWhenBranchMatchedException();
+        } else {
+            initNewYearType();
+            openScreen();
         }
     }
 
@@ -279,6 +290,22 @@ public final class ConveyorGameScreen extends SAMPUIElement {
         this.itemImageList = this.itemHalloweenList;
         this.boxImageList = this.boxHalloweenList;
         conveyorGameScreenBinding.ageLabel.setVisibility(0);
+        startBackgroundMelody(R.raw.conveyor_game_background_melody);
+    }
+
+    private final void initNewYearType() {
+        ConveyorGameScreenBinding conveyorGameScreenBinding = this.binding;
+        conveyorGameScreenBinding.getRoot().setBackgroundResource(R.drawable.conveyor_new_years_bg);
+        conveyorGameScreenBinding.gameTitle.setText("Сортировка подарков");
+        CustomCardView leftContainer = conveyorGameScreenBinding.leftContainer;
+        Intrinsics.checkNotNullExpressionValue(leftContainer, "leftContainer");
+        CustomCardView.setBackground$default(leftContainer, Color.parseColor("#FF0D0D"), Color.parseColor("#FA0A9A"), null, CustomCardView.GradientType.LINEAR, 4, null);
+        conveyorGameScreenBinding.leftItem.setTextColor(-1);
+        conveyorGameScreenBinding.tvHint.setText("Нажмите на игрушку, а затем на соответствующую подарочную коробку");
+        conveyorGameScreenBinding.ivDefaultItem.setImageResource(R.drawable.conveyor_game_new_year_item_empty);
+        this.itemImageList = this.itemNewYearList;
+        this.boxImageList = this.boxNewYearList;
+        startBackgroundMelody(R.raw.conveyor_game_new_year_background_melody);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -344,7 +371,6 @@ public final class ConveyorGameScreen extends SAMPUIElement {
         this.boxAdapter.submitList(toConveyorItemModel(this.boxImageList));
         this.itemAdapter.submitList(getRandomItemImageList());
         getCorrectEggToBoxMap();
-        startBackgroundMelody();
     }
 
     private final void checkIsHasAnimation(View view) {
@@ -491,8 +517,8 @@ public final class ConveyorGameScreen extends SAMPUIElement {
         this.soundPool.play(i, 1.0f, 1.0f, 0, 0, 1.0f);
     }
 
-    private final void startBackgroundMelody() {
-        MediaPlayer create = MediaPlayer.create(getTargetActivity(), R.raw.conveyor_game_background_melody);
+    private final void startBackgroundMelody(int i) {
+        MediaPlayer create = MediaPlayer.create(getTargetActivity(), i);
         this.mediaPlayer = create;
         if (create != null) {
             create.setLooping(true);
@@ -577,7 +603,7 @@ public final class ConveyorGameScreen extends SAMPUIElement {
         /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
         /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
         /* compiled from: ConveyorGameScreen.kt */
-        @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0002\b\t\b\u0082\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000b¨\u0006\f"}, d2 = {"Lcom/arizonagames/feature/minigames/conveyor/ConveyorGameScreen$Companion$ConveyorType;", "", "type", "", "<init>", "(Ljava/lang/String;II)V", "getType", "()I", "EGGS", "DOCUMENTS", "CRYSTAL", "Halloween", "conveyor_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+        @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0002\b\n\b\u0082\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000bj\u0002\b\f¨\u0006\r"}, d2 = {"Lcom/arizonagames/feature/minigames/conveyor/ConveyorGameScreen$Companion$ConveyorType;", "", "type", "", "<init>", "(Ljava/lang/String;II)V", "getType", "()I", "EGGS", "DOCUMENTS", "CRYSTAL", "Halloween", "NEW_YEAR", "conveyor_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
         /* loaded from: classes3.dex */
         private static final class ConveyorType {
             private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -587,9 +613,10 @@ public final class ConveyorGameScreen extends SAMPUIElement {
             public static final ConveyorType DOCUMENTS = new ConveyorType("DOCUMENTS", 1, 1);
             public static final ConveyorType CRYSTAL = new ConveyorType("CRYSTAL", 2, 2);
             public static final ConveyorType Halloween = new ConveyorType("Halloween", 3, 3);
+            public static final ConveyorType NEW_YEAR = new ConveyorType("NEW_YEAR", 4, 4);
 
             private static final /* synthetic */ ConveyorType[] $values() {
-                return new ConveyorType[]{EGGS, DOCUMENTS, CRYSTAL, Halloween};
+                return new ConveyorType[]{EGGS, DOCUMENTS, CRYSTAL, Halloween, NEW_YEAR};
             }
 
             public static EnumEntries<ConveyorType> getEntries() {

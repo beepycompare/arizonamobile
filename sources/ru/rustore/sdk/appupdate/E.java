@@ -29,7 +29,7 @@ public final class E extends Lambda implements Function1<SingleEmitter<Integer>,
     }
 
     public final void a(final SingleEmitter<Integer> emitter) {
-        Object m10215constructorimpl;
+        Object m10216constructorimpl;
         Intrinsics.checkNotNullParameter(emitter, "emitter");
         C0801r c0801r = this.f1496a;
         AppUpdateInfo appUpdateInfo = this.b;
@@ -42,14 +42,14 @@ public final class E extends Lambda implements Function1<SingleEmitter<Integer>,
                 }
             });
             appUpdateInfo.markIsUsed$sdk_public_appupdate_release();
-            m10215constructorimpl = Result.m10215constructorimpl(Unit.INSTANCE);
+            m10216constructorimpl = Result.m10216constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m10215constructorimpl = Result.m10215constructorimpl(ResultKt.createFailure(th));
+            m10216constructorimpl = Result.m10216constructorimpl(ResultKt.createFailure(th));
         }
-        Throwable m10218exceptionOrNullimpl = Result.m10218exceptionOrNullimpl(m10215constructorimpl);
-        if (m10218exceptionOrNullimpl != null) {
-            emitter.error(m10218exceptionOrNullimpl);
+        Throwable m10219exceptionOrNullimpl = Result.m10219exceptionOrNullimpl(m10216constructorimpl);
+        if (m10219exceptionOrNullimpl != null) {
+            emitter.error(m10219exceptionOrNullimpl);
         }
     }
 

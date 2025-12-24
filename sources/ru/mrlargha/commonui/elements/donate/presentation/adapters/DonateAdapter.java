@@ -493,7 +493,7 @@ public final class DonateAdapter extends ListAdapter<DonateItemModelUi, Recycler
 
         private final void checkBlockType(DonateItemModelUi donateItemModelUi) {
             DonateDefaultItemBinding donateDefaultItemBinding = this.binding;
-            int i = WhenMappings.$EnumSwitchMapping$0[donateItemModelUi.m12255getBlockType().ordinal()];
+            int i = WhenMappings.$EnumSwitchMapping$0[donateItemModelUi.m12256getBlockType().ordinal()];
             if (i == 1) {
                 LinearLayout blockContainer = donateDefaultItemBinding.blockContainer;
                 Intrinsics.checkNotNullExpressionValue(blockContainer, "blockContainer");
@@ -673,7 +673,7 @@ public final class DonateAdapter extends ListAdapter<DonateItemModelUi, Recycler
 
         private final void checkBlockType(DonateItemModelUi donateItemModelUi) {
             DonatePosterItemBinding donatePosterItemBinding = this.binding;
-            int i = WhenMappings.$EnumSwitchMapping$0[donateItemModelUi.m12255getBlockType().ordinal()];
+            int i = WhenMappings.$EnumSwitchMapping$0[donateItemModelUi.m12256getBlockType().ordinal()];
             if (i == 1) {
                 LinearLayout blockContainer = donatePosterItemBinding.blockContainer;
                 Intrinsics.checkNotNullExpressionValue(blockContainer, "blockContainer");

@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.content.ClipData;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -13,7 +11,6 @@ import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.os.Bundle;
 import android.provider.Settings;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
@@ -22,45 +19,24 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.media3.exoplayer.upstream.CmcdData;
-import com.adjust.sdk.Adjust;
-import com.adjust.sdk.AdjustEvent;
-import com.adjust.sdk.Constants;
-import com.arizona.game.BuildConfig;
-import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import io.appmetrica.analytics.AppMetrica;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
-import io.appmetrica.analytics.ecommerce.ECommerceAmount;
-import io.appmetrica.analytics.ecommerce.ECommerceCartItem;
-import io.appmetrica.analytics.ecommerce.ECommerceEvent;
-import io.appmetrica.analytics.ecommerce.ECommerceOrder;
-import io.appmetrica.analytics.ecommerce.ECommercePrice;
-import io.appmetrica.analytics.ecommerce.ECommerceProduct;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import kotlin.Metadata;
-import kotlin.Pair;
-import kotlin.TuplesKt;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
-import kotlin.collections.MapsKt;
 import kotlin.io.CloseableKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
@@ -71,17 +47,6 @@ import kotlin.text.StringsKt;
 import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
-import okhttp3.HttpUrl;
-import okhttp3.OkHttpClient;
-import okhttp3.Protocol;
-import okhttp3.Request;
-import okhttp3.ResponseBody;
-import okhttp3.logging.HttpLoggingInterceptor;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.IBackendNotifier;
 import ru.mrlargha.commonui.elements.hud.presentation.models.ServerInfoItem;
@@ -93,27 +58,14 @@ import ru.mrlargha.commonui.elements.inventory.domain.InventorySendRequest;
 import ru.mrlargha.commonui.elements.inventory.domain.models.InventoryItem;
 import ru.mrlargha.commonui.utils.ui.ArizonaRetrofit;
 /* compiled from: Utils.kt */
-@Metadata(d1 = {"\u0000²\u0001\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\n\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\"\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\t\n\u0002\b\u0003\u001a\u0012\u0010\u0018\u001a\u00020\u0019*\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001c\u001a\n\u0010\u001d\u001a\u00020\u001e*\u00020\u001f\u001a\n\u0010 \u001a\u00020\u001c*\u00020\u001f\u001a\"\u0010!\u001a\u0004\u0018\u00010\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020\u001c2\b\b\u0002\u0010&\u001a\u00020$\u001a\"\u0010!\u001a\u0004\u0018\u00010\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020$2\b\b\u0002\u0010&\u001a\u00020$\u001a\u0018\u0010!\u001a\u0004\u0018\u00010\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020$\u001a\u0018\u0010(\u001a\u0004\u0018\u00010\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020$\u001a\u0012\u0010)\u001a\u0004\u0018\u00010\"2\u0006\u0010*\u001a\u00020+H\u0002\u001a \u0010,\u001a\u00020\u001c2\u0006\u0010-\u001a\u00020\u001c2\u0006\u0010.\u001a\u00020\u001c2\u0006\u0010/\u001a\u00020\u001cH\u0002\u001aM\u00100\u001a\u0002H1\"\u0004\b\u0000\u00101*\u0002H12\u0017\u00102\u001a\u0013\u0012\u0004\u0012\u0002H1\u0012\u0004\u0012\u00020\u000e03¢\u0006\u0002\b42\u0017\u00105\u001a\u0013\u0012\u0004\u0012\u0002H1\u0012\u0004\u0012\u00020\u001903¢\u0006\u0002\b4H\u0086\bø\u0001\u0000¢\u0006\u0002\u00106\u001a\u0016\u00107\u001a\u00020\"2\u0006\u00108\u001a\u0002092\u0006\u0010:\u001a\u00020\u001c\u001a\u0018\u0010;\u001a\u00020\u000e2\u0006\u0010<\u001a\u00020=2\u0006\u0010>\u001a\u00020?H\u0007\u001a\u000e\u0010@\u001a\u00020$2\u0006\u0010A\u001a\u00020$\u001a\u000e\u0010B\u001a\u00020\u001c2\u0006\u0010C\u001a\u00020\u001c\u001a\u0018\u0010D\u001a\u0004\u0018\u00010$2\u0006\u00108\u001a\u0002092\u0006\u0010E\u001a\u00020$\u001a\u000e\u0010F\u001a\u00020\u001c2\u0006\u0010G\u001a\u00020\u001c\u001a\u0014\u0010H\u001a\b\u0012\u0004\u0012\u00020$0\u00012\u0006\u0010I\u001a\u00020\u001f\u001a\u001e\u0010J\u001a\u00020\u00192\u0006\u0010>\u001a\u00020\u001a2\u0006\u0010K\u001a\u00020\u001c2\u0006\u0010I\u001a\u00020\u001f\u001a\u001e\u0010J\u001a\u00020\u00192\u0006\u0010>\u001a\u00020L2\u0006\u0010K\u001a\u00020\u001c2\u0006\u0010I\u001a\u00020\u001f\u001a\u000e\u0010M\u001a\u00020$2\u0006\u0010N\u001a\u00020$\u001a\u0016\u0010O\u001a\u00020\u00192\u0006\u0010P\u001a\u00020Q2\u0006\u0010R\u001a\u00020\"\u001a\u0016\u0010S\u001a\u00020\u00192\u0006\u0010P\u001a\u00020Q2\u0006\u00108\u001a\u000209\u001a\u0016\u0010T\u001a\u00020\u00192\u0006\u00108\u001a\u0002092\u0006\u0010U\u001a\u00020\u000e\u001a\"\u0010V\u001a\u00020\u00192\u0006\u00108\u001a\u0002092\u0006\u0010W\u001a\u00020\u001c2\n\b\u0002\u0010X\u001a\u0004\u0018\u00010Y\u001a&\u0010Z\u001a\u00020\u00192\u0006\u0010[\u001a\u00020\\2\u0006\u0010]\u001a\u00020\u001c2\u0006\u0010^\u001a\u00020=2\u0006\u0010_\u001a\u00020=\u001a\u001a\u0010`\u001a\u0004\u0018\u00010=2\b\u0010a\u001a\u0004\u0018\u00010=2\u0006\u0010b\u001a\u00020=\u001a\u000e\u0010c\u001a\u00020$2\u0006\u0010d\u001a\u00020$\u001a\u000e\u0010e\u001a\u00020$2\u0006\u0010%\u001a\u00020\u001c\u001a\u000e\u0010f\u001a\u00020$2\u0006\u0010%\u001a\u00020\u001c\u001a\u001e\u0010o\u001a\u00020\u00192\u0006\u00108\u001a\u0002092\u0006\u0010p\u001a\u00020$2\u0006\u0010q\u001a\u00020\u001c\u001a\u000e\u0010r\u001a\u00020\u00192\u0006\u0010s\u001a\u00020$\u001a\u0018\u0010t\u001a\u00020\u00192\u0006\u00108\u001a\u0002092\u0006\u0010p\u001a\u00020$H\u0002\u001a\u0015\u0010u\u001a\u00020\u000e*\u00020\u001c2\u0006\u0010v\u001a\u00020\u001cH\u0082\u0004\u001a\u0006\u0010w\u001a\u00020$\u001a\u0012\u0010x\u001a\u00020$2\b\u0010y\u001a\u0004\u0018\u00010$H\u0002\u001a\u0016\u0010z\u001a\u00020\u00192\u0006\u00108\u001a\u0002092\u0006\u0010p\u001a\u00020$\u001a\u0016\u0010{\u001a\u00020\u00192\u0006\u00108\u001a\u0002092\u0006\u0010|\u001a\u00020$\u001a\u0016\u0010}\u001a\u00020\u00192\u0006\u00108\u001a\u0002092\u0006\u0010|\u001a\u00020$\u001a\u0017\u0010\u0080\u0001\u001a\u00020\u00192\u0006\u00108\u001a\u0002092\u0006\u0010|\u001a\u00020$\u001a\u0017\u0010\u0081\u0001\u001a\u00020\u00192\u0006\u00108\u001a\u0002092\u0006\u0010|\u001a\u00020$\u001a\u0018\u0010\u0082\u0001\u001a\u00020\u00192\u0006\u00108\u001a\u0002092\u0007\u0010\u0083\u0001\u001a\u00020\u001c\u001a\f\u0010\u0084\u0001\u001a\u00030\u0085\u0001*\u000209\u001a\u000f\u0010\u0086\u0001\u001a\u00020\u000e2\u0006\u00108\u001a\u000209\u001a\u0010\u0010\u0087\u0001\u001a\u00030\u0088\u00012\u0006\u00108\u001a\u000209\u001a\u0010\u0010\u0089\u0001\u001a\u00020$2\u0007\u0010\u008a\u0001\u001a\u00020\u001c\u001a\u0011\u0010\u008b\u0001\u001a\u00020$2\b\u0010\u008c\u0001\u001a\u00030\u008d\u0001\u001a\u001c\u0010\u008e\u0001\u001a\u00020\u0019*\u00020\u001a2\u0007\u0010\u008f\u0001\u001a\u00020$2\u0006\u0010C\u001a\u00020\u001c\" \u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0003\u0010\u0004\"\u0004\b\u0005\u0010\u0006\"\u001c\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\t\u0010\n\"\u0004\b\u000b\u0010\f\"\u001a\u0010\r\u001a\u00020\u000eX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000f\u0010\u0010\"\u0004\b\u0011\u0010\u0012\"\u0011\u0010\u0013\u001a\u00020\u000e8F¢\u0006\u0006\u001a\u0004\b\u0013\u0010\u0010\"\u001a\u0010\u0014\u001a\u00020\u000eX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0015\u0010\u0010\"\u0004\b\u0016\u0010\u0012\"\u0011\u0010\u0017\u001a\u00020\u000e8F¢\u0006\u0006\u001a\u0004\b\u0017\u0010\u0010\"\u000e\u0010'\u001a\u00020\u001cX\u0082T¢\u0006\u0002\n\u0000\"\u000e\u0010g\u001a\u00020\u001cX\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010h\u001a\u00020\u001cX\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010i\u001a\u00020\u001cX\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010j\u001a\u00020\u001cX\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010k\u001a\u00020\u001cX\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010l\u001a\u00020\u001cX\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010m\u001a\u00020\u001cX\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010n\u001a\u00020\u001cX\u0086T¢\u0006\u0002\n\u0000\"\u000e\u0010~\u001a\u00020\u007fX\u0082\u0004¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006\u0090\u0001"}, d2 = {"itemsName", "", "Lru/mrlargha/commonui/utils/ItemsInfo;", "getItemsName", "()Ljava/util/List;", "setItemsName", "(Ljava/util/List;)V", "zipFileIcons", "Ljava/util/zip/ZipFile;", "getZipFileIcons", "()Ljava/util/zip/ZipFile;", "setZipFileIcons", "(Ljava/util/zip/ZipFile;)V", "_isArizonaType", "", "get_isArizonaType", "()Z", "set_isArizonaType", "(Z)V", "isArizonaType", "_isDebug", "get_isDebug", "set_isDebug", "isDebug", "setTextTimeFormat", "", "Landroid/widget/TextView;", "time", "", "getAnimationScale", "", "Landroid/app/Activity;", "getKeyboardHeightOrNull", "getIconFromArchive", "Landroid/graphics/Bitmap;", "folderName", "", "item", "gearsIconName", "MAX_DIM", "getIconFromArchiveWithFormat", "getBitmapFromEntry", "entry", "Ljava/util/zip/ZipEntry;", "calculateInSampleSizeToMax", "srcW", "srcH", "maxDim", "applyIf", ExifInterface.GPS_DIRECTION_TRUE, "predicate", "Lkotlin/Function1;", "Lkotlin/ExtensionFunctionType;", "block", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "getBitmapFromVectorDrawable", "context", "Landroid/content/Context;", "drawableId", "setDragClick", "itemVal", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "view", "Landroid/view/View;", "updateJsonString", "jsonString", "getColorTint", "color", "getJsonFromAssets", "fileName", "nextMultipleOfFive", "x", "getItemsDescription", "targetActivity", "setDrawableEnd", "viewInt", "Landroid/widget/EditText;", "deleteSvgWord", "svg", "setImage", "imageView", "Landroid/widget/ImageView;", "bitmap", "setNotLoadedImage", "checkItemsName", "isArizona", "getItemsJson", "type", "dir", "Ljava/io/File;", "sendData", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "backendID", "fromItem", "toItem", "updateInventoryItem", "originalItem", "newItem", "convertPngToWebp", "png", "defineArzMenuText", "defineRodMenuText", "DEFAULT_ANALYTICS", "TRACK_US", "APP_METRIKA", "APP_ADJUST", "APP_METRIKA_COMMERCE", "ADVGAME", "ADMITAD", "ADVERTISE", "sendDataAnalytics", NotificationCompat.CATEGORY_EVENT, "analyticsType", "sendPurchaseToAppMetrika", "data", "handleAdjustAnalytics", "hasFlag", "flag", "getDeviceName", "capitalize", CmcdData.STREAMING_FORMAT_SS, "sendAnalytics", "sendTrackUsRequest", "action", "sendAppMetricaAnalytics", "client", "Lokhttp3/OkHttpClient;", "sendAdmitadAnalytics", "sendAdvertiseAnalytics", "sendAdjustAnalytics", "eventId", "getBaseShredPref", "Landroid/content/SharedPreferences;", "getArizonaType", "getServerId", "Lru/mrlargha/commonui/elements/hud/presentation/models/ServerInfoItem;", "formatNumberWithSpaces", "number", "formatTime", "millisUntilFinished", "", "setColoredTextBeforeDot", "fullText", "CommonUI_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000¨\u0001\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\n\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\t\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\u001a\u0012\u0010\u0018\u001a\u00020\u0019*\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001c\u001a\n\u0010\u001d\u001a\u00020\u001e*\u00020\u001f\u001a\n\u0010 \u001a\u00020\u001c*\u00020\u001f\u001a\"\u0010!\u001a\u0004\u0018\u00010\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020\u001c2\b\b\u0002\u0010&\u001a\u00020$\u001a\"\u0010!\u001a\u0004\u0018\u00010\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020$2\b\b\u0002\u0010&\u001a\u00020$\u001a\u0018\u0010!\u001a\u0004\u0018\u00010\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020$\u001a\u0018\u0010(\u001a\u0004\u0018\u00010\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020$\u001a\u0012\u0010)\u001a\u0004\u0018\u00010\"2\u0006\u0010*\u001a\u00020+H\u0002\u001a \u0010,\u001a\u00020\u001c2\u0006\u0010-\u001a\u00020\u001c2\u0006\u0010.\u001a\u00020\u001c2\u0006\u0010/\u001a\u00020\u001cH\u0002\u001aM\u00100\u001a\u0002H1\"\u0004\b\u0000\u00101*\u0002H12\u0017\u00102\u001a\u0013\u0012\u0004\u0012\u0002H1\u0012\u0004\u0012\u00020\u000e03¢\u0006\u0002\b42\u0017\u00105\u001a\u0013\u0012\u0004\u0012\u0002H1\u0012\u0004\u0012\u00020\u001903¢\u0006\u0002\b4H\u0086\bø\u0001\u0000¢\u0006\u0002\u00106\u001a\u0016\u00107\u001a\u00020\"2\u0006\u00108\u001a\u0002092\u0006\u0010:\u001a\u00020\u001c\u001a\u0018\u0010;\u001a\u00020\u000e2\u0006\u0010<\u001a\u00020=2\u0006\u0010>\u001a\u00020?H\u0007\u001a\u000e\u0010@\u001a\u00020$2\u0006\u0010A\u001a\u00020$\u001a\u000e\u0010B\u001a\u00020\u001c2\u0006\u0010C\u001a\u00020\u001c\u001a\u0018\u0010D\u001a\u0004\u0018\u00010$2\u0006\u00108\u001a\u0002092\u0006\u0010E\u001a\u00020$\u001a\u000e\u0010F\u001a\u00020\u001c2\u0006\u0010G\u001a\u00020\u001c\u001a\u0014\u0010H\u001a\b\u0012\u0004\u0012\u00020$0\u00012\u0006\u0010I\u001a\u00020\u001f\u001a\u001e\u0010J\u001a\u00020\u00192\u0006\u0010>\u001a\u00020\u001a2\u0006\u0010K\u001a\u00020\u001c2\u0006\u0010I\u001a\u00020\u001f\u001a\u001e\u0010J\u001a\u00020\u00192\u0006\u0010>\u001a\u00020L2\u0006\u0010K\u001a\u00020\u001c2\u0006\u0010I\u001a\u00020\u001f\u001a\u000e\u0010M\u001a\u00020$2\u0006\u0010N\u001a\u00020$\u001a\u0016\u0010O\u001a\u00020\u00192\u0006\u0010P\u001a\u00020Q2\u0006\u0010R\u001a\u00020\"\u001a\u0016\u0010S\u001a\u00020\u00192\u0006\u0010P\u001a\u00020Q2\u0006\u00108\u001a\u000209\u001a\u0016\u0010T\u001a\u00020\u00192\u0006\u00108\u001a\u0002092\u0006\u0010U\u001a\u00020\u000e\u001a\"\u0010V\u001a\u00020\u00192\u0006\u00108\u001a\u0002092\u0006\u0010W\u001a\u00020\u001c2\n\b\u0002\u0010X\u001a\u0004\u0018\u00010Y\u001a&\u0010Z\u001a\u00020\u00192\u0006\u0010[\u001a\u00020\\2\u0006\u0010]\u001a\u00020\u001c2\u0006\u0010^\u001a\u00020=2\u0006\u0010_\u001a\u00020=\u001a\u001a\u0010`\u001a\u0004\u0018\u00010=2\b\u0010a\u001a\u0004\u0018\u00010=2\u0006\u0010b\u001a\u00020=\u001a\u000e\u0010c\u001a\u00020$2\u0006\u0010d\u001a\u00020$\u001a\u000e\u0010e\u001a\u00020$2\u0006\u0010%\u001a\u00020\u001c\u001a\u000e\u0010f\u001a\u00020$2\u0006\u0010%\u001a\u00020\u001c\u001a\u0006\u0010g\u001a\u00020$\u001a\u0012\u0010h\u001a\u00020$2\b\u0010i\u001a\u0004\u0018\u00010$H\u0002\u001a\u000e\u0010j\u001a\u00020\u000e2\u0006\u00108\u001a\u000209\u001a\u000e\u0010k\u001a\u00020l2\u0006\u00108\u001a\u000209\u001a\u000e\u0010m\u001a\u00020$2\u0006\u0010n\u001a\u00020\u001c\u001a\u000e\u0010o\u001a\u00020$2\u0006\u0010p\u001a\u00020q\u001a\u001a\u0010r\u001a\u00020\u0019*\u00020\u001a2\u0006\u0010s\u001a\u00020$2\u0006\u0010C\u001a\u00020\u001c\u001a\n\u0010t\u001a\u00020u*\u000209\" \u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0003\u0010\u0004\"\u0004\b\u0005\u0010\u0006\"\u001c\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\t\u0010\n\"\u0004\b\u000b\u0010\f\"\u001a\u0010\r\u001a\u00020\u000eX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000f\u0010\u0010\"\u0004\b\u0011\u0010\u0012\"\u0011\u0010\u0013\u001a\u00020\u000e8F¢\u0006\u0006\u001a\u0004\b\u0013\u0010\u0010\"\u001a\u0010\u0014\u001a\u00020\u000eX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0015\u0010\u0010\"\u0004\b\u0016\u0010\u0012\"\u0011\u0010\u0017\u001a\u00020\u000e8F¢\u0006\u0006\u001a\u0004\b\u0017\u0010\u0010\"\u000e\u0010'\u001a\u00020\u001cX\u0082T¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006v"}, d2 = {"itemsName", "", "Lru/mrlargha/commonui/utils/ItemsInfo;", "getItemsName", "()Ljava/util/List;", "setItemsName", "(Ljava/util/List;)V", "zipFileIcons", "Ljava/util/zip/ZipFile;", "getZipFileIcons", "()Ljava/util/zip/ZipFile;", "setZipFileIcons", "(Ljava/util/zip/ZipFile;)V", "_isArizonaType", "", "get_isArizonaType", "()Z", "set_isArizonaType", "(Z)V", "isArizonaType", "_isDebug", "get_isDebug", "set_isDebug", "isDebug", "setTextTimeFormat", "", "Landroid/widget/TextView;", "time", "", "getAnimationScale", "", "Landroid/app/Activity;", "getKeyboardHeightOrNull", "getIconFromArchive", "Landroid/graphics/Bitmap;", "folderName", "", "item", "gearsIconName", "MAX_DIM", "getIconFromArchiveWithFormat", "getBitmapFromEntry", "entry", "Ljava/util/zip/ZipEntry;", "calculateInSampleSizeToMax", "srcW", "srcH", "maxDim", "applyIf", ExifInterface.GPS_DIRECTION_TRUE, "predicate", "Lkotlin/Function1;", "Lkotlin/ExtensionFunctionType;", "block", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "getBitmapFromVectorDrawable", "context", "Landroid/content/Context;", "drawableId", "setDragClick", "itemVal", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "view", "Landroid/view/View;", "updateJsonString", "jsonString", "getColorTint", "color", "getJsonFromAssets", "fileName", "nextMultipleOfFive", "x", "getItemsDescription", "targetActivity", "setDrawableEnd", "viewInt", "Landroid/widget/EditText;", "deleteSvgWord", "svg", "setImage", "imageView", "Landroid/widget/ImageView;", "bitmap", "setNotLoadedImage", "checkItemsName", "isArizona", "getItemsJson", "type", "dir", "Ljava/io/File;", "sendData", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "backendID", "fromItem", "toItem", "updateInventoryItem", "originalItem", "newItem", "convertPngToWebp", "png", "defineArzMenuText", "defineRodMenuText", "getDeviceName", "capitalize", CmcdData.STREAMING_FORMAT_SS, "getArizonaType", "getServerId", "Lru/mrlargha/commonui/elements/hud/presentation/models/ServerInfoItem;", "formatNumberWithSpaces", "number", "formatTime", "millisUntilFinished", "", "setColoredTextBeforeDot", "fullText", "getBaseShredPref", "Landroid/content/SharedPreferences;", "CommonUI_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class UtilsKt {
-    public static final int ADMITAD = 64;
-    public static final int ADVERTISE = 128;
-    public static final int ADVGAME = 32;
-    public static final int APP_ADJUST = 8;
-    public static final int APP_METRIKA = 4;
-    public static final int APP_METRIKA_COMMERCE = 16;
-    public static final int DEFAULT_ANALYTICS = 1;
     private static final int MAX_DIM = 1024;
-    public static final int TRACK_US = 2;
     private static ZipFile zipFileIcons;
     private static List<ItemsInfo> itemsName = CollectionsKt.emptyList();
     private static boolean _isArizonaType = true;
     private static boolean _isDebug = true;
-    private static final OkHttpClient client = new OkHttpClient();
-
-    private static final boolean hasFlag(int i, int i2) {
-        return (i & i2) != 0;
-    }
 
     public static final List<ItemsInfo> getItemsName() {
         return itemsName;
@@ -625,65 +577,6 @@ public final class UtilsKt {
         return i == RodInventoryButtonTypes.BUTTON_INVENTORY.ordinal() ? "Инвентарь" : i == RodInventoryButtonTypes.BUTTON_CAR_INVENTORY.ordinal() ? "Транспорт" : i == RodInventoryButtonTypes.BUTTON_TRASH.ordinal() ? "Мусорка" : i == RodInventoryButtonTypes.BUTTON_TRUNK.ordinal() ? "Багажник" : i == RodInventoryButtonTypes.BUTTON_HOUSE.ordinal() ? "Домашний шкаф" : i == RodInventoryButtonTypes.BUTTON_DRAWER.ordinal() ? "Тумбочка" : i == RodInventoryButtonTypes.BUTTON_SHIP.ordinal() ? "Трюм корабля" : i == RodInventoryButtonTypes.BUTTON_CAMPER.ordinal() ? "Дом на колесах" : i == RodInventoryButtonTypes.BUTTON_BANK_VAULT.ordinal() ? "Банковское хранилище" : i == RodInventoryButtonTypes.BUTTON_FRACTION_WAREHOUSE.ordinal() ? "Общак фракции" : i == RodInventoryButtonTypes.BUTTON_FAMILY_WAREHOUSE.ordinal() ? "Общак семьи" : i == RodInventoryButtonTypes.BUTTON_GARDENING_BARN.ordinal() ? "Амбар" : i == RodInventoryButtonTypes.BUTTON_GARAGE.ordinal() ? "Гараж" : i == RodInventoryButtonTypes.BUTTON_SECURITY.ordinal() ? "Охранники" : i == RodInventoryButtonTypes.BUTTON_CARS.ordinal() ? "Мой транспорт" : i == RodInventoryButtonTypes.BUTTON_BIZ.ordinal() ? "Мои бизнесы" : i == RodInventoryButtonTypes.BUTTON_HOUSES.ordinal() ? "Мои дома" : i == RodInventoryButtonTypes.BUTTON_TRAILER.ordinal() ? "Трейлер" : "";
     }
 
-    public static final void sendDataAnalytics(Context context, String event, int i) {
-        Intrinsics.checkNotNullParameter(context, "context");
-        Intrinsics.checkNotNullParameter(event, "event");
-        Log.i("sendDataAnalytics", "event: " + event + ", " + i);
-        if (hasFlag(i, 1)) {
-            sendAnalytics(context, event);
-        }
-        if (hasFlag(i, 2)) {
-            sendTrackUsRequest(context, event);
-        }
-        if (hasFlag(i, 4)) {
-            sendAppMetricaAnalytics(context, event);
-        }
-        if (hasFlag(i, 8)) {
-            handleAdjustAnalytics(context, event);
-        }
-        if (hasFlag(i, 16)) {
-            sendPurchaseToAppMetrika(event);
-        }
-        if (hasFlag(i, 128)) {
-            sendAdvertiseAnalytics(context, event);
-        }
-        if (hasFlag(i, 64)) {
-            sendAdmitadAnalytics(context, event);
-        }
-    }
-
-    public static final void sendPurchaseToAppMetrika(String data) {
-        Intrinsics.checkNotNullParameter(data, "data");
-        Log.d("sendDataAnalytics", "sendPurchaseToAppMetrika: " + data);
-        PurchaseData purchaseData = (PurchaseData) new Gson().fromJson(data, (Class<Object>) PurchaseData.class);
-        ECommercePrice eCommercePrice = new ECommercePrice(new ECommerceAmount(purchaseData.getAmount(), purchaseData.getCurrency()));
-        ECommerceProduct name = new ECommerceProduct(purchaseData.getProductId()).setActualPrice(eCommercePrice).setName(purchaseData.getProductName());
-        Intrinsics.checkNotNullExpressionValue(name, "setName(...)");
-        ECommerceOrder eCommerceOrder = new ECommerceOrder(purchaseData.getOrderId(), CollectionsKt.listOf(new ECommerceCartItem(name, eCommercePrice, 1.0d)));
-        ECommerceEvent beginCheckoutEvent = ECommerceEvent.beginCheckoutEvent(eCommerceOrder);
-        Intrinsics.checkNotNullExpressionValue(beginCheckoutEvent, "beginCheckoutEvent(...)");
-        AppMetrica.reportECommerce(beginCheckoutEvent);
-        ECommerceEvent purchaseEvent = ECommerceEvent.purchaseEvent(eCommerceOrder);
-        Intrinsics.checkNotNullExpressionValue(purchaseEvent, "purchaseEvent(...)");
-        AppMetrica.reportECommerce(purchaseEvent);
-    }
-
-    private static final void handleAdjustAnalytics(Context context, String str) {
-        Log.i("sendDataAnalytics", "handleAdjustAnalytics: " + str);
-        int hashCode = str.hashCode();
-        if (hashCode == -690213213) {
-            if (str.equals("register")) {
-                sendAdjustAnalytics(context, 0);
-            }
-        } else if (hashCode == -689618847) {
-            if (str.equals("first_topup")) {
-                sendAdjustAnalytics(context, 2);
-            }
-        } else if (hashCode == 22643575 && str.equals("one_played_hour")) {
-            sendAdjustAnalytics(context, 1);
-        }
-    }
-
     public static final String getDeviceName() {
         String str = Build.MANUFACTURER;
         if (str == null) {
@@ -710,332 +603,6 @@ public final class UtilsKt {
         String substring = str.substring(1);
         Intrinsics.checkNotNullExpressionValue(substring, "substring(...)");
         return upperCase + substring;
-    }
-
-    public static final void sendAnalytics(Context context, String event) {
-        Intrinsics.checkNotNullParameter(context, "context");
-        Intrinsics.checkNotNullParameter(event, "event");
-        String string = context.getSharedPreferences("SP_NAME", 0).getString("referrerUrl", "");
-        if (string == null) {
-            string = "";
-        }
-        ArrayList arrayList = new ArrayList();
-        for (Object obj : StringsKt.split$default((CharSequence) string, new String[]{"&"}, false, 0, 6, (Object) null)) {
-            if (StringsKt.contains$default((CharSequence) ((String) obj), (CharSequence) "=", false, 2, (Object) null)) {
-                arrayList.add(obj);
-            }
-        }
-        ArrayList<String> arrayList2 = arrayList;
-        LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(arrayList2, 10)), 16));
-        for (String str : arrayList2) {
-            List split$default = StringsKt.split$default((CharSequence) str, new String[]{"="}, false, 0, 6, (Object) null);
-            Pair pair = TuplesKt.to((String) split$default.get(0), (String) split$default.get(1));
-            linkedHashMap.put(pair.getFirst(), pair.getSecond());
-        }
-        long j = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).firstInstallTime;
-        String str2 = (String) linkedHashMap.get("utm_source");
-        if (str2 == null) {
-            str2 = "";
-        }
-        String str3 = (String) linkedHashMap.get("utm_medium");
-        if (str3 == null) {
-            str3 = "";
-        }
-        String str4 = (String) linkedHashMap.get("utm_term");
-        if (str4 == null) {
-            str4 = "";
-        }
-        String str5 = (String) linkedHashMap.get("utm_content");
-        if (str5 == null) {
-            str5 = "";
-        }
-        String str6 = (String) linkedHashMap.get("utm_campaign");
-        String str7 = str6 != null ? str6 : "";
-        Bundle bundle = new Bundle();
-        bundle.putString("utm_source", str2);
-        bundle.putString("utm_medium", str3);
-        bundle.putString("utm_term", str4);
-        bundle.putString("utm_content", str5);
-        bundle.putString("utm_campaign", str7);
-        bundle.putLong("first_install_time", j);
-        FirebaseAnalytics.getInstance(context).logEvent(event, bundle);
-    }
-
-    public static final void sendTrackUsRequest(Context context, String action) {
-        Intrinsics.checkNotNullParameter(context, "context");
-        Intrinsics.checkNotNullParameter(action, "action");
-        String string = context.getSharedPreferences("SP_NAME", 0).getString("referrerUrl", "");
-        if (string == null) {
-            string = "";
-        }
-        boolean z = context.getSharedPreferences("flavorType", 0).getBoolean("isArizonaType", false);
-        ArrayList arrayList = new ArrayList();
-        for (Object obj : StringsKt.split$default((CharSequence) string, new String[]{"&"}, false, 0, 6, (Object) null)) {
-            if (StringsKt.contains$default((CharSequence) ((String) obj), (CharSequence) "=", false, 2, (Object) null)) {
-                arrayList.add(obj);
-            }
-        }
-        ArrayList<String> arrayList2 = arrayList;
-        LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(arrayList2, 10)), 16));
-        for (String str : arrayList2) {
-            List split$default = StringsKt.split$default((CharSequence) str, new String[]{"="}, false, 0, 6, (Object) null);
-            Pair pair = TuplesKt.to((String) split$default.get(0), (String) split$default.get(1));
-            linkedHashMap.put(pair.getFirst(), pair.getSecond());
-        }
-        String str2 = (String) linkedHashMap.get("bidID");
-        String str3 = str2 == null ? "" : str2;
-        if (str3.length() > 0) {
-            String deviceName = getDeviceName();
-            String str4 = Build.VERSION.RELEASE;
-            String str5 = str4 == null ? "" : str4;
-            String str6 = z ? BuildConfig.APPLICATION_ID : "com.rodina21.game";
-            HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor(null, 1, null);
-            httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-            OkHttpClient.Builder builder = new OkHttpClient.Builder();
-            builder.connectTimeout(30L, TimeUnit.SECONDS).writeTimeout(30L, TimeUnit.SECONDS).readTimeout(30L, TimeUnit.SECONDS).protocols(CollectionsKt.listOf(Protocol.HTTP_1_1));
-            builder.addInterceptor(httpLoggingInterceptor);
-            ((TrackUsAPI) new Retrofit.Builder().baseUrl("https://track-us.bidease.com/").addConverterFactory(GsonConverterFactory.create()).client(builder.build()).build().create(TrackUsAPI.class)).sendTrackUsReq(str3, action, "0", "1", "SampleManager", str6, deviceName, "Android", str5, "ru", "image").enqueue(new Callback<ResponseBody>() { // from class: ru.mrlargha.commonui.utils.UtilsKt$sendTrackUsRequest$1
-                @Override // retrofit2.Callback
-                public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                    Intrinsics.checkNotNullParameter(call, "call");
-                    Intrinsics.checkNotNullParameter(response, "response");
-                }
-
-                @Override // retrofit2.Callback
-                public void onFailure(Call<ResponseBody> call, Throwable t) {
-                    Intrinsics.checkNotNullParameter(call, "call");
-                    Intrinsics.checkNotNullParameter(t, "t");
-                    Log.w("Utils", "error get sendTrackUsReq");
-                }
-            });
-        }
-    }
-
-    public static final void sendAppMetricaAnalytics(Context context, String action) {
-        PackageInfo packageInfo;
-        Intrinsics.checkNotNullParameter(context, "context");
-        Intrinsics.checkNotNullParameter(action, "action");
-        String string = context.getSharedPreferences("SP_NAME", 0).getString("referrerUrl", "");
-        String str = string != null ? string : "";
-        if (StringsKt.isBlank(str)) {
-            Log.e("appMetrica", "url is Empty");
-            return;
-        }
-        ArrayList arrayList = new ArrayList();
-        Iterator it = StringsKt.split$default((CharSequence) str, new String[]{"&"}, false, 0, 6, (Object) null).iterator();
-        while (true) {
-            packageInfo = null;
-            if (!it.hasNext()) {
-                break;
-            }
-            Object next = it.next();
-            if (StringsKt.contains$default((CharSequence) ((String) next), (CharSequence) "=", false, 2, (Object) null)) {
-                arrayList.add(next);
-            }
-        }
-        ArrayList<String> arrayList2 = arrayList;
-        LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(arrayList2, 10)), 16));
-        for (String str2 : arrayList2) {
-            List split$default = StringsKt.split$default((CharSequence) str2, new String[]{"="}, false, 0, 6, (Object) null);
-            Pair pair = TuplesKt.to((String) split$default.get(0), (String) split$default.get(1));
-            linkedHashMap.put(pair.getFirst(), pair.getSecond());
-        }
-        try {
-            packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
-        } catch (PackageManager.NameNotFoundException unused) {
-        }
-        long j = packageInfo != null ? packageInfo.firstInstallTime : 0L;
-        String str3 = (String) linkedHashMap.get("utm_source");
-        if (str3 == null) {
-            str3 = "unknown_source";
-        }
-        String str4 = (String) linkedHashMap.get("utm_medium");
-        if (str4 == null) {
-            str4 = "unknown_medium";
-        }
-        String str5 = (String) linkedHashMap.get("utm_term");
-        if (str5 == null) {
-            str5 = "unknown_term";
-        }
-        String str6 = (String) linkedHashMap.get("utm_content");
-        if (str6 == null) {
-            str6 = "unknown_content";
-        }
-        String str7 = (String) linkedHashMap.get("utm_campaign");
-        if (str7 == null) {
-            str7 = "unknown_campaign";
-        }
-        Map mapOf = MapsKt.mapOf(TuplesKt.to("utm_source", str3), TuplesKt.to("utm_medium", str4), TuplesKt.to("utm_term", str5), TuplesKt.to("utm_content", str6), TuplesKt.to("utm_campaign", str7), TuplesKt.to("first_install_time", Long.valueOf(j)));
-        AppMetrica.reportEvent(action, mapOf);
-        Log.e("appMetrica", "url is " + mapOf);
-    }
-
-    public static final void sendAdmitadAnalytics(Context context, String action) {
-        String str;
-        Intrinsics.checkNotNullParameter(context, "context");
-        Intrinsics.checkNotNullParameter(action, "action");
-        int hashCode = action.hashCode();
-        if (hashCode != -689618847) {
-            if (hashCode != 443600344) {
-                if (hashCode != 2006065723 || !action.equals("effective_register")) {
-                    return;
-                }
-                str = "1";
-            } else if (!action.equals("third_topup")) {
-                return;
-            } else {
-                str = ExifInterface.GPS_MEASUREMENT_3D;
-            }
-        } else if (!action.equals("first_topup")) {
-            return;
-        } else {
-            str = ExifInterface.GPS_MEASUREMENT_2D;
-        }
-        String string = context.getSharedPreferences("SP_NAME", 0).getString("referrerUrl", "");
-        if (string == null) {
-            string = "";
-        }
-        ArrayList arrayList = new ArrayList();
-        for (Object obj : StringsKt.split$default((CharSequence) string, new String[]{"&"}, false, 0, 6, (Object) null)) {
-            if (StringsKt.contains$default((CharSequence) ((String) obj), (CharSequence) "=", false, 2, (Object) null)) {
-                arrayList.add(obj);
-            }
-        }
-        ArrayList<String> arrayList2 = arrayList;
-        LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(arrayList2, 10)), 16));
-        for (String str2 : arrayList2) {
-            List split$default = StringsKt.split$default((CharSequence) str2, new String[]{"="}, false, 0, 6, (Object) null);
-            Pair pair = TuplesKt.to((String) split$default.get(0), (String) split$default.get(1));
-            linkedHashMap.put(pair.getFirst(), pair.getSecond());
-        }
-        String str3 = (String) linkedHashMap.get("admitad_uid");
-        if (str3 == null) {
-            str3 = "unknown_uid";
-        }
-        String str4 = (String) linkedHashMap.get("utm_campaign");
-        if (str4 == null) {
-            str4 = "unknown_campaign";
-        }
-        client.newCall(new Request.Builder().url(new HttpUrl.Builder().scheme(Constants.SCHEME).host("ad.admitad.com").addPathSegment("r").addQueryParameter("campaign_code", str4).addQueryParameter("pb", "1").addQueryParameter("pk", "8E2e5c2c32A1BcCF695582A73c8a1f44").addQueryParameter("ac", str).addQueryParameter("uid", str3).addQueryParameter("oid", "").addQueryParameter("tc", "1").build()).get().build()).enqueue(new okhttp3.Callback() { // from class: ru.mrlargha.commonui.utils.UtilsKt$sendAdmitadAnalytics$1
-            @Override // okhttp3.Callback
-            public void onFailure(okhttp3.Call call, IOException e) {
-                Intrinsics.checkNotNullParameter(call, "call");
-                Intrinsics.checkNotNullParameter(e, "e");
-                Log.e("Admitad", "track fail", e);
-            }
-
-            @Override // okhttp3.Callback
-            public void onResponse(okhttp3.Call call, okhttp3.Response response) {
-                Intrinsics.checkNotNullParameter(call, "call");
-                Intrinsics.checkNotNullParameter(response, "response");
-                Log.d("Admitad", "track ok: " + response.code());
-                response.close();
-            }
-        });
-    }
-
-    public static final void sendAdvertiseAnalytics(Context context, String action) {
-        String str;
-        String str2;
-        Intrinsics.checkNotNullParameter(context, "context");
-        Intrinsics.checkNotNullParameter(action, "action");
-        int hashCode = action.hashCode();
-        if (hashCode != -689618847) {
-            if (hashCode == 443600344) {
-                if (!action.equals("third_topup")) {
-                    return;
-                } else {
-                    str = ExifInterface.GPS_MEASUREMENT_3D;
-                }
-            } else {
-                if (hashCode != 2006065723 || !action.equals("effective_register")) {
-                    return;
-                }
-                str = "1";
-            }
-        } else if (!action.equals("first_topup")) {
-            return;
-        } else {
-            str = ExifInterface.GPS_MEASUREMENT_2D;
-        }
-        String string = context.getSharedPreferences("SP_NAME", 0).getString("referrerUrl", "");
-        String str3 = string != null ? string : "";
-        ArrayList arrayList = new ArrayList();
-        for (Object obj : StringsKt.split$default((CharSequence) str3, new String[]{"&"}, false, 0, 6, (Object) null)) {
-            if (StringsKt.contains$default((CharSequence) ((String) obj), (CharSequence) "=", false, 2, (Object) null)) {
-                arrayList.add(obj);
-            }
-        }
-        ArrayList<String> arrayList2 = arrayList;
-        LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(arrayList2, 10)), 16));
-        for (String str4 : arrayList2) {
-            List split$default = StringsKt.split$default((CharSequence) str4, new String[]{"="}, false, 0, 6, (Object) null);
-            Pair pair = TuplesKt.to((String) split$default.get(0), (String) split$default.get(1));
-            linkedHashMap.put(pair.getFirst(), pair.getSecond());
-        }
-        String str5 = (String) linkedHashMap.get("uid");
-        if (str5 == null) {
-            str5 = "unknown_uid";
-        }
-        int hashCode2 = action.hashCode();
-        if (hashCode2 != -689618847) {
-            if (hashCode2 == 443600344) {
-                if (!action.equals("third_topup")) {
-                    return;
-                } else {
-                    str2 = "2c0713f72a75426b";
-                }
-            } else {
-                if (hashCode2 != 2006065723 || !action.equals("effective_register")) {
-                    return;
-                }
-                str2 = "2c0713f72875426b";
-            }
-        } else if (!action.equals("first_topup")) {
-            return;
-        } else {
-            str2 = "2c0713f72b75426b";
-        }
-        client.newCall(new Request.Builder().url(new HttpUrl.Builder().scheme(Constants.SCHEME).host("advertiseru.net").addPathSegment("postback").addPathSegment(str2).addQueryParameter("token", "0b31d2ebdf374ea02f71aa271b35c8d0").addQueryParameter("uid", str5).addQueryParameter("ac", str).build()).get().build()).enqueue(new okhttp3.Callback() { // from class: ru.mrlargha.commonui.utils.UtilsKt$sendAdvertiseAnalytics$1
-            @Override // okhttp3.Callback
-            public void onFailure(okhttp3.Call call, IOException e) {
-                Intrinsics.checkNotNullParameter(call, "call");
-                Intrinsics.checkNotNullParameter(e, "e");
-                Log.e("Advertise", "track fail", e);
-            }
-
-            @Override // okhttp3.Callback
-            public void onResponse(okhttp3.Call call, okhttp3.Response response) {
-                Intrinsics.checkNotNullParameter(call, "call");
-                Intrinsics.checkNotNullParameter(response, "response");
-                Log.d("Advertise", "track ok: " + response.code());
-                response.close();
-            }
-        });
-    }
-
-    public static final void sendAdjustAnalytics(Context context, int i) {
-        String str;
-        Intrinsics.checkNotNullParameter(context, "context");
-        boolean z = context.getSharedPreferences("flavorType", 0).getBoolean("isArizonaType", false);
-        if (i == 0) {
-            str = z ? "u8cswn" : "bb6dmh";
-        } else if (i == 1) {
-            str = z ? "qqj12v" : "aks398";
-        } else if (i != 2) {
-            str = "";
-        } else {
-            str = z ? "gohrb0" : "7xl8q1";
-        }
-        Adjust.trackEvent(new AdjustEvent(str));
-        Log.d(Constants.LOGTAG, "Event sent to Adjust: event_token");
-    }
-
-    public static final SharedPreferences getBaseShredPref(Context context) {
-        Intrinsics.checkNotNullParameter(context, "<this>");
-        SharedPreferences sharedPreferences = context.getSharedPreferences("flavorType", 0);
-        Intrinsics.checkNotNullExpressionValue(sharedPreferences, "getSharedPreferences(...)");
-        return sharedPreferences;
     }
 
     public static final boolean getArizonaType(Context context) {
@@ -1081,5 +648,12 @@ public final class UtilsKt {
         SpannableString spannableString = new SpannableString(str);
         spannableString.setSpan(new ForegroundColorSpan(i), 0, indexOf$default, 33);
         textView.setText(spannableString);
+    }
+
+    public static final SharedPreferences getBaseShredPref(Context context) {
+        Intrinsics.checkNotNullParameter(context, "<this>");
+        SharedPreferences sharedPreferences = context.getSharedPreferences("flavorType", 0);
+        Intrinsics.checkNotNullExpressionValue(sharedPreferences, "getSharedPreferences(...)");
+        return sharedPreferences;
     }
 }

@@ -38,10 +38,13 @@ public final class HudPageBinding implements ViewBinding {
     public final LinearLayout buttonsContainer;
     public final HudCaptBinding capt;
     public final HudElementCasesTimerBinding casesTimer;
+    public final HudElementChickenChargeBinding chargeChiken;
+    public final HudElementChickenGameBinding chickenGame;
     public final ImageView endPointIc;
     public final LinearLayout groupButton;
     public final RecyclerView groupRv;
     public final Guideline halfHudeGuideline;
+    public final ConstraintLayout hideAll;
     public final LinearLayout hudButtonsContainer;
     public final ConstraintLayout hudContainer;
     public final ConstraintLayout hudDonateButton;
@@ -74,6 +77,7 @@ public final class HudPageBinding implements ViewBinding {
     public final AppCompatImageView hudStreamerButtonIcon;
     public final HudTaximeterBinding hudTaximeterLayout;
     public final ImageView imageButtonInteraction;
+    public final HudElementImposterGameBinding imposterGame;
     public final HudImprovingSkillsBinding improvingSkills;
     public final TextView income;
     public final ImageView incomeIc;
@@ -146,7 +150,7 @@ public final class HudPageBinding implements ViewBinding {
     public final TextView warningsCount;
     public final TextView warningsCountTitle;
 
-    private HudPageBinding(ConstraintLayout rootView, ConstraintLayout actionButton, ImageView actionButtonIc, TextView actionButtonTxt, LinearLayout actionNoticeWithDescriptionButton, ConstraintLayout actionNoticeWithDescriptionButtonClick, TextView actionNoticeWithDescriptionButtonText, TextView actionNoticeWithDescriptionDescription, TextView actionNoticeWithDescriptionTitle, LinearLayout actionNoticeWithoutDescriptionButton, ConstraintLayout actionNoticeWithoutDescriptionButtonClick, TextView actionNoticeWithoutDescriptionButtonText, TextView actionNoticeWithoutDescriptionButtonTitle, BannerElementBinding banner, FrameLayout bgForLocation, Guideline botGuideline, Guideline bottomQuestButtonLine, LinearLayout buttonsContainer, HudCaptBinding capt, HudElementCasesTimerBinding casesTimer, ImageView endPointIc, LinearLayout groupButton, RecyclerView groupRv, Guideline halfHudeGuideline, LinearLayout hudButtonsContainer, ConstraintLayout hudContainer, ConstraintLayout hudDonateButton, AppCompatImageView hudDonateButtonIcon, ConstraintLayout hudInfoContainer, TextView hudInfoIdIcon, TextView hudInfoIdValue, TextView hudInfoMoneyValue, AppCompatImageView hudInfoPersonIcon, TextView hudInfoPersonValue, ConstraintLayout hudInventoryButton, AppCompatImageView hudInventoryButtonIcon, RodinaKaptScreenBinding hudKaptScreen, ConstraintLayout hudMenuButton, AppCompatImageView hudMenuButtonIcon, ImageView hudMoneyIcon, ConstraintLayout hudPage, ConstraintLayout hudPhoneButton, AppCompatImageView hudPhoneButtonIcon, HudProgressBarContainerBinding hudProgressBarLayout, HudProposalScreenBinding hudProposalScreen, ConstraintLayout hudServerInfoContainer, ConstraintLayout hudServerInfoMultiply, TextView hudServerInfoMultiplyValue, ConstraintLayout hudServerShieldContainer, AppCompatImageView hudServerShieldLogo, TextView hudServerShieldName, TextView hudServerShieldSite, ConstraintLayout hudStreamerButton, AppCompatImageView hudStreamerButtonIcon, HudTaximeterBinding hudTaximeterLayout, ImageView imageButtonInteraction, HudImprovingSkillsBinding improvingSkills, TextView income, ImageView incomeIc, Guideline incomeIcLeftLine, LinearLayout interactionButtonContainer, ImageView ivDoors, ImageView ivDoorsState, ImageView ivHorn, ImageView ivHornState, HudLeftMenuBinding leftMenu, Guideline leftQuestButtonLine, TextView locationCity, LinearLayout locationContainer, TextView locationText, TextView maxKm, AvatarView messageAvatar, TextView messageName, RelativeLayout messageNotificationContainer, TextView messageText, Guideline middleButtonLine, Guideline missionProgressBottomLine, LinearLayout missionProgressContainer, Guideline missionProgressGuideline, RecyclerView missionProgressList, TextView missionTitle, CardView newMessageContainer, Guideline noticeTopLine, LinearLayout noticeWithDescriptionButton, TextView noticeWithDescriptionDescription, TextView noticeWithDescriptionTitle, LinearLayout noticeWithoutDescriptionButton, TextView noticeWithoutDescriptionButtonTitle, Guideline notificationMessageGuideline, View overlay, HudElementPiratesBinding pirates, HudElementPromoBinding promo, HudRadarScreenBinding radar, Guideline rightQuestButtonLine, ConstraintLayout rouletteContainer, ImageView rouletteIc, TextView rouletteText, TextView rouletteTime, ConstraintLayout rouletteTimeContainer, ConstraintLayout routeContainer, LottieAnimationView routeProgress, Guideline routeTopLine, TextView speedLimit, ImageView startPointIc, Guideline taximeterTopLine, TextView textInteraction, HudTimerBinding timer, ImageView timerIc, Guideline timerIcLeftLine, Guideline topGuideline, Guideline topQuestButtonLine, TextView trainCurrentTime, ConstraintLayout trainDriverContainer, ConstraintLayout trainInfoContainer, Guideline trainInfoTopLine, TextView trainMaxTime, ConstraintLayout trainSettings, TextView tvMessageCount, FrameLayout unreadMeassageContainer, ConstraintLayout vipContainer, TextView vipDays, TextView vipTitle, HudWalkieTalkieBinding walkieTalkie, ImageView warningIc, TextView warningsCount, TextView warningsCountTitle) {
+    private HudPageBinding(ConstraintLayout rootView, ConstraintLayout actionButton, ImageView actionButtonIc, TextView actionButtonTxt, LinearLayout actionNoticeWithDescriptionButton, ConstraintLayout actionNoticeWithDescriptionButtonClick, TextView actionNoticeWithDescriptionButtonText, TextView actionNoticeWithDescriptionDescription, TextView actionNoticeWithDescriptionTitle, LinearLayout actionNoticeWithoutDescriptionButton, ConstraintLayout actionNoticeWithoutDescriptionButtonClick, TextView actionNoticeWithoutDescriptionButtonText, TextView actionNoticeWithoutDescriptionButtonTitle, BannerElementBinding banner, FrameLayout bgForLocation, Guideline botGuideline, Guideline bottomQuestButtonLine, LinearLayout buttonsContainer, HudCaptBinding capt, HudElementCasesTimerBinding casesTimer, HudElementChickenChargeBinding chargeChiken, HudElementChickenGameBinding chickenGame, ImageView endPointIc, LinearLayout groupButton, RecyclerView groupRv, Guideline halfHudeGuideline, ConstraintLayout hideAll, LinearLayout hudButtonsContainer, ConstraintLayout hudContainer, ConstraintLayout hudDonateButton, AppCompatImageView hudDonateButtonIcon, ConstraintLayout hudInfoContainer, TextView hudInfoIdIcon, TextView hudInfoIdValue, TextView hudInfoMoneyValue, AppCompatImageView hudInfoPersonIcon, TextView hudInfoPersonValue, ConstraintLayout hudInventoryButton, AppCompatImageView hudInventoryButtonIcon, RodinaKaptScreenBinding hudKaptScreen, ConstraintLayout hudMenuButton, AppCompatImageView hudMenuButtonIcon, ImageView hudMoneyIcon, ConstraintLayout hudPage, ConstraintLayout hudPhoneButton, AppCompatImageView hudPhoneButtonIcon, HudProgressBarContainerBinding hudProgressBarLayout, HudProposalScreenBinding hudProposalScreen, ConstraintLayout hudServerInfoContainer, ConstraintLayout hudServerInfoMultiply, TextView hudServerInfoMultiplyValue, ConstraintLayout hudServerShieldContainer, AppCompatImageView hudServerShieldLogo, TextView hudServerShieldName, TextView hudServerShieldSite, ConstraintLayout hudStreamerButton, AppCompatImageView hudStreamerButtonIcon, HudTaximeterBinding hudTaximeterLayout, ImageView imageButtonInteraction, HudElementImposterGameBinding imposterGame, HudImprovingSkillsBinding improvingSkills, TextView income, ImageView incomeIc, Guideline incomeIcLeftLine, LinearLayout interactionButtonContainer, ImageView ivDoors, ImageView ivDoorsState, ImageView ivHorn, ImageView ivHornState, HudLeftMenuBinding leftMenu, Guideline leftQuestButtonLine, TextView locationCity, LinearLayout locationContainer, TextView locationText, TextView maxKm, AvatarView messageAvatar, TextView messageName, RelativeLayout messageNotificationContainer, TextView messageText, Guideline middleButtonLine, Guideline missionProgressBottomLine, LinearLayout missionProgressContainer, Guideline missionProgressGuideline, RecyclerView missionProgressList, TextView missionTitle, CardView newMessageContainer, Guideline noticeTopLine, LinearLayout noticeWithDescriptionButton, TextView noticeWithDescriptionDescription, TextView noticeWithDescriptionTitle, LinearLayout noticeWithoutDescriptionButton, TextView noticeWithoutDescriptionButtonTitle, Guideline notificationMessageGuideline, View overlay, HudElementPiratesBinding pirates, HudElementPromoBinding promo, HudRadarScreenBinding radar, Guideline rightQuestButtonLine, ConstraintLayout rouletteContainer, ImageView rouletteIc, TextView rouletteText, TextView rouletteTime, ConstraintLayout rouletteTimeContainer, ConstraintLayout routeContainer, LottieAnimationView routeProgress, Guideline routeTopLine, TextView speedLimit, ImageView startPointIc, Guideline taximeterTopLine, TextView textInteraction, HudTimerBinding timer, ImageView timerIc, Guideline timerIcLeftLine, Guideline topGuideline, Guideline topQuestButtonLine, TextView trainCurrentTime, ConstraintLayout trainDriverContainer, ConstraintLayout trainInfoContainer, Guideline trainInfoTopLine, TextView trainMaxTime, ConstraintLayout trainSettings, TextView tvMessageCount, FrameLayout unreadMeassageContainer, ConstraintLayout vipContainer, TextView vipDays, TextView vipTitle, HudWalkieTalkieBinding walkieTalkie, ImageView warningIc, TextView warningsCount, TextView warningsCountTitle) {
         this.rootView = rootView;
         this.actionButton = actionButton;
         this.actionButtonIc = actionButtonIc;
@@ -167,10 +171,13 @@ public final class HudPageBinding implements ViewBinding {
         this.buttonsContainer = buttonsContainer;
         this.capt = capt;
         this.casesTimer = casesTimer;
+        this.chargeChiken = chargeChiken;
+        this.chickenGame = chickenGame;
         this.endPointIc = endPointIc;
         this.groupButton = groupButton;
         this.groupRv = groupRv;
         this.halfHudeGuideline = halfHudeGuideline;
+        this.hideAll = hideAll;
         this.hudButtonsContainer = hudButtonsContainer;
         this.hudContainer = hudContainer;
         this.hudDonateButton = hudDonateButton;
@@ -203,6 +210,7 @@ public final class HudPageBinding implements ViewBinding {
         this.hudStreamerButtonIcon = hudStreamerButtonIcon;
         this.hudTaximeterLayout = hudTaximeterLayout;
         this.imageButtonInteraction = imageButtonInteraction;
+        this.imposterGame = imposterGame;
         this.improvingSkills = improvingSkills;
         this.income = income;
         this.incomeIc = incomeIc;
@@ -300,9 +308,9 @@ public final class HudPageBinding implements ViewBinding {
         	at jadx.core.dex.visitors.ssa.SSATransform.process(SSATransform.java:55)
         	at jadx.core.dex.visitors.ssa.SSATransform.visit(SSATransform.java:41)
         */
-    public static ru.mrlargha.commonui.databinding.HudPageBinding bind(android.view.View r130) {
+    public static ru.mrlargha.commonui.databinding.HudPageBinding bind(android.view.View r134) {
         /*
-            Method dump skipped, instructions count: 1506
+            Method dump skipped, instructions count: 1554
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: ru.mrlargha.commonui.databinding.HudPageBinding.bind(android.view.View):ru.mrlargha.commonui.databinding.HudPageBinding");

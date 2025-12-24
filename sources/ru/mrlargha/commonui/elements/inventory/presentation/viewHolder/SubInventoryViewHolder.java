@@ -64,7 +64,7 @@ public final class SubInventoryViewHolder extends RecyclerView.ViewHolder {
         this.isArizonaType = sharedPreferences.getBoolean("isArizonaType", false);
     }
 
-    /* JADX WARN: Type inference failed for: r1v57, types: [ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.SubInventoryViewHolder$bind$1$5] */
+    /* JADX WARN: Type inference failed for: r1v56, types: [ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.SubInventoryViewHolder$bind$1$5] */
     public final void bind(final InventoryItem itemVal) {
         Job launch$default;
         Intrinsics.checkNotNullParameter(itemVal, "itemVal");
@@ -216,12 +216,7 @@ public final class SubInventoryViewHolder extends RecyclerView.ViewHolder {
         View viewColored = itemSubInventoryBinding.viewColored;
         Intrinsics.checkNotNullExpressionValue(viewColored, "viewColored");
         viewColored.setVisibility(itemVal.isColored() ? 0 : 8);
-        Integer item = itemVal.getItem();
-        ImageView ivEffectBackground = itemSubInventoryBinding.ivEffectBackground;
-        Intrinsics.checkNotNullExpressionValue(ivEffectBackground, "ivEffectBackground");
-        ImageView ivEffectForeground = itemSubInventoryBinding.ivEffectForeground;
-        Intrinsics.checkNotNullExpressionValue(ivEffectForeground, "ivEffectForeground");
-        UtilKt.setInventoryItemEffect(item, ivEffectBackground, ivEffectForeground);
+        UtilKt.setInventoryItemEffect(itemSubInventoryBinding, itemVal.getItem());
     }
 
     /* JADX INFO: Access modifiers changed from: private */

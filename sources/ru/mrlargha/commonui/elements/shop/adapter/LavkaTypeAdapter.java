@@ -12,7 +12,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.math.MathKt;
-import ru.mrlargha.commonui.databinding.ItemLavkaTypeBinding;
+import ru.mrlargha.commonui.databinding.ItemInventoryBinding;
 import ru.mrlargha.commonui.elements.inventory.domain.models.InventoryItem;
 import ru.mrlargha.commonui.elements.shop.viewholder.LavkaTypeViewHolder;
 /* compiled from: LavkaTypeAdapter.kt */
@@ -54,7 +54,7 @@ public final class LavkaTypeAdapter extends ListAdapter<InventoryItem, LavkaType
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
     public LavkaTypeViewHolder onCreateViewHolder(ViewGroup parent, int i) {
         Intrinsics.checkNotNullParameter(parent, "parent");
-        ItemLavkaTypeBinding inflate = ItemLavkaTypeBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
+        ItemInventoryBinding inflate = ItemInventoryBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
         Intrinsics.checkNotNullExpressionValue(inflate, "inflate(...)");
         return new LavkaTypeViewHolder(inflate, this.onItemClicked);
     }

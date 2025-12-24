@@ -265,12 +265,7 @@ public final class UpgradesInventoryViewHolder extends RecyclerView.ViewHolder {
             Intrinsics.checkNotNullExpressionValue(cvColoredItem2, "cvColoredItem");
             cvColoredItem2.setVisibility(8);
         }
-        Integer item2 = itemVal.getItem();
-        ImageView ivEffectBackground = itemSubInventoryBinding.ivEffectBackground;
-        Intrinsics.checkNotNullExpressionValue(ivEffectBackground, "ivEffectBackground");
-        ImageView ivEffectForeground = itemSubInventoryBinding.ivEffectForeground;
-        Intrinsics.checkNotNullExpressionValue(ivEffectForeground, "ivEffectForeground");
-        UtilKt.setInventoryItemEffect(item2, ivEffectBackground, ivEffectForeground);
+        UtilKt.setInventoryItemEffect(itemSubInventoryBinding, itemVal.getItem());
         checkIsAccess(itemVal, getPosition());
     }
 

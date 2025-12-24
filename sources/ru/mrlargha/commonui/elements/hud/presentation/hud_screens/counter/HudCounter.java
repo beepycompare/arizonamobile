@@ -213,19 +213,23 @@ public final class HudCounter {
                 iArr2[TypeTaximeter.SEARCH_CRYSTALS.ordinal()] = 36;
             } catch (NoSuchFieldError unused38) {
             }
+            try {
+                iArr2[TypeTaximeter.BASE_JUMPING.ordinal()] = 37;
+            } catch (NoSuchFieldError unused39) {
+            }
             $EnumSwitchMapping$1 = iArr2;
             int[] iArr3 = new int[HudCounterItemType.values().length];
             try {
                 iArr3[HudCounterItemType.SIMPLE_TEXT.ordinal()] = 1;
-            } catch (NoSuchFieldError unused39) {
-            }
-            try {
-                iArr3[HudCounterItemType.ICON_WITH_TEXT.ordinal()] = 2;
             } catch (NoSuchFieldError unused40) {
             }
             try {
-                iArr3[HudCounterItemType.TITLE_WITH_TEXT.ordinal()] = 3;
+                iArr3[HudCounterItemType.ICON_WITH_TEXT.ordinal()] = 2;
             } catch (NoSuchFieldError unused41) {
+            }
+            try {
+                iArr3[HudCounterItemType.TITLE_WITH_TEXT.ordinal()] = 3;
+            } catch (NoSuchFieldError unused42) {
             }
             $EnumSwitchMapping$2 = iArr3;
         }
@@ -485,7 +489,6 @@ public final class HudCounter {
         return arrayList;
     }
 
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     public final HudTaximeterContainerBinding setTaximeterType(int i) {
         HudTaximeterContainerBinding hudTaximeterContainerBinding;
         HudTaximeterContainerBinding hudTaximeterContainerBinding2;
@@ -526,31 +529,37 @@ public final class HudCounter {
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
                 this.isTimer = true;
                 setTaximeterLayoutType$default(this, R.drawable.bg_taximeter_sum, R.drawable.bg_taximeter_time, null, "#FFDD28", null, "#000000", false, R.font.ds_digital, 84, null);
+                Unit unit = Unit.INSTANCE;
                 break;
             case 2:
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
                 this.isTimer = true;
                 setTaximeterLayoutType$default(this, R.drawable.bg_taximeter_bus_sum, R.drawable.bg_taximeter_bus_time, null, "#28D8FF", null, "#000000", false, R.font.ds_digital, 84, null);
+                Unit unit2 = Unit.INSTANCE;
                 break;
             case 3:
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
                 this.isTimer = true;
                 setTaximeterLayoutType$default(this, R.drawable.bg_taximeter_truck_sum, R.drawable.bg_taximeter_truck_time, null, "#ADFF2F", null, "#000000", false, R.font.ds_digital, 84, null);
+                Unit unit3 = Unit.INSTANCE;
                 break;
             case 4:
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
                 this.isTimer = true;
                 setTaximeterLayoutType$default(this, R.drawable.bg_taximeter_delivery_summ, R.drawable.bg_taximeter_delivery_time, null, "#FF2372", null, "#000000", false, R.font.ds_digital, 84, null);
+                Unit unit4 = Unit.INSTANCE;
                 break;
             case 5:
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
                 this.isTimer = true;
                 setTaximeterLayoutType$default(this, R.drawable.bg_taximeter_drift_summ, R.drawable.bg_taximeter_drift_time, null, "#FF5900", null, "#000000", false, R.font.ds_digital, 84, null);
+                Unit unit5 = Unit.INSTANCE;
                 break;
             case 6:
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
                 this.isTimer = true;
                 setTaximeterLayoutType$default(this, R.drawable.bg_taximeter_halloween_summ, R.drawable.bg_taximeter_halloween_time, null, "#FF0000", null, "#000000", false, R.font.ds_digital, 84, null);
+                Unit unit6 = Unit.INSTANCE;
                 break;
             case 7:
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
@@ -559,6 +568,7 @@ public final class HudCounter {
                 Intrinsics.checkNotNullExpressionValue(root5, "getRoot(...)");
                 root5.setVisibility(8);
                 setDemorganType$default(this, R.drawable.hud_taximeter_stopwatch_demorgan_logo, R.drawable.hud_taximeter_stopwatch_demorgan_second_bg, R.drawable.hud_taximeter_stopwatch_demorgan_bg, "#FF4343", 0, false, 48, null);
+                Unit unit7 = Unit.INSTANCE;
                 break;
             case 8:
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
@@ -567,6 +577,7 @@ public final class HudCounter {
                 Intrinsics.checkNotNullExpressionValue(root6, "getRoot(...)");
                 root6.setVisibility(8);
                 setDemorganType$default(this, R.drawable.hud_taximeter_stopwatch_army_logo, R.drawable.hud_taximeter_stopwatch_army_second_bg, R.drawable.hud_taximeter_stopwatch_army_bg, "#75D100", 0, false, 48, null);
+                Unit unit8 = Unit.INSTANCE;
                 break;
             case 9:
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
@@ -575,6 +586,7 @@ public final class HudCounter {
                 Intrinsics.checkNotNullExpressionValue(root7, "getRoot(...)");
                 root7.setVisibility(8);
                 setDemorganType(R.drawable.hud_taximeter_stopwatch_easter_relay_logo, R.drawable.hud_taximeter_stopwatch_easter_relay_second_bg, R.drawable.hud_taximeter_stopwatch_easter_relay_bg, "#FFFFFF", R.font.harreegh_popped_cyrillic, true);
+                Unit unit9 = Unit.INSTANCE;
                 break;
             case 10:
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
@@ -585,6 +597,7 @@ public final class HudCounter {
                 Intrinsics.checkNotNull(imageView);
                 imageView.setVisibility(0);
                 setTaximeterLayoutType$default(this, R.drawable.hud_taximeter_farmer_health_sum, R.drawable.hud_taximeter_farmer_health_time, Integer.valueOf(R.drawable.hud_taximeter_farmer_health_bg), "#FFFFFF", "Здоровье", null, false, 0, 160, null);
+                Unit unit10 = Unit.INSTANCE;
                 break;
             case 11:
                 this.isTimer = true;
@@ -595,12 +608,14 @@ public final class HudCounter {
                 Intrinsics.checkNotNull(imageView2);
                 imageView2.setVisibility(0);
                 setTaximeterLayoutType$default(this, R.drawable.hud_taximeter_soccer_goals_sum, R.drawable.hud_taximeter_soccer_goals_time, Integer.valueOf(R.drawable.hud_taximeter_soccer_goals_bg), "#FFFFFF", "Голов", null, false, 0, 160, null);
+                Unit unit11 = Unit.INSTANCE;
                 break;
             case 12:
                 hudTaximeterContainerBinding2 = hudTaximeterContainerBinding3;
                 this.isTimer = true;
                 this.typeTaximeterValue = TypeTaximeterValue.PERCENT;
                 setTaximeterLayoutType$default(this, R.drawable.hud_taximeter_easter_chicken_summ, R.drawable.hud_taximeter_easter_chicken_time, Integer.valueOf(R.drawable.hud_taximeter_easter_chicken_bg), "#D0FFFA", "Состояние прицепа", null, false, 0, 160, null);
+                Unit unit12 = Unit.INSTANCE;
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding2;
                 break;
             case 13:
@@ -608,6 +623,7 @@ public final class HudCounter {
                 this.isTimer = true;
                 this.typeTaximeterValue = TypeTaximeterValue.TEXT;
                 setTaximeterLayoutType$default(this, R.drawable.bg_taximeter_bus_sum, R.drawable.bg_taximeter_bus_time, null, "#28D8FF", null, "#000000", false, R.font.ds_digital, 84, null);
+                Unit unit13 = Unit.INSTANCE;
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding2;
                 break;
             case 14:
@@ -615,6 +631,7 @@ public final class HudCounter {
                 this.isTimer = true;
                 this.typeTaximeterValue = TypeTaximeterValue.PERCENT;
                 setCounterType$default(this, HudCounterItemType.ICON_WITH_TEXT, HudCounterItemType.TITLE_WITH_TEXT, R.drawable.hud_counter_recording_bg, Integer.valueOf(R.drawable.hud_counter_recording_item_bg), null, Color.parseColor("#072100"), 0, R.font.moscow_2024, 0, this.context.getString(R.string.progress), null, this.context.getString(R.string.recording), Integer.valueOf(R.drawable.hud_counter_sound_ic), null, 9552, null);
+                Unit unit14 = Unit.INSTANCE;
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding2;
                 break;
             case 15:
@@ -629,6 +646,7 @@ public final class HudCounter {
                 int i3 = R.font.moscow_2024;
                 int i4 = R.drawable.hud_counter_interception_data_item_bg;
                 setCounterType$default(this, hudCounterItemType, hudCounterItemType2, i2, Integer.valueOf(i4), null, Color.parseColor("#000321"), 0, i3, 0, this.context.getString(R.string.progress), null, null, null, null, 15696, null);
+                Unit unit15 = Unit.INSTANCE;
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding2;
                 break;
             case 16:
@@ -637,6 +655,7 @@ public final class HudCounter {
                 this.typeTaximeterValue = TypeTaximeterValue.PERCENT;
                 hudTaximeterBinding.counter.secondItem.tvProgress.setPadding(0, dpToPx(2), 0, 0);
                 setCounterType$default(this, HudCounterItemType.SIMPLE_TEXT, HudCounterItemType.TITLE_WITH_TEXT, R.drawable.hud_counter_killing_alients_bg, Integer.valueOf(R.drawable.hud_counter_killing_alients_item_bg), null, Color.parseColor("#3CFF00"), 0, R.font.mk_90, 0, this.context.getString(R.string.progress), null, null, null, null, 15696, null);
+                Unit unit16 = Unit.INSTANCE;
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding2;
                 break;
             case 17:
@@ -650,6 +669,7 @@ public final class HudCounter {
                 Typeface font = ResourcesCompat.getFont(this.context, R.font.heading_now_66_bold);
                 this.binding.counter.firstItem.tvTitleProgress.setTypeface(font);
                 this.binding.counter.secondItem.tvTitleProgress.setTypeface(font);
+                Unit unit17 = Unit.INSTANCE;
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding2;
                 break;
             case 18:
@@ -665,6 +685,7 @@ public final class HudCounter {
                 int i6 = R.drawable.hud_counter_space_race_second_item_bg;
                 setCounterType$default(this, hudCounterItemType3, hudCounterItemType4, i5, null, Integer.valueOf(i6), -1, 0, R.font.race_line, 0, null, null, "5/8", Integer.valueOf(R.drawable.hud_counter_space_race_logo), Integer.valueOf(R.drawable.hud_counter_man_ic), 1864, null);
                 hudTaximeterBinding.counter.firstItem.tvTitleWithIc.setText("");
+                Unit unit18 = Unit.INSTANCE;
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding2;
                 break;
             case 19:
@@ -687,70 +708,83 @@ public final class HudCounter {
                 int i8 = R.drawable.hud_counter_height_second_item_bg;
                 hudTaximeterContainerBinding2 = hudTaximeterContainerBinding3;
                 setCounterType$default(this, hudCounterItemType5, hudCounterItemType6, i7, null, Integer.valueOf(i8), Color.parseColor("#2EEF3B"), -1, R.font.spi_key_bit, R.font.heading_now_64_regular, null, null, "Высота полета", Integer.valueOf(R.drawable.hud_counter_arrows_ic), null, 9736, null);
+                Unit unit19 = Unit.INSTANCE;
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding2;
                 break;
             case 20:
                 setVisible(valueOf);
                 this.secondTextView = hudTaximeterBinding.noiseLevel.tvSecond;
+                Unit unit20 = Unit.INSTANCE;
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
                 break;
             case 21:
                 setVisible(valueOf);
                 this.secondTextView = hudTaximeterBinding.accumulatedEnergy.tvSecond;
+                Unit unit21 = Unit.INSTANCE;
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
                 break;
             case 22:
                 setVisible(valueOf);
                 this.firstTextView = hudTaximeterBinding.distanceToHome.tvFirst;
                 this.secondTextView = hudTaximeterBinding.distanceToHome.tvSecond;
+                Unit unit22 = Unit.INSTANCE;
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
                 break;
             case 23:
                 setVisible(valueOf);
                 this.secondTextView = hudTaximeterBinding.busCondition.tvSecond;
+                Unit unit23 = Unit.INSTANCE;
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
                 break;
             case 24:
                 setVisible(valueOf);
                 this.firstTextView = hudTaximeterBinding.killedZombies.tvFirst;
                 this.secondTextView = hudTaximeterBinding.killedZombies.tvSecond;
+                Unit unit24 = Unit.INSTANCE;
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
                 break;
             case 25:
                 setVisible(valueOf);
                 this.firstTextView = hudTaximeterBinding.zombieMode.tvFirst;
+                Unit unit25 = Unit.INSTANCE;
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
                 break;
             case 26:
                 setVisible(valueOf);
                 this.firstTextView = hudTaximeterBinding.halloweenCoins.tvFirst;
                 this.secondTextView = hudTaximeterBinding.halloweenCoins.tvSecond;
+                Unit unit26 = Unit.INSTANCE;
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
                 break;
             case 27:
                 setVisible(valueOf);
                 this.firstTextView = hudTaximeterBinding.lordRigns.tvFirst;
                 this.secondTextView = hudTaximeterBinding.lordRigns.tvSecond;
+                Unit unit27 = Unit.INSTANCE;
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
                 break;
             case 28:
                 setVisible(valueOf);
                 this.firstTextView = hudTaximeterBinding.ghosts.tvFirst;
+                Unit unit28 = Unit.INSTANCE;
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
                 break;
             case 29:
                 setVisible(valueOf);
                 this.secondTextView = hudTaximeterBinding.franclinStein.tvSecond;
+                Unit unit29 = Unit.INSTANCE;
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
                 break;
             case 30:
                 setVisible(valueOf);
                 this.secondTextView = hudTaximeterBinding.conditionSled.tvSecond;
+                Unit unit30 = Unit.INSTANCE;
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
                 break;
             case 31:
                 setVisible(valueOf);
                 this.secondTextView = hudTaximeterBinding.conditionPackage.tvSecond;
+                Unit unit31 = Unit.INSTANCE;
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
                 break;
             case 32:
@@ -758,32 +792,45 @@ public final class HudCounter {
                 this.isTimer = false;
                 this.firstTextView = hudTaximeterBinding.rollingSnowball.tvFirst;
                 this.secondTextView = hudTaximeterBinding.rollingSnowball.tvSecond;
+                Unit unit32 = Unit.INSTANCE;
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
                 break;
             case 33:
                 setVisible(valueOf);
                 this.firstTextView = hudTaximeterBinding.deliveryGifts.tvFirst;
                 this.secondTextView = hudTaximeterBinding.deliveryGifts.tvSecond;
+                Unit unit33 = Unit.INSTANCE;
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
                 break;
             case 34:
                 setVisible(valueOf);
                 this.secondTextView = hudTaximeterBinding.brokingIce.tvSecond;
+                Unit unit34 = Unit.INSTANCE;
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
                 break;
             case 35:
                 setVisible(valueOf);
                 this.firstTextView = hudTaximeterBinding.newYearTaxi.tvFirst;
                 this.secondTextView = hudTaximeterBinding.newYearTaxi.tvSecond;
+                Unit unit35 = Unit.INSTANCE;
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
                 break;
             case 36:
                 setVisible(valueOf);
                 this.secondTextView = hudTaximeterBinding.searchCrystal.tvSecond;
+                Unit unit36 = Unit.INSTANCE;
+                hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
+                break;
+            case 37:
+                setVisible(valueOf);
+                this.firstTextView = hudTaximeterBinding.baseJumping.tvFirst;
+                this.secondTextView = hudTaximeterBinding.baseJumping.tvSecond;
+                Unit unit37 = Unit.INSTANCE;
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
                 break;
             default:
                 hudTaximeterContainerBinding = hudTaximeterContainerBinding3;
+                Unit unit38 = Unit.INSTANCE;
                 break;
         }
         Intrinsics.checkNotNullExpressionValue(hudTaximeterContainerBinding, "with(...)");
@@ -1079,5 +1126,8 @@ public final class HudCounter {
         FrameLayout root20 = hudTaximeterBinding.searchCrystal.getRoot();
         Intrinsics.checkNotNullExpressionValue(root20, "getRoot(...)");
         root20.setVisibility(typeTaximeter == TypeTaximeter.SEARCH_CRYSTALS ? 0 : 8);
+        FrameLayout root21 = hudTaximeterBinding.baseJumping.getRoot();
+        Intrinsics.checkNotNullExpressionValue(root21, "getRoot(...)");
+        root21.setVisibility(typeTaximeter == TypeTaximeter.BASE_JUMPING ? 0 : 8);
     }
 }

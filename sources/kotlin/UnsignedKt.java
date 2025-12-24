@@ -20,47 +20,47 @@ public final class UnsignedKt {
     }
 
     /* renamed from: uintRemainder-J1ME1BU  reason: not valid java name */
-    public static final int m10572uintRemainderJ1ME1BU(int i, int i2) {
-        return UInt.m10315constructorimpl((int) ((i & 4294967295L) % (i2 & 4294967295L)));
+    public static final int m10573uintRemainderJ1ME1BU(int i, int i2) {
+        return UInt.m10316constructorimpl((int) ((i & 4294967295L) % (i2 & 4294967295L)));
     }
 
     /* renamed from: uintDivide-J1ME1BU  reason: not valid java name */
-    public static final int m10571uintDivideJ1ME1BU(int i, int i2) {
-        return UInt.m10315constructorimpl((int) ((i & 4294967295L) / (i2 & 4294967295L)));
+    public static final int m10572uintDivideJ1ME1BU(int i, int i2) {
+        return UInt.m10316constructorimpl((int) ((i & 4294967295L) / (i2 & 4294967295L)));
     }
 
     /* renamed from: ulongDivide-eb3DHEI  reason: not valid java name */
-    public static final long m10573ulongDivideeb3DHEI(long j, long j2) {
+    public static final long m10574ulongDivideeb3DHEI(long j, long j2) {
         int compare;
         int compare2;
         if (j2 < 0) {
             compare2 = Long.compare(j ^ Long.MIN_VALUE, j2 ^ Long.MIN_VALUE);
-            return compare2 < 0 ? ULong.m10394constructorimpl(0L) : ULong.m10394constructorimpl(1L);
+            return compare2 < 0 ? ULong.m10395constructorimpl(0L) : ULong.m10395constructorimpl(1L);
         } else if (j >= 0) {
-            return ULong.m10394constructorimpl(j / j2);
+            return ULong.m10395constructorimpl(j / j2);
         } else {
             long j3 = ((j >>> 1) / j2) << 1;
-            compare = Long.compare(ULong.m10394constructorimpl(j - (j3 * j2)) ^ Long.MIN_VALUE, ULong.m10394constructorimpl(j2) ^ Long.MIN_VALUE);
-            return ULong.m10394constructorimpl(j3 + (compare < 0 ? 0 : 1));
+            compare = Long.compare(ULong.m10395constructorimpl(j - (j3 * j2)) ^ Long.MIN_VALUE, ULong.m10395constructorimpl(j2) ^ Long.MIN_VALUE);
+            return ULong.m10395constructorimpl(j3 + (compare < 0 ? 0 : 1));
         }
     }
 
     /* renamed from: ulongRemainder-eb3DHEI  reason: not valid java name */
-    public static final long m10574ulongRemaindereb3DHEI(long j, long j2) {
+    public static final long m10575ulongRemaindereb3DHEI(long j, long j2) {
         int compare;
         int compare2;
         if (j2 < 0) {
             compare2 = Long.compare(j ^ Long.MIN_VALUE, j2 ^ Long.MIN_VALUE);
-            return compare2 < 0 ? j : ULong.m10394constructorimpl(j - j2);
+            return compare2 < 0 ? j : ULong.m10395constructorimpl(j - j2);
         } else if (j >= 0) {
-            return ULong.m10394constructorimpl(j % j2);
+            return ULong.m10395constructorimpl(j % j2);
         } else {
             long j3 = j - ((((j >>> 1) / j2) << 1) * j2);
-            compare = Long.compare(ULong.m10394constructorimpl(j3) ^ Long.MIN_VALUE, ULong.m10394constructorimpl(j2) ^ Long.MIN_VALUE);
+            compare = Long.compare(ULong.m10395constructorimpl(j3) ^ Long.MIN_VALUE, ULong.m10395constructorimpl(j2) ^ Long.MIN_VALUE);
             if (compare < 0) {
                 j2 = 0;
             }
-            return ULong.m10394constructorimpl(j3 - j2);
+            return ULong.m10395constructorimpl(j3 - j2);
         }
     }
 
@@ -73,7 +73,7 @@ public final class UnsignedKt {
     }
 
     private static final long uintToULong(int i) {
-        return ULong.m10394constructorimpl(i & 4294967295L);
+        return ULong.m10395constructorimpl(i & 4294967295L);
     }
 
     private static final float uintToFloat(int i) {
@@ -90,9 +90,9 @@ public final class UnsignedKt {
                 return -1;
             }
             if (d <= 2.147483647E9d) {
-                return UInt.m10315constructorimpl((int) d);
+                return UInt.m10316constructorimpl((int) d);
             }
-            return UInt.m10315constructorimpl(UInt.m10315constructorimpl((int) (d - Integer.MAX_VALUE)) + UInt.m10315constructorimpl(Integer.MAX_VALUE));
+            return UInt.m10316constructorimpl(UInt.m10316constructorimpl((int) (d - Integer.MAX_VALUE)) + UInt.m10316constructorimpl(Integer.MAX_VALUE));
         }
         return 0;
     }
@@ -111,9 +111,9 @@ public final class UnsignedKt {
                 return -1L;
             }
             if (d < 9.223372036854776E18d) {
-                return ULong.m10394constructorimpl((long) d);
+                return ULong.m10395constructorimpl((long) d);
             }
-            return ULong.m10394constructorimpl(ULong.m10394constructorimpl((long) (d - 9.223372036854776E18d)) - Long.MIN_VALUE);
+            return ULong.m10395constructorimpl(ULong.m10395constructorimpl((long) (d - 9.223372036854776E18d)) - Long.MIN_VALUE);
         }
         return 0L;
     }

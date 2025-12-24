@@ -23,8 +23,8 @@
                 <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_8sdp">
                     <TextView android:textSize="@dimen/_7sdp" android:textColor="@color/main" android:layout_gravity="start" android:id="@+id/tv_task_count" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="40/40" android:fontFamily="@font/pfdindisplaypro_medium"/>
                     <LinearLayout android:layout_gravity="end" android:id="@+id/complete_text_container" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="match_parent">
-                        <ImageView android:layout_width="wrap_content" android:layout_height="@dimen/_8sdp" android:src="@drawable/check_mark" android:adjustViewBounds="true" android:tint="#ffe419" android:layout_marginEnd="@dimen/_4sdp"/>
-                        <TextView android:textSize="@dimen/_7sdp" android:textColor="#ffe419" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Выполнено" android:fontFamily="@font/pfdindisplaypro_regular"/>
+                        <ImageView android:layout_width="wrap_content" android:layout_height="@dimen/_8sdp" android:src="@drawable/check_mark" android:adjustViewBounds="true" android:tint="@color/main" android:layout_marginEnd="@dimen/_4sdp"/>
+                        <TextView android:textSize="@dimen/_7sdp" android:textColor="@color/main" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Выполнено" android:fontFamily="@font/pfdindisplaypro_regular"/>
                     </LinearLayout>
                     <TextView android:textSize="@dimen/_7sdp" android:textColor="#ffffff" android:layout_gravity="end" android:id="@+id/tv_complete_percent" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="65%" android:fontFamily="@font/pfdindisplaypro_regular"/>
                 </FrameLayout>
@@ -40,7 +40,7 @@
         </LinearLayout>
         <LinearLayout android:gravity="center" android:id="@+id/error_overlay" android:background="#cb191d22" android:padding="@dimen/_20sdp" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent">
             <ImageView android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="@dimen/_12sdp" android:src="@drawable/event_task_ic_lock" android:adjustViewBounds="true" android:layout_marginStart="@dimen/_12sdp"/>
-            <TextView android:textSize="@dimen/_10sdp" android:textColor="#ffe419" android:id="@+id/tv_error_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_4sdp" android:text="Будет доступно через" android:fontFamily="@font/pfdindisplaypro_regular"/>
+            <TextView android:textSize="@dimen/_10sdp" android:textColor="@color/main" android:id="@+id/tv_error_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_4sdp" android:text="Будет доступно через" android:fontFamily="@font/pfdindisplaypro_regular"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </FrameLayout>

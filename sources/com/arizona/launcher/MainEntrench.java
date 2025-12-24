@@ -381,7 +381,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
             if (str == null) {
                 str = "unknown";
             }
-            Toast.makeText(getApplicationContext(), str + " v16.9.2 release", 1).show();
+            Toast.makeText(getApplicationContext(), str + " v16.9.3 release", 1).show();
             if (Build.VERSION.SDK_INT >= 26) {
                 if (!getFirstOpen()) {
                     Context applicationContext2 = getApplicationContext();
@@ -1589,6 +1589,13 @@ public final class MainEntrench extends Hilt_MainEntrench {
         Integer intOrNull = StringsKt.toIntOrNull(ConnectionHolder.INSTANCE.getSettingsData().getPort());
         bufferedWriter.write(jSONObject.put("client", put.put("test", put2.put("port", intOrNull != null ? intOrNull.intValue() : 1).put("pass", ConnectionHolder.INSTANCE.getSettingsData().getPassword()))).put("launcher", new JSONObject().put(SettingsConstants.NICKNAME, getMainViewModel().getPlayerNick()).put(SettingsConstants.CHAT_PAGE_SIZE, ConnectionHolder.INSTANCE.getSettingsData().getPageSize()).put(SettingsConstants.CHAT_FONT_SIZE, ConnectionHolder.INSTANCE.getSettingsData().getChatFontSize()).put(SettingsConstants.CHAT_PRINT_TIMESTAMP, ConnectionHolder.INSTANCE.getSettingsData().getShowChatTime()).put(SettingsConstants.AMBIENT_SOUNDS, ConnectionHolder.INSTANCE.getSettingsData().getAmbientSounds()).put(SettingsConstants.STREAMER_MODE, ConnectionHolder.INSTANCE.getSettingsData().getStreamerMode()).put(SettingsConstants.IS_HEAD_MOVING, defaultSharedPreferences != null ? Boolean.valueOf(defaultSharedPreferences.getBoolean(SettingsConstants.IS_HEAD_MOVING, false)) : null)).toString());
         bufferedWriter.close();
+        LogcatHelper.Companion companion = LogcatHelper.Companion;
+        Context applicationContext = getApplicationContext();
+        Intrinsics.checkNotNullExpressionValue(applicationContext, "getApplicationContext(...)");
+        LogcatHelper companion2 = companion.getInstance(applicationContext);
+        if (companion2 != null) {
+            companion2.clean(false);
+        }
         startActivity(new Intent(mainEntrench, GTASA.class));
     }
 
@@ -1687,6 +1694,13 @@ public final class MainEntrench extends Hilt_MainEntrench {
         sendRequests$default(this, mainEntrench2, "http://" + ConnectionHolder.INSTANCE.getSelectedServer().getIp() + ":825/", nextInt, null, 4, null);
         sendRequests$default(this, mainEntrench2, "http://" + ConnectionHolder.INSTANCE.getSelectedServer().getIp() + "/", nextInt, null, 4, null);
         getMainViewModel().setNotFirstRun();
+        LogcatHelper.Companion companion = LogcatHelper.Companion;
+        Context applicationContext = getApplicationContext();
+        Intrinsics.checkNotNullExpressionValue(applicationContext, "getApplicationContext(...)");
+        LogcatHelper companion2 = companion.getInstance(applicationContext);
+        if (companion2 != null) {
+            companion2.clean(false);
+        }
         startActivity(new Intent(mainEntrench, GTASA.class));
     }
 }

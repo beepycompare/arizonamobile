@@ -6,7 +6,7 @@
     <FrameLayout android:layout_gravity="bottom" android:layout_width="match_parent" android:layout_height="wrap_content">
         <androidx.recyclerview.widget.RecyclerView android:layout_gravity="bottom|center_horizontal" android:orientation="horizontal" android:id="@+id/rv_boxes" android:layout_width="wrap_content" android:layout_height="@dimen/_80sdp" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
     </FrameLayout>
-    <FrameLayout android:id="@+id/age_locker" android:background="#d9000000" android:layout_width="match_parent" android:layout_height="match_parent">
+    <FrameLayout android:id="@+id/age_locker" android:background="#d9000000" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent">
         <ru.mrlargha.commonui.utils.ui.CustomCardView android:layout_gravity="center" android:layout_width="@dimen/_200sdp" android:layout_height="@dimen/_120sdp" app:backgroundMainColor="#f5131516" app:borderMainColor="#1affffff" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_12sdp">
             <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
                 <ImageView android:layout_width="@dimen/_16sdp" android:layout_height="@dimen/_16sdp" android:layout_marginLeft="@dimen/_4sdp" android:src="@drawable/age_label"/>

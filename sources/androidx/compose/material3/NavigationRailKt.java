@@ -366,7 +366,7 @@ public final class NavigationRailKt {
     /* JADX WARN: Removed duplicated region for block: B:91:0x0100  */
     /* JADX WARN: Type inference failed for: r7v23 */
     /* JADX WARN: Type inference failed for: r7v5 */
-    /* JADX WARN: Type inference failed for: r7v6, types: [boolean, int] */
+    /* JADX WARN: Type inference failed for: r7v6, types: [int, boolean] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

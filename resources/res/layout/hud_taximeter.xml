@@ -20,4 +20,5 @@
     <include android:id="@+id/broking_ice" android:visibility="gone" layout="@layout/hud_counter_broking_ice"/>
     <include android:id="@+id/new_year_taxi" android:visibility="gone" layout="@layout/hud_counter_new_year"/>
     <include android:id="@+id/search_crystal" android:visibility="gone" layout="@layout/hud_counter_search_crystals"/>
+    <include android:id="@+id/base_jumping" android:visibility="gone" layout="@layout/hud_counter_base_jumping"/>
 </FrameLayout>

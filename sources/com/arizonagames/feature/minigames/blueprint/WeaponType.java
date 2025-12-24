@@ -27,7 +27,7 @@ public final class WeaponType {
     public static final WeaponType PIPE_FOUR = new WeaponType("PIPE_FOUR", 8, "pipeFour");
     public static final WeaponType PIPE_FIVE = new WeaponType("PIPE_FIVE", 9, "pipeFive");
     public static final WeaponType HALLOWEEN = new WeaponType("HALLOWEEN", 10, "halloweenBox");
-    public static final WeaponType SNOWMEN = new WeaponType("SNOWMEN", 11, "snowmen");
+    public static final WeaponType SNOWMEN = new WeaponType("SNOWMEN", 11, "snowman");
 
     private static final /* synthetic */ WeaponType[] $values() {
         return new WeaponType[]{RPG_WEAPON, AK_WEAPON, PM_WEAPON, RIFLE_WEAPON, SNIPE_WEAPON, PIPE_ONE, PIPE_TWO, PIPE_THREE, PIPE_FOUR, PIPE_FIVE, HALLOWEEN, SNOWMEN};

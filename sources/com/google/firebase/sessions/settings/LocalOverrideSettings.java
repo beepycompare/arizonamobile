@@ -55,9 +55,9 @@ public final class LocalOverrideSettings implements SettingsProvider {
 
     @Override // com.google.firebase.sessions.settings.SettingsProvider
     /* renamed from: getSessionRestartTimeout-FghU774  reason: not valid java name */
-    public Duration mo10029getSessionRestartTimeoutFghU774() {
+    public Duration mo10030getSessionRestartTimeoutFghU774() {
         if (this.metadata.containsKey(SESSION_RESTART_TIMEOUT)) {
-            return Duration.m11570boximpl(DurationKt.toDuration(this.metadata.getInt(SESSION_RESTART_TIMEOUT), DurationUnit.SECONDS));
+            return Duration.m11571boximpl(DurationKt.toDuration(this.metadata.getInt(SESSION_RESTART_TIMEOUT), DurationUnit.SECONDS));
         }
         return null;
     }

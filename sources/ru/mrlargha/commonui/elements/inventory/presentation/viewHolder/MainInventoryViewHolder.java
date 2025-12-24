@@ -78,7 +78,7 @@ public final class MainInventoryViewHolder extends RecyclerView.ViewHolder {
         return this.scrollHandler;
     }
 
-    /* JADX WARN: Type inference failed for: r1v3, types: [ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.MainInventoryViewHolder$bind$1$6] */
+    /* JADX WARN: Type inference failed for: r1v2, types: [ru.mrlargha.commonui.elements.inventory.presentation.viewHolder.MainInventoryViewHolder$bind$1$6] */
     public final void bind(final InventoryItem itemVal, final boolean z) {
         final InventoryItem inventoryItem;
         Job launch$default;
@@ -229,12 +229,7 @@ public final class MainInventoryViewHolder extends RecyclerView.ViewHolder {
             itemInventoryBinding.ivItemImage.setImageResource(R.drawable.ic_locked_item);
             itemInventoryBinding.tvTitleText.setText("");
         }
-        Integer item2 = inventoryItem.getItem();
-        ImageView ivEffectBackground = itemInventoryBinding.ivEffectBackground;
-        Intrinsics.checkNotNullExpressionValue(ivEffectBackground, "ivEffectBackground");
-        ImageView ivEffectForeground = itemInventoryBinding.ivEffectForeground;
-        Intrinsics.checkNotNullExpressionValue(ivEffectForeground, "ivEffectForeground");
-        UtilKt.setInventoryItemEffect(item2, ivEffectBackground, ivEffectForeground);
+        UtilKt.setInventoryItemEffect(itemInventoryBinding, inventoryItem.getItem());
     }
 
     /* JADX INFO: Access modifiers changed from: private */

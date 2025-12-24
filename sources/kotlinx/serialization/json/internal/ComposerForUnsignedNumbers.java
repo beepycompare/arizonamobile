@@ -22,17 +22,17 @@ public final class ComposerForUnsignedNumbers extends Composer {
 
     @Override // kotlinx.serialization.json.internal.Composer
     public void print(int i) {
-        String m10285m;
-        String m10285m2;
+        String m10286m;
+        String m10286m2;
         boolean z = this.forceQuoting;
-        int m10315constructorimpl = UInt.m10315constructorimpl(i);
+        int m10316constructorimpl = UInt.m10316constructorimpl(i);
         if (z) {
-            m10285m2 = UByte$$ExternalSyntheticBackport0.m10285m(m10315constructorimpl, 10);
-            printQuoted(m10285m2);
+            m10286m2 = UByte$$ExternalSyntheticBackport0.m10286m(m10316constructorimpl, 10);
+            printQuoted(m10286m2);
             return;
         }
-        m10285m = UByte$$ExternalSyntheticBackport0.m10285m(m10315constructorimpl, 10);
-        print(m10285m);
+        m10286m = UByte$$ExternalSyntheticBackport0.m10286m(m10316constructorimpl, 10);
+        print(m10286m);
     }
 
     @Override // kotlinx.serialization.json.internal.Composer
@@ -40,35 +40,35 @@ public final class ComposerForUnsignedNumbers extends Composer {
         String m;
         String m2;
         boolean z = this.forceQuoting;
-        long m10394constructorimpl = ULong.m10394constructorimpl(j);
+        long m10395constructorimpl = ULong.m10395constructorimpl(j);
         if (z) {
-            m2 = UByte$$ExternalSyntheticBackport0.m(m10394constructorimpl, 10);
+            m2 = UByte$$ExternalSyntheticBackport0.m(m10395constructorimpl, 10);
             printQuoted(m2);
             return;
         }
-        m = UByte$$ExternalSyntheticBackport0.m(m10394constructorimpl, 10);
+        m = UByte$$ExternalSyntheticBackport0.m(m10395constructorimpl, 10);
         print(m);
     }
 
     @Override // kotlinx.serialization.json.internal.Composer
     public void print(byte b) {
         boolean z = this.forceQuoting;
-        String m10277toStringimpl = UByte.m10277toStringimpl(UByte.m10233constructorimpl(b));
+        String m10278toStringimpl = UByte.m10278toStringimpl(UByte.m10234constructorimpl(b));
         if (z) {
-            printQuoted(m10277toStringimpl);
+            printQuoted(m10278toStringimpl);
         } else {
-            print(m10277toStringimpl);
+            print(m10278toStringimpl);
         }
     }
 
     @Override // kotlinx.serialization.json.internal.Composer
     public void print(short s) {
         boolean z = this.forceQuoting;
-        String m10545toStringimpl = UShort.m10545toStringimpl(UShort.m10501constructorimpl(s));
+        String m10546toStringimpl = UShort.m10546toStringimpl(UShort.m10502constructorimpl(s));
         if (z) {
-            printQuoted(m10545toStringimpl);
+            printQuoted(m10546toStringimpl);
         } else {
-            print(m10545toStringimpl);
+            print(m10546toStringimpl);
         }
     }
 }
