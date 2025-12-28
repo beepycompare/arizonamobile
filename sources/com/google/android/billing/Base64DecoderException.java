@@ -1,5 +1,5 @@
 package com.google.android.billing;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public class Base64DecoderException extends Exception {
     private static final long serialVersionUID = 1;
 

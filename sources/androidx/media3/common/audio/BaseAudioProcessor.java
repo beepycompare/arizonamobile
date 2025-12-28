@@ -13,6 +13,7 @@ public abstract class BaseAudioProcessor implements AudioProcessor {
     protected AudioProcessor.AudioFormat inputAudioFormat = AudioProcessor.AudioFormat.NOT_SET;
     protected AudioProcessor.AudioFormat outputAudioFormat = AudioProcessor.AudioFormat.NOT_SET;
 
+    @Deprecated
     protected void onFlush() {
     }
 
@@ -53,12 +54,18 @@ public abstract class BaseAudioProcessor implements AudioProcessor {
     }
 
     @Override // androidx.media3.common.audio.AudioProcessor
+    @Deprecated
     public final void flush() {
+        flush(AudioProcessor.StreamMetadata.DEFAULT);
+    }
+
+    @Override // androidx.media3.common.audio.AudioProcessor
+    public final void flush(AudioProcessor.StreamMetadata streamMetadata) {
         this.outputBuffer = EMPTY_BUFFER;
         this.inputEnded = false;
         this.inputAudioFormat = this.pendingInputAudioFormat;
         this.outputAudioFormat = this.pendingOutputAudioFormat;
-        onFlush();
+        onFlush(streamMetadata);
     }
 
     @Override // androidx.media3.common.audio.AudioProcessor
@@ -92,5 +99,9 @@ public abstract class BaseAudioProcessor implements AudioProcessor {
 
     protected AudioProcessor.AudioFormat onConfigure(AudioProcessor.AudioFormat audioFormat) throws AudioProcessor.UnhandledAudioFormatException {
         return AudioProcessor.AudioFormat.NOT_SET;
+    }
+
+    protected void onFlush(AudioProcessor.StreamMetadata streamMetadata) {
+        onFlush();
     }
 }

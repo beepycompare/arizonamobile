@@ -246,15 +246,18 @@ public abstract class BasePlayer implements Player {
 
     @Override // androidx.media3.common.Player
     public final int getBufferedPercentage() {
-        long bufferedPosition = getBufferedPosition();
-        long duration = getDuration();
-        if (bufferedPosition == C.TIME_UNSET || duration == C.TIME_UNSET) {
-            return 0;
+        if (isCommandAvailable(16)) {
+            long bufferedPosition = getBufferedPosition();
+            long duration = getDuration();
+            if (bufferedPosition == C.TIME_UNSET || duration == C.TIME_UNSET) {
+                return 0;
+            }
+            if (duration == 0) {
+                return 100;
+            }
+            return Util.constrainValue(Util.percentInt(bufferedPosition, duration), 0, 100);
         }
-        if (duration == 0) {
-            return 100;
-        }
-        return Util.constrainValue(Util.percentInt(bufferedPosition, duration), 0, 100);
+        return 0;
     }
 
     @Override // androidx.media3.common.Player

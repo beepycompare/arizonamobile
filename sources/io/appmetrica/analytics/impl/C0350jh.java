@@ -17,7 +17,7 @@ public final class C0350jh extends N5 {
     /* renamed from: b */
     public final C0402lh load(M5 m5) {
         C0402lh c0402lh = (C0402lh) super.load(m5);
-        c0402lh.m = ((C0273gh) m5.componentArguments).f1004a;
+        c0402lh.m = ((C0273gh) m5.componentArguments).f1005a;
         c0402lh.r = this.b.t.a();
         c0402lh.w = this.b.q.a();
         C0273gh c0273gh = (C0273gh) m5.componentArguments;
@@ -33,12 +33,12 @@ public final class C0350jh extends N5 {
         c0402lh.k = interfaceC0324ih;
         C0273gh c0273gh2 = (C0273gh) m5.componentArguments;
         c0402lh.v = c0273gh2.j;
-        C0278gm c0278gm = m5.f680a;
+        C0278gm c0278gm = m5.f681a;
         C0414m4 c0414m4 = c0278gm.n;
-        c0402lh.n = c0414m4.f1100a;
+        c0402lh.n = c0414m4.f1101a;
         C0723ye c0723ye = c0278gm.s;
         if (c0723ye != null) {
-            c0402lh.s = c0723ye.f1315a;
+            c0402lh.s = c0723ye.f1316a;
             c0402lh.t = c0723ye.b;
         }
         c0402lh.o = c0414m4.b;

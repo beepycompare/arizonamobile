@@ -8,5 +8,5 @@ public interface TimeProvider {
     Time currentTime();
 
     /* renamed from: elapsedRealtime-UwyO8pc  reason: not valid java name */
-    long mo10029elapsedRealtimeUwyO8pc();
+    long mo10044elapsedRealtimeUwyO8pc();
 }

@@ -3,9 +3,9 @@ package androidx.media3.extractor.text;
 import android.os.Bundle;
 import android.os.Parcel;
 import androidx.media3.common.text.Cue;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.BundleCollectionUtil;
 import com.google.common.base.Function;
+import com.google.common.base.Preconditions;
 import java.util.ArrayList;
 /* loaded from: classes3.dex */
 public final class CueDecoder {
@@ -25,6 +25,6 @@ public final class CueDecoder {
                 fromBundle = Cue.fromBundle((Bundle) obj);
                 return fromBundle;
             }
-        }, (ArrayList) Assertions.checkNotNull(readBundle.getParcelableArrayList(BUNDLE_FIELD_CUES))), j, readBundle.getLong("d"));
+        }, (ArrayList) Preconditions.checkNotNull(readBundle.getParcelableArrayList(BUNDLE_FIELD_CUES))), j, readBundle.getLong("d"));
     }
 }

@@ -8,7 +8,7 @@ import org.json.JSONObject;
 public final class G1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0137ba f585a;
+    public final C0137ba f586a;
     public boolean b;
 
     public G1() {
@@ -18,7 +18,7 @@ public final class G1 {
     public final synchronized long a(Context context) {
         String a2;
         try {
-            this.f585a.getClass();
+            this.f586a.getClass();
             a2 = Ka.a(FileUtils.getFileFromAppStorage(context, "metrica_service_settings.dat"));
         } catch (Throwable unused) {
         }
@@ -43,6 +43,6 @@ public final class G1 {
 
     public G1(C0137ba c0137ba) {
         this.b = false;
-        this.f585a = c0137ba;
+        this.f586a = c0137ba;
     }
 }

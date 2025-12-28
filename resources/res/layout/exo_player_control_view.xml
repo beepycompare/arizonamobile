@@ -33,4 +33,7 @@
         <include layout="@layout/exo_player_control_ffwd_button"/>
         <ImageButton android:id="@+id/exo_next" style="@style/ExoStyledControls.Button.Center.Next"/>
     </LinearLayout>
+    <LinearLayout android:layout_gravity="end|top" android:id="@+id/exo_top_controls" android:background="@android:color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <View android:id="@+id/exo_media_route_button_placeholder" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+    </LinearLayout>
 </merge>

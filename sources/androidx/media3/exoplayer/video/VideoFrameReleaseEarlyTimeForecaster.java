@@ -2,10 +2,11 @@ package androidx.media3.exoplayer.video;
 
 import android.util.Range;
 import androidx.media3.common.C;
-import androidx.media3.common.util.Assertions;
+import com.google.common.base.Preconditions;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes3.dex */
-class VideoFrameReleaseEarlyTimeForecaster {
+public class VideoFrameReleaseEarlyTimeForecaster {
     private static final float SMOOTHING_FACTOR = 0.2f;
     private double derivativeOfEarlyTime;
     private Range<Double> derivativeOfEarlyTimeRange;
@@ -13,7 +14,7 @@ class VideoFrameReleaseEarlyTimeForecaster {
     private long lastFramePresentationTimeUs;
 
     public VideoFrameReleaseEarlyTimeForecaster(float f) {
-        Assertions.checkArgument(f > 0.0f);
+        Preconditions.checkArgument(f > 0.0f);
         Range<Double> range = new Range<>(Double.valueOf((double) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE), Double.valueOf(1.0d / f));
         this.derivativeOfEarlyTimeRange = range;
         this.derivativeOfEarlyTime = range.getUpper().doubleValue();
@@ -22,8 +23,8 @@ class VideoFrameReleaseEarlyTimeForecaster {
     }
 
     public void onVideoFrameProcessed(long j, long j2) {
-        Assertions.checkArgument(j != C.TIME_UNSET);
-        Assertions.checkArgument(j2 != C.TIME_UNSET);
+        Preconditions.checkArgument(j != C.TIME_UNSET);
+        Preconditions.checkArgument(j2 != C.TIME_UNSET);
         updateDerivativeWithExponentialMovingAverage(this.derivativeOfEarlyTimeRange.clamp(Double.valueOf(calculateDerivativeFromLastFrame(j, j2))).doubleValue());
         this.lastFramePresentationTimeUs = j;
         this.lastFrameEarlyUs = j2;
@@ -35,7 +36,7 @@ class VideoFrameReleaseEarlyTimeForecaster {
     }
 
     public void setPlaybackSpeed(float f) {
-        Assertions.checkArgument(f > 0.0f);
+        Preconditions.checkArgument(f > 0.0f);
         this.derivativeOfEarlyTimeRange = new Range<>(Double.valueOf((double) FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE), Double.valueOf(1.0d / f));
         reset();
     }

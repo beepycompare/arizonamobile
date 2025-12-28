@@ -4,10 +4,10 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.database.DatabaseIOException;
 import androidx.media3.database.DatabaseProvider;
 import androidx.media3.database.VersionTable;
+import com.google.common.base.Preconditions;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -70,7 +70,7 @@ final class CacheFileMetadataIndex {
             Cursor cursor = getCursor();
             HashMap hashMap = new HashMap(cursor.getCount());
             while (cursor.moveToNext()) {
-                hashMap.put((String) Assertions.checkNotNull(cursor.getString(0)), new CacheFileMetadata(cursor.getLong(1), cursor.getLong(2)));
+                hashMap.put((String) Preconditions.checkNotNull(cursor.getString(0)), new CacheFileMetadata(cursor.getLong(1), cursor.getLong(2)));
             }
             if (cursor != null) {
                 cursor.close();
@@ -82,7 +82,7 @@ final class CacheFileMetadataIndex {
     }
 
     public void set(String str, long j, long j2) throws DatabaseIOException {
-        Assertions.checkNotNull(this.tableName);
+        Preconditions.checkNotNull(this.tableName);
         try {
             SQLiteDatabase writableDatabase = this.databaseProvider.getWritableDatabase();
             ContentValues contentValues = new ContentValues();
@@ -96,7 +96,7 @@ final class CacheFileMetadataIndex {
     }
 
     public void remove(String str) throws DatabaseIOException {
-        Assertions.checkNotNull(this.tableName);
+        Preconditions.checkNotNull(this.tableName);
         try {
             this.databaseProvider.getWritableDatabase().delete(this.tableName, WHERE_NAME_EQUALS, new String[]{str});
         } catch (SQLException e) {
@@ -105,7 +105,7 @@ final class CacheFileMetadataIndex {
     }
 
     public void removeAll(Set<String> set) throws DatabaseIOException {
-        Assertions.checkNotNull(this.tableName);
+        Preconditions.checkNotNull(this.tableName);
         try {
             SQLiteDatabase writableDatabase = this.databaseProvider.getWritableDatabase();
             writableDatabase.beginTransactionNonExclusive();
@@ -121,7 +121,7 @@ final class CacheFileMetadataIndex {
     }
 
     private Cursor getCursor() {
-        Assertions.checkNotNull(this.tableName);
+        Preconditions.checkNotNull(this.tableName);
         return this.databaseProvider.getReadableDatabase().query(this.tableName, COLUMNS, null, null, null, null, null);
     }
 

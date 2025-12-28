@@ -1,7 +1,7 @@
 package androidx.media3.datasource;
 
 import android.net.Uri;
-import androidx.media3.common.util.Assertions;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
@@ -13,13 +13,13 @@ public final class TeeDataSource implements DataSource {
     private final DataSource upstream;
 
     public TeeDataSource(DataSource dataSource, DataSink dataSink) {
-        this.upstream = (DataSource) Assertions.checkNotNull(dataSource);
-        this.dataSink = (DataSink) Assertions.checkNotNull(dataSink);
+        this.upstream = (DataSource) Preconditions.checkNotNull(dataSource);
+        this.dataSink = (DataSink) Preconditions.checkNotNull(dataSink);
     }
 
     @Override // androidx.media3.datasource.DataSource
     public void addTransferListener(TransferListener transferListener) {
-        Assertions.checkNotNull(transferListener);
+        Preconditions.checkNotNull(transferListener);
         this.upstream.addTransferListener(transferListener);
     }
 

@@ -11,7 +11,7 @@ import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.exoplayer.source.MediaSourceEventListener;
 import androidx.media3.exoplayer.upstream.BandwidthMeter;
 import java.util.List;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public interface AnalyticsCollector extends Player.Listener, MediaSourceEventListener, BandwidthMeter.EventListener, DrmSessionEventListener {
     void addListener(AnalyticsListener analyticsListener);
 
@@ -40,6 +40,8 @@ public interface AnalyticsCollector extends Player.Listener, MediaSourceEventLis
     void onAudioUnderrun(int i, long j, long j2);
 
     void onDroppedFrames(int i, long j);
+
+    void onDroppedSeeksWhileScrubbing(int i);
 
     void onRenderedFirstFrame(Object obj, long j);
 

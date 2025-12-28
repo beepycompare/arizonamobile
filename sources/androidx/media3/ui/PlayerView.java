@@ -36,12 +36,13 @@ import androidx.media3.common.Player;
 import androidx.media3.common.Timeline;
 import androidx.media3.common.Tracks;
 import androidx.media3.common.VideoSize;
+import androidx.media3.common.ViewProvider;
 import androidx.media3.common.text.CueGroup;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.ui.AspectRatioFrameLayout;
 import androidx.media3.ui.PlayerControlView;
 import androidx.media3.ui.PlayerView;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -195,7 +196,7 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
             this.setImageOutputMethod = null;
             this.imageOutput = null;
             ImageView imageView = new ImageView(context);
-            configureEditModeLogoV23(context, getResources(), imageView);
+            configureEditModeLogo(context, getResources(), imageView);
             addView(imageView);
             return;
         }
@@ -320,7 +321,7 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
             obj = Proxy.newProxyInstance(cls2.getClassLoader(), new Class[]{cls2}, new InvocationHandler() { // from class: androidx.media3.ui.PlayerView$$ExternalSyntheticLambda0
                 @Override // java.lang.reflect.InvocationHandler
                 public final Object invoke(Object obj2, Method method2, Object[] objArr) {
-                    return PlayerView.this.m9084lambda$new$0$androidxmedia3uiPlayerView(obj2, method2, objArr);
+                    return PlayerView.this.m9099lambda$new$0$androidxmedia3uiPlayerView(obj2, method2, objArr);
                 }
             });
         } catch (ClassNotFoundException | NoSuchMethodException unused) {
@@ -391,7 +392,7 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$androidx-media3-ui-PlayerView  reason: not valid java name */
-    public /* synthetic */ Object m9084lambda$new$0$androidxmedia3uiPlayerView(Object obj, Method method, Object[] objArr) throws Throwable {
+    public /* synthetic */ Object m9099lambda$new$0$androidxmedia3uiPlayerView(Object obj, Method method, Object[] objArr) throws Throwable {
         if (method.getName().equals("onImageAvailable")) {
             onImageAvailable((Bitmap) objArr[1]);
             return null;
@@ -416,8 +417,8 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
     }
 
     public void setPlayer(Player player) {
-        Assertions.checkState(Looper.myLooper() == Looper.getMainLooper());
-        Assertions.checkArgument(player == null || player.getApplicationLooper() == Looper.getMainLooper());
+        Preconditions.checkState(Looper.myLooper() == Looper.getMainLooper());
+        Preconditions.checkArgument(player == null || player.getApplicationLooper() == Looper.getMainLooper());
         Player player2 = this.player;
         if (player2 == player) {
             return;
@@ -474,7 +475,7 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
             return;
         }
         try {
-            ((Method) Assertions.checkNotNull(this.setImageOutputMethod)).invoke(player, Assertions.checkNotNull(this.imageOutput));
+            ((Method) Preconditions.checkNotNull(this.setImageOutputMethod)).invoke(player, Preconditions.checkNotNull(this.imageOutput));
         } catch (IllegalAccessException | InvocationTargetException e) {
             throw new RuntimeException(e);
         }
@@ -486,7 +487,7 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
             return;
         }
         try {
-            ((Method) Assertions.checkNotNull(this.setImageOutputMethod)).invoke(player, null);
+            ((Method) Preconditions.checkNotNull(this.setImageOutputMethod)).invoke(player, null);
         } catch (IllegalAccessException | InvocationTargetException e) {
             throw new RuntimeException(e);
         }
@@ -502,12 +503,12 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
     }
 
     public void setResizeMode(int i) {
-        Assertions.checkStateNotNull(this.contentFrame);
+        Preconditions.checkNotNull(this.contentFrame);
         this.contentFrame.setResizeMode(i);
     }
 
     public int getResizeMode() {
-        Assertions.checkStateNotNull(this.contentFrame);
+        Preconditions.checkNotNull(this.contentFrame);
         return this.contentFrame.getResizeMode();
     }
 
@@ -522,7 +523,7 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
     }
 
     public void setArtworkDisplayMode(int i) {
-        Assertions.checkState(i == 0 || this.artworkView != null);
+        Preconditions.checkState(i == 0 || this.artworkView != null);
         if (this.artworkDisplayMode != i) {
             this.artworkDisplayMode = i;
             updateForCurrentTrackSelections(false);
@@ -545,7 +546,7 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
     }
 
     public void setImageDisplayMode(int i) {
-        Assertions.checkState(this.imageView != null);
+        Preconditions.checkState(this.imageView != null);
         if (this.imageDisplayMode != i) {
             this.imageDisplayMode = i;
             updateImageViewAspectRatio();
@@ -562,7 +563,7 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
 
     public void setUseController(boolean z) {
         boolean z2 = false;
-        Assertions.checkState((z && this.controller == null) ? false : true);
+        Preconditions.checkState((z && this.controller == null) ? false : true);
         if (z || hasOnClickListeners()) {
             z2 = true;
         }
@@ -612,7 +613,7 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
     }
 
     public void setCustomErrorMessage(CharSequence charSequence) {
-        Assertions.checkState(this.errorMessageView != null);
+        Preconditions.checkState(this.errorMessageView != null);
         this.customErrorMessage = charSequence;
         updateErrorMessage();
     }
@@ -663,7 +664,7 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
     }
 
     public void setControllerShowTimeoutMs(int i) {
-        Assertions.checkStateNotNull(this.controller);
+        Preconditions.checkNotNull(this.controller);
         this.controllerShowTimeoutMs = i;
         if (this.controller.isFullyVisible()) {
             showController();
@@ -675,7 +676,7 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
     }
 
     public void setControllerHideOnTouch(boolean z) {
-        Assertions.checkStateNotNull(this.controller);
+        Preconditions.checkNotNull(this.controller);
         this.controllerHideOnTouch = z;
         updateContentDescription();
     }
@@ -700,13 +701,13 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
     }
 
     public void setControllerAnimationEnabled(boolean z) {
-        Assertions.checkStateNotNull(this.controller);
+        Preconditions.checkNotNull(this.controller);
         this.controller.setAnimationEnabled(z);
     }
 
     @Deprecated
     public void setControllerVisibilityListener(PlayerControlView.VisibilityListener visibilityListener) {
-        Assertions.checkStateNotNull(this.controller);
+        Preconditions.checkNotNull(this.controller);
         PlayerControlView.VisibilityListener visibilityListener2 = this.legacyControllerVisibilityListener;
         if (visibilityListener2 == visibilityListener) {
             return;
@@ -722,86 +723,91 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
     }
 
     public void setFullscreenButtonClickListener(FullscreenButtonClickListener fullscreenButtonClickListener) {
-        Assertions.checkStateNotNull(this.controller);
+        Preconditions.checkNotNull(this.controller);
         this.fullscreenButtonClickListener = fullscreenButtonClickListener;
         this.controller.setOnFullScreenModeChangedListener(this.componentListener);
     }
 
     public void setFullscreenButtonState(boolean z) {
-        Assertions.checkStateNotNull(this.controller);
+        Preconditions.checkNotNull(this.controller);
         this.controller.updateIsFullscreen(z);
     }
 
     @Deprecated
     public void setControllerOnFullScreenModeChangedListener(PlayerControlView.OnFullScreenModeChangedListener onFullScreenModeChangedListener) {
-        Assertions.checkStateNotNull(this.controller);
+        Preconditions.checkNotNull(this.controller);
         this.fullscreenButtonClickListener = null;
         this.controller.setOnFullScreenModeChangedListener(onFullScreenModeChangedListener);
     }
 
     public void setShowRewindButton(boolean z) {
-        Assertions.checkStateNotNull(this.controller);
+        Preconditions.checkNotNull(this.controller);
         this.controller.setShowRewindButton(z);
     }
 
     public void setShowFastForwardButton(boolean z) {
-        Assertions.checkStateNotNull(this.controller);
+        Preconditions.checkNotNull(this.controller);
         this.controller.setShowFastForwardButton(z);
     }
 
     public void setShowPreviousButton(boolean z) {
-        Assertions.checkStateNotNull(this.controller);
+        Preconditions.checkNotNull(this.controller);
         this.controller.setShowPreviousButton(z);
     }
 
     public void setShowNextButton(boolean z) {
-        Assertions.checkStateNotNull(this.controller);
+        Preconditions.checkNotNull(this.controller);
         this.controller.setShowNextButton(z);
     }
 
     public void setRepeatToggleModes(int i) {
-        Assertions.checkStateNotNull(this.controller);
+        Preconditions.checkNotNull(this.controller);
         this.controller.setRepeatToggleModes(i);
     }
 
     public void setShowShuffleButton(boolean z) {
-        Assertions.checkStateNotNull(this.controller);
+        Preconditions.checkNotNull(this.controller);
         this.controller.setShowShuffleButton(z);
     }
 
     public void setShowSubtitleButton(boolean z) {
-        Assertions.checkStateNotNull(this.controller);
+        Preconditions.checkNotNull(this.controller);
         this.controller.setShowSubtitleButton(z);
     }
 
     public void setShowVrButton(boolean z) {
-        Assertions.checkStateNotNull(this.controller);
+        Preconditions.checkNotNull(this.controller);
         this.controller.setShowVrButton(z);
+    }
+
+    public void setMediaRouteButtonViewProvider(ViewProvider viewProvider) {
+        Preconditions.checkNotNull(this.controller);
+        this.controller.setMediaRouteButtonViewProvider(viewProvider);
     }
 
     @Deprecated
     public void setShowMultiWindowTimeBar(boolean z) {
-        Assertions.checkStateNotNull(this.controller);
+        Preconditions.checkNotNull(this.controller);
         this.controller.setShowMultiWindowTimeBar(z);
     }
 
     public void setTimeBarScrubbingEnabled(boolean z) {
-        Assertions.checkStateNotNull(this.controller);
+        Preconditions.checkNotNull(this.controller);
         this.controller.setTimeBarScrubbingEnabled(z);
     }
 
     public void setShowPlayButtonIfPlaybackIsSuppressed(boolean z) {
-        Assertions.checkStateNotNull(this.controller);
+        Preconditions.checkNotNull(this.controller);
         this.controller.setShowPlayButtonIfPlaybackIsSuppressed(z);
     }
 
     public void setExtraAdGroupMarkers(long[] jArr, boolean[] zArr) {
-        Assertions.checkStateNotNull(this.controller);
+        Preconditions.checkNotNull(this.controller);
         this.controller.setExtraAdGroupMarkers(jArr, zArr);
     }
 
     public void setAspectRatioListener(AspectRatioFrameLayout.AspectRatioListener aspectRatioListener) {
-        Assertions.checkStateNotNull(this.contentFrame);
+        Preconditions.checkNotNull(this.contentFrame);
         this.contentFrame.setAspectRatioListener(aspectRatioListener);
     }
 
@@ -858,7 +864,7 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
 
     @Override // androidx.media3.common.AdViewProvider
     public ViewGroup getAdViewGroup() {
-        return (ViewGroup) Assertions.checkStateNotNull(this.adOverlayFrameLayout, "exo_ad_overlay must be present for ad playback");
+        return (ViewGroup) Preconditions.checkNotNull(this.adOverlayFrameLayout, "exo_ad_overlay must be present for ad playback");
     }
 
     @Override // androidx.media3.common.AdViewProvider
@@ -876,7 +882,7 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
     @EnsuresNonNullIf(expression = {"controller"}, result = true)
     private boolean useController() {
         if (this.useController) {
-            Assertions.checkStateNotNull(this.controller);
+            Preconditions.checkNotNull(this.controller);
             return true;
         }
         return false;
@@ -884,7 +890,7 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
 
     private boolean useArtwork() {
         if (this.artworkDisplayMode != 0) {
-            Assertions.checkStateNotNull(this.artworkView);
+            Preconditions.checkNotNull(this.artworkView);
             return true;
         }
         return false;
@@ -922,7 +928,7 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
             if (this.player.isCommandAvailable(17) && this.player.getCurrentTimeline().isEmpty()) {
                 return false;
             }
-            return playbackState == 1 || playbackState == 4 || !((Player) Assertions.checkNotNull(this.player)).getPlayWhenReady();
+            return playbackState == 1 || playbackState == 4 || !((Player) Preconditions.checkNotNull(this.player)).getPlayWhenReady();
         }
         return false;
     }
@@ -1091,14 +1097,14 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
         this.mainLooperHandler.post(new Runnable() { // from class: androidx.media3.ui.PlayerView$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                PlayerView.this.m9085lambda$onImageAvailable$1$androidxmedia3uiPlayerView(bitmap);
+                PlayerView.this.m9100lambda$onImageAvailable$1$androidxmedia3uiPlayerView(bitmap);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onImageAvailable$1$androidx-media3-ui-PlayerView  reason: not valid java name */
-    public /* synthetic */ void m9085lambda$onImageAvailable$1$androidxmedia3uiPlayerView(Bitmap bitmap) {
+    public /* synthetic */ void m9100lambda$onImageAvailable$1$androidxmedia3uiPlayerView(Bitmap bitmap) {
         setImage(new BitmapDrawable(getResources(), bitmap));
         if (hasSelectedVideoTrack()) {
             return;
@@ -1201,14 +1207,9 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
         }
     }
 
-    private static void configureEditModeLogoV23(Context context, Resources resources, ImageView imageView) {
-        imageView.setImageDrawable(Util.getDrawable(context, resources, R.drawable.exo_edit_mode_logo));
-        imageView.setBackgroundColor(resources.getColor(R.color.exo_edit_mode_background_color, null));
-    }
-
     private static void configureEditModeLogo(Context context, Resources resources, ImageView imageView) {
         imageView.setImageDrawable(Util.getDrawable(context, resources, R.drawable.exo_edit_mode_logo));
-        imageView.setBackgroundColor(resources.getColor(R.color.exo_edit_mode_background_color));
+        imageView.setBackgroundColor(resources.getColor(R.color.exo_edit_mode_background_color, null));
     }
 
     private static void setResizeModeRaw(AspectRatioFrameLayout aspectRatioFrameLayout, int i) {
@@ -1243,7 +1244,7 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
         public void onSurfaceSizeChanged(int i, int i2) {
             if (Build.VERSION.SDK_INT == 34 && (PlayerView.this.surfaceView instanceof SurfaceView) && PlayerView.this.enableComposeSurfaceSyncWorkaround) {
                 final PlayerView playerView = PlayerView.this;
-                ((SurfaceSyncGroupCompatV34) Assertions.checkNotNull(PlayerView.this.surfaceSyncGroupV34)).postRegister(PlayerView.this.mainLooperHandler, (SurfaceView) PlayerView.this.surfaceView, new Runnable() { // from class: androidx.media3.ui.PlayerView$ComponentListener$$ExternalSyntheticLambda0
+                ((SurfaceSyncGroupCompatV34) Preconditions.checkNotNull(PlayerView.this.surfaceSyncGroupV34)).postRegister(PlayerView.this.mainLooperHandler, (SurfaceView) PlayerView.this.surfaceView, new Runnable() { // from class: androidx.media3.ui.PlayerView$ComponentListener$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
                         PlayerView.this.invalidate();
@@ -1267,7 +1268,7 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
         @Override // androidx.media3.common.Player.Listener
         public void onTracksChanged(Tracks tracks) {
             Timeline timeline;
-            Player player = (Player) Assertions.checkNotNull(PlayerView.this.player);
+            Player player = (Player) Preconditions.checkNotNull(PlayerView.this.player);
             if (player.isCommandAvailable(17)) {
                 timeline = player.getCurrentTimeline();
             } else {
@@ -1359,21 +1360,21 @@ public class PlayerView extends FrameLayout implements AdViewProvider {
             handler.post(new Runnable() { // from class: androidx.media3.ui.PlayerView$SurfaceSyncGroupCompatV34$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PlayerView.SurfaceSyncGroupCompatV34.this.m9087xd2b35cc8(surfaceView, runnable);
+                    PlayerView.SurfaceSyncGroupCompatV34.this.m9102xd2b35cc8(surfaceView, runnable);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$postRegister$1$androidx-media3-ui-PlayerView$SurfaceSyncGroupCompatV34  reason: not valid java name */
-        public /* synthetic */ void m9087xd2b35cc8(SurfaceView surfaceView, Runnable runnable) {
+        public /* synthetic */ void m9102xd2b35cc8(SurfaceView surfaceView, Runnable runnable) {
             AttachedSurfaceControl rootSurfaceControl = surfaceView.getRootSurfaceControl();
             if (rootSurfaceControl == null) {
                 return;
             }
             SurfaceSyncGroup surfaceSyncGroup = new SurfaceSyncGroup("exo-sync-b-334901521");
             this.surfaceSyncGroup = surfaceSyncGroup;
-            Assertions.checkState(surfaceSyncGroup.add(rootSurfaceControl, new Runnable() { // from class: androidx.media3.ui.PlayerView$SurfaceSyncGroupCompatV34$$ExternalSyntheticLambda1
+            Preconditions.checkState(surfaceSyncGroup.add(rootSurfaceControl, new Runnable() { // from class: androidx.media3.ui.PlayerView$SurfaceSyncGroupCompatV34$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
                     PlayerView.SurfaceSyncGroupCompatV34.lambda$postRegister$0();

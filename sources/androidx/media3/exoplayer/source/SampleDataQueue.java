@@ -1,7 +1,6 @@
 package androidx.media3.exoplayer.source;
 
 import androidx.media3.common.DataReader;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
 import androidx.media3.decoder.CryptoInfo;
@@ -10,13 +9,13 @@ import androidx.media3.exoplayer.source.SampleQueue;
 import androidx.media3.exoplayer.upstream.Allocation;
 import androidx.media3.exoplayer.upstream.Allocator;
 import androidx.media3.extractor.TrackOutput;
+import com.google.common.base.Preconditions;
 import java.io.EOFException;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes3.dex */
-public class SampleDataQueue {
+class SampleDataQueue {
     private static final int INITIAL_SCRATCH_SIZE = 32;
     private final int allocationLength;
     private final Allocator allocator;
@@ -48,7 +47,7 @@ public class SampleDataQueue {
     }
 
     public void discardUpstreamSampleBytes(long j) {
-        Assertions.checkArgument(j <= this.totalBytesWritten);
+        Preconditions.checkArgument(j <= this.totalBytesWritten);
         this.totalBytesWritten = j;
         if (j == 0 || j == this.firstAllocationNode.startPosition) {
             clearAllocationNodes(this.firstAllocationNode);
@@ -62,7 +61,7 @@ public class SampleDataQueue {
         while (this.totalBytesWritten > allocationNode2.endPosition) {
             allocationNode2 = allocationNode2.next;
         }
-        AllocationNode allocationNode3 = (AllocationNode) Assertions.checkNotNull(allocationNode2.next);
+        AllocationNode allocationNode3 = (AllocationNode) Preconditions.checkNotNull(allocationNode2.next);
         clearAllocationNodes(allocationNode3);
         allocationNode2.next = new AllocationNode(allocationNode2.endPosition, this.allocationLength);
         this.writeAllocationNode = this.totalBytesWritten == allocationNode2.endPosition ? allocationNode2.next : allocationNode2;
@@ -270,7 +269,7 @@ public class SampleDataQueue {
         }
 
         public void reset(long j, int i) {
-            Assertions.checkState(this.allocation == null);
+            Preconditions.checkState(this.allocation == null);
             this.startPosition = j;
             this.endPosition = j + i;
         }
@@ -293,7 +292,7 @@ public class SampleDataQueue {
 
         @Override // androidx.media3.exoplayer.upstream.Allocator.AllocationNode
         public Allocation getAllocation() {
-            return (Allocation) Assertions.checkNotNull(this.allocation);
+            return (Allocation) Preconditions.checkNotNull(this.allocation);
         }
 
         @Override // androidx.media3.exoplayer.upstream.Allocator.AllocationNode

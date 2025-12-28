@@ -9,6 +9,7 @@ import android.view.Surface;
 import androidx.media3.decoder.CryptoInfo;
 import androidx.media3.exoplayer.mediacodec.MediaCodecAdapter;
 import java.nio.ByteBuffer;
+import java.util.List;
 /* loaded from: classes3.dex */
 public class ForwardingMediaCodecAdapter implements MediaCodecAdapter {
     private final MediaCodecAdapter delegate;
@@ -35,6 +36,11 @@ public class ForwardingMediaCodecAdapter implements MediaCodecAdapter {
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecAdapter
     public ByteBuffer getInputBuffer(int i) {
         return this.delegate.getInputBuffer(i);
+    }
+
+    @Override // androidx.media3.exoplayer.mediacodec.MediaCodecAdapter
+    public void useInputBuffer(Runnable runnable) {
+        this.delegate.useInputBuffer(runnable);
     }
 
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecAdapter
@@ -110,5 +116,15 @@ public class ForwardingMediaCodecAdapter implements MediaCodecAdapter {
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecAdapter
     public PersistableBundle getMetrics() {
         return this.delegate.getMetrics();
+    }
+
+    @Override // androidx.media3.exoplayer.mediacodec.MediaCodecAdapter
+    public void subscribeToVendorParameters(List<String> list) {
+        this.delegate.subscribeToVendorParameters(list);
+    }
+
+    @Override // androidx.media3.exoplayer.mediacodec.MediaCodecAdapter
+    public void unsubscribeFromVendorParameters(List<String> list) {
+        this.delegate.unsubscribeFromVendorParameters(list);
     }
 }

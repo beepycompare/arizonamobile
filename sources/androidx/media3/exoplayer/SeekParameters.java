@@ -1,7 +1,7 @@
 package androidx.media3.exoplayer;
 
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 /* loaded from: classes.dex */
 public final class SeekParameters {
     public static final SeekParameters CLOSEST_SYNC;
@@ -22,8 +22,8 @@ public final class SeekParameters {
     }
 
     public SeekParameters(long j, long j2) {
-        Assertions.checkArgument(j >= 0);
-        Assertions.checkArgument(j2 >= 0);
+        Preconditions.checkArgument(j >= 0);
+        Preconditions.checkArgument(j2 >= 0);
         this.toleranceBeforeUs = j;
         this.toleranceAfterUs = j2;
     }

@@ -2,7 +2,6 @@ package androidx.media3.datasource.cache;
 
 import android.net.Uri;
 import androidx.media3.common.PriorityTaskManager;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.datasource.DataSink;
 import androidx.media3.datasource.DataSource;
@@ -15,6 +14,7 @@ import androidx.media3.datasource.TeeDataSource;
 import androidx.media3.datasource.TransferListener;
 import androidx.media3.datasource.cache.Cache;
 import androidx.media3.datasource.cache.CacheDataSink;
+import com.google.common.base.Preconditions;
 import java.io.File;
 import java.io.IOException;
 import java.io.InterruptedIOException;
@@ -166,7 +166,7 @@ public final class CacheDataSource implements DataSource {
 
         private CacheDataSource createDataSourceInternal(DataSource dataSource, int i, int i2) {
             DataSink dataSink;
-            Cache cache = (Cache) Assertions.checkNotNull(this.cache);
+            Cache cache = (Cache) Preconditions.checkNotNull(this.cache);
             if (this.cacheIsReadOnly || dataSource == null) {
                 dataSink = null;
             } else {
@@ -225,7 +225,7 @@ public final class CacheDataSource implements DataSource {
 
     @Override // androidx.media3.datasource.DataSource
     public void addTransferListener(TransferListener transferListener) {
-        Assertions.checkNotNull(transferListener);
+        Preconditions.checkNotNull(transferListener);
         this.cacheReadDataSource.addTransferListener(transferListener);
         this.upstreamDataSource.addTransferListener(transferListener);
     }
@@ -293,13 +293,13 @@ public final class CacheDataSource implements DataSource {
         if (this.bytesRemaining == 0) {
             return -1;
         }
-        DataSpec dataSpec = (DataSpec) Assertions.checkNotNull(this.requestDataSpec);
-        DataSpec dataSpec2 = (DataSpec) Assertions.checkNotNull(this.currentDataSpec);
+        DataSpec dataSpec = (DataSpec) Preconditions.checkNotNull(this.requestDataSpec);
+        DataSpec dataSpec2 = (DataSpec) Preconditions.checkNotNull(this.currentDataSpec);
         try {
             if (this.readPosition >= this.checkCachePosition) {
                 openNextSource(dataSpec, true);
             }
-            int read = ((DataSource) Assertions.checkNotNull(this.currentDataSource)).read(bArr, i, i2);
+            int read = ((DataSource) Preconditions.checkNotNull(this.currentDataSource)).read(bArr, i, i2);
             if (read != -1) {
                 if (isReadingFromCache()) {
                     this.totalCachedBytesRead += read;
@@ -416,7 +416,7 @@ public final class CacheDataSource implements DataSource {
         }
         this.checkCachePosition = (this.currentRequestIgnoresCache || dataSource != this.upstreamDataSource) ? Long.MAX_VALUE : this.readPosition + MIN_READ_BEFORE_CHECKING_CACHE;
         if (z) {
-            Assertions.checkState(isBypassingCache());
+            Preconditions.checkState(isBypassingCache());
             if (dataSource == this.upstreamDataSource) {
                 return;
             }

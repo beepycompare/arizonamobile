@@ -6,10 +6,10 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Message;
 import android.view.Surface;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.EGLSurfaceTexture;
 import androidx.media3.common.util.GlUtil;
 import androidx.media3.common.util.Log;
+import com.google.common.base.Preconditions;
 /* loaded from: classes3.dex */
 public final class PlaceholderSurface extends Surface {
     private static final String TAG = "PlaceholderSurface";
@@ -37,7 +37,7 @@ public final class PlaceholderSurface extends Surface {
     }
 
     public static PlaceholderSurface newInstance(Context context, boolean z) {
-        Assertions.checkState(!z || isSecureSupported(context));
+        Preconditions.checkState(!z || isSecureSupported(context));
         return new PlaceholderSurfaceThread().init(z ? secureMode : 0);
     }
 
@@ -112,11 +112,11 @@ public final class PlaceholderSurface extends Surface {
             if (error != null) {
                 throw error;
             }
-            return (PlaceholderSurface) Assertions.checkNotNull(this.surface);
+            return (PlaceholderSurface) Preconditions.checkNotNull(this.surface);
         }
 
         public void release() {
-            Assertions.checkNotNull(this.handler);
+            Preconditions.checkNotNull(this.handler);
             this.handler.sendEmptyMessage(2);
         }
 
@@ -172,13 +172,13 @@ public final class PlaceholderSurface extends Surface {
         }
 
         private void initInternal(int i) throws GlUtil.GlException {
-            Assertions.checkNotNull(this.eglSurfaceTexture);
+            Preconditions.checkNotNull(this.eglSurfaceTexture);
             this.eglSurfaceTexture.init(i);
             this.surface = new PlaceholderSurface(this, this.eglSurfaceTexture.getSurfaceTexture(), i != 0);
         }
 
         private void releaseInternal() {
-            Assertions.checkNotNull(this.eglSurfaceTexture);
+            Preconditions.checkNotNull(this.eglSurfaceTexture);
             this.eglSurfaceTexture.release();
         }
     }

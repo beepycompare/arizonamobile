@@ -2,7 +2,7 @@ package androidx.media3.exoplayer;
 
 import android.os.HandlerThread;
 import android.os.Looper;
-import androidx.media3.common.util.Assertions;
+import com.google.common.base.Preconditions;
 /* loaded from: classes.dex */
 public final class PlaybackLooperProvider {
     private HandlerThread internalPlaybackThread;
@@ -25,7 +25,7 @@ public final class PlaybackLooperProvider {
         Looper looper;
         synchronized (this.lock) {
             if (this.playbackLooper == null) {
-                Assertions.checkState(this.referenceCount == 0 && this.internalPlaybackThread == null);
+                Preconditions.checkState(this.referenceCount == 0 && this.internalPlaybackThread == null);
                 HandlerThread handlerThread = new HandlerThread("ExoPlayer:Playback", -16);
                 this.internalPlaybackThread = handlerThread;
                 handlerThread.start();
@@ -40,7 +40,7 @@ public final class PlaybackLooperProvider {
     public void releaseLooper() {
         HandlerThread handlerThread;
         synchronized (this.lock) {
-            Assertions.checkState(this.referenceCount > 0);
+            Preconditions.checkState(this.referenceCount > 0);
             int i = this.referenceCount - 1;
             this.referenceCount = i;
             if (i == 0 && (handlerThread = this.internalPlaybackThread) != null) {

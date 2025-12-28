@@ -16,7 +16,7 @@ import ru.rustore.sdk.appupdate.model.AppUpdateInfo;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public static boolean f268a = false;
+    public static boolean f269a = false;
 
     public static void a(Set set, Map map, Map map2) {
         Iterator it = set.iterator();
@@ -30,7 +30,7 @@ public final class d {
 
     public static void a(Context context, c cVar, a aVar, Map map, String str, String str2) {
         byte[] bArr;
-        if (f268a) {
+        if (f269a) {
             Log.e("SignerInstance", "sign: library received error. It has locked down");
         } else if (map == null || map.size() == 0 || str == null || str2 == null) {
             Log.e("SignerInstance", "sign: One or more parameters are null");
@@ -54,7 +54,7 @@ public final class d {
                     break;
                 } catch (b e) {
                     Log.e("SignerInstance", "sign: Api is less than JellyBean-4-18");
-                    f268a = true;
+                    f269a = true;
                     map.remove("activity_kind");
                     map.remove("client_sdk");
                     throw e;
@@ -74,7 +74,7 @@ public final class d {
                 cVar.a(context);
             }
             if (i == 0) {
-                f268a = true;
+                f269a = true;
                 map.remove("activity_kind");
                 map.remove("client_sdk");
                 return;
@@ -82,7 +82,7 @@ public final class d {
             if (equals) {
                 Log.v("SignerInstance", "Calling native begin: " + simpleDateFormat.format(new Date(System.currentTimeMillis())));
             }
-            byte[] a2 = ((NativeLibHelper) aVar).a(context, map, bArr, cVar.f267a);
+            byte[] a2 = ((NativeLibHelper) aVar).a(context, map, bArr, cVar.f268a);
             if (equals) {
                 Log.v("SignerInstance", "Calling native end  : " + simpleDateFormat.format(new Date(System.currentTimeMillis())));
             }
@@ -93,12 +93,12 @@ public final class d {
                 return;
             }
             int length = a2.length;
-            char[] cArr = e.f269a;
+            char[] cArr = e.f270a;
             char[] cArr2 = new char[length * 2];
             for (int i2 = 0; i2 < length; i2++) {
                 byte b = a2[i2];
                 int i3 = i2 * 2;
-                char[] cArr3 = e.f269a;
+                char[] cArr3 = e.f270a;
                 cArr2[i3] = cArr3[(b & 255) >>> 4];
                 cArr2[i3 + 1] = cArr3[b & Ascii.SI];
             }

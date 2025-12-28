@@ -1,7 +1,7 @@
 package androidx.media3.common.audio;
 
 import androidx.media3.common.audio.AudioProcessor;
-import androidx.media3.common.util.Assertions;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -27,7 +27,7 @@ public final class AudioProcessingPipeline {
             AudioProcessor audioProcessor = this.audioProcessors.get(i);
             AudioProcessor.AudioFormat configure = audioProcessor.configure(audioFormat);
             if (audioProcessor.isActive()) {
-                Assertions.checkState(!configure.equals(AudioProcessor.AudioFormat.NOT_SET));
+                Preconditions.checkState(!configure.equals(AudioProcessor.AudioFormat.NOT_SET));
                 audioFormat = configure;
             }
         }
@@ -35,14 +35,22 @@ public final class AudioProcessingPipeline {
         return audioFormat;
     }
 
+    @Deprecated
     public void flush() {
+        flush(AudioProcessor.StreamMetadata.DEFAULT);
+    }
+
+    public void flush(AudioProcessor.StreamMetadata streamMetadata) {
         this.activeAudioProcessors.clear();
         this.outputAudioFormat = this.pendingOutputAudioFormat;
         this.inputEnded = false;
+        long j = streamMetadata.positionOffsetUs;
         for (int i = 0; i < this.audioProcessors.size(); i++) {
             AudioProcessor audioProcessor = this.audioProcessors.get(i);
-            audioProcessor.flush();
+            audioProcessor.flush(new AudioProcessor.StreamMetadata(j));
             if (audioProcessor.isActive()) {
+                j = audioProcessor.getDurationAfterProcessorApplied(j);
+                Preconditions.checkState(j >= 0);
                 this.activeAudioProcessors.add(audioProcessor);
             }
         }
@@ -94,7 +102,7 @@ public final class AudioProcessingPipeline {
     public void reset() {
         for (int i = 0; i < this.audioProcessors.size(); i++) {
             AudioProcessor audioProcessor = this.audioProcessors.get(i);
-            audioProcessor.flush();
+            audioProcessor.flush(AudioProcessor.StreamMetadata.DEFAULT);
             audioProcessor.reset();
         }
         this.outputBuffers = new ByteBuffer[0];

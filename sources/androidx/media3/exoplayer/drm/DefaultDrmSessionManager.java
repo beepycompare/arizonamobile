@@ -11,7 +11,6 @@ import androidx.media3.common.DrmInitData;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.PlaybackException;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.analytics.PlayerId;
@@ -23,6 +22,7 @@ import androidx.media3.exoplayer.drm.DrmSessionManager;
 import androidx.media3.exoplayer.drm.ExoMediaDrm;
 import androidx.media3.exoplayer.upstream.DefaultLoadErrorHandlingPolicy;
 import androidx.media3.exoplayer.upstream.LoadErrorHandlingPolicy;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
@@ -43,7 +43,7 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.UUID;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class DefaultDrmSessionManager implements DrmSessionManager {
     public static final long DEFAULT_SESSION_KEEPALIVE_MS = 300000;
     public static final int INITIAL_DRM_REQUEST_RETRY_COUNT = 3;
@@ -81,11 +81,11 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
     @Target({ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface Mode {
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Builder {
         private boolean multiSession;
         private final HashMap<String, String> keyRequestParameters = new HashMap<>();
@@ -105,8 +105,8 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
         }
 
         public Builder setUuidAndExoMediaDrmProvider(UUID uuid, ExoMediaDrm.Provider provider) {
-            this.uuid = (UUID) Assertions.checkNotNull(uuid);
-            this.exoMediaDrmProvider = (ExoMediaDrm.Provider) Assertions.checkNotNull(provider);
+            this.uuid = (UUID) Preconditions.checkNotNull(uuid);
+            this.exoMediaDrmProvider = (ExoMediaDrm.Provider) Preconditions.checkNotNull(provider);
             return this;
         }
 
@@ -121,7 +121,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
                 if (i != 2 && i != 1) {
                     z = false;
                 }
-                Assertions.checkArgument(z);
+                Preconditions.checkArgument(z);
             }
             this.useDrmSessionsForClearContentTrackTypes = (int[]) iArr.clone();
             return this;
@@ -133,12 +133,12 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
         }
 
         public Builder setLoadErrorHandlingPolicy(LoadErrorHandlingPolicy loadErrorHandlingPolicy) {
-            this.loadErrorHandlingPolicy = (LoadErrorHandlingPolicy) Assertions.checkNotNull(loadErrorHandlingPolicy);
+            this.loadErrorHandlingPolicy = (LoadErrorHandlingPolicy) Preconditions.checkNotNull(loadErrorHandlingPolicy);
             return this;
         }
 
         public Builder setSessionKeepaliveMs(long j) {
-            Assertions.checkArgument(j > 0 || j == C.TIME_UNSET);
+            Preconditions.checkArgument(j > 0 || j == C.TIME_UNSET);
             this.sessionKeepaliveMs = j;
             return this;
         }
@@ -148,7 +148,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class MissingSchemeDataException extends Exception {
         private MissingSchemeDataException(UUID uuid) {
             super("Media does not support uuid: " + uuid);
@@ -156,8 +156,8 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
     }
 
     private DefaultDrmSessionManager(UUID uuid, ExoMediaDrm.Provider provider, MediaDrmCallback mediaDrmCallback, HashMap<String, String> hashMap, boolean z, int[] iArr, boolean z2, LoadErrorHandlingPolicy loadErrorHandlingPolicy, long j) {
-        Assertions.checkNotNull(uuid);
-        Assertions.checkArgument(!C.COMMON_PSSH_UUID.equals(uuid), "Use C.CLEARKEY_UUID instead");
+        Preconditions.checkNotNull(uuid);
+        Preconditions.checkArgument(!C.COMMON_PSSH_UUID.equals(uuid), "Use C.CLEARKEY_UUID instead");
         this.uuid = uuid;
         this.exoMediaDrmProvider = provider;
         this.callback = mediaDrmCallback;
@@ -176,9 +176,9 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
     }
 
     public void setMode(int i, byte[] bArr) {
-        Assertions.checkState(this.sessions.isEmpty());
+        Preconditions.checkState(this.sessions.isEmpty());
         if (i == 1 || i == 3) {
-            Assertions.checkNotNull(bArr);
+            Preconditions.checkNotNull(bArr);
         }
         this.mode = i;
         this.offlineLicenseKeySetId = bArr;
@@ -229,8 +229,8 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
 
     @Override // androidx.media3.exoplayer.drm.DrmSessionManager
     public DrmSessionManager.DrmSessionReference preacquireSession(DrmSessionEventListener.EventDispatcher eventDispatcher, Format format) {
-        Assertions.checkState(this.prepareCallsCount > 0);
-        Assertions.checkStateNotNull(this.playbackLooper);
+        Preconditions.checkState(this.prepareCallsCount > 0);
+        Preconditions.checkNotNull(this.playbackLooper);
         PreacquiredSessionReference preacquiredSessionReference = new PreacquiredSessionReference(eventDispatcher);
         preacquiredSessionReference.acquire(format);
         return preacquiredSessionReference;
@@ -239,8 +239,8 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
     @Override // androidx.media3.exoplayer.drm.DrmSessionManager
     public DrmSession acquireSession(DrmSessionEventListener.EventDispatcher eventDispatcher, Format format) {
         verifyPlaybackThread(false);
-        Assertions.checkState(this.prepareCallsCount > 0);
-        Assertions.checkStateNotNull(this.playbackLooper);
+        Preconditions.checkState(this.prepareCallsCount > 0);
+        Preconditions.checkNotNull(this.playbackLooper);
         return acquireSession(this.playbackLooper, eventDispatcher, format, true);
     }
 
@@ -253,7 +253,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
         }
         DefaultDrmSession defaultDrmSession = null;
         if (this.offlineLicenseKeySetId == null) {
-            list = getSchemeDatas((DrmInitData) Assertions.checkNotNull(format.drmInitData), this.uuid, false);
+            list = getSchemeDatas((DrmInitData) Preconditions.checkNotNull(format.drmInitData), this.uuid, false);
             if (list.isEmpty()) {
                 MissingSchemeDataException missingSchemeDataException = new MissingSchemeDataException(this.uuid);
                 Log.e(TAG, "DRM error", missingSchemeDataException);
@@ -295,7 +295,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
     @Override // androidx.media3.exoplayer.drm.DrmSessionManager
     public int getCryptoType(Format format) {
         verifyPlaybackThread(false);
-        int cryptoType = ((ExoMediaDrm) Assertions.checkNotNull(this.exoMediaDrm)).getCryptoType();
+        int cryptoType = ((ExoMediaDrm) Preconditions.checkNotNull(this.exoMediaDrm)).getCryptoType();
         if (format.drmInitData == null) {
             if (Util.linearSearch(this.useDrmSessionsForClearContentTrackTypes, MimeTypes.getTrackType(format.sampleMimeType)) == -1) {
                 return 0;
@@ -307,7 +307,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
     }
 
     private DrmSession maybeAcquirePlaceholderSession(int i, boolean z) {
-        ExoMediaDrm exoMediaDrm = (ExoMediaDrm) Assertions.checkNotNull(this.exoMediaDrm);
+        ExoMediaDrm exoMediaDrm = (ExoMediaDrm) Preconditions.checkNotNull(this.exoMediaDrm);
         if ((exoMediaDrm.getCryptoType() == 2 && FrameworkCryptoConfig.WORKAROUND_DEVICE_NEEDS_KEYS_TO_CONFIGURE_CODEC) || Util.linearSearch(this.useDrmSessionsForClearContentTrackTypes, i) == -1 || exoMediaDrm.getCryptoType() == 1) {
             return null;
         }
@@ -346,8 +346,8 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
             this.playbackLooper = looper;
             this.playbackHandler = new Handler(looper);
         } else {
-            Assertions.checkState(looper2 == looper);
-            Assertions.checkNotNull(this.playbackHandler);
+            Preconditions.checkState(looper2 == looper);
+            Preconditions.checkNotNull(this.playbackHandler);
         }
     }
 
@@ -379,7 +379,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
         if (drmSession.getState() != 1) {
             return false;
         }
-        Throwable cause = ((DrmSession.DrmSessionException) Assertions.checkNotNull(drmSession.getError())).getCause();
+        Throwable cause = ((DrmSession.DrmSessionException) Preconditions.checkNotNull(drmSession.getError())).getCause();
         return (cause instanceof ResourceBusyException) || DrmUtil.isFailureToConstructResourceBusyException(cause);
     }
 
@@ -405,8 +405,8 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
     }
 
     private DefaultDrmSession createAndAcquireSession(List<DrmInitData.SchemeData> list, boolean z, DrmSessionEventListener.EventDispatcher eventDispatcher) {
-        Assertions.checkNotNull(this.exoMediaDrm);
-        DefaultDrmSession defaultDrmSession = new DefaultDrmSession(this.uuid, this.exoMediaDrm, this.provisioningManagerImpl, this.referenceCountListener, list, this.mode, this.playClearSamplesWithoutKeys | z, z, this.offlineLicenseKeySetId, this.keyRequestParameters, this.callback, (Looper) Assertions.checkNotNull(this.playbackLooper), this.loadErrorHandlingPolicy, (PlayerId) Assertions.checkNotNull(this.playerId));
+        Preconditions.checkNotNull(this.exoMediaDrm);
+        DefaultDrmSession defaultDrmSession = new DefaultDrmSession(this.uuid, this.exoMediaDrm, this.provisioningManagerImpl, this.referenceCountListener, list, this.mode, this.playClearSamplesWithoutKeys | z, z, this.offlineLicenseKeySetId, this.keyRequestParameters, this.callback, (Looper) Preconditions.checkNotNull(this.playbackLooper), this.loadErrorHandlingPolicy, (PlayerId) Preconditions.checkNotNull(this.playerId));
         defaultDrmSession.acquire(eventDispatcher);
         if (this.sessionKeepaliveMs != C.TIME_UNSET) {
             defaultDrmSession.acquire(null);
@@ -417,7 +417,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
     /* JADX INFO: Access modifiers changed from: private */
     public void maybeReleaseMediaDrm() {
         if (this.exoMediaDrm != null && this.prepareCallsCount == 0 && this.sessions.isEmpty() && this.preacquiredSessionReferences.isEmpty()) {
-            ((ExoMediaDrm) Assertions.checkNotNull(this.exoMediaDrm)).release();
+            ((ExoMediaDrm) Preconditions.checkNotNull(this.exoMediaDrm)).release();
             this.exoMediaDrm = null;
         }
     }
@@ -425,7 +425,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
     private void verifyPlaybackThread(boolean z) {
         if (z && this.playbackLooper == null) {
             Log.w(TAG, "DefaultDrmSessionManager accessed before setPlayer(), possibly on the wrong thread.", new IllegalStateException());
-        } else if (Thread.currentThread() != ((Looper) Assertions.checkNotNull(this.playbackLooper)).getThread()) {
+        } else if (Thread.currentThread() != ((Looper) Preconditions.checkNotNull(this.playbackLooper)).getThread()) {
             Log.w(TAG, "DefaultDrmSessionManager accessed on the wrong thread.\nCurrent thread: " + Thread.currentThread().getName() + "\nExpected thread: " + this.playbackLooper.getThread().getName(), new IllegalStateException());
         }
     }
@@ -442,7 +442,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public class MediaDrmHandler extends Handler {
         public MediaDrmHandler(Looper looper) {
             super(looper);
@@ -464,7 +464,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public class ProvisioningManagerImpl implements DefaultDrmSession.ProvisioningManager {
         private DefaultDrmSession provisioningSession;
         private final Set<DefaultDrmSession> sessionsAwaitingProvisioning = new HashSet();
@@ -519,7 +519,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public class ReferenceCountListenerImpl implements DefaultDrmSession.ReferenceCountListener {
         private ReferenceCountListenerImpl() {
         }
@@ -528,7 +528,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
         public void onReferenceCountIncremented(DefaultDrmSession defaultDrmSession, int i) {
             if (DefaultDrmSessionManager.this.sessionKeepaliveMs != C.TIME_UNSET) {
                 DefaultDrmSessionManager.this.keepaliveSessions.remove(defaultDrmSession);
-                ((Handler) Assertions.checkNotNull(DefaultDrmSessionManager.this.playbackHandler)).removeCallbacksAndMessages(defaultDrmSession);
+                ((Handler) Preconditions.checkNotNull(DefaultDrmSessionManager.this.playbackHandler)).removeCallbacksAndMessages(defaultDrmSession);
             }
         }
 
@@ -536,7 +536,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
         public void onReferenceCountDecremented(final DefaultDrmSession defaultDrmSession, int i) {
             if (i == 1 && DefaultDrmSessionManager.this.prepareCallsCount > 0 && DefaultDrmSessionManager.this.sessionKeepaliveMs != C.TIME_UNSET) {
                 DefaultDrmSessionManager.this.keepaliveSessions.add(defaultDrmSession);
-                ((Handler) Assertions.checkNotNull(DefaultDrmSessionManager.this.playbackHandler)).postAtTime(new Runnable() { // from class: androidx.media3.exoplayer.drm.DefaultDrmSessionManager$ReferenceCountListenerImpl$$ExternalSyntheticLambda0
+                ((Handler) Preconditions.checkNotNull(DefaultDrmSessionManager.this.playbackHandler)).postAtTime(new Runnable() { // from class: androidx.media3.exoplayer.drm.DefaultDrmSessionManager$ReferenceCountListenerImpl$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
                         DefaultDrmSession.this.release(null);
@@ -552,7 +552,7 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
                 }
                 DefaultDrmSessionManager.this.provisioningManagerImpl.onSessionFullyReleased(defaultDrmSession);
                 if (DefaultDrmSessionManager.this.sessionKeepaliveMs != C.TIME_UNSET) {
-                    ((Handler) Assertions.checkNotNull(DefaultDrmSessionManager.this.playbackHandler)).removeCallbacksAndMessages(defaultDrmSession);
+                    ((Handler) Preconditions.checkNotNull(DefaultDrmSessionManager.this.playbackHandler)).removeCallbacksAndMessages(defaultDrmSession);
                     DefaultDrmSessionManager.this.keepaliveSessions.remove(defaultDrmSession);
                 }
             }
@@ -560,19 +560,19 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private class MediaDrmEventListener implements ExoMediaDrm.OnEventListener {
         private MediaDrmEventListener() {
         }
 
         @Override // androidx.media3.exoplayer.drm.ExoMediaDrm.OnEventListener
         public void onEvent(ExoMediaDrm exoMediaDrm, byte[] bArr, int i, int i2, byte[] bArr2) {
-            ((MediaDrmHandler) Assertions.checkNotNull(DefaultDrmSessionManager.this.mediaDrmHandler)).obtainMessage(i, bArr).sendToTarget();
+            ((MediaDrmHandler) Preconditions.checkNotNull(DefaultDrmSessionManager.this.mediaDrmHandler)).obtainMessage(i, bArr).sendToTarget();
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public class PreacquiredSessionReference implements DrmSessionManager.DrmSessionReference {
         private final DrmSessionEventListener.EventDispatcher eventDispatcher;
         private boolean isReleased;
@@ -583,38 +583,38 @@ public class DefaultDrmSessionManager implements DrmSessionManager {
         }
 
         public void acquire(final Format format) {
-            ((Handler) Assertions.checkNotNull(DefaultDrmSessionManager.this.playbackHandler)).post(new Runnable() { // from class: androidx.media3.exoplayer.drm.DefaultDrmSessionManager$PreacquiredSessionReference$$ExternalSyntheticLambda0
+            ((Handler) Preconditions.checkNotNull(DefaultDrmSessionManager.this.playbackHandler)).post(new Runnable() { // from class: androidx.media3.exoplayer.drm.DefaultDrmSessionManager$PreacquiredSessionReference$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DefaultDrmSessionManager.PreacquiredSessionReference.this.m8966x937f548e(format);
+                    DefaultDrmSessionManager.PreacquiredSessionReference.this.m8973x937f548e(format);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$acquire$0$androidx-media3-exoplayer-drm-DefaultDrmSessionManager$PreacquiredSessionReference  reason: not valid java name */
-        public /* synthetic */ void m8966x937f548e(Format format) {
+        public /* synthetic */ void m8973x937f548e(Format format) {
             if (DefaultDrmSessionManager.this.prepareCallsCount == 0 || this.isReleased) {
                 return;
             }
             DefaultDrmSessionManager defaultDrmSessionManager = DefaultDrmSessionManager.this;
-            this.session = defaultDrmSessionManager.acquireSession((Looper) Assertions.checkNotNull(defaultDrmSessionManager.playbackLooper), this.eventDispatcher, format, false);
+            this.session = defaultDrmSessionManager.acquireSession((Looper) Preconditions.checkNotNull(defaultDrmSessionManager.playbackLooper), this.eventDispatcher, format, false);
             DefaultDrmSessionManager.this.preacquiredSessionReferences.add(this);
         }
 
         @Override // androidx.media3.exoplayer.drm.DrmSessionManager.DrmSessionReference
         public void release() {
-            Util.postOrRun((Handler) Assertions.checkNotNull(DefaultDrmSessionManager.this.playbackHandler), new Runnable() { // from class: androidx.media3.exoplayer.drm.DefaultDrmSessionManager$PreacquiredSessionReference$$ExternalSyntheticLambda1
+            Util.postOrRun((Handler) Preconditions.checkNotNull(DefaultDrmSessionManager.this.playbackHandler), new Runnable() { // from class: androidx.media3.exoplayer.drm.DefaultDrmSessionManager$PreacquiredSessionReference$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DefaultDrmSessionManager.PreacquiredSessionReference.this.m8967xce10c5c();
+                    DefaultDrmSessionManager.PreacquiredSessionReference.this.m8974xce10c5c();
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$release$1$androidx-media3-exoplayer-drm-DefaultDrmSessionManager$PreacquiredSessionReference  reason: not valid java name */
-        public /* synthetic */ void m8967xce10c5c() {
+        public /* synthetic */ void m8974xce10c5c() {
             if (this.isReleased) {
                 return;
             }

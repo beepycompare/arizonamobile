@@ -5,16 +5,16 @@ import io.appmetrica.analytics.plugins.PluginErrorDetails;
 public final class Me implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ PluginErrorDetails f687a;
+    public final /* synthetic */ PluginErrorDetails f688a;
     public final /* synthetic */ Pe b;
 
     public Me(Pe pe, PluginErrorDetails pluginErrorDetails) {
         this.b = pe;
-        this.f687a = pluginErrorDetails;
+        this.f688a = pluginErrorDetails;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        ((Sa) this.b.d.get()).getPluginExtension().reportUnhandledException(this.f687a);
+        ((Sa) this.b.d.get()).getPluginExtension().reportUnhandledException(this.f688a);
     }
 }

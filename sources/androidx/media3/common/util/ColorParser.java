@@ -5,6 +5,7 @@ import android.text.TextUtils;
 import androidx.core.internal.view.SupportMenu;
 import androidx.core.view.InputDeviceCompat;
 import com.google.common.base.Ascii;
+import com.google.common.base.Preconditions;
 import com.tbuonomo.viewpagerdotsindicator.BaseDotsIndicator;
 import java.util.HashMap;
 import java.util.Map;
@@ -185,7 +186,7 @@ public final class ColorParser {
 
     private static int parseColorInternal(String str, boolean z) {
         int parseInt;
-        Assertions.checkArgument(!TextUtils.isEmpty(str));
+        Preconditions.checkArgument(!TextUtils.isEmpty(str));
         String replace = str.replace(" ", "");
         if (replace.charAt(0) == '#') {
             int parseLong = (int) Long.parseLong(replace.substring(1), 16);
@@ -201,16 +202,16 @@ public final class ColorParser {
             Matcher matcher = (z ? RGBA_PATTERN_FLOAT_ALPHA : RGBA_PATTERN_INT_ALPHA).matcher(replace);
             if (matcher.matches()) {
                 if (z) {
-                    parseInt = (int) (Float.parseFloat((String) Assertions.checkNotNull(matcher.group(4))) * 255.0f);
+                    parseInt = (int) (Float.parseFloat((String) Preconditions.checkNotNull(matcher.group(4))) * 255.0f);
                 } else {
-                    parseInt = Integer.parseInt((String) Assertions.checkNotNull(matcher.group(4)), 10);
+                    parseInt = Integer.parseInt((String) Preconditions.checkNotNull(matcher.group(4)), 10);
                 }
-                return Color.argb(parseInt, Integer.parseInt((String) Assertions.checkNotNull(matcher.group(1)), 10), Integer.parseInt((String) Assertions.checkNotNull(matcher.group(2)), 10), Integer.parseInt((String) Assertions.checkNotNull(matcher.group(3)), 10));
+                return Color.argb(parseInt, Integer.parseInt((String) Preconditions.checkNotNull(matcher.group(1)), 10), Integer.parseInt((String) Preconditions.checkNotNull(matcher.group(2)), 10), Integer.parseInt((String) Preconditions.checkNotNull(matcher.group(3)), 10));
             }
         } else if (replace.startsWith(RGB)) {
             Matcher matcher2 = RGB_PATTERN.matcher(replace);
             if (matcher2.matches()) {
-                return Color.rgb(Integer.parseInt((String) Assertions.checkNotNull(matcher2.group(1)), 10), Integer.parseInt((String) Assertions.checkNotNull(matcher2.group(2)), 10), Integer.parseInt((String) Assertions.checkNotNull(matcher2.group(3)), 10));
+                return Color.rgb(Integer.parseInt((String) Preconditions.checkNotNull(matcher2.group(1)), 10), Integer.parseInt((String) Preconditions.checkNotNull(matcher2.group(2)), 10), Integer.parseInt((String) Preconditions.checkNotNull(matcher2.group(3)), 10));
             }
         } else {
             Integer num = COLOR_MAP.get(Ascii.toLowerCase(replace));

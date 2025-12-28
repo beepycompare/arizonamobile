@@ -126,8 +126,8 @@ public final class MimeTypesKt {
         createMapBuilder.put("mpeg", MimeTypes.VIDEO_MPEG);
         createMapBuilder.put("mpg", MimeTypes.VIDEO_MPEG);
         createMapBuilder.put("ogv", MimeTypes.VIDEO_OGG);
-        createMapBuilder.put("mov", "video/quicktime");
-        createMapBuilder.put("qt", "video/quicktime");
+        createMapBuilder.put("mov", MimeTypes.VIDEO_QUICK_TIME);
+        createMapBuilder.put("qt", MimeTypes.VIDEO_QUICK_TIME);
         createMapBuilder.put("fvt", "video/vnd.fvt");
         createMapBuilder.put("m4u", "video/vnd.mpegurl");
         createMapBuilder.put("mxu", "video/vnd.mpegurl");

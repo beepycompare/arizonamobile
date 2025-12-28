@@ -6,14 +6,14 @@ import io.appmetrica.analytics.Revenue;
 public final class C0703xj implements Ra {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Revenue f1299a;
+    public final /* synthetic */ Revenue f1300a;
 
     public C0703xj(Revenue revenue) {
-        this.f1299a = revenue;
+        this.f1300a = revenue;
     }
 
     @Override // io.appmetrica.analytics.impl.Ra
     public final void a(Sa sa) {
-        sa.reportRevenue(this.f1299a);
+        sa.reportRevenue(this.f1300a);
     }
 }

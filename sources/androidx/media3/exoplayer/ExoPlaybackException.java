@@ -5,9 +5,9 @@ import android.os.SystemClock;
 import android.text.TextUtils;
 import androidx.media3.common.Format;
 import androidx.media3.common.PlaybackException;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.source.MediaSource;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -76,8 +76,8 @@ public final class ExoPlaybackException extends PlaybackException {
     private ExoPlaybackException(String str, Throwable th, int i, int i2, String str2, int i3, Format format, int i4, MediaSource.MediaPeriodId mediaPeriodId, long j, boolean z) {
         super(str, th, i, Bundle.EMPTY, j);
         boolean z2 = false;
-        Assertions.checkArgument(!z || i2 == 1);
-        Assertions.checkArgument((th != null || i2 == 3) ? true : z2);
+        Preconditions.checkArgument(!z || i2 == 1);
+        Preconditions.checkArgument((th != null || i2 == 3) ? true : z2);
         this.type = i2;
         this.rendererName = str2;
         this.rendererIndex = i3;
@@ -88,18 +88,18 @@ public final class ExoPlaybackException extends PlaybackException {
     }
 
     public IOException getSourceException() {
-        Assertions.checkState(this.type == 0);
-        return (IOException) Assertions.checkNotNull(getCause());
+        Preconditions.checkState(this.type == 0);
+        return (IOException) Preconditions.checkNotNull(getCause());
     }
 
     public Exception getRendererException() {
-        Assertions.checkState(this.type == 1);
-        return (Exception) Assertions.checkNotNull(getCause());
+        Preconditions.checkState(this.type == 1);
+        return (Exception) Preconditions.checkNotNull(getCause());
     }
 
     public RuntimeException getUnexpectedException() {
-        Assertions.checkState(this.type == 2);
-        return (RuntimeException) Assertions.checkNotNull(getCause());
+        Preconditions.checkState(this.type == 2);
+        return (RuntimeException) Preconditions.checkNotNull(getCause());
     }
 
     @Override // androidx.media3.common.PlaybackException

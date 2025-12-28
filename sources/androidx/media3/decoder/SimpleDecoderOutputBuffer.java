@@ -1,7 +1,7 @@
 package androidx.media3.decoder;
 
-import androidx.media3.common.util.Assertions;
 import androidx.media3.decoder.DecoderOutputBuffer;
+import com.google.common.base.Preconditions;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 /* loaded from: classes2.dex */
@@ -25,8 +25,8 @@ public class SimpleDecoderOutputBuffer extends DecoderOutputBuffer {
     }
 
     public ByteBuffer grow(int i) {
-        ByteBuffer byteBuffer = (ByteBuffer) Assertions.checkNotNull(this.data);
-        Assertions.checkArgument(i >= byteBuffer.limit());
+        ByteBuffer byteBuffer = (ByteBuffer) Preconditions.checkNotNull(this.data);
+        Preconditions.checkArgument(i >= byteBuffer.limit());
         ByteBuffer order = ByteBuffer.allocateDirect(i).order(ByteOrder.nativeOrder());
         int position = byteBuffer.position();
         byteBuffer.position(0);

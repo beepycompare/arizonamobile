@@ -6,13 +6,13 @@ import android.app.Service;
 public final class C0609u0 implements A1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Service f1237a;
+    public final Service f1238a;
 
     public C0609u0(Service service) {
-        this.f1237a = service;
+        this.f1238a = service;
     }
 
     public final void a(int i) {
-        this.f1237a.stopSelf(i);
+        this.f1238a.stopSelf(i);
     }
 }

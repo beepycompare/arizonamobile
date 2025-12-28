@@ -4,13 +4,13 @@ import androidx.media3.common.C;
 import androidx.media3.common.DataReader;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Consumer;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.text.SubtitleParser;
+import com.google.common.base.Preconditions;
 import java.io.EOFException;
 import java.io.IOException;
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -46,8 +46,8 @@ public final class SubtitleTranscodingTrackOutput implements TrackOutput {
 
     @Override // androidx.media3.extractor.TrackOutput
     public void format(Format format) {
-        Assertions.checkNotNull(format.sampleMimeType);
-        Assertions.checkArgument(MimeTypes.getTrackType(format.sampleMimeType) == 3);
+        Preconditions.checkNotNull(format.sampleMimeType);
+        Preconditions.checkArgument(MimeTypes.getTrackType(format.sampleMimeType) == 3);
         if (!format.equals(this.currentFormat)) {
             this.currentFormat = format;
             this.currentSubtitleParser = this.subtitleParserFactory.supportsFormat(format) ? this.subtitleParserFactory.create(format) : null;
@@ -93,13 +93,13 @@ public final class SubtitleTranscodingTrackOutput implements TrackOutput {
             this.delegate.sampleMetadata(j, i, i2, i3, cryptoData);
             return;
         }
-        Assertions.checkArgument(cryptoData == null, "DRM on subtitles is not supported");
+        Preconditions.checkArgument(cryptoData == null, "DRM on subtitles is not supported");
         int i4 = (this.sampleDataEnd - i3) - i2;
         try {
             this.currentSubtitleParser.parse(this.sampleData, i4, i2, SubtitleParser.OutputOptions.allCues(), new Consumer() { // from class: androidx.media3.extractor.text.SubtitleTranscodingTrackOutput$$ExternalSyntheticLambda0
                 @Override // androidx.media3.common.util.Consumer
                 public final void accept(Object obj) {
-                    SubtitleTranscodingTrackOutput.this.m9066xa18018cd(j, i, (CuesWithTiming) obj);
+                    SubtitleTranscodingTrackOutput.this.m9081xa18018cd(j, i, (CuesWithTiming) obj);
                 }
             });
         } catch (RuntimeException e) {
@@ -119,13 +119,13 @@ public final class SubtitleTranscodingTrackOutput implements TrackOutput {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: outputSample */
-    public void m9066xa18018cd(CuesWithTiming cuesWithTiming, long j, int i) {
-        Assertions.checkStateNotNull(this.currentFormat);
+    public void m9081xa18018cd(CuesWithTiming cuesWithTiming, long j, int i) {
+        Preconditions.checkNotNull(this.currentFormat);
         byte[] encode = this.cueEncoder.encode(cuesWithTiming.cues, cuesWithTiming.durationUs);
         this.parsableScratch.reset(encode);
         this.delegate.sampleData(this.parsableScratch, encode.length);
         if (cuesWithTiming.startTimeUs == C.TIME_UNSET) {
-            Assertions.checkState(this.currentFormat.subsampleOffsetUs == Long.MAX_VALUE);
+            Preconditions.checkState(this.currentFormat.subsampleOffsetUs == Long.MAX_VALUE);
         } else if (this.currentFormat.subsampleOffsetUs == Long.MAX_VALUE) {
             j += cuesWithTiming.startTimeUs;
         } else {

@@ -1,8 +1,8 @@
 package androidx.media3.common;
 
 import android.os.Bundle;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.primitives.Ints;
 import java.util.Collection;
@@ -56,6 +56,6 @@ public final class TrackSelectionOverride {
     }
 
     public static TrackSelectionOverride fromBundle(Bundle bundle) {
-        return new TrackSelectionOverride(TrackGroup.fromBundle((Bundle) Assertions.checkNotNull(bundle.getBundle(FIELD_TRACK_GROUP))), Ints.asList((int[]) Assertions.checkNotNull(bundle.getIntArray(FIELD_TRACKS))));
+        return new TrackSelectionOverride(TrackGroup.fromBundle((Bundle) Preconditions.checkNotNull(bundle.getBundle(FIELD_TRACK_GROUP))), Ints.asList((int[]) Preconditions.checkNotNull(bundle.getIntArray(FIELD_TRACKS))));
     }
 }

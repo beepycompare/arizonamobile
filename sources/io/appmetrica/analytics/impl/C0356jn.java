@@ -6,13 +6,13 @@ import io.appmetrica.analytics.coreapi.internal.db.DatabaseScript;
 public final class C0356jn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final DatabaseScript f1059a;
+    public final DatabaseScript f1060a;
     public final DatabaseScript b;
     public final C0520qa c;
     public final InterfaceC0382kn d;
 
     public C0356jn(DatabaseScript databaseScript, DatabaseScript databaseScript2, C0520qa c0520qa, InterfaceC0382kn interfaceC0382kn) {
-        this.f1059a = databaseScript;
+        this.f1060a = databaseScript;
         this.b = databaseScript2;
         this.c = c0520qa;
         this.d = interfaceC0382kn;

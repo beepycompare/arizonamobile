@@ -47,7 +47,7 @@ public final class HomeComponent$checkHwVersion$2 extends SuspendLambda implemen
             mutableStateFlow = this.this$0.stateStore;
             do {
                 value = mutableStateFlow.getValue();
-            } while (!mutableStateFlow.compareAndSet(value, HomeUiState.copy$default((HomeUiState) value, 0, false, null, null, null, null, null, null, null, null, null, false, false, false, 0, true, false, false, 229375, null)));
+            } while (!mutableStateFlow.compareAndSet(value, HomeUiState.copy$default((HomeUiState) value, 0, false, null, null, null, null, null, null, null, null, null, false, false, false, 0, true, false, false, 0, 0, 1015807, null)));
             return Unit.INSTANCE;
         }
         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");

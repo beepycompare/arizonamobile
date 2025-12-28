@@ -31,8 +31,8 @@ final class ClassValueParametrizedCache<T> implements ParametrizedSerializerCach
 
     @Override // kotlinx.serialization.internal.ParametrizedSerializerCache
     /* renamed from: get-gIAlu-s  reason: not valid java name */
-    public Object mo11923getgIAlus(KClass<Object> key, List<? extends KType> types) {
-        Object m10216constructorimpl;
+    public Object mo11961getgIAlus(KClass<Object> key, List<? extends KType> types) {
+        Object m10244constructorimpl;
         Intrinsics.checkNotNullParameter(key, "key");
         Intrinsics.checkNotNullParameter(types, "types");
         Object obj = this.classValue.get(JvmClassMappingKt.getJavaClass((KClass) key));
@@ -59,16 +59,16 @@ final class ClassValueParametrizedCache<T> implements ParametrizedSerializerCach
         if (obj2 == null) {
             try {
                 Result.Companion companion = Result.Companion;
-                m10216constructorimpl = Result.m10216constructorimpl(this.compute.invoke(key, types));
+                m10244constructorimpl = Result.m10244constructorimpl(this.compute.invoke(key, types));
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m10216constructorimpl = Result.m10216constructorimpl(ResultKt.createFailure(th));
+                m10244constructorimpl = Result.m10244constructorimpl(ResultKt.createFailure(th));
             }
-            Result m10215boximpl = Result.m10215boximpl(m10216constructorimpl);
-            Object putIfAbsent = concurrentHashMap.putIfAbsent(arrayList2, m10215boximpl);
-            obj2 = putIfAbsent == null ? m10215boximpl : putIfAbsent;
+            Result m10243boximpl = Result.m10243boximpl(m10244constructorimpl);
+            Object putIfAbsent = concurrentHashMap.putIfAbsent(arrayList2, m10243boximpl);
+            obj2 = putIfAbsent == null ? m10243boximpl : putIfAbsent;
         }
         Intrinsics.checkNotNullExpressionValue(obj2, "getOrPut(...)");
-        return ((Result) obj2).m10225unboximpl();
+        return ((Result) obj2).m10253unboximpl();
     }
 }

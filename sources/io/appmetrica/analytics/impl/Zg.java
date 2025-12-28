@@ -18,7 +18,7 @@ public final class Zg implements Runnable {
         if (timePassedChecker.didTimePassMillis(y.f(), TimeUnit.DAYS.toMillis(1L), "[ReportKotlinVersionTask]")) {
             KotlinVersion kotlinVersion = KotlinVersion.CURRENT;
             Map mapOf = MapsKt.mapOf(TuplesKt.to("major", Integer.valueOf(kotlinVersion.getMajor())), TuplesKt.to("minor", Integer.valueOf(kotlinVersion.getMinor())), TuplesKt.to("patch", Integer.valueOf(kotlinVersion.getPatch())), TuplesKt.to(NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, new StringBuilder().append(kotlinVersion.getMajor()).append('.').append(kotlinVersion.getMinor()).append('.').append(kotlinVersion.getPatch()).toString()));
-            Rj rj = AbstractC0504pj.f1168a;
+            Rj rj = AbstractC0504pj.f1169a;
             rj.getClass();
             rj.a(new Qj("kotlin_version", mapOf));
             y.c(systemTimeProvider.currentTimeMillis()).b();

@@ -1,6 +1,7 @@
 package androidx.media3.common.util;
 
 import com.google.common.base.Ascii;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.primitives.Chars;
 import com.google.common.primitives.Ints;
@@ -12,6 +13,7 @@ import java.nio.ByteOrder;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
+import java.util.concurrent.atomic.AtomicBoolean;
 import okio.Utf8;
 @CheckReturnValue
 /* loaded from: classes2.dex */
@@ -23,6 +25,7 @@ public final class ParsableByteArray {
     private static final char[] CR_AND_LF = {'\r', '\n'};
     private static final char[] LF = {'\n'};
     private static final ImmutableSet<Charset> SUPPORTED_CHARSETS_FOR_READLINE = ImmutableSet.of(StandardCharsets.US_ASCII, StandardCharsets.UTF_8, StandardCharsets.UTF_16, StandardCharsets.UTF_16BE, StandardCharsets.UTF_16LE);
+    private static final AtomicBoolean shouldEnforceLimitOnLegacyMethods = new AtomicBoolean();
 
     private static boolean isUtf8ContinuationByte(byte b) {
         return (b & 192) == 128;
@@ -76,7 +79,7 @@ public final class ParsableByteArray {
     }
 
     public void setLimit(int i) {
-        Assertions.checkArgument(i >= 0 && i <= this.data.length);
+        Preconditions.checkArgument(i >= 0 && i <= this.data.length);
         this.limit = i;
     }
 
@@ -85,7 +88,7 @@ public final class ParsableByteArray {
     }
 
     public void setPosition(int i) {
-        Assertions.checkArgument(i >= 0 && i <= this.limit);
+        Preconditions.checkArgument(i >= 0 && i <= this.limit);
         this.position = i;
     }
 
@@ -107,16 +110,19 @@ public final class ParsableByteArray {
     }
 
     public void readBytes(byte[] bArr, int i, int i2) {
+        maybeAssertAtLeastBytesLeftForLegacyMethod(i2);
         System.arraycopy(this.data, this.position, bArr, i, i2);
         this.position += i2;
     }
 
     public void readBytes(ByteBuffer byteBuffer, int i) {
+        maybeAssertAtLeastBytesLeftForLegacyMethod(i);
         byteBuffer.put(this.data, this.position, i);
         this.position += i;
     }
 
     public int peekUnsignedByte() {
+        maybeAssertAtLeastBytesLeftForLegacyMethod(1);
         return this.data[this.position] & 255;
     }
 
@@ -127,7 +133,7 @@ public final class ParsableByteArray {
     @Deprecated
     public char peekChar(Charset charset) {
         int peekUnsignedByte;
-        Assertions.checkArgument(SUPPORTED_CHARSETS_FOR_READLINE.contains(charset), "Unsupported charset: " + charset);
+        Preconditions.checkArgument(SUPPORTED_CHARSETS_FOR_READLINE.contains(charset), "Unsupported charset: %s", charset);
         if (bytesLeft() == 0) {
             return (char) 0;
         }
@@ -147,6 +153,7 @@ public final class ParsableByteArray {
     }
 
     private char peekChar(ByteOrder byteOrder, int i) {
+        maybeAssertAtLeastBytesLeftForLegacyMethod(2);
         if (byteOrder == ByteOrder.BIG_ENDIAN) {
             byte[] bArr = this.data;
             int i2 = this.position;
@@ -162,7 +169,26 @@ public final class ParsableByteArray {
         return peekCodePointAndSize != 0 ? Ints.checkedCast(peekCodePointAndSize >>> 8) : INVALID_CODE_POINT;
     }
 
+    public int peekUnsignedInt24() {
+        if (bytesLeft() < 3) {
+            throw new IndexOutOfBoundsException("position=" + this.position + ", limit=" + this.limit);
+        }
+        int readUnsignedInt24 = readUnsignedInt24();
+        this.position -= 3;
+        return readUnsignedInt24;
+    }
+
+    public int peekInt() {
+        if (bytesLeft() < 4) {
+            throw new IndexOutOfBoundsException("position=" + this.position + ", limit=" + this.limit);
+        }
+        int readInt = readInt();
+        this.position -= 4;
+        return readInt;
+    }
+
     public int readUnsignedByte() {
+        maybeAssertAtLeastBytesLeftForLegacyMethod(1);
         byte[] bArr = this.data;
         int i = this.position;
         this.position = i + 1;
@@ -170,6 +196,7 @@ public final class ParsableByteArray {
     }
 
     public int readUnsignedShort() {
+        maybeAssertAtLeastBytesLeftForLegacyMethod(2);
         byte[] bArr = this.data;
         int i = this.position;
         int i2 = i + 1;
@@ -179,6 +206,7 @@ public final class ParsableByteArray {
     }
 
     public int readLittleEndianUnsignedShort() {
+        maybeAssertAtLeastBytesLeftForLegacyMethod(2);
         byte[] bArr = this.data;
         int i = this.position;
         int i2 = i + 1;
@@ -188,6 +216,7 @@ public final class ParsableByteArray {
     }
 
     public short readShort() {
+        maybeAssertAtLeastBytesLeftForLegacyMethod(2);
         byte[] bArr = this.data;
         int i = this.position;
         int i2 = i + 1;
@@ -197,6 +226,7 @@ public final class ParsableByteArray {
     }
 
     public short readLittleEndianShort() {
+        maybeAssertAtLeastBytesLeftForLegacyMethod(2);
         byte[] bArr = this.data;
         int i = this.position;
         int i2 = i + 1;
@@ -206,6 +236,7 @@ public final class ParsableByteArray {
     }
 
     public int readUnsignedInt24() {
+        maybeAssertAtLeastBytesLeftForLegacyMethod(3);
         byte[] bArr = this.data;
         int i = this.position;
         int i2 = i + 1;
@@ -218,6 +249,7 @@ public final class ParsableByteArray {
     }
 
     public int readInt24() {
+        maybeAssertAtLeastBytesLeftForLegacyMethod(3);
         byte[] bArr = this.data;
         int i = this.position;
         int i2 = i + 1;
@@ -230,6 +262,7 @@ public final class ParsableByteArray {
     }
 
     public int readLittleEndianInt24() {
+        maybeAssertAtLeastBytesLeftForLegacyMethod(3);
         byte[] bArr = this.data;
         int i = this.position;
         int i2 = i + 1;
@@ -242,6 +275,7 @@ public final class ParsableByteArray {
     }
 
     public int readLittleEndianUnsignedInt24() {
+        maybeAssertAtLeastBytesLeftForLegacyMethod(3);
         byte[] bArr = this.data;
         int i = this.position;
         int i2 = i + 1;
@@ -254,6 +288,7 @@ public final class ParsableByteArray {
     }
 
     public long readUnsignedInt() {
+        maybeAssertAtLeastBytesLeftForLegacyMethod(4);
         byte[] bArr = this.data;
         int i = this.position;
         int i2 = i + 1;
@@ -267,6 +302,7 @@ public final class ParsableByteArray {
     }
 
     public long readLittleEndianUnsignedInt() {
+        maybeAssertAtLeastBytesLeftForLegacyMethod(4);
         byte[] bArr = this.data;
         int i = this.position;
         int i2 = i + 1;
@@ -280,6 +316,7 @@ public final class ParsableByteArray {
     }
 
     public int readInt() {
+        maybeAssertAtLeastBytesLeftForLegacyMethod(4);
         byte[] bArr = this.data;
         int i = this.position;
         int i2 = i + 1;
@@ -294,6 +331,7 @@ public final class ParsableByteArray {
     }
 
     public int readLittleEndianInt() {
+        maybeAssertAtLeastBytesLeftForLegacyMethod(4);
         byte[] bArr = this.data;
         int i = this.position;
         int i2 = i + 1;
@@ -308,6 +346,7 @@ public final class ParsableByteArray {
     }
 
     public long readLong() {
+        maybeAssertAtLeastBytesLeftForLegacyMethod(8);
         byte[] bArr = this.data;
         int i = this.position;
         int i2 = i + 1;
@@ -331,30 +370,31 @@ public final class ParsableByteArray {
     }
 
     public long readLittleEndianLong() {
+        maybeAssertAtLeastBytesLeftForLegacyMethod(8);
         byte[] bArr = this.data;
         int i = this.position;
         int i2 = i + 1;
         this.position = i2;
         int i3 = i + 2;
         this.position = i3;
-        long j = (bArr[i] & 255) | ((bArr[i2] & 255) << 8);
         int i4 = i + 3;
         this.position = i4;
+        long j = (bArr[i] & 255) | ((bArr[i2] & 255) << 8) | ((bArr[i3] & 255) << 16);
         int i5 = i + 4;
         this.position = i5;
-        long j2 = j | ((bArr[i3] & 255) << 16) | ((bArr[i4] & 255) << 24);
         int i6 = i + 5;
         this.position = i6;
+        long j2 = j | ((bArr[i4] & 255) << 24) | ((bArr[i5] & 255) << 32);
         int i7 = i + 6;
         this.position = i7;
-        long j3 = j2 | ((bArr[i5] & 255) << 32) | ((bArr[i6] & 255) << 40);
         int i8 = i + 7;
         this.position = i8;
         this.position = i + 8;
-        return ((bArr[i8] & 255) << 56) | j3 | ((bArr[i7] & 255) << 48);
+        return ((bArr[i8] & 255) << 56) | j2 | ((bArr[i6] & 255) << 40) | ((bArr[i7] & 255) << 48);
     }
 
     public int readUnsignedFixedPoint1616() {
+        maybeAssertAtLeastBytesLeftForLegacyMethod(4);
         byte[] bArr = this.data;
         int i = this.position;
         int i2 = i + 1;
@@ -406,12 +446,14 @@ public final class ParsableByteArray {
     }
 
     public String readString(int i, Charset charset) {
+        maybeAssertAtLeastBytesLeftForLegacyMethod(i);
         String str = new String(this.data, this.position, i, charset);
         this.position += i;
         return str;
     }
 
     public String readNullTerminatedString(int i) {
+        maybeAssertAtLeastBytesLeftForLegacyMethod(i);
         if (i == 0) {
             return "";
         }
@@ -449,7 +491,7 @@ public final class ParsableByteArray {
     }
 
     public String readLine(Charset charset) {
-        Assertions.checkArgument(SUPPORTED_CHARSETS_FOR_READLINE.contains(charset), "Unsupported charset: " + charset);
+        Preconditions.checkArgument(SUPPORTED_CHARSETS_FOR_READLINE.contains(charset), "Unsupported charset: %s", charset);
         if (bytesLeft() == 0) {
             return null;
         }
@@ -466,35 +508,36 @@ public final class ParsableByteArray {
 
     public long readUtf8EncodedLong() {
         int i;
-        int i2;
         byte b;
-        int i3;
+        int i2;
+        maybeAssertAtLeastBytesLeftForLegacyMethod(1);
         long j = this.data[this.position];
-        int i4 = 7;
+        int i3 = 7;
         while (true) {
-            if (i4 < 0) {
+            if (i3 < 0) {
                 break;
             }
-            if (((1 << i4) & j) != 0) {
-                i4--;
-            } else if (i4 < 6) {
-                j &= i3 - 1;
-                i2 = 7 - i4;
-            } else if (i4 == 7) {
-                i2 = 1;
+            if (((1 << i3) & j) != 0) {
+                i3--;
+            } else if (i3 < 6) {
+                j &= i2 - 1;
+                i = 7 - i3;
+            } else if (i3 == 7) {
+                i = 1;
             }
         }
-        i2 = 0;
-        if (i2 == 0) {
+        i = 0;
+        if (i == 0) {
             throw new NumberFormatException("Invalid UTF-8 sequence first byte: " + j);
         }
-        for (i = 1; i < i2; i++) {
-            if ((this.data[this.position + i] & 192) != 128) {
+        maybeAssertAtLeastBytesLeftForLegacyMethod(i);
+        for (int i4 = 1; i4 < i; i4++) {
+            if ((this.data[this.position + i4] & 192) != 128) {
                 throw new NumberFormatException("Invalid UTF-8 sequence continuation byte: " + j);
             }
             j = (j << 6) | (b & Utf8.REPLACEMENT_BYTE);
         }
-        this.position += i2;
+        this.position += i;
         return j;
     }
 
@@ -546,6 +589,10 @@ public final class ParsableByteArray {
             }
         }
         return null;
+    }
+
+    public static void setShouldEnforceLimitOnLegacyMethods(boolean z) {
+        shouldEnforceLimitOnLegacyMethods.set(z);
     }
 
     private int findNextLineTerminator(Charset charset) {
@@ -609,7 +656,7 @@ public final class ParsableByteArray {
     private int peekCodePointAndSize(Charset charset) {
         int i;
         int i2;
-        Assertions.checkArgument(SUPPORTED_CHARSETS_FOR_READLINE.contains(charset), "Unsupported charset: " + charset);
+        Preconditions.checkArgument(SUPPORTED_CHARSETS_FOR_READLINE.contains(charset), "Unsupported charset: %s", charset);
         if (bytesLeft() < getSmallestCodeUnitSize(charset)) {
             throw new IndexOutOfBoundsException("position=" + this.position + ", limit=" + this.limit);
         }
@@ -656,7 +703,7 @@ public final class ParsableByteArray {
     }
 
     private static int getSmallestCodeUnitSize(Charset charset) {
-        Assertions.checkArgument(SUPPORTED_CHARSETS_FOR_READLINE.contains(charset), "Unsupported charset: " + charset);
+        Preconditions.checkArgument(SUPPORTED_CHARSETS_FOR_READLINE.contains(charset), "Unsupported charset: %s", charset);
         return (charset.equals(StandardCharsets.UTF_8) || charset.equals(StandardCharsets.US_ASCII)) ? 1 : 2;
     }
 
@@ -672,6 +719,12 @@ public final class ParsableByteArray {
             return (byte) 3;
         }
         return ((this.data[this.position] & 248) == 240 && bytesLeft() >= 4 && isUtf8ContinuationByte(this.data[this.position + 1]) && isUtf8ContinuationByte(this.data[this.position + 2]) && isUtf8ContinuationByte(this.data[this.position + 3])) ? (byte) 4 : (byte) 0;
+    }
+
+    private void maybeAssertAtLeastBytesLeftForLegacyMethod(int i) {
+        if (shouldEnforceLimitOnLegacyMethods.get() && bytesLeft() < i) {
+            throw new IndexOutOfBoundsException("bytesNeeded= " + i + ", bytesLeft=" + bytesLeft());
+        }
     }
 
     private static int decodeUtf8CodeUnit(int i, int i2, int i3, int i4) {

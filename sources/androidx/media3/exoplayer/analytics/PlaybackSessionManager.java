@@ -3,10 +3,10 @@ package androidx.media3.exoplayer.analytics;
 import androidx.media3.common.Timeline;
 import androidx.media3.exoplayer.analytics.AnalyticsListener;
 import androidx.media3.exoplayer.source.MediaSource;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public interface PlaybackSessionManager {
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public interface Listener {
         void onAdPlaybackStarted(AnalyticsListener.EventTime eventTime, String str, String str2);
 

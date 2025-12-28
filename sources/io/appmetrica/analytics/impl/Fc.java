@@ -5,16 +5,16 @@ import kotlin.jvm.functions.Function0;
 public final class Fc implements G8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0648ve f575a;
+    public final InterfaceC0648ve f576a;
     public final Function0 b;
 
     public Fc(InterfaceC0648ve interfaceC0648ve, Function0<Integer> function0) {
-        this.f575a = interfaceC0648ve;
+        this.f576a = interfaceC0648ve;
         this.b = function0;
     }
 
     @Override // io.appmetrica.analytics.impl.G8
     public final boolean b() {
-        return ((C0623ue) this.f575a).b.get() >= ((long) ((Number) this.b.invoke()).intValue());
+        return ((C0623ue) this.f576a).b.get() >= ((long) ((Number) this.b.invoke()).intValue());
     }
 }

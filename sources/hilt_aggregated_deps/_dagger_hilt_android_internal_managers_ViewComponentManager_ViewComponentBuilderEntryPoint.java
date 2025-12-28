@@ -1,4 +1,4 @@
 package hilt_aggregated_deps;
-/* loaded from: classes4.dex */
+/* loaded from: classes.dex */
 public class _dagger_hilt_android_internal_managers_ViewComponentManager_ViewComponentBuilderEntryPoint {
 }

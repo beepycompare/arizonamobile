@@ -3,12 +3,12 @@ package androidx.media3.extractor.ts;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.media3.common.ParserException;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ParsableBitArray;
 import androidx.media3.extractor.AacUtil;
 import androidx.media3.extractor.MpegAudioUtil;
 import androidx.media3.extractor.OpusUtil;
 import com.google.android.material.internal.ViewUtils;
+import com.google.common.base.Preconditions;
 import com.google.common.math.IntMath;
 import com.google.common.math.LongMath;
 import java.lang.annotation.Documented;
@@ -390,7 +390,7 @@ final class MpeghUtil {
     }
 
     private static int readEscapedIntValue(ParsableBitArray parsableBitArray, int i, int i2, int i3) {
-        Assertions.checkArgument(Math.max(Math.max(i, i2), i3) <= 31);
+        Preconditions.checkArgument(Math.max(Math.max(i, i2), i3) <= 31);
         int i4 = (1 << i) - 1;
         int i5 = (1 << i2) - 1;
         IntMath.checkedAdd(IntMath.checkedAdd(i4, i5), 1 << i3);
@@ -416,7 +416,7 @@ final class MpeghUtil {
     }
 
     private static long readEscapedLongValue(ParsableBitArray parsableBitArray, int i, int i2, int i3) {
-        Assertions.checkArgument(Math.max(Math.max(i, i2), i3) <= 63);
+        Preconditions.checkArgument(Math.max(Math.max(i, i2), i3) <= 63);
         long j = (1 << i) - 1;
         long j2 = (1 << i2) - 1;
         LongMath.checkedAdd(LongMath.checkedAdd(j, j2), 1 << i3);

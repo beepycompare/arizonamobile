@@ -9,7 +9,7 @@ import androidx.media3.common.util.Clock;
 import androidx.media3.exoplayer.analytics.PlayerId;
 import androidx.media3.exoplayer.audio.AudioSink;
 import java.nio.ByteBuffer;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class ForwardingAudioSink implements AudioSink {
     private final AudioSink sink;
 
@@ -133,6 +133,11 @@ public class ForwardingAudioSink implements AudioSink {
     }
 
     @Override // androidx.media3.exoplayer.audio.AudioSink
+    public void setVirtualDeviceId(int i) {
+        this.sink.setVirtualDeviceId(i);
+    }
+
+    @Override // androidx.media3.exoplayer.audio.AudioSink
     public void setOutputStreamOffsetUs(long j) {
         this.sink.setOutputStreamOffsetUs(j);
     }
@@ -160,6 +165,11 @@ public class ForwardingAudioSink implements AudioSink {
     @Override // androidx.media3.exoplayer.audio.AudioSink
     public void setOffloadDelayPadding(int i, int i2) {
         this.sink.setOffloadDelayPadding(i, i2);
+    }
+
+    @Override // androidx.media3.exoplayer.audio.AudioSink
+    public void setAudioOutputProvider(AudioOutputProvider audioOutputProvider) {
+        this.sink.setAudioOutputProvider(audioOutputProvider);
     }
 
     @Override // androidx.media3.exoplayer.audio.AudioSink

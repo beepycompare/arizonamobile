@@ -293,7 +293,7 @@ public final class Recomposer extends CompositionContext {
         }
         if (cancellableContinuation != null) {
             Result.Companion companion = Result.Companion;
-            cancellableContinuation.resumeWith(Result.m10216constructorimpl(Unit.INSTANCE));
+            cancellableContinuation.resumeWith(Result.m10244constructorimpl(Unit.INSTANCE));
         }
         return Unit.INSTANCE;
     }
@@ -397,7 +397,7 @@ public final class Recomposer extends CompositionContext {
         }
         if (deriveStateLocked != null) {
             Result.Companion companion = Result.Companion;
-            deriveStateLocked.resumeWith(Result.m10216constructorimpl(Unit.INSTANCE));
+            deriveStateLocked.resumeWith(Result.m10244constructorimpl(Unit.INSTANCE));
         }
     }
 
@@ -1121,7 +1121,7 @@ public final class Recomposer extends CompositionContext {
         }
         if (cancellableContinuationImpl2 != null) {
             Result.Companion companion = Result.Companion;
-            cancellableContinuationImpl2.resumeWith(Result.m10216constructorimpl(Unit.INSTANCE));
+            cancellableContinuationImpl2.resumeWith(Result.m10244constructorimpl(Unit.INSTANCE));
         }
         Object result = cancellableContinuationImpl.getResult();
         if (result == IntrinsicsKt.getCOROUTINE_SUSPENDED()) {
@@ -1538,7 +1538,7 @@ public final class Recomposer extends CompositionContext {
         }
         if (cancellableContinuation != null) {
             Result.Companion companion = Result.Companion;
-            cancellableContinuation.resumeWith(Result.m10216constructorimpl(Unit.INSTANCE));
+            cancellableContinuation.resumeWith(Result.m10244constructorimpl(Unit.INSTANCE));
         }
     }
 
@@ -1580,7 +1580,7 @@ public final class Recomposer extends CompositionContext {
         }
         if (cancellableContinuation != null) {
             Result.Companion companion = Result.Companion;
-            cancellableContinuation.resumeWith(Result.m10216constructorimpl(Unit.INSTANCE));
+            cancellableContinuation.resumeWith(Result.m10244constructorimpl(Unit.INSTANCE));
         }
     }
 
@@ -1593,7 +1593,7 @@ public final class Recomposer extends CompositionContext {
         }
         if (deriveStateLocked != null) {
             Result.Companion companion = Result.Companion;
-            deriveStateLocked.resumeWith(Result.m10216constructorimpl(Unit.INSTANCE));
+            deriveStateLocked.resumeWith(Result.m10244constructorimpl(Unit.INSTANCE));
         }
     }
 
@@ -1606,7 +1606,7 @@ public final class Recomposer extends CompositionContext {
         }
         if (deriveStateLocked != null) {
             Result.Companion companion = Result.Companion;
-            deriveStateLocked.resumeWith(Result.m10216constructorimpl(Unit.INSTANCE));
+            deriveStateLocked.resumeWith(Result.m10244constructorimpl(Unit.INSTANCE));
         }
     }
 
@@ -1622,7 +1622,7 @@ public final class Recomposer extends CompositionContext {
         }
         if (deriveStateLocked != null) {
             Result.Companion companion = Result.Companion;
-            deriveStateLocked.resumeWith(Result.m10216constructorimpl(Unit.INSTANCE));
+            deriveStateLocked.resumeWith(Result.m10244constructorimpl(Unit.INSTANCE));
         }
     }
 

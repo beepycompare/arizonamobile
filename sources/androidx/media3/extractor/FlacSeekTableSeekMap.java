@@ -1,8 +1,8 @@
 package androidx.media3.extractor;
 
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.SeekMap;
+import com.google.common.base.Preconditions;
 /* loaded from: classes3.dex */
 public final class FlacSeekTableSeekMap implements SeekMap {
     private final long firstFrameOffset;
@@ -25,7 +25,7 @@ public final class FlacSeekTableSeekMap implements SeekMap {
 
     @Override // androidx.media3.extractor.SeekMap
     public SeekMap.SeekPoints getSeekPoints(long j) {
-        Assertions.checkStateNotNull(this.flacStreamMetadata.seekTable);
+        Preconditions.checkNotNull(this.flacStreamMetadata.seekTable);
         long[] jArr = this.flacStreamMetadata.seekTable.pointSampleNumbers;
         long[] jArr2 = this.flacStreamMetadata.seekTable.pointOffsets;
         int binarySearchFloor = Util.binarySearchFloor(jArr, this.flacStreamMetadata.getSampleNumber(j), true, false);

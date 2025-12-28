@@ -5,10 +5,10 @@ import android.media.AudioManager;
 import android.os.Build;
 import android.os.Looper;
 import androidx.media3.common.MimeTypes;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.BackgroundExecutor;
 import androidx.media3.common.util.ConditionVariable;
 import androidx.media3.common.util.Log;
+import com.google.common.base.Preconditions;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -52,11 +52,11 @@ public final class AudioManagerCompat {
                     }
                 });
                 conditionVariable.blockUninterruptible();
-                return (AudioManager) Assertions.checkNotNull(audioManager);
+                return (AudioManager) Preconditions.checkNotNull(audioManager);
             }
             AudioManager audioManager3 = (AudioManager) applicationContext2.getSystemService(MimeTypes.BASE_TYPE_AUDIO);
             audioManager = audioManager3;
-            return (AudioManager) Assertions.checkNotNull(audioManager3);
+            return (AudioManager) Preconditions.checkNotNull(audioManager3);
         }
     }
 

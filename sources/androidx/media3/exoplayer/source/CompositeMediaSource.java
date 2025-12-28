@@ -2,12 +2,13 @@ package androidx.media3.exoplayer.source;
 
 import android.os.Handler;
 import androidx.media3.common.Timeline;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.datasource.TransferListener;
 import androidx.media3.exoplayer.drm.DrmSessionEventListener;
+import androidx.media3.exoplayer.drm.KeyRequestInfo;
 import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.exoplayer.source.MediaSourceEventListener;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Objects;
@@ -31,7 +32,7 @@ public abstract class CompositeMediaSource<T> extends BaseMediaSource {
 
     /* JADX INFO: Access modifiers changed from: protected */
     /* renamed from: onChildSourceInfoRefreshed */
-    public abstract void m8994x28f9175(T t, MediaSource mediaSource, Timeline timeline);
+    public abstract void m9003x28f9175(T t, MediaSource mediaSource, Timeline timeline);
 
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // androidx.media3.exoplayer.source.BaseMediaSource
@@ -75,17 +76,17 @@ public abstract class CompositeMediaSource<T> extends BaseMediaSource {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final void prepareChildSource(final T t, MediaSource mediaSource) {
-        Assertions.checkArgument(!this.childSources.containsKey(t));
+        Preconditions.checkArgument(!this.childSources.containsKey(t));
         MediaSource.MediaSourceCaller mediaSourceCaller = new MediaSource.MediaSourceCaller() { // from class: androidx.media3.exoplayer.source.CompositeMediaSource$$ExternalSyntheticLambda0
             @Override // androidx.media3.exoplayer.source.MediaSource.MediaSourceCaller
             public final void onSourceInfoRefreshed(MediaSource mediaSource2, Timeline timeline) {
-                CompositeMediaSource.this.m8994x28f9175(t, mediaSource2, timeline);
+                CompositeMediaSource.this.m9003x28f9175(t, mediaSource2, timeline);
             }
         };
         ForwardingEventListener forwardingEventListener = new ForwardingEventListener(t);
         this.childSources.put(t, new MediaSourceAndListener<>(mediaSource, mediaSourceCaller, forwardingEventListener));
-        mediaSource.addEventListener((Handler) Assertions.checkNotNull(this.eventHandler), forwardingEventListener);
-        mediaSource.addDrmEventListener((Handler) Assertions.checkNotNull(this.eventHandler), forwardingEventListener);
+        mediaSource.addEventListener((Handler) Preconditions.checkNotNull(this.eventHandler), forwardingEventListener);
+        mediaSource.addDrmEventListener((Handler) Preconditions.checkNotNull(this.eventHandler), forwardingEventListener);
         mediaSource.prepareSource(mediaSourceCaller, this.mediaTransferListener, getPlayerId());
         if (isEnabled()) {
             return;
@@ -95,19 +96,19 @@ public abstract class CompositeMediaSource<T> extends BaseMediaSource {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final void enableChildSource(T t) {
-        MediaSourceAndListener mediaSourceAndListener = (MediaSourceAndListener) Assertions.checkNotNull(this.childSources.get(t));
+        MediaSourceAndListener mediaSourceAndListener = (MediaSourceAndListener) Preconditions.checkNotNull(this.childSources.get(t));
         mediaSourceAndListener.mediaSource.enable(mediaSourceAndListener.caller);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final void disableChildSource(T t) {
-        MediaSourceAndListener mediaSourceAndListener = (MediaSourceAndListener) Assertions.checkNotNull(this.childSources.get(t));
+        MediaSourceAndListener mediaSourceAndListener = (MediaSourceAndListener) Preconditions.checkNotNull(this.childSources.get(t));
         mediaSourceAndListener.mediaSource.disable(mediaSourceAndListener.caller);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final void releaseChildSource(T t) {
-        MediaSourceAndListener mediaSourceAndListener = (MediaSourceAndListener) Assertions.checkNotNull(this.childSources.remove(t));
+        MediaSourceAndListener mediaSourceAndListener = (MediaSourceAndListener) Preconditions.checkNotNull(this.childSources.remove(t));
         mediaSourceAndListener.mediaSource.releaseSource(mediaSourceAndListener.caller);
         mediaSourceAndListener.mediaSource.removeEventListener(mediaSourceAndListener.eventListener);
         mediaSourceAndListener.mediaSource.removeDrmEventListener(mediaSourceAndListener.eventListener);
@@ -188,9 +189,9 @@ public abstract class CompositeMediaSource<T> extends BaseMediaSource {
         }
 
         @Override // androidx.media3.exoplayer.drm.DrmSessionEventListener
-        public void onDrmKeysLoaded(int i, MediaSource.MediaPeriodId mediaPeriodId) {
+        public void onDrmKeysLoaded(int i, MediaSource.MediaPeriodId mediaPeriodId, KeyRequestInfo keyRequestInfo) {
             if (maybeUpdateEventDispatcher(i, mediaPeriodId)) {
-                this.drmEventDispatcher.drmKeysLoaded();
+                this.drmEventDispatcher.drmKeysLoaded(keyRequestInfo);
             }
         }
 

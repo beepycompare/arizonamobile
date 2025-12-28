@@ -1,8 +1,8 @@
 package androidx.media3.common;
 
 import android.os.Bundle;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -52,13 +52,13 @@ public final class DeviceInfo {
         }
 
         public Builder setRoutingControllerId(String str) {
-            Assertions.checkArgument(this.playbackType != 0 || str == null);
+            Preconditions.checkArgument(this.playbackType != 0 || str == null);
             this.routingControllerId = str;
             return this;
         }
 
         public DeviceInfo build() {
-            Assertions.checkArgument(this.minVolume <= this.maxVolume);
+            Preconditions.checkArgument(this.minVolume <= this.maxVolume);
             return new DeviceInfo(this);
         }
     }

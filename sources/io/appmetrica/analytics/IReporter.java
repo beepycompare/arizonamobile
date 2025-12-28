@@ -4,7 +4,7 @@ import io.appmetrica.analytics.ecommerce.ECommerceEvent;
 import io.appmetrica.analytics.plugins.IPluginReporter;
 import io.appmetrica.analytics.profile.UserProfile;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public interface IReporter {
     void clearAppEnvironment();
 

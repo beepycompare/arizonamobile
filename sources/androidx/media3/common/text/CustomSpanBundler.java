@@ -3,8 +3,8 @@ package androidx.media3.common.text;
 import android.os.Bundle;
 import android.text.Spannable;
 import android.text.Spanned;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import java.util.ArrayList;
 /* loaded from: classes2.dex */
 final class CustomSpanBundler {
@@ -46,14 +46,14 @@ final class CustomSpanBundler {
         int i4 = bundle.getInt(FIELD_TYPE, -1);
         Bundle bundle2 = bundle.getBundle(FIELD_PARAMS);
         if (i4 == 1) {
-            spannable.setSpan(RubySpan.fromBundle((Bundle) Assertions.checkNotNull(bundle2)), i, i2, i3);
+            spannable.setSpan(RubySpan.fromBundle((Bundle) Preconditions.checkNotNull(bundle2)), i, i2, i3);
         } else if (i4 == 2) {
-            spannable.setSpan(TextEmphasisSpan.fromBundle((Bundle) Assertions.checkNotNull(bundle2)), i, i2, i3);
+            spannable.setSpan(TextEmphasisSpan.fromBundle((Bundle) Preconditions.checkNotNull(bundle2)), i, i2, i3);
         } else if (i4 == 3) {
             spannable.setSpan(new HorizontalTextInVerticalContextSpan(), i, i2, i3);
         } else if (i4 != 4) {
         } else {
-            spannable.setSpan(VoiceSpan.fromBundle((Bundle) Assertions.checkNotNull(bundle2)), i, i2, i3);
+            spannable.setSpan(VoiceSpan.fromBundle((Bundle) Preconditions.checkNotNull(bundle2)), i, i2, i3);
         }
     }
 

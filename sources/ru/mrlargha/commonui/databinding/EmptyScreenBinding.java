@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class EmptyScreenBinding implements ViewBinding {
     public final ConstraintLayout parentLayout;
     private final ConstraintLayout rootView;

@@ -13,12 +13,12 @@ import io.appmetrica.analytics.protobuf.nano.MessageNano;
 public final class C0505pk implements Jc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final xo f1169a;
+    public final xo f1170a;
     public final String b = "startup_state";
     public final AESEncrypter c;
 
     public C0505pk(xo xoVar) {
-        this.f1169a = xoVar;
+        this.f1170a = xoVar;
         C0100a c0100a = new C0100a(C0470oa.k().g());
         this.c = new AESEncrypter(AESEncrypter.DEFAULT_ALGORITHM, c0100a.b(), c0100a.a());
     }
@@ -26,7 +26,7 @@ public final class C0505pk implements Jc {
     public static void a(xo xoVar, C0355jm c0355jm, Bb bb) {
         String optStringOrNull;
         synchronized (xoVar) {
-            optStringOrNull = JsonUtils.optStringOrNull(xoVar.f1303a.a(), "device_id");
+            optStringOrNull = JsonUtils.optStringOrNull(xoVar.f1304a.a(), "device_id");
         }
         if (TextUtils.isEmpty(optStringOrNull)) {
             if (!TextUtils.isEmpty(bb.d)) {
@@ -35,10 +35,10 @@ public final class C0505pk implements Jc {
             if (!TextUtils.isEmpty(bb.e)) {
                 xoVar.b(bb.e);
             }
-            if (TextUtils.isEmpty(bb.f506a)) {
+            if (TextUtils.isEmpty(bb.f507a)) {
                 return;
             }
-            c0355jm.f1058a = bb.f506a;
+            c0355jm.f1059a = bb.f507a;
         }
     }
 
@@ -50,7 +50,7 @@ public final class C0505pk implements Jc {
                 Bb a2 = a(readableDatabase);
                 C0355jm c0355jm = new C0355jm(new C0414m4(new C0363k4()));
                 if (a2 != null) {
-                    a(this.f1169a, c0355jm, a2);
+                    a(this.f1170a, c0355jm, a2);
                     c0355jm.p = a2.c;
                     c0355jm.r = a2.b;
                 }

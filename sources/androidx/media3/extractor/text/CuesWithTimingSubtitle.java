@@ -2,10 +2,10 @@ package androidx.media3.extractor.text;
 
 import androidx.media3.common.C;
 import androidx.media3.common.text.Cue;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
 import com.google.common.base.Function;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Ordering;
@@ -105,7 +105,7 @@ final class CuesWithTimingSubtitle implements Subtitle {
 
     @Override // androidx.media3.extractor.text.Subtitle
     public long getEventTime(int i) {
-        Assertions.checkArgument(i < this.eventCues.size());
+        Preconditions.checkArgument(i < this.eventCues.size());
         return this.eventTimesUs[i];
     }
 

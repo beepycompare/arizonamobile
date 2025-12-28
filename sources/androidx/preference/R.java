@@ -103,8 +103,8 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class drawable {
-        public static int ic_arrow_down_24dp = 0x7f080a0c;
-        public static int preference_list_divider_material = 0x7f080d10;
+        public static int ic_arrow_down_24dp = 0x7f080a1b;
+        public static int preference_list_divider_material = 0x7f080d20;
 
         private drawable() {
         }
@@ -112,15 +112,15 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class id {
-        public static int icon_frame = 0x7f0a06b3;
-        public static int preferences_detail = 0x7f0a0a6c;
-        public static int preferences_header = 0x7f0a0a6d;
-        public static int preferences_sliding_pane_layout = 0x7f0a0a6e;
-        public static int recycler_view = 0x7f0a0af9;
-        public static int seekbar = 0x7f0a0c5c;
-        public static int seekbar_value = 0x7f0a0c5d;
-        public static int spinner = 0x7f0a0ccd;
-        public static int switchWidget = 0x7f0a0d3e;
+        public static int icon_frame = 0x7f0a06b5;
+        public static int preferences_detail = 0x7f0a0a70;
+        public static int preferences_header = 0x7f0a0a71;
+        public static int preferences_sliding_pane_layout = 0x7f0a0a72;
+        public static int recycler_view = 0x7f0a0afd;
+        public static int seekbar = 0x7f0a0c60;
+        public static int seekbar_value = 0x7f0a0c61;
+        public static int spinner = 0x7f0a0cd2;
+        public static int switchWidget = 0x7f0a0d43;
 
         private id() {
         }

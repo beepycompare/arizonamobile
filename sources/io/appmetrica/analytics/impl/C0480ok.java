@@ -6,7 +6,7 @@ import android.util.SparseArray;
 public final class C0480ok extends Kc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final xo f1150a;
+    public final xo f1151a;
 
     public C0480ok() {
         this(C0470oa.k().D().b());
@@ -14,9 +14,9 @@ public final class C0480ok extends Kc {
 
     @Override // io.appmetrica.analytics.impl.Kc
     public final void a(int i) {
-        xo xoVar = this.f1150a;
+        xo xoVar = this.f1151a;
         synchronized (xoVar) {
-            zo zoVar = xoVar.f1303a;
+            zo zoVar = xoVar.f1304a;
             zoVar.a(zoVar.a().put("last_migration_api_level", i));
         }
     }
@@ -24,9 +24,9 @@ public final class C0480ok extends Kc {
     @Override // io.appmetrica.analytics.impl.Kc
     public final int b() {
         int optInt;
-        xo xoVar = this.f1150a;
+        xo xoVar = this.f1151a;
         synchronized (xoVar) {
-            optInt = xoVar.f1303a.a().optInt("last_migration_api_level", -1);
+            optInt = xoVar.f1304a.a().optInt("last_migration_api_level", -1);
         }
         return optInt;
     }
@@ -34,13 +34,13 @@ public final class C0480ok extends Kc {
     @Override // io.appmetrica.analytics.impl.Kc
     public final SparseArray<Jc> c() {
         SparseArray<Jc> sparseArray = new SparseArray<>(1);
-        sparseArray.put(112, new C0505pk(this.f1150a));
+        sparseArray.put(112, new C0505pk(this.f1151a));
         sparseArray.put(115, new C0530qk());
         sparseArray.put(116, new C0604tk());
         return sparseArray;
     }
 
     public C0480ok(xo xoVar) {
-        this.f1150a = xoVar;
+        this.f1151a = xoVar;
     }
 }

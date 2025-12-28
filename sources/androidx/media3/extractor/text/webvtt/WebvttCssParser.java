@@ -1,12 +1,12 @@
 package androidx.media3.extractor.text.webvtt;
 
 import android.text.TextUtils;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ColorParser;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
 import com.google.common.base.Ascii;
+import com.google.common.base.Preconditions;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.ArrayList;
 import java.util.List;
@@ -271,7 +271,7 @@ final class WebvttCssParser {
             Log.w(TAG, "Invalid font-size: '" + str + "'.");
             return;
         }
-        String str2 = (String) Assertions.checkNotNull(matcher.group(2));
+        String str2 = (String) Preconditions.checkNotNull(matcher.group(2));
         str2.hashCode();
         char c = 65535;
         switch (str2.hashCode()) {
@@ -307,7 +307,7 @@ final class WebvttCssParser {
             default:
                 throw new IllegalStateException();
         }
-        webvttCssStyle.setFontSize(Float.parseFloat((String) Assertions.checkNotNull(matcher.group(1))));
+        webvttCssStyle.setFontSize(Float.parseFloat((String) Preconditions.checkNotNull(matcher.group(1))));
     }
 
     private void applySelectorToStyle(WebvttCssStyle webvttCssStyle, String str) {
@@ -318,7 +318,7 @@ final class WebvttCssParser {
         if (indexOf != -1) {
             Matcher matcher = VOICE_NAME_PATTERN.matcher(str.substring(indexOf));
             if (matcher.matches()) {
-                webvttCssStyle.setTargetVoice((String) Assertions.checkNotNull(matcher.group(1)));
+                webvttCssStyle.setTargetVoice((String) Preconditions.checkNotNull(matcher.group(1)));
             }
             str = str.substring(0, indexOf);
         }

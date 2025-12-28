@@ -5,7 +5,7 @@ import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdType
 public abstract /* synthetic */ class Oc {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int[] f717a;
+    public static final /* synthetic */ int[] f718a;
 
     static {
         int[] iArr = new int[ModuleAdType.values().length];
@@ -16,6 +16,6 @@ public abstract /* synthetic */ class Oc {
         iArr[ModuleAdType.MREC.ordinal()] = 5;
         iArr[ModuleAdType.APP_OPEN.ordinal()] = 6;
         iArr[ModuleAdType.OTHER.ordinal()] = 7;
-        f717a = iArr;
+        f718a = iArr;
     }
 }

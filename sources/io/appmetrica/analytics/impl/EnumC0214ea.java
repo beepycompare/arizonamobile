@@ -8,17 +8,17 @@ public enum EnumC0214ea {
     
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f966a;
+    public final int f967a;
 
     EnumC0214ea(int i) {
-        this.f966a = i;
+        this.f967a = i;
     }
 
     public static EnumC0214ea a(Integer num) {
         EnumC0214ea[] values;
         if (num != null) {
             for (EnumC0214ea enumC0214ea : values()) {
-                if (enumC0214ea.f966a == num.intValue()) {
+                if (enumC0214ea.f967a == num.intValue()) {
                     return enumC0214ea;
                 }
             }

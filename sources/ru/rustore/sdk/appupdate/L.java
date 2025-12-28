@@ -5,10 +5,10 @@ import kotlin.jvm.internal.Intrinsics;
 public final class L {
 
     /* renamed from: a  reason: collision with root package name */
-    public final K f1504a;
+    public final K f1505a;
 
     public L(K dataSource) {
         Intrinsics.checkNotNullParameter(dataSource, "dataSource");
-        this.f1504a = dataSource;
+        this.f1505a = dataSource;
     }
 }

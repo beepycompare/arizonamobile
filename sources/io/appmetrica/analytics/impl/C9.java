@@ -3,24 +3,24 @@ package io.appmetrica.analytics.impl;
 public final class C9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final long f524a;
+    public final long f525a;
 
     public C9(long j) {
-        this.f524a = j;
+        this.f525a = j;
     }
 
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof C9) && this.f524a == ((C9) obj).f524a;
+        return (obj instanceof C9) && this.f525a == ((C9) obj).f525a;
     }
 
     public final int hashCode() {
-        return Long.hashCode(this.f524a);
+        return Long.hashCode(this.f525a);
     }
 
     public final String toString() {
-        return "ExternalAttributionConfig(collectingInterval=" + this.f524a + ')';
+        return "ExternalAttributionConfig(collectingInterval=" + this.f525a + ')';
     }
 }

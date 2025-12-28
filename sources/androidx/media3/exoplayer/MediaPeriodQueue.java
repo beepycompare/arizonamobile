@@ -3,13 +3,13 @@ package androidx.media3.exoplayer;
 import android.util.Pair;
 import androidx.media3.common.C;
 import androidx.media3.common.Timeline;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.HandlerWrapper;
 import androidx.media3.exoplayer.ExoPlayer;
 import androidx.media3.exoplayer.MediaPeriodHolder;
 import androidx.media3.exoplayer.analytics.AnalyticsCollector;
 import androidx.media3.exoplayer.source.MediaPeriod;
 import androidx.media3.exoplayer.source.MediaSource;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.List;
@@ -212,17 +212,17 @@ public final class MediaPeriodQueue {
         MediaPeriodHolder mediaPeriodHolder = this.prewarming;
         MediaPeriodHolder mediaPeriodHolder2 = this.reading;
         if (mediaPeriodHolder == mediaPeriodHolder2) {
-            this.prewarming = ((MediaPeriodHolder) Assertions.checkStateNotNull(mediaPeriodHolder2)).getNext();
+            this.prewarming = ((MediaPeriodHolder) Preconditions.checkNotNull(mediaPeriodHolder2)).getNext();
         }
-        this.reading = ((MediaPeriodHolder) Assertions.checkStateNotNull(this.reading)).getNext();
+        this.reading = ((MediaPeriodHolder) Preconditions.checkNotNull(this.reading)).getNext();
         notifyQueueUpdate();
-        return (MediaPeriodHolder) Assertions.checkStateNotNull(this.reading);
+        return (MediaPeriodHolder) Preconditions.checkNotNull(this.reading);
     }
 
     public MediaPeriodHolder advancePrewarmingPeriod() {
-        this.prewarming = ((MediaPeriodHolder) Assertions.checkStateNotNull(this.prewarming)).getNext();
+        this.prewarming = ((MediaPeriodHolder) Preconditions.checkNotNull(this.prewarming)).getNext();
         notifyQueueUpdate();
-        return (MediaPeriodHolder) Assertions.checkStateNotNull(this.prewarming);
+        return (MediaPeriodHolder) Preconditions.checkNotNull(this.prewarming);
     }
 
     public MediaPeriodHolder advancePlayingPeriod() {
@@ -251,14 +251,14 @@ public final class MediaPeriodQueue {
     }
 
     public int removeAfter(MediaPeriodHolder mediaPeriodHolder) {
-        Assertions.checkStateNotNull(mediaPeriodHolder);
+        Preconditions.checkNotNull(mediaPeriodHolder);
         int i = 0;
         if (mediaPeriodHolder.equals(this.loading)) {
             return 0;
         }
         this.loading = mediaPeriodHolder;
         while (mediaPeriodHolder.getNext() != null) {
-            mediaPeriodHolder = (MediaPeriodHolder) Assertions.checkNotNull(mediaPeriodHolder.getNext());
+            mediaPeriodHolder = (MediaPeriodHolder) Preconditions.checkNotNull(mediaPeriodHolder.getNext());
             if (mediaPeriodHolder == this.reading) {
                 MediaPeriodHolder mediaPeriodHolder2 = this.playing;
                 this.reading = mediaPeriodHolder2;
@@ -272,7 +272,7 @@ public final class MediaPeriodQueue {
             mediaPeriodHolder.release();
             this.length--;
         }
-        ((MediaPeriodHolder) Assertions.checkNotNull(this.loading)).setNext(null);
+        ((MediaPeriodHolder) Preconditions.checkNotNull(this.loading)).setNext(null);
         notifyQueueUpdate();
         return i;
     }
@@ -305,7 +305,7 @@ public final class MediaPeriodQueue {
         if (this.length == 0) {
             return;
         }
-        MediaPeriodHolder mediaPeriodHolder = (MediaPeriodHolder) Assertions.checkStateNotNull(this.playing);
+        MediaPeriodHolder mediaPeriodHolder = (MediaPeriodHolder) Preconditions.checkNotNull(this.playing);
         this.oldFrontPeriodUid = mediaPeriodHolder.uid;
         this.oldFrontPeriodWindowSequenceNumber = mediaPeriodHolder.info.id.windowSequenceNumber;
         while (mediaPeriodHolder != null) {
@@ -404,7 +404,7 @@ public final class MediaPeriodQueue {
         timeline.getWindow(period.windowIndex, window);
         for (int indexOfPeriod = timeline.getIndexOfPeriod(obj); isSkippableAdPeriod(period) && indexOfPeriod <= window.lastPeriodIndex; indexOfPeriod++) {
             timeline.getPeriod(indexOfPeriod, period, true);
-            obj = Assertions.checkNotNull(period.uid);
+            obj = Preconditions.checkNotNull(period.uid);
         }
         timeline.getPeriodByUid(obj, period);
         int adGroupIndexForPositionUs = period.getAdGroupIndexForPositionUs(j);
@@ -445,7 +445,7 @@ public final class MediaPeriodQueue {
             z |= z2;
             Timeline.Period period = this.period;
             if (period.getAdGroupIndexForPositionUs(period.durationUs) != -1) {
-                obj = Assertions.checkNotNull(this.period.uid);
+                obj = Preconditions.checkNotNull(this.period.uid);
             }
             if (z && (!z2 || this.period.durationUs != 0)) {
                 break;
@@ -464,14 +464,14 @@ public final class MediaPeriodQueue {
         this.analyticsCollectorHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.MediaPeriodQueue$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                MediaPeriodQueue.this.m8915x6b40a91a(builder, mediaPeriodId);
+                MediaPeriodQueue.this.m8922x6b40a91a(builder, mediaPeriodId);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$notifyQueueUpdate$0$androidx-media3-exoplayer-MediaPeriodQueue  reason: not valid java name */
-    public /* synthetic */ void m8915x6b40a91a(ImmutableList.Builder builder, MediaSource.MediaPeriodId mediaPeriodId) {
+    public /* synthetic */ void m8922x6b40a91a(ImmutableList.Builder builder, MediaSource.MediaPeriodId mediaPeriodId) {
         this.analyticsCollector.updateMediaPeriodQueueInfo(builder.build(), mediaPeriodId);
     }
 
@@ -530,7 +530,7 @@ public final class MediaPeriodQueue {
         while (true) {
             timeline2 = timeline;
             indexOfPeriod = timeline2.getNextPeriodIndex(indexOfPeriod, this.period, this.window, this.repeatMode, this.shuffleModeEnabled);
-            while (((MediaPeriodHolder) Assertions.checkNotNull(mediaPeriodHolder)).getNext() != null && !mediaPeriodHolder.info.isLastInTimelinePeriod) {
+            while (((MediaPeriodHolder) Preconditions.checkNotNull(mediaPeriodHolder)).getNext() != null && !mediaPeriodHolder.info.isLastInTimelinePeriod) {
                 mediaPeriodHolder = mediaPeriodHolder.getNext();
             }
             MediaPeriodHolder next = mediaPeriodHolder.getNext();
@@ -567,7 +567,7 @@ public final class MediaPeriodQueue {
             return null;
         }
         int i = timeline.getPeriod(nextPeriodIndex, this.period, true).windowIndex;
-        Object checkNotNull = Assertions.checkNotNull(this.period.uid);
+        Object checkNotNull = Preconditions.checkNotNull(this.period.uid);
         long j3 = mediaPeriodInfo.id.windowSequenceNumber;
         long j4 = 0;
         if (timeline.getWindow(i, this.window).firstPeriodIndex == nextPeriodIndex) {

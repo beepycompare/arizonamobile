@@ -5,9 +5,9 @@ import android.system.ErrnoException;
 import android.system.OsConstants;
 import android.text.TextUtils;
 import androidx.media3.common.PlaybackException;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.datasource.DataSource;
+import com.google.common.base.Preconditions;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -134,7 +134,7 @@ public final class FileDataSource extends BaseDataSource {
     private static RandomAccessFile openLocalFile(Uri uri) throws FileDataSourceException {
         int i = PlaybackException.ERROR_CODE_IO_NO_PERMISSION;
         try {
-            return new RandomAccessFile((String) Assertions.checkNotNull(uri.getPath()), "r");
+            return new RandomAccessFile((String) Preconditions.checkNotNull(uri.getPath()), "r");
         } catch (FileNotFoundException e) {
             if (!TextUtils.isEmpty(uri.getQuery()) || !TextUtils.isEmpty(uri.getFragment())) {
                 throw new FileDataSourceException(String.format("uri has query and/or fragment, which are not supported. Did you call Uri.parse() on a string containing '?' or '#'? Use Uri.fromFile(new File(path)) to avoid this. path=%s,query=%s,fragment=%s", uri.getPath(), uri.getQuery(), uri.getFragment()), e, 1004);

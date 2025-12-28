@@ -4,7 +4,7 @@ import androidx.media3.common.audio.AudioProcessor;
 import androidx.media3.common.audio.BaseAudioProcessor;
 import androidx.media3.common.util.Util;
 import java.nio.ByteBuffer;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class ToFloatPcmAudioProcessor extends BaseAudioProcessor {
     private static final int FLOAT_NAN_AS_INT = Float.floatToIntBits(Float.NaN);
     private static final double PCM_32_BIT_INT_TO_PCM_32_BIT_FLOAT_FACTOR = 4.656612875245797E-10d;
@@ -12,7 +12,7 @@ public final class ToFloatPcmAudioProcessor extends BaseAudioProcessor {
     @Override // androidx.media3.common.audio.BaseAudioProcessor
     public AudioProcessor.AudioFormat onConfigure(AudioProcessor.AudioFormat audioFormat) throws AudioProcessor.UnhandledAudioFormatException {
         int i = audioFormat.encoding;
-        if (Util.isEncodingHighResolutionPcm(i)) {
+        if (Util.isEncodingHighResolutionPcm(i) || i == 2) {
             if (i != 4) {
                 return new AudioProcessor.AudioFormat(audioFormat.sampleRate, audioFormat.channelCount, 4);
             }
@@ -28,17 +28,11 @@ public final class ToFloatPcmAudioProcessor extends BaseAudioProcessor {
         int limit = byteBuffer.limit();
         int i = limit - position;
         int i2 = this.inputAudioFormat.encoding;
-        if (i2 == 21) {
-            replaceOutputBuffer = replaceOutputBuffer((i / 3) * 4);
+        if (i2 == 2) {
+            replaceOutputBuffer = replaceOutputBuffer(i * 2);
             while (position < limit) {
-                writePcm32BitFloat(((byteBuffer.get(position) & 255) << 8) | ((byteBuffer.get(position + 1) & 255) << 16) | ((byteBuffer.get(position + 2) & 255) << 24), replaceOutputBuffer);
-                position += 3;
-            }
-        } else if (i2 == 22) {
-            replaceOutputBuffer = replaceOutputBuffer(i);
-            while (position < limit) {
-                writePcm32BitFloat((byteBuffer.get(position) & 255) | ((byteBuffer.get(position + 1) & 255) << 8) | ((byteBuffer.get(position + 2) & 255) << 16) | ((byteBuffer.get(position + 3) & 255) << 24), replaceOutputBuffer);
-                position += 4;
+                writePcm32BitFloat(((byteBuffer.get(position) & 255) << 16) | ((byteBuffer.get(position + 1) & 255) << 24), replaceOutputBuffer);
+                position += 2;
             }
         } else if (i2 == 1342177280) {
             replaceOutputBuffer = replaceOutputBuffer((i / 3) * 4);
@@ -50,6 +44,18 @@ public final class ToFloatPcmAudioProcessor extends BaseAudioProcessor {
             replaceOutputBuffer = replaceOutputBuffer(i);
             while (position < limit) {
                 writePcm32BitFloat((byteBuffer.get(position + 3) & 255) | ((byteBuffer.get(position + 2) & 255) << 8) | ((byteBuffer.get(position + 1) & 255) << 16) | ((byteBuffer.get(position) & 255) << 24), replaceOutputBuffer);
+                position += 4;
+            }
+        } else if (i2 == 21) {
+            replaceOutputBuffer = replaceOutputBuffer((i / 3) * 4);
+            while (position < limit) {
+                writePcm32BitFloat(((byteBuffer.get(position) & 255) << 8) | ((byteBuffer.get(position + 1) & 255) << 16) | ((byteBuffer.get(position + 2) & 255) << 24), replaceOutputBuffer);
+                position += 3;
+            }
+        } else if (i2 == 22) {
+            replaceOutputBuffer = replaceOutputBuffer(i);
+            while (position < limit) {
+                writePcm32BitFloat((byteBuffer.get(position) & 255) | ((byteBuffer.get(position + 1) & 255) << 8) | ((byteBuffer.get(position + 2) & 255) << 16) | ((byteBuffer.get(position + 3) & 255) << 24), replaceOutputBuffer);
                 position += 4;
             }
         } else {

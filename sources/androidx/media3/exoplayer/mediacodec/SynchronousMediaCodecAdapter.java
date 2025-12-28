@@ -7,12 +7,13 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.PersistableBundle;
 import android.view.Surface;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.TraceUtil;
 import androidx.media3.decoder.CryptoInfo;
 import androidx.media3.exoplayer.mediacodec.MediaCodecAdapter;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.nio.ByteBuffer;
+import java.util.List;
 /* loaded from: classes3.dex */
 public final class SynchronousMediaCodecAdapter implements MediaCodecAdapter {
     private final MediaCodec codec;
@@ -55,7 +56,7 @@ public final class SynchronousMediaCodecAdapter implements MediaCodecAdapter {
         }
 
         protected MediaCodec createCodec(MediaCodecAdapter.Configuration configuration) throws IOException {
-            Assertions.checkNotNull(configuration.codecInfo);
+            Preconditions.checkNotNull(configuration.codecInfo);
             String str = configuration.codecInfo.name;
             TraceUtil.beginSection("createCodec:" + str);
             MediaCodec createByCodecName = MediaCodec.createByCodecName(str);
@@ -147,14 +148,14 @@ public final class SynchronousMediaCodecAdapter implements MediaCodecAdapter {
         this.codec.setOnFrameRenderedListener(new MediaCodec.OnFrameRenderedListener() { // from class: androidx.media3.exoplayer.mediacodec.SynchronousMediaCodecAdapter$$ExternalSyntheticLambda0
             @Override // android.media.MediaCodec.OnFrameRenderedListener
             public final void onFrameRendered(MediaCodec mediaCodec, long j, long j2) {
-                SynchronousMediaCodecAdapter.this.m8984xe3d0a01f(onFrameRenderedListener, mediaCodec, j, j2);
+                SynchronousMediaCodecAdapter.this.m8993xe3d0a01f(onFrameRenderedListener, mediaCodec, j, j2);
             }
         }, handler);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setOnFrameRenderedListener$0$androidx-media3-exoplayer-mediacodec-SynchronousMediaCodecAdapter  reason: not valid java name */
-    public /* synthetic */ void m8984xe3d0a01f(MediaCodecAdapter.OnFrameRenderedListener onFrameRenderedListener, MediaCodec mediaCodec, long j, long j2) {
+    public /* synthetic */ void m8993xe3d0a01f(MediaCodecAdapter.OnFrameRenderedListener onFrameRenderedListener, MediaCodec mediaCodec, long j, long j2) {
         onFrameRenderedListener.onFrameRendered(this, j, j2);
     }
 
@@ -181,5 +182,15 @@ public final class SynchronousMediaCodecAdapter implements MediaCodecAdapter {
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecAdapter
     public PersistableBundle getMetrics() {
         return this.codec.getMetrics();
+    }
+
+    @Override // androidx.media3.exoplayer.mediacodec.MediaCodecAdapter
+    public void subscribeToVendorParameters(List<String> list) {
+        this.codec.subscribeToVendorParameters(list);
+    }
+
+    @Override // androidx.media3.exoplayer.mediacodec.MediaCodecAdapter
+    public void unsubscribeFromVendorParameters(List<String> list) {
+        this.codec.unsubscribeFromVendorParameters(list);
     }
 }

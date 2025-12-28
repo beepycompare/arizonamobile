@@ -57,7 +57,7 @@ public final class HomeComponent$observeExternal$1 extends SuspendLambda impleme
         do {
             value = mutableStateFlow.getValue();
             Timber.Forest.d(homeExternalUiState.toString(), new Object[0]);
-        } while (!mutableStateFlow.compareAndSet(value, HomeUiState.copy$default((HomeUiState) value, 0, homeExternalUiState.isProgressDownload(), homeExternalUiState.getUpdateSize(), null, null, null, null, null, null, null, null, homeExternalUiState.isCheckingFiles(), false, homeExternalUiState.isUpdateNeeded(), 0, false, homeExternalUiState.isGameReady(), false, 186361, null)));
+        } while (!mutableStateFlow.compareAndSet(value, HomeUiState.copy$default((HomeUiState) value, 0, homeExternalUiState.isProgressDownload(), homeExternalUiState.getUpdateSize(), null, null, null, null, null, null, null, null, homeExternalUiState.isCheckingFiles(), false, homeExternalUiState.isUpdateNeeded(), 0, false, homeExternalUiState.isGameReady(), false, 0, 0, 972793, null)));
         return Unit.INSTANCE;
     }
 }

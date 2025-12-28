@@ -8,7 +8,7 @@ import java.util.HashMap;
 public final class C0405lk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0379kk f1093a;
+    public final C0379kk f1094a;
     public volatile A9 b;
     public volatile A9 c;
     public volatile A9 d;
@@ -25,7 +25,7 @@ public final class C0405lk {
         if (this.g == null) {
             synchronized (this) {
                 if (this.g == null) {
-                    this.f1093a.getClass();
+                    this.f1094a.getClass();
                     HandlerThreadC0190db a2 = A9.a("IAA-SDE");
                     this.g = new A9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }
@@ -38,7 +38,7 @@ public final class C0405lk {
         if (this.d == null) {
             synchronized (this) {
                 if (this.d == null) {
-                    this.f1093a.getClass();
+                    this.f1094a.getClass();
                     HandlerThreadC0190db a2 = A9.a("IAA-SMH-1");
                     this.d = new A9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }
@@ -51,7 +51,7 @@ public final class C0405lk {
         if (this.e == null) {
             synchronized (this) {
                 if (this.e == null) {
-                    this.f1093a.getClass();
+                    this.f1094a.getClass();
                     HandlerThreadC0190db a2 = A9.a("IAA-SNTPE");
                     this.e = new A9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }
@@ -64,7 +64,7 @@ public final class C0405lk {
         if (this.c == null) {
             synchronized (this) {
                 if (this.c == null) {
-                    this.f1093a.getClass();
+                    this.f1094a.getClass();
                     HandlerThreadC0190db a2 = A9.a("IAA-STE");
                     this.c = new A9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }
@@ -75,6 +75,6 @@ public final class C0405lk {
 
     public C0405lk(C0379kk c0379kk) {
         new HashMap();
-        this.f1093a = c0379kk;
+        this.f1094a = c0379kk;
     }
 }

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public final class C0271gf implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0574sf f1003a;
+    public final C0574sf f1004a;
     public final C0142bf b;
 
     public C0271gf() {
@@ -18,7 +18,7 @@ public final class C0271gf implements ProtobufConverter {
     /* renamed from: a */
     public final C0475of fromModel(C0219ef c0219ef) {
         C0475of c0475of = new C0475of();
-        c0475of.f1146a = this.f1003a.fromModel(c0219ef.f968a);
+        c0475of.f1147a = this.f1004a.fromModel(c0219ef.f969a);
         c0475of.b = new C0450nf[c0219ef.b.size()];
         int i = 0;
         for (C0194df c0194df : c0219ef.b) {
@@ -29,7 +29,7 @@ public final class C0271gf implements ProtobufConverter {
     }
 
     public C0271gf(C0574sf c0574sf, C0142bf c0142bf) {
-        this.f1003a = c0574sf;
+        this.f1004a = c0574sf;
         this.b = c0142bf;
     }
 
@@ -41,11 +41,11 @@ public final class C0271gf implements ProtobufConverter {
         for (C0450nf c0450nf : c0475of.b) {
             arrayList.add(this.b.toModel(c0450nf));
         }
-        C0425mf c0425mf = c0475of.f1146a;
+        C0425mf c0425mf = c0475of.f1147a;
         if (c0425mf == null) {
-            model = this.f1003a.toModel(new C0425mf());
+            model = this.f1004a.toModel(new C0425mf());
         } else {
-            model = this.f1003a.toModel(c0425mf);
+            model = this.f1004a.toModel(c0425mf);
         }
         return new C0219ef(model, arrayList);
     }

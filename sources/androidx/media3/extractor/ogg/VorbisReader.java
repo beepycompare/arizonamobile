@@ -3,10 +3,10 @@ package androidx.media3.extractor.ogg;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.ParserException;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.extractor.VorbisUtil;
 import androidx.media3.extractor.ogg.StreamReader;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -59,7 +59,7 @@ final class VorbisReader extends StreamReader {
         if ((parsableByteArray.getData()[0] & 1) == 1) {
             return -1L;
         }
-        int decodeBlockSize = decodeBlockSize(parsableByteArray.getData()[0], (VorbisSetup) Assertions.checkStateNotNull(this.vorbisSetup));
+        int decodeBlockSize = decodeBlockSize(parsableByteArray.getData()[0], (VorbisSetup) Preconditions.checkNotNull(this.vorbisSetup));
         long j = this.seenFirstAudioPacket ? (this.previousPacketBlockSize + decodeBlockSize) / 4 : 0;
         appendNumberOfSamples(parsableByteArray, j);
         this.seenFirstAudioPacket = true;
@@ -71,7 +71,7 @@ final class VorbisReader extends StreamReader {
     @EnsuresNonNullIf(expression = {"#3.format"}, result = false)
     protected boolean readHeaders(ParsableByteArray parsableByteArray, long j, StreamReader.SetupData setupData) throws IOException {
         if (this.vorbisSetup != null) {
-            Assertions.checkNotNull(setupData.format);
+            Preconditions.checkNotNull(setupData.format);
             return false;
         }
         VorbisSetup readSetupHeaders = readSetupHeaders(parsableByteArray);

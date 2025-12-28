@@ -1,12 +1,12 @@
 package androidx.media3.extractor.ogg;
 
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.audio.SilenceSkippingAudioProcessor;
 import androidx.media3.extractor.ExtractorInput;
 import androidx.media3.extractor.ExtractorUtil;
 import androidx.media3.extractor.SeekMap;
 import androidx.media3.extractor.SeekPoint;
+import com.google.common.base.Preconditions;
 import java.io.EOFException;
 import java.io.IOException;
 import java.math.BigInteger;
@@ -35,7 +35,7 @@ public final class DefaultOggSeeker implements OggSeeker {
     private long totalGranules;
 
     public DefaultOggSeeker(StreamReader streamReader, long j, long j2, long j3, long j4, boolean z) {
-        Assertions.checkArgument(j >= 0 && j2 > j);
+        Preconditions.checkArgument(j >= 0 && j2 > j);
         this.streamReader = streamReader;
         this.payloadStartPosition = j;
         this.payloadEndPosition = j2;

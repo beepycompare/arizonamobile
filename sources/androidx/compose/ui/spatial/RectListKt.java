@@ -19,8 +19,8 @@ public final class RectListKt {
     public static final int BitOffsetForLastChildOffset = 50;
     public static final int BitOffsetForParentId = 25;
     public static final int BitOffsetForUpdated = 60;
-    private static final long EverythingButLastChildOffset = ULong.m10395constructorimpl(ULong.m10395constructorimpl(ULong.m10395constructorimpl(1023) << 50) ^ (-1));
-    private static final long EverythingButParentId = ULong.m10395constructorimpl((-1) ^ ULong.m10395constructorimpl(ULong.m10395constructorimpl(33554431) << 25));
+    private static final long EverythingButLastChildOffset = ULong.m10423constructorimpl(ULong.m10423constructorimpl(ULong.m10423constructorimpl(1023) << 50) ^ (-1));
+    private static final long EverythingButParentId = ULong.m10423constructorimpl((-1) ^ ULong.m10423constructorimpl(ULong.m10423constructorimpl(33554431) << 25));
     public static final int InitialSize = 64;
     public static final int LongsPerItem = 3;
     public static final int Lower10Bits = 1023;

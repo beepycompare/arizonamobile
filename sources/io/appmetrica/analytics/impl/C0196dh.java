@@ -12,7 +12,7 @@ public final class C0196dh extends Sg {
     public final boolean a(Q5 q5) {
         Ek ek;
         Uk uk;
-        C0394l9 c0394l9 = this.f776a.n;
+        C0394l9 c0394l9 = this.f777a.n;
         Sk sk = c0394l9.c;
         if (sk.g == 0) {
             ek = sk.d.b();
@@ -25,22 +25,22 @@ public final class C0196dh extends Sg {
         }
         if (ek != null) {
             uk = new Uk();
-            uk.f811a = ek.d;
+            uk.f812a = ek.d;
             long andIncrement = ek.f.getAndIncrement();
             Vk vk = ek.b;
             vk.a(Vk.g, Long.valueOf(ek.f.get()));
             vk.b();
             uk.b = andIncrement;
             uk.c = TimeUnit.MILLISECONDS.toSeconds(ek.j);
-            uk.d = ek.c.f608a;
+            uk.d = ek.c.f609a;
         } else {
             long j = q5.j;
             long a2 = sk.b.a();
-            M6 m6 = sk.f778a.e;
+            M6 m6 = sk.f779a.e;
             Wk wk = Wk.BACKGROUND;
             m6.a(a2, wk, j);
             uk = new Uk();
-            uk.f811a = a2;
+            uk.f812a = a2;
             uk.d = wk;
             uk.b = 0L;
             uk.c = 0L;

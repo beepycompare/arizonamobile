@@ -2,13 +2,13 @@ package androidx.media3.exoplayer.source;
 
 import androidx.media3.common.StreamKey;
 import androidx.media3.common.TrackGroup;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.exoplayer.LoadingInfo;
 import androidx.media3.exoplayer.SeekParameters;
 import androidx.media3.exoplayer.source.MediaPeriod;
 import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.exoplayer.trackselection.ExoTrackSelection;
 import androidx.media3.exoplayer.upstream.Allocator;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import java.io.IOException;
@@ -63,7 +63,7 @@ public class FilteringMediaSource extends WrappingMediaSource {
 
         @Override // androidx.media3.exoplayer.source.MediaPeriod
         public TrackGroupArray getTrackGroups() {
-            return (TrackGroupArray) Assertions.checkNotNull(this.filteredTrackGroups);
+            return (TrackGroupArray) Preconditions.checkNotNull(this.filteredTrackGroups);
         }
 
         @Override // androidx.media3.exoplayer.source.MediaPeriod
@@ -132,12 +132,12 @@ public class FilteringMediaSource extends WrappingMediaSource {
                 }
             }
             this.filteredTrackGroups = new TrackGroupArray((TrackGroup[]) builder.build().toArray(new TrackGroup[0]));
-            ((MediaPeriod.Callback) Assertions.checkNotNull(this.callback)).onPrepared(this);
+            ((MediaPeriod.Callback) Preconditions.checkNotNull(this.callback)).onPrepared(this);
         }
 
         @Override // androidx.media3.exoplayer.source.SequenceableLoader.Callback
         public void onContinueLoadingRequested(MediaPeriod mediaPeriod) {
-            ((MediaPeriod.Callback) Assertions.checkNotNull(this.callback)).onContinueLoadingRequested(this);
+            ((MediaPeriod.Callback) Preconditions.checkNotNull(this.callback)).onContinueLoadingRequested(this);
         }
     }
 }

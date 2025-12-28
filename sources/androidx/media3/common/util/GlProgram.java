@@ -4,6 +4,7 @@ import android.content.Context;
 import android.opengl.GLES20;
 import androidx.media3.common.C;
 import androidx.media3.common.util.GlUtil;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.nio.Buffer;
 import java.util.HashMap;
@@ -102,33 +103,33 @@ public final class GlProgram {
     }
 
     public void setBufferAttribute(String str, float[] fArr, int i) {
-        ((Attribute) Assertions.checkNotNull(this.attributeByName.get(str))).setBuffer(fArr, i);
+        ((Attribute) Preconditions.checkNotNull(this.attributeByName.get(str))).setBuffer(fArr, i);
     }
 
     public void setSamplerTexIdUniform(String str, int i, int i2) {
-        ((Uniform) Assertions.checkNotNull(this.uniformByName.get(str))).setSamplerTexId(i, i2);
+        ((Uniform) Preconditions.checkNotNull(this.uniformByName.get(str))).setSamplerTexId(i, i2);
     }
 
     public void setSamplerTexIdUniform(String str, int i, int i2, int i3) {
-        Uniform uniform = (Uniform) Assertions.checkNotNull(this.uniformByName.get(str));
+        Uniform uniform = (Uniform) Preconditions.checkNotNull(this.uniformByName.get(str));
         uniform.setSamplerTexId(i, i2);
         uniform.setTexMinFilter(i3);
     }
 
     public void setIntUniform(String str, int i) {
-        ((Uniform) Assertions.checkNotNull(this.uniformByName.get(str))).setInt(i);
+        ((Uniform) Preconditions.checkNotNull(this.uniformByName.get(str))).setInt(i);
     }
 
     public void setIntsUniform(String str, int[] iArr) {
-        ((Uniform) Assertions.checkNotNull(this.uniformByName.get(str))).setInts(iArr);
+        ((Uniform) Preconditions.checkNotNull(this.uniformByName.get(str))).setInts(iArr);
     }
 
     public void setFloatUniform(String str, float f) {
-        ((Uniform) Assertions.checkNotNull(this.uniformByName.get(str))).setFloat(f);
+        ((Uniform) Preconditions.checkNotNull(this.uniformByName.get(str))).setFloat(f);
     }
 
     public void setFloatsUniform(String str, float[] fArr) {
-        ((Uniform) Assertions.checkNotNull(this.uniformByName.get(str))).setFloats(fArr);
+        ((Uniform) Preconditions.checkNotNull(this.uniformByName.get(str))).setFloats(fArr);
     }
 
     public void setFloatsUniformIfPresent(String str, float[] fArr) {
@@ -191,7 +192,7 @@ public final class GlProgram {
 
         public void bind() throws GlUtil.GlException {
             GLES20.glBindBuffer(34962, 0);
-            GLES20.glVertexAttribPointer(this.location, this.size, 5126, false, 0, (Buffer) Assertions.checkNotNull(this.buffer, "call setBuffer before bind"));
+            GLES20.glVertexAttribPointer(this.location, this.size, 5126, false, 0, (Buffer) Preconditions.checkNotNull(this.buffer, "call setBuffer before bind"));
             GLES20.glEnableVertexAttribArray(this.location);
             GlUtil.checkGlError();
         }

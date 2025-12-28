@@ -282,7 +282,7 @@ public final class NewVersionAvailableDialogKt {
                 composer.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableSingletons$NewVersionAvailableDialogKt.INSTANCE.m10081getLambda$1405896063$dialogs_release(), composer, 48);
+            DialogButtonKt.DialogButtonNo((Function0) rememberedValue, ComposableSingletons$NewVersionAvailableDialogKt.INSTANCE.m10096getLambda$1405896063$dialogs_release(), composer, 48);
             ComposerKt.sourceInformationMarkerStart(composer, 1194099340, "CC(remember):NewVersionAvailableDialog.kt#9igjgp");
             boolean changed2 = composer.changed(function02);
             Object rememberedValue2 = composer.rememberedValue();
@@ -298,7 +298,7 @@ public final class NewVersionAvailableDialogKt {
                 composer.updateRememberedValue(rememberedValue2);
             }
             ComposerKt.sourceInformationMarkerEnd(composer);
-            DialogButtonKt.DialogButtonYes((Function0) rememberedValue2, false, ComposableSingletons$NewVersionAvailableDialogKt.INSTANCE.m10082getLambda$1889472662$dialogs_release(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            DialogButtonKt.DialogButtonYes((Function0) rememberedValue2, false, ComposableSingletons$NewVersionAvailableDialogKt.INSTANCE.m10097getLambda$1889472662$dialogs_release(), composer, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ComposerKt.sourceInformationMarkerEnd(composer);
             ComposerKt.sourceInformationMarkerEnd(composer);
             composer.endNode();

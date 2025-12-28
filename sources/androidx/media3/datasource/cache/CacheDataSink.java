@@ -1,11 +1,11 @@
 package androidx.media3.datasource.cache;
 
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
 import androidx.media3.datasource.DataSink;
 import androidx.media3.datasource.DataSpec;
 import androidx.media3.datasource.cache.Cache;
+import com.google.common.base.Preconditions;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -50,7 +50,7 @@ public final class CacheDataSink implements DataSink {
 
         @Override // androidx.media3.datasource.DataSink.Factory
         public DataSink createDataSink() {
-            return new CacheDataSink((Cache) Assertions.checkNotNull(this.cache), this.fragmentSize, this.bufferSize);
+            return new CacheDataSink((Cache) Preconditions.checkNotNull(this.cache), this.fragmentSize, this.bufferSize);
         }
     }
 
@@ -66,19 +66,19 @@ public final class CacheDataSink implements DataSink {
     }
 
     public CacheDataSink(Cache cache, long j, int i) {
-        Assertions.checkState(j > 0 || j == -1, "fragmentSize must be positive or C.LENGTH_UNSET.");
+        Preconditions.checkState(j > 0 || j == -1, "fragmentSize must be positive or C.LENGTH_UNSET.");
         int i2 = (j > (-1L) ? 1 : (j == (-1L) ? 0 : -1));
         if (i2 != 0 && j < 2097152) {
             Log.w(TAG, "fragmentSize is below the minimum recommended value of 2097152. This may cause poor cache performance.");
         }
-        this.cache = (Cache) Assertions.checkNotNull(cache);
+        this.cache = (Cache) Preconditions.checkNotNull(cache);
         this.fragmentSize = i2 == 0 ? Long.MAX_VALUE : j;
         this.bufferSize = i;
     }
 
     @Override // androidx.media3.datasource.DataSink
     public void open(DataSpec dataSpec) throws CacheDataSinkException {
-        Assertions.checkNotNull(dataSpec.key);
+        Preconditions.checkNotNull(dataSpec.key);
         if (dataSpec.length == -1 && dataSpec.isFlagSet(2)) {
             this.dataSpec = null;
             return;

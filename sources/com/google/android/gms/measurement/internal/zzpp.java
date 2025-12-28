@@ -14,7 +14,6 @@ import android.os.Parcelable;
 import android.os.RemoteException;
 import android.os.ext.SdkExtensions;
 import android.text.TextUtils;
-import androidx.compose.material3.internal.CalendarModelKt;
 import androidx.core.app.NotificationCompat;
 import androidx.media3.exoplayer.Renderer;
 import androidx.privacysandbox.ads.adservices.java.measurement.MeasurementManagerFutures;
@@ -866,7 +865,7 @@ public final class zzpp extends zzjf {
     }
 
     public final long zzaj(long j, long j2) {
-        return (j + (j2 * 60000)) / CalendarModelKt.MillisecondsIn24Hours;
+        return (j + (j2 * 60000)) / 86400000;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

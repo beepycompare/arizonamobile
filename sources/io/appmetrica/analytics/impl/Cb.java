@@ -4,7 +4,7 @@ public final class Cb {
     public final C0328il c;
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0167ce f525a = new C0167ce("Context");
+    public final C0167ce f526a = new C0167ce("Context");
     public final C0167ce b = new C0167ce("Config");
     public final C0167ce d = new C0167ce("Sender");
     public final C0167ce e = new C0167ce("Event");

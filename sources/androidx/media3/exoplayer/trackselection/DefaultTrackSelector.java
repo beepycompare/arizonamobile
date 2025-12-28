@@ -23,7 +23,6 @@ import androidx.media3.common.TrackGroup;
 import androidx.media3.common.TrackSelectionOverride;
 import androidx.media3.common.TrackSelectionParameters;
 import androidx.media3.common.audio.AudioManagerCompat;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.BundleCollectionUtil;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
@@ -39,6 +38,7 @@ import androidx.media3.exoplayer.trackselection.ExoTrackSelection;
 import androidx.media3.exoplayer.trackselection.MappingTrackSelector;
 import com.google.android.vending.expansion.downloader.Constants;
 import com.google.common.base.Function;
+import com.google.common.base.Preconditions;
 import com.google.common.base.Predicate;
 import com.google.common.collect.ComparisonChain;
 import com.google.common.collect.ImmutableList;
@@ -92,7 +92,7 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
     @Deprecated
     /* loaded from: classes3.dex */
     public static final class ParametersBuilder extends TrackSelectionParameters.Builder {
-        private final Parameters.Builder delegate;
+        private final Parameters.Builder delegate = new Parameters.Builder();
 
         @Override // androidx.media3.common.TrackSelectionParameters.Builder
         public /* bridge */ /* synthetic */ TrackSelectionParameters.Builder setDisabledTrackTypes(Set set) {
@@ -100,11 +100,9 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
         }
 
         public ParametersBuilder() {
-            this.delegate = new Parameters.Builder();
         }
 
         public ParametersBuilder(Context context) {
-            this.delegate = new Parameters.Builder(context);
         }
 
         /* JADX INFO: Access modifiers changed from: protected */
@@ -220,13 +218,19 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
 
         @Override // androidx.media3.common.TrackSelectionParameters.Builder
         public ParametersBuilder setPreferredVideoLanguage(String str) {
-            super.setPreferredVideoLanguage(str);
+            this.delegate.setPreferredVideoLanguage(str);
             return this;
         }
 
         @Override // androidx.media3.common.TrackSelectionParameters.Builder
         public ParametersBuilder setPreferredVideoLanguages(String... strArr) {
-            super.setPreferredVideoLanguages(strArr);
+            this.delegate.setPreferredVideoLanguages(strArr);
+            return this;
+        }
+
+        @Override // androidx.media3.common.TrackSelectionParameters.Builder
+        public ParametersBuilder setPreferredVideoLabels(String... strArr) {
+            this.delegate.setPreferredVideoLabels(strArr);
             return this;
         }
 
@@ -304,8 +308,20 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
         }
 
         @Override // androidx.media3.common.TrackSelectionParameters.Builder
+        public ParametersBuilder setPreferredAudioLabels(String... strArr) {
+            this.delegate.setPreferredAudioLabels(strArr);
+            return this;
+        }
+
+        @Override // androidx.media3.common.TrackSelectionParameters.Builder
         public ParametersBuilder setAudioOffloadPreferences(TrackSelectionParameters.AudioOffloadPreferences audioOffloadPreferences) {
             this.delegate.setAudioOffloadPreferences(audioOffloadPreferences);
+            return this;
+        }
+
+        @Override // androidx.media3.common.TrackSelectionParameters.Builder
+        public ParametersBuilder setSelectTextByDefault(boolean z) {
+            this.delegate.setSelectTextByDefault(z);
             return this;
         }
 
@@ -336,6 +352,12 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
         @Override // androidx.media3.common.TrackSelectionParameters.Builder
         public ParametersBuilder setPreferredTextRoleFlags(int i) {
             this.delegate.setPreferredTextRoleFlags(i);
+            return this;
+        }
+
+        @Override // androidx.media3.common.TrackSelectionParameters.Builder
+        public ParametersBuilder setPreferredTextLabels(String... strArr) {
+            this.delegate.setPreferredTextLabels(strArr);
             return this;
         }
 
@@ -715,6 +737,12 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
             }
 
             @Override // androidx.media3.common.TrackSelectionParameters.Builder
+            public Builder setPreferredVideoLabels(String... strArr) {
+                super.setPreferredVideoLabels(strArr);
+                return this;
+            }
+
+            @Override // androidx.media3.common.TrackSelectionParameters.Builder
             public Builder setPreferredVideoRoleFlags(int i) {
                 super.setPreferredVideoRoleFlags(i);
                 return this;
@@ -735,6 +763,12 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
             @Override // androidx.media3.common.TrackSelectionParameters.Builder
             public Builder setPreferredAudioRoleFlags(int i) {
                 super.setPreferredAudioRoleFlags(i);
+                return this;
+            }
+
+            @Override // androidx.media3.common.TrackSelectionParameters.Builder
+            public Builder setPreferredAudioLabels(String... strArr) {
+                super.setPreferredAudioLabels(strArr);
                 return this;
             }
 
@@ -804,6 +838,12 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
             }
 
             @Override // androidx.media3.common.TrackSelectionParameters.Builder
+            public Builder setSelectTextByDefault(boolean z) {
+                super.setSelectTextByDefault(z);
+                return this;
+            }
+
+            @Override // androidx.media3.common.TrackSelectionParameters.Builder
             public Builder setPreferredTextLanguageAndRoleFlagsToCaptioningManagerSettings() {
                 super.setPreferredTextLanguageAndRoleFlagsToCaptioningManagerSettings();
                 return this;
@@ -837,6 +877,12 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
             @Override // androidx.media3.common.TrackSelectionParameters.Builder
             public Builder setIgnoredTextSelectionFlags(int i) {
                 super.setIgnoredTextSelectionFlags(i);
+                return this;
+            }
+
+            @Override // androidx.media3.common.TrackSelectionParameters.Builder
+            public Builder setPreferredTextLabels(String... strArr) {
+                super.setPreferredTextLabels(strArr);
                 return this;
             }
 
@@ -1331,8 +1377,8 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
             int i = bundle.getInt(FIELD_GROUP_INDEX, -1);
             int[] intArray = bundle.getIntArray(FIELD_TRACKS);
             int i2 = bundle.getInt(FIELD_TRACK_TYPE, -1);
-            Assertions.checkArgument(i >= 0 && i2 >= 0);
-            Assertions.checkNotNull(intArray);
+            Preconditions.checkArgument(i >= 0 && i2 >= 0);
+            Preconditions.checkNotNull(intArray);
             return new SelectionOverride(i, intArray, i2);
         }
     }
@@ -1390,7 +1436,7 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
         synchronized (this.lock) {
             Thread thread = this.playbackThread;
             if (thread != null) {
-                Assertions.checkState(thread == Thread.currentThread(), "DefaultTrackSelector is accessed on the wrong thread.");
+                Preconditions.checkState(thread == Thread.currentThread(), "DefaultTrackSelector is accessed on the wrong thread.");
             }
         }
         if (Build.VERSION.SDK_INT >= 32 && (spatializerWrapperV32 = this.spatializer) != null) {
@@ -1441,7 +1487,7 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
 
     private void setParametersInternal(Parameters parameters) {
         boolean equals;
-        Assertions.checkNotNull(parameters);
+        Preconditions.checkNotNull(parameters);
         synchronized (this.lock) {
             equals = this.parameters.equals(parameters);
             this.parameters = parameters;
@@ -1571,7 +1617,7 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
         return selectTracksForType(1, mappedTrackInfo, iArr, new TrackInfo.Factory() { // from class: androidx.media3.exoplayer.trackselection.DefaultTrackSelector$$ExternalSyntheticLambda6
             @Override // androidx.media3.exoplayer.trackselection.DefaultTrackSelector.TrackInfo.Factory
             public final List create(int i2, TrackGroup trackGroup, int[] iArr3) {
-                return DefaultTrackSelector.this.m9039x86684b84(parameters, z, iArr2, i2, trackGroup, iArr3);
+                return DefaultTrackSelector.this.m9052x86684b84(parameters, z, iArr2, i2, trackGroup, iArr3);
             }
         }, new Comparator() { // from class: androidx.media3.exoplayer.trackselection.DefaultTrackSelector$$ExternalSyntheticLambda7
             @Override // java.util.Comparator
@@ -1583,18 +1629,18 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$selectAudioTrack$3$androidx-media3-exoplayer-trackselection-DefaultTrackSelector  reason: not valid java name */
-    public /* synthetic */ List m9039x86684b84(final Parameters parameters, boolean z, int[] iArr, int i, TrackGroup trackGroup, int[] iArr2) {
+    public /* synthetic */ List m9052x86684b84(final Parameters parameters, boolean z, int[] iArr, int i, TrackGroup trackGroup, int[] iArr2) {
         return AudioTrackInfo.createForTrackGroup(i, trackGroup, parameters, iArr2, z, new Predicate() { // from class: androidx.media3.exoplayer.trackselection.DefaultTrackSelector$$ExternalSyntheticLambda3
             @Override // com.google.common.base.Predicate
             public final boolean apply(Object obj) {
-                return DefaultTrackSelector.this.m9038x92d8c743(parameters, (Format) obj);
+                return DefaultTrackSelector.this.m9051x92d8c743(parameters, (Format) obj);
             }
         }, iArr[i]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: isAudioFormatWithinAudioChannelCountConstraints */
-    public boolean m9038x92d8c743(Format format, Parameters parameters) {
+    public boolean m9051x92d8c743(Format format, Parameters parameters) {
         SpatializerWrapperV32 spatializerWrapperV32;
         SpatializerWrapperV32 spatializerWrapperV322;
         if (parameters.constrainAudioChannelCountToDeviceCapabilities) {
@@ -1939,6 +1985,18 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
     }
 
     /* JADX INFO: Access modifiers changed from: private */
+    public static int getBestLabelMatchIndex(Format format, ImmutableList<String> immutableList) {
+        for (int i = 0; i < immutableList.size(); i++) {
+            for (int i2 = 0; i2 < format.labels.size(); i2++) {
+                if (format.labels.get(i2).value.equals(immutableList.get(i))) {
+                    return i;
+                }
+            }
+        }
+        return Integer.MAX_VALUE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
     public static int getVideoCodecPreferenceScore(String str) {
         if (str == null) {
             return 0;
@@ -2123,6 +2181,7 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
         private final boolean isWithinRendererCapabilities;
         private final Parameters parameters;
         private final int pixelCount;
+        private final int preferredLabelMatchIndex;
         private final int preferredLanguageIndex;
         private final int preferredLanguageScore;
         private final int preferredMimeTypeMatchIndex;
@@ -2187,6 +2246,7 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
                 }
             }
             this.preferredMimeTypeMatchIndex = i5;
+            this.preferredLabelMatchIndex = DefaultTrackSelector.getBestLabelMatchIndex(this.format, parameters.preferredVideoLabels);
             this.usesPrimaryDecoder = RendererCapabilities.getDecoderSupport(i3) == 128;
             this.usesHardwareAcceleration = RendererCapabilities.getHardwareAccelerationSupport(i3) == 64;
             this.codecPreferenceScore = DefaultTrackSelector.getVideoCodecPreferenceScore(this.format.sampleMimeType);
@@ -2221,7 +2281,7 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
 
         /* JADX INFO: Access modifiers changed from: private */
         public static int compareNonQualityPreferences(VideoTrackInfo videoTrackInfo, VideoTrackInfo videoTrackInfo2) {
-            ComparisonChain compareFalseFirst = ComparisonChain.start().compareFalseFirst(videoTrackInfo.isWithinRendererCapabilities, videoTrackInfo2.isWithinRendererCapabilities).compare(Integer.valueOf(videoTrackInfo.preferredLanguageIndex), Integer.valueOf(videoTrackInfo2.preferredLanguageIndex), Ordering.natural().reverse()).compare(videoTrackInfo.preferredLanguageScore, videoTrackInfo2.preferredLanguageScore).compare(videoTrackInfo.preferredRoleFlagsScore, videoTrackInfo2.preferredRoleFlagsScore).compareFalseFirst(videoTrackInfo.hasMainOrNoRoleFlag, videoTrackInfo2.hasMainOrNoRoleFlag).compare(videoTrackInfo.selectedAudioLanguageScore, videoTrackInfo2.selectedAudioLanguageScore).compareFalseFirst(videoTrackInfo.hasReasonableFrameRate, videoTrackInfo2.hasReasonableFrameRate).compareFalseFirst(videoTrackInfo.isWithinMaxConstraints, videoTrackInfo2.isWithinMaxConstraints).compareFalseFirst(videoTrackInfo.isWithinMinConstraints, videoTrackInfo2.isWithinMinConstraints).compare(Integer.valueOf(videoTrackInfo.preferredMimeTypeMatchIndex), Integer.valueOf(videoTrackInfo2.preferredMimeTypeMatchIndex), Ordering.natural().reverse()).compareFalseFirst(videoTrackInfo.usesPrimaryDecoder, videoTrackInfo2.usesPrimaryDecoder).compareFalseFirst(videoTrackInfo.usesHardwareAcceleration, videoTrackInfo2.usesHardwareAcceleration);
+            ComparisonChain compareFalseFirst = ComparisonChain.start().compareFalseFirst(videoTrackInfo.isWithinRendererCapabilities, videoTrackInfo2.isWithinRendererCapabilities).compare(Integer.valueOf(videoTrackInfo.preferredLanguageIndex), Integer.valueOf(videoTrackInfo2.preferredLanguageIndex), Ordering.natural().reverse()).compare(videoTrackInfo.preferredLanguageScore, videoTrackInfo2.preferredLanguageScore).compare(videoTrackInfo.preferredRoleFlagsScore, videoTrackInfo2.preferredRoleFlagsScore).compare(Integer.valueOf(videoTrackInfo.preferredLabelMatchIndex), Integer.valueOf(videoTrackInfo2.preferredLabelMatchIndex), Ordering.natural().reverse()).compareFalseFirst(videoTrackInfo.hasMainOrNoRoleFlag, videoTrackInfo2.hasMainOrNoRoleFlag).compare(videoTrackInfo.selectedAudioLanguageScore, videoTrackInfo2.selectedAudioLanguageScore).compareFalseFirst(videoTrackInfo.hasReasonableFrameRate, videoTrackInfo2.hasReasonableFrameRate).compareFalseFirst(videoTrackInfo.isWithinMaxConstraints, videoTrackInfo2.isWithinMaxConstraints).compareFalseFirst(videoTrackInfo.isWithinMinConstraints, videoTrackInfo2.isWithinMinConstraints).compare(Integer.valueOf(videoTrackInfo.preferredMimeTypeMatchIndex), Integer.valueOf(videoTrackInfo2.preferredMimeTypeMatchIndex), Ordering.natural().reverse()).compareFalseFirst(videoTrackInfo.usesPrimaryDecoder, videoTrackInfo2.usesPrimaryDecoder).compareFalseFirst(videoTrackInfo.usesHardwareAcceleration, videoTrackInfo2.usesHardwareAcceleration);
             if (videoTrackInfo.usesPrimaryDecoder && videoTrackInfo.usesHardwareAcceleration) {
                 compareFalseFirst = compareFalseFirst.compare(videoTrackInfo.codecPreferenceScore, videoTrackInfo2.codecPreferenceScore);
             }
@@ -2300,6 +2360,7 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
         private final int localeLanguageMatchIndex;
         private final int localeLanguageScore;
         private final Parameters parameters;
+        private final int preferredLabelMatchIndex;
         private final int preferredLanguageIndex;
         private final int preferredLanguageScore;
         private final int preferredMimeTypeMatchIndex;
@@ -2344,6 +2405,7 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
             this.preferredLanguageIndex = i9;
             this.preferredLanguageScore = i6;
             this.preferredRoleFlagsScore = DefaultTrackSelector.getRoleFlagMatchScore(this.format.roleFlags, parameters.preferredAudioRoleFlags);
+            this.preferredLabelMatchIndex = DefaultTrackSelector.getBestLabelMatchIndex(this.format, parameters.preferredAudioLabels);
             this.hasMainOrNoRoleFlag = this.format.roleFlags == 0 || (this.format.roleFlags & 1) != 0;
             this.isDefaultSelectionFlag = (this.format.selectionFlags & 1) != 0;
             this.isObjectBasedAudio = DefaultTrackSelector.isObjectBasedAudio(this.format);
@@ -2410,7 +2472,7 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
         @Override // java.lang.Comparable
         public int compareTo(AudioTrackInfo audioTrackInfo) {
             Ordering reverse = (this.isWithinConstraints && this.isWithinRendererCapabilities) ? DefaultTrackSelector.FORMAT_VALUE_ORDERING : DefaultTrackSelector.FORMAT_VALUE_ORDERING.reverse();
-            ComparisonChain compare = ComparisonChain.start().compareFalseFirst(this.isWithinRendererCapabilities, audioTrackInfo.isWithinRendererCapabilities).compare(Integer.valueOf(this.preferredLanguageIndex), Integer.valueOf(audioTrackInfo.preferredLanguageIndex), Ordering.natural().reverse()).compare(this.preferredLanguageScore, audioTrackInfo.preferredLanguageScore).compare(this.preferredRoleFlagsScore, audioTrackInfo.preferredRoleFlagsScore).compareFalseFirst(this.isDefaultSelectionFlag, audioTrackInfo.isDefaultSelectionFlag).compareFalseFirst(this.hasMainOrNoRoleFlag, audioTrackInfo.hasMainOrNoRoleFlag).compare(Integer.valueOf(this.localeLanguageMatchIndex), Integer.valueOf(audioTrackInfo.localeLanguageMatchIndex), Ordering.natural().reverse()).compare(this.localeLanguageScore, audioTrackInfo.localeLanguageScore).compareFalseFirst(this.isWithinConstraints, audioTrackInfo.isWithinConstraints).compare(Integer.valueOf(this.preferredMimeTypeMatchIndex), Integer.valueOf(audioTrackInfo.preferredMimeTypeMatchIndex), Ordering.natural().reverse());
+            ComparisonChain compare = ComparisonChain.start().compareFalseFirst(this.isWithinRendererCapabilities, audioTrackInfo.isWithinRendererCapabilities).compare(Integer.valueOf(this.preferredLanguageIndex), Integer.valueOf(audioTrackInfo.preferredLanguageIndex), Ordering.natural().reverse()).compare(this.preferredLanguageScore, audioTrackInfo.preferredLanguageScore).compare(this.preferredRoleFlagsScore, audioTrackInfo.preferredRoleFlagsScore).compare(Integer.valueOf(this.preferredLabelMatchIndex), Integer.valueOf(audioTrackInfo.preferredLabelMatchIndex), Ordering.natural().reverse()).compareFalseFirst(this.isDefaultSelectionFlag, audioTrackInfo.isDefaultSelectionFlag).compareFalseFirst(this.hasMainOrNoRoleFlag, audioTrackInfo.hasMainOrNoRoleFlag).compare(Integer.valueOf(this.localeLanguageMatchIndex), Integer.valueOf(audioTrackInfo.localeLanguageMatchIndex), Ordering.natural().reverse()).compare(this.localeLanguageScore, audioTrackInfo.localeLanguageScore).compareFalseFirst(this.isWithinConstraints, audioTrackInfo.isWithinConstraints).compare(Integer.valueOf(this.preferredMimeTypeMatchIndex), Integer.valueOf(audioTrackInfo.preferredMimeTypeMatchIndex), Ordering.natural().reverse());
             if (this.parameters.forceLowestBitrate) {
                 compare = compare.compare(Integer.valueOf(this.bitrate), Integer.valueOf(audioTrackInfo.bitrate), DefaultTrackSelector.FORMAT_VALUE_ORDERING.reverse());
             }
@@ -2449,6 +2511,7 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
         private final boolean isDefault;
         private final boolean isForced;
         private final boolean isWithinRendererCapabilities;
+        private final int preferredLabelMatchIndex;
         private final int preferredLanguageIndex;
         private final int preferredLanguageScore;
         private final int preferredRoleFlagsScore;
@@ -2487,8 +2550,8 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
             int i7 = 0;
             while (true) {
                 if (i7 >= immutableList.size()) {
-                    i7 = Integer.MAX_VALUE;
                     i4 = 0;
+                    i7 = Integer.MAX_VALUE;
                     break;
                 }
                 i4 = DefaultTrackSelector.getFormatLanguageScore(this.format, immutableList.get(i7), parameters.selectUndeterminedTextLanguage);
@@ -2502,9 +2565,11 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
             int roleFlagMatchScore = DefaultTrackSelector.getRoleFlagMatchScore(this.format.roleFlags, str2 != null ? 1088 : parameters.preferredTextRoleFlags);
             this.preferredRoleFlagsScore = roleFlagMatchScore;
             this.hasCaptionRoleFlags = (1088 & this.format.roleFlags) != 0;
+            int bestLabelMatchIndex = DefaultTrackSelector.getBestLabelMatchIndex(this.format, parameters.preferredTextLabels);
+            this.preferredLabelMatchIndex = bestLabelMatchIndex;
             int formatLanguageScore = DefaultTrackSelector.getFormatLanguageScore(this.format, str, DefaultTrackSelector.normalizeUndeterminedLanguageToNull(str) == null);
             this.selectedAudioLanguageScore = formatLanguageScore;
-            boolean z = i4 > 0 || (parameters.preferredTextLanguages.isEmpty() && roleFlagMatchScore > 0) || this.isDefault || (this.isForced && formatLanguageScore > 0);
+            boolean z = i4 > 0 || (parameters.preferredTextLanguages.isEmpty() && roleFlagMatchScore > 0) || ((parameters.preferredTextLanguages.isEmpty() && bestLabelMatchIndex != Integer.MAX_VALUE) || this.isDefault || ((this.isForced && formatLanguageScore > 0) || parameters.selectTextByDefault));
             if (RendererCapabilities.isFormatSupported(i3, parameters.exceedRendererCapabilitiesIfNecessary) && z) {
                 i5 = 1;
             }
@@ -2518,7 +2583,7 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
 
         @Override // java.lang.Comparable
         public int compareTo(TextTrackInfo textTrackInfo) {
-            ComparisonChain compare = ComparisonChain.start().compareFalseFirst(this.isWithinRendererCapabilities, textTrackInfo.isWithinRendererCapabilities).compare(Integer.valueOf(this.preferredLanguageIndex), Integer.valueOf(textTrackInfo.preferredLanguageIndex), Ordering.natural().reverse()).compare(this.preferredLanguageScore, textTrackInfo.preferredLanguageScore).compare(this.preferredRoleFlagsScore, textTrackInfo.preferredRoleFlagsScore).compareFalseFirst(this.isDefault, textTrackInfo.isDefault).compare(Boolean.valueOf(this.isForced), Boolean.valueOf(textTrackInfo.isForced), this.preferredLanguageScore == 0 ? Ordering.natural() : Ordering.natural().reverse()).compare(this.selectedAudioLanguageScore, textTrackInfo.selectedAudioLanguageScore);
+            ComparisonChain compare = ComparisonChain.start().compareFalseFirst(this.isWithinRendererCapabilities, textTrackInfo.isWithinRendererCapabilities).compare(Integer.valueOf(this.preferredLanguageIndex), Integer.valueOf(textTrackInfo.preferredLanguageIndex), Ordering.natural().reverse()).compare(this.preferredLanguageScore, textTrackInfo.preferredLanguageScore).compare(this.preferredRoleFlagsScore, textTrackInfo.preferredRoleFlagsScore).compare(Integer.valueOf(this.preferredLabelMatchIndex), Integer.valueOf(textTrackInfo.preferredLabelMatchIndex), Ordering.natural().reverse()).compareFalseFirst(this.isDefault, textTrackInfo.isDefault).compare(Boolean.valueOf(this.isForced), Boolean.valueOf(textTrackInfo.isForced), this.preferredLanguageScore == 0 ? Ordering.natural() : Ordering.natural().reverse()).compare(this.selectedAudioLanguageScore, textTrackInfo.selectedAudioLanguageScore);
             if (this.preferredRoleFlagsScore == 0) {
                 compare = compare.compareTrueFirst(this.hasCaptionRoleFlags, textTrackInfo.hasCaptionRoleFlags);
             }
@@ -2619,7 +2684,7 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
                 }
             };
             this.listener = onSpatializerStateChangedListener;
-            final Handler handler = new Handler((Looper) Assertions.checkStateNotNull(Looper.myLooper()));
+            final Handler handler = new Handler((Looper) Preconditions.checkNotNull(Looper.myLooper()));
             this.handler = handler;
             Objects.requireNonNull(handler);
             spatializer.addOnSpatializerStateChangedListener(new Executor() { // from class: androidx.media3.exoplayer.trackselection.DefaultTrackSelector$SpatializerWrapperV32$$ExternalSyntheticLambda0
@@ -2635,11 +2700,11 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
         }
 
         public boolean isAvailable() {
-            return ((Spatializer) Assertions.checkNotNull(this.spatializer)).isAvailable();
+            return ((Spatializer) Preconditions.checkNotNull(this.spatializer)).isAvailable();
         }
 
         public boolean isEnabled() {
-            return ((Spatializer) Assertions.checkNotNull(this.spatializer)).isEnabled();
+            return ((Spatializer) Preconditions.checkNotNull(this.spatializer)).isEnabled();
         }
 
         public boolean canBeSpatialized(AudioAttributes audioAttributes, Format format) {
@@ -2661,7 +2726,7 @@ public class DefaultTrackSelector extends MappingTrackSelector implements Render
             if (format.sampleRate != -1) {
                 channelMask.setSampleRate(format.sampleRate);
             }
-            return ((Spatializer) Assertions.checkNotNull(this.spatializer)).canBeSpatialized(audioAttributes.getAudioAttributesV21().audioAttributes, channelMask.build());
+            return ((Spatializer) Preconditions.checkNotNull(this.spatializer)).canBeSpatialized(audioAttributes.getPlatformAudioAttributes(), channelMask.build());
         }
 
         public void release() {

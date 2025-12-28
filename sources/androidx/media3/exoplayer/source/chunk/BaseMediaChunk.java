@@ -1,9 +1,9 @@
 package androidx.media3.exoplayer.source.chunk;
 
 import androidx.media3.common.Format;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.datasource.DataSource;
 import androidx.media3.datasource.DataSpec;
+import com.google.common.base.Preconditions;
 /* loaded from: classes3.dex */
 public abstract class BaseMediaChunk extends MediaChunk {
     public final long clippedEndTimeUs;
@@ -23,11 +23,11 @@ public abstract class BaseMediaChunk extends MediaChunk {
     }
 
     public final int getFirstSampleIndex(int i) {
-        return ((int[]) Assertions.checkStateNotNull(this.firstSampleIndices))[i];
+        return ((int[]) Preconditions.checkNotNull(this.firstSampleIndices))[i];
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final BaseMediaChunkOutput getOutput() {
-        return (BaseMediaChunkOutput) Assertions.checkStateNotNull(this.output);
+        return (BaseMediaChunkOutput) Preconditions.checkNotNull(this.output);
     }
 }

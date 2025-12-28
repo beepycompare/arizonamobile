@@ -1,10 +1,10 @@
 package androidx.media3.extractor.metadata.emsg;
 
 import androidx.media3.common.Metadata;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.extractor.metadata.MetadataInputBuffer;
 import androidx.media3.extractor.metadata.SimpleMetadataDecoder;
+import com.google.common.base.Preconditions;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 /* loaded from: classes3.dex */
@@ -15,6 +15,6 @@ public final class EventMessageDecoder extends SimpleMetadataDecoder {
     }
 
     public EventMessage decode(ParsableByteArray parsableByteArray) {
-        return new EventMessage((String) Assertions.checkNotNull(parsableByteArray.readNullTerminatedString()), (String) Assertions.checkNotNull(parsableByteArray.readNullTerminatedString()), parsableByteArray.readLong(), parsableByteArray.readLong(), Arrays.copyOfRange(parsableByteArray.getData(), parsableByteArray.getPosition(), parsableByteArray.limit()));
+        return new EventMessage((String) Preconditions.checkNotNull(parsableByteArray.readNullTerminatedString()), (String) Preconditions.checkNotNull(parsableByteArray.readNullTerminatedString()), parsableByteArray.readLong(), parsableByteArray.readLong(), Arrays.copyOfRange(parsableByteArray.getData(), parsableByteArray.getPosition(), parsableByteArray.limit()));
     }
 }

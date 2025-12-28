@@ -5,7 +5,6 @@ import android.os.Build;
 import androidx.media3.common.C;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.exoplayer.analytics.PlayerId;
 import androidx.media3.exoplayer.source.chunk.ChunkExtractor;
 import androidx.media3.exoplayer.source.mediaparser.InputReaderAdapterV30;
@@ -20,6 +19,7 @@ import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.text.DefaultSubtitleParserFactory;
 import androidx.media3.extractor.text.SubtitleExtractor;
 import androidx.media3.extractor.text.SubtitleParser;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +44,7 @@ public final class MediaParserChunkExtractor implements ChunkExtractor {
 
         @Override // androidx.media3.exoplayer.source.chunk.ChunkExtractor.Factory
         public Factory setSubtitleParserFactory(SubtitleParser.Factory factory) {
-            this.subtitleParserFactory = (SubtitleParser.Factory) Assertions.checkNotNull(factory);
+            this.subtitleParserFactory = (SubtitleParser.Factory) Preconditions.checkNotNull(factory);
             return this;
         }
 
@@ -79,7 +79,7 @@ public final class MediaParserChunkExtractor implements ChunkExtractor {
         OutputConsumerAdapterV30 outputConsumerAdapterV30 = new OutputConsumerAdapterV30(format, i, true);
         this.outputConsumerAdapter = outputConsumerAdapterV30;
         this.inputReaderAdapter = new InputReaderAdapterV30();
-        if (MimeTypes.isMatroska((String) Assertions.checkNotNull(format.containerMimeType))) {
+        if (MimeTypes.isMatroska((String) Preconditions.checkNotNull(format.containerMimeType))) {
             str = "android.media.mediaparser.MatroskaParser";
         } else {
             str = "android.media.mediaparser.FragmentedMp4Parser";

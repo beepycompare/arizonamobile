@@ -5,6 +5,7 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.os.Build;
+import com.google.common.base.Preconditions;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -28,7 +29,7 @@ public final class NotificationUtil {
 
     public static void createNotificationChannel(Context context, String str, int i, int i2, int i3) {
         if (Build.VERSION.SDK_INT >= 26) {
-            NotificationManager notificationManager = (NotificationManager) Assertions.checkNotNull((NotificationManager) context.getSystemService("notification"));
+            NotificationManager notificationManager = (NotificationManager) Preconditions.checkNotNull((NotificationManager) context.getSystemService("notification"));
             NotificationChannel notificationChannel = new NotificationChannel(str, context.getString(i), i3);
             if (i2 != 0) {
                 notificationChannel.setDescription(context.getString(i2));
@@ -38,7 +39,7 @@ public final class NotificationUtil {
     }
 
     public static void setNotification(Context context, int i, Notification notification) {
-        NotificationManager notificationManager = (NotificationManager) Assertions.checkNotNull((NotificationManager) context.getSystemService("notification"));
+        NotificationManager notificationManager = (NotificationManager) Preconditions.checkNotNull((NotificationManager) context.getSystemService("notification"));
         if (notification != null) {
             notificationManager.notify(i, notification);
         } else {

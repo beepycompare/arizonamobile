@@ -16,8 +16,8 @@ import android.text.style.AbsoluteSizeSpan;
 import android.text.style.BackgroundColorSpan;
 import android.text.style.ForegroundColorSpan;
 import androidx.media3.common.text.Cue;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
+import com.google.common.base.Preconditions;
 import java.util.Objects;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
 /* loaded from: classes3.dex */
@@ -98,7 +98,7 @@ final class SubtitlePainter {
             drawLayout(canvas, z);
             return;
         }
-        this.cueText = cue.text;
+        this.cueText = BidiUtils.containsRtl(cue.text) ? BidiUtils.wrapText(cue.text) : cue.text;
         this.cueTextAlignment = cue.textAlignment;
         this.cueBitmap = cue.bitmap;
         this.cueLine = cue.line;
@@ -122,10 +122,10 @@ final class SubtitlePainter {
         this.parentRight = i3;
         this.parentBottom = i4;
         if (z) {
-            Assertions.checkNotNull(this.cueText);
+            Preconditions.checkNotNull(this.cueText);
             setupTextLayout();
         } else {
-            Assertions.checkNotNull(this.cueBitmap);
+            Preconditions.checkNotNull(this.cueBitmap);
             setupBitmapLayout();
         }
         drawLayout(canvas, z);
@@ -349,8 +349,8 @@ final class SubtitlePainter {
             drawTextLayout(canvas);
             return;
         }
-        Assertions.checkNotNull(this.bitmapRect);
-        Assertions.checkNotNull(this.cueBitmap);
+        Preconditions.checkNotNull(this.bitmapRect);
+        Preconditions.checkNotNull(this.cueBitmap);
         drawBitmapLayout(canvas);
     }
 

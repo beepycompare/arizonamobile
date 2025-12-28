@@ -13,7 +13,7 @@ public final class C0592t8 extends MessageNano {
     public static volatile C0592t8[] c;
 
     /* renamed from: a  reason: collision with root package name */
-    public C0468o8 f1228a;
+    public C0468o8 f1229a;
     public C0518q8 b;
 
     public C0592t8() {
@@ -32,7 +32,7 @@ public final class C0592t8 extends MessageNano {
     }
 
     public final C0592t8 a() {
-        this.f1228a = null;
+        this.f1229a = null;
         this.b = null;
         this.cachedSize = -1;
         return this;
@@ -41,7 +41,7 @@ public final class C0592t8 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        C0468o8 c0468o8 = this.f1228a;
+        C0468o8 c0468o8 = this.f1229a;
         if (c0468o8 != null) {
             computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(1, c0468o8);
         }
@@ -51,7 +51,7 @@ public final class C0592t8 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        C0468o8 c0468o8 = this.f1228a;
+        C0468o8 c0468o8 = this.f1229a;
         if (c0468o8 != null) {
             codedOutputByteBufferNano.writeMessage(1, c0468o8);
         }
@@ -70,10 +70,10 @@ public final class C0592t8 extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                if (this.f1228a == null) {
-                    this.f1228a = new C0468o8();
+                if (this.f1229a == null) {
+                    this.f1229a = new C0468o8();
                 }
-                codedInputByteBufferNano.readMessage(this.f1228a);
+                codedInputByteBufferNano.readMessage(this.f1229a);
             } else if (readTag != 18) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;

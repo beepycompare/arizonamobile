@@ -2,6 +2,7 @@ package androidx.media3.common.util;
 
 import android.os.Looper;
 import android.text.TextUtils;
+import com.google.common.base.Preconditions;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
 import org.checkerframework.dataflow.qual.Pure;
 /* loaded from: classes2.dex */
@@ -9,20 +10,19 @@ public final class Assertions {
     private Assertions() {
     }
 
+    @Deprecated
     @Pure
     public static void checkArgument(boolean z) {
-        if (!z) {
-            throw new IllegalArgumentException();
-        }
+        Preconditions.checkArgument(z);
     }
 
+    @Deprecated
     @Pure
     public static void checkArgument(boolean z, Object obj) {
-        if (!z) {
-            throw new IllegalArgumentException(String.valueOf(obj));
-        }
+        Preconditions.checkArgument(z, obj);
     }
 
+    @Deprecated
     @Pure
     public static int checkIndex(int i, int i2, int i3) {
         if (i < i2 || i >= i3) {
@@ -31,76 +31,65 @@ public final class Assertions {
         return i;
     }
 
+    @Deprecated
     @Pure
     public static void checkState(boolean z) {
-        if (!z) {
-            throw new IllegalStateException();
-        }
+        Preconditions.checkState(z);
     }
 
+    @Deprecated
     @Pure
     public static void checkState(boolean z, Object obj) {
-        if (!z) {
-            throw new IllegalStateException(String.valueOf(obj));
-        }
+        Preconditions.checkState(z, obj);
     }
 
     @EnsuresNonNull({"#1"})
+    @Deprecated
     @Pure
     public static <T> T checkStateNotNull(T t) {
-        if (t != null) {
-            return t;
-        }
-        throw new IllegalStateException();
+        return (T) Preconditions.checkNotNull(t);
     }
 
     @EnsuresNonNull({"#1"})
+    @Deprecated
     @Pure
     public static <T> T checkStateNotNull(T t, Object obj) {
-        if (t != null) {
-            return t;
-        }
-        throw new IllegalStateException(String.valueOf(obj));
+        return (T) Preconditions.checkNotNull(t, obj);
     }
 
     @EnsuresNonNull({"#1"})
+    @Deprecated
     @Pure
     public static <T> T checkNotNull(T t) {
-        t.getClass();
-        return t;
+        return (T) Preconditions.checkNotNull(t);
     }
 
     @EnsuresNonNull({"#1"})
+    @Deprecated
     @Pure
     public static <T> T checkNotNull(T t, Object obj) {
-        if (t != null) {
-            return t;
-        }
-        throw new NullPointerException(String.valueOf(obj));
+        return (T) Preconditions.checkNotNull(t, obj);
     }
 
     @EnsuresNonNull({"#1"})
+    @Deprecated
     @Pure
     public static String checkNotEmpty(String str) {
-        if (TextUtils.isEmpty(str)) {
-            throw new IllegalArgumentException();
-        }
+        Preconditions.checkArgument(!TextUtils.isEmpty(str));
         return str;
     }
 
     @EnsuresNonNull({"#1"})
+    @Deprecated
     @Pure
     public static String checkNotEmpty(String str, Object obj) {
-        if (TextUtils.isEmpty(str)) {
-            throw new IllegalArgumentException(String.valueOf(obj));
-        }
+        Preconditions.checkArgument(!TextUtils.isEmpty(str), obj);
         return str;
     }
 
+    @Deprecated
     @Pure
     public static void checkMainThread() {
-        if (Looper.myLooper() != Looper.getMainLooper()) {
-            throw new IllegalStateException("Not in applications main thread");
-        }
+        Preconditions.checkState(Looper.myLooper() == Looper.getMainLooper(), "Not in application's main thread");
     }
 }

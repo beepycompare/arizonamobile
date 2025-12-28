@@ -19,7 +19,6 @@ import androidx.media3.common.VideoFrameProcessingException;
 import androidx.media3.common.VideoFrameProcessor;
 import androidx.media3.common.VideoGraph;
 import androidx.media3.common.VideoSize;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Clock;
 import androidx.media3.common.util.GlUtil;
 import androidx.media3.common.util.HandlerWrapper;
@@ -28,8 +27,10 @@ import androidx.media3.common.util.Size;
 import androidx.media3.common.util.TimedValueQueue;
 import androidx.media3.common.util.TimestampIterator;
 import androidx.media3.common.util.Util;
+import androidx.media3.exoplayer.ExoPlayerImpl$VirtualDeviceIdChangeListener$$ExternalSyntheticLambda1;
 import androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper;
 import androidx.media3.exoplayer.video.VideoSink;
+import com.google.common.base.Preconditions;
 import com.google.common.base.Supplier;
 import com.google.common.base.Suppliers;
 import com.google.common.collect.ImmutableList;
@@ -41,6 +42,7 @@ import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.Executor;
 /* loaded from: classes3.dex */
 public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
+    public static final long LATE_US_TO_DROP_INPUT_FRAME = 15000;
     private static final Executor NO_OP_EXECUTOR = new Executor() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper$$ExternalSyntheticLambda1
         @Override // java.util.concurrent.Executor
         public final void execute(Runnable runnable) {
@@ -58,6 +60,7 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
     private final Context context;
     private Pair<Surface, Size> currentSurfaceAndSize;
     private final VideoSink defaultVideoSink;
+    private final long earlyThresholdToDropInputUs;
     private final boolean enablePlaylistMode;
     private long finalFramePresentationTimeUs;
     private HandlerWrapper handler;
@@ -76,6 +79,7 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
     private int totalVideoInputCount;
     private final VideoSink.VideoFrameHandler videoFrameHandler;
     private VideoFrameMetadataListener videoFrameMetadataListener;
+    private final VideoFrameReleaseEarlyTimeForecaster videoFrameReleaseEarlyTimeForecaster;
     private VideoGraph videoGraph;
     private final VideoGraph.Factory videoGraphFactory;
     private Format videoGraphOutputFormat;
@@ -109,12 +113,14 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
     /* loaded from: classes3.dex */
     public static final class Builder {
         private boolean built;
-        private Clock clock = Clock.DEFAULT;
         private final Context context;
         private boolean enablePlaylistMode;
         private boolean enableReplayableCache;
         private final VideoFrameReleaseControl videoFrameReleaseControl;
         private VideoGraph.Factory videoGraphFactory;
+        private long lateThresholdToDropInputUs = 15000;
+        private VideoFrameReleaseEarlyTimeForecaster videoFrameReleaseEarlyTimeForecaster = new VideoFrameReleaseEarlyTimeForecaster(1.0f);
+        private Clock clock = Clock.DEFAULT;
 
         public Builder(Context context, VideoFrameReleaseControl videoFrameReleaseControl) {
             this.context = context.getApplicationContext();
@@ -141,8 +147,13 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
             return this;
         }
 
+        public Builder experimentalSetLateThresholdToDropInputUs(long j) {
+            this.lateThresholdToDropInputUs = j;
+            return this;
+        }
+
         public PlaybackVideoGraphWrapper build() {
-            Assertions.checkState(!this.built);
+            Preconditions.checkState(!this.built);
             if (this.videoGraphFactory == null) {
                 this.videoGraphFactory = new ReflectiveSingleInputVideoGraphFactory(this.enableReplayableCache);
             }
@@ -150,28 +161,36 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
             this.built = true;
             return playbackVideoGraphWrapper;
         }
+
+        Builder setVideoFrameReleaseEarlyTimeForecaster(VideoFrameReleaseEarlyTimeForecaster videoFrameReleaseEarlyTimeForecaster) {
+            this.videoFrameReleaseEarlyTimeForecaster = videoFrameReleaseEarlyTimeForecaster;
+            return this;
+        }
     }
 
     private PlaybackVideoGraphWrapper(Builder builder) {
         this.context = builder.context;
         this.pendingStreamChanges = new TimedValueQueue<>();
-        this.videoGraphFactory = (VideoGraph.Factory) Assertions.checkStateNotNull(builder.videoGraphFactory);
+        this.videoGraphFactory = (VideoGraph.Factory) Preconditions.checkNotNull(builder.videoGraphFactory);
         this.inputVideoSinks = new SparseArray<>();
         this.compositionEffects = ImmutableList.of();
         this.compositorSettings = VideoCompositorSettings.DEFAULT;
         this.enablePlaylistMode = builder.enablePlaylistMode;
         Clock clock = builder.clock;
         this.clock = clock;
-        this.defaultVideoSink = new DefaultVideoSink(builder.videoFrameReleaseControl, clock);
+        this.earlyThresholdToDropInputUs = builder.lateThresholdToDropInputUs != C.TIME_UNSET ? -builder.lateThresholdToDropInputUs : -9223372036854775807L;
+        VideoFrameReleaseEarlyTimeForecaster videoFrameReleaseEarlyTimeForecaster = builder.videoFrameReleaseEarlyTimeForecaster;
+        this.videoFrameReleaseEarlyTimeForecaster = videoFrameReleaseEarlyTimeForecaster;
+        this.defaultVideoSink = new DefaultVideoSink(builder.videoFrameReleaseControl, videoFrameReleaseEarlyTimeForecaster, clock);
         this.videoFrameHandler = new VideoSink.VideoFrameHandler() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper.1
             @Override // androidx.media3.exoplayer.video.VideoSink.VideoFrameHandler
             public void render(long j) {
-                ((VideoGraph) Assertions.checkStateNotNull(PlaybackVideoGraphWrapper.this.videoGraph)).renderOutputFrame(j);
+                ((VideoGraph) Preconditions.checkNotNull(PlaybackVideoGraphWrapper.this.videoGraph)).renderOutputFrame(j);
             }
 
             @Override // androidx.media3.exoplayer.video.VideoSink.VideoFrameHandler
             public void skip() {
-                ((VideoGraph) Assertions.checkStateNotNull(PlaybackVideoGraphWrapper.this.videoGraph)).renderOutputFrame(-2L);
+                ((VideoGraph) Preconditions.checkNotNull(PlaybackVideoGraphWrapper.this.videoGraph)).renderOutputFrame(-2L);
             }
         };
         this.listeners = new CopyOnWriteArraySet<>();
@@ -192,6 +211,9 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
     }
 
     public void setTotalVideoInputCount(int i) {
+        if (i < this.totalVideoInputCount) {
+            return;
+        }
         this.totalVideoInputCount = i;
     }
 
@@ -325,12 +347,8 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
     public boolean registerInput(Format format, int i) throws VideoSink.VideoSinkException {
         PlaybackVideoGraphWrapper playbackVideoGraphWrapper;
         GlUtil.GlException glException;
-        VideoGraph.Factory factory;
-        Context context;
-        DebugViewProvider debugViewProvider;
-        final HandlerWrapper handlerWrapper;
         if (i == 0) {
-            Assertions.checkState(this.state == 0);
+            Preconditions.checkState(this.state == 0);
             ColorInfo adjustedInputColorInfo = getAdjustedInputColorInfo(format.colorInfo);
             try {
             } catch (GlUtil.GlException e) {
@@ -344,50 +362,42 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
                 } else if (!GlUtil.isColorTransferSupported(adjustedInputColorInfo.colorTransfer) && Build.VERSION.SDK_INT >= 29) {
                     Log.w(TAG, Util.formatInvariant("Color transfer %d is not supported. Falling back to OpenGl tone mapping.", Integer.valueOf(adjustedInputColorInfo.colorTransfer)));
                     adjustedInputColorInfo = ColorInfo.SDR_BT709_LIMITED;
+                } else if (adjustedInputColorInfo.colorTransfer == 2 || adjustedInputColorInfo.colorTransfer == 10) {
+                    adjustedInputColorInfo = ColorInfo.SDR_BT709_LIMITED;
                 }
                 ColorInfo colorInfo = adjustedInputColorInfo;
-                this.handler = this.clock.createHandler((Looper) Assertions.checkStateNotNull(Looper.myLooper()), null);
+                this.handler = this.clock.createHandler((Looper) Preconditions.checkNotNull(Looper.myLooper()), null);
                 try {
-                    factory = this.videoGraphFactory;
-                    context = this.context;
-                    debugViewProvider = DebugViewProvider.NONE;
-                    handlerWrapper = this.handler;
+                    VideoGraph.Factory factory = this.videoGraphFactory;
+                    Context context = this.context;
+                    DebugViewProvider debugViewProvider = DebugViewProvider.NONE;
+                    HandlerWrapper handlerWrapper = this.handler;
                     Objects.requireNonNull(handlerWrapper);
                     playbackVideoGraphWrapper = this;
-                } catch (VideoFrameProcessingException e2) {
-                    e = e2;
-                }
-                try {
-                    VideoGraph create = factory.create(context, colorInfo, debugViewProvider, playbackVideoGraphWrapper, new Executor() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper$$ExternalSyntheticLambda2
-                        @Override // java.util.concurrent.Executor
-                        public final void execute(Runnable runnable) {
-                            HandlerWrapper.this.post(runnable);
+                    try {
+                        VideoGraph create = factory.create(context, colorInfo, debugViewProvider, playbackVideoGraphWrapper, new ExoPlayerImpl$VirtualDeviceIdChangeListener$$ExternalSyntheticLambda1(handlerWrapper), 0L, false);
+                        playbackVideoGraphWrapper.videoGraph = create;
+                        create.setCompositionEffects(playbackVideoGraphWrapper.compositionEffects);
+                        playbackVideoGraphWrapper.videoGraph.setCompositorSettings(playbackVideoGraphWrapper.compositorSettings);
+                        playbackVideoGraphWrapper.videoGraph.initialize();
+                        Pair<Surface, Size> pair = playbackVideoGraphWrapper.currentSurfaceAndSize;
+                        if (pair != null) {
+                            Size size = (Size) playbackVideoGraphWrapper.currentSurfaceAndSize.second;
+                            maybeSetOutputSurfaceInfo((Surface) pair.first, size.getWidth(), size.getHeight());
                         }
-                    }, 0L, false);
-                    playbackVideoGraphWrapper.videoGraph = create;
-                    create.setCompositionEffects(playbackVideoGraphWrapper.compositionEffects);
-                    playbackVideoGraphWrapper.videoGraph.setCompositorSettings(playbackVideoGraphWrapper.compositorSettings);
-                    playbackVideoGraphWrapper.videoGraph.initialize();
-                    Pair<Surface, Size> pair = playbackVideoGraphWrapper.currentSurfaceAndSize;
-                    if (pair != null) {
-                        Size size = (Size) playbackVideoGraphWrapper.currentSurfaceAndSize.second;
-                        maybeSetOutputSurfaceInfo((Surface) pair.first, size.getWidth(), size.getHeight());
+                        playbackVideoGraphWrapper.defaultVideoSink.initialize(format);
+                        VideoSink videoSink = playbackVideoGraphWrapper.defaultVideoSink;
+                        DefaultVideoSinkListener defaultVideoSinkListener = new DefaultVideoSinkListener();
+                        HandlerWrapper handlerWrapper2 = playbackVideoGraphWrapper.handler;
+                        Objects.requireNonNull(handlerWrapper2);
+                        videoSink.setListener(defaultVideoSinkListener, new ExoPlayerImpl$VirtualDeviceIdChangeListener$$ExternalSyntheticLambda1(handlerWrapper2));
+                        playbackVideoGraphWrapper.state = 1;
+                    } catch (VideoFrameProcessingException e2) {
+                        e = e2;
+                        throw new VideoSink.VideoSinkException(e, format);
                     }
-                    playbackVideoGraphWrapper.defaultVideoSink.initialize(format);
-                    VideoSink videoSink = playbackVideoGraphWrapper.defaultVideoSink;
-                    DefaultVideoSinkListener defaultVideoSinkListener = new DefaultVideoSinkListener();
-                    final HandlerWrapper handlerWrapper2 = playbackVideoGraphWrapper.handler;
-                    Objects.requireNonNull(handlerWrapper2);
-                    videoSink.setListener(defaultVideoSinkListener, new Executor() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper$$ExternalSyntheticLambda2
-                        @Override // java.util.concurrent.Executor
-                        public final void execute(Runnable runnable) {
-                            HandlerWrapper.this.post(runnable);
-                        }
-                    });
-                    playbackVideoGraphWrapper.state = 1;
                 } catch (VideoFrameProcessingException e3) {
                     e = e3;
-                    throw new VideoSink.VideoSinkException(e, format);
                 }
             } catch (GlUtil.GlException e4) {
                 glException = e4;
@@ -400,7 +410,7 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
             }
         }
         try {
-            ((VideoGraph) Assertions.checkNotNull(playbackVideoGraphWrapper.videoGraph)).registerInput(i);
+            ((VideoGraph) Preconditions.checkNotNull(playbackVideoGraphWrapper.videoGraph)).registerInput(i);
             playbackVideoGraphWrapper.registeredVideoInputCount++;
             return true;
         } catch (VideoFrameProcessingException e5) {
@@ -456,18 +466,20 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
                 this.pendingStreamChanges.pollFirst();
             }
             if (this.pendingStreamChanges.size() == 1) {
-                StreamChangeInfo streamChangeInfo = (StreamChangeInfo) Assertions.checkNotNull(this.pendingStreamChanges.pollFirst());
+                StreamChangeInfo streamChangeInfo = (StreamChangeInfo) Preconditions.checkNotNull(this.pendingStreamChanges.pollFirst());
                 this.outputStreamStartPositionUs = streamChangeInfo.startPositionUs;
                 this.outputStreamFirstFrameReleaseInstruction = streamChangeInfo.firstFrameReleaseInstruction;
                 onOutputStreamChanged();
             }
             this.lastOutputFramePresentationTimeUs = C.TIME_UNSET;
-            this.finalFramePresentationTimeUs = C.TIME_UNSET;
-            this.hasSignaledEndOfVideoGraphOutputStream = false;
-            ((HandlerWrapper) Assertions.checkStateNotNull(this.handler)).post(new Runnable() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper$$ExternalSyntheticLambda0
+            if (z) {
+                this.finalFramePresentationTimeUs = C.TIME_UNSET;
+                this.hasSignaledEndOfVideoGraphOutputStream = false;
+            }
+            ((HandlerWrapper) Preconditions.checkNotNull(this.handler)).post(new Runnable() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PlaybackVideoGraphWrapper.this.m9046x92e2e5d9();
+                    PlaybackVideoGraphWrapper.this.m9059x92e2e5d9();
                 }
             });
         }
@@ -475,7 +487,7 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$flush$1$androidx-media3-exoplayer-video-PlaybackVideoGraphWrapper  reason: not valid java name */
-    public /* synthetic */ void m9046x92e2e5d9() {
+    public /* synthetic */ void m9059x92e2e5d9() {
         this.pendingFlushCount--;
     }
 
@@ -497,6 +509,7 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void setPlaybackSpeed(float f) {
+        this.videoFrameReleaseEarlyTimeForecaster.setPlaybackSpeed(f);
         this.defaultVideoSink.setPlaybackSpeed(f);
     }
 
@@ -523,6 +536,8 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes3.dex */
     public final class InputVideoSink implements VideoSink, Listener {
+        private static final int MAX_CONSECUTIVE_FRAMES_TO_DROP = 2;
+        private int consecutiveDroppedFrames;
         private long inputBufferTimestampAdjustmentUs;
         private Format inputFormat;
         private final int inputIndex;
@@ -562,7 +577,7 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
 
         @Override // androidx.media3.exoplayer.video.VideoSink
         public boolean initialize(Format format) throws VideoSink.VideoSinkException {
-            Assertions.checkState(!isInitialized());
+            Preconditions.checkState(!isInitialized());
             boolean registerInput = PlaybackVideoGraphWrapper.this.registerInput(format, this.inputIndex);
             this.isInitialized = registerInput;
             return registerInput;
@@ -579,7 +594,7 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
                 boolean z = this.signaledEndOfStream;
                 long j = PlaybackVideoGraphWrapper.this.lastOutputFramePresentationTimeUs;
                 PlaybackVideoGraphWrapper.this.flush(false);
-                ((VideoGraph) Assertions.checkNotNull(PlaybackVideoGraphWrapper.this.videoGraph)).redraw();
+                ((VideoGraph) Preconditions.checkNotNull(PlaybackVideoGraphWrapper.this.videoGraph)).redraw();
                 PlaybackVideoGraphWrapper.this.lastOutputFramePresentationTimeUs = j;
                 if (z) {
                     signalEndOfCurrentInputStream();
@@ -590,7 +605,7 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
         @Override // androidx.media3.exoplayer.video.VideoSink
         public void flush(boolean z) {
             if (isInitialized()) {
-                ((VideoGraph) Assertions.checkNotNull(PlaybackVideoGraphWrapper.this.videoGraph)).flush();
+                ((VideoGraph) Preconditions.checkNotNull(PlaybackVideoGraphWrapper.this.videoGraph)).flush();
             }
             this.lastFramePresentationTimeUs = C.TIME_UNSET;
             PlaybackVideoGraphWrapper.this.flush(z);
@@ -613,7 +628,7 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
         @Override // androidx.media3.exoplayer.video.VideoSink
         public void signalEndOfInput() {
             if (!this.signaledEndOfStream && isInitialized()) {
-                ((VideoGraph) Assertions.checkNotNull(PlaybackVideoGraphWrapper.this.videoGraph)).signalEndOfInput(this.inputIndex);
+                ((VideoGraph) Preconditions.checkNotNull(PlaybackVideoGraphWrapper.this.videoGraph)).signalEndOfInput(this.inputIndex);
                 this.signaledEndOfStream = true;
             }
         }
@@ -625,7 +640,7 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
 
         @Override // androidx.media3.exoplayer.video.VideoSink
         public void onInputStreamChanged(int i, Format format, long j, int i2, List<Effect> list) {
-            Assertions.checkState(isInitialized());
+            Preconditions.checkState(isInitialized());
             this.videoEffects = ImmutableList.copyOf((Collection) list);
             this.inputType = i;
             this.inputFormat = format;
@@ -648,7 +663,7 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
             TimedValueQueue timedValueQueue = new TimedValueQueue();
             boolean z = true;
             while (PlaybackVideoGraphWrapper.this.pendingStreamChanges.size() > 0) {
-                StreamChangeInfo streamChangeInfo = (StreamChangeInfo) Assertions.checkNotNull((StreamChangeInfo) PlaybackVideoGraphWrapper.this.pendingStreamChanges.pollFirst());
+                StreamChangeInfo streamChangeInfo = (StreamChangeInfo) Preconditions.checkNotNull((StreamChangeInfo) PlaybackVideoGraphWrapper.this.pendingStreamChanges.pollFirst());
                 if (z) {
                     if (streamChangeInfo.firstFrameReleaseInstruction != 0 && streamChangeInfo.firstFrameReleaseInstruction != 1) {
                         PlaybackVideoGraphWrapper.this.allowReleaseFirstFrameBeforeStarted();
@@ -664,8 +679,8 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
 
         @Override // androidx.media3.exoplayer.video.VideoSink
         public Surface getInputSurface() {
-            Assertions.checkState(isInitialized());
-            return ((VideoGraph) Assertions.checkNotNull(PlaybackVideoGraphWrapper.this.videoGraph)).getInputSurface(this.inputIndex);
+            Preconditions.checkState(isInitialized());
+            return ((VideoGraph) Preconditions.checkNotNull(PlaybackVideoGraphWrapper.this.videoGraph)).getInputSurface(this.inputIndex);
         }
 
         @Override // androidx.media3.exoplayer.video.VideoSink
@@ -718,24 +733,32 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
 
         @Override // androidx.media3.exoplayer.video.VideoSink
         public boolean handleInputFrame(long j, VideoSink.VideoFrameHandler videoFrameHandler) {
-            Assertions.checkState(isInitialized());
-            if (PlaybackVideoGraphWrapper.this.shouldRenderToInputVideoSink() && ((VideoGraph) Assertions.checkNotNull(PlaybackVideoGraphWrapper.this.videoGraph)).getPendingInputFrameCount(this.inputIndex) < this.videoFrameProcessorMaxPendingFrameCount && ((VideoGraph) Assertions.checkNotNull(PlaybackVideoGraphWrapper.this.videoGraph)).registerInputFrame(this.inputIndex)) {
-                long j2 = j + this.inputBufferTimestampAdjustmentUs;
-                this.lastFramePresentationTimeUs = j2;
-                videoFrameHandler.render(j2 * 1000);
-                return true;
+            int i;
+            Preconditions.checkState(isInitialized());
+            long j2 = j + this.inputBufferTimestampAdjustmentUs;
+            long predictEarlyUs = PlaybackVideoGraphWrapper.this.videoFrameReleaseEarlyTimeForecaster.predictEarlyUs(j2);
+            if (predictEarlyUs == C.TIME_UNSET || PlaybackVideoGraphWrapper.this.earlyThresholdToDropInputUs == C.TIME_UNSET || predictEarlyUs >= PlaybackVideoGraphWrapper.this.earlyThresholdToDropInputUs || (i = this.consecutiveDroppedFrames) >= 2) {
+                if (PlaybackVideoGraphWrapper.this.shouldRenderToInputVideoSink() && ((VideoGraph) Preconditions.checkNotNull(PlaybackVideoGraphWrapper.this.videoGraph)).getPendingInputFrameCount(this.inputIndex) < this.videoFrameProcessorMaxPendingFrameCount && ((VideoGraph) Preconditions.checkNotNull(PlaybackVideoGraphWrapper.this.videoGraph)).registerInputFrame(this.inputIndex)) {
+                    this.lastFramePresentationTimeUs = j2;
+                    videoFrameHandler.render(j2 * 1000);
+                    this.consecutiveDroppedFrames = 0;
+                    return true;
+                }
+                return false;
             }
-            return false;
+            this.consecutiveDroppedFrames = i + 1;
+            videoFrameHandler.skip();
+            return true;
         }
 
         @Override // androidx.media3.exoplayer.video.VideoSink
         public boolean handleInputBitmap(Bitmap bitmap, TimestampIterator timestampIterator) {
-            Assertions.checkState(isInitialized());
+            Preconditions.checkState(isInitialized());
             if (PlaybackVideoGraphWrapper.this.shouldRenderToInputVideoSink()) {
                 ShiftingTimestampIterator shiftingTimestampIterator = new ShiftingTimestampIterator(timestampIterator, this.inputBufferTimestampAdjustmentUs);
-                if (((VideoGraph) Assertions.checkNotNull(PlaybackVideoGraphWrapper.this.videoGraph)).queueInputBitmap(this.inputIndex, bitmap, shiftingTimestampIterator)) {
+                if (((VideoGraph) Preconditions.checkNotNull(PlaybackVideoGraphWrapper.this.videoGraph)).queueInputBitmap(this.inputIndex, bitmap, shiftingTimestampIterator)) {
                     long lastTimestampUs = shiftingTimestampIterator.getLastTimestampUs();
-                    Assertions.checkState(lastTimestampUs != C.TIME_UNSET);
+                    Preconditions.checkState(lastTimestampUs != C.TIME_UNSET);
                     this.lastFramePresentationTimeUs = lastTimestampUs;
                     return true;
                 }
@@ -817,19 +840,19 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
             this.listenerExecutor.execute(new Runnable() { // from class: androidx.media3.exoplayer.video.PlaybackVideoGraphWrapper$InputVideoSink$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PlaybackVideoGraphWrapper.InputVideoSink.this.m9047x167f068a(listener, videoFrameProcessingException);
+                    PlaybackVideoGraphWrapper.InputVideoSink.this.m9060x167f068a(listener, videoFrameProcessingException);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onError$1$androidx-media3-exoplayer-video-PlaybackVideoGraphWrapper$InputVideoSink  reason: not valid java name */
-        public /* synthetic */ void m9047x167f068a(VideoSink.Listener listener, VideoFrameProcessingException videoFrameProcessingException) {
-            listener.onError(new VideoSink.VideoSinkException(videoFrameProcessingException, (Format) Assertions.checkStateNotNull(this.inputFormat)));
+        public /* synthetic */ void m9060x167f068a(VideoSink.Listener listener, VideoFrameProcessingException videoFrameProcessingException) {
+            listener.onError(new VideoSink.VideoSinkException(videoFrameProcessingException, (Format) Preconditions.checkNotNull(this.inputFormat)));
         }
 
         private void registerInputStream(Format format) {
-            ((VideoGraph) Assertions.checkNotNull(PlaybackVideoGraphWrapper.this.videoGraph)).registerInputStream(this.inputIndex, this.inputType != 1 ? 2 : 1, format.buildUpon().setColorInfo(PlaybackVideoGraphWrapper.this.getAdjustedInputColorInfo(format.colorInfo)).build(), this.videoEffects, 0L);
+            ((VideoGraph) Preconditions.checkNotNull(PlaybackVideoGraphWrapper.this.videoGraph)).registerInputStream(this.inputIndex, this.inputType != 1 ? 2 : 1, format.buildUpon().setColorInfo(PlaybackVideoGraphWrapper.this.getAdjustedInputColorInfo(format.colorInfo)).build(), this.videoEffects, 0L);
         }
     }
 
@@ -971,7 +994,7 @@ public final class PlaybackVideoGraphWrapper implements VideoGraph.Listener {
                 Class<?> cls = DEFAULT_VIDEO_FRAME_PROCESSOR_FACTORY_BUILDER_CLASS.get();
                 Object newInstance = cls.getConstructor(new Class[0]).newInstance(new Object[0]);
                 cls.getMethod("setEnableReplayableCache", Boolean.TYPE).invoke(newInstance, Boolean.valueOf(this.enableReplayableCache));
-                return ((VideoFrameProcessor.Factory) Assertions.checkNotNull(cls.getMethod("build", new Class[0]).invoke(newInstance, new Object[0]))).create(context, debugViewProvider, colorInfo, z, executor, listener);
+                return ((VideoFrameProcessor.Factory) Preconditions.checkNotNull(cls.getMethod("build", new Class[0]).invoke(newInstance, new Object[0]))).create(context, debugViewProvider, colorInfo, z, executor, listener);
             } catch (Exception e) {
                 throw new VideoFrameProcessingException(e);
             }

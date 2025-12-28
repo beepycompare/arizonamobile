@@ -4,10 +4,10 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.decoder.DecoderInputBuffer;
 import androidx.media3.exoplayer.RendererCapabilities;
 import androidx.media3.exoplayer.image.ImageDecoder;
+import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
 import java.nio.ByteBuffer;
@@ -15,7 +15,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class ExternallyLoadedImageDecoder implements ImageDecoder {
     private final BitmapResolver bitmapResolver;
     private final DecoderInputBuffer inputBuffer;
@@ -24,7 +24,7 @@ public final class ExternallyLoadedImageDecoder implements ImageDecoder {
     private long pendingDecodeTimeUs;
     private boolean pendingEndOfStream;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface BitmapResolver {
         ListenableFuture<Bitmap> resolve(ExternalImageRequest externalImageRequest);
     }
@@ -33,7 +33,7 @@ public final class ExternallyLoadedImageDecoder implements ImageDecoder {
     public void setOutputStartTimeUs(long j) {
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class ExternalImageRequest {
         public final Uri uri;
 
@@ -42,7 +42,7 @@ public final class ExternallyLoadedImageDecoder implements ImageDecoder {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class Factory implements ImageDecoder.Factory {
         private final BitmapResolver bitmapResolver;
 
@@ -100,8 +100,8 @@ public final class ExternallyLoadedImageDecoder implements ImageDecoder {
             decoderInputBuffer.clear();
             return;
         }
-        ByteBuffer byteBuffer = (ByteBuffer) Assertions.checkNotNull(decoderInputBuffer.data);
-        Assertions.checkState(byteBuffer.hasArray());
+        ByteBuffer byteBuffer = (ByteBuffer) Preconditions.checkNotNull(decoderInputBuffer.data);
+        Preconditions.checkState(byteBuffer.hasArray());
         this.pendingDecode = this.bitmapResolver.resolve(new ExternalImageRequest(Uri.parse(new String(byteBuffer.array(), byteBuffer.arrayOffset(), byteBuffer.remaining(), StandardCharsets.UTF_8))));
         this.pendingDecodeTimeUs = decoderInputBuffer.timeUs;
         decoderInputBuffer.clear();

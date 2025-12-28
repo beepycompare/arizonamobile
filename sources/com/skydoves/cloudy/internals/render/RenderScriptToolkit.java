@@ -2,9 +2,11 @@ package com.skydoves.cloudy.internals.render;
 
 import android.graphics.Bitmap;
 import kotlin.Metadata;
+import kotlin.enums.EnumEntries;
+import kotlin.enums.EnumEntriesKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: RenderScriptToolkit.kt */
-@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0012\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0014\n\u0002\b\u0003\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0007\bÇ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003JC\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00052\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\b2\u0006\u0010\n\u001a\u00020\b2\b\b\u0002\u0010\u000b\u001a\u00020\b2\n\b\u0002\u0010\f\u001a\u0004\u0018\u00010\rH\u0001¢\u0006\u0002\b\u000eJ2\u0010\u0004\u001a\u0004\u0018\u00010\u000f2\b\u0010\u0010\u001a\u0004\u0018\u00010\u000f2\u0006\u0010\u0011\u001a\u00020\u000f2\b\b\u0003\u0010\u000b\u001a\u00020\b2\n\b\u0002\u0010\f\u001a\u0004\u0018\u00010\rH\u0007J\r\u0010\u0018\u001a\u00020\u0019H\u0000¢\u0006\u0002\b\u001aJ\t\u0010\u001b\u001a\u00020\u0017H\u0082 J\u0011\u0010\u001c\u001a\u00020\u00192\u0006\u0010\u0016\u001a\u00020\u0017H\u0082 JK\u0010\u001d\u001a\u00020\u00192\u0006\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0006\u001a\u00020\u00052\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\b2\u0006\u0010\n\u001a\u00020\b2\u0006\u0010\u000b\u001a\u00020\b2\u0006\u0010\u001e\u001a\u00020\u00052\b\u0010\f\u001a\u0004\u0018\u00010\rH\u0082 J3\u0010\u001f\u001a\u00020\u00192\u0006\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0010\u001a\u00020\u000f2\u0006\u0010\u0011\u001a\u00020\u000f2\u0006\u0010\u000b\u001a\u00020\b2\b\u0010\f\u001a\u0004\u0018\u00010\rH\u0082 R\u0014\u0010\u0012\u001a\u00020\u00138@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0014\u0010\u0015R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006 "}, d2 = {"Lcom/skydoves/cloudy/internals/render/RenderScriptToolkit;", "", "<init>", "()V", "blur", "", "inputArray", "vectorSize", "", "sizeX", "sizeY", "radius", "restriction", "Lcom/skydoves/cloudy/internals/render/Range2d;", "blur$cloudy_release", "Landroid/graphics/Bitmap;", "inputBitmap", "outputBitmap", "identityMatrix", "", "getIdentityMatrix$cloudy_release", "()[F", "nativeHandle", "", "shutdown", "", "shutdown$cloudy_release", "createNative", "destroyNative", "nativeBlur", "outputArray", "nativeBlurBitmap", "cloudy_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000V\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u0012\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0014\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010\u0007\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u0002\n\u0002\b\t\bÁ\u0002\u0018\u00002\u00020\u0001:\u0001.B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003JC\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00052\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\b2\u0006\u0010\n\u001a\u00020\b2\b\b\u0002\u0010\u000b\u001a\u00020\b2\n\b\u0002\u0010\f\u001a\u0004\u0018\u00010\rH\u0001¢\u0006\u0002\b\u000eJ7\u0010\u0004\u001a\u0004\u0018\u00010\u000f2\b\u0010\u0010\u001a\u0004\u0018\u00010\u000f2\u0006\u0010\u0011\u001a\u00020\u000f2\b\b\u0003\u0010\u000b\u001a\u00020\b2\n\b\u0002\u0010\f\u001a\u0004\u0018\u00010\rH\u0001¢\u0006\u0002\b\u000eJ]\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u000f2\u0006\u0010\u0019\u001a\u00020\u000f2\u0006\u0010\u001a\u001a\u00020\b2\u0006\u0010\u001b\u001a\u00020\b2\u0006\u0010\u000b\u001a\u00020\b2\b\b\u0002\u0010\u001c\u001a\u00020\u001d2\b\b\u0002\u0010\u001e\u001a\u00020\u001f2\b\b\u0002\u0010 \u001a\u00020\u001d2\b\b\u0002\u0010!\u001a\u00020\u001dH\u0000¢\u0006\u0002\b\"J\r\u0010%\u001a\u00020&H\u0000¢\u0006\u0002\b'J\t\u0010(\u001a\u00020$H\u0082 J\u0011\u0010)\u001a\u00020&2\u0006\u0010#\u001a\u00020$H\u0082 JK\u0010*\u001a\u00020&2\u0006\u0010#\u001a\u00020$2\u0006\u0010\u0006\u001a\u00020\u00052\u0006\u0010\u0007\u001a\u00020\b2\u0006\u0010\t\u001a\u00020\b2\u0006\u0010\n\u001a\u00020\b2\u0006\u0010\u000b\u001a\u00020\b2\u0006\u0010+\u001a\u00020\u00052\b\u0010\f\u001a\u0004\u0018\u00010\rH\u0082 J3\u0010,\u001a\u00020&2\u0006\u0010#\u001a\u00020$2\u0006\u0010\u0010\u001a\u00020\u000f2\u0006\u0010\u0011\u001a\u00020\u000f2\u0006\u0010\u000b\u001a\u00020\b2\b\u0010\f\u001a\u0004\u0018\u00010\rH\u0082 JY\u0010-\u001a\u00020\u00172\u0006\u0010#\u001a\u00020$2\u0006\u0010\u0018\u001a\u00020\u000f2\u0006\u0010\u0019\u001a\u00020\u000f2\u0006\u0010\u001a\u001a\u00020\b2\u0006\u0010\u001b\u001a\u00020\b2\u0006\u0010\u000b\u001a\u00020\b2\u0006\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\b2\u0006\u0010 \u001a\u00020\u001d2\u0006\u0010!\u001a\u00020\u001dH\u0082 R\u0014\u0010\u0012\u001a\u00020\u00138@X\u0080\u0004¢\u0006\u0006\u001a\u0004\b\u0014\u0010\u0015R\u000e\u0010#\u001a\u00020$X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006/"}, d2 = {"Lcom/skydoves/cloudy/internals/render/RenderScriptToolkit;", "", "<init>", "()V", "blur", "", "inputArray", "vectorSize", "", "sizeX", "sizeY", "radius", "restriction", "Lcom/skydoves/cloudy/internals/render/Range2d;", "blur$cloudy_release", "Landroid/graphics/Bitmap;", "inputBitmap", "outputBitmap", "identityMatrix", "", "getIdentityMatrix$cloudy_release", "()[F", "backgroundBlur", "", "srcBitmap", "dstBitmap", "cropX", "cropY", "scale", "", "progressiveDirection", "Lcom/skydoves/cloudy/internals/render/RenderScriptToolkit$ProgressiveDirection;", "fadeStart", "fadeEnd", "backgroundBlur$cloudy_release", "nativeHandle", "", "shutdown", "", "shutdown$cloudy_release", "createNative", "destroyNative", "nativeBlur", "outputArray", "nativeBlurBitmap", "nativeBackgroundBlur", "ProgressiveDirection", "cloudy_release"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class RenderScriptToolkit {
     public static final int $stable;
@@ -15,18 +17,20 @@ public final class RenderScriptToolkit {
 
     private final native void destroyNative(long j);
 
+    private final native boolean nativeBackgroundBlur(long j, Bitmap bitmap, Bitmap bitmap2, int i, int i2, int i3, float f, int i4, float f2, float f3);
+
     private final native void nativeBlur(long j, byte[] bArr, int i, int i2, int i3, int i4, byte[] bArr2, Range2d range2d);
 
     private final native void nativeBlurBitmap(long j, Bitmap bitmap, Bitmap bitmap2, int i, Range2d range2d);
 
-    public final Bitmap blur(Bitmap bitmap, Bitmap outputBitmap) {
+    public final Bitmap blur$cloudy_release(Bitmap bitmap, Bitmap outputBitmap) {
         Intrinsics.checkNotNullParameter(outputBitmap, "outputBitmap");
-        return blur$default(this, bitmap, outputBitmap, 0, null, 12, null);
+        return blur$cloudy_release$default(this, bitmap, outputBitmap, 0, null, 12, null);
     }
 
-    public final Bitmap blur(Bitmap bitmap, Bitmap outputBitmap, int i) {
+    public final Bitmap blur$cloudy_release(Bitmap bitmap, Bitmap outputBitmap, int i) {
         Intrinsics.checkNotNullParameter(outputBitmap, "outputBitmap");
-        return blur$default(this, bitmap, outputBitmap, i, null, 8, null);
+        return blur$cloudy_release$default(this, bitmap, outputBitmap, i, null, 8, null);
     }
 
     public final byte[] blur$cloudy_release(byte[] inputArray, int i, int i2, int i3) {
@@ -70,17 +74,17 @@ public final class RenderScriptToolkit {
         throw new IllegalArgumentException(("RenderScript Toolkit blur. inputArray is too small for the given dimensions. " + i2 + '*' + i3 + '*' + i + " < " + inputArray.length + '.').toString());
     }
 
-    public static /* synthetic */ Bitmap blur$default(RenderScriptToolkit renderScriptToolkit, Bitmap bitmap, Bitmap bitmap2, int i, Range2d range2d, int i2, Object obj) {
+    public static /* synthetic */ Bitmap blur$cloudy_release$default(RenderScriptToolkit renderScriptToolkit, Bitmap bitmap, Bitmap bitmap2, int i, Range2d range2d, int i2, Object obj) {
         if ((i2 & 4) != 0) {
             i = 5;
         }
         if ((i2 & 8) != 0) {
             range2d = null;
         }
-        return renderScriptToolkit.blur(bitmap, bitmap2, i, range2d);
+        return renderScriptToolkit.blur$cloudy_release(bitmap, bitmap2, i, range2d);
     }
 
-    public final Bitmap blur(Bitmap bitmap, Bitmap outputBitmap, int i, Range2d range2d) {
+    public final Bitmap blur$cloudy_release(Bitmap bitmap, Bitmap outputBitmap, int i, Range2d range2d) {
         Intrinsics.checkNotNullParameter(outputBitmap, "outputBitmap");
         if (bitmap == null) {
             return null;
@@ -99,6 +103,77 @@ public final class RenderScriptToolkit {
 
     public final float[] getIdentityMatrix$cloudy_release() {
         return new float[]{1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f};
+    }
+
+    /* compiled from: RenderScriptToolkit.kt */
+    @Metadata(d1 = {"\u0000\u0012\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0000\n\u0002\u0010\b\n\u0002\b\t\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\u0011\b\u0002\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007j\u0002\b\bj\u0002\b\tj\u0002\b\nj\u0002\b\u000b¨\u0006\f"}, d2 = {"Lcom/skydoves/cloudy/internals/render/RenderScriptToolkit$ProgressiveDirection;", "", "value", "", "<init>", "(Ljava/lang/String;II)V", "getValue", "()I", "NONE", "TOP_TO_BOTTOM", "BOTTOM_TO_TOP", "EDGES", "cloudy_release"}, k = 1, mv = {2, 3, 0}, xi = 48)
+    /* loaded from: classes4.dex */
+    public static final class ProgressiveDirection {
+        private static final /* synthetic */ EnumEntries $ENTRIES;
+        private static final /* synthetic */ ProgressiveDirection[] $VALUES;
+        private final int value;
+        public static final ProgressiveDirection NONE = new ProgressiveDirection("NONE", 0, 0);
+        public static final ProgressiveDirection TOP_TO_BOTTOM = new ProgressiveDirection("TOP_TO_BOTTOM", 1, 1);
+        public static final ProgressiveDirection BOTTOM_TO_TOP = new ProgressiveDirection("BOTTOM_TO_TOP", 2, 2);
+        public static final ProgressiveDirection EDGES = new ProgressiveDirection("EDGES", 3, 3);
+
+        private static final /* synthetic */ ProgressiveDirection[] $values() {
+            return new ProgressiveDirection[]{NONE, TOP_TO_BOTTOM, BOTTOM_TO_TOP, EDGES};
+        }
+
+        public static EnumEntries<ProgressiveDirection> getEntries() {
+            return $ENTRIES;
+        }
+
+        public static ProgressiveDirection valueOf(String str) {
+            return (ProgressiveDirection) Enum.valueOf(ProgressiveDirection.class, str);
+        }
+
+        public static ProgressiveDirection[] values() {
+            return (ProgressiveDirection[]) $VALUES.clone();
+        }
+
+        private ProgressiveDirection(String str, int i, int i2) {
+            super(str, i);
+            this.value = i2;
+        }
+
+        public final int getValue() {
+            return this.value;
+        }
+
+        static {
+            ProgressiveDirection[] $values = $values();
+            $VALUES = $values;
+            $ENTRIES = EnumEntriesKt.enumEntries($values);
+        }
+    }
+
+    public final boolean backgroundBlur$cloudy_release(Bitmap srcBitmap, Bitmap dstBitmap, int i, int i2, int i3, float f, ProgressiveDirection progressiveDirection, float f2, float f3) {
+        Intrinsics.checkNotNullParameter(srcBitmap, "srcBitmap");
+        Intrinsics.checkNotNullParameter(dstBitmap, "dstBitmap");
+        Intrinsics.checkNotNullParameter(progressiveDirection, "progressiveDirection");
+        RenderScriptToolkitKt.validateBitmap("backgroundBlur", srcBitmap, false);
+        RenderScriptToolkitKt.validateBitmap("backgroundBlur", dstBitmap, false);
+        if (1 > i3 || i3 >= 26) {
+            throw new IllegalArgumentException(("RenderScript Toolkit backgroundBlur. The radius should be between 1 and 25. " + i3 + " provided.").toString());
+        }
+        if (f <= 0.0f || f > 1.0f) {
+            throw new IllegalArgumentException(("RenderScript Toolkit backgroundBlur. The scale should be greater than 0 and at most 1. " + f + " provided.").toString());
+        }
+        if (0.0f > f2 || f2 > 1.0f || 0.0f > f3 || f3 > 1.0f) {
+            throw new IllegalArgumentException(("RenderScript Toolkit backgroundBlur. fadeStart and fadeEnd must be in the range [0, 1]. fadeStart=" + f2 + ", fadeEnd=" + f3 + " provided.").toString());
+        }
+        if (i < 0 || i2 < 0) {
+            throw new IllegalArgumentException("RenderScript Toolkit backgroundBlur. Crop offsets must be non-negative.".toString());
+        }
+        if (dstBitmap.getWidth() + i > srcBitmap.getWidth()) {
+            throw new IllegalArgumentException("RenderScript Toolkit backgroundBlur. Crop region exceeds source width.".toString());
+        }
+        if (i2 + dstBitmap.getHeight() > srcBitmap.getHeight()) {
+            throw new IllegalArgumentException("RenderScript Toolkit backgroundBlur. Crop region exceeds source height.".toString());
+        }
+        return nativeBackgroundBlur(nativeHandle, srcBitmap, dstBitmap, i, i2, i3, f, progressiveDirection.getValue(), f2, f3);
     }
 
     static {

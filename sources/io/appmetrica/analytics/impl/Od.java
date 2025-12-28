@@ -12,8 +12,8 @@ public final /* synthetic */ class Od extends FunctionReferenceImpl implements F
     @Override // kotlin.jvm.functions.Function1
     public final Object invoke(Object obj) {
         Pd pd = (Pd) this.receiver;
-        pd.f731a.markCrashCompleted((String) obj);
-        pd.f731a.deleteCompletedCrashes();
+        pd.f732a.markCrashCompleted((String) obj);
+        pd.f732a.deleteCompletedCrashes();
         return Unit.INSTANCE;
     }
 }

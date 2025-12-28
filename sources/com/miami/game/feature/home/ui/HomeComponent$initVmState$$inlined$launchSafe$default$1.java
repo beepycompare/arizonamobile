@@ -61,7 +61,7 @@ public final class HomeComponent$initVmState$$inlined$launchSafe$default$1 exten
     /* JADX WARN: Removed duplicated region for block: B:19:0x00a6  */
     /* JADX WARN: Removed duplicated region for block: B:21:0x00aa  */
     /* JADX WARN: Removed duplicated region for block: B:22:0x00ad  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x00e8  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x00ec  */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:16:0x009b -> B:8:0x003b). Please submit an issue!!! */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
@@ -117,7 +117,7 @@ public final class HomeComponent$initVmState$$inlined$launchSafe$default$1 exten
                     z = 0;
                 }
                 MutableStateFlow mutableStateFlow3 = mutableStateFlow2;
-                if (!mutableStateFlow3.compareAndSet(value, HomeUiState.copy$default(homeUiState, i12, z, null, null, null, null, null, null, null, null, null, i3 == 0 ? i5 : 0, ((Boolean) isPrivacyAccepted).booleanValue(), false, 0, false, false, false, 258047, null))) {
+                if (!mutableStateFlow3.compareAndSet(value, HomeUiState.copy$default(homeUiState, i12, z, null, null, null, null, null, null, null, null, null, i3 == 0 ? i5 : 0, ((Boolean) isPrivacyAccepted).booleanValue(), false, 0, false, false, false, 0, 0, 1044479, null))) {
                     mutableStateFlow2 = mutableStateFlow3;
                     i = i10;
                     i2 = i13;
@@ -155,7 +155,7 @@ public final class HomeComponent$initVmState$$inlined$launchSafe$default$1 exten
                     if (i7 == 0) {
                     }
                     MutableStateFlow mutableStateFlow32 = mutableStateFlow2;
-                    if (!mutableStateFlow32.compareAndSet(value, HomeUiState.copy$default(homeUiState, i12, z, null, null, null, null, null, null, null, null, null, i3 == 0 ? i5 : 0, ((Boolean) isPrivacyAccepted).booleanValue(), false, 0, false, false, false, 258047, null))) {
+                    if (!mutableStateFlow32.compareAndSet(value, HomeUiState.copy$default(homeUiState, i12, z, null, null, null, null, null, null, null, null, null, i3 == 0 ? i5 : 0, ((Boolean) isPrivacyAccepted).booleanValue(), false, 0, false, false, false, 0, 0, 1044479, null))) {
                     }
                 }
                 return Unit.INSTANCE;

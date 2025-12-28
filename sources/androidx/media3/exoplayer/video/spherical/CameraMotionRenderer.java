@@ -53,7 +53,7 @@ public final class CameraMotionRenderer extends BaseRenderer {
     }
 
     @Override // androidx.media3.exoplayer.BaseRenderer
-    protected void onPositionReset(long j, boolean z) {
+    protected void onPositionReset(long j, boolean z, boolean z2) {
         this.lastTimestampUs = Long.MIN_VALUE;
         resetListener();
     }

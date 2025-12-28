@@ -101,8 +101,13 @@ public class ForwardingRenderer implements Renderer {
     }
 
     @Override // androidx.media3.exoplayer.Renderer
-    public void resetPosition(long j) throws ExoPlaybackException {
-        this.renderer.resetPosition(j);
+    public void resetPosition(long j, boolean z) throws ExoPlaybackException {
+        this.renderer.resetPosition(j, z);
+    }
+
+    @Override // androidx.media3.exoplayer.Renderer
+    public boolean supportsResetPositionWithoutKeyFrameReset(long j) {
+        return this.renderer.supportsResetPositionWithoutKeyFrameReset(j);
     }
 
     @Override // androidx.media3.exoplayer.Renderer

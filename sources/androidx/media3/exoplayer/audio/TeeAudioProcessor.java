@@ -2,19 +2,19 @@ package androidx.media3.exoplayer.audio;
 
 import androidx.media3.common.audio.AudioProcessor;
 import androidx.media3.common.audio.BaseAudioProcessor;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.WavUtil;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class TeeAudioProcessor extends BaseAudioProcessor {
     private final AudioBufferSink audioBufferSink;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface AudioBufferSink {
         void flush(int i, int i2, int i3);
 
@@ -27,7 +27,7 @@ public final class TeeAudioProcessor extends BaseAudioProcessor {
     }
 
     public TeeAudioProcessor(AudioBufferSink audioBufferSink) {
-        this.audioBufferSink = (AudioBufferSink) Assertions.checkNotNull(audioBufferSink);
+        this.audioBufferSink = (AudioBufferSink) Preconditions.checkNotNull(audioBufferSink);
     }
 
     @Override // androidx.media3.common.audio.AudioProcessor
@@ -61,7 +61,7 @@ public final class TeeAudioProcessor extends BaseAudioProcessor {
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class WavFileAudioBufferSink implements AudioBufferSink {
         private static final int FILE_SIZE_MINUS_44_OFFSET = 40;
         private static final int FILE_SIZE_MINUS_8_OFFSET = 4;
@@ -136,7 +136,7 @@ public final class TeeAudioProcessor extends BaseAudioProcessor {
         }
 
         private void writeBuffer(ByteBuffer byteBuffer) throws IOException {
-            RandomAccessFile randomAccessFile = (RandomAccessFile) Assertions.checkNotNull(this.randomAccessFile);
+            RandomAccessFile randomAccessFile = (RandomAccessFile) Preconditions.checkNotNull(this.randomAccessFile);
             while (byteBuffer.hasRemaining()) {
                 int min = Math.min(byteBuffer.remaining(), this.scratchBuffer.length);
                 byteBuffer.get(this.scratchBuffer, 0, min);

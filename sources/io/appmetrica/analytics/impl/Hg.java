@@ -9,7 +9,7 @@ public class Hg extends AbstractC0495pa {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0495pa
     public void a(List<Sg> list) {
-        list.add(this.f1161a.m);
-        list.add(this.f1161a.b);
+        list.add(this.f1162a.m);
+        list.add(this.f1162a.b);
     }
 }

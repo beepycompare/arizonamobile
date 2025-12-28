@@ -11,7 +11,6 @@ import androidx.media3.common.DataReader;
 import androidx.media3.common.DrmInitData;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.MediaFormatUtil;
 import androidx.media3.common.util.TimestampAdjuster;
@@ -23,6 +22,7 @@ import androidx.media3.extractor.SeekMap;
 import androidx.media3.extractor.SeekPoint;
 import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.text.ttml.TtmlNode;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -123,7 +123,7 @@ public final class OutputConsumerAdapterV30 implements MediaParser.OutputConsume
         if (this.tracksFoundCalled) {
             Format[] formatArr = new Format[this.trackFormats.size()];
             for (int i = 0; i < this.trackFormats.size(); i++) {
-                formatArr[i] = (Format) Assertions.checkNotNull(this.trackFormats.get(i));
+                formatArr[i] = (Format) Preconditions.checkNotNull(this.trackFormats.get(i));
             }
             return formatArr;
         }
@@ -204,7 +204,7 @@ public final class OutputConsumerAdapterV30 implements MediaParser.OutputConsume
             if (timestampAdjuster != null) {
                 j = timestampAdjuster.adjustSampleTimestamp(j);
             }
-            ((TrackOutput) Assertions.checkNotNull(this.trackOutputs.get(i))).sampleMetadata(j, i2, i3, i4, toExoPlayerCryptoData(i, cryptoInfo));
+            ((TrackOutput) Preconditions.checkNotNull(this.trackOutputs.get(i))).sampleMetadata(j, i2, i3, i4, toExoPlayerCryptoData(i, cryptoInfo));
         }
     }
 
@@ -214,9 +214,9 @@ public final class OutputConsumerAdapterV30 implements MediaParser.OutputConsume
             return false;
         }
         IntBuffer asIntBuffer = byteBuffer.asIntBuffer();
-        LongBuffer asLongBuffer = ((ByteBuffer) Assertions.checkNotNull(mediaFormat.getByteBuffer(MEDIA_FORMAT_KEY_CHUNK_INDEX_OFFSETS))).asLongBuffer();
-        LongBuffer asLongBuffer2 = ((ByteBuffer) Assertions.checkNotNull(mediaFormat.getByteBuffer(MEDIA_FORMAT_KEY_CHUNK_INDEX_DURATIONS))).asLongBuffer();
-        LongBuffer asLongBuffer3 = ((ByteBuffer) Assertions.checkNotNull(mediaFormat.getByteBuffer(MEDIA_FORMAT_KEY_CHUNK_INDEX_TIMES))).asLongBuffer();
+        LongBuffer asLongBuffer = ((ByteBuffer) Preconditions.checkNotNull(mediaFormat.getByteBuffer(MEDIA_FORMAT_KEY_CHUNK_INDEX_OFFSETS))).asLongBuffer();
+        LongBuffer asLongBuffer2 = ((ByteBuffer) Preconditions.checkNotNull(mediaFormat.getByteBuffer(MEDIA_FORMAT_KEY_CHUNK_INDEX_DURATIONS))).asLongBuffer();
+        LongBuffer asLongBuffer3 = ((ByteBuffer) Preconditions.checkNotNull(mediaFormat.getByteBuffer(MEDIA_FORMAT_KEY_CHUNK_INDEX_TIMES))).asLongBuffer();
         int[] iArr = new int[asIntBuffer.remaining()];
         long[] jArr = new long[asLongBuffer.remaining()];
         long[] jArr2 = new long[asLongBuffer2.remaining()];
@@ -247,7 +247,7 @@ public final class OutputConsumerAdapterV30 implements MediaParser.OutputConsume
             return null;
         }
         if (this.lastReceivedCryptoInfos.get(i) == cryptoInfo) {
-            return (TrackOutput.CryptoData) Assertions.checkNotNull(this.lastOutputCryptoDatas.get(i));
+            return (TrackOutput.CryptoData) Preconditions.checkNotNull(this.lastOutputCryptoDatas.get(i));
         }
         try {
             Matcher matcher = REGEX_CRYPTO_INFO_PATTERN.matcher(cryptoInfo.toString());

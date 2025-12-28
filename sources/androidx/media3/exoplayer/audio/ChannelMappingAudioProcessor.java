@@ -2,11 +2,11 @@ package androidx.media3.exoplayer.audio;
 
 import androidx.media3.common.audio.AudioProcessor;
 import androidx.media3.common.audio.BaseAudioProcessor;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class ChannelMappingAudioProcessor extends BaseAudioProcessor {
     private int[] outputChannels;
     private int[] pendingOutputChannels;
@@ -42,7 +42,7 @@ public final class ChannelMappingAudioProcessor extends BaseAudioProcessor {
 
     @Override // androidx.media3.common.audio.AudioProcessor
     public void queueInput(ByteBuffer byteBuffer) {
-        int[] iArr = (int[]) Assertions.checkNotNull(this.outputChannels);
+        int[] iArr = (int[]) Preconditions.checkNotNull(this.outputChannels);
         int position = byteBuffer.position();
         int limit = byteBuffer.limit();
         ByteBuffer replaceOutputBuffer = replaceOutputBuffer(((limit - position) / this.inputAudioFormat.bytesPerFrame) * this.outputAudioFormat.bytesPerFrame);

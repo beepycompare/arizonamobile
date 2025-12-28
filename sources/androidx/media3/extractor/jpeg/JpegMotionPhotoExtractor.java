@@ -3,24 +3,28 @@ package androidx.media3.extractor.jpeg;
 import androidx.media3.common.C;
 import androidx.media3.common.Format;
 import androidx.media3.common.Metadata;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.extractor.Extractor;
 import androidx.media3.extractor.ExtractorInput;
 import androidx.media3.extractor.ExtractorOutput;
 import androidx.media3.extractor.PositionHolder;
 import androidx.media3.extractor.SeekMap;
-import androidx.media3.extractor.metadata.mp4.MotionPhotoMetadata;
+import androidx.media3.extractor.StartOffsetExtractorInput;
+import androidx.media3.extractor.StartOffsetExtractorOutput;
+import androidx.media3.extractor.metadata.MotionPhotoMetadata;
 import androidx.media3.extractor.mp4.Mp4Extractor;
 import androidx.media3.extractor.text.SubtitleParser;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
+import java.util.Objects;
 /* loaded from: classes3.dex */
 final class JpegMotionPhotoExtractor implements Extractor {
     private static final String HEADER_XMP_APP1 = "http://ns.adobe.com/xap/1.0/";
-    private static final int MARKER_APP0 = 65504;
     private static final int MARKER_APP1 = 65505;
+    private static final int MARKER_SIZE = 2;
     private static final int MARKER_SOI = 65496;
     private static final int MARKER_SOS = 65498;
+    private static final int SEGMENT_LENGTH_SIZE = 2;
     private static final int STATE_ENDED = 6;
     private static final int STATE_READING_MARKER = 0;
     private static final int STATE_READING_MOTION_PHOTO_VIDEO = 5;
@@ -38,18 +42,33 @@ final class JpegMotionPhotoExtractor implements Extractor {
     private final ParsableByteArray scratch = new ParsableByteArray(2);
     private long mp4StartPosition = -1;
 
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x001d, code lost:
+        return false;
+     */
     @Override // androidx.media3.extractor.Extractor
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public boolean sniff(ExtractorInput extractorInput) throws IOException {
+        int peekSegmentLength;
         if (peekMarker(extractorInput) != MARKER_SOI) {
             return false;
         }
-        int peekMarker = peekMarker(extractorInput);
-        this.marker = peekMarker;
-        if (peekMarker == MARKER_APP0) {
-            advancePeekPositionToNextSegment(extractorInput);
-            this.marker = peekMarker(extractorInput);
+        while (true) {
+            int peekMarker = peekMarker(extractorInput);
+            this.marker = peekMarker;
+            if (peekMarker != MARKER_SOS && (peekSegmentLength = peekSegmentLength(extractorInput)) >= 0) {
+                if (this.marker != MARKER_APP1) {
+                    extractorInput.advancePeekPosition(peekSegmentLength);
+                } else {
+                    this.scratch.reset(peekSegmentLength);
+                    extractorInput.peekFully(this.scratch.getData(), 0, peekSegmentLength);
+                    if (isMotionPhotoXmp(this.scratch)) {
+                        return true;
+                    }
+                }
+            }
         }
-        return this.marker == MARKER_APP1;
     }
 
     @Override // androidx.media3.extractor.Extractor
@@ -88,7 +107,7 @@ final class JpegMotionPhotoExtractor implements Extractor {
                 this.lastExtractorInput = extractorInput;
                 this.mp4ExtractorStartOffsetExtractorInput = new StartOffsetExtractorInput(extractorInput, this.mp4StartPosition);
             }
-            int read = ((Mp4Extractor) Assertions.checkNotNull(this.mp4Extractor)).read(this.mp4ExtractorStartOffsetExtractorInput, positionHolder);
+            int read = ((Mp4Extractor) Preconditions.checkNotNull(this.mp4Extractor)).read(this.mp4ExtractorStartOffsetExtractorInput, positionHolder);
             if (read == 1) {
                 positionHolder.position += this.mp4StartPosition;
             }
@@ -102,7 +121,7 @@ final class JpegMotionPhotoExtractor implements Extractor {
             this.state = 0;
             this.mp4Extractor = null;
         } else if (this.state == 5) {
-            ((Mp4Extractor) Assertions.checkNotNull(this.mp4Extractor)).seek(j, j2);
+            ((Mp4Extractor) Preconditions.checkNotNull(this.mp4Extractor)).seek(j, j2);
         }
     }
 
@@ -120,10 +139,11 @@ final class JpegMotionPhotoExtractor implements Extractor {
         return this.scratch.readUnsignedShort();
     }
 
-    private void advancePeekPositionToNextSegment(ExtractorInput extractorInput) throws IOException {
-        this.scratch.reset(2);
-        extractorInput.peekFully(this.scratch.getData(), 0, 2);
-        extractorInput.advancePeekPosition(this.scratch.readUnsignedShort() - 2);
+    private boolean isMotionPhotoXmp(ParsableByteArray parsableByteArray) {
+        if (Objects.equals(parsableByteArray.readNullTerminatedString(), HEADER_XMP_APP1)) {
+            return XmpMotionPhotoDescriptionParser.isMotionPhotoXmp(parsableByteArray.readNullTerminatedString());
+        }
+        return false;
     }
 
     private void readMarker(ExtractorInput extractorInput) throws IOException {
@@ -142,10 +162,15 @@ final class JpegMotionPhotoExtractor implements Extractor {
         }
     }
 
-    private void readSegmentLength(ExtractorInput extractorInput) throws IOException {
+    private int peekSegmentLength(ExtractorInput extractorInput) throws IOException {
         this.scratch.reset(2);
-        extractorInput.readFully(this.scratch.getData(), 0, 2);
-        this.segmentLength = this.scratch.readUnsignedShort() - 2;
+        extractorInput.peekFully(this.scratch.getData(), 0, 2);
+        return this.scratch.readUnsignedShort() - 2;
+    }
+
+    private void readSegmentLength(ExtractorInput extractorInput) throws IOException {
+        this.segmentLength = peekSegmentLength(extractorInput);
+        extractorInput.skipFully(2);
         this.state = 2;
     }
 
@@ -179,7 +204,7 @@ final class JpegMotionPhotoExtractor implements Extractor {
         StartOffsetExtractorInput startOffsetExtractorInput = new StartOffsetExtractorInput(extractorInput, this.mp4StartPosition);
         this.mp4ExtractorStartOffsetExtractorInput = startOffsetExtractorInput;
         if (this.mp4Extractor.sniff(startOffsetExtractorInput)) {
-            this.mp4Extractor.init(new StartOffsetExtractorOutput(this.mp4StartPosition, (ExtractorOutput) Assertions.checkNotNull(this.extractorOutput)));
+            this.mp4Extractor.init(new StartOffsetExtractorOutput(this.mp4StartPosition, (ExtractorOutput) Preconditions.checkNotNull(this.extractorOutput)));
             startReadingMotionPhoto();
             return;
         }
@@ -187,18 +212,18 @@ final class JpegMotionPhotoExtractor implements Extractor {
     }
 
     private void startReadingMotionPhoto() {
-        outputImageTrack((MotionPhotoMetadata) Assertions.checkNotNull(this.motionPhotoMetadata));
+        outputImageTrack((MotionPhotoMetadata) Preconditions.checkNotNull(this.motionPhotoMetadata));
         this.state = 5;
     }
 
     private void endReading() {
-        ((ExtractorOutput) Assertions.checkNotNull(this.extractorOutput)).endTracks();
+        ((ExtractorOutput) Preconditions.checkNotNull(this.extractorOutput)).endTracks();
         this.extractorOutput.seekMap(new SeekMap.Unseekable(C.TIME_UNSET));
         this.state = 6;
     }
 
     private void outputImageTrack(MotionPhotoMetadata motionPhotoMetadata) {
-        ((ExtractorOutput) Assertions.checkNotNull(this.extractorOutput)).track(1024, 4).format(new Format.Builder().setContainerMimeType("image/jpeg").setMetadata(new Metadata(motionPhotoMetadata)).build());
+        ((ExtractorOutput) Preconditions.checkNotNull(this.extractorOutput)).track(1024, 4).format(new Format.Builder().setContainerMimeType("image/jpeg").setMetadata(new Metadata(motionPhotoMetadata)).build());
     }
 
     private static MotionPhotoMetadata getMotionPhotoMetadata(String str, long j) throws IOException {

@@ -1,13 +1,13 @@
 package androidx.media3.exoplayer.audio;
 
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.audio.DefaultAudioSink;
 import androidx.media3.extractor.ExtractorUtil;
+import com.google.common.base.Preconditions;
 import com.google.common.math.IntMath;
 import com.google.common.primitives.Ints;
 import java.math.RoundingMode;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class DefaultAudioTrackBufferSizeProvider implements DefaultAudioSink.AudioTrackBufferSizeProvider {
     private static final int AC3_BUFFER_MULTIPLICATION_FACTOR = 2;
     private static final int DTSHD_BUFFER_MULTIPLICATION_FACTOR = 4;
@@ -24,7 +24,7 @@ public class DefaultAudioTrackBufferSizeProvider implements DefaultAudioSink.Aud
     protected final int passthroughBufferDurationUs;
     protected final int pcmBufferMultiplicationFactor;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class Builder {
         private int minPcmBufferDurationUs = 250000;
         private int maxPcmBufferDurationUs = DefaultAudioTrackBufferSizeProvider.MAX_PCM_BUFFER_DURATION_US;
@@ -144,7 +144,7 @@ public class DefaultAudioTrackBufferSizeProvider implements DefaultAudioSink.Aud
 
     private static int getNonPcmMaximumEncodedRateBytesPerSecond(int i) {
         int maximumEncodedRateBytesPerSecond = ExtractorUtil.getMaximumEncodedRateBytesPerSecond(i);
-        Assertions.checkState(maximumEncodedRateBytesPerSecond != -2147483647);
+        Preconditions.checkState(maximumEncodedRateBytesPerSecond != -2147483647);
         return maximumEncodedRateBytesPerSecond;
     }
 }

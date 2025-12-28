@@ -17,7 +17,7 @@ public final class C0110a9 extends MessageNano {
     public static volatile C0110a9[] m;
 
     /* renamed from: a  reason: collision with root package name */
-    public double f891a;
+    public double f892a;
     public double b;
     public long c;
     public int d;
@@ -43,7 +43,7 @@ public final class C0110a9 extends MessageNano {
     }
 
     public final C0110a9 a() {
-        this.f891a = FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
+        this.f892a = FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
         this.b = FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
         this.c = 0L;
         this.d = 0;
@@ -58,7 +58,7 @@ public final class C0110a9 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
-        int computeDoubleSize = CodedOutputByteBufferNano.computeDoubleSize(2, this.b) + CodedOutputByteBufferNano.computeDoubleSize(1, this.f891a) + super.computeSerializedSize();
+        int computeDoubleSize = CodedOutputByteBufferNano.computeDoubleSize(2, this.b) + CodedOutputByteBufferNano.computeDoubleSize(1, this.f892a) + super.computeSerializedSize();
         long j2 = this.c;
         if (j2 != 0) {
             computeDoubleSize += CodedOutputByteBufferNano.computeUInt64Size(3, j2);
@@ -88,7 +88,7 @@ public final class C0110a9 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        codedOutputByteBufferNano.writeDouble(1, this.f891a);
+        codedOutputByteBufferNano.writeDouble(1, this.f892a);
         codedOutputByteBufferNano.writeDouble(2, this.b);
         long j2 = this.c;
         if (j2 != 0) {
@@ -132,7 +132,7 @@ public final class C0110a9 extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 9) {
-                this.f891a = codedInputByteBufferNano.readDouble();
+                this.f892a = codedInputByteBufferNano.readDouble();
             } else if (readTag == 17) {
                 this.b = codedInputByteBufferNano.readDouble();
             } else if (readTag == 24) {

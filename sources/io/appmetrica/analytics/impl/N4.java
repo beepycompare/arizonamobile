@@ -6,16 +6,16 @@ import kotlin.jvm.internal.Lambda;
 public final class N4 extends Lambda implements Function0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Rg f694a;
+    public final /* synthetic */ Rg f695a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public N4(Rg rg) {
         super(0);
-        this.f694a = rg;
+        this.f695a = rg;
     }
 
     @Override // kotlin.jvm.functions.Function0
     public final Object invoke() {
-        return Integer.valueOf(((C0402lh) this.f694a.a()).i);
+        return Integer.valueOf(((C0402lh) this.f695a.a()).i);
     }
 }

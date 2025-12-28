@@ -1,7 +1,7 @@
 package androidx.media3.datasource.cache;
 
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
+import com.google.common.base.Preconditions;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.TreeSet;
@@ -94,8 +94,8 @@ public final class CachedContent {
     }
 
     public long getCachedBytesLength(long j, long j2) {
-        Assertions.checkArgument(j >= 0);
-        Assertions.checkArgument(j2 >= 0);
+        Preconditions.checkArgument(j >= 0);
+        Preconditions.checkArgument(j2 >= 0);
         SimpleCacheSpan span = getSpan(j, j2);
         if (span.isHoleSpan()) {
             return -Math.min(span.isOpenEnded() ? Long.MAX_VALUE : span.length, j2);
@@ -119,11 +119,11 @@ public final class CachedContent {
 
     public SimpleCacheSpan setLastTouchTimestamp(SimpleCacheSpan simpleCacheSpan, long j, boolean z) {
         long j2;
-        Assertions.checkState(this.cachedSpans.remove(simpleCacheSpan));
-        File file = (File) Assertions.checkNotNull(simpleCacheSpan.file);
+        Preconditions.checkState(this.cachedSpans.remove(simpleCacheSpan));
+        File file = (File) Preconditions.checkNotNull(simpleCacheSpan.file);
         if (z) {
             j2 = j;
-            File cacheFile = SimpleCacheSpan.getCacheFile((File) Assertions.checkNotNull(file.getParentFile()), this.id, simpleCacheSpan.position, j2);
+            File cacheFile = SimpleCacheSpan.getCacheFile((File) Preconditions.checkNotNull(file.getParentFile()), this.id, simpleCacheSpan.position, j2);
             if (file.renameTo(cacheFile)) {
                 file = cacheFile;
             } else {

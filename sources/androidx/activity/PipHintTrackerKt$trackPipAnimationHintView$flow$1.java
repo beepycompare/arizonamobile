@@ -73,7 +73,7 @@ final class PipHintTrackerKt$trackPipAnimationHintView$flow$1 extends SuspendLam
                     Intrinsics.checkNotNullParameter(v, "v");
                     ProducerScope<Rect> producerScope2 = producerScope;
                     trackPipAnimationHintView$positionInWindow2 = PipHintTrackerKt.trackPipAnimationHintView$positionInWindow(view2);
-                    producerScope2.mo9159trySendJP2dKIU(trackPipAnimationHintView$positionInWindow2);
+                    producerScope2.mo9174trySendJP2dKIU(trackPipAnimationHintView$positionInWindow2);
                     view2.getViewTreeObserver().addOnScrollChangedListener(onScrollChangedListener);
                     view2.addOnLayoutChangeListener(onLayoutChangeListener);
                 }
@@ -87,7 +87,7 @@ final class PipHintTrackerKt$trackPipAnimationHintView$flow$1 extends SuspendLam
             };
             if (this.$view.isAttachedToWindow()) {
                 trackPipAnimationHintView$positionInWindow = PipHintTrackerKt.trackPipAnimationHintView$positionInWindow(this.$view);
-                producerScope.mo9159trySendJP2dKIU(trackPipAnimationHintView$positionInWindow);
+                producerScope.mo9174trySendJP2dKIU(trackPipAnimationHintView$positionInWindow);
                 this.$view.getViewTreeObserver().addOnScrollChangedListener(onScrollChangedListener);
                 this.$view.addOnLayoutChangeListener(onLayoutChangeListener);
             }
@@ -120,14 +120,14 @@ final class PipHintTrackerKt$trackPipAnimationHintView$flow$1 extends SuspendLam
         }
         Intrinsics.checkNotNull(view);
         trackPipAnimationHintView$positionInWindow = PipHintTrackerKt.trackPipAnimationHintView$positionInWindow(view);
-        producerScope.mo9159trySendJP2dKIU(trackPipAnimationHintView$positionInWindow);
+        producerScope.mo9174trySendJP2dKIU(trackPipAnimationHintView$positionInWindow);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void invokeSuspend$lambda$1(ProducerScope producerScope, View view) {
         Rect trackPipAnimationHintView$positionInWindow;
         trackPipAnimationHintView$positionInWindow = PipHintTrackerKt.trackPipAnimationHintView$positionInWindow(view);
-        producerScope.mo9159trySendJP2dKIU(trackPipAnimationHintView$positionInWindow);
+        producerScope.mo9174trySendJP2dKIU(trackPipAnimationHintView$positionInWindow);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

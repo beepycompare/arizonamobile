@@ -7,13 +7,13 @@ import io.appmetrica.analytics.modulesapi.internal.client.ClientContext;
 public final class C0778v implements T {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ClientContext f1477a;
+    public final ClientContext f1478a;
     public final U b;
     public volatile C0768k c;
     public final Z d;
 
     public C0778v(ClientContext clientContext, U u) {
-        this.f1477a = clientContext;
+        this.f1478a = clientContext;
         this.b = u;
         this.d = new Z(clientContext, new C0775s(this));
     }
@@ -30,6 +30,6 @@ public final class C0778v implements T {
 
     @Override // io.appmetrica.analytics.screenshot.impl.T
     public final void a() {
-        this.f1477a.getActivityLifecycleRegistry().registerListener(new C0777u(this), ActivityEvent.RESUMED, ActivityEvent.PAUSED);
+        this.f1478a.getActivityLifecycleRegistry().registerListener(new C0777u(this), ActivityEvent.RESUMED, ActivityEvent.PAUSED);
     }
 }

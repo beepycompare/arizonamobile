@@ -15,7 +15,7 @@ import kotlin.text.StringsKt;
 public final class C0667w8 implements InterfaceC0387l2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f1279a = 5;
+    public final int f1280a = 5;
     public final int b = 100;
     public final int c = 255;
     public final int d = 2;
@@ -126,7 +126,7 @@ public final class C0667w8 implements InterfaceC0387l2 {
                                     i4++;
                                 }
                                 String str7 = substring + '@' + replace$default;
-                                if (str7.length() < this.f1279a || str7.length() > this.b) {
+                                if (str7.length() < this.f1280a || str7.length() > this.b) {
                                     return null;
                                 }
                                 return str7;

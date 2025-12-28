@@ -7,7 +7,6 @@ import androidx.media3.common.C;
 import androidx.media3.common.Format;
 import androidx.media3.common.MediaItem;
 import androidx.media3.common.MimeTypes;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
 import androidx.media3.datasource.DataSource;
@@ -24,6 +23,7 @@ import androidx.media3.exoplayer.source.ads.AdsLoader;
 import androidx.media3.exoplayer.source.ads.AdsMediaSource;
 import androidx.media3.exoplayer.upstream.CmcdConfiguration;
 import androidx.media3.exoplayer.upstream.LoadErrorHandlingPolicy;
+import androidx.media3.exoplayer.util.ReleasableExecutor;
 import androidx.media3.extractor.DefaultExtractorsFactory;
 import androidx.media3.extractor.Extractor;
 import androidx.media3.extractor.ExtractorInput;
@@ -35,6 +35,7 @@ import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.text.DefaultSubtitleParserFactory;
 import androidx.media3.extractor.text.SubtitleExtractor;
 import androidx.media3.extractor.text.SubtitleParser;
+import com.google.common.base.Preconditions;
 import com.google.common.base.Supplier;
 import com.google.common.collect.ImmutableList;
 import com.google.common.primitives.Ints;
@@ -56,6 +57,7 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
     private float liveMinSpeed;
     private long liveTargetOffsetMs;
     private LoadErrorHandlingPolicy loadErrorHandlingPolicy;
+    private boolean loadOnlySelectedTracks;
     private boolean parseSubtitlesDuringExtraction;
     private MediaSource.Factory serverSideAdInsertionMediaSourceFactory;
     private SubtitleParser.Factory subtitleParserFactory;
@@ -101,7 +103,7 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
 
     @Override // androidx.media3.exoplayer.source.MediaSource.Factory
     public DefaultMediaSourceFactory setSubtitleParserFactory(SubtitleParser.Factory factory) {
-        this.subtitleParserFactory = (SubtitleParser.Factory) Assertions.checkNotNull(factory);
+        this.subtitleParserFactory = (SubtitleParser.Factory) Preconditions.checkNotNull(factory);
         this.delegateFactoryLoader.setSubtitleParserFactory(factory);
         return this;
     }
@@ -125,8 +127,8 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
     }
 
     public DefaultMediaSourceFactory setLocalAdInsertionComponents(AdsLoader.Provider provider, AdViewProvider adViewProvider) {
-        this.adsLoaderProvider = (AdsLoader.Provider) Assertions.checkNotNull(provider);
-        this.adViewProvider = (AdViewProvider) Assertions.checkNotNull(adViewProvider);
+        this.adsLoaderProvider = (AdsLoader.Provider) Preconditions.checkNotNull(provider);
+        this.adViewProvider = (AdViewProvider) Preconditions.checkNotNull(adViewProvider);
         return this;
     }
 
@@ -179,20 +181,32 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
 
     @Override // androidx.media3.exoplayer.source.MediaSource.Factory
     public DefaultMediaSourceFactory setCmcdConfigurationFactory(CmcdConfiguration.Factory factory) {
-        this.delegateFactoryLoader.setCmcdConfigurationFactory((CmcdConfiguration.Factory) Assertions.checkNotNull(factory));
+        this.delegateFactoryLoader.setCmcdConfigurationFactory((CmcdConfiguration.Factory) Preconditions.checkNotNull(factory));
         return this;
     }
 
     @Override // androidx.media3.exoplayer.source.MediaSource.Factory
     public DefaultMediaSourceFactory setDrmSessionManagerProvider(DrmSessionManagerProvider drmSessionManagerProvider) {
-        this.delegateFactoryLoader.setDrmSessionManagerProvider((DrmSessionManagerProvider) Assertions.checkNotNull(drmSessionManagerProvider, "MediaSource.Factory#setDrmSessionManagerProvider no longer handles null by instantiating a new DefaultDrmSessionManagerProvider. Explicitly construct and pass an instance in order to retain the old behavior."));
+        this.delegateFactoryLoader.setDrmSessionManagerProvider((DrmSessionManagerProvider) Preconditions.checkNotNull(drmSessionManagerProvider, "MediaSource.Factory#setDrmSessionManagerProvider no longer handles null by instantiating a new DefaultDrmSessionManagerProvider. Explicitly construct and pass an instance in order to retain the old behavior."));
         return this;
     }
 
     @Override // androidx.media3.exoplayer.source.MediaSource.Factory
     public DefaultMediaSourceFactory setLoadErrorHandlingPolicy(LoadErrorHandlingPolicy loadErrorHandlingPolicy) {
-        this.loadErrorHandlingPolicy = (LoadErrorHandlingPolicy) Assertions.checkNotNull(loadErrorHandlingPolicy, "MediaSource.Factory#setLoadErrorHandlingPolicy no longer handles null by instantiating a new DefaultLoadErrorHandlingPolicy. Explicitly construct and pass an instance in order to retain the old behavior.");
+        this.loadErrorHandlingPolicy = (LoadErrorHandlingPolicy) Preconditions.checkNotNull(loadErrorHandlingPolicy, "MediaSource.Factory#setLoadErrorHandlingPolicy no longer handles null by instantiating a new DefaultLoadErrorHandlingPolicy. Explicitly construct and pass an instance in order to retain the old behavior.");
         this.delegateFactoryLoader.setLoadErrorHandlingPolicy(loadErrorHandlingPolicy);
+        return this;
+    }
+
+    public DefaultMediaSourceFactory setLoadOnlySelectedTracks(boolean z) {
+        this.loadOnlySelectedTracks = z;
+        this.delegateFactoryLoader.setLoadOnlySelectedTracks(z);
+        return this;
+    }
+
+    @Override // androidx.media3.exoplayer.source.MediaSource.Factory
+    public MediaSource.Factory setDownloadExecutor(Supplier<ReleasableExecutor> supplier) {
+        this.delegateFactoryLoader.setDownloadExecutor(supplier);
         return this;
     }
 
@@ -203,17 +217,18 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
 
     @Override // androidx.media3.exoplayer.source.MediaSource.Factory
     public MediaSource createMediaSource(MediaItem mediaItem) {
-        Assertions.checkNotNull(mediaItem.localConfiguration);
+        Preconditions.checkNotNull(mediaItem.localConfiguration);
         String scheme = mediaItem.localConfiguration.uri.getScheme();
         if (scheme != null && scheme.equals(C.SSAI_SCHEME)) {
-            return ((MediaSource.Factory) Assertions.checkNotNull(this.serverSideAdInsertionMediaSourceFactory)).createMediaSource(mediaItem);
+            return ((MediaSource.Factory) Preconditions.checkNotNull(this.serverSideAdInsertionMediaSourceFactory)).createMediaSource(mediaItem);
         }
         if (Objects.equals(mediaItem.localConfiguration.mimeType, MimeTypes.APPLICATION_EXTERNALLY_LOADED_IMAGE)) {
-            return new ExternallyLoadedMediaSource.Factory(Util.msToUs(mediaItem.localConfiguration.imageDurationMs), (ExternalLoader) Assertions.checkNotNull(this.externalImageLoader)).createMediaSource(mediaItem);
+            return new ExternallyLoadedMediaSource.Factory(Util.msToUs(mediaItem.localConfiguration.imageDurationMs), (ExternalLoader) Preconditions.checkNotNull(this.externalImageLoader)).createMediaSource(mediaItem);
         }
         int inferContentTypeForUriAndMimeType = Util.inferContentTypeForUriAndMimeType(mediaItem.localConfiguration.uri, mediaItem.localConfiguration.mimeType);
         if (mediaItem.localConfiguration.imageDurationMs != C.TIME_UNSET) {
             this.delegateFactoryLoader.setJpegExtractorFlags(1);
+            this.delegateFactoryLoader.setHeifExtractorFlags(1);
         }
         try {
             MediaSource.Factory mediaSourceFactory = this.delegateFactoryLoader.getMediaSourceFactory(inferContentTypeForUriAndMimeType);
@@ -248,18 +263,18 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
                         ProgressiveMediaSource.Factory factory = new ProgressiveMediaSource.Factory(this.dataSourceFactory, new ExtractorsFactory() { // from class: androidx.media3.exoplayer.source.DefaultMediaSourceFactory$$ExternalSyntheticLambda0
                             @Override // androidx.media3.extractor.ExtractorsFactory
                             public final Extractor[] createExtractors() {
-                                return DefaultMediaSourceFactory.this.m8996xeef04c56(build2);
+                                return DefaultMediaSourceFactory.this.m9005xeef04c56(build2);
                             }
                         });
                         if (this.subtitleParserFactory.supportsFormat(build2)) {
                             build2 = build2.buildUpon().setSampleMimeType(MimeTypes.APPLICATION_MEDIA3_CUES).setCodecs(build2.sampleMimeType).setCueReplacementBehavior(this.subtitleParserFactory.getCueReplacementBehavior(build2)).build();
                         }
-                        ProgressiveMediaSource.Factory enableLazyLoadingWithSingleTrack = factory.enableLazyLoadingWithSingleTrack(0, build2);
+                        ProgressiveMediaSource.Factory loadOnlySelectedTracks = factory.enableLazyLoadingWithSingleTrack(0, build2).setLoadOnlySelectedTracks(this.loadOnlySelectedTracks);
                         LoadErrorHandlingPolicy loadErrorHandlingPolicy = this.loadErrorHandlingPolicy;
                         if (loadErrorHandlingPolicy != null) {
-                            enableLazyLoadingWithSingleTrack.setLoadErrorHandlingPolicy(loadErrorHandlingPolicy);
+                            loadOnlySelectedTracks.setLoadErrorHandlingPolicy(loadErrorHandlingPolicy);
                         }
-                        mediaSourceArr[i + 1] = enableLazyLoadingWithSingleTrack.createMediaSource(MediaItem.fromUri(immutableList.get(i).uri.toString()));
+                        mediaSourceArr[i + 1] = loadOnlySelectedTracks.createMediaSource(MediaItem.fromUri(immutableList.get(i).uri.toString()));
                     } else {
                         SingleSampleMediaSource.Factory factory2 = new SingleSampleMediaSource.Factory(this.dataSourceFactory);
                         LoadErrorHandlingPolicy loadErrorHandlingPolicy2 = this.loadErrorHandlingPolicy;
@@ -279,7 +294,7 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$createMediaSource$0$androidx-media3-exoplayer-source-DefaultMediaSourceFactory  reason: not valid java name */
-    public /* synthetic */ Extractor[] m8996xeef04c56(Format format) {
+    public /* synthetic */ Extractor[] m9005xeef04c56(Format format) {
         Extractor unknownSubtitlesExtractor;
         Extractor[] extractorArr = new Extractor[1];
         if (this.subtitleParserFactory.supportsFormat(format)) {
@@ -297,7 +312,7 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
 
     private MediaSource maybeWrapWithAdsMediaSource(MediaItem mediaItem, MediaSource mediaSource) {
         Object of;
-        Assertions.checkNotNull(mediaItem.localConfiguration);
+        Preconditions.checkNotNull(mediaItem.localConfiguration);
         MediaItem.AdsConfiguration adsConfiguration = mediaItem.localConfiguration.adsConfiguration;
         if (adsConfiguration == null) {
             return mediaSource;
@@ -328,9 +343,11 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
         private CmcdConfiguration.Factory cmcdConfigurationFactory;
         private int codecsToParseWithinGopSampleDependencies;
         private DataSource.Factory dataSourceFactory;
+        private Supplier<ReleasableExecutor> downloadExecutorSupplier;
         private DrmSessionManagerProvider drmSessionManagerProvider;
         private final ExtractorsFactory extractorsFactory;
         private LoadErrorHandlingPolicy loadErrorHandlingPolicy;
+        private boolean loadOnlySelectedTracks;
         private SubtitleParser.Factory subtitleParserFactory;
         private final Map<Integer, Supplier<MediaSource.Factory>> mediaSourceFactorySuppliers = new HashMap();
         private final Map<Integer, MediaSource.Factory> mediaSourceFactories = new HashMap();
@@ -363,6 +380,10 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
             LoadErrorHandlingPolicy loadErrorHandlingPolicy = this.loadErrorHandlingPolicy;
             if (loadErrorHandlingPolicy != null) {
                 factory2.setLoadErrorHandlingPolicy(loadErrorHandlingPolicy);
+            }
+            Supplier<ReleasableExecutor> supplier = this.downloadExecutorSupplier;
+            if (supplier != null) {
+                factory2.setDownloadExecutor(supplier);
             }
             factory2.setSubtitleParserFactory(this.subtitleParserFactory);
             factory2.experimentalParseSubtitlesDuringExtraction(this.parseSubtitlesDuringExtraction);
@@ -428,6 +449,26 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
             }
         }
 
+        /* JADX INFO: Access modifiers changed from: private */
+        public void setLoadOnlySelectedTracks(boolean z) {
+            this.loadOnlySelectedTracks = z;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public void setHeifExtractorFlags(int i) {
+            ExtractorsFactory extractorsFactory = this.extractorsFactory;
+            if (extractorsFactory instanceof DefaultExtractorsFactory) {
+                ((DefaultExtractorsFactory) extractorsFactory).setHeifExtractorFlags(i);
+            }
+        }
+
+        public void setDownloadExecutor(Supplier<ReleasableExecutor> supplier) {
+            this.downloadExecutorSupplier = supplier;
+            for (MediaSource.Factory factory : this.mediaSourceFactories.values()) {
+                factory.setDownloadExecutor(supplier);
+            }
+        }
+
         private void ensureAllSuppliersAreLoaded() {
             maybeLoadSupplier(0);
             maybeLoadSupplier(1);
@@ -451,7 +492,7 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
             if (supplier3 != null) {
                 return supplier3;
             }
-            final DataSource.Factory factory = (DataSource.Factory) Assertions.checkNotNull(this.dataSourceFactory);
+            final DataSource.Factory factory = (DataSource.Factory) Preconditions.checkNotNull(this.dataSourceFactory);
             if (i == 0) {
                 final Class<? extends U> asSubclass = Class.forName("androidx.media3.exoplayer.dash.DashMediaSource$Factory").asSubclass(MediaSource.Factory.class);
                 supplier = new Supplier() { // from class: androidx.media3.exoplayer.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda0
@@ -497,7 +538,7 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
                     supplier2 = new Supplier() { // from class: androidx.media3.exoplayer.source.DefaultMediaSourceFactory$DelegateFactoryLoader$$ExternalSyntheticLambda4
                         @Override // com.google.common.base.Supplier
                         public final Object get() {
-                            return DefaultMediaSourceFactory.DelegateFactoryLoader.this.m8997xa479647d(factory);
+                            return DefaultMediaSourceFactory.DelegateFactoryLoader.this.m9006xa479647d(factory);
                         }
                     };
                 } else {
@@ -513,8 +554,8 @@ public final class DefaultMediaSourceFactory implements MediaSourceFactory {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$loadSupplier$4$androidx-media3-exoplayer-source-DefaultMediaSourceFactory$DelegateFactoryLoader  reason: not valid java name */
-        public /* synthetic */ MediaSource.Factory m8997xa479647d(DataSource.Factory factory) {
-            return new ProgressiveMediaSource.Factory(factory, this.extractorsFactory);
+        public /* synthetic */ MediaSource.Factory m9006xa479647d(DataSource.Factory factory) {
+            return new ProgressiveMediaSource.Factory(factory, this.extractorsFactory).setLoadOnlySelectedTracks(this.loadOnlySelectedTracks);
         }
     }
 

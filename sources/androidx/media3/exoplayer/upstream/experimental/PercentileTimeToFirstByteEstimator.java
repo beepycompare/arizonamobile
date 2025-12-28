@@ -1,12 +1,12 @@
 package androidx.media3.exoplayer.upstream.experimental;
 
 import androidx.media3.common.C;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Clock;
 import androidx.media3.common.util.Util;
 import androidx.media3.datasource.DataSpec;
 import androidx.media3.exoplayer.upstream.SlidingPercentile;
 import androidx.media3.exoplayer.upstream.TimeToFirstByteEstimator;
+import com.google.common.base.Preconditions;
 import java.util.LinkedHashMap;
 import java.util.Map;
 /* loaded from: classes3.dex */
@@ -29,7 +29,7 @@ public final class PercentileTimeToFirstByteEstimator implements TimeToFirstByte
     }
 
     PercentileTimeToFirstByteEstimator(int i, float f, Clock clock) {
-        Assertions.checkArgument(i > 0 && f > 0.0f && f <= 1.0f);
+        Preconditions.checkArgument(i > 0 && f > 0.0f && f <= 1.0f);
         this.percentile = f;
         this.clock = clock;
         this.initializedDataSpecs = new FixedSizeLinkedHashMap(10);

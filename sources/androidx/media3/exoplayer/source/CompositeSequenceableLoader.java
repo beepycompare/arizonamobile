@@ -1,8 +1,8 @@
 package androidx.media3.exoplayer.source;
 
 import androidx.media3.common.C;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.exoplayer.LoadingInfo;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import java.util.Collection;
 import java.util.Collections;
@@ -19,7 +19,7 @@ public final class CompositeSequenceableLoader implements SequenceableLoader {
 
     public CompositeSequenceableLoader(List<? extends SequenceableLoader> list, List<List<Integer>> list2) {
         ImmutableList.Builder builder = ImmutableList.builder();
-        Assertions.checkArgument(list.size() == list2.size());
+        Preconditions.checkArgument(list.size() == list2.size());
         for (int i = 0; i < list.size(); i++) {
             builder.add((ImmutableList.Builder) new SequenceableLoaderWithTrackTypes(list.get(i), list2.get(i)));
         }

@@ -4,11 +4,11 @@ import androidx.media3.common.Format;
 import androidx.media3.common.Metadata;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.ParserException;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.extractor.OpusUtil;
 import androidx.media3.extractor.VorbisUtil;
 import androidx.media3.extractor.ogg.StreamReader;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import java.util.Arrays;
 import java.util.List;
@@ -52,7 +52,7 @@ final class OpusReader extends StreamReader {
         }
         byte[] bArr = OPUS_COMMENT_HEADER_SIGNATURE;
         if (peekPacketStartsWith(parsableByteArray, bArr)) {
-            Assertions.checkStateNotNull(setupData.format);
+            Preconditions.checkNotNull(setupData.format);
             if (this.firstCommentHeaderSeen) {
                 return true;
             }
@@ -65,7 +65,7 @@ final class OpusReader extends StreamReader {
             setupData.format = setupData.format.buildUpon().setMetadata(parseVorbisComments.copyWithAppendedEntriesFrom(setupData.format.metadata)).build();
             return true;
         }
-        Assertions.checkStateNotNull(setupData.format);
+        Preconditions.checkNotNull(setupData.format);
         return false;
     }
 

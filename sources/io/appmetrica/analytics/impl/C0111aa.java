@@ -11,11 +11,11 @@ public final class C0111aa {
     public static volatile C0111aa c;
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f892a;
+    public final Context f893a;
     public final HashMap b = new HashMap();
 
     public C0111aa(Context context) {
-        this.f892a = context;
+        this.f893a = context;
     }
 
     public static final C0111aa a(Context context) {
@@ -40,7 +40,7 @@ public final class C0111aa {
         HashMap hashMap = this.b;
         obj = hashMap.get(str);
         if (obj == null) {
-            obj = new C0718y9(this.f892a, str);
+            obj = new C0718y9(this.f893a, str);
             hashMap.put(str, obj);
         }
         return (C0718y9) obj;

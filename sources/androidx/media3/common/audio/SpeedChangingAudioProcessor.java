@@ -1,11 +1,11 @@
 package androidx.media3.common.audio;
 
 import androidx.media3.common.audio.AudioProcessor;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.LongArrayQueue;
 import androidx.media3.common.util.SpeedProviderUtil;
 import androidx.media3.common.util.TimestampConsumer;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import java.math.RoundingMode;
 import java.nio.ByteBuffer;
 import java.util.ArrayDeque;
@@ -32,14 +32,14 @@ public final class SpeedChangingAudioProcessor implements AudioProcessor {
         this.sonicAudioProcessor = new SynchronizedSonicAudioProcessor(obj, true);
         this.pendingCallbackInputTimesUs = new LongArrayQueue();
         this.pendingCallbacks = new ArrayDeque();
-        resetInternalState(true);
+        this.currentSpeed = 1.0f;
     }
 
     public static long getSampleCountAfterProcessorApplied(SpeedProvider speedProvider, int i, long j) {
-        Assertions.checkArgument(speedProvider != null);
-        Assertions.checkArgument(i > 0);
+        Preconditions.checkArgument(speedProvider != null);
+        Preconditions.checkArgument(i > 0);
         long j2 = 0;
-        Assertions.checkArgument(j >= 0);
+        Preconditions.checkArgument(j >= 0);
         long j3 = 0;
         while (j2 < j) {
             long nextSpeedChangeSamplePosition = SpeedProviderUtil.getNextSpeedChangeSamplePosition(speedProvider, j2, i);
@@ -95,7 +95,7 @@ public final class SpeedChangingAudioProcessor implements AudioProcessor {
             this.endOfStreamQueuedToSonic = true;
         }
         long position2 = byteBuffer.position() - position;
-        Assertions.checkState(position2 % ((long) audioFormat.bytesPerFrame) == 0, "A frame was not queued completely.");
+        Preconditions.checkState(position2 % ((long) audioFormat.bytesPerFrame) == 0, "A frame was not queued completely.");
         this.framesRead += position2 / audioFormat.bytesPerFrame;
         byteBuffer.limit(limit);
     }
@@ -121,19 +121,20 @@ public final class SpeedChangingAudioProcessor implements AudioProcessor {
     }
 
     @Override // androidx.media3.common.audio.AudioProcessor
-    public void flush() {
+    public void flush(AudioProcessor.StreamMetadata streamMetadata) {
         this.inputEnded = false;
         resetInternalState(false);
         synchronized (this.lock) {
             this.inputAudioFormat = this.pendingInputAudioFormat;
-            this.sonicAudioProcessor.flush();
+            this.sonicAudioProcessor.flush(streamMetadata);
             processPendingCallbacks();
+            this.framesRead = Util.durationUsToSampleCount(streamMetadata.positionOffsetUs, this.inputAudioFormat.sampleRate);
         }
     }
 
     @Override // androidx.media3.common.audio.AudioProcessor
     public void reset() {
-        flush();
+        flush(AudioProcessor.StreamMetadata.DEFAULT);
         this.pendingInputAudioFormat = AudioProcessor.AudioFormat.NOT_SET;
         this.pendingOutputAudioFormat = AudioProcessor.AudioFormat.NOT_SET;
         synchronized (this.lock) {
@@ -143,6 +144,10 @@ public final class SpeedChangingAudioProcessor implements AudioProcessor {
         }
         resetInternalState(true);
         this.sonicAudioProcessor.reset();
+    }
+
+    public SpeedProvider getSpeedProvider() {
+        return this.speedProvider;
     }
 
     public void getSpeedAdjustedTimeAsync(long j, TimestampConsumer timestampConsumer) {
@@ -170,8 +175,8 @@ public final class SpeedChangingAudioProcessor implements AudioProcessor {
 
     static long getInputFrameCountForOutput(SpeedProvider speedProvider, int i, long j) {
         int i2 = i;
-        Assertions.checkArgument(i2 > 0);
-        Assertions.checkArgument(j >= 0);
+        Preconditions.checkArgument(i2 > 0);
+        Preconditions.checkArgument(j >= 0);
         long j2 = j;
         long j3 = 0;
         while (j2 > 0) {
@@ -210,7 +215,7 @@ public final class SpeedChangingAudioProcessor implements AudioProcessor {
             this.currentSpeed = f;
             this.sonicAudioProcessor.setSpeed(f);
             this.sonicAudioProcessor.setPitch(f);
-            this.sonicAudioProcessor.flush();
+            this.sonicAudioProcessor.flush(AudioProcessor.StreamMetadata.DEFAULT);
             this.endOfStreamQueuedToSonic = false;
         }
     }

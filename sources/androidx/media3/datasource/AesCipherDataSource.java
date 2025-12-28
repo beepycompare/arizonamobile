@@ -1,8 +1,8 @@
 package androidx.media3.datasource;
 
 import android.net.Uri;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
@@ -19,7 +19,7 @@ public final class AesCipherDataSource implements DataSource {
 
     @Override // androidx.media3.datasource.DataSource
     public void addTransferListener(TransferListener transferListener) {
-        Assertions.checkNotNull(transferListener);
+        Preconditions.checkNotNull(transferListener);
         this.upstream.addTransferListener(transferListener);
     }
 

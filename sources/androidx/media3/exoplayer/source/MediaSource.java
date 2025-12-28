@@ -10,7 +10,9 @@ import androidx.media3.exoplayer.drm.DrmSessionManagerProvider;
 import androidx.media3.exoplayer.upstream.Allocator;
 import androidx.media3.exoplayer.upstream.CmcdConfiguration;
 import androidx.media3.exoplayer.upstream.LoadErrorHandlingPolicy;
+import androidx.media3.exoplayer.util.ReleasableExecutor;
 import androidx.media3.extractor.text.SubtitleParser;
+import com.google.common.base.Supplier;
 import java.io.IOException;
 /* loaded from: classes3.dex */
 public interface MediaSource {
@@ -33,6 +35,10 @@ public interface MediaSource {
         int[] getSupportedTypes();
 
         default Factory setCmcdConfigurationFactory(CmcdConfiguration.Factory factory) {
+            return this;
+        }
+
+        default Factory setDownloadExecutor(Supplier<ReleasableExecutor> supplier) {
             return this;
         }
 

@@ -1,6 +1,5 @@
 package com.miami.game.core.server;
 
-import androidx.compose.runtime.ComposerImplKt;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.miami.game.core.api.model.response.servers.ServersApiModelItem;
@@ -48,13 +47,14 @@ import kotlinx.coroutines.flow.StateFlow;
 import kotlinx.coroutines.flow.StateFlowKt;
 /* compiled from: ServersInteractor.kt */
 @Singleton
-@Metadata(d1 = {"\u0000j\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\r\b\u0007\u0018\u0000 32\u00020\u0001:\u00013B)\b\u0007\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t¢\u0006\u0004\b\n\u0010\u000bJ\b\u0010\u0015\u001a\u00020\u0016H\u0002J\u0006\u0010\u0017\u001a\u00020\u0016J\u0018\u0010\u0018\u001a\n\u0012\u0004\u0012\u00020\u001a\u0018\u00010\u00192\u0006\u0010\u001b\u001a\u00020\u001cH\u0002J\b\u0010\u001d\u001a\u00020\u0016H\u0002J\u000e\u0010\u001e\u001a\u00020\u0016H\u0082@¢\u0006\u0002\u0010\u001fJ\u000e\u0010 \u001a\u00020\u0016H\u0082@¢\u0006\u0002\u0010\u001fJ\u0016\u0010!\u001a\u00020\u00162\f\u0010\"\u001a\b\u0012\u0004\u0012\u00020#0\u0019H\u0002J\u0016\u0010$\u001a\u00020%2\f\u0010&\u001a\b\u0012\u0004\u0012\u00020'0\u0019H\u0002J\u000e\u0010(\u001a\u00020\u00162\u0006\u0010)\u001a\u00020'J\u000e\u0010*\u001a\u00020\u00162\u0006\u0010)\u001a\u00020'J\u000e\u0010+\u001a\u00020\u00162\u0006\u0010)\u001a\u00020'J\b\u0010,\u001a\u00020\u0016H\u0002J\u0016\u0010-\u001a\u00020\u00162\f\u0010&\u001a\b\u0012\u0004\u0012\u00020'0\u0019H\u0002J\u0006\u0010.\u001a\u00020\u0016J\u0006\u0010/\u001a\u00020\u0016J\u0006\u00100\u001a\u00020\u0016J\u000e\u00101\u001a\u00020\u0016H\u0082@¢\u0006\u0002\u0010\u001fJ\u000e\u00102\u001a\u00020\u0016H\u0082@¢\u0006\u0002\u0010\u001fR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u00100\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00100\u0012¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014¨\u00064"}, d2 = {"Lcom/miami/game/core/server/ServersInteractor;", "", "buildConfig", "Lcom/miami/game/core/build/config/BuildConfigRepository;", "dataSource", "Lcom/miami/game/core/api/network/NetworkDataSource;", "localRepository", "Lcom/miami/game/core/local/repository/common/LocalRepository;", "favoriteServerDatabase", "Lcom/miami/game/core/server/data/FavoriteServerDatabase;", "<init>", "(Lcom/miami/game/core/build/config/BuildConfigRepository;Lcom/miami/game/core/api/network/NetworkDataSource;Lcom/miami/game/core/local/repository/common/LocalRepository;Lcom/miami/game/core/server/data/FavoriteServerDatabase;)V", "scope", "Lkotlinx/coroutines/CoroutineScope;", "stateStore", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lcom/miami/game/core/server/model/ServersState;", "interactorStateFlow", "Lkotlinx/coroutines/flow/StateFlow;", "getInteractorStateFlow", "()Lkotlinx/coroutines/flow/StateFlow;", "initial", "", "retry", "readDataAssets", "", "Lcom/miami/game/core/api/model/response/servers/ServersApiModelItem;", "fileName", "", "observeFavorite", "checkFavorite", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "firstLaunch", "updateFavorites", "favoritesList", "Lcom/miami/game/core/server/data/FavoriteServerEntity;", "getDonateMultiple", "", "list", "Lcom/miami/game/core/server/model/ServerModel;", "selectServer", "serverModel", "favoriteServer", "favoriteServerStartGame", "getCurrentServer", "getCurrentServerLocal", "filterMobileList", "filterDesktopList", "filterFavoriteList", "getServersMobileList", "getServersDesktopList", "Companion", "server_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000j\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000e\b\u0007\u0018\u0000 42\u00020\u0001:\u00014B)\b\u0007\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\t¢\u0006\u0004\b\n\u0010\u000bJ\b\u0010\u0015\u001a\u00020\u0016H\u0002J\u0006\u0010\u0017\u001a\u00020\u0016J\u0018\u0010\u0018\u001a\n\u0012\u0004\u0012\u00020\u001a\u0018\u00010\u00192\u0006\u0010\u001b\u001a\u00020\u001cH\u0002J\b\u0010\u001d\u001a\u00020\u0016H\u0002J\u000e\u0010\u001e\u001a\u00020\u0016H\u0082@¢\u0006\u0002\u0010\u001fJ\u000e\u0010 \u001a\u00020\u0016H\u0082@¢\u0006\u0002\u0010\u001fJ\u0016\u0010!\u001a\u00020\u00162\f\u0010\"\u001a\b\u0012\u0004\u0012\u00020#0\u0019H\u0002J\u0016\u0010$\u001a\u00020%2\f\u0010&\u001a\b\u0012\u0004\u0012\u00020'0\u0019H\u0002J\u000e\u0010(\u001a\u00020\u00162\u0006\u0010)\u001a\u00020'J\u000e\u0010*\u001a\u00020\u00162\u0006\u0010)\u001a\u00020'J\u000e\u0010+\u001a\u00020\u00162\u0006\u0010)\u001a\u00020'J\b\u0010,\u001a\u00020\u0016H\u0002J\u0016\u0010-\u001a\u00020\u00162\f\u0010&\u001a\b\u0012\u0004\u0012\u00020'0\u0019H\u0002J\u0006\u0010.\u001a\u00020\u0016J\u0006\u0010/\u001a\u00020\u0016J\u0006\u00100\u001a\u00020\u0016J\u000e\u00101\u001a\u00020\u0016H\u0082@¢\u0006\u0002\u0010\u001fJ\u000e\u00102\u001a\u00020\u0016H\u0082@¢\u0006\u0002\u0010\u001fJ\u000e\u00103\u001a\u00020\u0016H\u0082@¢\u0006\u0002\u0010\u001fR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u00100\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0017\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00100\u0012¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014¨\u00065"}, d2 = {"Lcom/miami/game/core/server/ServersInteractor;", "", "buildConfig", "Lcom/miami/game/core/build/config/BuildConfigRepository;", "dataSource", "Lcom/miami/game/core/api/network/NetworkDataSource;", "localRepository", "Lcom/miami/game/core/local/repository/common/LocalRepository;", "favoriteServerDatabase", "Lcom/miami/game/core/server/data/FavoriteServerDatabase;", "<init>", "(Lcom/miami/game/core/build/config/BuildConfigRepository;Lcom/miami/game/core/api/network/NetworkDataSource;Lcom/miami/game/core/local/repository/common/LocalRepository;Lcom/miami/game/core/server/data/FavoriteServerDatabase;)V", "scope", "Lkotlinx/coroutines/CoroutineScope;", "stateStore", "Lkotlinx/coroutines/flow/MutableStateFlow;", "Lcom/miami/game/core/server/model/ServersState;", "interactorStateFlow", "Lkotlinx/coroutines/flow/StateFlow;", "getInteractorStateFlow", "()Lkotlinx/coroutines/flow/StateFlow;", "initial", "", "retry", "readDataAssets", "", "Lcom/miami/game/core/api/model/response/servers/ServersApiModelItem;", "fileName", "", "observeFavorite", "checkFavorite", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "firstLaunch", "updateFavorites", "favoritesList", "Lcom/miami/game/core/server/data/FavoriteServerEntity;", "getDonateMultiple", "", "list", "Lcom/miami/game/core/server/model/ServerModel;", "selectServer", "serverModel", "favoriteServer", "favoriteServerStartGame", "getCurrentServer", "getCurrentServerLocal", "filterMobileList", "filterDesktopList", "filterFavoriteList", "getServersMobileList", "getServersDesktopList", "getServersVcList", "Companion", "server_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class ServersInteractor {
     public static final String CURRENT_SERVER_KEY = "CURRENT_SERVER";
     public static final Companion Companion = new Companion(null);
     public static final String DESKTOP_LIST_KEY = "DESKTOP_SERVER_LIST";
     public static final String MOBILE_LIST_KEY = "MOBILE_SERVER_LIST";
+    public static final String VC_LIST_KEY = "VC_SERVER_LIST";
     private final BuildConfigRepository buildConfig;
     private final NetworkDataSource dataSource;
     private final FavoriteServerDatabase favoriteServerDatabase;
@@ -74,7 +74,7 @@ public final class ServersInteractor {
         this.localRepository = localRepository;
         this.favoriteServerDatabase = favoriteServerDatabase;
         this.scope = CoroutineScopeKt.CoroutineScope(Dispatchers.getIO().plus(SupervisorKt.SupervisorJob$default((Job) null, 1, (Object) null)));
-        MutableStateFlow<ServersState> MutableStateFlow = StateFlowKt.MutableStateFlow(new ServersState(null, null, null, null, ServerStateCategory.Mobile, false, 0, 111, null));
+        MutableStateFlow<ServersState> MutableStateFlow = StateFlowKt.MutableStateFlow(new ServersState(null, null, null, null, null, ServerStateCategory.Mobile, false, 0, 223, null));
         this.stateStore = MutableStateFlow;
         this.interactorStateFlow = FlowKt.asStateFlow(MutableStateFlow);
         initial();
@@ -218,7 +218,7 @@ public final class ServersInteractor {
             arrayList = new ArrayList();
             arrayList2 = new ArrayList();
             for (ServerModel serverModel : serversState.getServerListMobile()) {
-                ServerModel copy$default = ServerModel.copy$default(serverModel, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, list.contains(FavoriteServerEntityKt.toFavoriteEntity(serverModel)), false, false, 917503, null);
+                ServerModel copy$default = ServerModel.copy$default(serverModel, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, list.contains(FavoriteServerEntityKt.toFavoriteEntity(serverModel)), false, false, 1835007, null);
                 arrayList.add(copy$default);
                 if (copy$default.isFavorite()) {
                     arrayList2.add(copy$default);
@@ -226,13 +226,13 @@ public final class ServersInteractor {
             }
             arrayList3 = new ArrayList();
             for (ServerModel serverModel2 : serversState.getServerListDesktop()) {
-                ServerModel copy$default2 = ServerModel.copy$default(serverModel2, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, list.contains(FavoriteServerEntityKt.toFavoriteEntity(serverModel2)), false, false, 917503, null);
+                ServerModel copy$default2 = ServerModel.copy$default(serverModel2, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, list.contains(FavoriteServerEntityKt.toFavoriteEntity(serverModel2)), false, false, 1835007, null);
                 arrayList3.add(copy$default2);
                 if (copy$default2.isFavorite()) {
                     arrayList2.add(copy$default2);
                 }
             }
-        } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default(serversState, null, CollectionsKt.toList(arrayList), CollectionsKt.toList(arrayList3), CollectionsKt.toList(arrayList2), null, false, getDonateMultiple(arrayList2), 49, null)));
+        } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default(serversState, null, CollectionsKt.toList(arrayList), CollectionsKt.toList(arrayList3), null, CollectionsKt.toList(arrayList2), null, false, getDonateMultiple(arrayList2), 105, null)));
     }
 
     private final int getDonateMultiple(List<ServerModel> list) {
@@ -273,7 +273,7 @@ public final class ServersInteractor {
         MutableStateFlow<ServersState> mutableStateFlow = this.stateStore;
         do {
             value = mutableStateFlow.getValue();
-        } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default(value, null, null, null, null, ServerStateCategory.Mobile, false, 0, 111, null)));
+        } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default(value, null, null, null, null, null, ServerStateCategory.Mobile, false, 0, 223, null)));
     }
 
     public final void filterDesktopList() {
@@ -281,7 +281,7 @@ public final class ServersInteractor {
         MutableStateFlow<ServersState> mutableStateFlow = this.stateStore;
         do {
             value = mutableStateFlow.getValue();
-        } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default(value, null, null, null, null, ServerStateCategory.Desktop, false, 0, 111, null)));
+        } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default(value, null, null, null, null, null, ServerStateCategory.Desktop, false, 0, 223, null)));
     }
 
     public final void filterFavoriteList() {
@@ -289,7 +289,7 @@ public final class ServersInteractor {
         MutableStateFlow<ServersState> mutableStateFlow = this.stateStore;
         do {
             value = mutableStateFlow.getValue();
-        } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default(value, null, null, null, null, ServerStateCategory.Favorite, false, 0, 111, null)));
+        } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default(value, null, null, null, null, null, ServerStateCategory.Favorite, false, 0, 223, null)));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -297,29 +297,29 @@ public final class ServersInteractor {
     /* JADX WARN: Code restructure failed: missing block: B:21:0x005c, code lost:
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:72:0x01f2, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:72:0x01fa, code lost:
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:73:0x01f3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:73:0x01fb, code lost:
         timber.log.Timber.Forest.tag("ServersInteractor").d(java.lang.String.valueOf(r0.getMessage()), new java.lang.Object[0]);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:95:0x0298, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:95:0x02a2, code lost:
         timber.log.Timber.Forest.tag("ServersInteractor").d(java.lang.String.valueOf(r0.getMessage()), new java.lang.Object[0]);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:97:0x02b7, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:97:0x02c1, code lost:
         if (checkFavorite(r2) != r3) goto L14;
      */
-    /* JADX WARN: Removed duplicated region for block: B:108:0x0206 A[EDGE_INSN: B:108:0x0206->B:74:0x0206 ?: BREAK  , SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:108:0x020e A[EDGE_INSN: B:108:0x020e->B:74:0x020e ?: BREAK  , SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0033  */
     /* JADX WARN: Removed duplicated region for block: B:26:0x006d  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x009f A[Catch: Exception -> 0x01f2, TRY_ENTER, TryCatch #1 {Exception -> 0x01f2, blocks: (B:24:0x0069, B:30:0x0099, B:33:0x009f, B:35:0x00a8, B:36:0x00ad, B:59:0x0189, B:61:0x018f, B:63:0x0198, B:64:0x01a9, B:66:0x01af, B:67:0x01c3, B:68:0x01ca, B:40:0x00e9, B:42:0x00f1, B:44:0x00fa, B:45:0x010c, B:47:0x0112, B:48:0x0127, B:49:0x012e, B:50:0x0148, B:52:0x014e, B:53:0x0163, B:27:0x0070), top: B:101:0x0031 }] */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x0185  */
-    /* JADX WARN: Removed duplicated region for block: B:66:0x01af A[Catch: Exception -> 0x01f2, LOOP:3: B:64:0x01a9->B:66:0x01af, LOOP_END, TryCatch #1 {Exception -> 0x01f2, blocks: (B:24:0x0069, B:30:0x0099, B:33:0x009f, B:35:0x00a8, B:36:0x00ad, B:59:0x0189, B:61:0x018f, B:63:0x0198, B:64:0x01a9, B:66:0x01af, B:67:0x01c3, B:68:0x01ca, B:40:0x00e9, B:42:0x00f1, B:44:0x00fa, B:45:0x010c, B:47:0x0112, B:48:0x0127, B:49:0x012e, B:50:0x0148, B:52:0x014e, B:53:0x0163, B:27:0x0070), top: B:101:0x0031 }] */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x01ef A[LOOP:4: B:68:0x01ca->B:71:0x01ef, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x0216  */
-    /* JADX WARN: Removed duplicated region for block: B:79:0x021c A[Catch: Exception -> 0x005c, TryCatch #0 {Exception -> 0x005c, blocks: (B:18:0x0052, B:91:0x026f, B:92:0x0271, B:19:0x0057, B:77:0x0218, B:79:0x021c, B:80:0x022d, B:82:0x0233, B:83:0x0247, B:86:0x024d, B:88:0x0259, B:74:0x0206), top: B:101:0x0031 }] */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x024a  */
-    /* JADX WARN: Removed duplicated region for block: B:86:0x024d A[Catch: Exception -> 0x005c, TryCatch #0 {Exception -> 0x005c, blocks: (B:18:0x0052, B:91:0x026f, B:92:0x0271, B:19:0x0057, B:77:0x0218, B:79:0x021c, B:80:0x022d, B:82:0x0233, B:83:0x0247, B:86:0x024d, B:88:0x0259, B:74:0x0206), top: B:101:0x0031 }] */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x009f A[Catch: Exception -> 0x01fa, TRY_ENTER, TryCatch #1 {Exception -> 0x01fa, blocks: (B:24:0x0069, B:30:0x0099, B:33:0x009f, B:35:0x00a8, B:36:0x00ad, B:59:0x018f, B:61:0x0195, B:63:0x019e, B:64:0x01af, B:66:0x01b5, B:67:0x01c9, B:68:0x01d0, B:40:0x00ed, B:42:0x00f5, B:44:0x00fe, B:45:0x0110, B:47:0x0116, B:48:0x012b, B:49:0x0132, B:50:0x014c, B:52:0x0152, B:53:0x0167, B:27:0x0070), top: B:101:0x0031 }] */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x018b  */
+    /* JADX WARN: Removed duplicated region for block: B:66:0x01b5 A[Catch: Exception -> 0x01fa, LOOP:3: B:64:0x01af->B:66:0x01b5, LOOP_END, TryCatch #1 {Exception -> 0x01fa, blocks: (B:24:0x0069, B:30:0x0099, B:33:0x009f, B:35:0x00a8, B:36:0x00ad, B:59:0x018f, B:61:0x0195, B:63:0x019e, B:64:0x01af, B:66:0x01b5, B:67:0x01c9, B:68:0x01d0, B:40:0x00ed, B:42:0x00f5, B:44:0x00fe, B:45:0x0110, B:47:0x0116, B:48:0x012b, B:49:0x0132, B:50:0x014c, B:52:0x0152, B:53:0x0167, B:27:0x0070), top: B:101:0x0031 }] */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x01f7 A[LOOP:4: B:68:0x01d0->B:71:0x01f7, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x021e  */
+    /* JADX WARN: Removed duplicated region for block: B:79:0x0224 A[Catch: Exception -> 0x005c, TryCatch #0 {Exception -> 0x005c, blocks: (B:18:0x0052, B:91:0x0277, B:92:0x0279, B:19:0x0057, B:77:0x0220, B:79:0x0224, B:80:0x0235, B:82:0x023b, B:83:0x024f, B:86:0x0255, B:88:0x0261, B:74:0x020e), top: B:101:0x0031 }] */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x0252  */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x0255 A[Catch: Exception -> 0x005c, TryCatch #0 {Exception -> 0x005c, blocks: (B:18:0x0052, B:91:0x0277, B:92:0x0279, B:19:0x0057, B:77:0x0220, B:79:0x0224, B:80:0x0235, B:82:0x023b, B:83:0x024f, B:86:0x0255, B:88:0x0261, B:74:0x020e), top: B:101:0x0031 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -390,7 +390,7 @@ public final class ServersInteractor {
                         mutableStateFlow = this.stateStore;
                         do {
                             value = mutableStateFlow.getValue();
-                        } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default(value, null, CollectionsKt.toList(arrayList), null, null, null, false, 0, ComposerImplKt.nodeKey, null)));
+                        } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default(value, null, CollectionsKt.toList(arrayList), null, null, null, null, false, 0, 253, null)));
                     }
                     serversInteractor$getServersMobileList$1.L$0 = null;
                     serversInteractor$getServersMobileList$1.L$1 = null;
@@ -409,7 +409,7 @@ public final class ServersInteractor {
                     mutableStateFlow = this.stateStore;
                     do {
                         value = mutableStateFlow.getValue();
-                    } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default(value, null, CollectionsKt.toList(arrayList), null, null, null, false, 0, ComposerImplKt.nodeKey, null)));
+                    } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default(value, null, CollectionsKt.toList(arrayList), null, null, null, null, false, 0, 253, null)));
                     serversInteractor$getServersMobileList$1.L$0 = null;
                     serversInteractor$getServersMobileList$1.L$1 = null;
                     serversInteractor$getServersMobileList$1.label = 4;
@@ -423,7 +423,7 @@ public final class ServersInteractor {
                             ServersState value3 = mutableStateFlow3.getValue();
                             MutableStateFlow<ServersState> mutableStateFlow4 = mutableStateFlow3;
                             list3 = list2;
-                            if (mutableStateFlow4.compareAndSet(value3, ServersState.copy$default(value3, null, list3, null, null, null, false, 0, ComposerImplKt.nodeKey, null))) {
+                            if (mutableStateFlow4.compareAndSet(value3, ServersState.copy$default(value3, null, list3, null, null, null, null, false, 0, 253, null))) {
                                 break;
                             }
                             mutableStateFlow3 = mutableStateFlow4;
@@ -448,7 +448,7 @@ public final class ServersInteractor {
                                 for (ServersApiModelItem serversApiModelItem3 : list9) {
                                     arrayList4.add(ServerModelKt.toDomain(serversApiModelItem3, true, this.buildConfig.isArizona()));
                                 }
-                                if (mutableStateFlow5.compareAndSet(value4, ServersState.copy$default(serversState, null, arrayList4, null, null, null, false, 0, ComposerImplKt.nodeKey, null))) {
+                                if (mutableStateFlow5.compareAndSet(value4, ServersState.copy$default(serversState, null, arrayList4, null, null, null, null, false, 0, 253, null))) {
                                     break;
                                 }
                             }
@@ -469,7 +469,7 @@ public final class ServersInteractor {
                     while (true) {
                         value2 = mutableStateFlow2.getValue();
                         list5 = list4;
-                        if (!mutableStateFlow2.compareAndSet(value2, ServersState.copy$default(value2, null, list5, null, null, null, false, 0, ComposerImplKt.nodeKey, null))) {
+                        if (!mutableStateFlow2.compareAndSet(value2, ServersState.copy$default(value2, null, list5, null, null, null, null, false, 0, 253, null))) {
                             break;
                         }
                         list4 = list5;
@@ -513,7 +513,7 @@ public final class ServersInteractor {
             while (true) {
                 value2 = mutableStateFlow2.getValue();
                 list5 = list4;
-                if (!mutableStateFlow2.compareAndSet(value2, ServersState.copy$default(value2, null, list5, null, null, null, false, 0, ComposerImplKt.nodeKey, null))) {
+                if (!mutableStateFlow2.compareAndSet(value2, ServersState.copy$default(value2, null, list5, null, null, null, null, false, 0, 253, null))) {
                 }
                 list4 = list5;
             }
@@ -540,29 +540,29 @@ public final class ServersInteractor {
     /* JADX WARN: Code restructure failed: missing block: B:21:0x005c, code lost:
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:68:0x01b3, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:68:0x01b9, code lost:
         r0 = move-exception;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:69:0x01b4, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:69:0x01ba, code lost:
         timber.log.Timber.Forest.tag("ServersInteractor").d(java.lang.String.valueOf(r0.getMessage()), new java.lang.Object[0]);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:91:0x0252, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:91:0x025a, code lost:
         timber.log.Timber.Forest.tag("ServersInteractor").d(java.lang.String.valueOf(r0.getMessage()), new java.lang.Object[0]);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:93:0x026f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:93:0x0277, code lost:
         if (checkFavorite(r2) != r3) goto L14;
      */
-    /* JADX WARN: Removed duplicated region for block: B:104:0x01c7 A[EDGE_INSN: B:104:0x01c7->B:70:0x01c7 ?: BREAK  , SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x01cd A[EDGE_INSN: B:104:0x01cd->B:70:0x01cd ?: BREAK  , SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0033  */
     /* JADX WARN: Removed duplicated region for block: B:26:0x006d  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x009f A[Catch: Exception -> 0x01b3, TRY_ENTER, TryCatch #1 {Exception -> 0x01b3, blocks: (B:24:0x0069, B:30:0x0099, B:33:0x009f, B:35:0x00a8, B:36:0x00ad, B:55:0x014c, B:57:0x0152, B:59:0x015b, B:60:0x016c, B:62:0x0172, B:63:0x0186, B:64:0x018d, B:40:0x00dd, B:42:0x00e5, B:44:0x00ee, B:45:0x00ff, B:47:0x0105, B:48:0x0119, B:49:0x0120, B:27:0x0070), top: B:97:0x0031 }] */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x0148  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x0172 A[Catch: Exception -> 0x01b3, LOOP:3: B:60:0x016c->B:62:0x0172, LOOP_END, TryCatch #1 {Exception -> 0x01b3, blocks: (B:24:0x0069, B:30:0x0099, B:33:0x009f, B:35:0x00a8, B:36:0x00ad, B:55:0x014c, B:57:0x0152, B:59:0x015b, B:60:0x016c, B:62:0x0172, B:63:0x0186, B:64:0x018d, B:40:0x00dd, B:42:0x00e5, B:44:0x00ee, B:45:0x00ff, B:47:0x0105, B:48:0x0119, B:49:0x0120, B:27:0x0070), top: B:97:0x0031 }] */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x01b0 A[LOOP:4: B:64:0x018d->B:67:0x01b0, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x01d5  */
-    /* JADX WARN: Removed duplicated region for block: B:75:0x01db A[Catch: Exception -> 0x005c, TryCatch #0 {Exception -> 0x005c, blocks: (B:18:0x0052, B:87:0x022a, B:88:0x0231, B:19:0x0057, B:73:0x01d7, B:75:0x01db, B:76:0x01ec, B:78:0x01f2, B:79:0x0206, B:82:0x020c, B:84:0x0215, B:70:0x01c7), top: B:97:0x0031 }] */
-    /* JADX WARN: Removed duplicated region for block: B:80:0x0209  */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x020c A[Catch: Exception -> 0x005c, TryCatch #0 {Exception -> 0x005c, blocks: (B:18:0x0052, B:87:0x022a, B:88:0x0231, B:19:0x0057, B:73:0x01d7, B:75:0x01db, B:76:0x01ec, B:78:0x01f2, B:79:0x0206, B:82:0x020c, B:84:0x0215, B:70:0x01c7), top: B:97:0x0031 }] */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x009f A[Catch: Exception -> 0x01b9, TRY_ENTER, TryCatch #1 {Exception -> 0x01b9, blocks: (B:24:0x0069, B:30:0x0099, B:33:0x009f, B:35:0x00a8, B:36:0x00ad, B:55:0x0150, B:57:0x0156, B:59:0x015f, B:60:0x0170, B:62:0x0176, B:63:0x018a, B:64:0x0191, B:40:0x00df, B:42:0x00e7, B:44:0x00f0, B:45:0x0101, B:47:0x0107, B:48:0x011b, B:49:0x0122, B:27:0x0070), top: B:97:0x0031 }] */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x014c  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x0176 A[Catch: Exception -> 0x01b9, LOOP:3: B:60:0x0170->B:62:0x0176, LOOP_END, TryCatch #1 {Exception -> 0x01b9, blocks: (B:24:0x0069, B:30:0x0099, B:33:0x009f, B:35:0x00a8, B:36:0x00ad, B:55:0x0150, B:57:0x0156, B:59:0x015f, B:60:0x0170, B:62:0x0176, B:63:0x018a, B:64:0x0191, B:40:0x00df, B:42:0x00e7, B:44:0x00f0, B:45:0x0101, B:47:0x0107, B:48:0x011b, B:49:0x0122, B:27:0x0070), top: B:97:0x0031 }] */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x01b6 A[LOOP:4: B:64:0x0191->B:67:0x01b6, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x01db  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x01e1 A[Catch: Exception -> 0x005c, TryCatch #0 {Exception -> 0x005c, blocks: (B:18:0x0052, B:87:0x0230, B:88:0x0237, B:19:0x0057, B:73:0x01dd, B:75:0x01e1, B:76:0x01f2, B:78:0x01f8, B:79:0x020c, B:82:0x0212, B:84:0x021b, B:70:0x01cd), top: B:97:0x0031 }] */
+    /* JADX WARN: Removed duplicated region for block: B:80:0x020f  */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x0212 A[Catch: Exception -> 0x005c, TryCatch #0 {Exception -> 0x005c, blocks: (B:18:0x0052, B:87:0x0230, B:88:0x0237, B:19:0x0057, B:73:0x01dd, B:75:0x01e1, B:76:0x01f2, B:78:0x01f8, B:79:0x020c, B:82:0x0212, B:84:0x021b, B:70:0x01cd), top: B:97:0x0031 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -635,7 +635,7 @@ public final class ServersInteractor {
                         mutableStateFlow = this.stateStore;
                         do {
                             value = mutableStateFlow.getValue();
-                        } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default(value, null, null, list2, null, null, false, 0, 123, null)));
+                        } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default(value, null, null, list2, null, null, null, false, 0, 251, null)));
                     }
                     serversInteractor$getServersDesktopList$1.L$0 = null;
                     serversInteractor$getServersDesktopList$1.L$1 = null;
@@ -656,7 +656,7 @@ public final class ServersInteractor {
                     mutableStateFlow = this.stateStore;
                     do {
                         value = mutableStateFlow.getValue();
-                    } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default(value, null, null, list2, null, null, false, 0, 123, null)));
+                    } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default(value, null, null, list2, null, null, null, false, 0, 251, null)));
                     serversInteractor$getServersDesktopList$1.L$0 = null;
                     serversInteractor$getServersDesktopList$1.L$1 = null;
                     serversInteractor$getServersDesktopList$1.label = 4;
@@ -670,7 +670,7 @@ public final class ServersInteractor {
                     while (true) {
                         ServersState value3 = mutableStateFlow3.getValue();
                         list4 = list3;
-                        if (mutableStateFlow3.compareAndSet(value3, ServersState.copy$default(value3, null, null, list4, null, null, false, 0, 123, null))) {
+                        if (mutableStateFlow3.compareAndSet(value3, ServersState.copy$default(value3, null, null, list4, null, null, null, false, 0, 251, null))) {
                             break;
                         }
                         list3 = list4;
@@ -690,7 +690,7 @@ public final class ServersInteractor {
                         while (true) {
                             ServersState value4 = mutableStateFlow4.getValue();
                             List<ServerModel> list11 = list10;
-                            if (mutableStateFlow4.compareAndSet(value4, ServersState.copy$default(value4, null, null, list11, null, null, false, 0, 123, null))) {
+                            if (mutableStateFlow4.compareAndSet(value4, ServersState.copy$default(value4, null, null, list11, null, null, null, false, 0, 251, null))) {
                                 break;
                             }
                             list10 = list11;
@@ -709,7 +709,7 @@ public final class ServersInteractor {
                     while (true) {
                         value2 = mutableStateFlow2.getValue();
                         list6 = list5;
-                        if (!mutableStateFlow2.compareAndSet(value2, ServersState.copy$default(value2, null, null, list6, null, null, false, 0, 123, null))) {
+                        if (!mutableStateFlow2.compareAndSet(value2, ServersState.copy$default(value2, null, null, list6, null, null, null, false, 0, 251, null))) {
                             break;
                         }
                         list5 = list6;
@@ -753,7 +753,7 @@ public final class ServersInteractor {
             while (true) {
                 value2 = mutableStateFlow2.getValue();
                 list6 = list5;
-                if (!mutableStateFlow2.compareAndSet(value2, ServersState.copy$default(value2, null, null, list6, null, null, false, 0, 123, null))) {
+                if (!mutableStateFlow2.compareAndSet(value2, ServersState.copy$default(value2, null, null, list6, null, null, null, false, 0, 251, null))) {
                 }
                 list5 = list6;
             }
@@ -775,8 +775,245 @@ public final class ServersInteractor {
         serversInteractor$getServersDesktopList$1.label = 4;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Can't wrap try/catch for region: R(17:1|(2:3|(15:5|6|7|(1:(1:(1:(8:12|13|14|15|(1:16)|18|19|20)(2:23|24))(6:25|26|(4:28|(2:31|29)|32|33)|(2:35|(3:37|(5:40|14|15|(1:16)|18)|39)(4:41|15|(1:16)|18))|19|20))(2:42|43))(2:90|(2:92|93)(2:94|(2:96|39)))|44|45|(2:47|(3:49|(2:50|(1:53)(1:52))|54)(2:74|(6:78|(2:81|79)|82|83|(2:84|(1:87)(1:86))|88)))(1:89)|(5:60|(2:63|61)|64|65|(2:66|(1:69)(1:68)))(0)|71|(2:73|39)|26|(0)|(0)|19|20))|101|6|7|(0)(0)|44|45|(0)(0)|(7:56|58|60|(1:61)|64|65|(3:66|(0)(0)|68))(0)|71|(0)|26|(0)|(0)|19|20) */
+    /* JADX WARN: Code restructure failed: missing block: B:20:0x0054, code lost:
+        r0 = move-exception;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:70:0x01bb, code lost:
+        r0 = move-exception;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:71:0x01bc, code lost:
+        timber.log.Timber.Forest.tag("ServersInteractor").d(java.lang.String.valueOf(r0.getMessage()), new java.lang.Object[0]);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:95:0x025d, code lost:
+        timber.log.Timber.Forest.tag("ServersInteractor").d(java.lang.String.valueOf(r0.getMessage()), new java.lang.Object[0]);
+     */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x01cf A[EDGE_INSN: B:105:0x01cf->B:72:0x01cf ?: BREAK  , SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0032  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0065  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x00a2 A[Catch: Exception -> 0x01bb, TRY_ENTER, TryCatch #0 {Exception -> 0x01bb, blocks: (B:23:0x0061, B:32:0x009c, B:35:0x00a2, B:37:0x00ab, B:38:0x00b0, B:57:0x0153, B:59:0x0159, B:61:0x0162, B:62:0x0173, B:64:0x0179, B:65:0x018d, B:66:0x0194, B:42:0x00e2, B:44:0x00ea, B:46:0x00f3, B:47:0x0104, B:49:0x010a, B:50:0x011e, B:51:0x0125, B:29:0x0073), top: B:98:0x0030 }] */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x014f  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x0179 A[Catch: Exception -> 0x01bb, LOOP:3: B:62:0x0173->B:64:0x0179, LOOP_END, TryCatch #0 {Exception -> 0x01bb, blocks: (B:23:0x0061, B:32:0x009c, B:35:0x00a2, B:37:0x00ab, B:38:0x00b0, B:57:0x0153, B:59:0x0159, B:61:0x0162, B:62:0x0173, B:64:0x0179, B:65:0x018d, B:66:0x0194, B:42:0x00e2, B:44:0x00ea, B:46:0x00f3, B:47:0x0104, B:49:0x010a, B:50:0x011e, B:51:0x0125, B:29:0x0073), top: B:98:0x0030 }] */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x01b8 A[LOOP:4: B:66:0x0194->B:69:0x01b8, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x01dd  */
+    /* JADX WARN: Removed duplicated region for block: B:77:0x01e2 A[Catch: Exception -> 0x0054, TryCatch #1 {Exception -> 0x0054, blocks: (B:14:0x0042, B:91:0x0236, B:92:0x023b, B:18:0x004f, B:75:0x01de, B:77:0x01e2, B:78:0x01f3, B:80:0x01f9, B:81:0x020d, B:83:0x0212, B:85:0x021b, B:72:0x01cf), top: B:98:0x0030 }] */
+    /* JADX WARN: Removed duplicated region for block: B:83:0x0212 A[Catch: Exception -> 0x0054, TryCatch #1 {Exception -> 0x0054, blocks: (B:14:0x0042, B:91:0x0236, B:92:0x023b, B:18:0x004f, B:75:0x01de, B:77:0x01e2, B:78:0x01f3, B:80:0x01f9, B:81:0x020d, B:83:0x0212, B:85:0x021b, B:72:0x01cf), top: B:98:0x0030 }] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final Object getServersVcList(Continuation<? super Unit> continuation) {
+        ServersInteractor$getServersVcList$1 serversInteractor$getServersVcList$1;
+        Object obj;
+        Object coroutine_suspended;
+        int i;
+        ArrayList arrayList;
+        List list;
+        ArrayList arrayList2;
+        List list2;
+        MutableStateFlow<ServersState> mutableStateFlow;
+        ServersState value;
+        List<ServerModel> list3;
+        List<ServerModel> list4;
+        List<ServersApiModelItem> readDataAssets;
+        ArrayList arrayList3;
+        MutableStateFlow<ServersState> mutableStateFlow2;
+        ServersState value2;
+        ArrayList arrayList4;
+        if (continuation instanceof ServersInteractor$getServersVcList$1) {
+            serversInteractor$getServersVcList$1 = (ServersInteractor$getServersVcList$1) continuation;
+            if ((serversInteractor$getServersVcList$1.label & Integer.MIN_VALUE) != 0) {
+                serversInteractor$getServersVcList$1.label -= Integer.MIN_VALUE;
+                obj = serversInteractor$getServersVcList$1.result;
+                coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                i = serversInteractor$getServersVcList$1.label;
+                arrayList = null;
+                if (i != 0) {
+                    ResultKt.throwOnFailure(obj);
+                    if (!this.buildConfig.isArizona()) {
+                        return Unit.INSTANCE;
+                    }
+                    LocalRepository localRepository = this.localRepository;
+                    serversInteractor$getServersVcList$1.L$0 = SpillingKt.nullOutSpilledVariable(localRepository);
+                    serversInteractor$getServersVcList$1.L$1 = SpillingKt.nullOutSpilledVariable(VC_LIST_KEY);
+                    serversInteractor$getServersVcList$1.I$0 = 0;
+                    serversInteractor$getServersVcList$1.label = 1;
+                    obj = BuildersKt.withContext(Dispatchers.getIO(), new ServersInteractor$getServersVcList$$inlined$getSuspend$1(localRepository, VC_LIST_KEY, null), serversInteractor$getServersVcList$1);
+                    if (obj == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                } else if (i != 1) {
+                    if (i != 2) {
+                        if (i == 3) {
+                            int i2 = serversInteractor$getServersVcList$1.I$0;
+                            List list5 = (List) serversInteractor$getServersVcList$1.L$1;
+                            list2 = (List) serversInteractor$getServersVcList$1.L$0;
+                            ResultKt.throwOnFailure(obj);
+                            arrayList2 = list2;
+                            getCurrentServer();
+                            mutableStateFlow = this.stateStore;
+                            do {
+                                value = mutableStateFlow.getValue();
+                            } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default(value, null, null, null, arrayList2, null, null, false, 0, 247, null)));
+                            return Unit.INSTANCE;
+                        }
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    ResultKt.throwOnFailure(obj);
+                    list = (List) obj;
+                    if (list != null) {
+                        List<ServersApiModelItem> list6 = list;
+                        ArrayList arrayList5 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list6, 10));
+                        for (ServersApiModelItem serversApiModelItem : list6) {
+                            arrayList5.add(ServerModelKt.toDomain(serversApiModelItem, false, this.buildConfig.isArizona()));
+                        }
+                        arrayList = arrayList5;
+                    }
+                    if (arrayList != null) {
+                        if (!arrayList.isEmpty()) {
+                            LocalRepository localRepository2 = this.localRepository;
+                            serversInteractor$getServersVcList$1.L$0 = arrayList;
+                            serversInteractor$getServersVcList$1.L$1 = SpillingKt.nullOutSpilledVariable(arrayList);
+                            serversInteractor$getServersVcList$1.I$0 = 0;
+                            serversInteractor$getServersVcList$1.label = 3;
+                            if (localRepository2.save2(VC_LIST_KEY, (String) arrayList, (Continuation<? super Unit>) serversInteractor$getServersVcList$1) != coroutine_suspended) {
+                                list2 = arrayList;
+                                arrayList2 = list2;
+                                getCurrentServer();
+                                mutableStateFlow = this.stateStore;
+                                do {
+                                    value = mutableStateFlow.getValue();
+                                } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default(value, null, null, null, arrayList2, null, null, false, 0, 247, null)));
+                            }
+                            return coroutine_suspended;
+                        }
+                        arrayList2 = arrayList;
+                        getCurrentServer();
+                        mutableStateFlow = this.stateStore;
+                        do {
+                            value = mutableStateFlow.getValue();
+                        } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default(value, null, null, null, arrayList2, null, null, false, 0, 247, null)));
+                    }
+                    return Unit.INSTANCE;
+                } else {
+                    int i3 = serversInteractor$getServersVcList$1.I$0;
+                    String str = (String) serversInteractor$getServersVcList$1.L$1;
+                    IKeyValueRepository iKeyValueRepository = (IKeyValueRepository) serversInteractor$getServersVcList$1.L$0;
+                    ResultKt.throwOnFailure(obj);
+                }
+                list3 = (List) obj;
+                if (list3 != null) {
+                    list4 = list3;
+                } else if (!list3.isEmpty()) {
+                    getCurrentServerLocal(list3);
+                    MutableStateFlow<ServersState> mutableStateFlow3 = this.stateStore;
+                    while (true) {
+                        ServersState value3 = mutableStateFlow3.getValue();
+                        list4 = list3;
+                        if (mutableStateFlow3.compareAndSet(value3, ServersState.copy$default(value3, null, null, null, list4, null, null, false, 0, 247, null))) {
+                            break;
+                        }
+                        list3 = list4;
+                    }
+                } else {
+                    list4 = list3;
+                    List<ServersApiModelItem> readDataAssets2 = readDataAssets("server_vc.json");
+                    if (readDataAssets2 != null && !readDataAssets2.isEmpty()) {
+                        List<ServersApiModelItem> list7 = readDataAssets2;
+                        ArrayList arrayList6 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list7, 10));
+                        for (ServersApiModelItem serversApiModelItem2 : list7) {
+                            arrayList6.add(ServerModelKt.toDomain(serversApiModelItem2, false, this.buildConfig.isArizona()));
+                        }
+                        ArrayList arrayList7 = arrayList6;
+                        getCurrentServerLocal(arrayList7);
+                        MutableStateFlow<ServersState> mutableStateFlow4 = this.stateStore;
+                        while (true) {
+                            ServersState value4 = mutableStateFlow4.getValue();
+                            ArrayList arrayList8 = arrayList7;
+                            if (mutableStateFlow4.compareAndSet(value4, ServersState.copy$default(value4, null, null, null, arrayList8, null, null, false, 0, 247, null))) {
+                                break;
+                            }
+                            arrayList7 = arrayList8;
+                        }
+                    }
+                }
+                if (list4 == null && (readDataAssets = readDataAssets("server_vc.json")) != null && !readDataAssets.isEmpty()) {
+                    List<ServersApiModelItem> list8 = readDataAssets;
+                    ArrayList arrayList9 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list8, 10));
+                    for (ServersApiModelItem serversApiModelItem3 : list8) {
+                        arrayList9.add(ServerModelKt.toDomain(serversApiModelItem3, false, this.buildConfig.isArizona()));
+                    }
+                    arrayList3 = arrayList9;
+                    getCurrentServerLocal(arrayList3);
+                    mutableStateFlow2 = this.stateStore;
+                    while (true) {
+                        value2 = mutableStateFlow2.getValue();
+                        arrayList4 = arrayList3;
+                        if (!mutableStateFlow2.compareAndSet(value2, ServersState.copy$default(value2, null, null, null, arrayList4, null, null, false, 0, 247, null))) {
+                            break;
+                        }
+                        arrayList3 = arrayList4;
+                    }
+                }
+                NetworkDataSource networkDataSource = this.dataSource;
+                serversInteractor$getServersVcList$1.L$0 = null;
+                serversInteractor$getServersVcList$1.L$1 = null;
+                serversInteractor$getServersVcList$1.label = 2;
+                obj = networkDataSource.getServersVc(serversInteractor$getServersVcList$1);
+                if (obj == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                list = (List) obj;
+                if (list != null) {
+                }
+                if (arrayList != null) {
+                }
+                return Unit.INSTANCE;
+            }
+        }
+        serversInteractor$getServersVcList$1 = new ServersInteractor$getServersVcList$1(this, continuation);
+        obj = serversInteractor$getServersVcList$1.result;
+        coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        i = serversInteractor$getServersVcList$1.label;
+        arrayList = null;
+        if (i != 0) {
+        }
+        list3 = (List) obj;
+        if (list3 != null) {
+        }
+        if (list4 == null) {
+            List<ServersApiModelItem> list82 = readDataAssets;
+            ArrayList arrayList92 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list82, 10));
+            while (r0.hasNext()) {
+            }
+            arrayList3 = arrayList92;
+            getCurrentServerLocal(arrayList3);
+            mutableStateFlow2 = this.stateStore;
+            while (true) {
+                value2 = mutableStateFlow2.getValue();
+                arrayList4 = arrayList3;
+                if (!mutableStateFlow2.compareAndSet(value2, ServersState.copy$default(value2, null, null, null, arrayList4, null, null, false, 0, 247, null))) {
+                }
+                arrayList3 = arrayList4;
+            }
+        }
+        NetworkDataSource networkDataSource2 = this.dataSource;
+        serversInteractor$getServersVcList$1.L$0 = null;
+        serversInteractor$getServersVcList$1.L$1 = null;
+        serversInteractor$getServersVcList$1.label = 2;
+        obj = networkDataSource2.getServersVc(serversInteractor$getServersVcList$1);
+        if (obj == coroutine_suspended) {
+        }
+        list = (List) obj;
+        if (list != null) {
+        }
+        if (arrayList != null) {
+        }
+        return Unit.INSTANCE;
+    }
+
     /* compiled from: ServersInteractor.kt */
-    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000¨\u0006\b"}, d2 = {"Lcom/miami/game/core/server/ServersInteractor$Companion;", "", "<init>", "()V", "CURRENT_SERVER_KEY", "", "MOBILE_LIST_KEY", "DESKTOP_LIST_KEY", "server_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000¨\u0006\t"}, d2 = {"Lcom/miami/game/core/server/ServersInteractor$Companion;", "", "<init>", "()V", "CURRENT_SERVER_KEY", "", "MOBILE_LIST_KEY", "DESKTOP_LIST_KEY", "VC_LIST_KEY", "server_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {

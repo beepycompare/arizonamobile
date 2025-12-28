@@ -29,7 +29,6 @@ import androidx.media3.common.Player;
 import androidx.media3.common.Timeline;
 import androidx.media3.common.Tracks;
 import androidx.media3.common.VideoSize;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.BackgroundExecutor;
 import androidx.media3.common.util.NetworkTypeObserver;
 import androidx.media3.common.util.Util;
@@ -50,6 +49,7 @@ import androidx.media3.exoplayer.source.LoadEventInfo;
 import androidx.media3.exoplayer.source.MediaLoadData;
 import androidx.media3.exoplayer.source.MediaSource;
 import com.google.android.vending.expansion.downloader.Constants;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.UnmodifiableIterator;
 import java.io.FileNotFoundException;
@@ -62,7 +62,7 @@ import java.util.UUID;
 import java.util.concurrent.Executor;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNullIf;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class MediaMetricsListener implements AnalyticsListener, PlaybackSessionManager.Listener {
     private String activeSessionId;
     private int audioUnderruns;
@@ -167,7 +167,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
     @Override // androidx.media3.exoplayer.analytics.AnalyticsListener
     public void onBandwidthEstimate(AnalyticsListener.EventTime eventTime, int i, long j, long j2) {
         if (eventTime.mediaPeriodId != null) {
-            String sessionForMediaPeriodId = this.sessionManager.getSessionForMediaPeriodId(eventTime.timeline, (MediaSource.MediaPeriodId) Assertions.checkNotNull(eventTime.mediaPeriodId));
+            String sessionForMediaPeriodId = this.sessionManager.getSessionForMediaPeriodId(eventTime.timeline, (MediaSource.MediaPeriodId) Preconditions.checkNotNull(eventTime.mediaPeriodId));
             Long l = this.bandwidthBytes.get(sessionForMediaPeriodId);
             Long l2 = this.bandwidthTimeMs.get(sessionForMediaPeriodId);
             this.bandwidthBytes.put(sessionForMediaPeriodId, Long.valueOf((l == null ? 0L : l.longValue()) + j));
@@ -180,7 +180,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
         if (eventTime.mediaPeriodId == null) {
             return;
         }
-        PendingFormatUpdate pendingFormatUpdate = new PendingFormatUpdate((Format) Assertions.checkNotNull(mediaLoadData.trackFormat), mediaLoadData.trackSelectionReason, this.sessionManager.getSessionForMediaPeriodId(eventTime.timeline, (MediaSource.MediaPeriodId) Assertions.checkNotNull(eventTime.mediaPeriodId)));
+        PendingFormatUpdate pendingFormatUpdate = new PendingFormatUpdate((Format) Preconditions.checkNotNull(mediaLoadData.trackFormat), mediaLoadData.trackSelectionReason, this.sessionManager.getSessionForMediaPeriodId(eventTime.timeline, (MediaSource.MediaPeriodId) Preconditions.checkNotNull(eventTime.mediaPeriodId)));
         int i = mediaLoadData.trackType;
         if (i != 0) {
             if (i == 1) {
@@ -273,7 +273,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
         this.backgroundExecutor.execute(new Runnable() { // from class: androidx.media3.exoplayer.analytics.MediaMetricsListener$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                MediaMetricsListener.this.m8949xdf4bfb0e(build);
+                MediaMetricsListener.this.m8952xdf4bfb0e(build);
             }
         });
         this.reportedEventsForCurrentSession = true;
@@ -282,7 +282,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$maybeReportPlaybackError$0$androidx-media3-exoplayer-analytics-MediaMetricsListener  reason: not valid java name */
-    public /* synthetic */ void m8949xdf4bfb0e(PlaybackErrorEvent playbackErrorEvent) {
+    public /* synthetic */ void m8952xdf4bfb0e(PlaybackErrorEvent playbackErrorEvent) {
         this.playbackSession.reportPlaybackErrorEvent(playbackErrorEvent);
     }
 
@@ -331,7 +331,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
             this.backgroundExecutor.execute(new Runnable() { // from class: androidx.media3.exoplayer.analytics.MediaMetricsListener$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MediaMetricsListener.this.m8948xe45a00bc(build);
+                    MediaMetricsListener.this.m8951xe45a00bc(build);
                 }
             });
         }
@@ -339,7 +339,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$maybeReportNetworkChange$1$androidx-media3-exoplayer-analytics-MediaMetricsListener  reason: not valid java name */
-    public /* synthetic */ void m8948xe45a00bc(NetworkEvent networkEvent) {
+    public /* synthetic */ void m8951xe45a00bc(NetworkEvent networkEvent) {
         this.playbackSession.reportNetworkEvent(networkEvent);
     }
 
@@ -360,7 +360,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
             this.backgroundExecutor.execute(new Runnable() { // from class: androidx.media3.exoplayer.analytics.MediaMetricsListener$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MediaMetricsListener.this.m8950x6c41e093(build);
+                    MediaMetricsListener.this.m8953x6c41e093(build);
                 }
             });
         }
@@ -368,7 +368,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$maybeReportPlaybackStateChange$2$androidx-media3-exoplayer-analytics-MediaMetricsListener  reason: not valid java name */
-    public /* synthetic */ void m8950x6c41e093(PlaybackStateEvent playbackStateEvent) {
+    public /* synthetic */ void m8953x6c41e093(PlaybackStateEvent playbackStateEvent) {
         this.playbackSession.reportPlaybackStateEvent(playbackStateEvent);
     }
 
@@ -484,14 +484,14 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
         this.backgroundExecutor.execute(new Runnable() { // from class: androidx.media3.exoplayer.analytics.MediaMetricsListener$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                MediaMetricsListener.this.m8951x86fc0269(build);
+                MediaMetricsListener.this.m8954x86fc0269(build);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$reportTrackChangeEvent$3$androidx-media3-exoplayer-analytics-MediaMetricsListener  reason: not valid java name */
-    public /* synthetic */ void m8951x86fc0269(TrackChangeEvent trackChangeEvent) {
+    public /* synthetic */ void m8954x86fc0269(TrackChangeEvent trackChangeEvent) {
         this.playbackSession.reportTrackChangeEvent(trackChangeEvent);
     }
 
@@ -527,7 +527,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
             this.backgroundExecutor.execute(new Runnable() { // from class: androidx.media3.exoplayer.analytics.MediaMetricsListener$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MediaMetricsListener.this.m8947x9548dab(build);
+                    MediaMetricsListener.this.m8950x9548dab(build);
                 }
             });
         }
@@ -544,7 +544,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$finishCurrentSession$4$androidx-media3-exoplayer-analytics-MediaMetricsListener  reason: not valid java name */
-    public /* synthetic */ void m8947x9548dab(PlaybackMetrics playbackMetrics) {
+    public /* synthetic */ void m8950x9548dab(PlaybackMetrics playbackMetrics) {
         this.playbackSession.reportPlaybackMetrics(playbackMetrics);
     }
 
@@ -608,7 +608,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
             i = 0;
             z2 = false;
         }
-        Throwable th = (Throwable) Assertions.checkNotNull(playbackException.getCause());
+        Throwable th = (Throwable) Preconditions.checkNotNull(playbackException.getCause());
         if (!(th instanceof IOException)) {
             if (z2 && (i == 0 || i == 1)) {
                 return new ErrorInfo(35, 0);
@@ -665,7 +665,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
                 return new ErrorInfo(21, 0);
             } else {
                 if (th instanceof DrmSession.DrmSessionException) {
-                    Throwable th2 = (Throwable) Assertions.checkNotNull(th.getCause());
+                    Throwable th2 = (Throwable) Preconditions.checkNotNull(th.getCause());
                     if (th2 instanceof MediaDrm.MediaDrmStateException) {
                         int errorCodeFromPlatformDiagnosticsInfo = Util.getErrorCodeFromPlatformDiagnosticsInfo(((MediaDrm.MediaDrmStateException) th2).getDiagnosticInfo());
                         return new ErrorInfo(getDrmErrorCode(errorCodeFromPlatformDiagnosticsInfo), errorCodeFromPlatformDiagnosticsInfo);
@@ -687,7 +687,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
                         return new ErrorInfo(30, 0);
                     }
                 } else if ((th instanceof FileDataSource.FileDataSourceException) && (th.getCause() instanceof FileNotFoundException)) {
-                    Throwable cause2 = ((Throwable) Assertions.checkNotNull(th.getCause())).getCause();
+                    Throwable cause2 = ((Throwable) Preconditions.checkNotNull(th.getCause())).getCause();
                     if ((cause2 instanceof ErrnoException) && ((ErrnoException) cause2).errno == OsConstants.EACCES) {
                         return new ErrorInfo(32, 0);
                     }
@@ -745,7 +745,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static final class ErrorInfo {
         public final int errorCode;
         public final int subErrorCode;
@@ -757,7 +757,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static final class PendingFormatUpdate {
         public final Format format;
         public final int selectionReason;

@@ -1,48 +1,68 @@
 package androidx.media3.extractor.heif;
 
-import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.extractor.Extractor;
 import androidx.media3.extractor.ExtractorInput;
 import androidx.media3.extractor.ExtractorOutput;
 import androidx.media3.extractor.PositionHolder;
 import androidx.media3.extractor.SingleSampleExtractor;
 import java.io.IOException;
+import java.lang.annotation.Documented;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 /* loaded from: classes3.dex */
 public final class HeifExtractor implements Extractor {
-    private static final int FILE_SIGNATURE_SEGMENT_LENGTH = 4;
-    private static final int HEIF_FILE_SIGNATURE_PART_1 = 1718909296;
-    private static final int HEIF_FILE_SIGNATURE_PART_2 = 1751476579;
-    private final ParsableByteArray scratch = new ParsableByteArray(4);
-    private final SingleSampleExtractor imageExtractor = new SingleSampleExtractor(-1, -1, "image/heif");
+    public static final int FLAG_READ_IMAGE = 1;
+    private final boolean extractImage;
+    private final Extractor extractor;
 
-    @Override // androidx.media3.extractor.Extractor
-    public void release() {
+    @Target({ElementType.TYPE_USE})
+    @Documented
+    @Retention(RetentionPolicy.SOURCE)
+    /* loaded from: classes3.dex */
+    public @interface Flags {
+    }
+
+    public HeifExtractor() {
+        this(0);
+    }
+
+    public HeifExtractor(int i) {
+        boolean z = (i & 1) != 0;
+        this.extractImage = z;
+        if (z) {
+            this.extractor = new SingleSampleExtractor(-1, -1, "image/heif");
+        } else {
+            this.extractor = new HeicMotionPhotoExtractor();
+        }
     }
 
     @Override // androidx.media3.extractor.Extractor
     public boolean sniff(ExtractorInput extractorInput) throws IOException {
-        extractorInput.advancePeekPosition(4);
-        return readAndCompareFourBytes(extractorInput, 1718909296) && readAndCompareFourBytes(extractorInput, 1751476579);
+        if (this.extractImage) {
+            return HeifSniffer.sniff(extractorInput, false);
+        }
+        return this.extractor.sniff(extractorInput);
     }
 
     @Override // androidx.media3.extractor.Extractor
     public void init(ExtractorOutput extractorOutput) {
-        this.imageExtractor.init(extractorOutput);
+        this.extractor.init(extractorOutput);
     }
 
     @Override // androidx.media3.extractor.Extractor
     public int read(ExtractorInput extractorInput, PositionHolder positionHolder) throws IOException {
-        return this.imageExtractor.read(extractorInput, positionHolder);
+        return this.extractor.read(extractorInput, positionHolder);
     }
 
     @Override // androidx.media3.extractor.Extractor
     public void seek(long j, long j2) {
-        this.imageExtractor.seek(j, j2);
+        this.extractor.seek(j, j2);
     }
 
-    private boolean readAndCompareFourBytes(ExtractorInput extractorInput, int i) throws IOException {
-        this.scratch.reset(4);
-        extractorInput.peekFully(this.scratch.getData(), 0, 4);
-        return this.scratch.readUnsignedInt() == ((long) i);
+    @Override // androidx.media3.extractor.Extractor
+    public void release() {
+        this.extractor.release();
     }
 }

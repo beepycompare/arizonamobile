@@ -5,16 +5,16 @@ import io.appmetrica.analytics.billing.internal.config.BillingConfig;
 public final class A {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f305a;
+    public final int f306a;
     public final int b;
 
     public A(int i, int i2) {
-        this.f305a = i;
+        this.f306a = i;
         this.b = i2;
     }
 
     public final String toString() {
-        return "ServiceSideBillingConfig(sendFrequencySeconds=" + this.f305a + ", firstCollectingInappMaxAgeSeconds=" + this.b + ')';
+        return "ServiceSideBillingConfig(sendFrequencySeconds=" + this.f306a + ", firstCollectingInappMaxAgeSeconds=" + this.b + ')';
     }
 
     public A(BillingConfig billingConfig) {

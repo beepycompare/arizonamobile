@@ -313,7 +313,7 @@ public final class LavkaTypeScreen extends SAMPUIElement implements InterfaceCon
                 List<InventoryItem> items = inventoryResponse2.getItems();
                 ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(items, 10));
                 for (InventoryItem inventoryItem : items) {
-                    arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, inventoryResponse2.getType(), null, null, false, false, null, 4128767, null));
+                    arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, inventoryResponse2.getType(), null, null, false, false, null, null, 8323071, null));
                 }
                 InventoryResponse inventoryResponse3 = new InventoryResponse(type2, arrayList);
                 if (this.isArizonaType) {
@@ -469,7 +469,7 @@ public final class LavkaTypeScreen extends SAMPUIElement implements InterfaceCon
                     if (itemsInfo2 != null) {
                         num = Integer.valueOf(itemsInfo2.getAcs_slot());
                     }
-                    arrayList2.add(InventoryItem.copy$default(inventoryItem6, 0, null, 0, null, valueOf, null, null, null, null, null, null, null, null, null, null, null, type5, num, null, false, false, null, 3997679, null));
+                    arrayList2.add(InventoryItem.copy$default(inventoryItem6, 0, null, 0, null, valueOf, null, null, null, null, null, null, null, null, null, null, null, type5, num, null, false, false, null, null, 8191983, null));
                 }
                 for (InventoryItem inventoryItem7 : new InventoryResponse(type4, arrayList2).getItems()) {
                     Iterator<InventoryItem> it8 = this.inventoryItemsList.iterator();
@@ -535,7 +535,7 @@ public final class LavkaTypeScreen extends SAMPUIElement implements InterfaceCon
         List<InventoryItem> items = inventoryResponse.getItems();
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(items, 10));
         for (InventoryItem inventoryItem : items) {
-            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, inventoryResponse.getType(), null, null, false, false, null, 4128767, null));
+            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, inventoryResponse.getType(), null, null, false, false, null, null, 8323071, null));
         }
         return CollectionsKt.toMutableList((Collection) new InventoryResponse(type, arrayList).getItems());
     }
@@ -545,7 +545,7 @@ public final class LavkaTypeScreen extends SAMPUIElement implements InterfaceCon
         List<InventoryItem> items = inventoryResponse.getItems();
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(items, 10));
         for (InventoryItem inventoryItem : items) {
-            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, inventoryResponse.getType(), null, null, false, false, null, 4128767, null));
+            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, inventoryResponse.getType(), null, null, false, false, null, null, 8323071, null));
         }
         CollectionsKt.addAll(this.lavkaItems, CollectionsKt.toMutableList((Collection) new InventoryResponse(type, arrayList).getItems()));
         this.lavkaAdapter.submitList(this.lavkaItems);
@@ -560,7 +560,7 @@ public final class LavkaTypeScreen extends SAMPUIElement implements InterfaceCon
         if (1 <= nextMultipleOfFive) {
             int i = 1;
             while (true) {
-                this.inventoryItemsList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), ((InventoryItem) CollectionsKt.last((List<? extends Object>) this.inventoryItemsList)).getSlot() + 1, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, false, true, null, 3145726, null));
+                this.inventoryItemsList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), ((InventoryItem) CollectionsKt.last((List<? extends Object>) this.inventoryItemsList)).getSlot() + 1, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, false, true, null, null, 7340030, null));
                 if (i == nextMultipleOfFive) {
                     break;
                 }
@@ -570,7 +570,7 @@ public final class LavkaTypeScreen extends SAMPUIElement implements InterfaceCon
         List<InventoryItem> list = this.inventoryItemsList;
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
         for (InventoryItem inventoryItem : list) {
-            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, 4191743, null));
+            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, null, 8386047, null));
         }
         List<InventoryItem> mutableList = CollectionsKt.toMutableList((Collection) arrayList);
         this.inventoryItemsList = mutableList;

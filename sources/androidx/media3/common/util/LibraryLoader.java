@@ -1,5 +1,6 @@
 package androidx.media3.common.util;
 
+import com.google.common.base.Preconditions;
 import java.util.Arrays;
 /* loaded from: classes2.dex */
 public abstract class LibraryLoader {
@@ -15,7 +16,7 @@ public abstract class LibraryLoader {
     }
 
     public synchronized void setLibraries(String... strArr) {
-        Assertions.checkState(!this.loadAttempted, "Cannot set libraries after loading");
+        Preconditions.checkState(!this.loadAttempted, "Cannot set libraries after loading");
         this.nativeLibraries = strArr;
     }
 

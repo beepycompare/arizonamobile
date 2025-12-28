@@ -37,7 +37,7 @@ public final class AzVoiceSettings extends SAMPUIElement {
     private List<SoundSliderData> sliderList;
 
     /* renamed from: switch  reason: not valid java name */
-    private final SwitchCompat f157switch;
+    private final SwitchCompat f158switch;
     private final TextView switchText;
     private final TextView userVoiceSettingsButton;
 
@@ -52,7 +52,7 @@ public final class AzVoiceSettings extends SAMPUIElement {
         View findViewById = constraintLayout.findViewById(R.id.micro_switch);
         Intrinsics.checkNotNullExpressionValue(findViewById, "findViewById(...)");
         SwitchCompat switchCompat = (SwitchCompat) findViewById;
-        this.f157switch = switchCompat;
+        this.f158switch = switchCompat;
         View findViewById2 = constraintLayout.findViewById(R.id.micro_state_text);
         Intrinsics.checkNotNullExpressionValue(findViewById2, "findViewById(...)");
         this.switchText = (TextView) findViewById2;

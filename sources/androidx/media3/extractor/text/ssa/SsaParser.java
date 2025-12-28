@@ -9,7 +9,6 @@ import android.text.style.StyleSpan;
 import android.text.style.UnderlineSpan;
 import androidx.media3.common.C;
 import androidx.media3.common.text.Cue;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Consumer;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.ParsableByteArray;
@@ -19,6 +18,7 @@ import androidx.media3.extractor.text.CuesWithTiming;
 import androidx.media3.extractor.text.SubtitleParser;
 import androidx.media3.extractor.text.ssa.SsaStyle;
 import com.google.common.base.Ascii;
+import com.google.common.base.Preconditions;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -70,8 +70,8 @@ public final class SsaParser implements SubtitleParser {
         if (list != null && !list.isEmpty()) {
             this.haveInitializationData = true;
             String fromUtf8Bytes = Util.fromUtf8Bytes(list.get(0));
-            Assertions.checkArgument(fromUtf8Bytes.startsWith(FORMAT_LINE_PREFIX));
-            this.dialogueFormatFromInitializationData = (SsaDialogueFormat) Assertions.checkNotNull(SsaDialogueFormat.fromFormatLine(fromUtf8Bytes));
+            Preconditions.checkArgument(fromUtf8Bytes.startsWith(FORMAT_LINE_PREFIX));
+            this.dialogueFormatFromInitializationData = (SsaDialogueFormat) Preconditions.checkNotNull(SsaDialogueFormat.fromFormatLine(fromUtf8Bytes));
             parseHeader(new ParsableByteArray(list.get(1)), StandardCharsets.UTF_8);
             return;
         }
@@ -137,7 +137,7 @@ public final class SsaParser implements SubtitleParser {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:24:0x005b A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0059 A[SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:4:0x0006  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -222,7 +222,7 @@ public final class SsaParser implements SubtitleParser {
     private void parseDialogueLine(String str, SsaDialogueFormat ssaDialogueFormat, List<List<Cue>> list, List<Long> list2) {
         int parseInt;
         long parseTimecodeUs;
-        Assertions.checkArgument(str.startsWith(DIALOGUE_LINE_PREFIX));
+        Preconditions.checkArgument(str.startsWith(DIALOGUE_LINE_PREFIX));
         String[] split = str.substring(DIALOGUE_LINE_PREFIX.length()).split(StringUtils.COMMA, ssaDialogueFormat.length);
         if (split.length != ssaDialogueFormat.length) {
             Log.w(TAG, "Skipping dialogue line with fewer columns than format: " + str);

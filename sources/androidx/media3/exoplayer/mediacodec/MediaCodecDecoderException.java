@@ -12,10 +12,10 @@ public class MediaCodecDecoderException extends DecoderException {
         super("Decoder failed: " + (mediaCodecInfo == null ? null : mediaCodecInfo.name), th);
         this.codecInfo = mediaCodecInfo;
         this.diagnosticInfo = th instanceof MediaCodec.CodecException ? ((MediaCodec.CodecException) th).getDiagnosticInfo() : null;
-        this.errorCode = getErrorCodeV23(th);
+        this.errorCode = getErrorCode(th);
     }
 
-    private static int getErrorCodeV23(Throwable th) {
+    private static int getErrorCode(Throwable th) {
         if (th instanceof MediaCodec.CodecException) {
             return ((MediaCodec.CodecException) th).getErrorCode();
         }

@@ -51,11 +51,11 @@ public final class ScalingButtonKt$ScalingButtonLong$1$1 implements PointerInput
 
         @Override // kotlin.jvm.functions.Function3
         public /* bridge */ /* synthetic */ Object invoke(PressGestureScope pressGestureScope, Offset offset, Continuation<? super Unit> continuation) {
-            return m10052invoked4ec7I(pressGestureScope, offset.m5189unboximpl(), continuation);
+            return m10067invoked4ec7I(pressGestureScope, offset.m5189unboximpl(), continuation);
         }
 
         /* renamed from: invoke-d-4ec7I  reason: not valid java name */
-        public final Object m10052invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
+        public final Object m10067invoked4ec7I(PressGestureScope pressGestureScope, long j, Continuation<? super Unit> continuation) {
             AnonymousClass2 anonymousClass2 = new AnonymousClass2(this.$selected$delegate, continuation);
             anonymousClass2.L$0 = pressGestureScope;
             return anonymousClass2.invokeSuspend(Unit.INSTANCE);

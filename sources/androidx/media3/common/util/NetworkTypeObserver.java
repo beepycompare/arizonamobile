@@ -13,6 +13,7 @@ import android.telephony.TelephonyCallback;
 import android.telephony.TelephonyDisplayInfo;
 import android.telephony.TelephonyManager;
 import androidx.media3.common.util.NetworkTypeObserver;
+import com.google.common.base.Preconditions;
 import java.lang.ref.WeakReference;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -57,7 +58,7 @@ public final class NetworkTypeObserver {
         executor.execute(new Runnable() { // from class: androidx.media3.common.util.NetworkTypeObserver$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                NetworkTypeObserver.this.m8891lambda$new$0$androidxmedia3commonutilNetworkTypeObserver(context);
+                NetworkTypeObserver.this.m8895lambda$new$0$androidxmedia3commonutilNetworkTypeObserver(context);
             }
         });
     }
@@ -96,7 +97,7 @@ public final class NetworkTypeObserver {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: init */
-    public void m8891lambda$new$0$androidxmedia3commonutilNetworkTypeObserver(Context context) {
+    public void m8895lambda$new$0$androidxmedia3commonutilNetworkTypeObserver(Context context) {
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
         context.registerReceiver(new Receiver(), intentFilter);
@@ -207,7 +208,7 @@ public final class NetworkTypeObserver {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onReceive$0$androidx-media3-common-util-NetworkTypeObserver$Receiver  reason: not valid java name */
-        public /* synthetic */ void m8893x90e623c9(Context context) {
+        public /* synthetic */ void m8897x90e623c9(Context context) {
             NetworkTypeObserver.this.handleConnectivityActionBroadcast(context);
         }
 
@@ -216,7 +217,7 @@ public final class NetworkTypeObserver {
             NetworkTypeObserver.this.backgroundExecutor.execute(new Runnable() { // from class: androidx.media3.common.util.NetworkTypeObserver$Receiver$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    NetworkTypeObserver.Receiver.this.m8893x90e623c9(context);
+                    NetworkTypeObserver.Receiver.this.m8897x90e623c9(context);
                 }
             });
         }
@@ -230,7 +231,7 @@ public final class NetworkTypeObserver {
 
         public static void disambiguate4gAnd5gNsa(Context context, NetworkTypeObserver networkTypeObserver) {
             try {
-                TelephonyManager telephonyManager = (TelephonyManager) Assertions.checkNotNull((TelephonyManager) context.getSystemService("phone"));
+                TelephonyManager telephonyManager = (TelephonyManager) Preconditions.checkNotNull((TelephonyManager) context.getSystemService("phone"));
                 DisplayInfoCallback displayInfoCallback = new DisplayInfoCallback(networkTypeObserver);
                 telephonyManager.registerTelephonyCallback(networkTypeObserver.backgroundExecutor, displayInfoCallback);
                 telephonyManager.unregisterTelephonyCallback(displayInfoCallback);
@@ -275,14 +276,14 @@ public final class NetworkTypeObserver {
             this.executor.execute(new Runnable() { // from class: androidx.media3.common.util.NetworkTypeObserver$ListenerHolder$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    NetworkTypeObserver.ListenerHolder.this.m8892x7c19281b();
+                    NetworkTypeObserver.ListenerHolder.this.m8896x7c19281b();
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$callOnNetworkTypeChanged$0$androidx-media3-common-util-NetworkTypeObserver$ListenerHolder  reason: not valid java name */
-        public /* synthetic */ void m8892x7c19281b() {
+        public /* synthetic */ void m8896x7c19281b() {
             Listener listener = this.listener.get();
             if (listener != null) {
                 listener.onNetworkTypeChanged(NetworkTypeObserver.this.getNetworkType());

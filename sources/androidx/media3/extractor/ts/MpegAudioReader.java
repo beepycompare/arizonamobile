@@ -2,12 +2,12 @@ package androidx.media3.extractor.ts;
 
 import androidx.media3.common.C;
 import androidx.media3.common.Format;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.extractor.ExtractorOutput;
 import androidx.media3.extractor.MpegAudioUtil;
 import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.ts.TsPayloadReader;
+import com.google.common.base.Preconditions;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
 /* loaded from: classes3.dex */
 public final class MpegAudioReader implements ElementaryStreamReader {
@@ -72,7 +72,7 @@ public final class MpegAudioReader implements ElementaryStreamReader {
 
     @Override // androidx.media3.extractor.ts.ElementaryStreamReader
     public void consume(ParsableByteArray parsableByteArray) {
-        Assertions.checkStateNotNull(this.output);
+        Preconditions.checkNotNull(this.output);
         while (parsableByteArray.bytesLeft() > 0) {
             int i = this.state;
             if (i == 0) {
@@ -142,7 +142,7 @@ public final class MpegAudioReader implements ElementaryStreamReader {
         if (i < this.frameSize) {
             return;
         }
-        Assertions.checkState(this.timeUs != C.TIME_UNSET);
+        Preconditions.checkState(this.timeUs != C.TIME_UNSET);
         this.output.sampleMetadata(this.timeUs, 1, this.frameSize, 0, null);
         this.timeUs += this.frameDurationUs;
         this.frameBytesRead = 0;

@@ -5,6 +5,7 @@
         "ip": "mobile2.arizona-rp.com",
         "port": 5125,
         "online": 1000,
+        "queue": 0,
         "maxplayers": 1000,
         "password": false,
         "plotPoints": [
@@ -122,6 +123,7 @@
         "ip": "mobile1.arizona-rp.com",
         "port": 5125,
         "online": 1000,
+        "queue": 0,
         "maxplayers": 1000,
         "password": false,
         "plotPoints": [
@@ -238,6 +240,7 @@
         "ip": "mobile3.arizona-rp.com",
         "port": 5125,
         "online": 1000,
+        "queue": 0,
         "maxplayers": 1000,
         "password": false,
         "plotPoints": [

@@ -2,46 +2,40 @@ package androidx.media3.exoplayer.source.preload;
 
 import android.os.Handler;
 import android.os.Looper;
-import androidx.media3.common.FlagSet;
 import androidx.media3.common.MediaItem;
-import androidx.media3.common.util.Assertions;
-import androidx.media3.common.util.Clock;
 import androidx.media3.common.util.ListenerSet;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.source.MediaSource;
+import androidx.media3.exoplayer.source.preload.BasePreloadManager;
+import androidx.media3.exoplayer.source.preload.RankingDataComparator;
+import com.google.common.base.Preconditions;
+import com.google.common.base.Predicate;
 import com.google.common.base.Supplier;
-import java.util.Comparator;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
-import java.util.Map;
-import java.util.PriorityQueue;
+import java.util.List;
 /* loaded from: classes3.dex */
 public abstract class BasePreloadManager<T, PreloadStatusT> {
     private final Handler applicationHandler;
+    private int indexForSourceHolderToClear;
+    private int indexForSourceHolderToPreload;
     private final ListenerSet<PreloadManagerListener> listeners;
     private final Object lock = new Object();
-    private final Map<MediaItem, BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder> mediaItemMediaSourceHolderMap;
     private final MediaSource.Factory mediaSourceFactory;
-    protected final Comparator<T> rankingDataComparator;
-    private final PriorityQueue<BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder> sourceHolderPriorityQueue;
+    private final BasePreloadManager<T, PreloadStatusT>.MediaSourceHolderMap mediaSourceHolderMap;
+    protected final RankingDataComparator<T> rankingDataComparator;
+    private final List<BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder> sourceHolderPriorityList;
     private final TargetPreloadStatusControl<T, PreloadStatusT> targetPreloadStatusControl;
     private PreloadStatusT targetPreloadStatusOfCurrentPreloadingSource;
 
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void lambda$new$0(PreloadManagerListener preloadManagerListener, FlagSet flagSet) {
-    }
+    protected abstract BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder createMediaSourceHolder(MediaItem mediaItem, MediaSource mediaSource, T t);
 
-    protected abstract void clearSourceInternal(MediaSource mediaSource);
-
-    protected MediaSource createMediaSourceForPreloading(MediaSource mediaSource) {
-        return mediaSource;
-    }
-
-    protected abstract void preloadSourceInternal(MediaSource mediaSource, PreloadStatusT preloadstatust);
+    protected abstract void preloadMediaSourceHolderInternal(BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder mediaSourceHolder, PreloadStatusT preloadstatust);
 
     protected void releaseInternal() {
     }
-
-    protected abstract void releaseSourceInternal(MediaSource mediaSource);
 
     protected boolean shouldStartPreloadingNextSource() {
         return true;
@@ -50,33 +44,34 @@ public abstract class BasePreloadManager<T, PreloadStatusT> {
     /* loaded from: classes3.dex */
     protected static abstract class BuilderBase<T, PreloadStatusT> {
         protected Supplier<MediaSource.Factory> mediaSourceFactorySupplier;
-        protected final Comparator<T> rankingDataComparator;
+        protected RankingDataComparator<T> rankingDataComparator;
         protected final TargetPreloadStatusControl<T, PreloadStatusT> targetPreloadStatusControl;
 
         public abstract BasePreloadManager<T, PreloadStatusT> build();
 
-        public BuilderBase(Comparator<T> comparator, TargetPreloadStatusControl<T, PreloadStatusT> targetPreloadStatusControl, Supplier<MediaSource.Factory> supplier) {
-            this.rankingDataComparator = comparator;
+        public BuilderBase(RankingDataComparator<T> rankingDataComparator, TargetPreloadStatusControl<T, PreloadStatusT> targetPreloadStatusControl, Supplier<MediaSource.Factory> supplier) {
+            this.rankingDataComparator = rankingDataComparator;
             this.targetPreloadStatusControl = targetPreloadStatusControl;
             this.mediaSourceFactorySupplier = supplier;
         }
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    public BasePreloadManager(Comparator<T> comparator, TargetPreloadStatusControl<T, PreloadStatusT> targetPreloadStatusControl, MediaSource.Factory factory) {
+    public BasePreloadManager(RankingDataComparator<T> rankingDataComparator, TargetPreloadStatusControl<T, PreloadStatusT> targetPreloadStatusControl, MediaSource.Factory factory) {
         Handler createHandlerForCurrentOrMainLooper = Util.createHandlerForCurrentOrMainLooper();
         this.applicationHandler = createHandlerForCurrentOrMainLooper;
-        this.rankingDataComparator = comparator;
+        this.rankingDataComparator = rankingDataComparator;
         this.targetPreloadStatusControl = targetPreloadStatusControl;
         this.mediaSourceFactory = factory;
-        this.listeners = new ListenerSet<>(createHandlerForCurrentOrMainLooper.getLooper(), Clock.DEFAULT, new ListenerSet.IterationFinishedEvent() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda5
-            @Override // androidx.media3.common.util.ListenerSet.IterationFinishedEvent
-            public final void invoke(Object obj, FlagSet flagSet) {
-                BasePreloadManager.lambda$new$0((PreloadManagerListener) obj, flagSet);
+        this.listeners = new ListenerSet<>(createHandlerForCurrentOrMainLooper.getLooper());
+        this.mediaSourceHolderMap = new MediaSourceHolderMap();
+        rankingDataComparator.setInvalidationListener(new RankingDataComparator.InvalidationListener() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda2
+            @Override // androidx.media3.exoplayer.source.preload.RankingDataComparator.InvalidationListener
+            public final void onRankingDataComparatorInvalidated() {
+                BasePreloadManager.this.invalidate();
             }
         });
-        this.mediaItemMediaSourceHolderMap = new HashMap();
-        this.sourceHolderPriorityQueue = new PriorityQueue<>();
+        this.sourceHolderPriorityList = new ArrayList();
     }
 
     public void addListener(PreloadManagerListener preloadManagerListener) {
@@ -94,62 +89,129 @@ public abstract class BasePreloadManager<T, PreloadStatusT> {
     }
 
     public final int getSourceCount() {
-        return this.mediaItemMediaSourceHolderMap.size();
+        return this.mediaSourceHolderMap.size();
+    }
+
+    public final void addMediaItems(List<MediaItem> list, List<T> list2) {
+        Preconditions.checkArgument(list.size() == list2.size());
+        for (int i = 0; i < list.size(); i++) {
+            add(list.get(i), (MediaItem) list2.get(i));
+        }
+        invalidate();
     }
 
     public final void add(MediaItem mediaItem, T t) {
         add(this.mediaSourceFactory.createMediaSource(mediaItem), (MediaSource) t);
     }
 
+    public final void addMediaSources(List<MediaSource> list, List<T> list2) {
+        Preconditions.checkArgument(list.size() == list2.size());
+        for (int i = 0; i < list.size(); i++) {
+            add(list.get(i), (MediaSource) list2.get(i));
+        }
+        invalidate();
+    }
+
     public final void add(MediaSource mediaSource, T t) {
-        MediaSource createMediaSourceForPreloading = createMediaSourceForPreloading(mediaSource);
-        this.mediaItemMediaSourceHolderMap.put(createMediaSourceForPreloading.getMediaItem(), new MediaSourceHolder(createMediaSourceForPreloading, t));
+        BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder createMediaSourceHolder = createMediaSourceHolder(mediaSource.getMediaItem(), mediaSource, t);
+        this.mediaSourceHolderMap.put(createMediaSourceHolder.mediaItem, createMediaSourceHolder.getMediaSource(), createMediaSourceHolder);
     }
 
     public final void invalidate() {
         synchronized (this.lock) {
-            this.sourceHolderPriorityQueue.clear();
-            this.sourceHolderPriorityQueue.addAll(this.mediaItemMediaSourceHolderMap.values());
-            while (!this.sourceHolderPriorityQueue.isEmpty() && !maybeStartPreloadNextSource()) {
-                this.sourceHolderPriorityQueue.poll();
+            resetSourceHolderPriorityList();
+            while (this.indexForSourceHolderToPreload < this.sourceHolderPriorityList.size() && !maybeStartPreloadingNextSourceHolder()) {
+                this.indexForSourceHolderToPreload++;
             }
         }
     }
 
+    private void resetSourceHolderPriorityList() {
+        this.sourceHolderPriorityList.clear();
+        this.sourceHolderPriorityList.addAll(this.mediaSourceHolderMap.values());
+        Collections.sort(this.sourceHolderPriorityList);
+        this.indexForSourceHolderToPreload = 0;
+        this.indexForSourceHolderToClear = this.sourceHolderPriorityList.size() - 1;
+    }
+
     public final MediaSource getMediaSource(MediaItem mediaItem) {
-        if (this.mediaItemMediaSourceHolderMap.containsKey(mediaItem)) {
-            return this.mediaItemMediaSourceHolderMap.get(mediaItem).mediaSource;
+        if (this.mediaSourceHolderMap.containsKey(mediaItem)) {
+            return ((MediaSourceHolder) Preconditions.checkNotNull(this.mediaSourceHolderMap.get(mediaItem))).getMediaSource();
         }
         return null;
     }
 
     public final boolean remove(MediaItem mediaItem) {
-        if (this.mediaItemMediaSourceHolderMap.containsKey(mediaItem)) {
-            MediaSource mediaSource = this.mediaItemMediaSourceHolderMap.get(mediaItem).mediaSource;
-            this.mediaItemMediaSourceHolderMap.remove(mediaItem);
-            releaseSourceInternal(mediaSource);
+        BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder mediaSourceHolder = this.mediaSourceHolderMap.get(mediaItem);
+        if (mediaSourceHolder != null) {
+            releaseMediaSourceHolderInternal(mediaSourceHolder);
+            this.mediaSourceHolderMap.remove(mediaItem);
+            if (isCurrentlyPreloading(mediaSourceHolder)) {
+                maybeAdvanceToNextMediaSourceHolder();
+                return true;
+            }
             return true;
         }
         return false;
+    }
+
+    public final void removeMediaItems(List<MediaItem> list) {
+        BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder currentlyPreloadingMediaSourceHolder;
+        for (MediaItem mediaItem : list) {
+            BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder mediaSourceHolder = this.mediaSourceHolderMap.get(mediaItem);
+            if (mediaSourceHolder != null) {
+                releaseMediaSourceHolderInternal(mediaSourceHolder);
+                this.mediaSourceHolderMap.remove(mediaItem);
+            }
+        }
+        synchronized (this.lock) {
+            currentlyPreloadingMediaSourceHolder = getCurrentlyPreloadingMediaSourceHolder();
+        }
+        if (currentlyPreloadingMediaSourceHolder == null || !currentlyPreloadingMediaSourceHolder.isReleased()) {
+            return;
+        }
+        maybeAdvanceToNextMediaSourceHolder();
     }
 
     public final boolean remove(MediaSource mediaSource) {
-        MediaItem mediaItem = mediaSource.getMediaItem();
-        if (this.mediaItemMediaSourceHolderMap.containsKey(mediaItem) && mediaSource == this.mediaItemMediaSourceHolderMap.get(mediaItem).mediaSource) {
-            this.mediaItemMediaSourceHolderMap.remove(mediaItem);
-            releaseSourceInternal(mediaSource);
+        BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder mediaSourceHolder = this.mediaSourceHolderMap.get(mediaSource);
+        if (mediaSourceHolder != null) {
+            releaseMediaSourceHolderInternal(mediaSourceHolder);
+            this.mediaSourceHolderMap.remove(mediaSource);
+            if (isCurrentlyPreloading(mediaSourceHolder)) {
+                maybeAdvanceToNextMediaSourceHolder();
+                return true;
+            }
             return true;
         }
         return false;
     }
 
-    public final void reset() {
-        for (BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder mediaSourceHolder : this.mediaItemMediaSourceHolderMap.values()) {
-            releaseSourceInternal(mediaSourceHolder.mediaSource);
+    public final void removeMediaSources(List<MediaSource> list) {
+        BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder currentlyPreloadingMediaSourceHolder;
+        for (MediaSource mediaSource : list) {
+            BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder mediaSourceHolder = this.mediaSourceHolderMap.get(mediaSource);
+            if (mediaSourceHolder != null) {
+                releaseMediaSourceHolderInternal(mediaSourceHolder);
+                this.mediaSourceHolderMap.remove(mediaSource);
+            }
         }
-        this.mediaItemMediaSourceHolderMap.clear();
         synchronized (this.lock) {
-            this.sourceHolderPriorityQueue.clear();
+            currentlyPreloadingMediaSourceHolder = getCurrentlyPreloadingMediaSourceHolder();
+        }
+        if (currentlyPreloadingMediaSourceHolder == null || !currentlyPreloadingMediaSourceHolder.isReleased()) {
+            return;
+        }
+        maybeAdvanceToNextMediaSourceHolder();
+    }
+
+    public final void reset() {
+        for (BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder mediaSourceHolder : this.mediaSourceHolderMap.values()) {
+            releaseMediaSourceHolderInternal(mediaSourceHolder);
+        }
+        this.mediaSourceHolderMap.clear();
+        synchronized (this.lock) {
+            resetSourceHolderPriorityList();
             this.targetPreloadStatusOfCurrentPreloadingSource = null;
         }
     }
@@ -161,105 +223,236 @@ public abstract class BasePreloadManager<T, PreloadStatusT> {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    public final void onPreloadCompleted(final MediaSource mediaSource) {
-        synchronized (this.lock) {
-            if (isPreloading(mediaSource)) {
-                this.applicationHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda2
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        BasePreloadManager.this.m9015xf9589f29(mediaSource);
-                    }
-                });
+    public final void onCompleted(final MediaSource mediaSource, final Predicate<PreloadStatusT> predicate) {
+        this.applicationHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda1
+            @Override // java.lang.Runnable
+            public final void run() {
+                BasePreloadManager.this.m9024x3eecb679(mediaSource, predicate);
             }
-        }
+        });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* renamed from: lambda$onPreloadCompleted$2$androidx-media3-exoplayer-source-preload-BasePreloadManager  reason: not valid java name */
-    public /* synthetic */ void m9015xf9589f29(final MediaSource mediaSource) {
-        this.listeners.sendEvent(-1, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda0
-            @Override // androidx.media3.common.util.ListenerSet.Event
-            public final void invoke(Object obj) {
-                ((PreloadManagerListener) obj).onCompleted(MediaSource.this.getMediaItem());
-            }
-        });
-        m9017x7039cf91(mediaSource);
+    /* renamed from: lambda$onCompleted$1$androidx-media3-exoplayer-source-preload-BasePreloadManager  reason: not valid java name */
+    public /* synthetic */ void m9024x3eecb679(MediaSource mediaSource, Predicate predicate) {
+        PreloadStatusT targetPreloadStatusIfCurrentlyPreloading = getTargetPreloadStatusIfCurrentlyPreloading(mediaSource);
+        if (targetPreloadStatusIfCurrentlyPreloading == null) {
+            return;
+        }
+        final MediaSourceHolder mediaSourceHolder = (MediaSourceHolder) Preconditions.checkNotNull(this.mediaSourceHolderMap.get(mediaSource));
+        if (predicate.apply(targetPreloadStatusIfCurrentlyPreloading)) {
+            this.listeners.sendEvent(new ListenerSet.Event() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda7
+                @Override // androidx.media3.common.util.ListenerSet.Event
+                public final void invoke(Object obj) {
+                    ((PreloadManagerListener) obj).onCompleted(BasePreloadManager.MediaSourceHolder.this.mediaItem);
+                }
+            });
+            maybeAdvanceToNextMediaSourceHolder();
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    public final void onPreloadError(final PreloadException preloadException, final MediaSource mediaSource) {
-        synchronized (this.lock) {
-            if (isPreloading(mediaSource)) {
-                this.applicationHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda4
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        BasePreloadManager.this.m9016x773570a8(preloadException, mediaSource);
-                    }
-                });
+    public final void onCompleted(final MediaItem mediaItem, final Predicate<PreloadStatusT> predicate) {
+        this.applicationHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda10
+            @Override // java.lang.Runnable
+            public final void run() {
+                BasePreloadManager.this.m9025xb3d7f77b(mediaItem, predicate);
             }
-        }
+        });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* renamed from: lambda$onPreloadError$4$androidx-media3-exoplayer-source-preload-BasePreloadManager  reason: not valid java name */
-    public /* synthetic */ void m9016x773570a8(final PreloadException preloadException, MediaSource mediaSource) {
-        this.listeners.sendEvent(-1, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda1
-            @Override // androidx.media3.common.util.ListenerSet.Event
-            public final void invoke(Object obj) {
-                ((PreloadManagerListener) obj).onError(PreloadException.this);
+    /* renamed from: lambda$onCompleted$3$androidx-media3-exoplayer-source-preload-BasePreloadManager  reason: not valid java name */
+    public /* synthetic */ void m9025xb3d7f77b(MediaItem mediaItem, Predicate predicate) {
+        PreloadStatusT targetPreloadStatusIfCurrentlyPreloading = getTargetPreloadStatusIfCurrentlyPreloading(mediaItem);
+        if (targetPreloadStatusIfCurrentlyPreloading == null) {
+            return;
+        }
+        final MediaSourceHolder mediaSourceHolder = (MediaSourceHolder) Preconditions.checkNotNull(this.mediaSourceHolderMap.get(mediaItem));
+        if (predicate.apply(targetPreloadStatusIfCurrentlyPreloading)) {
+            this.listeners.sendEvent(new ListenerSet.Event() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda8
+                @Override // androidx.media3.common.util.ListenerSet.Event
+                public final void invoke(Object obj) {
+                    ((PreloadManagerListener) obj).onCompleted(BasePreloadManager.MediaSourceHolder.this.mediaItem);
+                }
+            });
+            maybeAdvanceToNextMediaSourceHolder();
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    public final void onError(final PreloadException preloadException, final MediaSource mediaSource, final Predicate<PreloadStatusT> predicate) {
+        this.applicationHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda9
+            @Override // java.lang.Runnable
+            public final void run() {
+                BasePreloadManager.this.m9026x72a3597a(mediaSource, predicate, preloadException);
             }
         });
-        m9017x7039cf91(mediaSource);
     }
 
-    /* JADX INFO: Access modifiers changed from: protected */
-    public final void onPreloadSkipped(final MediaSource mediaSource) {
-        synchronized (this.lock) {
-            if (isPreloading(mediaSource)) {
-                Util.postOrRun(this.applicationHandler, new Runnable() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda3
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        BasePreloadManager.this.m9017x7039cf91(mediaSource);
-                    }
-                });
-            }
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* renamed from: lambda$onError$5$androidx-media3-exoplayer-source-preload-BasePreloadManager  reason: not valid java name */
+    public /* synthetic */ void m9026x72a3597a(MediaSource mediaSource, Predicate predicate, final PreloadException preloadException) {
+        PreloadStatusT targetPreloadStatusIfCurrentlyPreloading = getTargetPreloadStatusIfCurrentlyPreloading(mediaSource);
+        if (targetPreloadStatusIfCurrentlyPreloading != null && predicate.apply(targetPreloadStatusIfCurrentlyPreloading)) {
+            this.listeners.sendEvent(new ListenerSet.Event() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda5
+                @Override // androidx.media3.common.util.ListenerSet.Event
+                public final void invoke(Object obj) {
+                    ((PreloadManagerListener) obj).onError(PreloadException.this);
+                }
+            });
+            maybeAdvanceToNextMediaSourceHolder();
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    /* renamed from: maybeAdvanceToNextSource */
-    public void m9017x7039cf91(MediaSource mediaSource) {
-        synchronized (this.lock) {
-            if (isPreloading(mediaSource)) {
-                do {
-                    this.sourceHolderPriorityQueue.poll();
-                    if (this.sourceHolderPriorityQueue.isEmpty()) {
-                        break;
-                    }
-                } while (!maybeStartPreloadNextSource());
+    /* JADX INFO: Access modifiers changed from: protected */
+    public final void onError(final PreloadException preloadException, final MediaItem mediaItem, final Predicate<PreloadStatusT> predicate) {
+        this.applicationHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda3
+            @Override // java.lang.Runnable
+            public final void run() {
+                BasePreloadManager.this.m9027xe78e9a7c(mediaItem, predicate, preloadException);
             }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* renamed from: lambda$onError$7$androidx-media3-exoplayer-source-preload-BasePreloadManager  reason: not valid java name */
+    public /* synthetic */ void m9027xe78e9a7c(MediaItem mediaItem, Predicate predicate, final PreloadException preloadException) {
+        PreloadStatusT targetPreloadStatusIfCurrentlyPreloading = getTargetPreloadStatusIfCurrentlyPreloading(mediaItem);
+        if (targetPreloadStatusIfCurrentlyPreloading != null && predicate.apply(targetPreloadStatusIfCurrentlyPreloading)) {
+            this.listeners.sendEvent(new ListenerSet.Event() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda6
+                @Override // androidx.media3.common.util.ListenerSet.Event
+                public final void invoke(Object obj) {
+                    ((PreloadManagerListener) obj).onError(PreloadException.this);
+                }
+            });
+            maybeAdvanceToNextMediaSourceHolder();
         }
     }
 
-    private boolean isPreloading(MediaSource mediaSource) {
-        return !this.sourceHolderPriorityQueue.isEmpty() && ((MediaSourceHolder) Assertions.checkNotNull(this.sourceHolderPriorityQueue.peek())).mediaSource == mediaSource;
+    /* JADX INFO: Access modifiers changed from: protected */
+    public final void onSkipped(final MediaSource mediaSource, final Predicate<PreloadStatusT> predicate) {
+        Util.postOrRun(this.applicationHandler, new Runnable() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda0
+            @Override // java.lang.Runnable
+            public final void run() {
+                BasePreloadManager.this.m9029x83a22925(mediaSource, predicate);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* renamed from: lambda$onSkipped$8$androidx-media3-exoplayer-source-preload-BasePreloadManager  reason: not valid java name */
+    public /* synthetic */ void m9029x83a22925(MediaSource mediaSource, Predicate predicate) {
+        PreloadStatusT targetPreloadStatusIfCurrentlyPreloading = getTargetPreloadStatusIfCurrentlyPreloading(mediaSource);
+        if (targetPreloadStatusIfCurrentlyPreloading != null && predicate.apply(targetPreloadStatusIfCurrentlyPreloading)) {
+            maybeAdvanceToNextMediaSourceHolder();
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
-    public final PreloadStatusT getTargetPreloadStatus(MediaSource mediaSource) {
+    public final void onSourceCleared() {
         synchronized (this.lock) {
-            if (isPreloading(mediaSource)) {
+            this.indexForSourceHolderToClear--;
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    public final void onMediaSourceUpdated(final MediaItem mediaItem, final MediaSource mediaSource) {
+        Util.postOrRun(this.applicationHandler, new Runnable() { // from class: androidx.media3.exoplayer.source.preload.BasePreloadManager$$ExternalSyntheticLambda4
+            @Override // java.lang.Runnable
+            public final void run() {
+                BasePreloadManager.this.m9028xfe00ce8a(mediaItem, mediaSource);
+            }
+        });
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    /* renamed from: lambda$onMediaSourceUpdated$9$androidx-media3-exoplayer-source-preload-BasePreloadManager  reason: not valid java name */
+    public /* synthetic */ void m9028xfe00ce8a(MediaItem mediaItem, MediaSource mediaSource) {
+        if (getTargetPreloadStatusIfCurrentlyPreloading(mediaItem) == null) {
+            return;
+        }
+        BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder mediaSourceHolder = (MediaSourceHolder) Preconditions.checkNotNull(this.mediaSourceHolderMap.get(mediaItem));
+        this.mediaSourceHolderMap.remove(mediaItem);
+        mediaSourceHolder.setMediaSource(mediaSource);
+        this.mediaSourceHolderMap.put(mediaItem, mediaSource, mediaSourceHolder);
+    }
+
+    private void maybeAdvanceToNextMediaSourceHolder() {
+        synchronized (this.lock) {
+            do {
+                int i = this.indexForSourceHolderToPreload + 1;
+                this.indexForSourceHolderToPreload = i;
+                if (i >= this.sourceHolderPriorityList.size()) {
+                    break;
+                }
+            } while (!maybeStartPreloadingNextSourceHolder());
+        }
+    }
+
+    private BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder getCurrentlyPreloadingMediaSourceHolder() {
+        if (this.indexForSourceHolderToPreload >= this.sourceHolderPriorityList.size()) {
+            return null;
+        }
+        return this.sourceHolderPriorityList.get(this.indexForSourceHolderToPreload);
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    public BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder getMediaSourceHolderToClear() {
+        synchronized (this.lock) {
+            int i = this.indexForSourceHolderToPreload;
+            int i2 = this.indexForSourceHolderToClear;
+            if (i >= i2) {
+                return null;
+            }
+            return this.sourceHolderPriorityList.get(i2);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    public final PreloadStatusT getTargetPreloadStatusIfCurrentlyPreloading(MediaSource mediaSource) {
+        synchronized (this.lock) {
+            BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder currentlyPreloadingMediaSourceHolder = getCurrentlyPreloadingMediaSourceHolder();
+            if (currentlyPreloadingMediaSourceHolder != null && mediaSource == currentlyPreloadingMediaSourceHolder.getMediaSource()) {
                 return this.targetPreloadStatusOfCurrentPreloadingSource;
             }
             return null;
         }
     }
 
-    private boolean maybeStartPreloadNextSource() {
+    /* JADX INFO: Access modifiers changed from: protected */
+    public final PreloadStatusT getTargetPreloadStatusIfCurrentlyPreloading(MediaItem mediaItem) {
+        synchronized (this.lock) {
+            BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder currentlyPreloadingMediaSourceHolder = getCurrentlyPreloadingMediaSourceHolder();
+            if (currentlyPreloadingMediaSourceHolder != null && mediaItem.equals(currentlyPreloadingMediaSourceHolder.mediaItem)) {
+                return this.targetPreloadStatusOfCurrentPreloadingSource;
+            }
+            return null;
+        }
+    }
+
+    private boolean isCurrentlyPreloading(BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder mediaSourceHolder) {
+        boolean z;
+        synchronized (this.lock) {
+            z = mediaSourceHolder == getCurrentlyPreloadingMediaSourceHolder();
+        }
+        return z;
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    public void releaseMediaSourceHolderInternal(BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder mediaSourceHolder) {
+        mediaSourceHolder.release();
+    }
+
+    private boolean maybeStartPreloadingNextSourceHolder() {
         if (shouldStartPreloadingNextSource()) {
-            MediaSourceHolder mediaSourceHolder = (MediaSourceHolder) Assertions.checkNotNull(this.sourceHolderPriorityQueue.peek());
-            this.targetPreloadStatusOfCurrentPreloadingSource = this.targetPreloadStatusControl.getTargetPreloadStatus(mediaSourceHolder.rankingData);
-            preloadSourceInternal(mediaSourceHolder.mediaSource, this.targetPreloadStatusOfCurrentPreloadingSource);
+            BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder mediaSourceHolder = this.sourceHolderPriorityList.get(this.indexForSourceHolderToPreload);
+            if (mediaSourceHolder.isReleased()) {
+                return false;
+            }
+            PreloadStatusT targetPreloadStatus = this.targetPreloadStatusControl.getTargetPreloadStatus(mediaSourceHolder.rankingData);
+            this.targetPreloadStatusOfCurrentPreloadingSource = targetPreloadStatus;
+            preloadMediaSourceHolderInternal(mediaSourceHolder, targetPreloadStatus);
             return true;
         }
         return false;
@@ -271,24 +464,105 @@ public abstract class BasePreloadManager<T, PreloadStatusT> {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: protected */
     /* loaded from: classes3.dex */
-    public final class MediaSourceHolder implements Comparable<BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder> {
-        public final MediaSource mediaSource;
+    public class MediaSourceHolder implements Comparable<BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder> {
+        public final MediaItem mediaItem;
+        private MediaSource mediaSource;
         public final T rankingData;
+        private boolean released;
 
         @Override // java.lang.Comparable
         public /* bridge */ /* synthetic */ int compareTo(Object obj) {
             return compareTo((MediaSourceHolder) ((MediaSourceHolder) obj));
         }
 
-        public MediaSourceHolder(MediaSource mediaSource, T t) {
-            this.mediaSource = mediaSource;
+        public MediaSourceHolder(MediaItem mediaItem, T t, MediaSource mediaSource) {
+            this.mediaItem = mediaItem;
             this.rankingData = t;
+            this.mediaSource = mediaSource;
+        }
+
+        public final void release() {
+            this.released = true;
+        }
+
+        public final boolean isReleased() {
+            return this.released;
+        }
+
+        public synchronized MediaSource getMediaSource() {
+            return this.mediaSource;
+        }
+
+        public synchronized void setMediaSource(MediaSource mediaSource) {
+            this.mediaSource = mediaSource;
         }
 
         public int compareTo(BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder mediaSourceHolder) {
             return BasePreloadManager.this.rankingDataComparator.compare(this.rankingData, mediaSourceHolder.rankingData);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* loaded from: classes3.dex */
+    public final class MediaSourceHolderMap {
+        private final HashMap<MediaItem, BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder> mediaItemToMediaSourceHolder = new HashMap<>();
+        private final HashMap<MediaSource, MediaItem> mediaSourceToMediaItem = new HashMap<>();
+
+        public MediaSourceHolderMap() {
+        }
+
+        public synchronized void put(MediaItem mediaItem, MediaSource mediaSource, BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder mediaSourceHolder) {
+            this.mediaItemToMediaSourceHolder.put(mediaItem, mediaSourceHolder);
+            this.mediaSourceToMediaItem.put(mediaSource, mediaItem);
+        }
+
+        public synchronized Collection<BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder> values() {
+            return this.mediaItemToMediaSourceHolder.values();
+        }
+
+        public synchronized int size() {
+            return this.mediaItemToMediaSourceHolder.size();
+        }
+
+        public synchronized boolean containsKey(MediaItem mediaItem) {
+            return this.mediaItemToMediaSourceHolder.containsKey(mediaItem);
+        }
+
+        public synchronized BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder get(MediaItem mediaItem) {
+            return this.mediaItemToMediaSourceHolder.get(mediaItem);
+        }
+
+        public synchronized BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder get(MediaSource mediaSource) {
+            MediaItem mediaItem = this.mediaSourceToMediaItem.get(mediaSource);
+            if (mediaItem != null) {
+                return (MediaSourceHolder) Preconditions.checkNotNull(this.mediaItemToMediaSourceHolder.get(mediaItem));
+            }
+            return null;
+        }
+
+        public synchronized boolean remove(MediaItem mediaItem) {
+            BasePreloadManager<T, PreloadStatusT>.MediaSourceHolder remove = this.mediaItemToMediaSourceHolder.remove(mediaItem);
+            if (remove == null) {
+                return false;
+            }
+            Preconditions.checkNotNull(this.mediaSourceToMediaItem.remove(remove.getMediaSource()));
+            return true;
+        }
+
+        public synchronized boolean remove(MediaSource mediaSource) {
+            MediaItem remove = this.mediaSourceToMediaItem.remove(mediaSource);
+            if (remove == null) {
+                return false;
+            }
+            Preconditions.checkNotNull(this.mediaItemToMediaSourceHolder.remove(remove));
+            return true;
+        }
+
+        public synchronized void clear() {
+            this.mediaItemToMediaSourceHolder.clear();
+            this.mediaSourceToMediaItem.clear();
         }
     }
 }

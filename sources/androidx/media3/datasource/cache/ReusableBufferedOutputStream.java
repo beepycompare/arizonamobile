@@ -1,7 +1,7 @@
 package androidx.media3.datasource.cache;
 
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import java.io.BufferedOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
@@ -40,7 +40,7 @@ public final class ReusableBufferedOutputStream extends BufferedOutputStream {
     }
 
     public void reset(OutputStream outputStream) {
-        Assertions.checkState(this.closed);
+        Preconditions.checkState(this.closed);
         this.out = outputStream;
         this.count = 0;
         this.closed = false;

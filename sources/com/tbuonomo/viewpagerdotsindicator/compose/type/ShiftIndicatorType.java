@@ -64,7 +64,7 @@ public final class ShiftIndicatorType extends IndicatorType {
 
     @Override // com.tbuonomo.viewpagerdotsindicator.compose.type.IndicatorType
     /* renamed from: IndicatorTypeComposable--jt2gSs */
-    public void mo10195IndicatorTypeComposablejt2gSs(final Function0<Float> globalOffsetProvider, final Modifier modifier, final int i, final float f, final Function1<? super Integer, Unit> function1, Composer composer, final int i2) {
+    public void mo10223IndicatorTypeComposablejt2gSs(final Function0<Float> globalOffsetProvider, final Modifier modifier, final int i, final float f, final Function1<? super Integer, Unit> function1, Composer composer, final int i2) {
         int i3;
         Composer composer2;
         Intrinsics.checkNotNullParameter(globalOffsetProvider, "globalOffsetProvider");
@@ -190,14 +190,14 @@ public final class ShiftIndicatorType extends IndicatorType {
 
                                             @Override // kotlin.jvm.functions.Function0
                                             public /* bridge */ /* synthetic */ Dp invoke() {
-                                                return Dp.m8256boximpl(m10198invokeD9Ej5fM());
+                                                return Dp.m8256boximpl(m10226invokeD9Ej5fM());
                                             }
 
                                             /* renamed from: invoke-D9Ej5fM  reason: not valid java name */
-                                            public final float m10198invokeD9Ej5fM() {
-                                                float m10197computeDotWidthchRvn1I;
-                                                m10197computeDotWidthchRvn1I = ShiftIndicatorType.this.m10197computeDotWidthchRvn1I(i6, function02.invoke().floatValue());
-                                                return m10197computeDotWidthchRvn1I;
+                                            public final float m10226invokeD9Ej5fM() {
+                                                float m10225computeDotWidthchRvn1I;
+                                                m10225computeDotWidthchRvn1I = ShiftIndicatorType.this.m10225computeDotWidthchRvn1I(i6, function02.invoke().floatValue());
+                                                return m10225computeDotWidthchRvn1I;
                                             }
                                         });
                                         composer3.updateRememberedValue(rememberedValue2);
@@ -290,7 +290,7 @@ public final class ShiftIndicatorType extends IndicatorType {
                 }
 
                 public final void invoke(Composer composer3, int i5) {
-                    ShiftIndicatorType.this.mo10195IndicatorTypeComposablejt2gSs(globalOffsetProvider, modifier, i, f, function1, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
+                    ShiftIndicatorType.this.mo10223IndicatorTypeComposablejt2gSs(globalOffsetProvider, modifier, i, f, function1, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
                 }
             });
         }
@@ -298,7 +298,7 @@ public final class ShiftIndicatorType extends IndicatorType {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: computeDotWidth-chRvn1I  reason: not valid java name */
-    public final float m10197computeDotWidthchRvn1I(int i, float f) {
-        return Dp.m8258constructorimpl(this.dotsGraphic.m10194getSizeD9Ej5fM() + Dp.m8258constructorimpl(Dp.m8258constructorimpl(RangesKt.coerceAtLeast(this.shiftSizeFactor - 1.0f, 0.0f) * this.dotsGraphic.m10194getSizeD9Ej5fM()) * (1.0f - RangesKt.coerceAtMost(Math.abs(i - f), 1.0f))));
+    public final float m10225computeDotWidthchRvn1I(int i, float f) {
+        return Dp.m8258constructorimpl(this.dotsGraphic.m10222getSizeD9Ej5fM() + Dp.m8258constructorimpl(Dp.m8258constructorimpl(RangesKt.coerceAtLeast(this.shiftSizeFactor - 1.0f, 0.0f) * this.dotsGraphic.m10222getSizeD9Ej5fM()) * (1.0f - RangesKt.coerceAtMost(Math.abs(i - f), 1.0f))));
     }
 }

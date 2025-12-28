@@ -1,9 +1,14 @@
 package androidx.text.emoji.flatbuffer;
 
+import androidx.text.emoji.flatbuffer.MetadataItem;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 /* loaded from: classes3.dex */
 public final class MetadataList extends Table {
+    public static void ValidateVersion() {
+        Constants.FLATBUFFERS_1_12_0();
+    }
+
     public static MetadataList getRootAsMetadataList(ByteBuffer byteBuffer) {
         return getRootAsMetadataList(byteBuffer, new MetadataList());
     }
@@ -14,8 +19,7 @@ public final class MetadataList extends Table {
     }
 
     public void __init(int i, ByteBuffer byteBuffer) {
-        this.bb_pos = i;
-        this.bb = byteBuffer;
+        __reset(i, byteBuffer);
     }
 
     public MetadataList __assign(int i, ByteBuffer byteBuffer) {
@@ -51,6 +55,18 @@ public final class MetadataList extends Table {
         return 0;
     }
 
+    public MetadataItem.Vector listVector() {
+        return listVector(new MetadataItem.Vector());
+    }
+
+    public MetadataItem.Vector listVector(MetadataItem.Vector vector) {
+        int __offset = __offset(6);
+        if (__offset != 0) {
+            return vector.__assign(__vector(__offset), 4, this.bb);
+        }
+        return null;
+    }
+
     public String sourceSha() {
         int __offset = __offset(8);
         if (__offset != 0) {
@@ -63,8 +79,12 @@ public final class MetadataList extends Table {
         return __vector_as_bytebuffer(8, 1);
     }
 
+    public ByteBuffer sourceShaInByteBuffer(ByteBuffer byteBuffer) {
+        return __vector_in_bytebuffer(byteBuffer, 8, 1);
+    }
+
     public static int createMetadataList(FlatBufferBuilder flatBufferBuilder, int i, int i2, int i3) {
-        flatBufferBuilder.startObject(3);
+        flatBufferBuilder.startTable(3);
         addSourceSha(flatBufferBuilder, i3);
         addList(flatBufferBuilder, i2);
         addVersion(flatBufferBuilder, i);
@@ -72,7 +92,7 @@ public final class MetadataList extends Table {
     }
 
     public static void startMetadataList(FlatBufferBuilder flatBufferBuilder) {
-        flatBufferBuilder.startObject(3);
+        flatBufferBuilder.startTable(3);
     }
 
     public static void addVersion(FlatBufferBuilder flatBufferBuilder, int i) {
@@ -100,10 +120,30 @@ public final class MetadataList extends Table {
     }
 
     public static int endMetadataList(FlatBufferBuilder flatBufferBuilder) {
-        return flatBufferBuilder.endObject();
+        return flatBufferBuilder.endTable();
     }
 
     public static void finishMetadataListBuffer(FlatBufferBuilder flatBufferBuilder, int i) {
         flatBufferBuilder.finish(i);
+    }
+
+    public static void finishSizePrefixedMetadataListBuffer(FlatBufferBuilder flatBufferBuilder, int i) {
+        flatBufferBuilder.finishSizePrefixed(i);
+    }
+
+    /* loaded from: classes3.dex */
+    public static final class Vector extends BaseVector {
+        public Vector __assign(int i, int i2, ByteBuffer byteBuffer) {
+            __reset(i, i2, byteBuffer);
+            return this;
+        }
+
+        public MetadataList get(int i) {
+            return get(new MetadataList(), i);
+        }
+
+        public MetadataList get(MetadataList metadataList, int i) {
+            return metadataList.__assign(MetadataList.__indirect(__element(i), this.bb), this.bb);
+        }
     }
 }

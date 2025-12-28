@@ -3,10 +3,10 @@ package androidx.media3.exoplayer.source;
 import androidx.media3.common.C;
 import androidx.media3.common.MediaItem;
 import androidx.media3.common.Timeline;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.exoplayer.upstream.Allocator;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -41,7 +41,7 @@ public final class ClippingMediaSource extends WrappingMediaSource {
         private long startPositionUs;
 
         public Builder(MediaSource mediaSource) {
-            this.mediaSource = (MediaSource) Assertions.checkNotNull(mediaSource);
+            this.mediaSource = (MediaSource) Preconditions.checkNotNull(mediaSource);
         }
 
         public Builder setStartPositionMs(long j) {
@@ -49,8 +49,8 @@ public final class ClippingMediaSource extends WrappingMediaSource {
         }
 
         public Builder setStartPositionUs(long j) {
-            Assertions.checkArgument(j >= 0);
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkArgument(j >= 0);
+            Preconditions.checkState(!this.buildCalled);
             this.startPositionUs = j;
             return this;
         }
@@ -60,31 +60,31 @@ public final class ClippingMediaSource extends WrappingMediaSource {
         }
 
         public Builder setEndPositionUs(long j) {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             this.endPositionUs = j;
             return this;
         }
 
         public Builder setEnableInitialDiscontinuity(boolean z) {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             this.enableInitialDiscontinuity = z;
             return this;
         }
 
         public Builder setAllowDynamicClippingUpdates(boolean z) {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             this.allowDynamicClippingUpdates = z;
             return this;
         }
 
         public Builder setRelativeToDefaultPosition(boolean z) {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             this.relativeToDefaultPosition = z;
             return this;
         }
 
         public Builder setAllowUnseekableMedia(boolean z) {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             this.allowUnseekableMedia = z;
             return this;
         }
@@ -123,7 +123,7 @@ public final class ClippingMediaSource extends WrappingMediaSource {
                 boolean z = true;
                 if (i != 1) {
                     if (i == 2) {
-                        Assertions.checkState((j == C.TIME_UNSET || j2 == C.TIME_UNSET) ? false : false);
+                        Preconditions.checkState((j == C.TIME_UNSET || j2 == C.TIME_UNSET) ? false : false);
                         return "start exceeds end. Start time: " + j + ", End time: " + j2;
                     }
                     return "unknown";
@@ -184,12 +184,12 @@ public final class ClippingMediaSource extends WrappingMediaSource {
 
     @Override // androidx.media3.exoplayer.source.WrappingMediaSource, androidx.media3.exoplayer.source.MediaSource
     public void releasePeriod(MediaPeriod mediaPeriod) {
-        Assertions.checkState(this.mediaPeriods.remove(mediaPeriod));
+        Preconditions.checkState(this.mediaPeriods.remove(mediaPeriod));
         this.mediaSource.releasePeriod(((ClippingMediaPeriod) mediaPeriod).mediaPeriod);
         if (!this.mediaPeriods.isEmpty() || this.allowDynamicClippingUpdates) {
             return;
         }
-        refreshClippedTimeline(((ClippingTimeline) Assertions.checkNotNull(this.clippingTimeline)).timeline);
+        refreshClippedTimeline(((ClippingTimeline) Preconditions.checkNotNull(this.clippingTimeline)).timeline);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

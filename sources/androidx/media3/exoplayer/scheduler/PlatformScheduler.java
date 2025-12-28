@@ -9,9 +9,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.PersistableBundle;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 /* loaded from: classes3.dex */
 public final class PlatformScheduler implements Scheduler {
     private static final String KEY_REQUIREMENTS = "requirements";
@@ -31,7 +31,7 @@ public final class PlatformScheduler implements Scheduler {
         Context applicationContext = context.getApplicationContext();
         this.jobId = i;
         this.jobServiceComponentName = new ComponentName(applicationContext, PlatformSchedulerService.class);
-        this.jobScheduler = (JobScheduler) Assertions.checkNotNull((JobScheduler) applicationContext.getSystemService("jobscheduler"));
+        this.jobScheduler = (JobScheduler) Preconditions.checkNotNull((JobScheduler) applicationContext.getSystemService("jobscheduler"));
     }
 
     @Override // androidx.media3.exoplayer.scheduler.Scheduler
@@ -87,7 +87,7 @@ public final class PlatformScheduler implements Scheduler {
             PersistableBundle extras = jobParameters.getExtras();
             int notMetRequirements = new Requirements(extras.getInt("requirements")).getNotMetRequirements(this);
             if (notMetRequirements == 0) {
-                Util.startForegroundService(this, new Intent((String) Assertions.checkNotNull(extras.getString(PlatformScheduler.KEY_SERVICE_ACTION))).setPackage((String) Assertions.checkNotNull(extras.getString(PlatformScheduler.KEY_SERVICE_PACKAGE))));
+                Util.startForegroundService(this, new Intent((String) Preconditions.checkNotNull(extras.getString(PlatformScheduler.KEY_SERVICE_ACTION))).setPackage((String) Preconditions.checkNotNull(extras.getString(PlatformScheduler.KEY_SERVICE_PACKAGE))));
                 return false;
             }
             Log.w(PlatformScheduler.TAG, "Requirements not met: " + notMetRequirements);

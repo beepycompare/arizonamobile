@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import androidx.viewbinding.ViewBinding;
 import com.google.android.material.button.MaterialButton;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class InteractionButtonBinding implements ViewBinding {
     public final MaterialButton interaction;
     private final MaterialButton rootView;

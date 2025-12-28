@@ -97,9 +97,9 @@ public final class AndroidParagraph implements Paragraph {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x01cd  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x01f8  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x01fe  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x01cc  */
+    /* JADX WARN: Removed duplicated region for block: B:62:0x01f7  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x01fd  */
     /* JADX WARN: Type inference failed for: r11v15 */
     /* JADX WARN: Type inference failed for: r11v16 */
     /* JADX WARN: Type inference failed for: r11v23 */
@@ -107,7 +107,7 @@ public final class AndroidParagraph implements Paragraph {
     /* JADX WARN: Type inference failed for: r13v30 */
     /* JADX WARN: Type inference failed for: r13v4 */
     /* JADX WARN: Type inference failed for: r15v1 */
-    /* JADX WARN: Type inference failed for: r15v2, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r15v2, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r15v3 */
     /* JADX WARN: Type inference failed for: r2v1 */
     /* JADX WARN: Type inference failed for: r2v11, types: [android.text.Spanned] */

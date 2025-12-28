@@ -1,7 +1,7 @@
 package androidx.media3.datasource;
 
 import android.net.Uri;
-import androidx.media3.common.util.Assertions;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 /* loaded from: classes2.dex */
 public final class ByteArrayDataSource extends BaseDataSource {
@@ -29,12 +29,12 @@ public final class ByteArrayDataSource extends BaseDataSource {
                 return ByteArrayDataSource.lambda$new$0(bArr, uri);
             }
         });
-        Assertions.checkArgument(bArr.length > 0);
+        Preconditions.checkArgument(bArr.length > 0);
     }
 
     public ByteArrayDataSource(UriResolver uriResolver) {
         super(false);
-        this.uriResolver = (UriResolver) Assertions.checkNotNull(uriResolver);
+        this.uriResolver = (UriResolver) Preconditions.checkNotNull(uriResolver);
     }
 
     @Override // androidx.media3.datasource.DataSource
@@ -66,7 +66,7 @@ public final class ByteArrayDataSource extends BaseDataSource {
             return -1;
         }
         int min = Math.min(i2, i3);
-        System.arraycopy(Assertions.checkStateNotNull(this.data), this.readPosition, bArr, i, min);
+        System.arraycopy(Preconditions.checkNotNull(this.data), this.readPosition, bArr, i, min);
         this.readPosition += min;
         this.bytesRemaining -= min;
         bytesTransferred(min);

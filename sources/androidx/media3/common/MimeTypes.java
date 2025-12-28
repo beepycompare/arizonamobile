@@ -1,10 +1,10 @@
 package androidx.media3.common;
 
 import android.text.TextUtils;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.ts.TsExtractor;
 import com.google.common.base.Ascii;
+import com.google.common.base.Preconditions;
 import com.google.common.primitives.SignedBytes;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.ArrayList;
@@ -27,6 +27,7 @@ public final class MimeTypes {
     public static final String APPLICATION_M3U8 = "application/x-mpegURL";
     public static final String APPLICATION_MATROSKA = "application/x-matroska";
     public static final String APPLICATION_MEDIA3_CUES = "application/x-media3-cues";
+    public static final String APPLICATION_META = "application/meta";
     public static final String APPLICATION_MP4 = "application/mp4";
     public static final String APPLICATION_MP4CEA608 = "application/x-mp4-cea-608";
     public static final String APPLICATION_MP4VTT = "application/x-mp4-vtt";
@@ -117,6 +118,7 @@ public final class MimeTypes {
     public static final String VIDEO_MV_HEVC = "video/mv-hevc";
     public static final String VIDEO_OGG = "video/ogg";
     public static final String VIDEO_PS = "video/mp2p";
+    public static final String VIDEO_QUICK_TIME = "video/quicktime";
     public static final String VIDEO_RAW = "video/raw";
     public static final String VIDEO_UNKNOWN = "video/x-unknown";
     public static final String VIDEO_VC1 = "video/wvc1";
@@ -142,6 +144,10 @@ public final class MimeTypes {
             i2++;
         }
         customMimeTypes.add(customMimeType);
+    }
+
+    public static void clearRegisteredCustomMimeTypes() {
+        customMimeTypes.clear();
     }
 
     public static boolean isAudio(String str) {
@@ -532,7 +538,7 @@ public final class MimeTypes {
         if (isImage(str)) {
             return 4;
         }
-        if (APPLICATION_ID3.equals(str) || APPLICATION_EMSG.equals(str) || APPLICATION_SCTE35.equals(str) || APPLICATION_ICY.equals(str) || APPLICATION_AIT.equals(str)) {
+        if (APPLICATION_ID3.equals(str) || APPLICATION_EMSG.equals(str) || APPLICATION_SCTE35.equals(str) || APPLICATION_ICY.equals(str) || APPLICATION_AIT.equals(str) || APPLICATION_META.equals(str)) {
             return 5;
         }
         if (APPLICATION_CAMERA_MOTION.equals(str)) {
@@ -770,7 +776,7 @@ public final class MimeTypes {
     static Mp4aObjectType getObjectTypeFromMp4aRFC6381CodecString(String str) {
         Matcher matcher = MP4A_RFC_6381_CODEC_PATTERN.matcher(str);
         if (matcher.matches()) {
-            String str2 = (String) Assertions.checkNotNull(matcher.group(1));
+            String str2 = (String) Preconditions.checkNotNull(matcher.group(1));
             String group = matcher.group(2);
             try {
                 return new Mp4aObjectType(Integer.parseInt(str2, 16), group != null ? Integer.parseInt(group) : 0);

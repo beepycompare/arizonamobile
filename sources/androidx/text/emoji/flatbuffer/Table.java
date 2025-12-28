@@ -2,32 +2,15 @@ package androidx.text.emoji.flatbuffer;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-import java.nio.CharBuffer;
-import java.nio.charset.CharacterCodingException;
-import java.nio.charset.Charset;
-import java.nio.charset.CharsetDecoder;
-import java.nio.charset.CoderResult;
 import java.util.Arrays;
 import java.util.Comparator;
 /* loaded from: classes3.dex */
 public class Table {
     protected ByteBuffer bb;
     protected int bb_pos;
-    private static final ThreadLocal<CharsetDecoder> UTF8_DECODER = new ThreadLocal<CharsetDecoder>() { // from class: androidx.text.emoji.flatbuffer.Table.1
-        /* JADX INFO: Access modifiers changed from: protected */
-        @Override // java.lang.ThreadLocal
-        public CharsetDecoder initialValue() {
-            return Charset.forName("UTF-8").newDecoder();
-        }
-    };
-    public static final ThreadLocal<Charset> UTF8_CHARSET = new ThreadLocal<Charset>() { // from class: androidx.text.emoji.flatbuffer.Table.2
-        /* JADX INFO: Access modifiers changed from: protected */
-        @Override // java.lang.ThreadLocal
-        public Charset initialValue() {
-            return Charset.forName("UTF-8");
-        }
-    };
-    private static final ThreadLocal<CharBuffer> CHAR_BUFFER = new ThreadLocal<>();
+    Utf8 utf8 = Utf8.getDefault();
+    private int vtable_size;
+    private int vtable_start;
 
     protected int keysCompare(Integer num, Integer num2, ByteBuffer byteBuffer) {
         return 0;
@@ -39,10 +22,8 @@ public class Table {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public int __offset(int i) {
-        int i2 = this.bb_pos;
-        int i3 = i2 - this.bb.getInt(i2);
-        if (i < this.bb.getShort(i3)) {
-            return this.bb.getShort(i3 + i);
+        if (i < this.vtable_size) {
+            return this.bb.getShort(this.vtable_start + i);
         }
         return 0;
     }
@@ -57,37 +38,20 @@ public class Table {
         return i + this.bb.getInt(i);
     }
 
-    protected static int __indirect(int i, ByteBuffer byteBuffer) {
+    /* JADX INFO: Access modifiers changed from: protected */
+    public static int __indirect(int i, ByteBuffer byteBuffer) {
         return i + byteBuffer.getInt(i);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public String __string(int i) {
-        CharsetDecoder charsetDecoder = UTF8_DECODER.get();
-        charsetDecoder.reset();
-        int i2 = i + this.bb.getInt(i);
-        ByteBuffer order = this.bb.duplicate().order(ByteOrder.LITTLE_ENDIAN);
-        int i3 = order.getInt(i2);
-        int i4 = i2 + 4;
-        order.position(i4);
-        order.limit(i4 + i3);
-        int maxCharsPerByte = (int) (i3 * charsetDecoder.maxCharsPerByte());
-        ThreadLocal<CharBuffer> threadLocal = CHAR_BUFFER;
-        CharBuffer charBuffer = threadLocal.get();
-        if (charBuffer == null || charBuffer.capacity() < maxCharsPerByte) {
-            charBuffer = CharBuffer.allocate(maxCharsPerByte);
-            threadLocal.set(charBuffer);
-        }
-        charBuffer.clear();
-        try {
-            CoderResult decode = charsetDecoder.decode(order, charBuffer, true);
-            if (!decode.isUnderflow()) {
-                decode.throwException();
-            }
-            return charBuffer.flip().toString();
-        } catch (CharacterCodingException e) {
-            throw new Error(e);
-        }
+        return __string(i, this.bb, this.utf8);
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    public static String __string(int i, ByteBuffer byteBuffer, Utf8 utf8) {
+        int i2 = i + byteBuffer.getInt(i);
+        return utf8.decodeUtf8(byteBuffer, i2 + 4, byteBuffer.getInt(i2));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -115,10 +79,26 @@ public class Table {
         return order;
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
+    public ByteBuffer __vector_in_bytebuffer(ByteBuffer byteBuffer, int i, int i2) {
+        int __offset = __offset(i);
+        if (__offset == 0) {
+            return null;
+        }
+        int __vector = __vector(__offset);
+        byteBuffer.rewind();
+        byteBuffer.limit((__vector_len(__offset) * i2) + __vector);
+        byteBuffer.position(__vector);
+        return byteBuffer;
+    }
+
     protected Table __union(Table table, int i) {
-        int i2 = i + this.bb_pos;
-        table.bb_pos = i2 + this.bb.getInt(i2);
-        table.bb = this.bb;
+        return __union(table, i, this.bb);
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    public static Table __union(Table table, int i, ByteBuffer byteBuffer) {
+        table.__reset(__indirect(i, byteBuffer), byteBuffer);
         return table;
     }
 
@@ -140,7 +120,7 @@ public class Table {
         for (int i = 0; i < iArr.length; i++) {
             numArr[i] = Integer.valueOf(iArr[i]);
         }
-        Arrays.sort(numArr, new Comparator<Integer>() { // from class: androidx.text.emoji.flatbuffer.Table.3
+        Arrays.sort(numArr, new Comparator<Integer>() { // from class: androidx.text.emoji.flatbuffer.Table.1
             @Override // java.util.Comparator
             public int compare(Integer num, Integer num2) {
                 return Table.this.keysCompare(num, num2, byteBuffer);
@@ -182,5 +162,24 @@ public class Table {
             }
         }
         return i3 - length;
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
+    public void __reset(int i, ByteBuffer byteBuffer) {
+        this.bb = byteBuffer;
+        if (byteBuffer != null) {
+            this.bb_pos = i;
+            int i2 = i - byteBuffer.getInt(i);
+            this.vtable_start = i2;
+            this.vtable_size = this.bb.getShort(i2);
+            return;
+        }
+        this.bb_pos = 0;
+        this.vtable_start = 0;
+        this.vtable_size = 0;
+    }
+
+    public void __reset() {
+        __reset(0, null);
     }
 }

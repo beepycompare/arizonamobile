@@ -6,13 +6,13 @@ import io.appmetrica.analytics.internal.AppMetricaService;
 public final class C0327ik {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1040a;
+    public final String f1041a;
 
     public C0327ik(String str) {
-        this.f1040a = str;
+        this.f1041a = str;
     }
 
     public final String toString() {
-        return "ServiceDescription(packageName='" + this.f1040a + "', serviceScheme='appmetrica', serviceClass=" + AppMetricaService.class + ')';
+        return "ServiceDescription(packageName='" + this.f1041a + "', serviceScheme='appmetrica', serviceClass=" + AppMetricaService.class + ')';
     }
 }

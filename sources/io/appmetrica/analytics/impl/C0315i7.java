@@ -12,7 +12,7 @@ import org.json.JSONObject;
 public final class C0315i7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1033a;
+    public final Context f1034a;
     public final int b;
     public final yo c;
     public final A8 d;
@@ -22,14 +22,14 @@ public final class C0315i7 {
     public final Q5 h;
 
     public C0315i7(Context context, Uk uk, int i, yo yoVar, A8 a8, C0308i0 c0308i0, K8 k8, C0392l7 c0392l7) {
-        this.f1033a = context;
+        this.f1034a = context;
         this.b = i;
         this.c = yoVar;
         this.d = a8;
         this.e = c0308i0;
         this.f = k8;
         this.g = c0392l7;
-        this.h = a8.f489a;
+        this.h = a8.f490a;
     }
 
     public static String b() {
@@ -51,14 +51,14 @@ public final class C0315i7 {
         yo yoVar = this.c;
         int i = this.b;
         synchronized (yoVar) {
-            JSONObject a2 = yoVar.f1322a.a();
+            JSONObject a2 = yoVar.f1323a.a();
             JSONObject optJSONObject = a2.optJSONObject("numbers_of_type");
             if (optJSONObject == null) {
                 optJSONObject = new JSONObject();
             }
             optLong = optJSONObject.optLong(String.valueOf(i));
             optJSONObject.put(String.valueOf(i), 1 + optLong);
-            yoVar.f1322a.a(a2.put("numbers_of_type", optJSONObject));
+            yoVar.f1323a.a(a2.put("numbers_of_type", optJSONObject));
         }
         Long valueOf2 = Long.valueOf(optLong);
         C0392l7 c0392l7 = this.g;
@@ -75,21 +75,21 @@ public final class C0315i7 {
             Location systemLocation = m.getSystemLocation();
             jo = systemLocation != null ? new Jo(new Location(systemLocation), "") : null;
         }
-        boolean z = c0392l7.f1086a.d;
+        boolean z = c0392l7.f1087a.d;
         Double valueOf3 = jo != null ? Double.valueOf(jo.getLatitude()) : null;
         Double valueOf4 = jo != null ? Double.valueOf(jo.getLongitude()) : null;
         Long valueOf5 = jo != null ? Long.valueOf(jo.getTime()) : null;
         Integer valueOf6 = jo != null ? Integer.valueOf((int) jo.getAccuracy()) : null;
         Integer valueOf7 = jo != null ? Integer.valueOf((int) jo.getBearing()) : null;
         Integer valueOf8 = jo != null ? Integer.valueOf((int) jo.getSpeed()) : null;
-        C0340j7 c0340j7 = new C0340j7(Boolean.valueOf(z), valueOf4, valueOf3, jo != null ? Integer.valueOf((int) jo.getAltitude()) : null, valueOf7, valueOf6, valueOf8, valueOf5, jo != null ? jo.getProvider() : null, jo != null ? jo.f642a : null);
+        C0340j7 c0340j7 = new C0340j7(Boolean.valueOf(z), valueOf4, valueOf3, jo != null ? Integer.valueOf((int) jo.getAltitude()) : null, valueOf7, valueOf6, valueOf8, valueOf5, jo != null ? jo.getProvider() : null, jo != null ? jo.f643a : null);
         String str = this.h.c;
         C0308i0 c0308i0 = this.e;
-        String str2 = c0308i0.f1028a;
+        String str2 = c0308i0.f1029a;
         Long valueOf9 = Long.valueOf(c0308i0.b);
         Integer valueOf10 = Integer.valueOf(this.h.g);
-        Context context = this.f1033a;
-        De de = He.f604a;
+        Context context = this.f1034a;
+        De de = He.f605a;
         Integer valueOf11 = Integer.valueOf(((Integer) He.c.a((NetworkType) SystemServiceUtils.accessSystemServiceSafelyOrDefault((ConnectivityManager) context.getSystemService("connectivity"), "getting connection type", "ConnectivityManager", NetworkType.UNDEFINED, new Ge()))).intValue());
         String b = b();
         J8 j8 = this.d.b;

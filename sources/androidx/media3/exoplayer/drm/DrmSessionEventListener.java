@@ -1,15 +1,19 @@
 package androidx.media3.exoplayer.drm;
 
 import android.os.Handler;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.drm.DrmSessionEventListener;
 import androidx.media3.exoplayer.source.MediaSource;
+import com.google.common.base.Preconditions;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public interface DrmSessionEventListener {
+    @Deprecated
     default void onDrmKeysLoaded(int i, MediaSource.MediaPeriodId mediaPeriodId) {
+    }
+
+    default void onDrmKeysLoaded(int i, MediaSource.MediaPeriodId mediaPeriodId, KeyRequestInfo keyRequestInfo) {
     }
 
     default void onDrmKeysRemoved(int i, MediaSource.MediaPeriodId mediaPeriodId) {
@@ -27,7 +31,7 @@ public interface DrmSessionEventListener {
     default void onDrmSessionReleased(int i, MediaSource.MediaPeriodId mediaPeriodId) {
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class EventDispatcher {
         private final CopyOnWriteArrayList<ListenerAndHandler> listenerAndHandlers;
         public final MediaSource.MediaPeriodId mediaPeriodId;
@@ -48,8 +52,8 @@ public interface DrmSessionEventListener {
         }
 
         public void addEventListener(Handler handler, DrmSessionEventListener drmSessionEventListener) {
-            Assertions.checkNotNull(handler);
-            Assertions.checkNotNull(drmSessionEventListener);
+            Preconditions.checkNotNull(handler);
+            Preconditions.checkNotNull(drmSessionEventListener);
             this.listenerAndHandlers.add(new ListenerAndHandler(handler, drmSessionEventListener));
         }
 
@@ -68,10 +72,10 @@ public interface DrmSessionEventListener {
             while (it.hasNext()) {
                 ListenerAndHandler next = it.next();
                 final DrmSessionEventListener drmSessionEventListener = next.listener;
-                Util.postOrRun(next.handler, new Runnable() { // from class: androidx.media3.exoplayer.drm.DrmSessionEventListener$EventDispatcher$$ExternalSyntheticLambda3
+                Util.postOrRun(next.handler, new Runnable() { // from class: androidx.media3.exoplayer.drm.DrmSessionEventListener$EventDispatcher$$ExternalSyntheticLambda4
                     @Override // java.lang.Runnable
                     public final void run() {
-                        DrmSessionEventListener.EventDispatcher.this.m8971x3233dce6(drmSessionEventListener, i);
+                        DrmSessionEventListener.EventDispatcher.this.m8978x3233dce6(drmSessionEventListener, i);
                     }
                 });
             }
@@ -79,19 +83,19 @@ public interface DrmSessionEventListener {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$drmSessionAcquired$0$androidx-media3-exoplayer-drm-DrmSessionEventListener$EventDispatcher  reason: not valid java name */
-        public /* synthetic */ void m8971x3233dce6(DrmSessionEventListener drmSessionEventListener, int i) {
+        public /* synthetic */ void m8978x3233dce6(DrmSessionEventListener drmSessionEventListener, int i) {
             drmSessionEventListener.onDrmSessionAcquired(this.windowIndex, this.mediaPeriodId, i);
         }
 
-        public void drmKeysLoaded() {
+        public void drmKeysLoaded(final KeyRequestInfo keyRequestInfo) {
             Iterator<ListenerAndHandler> it = this.listenerAndHandlers.iterator();
             while (it.hasNext()) {
                 ListenerAndHandler next = it.next();
                 final DrmSessionEventListener drmSessionEventListener = next.listener;
-                Util.postOrRun(next.handler, new Runnable() { // from class: androidx.media3.exoplayer.drm.DrmSessionEventListener$EventDispatcher$$ExternalSyntheticLambda4
+                Util.postOrRun(next.handler, new Runnable() { // from class: androidx.media3.exoplayer.drm.DrmSessionEventListener$EventDispatcher$$ExternalSyntheticLambda3
                     @Override // java.lang.Runnable
                     public final void run() {
-                        DrmSessionEventListener.EventDispatcher.this.m8968x8fe293c0(drmSessionEventListener);
+                        DrmSessionEventListener.EventDispatcher.this.m8975x8fe293c0(drmSessionEventListener, keyRequestInfo);
                     }
                 });
             }
@@ -99,8 +103,9 @@ public interface DrmSessionEventListener {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$drmKeysLoaded$1$androidx-media3-exoplayer-drm-DrmSessionEventListener$EventDispatcher  reason: not valid java name */
-        public /* synthetic */ void m8968x8fe293c0(DrmSessionEventListener drmSessionEventListener) {
+        public /* synthetic */ void m8975x8fe293c0(DrmSessionEventListener drmSessionEventListener, KeyRequestInfo keyRequestInfo) {
             drmSessionEventListener.onDrmKeysLoaded(this.windowIndex, this.mediaPeriodId);
+            drmSessionEventListener.onDrmKeysLoaded(this.windowIndex, this.mediaPeriodId, keyRequestInfo);
         }
 
         public void drmSessionManagerError(final Exception exc) {
@@ -111,7 +116,7 @@ public interface DrmSessionEventListener {
                 Util.postOrRun(next.handler, new Runnable() { // from class: androidx.media3.exoplayer.drm.DrmSessionEventListener$EventDispatcher$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        DrmSessionEventListener.EventDispatcher.this.m8972x18253075(drmSessionEventListener, exc);
+                        DrmSessionEventListener.EventDispatcher.this.m8979x18253075(drmSessionEventListener, exc);
                     }
                 });
             }
@@ -119,7 +124,7 @@ public interface DrmSessionEventListener {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$drmSessionManagerError$2$androidx-media3-exoplayer-drm-DrmSessionEventListener$EventDispatcher  reason: not valid java name */
-        public /* synthetic */ void m8972x18253075(DrmSessionEventListener drmSessionEventListener, Exception exc) {
+        public /* synthetic */ void m8979x18253075(DrmSessionEventListener drmSessionEventListener, Exception exc) {
             drmSessionEventListener.onDrmSessionManagerError(this.windowIndex, this.mediaPeriodId, exc);
         }
 
@@ -131,7 +136,7 @@ public interface DrmSessionEventListener {
                 Util.postOrRun(next.handler, new Runnable() { // from class: androidx.media3.exoplayer.drm.DrmSessionEventListener$EventDispatcher$$ExternalSyntheticLambda2
                     @Override // java.lang.Runnable
                     public final void run() {
-                        DrmSessionEventListener.EventDispatcher.this.m8970xcfc47b53(drmSessionEventListener);
+                        DrmSessionEventListener.EventDispatcher.this.m8977xcfc47b53(drmSessionEventListener);
                     }
                 });
             }
@@ -139,7 +144,7 @@ public interface DrmSessionEventListener {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$drmKeysRestored$3$androidx-media3-exoplayer-drm-DrmSessionEventListener$EventDispatcher  reason: not valid java name */
-        public /* synthetic */ void m8970xcfc47b53(DrmSessionEventListener drmSessionEventListener) {
+        public /* synthetic */ void m8977xcfc47b53(DrmSessionEventListener drmSessionEventListener) {
             drmSessionEventListener.onDrmKeysRestored(this.windowIndex, this.mediaPeriodId);
         }
 
@@ -151,7 +156,7 @@ public interface DrmSessionEventListener {
                 Util.postOrRun(next.handler, new Runnable() { // from class: androidx.media3.exoplayer.drm.DrmSessionEventListener$EventDispatcher$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        DrmSessionEventListener.EventDispatcher.this.m8969x5d8fdb2(drmSessionEventListener);
+                        DrmSessionEventListener.EventDispatcher.this.m8976x5d8fdb2(drmSessionEventListener);
                     }
                 });
             }
@@ -159,7 +164,7 @@ public interface DrmSessionEventListener {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$drmKeysRemoved$4$androidx-media3-exoplayer-drm-DrmSessionEventListener$EventDispatcher  reason: not valid java name */
-        public /* synthetic */ void m8969x5d8fdb2(DrmSessionEventListener drmSessionEventListener) {
+        public /* synthetic */ void m8976x5d8fdb2(DrmSessionEventListener drmSessionEventListener) {
             drmSessionEventListener.onDrmKeysRemoved(this.windowIndex, this.mediaPeriodId);
         }
 
@@ -171,7 +176,7 @@ public interface DrmSessionEventListener {
                 Util.postOrRun(next.handler, new Runnable() { // from class: androidx.media3.exoplayer.drm.DrmSessionEventListener$EventDispatcher$$ExternalSyntheticLambda5
                     @Override // java.lang.Runnable
                     public final void run() {
-                        DrmSessionEventListener.EventDispatcher.this.m8973x690251a(drmSessionEventListener);
+                        DrmSessionEventListener.EventDispatcher.this.m8980x690251a(drmSessionEventListener);
                     }
                 });
             }
@@ -179,11 +184,11 @@ public interface DrmSessionEventListener {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$drmSessionReleased$5$androidx-media3-exoplayer-drm-DrmSessionEventListener$EventDispatcher  reason: not valid java name */
-        public /* synthetic */ void m8973x690251a(DrmSessionEventListener drmSessionEventListener) {
+        public /* synthetic */ void m8980x690251a(DrmSessionEventListener drmSessionEventListener) {
             drmSessionEventListener.onDrmSessionReleased(this.windowIndex, this.mediaPeriodId);
         }
 
-        /* loaded from: classes2.dex */
+        /* loaded from: classes3.dex */
         private static final class ListenerAndHandler {
             public Handler handler;
             public DrmSessionEventListener listener;

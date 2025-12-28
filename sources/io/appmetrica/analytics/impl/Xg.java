@@ -9,7 +9,7 @@ public final class Xg extends Sg {
 
     @Override // io.appmetrica.analytics.impl.Sg
     public final boolean a(Q5 q5) {
-        Y4 y4 = this.f776a;
+        Y4 y4 = this.f777a;
         if (this.b.c()) {
             return false;
         }
@@ -19,7 +19,7 @@ public final class Xg extends Sg {
         }
         yo yoVar = this.b;
         synchronized (yoVar) {
-            zo zoVar = yoVar.f1322a;
+            zo zoVar = yoVar.f1323a;
             zoVar.a(zoVar.a().put("first_event_done", true));
         }
         return false;

@@ -3,18 +3,18 @@ package io.appmetrica.analytics;
 import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
 import java.util.HashMap;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public class PreloadInfo {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f284a;
+    private final String f285a;
     private final Map b;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private final String f285a;
+        private final String f286a;
         private final HashMap b;
 
         /* synthetic */ Builder(String str, int i) {
@@ -33,7 +33,7 @@ public class PreloadInfo {
         }
 
         private Builder(String str) {
-            this.f285a = str;
+            this.f286a = str;
             this.b = new HashMap();
         }
     }
@@ -51,11 +51,11 @@ public class PreloadInfo {
     }
 
     public String getTrackingId() {
-        return this.f284a;
+        return this.f285a;
     }
 
     private PreloadInfo(Builder builder) {
-        this.f284a = builder.f285a;
+        this.f285a = builder.f286a;
         this.b = CollectionUtils.unmodifiableMapCopy(builder.b);
     }
 }

@@ -1,7 +1,6 @@
 package androidx.media3.extractor.ogg;
 
 import androidx.media3.common.ParserException;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.extractor.Extractor;
 import androidx.media3.extractor.ExtractorInput;
@@ -9,6 +8,7 @@ import androidx.media3.extractor.ExtractorOutput;
 import androidx.media3.extractor.ExtractorsFactory;
 import androidx.media3.extractor.PositionHolder;
 import androidx.media3.extractor.TrackOutput;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNullIf;
 /* loaded from: classes3.dex */
@@ -57,7 +57,7 @@ public class OggExtractor implements Extractor {
 
     @Override // androidx.media3.extractor.Extractor
     public int read(ExtractorInput extractorInput, PositionHolder positionHolder) throws IOException {
-        Assertions.checkStateNotNull(this.output);
+        Preconditions.checkNotNull(this.output);
         if (this.streamReader == null) {
             if (!sniffInternal(extractorInput)) {
                 throw ParserException.createForMalformedContainer("Failed to determine bitstream type", null);

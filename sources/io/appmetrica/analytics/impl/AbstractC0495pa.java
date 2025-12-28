@@ -6,14 +6,14 @@ import java.util.List;
 public abstract class AbstractC0495pa {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0577si f1161a;
+    public final C0577si f1162a;
 
     public AbstractC0495pa(C0577si c0577si) {
-        this.f1161a = c0577si;
+        this.f1162a = c0577si;
     }
 
     public final C0577si a() {
-        return this.f1161a;
+        return this.f1162a;
     }
 
     public abstract void a(List list);

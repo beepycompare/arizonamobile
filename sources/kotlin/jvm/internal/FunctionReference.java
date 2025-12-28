@@ -5,7 +5,6 @@ import kotlin.reflect.KFunction;
 /* loaded from: classes5.dex */
 public class FunctionReference extends CallableReference implements FunctionBase, KFunction {
     private final int arity;
-    private final int flags;
 
     public FunctionReference(int i) {
         this(i, NO_RECEIVER, null, null, null, 0);
@@ -18,7 +17,6 @@ public class FunctionReference extends CallableReference implements FunctionBase
     public FunctionReference(int i, Object obj, Class cls, String str, String str2, int i2) {
         super(obj, cls, str, str2, (i2 & 1) == 1);
         this.arity = i;
-        this.flags = i2 >> 1;
     }
 
     @Override // kotlin.jvm.internal.FunctionBase
@@ -68,7 +66,7 @@ public class FunctionReference extends CallableReference implements FunctionBase
         }
         if (obj instanceof FunctionReference) {
             FunctionReference functionReference = (FunctionReference) obj;
-            return getName().equals(functionReference.getName()) && getSignature().equals(functionReference.getSignature()) && this.flags == functionReference.flags && this.arity == functionReference.arity && Intrinsics.areEqual(getBoundReceiver(), functionReference.getBoundReceiver()) && Intrinsics.areEqual(getOwner(), functionReference.getOwner());
+            return getName().equals(functionReference.getName()) && getSignature().equals(functionReference.getSignature()) && Intrinsics.areEqual(getBoundReceiver(), functionReference.getBoundReceiver()) && Intrinsics.areEqual(getOwner(), functionReference.getOwner());
         } else if (obj instanceof KFunction) {
             return obj.equals(compute());
         } else {

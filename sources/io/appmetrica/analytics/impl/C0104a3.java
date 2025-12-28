@@ -9,18 +9,18 @@ public final class C0104a3 extends N2 {
     }
 
     public final int b() {
-        return this.f693a;
+        return this.f694a;
     }
 
     @Override // io.appmetrica.analytics.impl.Mn
     public final byte[] a(byte[] bArr) {
         if (bArr != null) {
             int length = bArr.length;
-            int i = this.f693a;
+            int i = this.f694a;
             if (length > i) {
                 byte[] bArr2 = new byte[i];
                 System.arraycopy(bArr, 0, bArr2, 0, i);
-                this.c.warning("\"%s\" %s exceeded limit of %d bytes", this.b, bArr, Integer.valueOf(this.f693a));
+                this.c.warning("\"%s\" %s exceeded limit of %d bytes", this.b, bArr, Integer.valueOf(this.f694a));
                 return bArr2;
             }
         }

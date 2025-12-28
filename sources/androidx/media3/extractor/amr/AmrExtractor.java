@@ -5,7 +5,6 @@ import androidx.media3.common.DataReader;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.ParserException;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.audio.SilenceSkippingAudioProcessor;
 import androidx.media3.extractor.ConstantBitrateSeekMap;
@@ -18,6 +17,7 @@ import androidx.media3.extractor.IndexSeekMap;
 import androidx.media3.extractor.PositionHolder;
 import androidx.media3.extractor.SeekMap;
 import androidx.media3.extractor.TrackOutput;
+import com.google.common.base.Preconditions;
 import java.io.EOFException;
 import java.io.IOException;
 import java.lang.annotation.Documented;
@@ -319,7 +319,7 @@ public final class AmrExtractor implements Extractor {
 
     @EnsuresNonNull({"extractorOutput", "realTrackOutput"})
     private void assertInitialized() {
-        Assertions.checkStateNotNull(this.realTrackOutput);
+        Preconditions.checkNotNull(this.realTrackOutput);
         Util.castNonNull(this.extractorOutput);
     }
 

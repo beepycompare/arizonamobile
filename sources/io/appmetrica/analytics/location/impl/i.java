@@ -7,11 +7,11 @@ import kotlin.jvm.internal.Intrinsics;
 public final class i {
 
     /* renamed from: a  reason: collision with root package name */
-    public final LocationFilter f1346a;
+    public final LocationFilter f1347a;
     public final CacheArguments b;
 
     public i(LocationFilter locationFilter, CacheArguments cacheArguments) {
-        this.f1346a = locationFilter;
+        this.f1347a = locationFilter;
         this.b = cacheArguments;
     }
 
@@ -22,7 +22,7 @@ public final class i {
         if (Intrinsics.areEqual(i.class, obj != null ? obj.getClass() : null)) {
             if (obj != null) {
                 i iVar = (i) obj;
-                return Intrinsics.areEqual(this.f1346a, iVar.f1346a) && Intrinsics.areEqual(this.b, iVar.b);
+                return Intrinsics.areEqual(this.f1347a, iVar.f1347a) && Intrinsics.areEqual(this.b, iVar.b);
             }
             throw new NullPointerException("null cannot be cast to non-null type io.appmetrica.analytics.location.impl.LocationConfig");
         }
@@ -30,11 +30,11 @@ public final class i {
     }
 
     public final int hashCode() {
-        return this.b.hashCode() + (this.f1346a.hashCode() * 31);
+        return this.b.hashCode() + (this.f1347a.hashCode() * 31);
     }
 
     public final String toString() {
-        return "LocationConfig(locationFilter=" + this.f1346a + ", cacheArguments=" + this.b + ')';
+        return "LocationConfig(locationFilter=" + this.f1347a + ", cacheArguments=" + this.b + ')';
     }
 
     public /* synthetic */ i() {

@@ -242,4 +242,8 @@ public interface ShuffleOrder {
             return new UnshuffledShuffleOrder(0);
         }
     }
+
+    default ShuffleOrder cloneAndSet(int i, int i2) {
+        return cloneAndClear().cloneAndInsert(0, i);
+    }
 }

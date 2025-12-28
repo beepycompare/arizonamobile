@@ -4,7 +4,7 @@ import androidx.media3.common.audio.AudioProcessor;
 import androidx.media3.common.audio.BaseAudioProcessor;
 import androidx.media3.common.util.Util;
 import java.nio.ByteBuffer;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class TrimmingAudioProcessor extends BaseAudioProcessor {
     private byte[] endBuffer = Util.EMPTY_BYTE_ARRAY;
     private int endBufferSize;
@@ -29,7 +29,7 @@ public final class TrimmingAudioProcessor extends BaseAudioProcessor {
 
     @Override // androidx.media3.common.audio.AudioProcessor
     public long getDurationAfterProcessorApplied(long j) {
-        return j - Util.sampleCountToDurationUs(this.trimEndFrames + this.trimStartFrames, this.inputAudioFormat.sampleRate);
+        return Math.max(0L, j - Util.sampleCountToDurationUs(this.trimEndFrames + this.trimStartFrames, this.inputAudioFormat.sampleRate));
     }
 
     @Override // androidx.media3.common.audio.BaseAudioProcessor

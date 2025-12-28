@@ -1,6 +1,6 @@
 package androidx.media3.extractor.ts;
 
-import androidx.media3.common.util.Assertions;
+import com.google.common.base.Preconditions;
 import java.util.Arrays;
 /* loaded from: classes3.dex */
 public final class NalUnitTargetBuffer {
@@ -27,7 +27,7 @@ public final class NalUnitTargetBuffer {
     }
 
     public void startNalUnit(int i) {
-        Assertions.checkState(!this.isFilling);
+        Preconditions.checkState(!this.isFilling);
         boolean z = i == this.targetType;
         this.isFilling = z;
         if (z) {

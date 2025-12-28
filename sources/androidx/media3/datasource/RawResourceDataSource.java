@@ -7,8 +7,8 @@ import android.content.res.Resources;
 import android.net.Uri;
 import android.text.TextUtils;
 import androidx.media3.common.PlaybackException;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.io.EOFException;
 import java.io.FileInputStream;
@@ -121,7 +121,7 @@ public final class RawResourceDataSource extends BaseDataSource {
                 throw new RawResourceDataSourceException("rawresource:// URI must have exactly one path element, found " + pathSegments.size());
             }
         } else if (TextUtils.equals("android.resource", normalizeScheme.getScheme())) {
-            String str = (String) Assertions.checkNotNull(normalizeScheme.getPath());
+            String str = (String) Preconditions.checkNotNull(normalizeScheme.getPath());
             if (str.startsWith("/")) {
                 str = str.substring(1);
             }

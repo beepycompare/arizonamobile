@@ -2,9 +2,9 @@ package androidx.media3.exoplayer.text;
 
 import androidx.media3.common.C;
 import androidx.media3.common.text.Cue;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.extractor.text.CuesWithTiming;
 import com.google.common.base.Function;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Ordering;
 import java.util.ArrayList;
@@ -30,8 +30,8 @@ final class MergingCuesResolver implements CuesResolver {
 
     @Override // androidx.media3.exoplayer.text.CuesResolver
     public boolean addCues(CuesWithTiming cuesWithTiming, long j) {
-        Assertions.checkArgument(cuesWithTiming.startTimeUs != C.TIME_UNSET);
-        Assertions.checkArgument(cuesWithTiming.durationUs != C.TIME_UNSET);
+        Preconditions.checkArgument(cuesWithTiming.startTimeUs != C.TIME_UNSET);
+        Preconditions.checkArgument(cuesWithTiming.durationUs != C.TIME_UNSET);
         boolean z = cuesWithTiming.startTimeUs <= j && j < cuesWithTiming.endTimeUs;
         for (int size = this.cuesWithTimingList.size() - 1; size >= 0; size--) {
             if (cuesWithTiming.startTimeUs >= this.cuesWithTimingList.get(size).startTimeUs) {

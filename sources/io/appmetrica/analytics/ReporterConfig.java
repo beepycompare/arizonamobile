@@ -6,7 +6,7 @@ import io.appmetrica.analytics.impl.C0465o5;
 import io.appmetrica.analytics.impl.Fn;
 import java.util.HashMap;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public class ReporterConfig {
     public final Map<String, Object> additionalConfig;
     public final String apiKey;
@@ -19,12 +19,12 @@ public class ReporterConfig {
     public final Integer sessionTimeout;
     public final String userProfileID;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static class Builder {
         private static final Fn l = new Fn(new C0282h0());
 
         /* renamed from: a  reason: collision with root package name */
-        private final C0465o5 f286a;
+        private final C0465o5 f287a;
         private final String b;
         private Integer c;
         private Boolean d;
@@ -75,7 +75,7 @@ public class ReporterConfig {
         }
 
         public Builder withMaxReportsInDatabaseCount(int i) {
-            this.f = Integer.valueOf(this.f286a.a(i));
+            this.f = Integer.valueOf(this.f287a.a(i));
             return this;
         }
 
@@ -93,7 +93,7 @@ public class ReporterConfig {
             this.j = new HashMap();
             this.k = new HashMap();
             l.a(str);
-            this.f286a = new C0465o5(str);
+            this.f287a = new C0465o5(str);
             this.b = str;
         }
     }

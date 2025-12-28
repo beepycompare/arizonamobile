@@ -145,9 +145,8 @@ public final class Predicates {
         return new ContainsPatternPredicate(new JdkPattern(pattern));
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes4.dex */
-    public static class NotPredicate<T> implements Predicate<T>, Serializable {
+    private static class NotPredicate<T> implements Predicate<T>, Serializable {
         private static final long serialVersionUID = 0;
         final Predicate<T> predicate;
 
@@ -264,9 +263,8 @@ public final class Predicates {
         return append.append(')').toString();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes4.dex */
-    public static class IsEqualToPredicate implements Predicate<Object>, Serializable {
+    private static class IsEqualToPredicate implements Predicate<Object>, Serializable {
         private static final long serialVersionUID = 0;
         private final Object target;
 

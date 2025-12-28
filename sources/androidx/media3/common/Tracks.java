@@ -2,11 +2,11 @@ package androidx.media3.common;
 
 import android.os.Bundle;
 import androidx.media3.common.Tracks;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.BundleCollectionUtil;
 import androidx.media3.common.util.Util;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.primitives.Booleans;
 import java.util.ArrayList;
@@ -35,7 +35,7 @@ public final class Tracks {
             int i = trackGroup.length;
             this.length = i;
             boolean z2 = false;
-            Assertions.checkArgument(i == iArr.length && i == zArr.length);
+            Preconditions.checkArgument(i == iArr.length && i == zArr.length);
             this.mediaTrackGroup = trackGroup;
             if (z && i > 1) {
                 z2 = true;
@@ -129,7 +129,7 @@ public final class Tracks {
         }
 
         public static Group fromBundle(Bundle bundle) {
-            TrackGroup fromBundle = TrackGroup.fromBundle((Bundle) Assertions.checkNotNull(bundle.getBundle(FIELD_TRACK_GROUP)));
+            TrackGroup fromBundle = TrackGroup.fromBundle((Bundle) Preconditions.checkNotNull(bundle.getBundle(FIELD_TRACK_GROUP)));
             return new Group(fromBundle, bundle.getBoolean(FIELD_ADAPTIVE_SUPPORTED, false), (int[]) MoreObjects.firstNonNull(bundle.getIntArray(FIELD_TRACK_SUPPORT), new int[fromBundle.length]), (boolean[]) MoreObjects.firstNonNull(bundle.getBooleanArray(FIELD_TRACK_SELECTED), new boolean[fromBundle.length]));
         }
     }

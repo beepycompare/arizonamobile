@@ -1,6 +1,6 @@
 package androidx.media3.datasource;
 
-import androidx.media3.common.util.Assertions;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.io.InputStream;
 /* loaded from: classes2.dex */
@@ -40,7 +40,7 @@ public final class DataSourceInputStream extends InputStream {
 
     @Override // java.io.InputStream
     public int read(byte[] bArr, int i, int i2) throws IOException {
-        Assertions.checkState(!this.closed);
+        Preconditions.checkState(!this.closed);
         checkOpened();
         int read = this.dataSource.read(bArr, i, i2);
         if (read == -1) {

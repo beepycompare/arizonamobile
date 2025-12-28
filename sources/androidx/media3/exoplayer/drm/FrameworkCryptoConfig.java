@@ -3,7 +3,7 @@ package androidx.media3.exoplayer.drm;
 import android.os.Build;
 import androidx.media3.decoder.CryptoConfig;
 import java.util.UUID;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class FrameworkCryptoConfig implements CryptoConfig {
     public static final boolean WORKAROUND_DEVICE_NEEDS_KEYS_TO_CONFIGURE_CODEC;
     @Deprecated

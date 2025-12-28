@@ -6,7 +6,6 @@ import androidx.media3.common.DataReader;
 import androidx.media3.common.DrmInitData;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Consumer;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.ParsableByteArray;
@@ -19,6 +18,7 @@ import androidx.media3.exoplayer.drm.DrmSessionManager;
 import androidx.media3.exoplayer.source.SampleQueue;
 import androidx.media3.exoplayer.upstream.Allocator;
 import androidx.media3.extractor.TrackOutput;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.Objects;
 /* loaded from: classes3.dex */
@@ -74,13 +74,13 @@ public class SampleQueue implements TrackOutput {
     }
 
     public static SampleQueue createWithDrm(Allocator allocator, DrmSessionManager drmSessionManager, DrmSessionEventListener.EventDispatcher eventDispatcher) {
-        return new SampleQueue(allocator, (DrmSessionManager) Assertions.checkNotNull(drmSessionManager), (DrmSessionEventListener.EventDispatcher) Assertions.checkNotNull(eventDispatcher));
+        return new SampleQueue(allocator, (DrmSessionManager) Preconditions.checkNotNull(drmSessionManager), (DrmSessionEventListener.EventDispatcher) Preconditions.checkNotNull(eventDispatcher));
     }
 
     @Deprecated
     public static SampleQueue createWithDrm(Allocator allocator, Looper looper, DrmSessionManager drmSessionManager, DrmSessionEventListener.EventDispatcher eventDispatcher) {
         drmSessionManager.setPlayer(looper, PlayerId.UNSET);
-        return new SampleQueue(allocator, (DrmSessionManager) Assertions.checkNotNull(drmSessionManager), (DrmSessionEventListener.EventDispatcher) Assertions.checkNotNull(eventDispatcher));
+        return new SampleQueue(allocator, (DrmSessionManager) Preconditions.checkNotNull(drmSessionManager), (DrmSessionEventListener.EventDispatcher) Preconditions.checkNotNull(eventDispatcher));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -143,7 +143,7 @@ public class SampleQueue implements TrackOutput {
         if (this.length == 0) {
             return;
         }
-        Assertions.checkArgument(j > getLargestReadTimestampUs());
+        Preconditions.checkArgument(j > getLargestReadTimestampUs());
         discardUpstreamSamples(this.absoluteFirstIndex + countUnreadSamplesBefore(j));
     }
 
@@ -155,7 +155,7 @@ public class SampleQueue implements TrackOutput {
     public void maybeThrowError() throws IOException {
         DrmSession drmSession = this.currentDrmSession;
         if (drmSession != null && drmSession.getState() == 1) {
-            throw ((DrmSession.DrmSessionException) Assertions.checkNotNull(this.currentDrmSession.getError()));
+            throw ((DrmSession.DrmSessionException) Preconditions.checkNotNull(this.currentDrmSession.getError()));
         }
     }
 
@@ -307,7 +307,7 @@ public class SampleQueue implements TrackOutput {
             try {
                 if (this.readPosition + i <= this.length) {
                     z = true;
-                    Assertions.checkArgument(z);
+                    Preconditions.checkArgument(z);
                     this.readPosition += i;
                 }
             } catch (Throwable th) {
@@ -315,7 +315,7 @@ public class SampleQueue implements TrackOutput {
             }
         }
         z = false;
-        Assertions.checkArgument(z);
+        Preconditions.checkArgument(z);
         this.readPosition += i;
     }
 
@@ -373,7 +373,7 @@ public class SampleQueue implements TrackOutput {
     public void sampleMetadata(long j, int i, int i2, int i3, TrackOutput.CryptoData cryptoData) {
         int i4;
         if (this.upstreamFormatAdjustmentRequired) {
-            format((Format) Assertions.checkStateNotNull(this.unadjustedUpstreamFormat));
+            format((Format) Preconditions.checkNotNull(this.unadjustedUpstreamFormat));
         }
         int i5 = i & 1;
         boolean z = i5 != 0;
@@ -431,7 +431,7 @@ public class SampleQueue implements TrackOutput {
                 if (format == null || (!z && format == this.downstreamFormat)) {
                     return -3;
                 }
-                onFormatResult((Format) Assertions.checkNotNull(format), formatHolder);
+                onFormatResult((Format) Preconditions.checkNotNull(format), formatHolder);
                 return -5;
             }
             decoderInputBuffer.setFlags(4);
@@ -542,7 +542,7 @@ public class SampleQueue implements TrackOutput {
         int i3 = this.length;
         if (i3 > 0) {
             int relativeIndex = getRelativeIndex(i3 - 1);
-            Assertions.checkArgument(this.offsets[relativeIndex] + ((long) this.sizes[relativeIndex]) <= j2);
+            Preconditions.checkArgument(this.offsets[relativeIndex] + ((long) this.sizes[relativeIndex]) <= j2);
         }
         this.isLastSampleQueued = (536870912 & i) != 0;
         this.largestQueuedTimestampUs = Math.max(this.largestQueuedTimestampUs, j);
@@ -554,7 +554,7 @@ public class SampleQueue implements TrackOutput {
         this.cryptoDatas[relativeIndex2] = cryptoData;
         this.sourceIds[relativeIndex2] = this.upstreamSourceId;
         if (this.sharedSampleMetadata.isEmpty() || !this.sharedSampleMetadata.getEndValue().format.equals(this.upstreamFormat)) {
-            Format format = (Format) Assertions.checkNotNull(this.upstreamFormat);
+            Format format = (Format) Preconditions.checkNotNull(this.upstreamFormat);
             DrmSessionManager drmSessionManager = this.drmSessionManager;
             if (drmSessionManager != null) {
                 drmSessionReference = drmSessionManager.preacquireSession(this.drmEventDispatcher, format);
@@ -615,7 +615,7 @@ public class SampleQueue implements TrackOutput {
         int relativeIndex;
         int writeIndex = getWriteIndex() - i;
         boolean z = false;
-        Assertions.checkArgument(writeIndex >= 0 && writeIndex <= this.length - this.readPosition);
+        Preconditions.checkArgument(writeIndex >= 0 && writeIndex <= this.length - this.readPosition);
         int i2 = this.length - writeIndex;
         this.length = i2;
         this.largestQueuedTimestampUs = Math.max(this.largestDiscardedTimestampUs, getLargestTimestamp(i2));

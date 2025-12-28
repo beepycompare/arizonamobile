@@ -7,8 +7,9 @@ import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import kotlin.UShort;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes2.dex */
-class MetadataListReader {
+public class MetadataListReader {
     private static final int EMJI_TAG = 1164798569;
     private static final int EMJI_TAG_DEPRECATED = 1701669481;
     private static final int META_TABLE_NAME = 1835365473;
@@ -201,8 +202,9 @@ class MetadataListReader {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes2.dex */
-    private static class ByteBufferReader implements OpenTypeReader {
+    public static class ByteBufferReader implements OpenTypeReader {
         private final ByteBuffer mByteBuffer;
 
         ByteBufferReader(ByteBuffer byteBuffer) {

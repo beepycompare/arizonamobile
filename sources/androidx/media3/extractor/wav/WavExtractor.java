@@ -5,7 +5,6 @@ import androidx.media3.common.DataReader;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.ParserException;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
@@ -19,6 +18,7 @@ import androidx.media3.extractor.WavUtil;
 import androidx.media3.extractor.ts.TsExtractor;
 import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import com.google.common.base.Ascii;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
@@ -110,12 +110,12 @@ public final class WavExtractor implements Extractor {
 
     @EnsuresNonNull({"extractorOutput", "trackOutput"})
     private void assertInitialized() {
-        Assertions.checkStateNotNull(this.trackOutput);
+        Preconditions.checkNotNull(this.trackOutput);
         Util.castNonNull(this.extractorOutput);
     }
 
     private void readFileType(ExtractorInput extractorInput) throws IOException {
-        Assertions.checkState(extractorInput.getPosition() == 0);
+        Preconditions.checkState(extractorInput.getPosition() == 0);
         int i = this.dataStartPosition;
         if (i != -1) {
             extractorInput.skipFully(i);
@@ -166,13 +166,13 @@ public final class WavExtractor implements Extractor {
             Log.w(TAG, "Data exceeds input length: " + this.dataEndPosition + ", " + length);
             this.dataEndPosition = length;
         }
-        ((OutputWriter) Assertions.checkNotNull(this.outputWriter)).init(this.dataStartPosition, this.dataEndPosition);
+        ((OutputWriter) Preconditions.checkNotNull(this.outputWriter)).init(this.dataStartPosition, this.dataEndPosition);
         this.state = 4;
     }
 
     private int readSampleData(ExtractorInput extractorInput) throws IOException {
-        Assertions.checkState(this.dataEndPosition != -1);
-        return ((OutputWriter) Assertions.checkNotNull(this.outputWriter)).sampleData(extractorInput, this.dataEndPosition - extractorInput.getPosition()) ? -1 : 0;
+        Preconditions.checkState(this.dataEndPosition != -1);
+        return ((OutputWriter) Preconditions.checkNotNull(this.outputWriter)).sampleData(extractorInput, this.dataEndPosition - extractorInput.getPosition()) ? -1 : 0;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

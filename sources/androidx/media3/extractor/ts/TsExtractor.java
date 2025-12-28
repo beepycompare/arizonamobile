@@ -5,7 +5,6 @@ import android.util.SparseBooleanArray;
 import android.util.SparseIntArray;
 import androidx.media3.common.C;
 import androidx.media3.common.ParserException;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ParsableBitArray;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.TimestampAdjuster;
@@ -19,6 +18,7 @@ import androidx.media3.extractor.SeekMap;
 import androidx.media3.extractor.text.SubtitleParser;
 import androidx.media3.extractor.text.SubtitleTranscodingExtractorOutput;
 import androidx.media3.extractor.ts.TsPayloadReader;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -173,7 +173,7 @@ public final class TsExtractor implements Extractor {
     }
 
     public TsExtractor(int i, int i2, SubtitleParser.Factory factory, TimestampAdjuster timestampAdjuster, TsPayloadReader.Factory factory2, int i3) {
-        this.payloadReaderFactory = (TsPayloadReader.Factory) Assertions.checkNotNull(factory2);
+        this.payloadReaderFactory = (TsPayloadReader.Factory) Preconditions.checkNotNull(factory2);
         this.timestampSearchBytes = i3;
         this.mode = i;
         this.extractorFlags = i2;
@@ -230,7 +230,7 @@ public final class TsExtractor implements Extractor {
     @Override // androidx.media3.extractor.Extractor
     public void seek(long j, long j2) {
         TsBinarySearchSeeker tsBinarySearchSeeker;
-        Assertions.checkState(this.mode != 2);
+        Preconditions.checkState(this.mode != 2);
         int size = this.timestampAdjusters.size();
         for (int i = 0; i < size; i++) {
             TimestampAdjuster timestampAdjuster = this.timestampAdjusters.get(i);

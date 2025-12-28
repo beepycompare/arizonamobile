@@ -7,7 +7,7 @@ import java.util.List;
 public final class C0336j3 implements InterfaceC0161c8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0362k3 f1046a;
+    public final C0362k3 f1047a;
 
     public C0336j3() {
         this(new C0362k3());
@@ -18,9 +18,9 @@ public final class C0336j3 implements InterfaceC0161c8 {
     public final List<Ei> fromModel(C0311i3 c0311i3) {
         C0642v8 c0642v8 = new C0642v8();
         c0642v8.e = new C0212e8();
-        Ei fromModel = this.f1046a.fromModel(c0311i3.b);
-        c0642v8.e.f964a = (C0238f8) fromModel.f560a;
-        c0642v8.f1262a = c0311i3.f1030a;
+        Ei fromModel = this.f1047a.fromModel(c0311i3.b);
+        c0642v8.e.f965a = (C0238f8) fromModel.f561a;
+        c0642v8.f1263a = c0311i3.f1031a;
         return Collections.singletonList(new Ei(c0642v8, new C0130b3(C0130b3.b(fromModel))));
     }
 
@@ -31,7 +31,7 @@ public final class C0336j3 implements InterfaceC0161c8 {
     }
 
     public C0336j3(C0362k3 c0362k3) {
-        this.f1046a = c0362k3;
+        this.f1047a = c0362k3;
     }
 
     public final C0311i3 a(List<Ei> list) {

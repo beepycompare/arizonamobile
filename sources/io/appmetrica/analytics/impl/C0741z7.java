@@ -6,11 +6,11 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0741z7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ja f1326a;
+    public final Ja f1327a;
     public String b = "";
 
     public C0741z7(Ja ja) {
-        this.f1326a = ja;
+        this.f1327a = ja;
     }
 
     public final void a(String str, boolean z) {
@@ -19,7 +19,7 @@ public final class C0741z7 {
                 return;
             }
             this.b = str;
-            this.f1326a.a(str, z);
+            this.f1327a.a(str, z);
         }
     }
 }

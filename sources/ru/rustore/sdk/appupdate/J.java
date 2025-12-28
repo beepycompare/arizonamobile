@@ -20,10 +20,10 @@ public interface J extends IInterface {
         public static class C0087a implements J {
 
             /* renamed from: a  reason: collision with root package name */
-            public final IBinder f1501a;
+            public final IBinder f1502a;
 
             public C0087a(IBinder iBinder) {
-                this.f1501a = iBinder;
+                this.f1502a = iBinder;
             }
 
             @Override // ru.rustore.sdk.appupdate.J
@@ -34,7 +34,7 @@ public interface J extends IInterface {
                     obtain.writeInterfaceToken("ru.vk.store.provider.appupdate.AppUpdateProvider");
                     obtain.writeString(str);
                     obtain.writeStrongInterface(aVar);
-                    this.f1501a.transact(3, obtain, obtain2, 0);
+                    this.f1502a.transact(3, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -44,7 +44,7 @@ public interface J extends IInterface {
 
             @Override // android.os.IInterface
             public final IBinder asBinder() {
-                return this.f1501a;
+                return this.f1502a;
             }
 
             @Override // ru.rustore.sdk.appupdate.J
@@ -61,7 +61,7 @@ public interface J extends IInterface {
                         obtain.writeInt(0);
                     }
                     obtain.writeStrongInterface(aVar);
-                    this.f1501a.transact(1, obtain, obtain2, 0);
+                    this.f1502a.transact(1, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -77,7 +77,7 @@ public interface J extends IInterface {
                     obtain.writeInterfaceToken("ru.vk.store.provider.appupdate.AppUpdateProvider");
                     obtain.writeString(str);
                     obtain.writeStrongInterface(aVar);
-                    this.f1501a.transact(2, obtain, obtain2, 0);
+                    this.f1502a.transact(2, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();
@@ -93,7 +93,7 @@ public interface J extends IInterface {
                     obtain.writeInterfaceToken("ru.vk.store.provider.appupdate.AppUpdateProvider");
                     obtain.writeString(str);
                     obtain.writeStrongInterface(aVar);
-                    this.f1501a.transact(4, obtain, obtain2, 0);
+                    this.f1502a.transact(4, obtain, obtain2, 0);
                     obtain2.readException();
                 } finally {
                     obtain2.recycle();

@@ -10,13 +10,13 @@ public final class C0151bo extends Sg {
 
     @Override // io.appmetrica.analytics.impl.Sg
     public final boolean a(Q5 q5) {
-        String j = this.f776a.c.j();
+        String j = this.f777a.c.j();
         String str = q5.h;
-        this.f776a.c.j(str).b();
+        this.f777a.c.j(str).b();
         if (TextUtils.equals(j, str)) {
             return false;
         }
-        this.f776a.a(N3.o());
+        this.f777a.a(N3.o());
         return false;
     }
 }

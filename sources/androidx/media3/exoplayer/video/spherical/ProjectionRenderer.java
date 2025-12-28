@@ -1,9 +1,9 @@
 package androidx.media3.exoplayer.video.spherical;
 
 import android.opengl.GLES20;
-import android.util.Log;
 import androidx.media3.common.util.GlProgram;
 import androidx.media3.common.util.GlUtil;
+import androidx.media3.common.util.Log;
 import androidx.media3.exoplayer.video.spherical.Projection;
 import java.nio.Buffer;
 import java.nio.FloatBuffer;

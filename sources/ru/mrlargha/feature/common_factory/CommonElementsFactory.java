@@ -53,13 +53,13 @@ import ru.mrlargha.commonui.elements.streetFood.StreetFoodScreen;
 import ru.mrlargha.commonui.elements.trade.presentation.TradeScreen;
 import ru.mrlargha.commonui.elements.tuningAuto.presentation.TuningAutoScreen;
 import ru.mrlargha.commonui.elements.video_advice.VideoAdvice;
-import ru.mrlargha.commonui.elements.workshop.PotionsScreen;
-import ru.mrlargha.commonui.elements.workshop.WorkshopScreen;
 import ru.mrlargha.feature.battle_pass_view.UserBattlePass;
 import ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen;
 import ru.mrlargha.feature.calendar.DailyRewardsScreen;
 import ru.mrlargha.feature.documents.DocumentsScreen;
 import ru.mrlargha.feature.starter_pack.StarterPackScreen;
+import ru.mrlargha.feature.workshop.presentation.PotionsScreen;
+import ru.mrlargha.feature.workshop.presentation.WorkshopScreen;
 import ru.mrlargha.rodina_ui.screens.excavation.ExcavationScreen;
 /* compiled from: CommonElementsFactory.kt */
 @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003¨\u0006\u0004"}, d2 = {"Lru/mrlargha/feature/common_factory/CommonElementsFactory;", "Lru/mrlargha/commonui/core/UIElementFactory;", "<init>", "()V", "common-factory_release"}, k = 1, mv = {2, 2, 0}, xi = 48)

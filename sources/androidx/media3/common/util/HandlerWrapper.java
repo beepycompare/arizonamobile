@@ -29,6 +29,8 @@ public interface HandlerWrapper {
 
     boolean postDelayed(Runnable runnable, long j);
 
+    void removeCallbacks(Runnable runnable);
+
     void removeCallbacksAndMessages(Object obj);
 
     void removeMessages(int i);

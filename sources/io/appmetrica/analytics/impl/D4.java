@@ -5,10 +5,10 @@ import java.util.ArrayList;
 public final class D4 extends Gf {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C4 f537a;
+    public final C4 f538a;
 
     public D4(C0713y4 c0713y4) {
-        this.f537a = new C4(c0713y4);
+        this.f538a = new C4(c0713y4);
     }
 
     @Override // io.appmetrica.analytics.impl.Gf
@@ -16,11 +16,11 @@ public final class D4 extends Gf {
         ArrayList arrayList = new ArrayList();
         int ordinal = EnumC0164cb.a(i).ordinal();
         if (ordinal == 12) {
-            arrayList.add(this.f537a.f519a);
+            arrayList.add(this.f538a.f520a);
         } else if (ordinal == 14) {
-            arrayList.add(this.f537a.b);
+            arrayList.add(this.f538a.b);
         } else if (ordinal == 34) {
-            arrayList.add(this.f537a.c);
+            arrayList.add(this.f538a.c);
         }
         return new W8(arrayList);
     }

@@ -8,11 +8,11 @@ import android.util.Pair;
 import androidx.media3.common.C;
 import androidx.media3.common.MediaItem;
 import androidx.media3.common.Timeline;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.datasource.TransferListener;
 import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.exoplayer.upstream.Allocator;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import java.util.HashMap;
 import java.util.IdentityHashMap;
@@ -58,7 +58,7 @@ public final class ConcatenatingMediaSource2 extends CompositeMediaSource<Intege
         }
 
         public Builder setMediaSourceFactory(MediaSource.Factory factory) {
-            this.mediaSourceFactory = (MediaSource.Factory) Assertions.checkNotNull(factory);
+            this.mediaSourceFactory = (MediaSource.Factory) Preconditions.checkNotNull(factory);
             return this;
         }
 
@@ -72,11 +72,11 @@ public final class ConcatenatingMediaSource2 extends CompositeMediaSource<Intege
         }
 
         public Builder add(MediaItem mediaItem, long j) {
-            Assertions.checkNotNull(mediaItem);
+            Preconditions.checkNotNull(mediaItem);
             if (j == C.TIME_UNSET && mediaItem.clippingConfiguration.endPositionMs != Long.MIN_VALUE) {
                 j = Util.usToMs(mediaItem.clippingConfiguration.endPositionUs - mediaItem.clippingConfiguration.startPositionUs);
             }
-            Assertions.checkStateNotNull(this.mediaSourceFactory, "Must use useDefaultMediaSourceFactory or setMediaSourceFactory first.");
+            Preconditions.checkNotNull(this.mediaSourceFactory, "Must use useDefaultMediaSourceFactory or setMediaSourceFactory first.");
             return add(this.mediaSourceFactory.createMediaSource(mediaItem), j);
         }
 
@@ -85,8 +85,8 @@ public final class ConcatenatingMediaSource2 extends CompositeMediaSource<Intege
         }
 
         public Builder add(MediaSource mediaSource, long j) {
-            Assertions.checkNotNull(mediaSource);
-            Assertions.checkState(((mediaSource instanceof ProgressiveMediaSource) && j == C.TIME_UNSET) ? false : true, "Progressive media source must define an initial placeholder duration.");
+            Preconditions.checkNotNull(mediaSource);
+            Preconditions.checkState(((mediaSource instanceof ProgressiveMediaSource) && j == C.TIME_UNSET) ? false : true, "Progressive media source must define an initial placeholder duration.");
             ImmutableList.Builder<MediaSourceHolder> builder = this.mediaSourceHoldersBuilder;
             int i = this.index;
             this.index = i + 1;
@@ -95,7 +95,7 @@ public final class ConcatenatingMediaSource2 extends CompositeMediaSource<Intege
         }
 
         public ConcatenatingMediaSource2 build() {
-            Assertions.checkArgument(this.index > 0, "Must add at least one source to the concatenation.");
+            Preconditions.checkArgument(this.index > 0, "Must add at least one source to the concatenation.");
             if (this.mediaItem == null) {
                 this.mediaItem = MediaItem.fromUri(Uri.EMPTY);
             }
@@ -148,7 +148,7 @@ public final class ConcatenatingMediaSource2 extends CompositeMediaSource<Intege
         MediaSource.MediaPeriodId copyWithWindowSequenceNumber = mediaPeriodId.copyWithPeriodUid(getChildPeriodUid(mediaPeriodId.periodUid)).copyWithWindowSequenceNumber(getChildWindowSequenceNumber(mediaPeriodId.windowSequenceNumber, this.mediaSourceHolders.size(), mediaSourceHolder.index));
         enableChildSource(Integer.valueOf(mediaSourceHolder.index));
         mediaSourceHolder.activeMediaPeriods++;
-        long longValue = mediaPeriodId.isAd() ? 0L : ((Long) Assertions.checkNotNull(mediaSourceHolder.periodTimeOffsetsByUid.get(copyWithWindowSequenceNumber.periodUid))).longValue();
+        long longValue = mediaPeriodId.isAd() ? 0L : ((Long) Preconditions.checkNotNull(mediaSourceHolder.periodTimeOffsetsByUid.get(copyWithWindowSequenceNumber.periodUid))).longValue();
         TimeOffsetMediaPeriod timeOffsetMediaPeriod = new TimeOffsetMediaPeriod(mediaSourceHolder.mediaSource.createPeriod(copyWithWindowSequenceNumber, allocator, j - longValue), longValue);
         this.mediaSourceByMediaPeriod.put(timeOffsetMediaPeriod, mediaSourceHolder);
         disableUnusedMediaSources();
@@ -158,7 +158,7 @@ public final class ConcatenatingMediaSource2 extends CompositeMediaSource<Intege
     @Override // androidx.media3.exoplayer.source.MediaSource
     public void releasePeriod(MediaPeriod mediaPeriod) {
         MediaSourceHolder mediaSourceHolder;
-        ((MediaSourceHolder) Assertions.checkNotNull(this.mediaSourceByMediaPeriod.remove(mediaPeriod))).mediaSource.releasePeriod(((TimeOffsetMediaPeriod) mediaPeriod).getWrappedMediaPeriod());
+        ((MediaSourceHolder) Preconditions.checkNotNull(this.mediaSourceByMediaPeriod.remove(mediaPeriod))).mediaSource.releasePeriod(((TimeOffsetMediaPeriod) mediaPeriod).getWrappedMediaPeriod());
         mediaSourceHolder.activeMediaPeriods--;
         if (this.mediaSourceByMediaPeriod.isEmpty()) {
             return;
@@ -212,7 +212,7 @@ public final class ConcatenatingMediaSource2 extends CompositeMediaSource<Intege
         if (this.timelineUpdateScheduled) {
             return;
         }
-        ((Handler) Assertions.checkNotNull(this.playbackThreadHandler)).obtainMessage(1).sendToTarget();
+        ((Handler) Preconditions.checkNotNull(this.playbackThreadHandler)).obtainMessage(1).sendToTarget();
         this.timelineUpdateScheduled = true;
     }
 
@@ -262,7 +262,7 @@ public final class ConcatenatingMediaSource2 extends CompositeMediaSource<Intege
         while (i2 < size) {
             MediaSourceHolder mediaSourceHolder = concatenatingMediaSource2.mediaSourceHolders.get(i2);
             Timeline timeline = mediaSourceHolder.mediaSource.getTimeline();
-            Assertions.checkArgument(timeline.isEmpty() ^ z2, "Can't concatenate empty child Timeline.");
+            Preconditions.checkArgument(timeline.isEmpty() ^ z2, "Can't concatenate empty child Timeline.");
             builder3.add((ImmutableList.Builder) timeline);
             builder4.add((ImmutableList.Builder) Integer.valueOf(i3));
             i3 += timeline.getPeriodCount();
@@ -302,7 +302,7 @@ public final class ConcatenatingMediaSource2 extends CompositeMediaSource<Intege
                     ImmutableList.Builder builder6 = builder5;
                     long j7 = period.durationUs;
                     if (j7 == C.TIME_UNSET) {
-                        Assertions.checkArgument(window2.firstPeriodIndex == window2.lastPeriodIndex, "Can't apply placeholder duration to multiple periods with unknown duration in a single window.");
+                        Preconditions.checkArgument(window2.firstPeriodIndex == window2.lastPeriodIndex, "Can't apply placeholder duration to multiple periods with unknown duration in a single window.");
                         j7 = window2.positionInFirstPeriodUs + j6;
                     }
                     if (i5 != window2.firstPeriodIndex || ((mediaSourceHolder.index == 0 && i4 == 0) || j7 == C.TIME_UNSET)) {
@@ -314,7 +314,7 @@ public final class ConcatenatingMediaSource2 extends CompositeMediaSource<Intege
                         j2 = -window2.positionInFirstPeriodUs;
                         j = j7 + j2;
                     }
-                    Object checkNotNull = Assertions.checkNotNull(period.uid);
+                    Object checkNotNull = Preconditions.checkNotNull(period.uid);
                     int i6 = i;
                     if (mediaSourceHolder.activeMediaPeriods == 0 || !mediaSourceHolder.periodTimeOffsetsByUid.containsKey(checkNotNull)) {
                         window = window2;
@@ -322,7 +322,7 @@ public final class ConcatenatingMediaSource2 extends CompositeMediaSource<Intege
                         window = window2;
                         if (!mediaSourceHolder.periodTimeOffsetsByUid.get(checkNotNull).equals(Long.valueOf(j2))) {
                             z = false;
-                            Assertions.checkArgument(z, "Can't handle windows with changing offset in first period.");
+                            Preconditions.checkArgument(z, "Can't handle windows with changing offset in first period.");
                             mediaSourceHolder.periodTimeOffsetsByUid.put(checkNotNull, Long.valueOf(j2));
                             j5 += j;
                             i5 = i6 + 1;
@@ -332,7 +332,7 @@ public final class ConcatenatingMediaSource2 extends CompositeMediaSource<Intege
                         }
                     }
                     z = true;
-                    Assertions.checkArgument(z, "Can't handle windows with changing offset in first period.");
+                    Preconditions.checkArgument(z, "Can't handle windows with changing offset in first period.");
                     mediaSourceHolder.periodTimeOffsetsByUid.put(checkNotNull, Long.valueOf(j2));
                     j5 += j;
                     i5 = i6 + 1;
@@ -454,7 +454,7 @@ public final class ConcatenatingMediaSource2 extends CompositeMediaSource<Intege
             period.positionInWindowUs = this.periodOffsetsInWindowUs.get(i).longValue();
             period.durationUs = getPeriodDurationUs(period, i);
             if (z) {
-                period.uid = ConcatenatingMediaSource2.getPeriodUid(childIndexByPeriodIndex, Assertions.checkNotNull(period.uid));
+                period.uid = ConcatenatingMediaSource2.getPeriodUid(childIndexByPeriodIndex, Preconditions.checkNotNull(period.uid));
             }
             return period;
         }

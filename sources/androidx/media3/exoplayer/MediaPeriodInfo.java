@@ -1,7 +1,7 @@
 package androidx.media3.exoplayer;
 
-import androidx.media3.common.util.Assertions;
 import androidx.media3.exoplayer.source.MediaSource;
+import com.google.common.base.Preconditions;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
@@ -20,12 +20,12 @@ public final class MediaPeriodInfo {
     /* JADX INFO: Access modifiers changed from: package-private */
     public MediaPeriodInfo(MediaSource.MediaPeriodId mediaPeriodId, long j, long j2, long j3, long j4, boolean z, boolean z2, boolean z3, boolean z4, boolean z5) {
         boolean z6 = false;
-        Assertions.checkArgument(!z5 || z3);
-        Assertions.checkArgument(!z4 || z3);
+        Preconditions.checkArgument(!z5 || z3);
+        Preconditions.checkArgument(!z4 || z3);
         if (!z2 || (!z3 && !z4 && !z5)) {
             z6 = true;
         }
-        Assertions.checkArgument(z6);
+        Preconditions.checkArgument(z6);
         this.id = mediaPeriodId;
         this.startPositionUs = j;
         this.requestedContentPositionUs = j2;

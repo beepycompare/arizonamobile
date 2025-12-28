@@ -9,7 +9,6 @@ import androidx.media3.common.Player;
 import androidx.media3.common.Timeline;
 import androidx.media3.common.Tracks;
 import androidx.media3.common.VideoSize;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.analytics.AnalyticsListener;
 import androidx.media3.exoplayer.analytics.PlaybackSessionManager;
@@ -17,6 +16,7 @@ import androidx.media3.exoplayer.analytics.PlaybackStats;
 import androidx.media3.exoplayer.source.LoadEventInfo;
 import androidx.media3.exoplayer.source.MediaLoadData;
 import androidx.media3.exoplayer.source.MediaSource;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,7 +26,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class PlaybackStatsListener implements AnalyticsListener, PlaybackSessionManager.Listener {
     private Format audioFormat;
     private long bandwidthBytes;
@@ -46,7 +46,7 @@ public final class PlaybackStatsListener implements AnalyticsListener, PlaybackS
     private Format videoFormat;
     private VideoSize videoSize;
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public interface Callback {
         void onPlaybackStatsReady(AnalyticsListener.EventTime eventTime, PlaybackStats playbackStats);
     }
@@ -92,18 +92,18 @@ public final class PlaybackStatsListener implements AnalyticsListener, PlaybackS
 
     @Override // androidx.media3.exoplayer.analytics.PlaybackSessionManager.Listener
     public void onSessionActive(AnalyticsListener.EventTime eventTime, String str) {
-        ((PlaybackStatsTracker) Assertions.checkNotNull(this.playbackStatsTrackers.get(str))).onForeground();
+        ((PlaybackStatsTracker) Preconditions.checkNotNull(this.playbackStatsTrackers.get(str))).onForeground();
     }
 
     @Override // androidx.media3.exoplayer.analytics.PlaybackSessionManager.Listener
     public void onAdPlaybackStarted(AnalyticsListener.EventTime eventTime, String str, String str2) {
-        ((PlaybackStatsTracker) Assertions.checkNotNull(this.playbackStatsTrackers.get(str))).onInterruptedByAd();
+        ((PlaybackStatsTracker) Preconditions.checkNotNull(this.playbackStatsTrackers.get(str))).onInterruptedByAd();
     }
 
     @Override // androidx.media3.exoplayer.analytics.PlaybackSessionManager.Listener
     public void onSessionFinished(AnalyticsListener.EventTime eventTime, String str, boolean z) {
-        PlaybackStatsTracker playbackStatsTracker = (PlaybackStatsTracker) Assertions.checkNotNull(this.playbackStatsTrackers.remove(str));
-        AnalyticsListener.EventTime eventTime2 = (AnalyticsListener.EventTime) Assertions.checkNotNull(this.sessionStartEventTimes.remove(str));
+        PlaybackStatsTracker playbackStatsTracker = (PlaybackStatsTracker) Preconditions.checkNotNull(this.playbackStatsTrackers.remove(str));
+        AnalyticsListener.EventTime eventTime2 = (AnalyticsListener.EventTime) Preconditions.checkNotNull(this.sessionStartEventTimes.remove(str));
         playbackStatsTracker.onFinished(eventTime, z, str.equals(this.discontinuityFromSession) ? this.discontinuityFromPositionMs : C.TIME_UNSET);
         PlaybackStats build = playbackStatsTracker.build(true);
         this.finishedPlaybackStats = PlaybackStats.merge(this.finishedPlaybackStats, build);
@@ -214,7 +214,7 @@ public final class PlaybackStatsListener implements AnalyticsListener, PlaybackS
                 z = belongsToSession;
             }
         }
-        Assertions.checkNotNull(eventTime);
+        Preconditions.checkNotNull(eventTime);
         if (!z && eventTime.mediaPeriodId != null && eventTime.mediaPeriodId.isAd()) {
             long adGroupTimeUs = eventTime.timeline.getPeriodByUid(eventTime.mediaPeriodId.periodUid, this.period).getAdGroupTimeUs(eventTime.mediaPeriodId.adGroupIndex);
             if (adGroupTimeUs == Long.MIN_VALUE) {
@@ -231,7 +231,7 @@ public final class PlaybackStatsListener implements AnalyticsListener, PlaybackS
         return events.contains(i) && this.sessionManager.belongsToSession(events.getEventTime(i), str);
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     private static final class PlaybackStatsTracker {
         private long audioFormatBitrateTimeProduct;
         private final List<PlaybackStats.EventTimeAndFormat> audioFormatHistory;
@@ -474,7 +474,7 @@ public final class PlaybackStatsListener implements AnalyticsListener, PlaybackS
         }
 
         private void updatePlaybackState(int i, AnalyticsListener.EventTime eventTime) {
-            Assertions.checkArgument(eventTime.realtimeMs >= this.currentPlaybackStateStartTimeMs);
+            Preconditions.checkArgument(eventTime.realtimeMs >= this.currentPlaybackStateStartTimeMs);
             long j = eventTime.realtimeMs - this.currentPlaybackStateStartTimeMs;
             long[] jArr = this.playbackStateDurationsMs;
             int i2 = this.currentPlaybackState;

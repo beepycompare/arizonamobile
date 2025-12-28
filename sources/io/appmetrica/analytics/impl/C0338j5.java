@@ -12,11 +12,11 @@ import kotlin.collections.CollectionsKt;
 public final class C0338j5 implements ModuleAdRevenueProcessor, ModuleAdRevenueProcessorsHolder {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f1047a = new ArrayList();
+    public final ArrayList f1048a = new ArrayList();
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessor
     public final String getDescription() {
-        return CollectionsKt.joinToString$default(this.f1047a, null, "Composite processor with " + this.f1047a.size() + " children: [", "]", 0, null, C0313i5.f1032a, 25, null);
+        return CollectionsKt.joinToString$default(this.f1048a, null, "Composite processor with " + this.f1048a.size() + " children: [", "]", 0, null, C0313i5.f1033a, 25, null);
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessor
@@ -24,7 +24,7 @@ public final class C0338j5 implements ModuleAdRevenueProcessor, ModuleAdRevenueP
         Object obj;
         boolean process;
         LoggerStorage.getMainPublicOrAnonymousLogger().info("Processing Ad Revenue for " + Arrays.toString(objArr), new Object[0]);
-        Iterator it = this.f1047a.iterator();
+        Iterator it = this.f1048a.iterator();
         while (true) {
             if (!it.hasNext()) {
                 obj = null;
@@ -53,6 +53,6 @@ public final class C0338j5 implements ModuleAdRevenueProcessor, ModuleAdRevenueP
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessorsHolder
     public final void register(ModuleAdRevenueProcessor moduleAdRevenueProcessor) {
-        this.f1047a.add(moduleAdRevenueProcessor);
+        this.f1048a.add(moduleAdRevenueProcessor);
     }
 }

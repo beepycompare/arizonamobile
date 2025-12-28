@@ -35,7 +35,7 @@ public final class IBinderSerializer implements KSerializer<IBinder> {
             throw new IllegalArgumentException(BuiltInSerializerKt.encoderErrorMessage(INSTANCE.getDescriptor().getSerialName(), encoder).toString());
         }
         SavedStateEncoder savedStateEncoder = (SavedStateEncoder) encoder;
-        SavedStateWriter.m9285putBinderimpl(SavedStateWriter.m9280constructorimpl(savedStateEncoder.getSavedState$savedstate()), savedStateEncoder.getKey$savedstate(), value);
+        SavedStateWriter.m9300putBinderimpl(SavedStateWriter.m9295constructorimpl(savedStateEncoder.getSavedState$savedstate()), savedStateEncoder.getKey$savedstate(), value);
     }
 
     @Override // kotlinx.serialization.DeserializationStrategy
@@ -45,6 +45,6 @@ public final class IBinderSerializer implements KSerializer<IBinder> {
             throw new IllegalArgumentException(BuiltInSerializerKt.decoderErrorMessage(INSTANCE.getDescriptor().getSerialName(), decoder).toString());
         }
         SavedStateDecoder savedStateDecoder = (SavedStateDecoder) decoder;
-        return SavedStateReader.m9201getBinderimpl(SavedStateReader.m9194constructorimpl(savedStateDecoder.getSavedState$savedstate()), savedStateDecoder.getKey$savedstate());
+        return SavedStateReader.m9216getBinderimpl(SavedStateReader.m9209constructorimpl(savedStateDecoder.getSavedState$savedstate()), savedStateDecoder.getKey$savedstate());
     }
 }

@@ -50,10 +50,7 @@ public final class MediaCodecPerformancePointCoverageProvider {
         }
 
         private static boolean shouldIgnorePerformancePoints() {
-            if (Build.VERSION.SDK_INT >= 35) {
-                return false;
-            }
-            int evaluateH264RequiredSupport = evaluateH264RequiredSupport(false);
+            int evaluateH264RequiredSupport = Build.VERSION.SDK_INT >= 35 ? 2 : evaluateH264RequiredSupport(false);
             int evaluateH264RequiredSupport2 = evaluateH264RequiredSupport(true);
             if (evaluateH264RequiredSupport == 0) {
                 return true;

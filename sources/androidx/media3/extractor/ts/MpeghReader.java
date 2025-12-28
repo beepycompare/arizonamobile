@@ -4,7 +4,6 @@ import androidx.media3.common.C;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.ParserException;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ParsableBitArray;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
@@ -12,6 +11,7 @@ import androidx.media3.extractor.ExtractorOutput;
 import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.ts.MpeghUtil;
 import androidx.media3.extractor.ts.TsPayloadReader;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
 /* loaded from: classes3.dex */
@@ -100,7 +100,7 @@ public final class MpeghReader implements ElementaryStreamReader {
 
     @Override // androidx.media3.extractor.ts.ElementaryStreamReader
     public void consume(ParsableByteArray parsableByteArray) throws ParserException {
-        Assertions.checkStateNotNull(this.output);
+        Preconditions.checkNotNull(this.output);
         while (parsableByteArray.bytesLeft() > 0) {
             int i = this.state;
             if (i != 0) {

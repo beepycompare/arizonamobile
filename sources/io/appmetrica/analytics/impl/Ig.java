@@ -9,8 +9,8 @@ public final class Ig extends Hg {
 
     @Override // io.appmetrica.analytics.impl.Hg, io.appmetrica.analytics.impl.AbstractC0495pa
     public final void a(List<Sg> list) {
-        list.add(this.f1161a.i);
-        list.add(this.f1161a.j);
+        list.add(this.f1162a.i);
+        list.add(this.f1162a.j);
         super.a(list);
     }
 }

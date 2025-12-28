@@ -6,12 +6,12 @@ import io.appmetrica.analytics.coreapi.internal.db.DatabaseScript;
 public final class L4 extends DatabaseScript {
 
     /* renamed from: a  reason: collision with root package name */
-    public final K4 f661a = new K4();
+    public final K4 f662a = new K4();
     public final J4 b = new J4();
 
     @Override // io.appmetrica.analytics.coreapi.internal.db.DatabaseScript
     public final void runScript(SQLiteDatabase sQLiteDatabase) {
-        this.f661a.runScript(sQLiteDatabase);
+        this.f662a.runScript(sQLiteDatabase);
         this.b.runScript(sQLiteDatabase);
     }
 }

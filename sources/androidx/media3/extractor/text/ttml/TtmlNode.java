@@ -7,7 +7,7 @@ import android.util.Base64;
 import android.util.Pair;
 import androidx.media3.common.C;
 import androidx.media3.common.text.Cue;
-import androidx.media3.common.util.Assertions;
+import com.google.common.base.Preconditions;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -117,7 +117,7 @@ public final class TtmlNode {
         this.isTextNode = str2 != null;
         this.startTimeUs = j;
         this.endTimeUs = j2;
-        this.regionId = (String) Assertions.checkNotNull(str3);
+        this.regionId = (String) Preconditions.checkNotNull(str3);
         this.parent = ttmlNode;
         this.nodeStartsByRegion = new HashMap<>();
         this.nodeEndsByRegion = new HashMap<>();
@@ -210,14 +210,14 @@ public final class TtmlNode {
             if (str != null) {
                 byte[] decode = Base64.decode(str, 0);
                 Bitmap decodeByteArray = BitmapFactory.decodeByteArray(decode, 0, decode.length);
-                TtmlRegion ttmlRegion = (TtmlRegion) Assertions.checkNotNull(map2.get(pair.first));
+                TtmlRegion ttmlRegion = (TtmlRegion) Preconditions.checkNotNull(map2.get(pair.first));
                 arrayList2.add(new Cue.Builder().setBitmap(decodeByteArray).setPosition(ttmlRegion.position).setPositionAnchor(0).setLine(ttmlRegion.line, 0).setLineAnchor(ttmlRegion.lineAnchor).setSize(ttmlRegion.width).setBitmapHeight(ttmlRegion.height).setVerticalType(ttmlRegion.verticalType).build());
             }
         }
         for (Map.Entry entry : treeMap.entrySet()) {
-            TtmlRegion ttmlRegion2 = (TtmlRegion) Assertions.checkNotNull(map2.get(entry.getKey()));
+            TtmlRegion ttmlRegion2 = (TtmlRegion) Preconditions.checkNotNull(map2.get(entry.getKey()));
             Cue.Builder builder = (Cue.Builder) entry.getValue();
-            cleanUpText((SpannableStringBuilder) Assertions.checkNotNull(builder.getText()));
+            cleanUpText((SpannableStringBuilder) Preconditions.checkNotNull(builder.getText()));
             builder.setLine(ttmlRegion2.line, ttmlRegion2.lineType);
             builder.setLineAnchor(ttmlRegion2.lineAnchor);
             builder.setPosition(ttmlRegion2.position);
@@ -256,12 +256,12 @@ public final class TtmlNode {
         }
         String str2 = str;
         if (this.isTextNode && z) {
-            getRegionOutputText(str2, map).append((CharSequence) Assertions.checkNotNull(this.text));
+            getRegionOutputText(str2, map).append((CharSequence) Preconditions.checkNotNull(this.text));
         } else if ("br".equals(this.tag) && z) {
             getRegionOutputText(str2, map).append('\n');
         } else if (isActive(j)) {
             for (Map.Entry<String, Cue.Builder> entry : map.entrySet()) {
-                this.nodeStartsByRegion.put(entry.getKey(), Integer.valueOf(((CharSequence) Assertions.checkNotNull(entry.getValue().getText())).length()));
+                this.nodeStartsByRegion.put(entry.getKey(), Integer.valueOf(((CharSequence) Preconditions.checkNotNull(entry.getValue().getText())).length()));
             }
             boolean equals = TAG_P.equals(this.tag);
             int i = 0;
@@ -286,7 +286,7 @@ public final class TtmlNode {
                 TtmlRenderUtil.endParagraph(getRegionOutputText(str2, map3));
             }
             for (Map.Entry<String, Cue.Builder> entry2 : map3.entrySet()) {
-                this.nodeEndsByRegion.put(entry2.getKey(), Integer.valueOf(((CharSequence) Assertions.checkNotNull(entry2.getValue().getText())).length()));
+                this.nodeEndsByRegion.put(entry2.getKey(), Integer.valueOf(((CharSequence) Preconditions.checkNotNull(entry2.getValue().getText())).length()));
             }
         }
     }
@@ -297,7 +297,7 @@ public final class TtmlNode {
             builder.setText(new SpannableStringBuilder());
             map.put(str, builder);
         }
-        return (SpannableStringBuilder) Assertions.checkNotNull(map.get(str).getText());
+        return (SpannableStringBuilder) Preconditions.checkNotNull(map.get(str).getText());
     }
 
     private void traverseForStyle(long j, Map<String, TtmlStyle> map, Map<String, TtmlRegion> map2, String str, Map<String, Cue.Builder> map3) {
@@ -313,7 +313,7 @@ public final class TtmlNode {
                 int intValue = this.nodeStartsByRegion.containsKey(key) ? this.nodeStartsByRegion.get(key).intValue() : 0;
                 int intValue2 = next.getValue().intValue();
                 if (intValue != intValue2) {
-                    applyStyleToOutput(map, (Cue.Builder) Assertions.checkNotNull(map3.get(key)), intValue, intValue2, ((TtmlRegion) Assertions.checkNotNull(map2.get(str2))).verticalType);
+                    applyStyleToOutput(map, (Cue.Builder) Preconditions.checkNotNull(map3.get(key)), intValue, intValue2, ((TtmlRegion) Preconditions.checkNotNull(map2.get(str2))).verticalType);
                 }
             }
             for (int i = 0; i < getChildCount(); i++) {

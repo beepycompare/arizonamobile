@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import androidx.viewbinding.ViewBinding;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class TableRowBinding implements ViewBinding {
     private final LinearLayout rootView;
 

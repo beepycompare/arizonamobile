@@ -8,20 +8,20 @@ import io.appmetrica.analytics.coreapi.internal.identifiers.AppSetIdScope;
 public final class C0103a2 implements AppSetIdListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0129b2 f886a;
+    public final /* synthetic */ C0129b2 f887a;
 
     public C0103a2(C0129b2 c0129b2) {
-        this.f886a = c0129b2;
+        this.f887a = c0129b2;
     }
 
     @Override // io.appmetrica.analytics.appsetid.internal.AppSetIdListener
     public final void onAppSetIdRetrieved(String str, AppSetIdScope appSetIdScope) {
-        this.f886a.c = new AppSetId(str, appSetIdScope);
-        this.f886a.d.countDown();
+        this.f887a.c = new AppSetId(str, appSetIdScope);
+        this.f887a.d.countDown();
     }
 
     @Override // io.appmetrica.analytics.appsetid.internal.AppSetIdListener
     public final void onFailure(Throwable th) {
-        this.f886a.d.countDown();
+        this.f887a.d.countDown();
     }
 }

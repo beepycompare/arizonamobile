@@ -19,22 +19,22 @@ public final class UByteArraySerializer extends PrimitiveArraySerializer<UByte, 
 
     @Override // kotlinx.serialization.internal.AbstractCollectionSerializer
     public /* bridge */ /* synthetic */ int collectionSize(Object obj) {
-        return m11934collectionSizeGBYM_sE(((UByteArray) obj).m10306unboximpl());
+        return m11972collectionSizeGBYM_sE(((UByteArray) obj).m10334unboximpl());
     }
 
     @Override // kotlinx.serialization.internal.PrimitiveArraySerializer
     public /* bridge */ /* synthetic */ UByteArray empty() {
-        return UByteArray.m10290boximpl(m11935emptyTcUX1vc());
+        return UByteArray.m10318boximpl(m11973emptyTcUX1vc());
     }
 
     @Override // kotlinx.serialization.internal.AbstractCollectionSerializer
     public /* bridge */ /* synthetic */ Object toBuilder(Object obj) {
-        return m11936toBuilderGBYM_sE(((UByteArray) obj).m10306unboximpl());
+        return m11974toBuilderGBYM_sE(((UByteArray) obj).m10334unboximpl());
     }
 
     @Override // kotlinx.serialization.internal.PrimitiveArraySerializer
     public /* bridge */ /* synthetic */ void writeContent(CompositeEncoder compositeEncoder, UByteArray uByteArray, int i) {
-        m11937writeContentCoi6ktg(compositeEncoder, uByteArray.m10306unboximpl(), i);
+        m11975writeContentCoi6ktg(compositeEncoder, uByteArray.m10334unboximpl(), i);
     }
 
     private UByteArraySerializer() {
@@ -42,20 +42,20 @@ public final class UByteArraySerializer extends PrimitiveArraySerializer<UByte, 
     }
 
     /* renamed from: collectionSize-GBYM_sE  reason: not valid java name */
-    protected int m11934collectionSizeGBYM_sE(byte[] collectionSize) {
+    protected int m11972collectionSizeGBYM_sE(byte[] collectionSize) {
         Intrinsics.checkNotNullParameter(collectionSize, "$this$collectionSize");
-        return UByteArray.m10298getSizeimpl(collectionSize);
+        return UByteArray.m10326getSizeimpl(collectionSize);
     }
 
     /* renamed from: toBuilder-GBYM_sE  reason: not valid java name */
-    protected UByteArrayBuilder m11936toBuilderGBYM_sE(byte[] toBuilder) {
+    protected UByteArrayBuilder m11974toBuilderGBYM_sE(byte[] toBuilder) {
         Intrinsics.checkNotNullParameter(toBuilder, "$this$toBuilder");
         return new UByteArrayBuilder(toBuilder, null);
     }
 
     /* renamed from: empty-TcUX1vc  reason: not valid java name */
-    protected byte[] m11935emptyTcUX1vc() {
-        return UByteArray.m10291constructorimpl(0);
+    protected byte[] m11973emptyTcUX1vc() {
+        return UByteArray.m10319constructorimpl(0);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -63,15 +63,15 @@ public final class UByteArraySerializer extends PrimitiveArraySerializer<UByte, 
     public void readElement(CompositeDecoder decoder, int i, UByteArrayBuilder builder, boolean z) {
         Intrinsics.checkNotNullParameter(decoder, "decoder");
         Intrinsics.checkNotNullParameter(builder, "builder");
-        builder.m11932append7apg3OU$kotlinx_serialization_core(UByte.m10234constructorimpl(decoder.decodeInlineElement(getDescriptor(), i).decodeByte()));
+        builder.m11970append7apg3OU$kotlinx_serialization_core(UByte.m10262constructorimpl(decoder.decodeInlineElement(getDescriptor(), i).decodeByte()));
     }
 
     /* renamed from: writeContent-Coi6ktg  reason: not valid java name */
-    protected void m11937writeContentCoi6ktg(CompositeEncoder encoder, byte[] content, int i) {
+    protected void m11975writeContentCoi6ktg(CompositeEncoder encoder, byte[] content, int i) {
         Intrinsics.checkNotNullParameter(encoder, "encoder");
         Intrinsics.checkNotNullParameter(content, "content");
         for (int i2 = 0; i2 < i; i2++) {
-            encoder.encodeInlineElement(getDescriptor(), i2).encodeByte(UByteArray.m10297getw2LRezQ(content, i2));
+            encoder.encodeInlineElement(getDescriptor(), i2).encodeByte(UByteArray.m10325getw2LRezQ(content, i2));
         }
     }
 }

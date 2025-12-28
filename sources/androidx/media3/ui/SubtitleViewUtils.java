@@ -7,7 +7,7 @@ import android.text.style.AbsoluteSizeSpan;
 import android.text.style.RelativeSizeSpan;
 import androidx.media3.common.text.Cue;
 import androidx.media3.common.text.LanguageFeatureSpan;
-import androidx.media3.common.util.Assertions;
+import com.google.common.base.Preconditions;
 import com.google.common.base.Predicate;
 /* loaded from: classes3.dex */
 final class SubtitleViewUtils {
@@ -35,7 +35,7 @@ final class SubtitleViewUtils {
             if (!(builder.getText() instanceof Spannable)) {
                 builder.setText(SpannableString.valueOf(builder.getText()));
             }
-            removeSpansIf((Spannable) Assertions.checkNotNull(builder.getText()), new Predicate() { // from class: androidx.media3.ui.SubtitleViewUtils$$ExternalSyntheticLambda0
+            removeSpansIf((Spannable) Preconditions.checkNotNull(builder.getText()), new Predicate() { // from class: androidx.media3.ui.SubtitleViewUtils$$ExternalSyntheticLambda0
                 @Override // com.google.common.base.Predicate
                 public final boolean apply(Object obj) {
                     return SubtitleViewUtils.lambda$removeAllEmbeddedStyling$0(obj);
@@ -56,7 +56,7 @@ final class SubtitleViewUtils {
             if (!(builder.getText() instanceof Spannable)) {
                 builder.setText(SpannableString.valueOf(builder.getText()));
             }
-            removeSpansIf((Spannable) Assertions.checkNotNull(builder.getText()), new Predicate() { // from class: androidx.media3.ui.SubtitleViewUtils$$ExternalSyntheticLambda1
+            removeSpansIf((Spannable) Preconditions.checkNotNull(builder.getText()), new Predicate() { // from class: androidx.media3.ui.SubtitleViewUtils$$ExternalSyntheticLambda1
                 @Override // com.google.common.base.Predicate
                 public final boolean apply(Object obj) {
                     return SubtitleViewUtils.lambda$removeEmbeddedFontSizes$1(obj);

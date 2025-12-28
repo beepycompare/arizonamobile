@@ -3,24 +3,24 @@ package io.appmetrica.analytics.impl;
 public final class Eb implements InterfaceC0152c {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0256g0 f556a;
+    public final InterfaceC0256g0 f557a;
     public final En b = new En();
 
     public Eb(InterfaceC0256g0 interfaceC0256g0) {
-        this.f556a = interfaceC0256g0;
+        this.f557a = interfaceC0256g0;
     }
 
     public static final void a(Eb eb, V v) {
-        eb.f556a.a(v);
+        eb.f557a.a(v);
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0152c
     public final void onAppNotResponding() {
         StackTraceElement[] stackTraceElementArr;
         En en = this.b;
-        Thread a2 = en.f564a.a();
+        Thread a2 = en.f565a.a();
         try {
-            stackTraceElementArr = en.f564a.b();
+            stackTraceElementArr = en.f565a.b();
             if (stackTraceElementArr == null) {
                 try {
                     stackTraceElementArr = a2.getStackTrace();

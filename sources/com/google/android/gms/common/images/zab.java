@@ -8,6 +8,7 @@ import com.google.android.gms.common.internal.Asserts;
 import com.google.android.gms.internal.base.zam;
 import java.util.HashSet;
 import java.util.Map;
+import kotlin.time.DurationKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-base@@18.4.0 */
 /* loaded from: classes4.dex */
@@ -51,7 +52,7 @@ public final class zab implements Runnable {
             map2 = this.zaa.zaj;
             Long l = (Long) map2.get(uri);
             if (l != null) {
-                if (SystemClock.elapsedRealtime() - l.longValue() < 3600000) {
+                if (SystemClock.elapsedRealtime() - l.longValue() < DurationKt.MILLIS_IN_HOUR) {
                     zag zagVar3 = this.zab;
                     ImageManager imageManager2 = this.zaa;
                     Context context = imageManager2.zad;

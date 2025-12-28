@@ -12,7 +12,7 @@ import org.json.JSONObject;
 public final class A implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f457a = "request_state";
+    public final String f458a = "request_state";
     public final String b = "type";
     public final String c = "last_attempt";
     public final String d = "prev_attempt_result";
@@ -27,13 +27,13 @@ public final class A implements Converter {
         ?? emptyList;
         JSONObject jSONObject;
         JSONObject jSONObject2 = new JSONObject();
-        String str = this.f457a;
+        String str = this.f458a;
         if (list != null) {
             emptyList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
             for (z zVar : list) {
                 try {
                     jSONObject = new JSONObject();
-                    jSONObject.put(this.b, zVar.f479a);
+                    jSONObject.put(this.b, zVar.f480a);
                     jSONObject.put(this.c, zVar.b);
                     jSONObject.put(this.d, u.a(zVar.c));
                 } catch (Throwable unused) {
@@ -56,7 +56,7 @@ public final class A implements Converter {
         int i;
         try {
             ArrayList arrayList = new ArrayList();
-            if (str == null || (optJSONArray = new JSONObject(str).optJSONArray(this.f457a)) == null) {
+            if (str == null || (optJSONArray = new JSONObject(str).optJSONArray(this.f458a)) == null) {
                 return arrayList;
             }
             int length = optJSONArray.length();

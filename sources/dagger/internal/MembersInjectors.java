@@ -1,13 +1,13 @@
 package dagger.internal;
 
 import dagger.MembersInjector;
-/* loaded from: classes4.dex */
+/* loaded from: classes.dex */
 public final class MembersInjectors {
     public static <T> MembersInjector<T> noOp() {
         return NoOpMembersInjector.INSTANCE;
     }
 
-    /* loaded from: classes4.dex */
+    /* loaded from: classes.dex */
     private enum NoOpMembersInjector implements MembersInjector<Object> {
         INSTANCE;
 

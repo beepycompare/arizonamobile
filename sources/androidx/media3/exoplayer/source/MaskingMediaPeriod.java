@@ -1,7 +1,6 @@
 package androidx.media3.exoplayer.source;
 
 import androidx.media3.common.C;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.LoadingInfo;
 import androidx.media3.exoplayer.SeekParameters;
@@ -9,6 +8,7 @@ import androidx.media3.exoplayer.source.MediaPeriod;
 import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.exoplayer.trackselection.ExoTrackSelection;
 import androidx.media3.exoplayer.upstream.Allocator;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 /* loaded from: classes3.dex */
 public final class MaskingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
@@ -52,13 +52,13 @@ public final class MaskingMediaPeriod implements MediaPeriod, MediaPeriod.Callba
     }
 
     public void setMediaSource(MediaSource mediaSource) {
-        Assertions.checkState(this.mediaSource == null);
+        Preconditions.checkState(this.mediaSource == null);
         this.mediaSource = mediaSource;
     }
 
     public void createPeriod(MediaSource.MediaPeriodId mediaPeriodId) {
         long preparePositionWithOverride = getPreparePositionWithOverride(this.preparePositionUs);
-        MediaPeriod createPeriod = ((MediaSource) Assertions.checkNotNull(this.mediaSource)).createPeriod(mediaPeriodId, this.allocator, preparePositionWithOverride);
+        MediaPeriod createPeriod = ((MediaSource) Preconditions.checkNotNull(this.mediaSource)).createPeriod(mediaPeriodId, this.allocator, preparePositionWithOverride);
         this.mediaPeriod = createPeriod;
         if (this.callback != null) {
             createPeriod.prepare(this, preparePositionWithOverride);
@@ -67,7 +67,7 @@ public final class MaskingMediaPeriod implements MediaPeriod, MediaPeriod.Callba
 
     public void releasePeriod() {
         if (this.mediaPeriod != null) {
-            ((MediaSource) Assertions.checkNotNull(this.mediaSource)).releasePeriod(this.mediaPeriod);
+            ((MediaSource) Preconditions.checkNotNull(this.mediaSource)).releasePeriod(this.mediaPeriod);
         }
     }
 

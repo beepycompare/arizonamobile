@@ -5,7 +5,7 @@ import androidx.media3.common.Format;
 import androidx.media3.exoplayer.analytics.AnalyticsListener;
 import java.util.Collections;
 import java.util.List;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class PlaybackStats {
     public static final PlaybackStats EMPTY = merge(new PlaybackStats[0]);
     public static final int PLAYBACK_STATE_ABANDONED = 15;
@@ -65,7 +65,7 @@ public final class PlaybackStats {
     public final int validJoinTimeCount;
     public final List<EventTimeAndFormat> videoFormatHistory;
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static final class EventTimeAndPlaybackState {
         public final AnalyticsListener.EventTime eventTime;
         public final int playbackState;
@@ -94,7 +94,7 @@ public final class PlaybackStats {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static final class EventTimeAndFormat {
         public final AnalyticsListener.EventTime eventTime;
         public final Format format;
@@ -132,7 +132,7 @@ public final class PlaybackStats {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static final class EventTimeAndException {
         public final AnalyticsListener.EventTime eventTime;
         public final Exception exception;

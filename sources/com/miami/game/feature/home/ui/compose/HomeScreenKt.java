@@ -397,7 +397,7 @@ public final class HomeScreenKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = startRestartGroup.consume(AndroidCompositionLocals_androidKt.getLocalContext());
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            SingletonAsyncImageKt.m9395AsyncImage10Xjiaw(ImageRequestsKt.transformations(new ImageRequest.Builder((Context) consume).data(Integer.valueOf(uiState.getBackGroundId())), new CoilBlurTransformation(0, 0, 3, null)).build(), null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, 1573296, 0, 1976);
+            SingletonAsyncImageKt.m9410AsyncImage10Xjiaw(ImageRequestsKt.transformations(new ImageRequest.Builder((Context) consume).data(Integer.valueOf(uiState.getBackGroundId())), new CoilBlurTransformation(0, 0, 3, null)).build(), null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, 1573296, 0, 1976);
             ImagesKt.BackgroundImage(uiState.getBackGroundId(), startRestartGroup, 0);
             HomeContent(uiState, notificationState, onClickGame, onClickServer, onClickShop, onClickNews, onClickSocial, onClickAccount, onClickForum, onClickSettings, onClickSetup, onClickNotifications, onLongClickGame, startRestartGroup, 2147483646 & i3, i5 & AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED);
             composer2 = startRestartGroup;

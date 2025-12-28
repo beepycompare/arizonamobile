@@ -11,6 +11,7 @@ import androidx.media3.common.text.Cue;
 import androidx.media3.common.text.CueGroup;
 import androidx.media3.common.util.Size;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -349,6 +350,10 @@ public interface Player {
 
     AudioAttributes getAudioAttributes();
 
+    default int getAudioSessionId() {
+        return 0;
+    }
+
     Commands getAvailableCommands();
 
     int getBufferedPercentage();
@@ -478,6 +483,8 @@ public interface Player {
 
     void moveMediaItems(int i, int i2, int i3);
 
+    void mute();
+
     void pause();
 
     void play();
@@ -566,6 +573,8 @@ public interface Player {
 
     void stop();
 
+    void unmute();
+
     /* loaded from: classes2.dex */
     public static final class Events {
         private final FlagSet flags;
@@ -580,6 +589,10 @@ public interface Player {
 
         public boolean containsAny(int... iArr) {
             return this.flags.containsAny(iArr);
+        }
+
+        public boolean containsAny(Events events) {
+            return this.flags.containsAny(events.flags);
         }
 
         public int size() {
@@ -632,6 +645,8 @@ public interface Player {
         }
 
         public PositionInfo(Object obj, int i, MediaItem mediaItem, Object obj2, int i2, long j, long j2, int i3, int i4) {
+            Preconditions.checkArgument(i >= 0);
+            Preconditions.checkArgument(i2 >= 0);
             this.windowUid = obj;
             this.windowIndex = i;
             this.mediaItemIndex = i;
@@ -712,9 +727,9 @@ public interface Player {
         }
 
         public static PositionInfo fromBundle(Bundle bundle) {
-            int i = bundle.getInt(FIELD_MEDIA_ITEM_INDEX, 0);
+            int max = Math.max(0, bundle.getInt(FIELD_MEDIA_ITEM_INDEX, 0));
             Bundle bundle2 = bundle.getBundle(FIELD_MEDIA_ITEM);
-            return new PositionInfo(null, i, bundle2 == null ? null : MediaItem.fromBundle(bundle2), null, bundle.getInt(FIELD_PERIOD_INDEX, 0), bundle.getLong(FIELD_POSITION_MS, 0L), bundle.getLong(FIELD_CONTENT_POSITION_MS, 0L), bundle.getInt(FIELD_AD_GROUP_INDEX, -1), bundle.getInt(FIELD_AD_INDEX_IN_AD_GROUP, -1));
+            return new PositionInfo(null, max, bundle2 == null ? null : MediaItem.fromBundle(bundle2), null, Math.max(0, bundle.getInt(FIELD_PERIOD_INDEX, 0)), bundle.getLong(FIELD_POSITION_MS, 0L), bundle.getLong(FIELD_CONTENT_POSITION_MS, 0L), bundle.getInt(FIELD_AD_GROUP_INDEX, -1), bundle.getInt(FIELD_AD_INDEX_IN_AD_GROUP, -1));
         }
     }
 

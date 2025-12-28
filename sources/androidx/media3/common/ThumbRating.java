@@ -1,8 +1,8 @@
 package androidx.media3.common;
 
 import android.os.Bundle;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import java.util.Objects;
 /* loaded from: classes2.dex */
 public final class ThumbRating extends Rating {
@@ -53,7 +53,7 @@ public final class ThumbRating extends Rating {
     }
 
     public static ThumbRating fromBundle(Bundle bundle) {
-        Assertions.checkArgument(bundle.getInt(FIELD_RATING_TYPE, -1) == 3);
+        Preconditions.checkArgument(bundle.getInt(FIELD_RATING_TYPE, -1) == 3);
         if (bundle.getBoolean(FIELD_RATED, false)) {
             return new ThumbRating(bundle.getBoolean(FIELD_IS_THUMBS_UP, false));
         }

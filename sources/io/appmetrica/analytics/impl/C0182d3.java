@@ -6,7 +6,7 @@ import android.util.Base64;
 public final class C0182d3 implements uo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final I8 f938a;
+    public final I8 f939a;
 
     public C0182d3() {
         this(new I8());
@@ -22,11 +22,11 @@ public final class C0182d3 implements uo {
             } catch (Throwable unused) {
             }
         }
-        I8 i8 = this.f938a;
-        return ((H8) i8.f619a.a(o8.o)).a(bArr);
+        I8 i8 = this.f939a;
+        return ((H8) i8.f620a.a(o8.o)).a(bArr);
     }
 
     public C0182d3(I8 i8) {
-        this.f938a = i8;
+        this.f939a = i8;
     }
 }

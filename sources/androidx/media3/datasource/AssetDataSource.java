@@ -5,8 +5,8 @@ import android.content.res.AssetManager;
 import android.net.Uri;
 import androidx.collection.SieveCacheKt;
 import androidx.media3.common.PlaybackException;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -40,7 +40,7 @@ public final class AssetDataSource extends BaseDataSource {
         try {
             Uri uri = dataSpec.uri;
             this.uri = uri;
-            String str = (String) Assertions.checkNotNull(uri.getPath());
+            String str = (String) Preconditions.checkNotNull(uri.getPath());
             if (str.startsWith("/android_asset/")) {
                 str = str.substring(15);
             } else if (str.startsWith("/")) {

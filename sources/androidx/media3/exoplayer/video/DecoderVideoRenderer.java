@@ -6,7 +6,6 @@ import android.view.Surface;
 import androidx.media3.common.C;
 import androidx.media3.common.Format;
 import androidx.media3.common.VideoSize;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.TimedValueQueue;
 import androidx.media3.common.util.TraceUtil;
@@ -25,6 +24,7 @@ import androidx.media3.exoplayer.audio.SilenceSkippingAudioProcessor;
 import androidx.media3.exoplayer.drm.DrmSession;
 import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.exoplayer.video.VideoRendererEventListener;
+import com.google.common.base.Preconditions;
 /* loaded from: classes3.dex */
 public abstract class DecoderVideoRenderer extends BaseRenderer {
     private static final int REINITIALIZATION_STATE_NONE = 0;
@@ -106,7 +106,7 @@ public abstract class DecoderVideoRenderer extends BaseRenderer {
             int readSource = readSource(formatHolder, this.flagsOnlyBuffer, 2);
             if (readSource != -5) {
                 if (readSource == -4) {
-                    Assertions.checkState(this.flagsOnlyBuffer.isEndOfStream());
+                    Preconditions.checkState(this.flagsOnlyBuffer.isEndOfStream());
                     this.inputStreamEnded = true;
                     this.outputStreamEnded = true;
                     return;
@@ -181,7 +181,7 @@ public abstract class DecoderVideoRenderer extends BaseRenderer {
     }
 
     @Override // androidx.media3.exoplayer.BaseRenderer
-    protected void onPositionReset(long j, boolean z) throws ExoPlaybackException {
+    protected void onPositionReset(long j, boolean z, boolean z2) throws ExoPlaybackException {
         this.inputStreamEnded = false;
         this.outputStreamEnded = false;
         lowerFirstFrameState(1);
@@ -243,7 +243,7 @@ public abstract class DecoderVideoRenderer extends BaseRenderer {
             videoDecoderOutputBuffer.release();
             this.outputBuffer = null;
         }
-        Decoder decoder = (Decoder) Assertions.checkNotNull(this.decoder);
+        Decoder decoder = (Decoder) Preconditions.checkNotNull(this.decoder);
         decoder.flush();
         decoder.setOutputStartTimeUs(getLastResetPositionUs());
         this.decoderReceivedBuffers = false;
@@ -267,20 +267,20 @@ public abstract class DecoderVideoRenderer extends BaseRenderer {
     protected void onInputFormatChanged(FormatHolder formatHolder) throws ExoPlaybackException {
         DecoderReuseEvaluation canReuseDecoder;
         this.waitingForFirstSampleInFormat = true;
-        Format format = (Format) Assertions.checkNotNull(formatHolder.format);
+        Format format = (Format) Preconditions.checkNotNull(formatHolder.format);
         setSourceDrmSession(formatHolder.drmSession);
         Format format2 = this.inputFormat;
         this.inputFormat = format;
         Decoder<DecoderInputBuffer, ? extends VideoDecoderOutputBuffer, ? extends DecoderException> decoder = this.decoder;
         if (decoder == null) {
             maybeInitDecoder();
-            this.eventDispatcher.inputFormatChanged((Format) Assertions.checkNotNull(this.inputFormat), null);
+            this.eventDispatcher.inputFormatChanged((Format) Preconditions.checkNotNull(this.inputFormat), null);
             return;
         }
         if (this.sourceDrmSession != this.decoderDrmSession) {
-            canReuseDecoder = new DecoderReuseEvaluation(this.decoder.getName(), (Format) Assertions.checkNotNull(format2), format, 0, 128);
+            canReuseDecoder = new DecoderReuseEvaluation(this.decoder.getName(), (Format) Preconditions.checkNotNull(format2), format, 0, 128);
         } else {
-            canReuseDecoder = canReuseDecoder(decoder.getName(), (Format) Assertions.checkNotNull(format2), format);
+            canReuseDecoder = canReuseDecoder(decoder.getName(), (Format) Preconditions.checkNotNull(format2), format);
         }
         if (canReuseDecoder.result == 0) {
             if (this.decoderReceivedBuffers) {
@@ -290,7 +290,7 @@ public abstract class DecoderVideoRenderer extends BaseRenderer {
                 maybeInitDecoder();
             }
         }
-        this.eventDispatcher.inputFormatChanged((Format) Assertions.checkNotNull(this.inputFormat), canReuseDecoder);
+        this.eventDispatcher.inputFormatChanged((Format) Preconditions.checkNotNull(this.inputFormat), canReuseDecoder);
     }
 
     protected void onProcessedOutputBuffer(long j) {
@@ -361,9 +361,9 @@ public abstract class DecoderVideoRenderer extends BaseRenderer {
         }
         maybeNotifyVideoSizeChanged(videoDecoderOutputBuffer.width, videoDecoderOutputBuffer.height);
         if (z2) {
-            ((VideoDecoderOutputBufferRenderer) Assertions.checkNotNull(this.outputBufferRenderer)).setOutputBuffer(videoDecoderOutputBuffer);
+            ((VideoDecoderOutputBufferRenderer) Preconditions.checkNotNull(this.outputBufferRenderer)).setOutputBuffer(videoDecoderOutputBuffer);
         } else {
-            renderOutputBufferToSurface(videoDecoderOutputBuffer, (Surface) Assertions.checkNotNull(this.outputSurface));
+            renderOutputBufferToSurface(videoDecoderOutputBuffer, (Surface) Preconditions.checkNotNull(this.outputSurface));
         }
         this.consecutiveDroppedFrameCount = 0;
         this.decoderCounters.renderedOutputBufferCount++;
@@ -434,12 +434,12 @@ public abstract class DecoderVideoRenderer extends BaseRenderer {
         }
         try {
             long elapsedRealtime = SystemClock.elapsedRealtime();
-            Decoder<DecoderInputBuffer, ? extends VideoDecoderOutputBuffer, ? extends DecoderException> createDecoder = createDecoder((Format) Assertions.checkNotNull(this.inputFormat), cryptoConfig);
+            Decoder<DecoderInputBuffer, ? extends VideoDecoderOutputBuffer, ? extends DecoderException> createDecoder = createDecoder((Format) Preconditions.checkNotNull(this.inputFormat), cryptoConfig);
             this.decoder = createDecoder;
             createDecoder.setOutputStartTimeUs(getLastResetPositionUs());
             setDecoderOutputMode(this.outputMode);
             long elapsedRealtime2 = SystemClock.elapsedRealtime();
-            this.eventDispatcher.decoderInitialized(((Decoder) Assertions.checkNotNull(this.decoder)).getName(), elapsedRealtime2, elapsedRealtime2 - elapsedRealtime);
+            this.eventDispatcher.decoderInitialized(((Decoder) Preconditions.checkNotNull(this.decoder)).getName(), elapsedRealtime2, elapsedRealtime2 - elapsedRealtime);
             this.decoderCounters.decoderInitCount++;
         } catch (DecoderException e) {
             Log.e(TAG, "Video codec error", e);
@@ -462,10 +462,10 @@ public abstract class DecoderVideoRenderer extends BaseRenderer {
                 return false;
             }
         }
-        DecoderInputBuffer decoderInputBuffer = (DecoderInputBuffer) Assertions.checkNotNull(this.inputBuffer);
+        DecoderInputBuffer decoderInputBuffer = (DecoderInputBuffer) Preconditions.checkNotNull(this.inputBuffer);
         if (this.decoderReinitializationState == 1) {
             decoderInputBuffer.setFlags(4);
-            ((Decoder) Assertions.checkNotNull(this.decoder)).queueInputBuffer(decoderInputBuffer);
+            ((Decoder) Preconditions.checkNotNull(this.decoder)).queueInputBuffer(decoderInputBuffer);
             this.inputBuffer = null;
             this.decoderReinitializationState = 2;
             return false;
@@ -482,18 +482,18 @@ public abstract class DecoderVideoRenderer extends BaseRenderer {
             throw new IllegalStateException();
         } else if (decoderInputBuffer.isEndOfStream()) {
             this.inputStreamEnded = true;
-            ((Decoder) Assertions.checkNotNull(this.decoder)).queueInputBuffer(decoderInputBuffer);
+            ((Decoder) Preconditions.checkNotNull(this.decoder)).queueInputBuffer(decoderInputBuffer);
             this.inputBuffer = null;
             return false;
         } else {
             if (this.waitingForFirstSampleInFormat) {
-                this.formatQueue.add(decoderInputBuffer.timeUs, (Format) Assertions.checkNotNull(this.inputFormat));
+                this.formatQueue.add(decoderInputBuffer.timeUs, (Format) Preconditions.checkNotNull(this.inputFormat));
                 this.waitingForFirstSampleInFormat = false;
             }
             decoderInputBuffer.flip();
             decoderInputBuffer.format = this.inputFormat;
             onQueueInputBuffer(decoderInputBuffer);
-            ((Decoder) Assertions.checkNotNull(this.decoder)).queueInputBuffer(decoderInputBuffer);
+            ((Decoder) Preconditions.checkNotNull(this.decoder)).queueInputBuffer(decoderInputBuffer);
             this.buffersInCodecCount++;
             this.decoderReceivedBuffers = true;
             this.decoderCounters.queuedInputBufferCount++;
@@ -504,7 +504,7 @@ public abstract class DecoderVideoRenderer extends BaseRenderer {
 
     private boolean drainOutputBuffer(long j, long j2) throws ExoPlaybackException, DecoderException {
         if (this.outputBuffer == null) {
-            VideoDecoderOutputBuffer videoDecoderOutputBuffer = (VideoDecoderOutputBuffer) ((Decoder) Assertions.checkNotNull(this.decoder)).dequeueOutputBuffer();
+            VideoDecoderOutputBuffer videoDecoderOutputBuffer = (VideoDecoderOutputBuffer) ((Decoder) Preconditions.checkNotNull(this.decoder)).dequeueOutputBuffer();
             this.outputBuffer = videoDecoderOutputBuffer;
             if (videoDecoderOutputBuffer == null) {
                 return false;
@@ -525,7 +525,7 @@ public abstract class DecoderVideoRenderer extends BaseRenderer {
         }
         boolean processOutputBuffer = processOutputBuffer(j, j2);
         if (processOutputBuffer) {
-            onProcessedOutputBuffer(((VideoDecoderOutputBuffer) Assertions.checkNotNull(this.outputBuffer)).timeUs);
+            onProcessedOutputBuffer(((VideoDecoderOutputBuffer) Preconditions.checkNotNull(this.outputBuffer)).timeUs);
             this.outputBuffer = null;
         }
         return processOutputBuffer;
@@ -535,7 +535,7 @@ public abstract class DecoderVideoRenderer extends BaseRenderer {
         if (this.initialPositionUs == C.TIME_UNSET) {
             this.initialPositionUs = j;
         }
-        VideoDecoderOutputBuffer videoDecoderOutputBuffer = (VideoDecoderOutputBuffer) Assertions.checkNotNull(this.outputBuffer);
+        VideoDecoderOutputBuffer videoDecoderOutputBuffer = (VideoDecoderOutputBuffer) Preconditions.checkNotNull(this.outputBuffer);
         long j3 = videoDecoderOutputBuffer.timeUs;
         long j4 = j3 - j;
         if (!hasOutput()) {
@@ -553,7 +553,7 @@ public abstract class DecoderVideoRenderer extends BaseRenderer {
         }
         long streamOffsetUs = j3 - getStreamOffsetUs();
         if (shouldForceRender(j4)) {
-            renderOutputBuffer(videoDecoderOutputBuffer, streamOffsetUs, (Format) Assertions.checkNotNull(this.outputFormat));
+            renderOutputBuffer(videoDecoderOutputBuffer, streamOffsetUs, (Format) Preconditions.checkNotNull(this.outputFormat));
             return true;
         } else if (getState() != 2 || j == this.initialPositionUs || (shouldDropBuffersToKeyframe(j4, j2) && maybeDropBuffersToKeyframe(j))) {
             return false;
@@ -563,7 +563,7 @@ public abstract class DecoderVideoRenderer extends BaseRenderer {
                 return true;
             }
             if (j4 < 30000) {
-                renderOutputBuffer(videoDecoderOutputBuffer, streamOffsetUs, (Format) Assertions.checkNotNull(this.outputFormat));
+                renderOutputBuffer(videoDecoderOutputBuffer, streamOffsetUs, (Format) Preconditions.checkNotNull(this.outputFormat));
                 return true;
             }
             return false;

@@ -1,7 +1,7 @@
 package androidx.media3.extractor.jpeg;
 
 import androidx.media3.common.MimeTypes;
-import androidx.media3.extractor.metadata.mp4.MotionPhotoMetadata;
+import androidx.media3.extractor.metadata.MotionPhotoMetadata;
 import java.util.List;
 /* loaded from: classes3.dex */
 final class MotionPhotoDescription {
@@ -29,43 +29,44 @@ final class MotionPhotoDescription {
     }
 
     public MotionPhotoMetadata getMotionPhotoMetadata(long j) {
+        MotionPhotoMetadata motionPhotoMetadata;
         long j2;
+        MotionPhotoMetadata motionPhotoMetadata2 = null;
         if (this.items.size() < 2) {
             return null;
         }
+        boolean z = true;
+        int size = this.items.size() - 1;
         long j3 = j;
         long j4 = -1;
         long j5 = -1;
         long j6 = -1;
         long j7 = -1;
-        boolean z = false;
-        for (int size = this.items.size() - 1; size >= 0; size--) {
+        while (size >= 0) {
             ContainerItem containerItem = this.items.get(size);
-            boolean equals = MimeTypes.VIDEO_MP4.equals(containerItem.mime) | z;
+            boolean z2 = (containerItem.mime.equals(MimeTypes.VIDEO_MP4) || containerItem.mime.equals(MimeTypes.VIDEO_QUICK_TIME)) ? z : false;
             if (size == 0) {
+                motionPhotoMetadata = motionPhotoMetadata2;
                 j3 -= containerItem.padding;
                 j2 = 0;
             } else {
+                motionPhotoMetadata = motionPhotoMetadata2;
                 j2 = j3 - containerItem.length;
             }
-            long j8 = j2;
-            long j9 = j3;
-            j3 = j8;
-            if (!equals || j3 == j9) {
-                z = equals;
-            } else {
-                j7 = j9 - j3;
+            long j8 = j3;
+            j3 = j2;
+            if (z2 && j3 != j8) {
+                j7 = j8 - j3;
                 j6 = j3;
-                z = false;
             }
             if (size == 0) {
+                j5 = j8;
                 j4 = j3;
-                j5 = j9;
             }
+            size--;
+            motionPhotoMetadata2 = motionPhotoMetadata;
+            z = true;
         }
-        if (j6 == -1 || j7 == -1 || j4 == -1 || j5 == -1) {
-            return null;
-        }
-        return new MotionPhotoMetadata(j4, j5, this.photoPresentationTimestampUs, j6, j7);
+        return (j6 == -1 || j7 == -1 || j4 == -1 || j5 == -1) ? motionPhotoMetadata2 : new MotionPhotoMetadata(j4, j5, this.photoPresentationTimestampUs, j6, j7);
     }
 }

@@ -1,6 +1,6 @@
 package androidx.media3.exoplayer.offline;
 
-import androidx.media3.common.util.Assertions;
+import com.google.common.base.Preconditions;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -46,11 +46,11 @@ public final class Download {
     }
 
     public Download(DownloadRequest downloadRequest, int i, long j, long j2, long j3, int i2, int i3, DownloadProgress downloadProgress) {
-        Assertions.checkNotNull(downloadProgress);
+        Preconditions.checkNotNull(downloadProgress);
         boolean z = true;
-        Assertions.checkArgument((i3 == 0) == (i != 4));
+        Preconditions.checkArgument((i3 == 0) == (i != 4));
         if (i2 != 0) {
-            Assertions.checkArgument((i == 2 || i == 0) ? false : z);
+            Preconditions.checkArgument((i == 2 || i == 0) ? false : z);
         }
         this.request = downloadRequest;
         this.state = i;

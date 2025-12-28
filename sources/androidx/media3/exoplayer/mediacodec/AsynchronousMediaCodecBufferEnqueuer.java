@@ -6,10 +6,10 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Message;
 import androidx.compose.animation.core.MutatorMutex$$ExternalSyntheticBackportWithForwarding0;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ConditionVariable;
 import androidx.media3.common.util.Util;
 import androidx.media3.decoder.CryptoInfo;
+import com.google.common.base.Preconditions;
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
@@ -113,13 +113,13 @@ public class AsynchronousMediaCodecBufferEnqueuer implements MediaCodecBufferEnq
     }
 
     private void flushHandlerThread() throws InterruptedException {
-        ((Handler) Assertions.checkNotNull(this.handler)).removeCallbacksAndMessages(null);
+        ((Handler) Preconditions.checkNotNull(this.handler)).removeCallbacksAndMessages(null);
         blockUntilHandlerThreadIsIdle();
     }
 
     private void blockUntilHandlerThreadIsIdle() throws InterruptedException {
         this.conditionVariable.close();
-        ((Handler) Assertions.checkNotNull(this.handler)).obtainMessage(3).sendToTarget();
+        ((Handler) Preconditions.checkNotNull(this.handler)).obtainMessage(3).sendToTarget();
         this.conditionVariable.block();
     }
 
@@ -232,8 +232,8 @@ public class AsynchronousMediaCodecBufferEnqueuer implements MediaCodecBufferEnq
         cryptoInfo2.numSubSamples = cryptoInfo.numSubSamples;
         cryptoInfo2.numBytesOfClearData = copy(cryptoInfo.numBytesOfClearData, cryptoInfo2.numBytesOfClearData);
         cryptoInfo2.numBytesOfEncryptedData = copy(cryptoInfo.numBytesOfEncryptedData, cryptoInfo2.numBytesOfEncryptedData);
-        cryptoInfo2.key = (byte[]) Assertions.checkNotNull(copy(cryptoInfo.key, cryptoInfo2.key));
-        cryptoInfo2.iv = (byte[]) Assertions.checkNotNull(copy(cryptoInfo.iv, cryptoInfo2.iv));
+        cryptoInfo2.key = (byte[]) Preconditions.checkNotNull(copy(cryptoInfo.key, cryptoInfo2.key));
+        cryptoInfo2.iv = (byte[]) Preconditions.checkNotNull(copy(cryptoInfo.iv, cryptoInfo2.iv));
         cryptoInfo2.mode = cryptoInfo.mode;
         cryptoInfo2.setPattern(new MediaCodec.CryptoInfo.Pattern(cryptoInfo.encryptedBlocks, cryptoInfo.clearBlocks));
     }

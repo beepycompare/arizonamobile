@@ -8,11 +8,10 @@ import androidx.media3.common.ColorInfo;
 import androidx.media3.common.DataReader;
 import androidx.media3.common.DrmInitData;
 import androidx.media3.common.Format;
+import androidx.media3.common.Metadata;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.ParserException;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
-import androidx.media3.common.util.LongArray;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
 import androidx.media3.container.DolbyVisionConfig;
@@ -20,6 +19,8 @@ import androidx.media3.container.NalUnitUtil;
 import androidx.media3.extractor.AacUtil;
 import androidx.media3.extractor.AvcConfig;
 import androidx.media3.extractor.ChunkIndex;
+import androidx.media3.extractor.ChunkIndexProvider;
+import androidx.media3.extractor.DtsUtil;
 import androidx.media3.extractor.Extractor;
 import androidx.media3.extractor.ExtractorInput;
 import androidx.media3.extractor.ExtractorOutput;
@@ -27,12 +28,17 @@ import androidx.media3.extractor.ExtractorsFactory;
 import androidx.media3.extractor.HevcConfig;
 import androidx.media3.extractor.PositionHolder;
 import androidx.media3.extractor.SeekMap;
+import androidx.media3.extractor.SeekPoint;
+import androidx.media3.extractor.TrackAwareSeekMap;
 import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.TrueHdSampleRechunker;
+import androidx.media3.extractor.metadata.ThumbnailMetadata;
 import androidx.media3.extractor.text.SubtitleParser;
 import androidx.media3.extractor.text.SubtitleTranscodingExtractorOutput;
 import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
+import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import java.io.IOException;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -139,7 +145,9 @@ public class MatroskaExtractor implements Extractor {
     private static final int ID_CUES = 475249515;
     private static final int ID_CUE_CLUSTER_POSITION = 241;
     private static final int ID_CUE_POINT = 187;
+    private static final int ID_CUE_RELATIVE_POSITION = 240;
     private static final int ID_CUE_TIME = 179;
+    private static final int ID_CUE_TRACK = 247;
     private static final int ID_CUE_TRACK_POSITIONS = 183;
     private static final int ID_DEFAULT_DURATION = 2352003;
     private static final int ID_DISCARD_PADDING = 30114;
@@ -200,6 +208,8 @@ public class MatroskaExtractor implements Extractor {
     private static final int LACING_FIXED_SIZE = 2;
     private static final int LACING_NONE = 0;
     private static final int LACING_XIPH = 1;
+    private static final int MAX_CHUNKS_TO_SCAN_FOR_THUMBNAIL = 20;
+    private static final long MAX_DURATION_US_TO_SCAN_FOR_THUMBNAIL = 10000000;
     private static final int OPUS_MAX_INPUT_SIZE = 5760;
     private static final int SSA_PREFIX_END_TIMECODE_OFFSET = 21;
     private static final String SSA_TIMECODE_FORMAT = "%01d:%02d:%02d:%02d";
@@ -209,7 +219,6 @@ public class MatroskaExtractor implements Extractor {
     private static final long SUBRIP_TIMECODE_LAST_VALUE_SCALING_FACTOR = 1000;
     private static final String TAG = "MatroskaExtractor";
     private static final Map<String, Integer> TRACK_NAME_TO_ROTATION_DEGREES;
-    private static final int TRACK_TYPE_AUDIO = 2;
     private static final int UNSET_ENTRY_ID = -1;
     private static final int VORBIS_MAX_INPUT_SIZE = 8192;
     private static final int VTT_PREFIX_END_TIMECODE_OFFSET = 25;
@@ -231,9 +240,11 @@ public class MatroskaExtractor implements Extractor {
     private int blockTrackNumber;
     private int blockTrackNumberLength;
     private long clusterTimecodeUs;
-    private LongArray cueClusterPositions;
-    private LongArray cueTimesUs;
     private long cuesContentPosition;
+    private long currentCueClusterPosition;
+    private long currentCueRelativePosition;
+    private long currentCueTimeUs;
+    private int currentCueTrackNumber;
     private Track currentTrack;
     private long durationTimecode;
     private long durationUs;
@@ -242,10 +253,14 @@ public class MatroskaExtractor implements Extractor {
     private ByteBuffer encryptionSubsampleDataBuffer;
     private ExtractorOutput extractorOutput;
     private boolean haveOutputSample;
+    private boolean inCuesElement;
     private boolean isWebm;
     private final ParsableByteArray nalLength;
     private final ParsableByteArray nalStartCode;
     private final boolean parseSubtitlesDuringExtraction;
+    private boolean pendingEndTracks;
+    private final SparseArray<List<MatroskaSeekMap.CuePointData>> perTrackCues;
+    private int primarySeekTrackNumber;
     private final EbmlReader reader;
     private int sampleBytesRead;
     private int sampleBytesWritten;
@@ -264,7 +279,6 @@ public class MatroskaExtractor implements Extractor {
     private boolean seekForCues;
     private final boolean seekForCuesEnabled;
     private long seekPositionAfterBuildingCues;
-    private boolean seenClusterPositionForCurrentCuePoint;
     private long segmentContentPosition;
     private long segmentContentSize;
     private boolean sentSeekMap;
@@ -307,7 +321,9 @@ public class MatroskaExtractor implements Extractor {
             case ID_TRACK_NUMBER /* 215 */:
             case ID_TIME_CODE /* 231 */:
             case ID_BLOCK_ADD_ID /* 238 */:
+            case 240:
             case ID_CUE_CLUSTER_POSITION /* 241 */:
+            case ID_CUE_TRACK /* 247 */:
             case ID_REFERENCE_BLOCK /* 251 */:
             case ID_BLOCK_ADD_ID_TYPE /* 16871 */:
             case ID_CONTENT_COMPRESSION_ALGORITHM /* 16980 */:
@@ -459,12 +475,18 @@ public class MatroskaExtractor implements Extractor {
         this.timecodeScale = C.TIME_UNSET;
         this.durationTimecode = C.TIME_UNSET;
         this.durationUs = C.TIME_UNSET;
+        this.currentCueTimeUs = C.TIME_UNSET;
+        this.currentCueTrackNumber = -1;
+        this.currentCueClusterPosition = -1L;
+        this.currentCueRelativePosition = -1L;
+        this.primarySeekTrackNumber = -1;
         this.cuesContentPosition = -1L;
         this.seekPositionAfterBuildingCues = -1L;
         this.clusterTimecodeUs = C.TIME_UNSET;
         this.reader = ebmlReader;
         ebmlReader.init(new InnerEbmlProcessor());
         this.subtitleParserFactory = factory;
+        this.perTrackCues = new SparseArray<>();
         this.seekForCuesEnabled = (i & 1) == 0;
         this.parseSubtitlesDuringExtraction = (i & 2) == 0;
         this.varintReader = new VarintReader();
@@ -480,6 +502,7 @@ public class MatroskaExtractor implements Extractor {
         this.encryptionSubsampleData = new ParsableByteArray();
         this.supplementalData = new ParsableByteArray();
         this.blockSampleSizes = new int[1];
+        this.pendingEndTracks = true;
     }
 
     @Override // androidx.media3.extractor.Extractor
@@ -502,6 +525,14 @@ public class MatroskaExtractor implements Extractor {
         this.reader.reset();
         this.varintReader.reset();
         resetWriteSampleData();
+        this.inCuesElement = false;
+        this.currentCueTimeUs = C.TIME_UNSET;
+        this.currentCueTrackNumber = -1;
+        this.currentCueClusterPosition = -1L;
+        this.currentCueRelativePosition = -1L;
+        if (!this.sentSeekMap) {
+            this.perTrackCues.clear();
+        }
         for (int i = 0; i < this.tracks.size(); i++) {
             this.tracks.valueAt(i).reset();
         }
@@ -537,8 +568,20 @@ public class MatroskaExtractor implements Extractor {
             Track track = new Track();
             this.currentTrack = track;
             track.isWebm = this.isWebm;
+        } else if (i == ID_CUE_TRACK_POSITIONS) {
+            if (this.sentSeekMap) {
+                return;
+            }
+            assertInCues(i);
+            this.currentCueTrackNumber = -1;
+            this.currentCueClusterPosition = -1L;
+            this.currentCueRelativePosition = -1L;
         } else if (i == ID_CUE_POINT) {
-            this.seenClusterPositionForCurrentCuePoint = false;
+            if (this.sentSeekMap) {
+                return;
+            }
+            assertInCues(i);
+            this.currentCueTimeUs = C.TIME_UNSET;
         } else if (i == ID_SEEK) {
             this.seekEntryId = -1;
             this.seekEntryPosition = -1L;
@@ -554,8 +597,10 @@ public class MatroskaExtractor implements Extractor {
             this.segmentContentPosition = j;
             this.segmentContentSize = j2;
         } else if (i == ID_CUES) {
-            this.cueTimesUs = new LongArray();
-            this.cueClusterPositions = new LongArray();
+            if (this.sentSeekMap) {
+                return;
+            }
+            this.inCuesElement = true;
         } else if (i == ID_CLUSTER && !this.sentSeekMap) {
             if (this.seekForCuesEnabled && this.cuesContentPosition != -1) {
                 this.seekForCues = true;
@@ -567,6 +612,7 @@ public class MatroskaExtractor implements Extractor {
     }
 
     protected void endMasterElement(int i) throws ParserException {
+        int i2;
         assertInitialized();
         if (i == ID_BLOCK_GROUP) {
             if (this.blockState != 2) {
@@ -577,40 +623,55 @@ public class MatroskaExtractor implements Extractor {
             if (this.blockGroupDiscardPaddingNs > 0 && CODEC_ID_OPUS.equals(track.codecId)) {
                 this.supplementalData.reset(ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN).putLong(this.blockGroupDiscardPaddingNs).array());
             }
-            int i2 = 0;
-            for (int i3 = 0; i3 < this.blockSampleCount; i3++) {
-                i2 += this.blockSampleSizes[i3];
+            int i3 = 0;
+            for (int i4 = 0; i4 < this.blockSampleCount; i4++) {
+                i3 += this.blockSampleSizes[i4];
             }
-            int i4 = 0;
-            while (i4 < this.blockSampleCount) {
-                long j = this.blockTimeUs + ((track.defaultSampleDurationNs * i4) / 1000);
-                int i5 = this.blockFlags;
-                if (i4 == 0 && !this.blockHasReferenceBlock) {
-                    i5 |= 1;
+            int i5 = 0;
+            while (i5 < this.blockSampleCount) {
+                long j = this.blockTimeUs + ((track.defaultSampleDurationNs * i5) / 1000);
+                int i6 = this.blockFlags;
+                if (i5 == 0 && !this.blockHasReferenceBlock) {
+                    i6 |= 1;
                 }
-                int i6 = this.blockSampleSizes[i4];
-                int i7 = i2 - i6;
-                commitSampleToOutput(track, j, i5, i6, i7);
-                i4++;
-                i2 = i7;
+                int i7 = this.blockSampleSizes[i5];
+                int i8 = i3 - i7;
+                commitSampleToOutput(track, j, i6, i7, i8);
+                i5++;
+                i3 = i8;
             }
             this.blockState = 0;
         } else if (i == ID_TRACK_ENTRY) {
-            Track track2 = (Track) Assertions.checkStateNotNull(this.currentTrack);
+            Track track2 = (Track) Preconditions.checkNotNull(this.currentTrack);
             if (track2.codecId == null) {
                 throw ParserException.createForMalformedContainer("CodecId is missing in TrackEntry element", null);
             }
             if (isCodecSupported(track2.codecId)) {
-                track2.initializeOutput(this.extractorOutput, track2.number);
+                track2.initializeFormat(track2.number);
+                track2.output = this.extractorOutput.track(track2.number, track2.type);
                 this.tracks.put(track2.number, track2);
             }
             this.currentTrack = null;
+        } else if (i == ID_CUE_TRACK_POSITIONS) {
+            if (this.sentSeekMap) {
+                return;
+            }
+            assertInCues(i);
+            if (this.currentCueTimeUs == C.TIME_UNSET || (i2 = this.currentCueTrackNumber) == -1 || this.currentCueClusterPosition == -1) {
+                return;
+            }
+            List<MatroskaSeekMap.CuePointData> list = this.perTrackCues.get(i2);
+            if (list == null) {
+                list = new ArrayList<>();
+                this.perTrackCues.put(this.currentCueTrackNumber, list);
+            }
+            list.add(new MatroskaSeekMap.CuePointData(this.currentCueTimeUs, this.segmentContentPosition + this.currentCueClusterPosition, this.currentCueRelativePosition));
         } else if (i == ID_SEEK) {
-            int i8 = this.seekEntryId;
-            if (i8 != -1) {
+            int i9 = this.seekEntryId;
+            if (i9 != -1) {
                 long j2 = this.seekEntryPosition;
                 if (j2 != -1) {
-                    if (i8 == ID_CUES) {
+                    if (i9 == ID_CUES) {
                         this.cuesContentPosition = j2;
                         return;
                     }
@@ -639,23 +700,102 @@ public class MatroskaExtractor implements Extractor {
             if (j3 != C.TIME_UNSET) {
                 this.durationUs = scaleTimecodeToUs(j3);
             }
-        } else if (i == ID_TRACKS) {
-            if (this.tracks.size() == 0) {
-                throw ParserException.createForMalformedContainer("No valid tracks were found", null);
-            }
-            this.extractorOutput.endTracks();
-        } else if (i == ID_CUES) {
-            if (!this.sentSeekMap) {
-                this.extractorOutput.seekMap(buildSeekMap(this.cueTimesUs, this.cueClusterPositions));
+        } else if (i != ID_TRACKS) {
+            if (i == ID_CUES && !this.sentSeekMap) {
+                int i10 = 0;
+                while (true) {
+                    if (i10 >= this.perTrackCues.size()) {
+                        break;
+                    } else if (this.perTrackCues.valueAt(i10).isEmpty()) {
+                        i10++;
+                    } else if (this.durationUs != C.TIME_UNSET) {
+                        for (int i11 = 0; i11 < this.perTrackCues.size(); i11++) {
+                            Collections.sort(this.perTrackCues.valueAt(i11));
+                        }
+                        this.extractorOutput.seekMap(new MatroskaSeekMap(this.perTrackCues, this.durationUs, this.primarySeekTrackNumber, this.segmentContentPosition, this.segmentContentSize));
+                    }
+                }
+                this.extractorOutput.seekMap(new SeekMap.Unseekable(this.durationUs));
                 this.sentSeekMap = true;
+                this.inCuesElement = false;
+                for (int i12 = 0; i12 < this.tracks.size(); i12++) {
+                    Track valueAt = this.tracks.valueAt(i12);
+                    valueAt.maybeAddThumbnailMetadata(this.perTrackCues, this.durationUs, this.segmentContentPosition, this.segmentContentSize);
+                    if (!valueAt.waitingForDtsAnalysis) {
+                        valueAt.assertOutputInitialized();
+                        valueAt.output.format((Format) Preconditions.checkNotNull(valueAt.format));
+                    }
+                }
+                maybeEndTracks();
             }
-            this.cueTimesUs = null;
-            this.cueClusterPositions = null;
+        } else if (this.tracks.size() == 0) {
+            throw ParserException.createForMalformedContainer("No valid tracks were found", null);
+        } else {
+            boolean z = !this.seekForCuesEnabled || this.cuesContentPosition == -1;
+            int i13 = -1;
+            int i14 = -1;
+            int i15 = -1;
+            int i16 = -1;
+            for (int i17 = 0; i17 < this.tracks.size(); i17++) {
+                Track valueAt2 = this.tracks.valueAt(i17);
+                int i18 = valueAt2.type;
+                if (i18 == 2) {
+                    if (valueAt2.flagDefault) {
+                        i13 = valueAt2.number;
+                    }
+                    if (i14 == -1) {
+                        i14 = valueAt2.number;
+                    }
+                } else if (i18 == 1) {
+                    if (valueAt2.flagDefault) {
+                        i15 = valueAt2.number;
+                    }
+                    if (i16 == -1) {
+                        i16 = valueAt2.number;
+                    }
+                }
+                if (z) {
+                    valueAt2.assertOutputInitialized();
+                    if (!valueAt2.waitingForDtsAnalysis) {
+                        valueAt2.output.format((Format) Preconditions.checkNotNull(valueAt2.format));
+                    }
+                }
+            }
+            if (i13 != -1) {
+                this.primarySeekTrackNumber = i13;
+            } else if (i14 != -1) {
+                this.primarySeekTrackNumber = i14;
+            } else if (i15 != -1) {
+                this.primarySeekTrackNumber = i15;
+            } else if (i16 != -1) {
+                this.primarySeekTrackNumber = i16;
+            } else {
+                this.primarySeekTrackNumber = this.tracks.size() > 0 ? this.tracks.valueAt(0).number : -1;
+            }
+            if (z) {
+                maybeEndTracks();
+            }
         }
     }
 
     protected void integerElement(int i, long j) throws ParserException {
-        if (i == ID_CONTENT_ENCODING_ORDER) {
+        if (i == 240) {
+            if (this.sentSeekMap) {
+                return;
+            }
+            assertInCues(i);
+            if (this.currentCueRelativePosition == -1) {
+                this.currentCueRelativePosition = j;
+            }
+        } else if (i == ID_CUE_CLUSTER_POSITION) {
+            if (this.sentSeekMap) {
+                return;
+            }
+            assertInCues(i);
+            if (this.currentCueClusterPosition == -1) {
+                this.currentCueClusterPosition = j;
+            }
+        } else if (i == ID_CONTENT_ENCODING_ORDER) {
             if (j != 0) {
                 throw ParserException.createForMalformedContainer("ContentEncodingOrder " + j + " not supported", null);
             }
@@ -666,8 +806,23 @@ public class MatroskaExtractor implements Extractor {
         } else {
             switch (i) {
                 case ID_TRACK_TYPE /* 131 */:
-                    getCurrentTrack(i).type = (int) j;
-                    return;
+                    int i2 = (int) j;
+                    if (i2 == 1) {
+                        getCurrentTrack(i).type = 2;
+                        return;
+                    } else if (i2 == 2) {
+                        getCurrentTrack(i).type = 1;
+                        return;
+                    } else if (i2 == 17) {
+                        getCurrentTrack(i).type = 3;
+                        return;
+                    } else if (i2 == 33) {
+                        getCurrentTrack(i).type = 5;
+                        return;
+                    } else {
+                        getCurrentTrack(i).type = -1;
+                        return;
+                    }
                 case 136:
                     getCurrentTrack(i).flagDefault = j == 1;
                     return;
@@ -681,8 +836,11 @@ public class MatroskaExtractor implements Extractor {
                     getCurrentTrack(i).width = (int) j;
                     return;
                 case ID_CUE_TIME /* 179 */:
+                    if (this.sentSeekMap) {
+                        return;
+                    }
                     assertInCues(i);
-                    this.cueTimesUs.add(scaleTimecodeToUs(j));
+                    this.currentCueTimeUs = scaleTimecodeToUs(j);
                     return;
                 case ID_PIXEL_HEIGHT /* 186 */:
                     getCurrentTrack(i).height = (int) j;
@@ -696,13 +854,12 @@ public class MatroskaExtractor implements Extractor {
                 case ID_BLOCK_ADD_ID /* 238 */:
                     this.blockAdditionalId = (int) j;
                     return;
-                case ID_CUE_CLUSTER_POSITION /* 241 */:
-                    if (this.seenClusterPositionForCurrentCuePoint) {
+                case ID_CUE_TRACK /* 247 */:
+                    if (this.sentSeekMap) {
                         return;
                     }
                     assertInCues(i);
-                    this.cueClusterPositions.add(j);
-                    this.seenClusterPositionForCurrentCuePoint = true;
+                    this.currentCueTrackNumber = (int) j;
                     return;
                 case ID_REFERENCE_BLOCK /* 251 */:
                     this.blockHasReferenceBlock = true;
@@ -739,18 +896,18 @@ public class MatroskaExtractor implements Extractor {
                     this.seekEntryPosition = j + this.segmentContentPosition;
                     return;
                 case ID_STEREO_MODE /* 21432 */:
-                    int i2 = (int) j;
+                    int i3 = (int) j;
                     assertInTrackEntry(i);
-                    if (i2 == 0) {
+                    if (i3 == 0) {
                         this.currentTrack.stereoMode = 0;
                         return;
-                    } else if (i2 == 1) {
+                    } else if (i3 == 1) {
                         this.currentTrack.stereoMode = 2;
                         return;
-                    } else if (i2 == 3) {
+                    } else if (i3 == 3) {
                         this.currentTrack.stereoMode = 1;
                         return;
-                    } else if (i2 != 15) {
+                    } else if (i3 != 15) {
                         return;
                     } else {
                         this.currentTrack.stereoMode = 3;
@@ -790,17 +947,17 @@ public class MatroskaExtractor implements Extractor {
                     return;
                 case ID_PROJECTION_TYPE /* 30321 */:
                     assertInTrackEntry(i);
-                    int i3 = (int) j;
-                    if (i3 == 0) {
+                    int i4 = (int) j;
+                    if (i4 == 0) {
                         this.currentTrack.projectionType = 0;
                         return;
-                    } else if (i3 == 1) {
+                    } else if (i4 == 1) {
                         this.currentTrack.projectionType = 1;
                         return;
-                    } else if (i3 == 2) {
+                    } else if (i4 == 2) {
                         this.currentTrack.projectionType = 2;
                         return;
-                    } else if (i3 != 3) {
+                    } else if (i4 != 3) {
                         return;
                     } else {
                         this.currentTrack.projectionType = 3;
@@ -816,11 +973,11 @@ public class MatroskaExtractor implements Extractor {
                     switch (i) {
                         case ID_COLOUR_RANGE /* 21945 */:
                             assertInTrackEntry(i);
-                            int i4 = (int) j;
-                            if (i4 == 1) {
+                            int i5 = (int) j;
+                            if (i5 == 1) {
                                 this.currentTrack.colorRange = 2;
                                 return;
-                            } else if (i4 != 2) {
+                            } else if (i5 != 2) {
                                 return;
                             } else {
                                 this.currentTrack.colorRange = 1;
@@ -927,10 +1084,9 @@ public class MatroskaExtractor implements Extractor {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:93:0x024d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:92:0x0250, code lost:
         throw androidx.media3.common.ParserException.createForMalformedContainer("EBML lacing sample size out of range.", null);
      */
-    /* JADX WARN: Multi-variable type inference failed */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -940,56 +1096,57 @@ public class MatroskaExtractor implements Extractor {
         int i5;
         int i6;
         int i7;
-        long j;
         int i8;
+        long j;
         int i9;
         int i10;
-        ExtractorInput extractorInput2 = extractorInput;
-        int i11 = 0;
-        int i12 = 1;
+        int i11;
+        int i12 = 2;
+        int i13 = 0;
+        int i14 = 1;
         if (i != ID_BLOCK && i != ID_SIMPLE_BLOCK) {
             if (i == ID_BLOCK_ADDITIONAL) {
                 if (this.blockState != 2) {
                     return;
                 }
-                handleBlockAdditionalData(this.tracks.get(this.blockTrackNumber), this.blockAdditionalId, extractorInput2, i2);
+                handleBlockAdditionalData(this.tracks.get(this.blockTrackNumber), this.blockAdditionalId, extractorInput, i2);
                 return;
             } else if (i == ID_BLOCK_ADD_ID_EXTRA_DATA) {
-                handleBlockAddIDExtraData(getCurrentTrack(i), extractorInput2, i2);
+                handleBlockAddIDExtraData(getCurrentTrack(i), extractorInput, i2);
                 return;
             } else if (i == ID_CONTENT_COMPRESSION_SETTINGS) {
                 assertInTrackEntry(i);
                 this.currentTrack.sampleStrippedBytes = new byte[i2];
-                extractorInput2.readFully(this.currentTrack.sampleStrippedBytes, 0, i2);
+                extractorInput.readFully(this.currentTrack.sampleStrippedBytes, 0, i2);
                 return;
             } else if (i == ID_CONTENT_ENCRYPTION_KEY_ID) {
                 byte[] bArr = new byte[i2];
-                extractorInput2.readFully(bArr, 0, i2);
+                extractorInput.readFully(bArr, 0, i2);
                 getCurrentTrack(i).cryptoData = new TrackOutput.CryptoData(1, bArr, 0, 0);
                 return;
             } else if (i == ID_SEEK_ID) {
                 Arrays.fill(this.seekEntryIdBytes.getData(), (byte) 0);
-                extractorInput2.readFully(this.seekEntryIdBytes.getData(), 4 - i2, i2);
+                extractorInput.readFully(this.seekEntryIdBytes.getData(), 4 - i2, i2);
                 this.seekEntryIdBytes.setPosition(0);
                 this.seekEntryId = (int) this.seekEntryIdBytes.readUnsignedInt();
                 return;
             } else if (i == ID_CODEC_PRIVATE) {
                 assertInTrackEntry(i);
                 this.currentTrack.codecPrivate = new byte[i2];
-                extractorInput2.readFully(this.currentTrack.codecPrivate, 0, i2);
+                extractorInput.readFully(this.currentTrack.codecPrivate, 0, i2);
                 return;
             } else if (i == ID_PROJECTION_PRIVATE) {
                 assertInTrackEntry(i);
                 this.currentTrack.projectionData = new byte[i2];
-                extractorInput2.readFully(this.currentTrack.projectionData, 0, i2);
+                extractorInput.readFully(this.currentTrack.projectionData, 0, i2);
                 return;
             } else {
                 throw ParserException.createForMalformedContainer("Unexpected id: " + i, null);
             }
         }
-        int i13 = 8;
+        int i15 = 8;
         if (this.blockState == 0) {
-            this.blockTrackNumber = (int) this.varintReader.readUnsignedVarint(extractorInput2, false, true, 8);
+            this.blockTrackNumber = (int) this.varintReader.readUnsignedVarint(extractorInput, false, true, 8);
             this.blockTrackNumberLength = this.varintReader.getLastLength();
             this.blockDurationUs = C.TIME_UNSET;
             this.blockState = 1;
@@ -997,146 +1154,148 @@ public class MatroskaExtractor implements Extractor {
         }
         Track track = this.tracks.get(this.blockTrackNumber);
         if (track == null) {
-            extractorInput2.skipFully(i2 - this.blockTrackNumberLength);
+            extractorInput.skipFully(i2 - this.blockTrackNumberLength);
             this.blockState = 0;
             return;
         }
         track.assertOutputInitialized();
         if (this.blockState == 1) {
-            readScratch(extractorInput2, 3);
-            int i14 = (this.scratch.getData()[2] & 6) >> 1;
-            if (i14 == 0) {
+            readScratch(extractorInput, 3);
+            int i16 = (this.scratch.getData()[2] & 6) >> 1;
+            byte b = 255;
+            if (i16 == 0) {
                 this.blockSampleCount = 1;
                 int[] ensureArrayCapacity = ensureArrayCapacity(this.blockSampleSizes, 1);
                 this.blockSampleSizes = ensureArrayCapacity;
                 ensureArrayCapacity[0] = (i2 - this.blockTrackNumberLength) - 3;
             } else {
-                readScratch(extractorInput2, 4);
-                int i15 = (this.scratch.getData()[3] & 255) + 1;
-                this.blockSampleCount = i15;
-                int[] ensureArrayCapacity2 = ensureArrayCapacity(this.blockSampleSizes, i15);
+                readScratch(extractorInput, 4);
+                int i17 = (this.scratch.getData()[3] & 255) + 1;
+                this.blockSampleCount = i17;
+                int[] ensureArrayCapacity2 = ensureArrayCapacity(this.blockSampleSizes, i17);
                 this.blockSampleSizes = ensureArrayCapacity2;
-                if (i14 == 2) {
-                    int i16 = this.blockSampleCount;
-                    Arrays.fill(ensureArrayCapacity2, 0, i16, ((i2 - this.blockTrackNumberLength) - 4) / i16);
-                } else if (i14 == 1) {
-                    int i17 = 0;
-                    int i18 = 0;
-                    int i19 = 4;
+                if (i16 == 2) {
+                    int i18 = this.blockSampleCount;
+                    Arrays.fill(ensureArrayCapacity2, 0, i18, ((i2 - this.blockTrackNumberLength) - 4) / i18);
+                } else if (i16 == 1) {
+                    int i19 = 0;
+                    int i20 = 0;
+                    int i21 = 4;
                     while (true) {
-                        i8 = this.blockSampleCount;
-                        if (i17 >= i8 - 1) {
+                        i9 = this.blockSampleCount;
+                        if (i19 >= i9 - 1) {
                             break;
                         }
-                        this.blockSampleSizes[i17] = 0;
+                        this.blockSampleSizes[i19] = 0;
                         while (true) {
-                            i9 = i19 + 1;
-                            readScratch(extractorInput2, i9);
-                            int i20 = this.scratch.getData()[i19] & 255;
+                            i10 = i21 + 1;
+                            readScratch(extractorInput, i10);
+                            int i22 = this.scratch.getData()[i21] & 255;
                             int[] iArr = this.blockSampleSizes;
-                            i10 = iArr[i17] + i20;
-                            iArr[i17] = i10;
-                            if (i20 != 255) {
+                            i11 = iArr[i19] + i22;
+                            iArr[i19] = i11;
+                            if (i22 != 255) {
                                 break;
                             }
-                            i19 = i9;
+                            i21 = i10;
                         }
-                        i18 += i10;
-                        i17++;
-                        i19 = i9;
+                        i20 += i11;
+                        i19++;
+                        i21 = i10;
                     }
-                    this.blockSampleSizes[i8 - 1] = ((i2 - this.blockTrackNumberLength) - i19) - i18;
-                } else if (i14 != 3) {
-                    throw ParserException.createForMalformedContainer("Unexpected lacing value: " + i14, null);
+                    this.blockSampleSizes[i9 - 1] = ((i2 - this.blockTrackNumberLength) - i21) - i20;
+                } else if (i16 != 3) {
+                    throw ParserException.createForMalformedContainer("Unexpected lacing value: " + i16, null);
                 } else {
-                    int i21 = 0;
-                    int i22 = 0;
-                    int i23 = 4;
+                    int i23 = 0;
+                    int i24 = 0;
+                    int i25 = 4;
                     while (true) {
-                        int i24 = this.blockSampleCount;
-                        i3 = i12;
-                        if (i21 < i24 - 1) {
-                            this.blockSampleSizes[i21] = i11;
-                            int i25 = i23 + 1;
-                            readScratch(extractorInput2, i25);
-                            if (this.scratch.getData()[i23] == 0) {
+                        int i26 = this.blockSampleCount;
+                        i3 = i13;
+                        if (i23 < i26 - 1) {
+                            this.blockSampleSizes[i23] = i3;
+                            int i27 = i25 + 1;
+                            readScratch(extractorInput, i27);
+                            if (this.scratch.getData()[i25] == 0) {
                                 throw ParserException.createForMalformedContainer("No valid varint length mask found", null);
                             }
-                            int i26 = i11;
+                            int i28 = i3;
                             while (true) {
-                                if (i26 >= i13) {
-                                    i5 = i11;
-                                    i6 = i13;
-                                    i7 = i21;
+                                if (i28 >= i15) {
+                                    i6 = i12;
+                                    i7 = i14;
+                                    i8 = i15;
                                     j = 0;
                                     break;
                                 }
-                                i6 = i13;
-                                int i27 = i3 << (7 - i26);
-                                i5 = i11;
-                                if ((this.scratch.getData()[i23] & i27) != 0) {
-                                    i25 += i26;
-                                    readScratch(extractorInput2, i25);
-                                    int i28 = i23 + 1;
-                                    j = this.scratch.getData()[i23] & 255 & (~i27);
+                                i8 = i15;
+                                int i29 = i14 << (7 - i28);
+                                i6 = i12;
+                                if ((this.scratch.getData()[i25] & i29) != 0) {
+                                    i27 += i28;
+                                    readScratch(extractorInput, i27);
+                                    int i30 = i25 + 1;
+                                    i7 = i14;
+                                    j = this.scratch.getData()[i25] & b & (~i29);
                                     while (true) {
-                                        int i29 = i28;
-                                        if (i29 >= i25) {
+                                        int i31 = i30;
+                                        if (i31 >= i27) {
                                             break;
                                         }
-                                        i28 = i29 + 1;
-                                        j = (j << i6) | (this.scratch.getData()[i29] & 255);
-                                        i21 = i21;
+                                        i30 = i31 + 1;
+                                        j = (j << i8) | (this.scratch.getData()[i31] & b);
+                                        b = 255;
                                     }
-                                    i7 = i21;
-                                    if (i7 > 0) {
-                                        j -= (1 << ((i26 * 7) + 6)) - 1;
+                                    if (i23 > 0) {
+                                        j -= (1 << ((i28 * 7) + 6)) - 1;
                                     }
                                 } else {
-                                    i26++;
-                                    extractorInput2 = extractorInput;
-                                    i11 = i5;
-                                    i13 = i6;
+                                    i28++;
+                                    i12 = i6;
+                                    i15 = i8;
+                                    b = 255;
                                 }
                             }
-                            i23 = i25;
+                            i25 = i27;
                             if (j < SieveCacheKt.NodeMetaAndPreviousMask || j > SieveCacheKt.NodeLinkMask) {
                                 break;
                             }
-                            int i30 = (int) j;
+                            int i32 = (int) j;
                             int[] iArr2 = this.blockSampleSizes;
-                            if (i7 != 0) {
-                                i30 += iArr2[i7 - 1];
+                            if (i23 != 0) {
+                                i32 += iArr2[i23 - 1];
                             }
-                            iArr2[i7] = i30;
-                            i22 += i30;
-                            i21 = i7 + 1;
-                            extractorInput2 = extractorInput;
-                            i12 = i3;
-                            i11 = i5;
-                            i13 = i6;
+                            iArr2[i23] = i32;
+                            i24 += i32;
+                            i23++;
+                            i13 = i3;
+                            i12 = i6;
+                            i15 = i8;
+                            i14 = i7;
+                            b = 255;
                         } else {
-                            i4 = i11;
-                            this.blockSampleSizes[i24 - 1] = ((i2 - this.blockTrackNumberLength) - i23) - i22;
+                            i4 = i12;
+                            i5 = i14;
+                            this.blockSampleSizes[i26 - 1] = ((i2 - this.blockTrackNumberLength) - i25) - i24;
                             break;
                         }
                     }
                 }
             }
-            i4 = 0;
-            i3 = 1;
-            this.blockTimeUs = this.clusterTimecodeUs + scaleTimecodeToUs((this.scratch.getData()[i4] << 8) | (this.scratch.getData()[i3] & 255));
-            this.blockFlags = (track.type == 2 || (i == ID_SIMPLE_BLOCK && (this.scratch.getData()[2] & 128) == 128)) ? i3 : i4;
-            this.blockState = 2;
-            this.blockSampleIndex = i4;
-        } else {
-            i3 = 1;
+            i4 = 2;
+            i3 = 0;
+            i5 = 1;
+            this.blockTimeUs = this.clusterTimecodeUs + scaleTimecodeToUs((this.scratch.getData()[i3] << 8) | (this.scratch.getData()[i5] & 255));
+            this.blockFlags = (track.type == i5 || (i == ID_SIMPLE_BLOCK && (this.scratch.getData()[i4] & 128) == 128)) ? 1 : i3;
+            this.blockState = i4;
+            this.blockSampleIndex = i3;
         }
         if (i == ID_SIMPLE_BLOCK) {
             while (true) {
-                int i31 = this.blockSampleIndex;
-                if (i31 < this.blockSampleCount) {
-                    int writeSampleData = writeSampleData(extractorInput, track, this.blockSampleSizes[i31], false);
+                int i33 = this.blockSampleIndex;
+                if (i33 < this.blockSampleCount) {
+                    int writeSampleData = writeSampleData(extractorInput, track, this.blockSampleSizes[i33], false);
                     Track track2 = track;
                     commitSampleToOutput(track2, this.blockTimeUs + ((this.blockSampleIndex * track.defaultSampleDurationNs) / 1000), this.blockFlags, writeSampleData, 0);
                     this.blockSampleIndex++;
@@ -1148,14 +1307,13 @@ public class MatroskaExtractor implements Extractor {
             }
         } else {
             while (true) {
-                int i32 = this.blockSampleIndex;
-                if (i32 >= this.blockSampleCount) {
+                int i34 = this.blockSampleIndex;
+                if (i34 >= this.blockSampleCount) {
                     return;
                 }
                 int[] iArr3 = this.blockSampleSizes;
-                boolean z = i3;
-                iArr3[i32] = writeSampleData(extractorInput, track, iArr3[i32], z);
-                this.blockSampleIndex += z ? 1 : 0;
+                iArr3[i34] = writeSampleData(extractorInput, track, iArr3[i34], true);
+                this.blockSampleIndex++;
             }
         }
     }
@@ -1185,9 +1343,8 @@ public class MatroskaExtractor implements Extractor {
         }
     }
 
-    @EnsuresNonNull({"cueTimesUs", "cueClusterPositions"})
     private void assertInCues(int i) throws ParserException {
-        if (this.cueTimesUs == null || this.cueClusterPositions == null) {
+        if (!this.inCuesElement) {
             throw ParserException.createForMalformedContainer("Element " + i + " must be in a Cues", null);
         }
     }
@@ -1274,6 +1431,15 @@ public class MatroskaExtractor implements Extractor {
             writeSubtitleSampleData(extractorInput, VTT_PREFIX, i);
             return finishWriteSampleData();
         } else {
+            if (track.waitingForDtsAnalysis) {
+                Preconditions.checkNotNull(track.format);
+                if (DtsUtil.isSampleDtsHd(extractorInput, i)) {
+                    track.format = track.format.buildUpon().setSampleMimeType(MimeTypes.AUDIO_DTS_HD).build();
+                }
+                track.output.format(track.format);
+                track.waitingForDtsAnalysis = false;
+                maybeEndTracks();
+            }
             TrackOutput trackOutput = track.output;
             if (!this.sampleEncodingHandled) {
                 if (track.hasContentEncryption) {
@@ -1395,7 +1561,7 @@ public class MatroskaExtractor implements Extractor {
                 }
             } else {
                 if (track.trueHdSampleRechunker != null) {
-                    Assertions.checkState(this.sampleStrippedBytes.limit() == 0);
+                    Preconditions.checkState(this.sampleStrippedBytes.limit() == 0);
                     track.trueHdSampleRechunker.startSample(extractorInput);
                 }
                 while (true) {
@@ -1500,7 +1666,7 @@ public class MatroskaExtractor implements Extractor {
     }
 
     private static byte[] formatSubtitleTimecode(long j, String str, long j2) {
-        Assertions.checkArgument(j != C.TIME_UNSET);
+        Preconditions.checkArgument(j != C.TIME_UNSET);
         int i = (int) (j / 3600000000L);
         long j3 = j - (i * 3600000000L);
         int i2 = (int) (j3 / 60000000);
@@ -1525,48 +1691,6 @@ public class MatroskaExtractor implements Extractor {
             return min;
         }
         return trackOutput.sampleData((DataReader) extractorInput, i, false);
-    }
-
-    private SeekMap buildSeekMap(LongArray longArray, LongArray longArray2) {
-        int i;
-        if (this.segmentContentPosition == -1 || this.durationUs == C.TIME_UNSET || longArray == null || longArray.size() == 0 || longArray2 == null || longArray2.size() != longArray.size()) {
-            return new SeekMap.Unseekable(this.durationUs);
-        }
-        int size = longArray.size();
-        int[] iArr = new int[size];
-        long[] jArr = new long[size];
-        long[] jArr2 = new long[size];
-        long[] jArr3 = new long[size];
-        int i2 = 0;
-        for (int i3 = 0; i3 < size; i3++) {
-            jArr3[i3] = longArray.get(i3);
-            jArr[i3] = this.segmentContentPosition + longArray2.get(i3);
-        }
-        while (true) {
-            i = size - 1;
-            if (i2 >= i) {
-                break;
-            }
-            int i4 = i2 + 1;
-            iArr[i2] = (int) (jArr[i4] - jArr[i2]);
-            jArr2[i2] = jArr3[i4] - jArr3[i2];
-            i2 = i4;
-        }
-        int i5 = i;
-        while (i5 > 0 && jArr3[i5] > this.durationUs) {
-            i5--;
-        }
-        iArr[i5] = (int) ((this.segmentContentPosition + this.segmentContentSize) - jArr[i5]);
-        jArr2[i5] = this.durationUs - jArr3[i5];
-        if (i5 < i) {
-            Log.w(TAG, "Discarding trailing cue points with timestamps greater than total duration");
-            int i6 = i5 + 1;
-            iArr = Arrays.copyOf(iArr, i6);
-            jArr = Arrays.copyOf(jArr, i6);
-            jArr2 = Arrays.copyOf(jArr2, i6);
-            jArr3 = Arrays.copyOf(jArr3, i6);
-        }
-        return new ChunkIndex(iArr, jArr, jArr2, jArr3);
     }
 
     private boolean maybeSeekForCues(PositionHolder positionHolder, long j) {
@@ -1854,7 +1978,19 @@ public class MatroskaExtractor implements Extractor {
 
     @EnsuresNonNull({"extractorOutput"})
     private void assertInitialized() {
-        Assertions.checkStateNotNull(this.extractorOutput);
+        Preconditions.checkNotNull(this.extractorOutput);
+    }
+
+    private void maybeEndTracks() {
+        if (this.pendingEndTracks) {
+            for (int i = 0; i < this.tracks.size(); i++) {
+                if (this.tracks.valueAt(i).waitingForDtsAnalysis) {
+                    return;
+                }
+            }
+            ((ExtractorOutput) Preconditions.checkNotNull(this.extractorOutput)).endTracks();
+            this.pendingEndTracks = false;
+        }
     }
 
     /* loaded from: classes3.dex */
@@ -1918,6 +2054,7 @@ public class MatroskaExtractor implements Extractor {
         public byte[] dolbyVisionConfigBytes;
         public DrmInitData drmInitData;
         public boolean flagForced;
+        public Format format;
         public boolean hasContentEncryption;
         public boolean isWebm;
         public int maxBlockAdditionId;
@@ -1961,6 +2098,7 @@ public class MatroskaExtractor implements Extractor {
         public int sampleRate = 8000;
         public long codecDelayNs = 0;
         public long seekPreRollNs = 0;
+        public boolean waitingForDtsAnalysis = false;
         public boolean flagDefault = true;
         private String language = "eng";
 
@@ -1968,20 +2106,8 @@ public class MatroskaExtractor implements Extractor {
         }
 
         /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-        /* JADX WARN: Removed duplicated region for block: B:222:0x043a  */
-        /* JADX WARN: Removed duplicated region for block: B:227:0x0454  */
-        /* JADX WARN: Removed duplicated region for block: B:228:0x0456  */
-        /* JADX WARN: Removed duplicated region for block: B:231:0x0463  */
-        /* JADX WARN: Removed duplicated region for block: B:232:0x0475  */
-        /* JADX WARN: Removed duplicated region for block: B:299:0x05a2  */
-        /* JADX WARN: Removed duplicated region for block: B:304:0x05bd  */
-        /* JADX WARN: Removed duplicated region for block: B:305:0x05c1  */
-        @EnsuresNonNull({"this.output"})
         @RequiresNonNull({"codecId"})
-        /*
-            Code decompiled incorrectly, please refer to instructions dump.
-        */
-        public void initializeOutput(ExtractorOutput extractorOutput, int i) throws ParserException {
+        public void initializeFormat(int i) throws ParserException {
             char c;
             int i2;
             List<byte[]> singletonList;
@@ -1989,250 +2115,248 @@ public class MatroskaExtractor implements Extractor {
             int i3;
             List<byte[]> list;
             String str2;
-            String str3;
-            Format.Builder builder;
             int i4;
             int i5;
             int i6;
             int i7;
             DolbyVisionConfig parse;
-            String str4 = this.codecId;
-            str4.hashCode();
-            int i8 = 4;
-            switch (str4.hashCode()) {
+            String str3 = this.codecId;
+            str3.hashCode();
+            int i8 = 3;
+            switch (str3.hashCode()) {
                 case -2095576542:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_MPEG4_AP)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_MPEG4_AP)) {
                         c = 0;
                         break;
                     }
                     c = 65535;
                     break;
                 case -2095575984:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_MPEG4_SP)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_MPEG4_SP)) {
                         c = 1;
                         break;
                     }
                     c = 65535;
                     break;
                 case -1985379776:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_ACM)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_ACM)) {
                         c = 2;
                         break;
                     }
                     c = 65535;
                     break;
                 case -1784763192:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_TRUEHD)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_TRUEHD)) {
                         c = 3;
                         break;
                     }
                     c = 65535;
                     break;
                 case -1730367663:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_VORBIS)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_VORBIS)) {
                         c = 4;
                         break;
                     }
                     c = 65535;
                     break;
                 case -1482641358:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_MP2)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_MP2)) {
                         c = 5;
                         break;
                     }
                     c = 65535;
                     break;
                 case -1482641357:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_MP3)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_MP3)) {
                         c = 6;
                         break;
                     }
                     c = 65535;
                     break;
                 case -1373388978:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_FOURCC)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_FOURCC)) {
                         c = 7;
                         break;
                     }
                     c = 65535;
                     break;
                 case -933872740:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_DVBSUB)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_DVBSUB)) {
                         c = '\b';
                         break;
                     }
                     c = 65535;
                     break;
                 case -538363189:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_MPEG4_ASP)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_MPEG4_ASP)) {
                         c = '\t';
                         break;
                     }
                     c = 65535;
                     break;
                 case -538363109:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_H264)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_H264)) {
                         c = '\n';
                         break;
                     }
                     c = 65535;
                     break;
                 case -425012669:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_VOBSUB)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_VOBSUB)) {
                         c = 11;
                         break;
                     }
                     c = 65535;
                     break;
                 case -356037306:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_DTS_LOSSLESS)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_DTS_LOSSLESS)) {
                         c = '\f';
                         break;
                     }
                     c = 65535;
                     break;
                 case 62923557:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_AAC)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_AAC)) {
                         c = '\r';
                         break;
                     }
                     c = 65535;
                     break;
                 case 62923603:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_AC3)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_AC3)) {
                         c = 14;
                         break;
                     }
                     c = 65535;
                     break;
                 case 62927045:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_DTS)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_DTS)) {
                         c = 15;
                         break;
                     }
                     c = 65535;
                     break;
                 case 82318131:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_AV1)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_AV1)) {
                         c = 16;
                         break;
                     }
                     c = 65535;
                     break;
                 case 82338133:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_VP8)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_VP8)) {
                         c = 17;
                         break;
                     }
                     c = 65535;
                     break;
                 case 82338134:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_VP9)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_VP9)) {
                         c = 18;
                         break;
                     }
                     c = 65535;
                     break;
                 case 99146302:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_PGS)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_PGS)) {
                         c = 19;
                         break;
                     }
                     c = 65535;
                     break;
                 case 444813526:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_THEORA)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_THEORA)) {
                         c = 20;
                         break;
                     }
                     c = 65535;
                     break;
                 case 542569478:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_DTS_EXPRESS)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_DTS_EXPRESS)) {
                         c = 21;
                         break;
                     }
                     c = 65535;
                     break;
                 case 635596514:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_PCM_FLOAT)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_PCM_FLOAT)) {
                         c = 22;
                         break;
                     }
                     c = 65535;
                     break;
                 case 725948237:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_PCM_INT_BIG)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_PCM_INT_BIG)) {
                         c = 23;
                         break;
                     }
                     c = 65535;
                     break;
                 case 725957860:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_PCM_INT_LIT)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_PCM_INT_LIT)) {
                         c = 24;
                         break;
                     }
                     c = 65535;
                     break;
                 case 738597099:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_ASS)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_ASS)) {
                         c = 25;
                         break;
                     }
                     c = 65535;
                     break;
                 case 738614379:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_SSA)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_SSA)) {
                         c = 26;
                         break;
                     }
                     c = 65535;
                     break;
                 case 855502857:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_H265)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_H265)) {
                         c = 27;
                         break;
                     }
                     c = 65535;
                     break;
                 case 1045209816:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_VTT)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_VTT)) {
                         c = 28;
                         break;
                     }
                     c = 65535;
                     break;
                 case 1422270023:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_SUBRIP)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_SUBRIP)) {
                         c = 29;
                         break;
                     }
                     c = 65535;
                     break;
                 case 1809237540:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_MPEG2)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_MPEG2)) {
                         c = 30;
                         break;
                     }
                     c = 65535;
                     break;
                 case 1950749482:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_E_AC3)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_E_AC3)) {
                         c = 31;
                         break;
                     }
                     c = 65535;
                     break;
                 case 1950789798:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_FLAC)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_FLAC)) {
                         c = ' ';
                         break;
                     }
                     c = 65535;
                     break;
                 case 1951062397:
-                    if (str4.equals(MatroskaExtractor.CODEC_ID_OPUS)) {
+                    if (str3.equals(MatroskaExtractor.CODEC_ID_OPUS)) {
                         c = '!';
                         break;
                     }
@@ -2243,7 +2367,7 @@ public class MatroskaExtractor implements Extractor {
                     break;
             }
             int i9 = 4096;
-            String str5 = MimeTypes.AUDIO_RAW;
+            String str4 = MimeTypes.AUDIO_RAW;
             switch (c) {
                 case 0:
                 case 1:
@@ -2251,811 +2375,374 @@ public class MatroskaExtractor implements Extractor {
                     i2 = 0;
                     byte[] bArr = this.codecPrivate;
                     singletonList = bArr == null ? null : Collections.singletonList(bArr);
-                    str5 = MimeTypes.VIDEO_MP4V;
+                    str4 = MimeTypes.VIDEO_MP4V;
                     str = null;
                     i3 = -1;
                     i8 = -1;
-                    if (this.dolbyVisionConfigBytes != null && (parse = DolbyVisionConfig.parse(new ParsableByteArray(this.dolbyVisionConfigBytes))) != null) {
-                        str = parse.codecs;
-                        str5 = MimeTypes.VIDEO_DOLBY_VISION;
-                    }
-                    str3 = str5;
-                    int i10 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                    builder = new Format.Builder();
-                    if (!MimeTypes.isAudio(str3)) {
-                        builder.setChannelCount(this.channelCount).setSampleRate(this.sampleRate).setPcmEncoding(i8);
-                        i4 = 1;
-                    } else if (MimeTypes.isVideo(str3)) {
-                        if (this.displayUnit == 0) {
-                            int i11 = this.displayWidth;
-                            i5 = -1;
-                            if (i11 == -1) {
-                                i11 = this.width;
-                            }
-                            this.displayWidth = i11;
-                            int i12 = this.displayHeight;
-                            if (i12 == -1) {
-                                i12 = this.height;
-                            }
-                            this.displayHeight = i12;
-                        } else {
-                            i5 = -1;
-                        }
-                        float f = (this.displayWidth == i5 || (i7 = this.displayHeight) == i5) ? -1.0f : (this.height * i6) / (this.width * i7);
-                        ColorInfo build = this.hasColorInfo ? new ColorInfo.Builder().setColorSpace(this.colorSpace).setColorRange(this.colorRange).setColorTransfer(this.colorTransfer).setHdrStaticInfo(getHdrStaticInfo()).setLumaBitdepth(this.bitsPerChannel).setChromaBitdepth(this.bitsPerChannel).build() : null;
-                        if (this.name != null && MatroskaExtractor.TRACK_NAME_TO_ROTATION_DEGREES.containsKey(this.name)) {
-                            i5 = ((Integer) MatroskaExtractor.TRACK_NAME_TO_ROTATION_DEGREES.get(this.name)).intValue();
-                        }
-                        if (this.projectionType == 0 && Float.compare(this.projectionPoseYaw, 0.0f) == 0 && Float.compare(this.projectionPosePitch, 0.0f) == 0) {
-                            if (Float.compare(this.projectionPoseRoll, 0.0f) != 0) {
-                                if (Float.compare(this.projectionPoseRoll, 90.0f) == 0) {
-                                    i2 = 90;
-                                } else if (Float.compare(this.projectionPoseRoll, -180.0f) == 0 || Float.compare(this.projectionPoseRoll, 180.0f) == 0) {
-                                    i2 = 180;
-                                } else if (Float.compare(this.projectionPoseRoll, -90.0f) == 0) {
-                                    i2 = SubsamplingScaleImageView.ORIENTATION_270;
-                                }
-                            }
-                            builder.setWidth(this.width).setHeight(this.height).setPixelWidthHeightRatio(f).setRotationDegrees(i2).setProjectionData(this.projectionData).setStereoMode(this.stereoMode).setColorInfo(build);
-                            i4 = 2;
-                        }
-                        i2 = i5;
-                        builder.setWidth(this.width).setHeight(this.height).setPixelWidthHeightRatio(f).setRotationDegrees(i2).setProjectionData(this.projectionData).setStereoMode(this.stereoMode).setColorInfo(build);
-                        i4 = 2;
-                    } else if (!MimeTypes.APPLICATION_SUBRIP.equals(str3) && !MimeTypes.TEXT_SSA.equals(str3) && !MimeTypes.TEXT_VTT.equals(str3) && !MimeTypes.APPLICATION_VOBSUB.equals(str3) && !MimeTypes.APPLICATION_PGS.equals(str3) && !MimeTypes.APPLICATION_DVBSUBS.equals(str3)) {
-                        throw ParserException.createForMalformedContainer("Unexpected MIME type.", null);
-                    } else {
-                        i4 = 3;
-                    }
-                    if (this.name != null && !MatroskaExtractor.TRACK_NAME_TO_ROTATION_DEGREES.containsKey(this.name)) {
-                        builder.setLabel(this.name);
-                    }
-                    Format build2 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i10).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                    TrackOutput track = extractorOutput.track(this.number, i4);
-                    this.output = track;
-                    track.format(build2);
-                    return;
+                    break;
                 case 2:
                     i2 = 0;
                     if (parseMsAcmCodecPrivate(new ParsableByteArray(getCodecPrivate(this.codecId)))) {
                         i8 = Util.getPcmEncoding(this.audioBitDepth);
-                        if (i8 == 0) {
-                            Log.w(MatroskaExtractor.TAG, "Unsupported PCM bit depth: " + this.audioBitDepth + ". Setting mimeType to audio/x-unknown");
-                        } else {
+                        if (i8 != 0) {
                             singletonList = null;
                             str = null;
                             i3 = -1;
-                            if (this.dolbyVisionConfigBytes != null) {
-                                str = parse.codecs;
-                                str5 = MimeTypes.VIDEO_DOLBY_VISION;
-                                break;
-                            }
-                            str3 = str5;
-                            int i102 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                            builder = new Format.Builder();
-                            if (!MimeTypes.isAudio(str3)) {
-                            }
-                            if (this.name != null) {
-                                builder.setLabel(this.name);
-                                break;
-                            }
-                            Format build22 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i102).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                            TrackOutput track2 = extractorOutput.track(this.number, i4);
-                            this.output = track2;
-                            track2.format(build22);
-                            return;
+                            break;
+                        } else {
+                            Log.w(MatroskaExtractor.TAG, "Unsupported PCM bit depth: " + this.audioBitDepth + ". Setting mimeType to audio/x-unknown");
                         }
                     } else {
                         Log.w(MatroskaExtractor.TAG, "Non-PCM MS/ACM is unsupported. Setting mimeType to audio/x-unknown");
                     }
                     singletonList = null;
                     str = null;
-                    str5 = MimeTypes.AUDIO_UNKNOWN;
+                    str4 = MimeTypes.AUDIO_UNKNOWN;
                     i3 = -1;
                     i8 = -1;
-                    if (this.dolbyVisionConfigBytes != null) {
-                    }
-                    str3 = str5;
-                    int i1022 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                    builder = new Format.Builder();
-                    if (!MimeTypes.isAudio(str3)) {
-                    }
-                    if (this.name != null) {
-                    }
-                    Format build222 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i1022).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                    TrackOutput track22 = extractorOutput.track(this.number, i4);
-                    this.output = track22;
-                    track22.format(build222);
-                    return;
+                    break;
                 case 3:
                     i2 = 0;
                     this.trueHdSampleRechunker = new TrueHdSampleRechunker();
-                    str5 = MimeTypes.AUDIO_TRUEHD;
+                    str4 = MimeTypes.AUDIO_TRUEHD;
                     singletonList = null;
                     str = null;
                     i3 = -1;
                     i8 = -1;
-                    if (this.dolbyVisionConfigBytes != null) {
-                    }
-                    str3 = str5;
-                    int i10222 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                    builder = new Format.Builder();
-                    if (!MimeTypes.isAudio(str3)) {
-                    }
-                    if (this.name != null) {
-                    }
-                    Format build2222 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i10222).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                    TrackOutput track222 = extractorOutput.track(this.number, i4);
-                    this.output = track222;
-                    track222.format(build2222);
-                    return;
+                    break;
                 case 4:
                     i2 = 0;
                     singletonList = parseVorbisCodecPrivate(getCodecPrivate(this.codecId));
-                    str5 = MimeTypes.AUDIO_VORBIS;
+                    str4 = MimeTypes.AUDIO_VORBIS;
                     i9 = 8192;
                     str = null;
                     i3 = i9;
                     i8 = -1;
-                    if (this.dolbyVisionConfigBytes != null) {
-                    }
-                    str3 = str5;
-                    int i102222 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                    builder = new Format.Builder();
-                    if (!MimeTypes.isAudio(str3)) {
-                    }
-                    if (this.name != null) {
-                    }
-                    Format build22222 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i102222).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                    TrackOutput track2222 = extractorOutput.track(this.number, i4);
-                    this.output = track2222;
-                    track2222.format(build22222);
-                    return;
+                    break;
                 case 5:
                     i2 = 0;
-                    str5 = MimeTypes.AUDIO_MPEG_L2;
+                    str4 = MimeTypes.AUDIO_MPEG_L2;
                     singletonList = null;
                     str = null;
                     i3 = i9;
                     i8 = -1;
-                    if (this.dolbyVisionConfigBytes != null) {
-                    }
-                    str3 = str5;
-                    int i1022222 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                    builder = new Format.Builder();
-                    if (!MimeTypes.isAudio(str3)) {
-                    }
-                    if (this.name != null) {
-                    }
-                    Format build222222 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i1022222).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                    TrackOutput track22222 = extractorOutput.track(this.number, i4);
-                    this.output = track22222;
-                    track22222.format(build222222);
-                    return;
+                    break;
                 case 6:
                     i2 = 0;
-                    str5 = MimeTypes.AUDIO_MPEG;
+                    str4 = MimeTypes.AUDIO_MPEG;
                     singletonList = null;
                     str = null;
                     i3 = i9;
                     i8 = -1;
-                    if (this.dolbyVisionConfigBytes != null) {
-                    }
-                    str3 = str5;
-                    int i10222222 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                    builder = new Format.Builder();
-                    if (!MimeTypes.isAudio(str3)) {
-                    }
-                    if (this.name != null) {
-                    }
-                    Format build2222222 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i10222222).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                    TrackOutput track222222 = extractorOutput.track(this.number, i4);
-                    this.output = track222222;
-                    track222222.format(build2222222);
-                    return;
+                    break;
                 case 7:
                     i2 = 0;
                     Pair<String, List<byte[]>> parseFourCcPrivate = parseFourCcPrivate(new ParsableByteArray(getCodecPrivate(this.codecId)));
-                    str5 = (String) parseFourCcPrivate.first;
+                    str4 = (String) parseFourCcPrivate.first;
                     singletonList = (List) parseFourCcPrivate.second;
                     str = null;
                     i3 = -1;
                     i8 = -1;
-                    if (this.dolbyVisionConfigBytes != null) {
-                    }
-                    str3 = str5;
-                    int i102222222 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                    builder = new Format.Builder();
-                    if (!MimeTypes.isAudio(str3)) {
-                    }
-                    if (this.name != null) {
-                    }
-                    Format build22222222 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i102222222).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                    TrackOutput track2222222 = extractorOutput.track(this.number, i4);
-                    this.output = track2222222;
-                    track2222222.format(build22222222);
-                    return;
+                    break;
                 case '\b':
                     byte[] bArr2 = new byte[4];
                     i2 = 0;
                     System.arraycopy(getCodecPrivate(this.codecId), 0, bArr2, 0, 4);
                     singletonList = ImmutableList.of(bArr2);
-                    str5 = MimeTypes.APPLICATION_DVBSUBS;
+                    str4 = MimeTypes.APPLICATION_DVBSUBS;
                     str = null;
                     i3 = -1;
                     i8 = -1;
-                    if (this.dolbyVisionConfigBytes != null) {
-                    }
-                    str3 = str5;
-                    int i1022222222 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                    builder = new Format.Builder();
-                    if (!MimeTypes.isAudio(str3)) {
-                    }
-                    if (this.name != null) {
-                    }
-                    Format build222222222 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i1022222222).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                    TrackOutput track22222222 = extractorOutput.track(this.number, i4);
-                    this.output = track22222222;
-                    track22222222.format(build222222222);
-                    return;
+                    break;
                 case '\n':
                     AvcConfig parse2 = AvcConfig.parse(new ParsableByteArray(getCodecPrivate(this.codecId)));
                     list = parse2.initializationData;
                     this.nalUnitLengthFieldLength = parse2.nalUnitLengthFieldLength;
                     str2 = parse2.codecs;
-                    str5 = MimeTypes.VIDEO_H264;
+                    str4 = MimeTypes.VIDEO_H264;
                     List<byte[]> list2 = list;
                     str = str2;
                     singletonList = list2;
-                    i2 = 0;
                     i3 = -1;
+                    i2 = 0;
                     i8 = -1;
-                    if (this.dolbyVisionConfigBytes != null) {
-                    }
-                    str3 = str5;
-                    int i10222222222 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                    builder = new Format.Builder();
-                    if (!MimeTypes.isAudio(str3)) {
-                    }
-                    if (this.name != null) {
-                    }
-                    Format build2222222222 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i10222222222).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                    TrackOutput track222222222 = extractorOutput.track(this.number, i4);
-                    this.output = track222222222;
-                    track222222222.format(build2222222222);
-                    return;
+                    break;
                 case 11:
                     singletonList = ImmutableList.of(getCodecPrivate(this.codecId));
                     str = null;
-                    str5 = MimeTypes.APPLICATION_VOBSUB;
-                    i2 = 0;
+                    str4 = MimeTypes.APPLICATION_VOBSUB;
                     i3 = -1;
+                    i2 = 0;
                     i8 = -1;
-                    if (this.dolbyVisionConfigBytes != null) {
-                    }
-                    str3 = str5;
-                    int i102222222222 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                    builder = new Format.Builder();
-                    if (!MimeTypes.isAudio(str3)) {
-                    }
-                    if (this.name != null) {
-                    }
-                    Format build22222222222 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i102222222222).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                    TrackOutput track2222222222 = extractorOutput.track(this.number, i4);
-                    this.output = track2222222222;
-                    track2222222222.format(build22222222222);
-                    return;
+                    break;
                 case '\f':
-                    str5 = MimeTypes.AUDIO_DTS_HD;
+                    str4 = MimeTypes.AUDIO_DTS_HD;
                     singletonList = null;
                     str = null;
-                    i2 = 0;
                     i3 = -1;
+                    i2 = 0;
                     i8 = -1;
-                    if (this.dolbyVisionConfigBytes != null) {
-                    }
-                    str3 = str5;
-                    int i1022222222222 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                    builder = new Format.Builder();
-                    if (!MimeTypes.isAudio(str3)) {
-                    }
-                    if (this.name != null) {
-                    }
-                    Format build222222222222 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i1022222222222).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                    TrackOutput track22222222222 = extractorOutput.track(this.number, i4);
-                    this.output = track22222222222;
-                    track22222222222.format(build222222222222);
-                    return;
+                    break;
                 case '\r':
                     singletonList = Collections.singletonList(getCodecPrivate(this.codecId));
                     AacUtil.Config parseAudioSpecificConfig = AacUtil.parseAudioSpecificConfig(this.codecPrivate);
                     this.sampleRate = parseAudioSpecificConfig.sampleRateHz;
                     this.channelCount = parseAudioSpecificConfig.channelCount;
                     str = parseAudioSpecificConfig.codecs;
-                    str5 = MimeTypes.AUDIO_AAC;
-                    i2 = 0;
+                    str4 = MimeTypes.AUDIO_AAC;
                     i3 = -1;
+                    i2 = 0;
                     i8 = -1;
-                    if (this.dolbyVisionConfigBytes != null) {
-                    }
-                    str3 = str5;
-                    int i10222222222222 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                    builder = new Format.Builder();
-                    if (!MimeTypes.isAudio(str3)) {
-                    }
-                    if (this.name != null) {
-                    }
-                    Format build2222222222222 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i10222222222222).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                    TrackOutput track222222222222 = extractorOutput.track(this.number, i4);
-                    this.output = track222222222222;
-                    track222222222222.format(build2222222222222);
-                    return;
+                    break;
                 case 14:
-                    str5 = MimeTypes.AUDIO_AC3;
+                    str4 = MimeTypes.AUDIO_AC3;
                     singletonList = null;
                     str = null;
-                    i2 = 0;
                     i3 = -1;
+                    i2 = 0;
                     i8 = -1;
-                    if (this.dolbyVisionConfigBytes != null) {
-                    }
-                    str3 = str5;
-                    int i102222222222222 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                    builder = new Format.Builder();
-                    if (!MimeTypes.isAudio(str3)) {
-                    }
-                    if (this.name != null) {
-                    }
-                    Format build22222222222222 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i102222222222222).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                    TrackOutput track2222222222222 = extractorOutput.track(this.number, i4);
-                    this.output = track2222222222222;
-                    track2222222222222.format(build22222222222222);
-                    return;
+                    break;
                 case 15:
                 case 21:
-                    str5 = MimeTypes.AUDIO_DTS;
+                    this.waitingForDtsAnalysis = true;
+                    str4 = MimeTypes.AUDIO_DTS;
                     singletonList = null;
                     str = null;
-                    i2 = 0;
                     i3 = -1;
+                    i2 = 0;
                     i8 = -1;
-                    if (this.dolbyVisionConfigBytes != null) {
-                    }
-                    str3 = str5;
-                    int i1022222222222222 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                    builder = new Format.Builder();
-                    if (!MimeTypes.isAudio(str3)) {
-                    }
-                    if (this.name != null) {
-                    }
-                    Format build222222222222222 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i1022222222222222).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                    TrackOutput track22222222222222 = extractorOutput.track(this.number, i4);
-                    this.output = track22222222222222;
-                    track22222222222222.format(build222222222222222);
-                    return;
+                    break;
                 case 16:
                     byte[] bArr3 = this.codecPrivate;
                     singletonList = bArr3 == null ? null : ImmutableList.of(bArr3);
-                    str5 = MimeTypes.VIDEO_AV1;
+                    str4 = MimeTypes.VIDEO_AV1;
                     str = null;
-                    i2 = 0;
                     i3 = -1;
+                    i2 = 0;
                     i8 = -1;
-                    if (this.dolbyVisionConfigBytes != null) {
-                    }
-                    str3 = str5;
-                    int i10222222222222222 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                    builder = new Format.Builder();
-                    if (!MimeTypes.isAudio(str3)) {
-                    }
-                    if (this.name != null) {
-                    }
-                    Format build2222222222222222 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i10222222222222222).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                    TrackOutput track222222222222222 = extractorOutput.track(this.number, i4);
-                    this.output = track222222222222222;
-                    track222222222222222.format(build2222222222222222);
-                    return;
+                    break;
                 case 17:
-                    str5 = MimeTypes.VIDEO_VP8;
+                    str4 = MimeTypes.VIDEO_VP8;
                     singletonList = null;
                     str = null;
-                    i2 = 0;
                     i3 = -1;
+                    i2 = 0;
                     i8 = -1;
-                    if (this.dolbyVisionConfigBytes != null) {
-                    }
-                    str3 = str5;
-                    int i102222222222222222 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                    builder = new Format.Builder();
-                    if (!MimeTypes.isAudio(str3)) {
-                    }
-                    if (this.name != null) {
-                    }
-                    Format build22222222222222222 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i102222222222222222).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                    TrackOutput track2222222222222222 = extractorOutput.track(this.number, i4);
-                    this.output = track2222222222222222;
-                    track2222222222222222.format(build22222222222222222);
-                    return;
+                    break;
                 case 18:
                     byte[] bArr4 = this.codecPrivate;
                     singletonList = bArr4 == null ? null : ImmutableList.of(bArr4);
-                    str5 = MimeTypes.VIDEO_VP9;
+                    str4 = MimeTypes.VIDEO_VP9;
                     str = null;
-                    i2 = 0;
                     i3 = -1;
+                    i2 = 0;
                     i8 = -1;
-                    if (this.dolbyVisionConfigBytes != null) {
-                    }
-                    str3 = str5;
-                    int i1022222222222222222 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                    builder = new Format.Builder();
-                    if (!MimeTypes.isAudio(str3)) {
-                    }
-                    if (this.name != null) {
-                    }
-                    Format build222222222222222222 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i1022222222222222222).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                    TrackOutput track22222222222222222 = extractorOutput.track(this.number, i4);
-                    this.output = track22222222222222222;
-                    track22222222222222222.format(build222222222222222222);
-                    return;
+                    break;
                 case 19:
-                    str5 = MimeTypes.APPLICATION_PGS;
+                    str4 = MimeTypes.APPLICATION_PGS;
                     singletonList = null;
                     str = null;
-                    i2 = 0;
                     i3 = -1;
+                    i2 = 0;
                     i8 = -1;
-                    if (this.dolbyVisionConfigBytes != null) {
-                    }
-                    str3 = str5;
-                    int i10222222222222222222 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                    builder = new Format.Builder();
-                    if (!MimeTypes.isAudio(str3)) {
-                    }
-                    if (this.name != null) {
-                    }
-                    Format build2222222222222222222 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i10222222222222222222).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                    TrackOutput track222222222222222222 = extractorOutput.track(this.number, i4);
-                    this.output = track222222222222222222;
-                    track222222222222222222.format(build2222222222222222222);
-                    return;
+                    break;
                 case 20:
-                    str5 = MimeTypes.VIDEO_UNKNOWN;
+                    str4 = MimeTypes.VIDEO_UNKNOWN;
                     singletonList = null;
                     str = null;
-                    i2 = 0;
                     i3 = -1;
+                    i2 = 0;
                     i8 = -1;
-                    if (this.dolbyVisionConfigBytes != null) {
-                    }
-                    str3 = str5;
-                    int i102222222222222222222 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                    builder = new Format.Builder();
-                    if (!MimeTypes.isAudio(str3)) {
-                    }
-                    if (this.name != null) {
-                    }
-                    Format build22222222222222222222 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i102222222222222222222).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                    TrackOutput track2222222222222222222 = extractorOutput.track(this.number, i4);
-                    this.output = track2222222222222222222;
-                    track2222222222222222222.format(build22222222222222222222);
-                    return;
+                    break;
                 case 22:
                     if (this.audioBitDepth != 32) {
                         Log.w(MatroskaExtractor.TAG, "Unsupported floating point PCM bit depth: " + this.audioBitDepth + ". Setting mimeType to audio/x-unknown");
                         singletonList = null;
                         str = null;
-                        str5 = MimeTypes.AUDIO_UNKNOWN;
-                        i2 = 0;
+                        str4 = MimeTypes.AUDIO_UNKNOWN;
                         i3 = -1;
+                        i2 = 0;
                         i8 = -1;
-                        if (this.dolbyVisionConfigBytes != null) {
-                        }
-                        str3 = str5;
-                        int i1022222222222222222222 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                        builder = new Format.Builder();
-                        if (!MimeTypes.isAudio(str3)) {
-                        }
-                        if (this.name != null) {
-                        }
-                        Format build222222222222222222222 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i1022222222222222222222).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                        TrackOutput track22222222222222222222 = extractorOutput.track(this.number, i4);
-                        this.output = track22222222222222222222;
-                        track22222222222222222222.format(build222222222222222222222);
-                        return;
-                    }
-                    singletonList = null;
-                    str = null;
-                    i2 = 0;
-                    i3 = -1;
-                    if (this.dolbyVisionConfigBytes != null) {
-                    }
-                    str3 = str5;
-                    int i10222222222222222222222 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                    builder = new Format.Builder();
-                    if (!MimeTypes.isAudio(str3)) {
-                    }
-                    if (this.name != null) {
-                    }
-                    Format build2222222222222222222222 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i10222222222222222222222).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                    TrackOutput track222222222222222222222 = extractorOutput.track(this.number, i4);
-                    this.output = track222222222222222222222;
-                    track222222222222222222222.format(build2222222222222222222222);
-                    return;
-                case 23:
-                    int i13 = this.audioBitDepth;
-                    if (i13 == 8) {
-                        i8 = 3;
-                    } else if (i13 == 16) {
-                        i8 = 268435456;
-                    } else if (i13 == 24) {
-                        i8 = C.ENCODING_PCM_24BIT_BIG_ENDIAN;
-                    } else if (i13 != 32) {
-                        Log.w(MatroskaExtractor.TAG, "Unsupported big endian PCM bit depth: " + this.audioBitDepth + ". Setting mimeType to audio/x-unknown");
+                        break;
+                    } else {
                         singletonList = null;
                         str = null;
-                        str5 = MimeTypes.AUDIO_UNKNOWN;
-                        i2 = 0;
                         i3 = -1;
-                        i8 = -1;
-                        if (this.dolbyVisionConfigBytes != null) {
+                        i2 = 0;
+                        i8 = 4;
+                        break;
+                    }
+                case 23:
+                    int i10 = this.audioBitDepth;
+                    if (i10 != 8) {
+                        if (i10 != 16) {
+                            if (i10 != 24) {
+                                if (i10 != 32) {
+                                    Log.w(MatroskaExtractor.TAG, "Unsupported big endian PCM bit depth: " + this.audioBitDepth + ". Setting mimeType to audio/x-unknown");
+                                    singletonList = null;
+                                    str = null;
+                                    str4 = MimeTypes.AUDIO_UNKNOWN;
+                                    i3 = -1;
+                                    i2 = 0;
+                                    i8 = -1;
+                                    break;
+                                } else {
+                                    i8 = C.ENCODING_PCM_32BIT_BIG_ENDIAN;
+                                }
+                            } else {
+                                i8 = C.ENCODING_PCM_24BIT_BIG_ENDIAN;
+                            }
+                        } else {
+                            i8 = 268435456;
                         }
-                        str3 = str5;
-                        int i102222222222222222222222 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                        builder = new Format.Builder();
-                        if (!MimeTypes.isAudio(str3)) {
-                        }
-                        if (this.name != null) {
-                        }
-                        Format build22222222222222222222222 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i102222222222222222222222).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                        TrackOutput track2222222222222222222222 = extractorOutput.track(this.number, i4);
-                        this.output = track2222222222222222222222;
-                        track2222222222222222222222.format(build22222222222222222222222);
-                        return;
-                    } else {
-                        i8 = C.ENCODING_PCM_32BIT_BIG_ENDIAN;
                     }
                     singletonList = null;
                     str = null;
-                    i2 = 0;
                     i3 = -1;
-                    if (this.dolbyVisionConfigBytes != null) {
-                    }
-                    str3 = str5;
-                    int i1022222222222222222222222 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                    builder = new Format.Builder();
-                    if (!MimeTypes.isAudio(str3)) {
-                    }
-                    if (this.name != null) {
-                    }
-                    Format build222222222222222222222222 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i1022222222222222222222222).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                    TrackOutput track22222222222222222222222 = extractorOutput.track(this.number, i4);
-                    this.output = track22222222222222222222222;
-                    track22222222222222222222222.format(build222222222222222222222222);
-                    return;
+                    i2 = 0;
+                    break;
                 case 24:
                     i8 = Util.getPcmEncoding(this.audioBitDepth);
                     if (i8 == 0) {
                         Log.w(MatroskaExtractor.TAG, "Unsupported little endian PCM bit depth: " + this.audioBitDepth + ". Setting mimeType to audio/x-unknown");
                         singletonList = null;
                         str = null;
-                        str5 = MimeTypes.AUDIO_UNKNOWN;
-                        i2 = 0;
+                        str4 = MimeTypes.AUDIO_UNKNOWN;
                         i3 = -1;
+                        i2 = 0;
                         i8 = -1;
-                        if (this.dolbyVisionConfigBytes != null) {
-                        }
-                        str3 = str5;
-                        int i10222222222222222222222222 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                        builder = new Format.Builder();
-                        if (!MimeTypes.isAudio(str3)) {
-                        }
-                        if (this.name != null) {
-                        }
-                        Format build2222222222222222222222222 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i10222222222222222222222222).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                        TrackOutput track222222222222222222222222 = extractorOutput.track(this.number, i4);
-                        this.output = track222222222222222222222222;
-                        track222222222222222222222222.format(build2222222222222222222222222);
-                        return;
+                        break;
                     }
                     singletonList = null;
                     str = null;
-                    i2 = 0;
                     i3 = -1;
-                    if (this.dolbyVisionConfigBytes != null) {
-                    }
-                    str3 = str5;
-                    int i102222222222222222222222222 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                    builder = new Format.Builder();
-                    if (!MimeTypes.isAudio(str3)) {
-                    }
-                    if (this.name != null) {
-                    }
-                    Format build22222222222222222222222222 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i102222222222222222222222222).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                    TrackOutput track2222222222222222222222222 = extractorOutput.track(this.number, i4);
-                    this.output = track2222222222222222222222222;
-                    track2222222222222222222222222.format(build22222222222222222222222222);
-                    return;
+                    i2 = 0;
+                    break;
                 case 25:
                 case 26:
                     singletonList = ImmutableList.of(MatroskaExtractor.SSA_DIALOGUE_FORMAT, getCodecPrivate(this.codecId));
                     str = null;
-                    str5 = MimeTypes.TEXT_SSA;
-                    i2 = 0;
+                    str4 = MimeTypes.TEXT_SSA;
                     i3 = -1;
+                    i2 = 0;
                     i8 = -1;
-                    if (this.dolbyVisionConfigBytes != null) {
-                    }
-                    str3 = str5;
-                    int i1022222222222222222222222222 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                    builder = new Format.Builder();
-                    if (!MimeTypes.isAudio(str3)) {
-                    }
-                    if (this.name != null) {
-                    }
-                    Format build222222222222222222222222222 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i1022222222222222222222222222).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                    TrackOutput track22222222222222222222222222 = extractorOutput.track(this.number, i4);
-                    this.output = track22222222222222222222222222;
-                    track22222222222222222222222222.format(build222222222222222222222222222);
-                    return;
+                    break;
                 case 27:
                     HevcConfig parse3 = HevcConfig.parse(new ParsableByteArray(getCodecPrivate(this.codecId)));
                     list = parse3.initializationData;
                     this.nalUnitLengthFieldLength = parse3.nalUnitLengthFieldLength;
                     str2 = parse3.codecs;
-                    str5 = MimeTypes.VIDEO_H265;
+                    str4 = MimeTypes.VIDEO_H265;
                     List<byte[]> list22 = list;
                     str = str2;
                     singletonList = list22;
-                    i2 = 0;
                     i3 = -1;
+                    i2 = 0;
                     i8 = -1;
-                    if (this.dolbyVisionConfigBytes != null) {
-                    }
-                    str3 = str5;
-                    int i10222222222222222222222222222 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                    builder = new Format.Builder();
-                    if (!MimeTypes.isAudio(str3)) {
-                    }
-                    if (this.name != null) {
-                    }
-                    Format build2222222222222222222222222222 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i10222222222222222222222222222).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                    TrackOutput track222222222222222222222222222 = extractorOutput.track(this.number, i4);
-                    this.output = track222222222222222222222222222;
-                    track222222222222222222222222222.format(build2222222222222222222222222222);
-                    return;
+                    break;
                 case 28:
                     singletonList = null;
                     str = null;
-                    str5 = MimeTypes.TEXT_VTT;
-                    i2 = 0;
+                    str4 = MimeTypes.TEXT_VTT;
                     i3 = -1;
+                    i2 = 0;
                     i8 = -1;
-                    if (this.dolbyVisionConfigBytes != null) {
-                    }
-                    str3 = str5;
-                    int i102222222222222222222222222222 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                    builder = new Format.Builder();
-                    if (!MimeTypes.isAudio(str3)) {
-                    }
-                    if (this.name != null) {
-                    }
-                    Format build22222222222222222222222222222 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i102222222222222222222222222222).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                    TrackOutput track2222222222222222222222222222 = extractorOutput.track(this.number, i4);
-                    this.output = track2222222222222222222222222222;
-                    track2222222222222222222222222222.format(build22222222222222222222222222222);
-                    return;
+                    break;
                 case 29:
-                    str5 = MimeTypes.APPLICATION_SUBRIP;
+                    str4 = MimeTypes.APPLICATION_SUBRIP;
                     singletonList = null;
                     str = null;
-                    i2 = 0;
                     i3 = -1;
+                    i2 = 0;
                     i8 = -1;
-                    if (this.dolbyVisionConfigBytes != null) {
-                    }
-                    str3 = str5;
-                    int i1022222222222222222222222222222 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                    builder = new Format.Builder();
-                    if (!MimeTypes.isAudio(str3)) {
-                    }
-                    if (this.name != null) {
-                    }
-                    Format build222222222222222222222222222222 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i1022222222222222222222222222222).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                    TrackOutput track22222222222222222222222222222 = extractorOutput.track(this.number, i4);
-                    this.output = track22222222222222222222222222222;
-                    track22222222222222222222222222222.format(build222222222222222222222222222222);
-                    return;
+                    break;
                 case 30:
-                    str5 = MimeTypes.VIDEO_MPEG2;
+                    str4 = MimeTypes.VIDEO_MPEG2;
                     singletonList = null;
                     str = null;
-                    i2 = 0;
                     i3 = -1;
+                    i2 = 0;
                     i8 = -1;
-                    if (this.dolbyVisionConfigBytes != null) {
-                    }
-                    str3 = str5;
-                    int i10222222222222222222222222222222 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                    builder = new Format.Builder();
-                    if (!MimeTypes.isAudio(str3)) {
-                    }
-                    if (this.name != null) {
-                    }
-                    Format build2222222222222222222222222222222 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i10222222222222222222222222222222).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                    TrackOutput track222222222222222222222222222222 = extractorOutput.track(this.number, i4);
-                    this.output = track222222222222222222222222222222;
-                    track222222222222222222222222222222.format(build2222222222222222222222222222222);
-                    return;
+                    break;
                 case 31:
-                    str5 = MimeTypes.AUDIO_E_AC3;
+                    str4 = MimeTypes.AUDIO_E_AC3;
                     singletonList = null;
                     str = null;
-                    i2 = 0;
                     i3 = -1;
+                    i2 = 0;
                     i8 = -1;
-                    if (this.dolbyVisionConfigBytes != null) {
-                    }
-                    str3 = str5;
-                    int i102222222222222222222222222222222 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                    builder = new Format.Builder();
-                    if (!MimeTypes.isAudio(str3)) {
-                    }
-                    if (this.name != null) {
-                    }
-                    Format build22222222222222222222222222222222 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i102222222222222222222222222222222).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                    TrackOutput track2222222222222222222222222222222 = extractorOutput.track(this.number, i4);
-                    this.output = track2222222222222222222222222222222;
-                    track2222222222222222222222222222222.format(build22222222222222222222222222222222);
-                    return;
+                    break;
                 case ' ':
                     singletonList = Collections.singletonList(getCodecPrivate(this.codecId));
-                    str5 = MimeTypes.AUDIO_FLAC;
+                    str4 = MimeTypes.AUDIO_FLAC;
                     str = null;
-                    i2 = 0;
                     i3 = -1;
+                    i2 = 0;
                     i8 = -1;
-                    if (this.dolbyVisionConfigBytes != null) {
-                    }
-                    str3 = str5;
-                    int i1022222222222222222222222222222222 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                    builder = new Format.Builder();
-                    if (!MimeTypes.isAudio(str3)) {
-                    }
-                    if (this.name != null) {
-                    }
-                    Format build222222222222222222222222222222222 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i1022222222222222222222222222222222).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                    TrackOutput track22222222222222222222222222222222 = extractorOutput.track(this.number, i4);
-                    this.output = track22222222222222222222222222222222;
-                    track22222222222222222222222222222222.format(build222222222222222222222222222222222);
-                    return;
+                    break;
                 case '!':
                     singletonList = new ArrayList<>(3);
                     singletonList.add(getCodecPrivate(this.codecId));
                     singletonList.add(ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN).putLong(this.codecDelayNs).array());
                     singletonList.add(ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN).putLong(this.seekPreRollNs).array());
-                    str5 = MimeTypes.AUDIO_OPUS;
+                    str4 = MimeTypes.AUDIO_OPUS;
                     str = null;
                     i3 = MatroskaExtractor.OPUS_MAX_INPUT_SIZE;
                     i2 = 0;
                     i8 = -1;
-                    if (this.dolbyVisionConfigBytes != null) {
-                    }
-                    str3 = str5;
-                    int i10222222222222222222222222222222222 = (this.flagDefault ? 1 : 0) | (!this.flagForced ? 2 : i2);
-                    builder = new Format.Builder();
-                    if (!MimeTypes.isAudio(str3)) {
-                    }
-                    if (this.name != null) {
-                    }
-                    Format build2222222222222222222222222222222222 = builder.setId(i).setContainerMimeType(!this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str3).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i10222222222222222222222222222222222).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
-                    TrackOutput track222222222222222222222222222222222 = extractorOutput.track(this.number, i4);
-                    this.output = track222222222222222222222222222222222;
-                    track222222222222222222222222222222222.format(build2222222222222222222222222222222222);
-                    return;
+                    break;
                 default:
                     throw ParserException.createForMalformedContainer("Unrecognized codec identifier.", null);
             }
+            if (this.dolbyVisionConfigBytes != null && (parse = DolbyVisionConfig.parse(new ParsableByteArray(this.dolbyVisionConfigBytes))) != null) {
+                str = parse.codecs;
+                str4 = MimeTypes.VIDEO_DOLBY_VISION;
+            }
+            String str5 = str4;
+            int i11 = (this.flagDefault ? 1 : 0) | (this.flagForced ? 2 : i2);
+            Format.Builder builder = new Format.Builder();
+            if (MimeTypes.isAudio(str5)) {
+                builder.setChannelCount(this.channelCount).setSampleRate(this.sampleRate).setPcmEncoding(i8);
+            } else if (MimeTypes.isVideo(str5)) {
+                if (this.displayUnit == 0) {
+                    int i12 = this.displayWidth;
+                    i4 = -1;
+                    if (i12 == -1) {
+                        i12 = this.width;
+                    }
+                    this.displayWidth = i12;
+                    int i13 = this.displayHeight;
+                    if (i13 == -1) {
+                        i13 = this.height;
+                    }
+                    this.displayHeight = i13;
+                } else {
+                    i4 = -1;
+                }
+                float f = (this.displayWidth == i4 || (i7 = this.displayHeight) == i4) ? -1.0f : (this.height * i5) / (this.width * i7);
+                ColorInfo build = this.hasColorInfo ? new ColorInfo.Builder().setColorSpace(this.colorSpace).setColorRange(this.colorRange).setColorTransfer(this.colorTransfer).setHdrStaticInfo(getHdrStaticInfo()).setLumaBitdepth(this.bitsPerChannel).setChromaBitdepth(this.bitsPerChannel).build() : null;
+                int intValue = (this.name == null || !MatroskaExtractor.TRACK_NAME_TO_ROTATION_DEGREES.containsKey(this.name)) ? i4 : ((Integer) MatroskaExtractor.TRACK_NAME_TO_ROTATION_DEGREES.get(this.name)).intValue();
+                if (this.projectionType == 0 && Float.compare(this.projectionPoseYaw, 0.0f) == 0 && Float.compare(this.projectionPosePitch, 0.0f) == 0) {
+                    if (Float.compare(this.projectionPoseRoll, 0.0f) == 0) {
+                        i6 = i2;
+                    } else if (Float.compare(this.projectionPoseRoll, 90.0f) == 0) {
+                        i6 = 90;
+                    } else if (Float.compare(this.projectionPoseRoll, -180.0f) == 0 || Float.compare(this.projectionPoseRoll, 180.0f) == 0) {
+                        i6 = 180;
+                    } else if (Float.compare(this.projectionPoseRoll, -90.0f) == 0) {
+                        i6 = SubsamplingScaleImageView.ORIENTATION_270;
+                    }
+                    builder.setWidth(this.width).setHeight(this.height).setPixelWidthHeightRatio(f).setRotationDegrees(i6).setProjectionData(this.projectionData).setStereoMode(this.stereoMode).setColorInfo(build);
+                }
+                i6 = intValue;
+                builder.setWidth(this.width).setHeight(this.height).setPixelWidthHeightRatio(f).setRotationDegrees(i6).setProjectionData(this.projectionData).setStereoMode(this.stereoMode).setColorInfo(build);
+            } else if (!MimeTypes.APPLICATION_SUBRIP.equals(str5) && !MimeTypes.TEXT_SSA.equals(str5) && !MimeTypes.TEXT_VTT.equals(str5) && !MimeTypes.APPLICATION_VOBSUB.equals(str5) && !MimeTypes.APPLICATION_PGS.equals(str5) && !MimeTypes.APPLICATION_DVBSUBS.equals(str5)) {
+                throw ParserException.createForMalformedContainer("Unexpected MIME type.", null);
+            }
+            if (this.name != null && !MatroskaExtractor.TRACK_NAME_TO_ROTATION_DEGREES.containsKey(this.name)) {
+                builder.setLabel(this.name);
+            }
+            this.format = builder.setId(i).setContainerMimeType(this.isWebm ? MimeTypes.VIDEO_WEBM : MimeTypes.VIDEO_MATROSKA).setSampleMimeType(str5).setMaxInputSize(i3).setLanguage(this.language).setSelectionFlags(i11).setInitializationData(singletonList).setCodecs(str).setDrmInitData(this.drmInitData).build();
         }
 
         @RequiresNonNull({"output"})
@@ -3098,6 +2785,53 @@ public class MatroskaExtractor implements Extractor {
             order.putShort((short) this.maxContentLuminance);
             order.putShort((short) this.maxFrameAverageLuminance);
             return bArr;
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public void maybeAddThumbnailMetadata(SparseArray<List<MatroskaSeekMap.CuePointData>> sparseArray, long j, long j2, long j3) {
+            List<MatroskaSeekMap.CuePointData> list;
+            if (this.type != 2 || (list = sparseArray.get(this.number)) == null || list.isEmpty()) {
+                return;
+            }
+            long findBestThumbnailPresentationTimeUs = findBestThumbnailPresentationTimeUs(list, j, j2, j3);
+            if (findBestThumbnailPresentationTimeUs != C.TIME_UNSET) {
+                Metadata metadata = ((Format) Preconditions.checkNotNull(this.format)).metadata;
+                ThumbnailMetadata thumbnailMetadata = new ThumbnailMetadata(findBestThumbnailPresentationTimeUs);
+                this.format = this.format.buildUpon().setMetadata(metadata == null ? new Metadata(thumbnailMetadata) : metadata.copyWithAppendedEntries(thumbnailMetadata)).build();
+            }
+        }
+
+        private static long findBestThumbnailPresentationTimeUs(List<MatroskaSeekMap.CuePointData> list, long j, long j2, long j3) {
+            long j4;
+            long j5;
+            if (list.isEmpty()) {
+                return C.TIME_UNSET;
+            }
+            int min = Math.min(list.size(), 20);
+            double d = FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
+            int i = -1;
+            for (int i2 = 0; i2 < min; i2++) {
+                MatroskaSeekMap.CuePointData cuePointData = list.get(i2);
+                if (cuePointData.timeUs > MatroskaExtractor.MAX_DURATION_US_TO_SCAN_FOR_THUMBNAIL) {
+                    break;
+                }
+                if (i2 < list.size() - 1) {
+                    MatroskaSeekMap.CuePointData cuePointData2 = list.get(i2 + 1);
+                    j4 = (cuePointData2.clusterPosition + cuePointData2.relativePosition) - (cuePointData.clusterPosition + cuePointData.relativePosition);
+                    j5 = cuePointData2.timeUs - cuePointData.timeUs;
+                } else {
+                    j4 = (j2 + j3) - (cuePointData.clusterPosition + cuePointData.relativePosition);
+                    j5 = j - cuePointData.timeUs;
+                }
+                if (j5 > 0) {
+                    double d2 = j4 / j5;
+                    if (d2 > d) {
+                        i = i2;
+                        d = d2;
+                    }
+                }
+            }
+            return i == -1 ? C.TIME_UNSET : list.get(i).timeUs;
         }
 
         private static Pair<String, List<byte[]>> parseFourCcPrivate(ParsableByteArray parsableByteArray) throws ParserException {
@@ -3203,7 +2937,7 @@ public class MatroskaExtractor implements Extractor {
         /* JADX INFO: Access modifiers changed from: private */
         @EnsuresNonNull({"output"})
         public void assertOutputInitialized() {
-            Assertions.checkNotNull(this.output);
+            Preconditions.checkNotNull(this.output);
         }
 
         @EnsuresNonNull({"codecPrivate"})
@@ -3213,6 +2947,155 @@ public class MatroskaExtractor implements Extractor {
                 return bArr;
             }
             throw ParserException.createForMalformedContainer("Missing CodecPrivate for codec " + str, null);
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* loaded from: classes3.dex */
+    public static final class MatroskaSeekMap implements TrackAwareSeekMap, ChunkIndexProvider {
+        private final ChunkIndex chunkIndex;
+        private final long durationUs;
+        private final SparseArray<List<CuePointData>> perTrackCues;
+        private final int primarySeekTrackNumber;
+
+        public MatroskaSeekMap(SparseArray<List<CuePointData>> sparseArray, long j, int i, long j2, long j3) {
+            this.perTrackCues = sparseArray;
+            this.durationUs = j;
+            this.primarySeekTrackNumber = i;
+            this.chunkIndex = buildChunkIndex(sparseArray, j, i, j2, j3);
+        }
+
+        @Override // androidx.media3.extractor.SeekMap
+        public boolean isSeekable() {
+            return isSeekable(this.primarySeekTrackNumber);
+        }
+
+        @Override // androidx.media3.extractor.TrackAwareSeekMap
+        public boolean isSeekable(int i) {
+            List<CuePointData> list = this.perTrackCues.get(i);
+            return (list == null || list.isEmpty()) ? false : true;
+        }
+
+        @Override // androidx.media3.extractor.SeekMap
+        public long getDurationUs() {
+            return this.durationUs;
+        }
+
+        @Override // androidx.media3.extractor.SeekMap
+        public SeekMap.SeekPoints getSeekPoints(long j) {
+            ChunkIndex chunkIndex = this.chunkIndex;
+            if (chunkIndex != null) {
+                return chunkIndex.getSeekPoints(j);
+            }
+            return new SeekMap.SeekPoints(SeekPoint.START);
+        }
+
+        @Override // androidx.media3.extractor.TrackAwareSeekMap
+        public SeekMap.SeekPoints getSeekPoints(long j, int i) {
+            int i2;
+            int i3;
+            List<CuePointData> list = this.perTrackCues.get(i);
+            if ((list == null || list.isEmpty()) && i != (i2 = this.primarySeekTrackNumber)) {
+                list = this.perTrackCues.get(i2);
+            }
+            if (list == null || list.isEmpty()) {
+                return new SeekMap.SeekPoints(SeekPoint.START);
+            }
+            int binarySearchFloor = Util.binarySearchFloor((List<? extends Comparable<? super CuePointData>>) list, new CuePointData(j, -1L, -1L), true, false);
+            if (binarySearchFloor != -1) {
+                CuePointData cuePointData = list.get(binarySearchFloor);
+                SeekPoint seekPoint = new SeekPoint(cuePointData.timeUs, cuePointData.clusterPosition);
+                if (cuePointData.timeUs < j && (i3 = binarySearchFloor + 1) < list.size()) {
+                    CuePointData cuePointData2 = list.get(i3);
+                    return new SeekMap.SeekPoints(seekPoint, new SeekPoint(cuePointData2.timeUs, cuePointData2.clusterPosition));
+                }
+                return new SeekMap.SeekPoints(seekPoint);
+            }
+            CuePointData cuePointData3 = list.get(0);
+            return new SeekMap.SeekPoints(new SeekPoint(cuePointData3.timeUs, cuePointData3.clusterPosition));
+        }
+
+        @Override // androidx.media3.extractor.ChunkIndexProvider
+        public ChunkIndex getChunkIndex() {
+            return this.chunkIndex;
+        }
+
+        private static ChunkIndex buildChunkIndex(SparseArray<List<CuePointData>> sparseArray, long j, int i, long j2, long j3) {
+            int i2;
+            List<CuePointData> list = sparseArray.get(i);
+            if (list == null || list.isEmpty()) {
+                return null;
+            }
+            int size = list.size();
+            int[] iArr = new int[size];
+            long[] jArr = new long[size];
+            long[] jArr2 = new long[size];
+            long[] jArr3 = new long[size];
+            int i3 = 0;
+            for (int i4 = 0; i4 < size; i4++) {
+                CuePointData cuePointData = list.get(i4);
+                jArr3[i4] = cuePointData.timeUs;
+                jArr[i4] = cuePointData.clusterPosition;
+            }
+            while (true) {
+                i2 = size - 1;
+                if (i3 >= i2) {
+                    break;
+                }
+                int i5 = i3 + 1;
+                iArr[i3] = (int) (jArr[i5] - jArr[i3]);
+                jArr2[i3] = jArr3[i5] - jArr3[i3];
+                i3 = i5;
+            }
+            int i6 = i2;
+            while (i6 > 0 && jArr3[i6] >= j) {
+                i6--;
+            }
+            iArr[i6] = (int) ((j2 + j3) - jArr[i6]);
+            jArr2[i6] = j - jArr3[i6];
+            if (i6 < i2) {
+                Log.w(MatroskaExtractor.TAG, "Discarding trailing cue points with timestamps greater than total duration.");
+                int i7 = i6 + 1;
+                iArr = Arrays.copyOf(iArr, i7);
+                jArr = Arrays.copyOf(jArr, i7);
+                jArr2 = Arrays.copyOf(jArr2, i7);
+                jArr3 = Arrays.copyOf(jArr3, i7);
+            }
+            return new ChunkIndex(iArr, jArr, jArr2, jArr3);
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        /* loaded from: classes3.dex */
+        public static final class CuePointData implements Comparable<CuePointData> {
+            private final long clusterPosition;
+            private final long relativePosition;
+            private final long timeUs;
+
+            private CuePointData(long j, long j2, long j3) {
+                this.timeUs = j;
+                this.clusterPosition = j2;
+                this.relativePosition = j3;
+            }
+
+            @Override // java.lang.Comparable
+            public int compareTo(CuePointData cuePointData) {
+                return Long.compare(this.timeUs, cuePointData.timeUs);
+            }
+
+            public boolean equals(Object obj) {
+                if (this == obj) {
+                    return true;
+                }
+                if (obj instanceof CuePointData) {
+                    CuePointData cuePointData = (CuePointData) obj;
+                    return this.timeUs == cuePointData.timeUs && this.clusterPosition == cuePointData.clusterPosition && this.relativePosition == cuePointData.relativePosition;
+                }
+                return false;
+            }
+
+            public int hashCode() {
+                return Objects.hash(Long.valueOf(this.timeUs), Long.valueOf(this.clusterPosition), Long.valueOf(this.relativePosition));
+            }
         }
     }
 }

@@ -7,7 +7,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public class ECommerceCartItem {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ECommerceProduct f431a;
+    private final ECommerceProduct f432a;
     private final BigDecimal b;
     private final ECommercePrice c;
     private ECommerceReferrer d;
@@ -17,7 +17,7 @@ public class ECommerceCartItem {
     }
 
     public ECommerceProduct getProduct() {
-        return this.f431a;
+        return this.f432a;
     }
 
     public BigDecimal getQuantity() {
@@ -38,7 +38,7 @@ public class ECommerceCartItem {
     }
 
     public String toString() {
-        return "ECommerceCartItem{product=" + this.f431a + ", quantity=" + this.b + ", revenue=" + this.c + ", referrer=" + this.d + AbstractJsonLexerKt.END_OBJ;
+        return "ECommerceCartItem{product=" + this.f432a + ", quantity=" + this.b + ", revenue=" + this.c + ", referrer=" + this.d + AbstractJsonLexerKt.END_OBJ;
     }
 
     public ECommerceCartItem(ECommerceProduct eCommerceProduct, ECommercePrice eCommercePrice, double d) {
@@ -46,7 +46,7 @@ public class ECommerceCartItem {
     }
 
     public ECommerceCartItem(ECommerceProduct eCommerceProduct, ECommercePrice eCommercePrice, BigDecimal bigDecimal) {
-        this.f431a = eCommerceProduct;
+        this.f432a = eCommerceProduct;
         this.b = bigDecimal;
         this.c = eCommercePrice;
     }

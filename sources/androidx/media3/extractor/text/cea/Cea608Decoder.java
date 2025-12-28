@@ -13,7 +13,6 @@ import androidx.core.view.InputDeviceCompat;
 import androidx.media3.common.C;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.text.Cue;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.extractor.text.Subtitle;
@@ -23,6 +22,7 @@ import androidx.media3.extractor.text.SubtitleOutputBuffer;
 import androidx.media3.extractor.ts.PsExtractor;
 import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import com.google.common.base.Ascii;
+import com.google.common.base.Preconditions;
 import com.tbuonomo.viewpagerdotsindicator.BaseDotsIndicator;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -153,7 +153,7 @@ public final class Cea608Decoder extends CeaDecoder {
 
     public Cea608Decoder(String str, int i, long j) {
         if (j != C.TIME_UNSET) {
-            Assertions.checkArgument(j >= MIN_DATA_CHANNEL_TIMEOUT_MS);
+            Preconditions.checkArgument(j >= MIN_DATA_CHANNEL_TIMEOUT_MS);
             this.validDataChannelTimeoutUs = j * 1000;
         } else {
             this.validDataChannelTimeoutUs = C.TIME_UNSET;
@@ -229,7 +229,7 @@ public final class Cea608Decoder extends CeaDecoder {
     @Override // androidx.media3.extractor.text.cea.CeaDecoder
     protected Subtitle createSubtitle() {
         this.lastCues = this.cues;
-        return new CeaSubtitle((List) Assertions.checkNotNull(this.cues));
+        return new CeaSubtitle((List) Preconditions.checkNotNull(this.cues));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:76:0x006d A[SYNTHETIC] */
@@ -240,7 +240,7 @@ public final class Cea608Decoder extends CeaDecoder {
     */
     protected void decode(SubtitleInputBuffer subtitleInputBuffer) {
         boolean z;
-        ByteBuffer byteBuffer = (ByteBuffer) Assertions.checkNotNull(subtitleInputBuffer.data);
+        ByteBuffer byteBuffer = (ByteBuffer) Preconditions.checkNotNull(subtitleInputBuffer.data);
         this.ccData.reset(byteBuffer.array(), byteBuffer.limit());
         boolean z2 = false;
         while (true) {
@@ -436,7 +436,7 @@ public final class Cea608Decoder extends CeaDecoder {
             Cue cue = (Cue) arrayList.get(i3);
             if (cue != null) {
                 if (cue.positionAnchor != i) {
-                    cue = (Cue) Assertions.checkNotNull(this.cueBuilders.get(i3).build(i));
+                    cue = (Cue) Preconditions.checkNotNull(this.cueBuilders.get(i3).build(i));
                 }
                 arrayList2.add(cue);
             }

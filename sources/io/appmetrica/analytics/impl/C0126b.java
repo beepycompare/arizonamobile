@@ -8,7 +8,7 @@ import io.appmetrica.analytics.coreutils.internal.encryption.AESEncrypter;
 public final class C0126b implements H8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final AESEncrypter f902a;
+    public final AESEncrypter f903a;
 
     public C0126b() {
         this(new C0100a(C0470oa.k().g()));
@@ -21,7 +21,7 @@ public final class C0126b implements H8 {
         String value = q5.getValue();
         if (!TextUtils.isEmpty(value)) {
             try {
-                encrypt = this.f902a.encrypt(value.getBytes("UTF-8"));
+                encrypt = this.f903a.encrypt(value.getBytes("UTF-8"));
             } catch (Throwable unused) {
             }
             if (encrypt != null) {
@@ -40,7 +40,7 @@ public final class C0126b implements H8 {
     }
 
     public C0126b(AESEncrypter aESEncrypter) {
-        this.f902a = aESEncrypter;
+        this.f903a = aESEncrypter;
     }
 
     @Override // io.appmetrica.analytics.impl.H8
@@ -48,7 +48,7 @@ public final class C0126b implements H8 {
         byte[] bArr2 = new byte[0];
         if (bArr != null && bArr.length > 0) {
             try {
-                return this.f902a.decrypt(Base64.decode(bArr, 0));
+                return this.f903a.decrypt(Base64.decode(bArr, 0));
             } catch (Throwable unused) {
             }
         }

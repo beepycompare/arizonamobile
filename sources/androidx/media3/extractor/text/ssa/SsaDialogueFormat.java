@@ -1,9 +1,9 @@
 package androidx.media3.extractor.text.ssa;
 
 import android.text.TextUtils;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.google.common.base.Ascii;
+import com.google.common.base.Preconditions;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.AdRevenueConstants;
 /* loaded from: classes3.dex */
@@ -27,7 +27,7 @@ final class SsaDialogueFormat {
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     public static SsaDialogueFormat fromFormatLine(String str) {
         char c;
-        Assertions.checkArgument(str.startsWith("Format:"));
+        Preconditions.checkArgument(str.startsWith("Format:"));
         String[] split = TextUtils.split(str.substring("Format:".length()), StringUtils.COMMA);
         int i = -1;
         int i2 = -1;

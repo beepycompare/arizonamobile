@@ -107,7 +107,7 @@ public final class SavedStateEncoderKt {
             pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
         }
         Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        SavedStateWriter.m9280constructorimpl(bundleOf);
+        SavedStateWriter.m9295constructorimpl(bundleOf);
         new SavedStateEncoder(bundleOf, configuration).encodeSerializableValue(serializer, value);
         return bundleOf;
     }
@@ -127,7 +127,7 @@ public final class SavedStateEncoderKt {
             pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
         }
         Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        SavedStateWriter.m9280constructorimpl(bundleOf);
+        SavedStateWriter.m9295constructorimpl(bundleOf);
         new SavedStateEncoder(bundleOf, configuration).encodeSerializableValue(serializer, t);
         return bundleOf;
     }

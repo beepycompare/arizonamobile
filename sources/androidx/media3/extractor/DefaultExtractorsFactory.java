@@ -63,6 +63,7 @@ public final class DefaultExtractorsFactory implements ExtractorsFactory {
     private boolean constantBitrateSeekingEnabled;
     private int flacFlags;
     private int fragmentedMp4Flags;
+    private int heifFlags;
     private int jpegFlags;
     private int matroskaFlags;
     private int mp3Flags;
@@ -165,6 +166,11 @@ public final class DefaultExtractorsFactory implements ExtractorsFactory {
 
     public synchronized DefaultExtractorsFactory setJpegExtractorFlags(int i) {
         this.jpegFlags = i;
+        return this;
+    }
+
+    public synchronized DefaultExtractorsFactory setHeifExtractorFlags(int i) {
+        this.heifFlags = i;
         return this;
     }
 
@@ -271,11 +277,7 @@ public final class DefaultExtractorsFactory implements ExtractorsFactory {
                 list.add(new BmpExtractor());
                 return;
             case 20:
-                int i2 = this.mp4Flags;
-                if ((i2 & 2) == 0 && (i2 & 4) == 0) {
-                    list.add(new HeifExtractor());
-                    return;
-                }
+                list.add(new HeifExtractor(this.heifFlags));
                 return;
             case 21:
                 list.add(new AvifExtractor());

@@ -1,8 +1,8 @@
 package androidx.media3.exoplayer;
 
 import androidx.media3.common.PlaybackParameters;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Clock;
+import com.google.common.base.Preconditions;
 /* loaded from: classes.dex */
 final class DefaultMediaClock implements MediaClock {
     private boolean isUsingStandaloneClock = true;
@@ -68,7 +68,7 @@ final class DefaultMediaClock implements MediaClock {
         if (this.isUsingStandaloneClock) {
             return this.standaloneClock.getPositionUs();
         }
-        return ((MediaClock) Assertions.checkNotNull(this.rendererClock)).getPositionUs();
+        return ((MediaClock) Preconditions.checkNotNull(this.rendererClock)).getPositionUs();
     }
 
     @Override // androidx.media3.exoplayer.MediaClock
@@ -76,7 +76,7 @@ final class DefaultMediaClock implements MediaClock {
         if (this.isUsingStandaloneClock) {
             return this.standaloneClock.hasSkippedSilenceSinceLastCall();
         }
-        return ((MediaClock) Assertions.checkNotNull(this.rendererClock)).hasSkippedSilenceSinceLastCall();
+        return ((MediaClock) Preconditions.checkNotNull(this.rendererClock)).hasSkippedSilenceSinceLastCall();
     }
 
     @Override // androidx.media3.exoplayer.MediaClock
@@ -107,7 +107,7 @@ final class DefaultMediaClock implements MediaClock {
             }
             return;
         }
-        MediaClock mediaClock = (MediaClock) Assertions.checkNotNull(this.rendererClock);
+        MediaClock mediaClock = (MediaClock) Preconditions.checkNotNull(this.rendererClock);
         long positionUs = mediaClock.getPositionUs();
         if (this.isUsingStandaloneClock) {
             if (positionUs < this.standaloneClock.getPositionUs()) {

@@ -1,7 +1,7 @@
 package androidx.media3.exoplayer;
 
 import androidx.media3.common.C;
-import androidx.media3.common.util.Assertions;
+import com.google.common.base.Preconditions;
 import java.util.Objects;
 /* loaded from: classes.dex */
 public final class LoadingInfo {
@@ -33,13 +33,13 @@ public final class LoadingInfo {
         }
 
         public Builder setPlaybackSpeed(float f) {
-            Assertions.checkArgument(f > 0.0f || f == -3.4028235E38f);
+            Preconditions.checkArgument(f > 0.0f || f == -3.4028235E38f);
             this.playbackSpeed = f;
             return this;
         }
 
         public Builder setLastRebufferRealtimeMs(long j) {
-            Assertions.checkArgument(j >= 0 || j == C.TIME_UNSET);
+            Preconditions.checkArgument(j >= 0 || j == C.TIME_UNSET);
             this.lastRebufferRealtimeMs = j;
             return this;
         }

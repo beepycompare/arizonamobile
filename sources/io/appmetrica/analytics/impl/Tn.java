@@ -3,9 +3,9 @@ package io.appmetrica.analytics.impl;
 public final class Tn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0421mb f796a;
+    public final C0421mb f797a;
 
     public Tn(C0421mb c0421mb) {
-        this.f796a = c0421mb;
+        this.f797a = c0421mb;
     }
 }

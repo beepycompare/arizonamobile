@@ -3,13 +3,13 @@ package androidx.media3.exoplayer.source;
 import androidx.media3.common.C;
 import androidx.media3.common.Format;
 import androidx.media3.common.TrackGroup;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.exoplayer.LoadingInfo;
 import androidx.media3.exoplayer.SeekParameters;
 import androidx.media3.exoplayer.source.MediaPeriod;
 import androidx.media3.exoplayer.trackselection.ExoTrackSelection;
 import androidx.media3.exoplayer.trackselection.ForwardingTrackSelection;
 import com.google.common.base.Function;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.io.IOException;
@@ -69,7 +69,7 @@ final class MergingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
 
     @Override // androidx.media3.exoplayer.source.MediaPeriod
     public TrackGroupArray getTrackGroups() {
-        return (TrackGroupArray) Assertions.checkNotNull(this.trackGroups);
+        return (TrackGroupArray) Preconditions.checkNotNull(this.trackGroups);
     }
 
     @Override // androidx.media3.exoplayer.source.MediaPeriod
@@ -101,8 +101,8 @@ final class MergingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
             for (int i4 = i; i4 < exoTrackSelectionArr.length; i4++) {
                 sampleStreamArr3[i4] = iArr[i4] == i3 ? sampleStreamArr[i4] : null;
                 if (iArr2[i4] == i3) {
-                    ExoTrackSelection exoTrackSelection2 = (ExoTrackSelection) Assertions.checkNotNull(exoTrackSelectionArr[i4]);
-                    exoTrackSelectionArr2[i4] = new MergingMediaPeriodTrackSelection(exoTrackSelection2, (TrackGroup) Assertions.checkNotNull(this.childTrackGroupByMergedTrackGroup.get(exoTrackSelection2.getTrackGroup())));
+                    ExoTrackSelection exoTrackSelection2 = (ExoTrackSelection) Preconditions.checkNotNull(exoTrackSelectionArr[i4]);
+                    exoTrackSelectionArr2[i4] = new MergingMediaPeriodTrackSelection(exoTrackSelection2, (TrackGroup) Preconditions.checkNotNull(this.childTrackGroupByMergedTrackGroup.get(exoTrackSelection2.getTrackGroup())));
                 } else {
                     exoTrackSelectionArr2[i4] = null;
                 }
@@ -118,10 +118,10 @@ final class MergingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
             for (int i6 = 0; i6 < exoTrackSelectionArr.length; i6++) {
                 if (iArr2[i6] == i5) {
                     sampleStreamArr2[i6] = sampleStreamArr3[i6];
-                    this.streamPeriodIndices.put((SampleStream) Assertions.checkNotNull(sampleStreamArr3[i6]), Integer.valueOf(i5));
+                    this.streamPeriodIndices.put((SampleStream) Preconditions.checkNotNull(sampleStreamArr3[i6]), Integer.valueOf(i5));
                     z = true;
                 } else if (iArr[i6] == i5) {
-                    Assertions.checkState(sampleStreamArr3[i6] == null);
+                    Preconditions.checkState(sampleStreamArr3[i6] == null);
                 }
             }
             if (z) {
@@ -267,7 +267,7 @@ final class MergingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
                 i2++;
             } else {
                 this.trackGroups = new TrackGroupArray(trackGroupArr);
-                ((MediaPeriod.Callback) Assertions.checkNotNull(this.callback)).onPrepared(this);
+                ((MediaPeriod.Callback) Preconditions.checkNotNull(this.callback)).onPrepared(this);
                 return;
             }
         }
@@ -275,7 +275,7 @@ final class MergingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
 
     @Override // androidx.media3.exoplayer.source.SequenceableLoader.Callback
     public void onContinueLoadingRequested(MediaPeriod mediaPeriod) {
-        ((MediaPeriod.Callback) Assertions.checkNotNull(this.callback)).onContinueLoadingRequested(this);
+        ((MediaPeriod.Callback) Preconditions.checkNotNull(this.callback)).onContinueLoadingRequested(this);
     }
 
     /* loaded from: classes3.dex */

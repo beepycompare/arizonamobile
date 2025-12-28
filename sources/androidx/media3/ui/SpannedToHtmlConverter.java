@@ -14,10 +14,10 @@ import android.util.SparseArray;
 import androidx.media3.common.text.HorizontalTextInVerticalContextSpan;
 import androidx.media3.common.text.RubySpan;
 import androidx.media3.common.text.TextEmphasisSpan;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import androidx.media3.ui.SpannedToHtmlConverter;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -84,7 +84,7 @@ public final class SpannedToHtmlConverter {
             int spanStart = spanned.getSpanStart(obj);
             int spanEnd = spanned.getSpanEnd(obj);
             if (openingTag != null) {
-                Assertions.checkNotNull(closingTag);
+                Preconditions.checkNotNull(closingTag);
                 SpanInfo spanInfo = new SpanInfo(spanStart, spanEnd, openingTag, closingTag);
                 getOrCreate(sparseArray, spanStart).spansAdded.add(spanInfo);
                 getOrCreate(sparseArray, spanEnd).spansRemoved.add(spanInfo);

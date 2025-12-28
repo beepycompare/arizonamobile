@@ -3,10 +3,10 @@ package androidx.media3.common;
 import android.net.Uri;
 import android.os.Bundle;
 import androidx.media3.common.MediaItem;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.BundleCollectionUtil;
 import androidx.media3.common.util.Util;
 import com.google.common.base.Function;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
@@ -101,7 +101,7 @@ public final class MediaItem {
         }
 
         public Builder setMediaId(String str) {
-            this.mediaId = (String) Assertions.checkNotNull(str);
+            this.mediaId = (String) Preconditions.checkNotNull(str);
             return this;
         }
 
@@ -316,7 +316,7 @@ public final class MediaItem {
         }
 
         public Builder setImageDurationMs(long j) {
-            Assertions.checkArgument(j > 0 || j == C.TIME_UNSET);
+            Preconditions.checkArgument(j > 0 || j == C.TIME_UNSET);
             this.imageDurationMs = j;
             return this;
         }
@@ -333,7 +333,7 @@ public final class MediaItem {
 
         public MediaItem build() {
             LocalConfiguration localConfiguration;
-            Assertions.checkState(this.drmConfiguration.licenseUri == null || this.drmConfiguration.scheme != null);
+            Preconditions.checkState(this.drmConfiguration.licenseUri == null || this.drmConfiguration.scheme != null);
             Uri uri = this.uri;
             if (uri != null) {
                 localConfiguration = new LocalConfiguration(uri, this.mimeType, this.drmConfiguration.scheme != null ? this.drmConfiguration.build() : null, this.adsConfiguration, this.streamKeys, this.customCacheKey, this.subtitleConfigurations, this.tag, this.imageDurationMs);
@@ -488,8 +488,8 @@ public final class MediaItem {
         }
 
         private DrmConfiguration(Builder builder) {
-            Assertions.checkState((builder.forceDefaultLicenseUri && builder.licenseUri == null) ? false : true);
-            UUID uuid = (UUID) Assertions.checkNotNull(builder.scheme);
+            Preconditions.checkState((builder.forceDefaultLicenseUri && builder.licenseUri == null) ? false : true);
+            UUID uuid = (UUID) Preconditions.checkNotNull(builder.scheme);
             this.scheme = uuid;
             this.uuid = uuid;
             this.licenseUri = builder.licenseUri;
@@ -533,7 +533,7 @@ public final class MediaItem {
         }
 
         public static DrmConfiguration fromBundle(Bundle bundle) {
-            UUID fromString = UUID.fromString((String) Assertions.checkNotNull(bundle.getString(FIELD_SCHEME)));
+            UUID fromString = UUID.fromString((String) Preconditions.checkNotNull(bundle.getString(FIELD_SCHEME)));
             ImmutableMap<String, String> bundleToStringImmutableMap = BundleCollectionUtil.bundleToStringImmutableMap(BundleCollectionUtil.getBundleWithDefault(bundle, FIELD_LICENSE_REQUEST_HEADERS, Bundle.EMPTY));
             boolean z = bundle.getBoolean(FIELD_MULTI_SESSION, false);
             boolean z2 = bundle.getBoolean(FIELD_PLAY_CLEAR_CONTENT_WITHOUT_KEY, false);
@@ -633,7 +633,7 @@ public final class MediaItem {
 
         public static AdsConfiguration fromBundle(Bundle bundle) {
             Uri uri = (Uri) bundle.getParcelable(FIELD_AD_TAG_URI);
-            Assertions.checkNotNull(uri);
+            Preconditions.checkNotNull(uri);
             return new Builder(uri).build();
         }
 
@@ -780,7 +780,7 @@ public final class MediaItem {
                     }
                 }, parcelableArrayList2);
             }
-            return new LocalConfiguration((Uri) Assertions.checkNotNull((Uri) bundle.getParcelable(FIELD_URI)), bundle.getString(FIELD_MIME_TYPE), fromBundle, fromBundle2, immutableList, bundle.getString(FIELD_CUSTOM_CACHE_KEY), fromBundleList2, null, bundle.getLong(FIELD_IMAGE_DURATION_MS, C.TIME_UNSET));
+            return new LocalConfiguration((Uri) Preconditions.checkNotNull((Uri) bundle.getParcelable(FIELD_URI)), bundle.getString(FIELD_MIME_TYPE), fromBundle, fromBundle2, immutableList, bundle.getString(FIELD_CUSTOM_CACHE_KEY), fromBundleList2, null, bundle.getLong(FIELD_IMAGE_DURATION_MS, C.TIME_UNSET));
         }
     }
 
@@ -1064,7 +1064,7 @@ public final class MediaItem {
             int i = bundle.getInt(FIELD_SELECTION_FLAGS, 0);
             int i2 = bundle.getInt(FIELD_ROLE_FLAGS, 0);
             String string3 = bundle.getString(FIELD_LABEL);
-            return new Builder((Uri) Assertions.checkNotNull((Uri) bundle.getParcelable(FIELD_URI))).setMimeType(string).setLanguage(string2).setSelectionFlags(i).setRoleFlags(i2).setLabel(string3).setId(bundle.getString(FIELD_ID)).build();
+            return new Builder((Uri) Preconditions.checkNotNull((Uri) bundle.getParcelable(FIELD_URI))).setMimeType(string).setLanguage(string2).setSelectionFlags(i).setRoleFlags(i2).setLabel(string3).setId(bundle.getString(FIELD_ID)).build();
         }
 
         public Bundle toBundle() {
@@ -1168,7 +1168,7 @@ public final class MediaItem {
             }
 
             public Builder setStartPositionUs(long j) {
-                Assertions.checkArgument(j >= 0);
+                Preconditions.checkArgument(j >= 0);
                 this.startPositionUs = j;
                 return this;
             }
@@ -1178,7 +1178,7 @@ public final class MediaItem {
             }
 
             public Builder setEndPositionUs(long j) {
-                Assertions.checkArgument(j == Long.MIN_VALUE || j >= 0);
+                Preconditions.checkArgument(j == Long.MIN_VALUE || j >= 0);
                 this.endPositionUs = j;
                 return this;
             }
@@ -1479,7 +1479,7 @@ public final class MediaItem {
         MediaMetadata fromBundle2;
         ClippingProperties fromBundle3;
         RequestMetadata fromBundle4;
-        String str = (String) Assertions.checkNotNull(bundle.getString(FIELD_MEDIA_ID, ""));
+        String str = (String) Preconditions.checkNotNull(bundle.getString(FIELD_MEDIA_ID, ""));
         Bundle bundle2 = bundle.getBundle(FIELD_LIVE_CONFIGURATION);
         if (bundle2 == null) {
             fromBundle = LiveConfiguration.UNSET;

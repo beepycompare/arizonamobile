@@ -11,7 +11,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class C0097b implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final i f308a;
+    public final i f309a;
 
     public C0097b() {
         this(null, 1, null);
@@ -21,14 +21,14 @@ public final class C0097b implements ProtobufConverter {
     /* renamed from: a */
     public final d fromModel(C0096a c0096a) {
         d dVar = new d();
-        List<BillingInfo> list = c0096a.f307a;
+        List<BillingInfo> list = c0096a.f308a;
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
         for (BillingInfo billingInfo : list) {
-            arrayList.add(this.f308a.fromModel(billingInfo));
+            arrayList.add(this.f309a.fromModel(billingInfo));
         }
         Object[] array = arrayList.toArray(new c[0]);
         if (array != null) {
-            dVar.f310a = (c[]) array;
+            dVar.f311a = (c[]) array;
             dVar.b = c0096a.b;
             return dVar;
         }
@@ -36,7 +36,7 @@ public final class C0097b implements ProtobufConverter {
     }
 
     public C0097b(i iVar) {
-        this.f308a = iVar;
+        this.f309a = iVar;
     }
 
     public /* synthetic */ C0097b(i iVar, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -46,10 +46,10 @@ public final class C0097b implements ProtobufConverter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final C0096a toModel(d dVar) {
-        c[] cVarArr = dVar.f310a;
+        c[] cVarArr = dVar.f311a;
         ArrayList arrayList = new ArrayList(cVarArr.length);
         for (c cVar : cVarArr) {
-            arrayList.add(this.f308a.toModel(cVar));
+            arrayList.add(this.f309a.toModel(cVar));
         }
         return new C0096a(arrayList, dVar.b);
     }

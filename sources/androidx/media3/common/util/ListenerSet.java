@@ -4,6 +4,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import androidx.media3.common.FlagSet;
+import com.google.common.base.Preconditions;
 import java.util.ArrayDeque;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArraySet;
@@ -12,12 +13,13 @@ public final class ListenerSet<T> {
     private static final int MSG_ITERATION_FINISHED = 1;
     private final Clock clock;
     private final ArrayDeque<Runnable> flushingEvents;
-    private final HandlerWrapper handler;
     private final IterationFinishedEvent<T> iterationFinishedEvent;
+    private final HandlerWrapper iterationFinishedHandler;
     private final CopyOnWriteArraySet<ListenerHolder<T>> listeners;
     private final ArrayDeque<Runnable> queuedEvents;
     private boolean released;
     private final Object releasedLock;
+    private final Thread thread;
     private boolean throwsWhenUsingWrongThread;
 
     /* loaded from: classes2.dex */
@@ -30,25 +32,38 @@ public final class ListenerSet<T> {
         void invoke(T t, FlagSet flagSet);
     }
 
-    public ListenerSet(Looper looper, Clock clock, IterationFinishedEvent<T> iterationFinishedEvent) {
-        this(new CopyOnWriteArraySet(), looper, clock, iterationFinishedEvent, true);
+    public ListenerSet(Looper looper) {
+        this(looper.getThread());
     }
 
-    private ListenerSet(CopyOnWriteArraySet<ListenerHolder<T>> copyOnWriteArraySet, Looper looper, Clock clock, IterationFinishedEvent<T> iterationFinishedEvent, boolean z) {
+    public ListenerSet(Thread thread) {
+        this(new CopyOnWriteArraySet(), null, thread, null, null, true);
+    }
+
+    public ListenerSet(Looper looper, Clock clock, IterationFinishedEvent<T> iterationFinishedEvent) {
+        this(new CopyOnWriteArraySet(), looper, looper.getThread(), clock, iterationFinishedEvent, true);
+    }
+
+    private ListenerSet(CopyOnWriteArraySet<ListenerHolder<T>> copyOnWriteArraySet, Looper looper, Thread thread, Clock clock, IterationFinishedEvent<T> iterationFinishedEvent, boolean z) {
         this.clock = clock;
+        this.thread = thread;
         this.listeners = copyOnWriteArraySet;
         this.iterationFinishedEvent = iterationFinishedEvent;
         this.releasedLock = new Object();
         this.flushingEvents = new ArrayDeque<>();
         this.queuedEvents = new ArrayDeque<>();
-        this.handler = clock.createHandler(looper, new Handler.Callback() { // from class: androidx.media3.common.util.ListenerSet$$ExternalSyntheticLambda0
-            @Override // android.os.Handler.Callback
-            public final boolean handleMessage(Message message) {
-                boolean handleMessage;
-                handleMessage = ListenerSet.this.handleMessage(message);
-                return handleMessage;
-            }
-        });
+        if (looper != null && clock != null && iterationFinishedEvent != null) {
+            this.iterationFinishedHandler = clock.createHandler(looper, new Handler.Callback() { // from class: androidx.media3.common.util.ListenerSet$$ExternalSyntheticLambda0
+                @Override // android.os.Handler.Callback
+                public final boolean handleMessage(Message message) {
+                    boolean handleMessage;
+                    handleMessage = ListenerSet.this.handleMessage(message);
+                    return handleMessage;
+                }
+            });
+        } else {
+            this.iterationFinishedHandler = null;
+        }
         this.throwsWhenUsingWrongThread = z;
     }
 
@@ -56,12 +71,25 @@ public final class ListenerSet<T> {
         return copy(looper, this.clock, iterationFinishedEvent);
     }
 
+    public ListenerSet<T> copy(Looper looper) {
+        return copy(looper, this.clock, this.iterationFinishedEvent);
+    }
+
+    public ListenerSet<T> copy(Clock clock) {
+        HandlerWrapper handlerWrapper = this.iterationFinishedHandler;
+        if (handlerWrapper != null) {
+            return copy(handlerWrapper.getLooper(), clock, this.iterationFinishedEvent);
+        }
+        return new ListenerSet<>(this.listeners, null, this.thread, clock, null, this.throwsWhenUsingWrongThread);
+    }
+
     public ListenerSet<T> copy(Looper looper, Clock clock, IterationFinishedEvent<T> iterationFinishedEvent) {
-        return new ListenerSet<>(this.listeners, looper, clock, iterationFinishedEvent, this.throwsWhenUsingWrongThread);
+        Preconditions.checkState(clock != null || iterationFinishedEvent == null);
+        return new ListenerSet<>(this.listeners, looper, looper.getThread(), clock, iterationFinishedEvent, this.throwsWhenUsingWrongThread);
     }
 
     public void add(T t) {
-        Assertions.checkNotNull(t);
+        Preconditions.checkNotNull(t);
         synchronized (this.releasedLock) {
             if (this.released) {
                 return;
@@ -96,6 +124,10 @@ public final class ListenerSet<T> {
         return this.listeners.size();
     }
 
+    public void queueEvent(Event<T> event) {
+        queueEvent(-1, event);
+    }
+
     public void queueEvent(final int i, final Event<T> event) {
         verifyCurrentThread();
         final CopyOnWriteArraySet copyOnWriteArraySet = new CopyOnWriteArraySet(this.listeners);
@@ -120,8 +152,8 @@ public final class ListenerSet<T> {
         if (this.queuedEvents.isEmpty()) {
             return;
         }
-        if (!this.handler.hasMessages(1)) {
-            HandlerWrapper handlerWrapper = this.handler;
+        if (this.iterationFinishedEvent != null && !((HandlerWrapper) Preconditions.checkNotNull(this.iterationFinishedHandler)).hasMessages(1)) {
+            HandlerWrapper handlerWrapper = this.iterationFinishedHandler;
             handlerWrapper.sendMessageAtFrontOfQueue(handlerWrapper.obtainMessage(1));
         }
         boolean isEmpty = this.flushingEvents.isEmpty();
@@ -133,6 +165,10 @@ public final class ListenerSet<T> {
                 this.flushingEvents.removeFirst();
             }
         }
+    }
+
+    public void sendEvent(Event<T> event) {
+        sendEvent(-1, event);
     }
 
     public void sendEvent(int i, Event<T> event) {
@@ -159,10 +195,11 @@ public final class ListenerSet<T> {
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean handleMessage(Message message) {
+        IterationFinishedEvent<T> iterationFinishedEvent = (IterationFinishedEvent) Preconditions.checkNotNull(this.iterationFinishedEvent);
         Iterator<ListenerHolder<T>> it = this.listeners.iterator();
         while (it.hasNext()) {
-            it.next().iterationFinished(this.iterationFinishedEvent);
-            if (this.handler.hasMessages(1)) {
+            it.next().iterationFinished(iterationFinishedEvent);
+            if (((HandlerWrapper) Preconditions.checkNotNull(this.iterationFinishedHandler)).hasMessages(1)) {
                 break;
             }
         }
@@ -171,7 +208,7 @@ public final class ListenerSet<T> {
 
     private void verifyCurrentThread() {
         if (this.throwsWhenUsingWrongThread) {
-            Assertions.checkState(Thread.currentThread() == this.handler.getLooper().getThread());
+            Preconditions.checkState(Thread.currentThread() == this.thread);
         }
     }
 
@@ -187,12 +224,14 @@ public final class ListenerSet<T> {
             this.listener = t;
         }
 
+        /* JADX INFO: Access modifiers changed from: private */
         public void release(IterationFinishedEvent<T> iterationFinishedEvent) {
             this.released = true;
-            if (this.needsIterationFinishedEvent) {
-                this.needsIterationFinishedEvent = false;
-                iterationFinishedEvent.invoke(this.listener, this.flagsBuilder.build());
+            if (iterationFinishedEvent == null || !this.needsIterationFinishedEvent) {
+                return;
             }
+            this.needsIterationFinishedEvent = false;
+            iterationFinishedEvent.invoke(this.listener, this.flagsBuilder.build());
         }
 
         public void invoke(int i, Event<T> event) {

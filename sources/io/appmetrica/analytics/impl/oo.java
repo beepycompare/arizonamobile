@@ -15,7 +15,7 @@ public final class oo implements La {
                 if (a3 == null || (c0381km = (C0381km) a3.read()) == null) {
                     return null;
                 }
-                return c0381km.f1078a;
+                return c0381km.f1079a;
             }
             return null;
         } catch (Throwable unused) {

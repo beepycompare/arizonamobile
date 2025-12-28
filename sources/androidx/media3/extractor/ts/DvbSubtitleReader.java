@@ -3,11 +3,11 @@ package androidx.media3.extractor.ts;
 import androidx.media3.common.C;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.extractor.ExtractorOutput;
 import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.ts.TsPayloadReader;
+import com.google.common.base.Preconditions;
 import java.util.Collections;
 import java.util.List;
 /* loaded from: classes3.dex */
@@ -57,7 +57,7 @@ public final class DvbSubtitleReader implements ElementaryStreamReader {
     @Override // androidx.media3.extractor.ts.ElementaryStreamReader
     public void packetFinished(boolean z) {
         if (this.writingSample) {
-            Assertions.checkState(this.sampleTimeUs != C.TIME_UNSET);
+            Preconditions.checkState(this.sampleTimeUs != C.TIME_UNSET);
             for (TrackOutput trackOutput : this.outputs) {
                 trackOutput.sampleMetadata(this.sampleTimeUs, 1, this.sampleBytesWritten, 0, null);
             }

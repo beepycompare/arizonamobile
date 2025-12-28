@@ -41,7 +41,7 @@ public final class ObservableBlockingFirstKt {
                 if (atomicBoolean.compareAndSet(false, true)) {
                     Ref.ObjectRef<Result<T>> objectRef2 = objectRef;
                     Result.Companion companion = Result.Companion;
-                    objectRef2.element = Result.m10215boximpl(Result.m10216constructorimpl(ResultKt.createFailure(error)));
+                    objectRef2.element = Result.m10243boximpl(Result.m10244constructorimpl(ResultKt.createFailure(error)));
                     countDownLatch.countDown();
                 }
             }
@@ -64,7 +64,7 @@ public final class ObservableBlockingFirstKt {
                 if (atomicBoolean.compareAndSet(false, true)) {
                     Ref.ObjectRef<Result<T>> objectRef2 = objectRef;
                     Result.Companion companion = Result.Companion;
-                    objectRef2.element = Result.m10215boximpl(Result.m10216constructorimpl(ResultKt.createFailure(new IllegalStateException("onComplete() called before value was received in blockingFirst()"))));
+                    objectRef2.element = Result.m10243boximpl(Result.m10244constructorimpl(ResultKt.createFailure(new IllegalStateException("onComplete() called before value was received in blockingFirst()"))));
                     countDownLatch.countDown();
                 }
             }
@@ -87,7 +87,7 @@ public final class ObservableBlockingFirstKt {
                 if (atomicBoolean.compareAndSet(false, true)) {
                     Ref.ObjectRef<Result<T>> objectRef2 = objectRef;
                     Result.Companion companion = Result.Companion;
-                    objectRef2.element = (T) Result.m10215boximpl(Result.m10216constructorimpl(t));
+                    objectRef2.element = (T) Result.m10243boximpl(Result.m10244constructorimpl(t));
                     countDownLatch.countDown();
                 }
             }
@@ -97,7 +97,7 @@ public final class ObservableBlockingFirstKt {
             subscribe.dispose();
             T t = objectRef.element;
             if (t != null) {
-                return ((Result) t).m10225unboximpl();
+                return ((Result) t).m10253unboximpl();
             }
             throw new IllegalArgumentException("Required value was null.".toString());
         } catch (Throwable th) {

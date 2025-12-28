@@ -1,11 +1,14 @@
 package androidx.media3.extractor;
 
 import androidx.media3.common.ParserException;
+import androidx.media3.common.util.Log;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
 import java.io.IOException;
+import okhttp3.internal.ws.WebSocketProtocol;
 /* loaded from: classes3.dex */
 public final class FlacFrameReader {
+    private static final String TAG = "FlacFrameReader";
 
     /* loaded from: classes3.dex */
     public static final class SampleNumberHolder {
@@ -19,21 +22,19 @@ public final class FlacFrameReader {
         if (j != i) {
             return false;
         }
-        return checkChannelAssignment((int) ((readUnsignedInt >> 4) & 15), flacStreamMetadata) && checkBitsPerSample((int) ((readUnsignedInt >> 1) & 7), flacStreamMetadata) && !(((readUnsignedInt & 1) > 1L ? 1 : ((readUnsignedInt & 1) == 1L ? 0 : -1)) == 0) && checkAndReadFirstSampleNumber(parsableByteArray, flacStreamMetadata, ((j & 1) > 1L ? 1 : ((j & 1) == 1L ? 0 : -1)) == 0, sampleNumberHolder) && checkAndReadBlockSizeSamples(parsableByteArray, flacStreamMetadata, (int) ((readUnsignedInt >> 12) & 15)) && checkAndReadSampleRate(parsableByteArray, flacStreamMetadata, (int) ((readUnsignedInt >> 8) & 15)) && checkAndReadCrc(parsableByteArray, position);
+        return checkChannelAssignment((int) ((readUnsignedInt >> 4) & 15), flacStreamMetadata) && checkBitsPerSample((int) ((readUnsignedInt >> 1) & 7), flacStreamMetadata) && !(((readUnsignedInt & 1) > 1L ? 1 : ((readUnsignedInt & 1) == 1L ? 0 : -1)) == 0) && checkAndReadFirstSampleNumber(parsableByteArray, flacStreamMetadata, ((j & 1) > 1L ? 1 : ((j & 1) == 1L ? 0 : -1)) == 0, sampleNumberHolder) && checkAndReadBlockSizeSamples(parsableByteArray, flacStreamMetadata, (int) ((readUnsignedInt >> 12) & 15), sampleNumberHolder.sampleNumber) && checkAndReadSampleRate(parsableByteArray, flacStreamMetadata, (int) ((readUnsignedInt >> 8) & 15)) && checkAndReadCrc(parsableByteArray, position) && checkFirstSubframeHeaderFromPeek(parsableByteArray);
     }
 
     public static boolean checkFrameHeaderFromPeek(ExtractorInput extractorInput, FlacStreamMetadata flacStreamMetadata, int i, SampleNumberHolder sampleNumberHolder) throws IOException {
         long peekPosition = extractorInput.getPeekPosition();
-        byte[] bArr = new byte[2];
-        extractorInput.peekFully(bArr, 0, 2);
-        if ((((bArr[0] & 255) << 8) | (bArr[1] & 255)) != i) {
+        ParsableByteArray parsableByteArray = new ParsableByteArray(17);
+        extractorInput.peekFully(parsableByteArray.getData(), 0, 2);
+        if (parsableByteArray.peekChar() != i) {
             extractorInput.resetPeekPosition();
             extractorInput.advancePeekPosition((int) (peekPosition - extractorInput.getPosition()));
             return false;
         }
-        ParsableByteArray parsableByteArray = new ParsableByteArray(16);
-        System.arraycopy(bArr, 0, parsableByteArray.getData(), 0, 2);
-        parsableByteArray.setLimit(ExtractorUtil.peekToLength(extractorInput, parsableByteArray.getData(), 2, 14));
+        parsableByteArray.setLimit(ExtractorUtil.peekToLength(extractorInput, parsableByteArray.getData(), 2, 15) + 2);
         extractorInput.resetPeekPosition();
         extractorInput.advancePeekPosition((int) (peekPosition - extractorInput.getPosition()));
         return checkAndReadFrameHeader(parsableByteArray, flacStreamMetadata, i, sampleNumberHolder);
@@ -98,16 +99,19 @@ public final class FlacFrameReader {
             if (!z) {
                 readUtf8EncodedLong *= flacStreamMetadata.maxBlockSizeSamples;
             }
-            sampleNumberHolder.sampleNumber = readUtf8EncodedLong;
-            return true;
+            if (flacStreamMetadata.totalSamples == 0 || readUtf8EncodedLong <= flacStreamMetadata.totalSamples) {
+                sampleNumberHolder.sampleNumber = readUtf8EncodedLong;
+                return true;
+            }
+            return false;
         } catch (NumberFormatException unused) {
             return false;
         }
     }
 
-    private static boolean checkAndReadBlockSizeSamples(ParsableByteArray parsableByteArray, FlacStreamMetadata flacStreamMetadata, int i) {
+    private static boolean checkAndReadBlockSizeSamples(ParsableByteArray parsableByteArray, FlacStreamMetadata flacStreamMetadata, int i, long j) {
         int readFrameBlockSizeSamplesFromKey = readFrameBlockSizeSamplesFromKey(parsableByteArray, i);
-        return readFrameBlockSizeSamplesFromKey != -1 && readFrameBlockSizeSamplesFromKey <= flacStreamMetadata.maxBlockSizeSamples;
+        return readFrameBlockSizeSamplesFromKey != -1 && (((flacStreamMetadata.totalSamples > 0L ? 1 : (flacStreamMetadata.totalSamples == 0L ? 0 : -1)) == 0 || ((j + ((long) readFrameBlockSizeSamplesFromKey)) > flacStreamMetadata.totalSamples ? 1 : ((j + ((long) readFrameBlockSizeSamplesFromKey)) == flacStreamMetadata.totalSamples ? 0 : -1)) >= 0) || readFrameBlockSizeSamplesFromKey >= flacStreamMetadata.minBlockSizeSamples) && readFrameBlockSizeSamplesFromKey <= flacStreamMetadata.maxBlockSizeSamples;
     }
 
     private static boolean checkAndReadSampleRate(ParsableByteArray parsableByteArray, FlacStreamMetadata flacStreamMetadata, int i) {
@@ -135,6 +139,22 @@ public final class FlacFrameReader {
 
     private static boolean checkAndReadCrc(ParsableByteArray parsableByteArray, int i) {
         return parsableByteArray.readUnsignedByte() == Util.crc8(parsableByteArray.getData(), i, parsableByteArray.getPosition() - 1, 0);
+    }
+
+    private static boolean checkFirstSubframeHeaderFromPeek(ParsableByteArray parsableByteArray) {
+        if (parsableByteArray.bytesLeft() == 0) {
+            return true;
+        }
+        int peekUnsignedByte = parsableByteArray.peekUnsignedByte();
+        if ((peekUnsignedByte & 128) != 0) {
+            return false;
+        }
+        int i = (peekUnsignedByte & WebSocketProtocol.PAYLOAD_SHORT) >> 1;
+        if ((i < 2 || i > 7) && (i < 13 || i > 31)) {
+            return true;
+        }
+        Log.i(TAG, "Ignoring frame where first subframe has a reserved type: " + i);
+        return false;
     }
 
     private FlacFrameReader() {

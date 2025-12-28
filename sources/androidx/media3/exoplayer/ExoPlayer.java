@@ -11,7 +11,6 @@ import androidx.media3.common.Format;
 import androidx.media3.common.MediaItem;
 import androidx.media3.common.Player;
 import androidx.media3.common.PriorityTaskManager;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Clock;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.DefaultLivePlaybackSpeedControl;
@@ -20,6 +19,8 @@ import androidx.media3.exoplayer.PlayerMessage;
 import androidx.media3.exoplayer.analytics.AnalyticsCollector;
 import androidx.media3.exoplayer.analytics.AnalyticsListener;
 import androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector;
+import androidx.media3.exoplayer.analytics.PlayerId;
+import androidx.media3.exoplayer.audio.AudioOutputProvider;
 import androidx.media3.exoplayer.image.ImageOutput;
 import androidx.media3.exoplayer.source.DefaultMediaSourceFactory;
 import androidx.media3.exoplayer.source.MediaSource;
@@ -33,13 +34,19 @@ import androidx.media3.exoplayer.upstream.DefaultBandwidthMeter;
 import androidx.media3.exoplayer.video.VideoFrameMetadataListener;
 import androidx.media3.exoplayer.video.spherical.CameraMotionListener;
 import androidx.media3.extractor.DefaultExtractorsFactory;
+import com.adjust.sdk.Constants;
 import com.google.common.base.Function;
+import com.google.common.base.Preconditions;
 import com.google.common.base.Supplier;
 import java.util.List;
 /* loaded from: classes.dex */
 public interface ExoPlayer extends Player {
     public static final long DEFAULT_DETACH_SURFACE_TIMEOUT_MS = 2000;
     public static final long DEFAULT_RELEASE_TIMEOUT_MS = 500;
+    public static final int DEFAULT_STUCK_BUFFERING_DETECTION_TIMEOUT_MS = 600000;
+    public static final int DEFAULT_STUCK_PLAYING_DETECTION_TIMEOUT_MS;
+    public static final int DEFAULT_STUCK_PLAYING_NOT_ENDING_TIMEOUT_MS = 60000;
+    public static final int DEFAULT_STUCK_SUPPRESSED_DETECTION_TIMEOUT_MS = 600000;
 
     /* loaded from: classes.dex */
     public interface AudioOffloadListener {
@@ -52,6 +59,8 @@ public interface ExoPlayer extends Player {
 
     void addAnalyticsListener(AnalyticsListener analyticsListener);
 
+    void addAudioCodecParametersChangeListener(CodecParametersChangeListener codecParametersChangeListener, List<String> list);
+
     void addAudioOffloadListener(AudioOffloadListener audioOffloadListener);
 
     void addMediaSource(int i, MediaSource mediaSource);
@@ -61,6 +70,8 @@ public interface ExoPlayer extends Player {
     void addMediaSources(int i, List<MediaSource> list);
 
     void addMediaSources(List<MediaSource> list);
+
+    void addVideoCodecParametersChangeListener(CodecParametersChangeListener codecParametersChangeListener, List<String> list);
 
     void clearAuxEffectInfo();
 
@@ -75,8 +86,6 @@ public interface ExoPlayer extends Player {
     DecoderCounters getAudioDecoderCounters();
 
     Format getAudioFormat();
-
-    int getAudioSessionId();
 
     Clock getClock();
 
@@ -103,9 +112,7 @@ public interface ExoPlayer extends Player {
 
     ScrubbingModeParameters getScrubbingModeParameters();
 
-    default Renderer getSecondaryRenderer(int i) {
-        return null;
-    }
+    Renderer getSecondaryRenderer(int i);
 
     SeekParameters getSeekParameters();
 
@@ -142,13 +149,19 @@ public interface ExoPlayer extends Player {
 
     void removeAnalyticsListener(AnalyticsListener analyticsListener);
 
+    void removeAudioCodecParametersChangeListener(CodecParametersChangeListener codecParametersChangeListener);
+
     void removeAudioOffloadListener(AudioOffloadListener audioOffloadListener);
+
+    void removeVideoCodecParametersChangeListener(CodecParametersChangeListener codecParametersChangeListener);
 
     @Override // androidx.media3.common.Player
     void replaceMediaItem(int i, MediaItem mediaItem);
 
     @Override // androidx.media3.common.Player
     void replaceMediaItems(int i, int i2, List<MediaItem> list);
+
+    void setAudioCodecParameters(CodecParameters codecParameters);
 
     void setAudioSessionId(int i);
 
@@ -161,6 +174,8 @@ public interface ExoPlayer extends Player {
     void setHandleAudioBecomingNoisy(boolean z);
 
     void setImageOutput(ImageOutput imageOutput);
+
+    void setMaxSeekToPreviousPositionMs(long j);
 
     void setMediaSource(MediaSource mediaSource);
 
@@ -188,6 +203,10 @@ public interface ExoPlayer extends Player {
 
     void setScrubbingModeParameters(ScrubbingModeParameters scrubbingModeParameters);
 
+    void setSeekBackIncrementMs(long j);
+
+    void setSeekForwardIncrementMs(long j);
+
     void setSeekParameters(SeekParameters seekParameters);
 
     void setShuffleOrder(ShuffleOrder shuffleOrder);
@@ -196,11 +215,15 @@ public interface ExoPlayer extends Player {
 
     void setVideoChangeFrameRateStrategy(int i);
 
+    void setVideoCodecParameters(CodecParameters codecParameters);
+
     void setVideoEffects(List<Effect> list);
 
     void setVideoFrameMetadataListener(VideoFrameMetadataListener videoFrameMetadataListener);
 
     void setVideoScalingMode(int i);
+
+    void setVirtualDeviceId(int i);
 
     void setWakeMode(int i);
 
@@ -216,8 +239,10 @@ public interface ExoPlayer extends Player {
 
     /* loaded from: classes.dex */
     public static final class Builder {
+        public static boolean experimentalEnableStuckPlayingDetection = true;
         Function<Clock, AnalyticsCollector> analyticsCollectorFunction;
         AudioAttributes audioAttributes;
+        AudioOutputProvider audioOutputProvider;
         Supplier<BandwidthMeter> bandwidthMeterSupplier;
         boolean buildCalled;
         Clock clock;
@@ -245,6 +270,10 @@ public interface ExoPlayer extends Player {
         long seekForwardIncrementMs;
         SeekParameters seekParameters;
         boolean skipSilenceEnabled;
+        int stuckBufferingDetectionTimeoutMs;
+        int stuckPlayingDetectionTimeoutMs;
+        int stuckPlayingNotEndingTimeoutMs;
+        int stuckSuppressedDetectionTimeoutMs;
         SuitableOutputChecker suitableOutputChecker;
         boolean suppressPlaybackOnUnsuitableOutput;
         Supplier<TrackSelector> trackSelectorSupplier;
@@ -253,6 +282,7 @@ public interface ExoPlayer extends Player {
         int videoChangeFrameRateStrategy;
         int videoScalingMode;
         int wakeMode;
+        boolean wakeModeSet;
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public static /* synthetic */ TrackSelector lambda$new$10(TrackSelector trackSelector) {
@@ -370,7 +400,7 @@ public interface ExoPlayer extends Player {
                     return ExoPlayer.Builder.lambda$new$3(context);
                 }
             });
-            Assertions.checkNotNull(renderersFactory);
+            Preconditions.checkNotNull(renderersFactory);
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
@@ -390,7 +420,7 @@ public interface ExoPlayer extends Player {
                     return ExoPlayer.Builder.lambda$new$5(MediaSource.Factory.this);
                 }
             });
-            Assertions.checkNotNull(factory);
+            Preconditions.checkNotNull(factory);
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
@@ -410,8 +440,8 @@ public interface ExoPlayer extends Player {
                     return ExoPlayer.Builder.lambda$new$7(MediaSource.Factory.this);
                 }
             });
-            Assertions.checkNotNull(renderersFactory);
-            Assertions.checkNotNull(factory);
+            Preconditions.checkNotNull(renderersFactory);
+            Preconditions.checkNotNull(factory);
         }
 
         public Builder(Context context, final RenderersFactory renderersFactory, final MediaSource.Factory factory, final TrackSelector trackSelector, final LoadControl loadControl, final BandwidthMeter bandwidthMeter, final AnalyticsCollector analyticsCollector) {
@@ -446,11 +476,11 @@ public interface ExoPlayer extends Player {
                     return ExoPlayer.Builder.lambda$new$13(AnalyticsCollector.this, (Clock) obj);
                 }
             });
-            Assertions.checkNotNull(renderersFactory);
-            Assertions.checkNotNull(factory);
-            Assertions.checkNotNull(trackSelector);
-            Assertions.checkNotNull(bandwidthMeter);
-            Assertions.checkNotNull(analyticsCollector);
+            Preconditions.checkNotNull(renderersFactory);
+            Preconditions.checkNotNull(factory);
+            Preconditions.checkNotNull(trackSelector);
+            Preconditions.checkNotNull(bandwidthMeter);
+            Preconditions.checkNotNull(analyticsCollector);
         }
 
         private Builder(final Context context, Supplier<RenderersFactory> supplier, Supplier<MediaSource.Factory> supplier2) {
@@ -480,7 +510,7 @@ public interface ExoPlayer extends Player {
         }
 
         private Builder(Context context, Supplier<RenderersFactory> supplier, Supplier<MediaSource.Factory> supplier2, Supplier<TrackSelector> supplier3, Supplier<LoadControl> supplier4, Supplier<BandwidthMeter> supplier5, Function<Clock, AnalyticsCollector> function) {
-            this.context = (Context) Assertions.checkNotNull(context);
+            this.context = (Context) Preconditions.checkNotNull(context);
             this.renderersFactorySupplier = supplier;
             this.mediaSourceFactorySupplier = supplier2;
             this.trackSelectorSupplier = supplier3;
@@ -502,6 +532,10 @@ public interface ExoPlayer extends Player {
             this.clock = Clock.DEFAULT;
             this.releaseTimeoutMs = 500L;
             this.detachSurfaceTimeoutMs = ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS;
+            this.stuckBufferingDetectionTimeoutMs = 600000;
+            this.stuckPlayingDetectionTimeoutMs = experimentalEnableStuckPlayingDetection ? ExoPlayer.DEFAULT_STUCK_PLAYING_DETECTION_TIMEOUT_MS : Integer.MAX_VALUE;
+            this.stuckPlayingNotEndingTimeoutMs = experimentalEnableStuckPlayingDetection ? 60000 : Integer.MAX_VALUE;
+            this.stuckSuppressedDetectionTimeoutMs = 600000;
             this.usePlatformDiagnostics = true;
             this.playerName = "";
             this.priority = -1000;
@@ -509,26 +543,26 @@ public interface ExoPlayer extends Player {
         }
 
         public Builder experimentalSetForegroundModeTimeoutMs(long j) {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             this.foregroundModeTimeoutMs = j;
             return this;
         }
 
         public Builder experimentalSetDynamicSchedulingEnabled(boolean z) {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             this.dynamicSchedulingEnabled = z;
             return this;
         }
 
         public Builder setSuppressPlaybackOnUnsuitableOutput(boolean z) {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             this.suppressPlaybackOnUnsuitableOutput = z;
             return this;
         }
 
         public Builder setRenderersFactory(final RenderersFactory renderersFactory) {
-            Assertions.checkState(!this.buildCalled);
-            Assertions.checkNotNull(renderersFactory);
+            Preconditions.checkState(!this.buildCalled);
+            Preconditions.checkNotNull(renderersFactory);
             this.renderersFactorySupplier = new Supplier() { // from class: androidx.media3.exoplayer.ExoPlayer$Builder$$ExternalSyntheticLambda4
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
@@ -539,8 +573,8 @@ public interface ExoPlayer extends Player {
         }
 
         public Builder setMediaSourceFactory(final MediaSource.Factory factory) {
-            Assertions.checkState(!this.buildCalled);
-            Assertions.checkNotNull(factory);
+            Preconditions.checkState(!this.buildCalled);
+            Preconditions.checkNotNull(factory);
             this.mediaSourceFactorySupplier = new Supplier() { // from class: androidx.media3.exoplayer.ExoPlayer$Builder$$ExternalSyntheticLambda23
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
@@ -551,8 +585,8 @@ public interface ExoPlayer extends Player {
         }
 
         public Builder setTrackSelector(final TrackSelector trackSelector) {
-            Assertions.checkState(!this.buildCalled);
-            Assertions.checkNotNull(trackSelector);
+            Preconditions.checkState(!this.buildCalled);
+            Preconditions.checkNotNull(trackSelector);
             this.trackSelectorSupplier = new Supplier() { // from class: androidx.media3.exoplayer.ExoPlayer$Builder$$ExternalSyntheticLambda22
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
@@ -563,8 +597,8 @@ public interface ExoPlayer extends Player {
         }
 
         public Builder setLoadControl(final LoadControl loadControl) {
-            Assertions.checkState(!this.buildCalled);
-            Assertions.checkNotNull(loadControl);
+            Preconditions.checkState(!this.buildCalled);
+            Preconditions.checkNotNull(loadControl);
             this.loadControlSupplier = new Supplier() { // from class: androidx.media3.exoplayer.ExoPlayer$Builder$$ExternalSyntheticLambda0
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
@@ -575,8 +609,8 @@ public interface ExoPlayer extends Player {
         }
 
         public Builder setBandwidthMeter(final BandwidthMeter bandwidthMeter) {
-            Assertions.checkState(!this.buildCalled);
-            Assertions.checkNotNull(bandwidthMeter);
+            Preconditions.checkState(!this.buildCalled);
+            Preconditions.checkNotNull(bandwidthMeter);
             this.bandwidthMeterSupplier = new Supplier() { // from class: androidx.media3.exoplayer.ExoPlayer$Builder$$ExternalSyntheticLambda11
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
@@ -587,15 +621,15 @@ public interface ExoPlayer extends Player {
         }
 
         public Builder setLooper(Looper looper) {
-            Assertions.checkState(!this.buildCalled);
-            Assertions.checkNotNull(looper);
+            Preconditions.checkState(!this.buildCalled);
+            Preconditions.checkNotNull(looper);
             this.looper = looper;
             return this;
         }
 
         public Builder setAnalyticsCollector(final AnalyticsCollector analyticsCollector) {
-            Assertions.checkState(!this.buildCalled);
-            Assertions.checkNotNull(analyticsCollector);
+            Preconditions.checkState(!this.buildCalled);
+            Preconditions.checkNotNull(analyticsCollector);
             this.analyticsCollectorFunction = new Function() { // from class: androidx.media3.exoplayer.ExoPlayer$Builder$$ExternalSyntheticLambda1
                 @Override // com.google.common.base.Function
                 public final Object apply(Object obj) {
@@ -605,171 +639,211 @@ public interface ExoPlayer extends Player {
             return this;
         }
 
+        public Builder setAudioOutputProvider(AudioOutputProvider audioOutputProvider) {
+            Preconditions.checkState(!this.buildCalled);
+            this.audioOutputProvider = (AudioOutputProvider) Preconditions.checkNotNull(audioOutputProvider);
+            return this;
+        }
+
         public Builder setPriority(int i) {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             this.priority = i;
             return this;
         }
 
         public Builder setPriorityTaskManager(PriorityTaskManager priorityTaskManager) {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             this.priorityTaskManager = priorityTaskManager;
             return this;
         }
 
         public Builder setAudioAttributes(AudioAttributes audioAttributes, boolean z) {
-            Assertions.checkState(!this.buildCalled);
-            this.audioAttributes = (AudioAttributes) Assertions.checkNotNull(audioAttributes);
+            Preconditions.checkState(!this.buildCalled);
+            this.audioAttributes = (AudioAttributes) Preconditions.checkNotNull(audioAttributes);
             this.handleAudioFocus = z;
             return this;
         }
 
         public Builder setWakeMode(int i) {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             this.wakeMode = i;
+            this.wakeModeSet = true;
             return this;
         }
 
         public Builder setHandleAudioBecomingNoisy(boolean z) {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             this.handleAudioBecomingNoisy = z;
             return this;
         }
 
         public Builder setSkipSilenceEnabled(boolean z) {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             this.skipSilenceEnabled = z;
             return this;
         }
 
         public Builder setDeviceVolumeControlEnabled(boolean z) {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             this.deviceVolumeControlEnabled = z;
             return this;
         }
 
         public Builder setVideoScalingMode(int i) {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             this.videoScalingMode = i;
             return this;
         }
 
         public Builder setVideoChangeFrameRateStrategy(int i) {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             this.videoChangeFrameRateStrategy = i;
             return this;
         }
 
         public Builder setUseLazyPreparation(boolean z) {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             this.useLazyPreparation = z;
             return this;
         }
 
         public Builder setSeekParameters(SeekParameters seekParameters) {
-            Assertions.checkState(!this.buildCalled);
-            this.seekParameters = (SeekParameters) Assertions.checkNotNull(seekParameters);
+            Preconditions.checkState(!this.buildCalled);
+            this.seekParameters = (SeekParameters) Preconditions.checkNotNull(seekParameters);
             return this;
         }
 
         public Builder setSeekBackIncrementMs(long j) {
-            Assertions.checkArgument(j > 0);
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkArgument(j > 0);
+            Preconditions.checkState(!this.buildCalled);
             this.seekBackIncrementMs = j;
             return this;
         }
 
         public Builder setSeekForwardIncrementMs(long j) {
-            Assertions.checkArgument(j > 0);
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkArgument(j > 0);
+            Preconditions.checkState(!this.buildCalled);
             this.seekForwardIncrementMs = j;
             return this;
         }
 
         public Builder setMaxSeekToPreviousPositionMs(long j) {
-            Assertions.checkArgument(j >= 0);
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkArgument(j >= 0);
+            Preconditions.checkState(!this.buildCalled);
             this.maxSeekToPreviousPositionMs = j;
             return this;
         }
 
         public Builder setScrubbingModeParameters(ScrubbingModeParameters scrubbingModeParameters) {
-            Assertions.checkState(!this.buildCalled);
-            this.scrubbingModeParameters = (ScrubbingModeParameters) Assertions.checkNotNull(scrubbingModeParameters);
+            Preconditions.checkState(!this.buildCalled);
+            this.scrubbingModeParameters = (ScrubbingModeParameters) Preconditions.checkNotNull(scrubbingModeParameters);
             return this;
         }
 
         public Builder setReleaseTimeoutMs(long j) {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             this.releaseTimeoutMs = j;
             return this;
         }
 
         public Builder setDetachSurfaceTimeoutMs(long j) {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             this.detachSurfaceTimeoutMs = j;
             return this;
         }
 
+        public Builder setStuckBufferingDetectionTimeoutMs(int i) {
+            Preconditions.checkState(!this.buildCalled);
+            Preconditions.checkArgument(i > 0);
+            this.stuckBufferingDetectionTimeoutMs = i;
+            return this;
+        }
+
+        public Builder setStuckPlayingDetectionTimeoutMs(int i) {
+            Preconditions.checkState(!this.buildCalled);
+            Preconditions.checkArgument(i > 0);
+            this.stuckPlayingDetectionTimeoutMs = i;
+            return this;
+        }
+
+        public Builder setStuckPlayingNotEndingTimeoutMs(int i) {
+            Preconditions.checkState(!this.buildCalled);
+            Preconditions.checkArgument(i > 0);
+            this.stuckPlayingNotEndingTimeoutMs = i;
+            return this;
+        }
+
+        public Builder setStuckSuppressedDetectionTimeoutMs(int i) {
+            Preconditions.checkState(!this.buildCalled);
+            Preconditions.checkArgument(i > 0);
+            this.stuckSuppressedDetectionTimeoutMs = i;
+            return this;
+        }
+
         public Builder setPauseAtEndOfMediaItems(boolean z) {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             this.pauseAtEndOfMediaItems = z;
             return this;
         }
 
         public Builder setLivePlaybackSpeedControl(LivePlaybackSpeedControl livePlaybackSpeedControl) {
-            Assertions.checkState(!this.buildCalled);
-            this.livePlaybackSpeedControl = (LivePlaybackSpeedControl) Assertions.checkNotNull(livePlaybackSpeedControl);
+            Preconditions.checkState(!this.buildCalled);
+            this.livePlaybackSpeedControl = (LivePlaybackSpeedControl) Preconditions.checkNotNull(livePlaybackSpeedControl);
             return this;
         }
 
         public Builder setUsePlatformDiagnostics(boolean z) {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             this.usePlatformDiagnostics = z;
             return this;
         }
 
         public Builder setClock(Clock clock) {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             this.clock = clock;
             return this;
         }
 
         public Builder setSuitableOutputChecker(SuitableOutputChecker suitableOutputChecker) {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             this.suitableOutputChecker = suitableOutputChecker;
             return this;
         }
 
         public Builder setPlaybackLooper(Looper looper) {
-            Assertions.checkState((this.buildCalled || looper == Looper.getMainLooper()) ? false : true);
+            Preconditions.checkState((this.buildCalled || looper == Looper.getMainLooper()) ? false : true);
             this.playbackLooperProvider = new PlaybackLooperProvider(looper);
             return this;
         }
 
         public Builder setPlaybackLooperProvider(PlaybackLooperProvider playbackLooperProvider) {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             this.playbackLooperProvider = playbackLooperProvider;
             return this;
         }
 
         public Builder setName(String str) {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
+            Preconditions.checkArgument(!str.equals(PlayerId.PRELOAD.name));
             this.playerName = str;
             return this;
         }
 
         public ExoPlayer build() {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             this.buildCalled = true;
             return new ExoPlayerImpl(this, null);
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public SimpleExoPlayer buildSimpleExoPlayer() {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             this.buildCalled = true;
             return new SimpleExoPlayer(this);
         }
+    }
+
+    static {
+        DEFAULT_STUCK_PLAYING_DETECTION_TIMEOUT_MS = Util.isRunningOnEmulator() ? Constants.CONNECTION_TIMEOUT_VERIFY : 10000;
     }
 }

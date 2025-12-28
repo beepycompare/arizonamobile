@@ -1,16 +1,16 @@
 package androidx.media3.exoplayer.drm;
 
 import androidx.media3.common.MediaItem;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.datasource.DataSource;
 import androidx.media3.datasource.DefaultHttpDataSource;
 import androidx.media3.exoplayer.drm.DefaultDrmSessionManager;
 import androidx.media3.exoplayer.upstream.LoadErrorHandlingPolicy;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.UnmodifiableIterator;
 import com.google.common.primitives.Ints;
 import java.util.Map;
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class DefaultDrmSessionManagerProvider implements DrmSessionManagerProvider {
     private MediaItem.DrmConfiguration drmConfiguration;
     private DataSource.Factory drmHttpDataSourceFactory;
@@ -35,7 +35,7 @@ public final class DefaultDrmSessionManagerProvider implements DrmSessionManager
     @Override // androidx.media3.exoplayer.drm.DrmSessionManagerProvider
     public DrmSessionManager get(MediaItem mediaItem) {
         DrmSessionManager drmSessionManager;
-        Assertions.checkNotNull(mediaItem.localConfiguration);
+        Preconditions.checkNotNull(mediaItem.localConfiguration);
         MediaItem.DrmConfiguration drmConfiguration = mediaItem.localConfiguration.drmConfiguration;
         if (drmConfiguration == null) {
             return DrmSessionManager.DRM_UNSUPPORTED;
@@ -45,7 +45,7 @@ public final class DefaultDrmSessionManagerProvider implements DrmSessionManager
                 this.drmConfiguration = drmConfiguration;
                 this.manager = createManager(drmConfiguration);
             }
-            drmSessionManager = (DrmSessionManager) Assertions.checkNotNull(this.manager);
+            drmSessionManager = (DrmSessionManager) Preconditions.checkNotNull(this.manager);
         }
         return drmSessionManager;
     }

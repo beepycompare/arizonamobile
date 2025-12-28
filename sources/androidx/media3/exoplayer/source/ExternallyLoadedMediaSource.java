@@ -2,13 +2,13 @@ package androidx.media3.exoplayer.source;
 
 import androidx.media3.common.C;
 import androidx.media3.common.MediaItem;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.datasource.TransferListener;
 import androidx.media3.exoplayer.drm.DrmSessionManagerProvider;
 import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.exoplayer.upstream.Allocator;
 import androidx.media3.exoplayer.upstream.LoadErrorHandlingPolicy;
+import com.google.common.base.Preconditions;
 import java.util.Objects;
 /* loaded from: classes3.dex */
 public final class ExternallyLoadedMediaSource extends BaseMediaSource {
@@ -74,7 +74,7 @@ public final class ExternallyLoadedMediaSource extends BaseMediaSource {
     @Override // androidx.media3.exoplayer.source.MediaSource
     public boolean canUpdateMediaItem(MediaItem mediaItem) {
         MediaItem.LocalConfiguration localConfiguration = mediaItem.localConfiguration;
-        MediaItem.LocalConfiguration localConfiguration2 = (MediaItem.LocalConfiguration) Assertions.checkNotNull(getMediaItem().localConfiguration);
+        MediaItem.LocalConfiguration localConfiguration2 = (MediaItem.LocalConfiguration) Preconditions.checkNotNull(getMediaItem().localConfiguration);
         if (localConfiguration != null && localConfiguration.uri.equals(localConfiguration2.uri) && Objects.equals(localConfiguration.mimeType, localConfiguration2.mimeType)) {
             return localConfiguration.imageDurationMs == C.TIME_UNSET || Util.msToUs(localConfiguration.imageDurationMs) == this.timelineDurationUs;
         }
@@ -89,8 +89,8 @@ public final class ExternallyLoadedMediaSource extends BaseMediaSource {
     @Override // androidx.media3.exoplayer.source.MediaSource
     public MediaPeriod createPeriod(MediaSource.MediaPeriodId mediaPeriodId, Allocator allocator, long j) {
         MediaItem mediaItem = getMediaItem();
-        Assertions.checkNotNull(mediaItem.localConfiguration);
-        Assertions.checkNotNull(mediaItem.localConfiguration.mimeType, "Externally loaded mediaItems require a MIME type.");
+        Preconditions.checkNotNull(mediaItem.localConfiguration);
+        Preconditions.checkNotNull(mediaItem.localConfiguration.mimeType, "Externally loaded mediaItems require a MIME type.");
         return new ExternallyLoadedMediaPeriod(mediaItem.localConfiguration.uri, mediaItem.localConfiguration.mimeType, this.externalLoader);
     }
 

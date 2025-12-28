@@ -24,7 +24,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class BillingLibraryMonitor implements BillingMonitor, n {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Context f363a;
+    private final Context f364a;
     private final Executor b;
     private final Executor c;
     private final BillingInfoSender d;
@@ -34,7 +34,7 @@ public final class BillingLibraryMonitor implements BillingMonitor, n {
     private boolean h;
 
     public BillingLibraryMonitor(Context context, Executor executor, Executor executor2, BillingInfoStorage billingInfoStorage, BillingInfoSender billingInfoSender, BillingInfoManager billingInfoManager, UpdatePolicy updatePolicy) {
-        this.f363a = context;
+        this.f364a = context;
         this.b = executor;
         this.c = executor2;
         this.d = billingInfoSender;
@@ -50,7 +50,7 @@ public final class BillingLibraryMonitor implements BillingMonitor, n {
         this.g = billingConfig;
         if (billingConfig != null && !this.h) {
             this.h = true;
-            BillingClient build = BillingClient.newBuilder(this.f363a).setListener(new l()).enablePendingPurchases(PendingPurchasesParams.newBuilder().enableOneTimeProducts().build()).build();
+            BillingClient build = BillingClient.newBuilder(this.f364a).setListener(new l()).enablePendingPurchases(PendingPurchasesParams.newBuilder().enableOneTimeProducts().build()).build();
             try {
                 build.startConnection(new b(billingConfig, build, new BillingLibraryMonitor$updateBilling$1(this), new d(build), this));
             } catch (Throwable unused) {
@@ -64,7 +64,7 @@ public final class BillingLibraryMonitor implements BillingMonitor, n {
             BillingConfig billingConfig = this.g;
             if (billingConfig != null && !this.h) {
                 this.h = true;
-                BillingClient build = BillingClient.newBuilder(this.f363a).setListener(new l()).enablePendingPurchases(PendingPurchasesParams.newBuilder().enableOneTimeProducts().build()).build();
+                BillingClient build = BillingClient.newBuilder(this.f364a).setListener(new l()).enablePendingPurchases(PendingPurchasesParams.newBuilder().enableOneTimeProducts().build()).build();
                 build.startConnection(new b(billingConfig, build, new BillingLibraryMonitor$updateBilling$1(this), new d(build), this));
             }
         } catch (Throwable unused) {

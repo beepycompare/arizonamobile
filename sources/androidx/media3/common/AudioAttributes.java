@@ -7,10 +7,11 @@ import androidx.media3.common.util.Util;
 /* loaded from: classes2.dex */
 public final class AudioAttributes {
     public final int allowedCapturePolicy;
-    private AudioAttributesV21 audioAttributesV21;
     public final int contentType;
     public final int flags;
+    public final boolean hapticChannelsMuted;
     public final boolean isContentSpatialized;
+    private android.media.AudioAttributes platformAudioAttributes;
     public final int spatializationBehavior;
     public final int usage;
     public static final AudioAttributes DEFAULT = new Builder().build();
@@ -20,21 +21,15 @@ public final class AudioAttributes {
     private static final String FIELD_ALLOWED_CAPTURE_POLICY = Util.intToStringMaxRadix(3);
     private static final String FIELD_SPATIALIZATION_BEHAVIOR = Util.intToStringMaxRadix(4);
     private static final String FIELD_IS_CONTENT_SPATIALIZED = Util.intToStringMaxRadix(5);
+    private static final String FIELD_HAPTIC_CHANNELS_MUTED = Util.intToStringMaxRadix(6);
 
+    @Deprecated
     /* loaded from: classes2.dex */
     public static final class AudioAttributesV21 {
         public final android.media.AudioAttributes audioAttributes;
 
-        private AudioAttributesV21(AudioAttributes audioAttributes) {
-            AudioAttributes.Builder usage = new AudioAttributes.Builder().setContentType(audioAttributes.contentType).setFlags(audioAttributes.flags).setUsage(audioAttributes.usage);
-            if (Build.VERSION.SDK_INT >= 29) {
-                Api29.setAllowedCapturePolicy(usage, audioAttributes.allowedCapturePolicy);
-            }
-            if (Build.VERSION.SDK_INT >= 32) {
-                Api32.setSpatializationBehavior(usage, audioAttributes.spatializationBehavior);
-                Api32.setIsContentSpatialized(usage, audioAttributes.isContentSpatialized);
-            }
-            this.audioAttributes = usage.build();
+        private AudioAttributesV21(android.media.AudioAttributes audioAttributes) {
+            this.audioAttributes = audioAttributes;
         }
     }
 
@@ -46,6 +41,7 @@ public final class AudioAttributes {
         private int allowedCapturePolicy = 1;
         private int spatializationBehavior = 0;
         private boolean isContentSpatialized = false;
+        private boolean hapticChannelsMuted = true;
 
         public Builder setContentType(int i) {
             this.contentType = i;
@@ -77,25 +73,58 @@ public final class AudioAttributes {
             return this;
         }
 
+        public Builder setHapticChannelsMuted(boolean z) {
+            this.hapticChannelsMuted = z;
+            return this;
+        }
+
         public AudioAttributes build() {
-            return new AudioAttributes(this.contentType, this.flags, this.usage, this.allowedCapturePolicy, this.spatializationBehavior, this.isContentSpatialized);
+            return new AudioAttributes(this.contentType, this.flags, this.usage, this.allowedCapturePolicy, this.spatializationBehavior, this.isContentSpatialized, this.hapticChannelsMuted);
         }
     }
 
-    private AudioAttributes(int i, int i2, int i3, int i4, int i5, boolean z) {
+    public static AudioAttributes fromPlatformAudioAttributes(android.media.AudioAttributes audioAttributes) {
+        Builder usage = new Builder().setContentType(audioAttributes.getContentType()).setFlags(audioAttributes.getFlags()).setUsage(audioAttributes.getUsage());
+        if (Build.VERSION.SDK_INT >= 29) {
+            usage.setAllowedCapturePolicy(audioAttributes.getAllowedCapturePolicy());
+            usage.setHapticChannelsMuted(audioAttributes.areHapticChannelsMuted());
+        }
+        if (Build.VERSION.SDK_INT >= 32) {
+            usage.setSpatializationBehavior(audioAttributes.getSpatializationBehavior());
+            usage.setIsContentSpatialized(audioAttributes.isContentSpatialized());
+        }
+        return usage.build();
+    }
+
+    private AudioAttributes(int i, int i2, int i3, int i4, int i5, boolean z, boolean z2) {
         this.contentType = i;
         this.flags = i2;
         this.usage = i3;
         this.allowedCapturePolicy = i4;
         this.spatializationBehavior = i5;
         this.isContentSpatialized = z;
+        this.hapticChannelsMuted = z2;
     }
 
+    @Deprecated
     public AudioAttributesV21 getAudioAttributesV21() {
-        if (this.audioAttributesV21 == null) {
-            this.audioAttributesV21 = new AudioAttributesV21();
+        return new AudioAttributesV21(getPlatformAudioAttributes());
+    }
+
+    public android.media.AudioAttributes getPlatformAudioAttributes() {
+        if (this.platformAudioAttributes == null) {
+            AudioAttributes.Builder usage = new AudioAttributes.Builder().setContentType(this.contentType).setFlags(this.flags).setUsage(this.usage);
+            if (Build.VERSION.SDK_INT >= 29) {
+                Api29.setAllowedCapturePolicy(usage, this.allowedCapturePolicy);
+                Api29.setHapticChannelsMuted(usage, this.hapticChannelsMuted);
+            }
+            if (Build.VERSION.SDK_INT >= 32) {
+                Api32.setSpatializationBehavior(usage, this.spatializationBehavior);
+                Api32.setIsContentSpatialized(usage, this.isContentSpatialized);
+            }
+            this.platformAudioAttributes = usage.build();
         }
-        return this.audioAttributesV21;
+        return this.platformAudioAttributes;
     }
 
     public int getStreamType() {
@@ -133,7 +162,7 @@ public final class AudioAttributes {
         }
         if (obj != null && getClass() == obj.getClass()) {
             AudioAttributes audioAttributes = (AudioAttributes) obj;
-            if (this.contentType == audioAttributes.contentType && this.flags == audioAttributes.flags && this.usage == audioAttributes.usage && this.allowedCapturePolicy == audioAttributes.allowedCapturePolicy && this.spatializationBehavior == audioAttributes.spatializationBehavior && this.isContentSpatialized == audioAttributes.isContentSpatialized) {
+            if (this.contentType == audioAttributes.contentType && this.flags == audioAttributes.flags && this.usage == audioAttributes.usage && this.allowedCapturePolicy == audioAttributes.allowedCapturePolicy && this.spatializationBehavior == audioAttributes.spatializationBehavior && this.isContentSpatialized == audioAttributes.isContentSpatialized && this.hapticChannelsMuted == audioAttributes.hapticChannelsMuted) {
                 return true;
             }
         }
@@ -141,17 +170,39 @@ public final class AudioAttributes {
     }
 
     public int hashCode() {
-        return ((((((((((527 + this.contentType) * 31) + this.flags) * 31) + this.usage) * 31) + this.allowedCapturePolicy) * 31) + this.spatializationBehavior) * 31) + (this.isContentSpatialized ? 1 : 0);
+        return ((((((((((((527 + this.contentType) * 31) + this.flags) * 31) + this.usage) * 31) + this.allowedCapturePolicy) * 31) + this.spatializationBehavior) * 31) + (this.isContentSpatialized ? 1 : 0)) * 31) + (this.hapticChannelsMuted ? 1 : 0);
     }
 
     public Bundle toBundle() {
         Bundle bundle = new Bundle();
-        bundle.putInt(FIELD_CONTENT_TYPE, this.contentType);
-        bundle.putInt(FIELD_FLAGS, this.flags);
-        bundle.putInt(FIELD_USAGE, this.usage);
-        bundle.putInt(FIELD_ALLOWED_CAPTURE_POLICY, this.allowedCapturePolicy);
-        bundle.putInt(FIELD_SPATIALIZATION_BEHAVIOR, this.spatializationBehavior);
-        bundle.putBoolean(FIELD_IS_CONTENT_SPATIALIZED, this.isContentSpatialized);
+        int i = this.contentType;
+        if (i != 0) {
+            bundle.putInt(FIELD_CONTENT_TYPE, i);
+        }
+        int i2 = this.flags;
+        if (i2 != 0) {
+            bundle.putInt(FIELD_FLAGS, i2);
+        }
+        int i3 = this.usage;
+        if (i3 != 1) {
+            bundle.putInt(FIELD_USAGE, i3);
+        }
+        int i4 = this.allowedCapturePolicy;
+        if (i4 != 1) {
+            bundle.putInt(FIELD_ALLOWED_CAPTURE_POLICY, i4);
+        }
+        int i5 = this.spatializationBehavior;
+        if (i5 != 0) {
+            bundle.putInt(FIELD_SPATIALIZATION_BEHAVIOR, i5);
+        }
+        boolean z = this.isContentSpatialized;
+        if (z) {
+            bundle.putBoolean(FIELD_IS_CONTENT_SPATIALIZED, z);
+        }
+        boolean z2 = this.hapticChannelsMuted;
+        if (!z2) {
+            bundle.putBoolean(FIELD_HAPTIC_CHANNELS_MUTED, z2);
+        }
         return bundle;
     }
 
@@ -181,21 +232,32 @@ public final class AudioAttributes {
         if (bundle.containsKey(str6)) {
             builder.setIsContentSpatialized(bundle.getBoolean(str6));
         }
+        String str7 = FIELD_HAPTIC_CHANNELS_MUTED;
+        if (bundle.containsKey(str7)) {
+            builder.setHapticChannelsMuted(bundle.getBoolean(str7));
+        }
         return builder.build();
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes2.dex */
-    private static final class Api29 {
+    public static final class Api29 {
         private Api29() {
         }
 
         public static void setAllowedCapturePolicy(AudioAttributes.Builder builder, int i) {
             builder.setAllowedCapturePolicy(i);
         }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static void setHapticChannelsMuted(AudioAttributes.Builder builder, boolean z) {
+            builder.setHapticChannelsMuted(z);
+        }
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes2.dex */
-    private static final class Api32 {
+    public static final class Api32 {
         private Api32() {
         }
 

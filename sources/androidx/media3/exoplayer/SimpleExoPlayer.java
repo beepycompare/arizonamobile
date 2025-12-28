@@ -370,7 +370,7 @@ public class SimpleExoPlayer extends BasePlayer implements ExoPlayer {
         this.player.setAudioSessionId(i);
     }
 
-    @Override // androidx.media3.exoplayer.ExoPlayer
+    @Override // androidx.media3.common.Player
     public int getAudioSessionId() {
         blockUntilConstructorFinished();
         return this.player.getAudioSessionId();
@@ -394,6 +394,12 @@ public class SimpleExoPlayer extends BasePlayer implements ExoPlayer {
         this.player.setPreferredAudioDevice(audioDeviceInfo);
     }
 
+    @Override // androidx.media3.exoplayer.ExoPlayer
+    public void setVirtualDeviceId(int i) {
+        blockUntilConstructorFinished();
+        this.player.setVirtualDeviceId(i);
+    }
+
     @Override // androidx.media3.common.Player
     public void setVolume(float f) {
         blockUntilConstructorFinished();
@@ -404,6 +410,18 @@ public class SimpleExoPlayer extends BasePlayer implements ExoPlayer {
     public float getVolume() {
         blockUntilConstructorFinished();
         return this.player.getVolume();
+    }
+
+    @Override // androidx.media3.common.Player
+    public void mute() {
+        blockUntilConstructorFinished();
+        this.player.mute();
+    }
+
+    @Override // androidx.media3.common.Player
+    public void unmute() {
+        blockUntilConstructorFinished();
+        this.player.unmute();
     }
 
     @Override // androidx.media3.exoplayer.ExoPlayer
@@ -835,6 +853,24 @@ public class SimpleExoPlayer extends BasePlayer implements ExoPlayer {
     }
 
     @Override // androidx.media3.exoplayer.ExoPlayer
+    public void setMaxSeekToPreviousPositionMs(long j) {
+        blockUntilConstructorFinished();
+        this.player.setMaxSeekToPreviousPositionMs(j);
+    }
+
+    @Override // androidx.media3.exoplayer.ExoPlayer
+    public void setSeekBackIncrementMs(long j) {
+        blockUntilConstructorFinished();
+        this.player.setSeekBackIncrementMs(j);
+    }
+
+    @Override // androidx.media3.exoplayer.ExoPlayer
+    public void setSeekForwardIncrementMs(long j) {
+        blockUntilConstructorFinished();
+        this.player.setSeekForwardIncrementMs(j);
+    }
+
+    @Override // androidx.media3.exoplayer.ExoPlayer
     public void setForegroundMode(boolean z) {
         blockUntilConstructorFinished();
         this.player.setForegroundMode(z);
@@ -874,6 +910,12 @@ public class SimpleExoPlayer extends BasePlayer implements ExoPlayer {
     public Renderer getRenderer(int i) {
         blockUntilConstructorFinished();
         return this.player.getRenderer(i);
+    }
+
+    @Override // androidx.media3.exoplayer.ExoPlayer
+    public Renderer getSecondaryRenderer(int i) {
+        blockUntilConstructorFinished();
+        return this.player.getSecondaryRenderer(i);
     }
 
     @Override // androidx.media3.exoplayer.ExoPlayer
@@ -1095,6 +1137,42 @@ public class SimpleExoPlayer extends BasePlayer implements ExoPlayer {
     public void setImageOutput(ImageOutput imageOutput) {
         blockUntilConstructorFinished();
         this.player.setImageOutput(imageOutput);
+    }
+
+    @Override // androidx.media3.exoplayer.ExoPlayer
+    public void setAudioCodecParameters(CodecParameters codecParameters) {
+        blockUntilConstructorFinished();
+        this.player.setAudioCodecParameters(codecParameters);
+    }
+
+    @Override // androidx.media3.exoplayer.ExoPlayer
+    public void addAudioCodecParametersChangeListener(CodecParametersChangeListener codecParametersChangeListener, List<String> list) {
+        blockUntilConstructorFinished();
+        this.player.addAudioCodecParametersChangeListener(codecParametersChangeListener, list);
+    }
+
+    @Override // androidx.media3.exoplayer.ExoPlayer
+    public void removeAudioCodecParametersChangeListener(CodecParametersChangeListener codecParametersChangeListener) {
+        blockUntilConstructorFinished();
+        this.player.removeAudioCodecParametersChangeListener(codecParametersChangeListener);
+    }
+
+    @Override // androidx.media3.exoplayer.ExoPlayer
+    public void setVideoCodecParameters(CodecParameters codecParameters) {
+        blockUntilConstructorFinished();
+        this.player.setVideoCodecParameters(codecParameters);
+    }
+
+    @Override // androidx.media3.exoplayer.ExoPlayer
+    public void addVideoCodecParametersChangeListener(CodecParametersChangeListener codecParametersChangeListener, List<String> list) {
+        blockUntilConstructorFinished();
+        this.player.addVideoCodecParametersChangeListener(codecParametersChangeListener, list);
+    }
+
+    @Override // androidx.media3.exoplayer.ExoPlayer
+    public void removeVideoCodecParametersChangeListener(CodecParametersChangeListener codecParametersChangeListener) {
+        blockUntilConstructorFinished();
+        this.player.removeVideoCodecParametersChangeListener(codecParametersChangeListener);
     }
 
     void setThrowsWhenUsingWrongThread(boolean z) {

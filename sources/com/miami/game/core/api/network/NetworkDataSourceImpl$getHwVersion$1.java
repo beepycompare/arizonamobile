@@ -7,7 +7,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: NetworkDataSourceImpl.kt */
 @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.core.api.network.NetworkDataSourceImpl", f = "NetworkDataSourceImpl.kt", i = {}, l = {110}, m = "getHwVersion", n = {}, s = {}, v = 1)
+@DebugMetadata(c = "com.miami.game.core.api.network.NetworkDataSourceImpl", f = "NetworkDataSourceImpl.kt", i = {}, l = {124}, m = "getHwVersion", n = {}, s = {}, v = 1)
 /* loaded from: classes4.dex */
 public final class NetworkDataSourceImpl$getHwVersion$1 extends ContinuationImpl {
     int label;

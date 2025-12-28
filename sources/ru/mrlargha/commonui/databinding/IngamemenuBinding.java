@@ -13,7 +13,7 @@ import androidx.constraintlayout.widget.Guideline;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class IngamemenuBinding implements ViewBinding {
     public final AppCompatImageView closeImage;
     public final RelativeLayout elementAnimations;

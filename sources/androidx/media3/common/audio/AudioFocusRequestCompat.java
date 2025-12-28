@@ -7,8 +7,8 @@ import android.os.Handler;
 import android.os.Looper;
 import androidx.media3.common.AudioAttributes;
 import androidx.media3.common.audio.AudioFocusRequestCompat;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import java.util.Objects;
 /* loaded from: classes2.dex */
 public final class AudioFocusRequestCompat {
@@ -30,7 +30,7 @@ public final class AudioFocusRequestCompat {
             this.onAudioFocusChangeListener = onAudioFocusChangeListener;
         }
         if (Build.VERSION.SDK_INT >= 26) {
-            this.frameworkAudioFocusRequest = new AudioFocusRequest.Builder(i).setAudioAttributes(audioAttributes.getAudioAttributesV21().audioAttributes).setWillPauseWhenDucked(z).setOnAudioFocusChangeListener(onAudioFocusChangeListener, handler).build();
+            this.frameworkAudioFocusRequest = new AudioFocusRequest.Builder(i).setAudioAttributes(audioAttributes.getPlatformAudioAttributes()).setWillPauseWhenDucked(z).setOnAudioFocusChangeListener(onAudioFocusChangeListener, handler).build();
         } else {
             this.frameworkAudioFocusRequest = null;
         }
@@ -77,7 +77,7 @@ public final class AudioFocusRequestCompat {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public AudioFocusRequest getAudioFocusRequest() {
-        return (AudioFocusRequest) Assertions.checkNotNull(this.frameworkAudioFocusRequest);
+        return (AudioFocusRequest) Preconditions.checkNotNull(this.frameworkAudioFocusRequest);
     }
 
     /* loaded from: classes2.dex */
@@ -106,7 +106,7 @@ public final class AudioFocusRequestCompat {
         }
 
         public Builder setFocusGain(int i) {
-            Assertions.checkArgument(isValidFocusGain(i));
+            Preconditions.checkArgument(isValidFocusGain(i));
             this.focusGain = i;
             return this;
         }
@@ -116,15 +116,15 @@ public final class AudioFocusRequestCompat {
         }
 
         public Builder setOnAudioFocusChangeListener(AudioManager.OnAudioFocusChangeListener onAudioFocusChangeListener, Handler handler) {
-            Assertions.checkNotNull(onAudioFocusChangeListener);
-            Assertions.checkNotNull(handler);
+            Preconditions.checkNotNull(onAudioFocusChangeListener);
+            Preconditions.checkNotNull(handler);
             this.onAudioFocusChangeListener = onAudioFocusChangeListener;
             this.focusChangeHandler = handler;
             return this;
         }
 
         public Builder setAudioAttributes(AudioAttributes audioAttributes) {
-            Assertions.checkNotNull(audioAttributes);
+            Preconditions.checkNotNull(audioAttributes);
             this.audioAttributes = audioAttributes;
             return this;
         }
@@ -138,7 +138,7 @@ public final class AudioFocusRequestCompat {
             if (this.onAudioFocusChangeListener == null) {
                 throw new IllegalStateException("Can't build an AudioFocusRequestCompat instance without a listener");
             }
-            return new AudioFocusRequestCompat(this.focusGain, this.onAudioFocusChangeListener, (Handler) Assertions.checkNotNull(this.focusChangeHandler), this.audioAttributes, this.pauseOnDuck);
+            return new AudioFocusRequestCompat(this.focusGain, this.onAudioFocusChangeListener, (Handler) Preconditions.checkNotNull(this.focusChangeHandler), this.audioAttributes, this.pauseOnDuck);
         }
     }
 
@@ -155,7 +155,7 @@ public final class AudioFocusRequestCompat {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onAudioFocusChange$0$androidx-media3-common-audio-AudioFocusRequestCompat$OnAudioFocusChangeListenerHandlerCompat  reason: not valid java name */
-        public /* synthetic */ void m8886xd2a61c9d(int i) {
+        public /* synthetic */ void m8890xd2a61c9d(int i) {
             this.listener.onAudioFocusChange(i);
         }
 
@@ -164,7 +164,7 @@ public final class AudioFocusRequestCompat {
             Util.postOrRun(this.handler, new Runnable() { // from class: androidx.media3.common.audio.AudioFocusRequestCompat$OnAudioFocusChangeListenerHandlerCompat$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AudioFocusRequestCompat.OnAudioFocusChangeListenerHandlerCompat.this.m8886xd2a61c9d(i);
+                    AudioFocusRequestCompat.OnAudioFocusChangeListenerHandlerCompat.this.m8890xd2a61c9d(i);
                 }
             });
         }

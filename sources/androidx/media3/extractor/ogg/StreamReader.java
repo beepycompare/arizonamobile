@@ -2,7 +2,6 @@ package androidx.media3.extractor.ogg;
 
 import androidx.media3.common.C;
 import androidx.media3.common.Format;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.ExtractorInput;
@@ -10,6 +9,7 @@ import androidx.media3.extractor.ExtractorOutput;
 import androidx.media3.extractor.PositionHolder;
 import androidx.media3.extractor.SeekMap;
 import androidx.media3.extractor.TrackOutput;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNullIf;
@@ -105,7 +105,7 @@ public abstract class StreamReader {
 
     @EnsuresNonNull({"trackOutput", "extractorOutput"})
     private void assertInitialized() {
-        Assertions.checkStateNotNull(this.trackOutput);
+        Preconditions.checkNotNull(this.trackOutput);
         Util.castNonNull(this.extractorOutput);
     }
 
@@ -156,7 +156,7 @@ public abstract class StreamReader {
             onSeekEnd(-(read + 2));
         }
         if (!this.seekMapSet) {
-            SeekMap seekMap = (SeekMap) Assertions.checkStateNotNull(this.oggSeeker.createSeekMap());
+            SeekMap seekMap = (SeekMap) Preconditions.checkNotNull(this.oggSeeker.createSeekMap());
             this.extractorOutput.seekMap(seekMap);
             this.trackOutput.durationUs(seekMap.getDurationUs());
             this.seekMapSet = true;

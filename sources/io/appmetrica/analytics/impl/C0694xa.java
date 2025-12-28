@@ -6,11 +6,11 @@ import io.appmetrica.analytics.networktasks.internal.HostRetryInfoProvider;
 public final class C0694xa implements HostRetryInfoProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0116af f1295a;
+    public final C0116af f1296a;
     public final Ud b;
 
     public C0694xa(C0116af c0116af, Ud ud) {
-        this.f1295a = c0116af;
+        this.f1296a = c0116af;
         this.b = ud;
     }
 
@@ -20,21 +20,21 @@ public final class C0694xa implements HostRetryInfoProvider {
 
     @Override // io.appmetrica.analytics.networktasks.internal.HostRetryInfoProvider
     public final long getLastAttemptTimeSeconds() {
-        return this.f1295a.a(this.b, 0L);
+        return this.f1296a.a(this.b, 0L);
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.HostRetryInfoProvider
     public final int getNextSendAttemptNumber() {
-        return this.f1295a.a(this.b, 1);
+        return this.f1296a.a(this.b, 1);
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.HostRetryInfoProvider
     public final void saveLastAttemptTimeSeconds(long j) {
-        this.f1295a.b(this.b, j).b();
+        this.f1296a.b(this.b, j).b();
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.HostRetryInfoProvider
     public final void saveNextSendAttemptNumber(int i) {
-        this.f1295a.b(this.b, i).b();
+        this.f1296a.b(this.b, i).b();
     }
 }

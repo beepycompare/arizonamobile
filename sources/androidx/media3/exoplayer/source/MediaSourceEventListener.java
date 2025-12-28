@@ -3,11 +3,11 @@ package androidx.media3.exoplayer.source;
 import android.os.Handler;
 import androidx.media3.common.C;
 import androidx.media3.common.Format;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Consumer;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.exoplayer.source.MediaSourceEventListener;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -57,8 +57,8 @@ public interface MediaSourceEventListener {
         }
 
         public void addEventListener(Handler handler, MediaSourceEventListener mediaSourceEventListener) {
-            Assertions.checkNotNull(handler);
-            Assertions.checkNotNull(mediaSourceEventListener);
+            Preconditions.checkNotNull(handler);
+            Preconditions.checkNotNull(mediaSourceEventListener);
             this.listenerAndHandlers.add(new ListenerAndHandler(handler, mediaSourceEventListener));
         }
 
@@ -99,14 +99,14 @@ public interface MediaSourceEventListener {
             dispatchEvent(new Consumer() { // from class: androidx.media3.exoplayer.source.MediaSourceEventListener$EventDispatcher$$ExternalSyntheticLambda1
                 @Override // androidx.media3.common.util.Consumer
                 public final void accept(Object obj) {
-                    MediaSourceEventListener.EventDispatcher.this.m9002x7ecff69a(loadEventInfo, mediaLoadData, i, (MediaSourceEventListener) obj);
+                    MediaSourceEventListener.EventDispatcher.this.m9011x7ecff69a(loadEventInfo, mediaLoadData, i, (MediaSourceEventListener) obj);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$loadStarted$0$androidx-media3-exoplayer-source-MediaSourceEventListener$EventDispatcher  reason: not valid java name */
-        public /* synthetic */ void m9002x7ecff69a(LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData, int i, MediaSourceEventListener mediaSourceEventListener) {
+        public /* synthetic */ void m9011x7ecff69a(LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData, int i, MediaSourceEventListener mediaSourceEventListener) {
             mediaSourceEventListener.onLoadStarted(this.windowIndex, this.mediaPeriodId, loadEventInfo, mediaLoadData, i);
         }
 
@@ -122,14 +122,14 @@ public interface MediaSourceEventListener {
             dispatchEvent(new Consumer() { // from class: androidx.media3.exoplayer.source.MediaSourceEventListener$EventDispatcher$$ExternalSyntheticLambda2
                 @Override // androidx.media3.common.util.Consumer
                 public final void accept(Object obj) {
-                    MediaSourceEventListener.EventDispatcher.this.m9000xeec2c4e5(loadEventInfo, mediaLoadData, (MediaSourceEventListener) obj);
+                    MediaSourceEventListener.EventDispatcher.this.m9009xeec2c4e5(loadEventInfo, mediaLoadData, (MediaSourceEventListener) obj);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$loadCompleted$1$androidx-media3-exoplayer-source-MediaSourceEventListener$EventDispatcher  reason: not valid java name */
-        public /* synthetic */ void m9000xeec2c4e5(LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData, MediaSourceEventListener mediaSourceEventListener) {
+        public /* synthetic */ void m9009xeec2c4e5(LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData, MediaSourceEventListener mediaSourceEventListener) {
             mediaSourceEventListener.onLoadCompleted(this.windowIndex, this.mediaPeriodId, loadEventInfo, mediaLoadData);
         }
 
@@ -145,14 +145,14 @@ public interface MediaSourceEventListener {
             dispatchEvent(new Consumer() { // from class: androidx.media3.exoplayer.source.MediaSourceEventListener$EventDispatcher$$ExternalSyntheticLambda4
                 @Override // androidx.media3.common.util.Consumer
                 public final void accept(Object obj) {
-                    MediaSourceEventListener.EventDispatcher.this.m8999x7abee11a(loadEventInfo, mediaLoadData, (MediaSourceEventListener) obj);
+                    MediaSourceEventListener.EventDispatcher.this.m9008x7abee11a(loadEventInfo, mediaLoadData, (MediaSourceEventListener) obj);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$loadCanceled$2$androidx-media3-exoplayer-source-MediaSourceEventListener$EventDispatcher  reason: not valid java name */
-        public /* synthetic */ void m8999x7abee11a(LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData, MediaSourceEventListener mediaSourceEventListener) {
+        public /* synthetic */ void m9008x7abee11a(LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData, MediaSourceEventListener mediaSourceEventListener) {
             mediaSourceEventListener.onLoadCanceled(this.windowIndex, this.mediaPeriodId, loadEventInfo, mediaLoadData);
         }
 
@@ -168,14 +168,14 @@ public interface MediaSourceEventListener {
             dispatchEvent(new Consumer() { // from class: androidx.media3.exoplayer.source.MediaSourceEventListener$EventDispatcher$$ExternalSyntheticLambda3
                 @Override // androidx.media3.common.util.Consumer
                 public final void accept(Object obj) {
-                    MediaSourceEventListener.EventDispatcher.this.m9001xa1507124(loadEventInfo, mediaLoadData, iOException, z, (MediaSourceEventListener) obj);
+                    MediaSourceEventListener.EventDispatcher.this.m9010xa1507124(loadEventInfo, mediaLoadData, iOException, z, (MediaSourceEventListener) obj);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$loadError$3$androidx-media3-exoplayer-source-MediaSourceEventListener$EventDispatcher  reason: not valid java name */
-        public /* synthetic */ void m9001xa1507124(LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData, IOException iOException, boolean z, MediaSourceEventListener mediaSourceEventListener) {
+        public /* synthetic */ void m9010xa1507124(LoadEventInfo loadEventInfo, MediaLoadData mediaLoadData, IOException iOException, boolean z, MediaSourceEventListener mediaSourceEventListener) {
             mediaSourceEventListener.onLoadError(this.windowIndex, this.mediaPeriodId, loadEventInfo, mediaLoadData, iOException, z);
         }
 
@@ -184,18 +184,18 @@ public interface MediaSourceEventListener {
         }
 
         public void upstreamDiscarded(final MediaLoadData mediaLoadData) {
-            final MediaSource.MediaPeriodId mediaPeriodId = (MediaSource.MediaPeriodId) Assertions.checkNotNull(this.mediaPeriodId);
+            final MediaSource.MediaPeriodId mediaPeriodId = (MediaSource.MediaPeriodId) Preconditions.checkNotNull(this.mediaPeriodId);
             dispatchEvent(new Consumer() { // from class: androidx.media3.exoplayer.source.MediaSourceEventListener$EventDispatcher$$ExternalSyntheticLambda5
                 @Override // androidx.media3.common.util.Consumer
                 public final void accept(Object obj) {
-                    MediaSourceEventListener.EventDispatcher.this.m9003x1ba5ea45(mediaPeriodId, mediaLoadData, (MediaSourceEventListener) obj);
+                    MediaSourceEventListener.EventDispatcher.this.m9012x1ba5ea45(mediaPeriodId, mediaLoadData, (MediaSourceEventListener) obj);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$upstreamDiscarded$4$androidx-media3-exoplayer-source-MediaSourceEventListener$EventDispatcher  reason: not valid java name */
-        public /* synthetic */ void m9003x1ba5ea45(MediaSource.MediaPeriodId mediaPeriodId, MediaLoadData mediaLoadData, MediaSourceEventListener mediaSourceEventListener) {
+        public /* synthetic */ void m9012x1ba5ea45(MediaSource.MediaPeriodId mediaPeriodId, MediaLoadData mediaLoadData, MediaSourceEventListener mediaSourceEventListener) {
             mediaSourceEventListener.onUpstreamDiscarded(this.windowIndex, mediaPeriodId, mediaLoadData);
         }
 
@@ -207,14 +207,14 @@ public interface MediaSourceEventListener {
             dispatchEvent(new Consumer() { // from class: androidx.media3.exoplayer.source.MediaSourceEventListener$EventDispatcher$$ExternalSyntheticLambda0
                 @Override // androidx.media3.common.util.Consumer
                 public final void accept(Object obj) {
-                    MediaSourceEventListener.EventDispatcher.this.m8998xc39c8e5f(mediaLoadData, (MediaSourceEventListener) obj);
+                    MediaSourceEventListener.EventDispatcher.this.m9007xc39c8e5f(mediaLoadData, (MediaSourceEventListener) obj);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$downstreamFormatChanged$5$androidx-media3-exoplayer-source-MediaSourceEventListener$EventDispatcher  reason: not valid java name */
-        public /* synthetic */ void m8998xc39c8e5f(MediaLoadData mediaLoadData, MediaSourceEventListener mediaSourceEventListener) {
+        public /* synthetic */ void m9007xc39c8e5f(MediaLoadData mediaLoadData, MediaSourceEventListener mediaSourceEventListener) {
             mediaSourceEventListener.onDownstreamFormatChanged(this.windowIndex, this.mediaPeriodId, mediaLoadData);
         }
 

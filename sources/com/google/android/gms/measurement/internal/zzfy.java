@@ -1,6 +1,5 @@
 package com.google.android.gms.measurement.internal;
 
-import androidx.compose.material3.internal.CalendarModelKt;
 import androidx.media3.exoplayer.Renderer;
 import com.adjust.sdk.Constants;
 import com.google.firebase.messaging.ServiceStarter;
@@ -8,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
+import kotlin.time.DurationKt;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes4.dex */
 public final class zzfy {
@@ -132,10 +132,10 @@ public final class zzfy {
         Collections.synchronizedSet(new HashSet());
         Long valueOf = Long.valueOf((long) Renderer.DEFAULT_DURATION_TO_PROGRESS_US);
         zza = zza("measurement.ad_id_cache_time", valueOf, valueOf, zzfq.zza, false);
-        zzb = zza("measurement.app_uninstalled_additional_ad_id_cache_time", 3600000L, 3600000L, zzbo.zza, false);
-        Long valueOf2 = Long.valueOf((long) CalendarModelKt.MillisecondsIn24Hours);
-        zzc = zza("measurement.monitoring.sample_period_millis", valueOf2, valueOf2, zzcf.zza, false);
-        zzd = zza("measurement.config.cache_time", valueOf2, 3600000L, zzcq.zza, false);
+        Long valueOf2 = Long.valueOf((long) DurationKt.MILLIS_IN_HOUR);
+        zzb = zza("measurement.app_uninstalled_additional_ad_id_cache_time", valueOf2, valueOf2, zzbo.zza, false);
+        zzc = zza("measurement.monitoring.sample_period_millis", 86400000L, 86400000L, zzcf.zza, false);
+        zzd = zza("measurement.config.cache_time", 86400000L, valueOf2, zzcq.zza, false);
         zze = zza("measurement.config.url_scheme", Constants.SCHEME, Constants.SCHEME, zzdb.zza, false);
         zzf = zza("measurement.config.url_authority", "app-measurement.com", "app-measurement.com", zzdm.zza, false);
         zzg = zza("measurement.upload.max_bundles", 100, 100, zzdx.zza, false);
@@ -164,13 +164,13 @@ public final class zzfy {
         zzD = zza("measurement.sgtm.upload.min_delay_after_background", 600000L, 600000L, zzco.zza, false);
         zzE = zza("measurement.sgtm.batch.long_queuing_threshold", 14400000L, 14400000L, zzcp.zza, false);
         zzF = zza("measurement.upload.backoff_period", 43200000L, 43200000L, zzcr.zza, false);
-        zzG = zza("measurement.upload.window_interval", 3600000L, 3600000L, zzcs.zza, false);
-        zzH = zza("measurement.upload.interval", 3600000L, 3600000L, zzct.zza, false);
+        zzG = zza("measurement.upload.window_interval", valueOf2, valueOf2, zzcs.zza, false);
+        zzH = zza("measurement.upload.interval", valueOf2, valueOf2, zzct.zza, false);
         zzI = zza("measurement.upload.realtime_upload_interval", valueOf, valueOf, zzcu.zza, false);
         zzJ = zza("measurement.upload.debug_upload_interval", 1000L, 1000L, zzcv.zza, false);
         zzK = zza("measurement.upload.minimum_delay", 500L, 500L, zzcw.zza, false);
         zzL = zza("measurement.alarm_manager.minimum_interval", 60000L, 60000L, zzcx.zza, false);
-        zzM = zza("measurement.upload.stale_data_deletion_interval", valueOf2, valueOf2, zzcy.zza, false);
+        zzM = zza("measurement.upload.stale_data_deletion_interval", 86400000L, 86400000L, zzcy.zza, false);
         zzN = zza("measurement.upload.refresh_blacklisted_config_interval", 604800000L, 604800000L, zzcz.zza, false);
         zzO = zza("measurement.upload.initial_upload_delay_time", 15000L, 15000L, zzda.zza, false);
         zzP = zza("measurement.upload.retry_time", 1800000L, 1800000L, zzdc.zza, false);
@@ -203,7 +203,7 @@ public final class zzfy {
         zzan = zza("measurement.rb.attribution.uri_scheme", Constants.SCHEME, Constants.SCHEME, zzea.zza, false);
         zzao = zza("measurement.rb.attribution.uri_authority", "google-analytics.com", "google-analytics.com", zzeb.zza, false);
         zzap = zza("measurement.rb.attribution.uri_path", "privacy-sandbox/register-app-conversion", "privacy-sandbox/register-app-conversion", zzec.zza, false);
-        zzaq = zza("measurement.session.engagement_interval", 3600000L, 3600000L, zzed.zza, false);
+        zzaq = zza("measurement.session.engagement_interval", valueOf2, valueOf2, zzed.zza, false);
         zzar = zza("measurement.rb.attribution.app_allowlist", "", "", zzee.zza, false);
         zzas = zza("measurement.rb.attribution.user_properties", "_npa,npa|_fot,fot", "_npa,npa|_fot,fot", zzef.zza, false);
         zzat = zza("measurement.rb.attribution.event_params", "value|currency", "value|currency", zzeg.zza, false);

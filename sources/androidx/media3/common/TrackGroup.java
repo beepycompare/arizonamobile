@@ -2,11 +2,12 @@ package androidx.media3.common;
 
 import android.os.Bundle;
 import android.os.Parcelable;
-import androidx.media3.common.util.Assertions;
+import android.text.TextUtils;
 import androidx.media3.common.util.BundleCollectionUtil;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
 import com.google.common.base.Function;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -30,12 +31,18 @@ public final class TrackGroup {
     }
 
     public TrackGroup(String str, Format... formatArr) {
-        Assertions.checkArgument(formatArr.length > 0);
+        int trackType;
+        Preconditions.checkArgument(formatArr.length > 0);
         this.id = str;
         this.formats = formatArr;
         this.length = formatArr.length;
-        int trackType = MimeTypes.getTrackType(formatArr[0].sampleMimeType);
-        this.type = trackType == -1 ? MimeTypes.getTrackType(formatArr[0].containerMimeType) : trackType;
+        String str2 = formatArr[0].sampleMimeType;
+        if (TextUtils.isEmpty(str2)) {
+            trackType = MimeTypes.getTrackType(formatArr[0].containerMimeType);
+        } else {
+            trackType = MimeTypes.getTrackType(str2);
+        }
+        this.type = trackType;
         verifyCorrectness();
     }
 

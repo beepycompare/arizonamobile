@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 public final class El {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f563a;
+    public final String f564a;
     public final String b;
     public final Integer c;
     public final Integer d;
@@ -11,7 +11,7 @@ public final class El {
     public final Boolean f;
 
     public El(String str, String str2, Integer num, Integer num2, String str3, Boolean bool) {
-        this.f563a = str;
+        this.f564a = str;
         this.b = str2;
         this.c = num;
         this.d = num2;

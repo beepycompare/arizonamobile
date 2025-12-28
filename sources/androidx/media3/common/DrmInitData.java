@@ -3,8 +3,8 @@ package androidx.media3.common;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -110,7 +110,7 @@ public final class DrmInitData implements Comparator<SchemeData>, Parcelable {
     public DrmInitData merge(DrmInitData drmInitData) {
         String str;
         String str2 = this.schemeType;
-        Assertions.checkState(str2 == null || (str = drmInitData.schemeType) == null || TextUtils.equals(str2, str));
+        Preconditions.checkState(str2 == null || (str = drmInitData.schemeType) == null || TextUtils.equals(str2, str));
         String str3 = this.schemeType;
         if (str3 == null) {
             str3 = drmInitData.schemeType;
@@ -194,9 +194,9 @@ public final class DrmInitData implements Comparator<SchemeData>, Parcelable {
         }
 
         public SchemeData(UUID uuid, String str, String str2, byte[] bArr) {
-            this.uuid = (UUID) Assertions.checkNotNull(uuid);
+            this.uuid = (UUID) Preconditions.checkNotNull(uuid);
             this.licenseServerUrl = str;
-            this.mimeType = MimeTypes.normalizeMimeType((String) Assertions.checkNotNull(str2));
+            this.mimeType = MimeTypes.normalizeMimeType((String) Preconditions.checkNotNull(str2));
             this.data = bArr;
         }
 

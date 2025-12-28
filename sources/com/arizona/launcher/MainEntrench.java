@@ -381,7 +381,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
             if (str == null) {
                 str = "unknown";
             }
-            Toast.makeText(getApplicationContext(), str + " v16.9.3 release", 1).show();
+            Toast.makeText(getApplicationContext(), str + " v16.9.5 release", 1).show();
             if (Build.VERSION.SDK_INT >= 26) {
                 if (!getFirstOpen()) {
                     Context applicationContext2 = getApplicationContext();

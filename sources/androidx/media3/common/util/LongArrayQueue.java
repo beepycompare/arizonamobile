@@ -1,5 +1,6 @@
 package androidx.media3.common.util;
 
+import com.google.common.base.Preconditions;
 import java.util.NoSuchElementException;
 /* loaded from: classes2.dex */
 public final class LongArrayQueue {
@@ -15,7 +16,7 @@ public final class LongArrayQueue {
     }
 
     public LongArrayQueue(int i) {
-        Assertions.checkArgument(i >= 0 && i <= 1073741824);
+        Preconditions.checkArgument(i >= 0 && i <= 1073741824);
         i = i == 0 ? 1 : i;
         i = Integer.bitCount(i) != 1 ? Integer.highestOneBit(i - 1) << 1 : i;
         this.headIndex = 0;

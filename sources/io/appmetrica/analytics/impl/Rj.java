@@ -13,7 +13,7 @@ import java.util.Map;
 public final class Rj implements Sa, IPluginReporter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f761a = new ArrayList();
+    public final ArrayList f762a = new ArrayList();
     public volatile C0300hi b;
 
     @Override // io.appmetrica.analytics.impl.Sa, io.appmetrica.analytics.impl.Va
@@ -147,7 +147,7 @@ public final class Rj implements Sa, IPluginReporter {
 
     public final synchronized void a(Ra ra) {
         if (this.b == null) {
-            this.f761a.add(ra);
+            this.f762a.add(ra);
         } else {
             ra.a(this.b);
         }

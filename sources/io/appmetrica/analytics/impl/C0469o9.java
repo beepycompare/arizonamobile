@@ -14,7 +14,7 @@ public final class C0469o9 extends MessageNano {
     public static volatile C0469o9[] b;
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f1142a;
+    public byte[] f1143a;
 
     public C0469o9() {
         a();
@@ -32,7 +32,7 @@ public final class C0469o9 extends MessageNano {
     }
 
     public final C0469o9 a() {
-        this.f1142a = WireFormatNano.EMPTY_BYTES;
+        this.f1143a = WireFormatNano.EMPTY_BYTES;
         this.cachedSize = -1;
         return this;
     }
@@ -40,13 +40,13 @@ public final class C0469o9 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        return !Arrays.equals(this.f1142a, WireFormatNano.EMPTY_BYTES) ? CodedOutputByteBufferNano.computeBytesSize(1, this.f1142a) + computeSerializedSize : computeSerializedSize;
+        return !Arrays.equals(this.f1143a, WireFormatNano.EMPTY_BYTES) ? CodedOutputByteBufferNano.computeBytesSize(1, this.f1143a) + computeSerializedSize : computeSerializedSize;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        if (!Arrays.equals(this.f1142a, WireFormatNano.EMPTY_BYTES)) {
-            codedOutputByteBufferNano.writeBytes(1, this.f1142a);
+        if (!Arrays.equals(this.f1143a, WireFormatNano.EMPTY_BYTES)) {
+            codedOutputByteBufferNano.writeBytes(1, this.f1143a);
         }
         super.writeTo(codedOutputByteBufferNano);
     }
@@ -63,7 +63,7 @@ public final class C0469o9 extends MessageNano {
                     break;
                 }
             } else {
-                this.f1142a = codedInputByteBufferNano.readBytes();
+                this.f1143a = codedInputByteBufferNano.readBytes();
             }
         }
         return this;

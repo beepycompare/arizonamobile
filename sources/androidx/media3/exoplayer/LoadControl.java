@@ -12,7 +12,7 @@ public interface LoadControl {
     @Deprecated
     public static final MediaSource.MediaPeriodId EMPTY_MEDIA_PERIOD_ID = new MediaSource.MediaPeriodId(new Object());
 
-    Allocator getAllocator();
+    Allocator getAllocator(PlayerId playerId);
 
     /* loaded from: classes.dex */
     public static final class Parameters {
@@ -114,7 +114,7 @@ public interface LoadControl {
         throw new IllegalStateException("shouldContinueLoading not implemented");
     }
 
-    default boolean shouldContinuePreloading(Timeline timeline, MediaSource.MediaPeriodId mediaPeriodId, long j) {
+    default boolean shouldContinuePreloading(PlayerId playerId, Timeline timeline, MediaSource.MediaPeriodId mediaPeriodId, long j) {
         Log.w("LoadControl", "shouldContinuePreloading needs to be implemented when playlist preloading is enabled");
         return false;
     }

@@ -1,9 +1,9 @@
 package androidx.media3.exoplayer.source.chunk;
 
 import androidx.media3.common.Format;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.datasource.DataSource;
 import androidx.media3.datasource.DataSpec;
+import com.google.common.base.Preconditions;
 /* loaded from: classes3.dex */
 public abstract class MediaChunk extends Chunk {
     public final long chunkIndex;
@@ -12,7 +12,7 @@ public abstract class MediaChunk extends Chunk {
 
     public MediaChunk(DataSource dataSource, DataSpec dataSpec, Format format, int i, Object obj, long j, long j2, long j3) {
         super(dataSource, dataSpec, 1, format, i, obj, j, j2);
-        Assertions.checkNotNull(format);
+        Preconditions.checkNotNull(format);
         this.chunkIndex = j3;
     }
 

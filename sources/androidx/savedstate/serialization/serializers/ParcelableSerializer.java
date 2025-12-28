@@ -38,7 +38,7 @@ public abstract class ParcelableSerializer<T extends Parcelable> implements KSer
             throw new IllegalArgumentException(BuiltInSerializerKt.encoderErrorMessage(this.descriptor.getSerialName(), encoder).toString());
         }
         SavedStateEncoder savedStateEncoder = (SavedStateEncoder) encoder;
-        SavedStateWriter.m9304putParcelableimpl(SavedStateWriter.m9280constructorimpl(savedStateEncoder.getSavedState$savedstate()), savedStateEncoder.getKey$savedstate(), value);
+        SavedStateWriter.m9319putParcelableimpl(SavedStateWriter.m9295constructorimpl(savedStateEncoder.getSavedState$savedstate()), savedStateEncoder.getKey$savedstate(), value);
     }
 
     @Override // kotlinx.serialization.DeserializationStrategy
@@ -48,7 +48,7 @@ public abstract class ParcelableSerializer<T extends Parcelable> implements KSer
             throw new IllegalArgumentException(BuiltInSerializerKt.decoderErrorMessage(this.descriptor.getSerialName(), decoder).toString());
         }
         SavedStateDecoder savedStateDecoder = (SavedStateDecoder) decoder;
-        T t = (T) SavedStateReader.m9240getParcelableimpl(SavedStateReader.m9194constructorimpl(savedStateDecoder.getSavedState$savedstate()), savedStateDecoder.getKey$savedstate(), Reflection.getOrCreateKotlinClass(Parcelable.class));
+        T t = (T) SavedStateReader.m9255getParcelableimpl(SavedStateReader.m9209constructorimpl(savedStateDecoder.getSavedState$savedstate()), savedStateDecoder.getKey$savedstate(), Reflection.getOrCreateKotlinClass(Parcelable.class));
         Intrinsics.checkNotNull(t, "null cannot be cast to non-null type T of androidx.savedstate.serialization.serializers.ParcelableSerializer");
         return t;
     }

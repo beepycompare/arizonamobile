@@ -17,7 +17,7 @@ public final class MetadataRepo {
     private final Typeface mTypeface;
 
     MetadataRepo() {
-        this.mTypeface = null;
+        this.mTypeface = Typeface.DEFAULT;
         this.mMetadataList = null;
         this.mRootNode = new Node(1024);
         this.mEmojiCharArray = new char[0];

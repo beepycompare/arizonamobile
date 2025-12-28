@@ -233,7 +233,7 @@ public final class MutableObjectLongMap<K> extends ObjectLongMap<K> {
     public final void adjustStorage$collection() {
         int compare;
         if (this._capacity > 8) {
-            compare = Long.compare(ULong.m10395constructorimpl(ULong.m10395constructorimpl(this._size) * 32) ^ Long.MIN_VALUE, ULong.m10395constructorimpl(ULong.m10395constructorimpl(this._capacity) * 25) ^ Long.MIN_VALUE);
+            compare = Long.compare(ULong.m10423constructorimpl(ULong.m10423constructorimpl(this._size) * 32) ^ Long.MIN_VALUE, ULong.m10423constructorimpl(ULong.m10423constructorimpl(this._capacity) * 25) ^ Long.MIN_VALUE);
             if (compare <= 0) {
                 dropDeletes$collection();
                 return;

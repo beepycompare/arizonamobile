@@ -1,13 +1,13 @@
 package androidx.activity;
 
 import android.window.OnBackInvokedDispatcher;
+import androidx.activity.OnBackPressedCallback;
 import androidx.core.app.NotificationCompat;
 import androidx.core.util.Consumer;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.navigationevent.NavigationEvent;
 import androidx.navigationevent.NavigationEventDispatcher;
-import androidx.navigationevent.NavigationEventHandler;
 import androidx.navigationevent.NavigationEventInput;
 import androidx.navigationevent.OnBackCompletedFallback;
 import androidx.navigationevent.OnBackInvokedDefaultInput;
@@ -82,12 +82,12 @@ public final class OnBackPressedDispatcher {
         if (lifecycle.getCurrentState() == Lifecycle.State.DESTROYED) {
             return;
         }
-        NavigationEventHandler<?> createNavigationEventHandler$activity = onBackPressedCallback.createNavigationEventHandler$activity(new OnBackPressedCallbackInfo(onBackPressedCallback, owner));
+        OnBackPressedCallback.OnBackPressedEventHandler createNavigationEventHandler$activity = onBackPressedCallback.createNavigationEventHandler$activity(new OnBackPressedCallbackInfo(onBackPressedCallback, owner));
         if (ActivityFlags.isOnBackPressedLifecycleOrderMaintained) {
-            createNavigationEventHandler$activity.setBackEnabled(false);
+            createNavigationEventHandler$activity.setLifecycleActive(false);
             NavigationEventDispatcher.addHandler$default(this.eventDispatcher, createNavigationEventHandler$activity, 0, 2, null);
         }
-        OnBackPressedDispatcher$addCallback$lifecycleObserver$1 onBackPressedDispatcher$addCallback$lifecycleObserver$1 = new OnBackPressedDispatcher$addCallback$lifecycleObserver$1(createNavigationEventHandler$activity, onBackPressedCallback, this, lifecycle);
+        OnBackPressedDispatcher$addCallback$lifecycleObserver$1 onBackPressedDispatcher$addCallback$lifecycleObserver$1 = new OnBackPressedDispatcher$addCallback$lifecycleObserver$1(createNavigationEventHandler$activity, this, lifecycle);
         lifecycle.addObserver(onBackPressedDispatcher$addCallback$lifecycleObserver$1);
         onBackPressedCallback.addCloseable$activity(onBackPressedDispatcher$addCallback$lifecycleObserver$1);
     }

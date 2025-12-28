@@ -2,9 +2,9 @@ package androidx.media3.exoplayer.util;
 
 import android.os.SystemClock;
 import androidx.media3.common.C;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.exoplayer.upstream.Loader;
 import com.google.common.base.Ascii;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -177,7 +177,7 @@ public final class SntpClient {
                     i2 = i3;
                 }
             }
-            throw ((SocketTimeoutException) Assertions.checkNotNull(socketTimeoutException));
+            throw ((SocketTimeoutException) Preconditions.checkNotNull(socketTimeoutException));
         } catch (Throwable th) {
             try {
                 datagramSocket.close();

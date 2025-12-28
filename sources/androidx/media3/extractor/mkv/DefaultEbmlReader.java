@@ -2,8 +2,8 @@ package androidx.media3.extractor.mkv;
 
 import androidx.collection.SieveCacheKt;
 import androidx.media3.common.ParserException;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.extractor.ExtractorInput;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.ArrayDeque;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
@@ -39,7 +39,7 @@ final class DefaultEbmlReader implements EbmlReader {
 
     @Override // androidx.media3.extractor.mkv.EbmlReader
     public boolean read(ExtractorInput extractorInput) throws IOException {
-        Assertions.checkStateNotNull(this.processor);
+        Preconditions.checkNotNull(this.processor);
         while (true) {
             MasterElement peek = this.masterElementsStack.peek();
             if (peek == null || extractorInput.getPosition() < peek.elementEndPosition) {

@@ -12,7 +12,7 @@ public final class X5 extends MessageNano {
     public static volatile X5[] b;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f844a;
+    public String f845a;
 
     public X5() {
         a();
@@ -30,19 +30,19 @@ public final class X5 extends MessageNano {
     }
 
     public final X5 a() {
-        this.f844a = "";
+        this.f845a = "";
         this.cachedSize = -1;
         return this;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
-        return CodedOutputByteBufferNano.computeStringSize(1, this.f844a) + super.computeSerializedSize();
+        return CodedOutputByteBufferNano.computeStringSize(1, this.f845a) + super.computeSerializedSize();
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        codedOutputByteBufferNano.writeString(1, this.f844a);
+        codedOutputByteBufferNano.writeString(1, this.f845a);
         super.writeTo(codedOutputByteBufferNano);
     }
 
@@ -58,7 +58,7 @@ public final class X5 extends MessageNano {
                     break;
                 }
             } else {
-                this.f844a = codedInputByteBufferNano.readString();
+                this.f845a = codedInputByteBufferNano.readString();
             }
         }
         return this;

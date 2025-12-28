@@ -1,7 +1,6 @@
 package androidx.media3.exoplayer.upstream;
 
 import android.net.Uri;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.datasource.DataSource;
 import androidx.media3.datasource.DataSourceInputStream;
@@ -9,6 +8,7 @@ import androidx.media3.datasource.DataSpec;
 import androidx.media3.datasource.StatsDataSource;
 import androidx.media3.exoplayer.source.LoadEventInfo;
 import androidx.media3.exoplayer.upstream.Loader;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
@@ -34,13 +34,13 @@ public final class ParsingLoadable<T> implements Loader.Loadable {
     public static <T> T load(DataSource dataSource, Parser<? extends T> parser, Uri uri, int i) throws IOException {
         ParsingLoadable parsingLoadable = new ParsingLoadable(dataSource, uri, i, parser);
         parsingLoadable.load();
-        return (T) Assertions.checkNotNull(parsingLoadable.getResult());
+        return (T) Preconditions.checkNotNull(parsingLoadable.getResult());
     }
 
     public static <T> T load(DataSource dataSource, Parser<? extends T> parser, DataSpec dataSpec, int i) throws IOException {
         ParsingLoadable parsingLoadable = new ParsingLoadable(dataSource, dataSpec, i, parser);
         parsingLoadable.load();
-        return (T) Assertions.checkNotNull(parsingLoadable.getResult());
+        return (T) Preconditions.checkNotNull(parsingLoadable.getResult());
     }
 
     public ParsingLoadable(DataSource dataSource, Uri uri, int i, Parser<? extends T> parser) {
@@ -77,7 +77,7 @@ public final class ParsingLoadable<T> implements Loader.Loadable {
         DataSourceInputStream dataSourceInputStream = new DataSourceInputStream(this.dataSource, this.dataSpec);
         try {
             dataSourceInputStream.open();
-            this.result = this.parser.parse((Uri) Assertions.checkNotNull(this.dataSource.getUri()), dataSourceInputStream);
+            this.result = this.parser.parse((Uri) Preconditions.checkNotNull(this.dataSource.getUri()), dataSourceInputStream);
         } finally {
             Util.closeQuietly(dataSourceInputStream);
         }

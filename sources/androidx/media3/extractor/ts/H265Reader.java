@@ -4,7 +4,6 @@ import androidx.media3.common.C;
 import androidx.media3.common.ColorInfo;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.CodecSpecificDataUtil;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
@@ -180,7 +179,7 @@ public final class H265Reader implements ElementaryStreamReader {
 
     @EnsuresNonNull({"output", "sampleReader"})
     private void assertTracksCreated() {
-        Assertions.checkStateNotNull(this.output);
+        Preconditions.checkNotNull(this.output);
         Util.castNonNull(this.sampleReader);
     }
 

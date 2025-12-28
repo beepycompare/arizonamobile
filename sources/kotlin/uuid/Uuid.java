@@ -1,6 +1,7 @@
 package kotlin.uuid;
 
 import androidx.exifinterface.media.ExifInterface;
+import com.google.common.base.Ascii;
 import java.io.InvalidObjectException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
@@ -16,8 +17,11 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
+import kotlin.time.Clock;
+import kotlin.time.Instant;
+import okio.Utf8;
 /* compiled from: Uuid.kt */
-@Metadata(d1 = {"\u0000h\n\u0002\u0018\u0002\n\u0002\u0010\u000f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u0012\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0007\u0018\u0000 02\b\u0012\u0004\u0012\u00020\u00000\u00012\u00060\u0002j\u0002`\u0003:\u00010B\u0019\b\u0002\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0005¢\u0006\u0004\b\u0007\u0010\bJ\\\u0010\u000f\u001a\u0002H\u0010\"\u0004\b\u0000\u0010\u001026\u0010\u0011\u001a2\u0012\u0013\u0012\u00110\u0005¢\u0006\f\b\u0013\u0012\b\b\u0014\u0012\u0004\b\b(\u0004\u0012\u0013\u0012\u00110\u0005¢\u0006\f\b\u0013\u0012\b\b\u0014\u0012\u0004\b\b(\u0006\u0012\u0004\u0012\u0002H\u00100\u0012H\u0087\bø\u0001\u0000\u0082\u0002\n\n\b\b\u0001\u0012\u0002\u0010\u0001 \u0001¢\u0006\u0002\u0010\u0015J\\\u0010\u0016\u001a\u0002H\u0010\"\u0004\b\u0000\u0010\u001026\u0010\u0011\u001a2\u0012\u0013\u0012\u00110\u0017¢\u0006\f\b\u0013\u0012\b\b\u0014\u0012\u0004\b\b(\u0004\u0012\u0013\u0012\u00110\u0017¢\u0006\f\b\u0013\u0012\b\b\u0014\u0012\u0004\b\b(\u0006\u0012\u0004\u0012\u0002H\u00100\u0012H\u0087\bø\u0001\u0000\u0082\u0002\n\n\b\b\u0001\u0012\u0002\u0010\u0001 \u0001¢\u0006\u0002\u0010\u0015J\b\u0010\u0018\u001a\u00020\u0019H\u0016J\b\u0010\u001a\u001a\u00020\u0019H\u0007J\u0006\u0010\u001b\u001a\u00020\u0019J\u0006\u0010\u001c\u001a\u00020\u001dJ\u000f\u0010\u001e\u001a\u00020\u001fH\u0007¢\u0006\u0004\b \u0010!J\u0013\u0010\"\u001a\u00020#2\b\u0010$\u001a\u0004\u0018\u00010%H\u0096\u0002J\u0011\u0010&\u001a\u00020'2\u0006\u0010$\u001a\u00020\u0000H\u0097\u0002J\b\u0010(\u001a\u00020'H\u0016J\b\u0010)\u001a\u00020%H\u0002J\u0019\u0010*\u001a\u00020+2\n\u0010,\u001a\u00060-j\u0002`.H\u0002¢\u0006\u0002\u0010/R\u001c\u0010\u0004\u001a\u00020\u00058\u0000X\u0081\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\t\u0010\n\u001a\u0004\b\u000b\u0010\fR\u001c\u0010\u0006\u001a\u00020\u00058\u0000X\u0081\u0004¢\u0006\u000e\n\u0000\u0012\u0004\b\r\u0010\n\u001a\u0004\b\u000e\u0010\f\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u00061"}, d2 = {"Lkotlin/uuid/Uuid;", "", "Ljava/io/Serializable;", "Lkotlin/io/Serializable;", "mostSignificantBits", "", "leastSignificantBits", "<init>", "(JJ)V", "getMostSignificantBits$annotations", "()V", "getMostSignificantBits", "()J", "getLeastSignificantBits$annotations", "getLeastSignificantBits", "toLongs", ExifInterface.GPS_DIRECTION_TRUE, "action", "Lkotlin/Function2;", "Lkotlin/ParameterName;", "name", "(Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;", "toULongs", "Lkotlin/ULong;", "toString", "", "toHexDashString", "toHexString", "toByteArray", "", "toUByteArray", "Lkotlin/UByteArray;", "toUByteArray-TcUX1vc", "()[B", "equals", "", "other", "", "compareTo", "", "hashCode", "writeReplace", "readObject", "", "input", "Ljava/io/ObjectInputStream;", "Lkotlin/internal/ReadObjectParameterType;", "(Ljava/io/ObjectInputStream;)V", "Companion", "kotlin-stdlib"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000h\n\u0002\u0018\u0002\n\u0002\u0010\u000f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u0012\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0007\u0018\u0000 02\b\u0012\u0004\u0012\u00020\u00000\u00012\u00060\u0002j\u0002`\u0003:\u00010B\u0019\bB\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0005¢\u0006\u0004\b\u0007\u0010\bJ]\u0010\u000f\u001a\u0002H\u0010\"\u0004\b\u0000\u0010\u001026\u0010\u0011\u001a2\u0012\u0013\u0012\u00110\u0005¢\u0006\f\b\u0013\u0012\b\b\u0014\u0012\u0004\b\b(\u0004\u0012\u0013\u0012\u00110\u0005¢\u0006\f\b\u0013\u0012\b\b\u0014\u0012\u0004\b\b(\u0006\u0012\u0004\u0012\u0002H\u00100\u0012H\u0087\u0088\u0004ø\u0001\u0000\u0082\u0002\n\n\b\b\u0001\u0012\u0002\u0010\u0001 \u0001¢\u0006\u0002\u0010\u0015J]\u0010\u0016\u001a\u0002H\u0010\"\u0004\b\u0000\u0010\u001026\u0010\u0011\u001a2\u0012\u0013\u0012\u00110\u0017¢\u0006\f\b\u0013\u0012\b\b\u0014\u0012\u0004\b\b(\u0004\u0012\u0013\u0012\u00110\u0017¢\u0006\f\b\u0013\u0012\b\b\u0014\u0012\u0004\b\b(\u0006\u0012\u0004\u0012\u0002H\u00100\u0012H\u0087\u0088\u0004ø\u0001\u0000\u0082\u0002\n\n\b\b\u0001\u0012\u0002\u0010\u0001 \u0001¢\u0006\u0002\u0010\u0015J\n\u0010\u0018\u001a\u00020\u0019H\u0096\u0080\u0004J\n\u0010\u001a\u001a\u00020\u0019H\u0087\u0080\u0004J\n\u0010\u001b\u001a\u00020\u0019H\u0086\u0080\u0004J\n\u0010\u001c\u001a\u00020\u001dH\u0086\u0080\u0004J\u0011\u0010\u001e\u001a\u00020\u001fH\u0087\u0080\u0004¢\u0006\u0004\b \u0010!J\u0014\u0010\"\u001a\u00020#2\b\u0010$\u001a\u0004\u0018\u00010%H\u0096\u0082\u0004J\u0012\u0010&\u001a\u00020'2\u0006\u0010$\u001a\u00020\u0000H\u0097\u0082\u0004J\n\u0010(\u001a\u00020'H\u0096\u0080\u0004J\n\u0010)\u001a\u00020%H\u0082\u0080\u0004J\u001b\u0010*\u001a\u00020+2\n\u0010,\u001a\u00060-j\u0002`.H\u0082\u0080\u0004¢\u0006\u0002\u0010/R\u001d\u0010\u0004\u001a\u00020\u00058\u0000X\u0081\u0084\b¢\u0006\u000e\n\u0000\u0012\u0004\b\t\u0010\n\u001a\u0004\b\u000b\u0010\fR\u001d\u0010\u0006\u001a\u00020\u00058\u0000X\u0081\u0084\b¢\u0006\u000e\n\u0000\u0012\u0004\b\r\u0010\n\u001a\u0004\b\u000e\u0010\f\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u00061"}, d2 = {"Lkotlin/uuid/Uuid;", "", "Ljava/io/Serializable;", "Lkotlin/io/Serializable;", "mostSignificantBits", "", "leastSignificantBits", "<init>", "(JJ)V", "getMostSignificantBits$annotations", "()V", "getMostSignificantBits", "()J", "getLeastSignificantBits$annotations", "getLeastSignificantBits", "toLongs", ExifInterface.GPS_DIRECTION_TRUE, "action", "Lkotlin/Function2;", "Lkotlin/ParameterName;", "name", "(Lkotlin/jvm/functions/Function2;)Ljava/lang/Object;", "toULongs", "Lkotlin/ULong;", "toString", "", "toHexDashString", "toHexString", "toByteArray", "", "toUByteArray", "Lkotlin/UByteArray;", "toUByteArray-TcUX1vc", "()[B", "equals", "", "other", "", "compareTo", "", "hashCode", "writeReplace", "readObject", "", "input", "Ljava/io/ObjectInputStream;", "Lkotlin/internal/ReadObjectParameterType;", "(Ljava/io/ObjectInputStream;)V", "Companion", "kotlin-stdlib"}, k = 1, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class Uuid implements Comparable<Uuid>, Serializable {
     public static final Companion Companion = new Companion(null);
@@ -57,7 +61,7 @@ public final class Uuid implements Comparable<Uuid>, Serializable {
 
     private final <T> T toULongs(Function2<? super ULong, ? super ULong, ? extends T> action) {
         Intrinsics.checkNotNullParameter(action, "action");
-        return action.invoke(ULong.m10389boximpl(ULong.m10395constructorimpl(getMostSignificantBits())), ULong.m10389boximpl(ULong.m10395constructorimpl(getLeastSignificantBits())));
+        return action.invoke(ULong.m10417boximpl(ULong.m10423constructorimpl(getMostSignificantBits())), ULong.m10417boximpl(ULong.m10423constructorimpl(getLeastSignificantBits())));
     }
 
     public String toString() {
@@ -93,8 +97,8 @@ public final class Uuid implements Comparable<Uuid>, Serializable {
     }
 
     /* renamed from: toUByteArray-TcUX1vc  reason: not valid java name */
-    public final byte[] m11710toUByteArrayTcUX1vc() {
-        return UByteArray.m10292constructorimpl(toByteArray());
+    public final byte[] m11748toUByteArrayTcUX1vc() {
+        return UByteArray.m10320constructorimpl(toByteArray());
     }
 
     public boolean equals(Object obj) {
@@ -115,10 +119,10 @@ public final class Uuid implements Comparable<Uuid>, Serializable {
         Intrinsics.checkNotNullParameter(other, "other");
         long j = this.mostSignificantBits;
         if (j != other.mostSignificantBits) {
-            compare2 = Long.compare(ULong.m10395constructorimpl(j) ^ Long.MIN_VALUE, ULong.m10395constructorimpl(other.mostSignificantBits) ^ Long.MIN_VALUE);
+            compare2 = Long.compare(ULong.m10423constructorimpl(j) ^ Long.MIN_VALUE, ULong.m10423constructorimpl(other.mostSignificantBits) ^ Long.MIN_VALUE);
             return compare2;
         }
-        compare = Long.compare(ULong.m10395constructorimpl(this.leastSignificantBits) ^ Long.MIN_VALUE, ULong.m10395constructorimpl(other.leastSignificantBits) ^ Long.MIN_VALUE);
+        compare = Long.compare(ULong.m10423constructorimpl(this.leastSignificantBits) ^ Long.MIN_VALUE, ULong.m10423constructorimpl(other.leastSignificantBits) ^ Long.MIN_VALUE);
         return compare;
     }
 
@@ -135,7 +139,7 @@ public final class Uuid implements Comparable<Uuid>, Serializable {
     }
 
     /* compiled from: Uuid.kt */
-    @Metadata(d1 = {"\u0000P\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0012\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0016\u0010\u000b\u001a\u00020\u00052\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\rJ\u001d\u0010\u000f\u001a\u00020\u00052\u0006\u0010\f\u001a\u00020\u00102\u0006\u0010\u000e\u001a\u00020\u0010¢\u0006\u0004\b\u0011\u0010\u0012J\u000e\u0010\u0013\u001a\u00020\u00052\u0006\u0010\u0014\u001a\u00020\u0015J\u0017\u0010\u0016\u001a\u00020\u00052\u0006\u0010\u0017\u001a\u00020\u0018H\u0007¢\u0006\u0004\b\u0019\u0010\u001aJ\u000e\u0010\u001b\u001a\u00020\u00052\u0006\u0010\u001c\u001a\u00020\u001dJ\u0010\u0010\u001e\u001a\u00020\u00052\u0006\u0010\u001f\u001a\u00020\u001dH\u0007J\u000e\u0010 \u001a\u00020\u00052\u0006\u0010!\u001a\u00020\u001dJ\u0006\u0010\"\u001a\u00020\u0005R\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u000e\u0010\b\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R*\u0010#\u001a\u0012\u0012\u0004\u0012\u00020\u00050$j\b\u0012\u0004\u0012\u00020\u0005`%8FX\u0087\u0004¢\u0006\f\u0012\u0004\b&\u0010\u0003\u001a\u0004\b'\u0010(¨\u0006)"}, d2 = {"Lkotlin/uuid/Uuid$Companion;", "", "<init>", "()V", "NIL", "Lkotlin/uuid/Uuid;", "getNIL", "()Lkotlin/uuid/Uuid;", "SIZE_BYTES", "", "SIZE_BITS", "fromLongs", "mostSignificantBits", "", "leastSignificantBits", "fromULongs", "Lkotlin/ULong;", "fromULongs-eb3DHEI", "(JJ)Lkotlin/uuid/Uuid;", "fromByteArray", "byteArray", "", "fromUByteArray", "ubyteArray", "Lkotlin/UByteArray;", "fromUByteArray-GBYM_sE", "([B)Lkotlin/uuid/Uuid;", "parse", "uuidString", "", "parseHexDash", "hexDashString", "parseHex", "hexString", "random", "LEXICAL_ORDER", "Ljava/util/Comparator;", "Lkotlin/Comparator;", "getLEXICAL_ORDER$annotations", "getLEXICAL_ORDER", "()Ljava/util/Comparator;", "kotlin-stdlib"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000^\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0012\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000e\n\u0002\b\f\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\bB¢\u0006\u0004\b\u0002\u0010\u0003J\u001a\u0010\u000b\u001a\u00020\u00052\u0006\u0010\f\u001a\u00020\r2\u0006\u0010\u000e\u001a\u00020\rH\u0086\u0080\u0004J!\u0010\u000f\u001a\u00020\u00052\u0006\u0010\f\u001a\u00020\u00102\u0006\u0010\u000e\u001a\u00020\u0010H\u0086\u0080\u0004¢\u0006\u0004\b\u0011\u0010\u0012J\u0012\u0010\u0013\u001a\u00020\u00052\u0006\u0010\u0014\u001a\u00020\u0015H\u0086\u0080\u0004J\u0019\u0010\u0016\u001a\u00020\u00052\u0006\u0010\u0017\u001a\u00020\u0018H\u0087\u0080\u0004¢\u0006\u0004\b\u0019\u0010\u001aJ\u0012\u0010\u001b\u001a\u00020\u00052\u0006\u0010\u001c\u001a\u00020\u001dH\u0086\u0080\u0004J\u0014\u0010\u001e\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u001c\u001a\u00020\u001dH\u0087\u0080\u0004J\u0012\u0010\u001f\u001a\u00020\u00052\u0006\u0010 \u001a\u00020\u001dH\u0087\u0080\u0004J\u0014\u0010!\u001a\u0004\u0018\u00010\u00052\u0006\u0010 \u001a\u00020\u001dH\u0087\u0080\u0004J\u0012\u0010\"\u001a\u00020\u00052\u0006\u0010#\u001a\u00020\u001dH\u0086\u0080\u0004J\u0014\u0010$\u001a\u0004\u0018\u00010\u00052\u0006\u0010#\u001a\u00020\u001dH\u0087\u0080\u0004J\n\u0010%\u001a\u00020\u0005H\u0086\u0080\u0004J\n\u0010&\u001a\u00020\u0005H\u0087\u0080\u0004J\n\u0010'\u001a\u00020\u0005H\u0087\u0080\u0004J\u0012\u0010(\u001a\u00020\u00052\u0006\u0010)\u001a\u00020*H\u0087\u0080\u0004J\u0017\u0010'\u001a\u00020\u00052\u0006\u0010+\u001a\u00020,H\u0080\u0080\u0004¢\u0006\u0002\b-R\u0015\u0010\u0004\u001a\u00020\u0005X\u0086\u0084\b¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u000f\u0010\b\u001a\u00020\tX\u0086Ô\b¢\u0006\u0002\n\u0000R\u000f\u0010\n\u001a\u00020\tX\u0086Ô\b¢\u0006\u0002\n\u0000R+\u0010.\u001a\u0012\u0012\u0004\u0012\u00020\u00050/j\b\u0012\u0004\u0012\u00020\u0005`08FX\u0087\u0084\b¢\u0006\f\u0012\u0004\b1\u0010\u0003\u001a\u0004\b2\u00103¨\u00064"}, d2 = {"Lkotlin/uuid/Uuid$Companion;", "", "<init>", "()V", "NIL", "Lkotlin/uuid/Uuid;", "getNIL", "()Lkotlin/uuid/Uuid;", "SIZE_BYTES", "", "SIZE_BITS", "fromLongs", "mostSignificantBits", "", "leastSignificantBits", "fromULongs", "Lkotlin/ULong;", "fromULongs-eb3DHEI", "(JJ)Lkotlin/uuid/Uuid;", "fromByteArray", "byteArray", "", "fromUByteArray", "ubyteArray", "Lkotlin/UByteArray;", "fromUByteArray-GBYM_sE", "([B)Lkotlin/uuid/Uuid;", "parse", "uuidString", "", "parseOrNull", "parseHexDash", "hexDashString", "parseHexDashOrNull", "parseHex", "hexString", "parseHexOrNull", "random", "generateV4", "generateV7", "generateV7NonMonotonicAt", "timestamp", "Lkotlin/time/Instant;", "clock", "Lkotlin/time/Clock;", "generateV7$kotlin_stdlib", "LEXICAL_ORDER", "Ljava/util/Comparator;", "Lkotlin/Comparator;", "getLEXICAL_ORDER$annotations", "getLEXICAL_ORDER", "()Ljava/util/Comparator;", "kotlin-stdlib"}, k = 1, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -162,7 +166,7 @@ public final class Uuid implements Comparable<Uuid>, Serializable {
         }
 
         /* renamed from: fromULongs-eb3DHEI  reason: not valid java name */
-        public final Uuid m11712fromULongseb3DHEI(long j, long j2) {
+        public final Uuid m11750fromULongseb3DHEI(long j, long j2) {
             return fromLongs(j, j2);
         }
 
@@ -178,7 +182,7 @@ public final class Uuid implements Comparable<Uuid>, Serializable {
         }
 
         /* renamed from: fromUByteArray-GBYM_sE  reason: not valid java name */
-        public final Uuid m11711fromUByteArrayGBYM_sE(byte[] bArr) {
+        public final Uuid m11749fromUByteArrayGBYM_sE(byte[] bArr) {
             Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-ubyteArray$0");
             return fromByteArray(bArr);
         }
@@ -198,6 +202,18 @@ public final class Uuid implements Comparable<Uuid>, Serializable {
             return UuidKt.uuidParseHex(uuidString);
         }
 
+        public final Uuid parseOrNull(String uuidString) {
+            Intrinsics.checkNotNullParameter(uuidString, "uuidString");
+            int length = uuidString.length();
+            if (length != 32) {
+                if (length != 36) {
+                    return null;
+                }
+                return parseHexDashOrNull(uuidString);
+            }
+            return parseHexOrNull(uuidString);
+        }
+
         public final Uuid parseHexDash(String hexDashString) {
             String truncateForErrorMessage$UuidKt__UuidKt;
             Intrinsics.checkNotNullParameter(hexDashString, "hexDashString");
@@ -207,6 +223,14 @@ public final class Uuid implements Comparable<Uuid>, Serializable {
             StringBuilder sb = new StringBuilder("Expected a 36-char string in the standard hex-and-dash UUID format, but was \"");
             truncateForErrorMessage$UuidKt__UuidKt = UuidKt__UuidKt.truncateForErrorMessage$UuidKt__UuidKt(hexDashString, 64);
             throw new IllegalArgumentException(sb.append(truncateForErrorMessage$UuidKt__UuidKt).append("\" of length ").append(hexDashString.length()).toString().toString());
+        }
+
+        public final Uuid parseHexDashOrNull(String hexDashString) {
+            Intrinsics.checkNotNullParameter(hexDashString, "hexDashString");
+            if (hexDashString.length() != 36) {
+                return null;
+            }
+            return UuidKt.uuidParseHexDashOrNull(hexDashString);
         }
 
         public final Uuid parseHex(String hexString) {
@@ -220,8 +244,38 @@ public final class Uuid implements Comparable<Uuid>, Serializable {
             throw new IllegalArgumentException(sb.append(truncateForErrorMessage$UuidKt__UuidKt).append("\" of length ").append(hexString.length()).toString().toString());
         }
 
+        public final Uuid parseHexOrNull(String hexString) {
+            Intrinsics.checkNotNullParameter(hexString, "hexString");
+            if (hexString.length() != 32) {
+                return null;
+            }
+            return UuidKt.uuidParseHexOrNull(hexString);
+        }
+
         public final Uuid random() {
+            return generateV4();
+        }
+
+        public final Uuid generateV4() {
             return UuidKt.secureRandomUuid();
+        }
+
+        public final Uuid generateV7() {
+            return generateV7$kotlin_stdlib(Clock.System.INSTANCE);
+        }
+
+        public final Uuid generateV7NonMonotonicAt(Instant timestamp) {
+            Intrinsics.checkNotNullParameter(timestamp, "timestamp");
+            byte[] bArr = new byte[10];
+            UuidKt.secureRandomBytes(bArr);
+            int i = (((bArr[8] & Ascii.SI) | 112) << 8) | (bArr[9] & 255);
+            bArr[0] = (byte) (((byte) (bArr[0] & Utf8.REPLACEMENT_BYTE)) | Byte.MIN_VALUE);
+            return fromLongs((timestamp.toEpochMilliseconds() << 16) | i, UuidKt.getLongAt(bArr, 0));
+        }
+
+        public final Uuid generateV7$kotlin_stdlib(Clock clock) {
+            Intrinsics.checkNotNullParameter(clock, "clock");
+            return UuidV7Generator.INSTANCE.generate(clock);
         }
 
         public final Comparator<Uuid> getLEXICAL_ORDER() {

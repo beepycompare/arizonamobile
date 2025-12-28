@@ -1,5 +1,6 @@
 package androidx.media3.extractor.mp4;
 
+import androidx.media3.common.util.Util;
 import androidx.media3.extractor.SniffFailure;
 /* loaded from: classes3.dex */
 public final class AtomSizeTooSmallSniffFailure implements SniffFailure {
@@ -11,5 +12,9 @@ public final class AtomSizeTooSmallSniffFailure implements SniffFailure {
         this.atomType = i;
         this.atomSize = j;
         this.minimumHeaderSize = i2;
+    }
+
+    public String toString() {
+        return "AtomSizeTooSmall{type=" + Util.toFourccString(this.atomType) + ", size=" + this.atomSize + ", minHeaderSize=" + this.minimumHeaderSize + "}";
     }
 }

@@ -6,14 +6,14 @@ import io.appmetrica.analytics.profile.UserProfile;
 public final class C0678wj implements Ra {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ UserProfile f1282a;
+    public final /* synthetic */ UserProfile f1283a;
 
     public C0678wj(UserProfile userProfile) {
-        this.f1282a = userProfile;
+        this.f1283a = userProfile;
     }
 
     @Override // io.appmetrica.analytics.impl.Ra
     public final void a(Sa sa) {
-        sa.reportUserProfile(this.f1282a);
+        sa.reportUserProfile(this.f1283a);
     }
 }

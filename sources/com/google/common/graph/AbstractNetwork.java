@@ -62,14 +62,14 @@ public abstract class AbstractNetwork<N, E> implements Network<N, E> {
                 return Iterators.transform(AbstractNetwork.this.edges().iterator(), new Function() { // from class: com.google.common.graph.AbstractNetwork$1$1$$ExternalSyntheticLambda0
                     @Override // com.google.common.base.Function
                     public final Object apply(Object obj) {
-                        return AbstractNetwork.AnonymousClass1.C00631.this.m9920lambda$iterator$0$comgooglecommongraphAbstractNetwork$1$1(obj);
+                        return AbstractNetwork.AnonymousClass1.C00631.this.m9935lambda$iterator$0$comgooglecommongraphAbstractNetwork$1$1(obj);
                     }
                 });
             }
 
             /* JADX INFO: Access modifiers changed from: package-private */
             /* renamed from: lambda$iterator$0$com-google-common-graph-AbstractNetwork$1$1  reason: not valid java name */
-            public /* synthetic */ EndpointPair m9920lambda$iterator$0$comgooglecommongraphAbstractNetwork$1$1(Object obj) {
+            public /* synthetic */ EndpointPair m9935lambda$iterator$0$comgooglecommongraphAbstractNetwork$1$1(Object obj) {
                 return AbstractNetwork.this.incidentNodes(obj);
             }
 
@@ -260,7 +260,7 @@ public abstract class AbstractNetwork<N, E> implements Network<N, E> {
         return InvalidatableSet.of((Set) set, (Supplier<Boolean>) new Supplier() { // from class: com.google.common.graph.AbstractNetwork$$ExternalSyntheticLambda4
             @Override // com.google.common.base.Supplier
             public final Object get() {
-                return AbstractNetwork.this.m9917xa0c212f3(edge);
+                return AbstractNetwork.this.m9932xa0c212f3(edge);
             }
         }, (Supplier<String>) new Supplier() { // from class: com.google.common.graph.AbstractNetwork$$ExternalSyntheticLambda5
             @Override // com.google.common.base.Supplier
@@ -274,7 +274,7 @@ public abstract class AbstractNetwork<N, E> implements Network<N, E> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$edgeInvalidatableSet$0$com-google-common-graph-AbstractNetwork  reason: not valid java name */
-    public /* synthetic */ Boolean m9917xa0c212f3(Object obj) {
+    public /* synthetic */ Boolean m9932xa0c212f3(Object obj) {
         return Boolean.valueOf(edges().contains(obj));
     }
 
@@ -283,7 +283,7 @@ public abstract class AbstractNetwork<N, E> implements Network<N, E> {
         return InvalidatableSet.of((Set) set, (Supplier<Boolean>) new Supplier() { // from class: com.google.common.graph.AbstractNetwork$$ExternalSyntheticLambda0
             @Override // com.google.common.base.Supplier
             public final Object get() {
-                return AbstractNetwork.this.m9918xe136d8fa(node);
+                return AbstractNetwork.this.m9933xe136d8fa(node);
             }
         }, (Supplier<String>) new Supplier() { // from class: com.google.common.graph.AbstractNetwork$$ExternalSyntheticLambda1
             @Override // com.google.common.base.Supplier
@@ -297,7 +297,7 @@ public abstract class AbstractNetwork<N, E> implements Network<N, E> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$nodeInvalidatableSet$2$com-google-common-graph-AbstractNetwork  reason: not valid java name */
-    public /* synthetic */ Boolean m9918xe136d8fa(Object obj) {
+    public /* synthetic */ Boolean m9933xe136d8fa(Object obj) {
         return Boolean.valueOf(nodes().contains(obj));
     }
 
@@ -306,7 +306,7 @@ public abstract class AbstractNetwork<N, E> implements Network<N, E> {
         return InvalidatableSet.of((Set) set, (Supplier<Boolean>) new Supplier() { // from class: com.google.common.graph.AbstractNetwork$$ExternalSyntheticLambda2
             @Override // com.google.common.base.Supplier
             public final Object get() {
-                return AbstractNetwork.this.m9919xa62961f6(nodeU, nodeV);
+                return AbstractNetwork.this.m9934xa62961f6(nodeU, nodeV);
             }
         }, (Supplier<String>) new Supplier() { // from class: com.google.common.graph.AbstractNetwork$$ExternalSyntheticLambda3
             @Override // com.google.common.base.Supplier
@@ -320,7 +320,7 @@ public abstract class AbstractNetwork<N, E> implements Network<N, E> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$nodePairInvalidatableSet$4$com-google-common-graph-AbstractNetwork  reason: not valid java name */
-    public /* synthetic */ Boolean m9919xa62961f6(Object obj, Object obj2) {
+    public /* synthetic */ Boolean m9934xa62961f6(Object obj, Object obj2) {
         return Boolean.valueOf(nodes().contains(obj) && nodes().contains(obj2));
     }
 

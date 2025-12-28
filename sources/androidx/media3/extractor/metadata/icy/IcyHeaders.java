@@ -2,8 +2,8 @@ package androidx.media3.extractor.metadata.icy;
 
 import androidx.media3.common.MediaMetadata;
 import androidx.media3.common.Metadata;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
+import com.google.common.base.Preconditions;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -157,7 +157,7 @@ public final class IcyHeaders implements Metadata.Entry {
     }
 
     public IcyHeaders(int i, String str, String str2, String str3, boolean z, int i2) {
-        Assertions.checkArgument(i2 == -1 || i2 > 0);
+        Preconditions.checkArgument(i2 == -1 || i2 > 0);
         this.bitrate = i;
         this.genre = str;
         this.name = str2;

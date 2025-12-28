@@ -1,7 +1,7 @@
 package androidx.media3.extractor;
 
-import androidx.media3.common.util.Assertions;
 import androidx.media3.extractor.TrackOutput;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 /* loaded from: classes3.dex */
 public final class TrueHdSampleRechunker {
@@ -31,7 +31,7 @@ public final class TrueHdSampleRechunker {
     }
 
     public void sampleMetadata(TrackOutput trackOutput, long j, int i, int i2, int i3, TrackOutput.CryptoData cryptoData) {
-        Assertions.checkState(this.chunkOffset <= i2 + i3, "TrueHD chunk samples must be contiguous in the sample queue.");
+        Preconditions.checkState(this.chunkOffset <= i2 + i3, "TrueHD chunk samples must be contiguous in the sample queue.");
         if (this.foundSyncframe) {
             int i4 = this.chunkSampleCount;
             int i5 = i4 + 1;

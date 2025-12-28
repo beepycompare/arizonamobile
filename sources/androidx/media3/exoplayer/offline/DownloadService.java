@@ -9,7 +9,6 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.NotificationUtil;
 import androidx.media3.common.util.Util;
@@ -17,6 +16,7 @@ import androidx.media3.exoplayer.offline.DownloadManager;
 import androidx.media3.exoplayer.offline.DownloadService;
 import androidx.media3.exoplayer.scheduler.Requirements;
 import androidx.media3.exoplayer.scheduler.Scheduler;
+import com.google.common.base.Preconditions;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
@@ -202,7 +202,7 @@ public abstract class DownloadService extends Service {
         if (str == null) {
             str = ACTION_INIT;
         }
-        DownloadManager downloadManager = ((DownloadManagerHelper) Assertions.checkNotNull(this.downloadManagerHelper)).downloadManager;
+        DownloadManager downloadManager = ((DownloadManagerHelper) Preconditions.checkNotNull(this.downloadManagerHelper)).downloadManager;
         str.hashCode();
         char c = 65535;
         switch (str.hashCode()) {
@@ -263,7 +263,7 @@ public abstract class DownloadService extends Service {
         }
         switch (c) {
             case 0:
-                if (!((Intent) Assertions.checkNotNull(intent)).hasExtra(KEY_STOP_REASON)) {
+                if (!((Intent) Preconditions.checkNotNull(intent)).hasExtra(KEY_STOP_REASON)) {
                     Log.e(TAG, "Ignored SET_STOP_REASON: Missing stop_reason extra");
                     break;
                 } else {
@@ -288,7 +288,7 @@ public abstract class DownloadService extends Service {
                 downloadManager.removeAllDownloads();
                 break;
             case 6:
-                DownloadRequest downloadRequest = (DownloadRequest) ((Intent) Assertions.checkNotNull(intent)).getParcelableExtra(KEY_DOWNLOAD_REQUEST);
+                DownloadRequest downloadRequest = (DownloadRequest) ((Intent) Preconditions.checkNotNull(intent)).getParcelableExtra(KEY_DOWNLOAD_REQUEST);
                 if (downloadRequest == null) {
                     Log.e(TAG, "Ignored ADD_DOWNLOAD: Missing download_request extra");
                     break;
@@ -297,7 +297,7 @@ public abstract class DownloadService extends Service {
                     break;
                 }
             case 7:
-                Requirements requirements = (Requirements) ((Intent) Assertions.checkNotNull(intent)).getParcelableExtra(KEY_REQUIREMENTS);
+                Requirements requirements = (Requirements) ((Intent) Preconditions.checkNotNull(intent)).getParcelableExtra(KEY_REQUIREMENTS);
                 if (requirements == null) {
                     Log.e(TAG, "Ignored SET_REQUIREMENTS: Missing requirements extra");
                     break;
@@ -327,10 +327,15 @@ public abstract class DownloadService extends Service {
         this.taskRemoved = true;
     }
 
+    public void onTimeout(int i, int i2) {
+        Log.w(TAG, "onTimeout() called by system. Calling stopSelf() to terminate gracefully.");
+        stopSelf();
+    }
+
     @Override // android.app.Service
     public void onDestroy() {
         this.isDestroyed = true;
-        ((DownloadManagerHelper) Assertions.checkNotNull(this.downloadManagerHelper)).detachService(this);
+        ((DownloadManagerHelper) Preconditions.checkNotNull(this.downloadManagerHelper)).detachService(this);
         ForegroundNotificationUpdater foregroundNotificationUpdater = this.foregroundNotificationUpdater;
         if (foregroundNotificationUpdater != null) {
             foregroundNotificationUpdater.stopPeriodicUpdates();
@@ -392,7 +397,7 @@ public abstract class DownloadService extends Service {
         if (foregroundNotificationUpdater != null) {
             foregroundNotificationUpdater.stopPeriodicUpdates();
         }
-        if (((DownloadManagerHelper) Assertions.checkNotNull(this.downloadManagerHelper)).updateScheduler()) {
+        if (((DownloadManagerHelper) Preconditions.checkNotNull(this.downloadManagerHelper)).updateScheduler()) {
             if (Build.VERSION.SDK_INT < 28 && this.taskRemoved) {
                 stopSelf();
                 this.isStopped = true;
@@ -458,7 +463,7 @@ public abstract class DownloadService extends Service {
 
         /* JADX INFO: Access modifiers changed from: private */
         public void update() {
-            DownloadManager downloadManager = ((DownloadManagerHelper) Assertions.checkNotNull(DownloadService.this.downloadManagerHelper)).downloadManager;
+            DownloadManager downloadManager = ((DownloadManagerHelper) Preconditions.checkNotNull(DownloadService.this.downloadManagerHelper)).downloadManager;
             Notification foregroundNotification = DownloadService.this.getForegroundNotification(downloadManager.getCurrentDownloads(), downloadManager.getNotMetRequirements());
             if (!this.notificationDisplayed) {
                 Util.setForegroundServiceNotification(DownloadService.this, this.notificationId, foregroundNotification, 1, "dataSync");
@@ -500,13 +505,13 @@ public abstract class DownloadService extends Service {
         }
 
         public void attachService(final DownloadService downloadService) {
-            Assertions.checkState(this.downloadService == null);
+            Preconditions.checkState(this.downloadService == null);
             this.downloadService = downloadService;
             if (this.downloadManager.isInitialized()) {
                 Util.createHandlerForCurrentOrMainLooper().postAtFrontOfQueue(new Runnable() { // from class: androidx.media3.exoplayer.offline.DownloadService$DownloadManagerHelper$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        DownloadService.DownloadManagerHelper.this.m8991xee6ee963(downloadService);
+                        DownloadService.DownloadManagerHelper.this.m9000xee6ee963(downloadService);
                     }
                 });
             }
@@ -514,12 +519,12 @@ public abstract class DownloadService extends Service {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$attachService$0$androidx-media3-exoplayer-offline-DownloadService$DownloadManagerHelper  reason: not valid java name */
-        public /* synthetic */ void m8991xee6ee963(DownloadService downloadService) {
+        public /* synthetic */ void m9000xee6ee963(DownloadService downloadService) {
             downloadService.notifyDownloads(this.downloadManager.getCurrentDownloads());
         }
 
         public void detachService(DownloadService downloadService) {
-            Assertions.checkState(this.downloadService == downloadService);
+            Preconditions.checkState(this.downloadService == downloadService);
             this.downloadService = null;
         }
 

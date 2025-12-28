@@ -35,7 +35,7 @@ public final class Xe extends AbstractC0747zd implements Co {
 
     public final Xe a(C0308i0 c0308i0) {
         synchronized (this) {
-            b(j.b, c0308i0.f1028a);
+            b(j.b, c0308i0.f1029a);
             b(k.b, c0308i0.b);
         }
         return this;
@@ -47,25 +47,25 @@ public final class Xe extends AbstractC0747zd implements Co {
 
     @Override // io.appmetrica.analytics.impl.Ye
     public final Set<String> c() {
-        return this.f862a.a();
+        return this.f863a.a();
     }
 
     public final C0308i0 d() {
         C0308i0 c0308i0;
         synchronized (this) {
-            c0308i0 = new C0308i0(this.f862a.getString(j.b, "{}"), this.f862a.getLong(k.b, 0L));
+            c0308i0 = new C0308i0(this.f863a.getString(j.b, "{}"), this.f863a.getLong(k.b, 0L));
         }
         return c0308i0;
     }
 
     public final String e() {
-        return this.f862a.getString(m.b, "");
+        return this.f863a.getString(m.b, "");
     }
 
     public final Map<String, Long> f() {
         HashMap hashMap = new HashMap();
         try {
-            String string = this.f862a.getString(q.b, null);
+            String string = this.f863a.getString(q.b, null);
             if (!TextUtils.isEmpty(string)) {
                 JSONObject jSONObject = new JSONObject(string);
                 Iterator<String> keys = jSONObject.keys();
@@ -83,7 +83,7 @@ public final class Xe extends AbstractC0747zd implements Co {
         String str = n.b;
         List emptyList = Collections.emptyList();
         String[] strArr = emptyList == null ? null : (String[]) emptyList.toArray(new String[emptyList.size()]);
-        String string = this.f862a.getString(str, null);
+        String string = this.f863a.getString(str, null);
         if (!TextUtils.isEmpty(string)) {
             try {
                 JSONArray jSONArray = new JSONArray(string);
@@ -101,21 +101,21 @@ public final class Xe extends AbstractC0747zd implements Co {
     }
 
     public final int h() {
-        return this.f862a.getInt(l.b, -1);
+        return this.f863a.getInt(l.b, -1);
     }
 
     public final long i() {
-        return this.f862a.getLong(h.b, 0L);
+        return this.f863a.getLong(h.b, 0L);
     }
 
     public final String j() {
-        return this.f862a.getString(i.b, null);
+        return this.f863a.getString(i.b, null);
     }
 
     public final Map<Integer, String> k() {
         HashMap hashMap = new HashMap();
         try {
-            String string = this.f862a.getString(p.b, null);
+            String string = this.f863a.getString(p.b, null);
             if (string != null) {
                 JSONObject jSONObject = new JSONObject(string);
                 Iterator<String> keys = jSONObject.keys();
@@ -141,7 +141,7 @@ public final class Xe extends AbstractC0747zd implements Co {
     }
 
     public final String h(String str) {
-        return this.f862a.getString(new Ze(r, str).b, "");
+        return this.f863a.getString(new Ze(r, str).b, "");
     }
 
     public final Xe i(String str) {
@@ -174,12 +174,12 @@ public final class Xe extends AbstractC0747zd implements Co {
     }
 
     public final boolean a(boolean z) {
-        return this.f862a.getBoolean(s.b, z);
+        return this.f863a.getBoolean(s.b, z);
     }
 
     @Override // io.appmetrica.analytics.impl.Co
     public final String a() {
-        return this.f862a.getString(o.b, null);
+        return this.f863a.getString(o.b, null);
     }
 
     @Override // io.appmetrica.analytics.impl.Co

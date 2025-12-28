@@ -9,6 +9,6 @@ import kotlin.jvm.internal.Intrinsics;
 public final class ServerModelKt {
     public static final ServerModel toDomain(ServersApiModelItem serversApiModelItem, boolean z, boolean z2) {
         Intrinsics.checkNotNullParameter(serversApiModelItem, "<this>");
-        return new ServerModel(serversApiModelItem.getNumber(), serversApiModelItem.getName(), serversApiModelItem.getIp(), serversApiModelItem.getPort(), serversApiModelItem.getOnline(), serversApiModelItem.getMaxplayers(), serversApiModelItem.getPassword(), serversApiModelItem.getVk(), serversApiModelItem.getTg(), serversApiModelItem.getInst(), serversApiModelItem.getIcon(), serversApiModelItem.getAdditionalIps(), serversApiModelItem.getPlotPoints(), serversApiModelItem.getXdonate(), serversApiModelItem.getXpayday(), serversApiModelItem.isTop(), serversApiModelItem.isNew(), false, z, z2, 131072, null);
+        return new ServerModel(serversApiModelItem.getNumber(), serversApiModelItem.getName(), serversApiModelItem.getIp(), serversApiModelItem.getPort(), serversApiModelItem.getOnline(), serversApiModelItem.getQueue(), serversApiModelItem.getMaxplayers(), serversApiModelItem.getPassword(), serversApiModelItem.getVk(), serversApiModelItem.getTg(), serversApiModelItem.getInst(), serversApiModelItem.getIcon(), serversApiModelItem.getAdditionalIps(), serversApiModelItem.getPlotPoints(), serversApiModelItem.getXdonate(), serversApiModelItem.getXpayday(), serversApiModelItem.isTop(), serversApiModelItem.isNew(), false, z, z2, 262144, null);
     }
 }

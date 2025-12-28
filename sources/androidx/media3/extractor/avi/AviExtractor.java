@@ -4,7 +4,6 @@ import androidx.media3.common.C;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.ParserException;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.extractor.Extractor;
@@ -16,6 +15,7 @@ import androidx.media3.extractor.SeekMap;
 import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.text.SubtitleParser;
 import androidx.media3.extractor.text.SubtitleTranscodingExtractorOutput;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.UnmodifiableIterator;
 import java.io.IOException;
 import java.lang.annotation.Documented;
@@ -174,7 +174,7 @@ public final class AviExtractor implements Extractor {
                     this.moviStart = position2;
                     this.moviEnd = position2 + this.chunkHeaderHolder.size + 8;
                     if (!this.seekMapHasBeenOutput) {
-                        if (((AviMainHeaderChunk) Assertions.checkNotNull(this.aviHeader)).hasIndex()) {
+                        if (((AviMainHeaderChunk) Preconditions.checkNotNull(this.aviHeader)).hasIndex()) {
                             this.state = 4;
                             this.pendingReposition = this.moviEnd;
                             return 0;

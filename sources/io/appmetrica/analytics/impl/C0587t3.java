@@ -7,11 +7,11 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0587t3 implements R7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0562s3 f1225a;
+    public final C0562s3 f1226a;
     public final List b;
 
     public C0587t3(C0562s3 c0562s3, List<C0562s3> list) {
-        this.f1225a = c0562s3;
+        this.f1226a = c0562s3;
         this.b = list;
     }
 
@@ -21,11 +21,11 @@ public final class C0587t3 implements R7 {
 
     @Override // io.appmetrica.analytics.impl.R7
     public final Object b() {
-        return this.f1225a;
+        return this.f1226a;
     }
 
     public final C0562s3 c() {
-        return this.f1225a;
+        return this.f1226a;
     }
 
     public final List<C0562s3> d() {
@@ -33,7 +33,7 @@ public final class C0587t3 implements R7 {
     }
 
     public final C0562s3 e() {
-        return this.f1225a;
+        return this.f1226a;
     }
 
     public final boolean equals(Object obj) {
@@ -42,22 +42,22 @@ public final class C0587t3 implements R7 {
         }
         if (obj instanceof C0587t3) {
             C0587t3 c0587t3 = (C0587t3) obj;
-            return Intrinsics.areEqual(this.f1225a, c0587t3.f1225a) && Intrinsics.areEqual(this.b, c0587t3.b);
+            return Intrinsics.areEqual(this.f1226a, c0587t3.f1226a) && Intrinsics.areEqual(this.b, c0587t3.b);
         }
         return false;
     }
 
     public final int hashCode() {
-        return this.b.hashCode() + (this.f1225a.hashCode() * 31);
+        return this.b.hashCode() + (this.f1226a.hashCode() * 31);
     }
 
     public final String toString() {
-        return "ClidsInfo(chosen=" + this.f1225a + ", candidates=" + this.b + ')';
+        return "ClidsInfo(chosen=" + this.f1226a + ", candidates=" + this.b + ')';
     }
 
     public static C0587t3 a(C0587t3 c0587t3, C0562s3 c0562s3, List list, int i, Object obj) {
         if ((i & 1) != 0) {
-            c0562s3 = c0587t3.f1225a;
+            c0562s3 = c0587t3.f1226a;
         }
         if ((i & 2) != 0) {
             list = c0587t3.b;

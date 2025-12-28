@@ -1,7 +1,8 @@
 package androidx.media3.container;
 
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ParsableBitArray;
+import com.google.common.base.Preconditions;
+import java.nio.BufferUnderflowException;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,20 +31,26 @@ public final class ObuParser {
         ByteBuffer asReadOnlyBuffer = byteBuffer.asReadOnlyBuffer();
         ArrayList arrayList = new ArrayList();
         while (asReadOnlyBuffer.hasRemaining()) {
-            byte b = asReadOnlyBuffer.get();
-            int i = (b >> 3) & 15;
-            if (((b >> 2) & 1) != 0) {
-                asReadOnlyBuffer.get();
+            try {
+                byte b = asReadOnlyBuffer.get();
+                int i = (b >> 3) & 15;
+                if (((b >> 2) & 1) != 0) {
+                    asReadOnlyBuffer.get();
+                }
+                if (((b >> 1) & 1) != 0) {
+                    remaining = leb128(asReadOnlyBuffer);
+                } else {
+                    remaining = asReadOnlyBuffer.remaining();
+                }
+                if (asReadOnlyBuffer.position() + remaining > asReadOnlyBuffer.limit()) {
+                    break;
+                }
+                ByteBuffer duplicate = asReadOnlyBuffer.duplicate();
+                duplicate.limit(asReadOnlyBuffer.position() + remaining);
+                arrayList.add(new Obu(i, duplicate));
+                asReadOnlyBuffer.position(asReadOnlyBuffer.position() + remaining);
+            } catch (BufferUnderflowException unused) {
             }
-            if (((b >> 1) & 1) != 0) {
-                remaining = leb128(asReadOnlyBuffer);
-            } else {
-                remaining = asReadOnlyBuffer.remaining();
-            }
-            ByteBuffer duplicate = asReadOnlyBuffer.duplicate();
-            duplicate.limit(asReadOnlyBuffer.position() + remaining);
-            arrayList.add(new Obu(i, duplicate));
-            asReadOnlyBuffer.position(asReadOnlyBuffer.position() + remaining);
         }
         return arrayList;
     }
@@ -100,7 +107,7 @@ public final class ObuParser {
             int i2;
             boolean z;
             ?? r8;
-            Assertions.checkArgument(obu.type == 1);
+            Preconditions.checkArgument(obu.type == 1);
             byte[] bArr = new byte[obu.payload.remaining()];
             obu.payload.asReadOnlyBuffer().get(bArr);
             ParsableBitArray parsableBitArray = new ParsableBitArray(bArr);
@@ -310,7 +317,7 @@ public final class ObuParser {
         }
 
         private FrameHeader(SequenceHeader sequenceHeader, Obu obu) throws NotYetImplementedException {
-            Assertions.checkArgument(obu.type == 6 || obu.type == 3);
+            Preconditions.checkArgument(obu.type == 6 || obu.type == 3);
             byte[] bArr = new byte[Math.min(4, obu.payload.remaining())];
             obu.payload.asReadOnlyBuffer().get(bArr);
             ParsableBitArray parsableBitArray = new ParsableBitArray(bArr);

@@ -11,7 +11,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.google.android.material.button.MaterialButton;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class InputPopupBinding implements ViewBinding {
     public final ConstraintLayout layout;
     public final LinearLayout mainInput;

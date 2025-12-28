@@ -6,7 +6,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public class O5 extends BaseRequestConfig {
 
     /* renamed from: a  reason: collision with root package name */
-    public String f714a;
+    public String f715a;
     public String b;
     public C0278gm c;
 
@@ -16,10 +16,10 @@ public class O5 extends BaseRequestConfig {
 
     @Override // io.appmetrica.analytics.networktasks.internal.BaseRequestConfig
     public String toString() {
-        return "CoreRequestConfig{mAppDebuggable='" + this.f714a + "', mAppSystem='" + this.b + "', startupState=" + this.c + AbstractJsonLexerKt.END_OBJ;
+        return "CoreRequestConfig{mAppDebuggable='" + this.f715a + "', mAppSystem='" + this.b + "', startupState=" + this.c + AbstractJsonLexerKt.END_OBJ;
     }
 
     public final String a() {
-        return this.f714a;
+        return this.f715a;
     }
 }

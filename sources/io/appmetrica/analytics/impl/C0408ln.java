@@ -12,21 +12,21 @@ import java.util.Map;
 public final class C0408ln implements InterfaceC0382kn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashMap f1094a;
+    public final HashMap f1095a;
 
     public C0408ln(String str, HashMap<String, List<String>> hashMap) {
-        this.f1094a = hashMap;
+        this.f1095a = hashMap;
     }
 
     public final HashMap<String, List<String>> a() {
-        return this.f1094a;
+        return this.f1095a;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0382kn
     public final boolean a(SQLiteDatabase sQLiteDatabase) {
         try {
             boolean z = true;
-            for (Map.Entry entry : this.f1094a.entrySet()) {
+            for (Map.Entry entry : this.f1095a.entrySet()) {
                 SQLiteDatabase sQLiteDatabase2 = sQLiteDatabase;
                 Cursor query = sQLiteDatabase2.query((String) entry.getKey(), null, null, null, null, null, null);
                 if (query == null) {

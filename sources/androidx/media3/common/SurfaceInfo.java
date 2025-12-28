@@ -1,7 +1,7 @@
 package androidx.media3.common;
 
 import android.view.Surface;
-import androidx.media3.common.util.Assertions;
+import com.google.common.base.Preconditions;
 /* loaded from: classes2.dex */
 public final class SurfaceInfo {
     public final int height;
@@ -19,7 +19,7 @@ public final class SurfaceInfo {
     }
 
     public SurfaceInfo(Surface surface, int i, int i2, int i3, boolean z) {
-        Assertions.checkArgument(i3 == 0 || i3 == 90 || i3 == 180 || i3 == 270, "orientationDegrees must be 0, 90, 180, or 270");
+        Preconditions.checkArgument(i3 == 0 || i3 == 90 || i3 == 180 || i3 == 270, "orientationDegrees must be 0, 90, 180, or 270");
         this.surface = surface;
         this.width = i;
         this.height = i2;

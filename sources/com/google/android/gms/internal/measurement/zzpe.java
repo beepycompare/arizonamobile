@@ -1,11 +1,11 @@
 package com.google.android.gms.internal.measurement;
 
 import android.support.v4.media.session.PlaybackStateCompat;
-import androidx.compose.material3.internal.CalendarModelKt;
 import androidx.media3.common.C;
 import androidx.media3.exoplayer.Renderer;
 import androidx.media3.exoplayer.audio.SilenceSkippingAudioProcessor;
 import com.adjust.sdk.Constants;
+import kotlin.time.DurationKt;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes4.dex */
 public final class zzpe implements zzpd {
@@ -88,17 +88,17 @@ public final class zzpe implements zzpd {
     static {
         zzkg zzb2 = new zzkg(zzkb.zza("com.google.android.gms.measurement")).zza().zzb();
         zza = zzb2.zzc("measurement.ad_id_cache_time", Renderer.DEFAULT_DURATION_TO_PROGRESS_US);
-        zzb = zzb2.zzc("measurement.app_uninstalled_additional_ad_id_cache_time", 3600000L);
+        zzb = zzb2.zzc("measurement.app_uninstalled_additional_ad_id_cache_time", DurationKt.MILLIS_IN_HOUR);
         zzc = zzb2.zzd("measurement.config.bundle_for_all_apps_on_backgrounded", true);
         zzd = zzb2.zzc("measurement.max_bundles_per_iteration", 100L);
         zze = zzb2.zzf("measurement.gbraid_campaign.campaign_params_triggering_info_update", "gclid,gbraid,gad_campaignid");
-        zzf = zzb2.zzc("measurement.config.cache_time", CalendarModelKt.MillisecondsIn24Hours);
+        zzf = zzb2.zzc("measurement.config.cache_time", 86400000L);
         zzb2.zzf("measurement.log_tag", "FA");
         zzg = zzb2.zzf("measurement.config.url_authority", "app-measurement.com");
         zzh = zzb2.zzf("measurement.config.url_scheme", Constants.SCHEME);
         zzi = zzb2.zzc("measurement.upload.debug_upload_interval", 1000L);
         zzb2.zzd("measurement.config.default_flag_values", true);
-        zzj = zzb2.zzc("measurement.session.engagement_interval", 3600000L);
+        zzj = zzb2.zzc("measurement.session.engagement_interval", DurationKt.MILLIS_IN_HOUR);
         zzk = zzb2.zzf("measurement.rb.attribution.event_params", "value|currency");
         zzl = zzb2.zzf("measurement.edpb.events_cached_in_no_data_mode", "_f,_v,_cmp");
         zzm = zzb2.zzc("measurement.upload.google_signal_max_queue_time", 605000L);
@@ -116,13 +116,13 @@ public final class zzpe implements zzpd {
         zzx = zzb2.zzc("measurement.rb.attribution.client.min_ad_services_version", 7L);
         zzy = zzb2.zzc("measurement.alarm_manager.minimum_interval", 60000L);
         zzz = zzb2.zzc("measurement.upload.minimum_delay", 500L);
-        zzA = zzb2.zzc("measurement.monitoring.sample_period_millis", CalendarModelKt.MillisecondsIn24Hours);
+        zzA = zzb2.zzc("measurement.monitoring.sample_period_millis", 86400000L);
         zzB = zzb2.zzc("measurement.rb.attribution.notify_app_delay_millis", C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS);
         zzC = zzb2.zzd("measurement.config.notify_trigger_uris_on_backgrounded", true);
         zzD = zzb2.zzf("measurement.rb.attribution.app_allowlist", "");
         zzE = zzb2.zzc("measurement.upload.realtime_upload_interval", Renderer.DEFAULT_DURATION_TO_PROGRESS_US);
         zzF = zzb2.zzc("measurement.upload.refresh_blacklisted_config_interval", 604800000L);
-        zzb2.zzc("measurement.config.cache_time.service", 3600000L);
+        zzb2.zzc("measurement.config.cache_time.service", DurationKt.MILLIS_IN_HOUR);
         zzG = zzb2.zzc("measurement.service_client.idle_disconnect_millis", 5000L);
         zzb2.zzf("measurement.log_tag.service", "FA-SVC");
         zzH = zzb2.zzc("measurement.service_client.reconnect_millis", 1000L);
@@ -140,7 +140,7 @@ public final class zzpe implements zzpd {
         zzS = zzb2.zzc("measurement.sgtm.upload.min_delay_after_startup", 5000L);
         zzT = zzb2.zzc("measurement.sgtm.upload.retry_interval", 600000L);
         zzU = zzb2.zzc("measurement.sgtm.upload.retry_max_wait", 21600000L);
-        zzV = zzb2.zzc("measurement.upload.stale_data_deletion_interval", CalendarModelKt.MillisecondsIn24Hours);
+        zzV = zzb2.zzc("measurement.upload.stale_data_deletion_interval", 86400000L);
         zzW = zzb2.zzc("measurement.rb.attribution.max_retry_delay_seconds", 16L);
         zzX = zzb2.zzc("measurement.rb.attribution.client.min_time_after_boot_seconds", 90L);
         zzY = zzb2.zzf("measurement.rb.attribution.uri_authority", "google-analytics.com");
@@ -152,7 +152,7 @@ public final class zzpe implements zzpd {
         zzae = zzb2.zzc("measurement.redaction.app_instance_id.ttl", 7200000L);
         zzaf = zzb2.zzc("measurement.upload.backoff_period", 43200000L);
         zzag = zzb2.zzc("measurement.upload.initial_upload_delay_time", 15000L);
-        zzah = zzb2.zzc("measurement.upload.interval", 3600000L);
+        zzah = zzb2.zzc("measurement.upload.interval", DurationKt.MILLIS_IN_HOUR);
         zzai = zzb2.zzc("measurement.upload.max_bundle_size", PlaybackStateCompat.ACTION_PREPARE_FROM_SEARCH);
         zzaj = zzb2.zzc("measurement.upload.max_bundles", 100L);
         zzak = zzb2.zzc("measurement.upload.max_conversions_per_day", 500L);
@@ -166,7 +166,7 @@ public final class zzpe implements zzpd {
         zzas = zzb2.zzc("measurement.upload.retry_count", 6L);
         zzat = zzb2.zzc("measurement.upload.retry_time", 1800000L);
         zzau = zzb2.zzf("measurement.upload.url", "https://app-measurement.com/a");
-        zzav = zzb2.zzc("measurement.upload.window_interval", 3600000L);
+        zzav = zzb2.zzc("measurement.upload.window_interval", DurationKt.MILLIS_IN_HOUR);
         zzaw = zzb2.zzf("measurement.rb.attribution.user_properties", "_npa,npa|_fot,fot");
     }
 

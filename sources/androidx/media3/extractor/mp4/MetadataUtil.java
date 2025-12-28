@@ -16,6 +16,7 @@ import androidx.media3.extractor.metadata.id3.Id3Util;
 import androidx.media3.extractor.metadata.id3.InternalFrame;
 import androidx.media3.extractor.metadata.id3.TextInformationFrame;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.UnmodifiableIterator;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes3.dex */
 public final class MetadataUtil {
@@ -28,6 +29,8 @@ public final class MetadataUtil {
     private static final int SHORT_TYPE_ENCODER = 7630703;
     private static final int SHORT_TYPE_GENRE = 6776174;
     private static final int SHORT_TYPE_LYRICS = 7108978;
+    private static final int SHORT_TYPE_MOVEMENT_INDEX = 7173737;
+    private static final int SHORT_TYPE_MOVEMENT_NAME = 7173742;
     private static final int SHORT_TYPE_NAME_1 = 7233901;
     private static final int SHORT_TYPE_NAME_2 = 7631467;
     private static final int SHORT_TYPE_YEAR = 6578553;
@@ -61,15 +64,11 @@ public final class MetadataUtil {
             metadata2 = new Metadata(new Metadata.Entry[0]);
         }
         if (metadata != null) {
-            for (int i2 = 0; i2 < metadata.length(); i2++) {
-                Metadata.Entry entry = metadata.get(i2);
-                if (entry instanceof MdtaMetadataEntry) {
-                    MdtaMetadataEntry mdtaMetadataEntry = (MdtaMetadataEntry) entry;
-                    if (!mdtaMetadataEntry.key.equals(MdtaMetadataEntry.KEY_ANDROID_CAPTURE_FPS)) {
-                        metadata2 = metadata2.copyWithAppendedEntries(mdtaMetadataEntry);
-                    } else if (i == 2) {
-                        metadata2 = metadata2.copyWithAppendedEntries(mdtaMetadataEntry);
-                    }
+            UnmodifiableIterator it = metadata.getEntriesOfType(MdtaMetadataEntry.class).iterator();
+            while (it.hasNext()) {
+                MdtaMetadataEntry mdtaMetadataEntry = (MdtaMetadataEntry) it.next();
+                if (!mdtaMetadataEntry.key.equals(MdtaMetadataEntry.KEY_ANDROID_CAPTURE_FPS) || i == 2) {
+                    metadata2 = metadata2.copyWithAppendedEntries(mdtaMetadataEntry);
                 }
             }
         }
@@ -123,6 +122,12 @@ public final class MetadataUtil {
                 }
                 if (i2 == TYPE_GROUPING) {
                     return parseTextAttribute(readInt, "TIT1", parsableByteArray);
+                }
+                if (i2 == SHORT_TYPE_MOVEMENT_NAME) {
+                    return parseTextAttribute(readInt, "MVNM", parsableByteArray);
+                }
+                if (i2 == SHORT_TYPE_MOVEMENT_INDEX) {
+                    return parseIntegerAttribute(readInt, "MVIN", parsableByteArray, true, false);
                 }
             } else if (readInt == TYPE_GENRE) {
                 return parseStandardGenreAttribute(parsableByteArray);
@@ -203,6 +208,7 @@ public final class MetadataUtil {
         }
     }
 
+    @Deprecated
     public static MdtaMetadataEntry findMdtaMetadataEntryWithKey(Metadata metadata, String str) {
         for (int i = 0; i < metadata.length(); i++) {
             Metadata.Entry entry = metadata.get(i);

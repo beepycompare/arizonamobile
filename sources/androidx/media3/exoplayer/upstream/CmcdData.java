@@ -6,12 +6,12 @@ import androidx.media3.common.C;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.TrackGroup;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.UriUtil;
 import androidx.media3.common.util.Util;
 import androidx.media3.datasource.DataSpec;
 import androidx.media3.exoplayer.trackselection.ExoTrackSelection;
 import com.google.common.base.Joiner;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableListMultimap;
@@ -92,7 +92,7 @@ public final class CmcdData {
         }
 
         public Factory setChunkDurationUs(long j) {
-            Assertions.checkArgument(j >= 0);
+            Preconditions.checkArgument(j >= 0);
             this.chunkDurationUs = j;
             return this;
         }
@@ -118,13 +118,13 @@ public final class CmcdData {
         }
 
         public Factory setBufferedDurationUs(long j) {
-            Assertions.checkArgument(j >= 0);
+            Preconditions.checkArgument(j >= 0);
             this.bufferedDurationUs = j;
             return this;
         }
 
         public Factory setPlaybackRate(float f) {
-            Assertions.checkArgument(f == -3.4028235E38f || f > 0.0f);
+            Preconditions.checkArgument(f == -3.4028235E38f || f > 0.0f);
             this.playbackRate = f;
             return this;
         }
@@ -150,16 +150,16 @@ public final class CmcdData {
             int i3;
             boolean isManifestObjectType = isManifestObjectType(this.objectType);
             if (!isManifestObjectType) {
-                Assertions.checkStateNotNull(this.trackSelection, "Track selection must be set");
+                Preconditions.checkNotNull(this.trackSelection, "Track selection must be set");
             }
             if (this.objectType == null) {
-                this.objectType = getObjectTypeFromFormat(((ExoTrackSelection) Assertions.checkNotNull(this.trackSelection)).getSelectedFormat());
+                this.objectType = getObjectTypeFromFormat(((ExoTrackSelection) Preconditions.checkNotNull(this.trackSelection)).getSelectedFormat());
             }
             boolean isMediaObjectType = isMediaObjectType(this.objectType);
             boolean z = true;
             if (isMediaObjectType) {
-                Assertions.checkState(this.bufferedDurationUs != C.TIME_UNSET, "Buffered duration must be set");
-                Assertions.checkState(this.chunkDurationUs != C.TIME_UNSET, "Chunk duration must be set");
+                Preconditions.checkState(this.bufferedDurationUs != C.TIME_UNSET, "Buffered duration must be set");
+                Preconditions.checkState(this.chunkDurationUs != C.TIME_UNSET, "Chunk duration must be set");
             }
             ImmutableListMultimap<String, String> customData = this.cmcdConfiguration.requestConfig.getCustomData();
             UnmodifiableIterator<String> it = customData.keySet().iterator();
@@ -171,7 +171,7 @@ public final class CmcdData {
                 i2 = -2147483647;
                 i3 = -2147483647;
             } else {
-                ExoTrackSelection exoTrackSelection = (ExoTrackSelection) Assertions.checkNotNull(this.trackSelection);
+                ExoTrackSelection exoTrackSelection = (ExoTrackSelection) Preconditions.checkNotNull(this.trackSelection);
                 int i4 = exoTrackSelection.getSelectedFormat().bitrate;
                 i = Util.ceilDivide(i4, 1000);
                 TrackGroup trackGroup = exoTrackSelection.getTrackGroup();
@@ -236,7 +236,7 @@ public final class CmcdData {
                 builder3.setStreamingFormat(this.streamingFormat);
             }
             if (this.isLive != null && this.cmcdConfiguration.isStreamTypeLoggingAllowed()) {
-                builder3.setStreamType(((Boolean) Assertions.checkNotNull(this.isLive)).booleanValue() ? CmcdData.STREAM_TYPE_LIVE : "v");
+                builder3.setStreamType(((Boolean) Preconditions.checkNotNull(this.isLive)).booleanValue() ? CmcdData.STREAM_TYPE_LIVE : "v");
             }
             if (this.cmcdConfiguration.isPlaybackRateLoggingAllowed()) {
                 builder3.setPlaybackRate(this.playbackRate);
@@ -286,7 +286,7 @@ public final class CmcdData {
 
         private void validateCustomDataListFormat(List<String> list) {
             for (String str : list) {
-                Assertions.checkState(CUSTOM_KEY_NAME_PATTERN.matcher(Util.split(str, "=")[0]).matches());
+                Preconditions.checkState(CUSTOM_KEY_NAME_PATTERN.matcher(Util.split(str, "=")[0]).matches());
             }
         }
     }
@@ -323,8 +323,9 @@ public final class CmcdData {
     }
 
     public static DataSpec removeFromDataSpec(DataSpec dataSpec) {
-        if (dataSpec.uri.getQueryParameter(CmcdConfiguration.CMCD_QUERY_PARAMETER_KEY) != null) {
-            dataSpec = dataSpec.withUri(removeFromUri(dataSpec.uri));
+        Uri removeFromUri = removeFromUri(dataSpec.uri);
+        if (!Objects.equals(removeFromUri, dataSpec.uri)) {
+            dataSpec = dataSpec.withUri(removeFromUri);
         }
         if (dataSpec.httpRequestHeaders.containsKey(CmcdConfiguration.KEY_CMCD_OBJECT) || dataSpec.httpRequestHeaders.containsKey(CmcdConfiguration.KEY_CMCD_REQUEST) || dataSpec.httpRequestHeaders.containsKey(CmcdConfiguration.KEY_CMCD_STATUS) || dataSpec.httpRequestHeaders.containsKey(CmcdConfiguration.KEY_CMCD_SESSION)) {
             ImmutableMap.Builder builder = ImmutableMap.builder();
@@ -339,7 +340,7 @@ public final class CmcdData {
     }
 
     public static Uri removeFromUri(Uri uri) {
-        return uri.getQueryParameter(CmcdConfiguration.CMCD_QUERY_PARAMETER_KEY) != null ? UriUtil.removeQueryParameter(uri, CmcdConfiguration.CMCD_QUERY_PARAMETER_KEY) : uri;
+        return (!uri.isHierarchical() || uri.getQueryParameter(CmcdConfiguration.CMCD_QUERY_PARAMETER_KEY) == null) ? uri : UriUtil.removeQueryParameter(uri, CmcdConfiguration.CMCD_QUERY_PARAMETER_KEY);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -360,19 +361,19 @@ public final class CmcdData {
             private ImmutableList<String> customDataList = ImmutableList.of();
 
             public Builder setBitrateKbps(int i) {
-                Assertions.checkArgument(i >= 0 || i == -2147483647);
+                Preconditions.checkArgument(i >= 0 || i == -2147483647);
                 this.bitrateKbps = i;
                 return this;
             }
 
             public Builder setTopBitrateKbps(int i) {
-                Assertions.checkArgument(i >= 0 || i == -2147483647);
+                Preconditions.checkArgument(i >= 0 || i == -2147483647);
                 this.topBitrateKbps = i;
                 return this;
             }
 
             public Builder setObjectDurationMs(long j) {
-                Assertions.checkArgument(j >= 0 || j == C.TIME_UNSET);
+                Preconditions.checkArgument(j >= 0 || j == C.TIME_UNSET);
                 this.objectDurationMs = j;
                 return this;
             }
@@ -563,13 +564,13 @@ public final class CmcdData {
             private ImmutableList<String> customDataList = ImmutableList.of();
 
             public Builder setContentId(String str) {
-                Assertions.checkArgument(str == null || str.length() <= 64);
+                Preconditions.checkArgument(str == null || str.length() <= 64);
                 this.contentId = str;
                 return this;
             }
 
             public Builder setSessionId(String str) {
-                Assertions.checkArgument(str == null || str.length() <= 64);
+                Preconditions.checkArgument(str == null || str.length() <= 64);
                 this.sessionId = str;
                 return this;
             }
@@ -585,7 +586,7 @@ public final class CmcdData {
             }
 
             public Builder setPlaybackRate(float f) {
-                Assertions.checkArgument(f > 0.0f || f == -3.4028235E38f);
+                Preconditions.checkArgument(f > 0.0f || f == -3.4028235E38f);
                 this.playbackRate = f;
                 return this;
             }
@@ -649,7 +650,7 @@ public final class CmcdData {
             private ImmutableList<String> customDataList = ImmutableList.of();
 
             public Builder setMaximumRequestedThroughputKbps(int i) {
-                Assertions.checkArgument(i >= 0 || i == -2147483647);
+                Preconditions.checkArgument(i >= 0 || i == -2147483647);
                 if (i != -2147483647) {
                     i = ((i + 50) / 100) * 100;
                 }

@@ -1,7 +1,6 @@
 package androidx.media3.extractor.flv;
 
 import androidx.media3.common.C;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.extractor.Extractor;
 import androidx.media3.extractor.ExtractorInput;
@@ -10,6 +9,7 @@ import androidx.media3.extractor.ExtractorsFactory;
 import androidx.media3.extractor.IndexSeekMap;
 import androidx.media3.extractor.PositionHolder;
 import androidx.media3.extractor.SeekMap;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
 /* loaded from: classes3.dex */
@@ -96,7 +96,7 @@ public final class FlvExtractor implements Extractor {
 
     @Override // androidx.media3.extractor.Extractor
     public int read(ExtractorInput extractorInput, PositionHolder positionHolder) throws IOException {
-        Assertions.checkStateNotNull(this.extractorOutput);
+        Preconditions.checkNotNull(this.extractorOutput);
         while (true) {
             int i = this.state;
             if (i != 1) {

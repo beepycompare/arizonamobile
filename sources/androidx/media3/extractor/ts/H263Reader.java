@@ -3,7 +3,6 @@ package androidx.media3.extractor.ts;
 import androidx.media3.common.C;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.ParsableBitArray;
 import androidx.media3.common.util.ParsableByteArray;
@@ -12,6 +11,7 @@ import androidx.media3.container.NalUnitUtil;
 import androidx.media3.extractor.ExtractorOutput;
 import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.ts.TsPayloadReader;
+import com.google.common.base.Preconditions;
 import java.util.Arrays;
 import java.util.Collections;
 /* loaded from: classes3.dex */
@@ -94,8 +94,8 @@ public final class H263Reader implements ElementaryStreamReader {
 
     @Override // androidx.media3.extractor.ts.ElementaryStreamReader
     public void consume(ParsableByteArray parsableByteArray) {
-        Assertions.checkStateNotNull(this.sampleReader);
-        Assertions.checkStateNotNull(this.output);
+        Preconditions.checkNotNull(this.sampleReader);
+        Preconditions.checkNotNull(this.output);
         int position = parsableByteArray.getPosition();
         int limit = parsableByteArray.limit();
         byte[] data = parsableByteArray.getData();
@@ -117,7 +117,7 @@ public final class H263Reader implements ElementaryStreamReader {
                 if (this.csdBuffer.onStartCode(i2, i3 < 0 ? -i3 : 0)) {
                     TrackOutput trackOutput = this.output;
                     CsdBuffer csdBuffer = this.csdBuffer;
-                    trackOutput.format(parseCsdBuffer(csdBuffer, csdBuffer.volStartPosition, (String) Assertions.checkNotNull(this.formatId), this.containerMimeType));
+                    trackOutput.format(parseCsdBuffer(csdBuffer, csdBuffer.volStartPosition, (String) Preconditions.checkNotNull(this.formatId), this.containerMimeType));
                     this.hasOutputFormat = true;
                 }
             }
@@ -154,7 +154,7 @@ public final class H263Reader implements ElementaryStreamReader {
 
     @Override // androidx.media3.extractor.ts.ElementaryStreamReader
     public void packetFinished(boolean z) {
-        Assertions.checkStateNotNull(this.sampleReader);
+        Preconditions.checkNotNull(this.sampleReader);
         if (z) {
             this.sampleReader.onDataEnd(this.totalBytesWritten, 0, this.hasOutputFormat);
             this.sampleReader.reset();
@@ -362,7 +362,7 @@ public final class H263Reader implements ElementaryStreamReader {
         }
 
         public void onDataEnd(long j, int i, boolean z) {
-            Assertions.checkState(this.sampleTimeUs != C.TIME_UNSET);
+            Preconditions.checkState(this.sampleTimeUs != C.TIME_UNSET);
             if (this.startCodeValue == H263Reader.START_CODE_VALUE_VOP && z && this.readingSample) {
                 this.output.sampleMetadata(this.sampleTimeUs, this.sampleIsKeyframe ? 1 : 0, (int) (j - this.samplePosition), i, null);
             }

@@ -42,6 +42,7 @@ public final class PlayerControlViewLayoutManager {
     private final AnimatorSet showMainBarAnimator;
     private final View timeBar;
     private final ViewGroup timeView;
+    private final ViewGroup topControls;
     private final Runnable showAllBarsRunnable = new Runnable() { // from class: androidx.media3.ui.PlayerControlViewLayoutManager$$ExternalSyntheticLambda5
         @Override // java.lang.Runnable
         public final void run() {
@@ -84,6 +85,7 @@ public final class PlayerControlViewLayoutManager {
 
     public PlayerControlViewLayoutManager(final PlayerControlView playerControlView) {
         this.playerControlView = playerControlView;
+        this.topControls = (ViewGroup) playerControlView.findViewById(R.id.exo_top_controls);
         this.controlsBackground = playerControlView.findViewById(R.id.exo_controls_background);
         this.centerControls = (ViewGroup) playerControlView.findViewById(R.id.exo_center_controls);
         this.minimalControls = (ViewGroup) playerControlView.findViewById(R.id.exo_minimal_controls);
@@ -117,7 +119,7 @@ public final class PlayerControlViewLayoutManager {
         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: androidx.media3.ui.PlayerControlViewLayoutManager$$ExternalSyntheticLambda2
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                PlayerControlViewLayoutManager.this.m9079lambda$new$0$androidxmedia3uiPlayerControlViewLayoutManager(valueAnimator);
+                PlayerControlViewLayoutManager.this.m9094lambda$new$0$androidxmedia3uiPlayerControlViewLayoutManager(valueAnimator);
             }
         });
         ofFloat.addListener(new AnimatorListenerAdapter() { // from class: androidx.media3.ui.PlayerControlViewLayoutManager.1
@@ -134,6 +136,9 @@ public final class PlayerControlViewLayoutManager {
                 if (PlayerControlViewLayoutManager.this.controlsBackground != null) {
                     PlayerControlViewLayoutManager.this.controlsBackground.setVisibility(4);
                 }
+                if (PlayerControlViewLayoutManager.this.topControls != null) {
+                    PlayerControlViewLayoutManager.this.topControls.setVisibility(4);
+                }
                 if (PlayerControlViewLayoutManager.this.centerControls != null) {
                     PlayerControlViewLayoutManager.this.centerControls.setVisibility(4);
                 }
@@ -147,7 +152,7 @@ public final class PlayerControlViewLayoutManager {
         ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: androidx.media3.ui.PlayerControlViewLayoutManager$$ExternalSyntheticLambda3
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                PlayerControlViewLayoutManager.this.m9080lambda$new$1$androidxmedia3uiPlayerControlViewLayoutManager(valueAnimator);
+                PlayerControlViewLayoutManager.this.m9095lambda$new$1$androidxmedia3uiPlayerControlViewLayoutManager(valueAnimator);
             }
         });
         ofFloat2.addListener(new AnimatorListenerAdapter() { // from class: androidx.media3.ui.PlayerControlViewLayoutManager.2
@@ -155,6 +160,9 @@ public final class PlayerControlViewLayoutManager {
             public void onAnimationStart(Animator animator) {
                 if (PlayerControlViewLayoutManager.this.controlsBackground != null) {
                     PlayerControlViewLayoutManager.this.controlsBackground.setVisibility(0);
+                }
+                if (PlayerControlViewLayoutManager.this.topControls != null) {
+                    PlayerControlViewLayoutManager.this.topControls.setVisibility(0);
                 }
                 if (PlayerControlViewLayoutManager.this.centerControls != null) {
                     PlayerControlViewLayoutManager.this.centerControls.setVisibility(0);
@@ -264,7 +272,7 @@ public final class PlayerControlViewLayoutManager {
         ofFloat3.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: androidx.media3.ui.PlayerControlViewLayoutManager$$ExternalSyntheticLambda6
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                PlayerControlViewLayoutManager.this.m9081lambda$new$2$androidxmedia3uiPlayerControlViewLayoutManager(valueAnimator);
+                PlayerControlViewLayoutManager.this.m9096lambda$new$2$androidxmedia3uiPlayerControlViewLayoutManager(valueAnimator);
             }
         });
         ofFloat3.addListener(new AnimatorListenerAdapter() { // from class: androidx.media3.ui.PlayerControlViewLayoutManager.8
@@ -290,7 +298,7 @@ public final class PlayerControlViewLayoutManager {
         ofFloat4.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: androidx.media3.ui.PlayerControlViewLayoutManager$$ExternalSyntheticLambda7
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                PlayerControlViewLayoutManager.this.m9082lambda$new$3$androidxmedia3uiPlayerControlViewLayoutManager(valueAnimator);
+                PlayerControlViewLayoutManager.this.m9097lambda$new$3$androidxmedia3uiPlayerControlViewLayoutManager(valueAnimator);
             }
         });
         ofFloat4.addListener(new AnimatorListenerAdapter() { // from class: androidx.media3.ui.PlayerControlViewLayoutManager.9
@@ -312,49 +320,57 @@ public final class PlayerControlViewLayoutManager {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$androidx-media3-ui-PlayerControlViewLayoutManager  reason: not valid java name */
-    public /* synthetic */ void m9079lambda$new$0$androidxmedia3uiPlayerControlViewLayoutManager(ValueAnimator valueAnimator) {
+    public /* synthetic */ void m9094lambda$new$0$androidxmedia3uiPlayerControlViewLayoutManager(ValueAnimator valueAnimator) {
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         View view = this.controlsBackground;
         if (view != null) {
             view.setAlpha(floatValue);
         }
-        ViewGroup viewGroup = this.centerControls;
+        ViewGroup viewGroup = this.topControls;
         if (viewGroup != null) {
             viewGroup.setAlpha(floatValue);
         }
-        ViewGroup viewGroup2 = this.minimalControls;
+        ViewGroup viewGroup2 = this.centerControls;
         if (viewGroup2 != null) {
             viewGroup2.setAlpha(floatValue);
+        }
+        ViewGroup viewGroup3 = this.minimalControls;
+        if (viewGroup3 != null) {
+            viewGroup3.setAlpha(floatValue);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$1$androidx-media3-ui-PlayerControlViewLayoutManager  reason: not valid java name */
-    public /* synthetic */ void m9080lambda$new$1$androidxmedia3uiPlayerControlViewLayoutManager(ValueAnimator valueAnimator) {
+    public /* synthetic */ void m9095lambda$new$1$androidxmedia3uiPlayerControlViewLayoutManager(ValueAnimator valueAnimator) {
         float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         View view = this.controlsBackground;
         if (view != null) {
             view.setAlpha(floatValue);
         }
-        ViewGroup viewGroup = this.centerControls;
+        ViewGroup viewGroup = this.topControls;
         if (viewGroup != null) {
             viewGroup.setAlpha(floatValue);
         }
-        ViewGroup viewGroup2 = this.minimalControls;
+        ViewGroup viewGroup2 = this.centerControls;
         if (viewGroup2 != null) {
             viewGroup2.setAlpha(floatValue);
+        }
+        ViewGroup viewGroup3 = this.minimalControls;
+        if (viewGroup3 != null) {
+            viewGroup3.setAlpha(floatValue);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$2$androidx-media3-ui-PlayerControlViewLayoutManager  reason: not valid java name */
-    public /* synthetic */ void m9081lambda$new$2$androidxmedia3uiPlayerControlViewLayoutManager(ValueAnimator valueAnimator) {
+    public /* synthetic */ void m9096lambda$new$2$androidxmedia3uiPlayerControlViewLayoutManager(ValueAnimator valueAnimator) {
         animateOverflow(((Float) valueAnimator.getAnimatedValue()).floatValue());
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$3$androidx-media3-ui-PlayerControlViewLayoutManager  reason: not valid java name */
-    public /* synthetic */ void m9082lambda$new$3$androidxmedia3uiPlayerControlViewLayoutManager(ValueAnimator valueAnimator) {
+    public /* synthetic */ void m9097lambda$new$3$androidxmedia3uiPlayerControlViewLayoutManager(ValueAnimator valueAnimator) {
         animateOverflow(((Float) valueAnimator.getAnimatedValue()).floatValue());
     }
 
@@ -626,7 +642,7 @@ public final class PlayerControlViewLayoutManager {
 
     private boolean shouldHideInMinimalMode(View view) {
         int id = view.getId();
-        return id == R.id.exo_bottom_bar || id == R.id.exo_prev || id == R.id.exo_next || id == R.id.exo_rew || id == R.id.exo_rew_with_amount || id == R.id.exo_ffwd || id == R.id.exo_ffwd_with_amount;
+        return id == R.id.exo_bottom_bar || id == R.id.exo_media_route_button_placeholder || id == R.id.exo_prev || id == R.id.exo_next || id == R.id.exo_rew || id == R.id.exo_rew_with_amount || id == R.id.exo_ffwd || id == R.id.exo_ffwd_with_amount;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

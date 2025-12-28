@@ -4,7 +4,6 @@ import androidx.media3.common.C;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.ParserException;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Consumer;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
@@ -15,6 +14,7 @@ import androidx.media3.extractor.IndexSeekMap;
 import androidx.media3.extractor.PositionHolder;
 import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.text.SubtitleParser;
+import com.google.common.base.Preconditions;
 import com.google.common.primitives.Ints;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -59,7 +59,7 @@ public class SubtitleExtractor implements Extractor {
 
     @Override // androidx.media3.extractor.Extractor
     public void init(ExtractorOutput extractorOutput) {
-        Assertions.checkState(this.state == 0);
+        Preconditions.checkState(this.state == 0);
         TrackOutput track = extractorOutput.track(0, 3);
         this.trackOutput = track;
         Format format = this.format;
@@ -74,7 +74,7 @@ public class SubtitleExtractor implements Extractor {
     @Override // androidx.media3.extractor.Extractor
     public int read(ExtractorInput extractorInput, PositionHolder positionHolder) throws IOException {
         int i = this.state;
-        Assertions.checkState((i == 0 || i == 5) ? false : true);
+        Preconditions.checkState((i == 0 || i == 5) ? false : true);
         if (this.state == 1) {
             int checkedCast = extractorInput.getLength() != -1 ? Ints.checkedCast(extractorInput.getLength()) : 1024;
             if (checkedCast > this.subtitleData.length) {
@@ -97,7 +97,7 @@ public class SubtitleExtractor implements Extractor {
     @Override // androidx.media3.extractor.Extractor
     public void seek(long j, long j2) {
         int i = this.state;
-        Assertions.checkState((i == 0 || i == 5) ? false : true);
+        Preconditions.checkState((i == 0 || i == 5) ? false : true);
         this.seekTimeUs = j2;
         if (this.state == 2) {
             this.state = 1;
@@ -147,7 +147,7 @@ public class SubtitleExtractor implements Extractor {
             this.subtitleParser.parse(this.subtitleData, 0, this.bytesRead, allCues, new Consumer() { // from class: androidx.media3.extractor.text.SubtitleExtractor$$ExternalSyntheticLambda0
                 @Override // androidx.media3.common.util.Consumer
                 public final void accept(Object obj) {
-                    SubtitleExtractor.this.m9064xdbba10ad((CuesWithTiming) obj);
+                    SubtitleExtractor.this.m9079xdbba10ad((CuesWithTiming) obj);
                 }
             });
             Collections.sort(this.samples);
@@ -163,7 +163,7 @@ public class SubtitleExtractor implements Extractor {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$parseAndWriteToOutput$0$androidx-media3-extractor-text-SubtitleExtractor  reason: not valid java name */
-    public /* synthetic */ void m9064xdbba10ad(CuesWithTiming cuesWithTiming) {
+    public /* synthetic */ void m9079xdbba10ad(CuesWithTiming cuesWithTiming) {
         Sample sample = new Sample(cuesWithTiming.startTimeUs, this.cueEncoder.encode(cuesWithTiming.cues, cuesWithTiming.durationUs));
         this.samples.add(sample);
         if (this.seekTimeUs == C.TIME_UNSET || cuesWithTiming.endTimeUs >= this.seekTimeUs) {
@@ -179,7 +179,7 @@ public class SubtitleExtractor implements Extractor {
     }
 
     private void writeToOutput(Sample sample) {
-        Assertions.checkStateNotNull(this.trackOutput);
+        Preconditions.checkNotNull(this.trackOutput);
         int length = sample.data.length;
         this.scratchSampleArray.reset(sample.data);
         this.trackOutput.sampleData(this.scratchSampleArray, length);

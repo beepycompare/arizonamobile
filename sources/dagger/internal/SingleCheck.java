@@ -1,5 +1,5 @@
 package dagger.internal;
-/* loaded from: classes4.dex */
+/* loaded from: classes.dex */
 public final class SingleCheck<T> implements Provider<T> {
     static final /* synthetic */ boolean $assertionsDisabled = false;
     private static final Object UNINITIALIZED = new Object();

@@ -2,11 +2,11 @@ package androidx.media3.common;
 
 import android.os.Bundle;
 import android.text.TextUtils;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.BundleCollectionUtil;
 import androidx.media3.common.util.Util;
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.math.DoubleMath;
@@ -472,7 +472,7 @@ public final class Format {
                 this.labels = builder.labels;
                 this.label = getDefaultLabel(builder.labels, normalizeLanguageCode);
             } else {
-                Assertions.checkState(isLabelPartOfLabels(builder));
+                Preconditions.checkState(isLabelPartOfLabels(builder));
                 this.labels = builder.labels;
                 this.label = builder.label;
             }
@@ -481,7 +481,7 @@ public final class Format {
             this.label = builder.label;
         }
         this.selectionFlags = builder.selectionFlags;
-        Assertions.checkState(builder.auxiliaryTrackType == 0 || (builder.roleFlags & 32768) != 0, "Auxiliary track type must only be set to a value other than AUXILIARY_TRACK_TYPE_UNDEFINED only when ROLE_FLAG_AUXILIARY is set");
+        Preconditions.checkState(builder.auxiliaryTrackType == 0 || (builder.roleFlags & 32768) != 0, "Auxiliary track type must only be set to a value other than AUXILIARY_TRACK_TYPE_UNDEFINED only when ROLE_FLAG_AUXILIARY is set");
         this.roleFlags = builder.roleFlags;
         this.auxiliaryTrackType = builder.auxiliaryTrackType;
         int i = builder.averageBitrate;

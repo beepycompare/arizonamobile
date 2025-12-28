@@ -1,7 +1,7 @@
 package androidx.media3.datasource;
 
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import java.nio.ByteBuffer;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
@@ -65,11 +65,11 @@ public final class AesFlushingCipher {
                 }
                 int i8 = i5 - nonFlushingUpdate;
                 int i9 = 0;
-                Assertions.checkState(i8 < this.blockSize);
+                Preconditions.checkState(i8 < this.blockSize);
                 int i10 = i6 + nonFlushingUpdate;
                 int i11 = this.blockSize - i8;
                 this.pendingXorBytes = i11;
-                Assertions.checkState(nonFlushingUpdate(this.zerosBlock, 0, i11, this.flushedBlock, 0) == this.blockSize);
+                Preconditions.checkState(nonFlushingUpdate(this.zerosBlock, 0, i11, this.flushedBlock, 0) == this.blockSize);
                 while (i9 < i8) {
                     bArr2[i10] = this.flushedBlock[i9];
                     i9++;

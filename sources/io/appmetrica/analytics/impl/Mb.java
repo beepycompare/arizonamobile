@@ -17,7 +17,7 @@ import io.appmetrica.analytics.modulesapi.internal.service.ModuleLocationSources
 public final class Mb implements Lb, InterfaceC0407lm, LocationProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f684a;
+    public final Context f685a;
     public final Qb b;
     public final LocationClient c;
     public final C0630ul d;
@@ -26,7 +26,7 @@ public final class Mb implements Lb, InterfaceC0407lm, LocationProvider {
     public final LocationReceiverProviderFactory g;
 
     public Mb(Context context, Qb qb, LocationClient locationClient) {
-        this.f684a = context;
+        this.f685a = context;
         this.b = qb;
         this.c = locationClient;
         Vb vb = new Vb();
@@ -42,7 +42,7 @@ public final class Mb implements Lb, InterfaceC0407lm, LocationProvider {
     public final void a(C0278gm c0278gm) {
         C0207e3 c0207e3 = c0278gm.x;
         if (c0207e3 != null) {
-            long j = c0207e3.f960a;
+            long j = c0207e3.f961a;
             this.c.updateCacheArguments(new CacheArguments(j, 2 * j));
         }
     }
@@ -78,7 +78,7 @@ public final class Mb implements Lb, InterfaceC0407lm, LocationProvider {
 
     @Override // io.appmetrica.analytics.impl.Lb, io.appmetrica.analytics.impl.Ob
     public final void init() {
-        this.c.init(this.f684a, this.d, C0470oa.I.d.b(), this.e.e());
+        this.c.init(this.f685a, this.d, C0470oa.I.d.b(), this.e.e());
         ModuleLocationSourcesServiceController f = this.e.f();
         if (f != null) {
             f.init();

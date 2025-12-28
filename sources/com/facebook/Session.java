@@ -16,7 +16,6 @@ import android.os.Messenger;
 import android.os.RemoteException;
 import android.text.TextUtils;
 import android.util.Log;
-import androidx.compose.material3.internal.CalendarModelKt;
 import androidx.fragment.app.Fragment;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import com.facebook.AuthorizationClient;
@@ -43,6 +42,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
+import kotlin.time.DurationKt;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -1487,7 +1487,7 @@ public class Session implements Serializable {
             return false;
         }
         Date date = new Date();
-        return this.state.isOpened() && this.tokenInfo.getSource().canExtendToken() && date.getTime() - this.lastAttemptedTokenExtendDate.getTime() > 3600000 && date.getTime() - this.tokenInfo.getLastRefresh().getTime() > CalendarModelKt.MillisecondsIn24Hours;
+        return this.state.isOpened() && this.tokenInfo.getSource().canExtendToken() && date.getTime() - this.lastAttemptedTokenExtendDate.getTime() > DurationKt.MILLIS_IN_HOUR && date.getTime() - this.tokenInfo.getLastRefresh().getTime() > 86400000;
     }
 
     public String toString() {

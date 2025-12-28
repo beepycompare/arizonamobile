@@ -11,12 +11,12 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import androidx.media3.common.MimeTypes;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.BackgroundThreadStateHandler;
 import androidx.media3.common.util.Clock;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.DefaultSuitableOutputChecker;
 import androidx.media3.exoplayer.SuitableOutputChecker;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import java.util.Objects;
 import java.util.concurrent.Executor;
@@ -34,24 +34,17 @@ final class DefaultSuitableOutputChecker implements SuitableOutputChecker {
 
     @Override // androidx.media3.exoplayer.SuitableOutputChecker
     public void enable(SuitableOutputChecker.Callback callback, Context context, Looper looper, Looper looper2, Clock clock) {
-        SuitableOutputChecker suitableOutputChecker = this.impl;
-        if (suitableOutputChecker != null) {
-            suitableOutputChecker.enable(callback, context, looper, looper2, clock);
-        }
+        this.impl.enable(callback, context, looper, looper2, clock);
     }
 
     @Override // androidx.media3.exoplayer.SuitableOutputChecker
     public void disable() {
-        SuitableOutputChecker suitableOutputChecker = this.impl;
-        if (suitableOutputChecker != null) {
-            suitableOutputChecker.disable();
-        }
+        this.impl.disable();
     }
 
     @Override // androidx.media3.exoplayer.SuitableOutputChecker
     public boolean isSelectedOutputSuitableForPlayback() {
-        SuitableOutputChecker suitableOutputChecker = this.impl;
-        return suitableOutputChecker == null || suitableOutputChecker.isSelectedOutputSuitableForPlayback();
+        return this.impl.isSelectedOutputSuitableForPlayback();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -79,15 +72,15 @@ final class DefaultSuitableOutputChecker implements SuitableOutputChecker {
             backgroundThreadStateHandler.runInBackground(new Runnable() { // from class: androidx.media3.exoplayer.DefaultSuitableOutputChecker$ImplApi35$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DefaultSuitableOutputChecker.ImplApi35.this.m8903x2808a185(context);
+                    DefaultSuitableOutputChecker.ImplApi35.this.m8908x2808a185(context);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$enable$1$androidx-media3-exoplayer-DefaultSuitableOutputChecker$ImplApi35  reason: not valid java name */
-        public /* synthetic */ void m8903x2808a185(Context context) {
-            Assertions.checkNotNull(this.isSuitableForPlaybackState);
+        public /* synthetic */ void m8908x2808a185(Context context) {
+            Preconditions.checkNotNull(this.isSuitableForPlaybackState);
             this.router = MediaRouter2.getInstance(context);
             this.routeCallback = new MediaRouter2.RouteCallback() { // from class: androidx.media3.exoplayer.DefaultSuitableOutputChecker.ImplApi35.1
             };
@@ -113,20 +106,20 @@ final class DefaultSuitableOutputChecker implements SuitableOutputChecker {
 
         @Override // androidx.media3.exoplayer.SuitableOutputChecker
         public void disable() {
-            ((BackgroundThreadStateHandler) Assertions.checkStateNotNull(this.isSuitableForPlaybackState)).runInBackground(new Runnable() { // from class: androidx.media3.exoplayer.DefaultSuitableOutputChecker$ImplApi35$$ExternalSyntheticLambda1
+            ((BackgroundThreadStateHandler) Preconditions.checkNotNull(this.isSuitableForPlaybackState)).runInBackground(new Runnable() { // from class: androidx.media3.exoplayer.DefaultSuitableOutputChecker$ImplApi35$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DefaultSuitableOutputChecker.ImplApi35.this.m8902x2d89dbb9();
+                    DefaultSuitableOutputChecker.ImplApi35.this.m8907x2d89dbb9();
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$disable$2$androidx-media3-exoplayer-DefaultSuitableOutputChecker$ImplApi35  reason: not valid java name */
-        public /* synthetic */ void m8902x2d89dbb9() {
-            ((MediaRouter2) Assertions.checkNotNull(this.router)).unregisterControllerCallback((MediaRouter2.ControllerCallback) Assertions.checkNotNull(this.controllerCallback));
+        public /* synthetic */ void m8907x2d89dbb9() {
+            ((MediaRouter2) Preconditions.checkNotNull(this.router)).unregisterControllerCallback((MediaRouter2.ControllerCallback) Preconditions.checkNotNull(this.controllerCallback));
             this.controllerCallback = null;
-            this.router.unregisterRouteCallback((MediaRouter2.RouteCallback) Assertions.checkNotNull(this.routeCallback));
+            this.router.unregisterRouteCallback((MediaRouter2.RouteCallback) Preconditions.checkNotNull(this.routeCallback));
         }
 
         @Override // androidx.media3.exoplayer.SuitableOutputChecker
@@ -140,7 +133,7 @@ final class DefaultSuitableOutputChecker implements SuitableOutputChecker {
 
         /* JADX INFO: Access modifiers changed from: private */
         public static boolean isSelectedOutputSuitableForPlayback(MediaRouter2 mediaRouter2) {
-            int transferReason = ((MediaRouter2) Assertions.checkNotNull(mediaRouter2)).getSystemController().getRoutingSessionInfo().getTransferReason();
+            int transferReason = ((MediaRouter2) Preconditions.checkNotNull(mediaRouter2)).getSystemController().getRoutingSessionInfo().getTransferReason();
             boolean wasTransferInitiatedBySelf = mediaRouter2.getSystemController().wasTransferInitiatedBySelf();
             for (MediaRoute2Info mediaRoute2Info : mediaRouter2.getSystemController().getSelectedRoutes()) {
                 if (isRouteSuitableForMediaPlayback(mediaRoute2Info, transferReason, wasTransferInitiatedBySelf)) {
@@ -179,16 +172,16 @@ final class DefaultSuitableOutputChecker implements SuitableOutputChecker {
             backgroundThreadStateHandler.runInBackground(new Runnable() { // from class: androidx.media3.exoplayer.DefaultSuitableOutputChecker$ImplApi23$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DefaultSuitableOutputChecker.ImplApi23.this.m8900x2808a164(context);
+                    DefaultSuitableOutputChecker.ImplApi23.this.m8905x2808a164(context);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$enable$1$androidx-media3-exoplayer-DefaultSuitableOutputChecker$ImplApi23  reason: not valid java name */
-        public /* synthetic */ void m8900x2808a164(Context context) {
+        public /* synthetic */ void m8905x2808a164(Context context) {
             AudioManager audioManager;
-            Assertions.checkNotNull(this.isSuitableForPlaybackState);
+            Preconditions.checkNotNull(this.isSuitableForPlaybackState);
             if (Util.isWear(context) && (audioManager = (AudioManager) context.getSystemService(MimeTypes.BASE_TYPE_AUDIO)) != null) {
                 this.audioManager = audioManager;
                 AudioDeviceCallback audioDeviceCallback = new AudioDeviceCallback() { // from class: androidx.media3.exoplayer.DefaultSuitableOutputChecker.ImplApi23.1
@@ -203,27 +196,27 @@ final class DefaultSuitableOutputChecker implements SuitableOutputChecker {
                     }
                 };
                 this.audioDeviceCallback = audioDeviceCallback;
-                audioManager.registerAudioDeviceCallback(audioDeviceCallback, new Handler((Looper) Assertions.checkNotNull(Looper.myLooper())));
+                audioManager.registerAudioDeviceCallback(audioDeviceCallback, new Handler((Looper) Preconditions.checkNotNull(Looper.myLooper())));
                 this.isSuitableForPlaybackState.setStateInBackground(Boolean.valueOf(hasSupportedAudioOutput()));
             }
         }
 
         @Override // androidx.media3.exoplayer.SuitableOutputChecker
         public void disable() {
-            ((BackgroundThreadStateHandler) Assertions.checkNotNull(this.isSuitableForPlaybackState)).runInBackground(new Runnable() { // from class: androidx.media3.exoplayer.DefaultSuitableOutputChecker$ImplApi23$$ExternalSyntheticLambda0
+            ((BackgroundThreadStateHandler) Preconditions.checkNotNull(this.isSuitableForPlaybackState)).runInBackground(new Runnable() { // from class: androidx.media3.exoplayer.DefaultSuitableOutputChecker$ImplApi23$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DefaultSuitableOutputChecker.ImplApi23.this.m8899x2d89db98();
+                    DefaultSuitableOutputChecker.ImplApi23.this.m8904x2d89db98();
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$disable$2$androidx-media3-exoplayer-DefaultSuitableOutputChecker$ImplApi23  reason: not valid java name */
-        public /* synthetic */ void m8899x2d89db98() {
+        public /* synthetic */ void m8904x2d89db98() {
             AudioManager audioManager = this.audioManager;
             if (audioManager != null) {
-                audioManager.unregisterAudioDeviceCallback((AudioDeviceCallback) Assertions.checkNotNull(this.audioDeviceCallback));
+                audioManager.unregisterAudioDeviceCallback((AudioDeviceCallback) Preconditions.checkNotNull(this.audioDeviceCallback));
             }
         }
 
@@ -239,7 +232,7 @@ final class DefaultSuitableOutputChecker implements SuitableOutputChecker {
         /* JADX INFO: Access modifiers changed from: private */
         public boolean hasSupportedAudioOutput() {
             AudioDeviceInfo[] devices;
-            for (AudioDeviceInfo audioDeviceInfo : ((AudioManager) Assertions.checkStateNotNull(this.audioManager)).getDevices(2)) {
+            for (AudioDeviceInfo audioDeviceInfo : ((AudioManager) Preconditions.checkNotNull(this.audioManager)).getDevices(2)) {
                 if (audioDeviceInfo.getType() == 8 || audioDeviceInfo.getType() == 5 || audioDeviceInfo.getType() == 6 || audioDeviceInfo.getType() == 11 || audioDeviceInfo.getType() == 4 || audioDeviceInfo.getType() == 3) {
                     return true;
                 }

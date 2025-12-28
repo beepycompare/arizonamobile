@@ -11,13 +11,13 @@ import kotlin.collections.MapsKt;
 public final class C0523qd implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0729yk f1184a = C0470oa.k().p();
+    public final C0729yk f1185a = C0470oa.k().p();
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final C0606tm[] fromModel(Map<String, ? extends Object> map) {
         C0606tm c0606tm;
-        Map<String, Zc> c = this.f1184a.c();
+        Map<String, Zc> c = this.f1185a.c();
         ArrayList arrayList = new ArrayList();
         for (Map.Entry<String, ? extends Object> entry : map.entrySet()) {
             String key = entry.getKey();
@@ -27,7 +27,7 @@ public final class C0523qd implements Converter {
                 c0606tm = null;
             } else {
                 c0606tm = new C0606tm();
-                c0606tm.f1234a = key;
+                c0606tm.f1235a = key;
                 c0606tm.b = (byte[]) zc.c.fromModel(value);
             }
             if (c0606tm != null) {
@@ -44,11 +44,11 @@ public final class C0523qd implements Converter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final Map<String, Object> toModel(C0606tm[] c0606tmArr) {
-        Map<String, Zc> c = this.f1184a.c();
+        Map<String, Zc> c = this.f1185a.c();
         ArrayList arrayList = new ArrayList();
         for (C0606tm c0606tm : c0606tmArr) {
-            Zc zc = c.get(c0606tm.f1234a);
-            Pair pair = zc != null ? TuplesKt.to(c0606tm.f1234a, zc.c.toModel(c0606tm.b)) : null;
+            Zc zc = c.get(c0606tm.f1235a);
+            Pair pair = zc != null ? TuplesKt.to(c0606tm.f1235a, zc.c.toModel(c0606tm.b)) : null;
             if (pair != null) {
                 arrayList.add(pair);
             }

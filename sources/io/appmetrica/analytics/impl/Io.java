@@ -7,13 +7,13 @@ import java.util.ArrayList;
 public final class Io {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f627a = new ArrayList();
+    public final ArrayList f628a = new ArrayList();
     public PublicLogger b;
 
     public final synchronized void a(Consumer consumer) {
         PublicLogger publicLogger = this.b;
         if (publicLogger == null) {
-            this.f627a.add(consumer);
+            this.f628a.add(consumer);
         } else {
             consumer.consume(publicLogger);
         }

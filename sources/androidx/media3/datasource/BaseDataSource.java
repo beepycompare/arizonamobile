@@ -1,7 +1,7 @@
 package androidx.media3.datasource;
 
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import java.util.ArrayList;
 /* loaded from: classes2.dex */
 public abstract class BaseDataSource implements DataSource {
@@ -17,7 +17,7 @@ public abstract class BaseDataSource implements DataSource {
 
     @Override // androidx.media3.datasource.DataSource
     public final void addTransferListener(TransferListener transferListener) {
-        Assertions.checkNotNull(transferListener);
+        Preconditions.checkNotNull(transferListener);
         if (this.listeners.contains(transferListener)) {
             return;
         }

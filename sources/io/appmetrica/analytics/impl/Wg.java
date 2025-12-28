@@ -30,10 +30,10 @@ public final class Wg extends Sg {
     public final boolean a(Q5 q5) {
         HashSet hashSet;
         ArrayList b;
-        Y4 y4 = this.f776a;
+        Y4 y4 = this.f777a;
         if (y4.t.c() && y4.y()) {
             Xe xe = y4.c;
-            String e = this.f776a.c.e();
+            String e = this.f777a.c.e();
             try {
                 if (!TextUtils.isEmpty(e)) {
                     try {
@@ -50,14 +50,14 @@ public final class Wg extends Sg {
                         C0394l9 c0394l9 = y4.n;
                         int i2 = c0394l9.j;
                         c0394l9.l = i2;
-                        c0394l9.f1088a.a(i2).b();
+                        c0394l9.f1089a.a(i2).b();
                     } else {
                         JSONArray jSONArray2 = new JSONArray();
                         Iterator it = b.iterator();
                         while (it.hasNext()) {
                             S9 s9 = (S9) it.next();
                             s9.getClass();
-                            JSONObject put = new JSONObject().put("name", s9.f773a).put("required", s9.c);
+                            JSONObject put = new JSONObject().put("name", s9.f774a).put("required", s9.c);
                             int i3 = s9.b;
                             if (i3 != -1) {
                                 put.put(NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, i3);
@@ -69,7 +69,7 @@ public final class Wg extends Sg {
                         c0394l92.a(a2, Sk.a(c0394l92.c.b(a2), a2.i));
                         int i4 = c0394l92.j;
                         c0394l92.l = i4;
-                        c0394l92.f1088a.a(i4).b();
+                        c0394l92.f1089a.a(i4).b();
                         xe.i(jSONArray2.toString());
                     }
                 }
@@ -87,9 +87,9 @@ public final class Wg extends Sg {
         R9 q9;
         FeatureInfo[] featureInfoArr;
         try {
-            Y4 y4 = this.f776a;
+            Y4 y4 = this.f777a;
             SafePackageManager safePackageManager = this.b;
-            Context context = y4.f857a;
+            Context context = y4.f858a;
             PackageInfo packageInfo = safePackageManager.getPackageInfo(context, context.getPackageName(), 16384);
             ArrayList arrayList = new ArrayList();
             if (AndroidUtils.isApiAchieved(24)) {

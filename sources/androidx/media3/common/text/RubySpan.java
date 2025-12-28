@@ -1,8 +1,8 @@
 package androidx.media3.common.text;
 
 import android.os.Bundle;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 /* loaded from: classes2.dex */
 public final class RubySpan implements LanguageFeatureSpan {
     public final int position;
@@ -23,6 +23,6 @@ public final class RubySpan implements LanguageFeatureSpan {
     }
 
     public static RubySpan fromBundle(Bundle bundle) {
-        return new RubySpan((String) Assertions.checkNotNull(bundle.getString(FIELD_TEXT)), bundle.getInt(FIELD_POSITION));
+        return new RubySpan((String) Preconditions.checkNotNull(bundle.getString(FIELD_TEXT)), bundle.getInt(FIELD_POSITION));
     }
 }

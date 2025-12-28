@@ -8,23 +8,23 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class p implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final r f317a;
+    public final r f318a;
 
     public p() {
         this(null, 1, null);
     }
 
     public final byte[] a(RemoteBillingConfig remoteBillingConfig) {
-        return MessageNano.toByteArray(this.f317a.fromModel(remoteBillingConfig));
+        return MessageNano.toByteArray(this.f318a.fromModel(remoteBillingConfig));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object fromModel(Object obj) {
-        return MessageNano.toByteArray(this.f317a.fromModel((RemoteBillingConfig) obj));
+        return MessageNano.toByteArray(this.f318a.fromModel((RemoteBillingConfig) obj));
     }
 
     public p(r rVar) {
-        this.f317a = rVar;
+        this.f318a = rVar;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
@@ -36,7 +36,7 @@ public final class p implements Converter {
         } catch (Throwable unused) {
             tVar = new t();
         }
-        return this.f317a.toModel(tVar);
+        return this.f318a.toModel(tVar);
     }
 
     public /* synthetic */ p(r rVar, int i, DefaultConstructorMarker defaultConstructorMarker) {

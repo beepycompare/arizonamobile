@@ -3,7 +3,6 @@ package androidx.media3.exoplayer.image;
 import android.graphics.Bitmap;
 import androidx.media3.common.C;
 import androidx.media3.common.Format;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.TraceUtil;
 import androidx.media3.decoder.DecoderInputBuffer;
 import androidx.media3.exoplayer.BaseRenderer;
@@ -12,8 +11,9 @@ import androidx.media3.exoplayer.FormatHolder;
 import androidx.media3.exoplayer.RendererCapabilities;
 import androidx.media3.exoplayer.image.ImageDecoder;
 import androidx.media3.exoplayer.source.MediaSource;
+import com.google.common.base.Preconditions;
 import java.util.ArrayDeque;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class ImageRenderer extends BaseRenderer {
     private static final long IMAGE_PRESENTATION_WINDOW_THRESHOLD_US = 30000;
     private static final int REINITIALIZATION_STATE_NONE = 0;
@@ -79,14 +79,14 @@ public class ImageRenderer extends BaseRenderer {
             int readSource = readSource(formatHolder, this.flagsOnlyBuffer, 2);
             if (readSource != -5) {
                 if (readSource == -4) {
-                    Assertions.checkState(this.flagsOnlyBuffer.isEndOfStream());
+                    Preconditions.checkState(this.flagsOnlyBuffer.isEndOfStream());
                     this.inputStreamEnded = true;
                     this.outputStreamEnded = true;
                     return;
                 }
                 return;
             }
-            this.inputFormat = (Format) Assertions.checkStateNotNull(formatHolder.format);
+            this.inputFormat = (Format) Preconditions.checkNotNull(formatHolder.format);
             this.codecNeedsInitialization = true;
         }
         if (this.decoder != null || maybeInitCodec()) {
@@ -148,7 +148,7 @@ public class ImageRenderer extends BaseRenderer {
     }
 
     @Override // androidx.media3.exoplayer.BaseRenderer
-    protected void onPositionReset(long j, boolean z) throws ExoPlaybackException {
+    protected void onPositionReset(long j, boolean z, boolean z2) throws ExoPlaybackException {
         lowerFirstFrameState(1);
         this.outputStreamEnded = false;
         this.inputStreamEnded = false;
@@ -199,46 +199,46 @@ public class ImageRenderer extends BaseRenderer {
         if (this.outputBitmap == null || this.tileInfo != null) {
             if (this.firstFrameState != 0 || getState() == 2) {
                 if (this.outputBitmap == null) {
-                    Assertions.checkStateNotNull(this.decoder);
+                    Preconditions.checkNotNull(this.decoder);
                     ImageOutputBuffer dequeueOutputBuffer = this.decoder.dequeueOutputBuffer();
                     if (dequeueOutputBuffer == null) {
                         return false;
                     }
-                    if (((ImageOutputBuffer) Assertions.checkStateNotNull(dequeueOutputBuffer)).isEndOfStream()) {
+                    if (((ImageOutputBuffer) Preconditions.checkNotNull(dequeueOutputBuffer)).isEndOfStream()) {
                         if (this.decoderReinitializationState == 3) {
                             releaseDecoderResources();
-                            Assertions.checkStateNotNull(this.inputFormat);
+                            Preconditions.checkNotNull(this.inputFormat);
                             maybeInitCodec();
                         } else {
-                            ((ImageOutputBuffer) Assertions.checkStateNotNull(dequeueOutputBuffer)).release();
+                            ((ImageOutputBuffer) Preconditions.checkNotNull(dequeueOutputBuffer)).release();
                             if (this.pendingOutputStreamChanges.isEmpty()) {
                                 this.outputStreamEnded = true;
                             }
                         }
                         return false;
                     }
-                    Assertions.checkStateNotNull(dequeueOutputBuffer.bitmap, "Non-EOS buffer came back from the decoder without bitmap.");
+                    Preconditions.checkNotNull(dequeueOutputBuffer.bitmap, "Non-EOS buffer came back from the decoder without bitmap.");
                     this.outputBitmap = dequeueOutputBuffer.bitmap;
-                    ((ImageOutputBuffer) Assertions.checkStateNotNull(dequeueOutputBuffer)).release();
+                    ((ImageOutputBuffer) Preconditions.checkNotNull(dequeueOutputBuffer)).release();
                 }
                 if (!this.readyToOutputTiles || this.outputBitmap == null || this.tileInfo == null) {
                     return false;
                 }
-                Assertions.checkStateNotNull(this.inputFormat);
+                Preconditions.checkNotNull(this.inputFormat);
                 boolean z = ((this.inputFormat.tileCountHorizontal == 1 && this.inputFormat.tileCountVertical == 1) || this.inputFormat.tileCountHorizontal == -1 || this.inputFormat.tileCountVertical == -1) ? false : true;
                 if (!this.tileInfo.hasTileBitmap()) {
                     TileInfo tileInfo = this.tileInfo;
                     if (z) {
                         bitmap = cropTileFromImageGrid(tileInfo.getTileIndex());
                     } else {
-                        bitmap = (Bitmap) Assertions.checkStateNotNull(this.outputBitmap);
+                        bitmap = (Bitmap) Preconditions.checkNotNull(this.outputBitmap);
                     }
                     tileInfo.setTileBitmap(bitmap);
                 }
-                if (processOutputBuffer(j, j2, (Bitmap) Assertions.checkStateNotNull(this.tileInfo.getTileBitmap()), this.tileInfo.getPresentationTimeUs())) {
-                    onProcessedOutputBuffer(((TileInfo) Assertions.checkStateNotNull(this.tileInfo)).getPresentationTimeUs());
+                if (processOutputBuffer(j, j2, (Bitmap) Preconditions.checkNotNull(this.tileInfo.getTileBitmap()), this.tileInfo.getPresentationTimeUs())) {
+                    onProcessedOutputBuffer(((TileInfo) Preconditions.checkNotNull(this.tileInfo)).getPresentationTimeUs());
                     this.firstFrameState = 3;
-                    if (!z || ((TileInfo) Assertions.checkStateNotNull(this.tileInfo)).getTileIndex() == (((Format) Assertions.checkStateNotNull(this.inputFormat)).tileCountVertical * ((Format) Assertions.checkStateNotNull(this.inputFormat)).tileCountHorizontal) - 1) {
+                    if (!z || ((TileInfo) Preconditions.checkNotNull(this.tileInfo)).getTileIndex() == (((Format) Preconditions.checkNotNull(this.inputFormat)).tileCountVertical * ((Format) Preconditions.checkNotNull(this.inputFormat)).tileCountHorizontal) - 1) {
                         this.outputBitmap = null;
                     }
                     this.tileInfo = this.nextTileInfo;
@@ -298,16 +298,16 @@ public class ImageRenderer extends BaseRenderer {
                 }
             }
             if (this.decoderReinitializationState == 2) {
-                Assertions.checkStateNotNull(this.inputBuffer);
+                Preconditions.checkNotNull(this.inputBuffer);
                 this.inputBuffer.setFlags(4);
-                ((ImageDecoder) Assertions.checkStateNotNull(this.decoder)).queueInputBuffer(this.inputBuffer);
+                ((ImageDecoder) Preconditions.checkNotNull(this.decoder)).queueInputBuffer(this.inputBuffer);
                 this.inputBuffer = null;
                 this.decoderReinitializationState = 3;
                 return false;
             }
             int readSource = readSource(formatHolder, this.inputBuffer, 0);
             if (readSource == -5) {
-                this.inputFormat = (Format) Assertions.checkStateNotNull(formatHolder.format);
+                this.inputFormat = (Format) Preconditions.checkNotNull(formatHolder.format);
                 this.codecNeedsInitialization = true;
                 this.decoderReinitializationState = 2;
                 return true;
@@ -318,23 +318,23 @@ public class ImageRenderer extends BaseRenderer {
                 throw new IllegalStateException();
             } else {
                 this.inputBuffer.flip();
-                boolean z = (this.inputBuffer.data != null && this.inputBuffer.data.remaining() > 0) || ((DecoderInputBuffer) Assertions.checkStateNotNull(this.inputBuffer)).isEndOfStream();
+                boolean z = (this.inputBuffer.data != null && this.inputBuffer.data.remaining() > 0) || ((DecoderInputBuffer) Preconditions.checkNotNull(this.inputBuffer)).isEndOfStream();
                 if (z) {
-                    ((DecoderInputBuffer) Assertions.checkStateNotNull(this.inputBuffer)).format = this.inputFormat;
-                    ((ImageDecoder) Assertions.checkStateNotNull(this.decoder)).queueInputBuffer((DecoderInputBuffer) Assertions.checkStateNotNull(this.inputBuffer));
+                    ((DecoderInputBuffer) Preconditions.checkNotNull(this.inputBuffer)).format = this.inputFormat;
+                    ((ImageDecoder) Preconditions.checkNotNull(this.decoder)).queueInputBuffer((DecoderInputBuffer) Preconditions.checkNotNull(this.inputBuffer));
                     this.currentTileIndex = 0;
                 }
-                maybeAdvanceTileInfo(j, (DecoderInputBuffer) Assertions.checkStateNotNull(this.inputBuffer));
-                if (((DecoderInputBuffer) Assertions.checkStateNotNull(this.inputBuffer)).isEndOfStream()) {
+                maybeAdvanceTileInfo(j, (DecoderInputBuffer) Preconditions.checkNotNull(this.inputBuffer));
+                if (((DecoderInputBuffer) Preconditions.checkNotNull(this.inputBuffer)).isEndOfStream()) {
                     this.inputStreamEnded = true;
                     this.inputBuffer = null;
                     return false;
                 }
-                this.largestQueuedPresentationTimeUs = Math.max(this.largestQueuedPresentationTimeUs, ((DecoderInputBuffer) Assertions.checkStateNotNull(this.inputBuffer)).timeUs);
+                this.largestQueuedPresentationTimeUs = Math.max(this.largestQueuedPresentationTimeUs, ((DecoderInputBuffer) Preconditions.checkNotNull(this.inputBuffer)).timeUs);
                 if (z) {
                     this.inputBuffer = null;
                 } else {
-                    ((DecoderInputBuffer) Assertions.checkStateNotNull(this.inputBuffer)).clear();
+                    ((DecoderInputBuffer) Preconditions.checkNotNull(this.inputBuffer)).clear();
                 }
                 return !this.readyToOutputTiles;
             }
@@ -345,7 +345,7 @@ public class ImageRenderer extends BaseRenderer {
     private boolean maybeInitCodec() throws ExoPlaybackException {
         if (maybeInitializeProcessingPipeline()) {
             if (this.codecNeedsInitialization) {
-                if (canCreateDecoderForFormat((Format) Assertions.checkNotNull(this.inputFormat))) {
+                if (canCreateDecoderForFormat((Format) Preconditions.checkNotNull(this.inputFormat))) {
                     ImageDecoder imageDecoder = this.decoder;
                     if (imageDecoder != null) {
                         imageDecoder.release();
@@ -399,7 +399,7 @@ public class ImageRenderer extends BaseRenderer {
             boolean z2 = presentationTimeUs - IMAGE_PRESENTATION_WINDOW_THRESHOLD_US <= j && j <= IMAGE_PRESENTATION_WINDOW_THRESHOLD_US + presentationTimeUs;
             TileInfo tileInfo2 = this.tileInfo;
             boolean z3 = tileInfo2 != null && tileInfo2.getPresentationTimeUs() <= j && j < presentationTimeUs;
-            boolean isTileLastInGrid = isTileLastInGrid((TileInfo) Assertions.checkStateNotNull(this.nextTileInfo));
+            boolean isTileLastInGrid = isTileLastInGrid((TileInfo) Preconditions.checkNotNull(this.nextTileInfo));
             if (!z2 && !z3 && !isTileLastInGrid) {
                 z = false;
             }
@@ -413,13 +413,13 @@ public class ImageRenderer extends BaseRenderer {
     }
 
     private boolean isTileLastInGrid(TileInfo tileInfo) {
-        return ((Format) Assertions.checkStateNotNull(this.inputFormat)).tileCountHorizontal == -1 || this.inputFormat.tileCountVertical == -1 || tileInfo.getTileIndex() == (((Format) Assertions.checkStateNotNull(this.inputFormat)).tileCountVertical * this.inputFormat.tileCountHorizontal) - 1;
+        return ((Format) Preconditions.checkNotNull(this.inputFormat)).tileCountHorizontal == -1 || this.inputFormat.tileCountVertical == -1 || tileInfo.getTileIndex() == (((Format) Preconditions.checkNotNull(this.inputFormat)).tileCountVertical * this.inputFormat.tileCountHorizontal) - 1;
     }
 
     private Bitmap cropTileFromImageGrid(int i) {
-        Assertions.checkStateNotNull(this.outputBitmap);
-        int width = this.outputBitmap.getWidth() / ((Format) Assertions.checkStateNotNull(this.inputFormat)).tileCountHorizontal;
-        int height = this.outputBitmap.getHeight() / ((Format) Assertions.checkStateNotNull(this.inputFormat)).tileCountVertical;
+        Preconditions.checkNotNull(this.outputBitmap);
+        int width = this.outputBitmap.getWidth() / ((Format) Preconditions.checkNotNull(this.inputFormat)).tileCountHorizontal;
+        int height = this.outputBitmap.getHeight() / ((Format) Preconditions.checkNotNull(this.inputFormat)).tileCountVertical;
         return Bitmap.createBitmap(this.outputBitmap, (i % this.inputFormat.tileCountHorizontal) * width, (i / this.inputFormat.tileCountHorizontal) * height, width, height);
     }
 
@@ -428,7 +428,7 @@ public class ImageRenderer extends BaseRenderer {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static class TileInfo {
         private final long presentationTimeUs;
         private Bitmap tileBitmap;
@@ -461,7 +461,7 @@ public class ImageRenderer extends BaseRenderer {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class OutputStreamInfo {
         public static final OutputStreamInfo UNSET = new OutputStreamInfo(C.TIME_UNSET, C.TIME_UNSET);
         public final long previousStreamLastBufferTimeUs;

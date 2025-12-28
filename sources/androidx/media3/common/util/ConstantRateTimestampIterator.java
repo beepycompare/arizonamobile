@@ -1,6 +1,7 @@
 package androidx.media3.common.util;
 
 import androidx.media3.common.C;
+import com.google.common.base.Preconditions;
 /* loaded from: classes2.dex */
 public final class ConstantRateTimestampIterator implements TimestampIterator {
     private final long endPositionUs;
@@ -16,12 +17,12 @@ public final class ConstantRateTimestampIterator implements TimestampIterator {
 
     public ConstantRateTimestampIterator(long j, long j2, float f) {
         boolean z = false;
-        Assertions.checkArgument(j2 > 0);
-        Assertions.checkArgument(f > 0.0f);
+        Preconditions.checkArgument(j2 > 0);
+        Preconditions.checkArgument(f > 0.0f);
         if (0 <= j && j < j2) {
             z = true;
         }
-        Assertions.checkArgument(z);
+        Preconditions.checkArgument(z);
         this.startPositionUs = j;
         this.endPositionUs = j2;
         this.frameRate = f;
@@ -36,7 +37,7 @@ public final class ConstantRateTimestampIterator implements TimestampIterator {
 
     @Override // androidx.media3.common.util.TimestampIterator
     public long next() {
-        Assertions.checkState(hasNext());
+        Preconditions.checkState(hasNext());
         int i = this.framesAdded;
         this.framesAdded = i + 1;
         return getTimestampUsAfter(i);
@@ -55,7 +56,7 @@ public final class ConstantRateTimestampIterator implements TimestampIterator {
 
     private long getTimestampUsAfter(int i) {
         long round = this.startPositionUs + Math.round(this.framesDurationUs * i);
-        Assertions.checkState(round >= 0);
+        Preconditions.checkState(round >= 0);
         return round;
     }
 }

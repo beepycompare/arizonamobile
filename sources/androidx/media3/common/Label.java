@@ -1,8 +1,8 @@
 package androidx.media3.common;
 
 import android.os.Bundle;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import java.util.Objects;
 /* loaded from: classes2.dex */
 public class Label {
@@ -46,6 +46,6 @@ public class Label {
     }
 
     public static Label fromBundle(Bundle bundle) {
-        return new Label(bundle.getString(FIELD_LANGUAGE_INDEX), (String) Assertions.checkNotNull(bundle.getString(FIELD_VALUE_INDEX)));
+        return new Label(bundle.getString(FIELD_LANGUAGE_INDEX), (String) Preconditions.checkNotNull(bundle.getString(FIELD_VALUE_INDEX)));
     }
 }

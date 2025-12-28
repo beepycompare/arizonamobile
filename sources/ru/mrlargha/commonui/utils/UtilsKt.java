@@ -559,7 +559,7 @@ public final class UtilsKt {
             if (effect == null) {
                 effect = inventoryItem.getEffect();
             }
-            return InventoryItem.copy$default(inventoryItem, slot, num, id, str, num2, num3, background, num4, num5, num6, num7, num8, l, num9, num10, num11, inventoryType, num12, bitmap, false, false, effect, 1572864, null);
+            return InventoryItem.copy$default(inventoryItem, slot, num, id, str, num2, num3, background, num4, num5, num6, num7, num8, l, num9, num10, num11, inventoryType, num12, bitmap, false, false, effect, null, 5767168, null);
         }
         return null;
     }

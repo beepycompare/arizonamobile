@@ -22,12 +22,12 @@ public final class Z3 {
     public I5 c;
 
     /* renamed from: a  reason: collision with root package name */
-    public final Y3 f869a = new Y3();
+    public final Y3 f870a = new Y3();
     public final CopyOnWriteArrayList b = new CopyOnWriteArrayList();
     public final CopyOnWriteArrayList d = new CopyOnWriteArrayList();
 
     public static void a(String str, String str2, Throwable th) {
-        Rj rj = AbstractC0504pj.f1168a;
+        Rj rj = AbstractC0504pj.f1169a;
         Map mapOf = MapsKt.mapOf(TuplesKt.to(str, MapsKt.mapOf(TuplesKt.to(str2, ExceptionsKt.stackTraceToString(th)))));
         rj.getClass();
         rj.a(new Qj("client_module_errors", mapOf));
@@ -39,7 +39,7 @@ public final class Z3 {
         if (i5 == null || (l5 = ((L3) i5).b) == null) {
             return null;
         }
-        return l5.f662a;
+        return l5.f663a;
     }
 
     public final void c() {
@@ -116,7 +116,7 @@ public final class Z3 {
                 ServiceConfigExtensionConfiguration serviceConfigExtensionConfiguration = moduleClientEntryPoint.getServiceConfigExtensionConfiguration();
                 if (serviceConfigExtensionConfiguration != null) {
                     ServiceConfigUpdateListener serviceConfigUpdateListener = serviceConfigExtensionConfiguration.getServiceConfigUpdateListener();
-                    Y3 y3 = this.f869a;
+                    Y3 y3 = this.f870a;
                     String identifier = moduleClientEntryPoint.getIdentifier();
                     y3.getClass();
                     Bundle bundle2 = bundle.getBundle(identifier);

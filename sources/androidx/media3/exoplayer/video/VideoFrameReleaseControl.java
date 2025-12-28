@@ -3,10 +3,10 @@ package androidx.media3.exoplayer.video;
 import android.content.Context;
 import android.view.Surface;
 import androidx.media3.common.C;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Clock;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.ExoPlaybackException;
+import com.google.common.base.Preconditions;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -89,6 +89,7 @@ public final class VideoFrameReleaseControl {
         } else {
             throw new IllegalStateException();
         }
+        this.frameReleaseHelper.onPositionReset();
     }
 
     public void onStarted() {
@@ -170,19 +171,22 @@ public final class VideoFrameReleaseControl {
                     return 5;
                 }
                 long nanoTime = this.clock.nanoTime();
-                frameReleaseInfo.releaseTimeNs = this.frameReleaseHelper.adjustReleaseTime((frameReleaseInfo.earlyUs * 1000) + nanoTime);
+                frameReleaseInfo.releaseTimeNs = this.frameReleaseHelper.adjustReleaseTime((frameReleaseInfo.earlyUs * 1000) + nanoTime, j);
                 frameReleaseInfo.earlyUs = (frameReleaseInfo.releaseTimeNs - nanoTime) / 1000;
                 boolean z3 = (this.joiningDeadlineMs == C.TIME_UNSET || this.joiningRenderNextFrameImmediately) ? false : true;
                 if (this.frameTimingEvaluator.shouldIgnoreFrame(frameReleaseInfo.earlyUs, j2, j3, z2, z3)) {
                     return 4;
                 }
                 return this.frameTimingEvaluator.shouldDropFrame(frameReleaseInfo.earlyUs, j3, z2) ? z3 ? 3 : 2 : frameReleaseInfo.earlyUs > MAX_EARLY_US_THRESHOLD ? 5 : 1;
-            }
-            this.frameReadyWithoutSurface = true;
-            if (this.frameTimingEvaluator.shouldIgnoreFrame(frameReleaseInfo.earlyUs, j2, j3, z2, true)) {
+            } else if (this.frameTimingEvaluator.shouldIgnoreFrame(frameReleaseInfo.earlyUs, j2, j3, z2, true)) {
                 return 4;
+            } else {
+                if (!this.started || frameReleaseInfo.earlyUs >= 30000) {
+                    this.frameReadyWithoutSurface = true;
+                    return 5;
+                }
+                return 3;
             }
-            return (!this.started || frameReleaseInfo.earlyUs >= 30000) ? 5 : 3;
         }
         return 3;
     }
@@ -200,7 +204,7 @@ public final class VideoFrameReleaseControl {
     }
 
     public void setPlaybackSpeed(float f) {
-        Assertions.checkArgument(f > 0.0f);
+        Preconditions.checkArgument(f > 0.0f);
         if (f == this.playbackSpeed) {
             return;
         }

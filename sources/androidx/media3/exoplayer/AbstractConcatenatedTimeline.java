@@ -2,8 +2,8 @@ package androidx.media3.exoplayer;
 
 import android.util.Pair;
 import androidx.media3.common.Timeline;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.exoplayer.source.ShuffleOrder;
+import com.google.common.base.Preconditions;
 /* loaded from: classes.dex */
 public abstract class AbstractConcatenatedTimeline extends Timeline {
     private final int childCount;
@@ -168,7 +168,7 @@ public abstract class AbstractConcatenatedTimeline extends Timeline {
         getTimelineByChildIndex(childIndexByPeriodIndex).getPeriod(i - getFirstPeriodIndexByChildIndex(childIndexByPeriodIndex), period, z);
         period.windowIndex += firstWindowIndexByChildIndex;
         if (z) {
-            period.uid = getConcatenatedUid(getChildUidByChildIndex(childIndexByPeriodIndex), Assertions.checkNotNull(period.uid));
+            period.uid = getConcatenatedUid(getChildUidByChildIndex(childIndexByPeriodIndex), Preconditions.checkNotNull(period.uid));
         }
         return period;
     }

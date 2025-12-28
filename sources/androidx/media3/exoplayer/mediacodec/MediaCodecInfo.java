@@ -5,14 +5,17 @@ import android.media.MediaCodecInfo;
 import android.os.Build;
 import android.util.Pair;
 import android.util.Range;
+import androidx.core.view.InputDeviceCompat;
 import androidx.media3.common.ColorInfo;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
-import androidx.media3.common.util.Assertions;
+import androidx.media3.common.util.CodecSpecificDataUtil;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.DecoderReuseEvaluation;
+import androidx.media3.exoplayer.analytics.AnalyticsListener;
 import androidx.media3.exoplayer.mediacodec.MediaCodecUtil;
+import com.google.common.base.Preconditions;
 import java.util.Objects;
 /* loaded from: classes3.dex */
 public final class MediaCodecInfo {
@@ -34,16 +37,12 @@ public final class MediaCodecInfo {
     private int maxFrameRateWidth = -1;
     private int maxFrameRateHeight = -1;
 
-    private static boolean needsDisableAdaptationWorkaround(String str) {
-        return false;
-    }
-
     public static MediaCodecInfo newInstance(String str, String str2, String str3, MediaCodecInfo.CodecCapabilities codecCapabilities, boolean z, boolean z2, boolean z3, boolean z4, boolean z5) {
-        return new MediaCodecInfo(str, str2, str3, codecCapabilities, z, z2, z3, (z4 || codecCapabilities == null || !isAdaptive(codecCapabilities) || needsDisableAdaptationWorkaround(str)) ? false : true, codecCapabilities != null && isTunneling(codecCapabilities), z5 || (codecCapabilities != null && isSecure(codecCapabilities)), isDetachedSurfaceSupported(codecCapabilities));
+        return new MediaCodecInfo(str, str2, str3, codecCapabilities, z, z2, z3, (z4 || codecCapabilities == null || !isAdaptive(codecCapabilities)) ? false : true, codecCapabilities != null && isTunneling(codecCapabilities), z5 || (codecCapabilities != null && isSecure(codecCapabilities)), isDetachedSurfaceSupported(codecCapabilities));
     }
 
     MediaCodecInfo(String str, String str2, String str3, MediaCodecInfo.CodecCapabilities codecCapabilities, boolean z, boolean z2, boolean z3, boolean z4, boolean z5, boolean z6, boolean z7) {
-        this.name = (String) Assertions.checkNotNull(str);
+        this.name = (String) Preconditions.checkNotNull(str);
         this.mimeType = str2;
         this.codecMimeType = str3;
         this.capabilities = codecCapabilities;
@@ -74,7 +73,7 @@ public final class MediaCodecInfo {
         if (codecCapabilities == null) {
             return -1;
         }
-        return getMaxSupportedInstancesV23(codecCapabilities);
+        return codecCapabilities.getMaxSupportedInstances();
     }
 
     public boolean isFormatSupported(Format format) throws MediaCodecUtil.DecoderQueryException {
@@ -99,8 +98,7 @@ public final class MediaCodecInfo {
     }
 
     private boolean isCodecProfileAndLevelSupported(Format format, boolean z) {
-        MediaCodecInfo.CodecProfileLevel[] profileLevels;
-        Pair<Integer, Integer> codecProfileAndLevel = MediaCodecUtil.getCodecProfileAndLevel(format);
+        Pair<Integer, Integer> codecProfileAndLevel = CodecSpecificDataUtil.getCodecProfileAndLevel(format);
         if (format.sampleMimeType != null && format.sampleMimeType.equals(MimeTypes.VIDEO_MV_HEVC)) {
             String normalizeMimeType = MimeTypes.normalizeMimeType(this.codecMimeType);
             if (normalizeMimeType.equals(MimeTypes.VIDEO_MV_HEVC)) {
@@ -151,8 +149,12 @@ public final class MediaCodecInfo {
                     break;
             }
         }
-        if (this.isVideo || intValue == 42) {
-            for (MediaCodecInfo.CodecProfileLevel codecProfileLevel : getProfileLevels()) {
+        if (this.isVideo || this.mimeType.equals(MimeTypes.AUDIO_AC4) || intValue == 42) {
+            MediaCodecInfo.CodecProfileLevel[] profileLevels = getProfileLevels();
+            if (this.mimeType.equals(MimeTypes.AUDIO_AC4) && profileLevels.length == 0) {
+                profileLevels = estimateLegacyAc4ProfileLevels(this.capabilities);
+            }
+            for (MediaCodecInfo.CodecProfileLevel codecProfileLevel : profileLevels) {
                 if (codecProfileLevel.profile == intValue && ((codecProfileLevel.level >= intValue2 || !z) && !needsProfileExcludedWorkaround(this.mimeType, intValue))) {
                     return true;
                 }
@@ -182,7 +184,7 @@ public final class MediaCodecInfo {
         if (this.isVideo) {
             return this.adaptive;
         }
-        Pair<Integer, Integer> codecProfileAndLevel = MediaCodecUtil.getCodecProfileAndLevel(format);
+        Pair<Integer, Integer> codecProfileAndLevel = CodecSpecificDataUtil.getCodecProfileAndLevel(format);
         return codecProfileAndLevel != null && ((Integer) codecProfileAndLevel.first).intValue() == 42;
     }
 
@@ -208,6 +210,13 @@ public final class MediaCodecInfo {
             if (format.decodedWidth != -1 && format.decodedHeight != -1 && format.decodedWidth == format2.decodedWidth && format.decodedHeight == format2.decodedHeight && z) {
                 i |= 2;
             }
+            if (i == 0 && Objects.equals(format2.sampleMimeType, MimeTypes.VIDEO_DOLBY_VISION)) {
+                Pair<Integer, Integer> codecProfileAndLevel = CodecSpecificDataUtil.getCodecProfileAndLevel(format);
+                Pair<Integer, Integer> codecProfileAndLevel2 = CodecSpecificDataUtil.getCodecProfileAndLevel(format2);
+                if (codecProfileAndLevel == null || codecProfileAndLevel2 == null || !((Integer) codecProfileAndLevel.first).equals(codecProfileAndLevel2.first)) {
+                    i |= 2;
+                }
+            }
             if (i == 0) {
                 return new DecoderReuseEvaluation(this.name, format, format2, format.initializationDataEquals(format2) ? 3 : 2, 0);
             }
@@ -225,16 +234,22 @@ public final class MediaCodecInfo {
             if (format3.pcmEncoding != format4.pcmEncoding) {
                 i |= 16384;
             }
-            if (i == 0 && MimeTypes.AUDIO_AAC.equals(this.mimeType)) {
-                Pair<Integer, Integer> codecProfileAndLevel = MediaCodecUtil.getCodecProfileAndLevel(format3);
-                Pair<Integer, Integer> codecProfileAndLevel2 = MediaCodecUtil.getCodecProfileAndLevel(format4);
-                if (codecProfileAndLevel != null && codecProfileAndLevel2 != null) {
-                    int intValue = ((Integer) codecProfileAndLevel.first).intValue();
-                    int intValue2 = ((Integer) codecProfileAndLevel2.first).intValue();
+            if (i == 0 && (this.mimeType.equals(MimeTypes.AUDIO_AAC) || this.mimeType.equals(MimeTypes.AUDIO_AC4))) {
+                Pair<Integer, Integer> codecProfileAndLevel3 = CodecSpecificDataUtil.getCodecProfileAndLevel(format3);
+                Pair<Integer, Integer> codecProfileAndLevel4 = CodecSpecificDataUtil.getCodecProfileAndLevel(format4);
+                if (codecProfileAndLevel3 != null && codecProfileAndLevel4 != null) {
+                    int intValue = ((Integer) codecProfileAndLevel3.first).intValue();
+                    int intValue2 = ((Integer) codecProfileAndLevel4.first).intValue();
                     if (intValue == 42 && intValue2 == 42) {
                         return new DecoderReuseEvaluation(this.name, format3, format4, 3, 0);
                     }
+                    if (this.mimeType.equals(MimeTypes.AUDIO_AC4) && codecProfileAndLevel3.equals(codecProfileAndLevel4)) {
+                        return new DecoderReuseEvaluation(this.name, format3, format4, 3, 0);
+                    }
                 }
+            }
+            if (i == 0 && (this.mimeType.equals(MimeTypes.AUDIO_E_AC3_JOC) || this.mimeType.equals(MimeTypes.AUDIO_E_AC3))) {
+                return new DecoderReuseEvaluation(this.name, format3, format4, 3, 0);
             }
             if (!format3.initializationDataEquals(format4)) {
                 i |= 32;
@@ -419,8 +434,10 @@ public final class MediaCodecInfo {
         return new Point(Util.ceilDivide(i, widthAlignment) * widthAlignment, Util.ceilDivide(i2, heightAlignment) * heightAlignment);
     }
 
-    private static int getMaxSupportedInstancesV23(MediaCodecInfo.CodecCapabilities codecCapabilities) {
-        return codecCapabilities.getMaxSupportedInstances();
+    private static MediaCodecInfo.CodecProfileLevel[] estimateLegacyAc4ProfileLevels(MediaCodecInfo.CodecCapabilities codecCapabilities) {
+        MediaCodecInfo.AudioCapabilities audioCapabilities;
+        int i = ((codecCapabilities == null || (audioCapabilities = codecCapabilities.getAudioCapabilities()) == null) ? 2 : audioCapabilities.getMaxInputChannelCount()) > 18 ? 16 : 8;
+        return new MediaCodecInfo.CodecProfileLevel[]{MediaCodecUtil.createCodecProfileLevel(257, i), MediaCodecUtil.createCodecProfileLevel(InputDeviceCompat.SOURCE_DPAD, i), MediaCodecUtil.createCodecProfileLevel(514, i), MediaCodecUtil.createCodecProfileLevel(AnalyticsListener.EVENT_DRM_KEYS_REMOVED, i), MediaCodecUtil.createCodecProfileLevel(AnalyticsListener.EVENT_PLAYER_RELEASED, i)};
     }
 
     private static MediaCodecInfo.CodecProfileLevel[] estimateLegacyVp9ProfileLevels(MediaCodecInfo.CodecCapabilities codecCapabilities) {

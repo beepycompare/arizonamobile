@@ -23,13 +23,13 @@ public final class Of implements uo {
                 if (decode != null && decode.length != 0) {
                     c0476og = new C0476og(decode);
                     Wf wf = new Wf();
-                    str = c0476og.f1147a;
+                    str = c0476og.f1148a;
                     if (str != null) {
                         bytes = new byte[0];
                     } else {
                         bytes = str.getBytes();
                     }
-                    wf.f837a = bytes;
+                    wf.f838a = bytes;
                     wf.c = c0476og.b;
                     wf.b = c0476og.c;
                     ordinal = c0476og.d.ordinal();
@@ -45,10 +45,10 @@ public final class Of implements uo {
                 }
                 c0476og = null;
                 Wf wf2 = new Wf();
-                str = c0476og.f1147a;
+                str = c0476og.f1148a;
                 if (str != null) {
                 }
-                wf2.f837a = bytes;
+                wf2.f838a = bytes;
                 wf2.c = c0476og.b;
                 wf2.b = c0476og.c;
                 ordinal = c0476og.d.ordinal();

@@ -3,8 +3,8 @@ package androidx.media3.exoplayer;
 import android.os.SystemClock;
 import androidx.media3.common.C;
 import androidx.media3.common.MediaItem;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import com.google.common.primitives.Longs;
 /* loaded from: classes.dex */
 public final class DefaultLivePlaybackSpeedControl implements LivePlaybackSpeedControl {
@@ -50,43 +50,43 @@ public final class DefaultLivePlaybackSpeedControl implements LivePlaybackSpeedC
         private float minPossibleLiveOffsetSmoothingFactor = 0.999f;
 
         public Builder setFallbackMinPlaybackSpeed(float f) {
-            Assertions.checkArgument(0.0f < f && f <= 1.0f);
+            Preconditions.checkArgument(0.0f < f && f <= 1.0f);
             this.fallbackMinPlaybackSpeed = f;
             return this;
         }
 
         public Builder setFallbackMaxPlaybackSpeed(float f) {
-            Assertions.checkArgument(f >= 1.0f);
+            Preconditions.checkArgument(f >= 1.0f);
             this.fallbackMaxPlaybackSpeed = f;
             return this;
         }
 
         public Builder setMinUpdateIntervalMs(long j) {
-            Assertions.checkArgument(j > 0);
+            Preconditions.checkArgument(j > 0);
             this.minUpdateIntervalMs = j;
             return this;
         }
 
         public Builder setProportionalControlFactor(float f) {
-            Assertions.checkArgument(f > 0.0f);
+            Preconditions.checkArgument(f > 0.0f);
             this.proportionalControlFactorUs = f / 1000000.0f;
             return this;
         }
 
         public Builder setMaxLiveOffsetErrorMsForUnitSpeed(long j) {
-            Assertions.checkArgument(j > 0);
+            Preconditions.checkArgument(j > 0);
             this.maxLiveOffsetErrorUsForUnitSpeed = Util.msToUs(j);
             return this;
         }
 
         public Builder setTargetLiveOffsetIncrementOnRebufferMs(long j) {
-            Assertions.checkArgument(j >= 0);
+            Preconditions.checkArgument(j >= 0);
             this.targetLiveOffsetIncrementOnRebufferUs = Util.msToUs(j);
             return this;
         }
 
         public Builder setMinPossibleLiveOffsetSmoothingFactor(float f) {
-            Assertions.checkArgument(f >= 0.0f && f < 1.0f);
+            Preconditions.checkArgument(f >= 0.0f && f < 1.0f);
             this.minPossibleLiveOffsetSmoothingFactor = f;
             return this;
         }

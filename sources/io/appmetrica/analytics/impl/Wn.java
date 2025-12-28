@@ -9,7 +9,7 @@ public final class Wn extends AbstractC0495pa {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0495pa
     public final void a(List<Sg> list) {
-        list.add(this.f1161a.h);
-        list.add(this.f1161a.n);
+        list.add(this.f1162a.h);
+        list.add(this.f1162a.n);
     }
 }

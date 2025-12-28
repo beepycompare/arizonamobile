@@ -33,12 +33,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0729yk implements Qc, InterfaceC0407lm, AskForPermissionStrategyModuleProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1320a = "rp";
+    public final String f1321a = "rp";
     public final CopyOnWriteArrayList b = new CopyOnWriteArrayList();
     public volatile AskForPermissionStrategyModuleProvider c = new B7();
 
     public static void a(String str, String str2, Throwable th) {
-        Rj rj = AbstractC0504pj.f1168a;
+        Rj rj = AbstractC0504pj.f1169a;
         Map mapOf = MapsKt.mapOf(TuplesKt.to(str, MapsKt.mapOf(TuplesKt.to(str2, ExceptionsKt.stackTraceToString(th)))));
         rj.getClass();
         rj.a(new Qj("service_module_errors", mapOf));
@@ -264,7 +264,7 @@ public final class C0729yk implements Qc, InterfaceC0407lm, AskForPermissionStra
 
     public final void a(ModuleServiceEntryPoint<Object> moduleServiceEntryPoint) {
         this.b.add(moduleServiceEntryPoint);
-        if (Intrinsics.areEqual(this.f1320a, moduleServiceEntryPoint.getIdentifier()) && (moduleServiceEntryPoint instanceof AskForPermissionStrategyModuleProvider)) {
+        if (Intrinsics.areEqual(this.f1321a, moduleServiceEntryPoint.getIdentifier()) && (moduleServiceEntryPoint instanceof AskForPermissionStrategyModuleProvider)) {
             this.c = (AskForPermissionStrategyModuleProvider) moduleServiceEntryPoint;
         }
     }
@@ -272,7 +272,7 @@ public final class C0729yk implements Qc, InterfaceC0407lm, AskForPermissionStra
     @Override // io.appmetrica.analytics.impl.InterfaceC0407lm
     public final void a(C0278gm c0278gm) {
         HashSet hashSet = new HashSet();
-        SdkIdentifiers sdkIdentifiers = new SdkIdentifiers(c0278gm.d, c0278gm.f1008a, c0278gm.b);
+        SdkIdentifiers sdkIdentifiers = new SdkIdentifiers(c0278gm.d, c0278gm.f1009a, c0278gm.b);
         Lg lg = new Lg(c0278gm.v, c0278gm.u);
         Iterator it = this.b.iterator();
         while (it.hasNext()) {
@@ -296,13 +296,13 @@ public final class C0729yk implements Qc, InterfaceC0407lm, AskForPermissionStra
         while (it.hasNext()) {
             ModuleServiceEntryPoint moduleServiceEntryPoint = (ModuleServiceEntryPoint) it.next();
             try {
-                moduleServiceEntryPoint.initServiceSide(serviceContext, new C0654vk(new SdkIdentifiers(c0278gm.d, c0278gm.f1008a, c0278gm.b), new Lg(c0278gm.v, c0278gm.u), c0278gm.A.get(moduleServiceEntryPoint.getIdentifier())));
+                moduleServiceEntryPoint.initServiceSide(serviceContext, new C0654vk(new SdkIdentifiers(c0278gm.d, c0278gm.f1009a, c0278gm.b), new Lg(c0278gm.v, c0278gm.u), c0278gm.A.get(moduleServiceEntryPoint.getIdentifier())));
                 ModuleEventServiceHandlerFactory moduleEventServiceHandlerFactory = moduleServiceEntryPoint.getModuleEventServiceHandlerFactory();
                 if (moduleEventServiceHandlerFactory != null) {
                     Vc vc = C0470oa.I.t;
                     String identifier = moduleServiceEntryPoint.getIdentifier();
                     synchronized (vc) {
-                        vc.f819a.put(identifier, moduleEventServiceHandlerFactory);
+                        vc.f820a.put(identifier, moduleEventServiceHandlerFactory);
                     }
                 }
             } catch (Throwable th) {

@@ -1,6 +1,6 @@
 package androidx.media3.exoplayer.video.spherical;
 
-import androidx.media3.common.util.Assertions;
+import com.google.common.base.Preconditions;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -32,11 +32,11 @@ final class Projection {
     public static Projection createEquirectangular(float f, int i, int i2, float f2, float f3, int i3) {
         int i4;
         int i5 = i;
-        Assertions.checkArgument(f > 0.0f);
-        Assertions.checkArgument(i5 >= 1);
-        Assertions.checkArgument(i2 >= 1);
-        Assertions.checkArgument(f2 > 0.0f && f2 <= 180.0f);
-        Assertions.checkArgument(f3 > 0.0f && f3 <= 360.0f);
+        Preconditions.checkArgument(f > 0.0f);
+        Preconditions.checkArgument(i5 >= 1);
+        Preconditions.checkArgument(i2 >= 1);
+        Preconditions.checkArgument(f2 > 0.0f && f2 <= 180.0f);
+        Preconditions.checkArgument(f3 > 0.0f && f3 <= 360.0f);
         float radians = (float) Math.toRadians(f2);
         float radians2 = (float) Math.toRadians(f3);
         float f4 = radians / i5;
@@ -123,7 +123,7 @@ final class Projection {
 
         public SubMesh(int i, float[] fArr, float[] fArr2, int i2) {
             this.textureId = i;
-            Assertions.checkArgument(((long) fArr.length) * 2 == ((long) fArr2.length) * 3);
+            Preconditions.checkArgument(((long) fArr.length) * 2 == ((long) fArr2.length) * 3);
             this.vertices = fArr;
             this.textureCoords = fArr2;
             this.mode = i2;

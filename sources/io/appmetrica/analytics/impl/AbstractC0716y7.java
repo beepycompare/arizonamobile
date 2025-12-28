@@ -6,6 +6,6 @@ import java.math.BigInteger;
 public abstract class AbstractC0716y7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final BigInteger f1311a = BigInteger.valueOf(Long.MAX_VALUE);
+    public static final BigInteger f1312a = BigInteger.valueOf(Long.MAX_VALUE);
     public static final BigInteger b = BigInteger.valueOf(Long.MIN_VALUE);
 }

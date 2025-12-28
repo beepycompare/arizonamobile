@@ -5,6 +5,7 @@ import android.media.MediaDrm;
 import android.media.MediaDrmResetException;
 import android.media.NotProvisionedException;
 import android.os.Build;
+import android.os.SystemClock;
 import androidx.media3.common.PlaybackException;
 import androidx.media3.common.util.Util;
 import androidx.media3.datasource.DataSource;
@@ -13,6 +14,8 @@ import androidx.media3.datasource.DataSpec;
 import androidx.media3.datasource.HttpDataSource;
 import androidx.media3.datasource.StatsDataSource;
 import androidx.media3.exoplayer.drm.DefaultDrmSessionManager;
+import androidx.media3.exoplayer.drm.MediaDrmCallback;
+import androidx.media3.exoplayer.source.LoadEventInfo;
 import com.google.common.io.ByteStreams;
 import com.google.common.net.HttpHeaders;
 import java.lang.annotation.Documented;
@@ -22,7 +25,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.List;
 import java.util.Map;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class DrmUtil {
     public static final int ERROR_SOURCE_EXO_MEDIA_DRM = 1;
     public static final int ERROR_SOURCE_LICENSE_ACQUISITION = 2;
@@ -32,7 +35,7 @@ public final class DrmUtil {
     @Target({ElementType.FIELD, ElementType.METHOD, ElementType.PARAMETER, ElementType.LOCAL_VARIABLE, ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public @interface ErrorSource {
     }
 
@@ -40,7 +43,7 @@ public final class DrmUtil {
         if (th instanceof MediaDrm.MediaDrmStateException) {
             return Util.getErrorCodeForMediaDrmErrorCode(Util.getErrorCodeFromPlatformDiagnosticsInfo(((MediaDrm.MediaDrmStateException) th).getDiagnosticInfo()));
         }
-        if (Api23.isMediaDrmResetException(th)) {
+        if (th instanceof MediaDrmResetException) {
             return PlaybackException.ERROR_CODE_DRM_SYSTEM_ERROR;
         }
         if ((th instanceof NotProvisionedException) || isFailureToConstructNotProvisionedException(th)) {
@@ -78,29 +81,69 @@ public final class DrmUtil {
         return Build.VERSION.SDK_INT == 34 && (th instanceof NoSuchMethodError) && th.getMessage() != null && th.getMessage().contains("Landroid/media/ResourceBusyException;.<init>(");
     }
 
-    public static byte[] executePost(DataSource dataSource, String str, byte[] bArr, Map<String, String> map) throws MediaDrmCallbackException {
+    public static MediaDrmCallback.Response executePost(DataSource dataSource, String str, byte[] bArr, Map<String, String> map) throws MediaDrmCallbackException {
+        DataSpec dataSpec;
+        DataSourceInputStream dataSourceInputStream;
+        byte[] byteArray;
         StatsDataSource statsDataSource = new StatsDataSource(dataSource);
         DataSpec build = new DataSpec.Builder().setUri(str).setHttpRequestHeaders(map).setHttpMethod(2).setHttpBody(bArr).setFlags(1).build();
         int i = 0;
-        DataSpec dataSpec = build;
+        DataSpec dataSpec2 = build;
         while (true) {
             try {
-                DataSourceInputStream dataSourceInputStream = new DataSourceInputStream(statsDataSource, dataSpec);
+                DataSourceInputStream dataSourceInputStream2 = new DataSourceInputStream(statsDataSource, dataSpec2);
                 try {
-                    byte[] byteArray = ByteStreams.toByteArray(dataSourceInputStream);
-                    Util.closeQuietly(dataSourceInputStream);
-                    return byteArray;
                 } catch (HttpDataSource.InvalidResponseCodeException e) {
-                    String redirectUrl = getRedirectUrl(e, i);
-                    if (redirectUrl == null) {
-                        throw e;
-                    }
-                    i++;
-                    dataSpec = dataSpec.buildUpon().setUri(redirectUrl).build();
-                    Util.closeQuietly(dataSourceInputStream);
+                    e = e;
+                    dataSourceInputStream = dataSourceInputStream2;
+                    dataSpec = build;
+                } catch (Throwable th) {
+                    th = th;
+                    dataSourceInputStream = dataSourceInputStream2;
                 }
-            } catch (Exception e2) {
-                throw new MediaDrmCallbackException(build, statsDataSource.getLastOpenedUri(), statsDataSource.getResponseHeaders(), statsDataSource.getBytesRead(), e2);
+                try {
+                    dataSpec = build;
+                    dataSourceInputStream = dataSourceInputStream2;
+                    try {
+                        MediaDrmCallback.Response build2 = new MediaDrmCallback.Response.Builder(ByteStreams.toByteArray(dataSourceInputStream2)).setLoadEventInfo(new LoadEventInfo(-1L, dataSpec, statsDataSource.getLastOpenedUri(), statsDataSource.getLastResponseHeaders(), SystemClock.elapsedRealtime(), 0L, byteArray.length)).build();
+                        Util.closeQuietly(dataSourceInputStream);
+                        return build2;
+                    } catch (HttpDataSource.InvalidResponseCodeException e2) {
+                        e = e2;
+                        try {
+                            String redirectUrl = getRedirectUrl(e, i);
+                            if (redirectUrl == null) {
+                                throw e;
+                            }
+                            i++;
+                            dataSpec2 = dataSpec2.buildUpon().setUri(redirectUrl).build();
+                            try {
+                                Util.closeQuietly(dataSourceInputStream);
+                                build = dataSpec;
+                            } catch (Exception e3) {
+                                e = e3;
+                                throw new MediaDrmCallbackException(dataSpec, statsDataSource.getLastOpenedUri(), statsDataSource.getResponseHeaders(), statsDataSource.getBytesRead(), e);
+                            }
+                        } catch (Throwable th2) {
+                            th = th2;
+                            Util.closeQuietly(dataSourceInputStream);
+                            throw th;
+                        }
+                    }
+                } catch (HttpDataSource.InvalidResponseCodeException e4) {
+                    e = e4;
+                    dataSpec = build;
+                    dataSourceInputStream = dataSourceInputStream2;
+                } catch (Throwable th3) {
+                    th = th3;
+                    dataSourceInputStream = dataSourceInputStream2;
+                    Util.closeQuietly(dataSourceInputStream);
+                    throw th;
+                }
+                build = dataSpec;
+            } catch (Exception e5) {
+                e = e5;
+                dataSpec = build;
             }
         }
     }
@@ -112,16 +155,6 @@ public final class DrmUtil {
             return null;
         }
         return list.get(0);
-    }
-
-    /* loaded from: classes2.dex */
-    private static final class Api23 {
-        private Api23() {
-        }
-
-        public static boolean isMediaDrmResetException(Throwable th) {
-            return th instanceof MediaDrmResetException;
-        }
     }
 
     private DrmUtil() {

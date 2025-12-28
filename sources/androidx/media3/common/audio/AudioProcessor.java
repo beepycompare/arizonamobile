@@ -2,6 +2,7 @@ package androidx.media3.common.audio;
 
 import androidx.media3.common.Format;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.Objects;
@@ -11,8 +12,6 @@ public interface AudioProcessor {
     public static final ByteBuffer EMPTY_BUFFER = ByteBuffer.allocateDirect(0).order(ByteOrder.nativeOrder());
 
     AudioFormat configure(AudioFormat audioFormat) throws UnhandledAudioFormatException;
-
-    void flush();
 
     default long getDurationAfterProcessorApplied(long j) {
         return j;
@@ -81,5 +80,25 @@ public interface AudioProcessor {
             super(str + " " + audioFormat);
             this.inputAudioFormat = audioFormat;
         }
+    }
+
+    /* loaded from: classes2.dex */
+    public static final class StreamMetadata {
+        public static final StreamMetadata DEFAULT = new StreamMetadata(0);
+        public final long positionOffsetUs;
+
+        public StreamMetadata(long j) {
+            Preconditions.checkArgument(j >= 0);
+            this.positionOffsetUs = j;
+        }
+    }
+
+    @Deprecated
+    default void flush() {
+        throw new IllegalStateException("AudioProcessor must implement at least one #flush() overload.");
+    }
+
+    default void flush(StreamMetadata streamMetadata) {
+        flush();
     }
 }

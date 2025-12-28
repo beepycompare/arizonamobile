@@ -27,7 +27,7 @@ public final class FlacMetadataReader {
     }
 
     public static Metadata peekId3Metadata(ExtractorInput extractorInput, boolean z) throws IOException {
-        Metadata peekId3Data = new Id3Peeker().peekId3Data(extractorInput, z ? null : Id3Decoder.NO_FRAMES_PREDICATE);
+        Metadata peekId3Data = new Id3Peeker().peekId3Data(extractorInput, z ? null : Id3Decoder.NO_FRAMES_PREDICATE, 0);
         if (peekId3Data == null || peekId3Data.length() == 0) {
             return null;
         }

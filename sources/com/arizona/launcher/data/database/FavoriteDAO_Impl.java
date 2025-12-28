@@ -44,8 +44,8 @@ public final class FavoriteDAO_Impl implements FavoriteDAO {
             public void bind(SQLiteStatement statement, FavoriteServer entity) {
                 Intrinsics.checkNotNullParameter(statement, "statement");
                 Intrinsics.checkNotNullParameter(entity, "entity");
-                statement.mo9182bindLong(1, entity.getServerId());
-                statement.mo9184bindText(2, entity.getServerType());
+                statement.mo9197bindLong(1, entity.getServerId());
+                statement.mo9199bindText(2, entity.getServerType());
             }
         };
         this.__deleteAdapterOfFavoriteServer = new EntityDeleteOrUpdateAdapter<FavoriteServer>() { // from class: com.arizona.launcher.data.database.FavoriteDAO_Impl.2
@@ -59,8 +59,8 @@ public final class FavoriteDAO_Impl implements FavoriteDAO {
             public void bind(SQLiteStatement statement, FavoriteServer entity) {
                 Intrinsics.checkNotNullParameter(statement, "statement");
                 Intrinsics.checkNotNullParameter(entity, "entity");
-                statement.mo9182bindLong(1, entity.getServerId());
-                statement.mo9184bindText(2, entity.getServerType());
+                statement.mo9197bindLong(1, entity.getServerId());
+                statement.mo9199bindText(2, entity.getServerType());
             }
         };
     }

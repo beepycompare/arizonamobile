@@ -18,10 +18,10 @@ import org.json.JSONObject;
 public final class I6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final CounterConfigurationReporterType f617a;
+    public final CounterConfigurationReporterType f618a;
 
     public I6(CounterConfigurationReporterType counterConfigurationReporterType) {
-        this.f617a = counterConfigurationReporterType;
+        this.f618a = counterConfigurationReporterType;
     }
 
     /* JADX WARN: Can't wrap try/catch for region: R(12:1|2|3|(3:63|64|(9:66|(2:69|67)|70|6|7|8|(2:15|(8:18|7b|26|27|(4:30|(5:34|35|(1:37)(1:41)|38|39)|40|28)|44|45|(2:49|50)))|59|60))|5|6|7|8|(4:10|12|15|(2:18|7b))|59|60|(1:(0))) */
@@ -51,7 +51,7 @@ public final class I6 {
             } catch (Throwable th2) {
                 th = th2;
                 try {
-                    Rj rj = AbstractC0504pj.f1168a;
+                    Rj rj = AbstractC0504pj.f1169a;
                     rj.getClass();
                     rj.a(new C0529qj("select_rows_to_delete_exception", th));
                     mo.a(cursor);
@@ -75,11 +75,11 @@ public final class I6 {
                 if (arrayList != null && arrayList.size() != 0 && i22 == arrayList.size() && z) {
                     c0454nj = C0470oa.I.f;
                     if (str2 != null && c0454nj != null) {
-                        CounterConfigurationReporterType counterConfigurationReporterType = this.f617a;
+                        CounterConfigurationReporterType counterConfigurationReporterType = this.f618a;
                         synchronized (c0454nj) {
                             c0404lj = (C0404lj) c0454nj.c.get(str2);
                             if (c0404lj == null) {
-                                c0404lj = new C0404lj(str2, c0454nj.b, counterConfigurationReporterType, c0454nj.f1130a);
+                                c0404lj = new C0404lj(str2, c0454nj.b, counterConfigurationReporterType, c0454nj.f1131a);
                                 c0454nj.c.put(str2, c0404lj);
                             }
                         }
@@ -94,7 +94,7 @@ public final class I6 {
                                     jSONArray.put(asInteger);
                                     EnumC0164cb a2 = EnumC0164cb.a(asInteger2.intValue());
                                     if (a2 == null) {
-                                        Map map = Qf.f747a;
+                                        Map map = Qf.f748a;
                                         num = null;
                                     } else {
                                         num = (Integer) Qf.c.get(a2);
@@ -106,7 +106,7 @@ public final class I6 {
                             JSONObject put = new JSONObject().put("details", new JSONObject().put("reason", H6.a(i)).put("cleared", jSONObject).put("actual_deleted_number", i22));
                             PublicLogger orCreatePublicLogger = LoggerStorage.getOrCreatePublicLogger(str2);
                             String jSONObject2 = put.toString();
-                            Set set = AbstractC0693x9.f1294a;
+                            Set set = AbstractC0693x9.f1295a;
                             EnumC0164cb enumC0164cb = EnumC0164cb.EVENT_TYPE_UNDEFINED;
                             n3 = new N3(jSONObject2, "", 12290, 0, orCreatePublicLogger);
                         } catch (Throwable unused) {
@@ -114,9 +114,9 @@ public final class I6 {
                         }
                         if (n3 != null && c0404lj.c != null) {
                             try {
-                                CounterConfiguration counterConfiguration = new CounterConfiguration(c0404lj.f1092a);
+                                CounterConfiguration counterConfiguration = new CounterConfiguration(c0404lj.f1093a);
                                 counterConfiguration.setReporterType(c0404lj.c);
-                                ((C1) c0404lj.d.f1149a).reportData(1, n3.d(new Gh(new Cf(c0404lj.b, (ResultReceiver) null), counterConfiguration, new E8(new C0580sl(LoggerStorage.getOrCreatePublicLogger(c0404lj.f1092a), "Crash Environment")), null).c()));
+                                ((C1) c0404lj.d.f1150a).reportData(1, n3.d(new Gh(new Cf(c0404lj.b, (ResultReceiver) null), counterConfiguration, new E8(new C0580sl(LoggerStorage.getOrCreatePublicLogger(c0404lj.f1093a), "Crash Environment")), null).c()));
                             } catch (Throwable unused2) {
                             }
                         }
@@ -130,7 +130,7 @@ public final class I6 {
         if (arrayList != null) {
             c0454nj = C0470oa.I.f;
             if (str2 != null) {
-                CounterConfigurationReporterType counterConfigurationReporterType2 = this.f617a;
+                CounterConfigurationReporterType counterConfigurationReporterType2 = this.f618a;
                 synchronized (c0454nj) {
                 }
             }

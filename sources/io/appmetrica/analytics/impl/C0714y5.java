@@ -11,12 +11,12 @@ import kotlin.collections.SetsKt;
 public final class C0714y5 implements G8, T8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final M6 f1309a;
+    public final M6 f1310a;
     public final Set b;
     public final AtomicLong c;
 
     public C0714y5(M6 m6) {
-        this.f1309a = m6;
+        this.f1310a = m6;
         Set of = SetsKt.setOf((Object[]) new Integer[]{Integer.valueOf(EnumC0164cb.EVENT_CLIENT_EXTERNAL_ATTRIBUTION.a()), Integer.valueOf(EnumC0164cb.EVENT_TYPE_APP_UPDATE.a()), Integer.valueOf(EnumC0164cb.EVENT_TYPE_FIRST_ACTIVATION.a()), Integer.valueOf(EnumC0164cb.EVENT_TYPE_INIT.a()), Integer.valueOf(EnumC0164cb.EVENT_TYPE_SEND_AD_REVENUE_EVENT.a()), Integer.valueOf(EnumC0164cb.EVENT_TYPE_SEND_ECOMMERCE_EVENT.a()), Integer.valueOf(EnumC0164cb.EVENT_TYPE_SEND_REFERRER.a()), Integer.valueOf(EnumC0164cb.EVENT_TYPE_SEND_REVENUE_EVENT.a())});
         this.b = of;
         this.c = new AtomicLong(m6.a(of));
@@ -25,7 +25,7 @@ public final class C0714y5 implements G8, T8 {
 
     @Override // io.appmetrica.analytics.impl.T8
     public final void a() {
-        this.c.set(this.f1309a.a(this.b));
+        this.c.set(this.f1310a.a(this.b));
     }
 
     @Override // io.appmetrica.analytics.impl.G8

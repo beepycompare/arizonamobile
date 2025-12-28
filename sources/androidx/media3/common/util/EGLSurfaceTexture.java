@@ -9,6 +9,7 @@ import android.opengl.EGLSurface;
 import android.opengl.GLES20;
 import android.os.Handler;
 import androidx.media3.common.util.GlUtil;
+import com.google.common.base.Preconditions;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -101,7 +102,7 @@ public final class EGLSurfaceTexture implements SurfaceTexture.OnFrameAvailableL
     }
 
     public SurfaceTexture getSurfaceTexture() {
-        return (SurfaceTexture) Assertions.checkNotNull(this.texture);
+        return (SurfaceTexture) Preconditions.checkNotNull(this.texture);
     }
 
     @Override // android.graphics.SurfaceTexture.OnFrameAvailableListener

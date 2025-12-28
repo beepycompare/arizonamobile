@@ -15,10 +15,13 @@ import android.opengl.Matrix;
 import android.os.Build;
 import androidx.media3.common.C;
 import com.adjust.sdk.Constants;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableList;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 /* loaded from: classes2.dex */
@@ -43,8 +46,15 @@ public final class GlUtil {
 
     /* loaded from: classes2.dex */
     public static final class GlException extends Exception {
+        public final ImmutableList<Integer> errorCodes;
+
         public GlException(String str) {
+            this(str, ImmutableList.of());
+        }
+
+        public GlException(String str, List<Integer> list) {
             super(str);
+            this.errorCodes = ImmutableList.copyOf((Collection) list);
         }
     }
 
@@ -141,11 +151,11 @@ public final class GlUtil {
 
     public static EGLContext createEglContext(EGLContext eGLContext, EGLDisplay eGLDisplay, int i, int[] iArr) throws GlException {
         boolean z = true;
-        Assertions.checkArgument(Arrays.equals(iArr, EGL_CONFIG_ATTRIBUTES_RGBA_8888) || Arrays.equals(iArr, EGL_CONFIG_ATTRIBUTES_RGBA_1010102));
+        Preconditions.checkArgument(Arrays.equals(iArr, EGL_CONFIG_ATTRIBUTES_RGBA_8888) || Arrays.equals(iArr, EGL_CONFIG_ATTRIBUTES_RGBA_1010102));
         if (i != 2 && i != 3) {
             z = false;
         }
-        Assertions.checkArgument(z);
+        Preconditions.checkArgument(z);
         EGLContext eglCreateContext = EGL14.eglCreateContext(eGLDisplay, getEglConfig(eGLDisplay, iArr), eGLContext, new int[]{12440, i, 12344}, 0);
         if (eglCreateContext == null || eglCreateContext.equals(EGL14.EGL_NO_CONTEXT)) {
             EGL14.eglTerminate(eGLDisplay);
@@ -243,6 +253,7 @@ public final class GlUtil {
 
     public static void checkGlError() throws GlException {
         StringBuilder sb = new StringBuilder();
+        ImmutableList.Builder builder = new ImmutableList.Builder();
         boolean z = false;
         while (true) {
             int glGetError = GLES20.glGetError();
@@ -257,10 +268,11 @@ public final class GlUtil {
                 gluErrorString = "error code: 0x" + Integer.toHexString(glGetError);
             }
             sb.append("glError: ").append(gluErrorString);
+            builder.add((ImmutableList.Builder) Integer.valueOf(glGetError));
             z = true;
         }
         if (z) {
-            throw new GlException(sb.toString());
+            throw new GlException(sb.toString(), builder.build());
         }
     }
 
@@ -268,7 +280,7 @@ public final class GlUtil {
         int[] iArr = new int[1];
         GLES20.glGetIntegerv(3379, iArr, 0);
         int i3 = iArr[0];
-        Assertions.checkState(i3 > 0, "Create a OpenGL context first or run the GL methods on an OpenGL thread.");
+        Preconditions.checkState(i3 > 0, "Create a OpenGL context first or run the GL methods on an OpenGL thread.");
         if (i < 0 || i2 < 0) {
             throw new GlException("width or height is less than 0");
         }
@@ -392,10 +404,14 @@ public final class GlUtil {
         }
         EGL14.eglMakeCurrent(eGLDisplay, EGL14.EGL_NO_SURFACE, EGL14.EGL_NO_SURFACE, EGL14.EGL_NO_CONTEXT);
         checkEglException("Error releasing context");
-        if (eGLContext != null && !eGLContext.equals(EGL14.EGL_NO_CONTEXT)) {
-            EGL14.eglDestroyContext(eGLDisplay, eGLContext);
-            checkEglException("Error destroying context");
+        if (eGLContext == null || eGLContext.equals(EGL14.EGL_NO_CONTEXT)) {
+            return;
         }
+        EGL14.eglDestroyContext(eGLDisplay, eGLContext);
+        checkEglException("Error destroying context");
+    }
+
+    public static void terminate(EGLDisplay eGLDisplay) throws GlException {
         EGL14.eglReleaseThread();
         checkEglException("Error releasing thread");
         EGL14.eglTerminate(eGLDisplay);
@@ -510,7 +526,7 @@ public final class GlUtil {
     private static void checkEglException(String str) throws GlException {
         int eglGetError = EGL14.eglGetError();
         if (eglGetError != 12288) {
-            throw new GlException(str + ", error code: 0x" + Integer.toHexString(eglGetError));
+            throw new GlException(str + ", error code: 0x" + Integer.toHexString(eglGetError), ImmutableList.of(Integer.valueOf(eglGetError)));
         }
     }
 }

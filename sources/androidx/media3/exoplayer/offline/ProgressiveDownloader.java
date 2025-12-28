@@ -2,13 +2,13 @@ package androidx.media3.exoplayer.offline;
 
 import androidx.media3.common.MediaItem;
 import androidx.media3.common.PriorityTaskManager;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.RunnableFutureTask;
 import androidx.media3.common.util.Util;
 import androidx.media3.datasource.DataSpec;
 import androidx.media3.datasource.cache.CacheDataSource;
 import androidx.media3.datasource.cache.CacheWriter;
 import androidx.media3.exoplayer.offline.Downloader;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
@@ -36,8 +36,8 @@ public final class ProgressiveDownloader implements Downloader {
     }
 
     public ProgressiveDownloader(MediaItem mediaItem, CacheDataSource.Factory factory, Executor executor, long j, long j2) {
-        this.executor = (Executor) Assertions.checkNotNull(executor);
-        Assertions.checkNotNull(mediaItem.localConfiguration);
+        this.executor = (Executor) Preconditions.checkNotNull(executor);
+        Preconditions.checkNotNull(mediaItem.localConfiguration);
         DataSpec build = new DataSpec.Builder().setUri(mediaItem.localConfiguration.uri).setKey(mediaItem.localConfiguration.customCacheKey).setFlags(4).setPosition(j).setLength(j2).build();
         this.dataSpec = build;
         CacheDataSource createDataSourceForDownloading = factory.createDataSourceForDownloading();
@@ -86,7 +86,7 @@ public final class ProgressiveDownloader implements Downloader {
                     this.downloadRunnable.get();
                     z = true;
                 } catch (ExecutionException e) {
-                    Throwable th = (Throwable) Assertions.checkNotNull(e.getCause());
+                    Throwable th = (Throwable) Preconditions.checkNotNull(e.getCause());
                     if (!(th instanceof PriorityTaskManager.PriorityTooLowException)) {
                         if (th instanceof IOException) {
                             throw ((IOException) th);
@@ -95,7 +95,7 @@ public final class ProgressiveDownloader implements Downloader {
                     }
                 }
             } finally {
-                ((RunnableFutureTask) Assertions.checkNotNull(this.downloadRunnable)).blockUntilFinished();
+                ((RunnableFutureTask) Preconditions.checkNotNull(this.downloadRunnable)).blockUntilFinished();
                 PriorityTaskManager priorityTaskManager3 = this.priorityTaskManager;
                 if (priorityTaskManager3 != null) {
                     priorityTaskManager3.remove(-4000);
@@ -123,6 +123,6 @@ public final class ProgressiveDownloader implements Downloader {
         if (this.progressListener == null) {
             return;
         }
-        ((Downloader.ProgressListener) Assertions.checkNotNull(this.progressListener)).onProgress(j, j2, (j == -1 || j == 0) ? -1.0f : Util.percentFloat(j2, j));
+        ((Downloader.ProgressListener) Preconditions.checkNotNull(this.progressListener)).onProgress(j, j2, (j == -1 || j == 0) ? -1.0f : Util.percentFloat(j2, j));
     }
 }

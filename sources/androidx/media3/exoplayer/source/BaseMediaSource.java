@@ -3,12 +3,12 @@ package androidx.media3.exoplayer.source;
 import android.os.Handler;
 import android.os.Looper;
 import androidx.media3.common.Timeline;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.datasource.TransferListener;
 import androidx.media3.exoplayer.analytics.PlayerId;
 import androidx.media3.exoplayer.drm.DrmSessionEventListener;
 import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.exoplayer.source.MediaSourceEventListener;
+import com.google.common.base.Preconditions;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -53,7 +53,7 @@ public abstract class BaseMediaSource implements MediaSource {
 
     @Deprecated
     protected final MediaSourceEventListener.EventDispatcher createEventDispatcher(MediaSource.MediaPeriodId mediaPeriodId, long j) {
-        Assertions.checkNotNull(mediaPeriodId);
+        Preconditions.checkNotNull(mediaPeriodId);
         return this.eventDispatcher.withParameters(0, mediaPeriodId);
     }
 
@@ -79,7 +79,7 @@ public abstract class BaseMediaSource implements MediaSource {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final PlayerId getPlayerId() {
-        return (PlayerId) Assertions.checkStateNotNull(this.playerId);
+        return (PlayerId) Preconditions.checkNotNull(this.playerId);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -94,8 +94,8 @@ public abstract class BaseMediaSource implements MediaSource {
 
     @Override // androidx.media3.exoplayer.source.MediaSource
     public final void addEventListener(Handler handler, MediaSourceEventListener mediaSourceEventListener) {
-        Assertions.checkNotNull(handler);
-        Assertions.checkNotNull(mediaSourceEventListener);
+        Preconditions.checkNotNull(handler);
+        Preconditions.checkNotNull(mediaSourceEventListener);
         this.eventDispatcher.addEventListener(handler, mediaSourceEventListener);
     }
 
@@ -106,8 +106,8 @@ public abstract class BaseMediaSource implements MediaSource {
 
     @Override // androidx.media3.exoplayer.source.MediaSource
     public final void addDrmEventListener(Handler handler, DrmSessionEventListener drmSessionEventListener) {
-        Assertions.checkNotNull(handler);
-        Assertions.checkNotNull(drmSessionEventListener);
+        Preconditions.checkNotNull(handler);
+        Preconditions.checkNotNull(drmSessionEventListener);
         this.drmEventDispatcher.addEventListener(handler, drmSessionEventListener);
     }
 
@@ -125,7 +125,7 @@ public abstract class BaseMediaSource implements MediaSource {
     public final void prepareSource(MediaSource.MediaSourceCaller mediaSourceCaller, TransferListener transferListener, PlayerId playerId) {
         Looper myLooper = Looper.myLooper();
         Looper looper = this.looper;
-        Assertions.checkArgument(looper == null || looper == myLooper);
+        Preconditions.checkArgument(looper == null || looper == myLooper);
         this.playerId = playerId;
         Timeline timeline = this.timeline;
         this.mediaSourceCallers.add(mediaSourceCaller);
@@ -141,7 +141,7 @@ public abstract class BaseMediaSource implements MediaSource {
 
     @Override // androidx.media3.exoplayer.source.MediaSource
     public final void enable(MediaSource.MediaSourceCaller mediaSourceCaller) {
-        Assertions.checkNotNull(this.looper);
+        Preconditions.checkNotNull(this.looper);
         boolean isEmpty = this.enabledMediaSourceCallers.isEmpty();
         this.enabledMediaSourceCallers.add(mediaSourceCaller);
         if (isEmpty) {

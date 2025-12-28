@@ -9,7 +9,7 @@ import java.io.Closeable;
 public final class C0113ac implements InterfaceC0740z6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f894a;
+    public final Context f895a;
     public final String b;
     public final C0356jn c;
     public final Z9 d;
@@ -24,7 +24,7 @@ public final class C0113ac implements InterfaceC0740z6 {
         Z6 z6;
         try {
             this.d.a();
-            z6 = new Z6(this.f894a, this.b, this.c, PublicLogger.getAnonymousInstance());
+            z6 = new Z6(this.f895a, this.b, this.c, PublicLogger.getAnonymousInstance());
             this.e = z6;
         } catch (Throwable unused) {
             return null;
@@ -33,7 +33,7 @@ public final class C0113ac implements InterfaceC0740z6 {
     }
 
     public C0113ac(Context context, String str, Z9 z9, C0356jn c0356jn) {
-        this.f894a = context;
+        this.f895a = context;
         this.b = str;
         this.d = z9;
         this.c = c0356jn;

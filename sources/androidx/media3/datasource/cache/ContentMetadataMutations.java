@@ -1,7 +1,7 @@
 package androidx.media3.datasource.cache;
 
 import android.net.Uri;
-import androidx.media3.common.util.Assertions;
+import com.google.common.base.Preconditions;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -59,7 +59,7 @@ public class ContentMetadataMutations {
     }
 
     private ContentMetadataMutations checkAndSet(String str, Object obj) {
-        this.editedValues.put((String) Assertions.checkNotNull(str), Assertions.checkNotNull(obj));
+        this.editedValues.put((String) Preconditions.checkNotNull(str), Preconditions.checkNotNull(obj));
         this.removedValues.remove(str);
         return this;
     }

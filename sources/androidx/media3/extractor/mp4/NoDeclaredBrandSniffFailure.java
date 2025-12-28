@@ -7,4 +7,8 @@ public final class NoDeclaredBrandSniffFailure implements SniffFailure {
 
     private NoDeclaredBrandSniffFailure() {
     }
+
+    public String toString() {
+        return "NoDeclaredBrand";
+    }
 }

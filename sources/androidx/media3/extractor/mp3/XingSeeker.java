@@ -1,10 +1,10 @@
 package androidx.media3.extractor.mp3;
 
 import androidx.media3.common.C;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.SeekMap;
 import androidx.media3.extractor.SeekPoint;
+import com.google.common.base.Preconditions;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 /* loaded from: classes3.dex */
 final class XingSeeker implements Seeker {
@@ -54,7 +54,7 @@ final class XingSeeker implements Seeker {
                 d2 = 256.0d;
             } else {
                 int i = (int) d;
-                double d3 = ((long[]) Assertions.checkStateNotNull(this.tableOfContents))[i];
+                double d3 = ((long[]) Preconditions.checkNotNull(this.tableOfContents))[i];
                 d2 = d3 + ((d - i) * ((i == 99 ? 256.0d : jArr[i + 1]) - d3));
             }
         }
@@ -67,7 +67,7 @@ final class XingSeeker implements Seeker {
         if (!isSeekable() || j2 <= this.xingFrameSize) {
             return 0L;
         }
-        long[] jArr = (long[]) Assertions.checkStateNotNull(this.tableOfContents);
+        long[] jArr = (long[]) Preconditions.checkNotNull(this.tableOfContents);
         double d = (j2 * 256.0d) / this.dataSize;
         int binarySearchFloor = Util.binarySearchFloor(jArr, (long) d, true, true);
         long timeUsForTableIndex = getTimeUsForTableIndex(binarySearchFloor);

@@ -1,10 +1,10 @@
 package androidx.media3.extractor;
 
 import androidx.media3.common.C;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.LongArray;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.SeekMap;
+import com.google.common.base.Preconditions;
 /* loaded from: classes3.dex */
 public final class IndexSeekMap implements SeekMap {
     private long durationUs;
@@ -12,7 +12,7 @@ public final class IndexSeekMap implements SeekMap {
     private final LongArray timesUs;
 
     public IndexSeekMap(long[] jArr, long[] jArr2, long j) {
-        Assertions.checkArgument(jArr.length == jArr2.length);
+        Preconditions.checkArgument(jArr.length == jArr2.length);
         int length = jArr2.length;
         if (length > 0 && jArr2[0] > 0) {
             int i = length + 1;

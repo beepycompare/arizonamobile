@@ -1,7 +1,6 @@
 package androidx.media3.extractor.text.cea;
 
 import androidx.media3.common.C;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.decoder.DecoderOutputBuffer;
 import androidx.media3.extractor.text.Subtitle;
@@ -10,6 +9,7 @@ import androidx.media3.extractor.text.SubtitleDecoderException;
 import androidx.media3.extractor.text.SubtitleInputBuffer;
 import androidx.media3.extractor.text.SubtitleOutputBuffer;
 import androidx.media3.extractor.text.cea.CeaDecoder;
+import com.google.common.base.Preconditions;
 import java.util.ArrayDeque;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes3.dex */
@@ -67,7 +67,7 @@ public abstract class CeaDecoder implements SubtitleDecoder {
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // androidx.media3.decoder.Decoder
     public SubtitleInputBuffer dequeueInputBuffer() throws SubtitleDecoderException {
-        Assertions.checkState(this.dequeuedInputBuffer == null);
+        Preconditions.checkState(this.dequeuedInputBuffer == null);
         if (this.availableInputBuffers.isEmpty()) {
             return null;
         }
@@ -79,7 +79,7 @@ public abstract class CeaDecoder implements SubtitleDecoder {
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // androidx.media3.decoder.Decoder
     public void queueInputBuffer(SubtitleInputBuffer subtitleInputBuffer) throws SubtitleDecoderException {
-        Assertions.checkArgument(subtitleInputBuffer == this.dequeuedInputBuffer);
+        Preconditions.checkArgument(subtitleInputBuffer == this.dequeuedInputBuffer);
         CeaInputBuffer ceaInputBuffer = (CeaInputBuffer) subtitleInputBuffer;
         if (!ceaInputBuffer.isEndOfStream() && ceaInputBuffer.timeUs != Long.MIN_VALUE && this.outputStartTimeUs != C.TIME_UNSET && ceaInputBuffer.timeUs < this.outputStartTimeUs) {
             releaseInputBuffer(ceaInputBuffer);

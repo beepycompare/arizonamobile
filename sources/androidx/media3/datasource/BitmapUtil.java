@@ -3,6 +3,7 @@ package androidx.media3.datasource;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
+import android.os.Build;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.media3.common.ParserException;
 import java.io.ByteArrayInputStream;
@@ -51,5 +52,9 @@ public final class BitmapUtil {
             }
             throw th;
         }
+    }
+
+    public static Bitmap makeShared(Bitmap bitmap) {
+        return Build.VERSION.SDK_INT >= 31 ? bitmap.asShared() : bitmap;
     }
 }

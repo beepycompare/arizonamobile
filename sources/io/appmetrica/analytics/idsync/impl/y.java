@@ -5,7 +5,7 @@ import java.util.Map;
 public final class y {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f478a;
+    public final String f479a;
     public final boolean b;
     public final String c;
     public final boolean d;
@@ -14,7 +14,7 @@ public final class y {
     public final Map g;
 
     public y(String str, boolean z, String str2, boolean z2, int i, byte[] bArr, Map map) {
-        this.f478a = str;
+        this.f479a = str;
         this.b = z;
         this.c = str2;
         this.d = z2;
@@ -24,6 +24,6 @@ public final class y {
     }
 
     public final String toString() {
-        return "RequestResult(type='" + this.f478a + "', isCompleted=" + this.b + ", url=" + this.c + ", responseCodeIsValid=" + this.d + ", responseCode=" + this.e + ", responseBody=" + this.f + ", responseHeaders=" + this.g + ')';
+        return "RequestResult(type='" + this.f479a + "', isCompleted=" + this.b + ", url=" + this.c + ", responseCodeIsValid=" + this.d + ", responseCode=" + this.e + ", responseBody=" + this.f + ", responseHeaders=" + this.g + ')';
     }
 }

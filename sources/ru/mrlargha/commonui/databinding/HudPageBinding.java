@@ -17,7 +17,7 @@ import androidx.viewbinding.ViewBinding;
 import com.airbnb.lottie.LottieAnimationView;
 import com.arizona.common.ui.AvatarView;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class HudPageBinding implements ViewBinding {
     public final ConstraintLayout actionButton;
     public final ImageView actionButtonIc;

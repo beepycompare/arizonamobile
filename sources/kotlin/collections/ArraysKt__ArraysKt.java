@@ -19,7 +19,7 @@ import kotlin.ranges.RangesKt;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Arrays.kt */
-@Metadata(d1 = {"\u0000H\n\u0000\n\u0002\u0010 \n\u0000\n\u0002\u0010\u0011\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\b\u0003\u001a+\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\u0012\u0012\u000e\b\u0001\u0012\n\u0012\u0006\b\u0001\u0012\u0002H\u00020\u00030\u0003¢\u0006\u0002\u0010\u0004\u001aG\u0010\u0005\u001a\u001a\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00070\u00010\u0006\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u0007*\u0016\u0012\u0012\b\u0001\u0012\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u00070\u00060\u0003¢\u0006\u0002\u0010\b\u001a)\u0010\t\u001a\u00020\n*\b\u0012\u0002\b\u0003\u0018\u00010\u0003H\u0087\b\u0082\u0002\u000e\n\f\b\u0000\u0012\u0002\u0018\u0001\u001a\u0004\b\u0003\u0010\u0000¢\u0006\u0002\u0010\u000b\u001aH\u0010\f\u001a\u0002H\u0007\"\u0010\b\u0000\u0010\r*\u0006\u0012\u0002\b\u00030\u0003*\u0002H\u0007\"\u0004\b\u0001\u0010\u0007*\u0002H\r2\f\u0010\u000e\u001a\b\u0012\u0004\u0012\u0002H\u00070\u000fH\u0087\bø\u0001\u0000\u0082\u0002\n\n\b\b\u0001\u0012\u0002\u0010\u0001 \u0000¢\u0006\u0002\u0010\u0010\u001a5\u0010\u0011\u001a\u00020\n\"\u0004\b\u0000\u0010\u0002*\f\u0012\u0006\b\u0001\u0012\u0002H\u0002\u0018\u00010\u00032\u0010\u0010\u0012\u001a\f\u0012\u0006\b\u0001\u0012\u0002H\u0002\u0018\u00010\u0003H\u0001¢\u0006\u0004\b\u0013\u0010\u0014\u001a#\u0010\u0015\u001a\u00020\u0016\"\u0004\b\u0000\u0010\u0002*\f\u0012\u0006\b\u0001\u0012\u0002H\u0002\u0018\u00010\u0003H\u0001¢\u0006\u0004\b\u0017\u0010\u0018\u001a?\u0010\u0019\u001a\u00020\u001a\"\u0004\b\u0000\u0010\u0002*\n\u0012\u0006\b\u0001\u0012\u0002H\u00020\u00032\n\u0010\u001b\u001a\u00060\u001cj\u0002`\u001d2\u0010\u0010\u001e\u001a\f\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u00030\u001fH\u0002¢\u0006\u0004\b \u0010!\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006\""}, d2 = {"flatten", "", ExifInterface.GPS_DIRECTION_TRUE, "", "([[Ljava/lang/Object;)Ljava/util/List;", "unzip", "Lkotlin/Pair;", "R", "([Lkotlin/Pair;)Lkotlin/Pair;", "isNullOrEmpty", "", "([Ljava/lang/Object;)Z", "ifEmpty", "C", "defaultValue", "Lkotlin/Function0;", "([Ljava/lang/Object;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "contentDeepEqualsImpl", "other", "contentDeepEquals", "([Ljava/lang/Object;[Ljava/lang/Object;)Z", "contentDeepToStringImpl", "", "contentDeepToString", "([Ljava/lang/Object;)Ljava/lang/String;", "contentDeepToStringInternal", "", "result", "Ljava/lang/StringBuilder;", "Lkotlin/text/StringBuilder;", "processed", "", "contentDeepToStringInternal$ArraysKt__ArraysKt", "([Ljava/lang/Object;Ljava/lang/StringBuilder;Ljava/util/List;)V", "kotlin-stdlib"}, k = 5, mv = {2, 2, 0}, xi = 49, xs = "kotlin/collections/ArraysKt")
+@Metadata(d1 = {"\u0000H\n\u0000\n\u0002\u0010 \n\u0000\n\u0002\u0010\u0011\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\b\u0003\u001a/\u0010\u0000\u001a\b\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\b\u0000\u0010\u0002*\u0012\u0012\u000e\b\u0001\u0012\n\u0012\u0006\b\u0001\u0012\u0002H\u00020\u00030\u0003H\u0086\u0080\u0004¢\u0006\u0002\u0010\u0004\u001aK\u0010\u0005\u001a\u001a\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00020\u0001\u0012\n\u0012\b\u0012\u0004\u0012\u0002H\u00070\u00010\u0006\"\u0004\b\u0000\u0010\u0002\"\u0004\b\u0001\u0010\u0007*\u0016\u0012\u0012\b\u0001\u0012\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u00070\u00060\u0003H\u0086\u0080\u0004¢\u0006\u0002\u0010\b\u001a*\u0010\t\u001a\u00020\n*\b\u0012\u0002\b\u0003\u0018\u00010\u0003H\u0087\u0088\u0004\u0082\u0002\u000e\n\f\b\u0000\u0012\u0002\u0018\u0001\u001a\u0004\b\u0003\u0010\u0000¢\u0006\u0002\u0010\u000b\u001aI\u0010\f\u001a\u0002H\u0007\"\u0010\b\u0000\u0010\r*\u0006\u0012\u0002\b\u00030\u0003*\u0002H\u0007\"\u0004\b\u0001\u0010\u0007*\u0002H\r2\f\u0010\u000e\u001a\b\u0012\u0004\u0012\u0002H\u00070\u000fH\u0087\u0088\u0004ø\u0001\u0000\u0082\u0002\n\n\b\b\u0001\u0012\u0002\u0010\u0001 \u0000¢\u0006\u0002\u0010\u0010\u001a7\u0010\u0011\u001a\u00020\n\"\u0004\b\u0000\u0010\u0002*\f\u0012\u0006\b\u0001\u0012\u0002H\u0002\u0018\u00010\u00032\u0010\u0010\u0012\u001a\f\u0012\u0006\b\u0001\u0012\u0002H\u0002\u0018\u00010\u0003H\u0081\u0080\u0004¢\u0006\u0004\b\u0013\u0010\u0014\u001a%\u0010\u0015\u001a\u00020\u0016\"\u0004\b\u0000\u0010\u0002*\f\u0012\u0006\b\u0001\u0012\u0002H\u0002\u0018\u00010\u0003H\u0081\u0080\u0004¢\u0006\u0004\b\u0017\u0010\u0018\u001aA\u0010\u0019\u001a\u00020\u001a\"\u0004\b\u0000\u0010\u0002*\n\u0012\u0006\b\u0001\u0012\u0002H\u00020\u00032\n\u0010\u001b\u001a\u00060\u001cj\u0002`\u001d2\u0010\u0010\u001e\u001a\f\u0012\b\u0012\u0006\u0012\u0002\b\u00030\u00030\u001fH\u0082\u0080\u0004¢\u0006\u0004\b \u0010!\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006\""}, d2 = {"flatten", "", ExifInterface.GPS_DIRECTION_TRUE, "", "([[Ljava/lang/Object;)Ljava/util/List;", "unzip", "Lkotlin/Pair;", "R", "([Lkotlin/Pair;)Lkotlin/Pair;", "isNullOrEmpty", "", "([Ljava/lang/Object;)Z", "ifEmpty", "C", "defaultValue", "Lkotlin/Function0;", "([Ljava/lang/Object;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;", "contentDeepEqualsImpl", "other", "contentDeepEquals", "([Ljava/lang/Object;[Ljava/lang/Object;)Z", "contentDeepToStringImpl", "", "contentDeepToString", "([Ljava/lang/Object;)Ljava/lang/String;", "contentDeepToStringInternal", "", "result", "Ljava/lang/StringBuilder;", "Lkotlin/text/StringBuilder;", "processed", "", "contentDeepToStringInternal$ArraysKt__ArraysKt", "([Ljava/lang/Object;Ljava/lang/StringBuilder;Ljava/util/List;)V", "kotlin-stdlib"}, k = 5, mv = {2, 3, 0}, xi = 49, xs = "kotlin/collections/ArraysKt")
 /* loaded from: classes5.dex */
 public class ArraysKt__ArraysKt extends ArraysKt__ArraysJVMKt {
     public static final <T> List<T> flatten(T[][] tArr) {
@@ -110,19 +110,19 @@ public class ArraysKt__ArraysKt extends ArraysKt__ArraysJVMKt {
                         return false;
                     }
                 } else if ((t instanceof UByteArray) && (t2 instanceof UByteArray)) {
-                    if (!UArraysKt.m10798contentEqualskV0jMPg(((UByteArray) t).m10306unboximpl(), ((UByteArray) t2).m10306unboximpl())) {
+                    if (!UArraysKt.m10826contentEqualskV0jMPg(((UByteArray) t).m10334unboximpl(), ((UByteArray) t2).m10334unboximpl())) {
                         return false;
                     }
                 } else if ((t instanceof UShortArray) && (t2 instanceof UShortArray)) {
-                    if (!UArraysKt.m10796contentEqualsFGO6Aew(((UShortArray) t).m10569unboximpl(), ((UShortArray) t2).m10569unboximpl())) {
+                    if (!UArraysKt.m10824contentEqualsFGO6Aew(((UShortArray) t).m10597unboximpl(), ((UShortArray) t2).m10597unboximpl())) {
                         return false;
                     }
                 } else if ((t instanceof UIntArray) && (t2 instanceof UIntArray)) {
-                    if (!UArraysKt.m10797contentEqualsKJPZfPQ(((UIntArray) t).m10385unboximpl(), ((UIntArray) t2).m10385unboximpl())) {
+                    if (!UArraysKt.m10825contentEqualsKJPZfPQ(((UIntArray) t).m10413unboximpl(), ((UIntArray) t2).m10413unboximpl())) {
                         return false;
                     }
                 } else if ((t instanceof ULongArray) && (t2 instanceof ULongArray)) {
-                    if (!UArraysKt.m10799contentEqualslec5QzE(((ULongArray) t).m10464unboximpl(), ((ULongArray) t2).m10464unboximpl())) {
+                    if (!UArraysKt.m10827contentEqualslec5QzE(((ULongArray) t).m10492unboximpl(), ((ULongArray) t2).m10492unboximpl())) {
                         return false;
                     }
                 } else if (!Intrinsics.areEqual(t, t2)) {
@@ -194,16 +194,16 @@ public class ArraysKt__ArraysKt extends ArraysKt__ArraysJVMKt {
                 sb.append(arrays8);
             } else if (t instanceof UByteArray) {
                 UByteArray uByteArray = (UByteArray) t;
-                sb.append(UArraysKt.m10804contentToString2csIQuQ(uByteArray != null ? uByteArray.m10306unboximpl() : null));
+                sb.append(UArraysKt.m10832contentToString2csIQuQ(uByteArray != null ? uByteArray.m10334unboximpl() : null));
             } else if (t instanceof UShortArray) {
                 UShortArray uShortArray = (UShortArray) t;
-                sb.append(UArraysKt.m10806contentToStringd6D3K8(uShortArray != null ? uShortArray.m10569unboximpl() : null));
+                sb.append(UArraysKt.m10834contentToStringd6D3K8(uShortArray != null ? uShortArray.m10597unboximpl() : null));
             } else if (t instanceof UIntArray) {
                 UIntArray uIntArray = (UIntArray) t;
-                sb.append(UArraysKt.m10805contentToStringXUkPCBk(uIntArray != null ? uIntArray.m10385unboximpl() : null));
+                sb.append(UArraysKt.m10833contentToStringXUkPCBk(uIntArray != null ? uIntArray.m10413unboximpl() : null));
             } else if (t instanceof ULongArray) {
                 ULongArray uLongArray = (ULongArray) t;
-                sb.append(UArraysKt.m10807contentToStringuLth9ew(uLongArray != null ? uLongArray.m10464unboximpl() : null));
+                sb.append(UArraysKt.m10835contentToStringuLth9ew(uLongArray != null ? uLongArray.m10492unboximpl() : null));
             } else {
                 sb.append(t.toString());
             }

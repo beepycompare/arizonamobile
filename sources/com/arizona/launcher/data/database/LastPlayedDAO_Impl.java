@@ -46,13 +46,13 @@ public final class LastPlayedDAO_Impl implements LastPlayedDAO {
             public void bind(SQLiteStatement statement, LastPlayedServer entity) {
                 Intrinsics.checkNotNullParameter(statement, "statement");
                 Intrinsics.checkNotNullParameter(entity, "entity");
-                statement.mo9182bindLong(1, entity.getServerId());
-                statement.mo9184bindText(2, entity.getServerType());
+                statement.mo9197bindLong(1, entity.getServerId());
+                statement.mo9199bindText(2, entity.getServerType());
                 Long dateToTimestamp = LastPlayedDAO_Impl.this.__dateConverter.dateToTimestamp(entity.getDate());
                 if (dateToTimestamp == null) {
-                    statement.mo9183bindNull(3);
+                    statement.mo9198bindNull(3);
                 } else {
-                    statement.mo9182bindLong(3, dateToTimestamp.longValue());
+                    statement.mo9197bindLong(3, dateToTimestamp.longValue());
                 }
             }
         };

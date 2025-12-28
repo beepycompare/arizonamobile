@@ -7,16 +7,16 @@ import java.nio.BufferUnderflowException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.UUID;
+import kotlin.IgnorableReturnValue;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: UuidJVM.kt */
-@Metadata(d1 = {"\u0000@\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\u0010\u0012\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\b\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a\b\u0010\u0000\u001a\u00020\u0001H\u0001\u001a\u0010\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0001H\u0001\u001a\u0014\u0010\u0005\u001a\u00020\u0006*\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0001\u001a,\u0010\n\u001a\u00020\u000b*\u00020\u00062\u0006\u0010\f\u001a\u00020\u00072\u0006\u0010\r\u001a\u00020\t2\u0006\u0010\u000e\u001a\u00020\t2\u0006\u0010\u000f\u001a\u00020\tH\u0001\u001a\u001c\u0010\u0010\u001a\u00020\u000b*\u00020\u00072\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\u0011\u001a\u00020\u0006H\u0001\u001a\u0010\u0010\u0012\u001a\u00020\u00012\u0006\u0010\u0013\u001a\u00020\u0014H\u0001\u001a\u0010\u0010\u0015\u001a\u00020\u00012\u0006\u0010\u0016\u001a\u00020\u0014H\u0001\u001a\r\u0010\u0017\u001a\u00020\u0001*\u00020\u0018H\u0087\b\u001a\r\u0010\u0019\u001a\u00020\u0018*\u00020\u0001H\u0087\b\u001a\f\u0010\u001a\u001a\u00020\u0001*\u00020\u001bH\u0007\u001a\u0014\u0010\u001a\u001a\u00020\u0001*\u00020\u001b2\u0006\u0010\b\u001a\u00020\tH\u0007\u001a\u0014\u0010\u001c\u001a\u00020\u001b*\u00020\u001b2\u0006\u0010\u0004\u001a\u00020\u0001H\u0007\u001a\u001c\u0010\u001c\u001a\u00020\u001b*\u00020\u001b2\u0006\u0010\b\u001a\u00020\t2\u0006\u0010\u0004\u001a\u00020\u0001H\u0007\u001a\r\u0010\u001d\u001a\u00020\u0006*\u00020\u0006H\u0080\b¨\u0006\u001e"}, d2 = {"secureRandomUuid", "Lkotlin/uuid/Uuid;", "serializedUuid", "", CommonUrlParts.UUID, "getLongAt", "", "", FirebaseAnalytics.Param.INDEX, "", "formatBytesInto", "", "dst", "dstOffset", "startIndex", "endIndex", "setLongAt", "value", "uuidParseHexDash", "hexDashString", "", "uuidParseHex", "hexString", "toKotlinUuid", "Ljava/util/UUID;", "toJavaUuid", "getUuid", "Ljava/nio/ByteBuffer;", "putUuid", "reverseBytes", "kotlin-stdlib"}, k = 5, mv = {2, 2, 0}, xi = 49, xs = "kotlin/uuid/UuidKt")
+@Metadata(d1 = {"\u0000@\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0012\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0010\b\n\u0002\b\t\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a\u0012\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\u0080\u0080\u0004\u001a\u0012\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0081\u0080\u0004\u001a\u0016\u0010\b\u001a\u00020\t*\u00020\u00032\u0006\u0010\n\u001a\u00020\u000bH\u0081\u0080\u0004\u001a.\u0010\f\u001a\u00020\u0001*\u00020\t2\u0006\u0010\r\u001a\u00020\u00032\u0006\u0010\u000e\u001a\u00020\u000b2\u0006\u0010\u000f\u001a\u00020\u000b2\u0006\u0010\u0010\u001a\u00020\u000bH\u0081\u0080\u0004\u001a\u001e\u0010\u0011\u001a\u00020\u0001*\u00020\u00032\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\u0012\u001a\u00020\tH\u0081\u0080\u0004\u001a\u0012\u0010\u0013\u001a\u00020\u00072\u0006\u0010\u0014\u001a\u00020\u0015H\u0081\u0080\u0004\u001a\u0014\u0010\u0016\u001a\u0004\u0018\u00010\u00072\u0006\u0010\u0014\u001a\u00020\u0015H\u0081\u0080\u0004\u001a\u0012\u0010\u0017\u001a\u00020\u00072\u0006\u0010\u0018\u001a\u00020\u0015H\u0081\u0080\u0004\u001a\u0014\u0010\u0019\u001a\u0004\u0018\u00010\u00072\u0006\u0010\u0018\u001a\u00020\u0015H\u0081\u0080\u0004\u001a\u000e\u0010\u001a\u001a\u00020\u0007*\u00020\u001bH\u0087\u0088\u0004\u001a\u000e\u0010\u001c\u001a\u00020\u001b*\u00020\u0007H\u0087\u0088\u0004\u001a\u000e\u0010\u001d\u001a\u00020\u0007*\u00020\u001eH\u0087\u0080\u0004\u001a\u0016\u0010\u001d\u001a\u00020\u0007*\u00020\u001e2\u0006\u0010\n\u001a\u00020\u000bH\u0087\u0080\u0004\u001a\u0016\u0010\u001f\u001a\u00020\u001e*\u00020\u001e2\u0006\u0010\u0006\u001a\u00020\u0007H\u0087\u0080\b\u001a\u001e\u0010\u001f\u001a\u00020\u001e*\u00020\u001e2\u0006\u0010\n\u001a\u00020\u000b2\u0006\u0010\u0006\u001a\u00020\u0007H\u0087\u0080\b\u001a\u000e\u0010 \u001a\u00020\t*\u00020\tH\u0080\u0088\u0004¨\u0006!"}, d2 = {"secureRandomBytes", "", FirebaseAnalytics.Param.DESTINATION, "", "serializedUuid", "", CommonUrlParts.UUID, "Lkotlin/uuid/Uuid;", "getLongAt", "", FirebaseAnalytics.Param.INDEX, "", "formatBytesInto", "dst", "dstOffset", "startIndex", "endIndex", "setLongAt", "value", "uuidParseHexDash", "hexDashString", "", "uuidParseHexDashOrNull", "uuidParseHex", "hexString", "uuidParseHexOrNull", "toKotlinUuid", "Ljava/util/UUID;", "toJavaUuid", "getUuid", "Ljava/nio/ByteBuffer;", "putUuid", "reverseBytes", "kotlin-stdlib"}, k = 5, mv = {2, 3, 0}, xi = 49, xs = "kotlin/uuid/UuidKt")
 /* loaded from: classes5.dex */
 class UuidKt__UuidJVMKt {
-    public static final Uuid secureRandomUuid() {
-        byte[] bArr = new byte[16];
-        SecureRandomHolder.INSTANCE.getInstance().nextBytes(bArr);
-        return UuidKt.uuidFromRandomBytes(bArr);
+    public static final void secureRandomBytes(byte[] destination) {
+        Intrinsics.checkNotNullParameter(destination, "destination");
+        SecureRandomHolder.INSTANCE.getInstance().nextBytes(destination);
     }
 
     public static final Object serializedUuid(Uuid uuid) {
@@ -44,9 +44,19 @@ class UuidKt__UuidJVMKt {
         return UuidKt.uuidParseHexDashCommonImpl(hexDashString);
     }
 
+    public static final Uuid uuidParseHexDashOrNull(String hexDashString) {
+        Intrinsics.checkNotNullParameter(hexDashString, "hexDashString");
+        return UuidKt.uuidParseHexDashOrNullCommonImpl(hexDashString);
+    }
+
     public static final Uuid uuidParseHex(String hexString) {
         Intrinsics.checkNotNullParameter(hexString, "hexString");
         return UuidKt.uuidParseHexCommonImpl(hexString);
+    }
+
+    public static final Uuid uuidParseHexOrNull(String hexString) {
+        Intrinsics.checkNotNullParameter(hexString, "hexString");
+        return UuidKt.uuidParseHexOrNullCommonImpl(hexString);
     }
 
     public static final Uuid toKotlinUuid(UUID uuid) {
@@ -90,6 +100,7 @@ class UuidKt__UuidJVMKt {
         return Uuid.Companion.fromLongs(j, j2);
     }
 
+    @IgnorableReturnValue
     public static final ByteBuffer putUuid(ByteBuffer byteBuffer, Uuid uuid) {
         ByteBuffer putLong;
         Intrinsics.checkNotNullParameter(byteBuffer, "<this>");
@@ -110,6 +121,7 @@ class UuidKt__UuidJVMKt {
         return putLong;
     }
 
+    @IgnorableReturnValue
     public static final ByteBuffer putUuid(ByteBuffer byteBuffer, int i, Uuid uuid) {
         ByteBuffer putLong;
         Intrinsics.checkNotNullParameter(byteBuffer, "<this>");

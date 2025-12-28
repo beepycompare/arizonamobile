@@ -11,7 +11,6 @@ import androidx.media3.common.MimeTypes;
 import androidx.media3.common.PlaybackException;
 import androidx.media3.common.PlaybackParameters;
 import androidx.media3.common.audio.AudioProcessor;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.TraceUtil;
 import androidx.media3.common.util.Util;
@@ -34,7 +33,8 @@ import androidx.media3.exoplayer.audio.DefaultAudioSink;
 import androidx.media3.exoplayer.drm.DrmSession;
 import androidx.media3.exoplayer.source.MediaSource;
 import com.google.common.base.MoreObjects;
-/* loaded from: classes2.dex */
+import com.google.common.base.Preconditions;
+/* loaded from: classes3.dex */
 public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer, ? extends SimpleDecoderOutputBuffer, ? extends DecoderException>> extends BaseRenderer implements MediaClock {
     private static final int MAX_PENDING_OUTPUT_STREAM_OFFSET_COUNT = 10;
     private static final int REINITIALIZATION_STATE_NONE = 0;
@@ -114,7 +114,7 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
 
     @Override // androidx.media3.exoplayer.Renderer
     public long getDurationToProgressUs(long j, long j2) {
-        boolean z = this.nextBufferToWritePresentationTimeUs != C.TIME_UNSET;
+        boolean z = this.audioSink.hasPendingData() && this.nextBufferToWritePresentationTimeUs != C.TIME_UNSET;
         if (!this.isStarted) {
             if (z || this.outputStreamEnded) {
                 return 1000000L;
@@ -165,7 +165,7 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
             int readSource = readSource(formatHolder, this.flagsOnlyBuffer, 2);
             if (readSource != -5) {
                 if (readSource == -4) {
-                    Assertions.checkState(this.flagsOnlyBuffer.isEndOfStream());
+                    Preconditions.checkState(this.flagsOnlyBuffer.isEndOfStream());
                     this.inputStreamEnded = true;
                     try {
                         processEndOfStream();
@@ -349,7 +349,7 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
             simpleDecoderOutputBuffer.release();
             this.outputBuffer = null;
         }
-        Decoder decoder = (Decoder) Assertions.checkNotNull(this.decoder);
+        Decoder decoder = (Decoder) Preconditions.checkNotNull(this.decoder);
         decoder.flush();
         decoder.setOutputStartTimeUs(getLastResetPositionUs());
         this.decoderReceivedBuffers = false;
@@ -362,13 +362,7 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
 
     @Override // androidx.media3.exoplayer.Renderer
     public boolean isReady() {
-        if (this.audioSink.hasPendingData()) {
-            return true;
-        }
-        if (this.inputFormat != null) {
-            return isSourceReady() || this.outputBuffer != null;
-        }
-        return false;
+        return this.audioSink.hasPendingData();
     }
 
     @Override // androidx.media3.exoplayer.MediaClock
@@ -411,7 +405,7 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
     }
 
     @Override // androidx.media3.exoplayer.BaseRenderer
-    protected void onPositionReset(long j, boolean z) throws ExoPlaybackException {
+    protected void onPositionReset(long j, boolean z, boolean z2) throws ExoPlaybackException {
         this.audioSink.flush();
         this.currentPositionUs = j;
         this.nextBufferToWritePresentationTimeUs = C.TIME_UNSET;
@@ -480,14 +474,25 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
         } else if (i == 6) {
             this.audioSink.setAuxEffectInfo((AuxEffectInfo) obj);
         } else if (i == 12) {
-            Api23.setAudioSinkPreferredDevice(this.audioSink, obj);
+            this.audioSink.setPreferredDevice((AudioDeviceInfo) obj);
         } else if (i == 9) {
             this.audioSink.setSkipSilenceEnabled(((Boolean) obj).booleanValue());
         } else if (i == 10) {
             this.audioSink.setAudioSessionId(((Integer) obj).intValue());
+        } else if (i == 19) {
+            this.audioSink.setVirtualDeviceId(((Integer) Preconditions.checkNotNull(obj)).intValue());
+        } else if (i == 20) {
+            this.audioSink.setAudioOutputProvider((AudioOutputProvider) Preconditions.checkNotNull(obj));
         } else {
             super.handleMessage(i, obj);
         }
+    }
+
+    protected final boolean isReadyForDecoding() {
+        if (this.inputFormat != null) {
+            return isSourceReady() || this.outputBuffer != null;
+        }
+        return false;
     }
 
     private void maybeInitDecoder() throws ExoPlaybackException {
@@ -552,7 +557,7 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
 
     private void onInputFormatChanged(FormatHolder formatHolder) throws ExoPlaybackException {
         DecoderReuseEvaluation canReuseDecoder;
-        Format format = (Format) Assertions.checkNotNull(formatHolder.format);
+        Format format = (Format) Preconditions.checkNotNull(formatHolder.format);
         setSourceDrmSession(formatHolder.drmSession);
         Format format2 = this.inputFormat;
         this.inputFormat = format;
@@ -592,7 +597,7 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
         }
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private final class AudioSinkListener implements AudioSink.Listener {
         private AudioSinkListener() {
         }
@@ -646,16 +651,6 @@ public abstract class DecoderAudioRenderer<T extends Decoder<DecoderInputBuffer,
         @Override // androidx.media3.exoplayer.audio.AudioSink.Listener
         public void onAudioCapabilitiesChanged() {
             DecoderAudioRenderer.this.onRendererCapabilitiesChanged();
-        }
-    }
-
-    /* loaded from: classes2.dex */
-    private static final class Api23 {
-        private Api23() {
-        }
-
-        public static void setAudioSinkPreferredDevice(AudioSink audioSink, Object obj) {
-            audioSink.setPreferredDevice((AudioDeviceInfo) obj);
         }
     }
 }

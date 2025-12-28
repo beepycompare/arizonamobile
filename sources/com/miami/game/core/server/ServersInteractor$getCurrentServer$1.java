@@ -1,5 +1,6 @@
 package com.miami.game.core.server;
 
+import androidx.constraintlayout.core.motion.utils.TypedValues;
 import com.miami.game.core.local.repository.common.IKeyValueRepository;
 import com.miami.game.core.local.repository.common.LocalRepository;
 import com.miami.game.core.server.model.ServerModel;
@@ -19,11 +20,10 @@ import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.flow.MutableStateFlow;
-import okhttp3.internal.ws.WebSocketProtocol;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ServersInteractor.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.core.server.ServersInteractor$getCurrentServer$1", f = "ServersInteractor.kt", i = {0, 0, 0}, l = {364}, m = "invokeSuspend", n = {"$this$getSuspend$iv", "key$iv", "$i$f$getSuspend"}, s = {"L$0", "L$1", "I$0"}, v = 1)
+@DebugMetadata(c = "com.miami.game.core.server.ServersInteractor$getCurrentServer$1", f = "ServersInteractor.kt", i = {0, 0, 0}, l = {TypedValues.CycleType.TYPE_WAVE_PERIOD}, m = "invokeSuspend", n = {"$this$getSuspend$iv", "key$iv", "$i$f$getSuspend"}, s = {"L$0", "L$1", "I$0"}, v = 1)
 /* loaded from: classes4.dex */
 public final class ServersInteractor$getCurrentServer$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     int I$0;
@@ -87,7 +87,7 @@ public final class ServersInteractor$getCurrentServer$1 extends SuspendLambda im
         mutableStateFlow = this.this$0.stateStore;
         do {
             value = mutableStateFlow.getValue();
-        } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default((ServersState) value, serverModel, null, null, null, null, false, 0, WebSocketProtocol.PAYLOAD_SHORT, null)));
+        } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default((ServersState) value, serverModel, null, null, null, null, null, false, 0, 254, null)));
         return Unit.INSTANCE;
     }
 }

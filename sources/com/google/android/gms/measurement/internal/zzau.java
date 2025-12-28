@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import com.google.android.gms.internal.measurement.zzqp;
 import java.util.Objects;
+import kotlin.time.DurationKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
 /* loaded from: classes4.dex */
@@ -23,7 +24,7 @@ public final class zzau extends com.google.android.gms.internal.measurement.zzby
     public final SQLiteDatabase getWritableDatabase() {
         zzav zzavVar = this.zza;
         zzavVar.zzu.zzc();
-        if (!zzavVar.zzas().zzc(3600000L)) {
+        if (!zzavVar.zzas().zzc(DurationKt.MILLIS_IN_HOUR)) {
             throw new SQLiteException("Database open failed");
         }
         try {

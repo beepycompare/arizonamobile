@@ -257,6 +257,9 @@ public final class C {
     public static final int VOLUME_FLAG_REMOVE_SOUND_AND_VIBRATE = 8;
     public static final int VOLUME_FLAG_SHOW_UI = 1;
     public static final int VOLUME_FLAG_VIBRATE = 16;
+    public static final int VOLUME_OPERATION_TYPE_MUTE = 1;
+    public static final int VOLUME_OPERATION_TYPE_SET_VOLUME = 0;
+    public static final int VOLUME_OPERATION_TYPE_UNMUTE = 2;
     public static final int WAKE_MODE_LOCAL = 1;
     public static final int WAKE_MODE_NETWORK = 2;
     public static final int WAKE_MODE_NONE = 0;
@@ -495,6 +498,13 @@ public final class C {
     @Retention(RetentionPolicy.SOURCE)
     /* loaded from: classes2.dex */
     public @interface VolumeFlags {
+    }
+
+    @Target({ElementType.TYPE_USE})
+    @Documented
+    @Retention(RetentionPolicy.SOURCE)
+    /* loaded from: classes2.dex */
+    public @interface VolumeOperationType {
     }
 
     @Target({ElementType.FIELD, ElementType.METHOD, ElementType.PARAMETER, ElementType.LOCAL_VARIABLE, ElementType.TYPE_USE})

@@ -5,13 +5,13 @@ import java.util.Set;
 public final class a {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Set f1425a;
+    public final Set f1426a;
 
     public a(Set set) {
-        this.f1425a = set;
+        this.f1426a = set;
     }
 
     public final String toString() {
-        return "FeatureConfig(permittedPermissions=" + this.f1425a + ')';
+        return "FeatureConfig(permittedPermissions=" + this.f1426a + ')';
     }
 }

@@ -3,9 +3,9 @@ package androidx.media3.exoplayer.trackselection;
 import android.os.SystemClock;
 import androidx.media3.common.Format;
 import androidx.media3.common.TrackGroup;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.source.chunk.MediaChunk;
+import com.google.common.base.Preconditions;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
@@ -37,9 +37,9 @@ public abstract class BaseTrackSelection implements ExoTrackSelection {
     }
 
     public BaseTrackSelection(TrackGroup trackGroup, int[] iArr, int i) {
-        Assertions.checkState(iArr.length > 0);
+        Preconditions.checkState(iArr.length > 0);
         this.type = i;
-        this.group = (TrackGroup) Assertions.checkNotNull(trackGroup);
+        this.group = (TrackGroup) Preconditions.checkNotNull(trackGroup);
         int length = iArr.length;
         this.length = length;
         this.formats = new Format[length];

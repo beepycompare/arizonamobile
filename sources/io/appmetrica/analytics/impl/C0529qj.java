@@ -4,16 +4,16 @@ package io.appmetrica.analytics.impl;
 public final class C0529qj implements Ra {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f1188a;
+    public final /* synthetic */ String f1189a;
     public final /* synthetic */ Throwable b;
 
     public C0529qj(String str, Throwable th) {
-        this.f1188a = str;
+        this.f1189a = str;
         this.b = th;
     }
 
     @Override // io.appmetrica.analytics.impl.Ra
     public final void a(Sa sa) {
-        sa.reportError(this.f1188a, this.b);
+        sa.reportError(this.f1189a, this.b);
     }
 }

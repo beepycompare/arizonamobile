@@ -9,24 +9,24 @@ import io.appmetrica.analytics.internal.IAppMetricaService;
 public final class ServiceConnectionC0460o0 implements ServiceConnection {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0485p0 f1136a;
+    public final /* synthetic */ C0485p0 f1137a;
 
     public ServiceConnectionC0460o0(C0485p0 c0485p0) {
-        this.f1136a = c0485p0;
+        this.f1137a = c0485p0;
     }
 
     @Override // android.content.ServiceConnection
     public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
-        synchronized (this.f1136a) {
-            this.f1136a.d = IAppMetricaService.Stub.asInterface(iBinder);
-            this.f1136a.e.countDown();
+        synchronized (this.f1137a) {
+            this.f1137a.d = IAppMetricaService.Stub.asInterface(iBinder);
+            this.f1137a.e.countDown();
         }
     }
 
     @Override // android.content.ServiceConnection
     public final void onServiceDisconnected(ComponentName componentName) {
-        synchronized (this.f1136a) {
-            this.f1136a.d = null;
+        synchronized (this.f1137a) {
+            this.f1137a.d = null;
         }
     }
 }

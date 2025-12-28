@@ -6,7 +6,6 @@ import androidx.media3.common.Format;
 import androidx.media3.common.MediaItem;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.TrackGroup;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.datasource.TransferListener;
 import androidx.media3.decoder.DecoderInputBuffer;
@@ -17,6 +16,7 @@ import androidx.media3.exoplayer.source.MediaPeriod;
 import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.exoplayer.trackselection.ExoTrackSelection;
 import androidx.media3.exoplayer.upstream.Allocator;
+import com.google.common.base.Preconditions;
 import java.util.ArrayList;
 /* loaded from: classes3.dex */
 public final class SilenceMediaSource extends BaseMediaSource {
@@ -63,7 +63,7 @@ public final class SilenceMediaSource extends BaseMediaSource {
         }
 
         public SilenceMediaSource createMediaSource() {
-            Assertions.checkState(this.durationUs > 0);
+            Preconditions.checkState(this.durationUs > 0);
             return new SilenceMediaSource(this.durationUs, SilenceMediaSource.MEDIA_ITEM.buildUpon().setTag(this.tag).build());
         }
     }
@@ -80,7 +80,7 @@ public final class SilenceMediaSource extends BaseMediaSource {
     }
 
     private SilenceMediaSource(long j, MediaItem mediaItem) {
-        Assertions.checkArgument(j >= 0);
+        Preconditions.checkArgument(j >= 0);
         this.durationUs = j;
         this.mediaItem = mediaItem;
     }

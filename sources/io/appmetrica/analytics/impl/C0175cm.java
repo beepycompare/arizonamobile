@@ -82,7 +82,7 @@ public final class C0175cm extends O5 {
         if (!mo.a((Collection) this.e)) {
             linkedHashSet.addAll(this.e);
         }
-        String[] strArr = (String[]) this.p.f618a.a();
+        String[] strArr = (String[]) this.p.f619a.a();
         if (strArr != null) {
             arrayList = new ArrayList();
             for (String str : strArr) {

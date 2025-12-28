@@ -10,21 +10,21 @@ import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdType
 import io.appmetrica.analytics.modulesapi.internal.common.InternalClientModuleFacade;
 import java.math.BigDecimal;
 import java.util.Currency;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public final class c implements ImpressionDataListener {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ClientContext f297a;
+    public final ClientContext f298a;
     public final b b = new b();
 
     public c(ClientContext clientContext) {
-        this.f297a = clientContext;
+        this.f298a = clientContext;
     }
 
     public final void onImpressionSuccess(ImpressionData impressionData) {
         ModuleAdType moduleAdType;
         if (impressionData != null) {
-            InternalClientModuleFacade internalClientModuleFacade = this.f297a.getInternalClientModuleFacade();
+            InternalClientModuleFacade internalClientModuleFacade = this.f298a.getInternalClientModuleFacade();
             this.b.getClass();
             String adUnit = impressionData.getAdUnit();
             BigDecimal valueOf = BigDecimal.valueOf(WrapUtils.getFiniteDoubleOrDefault(impressionData.getRevenue().doubleValue(), FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE));

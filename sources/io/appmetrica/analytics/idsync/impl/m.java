@@ -1,6 +1,5 @@
 package io.appmetrica.analytics.idsync.impl;
 
-import androidx.compose.material3.internal.CalendarModelKt;
 import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
 import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
 import io.appmetrica.analytics.protobuf.nano.InternalNano;
@@ -9,12 +8,13 @@ import io.appmetrica.analytics.protobuf.nano.MessageNano;
 import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
 import java.io.IOException;
 import java.util.Arrays;
+import kotlin.time.DurationKt;
 /* loaded from: classes3.dex */
 public final class m extends MessageNano {
     public static volatile m[] h;
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f469a;
+    public byte[] f470a;
     public l b;
     public byte[] c;
     public k[] d;
@@ -39,12 +39,12 @@ public final class m extends MessageNano {
 
     public final m a() {
         byte[] bArr = WireFormatNano.EMPTY_BYTES;
-        this.f469a = bArr;
+        this.f470a = bArr;
         this.b = null;
         this.c = bArr;
         this.d = k.b();
-        this.e = CalendarModelKt.MillisecondsIn24Hours;
-        this.f = 3600000L;
+        this.e = 86400000L;
+        this.f = DurationKt.MILLIS_IN_HOUR;
         this.g = WireFormatNano.EMPTY_INT_ARRAY;
         this.cachedSize = -1;
         return this;
@@ -53,10 +53,10 @@ public final class m extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        byte[] bArr = this.f469a;
+        byte[] bArr = this.f470a;
         byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
         if (!Arrays.equals(bArr, bArr2)) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f469a);
+            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f470a);
         }
         l lVar = this.b;
         if (lVar != null) {
@@ -82,11 +82,11 @@ public final class m extends MessageNano {
             }
         }
         long j = this.e;
-        if (j != CalendarModelKt.MillisecondsIn24Hours) {
+        if (j != 86400000) {
             computeSerializedSize += CodedOutputByteBufferNano.computeUInt64Size(5, j);
         }
         long j2 = this.f;
-        if (j2 != 3600000) {
+        if (j2 != DurationKt.MILLIS_IN_HOUR) {
             computeSerializedSize += CodedOutputByteBufferNano.computeUInt64Size(6, j2);
         }
         int[] iArr = this.g;
@@ -107,10 +107,10 @@ public final class m extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        byte[] bArr = this.f469a;
+        byte[] bArr = this.f470a;
         byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
         if (!Arrays.equals(bArr, bArr2)) {
-            codedOutputByteBufferNano.writeBytes(1, this.f469a);
+            codedOutputByteBufferNano.writeBytes(1, this.f470a);
         }
         l lVar = this.b;
         if (lVar != null) {
@@ -136,11 +136,11 @@ public final class m extends MessageNano {
             }
         }
         long j = this.e;
-        if (j != CalendarModelKt.MillisecondsIn24Hours) {
+        if (j != 86400000) {
             codedOutputByteBufferNano.writeUInt64(5, j);
         }
         long j2 = this.f;
-        if (j2 != 3600000) {
+        if (j2 != DurationKt.MILLIS_IN_HOUR) {
             codedOutputByteBufferNano.writeUInt64(6, j2);
         }
         int[] iArr = this.g;
@@ -165,7 +165,7 @@ public final class m extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                this.f469a = codedInputByteBufferNano.readBytes();
+                this.f470a = codedInputByteBufferNano.readBytes();
             } else if (readTag == 18) {
                 if (this.b == null) {
                     this.b = new l();

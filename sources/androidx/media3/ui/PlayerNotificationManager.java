@@ -15,9 +15,9 @@ import androidx.core.app.NotificationBuilderWithBuilderAccessor;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.media3.common.Player;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.NotificationUtil;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -161,7 +161,7 @@ public class PlayerNotificationManager {
         }
 
         public Builder(Context context, int i, String str) {
-            Assertions.checkArgument(i > 0);
+            Preconditions.checkArgument(i > 0);
             this.context = context;
             this.notificationId = i;
             this.channelId = str;
@@ -335,11 +335,11 @@ public class PlayerNotificationManager {
 
     public final void setPlayer(Player player) {
         boolean z = true;
-        Assertions.checkState(Looper.myLooper() == Looper.getMainLooper());
+        Preconditions.checkState(Looper.myLooper() == Looper.getMainLooper());
         if (player != null && player.getApplicationLooper() != Looper.getMainLooper()) {
             z = false;
         }
-        Assertions.checkArgument(z);
+        Preconditions.checkArgument(z);
         Player player2 = this.player;
         if (player2 == player) {
             return;

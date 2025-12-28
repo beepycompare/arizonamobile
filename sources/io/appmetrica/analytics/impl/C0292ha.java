@@ -14,14 +14,14 @@ public final class C0292ha extends B4 {
         Ya ya = bundle != null ? (Ya) bundle.getParcelable("io.appmetrica.analytics.impl.IdentifiersData") : null;
         if (ya != null) {
             if (ya.d) {
-                C0489p4 c0489p4 = c0638v4.b.d.f495a;
+                C0489p4 c0489p4 = c0638v4.b.d.f496a;
                 Boolean bool = c0489p4.n;
                 Boolean bool2 = c0489p4.i;
                 C0470oa.I.c().c(bool != null ? bool.booleanValue() : true);
                 C0470oa.I.h().b(bool2);
             }
         }
-        this.f502a.a(ya);
+        this.f503a.a(ya);
         return false;
     }
 }

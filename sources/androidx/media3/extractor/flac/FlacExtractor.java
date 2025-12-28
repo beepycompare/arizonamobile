@@ -2,7 +2,6 @@ package androidx.media3.extractor.flac;
 
 import androidx.media3.common.Metadata;
 import androidx.media3.common.MimeTypes;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.Extractor;
@@ -16,6 +15,7 @@ import androidx.media3.extractor.FlacStreamMetadata;
 import androidx.media3.extractor.PositionHolder;
 import androidx.media3.extractor.SeekMap;
 import androidx.media3.extractor.TrackOutput;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -159,7 +159,7 @@ public final class FlacExtractor implements Extractor {
             z = FlacMetadataReader.readMetadataBlock(extractorInput, flacStreamMetadataHolder);
             this.flacStreamMetadata = (FlacStreamMetadata) Util.castNonNull(flacStreamMetadataHolder.flacStreamMetadata);
         }
-        Assertions.checkNotNull(this.flacStreamMetadata);
+        Preconditions.checkNotNull(this.flacStreamMetadata);
         this.minFrameSize = Math.max(this.flacStreamMetadata.minFrameSize, 6);
         ((TrackOutput) Util.castNonNull(this.trackOutput)).format(this.flacStreamMetadata.getFormat(this.streamMarkerAndInfoBlock, this.id3Metadata).buildUpon().setContainerMimeType(MimeTypes.AUDIO_FLAC).build());
         ((TrackOutput) Util.castNonNull(this.trackOutput)).durationUs(this.flacStreamMetadata.getDurationUs());
@@ -174,8 +174,8 @@ public final class FlacExtractor implements Extractor {
 
     private int readFrames(ExtractorInput extractorInput, PositionHolder positionHolder) throws IOException {
         boolean z;
-        Assertions.checkNotNull(this.trackOutput);
-        Assertions.checkNotNull(this.flacStreamMetadata);
+        Preconditions.checkNotNull(this.trackOutput);
+        Preconditions.checkNotNull(this.flacStreamMetadata);
         FlacBinarySearchSeeker flacBinarySearchSeeker = this.binarySearchSeeker;
         if (flacBinarySearchSeeker != null && flacBinarySearchSeeker.isSeeking()) {
             return this.binarySearchSeeker.handlePendingSeek(extractorInput, positionHolder);
@@ -225,7 +225,7 @@ public final class FlacExtractor implements Extractor {
     }
 
     private SeekMap getSeekMap(long j, long j2) {
-        Assertions.checkNotNull(this.flacStreamMetadata);
+        Preconditions.checkNotNull(this.flacStreamMetadata);
         if (this.flacStreamMetadata.seekTable != null && this.flacStreamMetadata.seekTable.pointSampleNumbers.length > 0) {
             return new FlacSeekTableSeekMap(this.flacStreamMetadata, j);
         }
@@ -239,7 +239,7 @@ public final class FlacExtractor implements Extractor {
 
     private long findFrame(ParsableByteArray parsableByteArray, boolean z) {
         boolean z2;
-        Assertions.checkNotNull(this.flacStreamMetadata);
+        Preconditions.checkNotNull(this.flacStreamMetadata);
         int position = parsableByteArray.getPosition();
         while (position <= parsableByteArray.limit() - 16) {
             parsableByteArray.setPosition(position);

@@ -4,12 +4,12 @@ import android.content.Context;
 import android.opengl.GLES20;
 import android.opengl.GLSurfaceView;
 import android.util.AttributeSet;
-import android.util.Log;
 import androidx.media3.common.C;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.GlProgram;
 import androidx.media3.common.util.GlUtil;
+import androidx.media3.common.util.Log;
 import androidx.media3.decoder.VideoDecoderOutputBuffer;
+import com.google.common.base.Preconditions;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
@@ -111,7 +111,7 @@ public final class VideoDecoderGLSurfaceView extends GLSurfaceView implements Vi
                 }
                 this.renderedOutputBuffer = andSet;
             }
-            VideoDecoderOutputBuffer videoDecoderOutputBuffer2 = (VideoDecoderOutputBuffer) Assertions.checkNotNull(this.renderedOutputBuffer);
+            VideoDecoderOutputBuffer videoDecoderOutputBuffer2 = (VideoDecoderOutputBuffer) Preconditions.checkNotNull(this.renderedOutputBuffer);
             float[] fArr = kColorConversion709;
             int i = videoDecoderOutputBuffer2.colorspace;
             if (i == 1) {
@@ -120,8 +120,8 @@ public final class VideoDecoderGLSurfaceView extends GLSurfaceView implements Vi
                 fArr = kColorConversion2020;
             }
             GLES20.glUniformMatrix3fv(this.colorMatrixLocation, 1, false, fArr, 0);
-            int[] iArr = (int[]) Assertions.checkNotNull(videoDecoderOutputBuffer2.yuvStrides);
-            ByteBuffer[] byteBufferArr = (ByteBuffer[]) Assertions.checkNotNull(videoDecoderOutputBuffer2.yuvPlanes);
+            int[] iArr = (int[]) Preconditions.checkNotNull(videoDecoderOutputBuffer2.yuvStrides);
+            ByteBuffer[] byteBufferArr = (ByteBuffer[]) Preconditions.checkNotNull(videoDecoderOutputBuffer2.yuvPlanes);
             int i2 = 0;
             while (i2 < 3) {
                 int i3 = i2 == 0 ? videoDecoderOutputBuffer2.height : (videoDecoderOutputBuffer2.height + 1) / 2;
@@ -136,7 +136,7 @@ public final class VideoDecoderGLSurfaceView extends GLSurfaceView implements Vi
             int[] iArr2 = {i4, i5, i5};
             for (int i6 = 0; i6 < 3; i6++) {
                 if (this.previousWidths[i6] != iArr2[i6] || this.previousStrides[i6] != iArr[i6]) {
-                    Assertions.checkState(iArr[i6] != 0);
+                    Preconditions.checkState(iArr[i6] != 0);
                     float f = iArr2[i6] / iArr[i6];
                     this.textureCoords[i6] = GlUtil.createBuffer(new float[]{0.0f, 0.0f, 0.0f, 1.0f, f, 0.0f, f, 1.0f});
                     GLES20.glVertexAttribPointer(this.texLocations[i6], 2, 5126, false, 0, (Buffer) this.textureCoords[i6]);

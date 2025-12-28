@@ -3,11 +3,11 @@ package androidx.media3.extractor.text.ssa;
 import android.graphics.Color;
 import android.graphics.PointF;
 import android.text.TextUtils;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import com.google.common.base.Ascii;
+import com.google.common.base.Preconditions;
 import com.google.common.primitives.Ints;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.lang.annotation.Documented;
@@ -96,7 +96,7 @@ public final class SsaStyle {
     public static SsaStyle fromStyleLine(String str, Format format) {
         boolean z;
         boolean z2;
-        Assertions.checkArgument(str.startsWith("Style:"));
+        Preconditions.checkArgument(str.startsWith("Style:"));
         String[] split = TextUtils.split(str.substring("Style:".length()), StringUtils.COMMA);
         if (split.length != format.length) {
             Log.w(TAG, Util.formatInvariant("Skipping malformed 'Style:' line (expected %s values, found %s): '%s'", Integer.valueOf(format.length), Integer.valueOf(split.length), str));
@@ -165,7 +165,7 @@ public final class SsaStyle {
             } else {
                 parseLong = Long.parseLong(str);
             }
-            Assertions.checkArgument(parseLong <= 4294967295L);
+            Preconditions.checkArgument(parseLong <= 4294967295L);
             return Integer.valueOf(Color.argb(Ints.checkedCast(((parseLong >> 24) & 255) ^ 255), Ints.checkedCast(parseLong & 255), Ints.checkedCast((parseLong >> 8) & 255), Ints.checkedCast((parseLong >> 16) & 255)));
         } catch (IllegalArgumentException e) {
             Log.w(TAG, "Failed to parse color expression: '" + str + "'", e);
@@ -373,7 +373,7 @@ public final class SsaStyle {
             PointF pointF = null;
             int i = -1;
             while (matcher.find()) {
-                String str2 = (String) Assertions.checkNotNull(matcher.group(1));
+                String str2 = (String) Preconditions.checkNotNull(matcher.group(1));
                 try {
                     PointF parsePosition = parsePosition(str2);
                     if (parsePosition != null) {
@@ -415,13 +415,13 @@ public final class SsaStyle {
                 group = matcher2.group(1);
                 group2 = matcher2.group(2);
             }
-            return new PointF(Float.parseFloat(((String) Assertions.checkNotNull(group)).trim()), Float.parseFloat(((String) Assertions.checkNotNull(group2)).trim()));
+            return new PointF(Float.parseFloat(((String) Preconditions.checkNotNull(group)).trim()), Float.parseFloat(((String) Preconditions.checkNotNull(group2)).trim()));
         }
 
         private static int parseAlignmentOverride(String str) {
             Matcher matcher = ALIGNMENT_OVERRIDE_PATTERN.matcher(str);
             if (matcher.find()) {
-                return SsaStyle.parseAlignment((String) Assertions.checkNotNull(matcher.group(1)));
+                return SsaStyle.parseAlignment((String) Preconditions.checkNotNull(matcher.group(1)));
             }
             return -1;
         }

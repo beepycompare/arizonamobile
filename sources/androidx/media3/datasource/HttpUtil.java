@@ -1,9 +1,9 @@
 package androidx.media3.datasource;
 
 import android.text.TextUtils;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import com.google.android.vending.expansion.downloader.Constants;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.net.HttpHeaders;
 import java.net.CookieHandler;
@@ -41,7 +41,7 @@ public final class HttpUtil {
         }
         Matcher matcher = CONTENT_RANGE_WITH_SIZE.matcher(str);
         if (matcher.matches()) {
-            return Long.parseLong((String) Assertions.checkNotNull(matcher.group(1)));
+            return Long.parseLong((String) Preconditions.checkNotNull(matcher.group(1)));
         }
         return -1L;
     }
@@ -63,7 +63,7 @@ public final class HttpUtil {
                 Matcher matcher = CONTENT_RANGE_WITH_START_AND_END.matcher(str2);
                 if (matcher.matches()) {
                     try {
-                        long parseLong2 = (Long.parseLong((String) Assertions.checkNotNull(matcher.group(2))) - Long.parseLong((String) Assertions.checkNotNull(matcher.group(1)))) + 1;
+                        long parseLong2 = (Long.parseLong((String) Preconditions.checkNotNull(matcher.group(2))) - Long.parseLong((String) Preconditions.checkNotNull(matcher.group(1)))) + 1;
                         if (parseLong < 0) {
                             return parseLong2;
                         }

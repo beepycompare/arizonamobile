@@ -10,4 +10,8 @@ public final class IncorrectFragmentationSniffFailure implements SniffFailure {
     private IncorrectFragmentationSniffFailure(boolean z) {
         this.fileIsFragmented = z;
     }
+
+    public String toString() {
+        return "IncorrectFragmentation{expected=" + (!this.fileIsFragmented) + "}";
+    }
 }

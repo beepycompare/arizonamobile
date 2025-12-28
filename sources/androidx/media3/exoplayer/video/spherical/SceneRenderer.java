@@ -5,11 +5,11 @@ import android.media.MediaFormat;
 import android.opengl.GLES20;
 import android.opengl.Matrix;
 import androidx.media3.common.Format;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.GlUtil;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.TimedValueQueue;
 import androidx.media3.exoplayer.video.VideoFrameMetadataListener;
+import com.google.common.base.Preconditions;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicBoolean;
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -49,7 +49,7 @@ public final class SceneRenderer implements VideoFrameMetadataListener, CameraMo
         surfaceTexture.setOnFrameAvailableListener(new SurfaceTexture.OnFrameAvailableListener() { // from class: androidx.media3.exoplayer.video.spherical.SceneRenderer$$ExternalSyntheticLambda0
             @Override // android.graphics.SurfaceTexture.OnFrameAvailableListener
             public final void onFrameAvailable(SurfaceTexture surfaceTexture2) {
-                SceneRenderer.this.m9058x200ab998(surfaceTexture2);
+                SceneRenderer.this.m9073x200ab998(surfaceTexture2);
             }
         });
         return this.surfaceTexture;
@@ -57,7 +57,7 @@ public final class SceneRenderer implements VideoFrameMetadataListener, CameraMo
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$init$0$androidx-media3-exoplayer-video-spherical-SceneRenderer  reason: not valid java name */
-    public /* synthetic */ void m9058x200ab998(SurfaceTexture surfaceTexture) {
+    public /* synthetic */ void m9073x200ab998(SurfaceTexture surfaceTexture) {
         this.frameAvailable.set(true);
     }
 
@@ -69,7 +69,7 @@ public final class SceneRenderer implements VideoFrameMetadataListener, CameraMo
             Log.e(TAG, "Failed to draw a frame", e);
         }
         if (this.frameAvailable.compareAndSet(true, false)) {
-            ((SurfaceTexture) Assertions.checkNotNull(this.surfaceTexture)).updateTexImage();
+            ((SurfaceTexture) Preconditions.checkNotNull(this.surfaceTexture)).updateTexImage();
             try {
                 GlUtil.checkGlError();
             } catch (GlUtil.GlException e2) {

@@ -17,6 +17,6 @@ public class Qg extends AbstractCallableC0726yh {
     @Override // io.appmetrica.analytics.impl.AbstractCallableC0726yh
     public final void a(IAppMetricaService iAppMetricaService) {
         C0676wh c0676wh = this.e;
-        iAppMetricaService.reportData(c0676wh.c, c0676wh.f1281a.d(c0676wh.e.c()));
+        iAppMetricaService.reportData(c0676wh.c, c0676wh.f1282a.d(c0676wh.e.c()));
     }
 }

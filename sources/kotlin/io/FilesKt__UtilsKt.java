@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import kotlin.Deprecated;
+import kotlin.DeprecatedSinceKotlin;
+import kotlin.IgnorableReturnValue;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
@@ -18,7 +20,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Utils.kt */
-@Metadata(d1 = {"\u0000<\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0014\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\u0004\u001a*\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u0001H\u0007\u001a*\u0010\u0006\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u0001H\u0007\u001a\u0012\u0010\u000e\u001a\u00020\u0003*\u00020\u00012\u0006\u0010\u000f\u001a\u00020\u0001\u001a\u0012\u0010\u0010\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u000f\u001a\u00020\u0001\u001a\u0012\u0010\u0011\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u000f\u001a\u00020\u0001\u001a\u0014\u0010\u0012\u001a\u0004\u0018\u00010\u0001*\u00020\u00012\u0006\u0010\u000f\u001a\u00020\u0001\u001a\u001b\u0010\u0013\u001a\u0004\u0018\u00010\u0003*\u00020\u00012\u0006\u0010\u000f\u001a\u00020\u0001H\u0002¢\u0006\u0002\b\u0014\u001a&\u0010\u0015\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0016\u001a\u00020\u00012\b\b\u0002\u0010\u0017\u001a\u00020\u00182\b\b\u0002\u0010\u0019\u001a\u00020\u001a\u001a8\u0010\u001b\u001a\u00020\u0018*\u00020\u00012\u0006\u0010\u0016\u001a\u00020\u00012\b\b\u0002\u0010\u0017\u001a\u00020\u00182\u001a\b\u0002\u0010\u001c\u001a\u0014\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u001e\u0012\u0004\u0012\u00020\u001f0\u001d\u001a\n\u0010 \u001a\u00020\u0018*\u00020\u0001\u001a\u0012\u0010!\u001a\u00020\u0018*\u00020\u00012\u0006\u0010\"\u001a\u00020\u0001\u001a\u0012\u0010!\u001a\u00020\u0018*\u00020\u00012\u0006\u0010\"\u001a\u00020\u0003\u001a\u0012\u0010#\u001a\u00020\u0018*\u00020\u00012\u0006\u0010\"\u001a\u00020\u0001\u001a\u0012\u0010#\u001a\u00020\u0018*\u00020\u00012\u0006\u0010\"\u001a\u00020\u0003\u001a\n\u0010$\u001a\u00020\u0001*\u00020\u0001\u001a\u0011\u0010$\u001a\u00020%*\u00020%H\u0002¢\u0006\u0002\b&\u001a\u001d\u0010$\u001a\b\u0012\u0004\u0012\u00020\u00010'*\b\u0012\u0004\u0012\u00020\u00010'H\u0002¢\u0006\u0002\b&\u001a\u0012\u0010(\u001a\u00020\u0001*\u00020\u00012\u0006\u0010)\u001a\u00020\u0001\u001a\u0012\u0010(\u001a\u00020\u0001*\u00020\u00012\u0006\u0010)\u001a\u00020\u0003\u001a\u0012\u0010*\u001a\u00020\u0001*\u00020\u00012\u0006\u0010)\u001a\u00020\u0001\u001a\u0012\u0010*\u001a\u00020\u0001*\u00020\u00012\u0006\u0010)\u001a\u00020\u0003\"\u0015\u0010\u0007\u001a\u00020\u0003*\u00020\u00018F¢\u0006\u0006\u001a\u0004\b\b\u0010\t\"\u0015\u0010\n\u001a\u00020\u0003*\u00020\u00018F¢\u0006\u0006\u001a\u0004\b\u000b\u0010\t\"\u0015\u0010\f\u001a\u00020\u0003*\u00020\u00018F¢\u0006\u0006\u001a\u0004\b\r\u0010\t¨\u0006+"}, d2 = {"createTempDir", "Ljava/io/File;", "prefix", "", "suffix", "directory", "createTempFile", "extension", "getExtension", "(Ljava/io/File;)Ljava/lang/String;", "invariantSeparatorsPath", "getInvariantSeparatorsPath", "nameWithoutExtension", "getNameWithoutExtension", "toRelativeString", TtmlNode.RUBY_BASE, "relativeTo", "relativeToOrSelf", "relativeToOrNull", "toRelativeStringOrNull", "toRelativeStringOrNull$FilesKt__UtilsKt", "copyTo", TypedValues.AttributesType.S_TARGET, "overwrite", "", "bufferSize", "", "copyRecursively", "onError", "Lkotlin/Function2;", "Ljava/io/IOException;", "Lkotlin/io/OnErrorAction;", "deleteRecursively", "startsWith", "other", "endsWith", "normalize", "Lkotlin/io/FilePathComponents;", "normalize$FilesKt__UtilsKt", "", "resolve", "relative", "resolveSibling", "kotlin-stdlib"}, k = 5, mv = {2, 2, 0}, xi = 49, xs = "kotlin/io/FilesKt")
+@Metadata(d1 = {"\u0000<\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0014\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\u0004\u001a,\u0010\u0000\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u0001H\u0087\u0080\u0004\u001a,\u0010\u0006\u001a\u00020\u00012\b\b\u0002\u0010\u0002\u001a\u00020\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u0001H\u0087\u0080\u0004\u001a\u0016\u0010\u000e\u001a\u00020\u0003*\u00020\u00012\u0006\u0010\u000f\u001a\u00020\u0001H\u0086\u0080\u0004\u001a\u0016\u0010\u0010\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u000f\u001a\u00020\u0001H\u0086\u0080\u0004\u001a\u0016\u0010\u0011\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u000f\u001a\u00020\u0001H\u0086\u0080\u0004\u001a\u0018\u0010\u0012\u001a\u0004\u0018\u00010\u0001*\u00020\u00012\u0006\u0010\u000f\u001a\u00020\u0001H\u0086\u0080\u0004\u001a\u001d\u0010\u0013\u001a\u0004\u0018\u00010\u0003*\u00020\u00012\u0006\u0010\u000f\u001a\u00020\u0001H\u0082\u0080\u0004¢\u0006\u0002\b\u0014\u001a*\u0010\u0015\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0016\u001a\u00020\u00012\b\b\u0002\u0010\u0017\u001a\u00020\u00182\b\b\u0002\u0010\u0019\u001a\u00020\u001aH\u0087\u0080\b\u001a<\u0010\u001b\u001a\u00020\u0018*\u00020\u00012\u0006\u0010\u0016\u001a\u00020\u00012\b\b\u0002\u0010\u0017\u001a\u00020\u00182\u001a\b\u0002\u0010\u001c\u001a\u0014\u0012\u0004\u0012\u00020\u0001\u0012\u0004\u0012\u00020\u001e\u0012\u0004\u0012\u00020\u001f0\u001dH\u0087\u0080\b\u001a\u000e\u0010 \u001a\u00020\u0018*\u00020\u0001H\u0087\u0080\b\u001a\u0016\u0010!\u001a\u00020\u0018*\u00020\u00012\u0006\u0010\"\u001a\u00020\u0001H\u0086\u0080\u0004\u001a\u0016\u0010!\u001a\u00020\u0018*\u00020\u00012\u0006\u0010\"\u001a\u00020\u0003H\u0086\u0080\u0004\u001a\u0016\u0010#\u001a\u00020\u0018*\u00020\u00012\u0006\u0010\"\u001a\u00020\u0001H\u0086\u0080\u0004\u001a\u0016\u0010#\u001a\u00020\u0018*\u00020\u00012\u0006\u0010\"\u001a\u00020\u0003H\u0086\u0080\u0004\u001a\u000e\u0010$\u001a\u00020\u0001*\u00020\u0001H\u0086\u0080\u0004\u001a\u0013\u0010$\u001a\u00020%*\u00020%H\u0082\u0080\u0004¢\u0006\u0002\b&\u001a\u001f\u0010$\u001a\b\u0012\u0004\u0012\u00020\u00010'*\b\u0012\u0004\u0012\u00020\u00010'H\u0082\u0080\u0004¢\u0006\u0002\b&\u001a\u0016\u0010(\u001a\u00020\u0001*\u00020\u00012\u0006\u0010)\u001a\u00020\u0001H\u0086\u0080\u0004\u001a\u0016\u0010(\u001a\u00020\u0001*\u00020\u00012\u0006\u0010)\u001a\u00020\u0003H\u0086\u0080\u0004\u001a\u0016\u0010*\u001a\u00020\u0001*\u00020\u00012\u0006\u0010)\u001a\u00020\u0001H\u0086\u0080\u0004\u001a\u0016\u0010*\u001a\u00020\u0001*\u00020\u00012\u0006\u0010)\u001a\u00020\u0003H\u0086\u0080\u0004\"\u0019\u0010\u0007\u001a\u00020\u0003*\u00020\u00018FX\u0086\u0084\b¢\u0006\u0006\u001a\u0004\b\b\u0010\t\"\u0019\u0010\n\u001a\u00020\u0003*\u00020\u00018FX\u0086\u0084\b¢\u0006\u0006\u001a\u0004\b\u000b\u0010\t\"\u0019\u0010\f\u001a\u00020\u0003*\u00020\u00018FX\u0086\u0084\b¢\u0006\u0006\u001a\u0004\b\r\u0010\t¨\u0006+"}, d2 = {"createTempDir", "Ljava/io/File;", "prefix", "", "suffix", "directory", "createTempFile", "extension", "getExtension", "(Ljava/io/File;)Ljava/lang/String;", "invariantSeparatorsPath", "getInvariantSeparatorsPath", "nameWithoutExtension", "getNameWithoutExtension", "toRelativeString", TtmlNode.RUBY_BASE, "relativeTo", "relativeToOrSelf", "relativeToOrNull", "toRelativeStringOrNull", "toRelativeStringOrNull$FilesKt__UtilsKt", "copyTo", TypedValues.AttributesType.S_TARGET, "overwrite", "", "bufferSize", "", "copyRecursively", "onError", "Lkotlin/Function2;", "Ljava/io/IOException;", "Lkotlin/io/OnErrorAction;", "deleteRecursively", "startsWith", "other", "endsWith", "normalize", "Lkotlin/io/FilePathComponents;", "normalize$FilesKt__UtilsKt", "", "resolve", "relative", "resolveSibling", "kotlin-stdlib"}, k = 5, mv = {2, 3, 0}, xi = 49, xs = "kotlin/io/FilesKt")
 /* loaded from: classes5.dex */
 public class FilesKt__UtilsKt extends FilesKt__FileTreeWalkKt {
     public static /* synthetic */ File createTempDir$default(String str, String str2, File file, int i, Object obj) {
@@ -35,6 +37,7 @@ public class FilesKt__UtilsKt extends FilesKt__FileTreeWalkKt {
     }
 
     @Deprecated(message = "Avoid creating temporary directories in the default temp location with this function due to too wide permissions on the newly created directory. Use kotlin.io.path.createTempDirectory instead.")
+    @DeprecatedSinceKotlin(errorSince = "2.3", warningSince = "1.4")
     public static final File createTempDir(String prefix, String str, File file) {
         Intrinsics.checkNotNullParameter(prefix, "prefix");
         File createTempFile = File.createTempFile(prefix, str, file);
@@ -60,6 +63,7 @@ public class FilesKt__UtilsKt extends FilesKt__FileTreeWalkKt {
     }
 
     @Deprecated(message = "Avoid creating temporary files in the default temp location with this function due to too wide permissions on the newly created file. Use kotlin.io.path.createTempFile instead or resort to java.io.File.createTempFile.")
+    @DeprecatedSinceKotlin(errorSince = "2.3", warningSince = "1.4")
     public static final File createTempFile(String prefix, String str, File file) {
         Intrinsics.checkNotNullParameter(prefix, "prefix");
         File createTempFile = File.createTempFile(prefix, str, file);
@@ -174,6 +178,7 @@ public class FilesKt__UtilsKt extends FilesKt__FileTreeWalkKt {
         return FilesKt.copyTo(file, file2, z, i);
     }
 
+    @IgnorableReturnValue
     public static final File copyTo(File file, File target, boolean z, int i) {
         Intrinsics.checkNotNullParameter(file, "<this>");
         Intrinsics.checkNotNullParameter(target, "target");
@@ -202,9 +207,10 @@ public class FilesKt__UtilsKt extends FilesKt__FileTreeWalkKt {
         try {
             FileInputStream fileInputStream2 = fileInputStream;
             FileOutputStream fileOutputStream = new FileOutputStream(target);
-            long copyTo = ByteStreamsKt.copyTo(fileInputStream2, fileOutputStream, i);
+            ByteStreamsKt.copyTo(fileInputStream2, fileOutputStream, i);
+            Unit unit = Unit.INSTANCE;
             CloseableKt.closeFinally(fileOutputStream, null);
-            Long.valueOf(copyTo);
+            Unit unit2 = Unit.INSTANCE;
             CloseableKt.closeFinally(fileInputStream, null);
             return target;
         } finally {
@@ -216,18 +222,26 @@ public class FilesKt__UtilsKt extends FilesKt__FileTreeWalkKt {
             z = false;
         }
         if ((i & 4) != 0) {
-            function2 = new Function2() { // from class: kotlin.io.FilesKt__UtilsKt$copyRecursively$1
+            function2 = new Function2() { // from class: kotlin.io.FilesKt__UtilsKt$$ExternalSyntheticLambda1
                 @Override // kotlin.jvm.functions.Function2
-                public final Void invoke(File file3, IOException exception) {
-                    Intrinsics.checkNotNullParameter(file3, "<unused var>");
-                    Intrinsics.checkNotNullParameter(exception, "exception");
-                    throw exception;
+                public final Object invoke(Object obj2, Object obj3) {
+                    OnErrorAction copyRecursively$lambda$0$FilesKt__UtilsKt;
+                    copyRecursively$lambda$0$FilesKt__UtilsKt = FilesKt__UtilsKt.copyRecursively$lambda$0$FilesKt__UtilsKt((File) obj2, (IOException) obj3);
+                    return copyRecursively$lambda$0$FilesKt__UtilsKt;
                 }
             };
         }
         return FilesKt.copyRecursively(file, file2, z, function2);
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final OnErrorAction copyRecursively$lambda$0$FilesKt__UtilsKt(File file, IOException exception) {
+        Intrinsics.checkNotNullParameter(file, "<unused var>");
+        Intrinsics.checkNotNullParameter(exception, "exception");
+        throw exception;
+    }
+
+    @IgnorableReturnValue
     public static final boolean copyRecursively(File file, File target, boolean z, final Function2<? super File, ? super IOException, ? extends OnErrorAction> onError) {
         Intrinsics.checkNotNullParameter(file, "<this>");
         Intrinsics.checkNotNullParameter(target, "target");
@@ -239,9 +253,9 @@ public class FilesKt__UtilsKt extends FilesKt__FileTreeWalkKt {
             Iterator<File> it = FilesKt.walkTopDown(file).onFail(new Function2() { // from class: kotlin.io.FilesKt__UtilsKt$$ExternalSyntheticLambda0
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
-                    Unit copyRecursively$lambda$0$FilesKt__UtilsKt;
-                    copyRecursively$lambda$0$FilesKt__UtilsKt = FilesKt__UtilsKt.copyRecursively$lambda$0$FilesKt__UtilsKt(Function2.this, (File) obj, (IOException) obj2);
-                    return copyRecursively$lambda$0$FilesKt__UtilsKt;
+                    Unit copyRecursively$lambda$1$FilesKt__UtilsKt;
+                    copyRecursively$lambda$1$FilesKt__UtilsKt = FilesKt__UtilsKt.copyRecursively$lambda$1$FilesKt__UtilsKt(Function2.this, (File) obj, (IOException) obj2);
+                    return copyRecursively$lambda$1$FilesKt__UtilsKt;
                 }
             }).iterator();
             while (it.hasNext()) {
@@ -282,7 +296,7 @@ public class FilesKt__UtilsKt extends FilesKt__FileTreeWalkKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit copyRecursively$lambda$0$FilesKt__UtilsKt(Function2 function2, File f, IOException e) {
+    public static final Unit copyRecursively$lambda$1$FilesKt__UtilsKt(Function2 function2, File f, IOException e) {
         Intrinsics.checkNotNullParameter(f, "f");
         Intrinsics.checkNotNullParameter(e, "e");
         if (function2.invoke(f, e) != OnErrorAction.TERMINATE) {
@@ -291,6 +305,7 @@ public class FilesKt__UtilsKt extends FilesKt__FileTreeWalkKt {
         throw new TerminateException(f);
     }
 
+    @IgnorableReturnValue
     public static final boolean deleteRecursively(File file) {
         Intrinsics.checkNotNullParameter(file, "<this>");
         while (true) {

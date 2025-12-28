@@ -5,12 +5,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class z {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f479a;
+    public final String f480a;
     public final long b;
     public final int c;
 
     public z(String str, long j, int i) {
-        this.f479a = str;
+        this.f480a = str;
         this.b = j;
         this.c = i;
     }
@@ -21,17 +21,17 @@ public final class z {
         }
         if (obj instanceof z) {
             z zVar = (z) obj;
-            return Intrinsics.areEqual(this.f479a, zVar.f479a) && this.b == zVar.b && this.c == zVar.c;
+            return Intrinsics.areEqual(this.f480a, zVar.f480a) && this.b == zVar.b && this.c == zVar.c;
         }
         return false;
     }
 
     public final int hashCode() {
         int hashCode = Long.hashCode(this.b);
-        return v.a(this.c) + ((hashCode + (this.f479a.hashCode() * 31)) * 31);
+        return v.a(this.c) + ((hashCode + (this.f480a.hashCode() * 31)) * 31);
     }
 
     public final String toString() {
-        return "RequestState(type=" + this.f479a + ", lastAttempt=" + this.b + ", lastAttemptResult=" + u.b(this.c) + ')';
+        return "RequestState(type=" + this.f480a + ", lastAttempt=" + this.b + ", lastAttemptResult=" + u.b(this.c) + ')';
     }
 }

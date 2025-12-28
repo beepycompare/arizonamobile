@@ -4,21 +4,21 @@ package io.appmetrica.analytics.impl;
 public final class C0195dg implements InterfaceC0600tg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0246fg f949a;
+    public final /* synthetic */ C0246fg f950a;
 
     public C0195dg(C0246fg c0246fg) {
-        this.f949a = c0246fg;
+        this.f950a = c0246fg;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0600tg
     public final void a(C0476og c0476og) {
-        C0246fg c0246fg = this.f949a;
+        C0246fg c0246fg = this.f950a;
         C0246fg.a(c0246fg, c0476og, (Xf) c0246fg.e.getValue());
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0600tg
     public final void a(Throwable th) {
-        C0246fg c0246fg = this.f949a;
+        C0246fg c0246fg = this.f950a;
         C0246fg.a(c0246fg, null, (Xf) c0246fg.e.getValue());
     }
 }

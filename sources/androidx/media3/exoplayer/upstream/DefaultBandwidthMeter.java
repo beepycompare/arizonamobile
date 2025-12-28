@@ -7,7 +7,6 @@ import androidx.compose.runtime.ComposerKt;
 import androidx.compose.ui.spatial.RectListKt;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.media3.common.C;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.BackgroundExecutor;
 import androidx.media3.common.util.Clock;
 import androidx.media3.common.util.NetworkTypeObserver;
@@ -25,6 +24,7 @@ import com.android.volley.DefaultRetryPolicy;
 import com.google.android.gms.dynamite.descriptors.com.google.android.gms.measurement.dynamite.ModuleDescriptor;
 import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import com.google.common.base.Ascii;
+import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -201,8 +201,8 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
 
     @Override // androidx.media3.exoplayer.upstream.BandwidthMeter
     public void addEventListener(Handler handler, BandwidthMeter.EventListener eventListener) {
-        Assertions.checkNotNull(handler);
-        Assertions.checkNotNull(eventListener);
+        Preconditions.checkNotNull(handler);
+        Preconditions.checkNotNull(eventListener);
         this.eventDispatcher.addListener(handler, eventListener);
     }
 
@@ -241,7 +241,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
         try {
             try {
                 if (isTransferAtFullNetworkSpeed(dataSpec, z)) {
-                    Assertions.checkState(this.streamCount > 0);
+                    Preconditions.checkState(this.streamCount > 0);
                     long elapsedRealtime = this.clock.elapsedRealtime();
                     int i = (int) (elapsedRealtime - this.sampleStartTimeMs);
                     this.totalElapsedTimeMs += i;

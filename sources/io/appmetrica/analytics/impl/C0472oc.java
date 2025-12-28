@@ -13,11 +13,11 @@ public final class C0472oc extends R4 {
 
     @Override // io.appmetrica.analytics.impl.R4
     public final String e() {
-        return this.f756a;
+        return this.f757a;
     }
 
     @Override // io.appmetrica.analytics.impl.R4
     public final String toString() {
-        return this.f756a;
+        return this.f757a;
     }
 }

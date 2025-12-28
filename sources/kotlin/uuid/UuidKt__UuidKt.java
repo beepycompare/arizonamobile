@@ -3,17 +3,30 @@ package kotlin.uuid;
 import com.google.common.base.Ascii;
 import com.google.common.primitives.SignedBytes;
 import com.google.firebase.analytics.FirebaseAnalytics;
+import kotlin.KotlinNothingValueException;
 import kotlin.Metadata;
+import kotlin.Unit;
 import kotlin.collections.ArraysKt;
 import kotlin.jvm.functions.Function1;
+import kotlin.jvm.functions.Function3;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.HexExtensionsKt;
 import okio.Utf8;
+import ru.rustore.sdk.activitylauncher.ActivityLauncherAnalytics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Uuid.kt */
-@Metadata(d1 = {"\u0000*\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0012\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u000b\u001a\u0010\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\u0001\u001a\u0014\u0010\u0004\u001a\u00020\u0005*\u00020\u00032\u0006\u0010\u0006\u001a\u00020\u0007H\u0000\u001a,\u0010\b\u001a\u00020\t*\u00020\u00052\u0006\u0010\n\u001a\u00020\u00032\u0006\u0010\u000b\u001a\u00020\u00072\u0006\u0010\f\u001a\u00020\u00072\u0006\u0010\r\u001a\u00020\u0007H\u0001\u001a\u0014\u0010\u000e\u001a\u00020\t*\u00020\u000f2\u0006\u0010\u0006\u001a\u00020\u0007H\u0000\u001a\u001c\u0010\u0010\u001a\u00020\t*\u00020\u00032\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\u0011\u001a\u00020\u0005H\u0000\u001a\u0010\u0010\u0012\u001a\u00020\u00012\u0006\u0010\u0013\u001a\u00020\u000fH\u0001\u001a\u0010\u0010\u0014\u001a\u00020\u00012\u0006\u0010\u0015\u001a\u00020\u000fH\u0001\u001a\u0019\u0010\u0016\u001a\u00020\u000f*\u00020\u000f2\u0006\u0010\u0017\u001a\u00020\u0007H\u0002¢\u0006\u0002\b\u0018\u001a\u0019\u0010\u0016\u001a\u00020\u000f*\u00020\u00032\u0006\u0010\u0019\u001a\u00020\u0007H\u0002¢\u0006\u0002\b\u0018¨\u0006\u001a"}, d2 = {"uuidFromRandomBytes", "Lkotlin/uuid/Uuid;", "randomBytes", "", "getLongAtCommonImpl", "", FirebaseAnalytics.Param.INDEX, "", "formatBytesIntoCommonImpl", "", "dst", "dstOffset", "startIndex", "endIndex", "checkHyphenAt", "", "setLongAtCommonImpl", "value", "uuidParseHexDashCommonImpl", "hexDashString", "uuidParseHexCommonImpl", "hexString", "truncateForErrorMessage", "maxLength", "truncateForErrorMessage$UuidKt__UuidKt", "maxSize", "kotlin-stdlib"}, k = 5, mv = {2, 2, 0}, xi = 49, xs = "kotlin/uuid/UuidKt")
+@Metadata(d1 = {"\u0000D\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0012\n\u0000\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\b\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0001\n\u0002\b\n\u001a\n\u0010\u0003\u001a\u00020\u0004H\u0081\u0080\u0004\u001a\u0012\u0010\u0005\u001a\u00020\u00042\u0006\u0010\u0006\u001a\u00020\u0007H\u0081\u0080\u0004\u001a\u0016\u0010\b\u001a\u00020\t*\u00020\u00072\u0006\u0010\n\u001a\u00020\u0001H\u0080\u0080\u0004\u001a.\u0010\u000b\u001a\u00020\f*\u00020\t2\u0006\u0010\r\u001a\u00020\u00072\u0006\u0010\u000e\u001a\u00020\u00012\u0006\u0010\u000f\u001a\u00020\u00012\u0006\u0010\u0010\u001a\u00020\u0001H\u0081\u0080\u0004\u001a\u001e\u0010\u0011\u001a\u00020\f*\u00020\u00072\u0006\u0010\n\u001a\u00020\u00012\u0006\u0010\u0012\u001a\u00020\tH\u0080\u0080\u0004\u001a\u0012\u0010\u0013\u001a\u00020\u00042\u0006\u0010\u0014\u001a\u00020\u0015H\u0081\u0080\u0004\u001a\u0014\u0010\u0016\u001a\u0004\u0018\u00010\u00042\u0006\u0010\u0014\u001a\u00020\u0015H\u0081\u0080\u0004\u001af\u0010\u0017\u001a\u00020\f*\u00020\u00152\u0006\u0010\n\u001a\u00020\u00012K\u0010\u0018\u001aG\u0012\u0013\u0012\u00110\u0015¢\u0006\f\b\u001a\u0012\b\b\u001b\u0012\u0004\b\b(\u001c\u0012\u0013\u0012\u00110\u0015¢\u0006\f\b\u001a\u0012\b\b\u001b\u0012\u0004\b\b(\u001d\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u001a\u0012\b\b\u001b\u0012\u0004\b\b(\u001e\u0012\u0004\u0012\u00020\f0\u0019H\u0080\u0088\u0004ø\u0001\u0000\u001ab\u0010\u0013\u001a\u00020\u00042\u0006\u0010\u0014\u001a\u00020\u00152K\u0010\u0018\u001aG\u0012\u0013\u0012\u00110\u0015¢\u0006\f\b\u001a\u0012\b\b\u001b\u0012\u0004\b\b(\u001c\u0012\u0013\u0012\u00110\u0015¢\u0006\f\b\u001a\u0012\b\b\u001b\u0012\u0004\b\b(\u001d\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u001a\u0012\b\b\u001b\u0012\u0004\b\b(\u001e\u0012\u0004\u0012\u00020\u001f0\u0019H\u0081\u0088\u0004ø\u0001\u0000\u001a\u0012\u0010 \u001a\u00020\u00042\u0006\u0010!\u001a\u00020\u0015H\u0081\u0080\u0004\u001a\u0014\u0010\"\u001a\u0004\u0018\u00010\u00042\u0006\u0010!\u001a\u00020\u0015H\u0081\u0080\u0004\u001ab\u0010 \u001a\u00020\u00042\u0006\u0010!\u001a\u00020\u00152K\u0010\u0018\u001aG\u0012\u0013\u0012\u00110\u0015¢\u0006\f\b\u001a\u0012\b\b\u001b\u0012\u0004\b\b(\u001c\u0012\u0013\u0012\u00110\u0015¢\u0006\f\b\u001a\u0012\b\b\u001b\u0012\u0004\b\b(\u001d\u0012\u0013\u0012\u00110\u0001¢\u0006\f\b\u001a\u0012\b\b\u001b\u0012\u0004\b\b(#\u0012\u0004\u0012\u00020\u001f0\u0019H\u0081\u0088\u0004ø\u0001\u0000\u001a\u001b\u0010$\u001a\u00020\u0015*\u00020\u00152\u0006\u0010%\u001a\u00020\u0001H\u0082\u0080\u0004¢\u0006\u0002\b&\u001a\u001b\u0010$\u001a\u00020\u0015*\u00020\u00072\u0006\u0010'\u001a\u00020\u0001H\u0082\u0080\u0004¢\u0006\u0002\b&\u001a\"\u0010(\u001a\u00020\u001f2\u0006\u0010\u001c\u001a\u00020\u00152\u0006\u0010\u001d\u001a\u00020\u00152\u0006\u0010#\u001a\u00020\u0001H\u0080\u0080\u0004\"\u000f\u0010\u0000\u001a\u00020\u0001X\u0082Ô\b¢\u0006\u0002\n\u0000\"\u000f\u0010\u0002\u001a\u00020\u0001X\u0082Ô\b¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006)"}, d2 = {"UUID_HEX_LENGTH", "", "UUID_HEX_DASH_LENGTH", "secureRandomUuid", "Lkotlin/uuid/Uuid;", "uuidFromRandomBytes", "randomBytes", "", "getLongAtCommonImpl", "", FirebaseAnalytics.Param.INDEX, "formatBytesIntoCommonImpl", "", "dst", "dstOffset", "startIndex", "endIndex", "setLongAtCommonImpl", "value", "uuidParseHexDashCommonImpl", "hexDashString", "", "uuidParseHexDashOrNullCommonImpl", "uuidCheckHyphenAt", "onError", "Lkotlin/Function3;", "Lkotlin/ParameterName;", "name", "inputString", ActivityLauncherAnalytics.ERROR_DESCRIPTION, "errorPosition", "", "uuidParseHexCommonImpl", "hexString", "uuidParseHexOrNullCommonImpl", "errorIndex", "truncateForErrorMessage", "maxLength", "truncateForErrorMessage$UuidKt__UuidKt", "maxSize", "uuidThrowUnexpectedCharacterException", "kotlin-stdlib"}, k = 5, mv = {2, 3, 0}, xi = 49, xs = "kotlin/uuid/UuidKt")
 /* loaded from: classes5.dex */
 public class UuidKt__UuidKt extends UuidKt__UuidJVMKt {
+    private static final int UUID_HEX_DASH_LENGTH = 36;
+    private static final int UUID_HEX_LENGTH = 32;
+
+    public static final Uuid secureRandomUuid() {
+        byte[] bArr = new byte[16];
+        UuidKt.secureRandomBytes(bArr);
+        return UuidKt.uuidFromRandomBytes(bArr);
+    }
+
     public static final Uuid uuidFromRandomBytes(byte[] randomBytes) {
         Intrinsics.checkNotNullParameter(randomBytes, "randomBytes");
         byte b = (byte) (randomBytes[6] & Ascii.SI);
@@ -50,13 +63,6 @@ public class UuidKt__UuidKt extends UuidKt__UuidJVMKt {
         }
     }
 
-    public static final void checkHyphenAt(String str, int i) {
-        Intrinsics.checkNotNullParameter(str, "<this>");
-        if (str.charAt(i) != '-') {
-            throw new IllegalArgumentException(("Expected '-' (hyphen) at index " + i + ", but was '" + str.charAt(i) + '\'').toString());
-        }
-    }
-
     public static final void setLongAtCommonImpl(byte[] bArr, int i, long j) {
         Intrinsics.checkNotNullParameter(bArr, "<this>");
         int i2 = 7;
@@ -67,24 +73,12 @@ public class UuidKt__UuidKt extends UuidKt__UuidJVMKt {
         }
     }
 
-    public static final Uuid uuidParseHexDashCommonImpl(String hexDashString) {
-        Intrinsics.checkNotNullParameter(hexDashString, "hexDashString");
-        long hexToLong$default = HexExtensionsKt.hexToLong$default(hexDashString, 0, 8, null, 4, null);
-        UuidKt.checkHyphenAt(hexDashString, 8);
-        long hexToLong$default2 = HexExtensionsKt.hexToLong$default(hexDashString, 9, 13, null, 4, null);
-        UuidKt.checkHyphenAt(hexDashString, 13);
-        long hexToLong$default3 = HexExtensionsKt.hexToLong$default(hexDashString, 14, 18, null, 4, null);
-        UuidKt.checkHyphenAt(hexDashString, 18);
-        long hexToLong$default4 = HexExtensionsKt.hexToLong$default(hexDashString, 19, 23, null, 4, null);
-        UuidKt.checkHyphenAt(hexDashString, 23);
-        long j = hexToLong$default2 << 16;
-        long j2 = hexToLong$default4 << 48;
-        return Uuid.Companion.fromLongs(j | (hexToLong$default << 32) | hexToLong$default3, j2 | HexExtensionsKt.hexToLong$default(hexDashString, 24, 36, null, 4, null));
-    }
-
-    public static final Uuid uuidParseHexCommonImpl(String hexString) {
-        Intrinsics.checkNotNullParameter(hexString, "hexString");
-        return Uuid.Companion.fromLongs(HexExtensionsKt.hexToLong$default(hexString, 0, 16, null, 4, null), HexExtensionsKt.hexToLong$default(hexString, 16, 32, null, 4, null));
+    public static final void uuidCheckHyphenAt(String str, int i, Function3<? super String, ? super String, ? super Integer, Unit> onError) {
+        Intrinsics.checkNotNullParameter(str, "<this>");
+        Intrinsics.checkNotNullParameter(onError, "onError");
+        if (str.charAt(i) != '-') {
+            onError.invoke(str, "'-' (hyphen)", Integer.valueOf(i));
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -102,5 +96,322 @@ public class UuidKt__UuidKt extends UuidKt__UuidJVMKt {
     /* JADX INFO: Access modifiers changed from: private */
     public static final String truncateForErrorMessage$UuidKt__UuidKt(byte[] bArr, int i) {
         return ArraysKt.joinToString$default(bArr, (CharSequence) null, (CharSequence) "[", (CharSequence) "]", i, (CharSequence) null, (Function1) null, 49, (Object) null);
+    }
+
+    public static final Void uuidThrowUnexpectedCharacterException(String inputString, String errorDescription, int i) {
+        Intrinsics.checkNotNullParameter(inputString, "inputString");
+        Intrinsics.checkNotNullParameter(errorDescription, "errorDescription");
+        throw new IllegalArgumentException("Expected " + errorDescription + " at index " + i + ", but was '" + inputString.charAt(i) + '\'');
+    }
+
+    public static final Uuid uuidParseHexDashCommonImpl(String hexDashString) {
+        Intrinsics.checkNotNullParameter(hexDashString, "hexDashString");
+        long j = 0;
+        for (int i = 0; i < 8; i++) {
+            long j2 = j << 4;
+            char charAt = hexDashString.charAt(i);
+            if ((charAt >>> '\b') != 0 || HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt] < 0) {
+                UuidKt.uuidThrowUnexpectedCharacterException(hexDashString, "a hexadecimal digit", i);
+                throw new KotlinNothingValueException();
+            }
+            j = j2 | HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt];
+        }
+        if (hexDashString.charAt(8) != '-') {
+            UuidKt.uuidThrowUnexpectedCharacterException(hexDashString, "'-' (hyphen)", 8);
+            throw new KotlinNothingValueException();
+        }
+        long j3 = 0;
+        for (int i2 = 9; i2 < 13; i2++) {
+            long j4 = j3 << 4;
+            char charAt2 = hexDashString.charAt(i2);
+            if ((charAt2 >>> '\b') != 0 || HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt2] < 0) {
+                UuidKt.uuidThrowUnexpectedCharacterException(hexDashString, "a hexadecimal digit", i2);
+                throw new KotlinNothingValueException();
+            }
+            j3 = j4 | HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt2];
+        }
+        if (hexDashString.charAt(13) != '-') {
+            UuidKt.uuidThrowUnexpectedCharacterException(hexDashString, "'-' (hyphen)", 13);
+            throw new KotlinNothingValueException();
+        }
+        long j5 = 0;
+        for (int i3 = 14; i3 < 18; i3++) {
+            long j6 = j5 << 4;
+            char charAt3 = hexDashString.charAt(i3);
+            if ((charAt3 >>> '\b') != 0 || HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt3] < 0) {
+                UuidKt.uuidThrowUnexpectedCharacterException(hexDashString, "a hexadecimal digit", i3);
+                throw new KotlinNothingValueException();
+            }
+            j5 = j6 | HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt3];
+        }
+        if (hexDashString.charAt(18) != '-') {
+            UuidKt.uuidThrowUnexpectedCharacterException(hexDashString, "'-' (hyphen)", 18);
+            throw new KotlinNothingValueException();
+        }
+        long j7 = 0;
+        for (int i4 = 19; i4 < 23; i4++) {
+            long j8 = j7 << 4;
+            char charAt4 = hexDashString.charAt(i4);
+            if ((charAt4 >>> '\b') != 0 || HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt4] < 0) {
+                UuidKt.uuidThrowUnexpectedCharacterException(hexDashString, "a hexadecimal digit", i4);
+                throw new KotlinNothingValueException();
+            }
+            j7 = j8 | HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt4];
+        }
+        if (hexDashString.charAt(23) != '-') {
+            UuidKt.uuidThrowUnexpectedCharacterException(hexDashString, "'-' (hyphen)", 23);
+            throw new KotlinNothingValueException();
+        }
+        long j9 = 0;
+        for (int i5 = 24; i5 < 36; i5++) {
+            long j10 = j9 << 4;
+            char charAt5 = hexDashString.charAt(i5);
+            if ((charAt5 >>> '\b') != 0 || HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt5] < 0) {
+                UuidKt.uuidThrowUnexpectedCharacterException(hexDashString, "a hexadecimal digit", i5);
+                throw new KotlinNothingValueException();
+            }
+            j9 = j10 | HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt5];
+        }
+        return Uuid.Companion.fromLongs((j << 32) | (j3 << 16) | j5, (j7 << 48) | j9);
+    }
+
+    public static final Uuid uuidParseHexDashOrNullCommonImpl(String hexDashString) {
+        Intrinsics.checkNotNullParameter(hexDashString, "hexDashString");
+        long j = 0;
+        for (int i = 0; i < 8; i++) {
+            long j2 = j << 4;
+            char charAt = hexDashString.charAt(i);
+            if ((charAt >>> '\b') != 0 || HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt] < 0) {
+                return null;
+            }
+            j = j2 | HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt];
+        }
+        if (hexDashString.charAt(8) != '-') {
+            return null;
+        }
+        long j3 = 0;
+        for (int i2 = 9; i2 < 13; i2++) {
+            long j4 = j3 << 4;
+            char charAt2 = hexDashString.charAt(i2);
+            if ((charAt2 >>> '\b') != 0 || HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt2] < 0) {
+                return null;
+            }
+            j3 = j4 | HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt2];
+        }
+        if (hexDashString.charAt(13) != '-') {
+            return null;
+        }
+        long j5 = 0;
+        for (int i3 = 14; i3 < 18; i3++) {
+            long j6 = j5 << 4;
+            char charAt3 = hexDashString.charAt(i3);
+            if ((charAt3 >>> '\b') != 0 || HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt3] < 0) {
+                return null;
+            }
+            j5 = j6 | HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt3];
+        }
+        if (hexDashString.charAt(18) != '-') {
+            return null;
+        }
+        long j7 = 0;
+        for (int i4 = 19; i4 < 23; i4++) {
+            long j8 = j7 << 4;
+            char charAt4 = hexDashString.charAt(i4);
+            if ((charAt4 >>> '\b') != 0 || HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt4] < 0) {
+                return null;
+            }
+            j7 = j8 | HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt4];
+        }
+        if (hexDashString.charAt(23) != '-') {
+            return null;
+        }
+        long j9 = 0;
+        for (int i5 = 24; i5 < 36; i5++) {
+            long j10 = j9 << 4;
+            char charAt5 = hexDashString.charAt(i5);
+            if ((charAt5 >>> '\b') != 0 || HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt5] < 0) {
+                return null;
+            }
+            j9 = j10 | HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt5];
+        }
+        return Uuid.Companion.fromLongs((j << 32) | (j3 << 16) | j5, (j7 << 48) | j9);
+    }
+
+    public static final Uuid uuidParseHexDashCommonImpl(String hexDashString, Function3 onError) {
+        Intrinsics.checkNotNullParameter(hexDashString, "hexDashString");
+        Intrinsics.checkNotNullParameter(onError, "onError");
+        long j = 0;
+        for (int i = 0; i < 8; i++) {
+            long j2 = j << 4;
+            char charAt = hexDashString.charAt(i);
+            if ((charAt >>> '\b') == 0 && HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt] >= 0) {
+                j = j2 | HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt];
+            } else {
+                onError.invoke(hexDashString, "a hexadecimal digit", Integer.valueOf(i));
+                throw new KotlinNothingValueException();
+            }
+        }
+        if (hexDashString.charAt(8) != '-') {
+            onError.invoke(hexDashString, "'-' (hyphen)", 8);
+        }
+        long j3 = 0;
+        for (int i2 = 9; i2 < 13; i2++) {
+            long j4 = j3 << 4;
+            char charAt2 = hexDashString.charAt(i2);
+            if ((charAt2 >>> '\b') == 0 && HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt2] >= 0) {
+                j3 = j4 | HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt2];
+            } else {
+                onError.invoke(hexDashString, "a hexadecimal digit", Integer.valueOf(i2));
+                throw new KotlinNothingValueException();
+            }
+        }
+        if (hexDashString.charAt(13) != '-') {
+            onError.invoke(hexDashString, "'-' (hyphen)", 13);
+        }
+        long j5 = 0;
+        for (int i3 = 14; i3 < 18; i3++) {
+            long j6 = j5 << 4;
+            char charAt3 = hexDashString.charAt(i3);
+            if ((charAt3 >>> '\b') == 0 && HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt3] >= 0) {
+                j5 = j6 | HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt3];
+            } else {
+                onError.invoke(hexDashString, "a hexadecimal digit", Integer.valueOf(i3));
+                throw new KotlinNothingValueException();
+            }
+        }
+        if (hexDashString.charAt(18) != '-') {
+            onError.invoke(hexDashString, "'-' (hyphen)", 18);
+        }
+        long j7 = 0;
+        for (int i4 = 19; i4 < 23; i4++) {
+            long j8 = j7 << 4;
+            char charAt4 = hexDashString.charAt(i4);
+            if ((charAt4 >>> '\b') == 0 && HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt4] >= 0) {
+                j7 = j8 | HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt4];
+            } else {
+                onError.invoke(hexDashString, "a hexadecimal digit", Integer.valueOf(i4));
+                throw new KotlinNothingValueException();
+            }
+        }
+        if (hexDashString.charAt(23) != '-') {
+            onError.invoke(hexDashString, "'-' (hyphen)", 23);
+        }
+        long j9 = 0;
+        for (int i5 = 24; i5 < 36; i5++) {
+            long j10 = j9 << 4;
+            char charAt5 = hexDashString.charAt(i5);
+            if ((charAt5 >>> '\b') == 0 && HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt5] >= 0) {
+                j9 = j10 | HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt5];
+            } else {
+                onError.invoke(hexDashString, "a hexadecimal digit", Integer.valueOf(i5));
+                throw new KotlinNothingValueException();
+            }
+        }
+        return Uuid.Companion.fromLongs((j << 32) | (j3 << 16) | j5, (j7 << 48) | j9);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x002d, code lost:
+        kotlin.uuid.UuidKt.uuidThrowUnexpectedCharacterException(r13, "a hexadecimal digit", r0);
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0035, code lost:
+        throw new kotlin.KotlinNothingValueException();
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final Uuid uuidParseHexCommonImpl(String hexString) {
+        Intrinsics.checkNotNullParameter(hexString, "hexString");
+        int i = 0;
+        long j = 0;
+        while (true) {
+            if (i < 16) {
+                long j2 = j << 4;
+                char charAt = hexString.charAt(i);
+                if ((charAt >>> '\b') != 0 || HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt] < 0) {
+                    break;
+                }
+                j = j2 | HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt];
+                i++;
+            } else {
+                long j3 = 0;
+                for (int i2 = 16; i2 < 32; i2++) {
+                    long j4 = j3 << 4;
+                    char charAt2 = hexString.charAt(i2);
+                    if ((charAt2 >>> '\b') == 0 && HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt2] >= 0) {
+                        j3 = j4 | HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt2];
+                    } else {
+                        UuidKt.uuidThrowUnexpectedCharacterException(hexString, "a hexadecimal digit", i2);
+                        throw new KotlinNothingValueException();
+                    }
+                }
+                return Uuid.Companion.fromLongs(j, j3);
+            }
+        }
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x002c, code lost:
+        return null;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final Uuid uuidParseHexOrNullCommonImpl(String hexString) {
+        Intrinsics.checkNotNullParameter(hexString, "hexString");
+        int i = 0;
+        long j = 0;
+        while (true) {
+            if (i < 16) {
+                long j2 = j << 4;
+                char charAt = hexString.charAt(i);
+                if ((charAt >>> '\b') != 0 || HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt] < 0) {
+                    break;
+                }
+                j = j2 | HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt];
+                i++;
+            } else {
+                long j3 = 0;
+                for (int i2 = 16; i2 < 32; i2++) {
+                    long j4 = j3 << 4;
+                    char charAt2 = hexString.charAt(i2);
+                    if ((charAt2 >>> '\b') != 0 || HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt2] < 0) {
+                        return null;
+                    }
+                    j3 = j4 | HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt2];
+                }
+                return Uuid.Companion.fromLongs(j, j3);
+            }
+        }
+    }
+
+    public static final Uuid uuidParseHexCommonImpl(String hexString, Function3 onError) {
+        Intrinsics.checkNotNullParameter(hexString, "hexString");
+        Intrinsics.checkNotNullParameter(onError, "onError");
+        int i = 0;
+        long j = 0;
+        while (true) {
+            if (i >= 16) {
+                long j2 = 0;
+                for (int i2 = 16; i2 < 32; i2++) {
+                    long j3 = j2 << 4;
+                    char charAt = hexString.charAt(i2);
+                    if ((charAt >>> '\b') == 0 && HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt] >= 0) {
+                        j2 = j3 | HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt];
+                    } else {
+                        onError.invoke(hexString, "a hexadecimal digit", Integer.valueOf(i2));
+                        throw new KotlinNothingValueException();
+                    }
+                }
+                return Uuid.Companion.fromLongs(j, j2);
+            }
+            long j4 = j << 4;
+            char charAt2 = hexString.charAt(i);
+            if ((charAt2 >>> '\b') != 0 || HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt2] < 0) {
+                break;
+            }
+            j = j4 | HexExtensionsKt.HEX_DIGITS_TO_LONG_DECIMAL[charAt2];
+            i++;
+        }
+        onError.invoke(hexString, "a hexadecimal digit", Integer.valueOf(i));
+        throw new KotlinNothingValueException();
     }
 }

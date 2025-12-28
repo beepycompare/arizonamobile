@@ -8,8 +8,8 @@ import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.SpannedString;
 import android.text.TextUtils;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import java.io.ByteArrayOutputStream;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -105,9 +105,9 @@ public final class Cue {
 
     private Cue(CharSequence charSequence, Layout.Alignment alignment, Layout.Alignment alignment2, Bitmap bitmap, float f, int i, int i2, float f2, int i3, int i4, float f3, float f4, float f5, boolean z, int i5, int i6, float f6, int i7) {
         if (charSequence == null) {
-            Assertions.checkNotNull(bitmap);
+            Preconditions.checkNotNull(bitmap);
         } else {
-            Assertions.checkArgument(bitmap == null);
+            Preconditions.checkArgument(bitmap == null);
         }
         if (charSequence instanceof Spanned) {
             this.text = SpannedString.valueOf(charSequence);
@@ -392,7 +392,7 @@ public final class Cue {
         Bundle bundleWithoutBitmap = toBundleWithoutBitmap();
         if (this.bitmap != null) {
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-            Assertions.checkState(this.bitmap.compress(Bitmap.CompressFormat.PNG, 0, byteArrayOutputStream));
+            Preconditions.checkState(this.bitmap.compress(Bitmap.CompressFormat.PNG, 0, byteArrayOutputStream));
             bundleWithoutBitmap.putByteArray(FIELD_BITMAP_BYTES, byteArrayOutputStream.toByteArray());
         }
         return bundleWithoutBitmap;

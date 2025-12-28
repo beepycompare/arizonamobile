@@ -12,7 +12,7 @@ import java.util.List;
 public final class C0713y4 implements Fa, Rl, Ha {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1308a;
+    public final Context f1309a;
     public final R4 b;
     public final Bm c;
     public final Ah d;
@@ -37,7 +37,7 @@ public final class C0713y4 implements Fa, Rl, Ha {
     @Override // io.appmetrica.analytics.impl.Fa
     public final void a(C0489p4 c0489p4) {
         Ah ah = this.d;
-        ah.f495a = ah.f495a.mergeFrom(c0489p4);
+        ah.f496a = ah.f496a.mergeFrom(c0489p4);
     }
 
     @Override // io.appmetrica.analytics.impl.Fa
@@ -46,7 +46,7 @@ public final class C0713y4 implements Fa, Rl, Ha {
     }
 
     public final C0489p4 d() {
-        return this.d.f495a;
+        return this.d.f496a;
     }
 
     public final C0426mg e() {
@@ -55,20 +55,20 @@ public final class C0713y4 implements Fa, Rl, Ha {
 
     @Override // io.appmetrica.analytics.impl.Fa
     public final Context getContext() {
-        return this.f1308a;
+        return this.f1309a;
     }
 
     public C0713y4(Context context, Il il, R4 r4, C0514q4 c0514q4, Ah ah, C0426mg c0426mg, S4 s4, A4 a4, C0550rg c0550rg) {
         this.g = new ArrayList();
         this.l = new Object();
         Context applicationContext = context.getApplicationContext();
-        this.f1308a = applicationContext;
+        this.f1309a = applicationContext;
         this.b = r4;
         this.d = ah;
         this.h = s4;
         this.e = A4.a(this);
         b(c0514q4);
-        Bm a2 = il.a(applicationContext, r4, c0514q4.f1177a);
+        Bm a2 = il.a(applicationContext, r4, c0514q4.f1178a);
         this.c = a2;
         this.j = V3.a(a2, C0470oa.k().c());
         this.f = a4.a(this, a2);
@@ -78,12 +78,12 @@ public final class C0713y4 implements Fa, Rl, Ha {
     }
 
     public final synchronized void a(C0638v4 c0638v4) {
-        this.h.f769a.add(c0638v4);
+        this.h.f770a.add(c0638v4);
         C6.a(c0638v4.c, this.j.a(Gm.a(this.c.e().l)));
     }
 
     public final synchronized void b(C0638v4 c0638v4) {
-        this.h.f769a.remove(c0638v4);
+        this.h.f770a.remove(c0638v4);
     }
 
     @Override // io.appmetrica.analytics.impl.Fa
@@ -103,7 +103,7 @@ public final class C0713y4 implements Fa, Rl, Ha {
             Iterator it = this.g.iterator();
             while (it.hasNext()) {
                 Ya ya = (Ya) it.next();
-                C6.a(ya.f860a, kl, this.j.a(ya.c));
+                C6.a(ya.f861a, kl, this.j.a(ya.c));
             }
             this.g.clear();
         }
@@ -112,7 +112,7 @@ public final class C0713y4 implements Fa, Rl, Ha {
     @Override // io.appmetrica.analytics.impl.Rl
     public final void a(C0278gm c0278gm) {
         synchronized (this.l) {
-            Iterator it = this.h.f769a.iterator();
+            Iterator it = this.h.f770a.iterator();
             while (it.hasNext()) {
                 C6.a(((C0638v4) it.next()).c, this.j.a(Gm.a(c0278gm.l)));
             }
@@ -121,7 +121,7 @@ public final class C0713y4 implements Fa, Rl, Ha {
             while (it2.hasNext()) {
                 Ya ya = (Ya) it2.next();
                 if (AbstractC0201dm.a(c0278gm, ya.b, ya.c, new Wa())) {
-                    C6.a(ya.f860a, this.j.a(ya.c));
+                    C6.a(ya.f861a, this.j.a(ya.c));
                 } else {
                     arrayList.add(ya);
                 }
@@ -141,7 +141,7 @@ public final class C0713y4 implements Fa, Rl, Ha {
         HashMap hashMap2 = new HashMap();
         if (ya != null) {
             list = ya.b;
-            resultReceiver = ya.f860a;
+            resultReceiver = ya.f861a;
             hashMap = ya.c;
         } else {
             resultReceiver = null;
@@ -177,7 +177,7 @@ public final class C0713y4 implements Fa, Rl, Ha {
 
     @Override // io.appmetrica.analytics.impl.Ha
     public final void a(C0514q4 c0514q4) {
-        this.c.a(c0514q4.f1177a);
+        this.c.a(c0514q4.f1178a);
         a(c0514q4.b);
     }
 }

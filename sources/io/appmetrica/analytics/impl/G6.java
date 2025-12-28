@@ -6,11 +6,11 @@ import java.util.List;
 public final class G6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f587a;
+    public final List f588a;
     public final int b;
 
     public G6(ArrayList arrayList, int i) {
-        this.f587a = arrayList;
+        this.f588a = arrayList;
         this.b = i;
     }
 }

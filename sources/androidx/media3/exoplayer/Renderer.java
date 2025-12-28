@@ -19,20 +19,24 @@ public interface Renderer extends PlayerMessage.Target {
     public static final long DEFAULT_IDLE_DURATION_TO_PROGRESS_US = 1000000;
     public static final int MSG_CUSTOM_BASE = 10000;
     public static final int MSG_SET_AUDIO_ATTRIBUTES = 3;
+    public static final int MSG_SET_AUDIO_OUTPUT_PROVIDER = 20;
     public static final int MSG_SET_AUDIO_SESSION_ID = 10;
     public static final int MSG_SET_AUX_EFFECT_INFO = 6;
     public static final int MSG_SET_CAMERA_MOTION_LISTENER = 8;
     public static final int MSG_SET_CHANGE_FRAME_RATE_STRATEGY = 5;
+    public static final int MSG_SET_CODEC_PARAMETERS = 21;
     public static final int MSG_SET_IMAGE_OUTPUT = 15;
     public static final int MSG_SET_PREFERRED_AUDIO_DEVICE = 12;
     public static final int MSG_SET_PRIORITY = 16;
     public static final int MSG_SET_SCALING_MODE = 4;
     public static final int MSG_SET_SCRUBBING_MODE = 18;
     public static final int MSG_SET_SKIP_SILENCE_ENABLED = 9;
+    public static final int MSG_SET_SUBSCRIBED_CODEC_PARAMETER_KEYS = 22;
     public static final int MSG_SET_VIDEO_EFFECTS = 13;
     public static final int MSG_SET_VIDEO_FRAME_METADATA_LISTENER = 7;
     public static final int MSG_SET_VIDEO_OUTPUT = 1;
     public static final int MSG_SET_VIDEO_OUTPUT_RESOLUTION = 14;
+    public static final int MSG_SET_VIRTUAL_DEVICE_ID = 19;
     public static final int MSG_SET_VOLUME = 2;
     public static final int MSG_SET_WAKEUP_LISTENER = 11;
     public static final int MSG_TRANSFER_RESOURCES = 17;
@@ -103,7 +107,7 @@ public interface Renderer extends PlayerMessage.Target {
 
     void reset();
 
-    void resetPosition(long j) throws ExoPlaybackException;
+    void resetPosition(long j, boolean z) throws ExoPlaybackException;
 
     void setCurrentStreamFinal();
 
@@ -115,6 +119,10 @@ public interface Renderer extends PlayerMessage.Target {
     void start() throws ExoPlaybackException;
 
     void stop();
+
+    default boolean supportsResetPositionWithoutKeyFrameReset(long j) {
+        return false;
+    }
 
     default long getDurationToProgressUs(long j, long j2) {
         if (getState() == 1) {

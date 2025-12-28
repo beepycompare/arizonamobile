@@ -10,27 +10,27 @@ import kotlin.jvm.internal.Lambda;
 public final class C0165cc extends Lambda implements Function0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0191dc f927a;
+    public final /* synthetic */ C0191dc f928a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C0165cc(C0191dc c0191dc) {
         super(0);
-        this.f927a = c0191dc;
+        this.f928a = c0191dc;
     }
 
     @Override // kotlin.jvm.functions.Function0
     public final Object invoke() {
         InterfaceC0646vc le;
-        C0191dc c0191dc = this.f927a;
+        C0191dc c0191dc = this.f928a;
         C0671wc c0671wc = c0191dc.f;
         InterfaceC0568s9 interfaceC0568s9 = c0191dc.b;
-        Rg rg = c0191dc.f946a;
+        Rg rg = c0191dc.f947a;
         C0489p4 c0489p4 = c0191dc.c;
         Xe xe = c0191dc.d;
         c0671wc.getClass();
         if (FrameworkDetector.isNative()) {
             N9 i = C0470oa.I.i();
-            Bundle applicationMetaData = i.d.getApplicationMetaData(i.f699a);
+            Bundle applicationMetaData = i.d.getApplicationMetaData(i.f700a);
             if (TextUtils.isEmpty(applicationMetaData != null ? applicationMetaData.getString("io.appmetrica.analytics.plugin_id") : null)) {
                 le = new Rd();
                 return le.a();

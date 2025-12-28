@@ -2,13 +2,13 @@ package androidx.media3.exoplayer.source;
 
 import androidx.media3.common.C;
 import androidx.media3.common.StreamKey;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.decoder.DecoderInputBuffer;
 import androidx.media3.exoplayer.FormatHolder;
 import androidx.media3.exoplayer.LoadingInfo;
 import androidx.media3.exoplayer.SeekParameters;
 import androidx.media3.exoplayer.source.MediaPeriod;
 import androidx.media3.exoplayer.trackselection.ExoTrackSelection;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.List;
 /* loaded from: classes3.dex */
@@ -134,12 +134,12 @@ final class TimeOffsetMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
 
     @Override // androidx.media3.exoplayer.source.MediaPeriod.Callback
     public void onPrepared(MediaPeriod mediaPeriod) {
-        ((MediaPeriod.Callback) Assertions.checkNotNull(this.callback)).onPrepared(this);
+        ((MediaPeriod.Callback) Preconditions.checkNotNull(this.callback)).onPrepared(this);
     }
 
     @Override // androidx.media3.exoplayer.source.SequenceableLoader.Callback
     public void onContinueLoadingRequested(MediaPeriod mediaPeriod) {
-        ((MediaPeriod.Callback) Assertions.checkNotNull(this.callback)).onContinueLoadingRequested(this);
+        ((MediaPeriod.Callback) Preconditions.checkNotNull(this.callback)).onContinueLoadingRequested(this);
     }
 
     /* loaded from: classes3.dex */

@@ -1,8 +1,8 @@
 package androidx.media3.extractor.metadata.id3;
 
 import androidx.media3.common.MediaMetadata;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.primitives.Ints;
 import java.util.ArrayList;
@@ -18,7 +18,7 @@ public final class TextInformationFrame extends Id3Frame {
 
     public TextInformationFrame(String str, String str2, List<String> list) {
         super(str);
-        Assertions.checkArgument(!list.isEmpty());
+        Preconditions.checkArgument(!list.isEmpty());
         this.description = str2;
         ImmutableList<String> copyOf = ImmutableList.copyOf((Collection) list);
         this.values = copyOf;

@@ -1,7 +1,7 @@
 package androidx.media3.extractor.text;
 
-import androidx.media3.common.util.Assertions;
 import androidx.media3.decoder.SimpleDecoder;
+import com.google.common.base.Preconditions;
 import java.nio.ByteBuffer;
 /* loaded from: classes3.dex */
 public abstract class SimpleSubtitleDecoder extends SimpleDecoder<SubtitleInputBuffer, SubtitleOutputBuffer, SubtitleDecoderException> implements SubtitleDecoder {
@@ -52,7 +52,7 @@ public abstract class SimpleSubtitleDecoder extends SimpleDecoder<SubtitleInputB
     @Override // androidx.media3.decoder.SimpleDecoder
     public final SubtitleDecoderException decode(SubtitleInputBuffer subtitleInputBuffer, SubtitleOutputBuffer subtitleOutputBuffer, boolean z) {
         try {
-            ByteBuffer byteBuffer = (ByteBuffer) Assertions.checkNotNull(subtitleInputBuffer.data);
+            ByteBuffer byteBuffer = (ByteBuffer) Preconditions.checkNotNull(subtitleInputBuffer.data);
             subtitleOutputBuffer.setContent(subtitleInputBuffer.timeUs, decode(byteBuffer.array(), byteBuffer.limit(), z), subtitleInputBuffer.subsampleOffsetUs);
             subtitleOutputBuffer.shouldBeSkipped = false;
             return null;

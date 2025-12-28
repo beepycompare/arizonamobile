@@ -7,12 +7,12 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.util.SparseArray;
 import android.util.SparseBooleanArray;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.AtomicFile;
 import androidx.media3.common.util.Util;
 import androidx.media3.database.DatabaseIOException;
 import androidx.media3.database.DatabaseProvider;
 import androidx.media3.database.VersionTable;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.UnmodifiableIterator;
 import java.io.BufferedInputStream;
@@ -85,7 +85,7 @@ public class CachedContentIndex {
     }
 
     public CachedContentIndex(DatabaseProvider databaseProvider, File file, byte[] bArr, boolean z, boolean z2) {
-        Assertions.checkState((databaseProvider == null && file == null) ? false : true);
+        Preconditions.checkState((databaseProvider == null && file == null) ? false : true);
         this.keyToContent = new HashMap<>();
         this.idToKey = new SparseArray<>();
         this.removedIds = new SparseBooleanArray();
@@ -272,9 +272,9 @@ public class CachedContentIndex {
         public LegacyStorage(File file, byte[] bArr, boolean z) {
             Cipher cipher;
             SecretKeySpec secretKeySpec;
-            Assertions.checkState((bArr == null && z) ? false : true);
+            Preconditions.checkState((bArr == null && z) ? false : true);
             if (bArr != null) {
-                Assertions.checkArgument(bArr.length == 16);
+                Preconditions.checkArgument(bArr.length == 16);
                 try {
                     cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");
                     secretKeySpec = new SecretKeySpec(bArr, "AES");
@@ -282,7 +282,7 @@ public class CachedContentIndex {
                     throw new IllegalStateException(e);
                 }
             } else {
-                Assertions.checkArgument(!z);
+                Preconditions.checkArgument(!z);
                 cipher = null;
                 secretKeySpec = null;
             }
@@ -305,7 +305,7 @@ public class CachedContentIndex {
 
         @Override // androidx.media3.datasource.cache.CachedContentIndex.Storage
         public void load(HashMap<String, CachedContent> hashMap, SparseArray<String> sparseArray) {
-            Assertions.checkState(!this.changed);
+            Preconditions.checkState(!this.changed);
             if (readFile(hashMap, sparseArray)) {
                 return;
             }
@@ -534,7 +534,7 @@ public class CachedContentIndex {
         @Override // androidx.media3.datasource.cache.CachedContentIndex.Storage
         public boolean exists() throws DatabaseIOException {
             try {
-                return VersionTable.getVersion(this.databaseProvider.getReadableDatabase(), 1, (String) Assertions.checkNotNull(this.hexUid)) != -1;
+                return VersionTable.getVersion(this.databaseProvider.getReadableDatabase(), 1, (String) Preconditions.checkNotNull(this.hexUid)) != -1;
             } catch (SQLException e) {
                 throw new DatabaseIOException(e);
             }
@@ -542,14 +542,14 @@ public class CachedContentIndex {
 
         @Override // androidx.media3.datasource.cache.CachedContentIndex.Storage
         public void delete() throws DatabaseIOException {
-            delete(this.databaseProvider, (String) Assertions.checkNotNull(this.hexUid));
+            delete(this.databaseProvider, (String) Preconditions.checkNotNull(this.hexUid));
         }
 
         @Override // androidx.media3.datasource.cache.CachedContentIndex.Storage
         public void load(HashMap<String, CachedContent> hashMap, SparseArray<String> sparseArray) throws IOException {
-            Assertions.checkState(this.pendingUpdates.size() == 0);
+            Preconditions.checkState(this.pendingUpdates.size() == 0);
             try {
-                if (VersionTable.getVersion(this.databaseProvider.getReadableDatabase(), 1, (String) Assertions.checkNotNull(this.hexUid)) != 1) {
+                if (VersionTable.getVersion(this.databaseProvider.getReadableDatabase(), 1, (String) Preconditions.checkNotNull(this.hexUid)) != 1) {
                     SQLiteDatabase writableDatabase = this.databaseProvider.getWritableDatabase();
                     writableDatabase.beginTransactionNonExclusive();
                     initializeTable(writableDatabase);
@@ -558,7 +558,7 @@ public class CachedContentIndex {
                 }
                 Cursor cursor = getCursor();
                 while (cursor.moveToNext()) {
-                    CachedContent cachedContent = new CachedContent(cursor.getInt(0), (String) Assertions.checkNotNull(cursor.getString(1)), CachedContentIndex.readContentMetadata(new DataInputStream(new ByteArrayInputStream(cursor.getBlob(2)))));
+                    CachedContent cachedContent = new CachedContent(cursor.getInt(0), (String) Preconditions.checkNotNull(cursor.getString(1)), CachedContentIndex.readContentMetadata(new DataInputStream(new ByteArrayInputStream(cursor.getBlob(2)))));
                     hashMap.put(cachedContent.key, cachedContent);
                     sparseArray.put(cachedContent.id, cachedContent.key);
                 }
@@ -628,17 +628,17 @@ public class CachedContentIndex {
         }
 
         private Cursor getCursor() {
-            return this.databaseProvider.getReadableDatabase().query((String) Assertions.checkNotNull(this.tableName), COLUMNS, null, null, null, null, null);
+            return this.databaseProvider.getReadableDatabase().query((String) Preconditions.checkNotNull(this.tableName), COLUMNS, null, null, null, null, null);
         }
 
         private void initializeTable(SQLiteDatabase sQLiteDatabase) throws DatabaseIOException {
-            VersionTable.setVersion(sQLiteDatabase, 1, (String) Assertions.checkNotNull(this.hexUid), 1);
-            dropTable(sQLiteDatabase, (String) Assertions.checkNotNull(this.tableName));
+            VersionTable.setVersion(sQLiteDatabase, 1, (String) Preconditions.checkNotNull(this.hexUid), 1);
+            dropTable(sQLiteDatabase, (String) Preconditions.checkNotNull(this.tableName));
             sQLiteDatabase.execSQL("CREATE TABLE " + this.tableName + " (id INTEGER PRIMARY KEY NOT NULL,key TEXT NOT NULL,metadata BLOB NOT NULL)");
         }
 
         private void deleteRow(SQLiteDatabase sQLiteDatabase, int i) {
-            sQLiteDatabase.delete((String) Assertions.checkNotNull(this.tableName), WHERE_ID_EQUALS, new String[]{Integer.toString(i)});
+            sQLiteDatabase.delete((String) Preconditions.checkNotNull(this.tableName), WHERE_ID_EQUALS, new String[]{Integer.toString(i)});
         }
 
         private void addOrUpdateRow(SQLiteDatabase sQLiteDatabase, CachedContent cachedContent) throws IOException {
@@ -649,7 +649,7 @@ public class CachedContentIndex {
             contentValues.put("id", Integer.valueOf(cachedContent.id));
             contentValues.put(COLUMN_KEY, cachedContent.key);
             contentValues.put("metadata", byteArray);
-            sQLiteDatabase.replaceOrThrow((String) Assertions.checkNotNull(this.tableName), null, contentValues);
+            sQLiteDatabase.replaceOrThrow((String) Preconditions.checkNotNull(this.tableName), null, contentValues);
         }
 
         private static void delete(DatabaseProvider databaseProvider, String str) throws DatabaseIOException {

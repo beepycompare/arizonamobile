@@ -11,7 +11,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class Tb implements Qb, ToggleObserver {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f788a = new ArrayList();
+    public final ArrayList f789a = new ArrayList();
     public final IHandlerExecutor b = C0470oa.k().w().b();
     public Ln c;
     public boolean d;
@@ -51,7 +51,7 @@ public final class Tb implements Qb, ToggleObserver {
     }
 
     public static final void a(Tb tb, LocationControllerObserver locationControllerObserver, boolean z) {
-        tb.f788a.add(locationControllerObserver);
+        tb.f789a.add(locationControllerObserver);
         if (z) {
             if (tb.d) {
                 locationControllerObserver.startLocationTracking();
@@ -64,8 +64,8 @@ public final class Tb implements Qb, ToggleObserver {
     public static final void a(Tb tb, boolean z) {
         if (tb.d != z) {
             tb.d = z;
-            Function1 function1 = z ? Rb.f757a : Sb.f774a;
-            for (LocationControllerObserver locationControllerObserver : tb.f788a) {
+            Function1 function1 = z ? Rb.f758a : Sb.f775a;
+            for (LocationControllerObserver locationControllerObserver : tb.f789a) {
                 function1.invoke(locationControllerObserver);
             }
         }
@@ -86,6 +86,6 @@ public final class Tb implements Qb, ToggleObserver {
             Intrinsics.throwUninitializedPropertyAccessException("togglesHolder");
             ln = null;
         }
-        ln.f673a.a(z);
+        ln.f674a.a(z);
     }
 }

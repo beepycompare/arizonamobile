@@ -24,7 +24,7 @@ import kotlin.collections.CollectionsKt;
 public final class C1 implements B1, InterfaceC0559s0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public boolean f516a;
+    public boolean f517a;
     public final Context b;
     public final A1 c;
     public final C0131b4 d;
@@ -71,7 +71,7 @@ public final class C1 implements B1, InterfaceC0559s0 {
             k1.getClass();
             String action = intent.getAction();
             if (!TextUtils.isEmpty(action)) {
-                k1.f644a.a(action, Integer.valueOf(K1.a(intent)));
+                k1.f645a.a(action, Integer.valueOf(K1.a(intent)));
             }
             for (Map.Entry entry : k1.b.entrySet()) {
                 J1 j1 = (J1) entry.getKey();
@@ -95,18 +95,18 @@ public final class C1 implements B1, InterfaceC0559s0 {
 
     @Override // io.appmetrica.analytics.impl.B1
     public final void onCreate() {
-        if (!this.f516a) {
+        if (!this.f517a) {
             this.g.b(this.b);
             C0470oa c0470oa = C0470oa.I;
             synchronized (c0470oa) {
                 c0470oa.B.initAsync();
-                c0470oa.u.a(c0470oa.f1143a);
+                c0470oa.u.a(c0470oa.f1144a);
                 c0470oa.u.a(new C0383ko(c0470oa.B));
-                NetworkServiceLocator.init(new C0261g5(new C0528qi(c0470oa.h()), new C0515q5(c0470oa.f1143a)));
+                NetworkServiceLocator.init(new C0261g5(new C0528qi(c0470oa.h()), new C0515q5(c0470oa.f1144a)));
                 c0470oa.l().a(c0470oa.q);
                 c0470oa.E();
             }
-            Xj.f849a.e();
+            Xj.f850a.e();
             C0329im c0329im = C0470oa.I.u;
             c0329im.b();
             C0278gm b = c0329im.b();
@@ -123,7 +123,7 @@ public final class C1 implements B1, InterfaceC0559s0 {
             d1.getClass();
             this.f = new Tg(context, c0131b4);
             Context context2 = this.b;
-            AbstractC0635v1.f1255a.b(context2);
+            AbstractC0635v1.f1256a.b(context2);
             AppMetrica.getReporter(context2, "20799a27-fa80-4b36-b2db-0f8141f24180");
             Context context3 = this.b;
             Tg tg = this.f;
@@ -149,18 +149,18 @@ public final class C1 implements B1, InterfaceC0559s0 {
             File nativeCrashDirectory = FileUtils.getNativeCrashDirectory(context3);
             String absolutePath = nativeCrashDirectory != null ? nativeCrashDirectory.getAbsolutePath() : null;
             if (absolutePath != null) {
-                r.f731a.init(context3, new NativeCrashServiceConfig(absolutePath));
-                List<NativeCrash> allCrashes = r.f731a.getAllCrashes();
+                r.f732a.init(context3, new NativeCrashServiceConfig(absolutePath));
+                List<NativeCrash> allCrashes = r.f732a.getAllCrashes();
                 if (!allCrashes.isEmpty()) {
                     Kd b2 = r.b.b(context3, tg);
                     for (NativeCrash nativeCrash : allCrashes) {
                         b2.newCrash(nativeCrash);
                     }
                 }
-                r.f731a.setDefaultCrashHandler(r.b.a(context3, tg));
+                r.f732a.setDefaultCrashHandler(r.b.a(context3, tg));
             }
             new J5(CollectionsKt.listOf(new Zg())).run();
-            this.f516a = true;
+            this.f517a = true;
         } else {
             C0470oa.I.v().a(this.b.getResources().getConfiguration());
         }
@@ -188,7 +188,7 @@ public final class C1 implements B1, InterfaceC0559s0 {
         } catch (Throwable unused) {
             cf = null;
         }
-        Integer asInteger = cf != null ? cf.f529a.getAsInteger("PROCESS_CFG_PROCESS_ID") : null;
+        Integer asInteger = cf != null ? cf.f530a.getAsInteger("PROCESS_CFG_PROCESS_ID") : null;
         if (asInteger != null) {
             this.h.b(asInteger.intValue());
         }
@@ -197,7 +197,7 @@ public final class C1 implements B1, InterfaceC0559s0 {
     @Override // io.appmetrica.analytics.impl.B1
     public final void reportData(int i, Bundle bundle) {
         this.j.getClass();
-        List<InterfaceC0224ek> list = (List) C0470oa.I.v.f991a.get(Integer.valueOf(i));
+        List<InterfaceC0224ek> list = (List) C0470oa.I.v.f992a.get(Integer.valueOf(i));
         if (list == null) {
             list = CollectionsKt.emptyList();
         }
@@ -219,7 +219,7 @@ public final class C1 implements B1, InterfaceC0559s0 {
         } catch (Throwable unused) {
             cf = null;
         }
-        Integer asInteger = cf != null ? cf.f529a.getAsInteger("PROCESS_CFG_PROCESS_ID") : null;
+        Integer asInteger = cf != null ? cf.f530a.getAsInteger("PROCESS_CFG_PROCESS_ID") : null;
         if (asInteger != null) {
             this.h.c(asInteger.intValue());
         }
@@ -236,7 +236,7 @@ public final class C1 implements B1, InterfaceC0559s0 {
             k1.getClass();
             String action = intent.getAction();
             if (!TextUtils.isEmpty(action)) {
-                k1.f644a.a(action, Integer.valueOf(K1.a(intent)));
+                k1.f645a.a(action, Integer.valueOf(K1.a(intent)));
             }
             for (Map.Entry entry : k1.b.entrySet()) {
                 J1 j1 = (J1) entry.getKey();
@@ -250,7 +250,7 @@ public final class C1 implements B1, InterfaceC0559s0 {
     }
 
     public C1(Context context, A1 a1, C0131b4 c0131b4, K1 k1, C0240fa c0240fa, C0284h2 c0284h2, D1 d1) {
-        this.f516a = false;
+        this.f517a = false;
         this.b = context;
         this.c = a1;
         this.d = c0131b4;
@@ -272,11 +272,11 @@ public final class C1 implements B1, InterfaceC0559s0 {
 
     @Override // io.appmetrica.analytics.impl.B1
     public final void a(Intent intent, int i) {
-        ((C0609u0) this.c).f1237a.stopSelf(i);
+        ((C0609u0) this.c).f1238a.stopSelf(i);
     }
 
     @Override // io.appmetrica.analytics.impl.B1
     public final void a(Intent intent, int i, int i2) {
-        ((C0609u0) this.c).f1237a.stopSelf(i2);
+        ((C0609u0) this.c).f1238a.stopSelf(i2);
     }
 }

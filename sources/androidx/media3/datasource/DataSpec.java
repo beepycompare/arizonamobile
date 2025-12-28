@@ -2,8 +2,8 @@ package androidx.media3.datasource;
 
 import android.net.Uri;
 import androidx.media3.common.MediaLibraryInfo;
-import androidx.media3.common.util.Assertions;
 import coil3.network.internal.UtilsKt;
+import com.google.common.base.Preconditions;
 import com.liulishuo.okdownload.core.Util;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -141,7 +141,7 @@ public final class DataSpec {
         }
 
         public DataSpec build() {
-            Assertions.checkStateNotNull(this.uri, "The uri must be set.");
+            Preconditions.checkNotNull(this.uri, "The uri must be set.");
             return new DataSpec(this.uri, this.uriPositionOffset, this.httpMethod, this.httpBody, this.httpRequestHeaders, this.position, this.length, this.key, this.flags, this.customData);
         }
     }
@@ -176,13 +176,13 @@ public final class DataSpec {
         byte[] bArr2 = bArr;
         long j4 = j + j2;
         boolean z = true;
-        Assertions.checkArgument(j4 >= 0);
-        Assertions.checkArgument(j2 >= 0);
+        Preconditions.checkArgument(j4 >= 0);
+        Preconditions.checkArgument(j2 >= 0);
         if (j3 <= 0 && j3 != -1) {
             z = false;
         }
-        Assertions.checkArgument(z);
-        this.uri = (Uri) Assertions.checkNotNull(uri);
+        Preconditions.checkArgument(z);
+        this.uri = (Uri) Preconditions.checkNotNull(uri);
         this.uriPositionOffset = j;
         this.httpMethod = i;
         this.httpBody = (bArr2 == null || bArr2.length == 0) ? null : bArr2;

@@ -18,7 +18,6 @@ import androidx.media3.common.Tracks;
 import androidx.media3.common.VideoSize;
 import androidx.media3.common.text.Cue;
 import androidx.media3.common.text.CueGroup;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Clock;
 import androidx.media3.common.util.HandlerWrapper;
 import androidx.media3.common.util.ListenerSet;
@@ -28,9 +27,11 @@ import androidx.media3.exoplayer.DecoderReuseEvaluation;
 import androidx.media3.exoplayer.ExoPlaybackException;
 import androidx.media3.exoplayer.analytics.AnalyticsListener;
 import androidx.media3.exoplayer.audio.AudioSink;
+import androidx.media3.exoplayer.drm.KeyRequestInfo;
 import androidx.media3.exoplayer.source.LoadEventInfo;
 import androidx.media3.exoplayer.source.MediaLoadData;
 import androidx.media3.exoplayer.source.MediaSource;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
@@ -39,21 +40,17 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public class DefaultAnalyticsCollector implements AnalyticsCollector {
     private final Clock clock;
     private final SparseArray<AnalyticsListener.EventTime> eventTimes;
     private HandlerWrapper handler;
     private boolean isSeeking;
-    private ListenerSet<AnalyticsListener> listeners;
+    private ListenerSet<AnalyticsListener> listeners = new ListenerSet<>(Util.getCurrentOrMainLooper());
     private final MediaPeriodQueueTracker mediaPeriodQueueTracker;
     private final Timeline.Period period;
     private Player player;
     private final Timeline.Window window;
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void lambda$new$0(AnalyticsListener analyticsListener, FlagSet flagSet) {
-    }
 
     @Override // androidx.media3.common.Player.Listener
     public void onEvents(Player player, Player.Events events) {
@@ -72,13 +69,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     }
 
     public DefaultAnalyticsCollector(Clock clock) {
-        this.clock = (Clock) Assertions.checkNotNull(clock);
-        this.listeners = new ListenerSet<>(Util.getCurrentOrMainLooper(), clock, new ListenerSet.IterationFinishedEvent() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda32
-            @Override // androidx.media3.common.util.ListenerSet.IterationFinishedEvent
-            public final void invoke(Object obj, FlagSet flagSet) {
-                DefaultAnalyticsCollector.lambda$new$0((AnalyticsListener) obj, flagSet);
-            }
-        });
+        this.clock = (Clock) Preconditions.checkNotNull(clock);
         Timeline.Period period = new Timeline.Period();
         this.period = period;
         this.window = new Timeline.Window();
@@ -93,7 +84,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
 
     @Override // androidx.media3.exoplayer.analytics.AnalyticsCollector
     public void addListener(AnalyticsListener analyticsListener) {
-        Assertions.checkNotNull(analyticsListener);
+        Preconditions.checkNotNull(analyticsListener);
         this.listeners.add(analyticsListener);
     }
 
@@ -104,26 +95,26 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
 
     @Override // androidx.media3.exoplayer.analytics.AnalyticsCollector
     public void setPlayer(final Player player, Looper looper) {
-        Assertions.checkState(this.player == null || this.mediaPeriodQueueTracker.mediaPeriodQueue.isEmpty());
-        this.player = (Player) Assertions.checkNotNull(player);
+        Preconditions.checkState(this.player == null || this.mediaPeriodQueueTracker.mediaPeriodQueue.isEmpty());
+        this.player = (Player) Preconditions.checkNotNull(player);
         this.handler = this.clock.createHandler(looper, null);
-        this.listeners = this.listeners.copy(looper, new ListenerSet.IterationFinishedEvent() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda16
+        this.listeners = this.listeners.copy(looper, this.clock, new ListenerSet.IterationFinishedEvent() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda16
             @Override // androidx.media3.common.util.ListenerSet.IterationFinishedEvent
             public final void invoke(Object obj, FlagSet flagSet) {
-                DefaultAnalyticsCollector.this.m8946xfeaa50a6(player, (AnalyticsListener) obj, flagSet);
+                DefaultAnalyticsCollector.this.m8949xb1acc65(player, (AnalyticsListener) obj, flagSet);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* renamed from: lambda$setPlayer$1$androidx-media3-exoplayer-analytics-DefaultAnalyticsCollector  reason: not valid java name */
-    public /* synthetic */ void m8946xfeaa50a6(Player player, AnalyticsListener analyticsListener, FlagSet flagSet) {
+    /* renamed from: lambda$setPlayer$0$androidx-media3-exoplayer-analytics-DefaultAnalyticsCollector  reason: not valid java name */
+    public /* synthetic */ void m8949xb1acc65(Player player, AnalyticsListener analyticsListener, FlagSet flagSet) {
         analyticsListener.onEvents(player, new AnalyticsListener.Events(flagSet, this.eventTimes));
     }
 
     @Override // androidx.media3.exoplayer.analytics.AnalyticsCollector
     public void release() {
-        ((HandlerWrapper) Assertions.checkStateNotNull(this.handler)).post(new Runnable() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda56
+        ((HandlerWrapper) Preconditions.checkNotNull(this.handler)).post(new Runnable() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda57
             @Override // java.lang.Runnable
             public final void run() {
                 DefaultAnalyticsCollector.this.releaseInternal();
@@ -133,7 +124,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
 
     @Override // androidx.media3.exoplayer.analytics.AnalyticsCollector
     public final void updateMediaPeriodQueueInfo(List<MediaSource.MediaPeriodId> list, MediaSource.MediaPeriodId mediaPeriodId) {
-        this.mediaPeriodQueueTracker.onQueueUpdated(list, mediaPeriodId, (Player) Assertions.checkNotNull(this.player));
+        this.mediaPeriodQueueTracker.onQueueUpdated(list, mediaPeriodId, (Player) Preconditions.checkNotNull(this.player));
     }
 
     @Override // androidx.media3.exoplayer.analytics.AnalyticsCollector
@@ -143,7 +134,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
         }
         final AnalyticsListener.EventTime generateCurrentPlayerMediaPeriodEventTime = generateCurrentPlayerMediaPeriodEventTime();
         this.isSeeking = true;
-        sendEvent(generateCurrentPlayerMediaPeriodEventTime, -1, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda51
+        sendEvent(generateCurrentPlayerMediaPeriodEventTime, -1, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda52
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((AnalyticsListener) obj).onSeekStarted(AnalyticsListener.EventTime.this);
@@ -154,7 +145,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     @Override // androidx.media3.exoplayer.analytics.AnalyticsCollector
     public void onRendererReadyChanged(final int i, final int i2, final boolean z) {
         final AnalyticsListener.EventTime generateReadingMediaPeriodEventTime = generateReadingMediaPeriodEventTime();
-        sendEvent(generateReadingMediaPeriodEventTime, AnalyticsListener.EVENT_RENDERER_READY_CHANGED, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda30
+        sendEvent(generateReadingMediaPeriodEventTime, AnalyticsListener.EVENT_RENDERER_READY_CHANGED, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda31
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((AnalyticsListener) obj).onRendererReadyChanged(AnalyticsListener.EventTime.this, i, i2, z);
@@ -176,16 +167,16 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     @Override // androidx.media3.exoplayer.analytics.AnalyticsCollector
     public final void onAudioDecoderInitialized(final String str, final long j, final long j2) {
         final AnalyticsListener.EventTime generateReadingMediaPeriodEventTime = generateReadingMediaPeriodEventTime();
-        sendEvent(generateReadingMediaPeriodEventTime, 1008, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda23
+        sendEvent(generateReadingMediaPeriodEventTime, 1008, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda24
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
-                DefaultAnalyticsCollector.lambda$onAudioDecoderInitialized$5(AnalyticsListener.EventTime.this, str, j2, j, (AnalyticsListener) obj);
+                DefaultAnalyticsCollector.lambda$onAudioDecoderInitialized$4(AnalyticsListener.EventTime.this, str, j2, j, (AnalyticsListener) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void lambda$onAudioDecoderInitialized$5(AnalyticsListener.EventTime eventTime, String str, long j, long j2, AnalyticsListener analyticsListener) {
+    public static /* synthetic */ void lambda$onAudioDecoderInitialized$4(AnalyticsListener.EventTime eventTime, String str, long j, long j2, AnalyticsListener analyticsListener) {
         analyticsListener.onAudioDecoderInitialized(eventTime, str, j);
         analyticsListener.onAudioDecoderInitialized(eventTime, str, j2, j);
     }
@@ -193,7 +184,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     @Override // androidx.media3.exoplayer.analytics.AnalyticsCollector
     public final void onAudioInputFormatChanged(final Format format, final DecoderReuseEvaluation decoderReuseEvaluation) {
         final AnalyticsListener.EventTime generateReadingMediaPeriodEventTime = generateReadingMediaPeriodEventTime();
-        sendEvent(generateReadingMediaPeriodEventTime, 1009, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda52
+        sendEvent(generateReadingMediaPeriodEventTime, 1009, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda53
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((AnalyticsListener) obj).onAudioInputFormatChanged(AnalyticsListener.EventTime.this, format, decoderReuseEvaluation);
@@ -237,7 +228,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     @Override // androidx.media3.exoplayer.analytics.AnalyticsCollector
     public final void onAudioDisabled(final DecoderCounters decoderCounters) {
         final AnalyticsListener.EventTime generatePlayingMediaPeriodEventTime = generatePlayingMediaPeriodEventTime();
-        sendEvent(generatePlayingMediaPeriodEventTime, 1013, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda37
+        sendEvent(generatePlayingMediaPeriodEventTime, 1013, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda38
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((AnalyticsListener) obj).onAudioDisabled(AnalyticsListener.EventTime.this, decoderCounters);
@@ -259,7 +250,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     @Override // androidx.media3.exoplayer.analytics.AnalyticsCollector
     public final void onAudioCodecError(final Exception exc) {
         final AnalyticsListener.EventTime generateReadingMediaPeriodEventTime = generateReadingMediaPeriodEventTime();
-        sendEvent(generateReadingMediaPeriodEventTime, AnalyticsListener.EVENT_AUDIO_CODEC_ERROR, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda60
+        sendEvent(generateReadingMediaPeriodEventTime, AnalyticsListener.EVENT_AUDIO_CODEC_ERROR, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda61
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((AnalyticsListener) obj).onAudioCodecError(AnalyticsListener.EventTime.this, exc);
@@ -270,7 +261,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     @Override // androidx.media3.exoplayer.analytics.AnalyticsCollector
     public void onAudioTrackInitialized(final AudioSink.AudioTrackConfig audioTrackConfig) {
         final AnalyticsListener.EventTime generateReadingMediaPeriodEventTime = generateReadingMediaPeriodEventTime();
-        sendEvent(generateReadingMediaPeriodEventTime, AnalyticsListener.EVENT_AUDIO_TRACK_INITIALIZED, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda46
+        sendEvent(generateReadingMediaPeriodEventTime, AnalyticsListener.EVENT_AUDIO_TRACK_INITIALIZED, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda47
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((AnalyticsListener) obj).onAudioTrackInitialized(AnalyticsListener.EventTime.this, audioTrackConfig);
@@ -303,7 +294,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     @Override // androidx.media3.exoplayer.analytics.AnalyticsCollector
     public final void onVideoEnabled(final DecoderCounters decoderCounters) {
         final AnalyticsListener.EventTime generateReadingMediaPeriodEventTime = generateReadingMediaPeriodEventTime();
-        sendEvent(generateReadingMediaPeriodEventTime, 1015, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda54
+        sendEvent(generateReadingMediaPeriodEventTime, 1015, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda56
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((AnalyticsListener) obj).onVideoEnabled(AnalyticsListener.EventTime.this, decoderCounters);
@@ -314,16 +305,16 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     @Override // androidx.media3.exoplayer.analytics.AnalyticsCollector
     public final void onVideoDecoderInitialized(final String str, final long j, final long j2) {
         final AnalyticsListener.EventTime generateReadingMediaPeriodEventTime = generateReadingMediaPeriodEventTime();
-        sendEvent(generateReadingMediaPeriodEventTime, 1016, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda61
+        sendEvent(generateReadingMediaPeriodEventTime, 1016, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda62
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
-                DefaultAnalyticsCollector.lambda$onVideoDecoderInitialized$17(AnalyticsListener.EventTime.this, str, j2, j, (AnalyticsListener) obj);
+                DefaultAnalyticsCollector.lambda$onVideoDecoderInitialized$16(AnalyticsListener.EventTime.this, str, j2, j, (AnalyticsListener) obj);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void lambda$onVideoDecoderInitialized$17(AnalyticsListener.EventTime eventTime, String str, long j, long j2, AnalyticsListener analyticsListener) {
+    public static /* synthetic */ void lambda$onVideoDecoderInitialized$16(AnalyticsListener.EventTime eventTime, String str, long j, long j2, AnalyticsListener analyticsListener) {
         analyticsListener.onVideoDecoderInitialized(eventTime, str, j);
         analyticsListener.onVideoDecoderInitialized(eventTime, str, j2, j);
     }
@@ -331,7 +322,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     @Override // androidx.media3.exoplayer.analytics.AnalyticsCollector
     public final void onVideoInputFormatChanged(final Format format, final DecoderReuseEvaluation decoderReuseEvaluation) {
         final AnalyticsListener.EventTime generateReadingMediaPeriodEventTime = generateReadingMediaPeriodEventTime();
-        sendEvent(generateReadingMediaPeriodEventTime, 1017, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda45
+        sendEvent(generateReadingMediaPeriodEventTime, 1017, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda46
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((AnalyticsListener) obj).onVideoInputFormatChanged(AnalyticsListener.EventTime.this, format, decoderReuseEvaluation);
@@ -342,7 +333,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     @Override // androidx.media3.exoplayer.analytics.AnalyticsCollector
     public final void onDroppedFrames(final int i, final long j) {
         final AnalyticsListener.EventTime generatePlayingMediaPeriodEventTime = generatePlayingMediaPeriodEventTime();
-        sendEvent(generatePlayingMediaPeriodEventTime, 1018, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda26
+        sendEvent(generatePlayingMediaPeriodEventTime, 1018, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda27
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((AnalyticsListener) obj).onDroppedVideoFrames(AnalyticsListener.EventTime.this, i, j);
@@ -353,7 +344,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     @Override // androidx.media3.exoplayer.analytics.AnalyticsCollector
     public final void onVideoDecoderReleased(final String str) {
         final AnalyticsListener.EventTime generateReadingMediaPeriodEventTime = generateReadingMediaPeriodEventTime();
-        sendEvent(generateReadingMediaPeriodEventTime, 1019, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda25
+        sendEvent(generateReadingMediaPeriodEventTime, 1019, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda26
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((AnalyticsListener) obj).onVideoDecoderReleased(AnalyticsListener.EventTime.this, str);
@@ -375,7 +366,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     @Override // androidx.media3.exoplayer.analytics.AnalyticsCollector
     public final void onRenderedFirstFrame(final Object obj, final long j) {
         final AnalyticsListener.EventTime generateReadingMediaPeriodEventTime = generateReadingMediaPeriodEventTime();
-        sendEvent(generateReadingMediaPeriodEventTime, 26, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda58
+        sendEvent(generateReadingMediaPeriodEventTime, 26, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda59
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj2) {
                 ((AnalyticsListener) obj2).onRenderedFirstFrame(AnalyticsListener.EventTime.this, obj, j);
@@ -386,7 +377,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     @Override // androidx.media3.exoplayer.analytics.AnalyticsCollector
     public final void onVideoFrameProcessingOffset(final long j, final int i) {
         final AnalyticsListener.EventTime generatePlayingMediaPeriodEventTime = generatePlayingMediaPeriodEventTime();
-        sendEvent(generatePlayingMediaPeriodEventTime, 1021, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda34
+        sendEvent(generatePlayingMediaPeriodEventTime, 1021, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda35
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((AnalyticsListener) obj).onVideoFrameProcessingOffset(AnalyticsListener.EventTime.this, j, i);
@@ -401,6 +392,17 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((AnalyticsListener) obj).onVideoCodecError(AnalyticsListener.EventTime.this, exc);
+            }
+        });
+    }
+
+    @Override // androidx.media3.exoplayer.analytics.AnalyticsCollector
+    public void onDroppedSeeksWhileScrubbing(final int i) {
+        final AnalyticsListener.EventTime generateCurrentPlayerMediaPeriodEventTime = generateCurrentPlayerMediaPeriodEventTime();
+        sendEvent(generateCurrentPlayerMediaPeriodEventTime, AnalyticsListener.EVENT_DROPPED_SEEKS_WHILE_SCRUBBING, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda34
+            @Override // androidx.media3.common.util.ListenerSet.Event
+            public final void invoke(Object obj) {
+                ((AnalyticsListener) obj).onDroppedSeeksWhileScrubbing(AnalyticsListener.EventTime.this, i);
             }
         });
     }
@@ -436,7 +438,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     @Override // androidx.media3.exoplayer.source.MediaSourceEventListener
     public final void onLoadCompleted(int i, MediaSource.MediaPeriodId mediaPeriodId, final LoadEventInfo loadEventInfo, final MediaLoadData mediaLoadData) {
         final AnalyticsListener.EventTime generateMediaPeriodEventTime = generateMediaPeriodEventTime(i, mediaPeriodId);
-        sendEvent(generateMediaPeriodEventTime, 1001, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda43
+        sendEvent(generateMediaPeriodEventTime, 1001, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda45
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((AnalyticsListener) obj).onLoadCompleted(AnalyticsListener.EventTime.this, loadEventInfo, mediaLoadData);
@@ -447,7 +449,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     @Override // androidx.media3.exoplayer.source.MediaSourceEventListener
     public final void onLoadCanceled(int i, MediaSource.MediaPeriodId mediaPeriodId, final LoadEventInfo loadEventInfo, final MediaLoadData mediaLoadData) {
         final AnalyticsListener.EventTime generateMediaPeriodEventTime = generateMediaPeriodEventTime(i, mediaPeriodId);
-        sendEvent(generateMediaPeriodEventTime, 1002, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda35
+        sendEvent(generateMediaPeriodEventTime, 1002, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda36
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((AnalyticsListener) obj).onLoadCanceled(AnalyticsListener.EventTime.this, loadEventInfo, mediaLoadData);
@@ -469,7 +471,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     @Override // androidx.media3.exoplayer.source.MediaSourceEventListener
     public final void onUpstreamDiscarded(int i, MediaSource.MediaPeriodId mediaPeriodId, final MediaLoadData mediaLoadData) {
         final AnalyticsListener.EventTime generateMediaPeriodEventTime = generateMediaPeriodEventTime(i, mediaPeriodId);
-        sendEvent(generateMediaPeriodEventTime, 1005, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda59
+        sendEvent(generateMediaPeriodEventTime, 1005, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda60
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((AnalyticsListener) obj).onUpstreamDiscarded(AnalyticsListener.EventTime.this, mediaLoadData);
@@ -490,7 +492,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
 
     @Override // androidx.media3.common.Player.Listener
     public final void onTimelineChanged(Timeline timeline, final int i) {
-        this.mediaPeriodQueueTracker.onTimelineChanged((Player) Assertions.checkNotNull(this.player));
+        this.mediaPeriodQueueTracker.onTimelineChanged((Player) Preconditions.checkNotNull(this.player));
         final AnalyticsListener.EventTime generateCurrentPlayerMediaPeriodEventTime = generateCurrentPlayerMediaPeriodEventTime();
         sendEvent(generateCurrentPlayerMediaPeriodEventTime, 0, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda8
             @Override // androidx.media3.common.util.ListenerSet.Event
@@ -564,7 +566,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     @Override // androidx.media3.common.Player.Listener
     public final void onPlaybackStateChanged(final int i) {
         final AnalyticsListener.EventTime generateCurrentPlayerMediaPeriodEventTime = generateCurrentPlayerMediaPeriodEventTime();
-        sendEvent(generateCurrentPlayerMediaPeriodEventTime, 4, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda38
+        sendEvent(generateCurrentPlayerMediaPeriodEventTime, 4, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda39
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((AnalyticsListener) obj).onPlaybackStateChanged(AnalyticsListener.EventTime.this, i);
@@ -575,7 +577,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     @Override // androidx.media3.common.Player.Listener
     public final void onPlayWhenReadyChanged(final boolean z, final int i) {
         final AnalyticsListener.EventTime generateCurrentPlayerMediaPeriodEventTime = generateCurrentPlayerMediaPeriodEventTime();
-        sendEvent(generateCurrentPlayerMediaPeriodEventTime, 5, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda29
+        sendEvent(generateCurrentPlayerMediaPeriodEventTime, 5, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda30
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((AnalyticsListener) obj).onPlayWhenReadyChanged(AnalyticsListener.EventTime.this, z, i);
@@ -586,7 +588,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     @Override // androidx.media3.common.Player.Listener
     public final void onPlaybackSuppressionReasonChanged(final int i) {
         final AnalyticsListener.EventTime generateCurrentPlayerMediaPeriodEventTime = generateCurrentPlayerMediaPeriodEventTime();
-        sendEvent(generateCurrentPlayerMediaPeriodEventTime, 6, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda24
+        sendEvent(generateCurrentPlayerMediaPeriodEventTime, 6, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda25
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((AnalyticsListener) obj).onPlaybackSuppressionReasonChanged(AnalyticsListener.EventTime.this, i);
@@ -608,7 +610,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     @Override // androidx.media3.common.Player.Listener
     public final void onRepeatModeChanged(final int i) {
         final AnalyticsListener.EventTime generateCurrentPlayerMediaPeriodEventTime = generateCurrentPlayerMediaPeriodEventTime();
-        sendEvent(generateCurrentPlayerMediaPeriodEventTime, 8, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda57
+        sendEvent(generateCurrentPlayerMediaPeriodEventTime, 8, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda58
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((AnalyticsListener) obj).onRepeatModeChanged(AnalyticsListener.EventTime.this, i);
@@ -630,7 +632,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     @Override // androidx.media3.common.Player.Listener
     public final void onPlayerError(final PlaybackException playbackException) {
         final AnalyticsListener.EventTime eventTimeForErrorEvent = getEventTimeForErrorEvent(playbackException);
-        sendEvent(eventTimeForErrorEvent, 10, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda36
+        sendEvent(eventTimeForErrorEvent, 10, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda37
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((AnalyticsListener) obj).onPlayerError(AnalyticsListener.EventTime.this, playbackException);
@@ -641,7 +643,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     @Override // androidx.media3.common.Player.Listener
     public void onPlayerErrorChanged(final PlaybackException playbackException) {
         final AnalyticsListener.EventTime eventTimeForErrorEvent = getEventTimeForErrorEvent(playbackException);
-        sendEvent(eventTimeForErrorEvent, 10, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda27
+        sendEvent(eventTimeForErrorEvent, 10, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda28
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((AnalyticsListener) obj).onPlayerErrorChanged(AnalyticsListener.EventTime.this, playbackException);
@@ -654,9 +656,9 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
         if (i == 1) {
             this.isSeeking = false;
         }
-        this.mediaPeriodQueueTracker.onPositionDiscontinuity((Player) Assertions.checkNotNull(this.player));
+        this.mediaPeriodQueueTracker.onPositionDiscontinuity((Player) Preconditions.checkNotNull(this.player));
         final AnalyticsListener.EventTime generateCurrentPlayerMediaPeriodEventTime = generateCurrentPlayerMediaPeriodEventTime();
-        sendEvent(generateCurrentPlayerMediaPeriodEventTime, 11, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda53
+        sendEvent(generateCurrentPlayerMediaPeriodEventTime, 11, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda54
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 DefaultAnalyticsCollector.lambda$onPositionDiscontinuity$46(AnalyticsListener.EventTime.this, i, positionInfo, positionInfo2, (AnalyticsListener) obj);
@@ -728,7 +730,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     @Override // androidx.media3.common.Player.Listener
     public void onPlaylistMetadataChanged(final MediaMetadata mediaMetadata) {
         final AnalyticsListener.EventTime generateCurrentPlayerMediaPeriodEventTime = generateCurrentPlayerMediaPeriodEventTime();
-        sendEvent(generateCurrentPlayerMediaPeriodEventTime, 15, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda49
+        sendEvent(generateCurrentPlayerMediaPeriodEventTime, 15, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda50
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((AnalyticsListener) obj).onPlaylistMetadataChanged(AnalyticsListener.EventTime.this, mediaMetadata);
@@ -750,7 +752,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     @Override // androidx.media3.common.Player.Listener
     public void onCues(final List<Cue> list) {
         final AnalyticsListener.EventTime generateCurrentPlayerMediaPeriodEventTime = generateCurrentPlayerMediaPeriodEventTime();
-        sendEvent(generateCurrentPlayerMediaPeriodEventTime, 27, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda31
+        sendEvent(generateCurrentPlayerMediaPeriodEventTime, 27, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda32
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((AnalyticsListener) obj).onCues(AnalyticsListener.EventTime.this, list);
@@ -783,7 +785,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     @Override // androidx.media3.common.Player.Listener
     public final void onAudioSessionIdChanged(final int i) {
         final AnalyticsListener.EventTime generateReadingMediaPeriodEventTime = generateReadingMediaPeriodEventTime();
-        sendEvent(generateReadingMediaPeriodEventTime, 21, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda48
+        sendEvent(generateReadingMediaPeriodEventTime, 21, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda49
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((AnalyticsListener) obj).onAudioSessionIdChanged(AnalyticsListener.EventTime.this, i);
@@ -805,7 +807,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     @Override // androidx.media3.common.Player.Listener
     public final void onVideoSizeChanged(final VideoSize videoSize) {
         final AnalyticsListener.EventTime generateReadingMediaPeriodEventTime = generateReadingMediaPeriodEventTime();
-        sendEvent(generateReadingMediaPeriodEventTime, 25, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda50
+        sendEvent(generateReadingMediaPeriodEventTime, 25, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda51
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 DefaultAnalyticsCollector.lambda$onVideoSizeChanged$59(AnalyticsListener.EventTime.this, videoSize, (AnalyticsListener) obj);
@@ -833,7 +835,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     @Override // androidx.media3.common.Player.Listener
     public void onDeviceInfoChanged(final DeviceInfo deviceInfo) {
         final AnalyticsListener.EventTime generateCurrentPlayerMediaPeriodEventTime = generateCurrentPlayerMediaPeriodEventTime();
-        sendEvent(generateCurrentPlayerMediaPeriodEventTime, 29, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda40
+        sendEvent(generateCurrentPlayerMediaPeriodEventTime, 29, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda41
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((AnalyticsListener) obj).onDeviceInfoChanged(AnalyticsListener.EventTime.this, deviceInfo);
@@ -844,7 +846,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     @Override // androidx.media3.common.Player.Listener
     public void onDeviceVolumeChanged(final int i, final boolean z) {
         final AnalyticsListener.EventTime generateCurrentPlayerMediaPeriodEventTime = generateCurrentPlayerMediaPeriodEventTime();
-        sendEvent(generateCurrentPlayerMediaPeriodEventTime, 30, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda28
+        sendEvent(generateCurrentPlayerMediaPeriodEventTime, 30, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda29
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((AnalyticsListener) obj).onDeviceVolumeChanged(AnalyticsListener.EventTime.this, i, z);
@@ -866,7 +868,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     @Override // androidx.media3.exoplayer.drm.DrmSessionEventListener
     public final void onDrmSessionAcquired(int i, MediaSource.MediaPeriodId mediaPeriodId, final int i2) {
         final AnalyticsListener.EventTime generateMediaPeriodEventTime = generateMediaPeriodEventTime(i, mediaPeriodId);
-        sendEvent(generateMediaPeriodEventTime, AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda39
+        sendEvent(generateMediaPeriodEventTime, AnalyticsListener.EVENT_DRM_SESSION_ACQUIRED, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda40
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 DefaultAnalyticsCollector.lambda$onDrmSessionAcquired$64(AnalyticsListener.EventTime.this, i2, (AnalyticsListener) obj);
@@ -881,20 +883,26 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     }
 
     @Override // androidx.media3.exoplayer.drm.DrmSessionEventListener
-    public final void onDrmKeysLoaded(int i, MediaSource.MediaPeriodId mediaPeriodId) {
+    public void onDrmKeysLoaded(int i, MediaSource.MediaPeriodId mediaPeriodId, final KeyRequestInfo keyRequestInfo) {
         final AnalyticsListener.EventTime generateMediaPeriodEventTime = generateMediaPeriodEventTime(i, mediaPeriodId);
-        sendEvent(generateMediaPeriodEventTime, 1023, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda62
+        sendEvent(generateMediaPeriodEventTime, 1023, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda23
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
-                ((AnalyticsListener) obj).onDrmKeysLoaded(AnalyticsListener.EventTime.this);
+                DefaultAnalyticsCollector.lambda$onDrmKeysLoaded$65(AnalyticsListener.EventTime.this, keyRequestInfo, (AnalyticsListener) obj);
             }
         });
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static /* synthetic */ void lambda$onDrmKeysLoaded$65(AnalyticsListener.EventTime eventTime, KeyRequestInfo keyRequestInfo, AnalyticsListener analyticsListener) {
+        analyticsListener.onDrmKeysLoaded(eventTime);
+        analyticsListener.onDrmKeysLoaded(eventTime, keyRequestInfo);
     }
 
     @Override // androidx.media3.exoplayer.drm.DrmSessionEventListener
     public final void onDrmSessionManagerError(int i, MediaSource.MediaPeriodId mediaPeriodId, final Exception exc) {
         final AnalyticsListener.EventTime generateMediaPeriodEventTime = generateMediaPeriodEventTime(i, mediaPeriodId);
-        sendEvent(generateMediaPeriodEventTime, 1024, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda42
+        sendEvent(generateMediaPeriodEventTime, 1024, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda43
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((AnalyticsListener) obj).onDrmSessionManagerError(AnalyticsListener.EventTime.this, exc);
@@ -905,7 +913,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     @Override // androidx.media3.exoplayer.drm.DrmSessionEventListener
     public final void onDrmKeysRestored(int i, MediaSource.MediaPeriodId mediaPeriodId) {
         final AnalyticsListener.EventTime generateMediaPeriodEventTime = generateMediaPeriodEventTime(i, mediaPeriodId);
-        sendEvent(generateMediaPeriodEventTime, 1025, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda47
+        sendEvent(generateMediaPeriodEventTime, 1025, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda48
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((AnalyticsListener) obj).onDrmKeysRestored(AnalyticsListener.EventTime.this);
@@ -916,7 +924,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     @Override // androidx.media3.exoplayer.drm.DrmSessionEventListener
     public final void onDrmKeysRemoved(int i, MediaSource.MediaPeriodId mediaPeriodId) {
         final AnalyticsListener.EventTime generateMediaPeriodEventTime = generateMediaPeriodEventTime(i, mediaPeriodId);
-        sendEvent(generateMediaPeriodEventTime, AnalyticsListener.EVENT_DRM_KEYS_REMOVED, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda41
+        sendEvent(generateMediaPeriodEventTime, AnalyticsListener.EVENT_DRM_KEYS_REMOVED, new ListenerSet.Event() { // from class: androidx.media3.exoplayer.analytics.DefaultAnalyticsCollector$$ExternalSyntheticLambda42
             @Override // androidx.media3.common.util.ListenerSet.Event
             public final void invoke(Object obj) {
                 ((AnalyticsListener) obj).onDrmKeysRemoved(AnalyticsListener.EventTime.this);
@@ -975,7 +983,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     }
 
     private AnalyticsListener.EventTime generateEventTime(MediaSource.MediaPeriodId mediaPeriodId) {
-        Assertions.checkNotNull(this.player);
+        Preconditions.checkNotNull(this.player);
         Timeline mediaPeriodIdTimeline = mediaPeriodId == null ? null : this.mediaPeriodQueueTracker.getMediaPeriodIdTimeline(mediaPeriodId);
         if (mediaPeriodId == null || mediaPeriodIdTimeline == null) {
             int currentMediaItemIndex = this.player.getCurrentMediaItemIndex();
@@ -1001,7 +1009,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     }
 
     private AnalyticsListener.EventTime generateMediaPeriodEventTime(int i, MediaSource.MediaPeriodId mediaPeriodId) {
-        Assertions.checkNotNull(this.player);
+        Preconditions.checkNotNull(this.player);
         if (mediaPeriodId != null) {
             if (this.mediaPeriodQueueTracker.getMediaPeriodIdTimeline(mediaPeriodId) != null) {
                 return generateEventTime(mediaPeriodId);
@@ -1026,7 +1034,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static final class MediaPeriodQueueTracker {
         private MediaSource.MediaPeriodId currentPlayerMediaPeriod;
         private ImmutableList<MediaSource.MediaPeriodId> mediaPeriodQueue = ImmutableList.of();
@@ -1075,7 +1083,7 @@ public class DefaultAnalyticsCollector implements AnalyticsCollector {
             this.mediaPeriodQueue = ImmutableList.copyOf((Collection) list);
             if (!list.isEmpty()) {
                 this.playingMediaPeriod = list.get(0);
-                this.readingMediaPeriod = (MediaSource.MediaPeriodId) Assertions.checkNotNull(mediaPeriodId);
+                this.readingMediaPeriod = (MediaSource.MediaPeriodId) Preconditions.checkNotNull(mediaPeriodId);
             }
             if (this.currentPlayerMediaPeriod == null) {
                 this.currentPlayerMediaPeriod = findCurrentPlayerMediaPeriodInQueue(player, this.mediaPeriodQueue, this.playingMediaPeriod, this.period);

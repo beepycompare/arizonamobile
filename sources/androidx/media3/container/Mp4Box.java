@@ -66,6 +66,7 @@ public abstract class Mp4Box {
     public static final int TYPE_eyes = 1702454643;
     public static final int TYPE_fLaC = 1716281667;
     public static final int TYPE_fpcm = 1718641517;
+    public static final int TYPE_free = 1718773093;
     public static final int TYPE_frma = 1718775137;
     public static final int TYPE_ftyp = 1718909296;
     public static final int TYPE_h263 = 1748121139;

@@ -14,6 +14,7 @@ import java.util.Random;
 import java.util.TimeZone;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import kotlin.time.DurationKt;
 /* loaded from: classes4.dex */
 public class Helpers {
     public static Random sRandom = new Random(SystemClock.uptimeMillis());
@@ -193,7 +194,7 @@ public class Helpers {
     }
 
     public static String getTimeRemaining(long j) {
-        return (j > 3600000 ? new SimpleDateFormat("HH:mm", Locale.getDefault()) : new SimpleDateFormat("mm:ss", Locale.getDefault())).format(new Date(j - TimeZone.getDefault().getRawOffset()));
+        return (j > DurationKt.MILLIS_IN_HOUR ? new SimpleDateFormat("HH:mm", Locale.getDefault()) : new SimpleDateFormat("mm:ss", Locale.getDefault())).format(new Date(j - TimeZone.getDefault().getRawOffset()));
     }
 
     public static boolean isExternalMediaMounted() {

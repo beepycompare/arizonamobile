@@ -10,7 +10,12 @@ import java.nio.charset.StandardCharsets;
 import java.util.function.Supplier;
 /* loaded from: classes2.dex */
 public class Utf8Old extends Utf8 {
-    private static final ThreadLocal<Cache> CACHE;
+    private static final ThreadLocal<Cache> CACHE = new Utf8Old$$ExternalSyntheticThreadLocal1(new Supplier() { // from class: androidx.emoji2.text.flatbuffer.Utf8Old$$ExternalSyntheticLambda0
+        @Override // java.util.function.Supplier
+        public final Object get() {
+            return Utf8Old.lambda$static$0();
+        }
+    });
 
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes2.dex */
@@ -22,21 +27,6 @@ public class Utf8Old extends Utf8 {
 
         Cache() {
         }
-    }
-
-    static {
-        final Supplier supplier = new Supplier() { // from class: androidx.emoji2.text.flatbuffer.Utf8Old$$ExternalSyntheticLambda0
-            @Override // java.util.function.Supplier
-            public final Object get() {
-                return Utf8Old.lambda$static$0();
-            }
-        };
-        CACHE = new ThreadLocal() { // from class: androidx.emoji2.text.flatbuffer.Utf8Old$$ExternalSyntheticThreadLocal1
-            @Override // java.lang.ThreadLocal
-            protected /* synthetic */ Object initialValue() {
-                return supplier.get();
-            }
-        };
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

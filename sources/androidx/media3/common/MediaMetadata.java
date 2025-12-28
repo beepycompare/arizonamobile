@@ -2,8 +2,8 @@ package androidx.media3.common;
 
 import android.net.Uri;
 import android.os.Bundle;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -370,7 +370,7 @@ public final class MediaMetadata {
         }
 
         public Builder setDurationMs(Long l) {
-            Assertions.checkArgument(l == null || l.longValue() >= 0);
+            Preconditions.checkArgument(l == null || l.longValue() >= 0);
             this.durationMs = l;
             return this;
         }

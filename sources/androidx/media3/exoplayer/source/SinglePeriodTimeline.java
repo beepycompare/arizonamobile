@@ -4,7 +4,7 @@ import android.net.Uri;
 import androidx.media3.common.C;
 import androidx.media3.common.MediaItem;
 import androidx.media3.common.Timeline;
-import androidx.media3.common.util.Assertions;
+import com.google.common.base.Preconditions;
 /* loaded from: classes3.dex */
 public final class SinglePeriodTimeline extends Timeline {
     private final long elapsedRealtimeEpochOffsetMs;
@@ -78,11 +78,11 @@ public final class SinglePeriodTimeline extends Timeline {
         this.isDynamic = z2;
         this.suppressPositionProjection = z3;
         this.manifest = obj;
-        this.mediaItem = (MediaItem) Assertions.checkNotNull(mediaItem);
+        this.mediaItem = (MediaItem) Preconditions.checkNotNull(mediaItem);
         this.liveConfiguration = liveConfiguration;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x002b, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x002a, code lost:
         if (r1 > r3) goto L9;
      */
     @Override // androidx.media3.common.Timeline
@@ -91,7 +91,7 @@ public final class SinglePeriodTimeline extends Timeline {
     */
     public Timeline.Window getWindow(int i, Timeline.Window window, long j) {
         long j2;
-        Assertions.checkIndex(i, 0, 1);
+        Preconditions.checkElementIndex(i, 1);
         long j3 = this.windowDefaultStartPositionUs;
         if (this.isDynamic && !this.suppressPositionProjection && j != 0) {
             long j4 = this.windowDurationUs;
@@ -107,7 +107,7 @@ public final class SinglePeriodTimeline extends Timeline {
 
     @Override // androidx.media3.common.Timeline
     public Timeline.Period getPeriod(int i, Timeline.Period period, boolean z) {
-        Assertions.checkIndex(i, 0, 1);
+        Preconditions.checkElementIndex(i, 1);
         return period.set(null, z ? UID : null, 0, this.periodDurationUs, -this.windowPositionInPeriodUs);
     }
 
@@ -118,7 +118,7 @@ public final class SinglePeriodTimeline extends Timeline {
 
     @Override // androidx.media3.common.Timeline
     public Object getUidOfPeriod(int i) {
-        Assertions.checkIndex(i, 0, 1);
+        Preconditions.checkElementIndex(i, 1);
         return UID;
     }
 }

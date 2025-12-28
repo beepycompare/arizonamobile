@@ -2,12 +2,12 @@ package androidx.media3.datasource;
 
 import android.net.Uri;
 import androidx.media3.common.PlaybackException;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
 import androidx.media3.datasource.DefaultHttpDataSource;
 import androidx.media3.datasource.HttpDataSource;
 import com.adjust.sdk.Constants;
+import com.google.common.base.Preconditions;
 import com.google.common.base.Predicate;
 import com.google.common.collect.ForwardingMap;
 import com.google.common.collect.ImmutableMap;
@@ -174,14 +174,14 @@ public class DefaultHttpDataSource extends BaseDataSource implements HttpDataSou
 
     @Override // androidx.media3.datasource.HttpDataSource
     public void setRequestProperty(String str, String str2) {
-        Assertions.checkNotNull(str);
-        Assertions.checkNotNull(str2);
+        Preconditions.checkNotNull(str);
+        Preconditions.checkNotNull(str2);
         this.requestProperties.set(str, str2);
     }
 
     @Override // androidx.media3.datasource.HttpDataSource
     public void clearRequestProperty(String str) {
-        Assertions.checkNotNull(str);
+        Preconditions.checkNotNull(str);
         this.requestProperties.remove(str);
     }
 

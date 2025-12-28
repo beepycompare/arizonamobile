@@ -13,7 +13,7 @@ public final class C0443n8 extends MessageNano {
     public static volatile C0443n8[] c;
 
     /* renamed from: a  reason: collision with root package name */
-    public C0187d8 f1123a;
+    public C0187d8 f1124a;
     public C0187d8[] b;
 
     public C0443n8() {
@@ -32,7 +32,7 @@ public final class C0443n8 extends MessageNano {
     }
 
     public final C0443n8 a() {
-        this.f1123a = null;
+        this.f1124a = null;
         this.b = C0187d8.b();
         this.cachedSize = -1;
         return this;
@@ -41,7 +41,7 @@ public final class C0443n8 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        C0187d8 c0187d8 = this.f1123a;
+        C0187d8 c0187d8 = this.f1124a;
         if (c0187d8 != null) {
             computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(1, c0187d8);
         }
@@ -65,7 +65,7 @@ public final class C0443n8 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        C0187d8 c0187d8 = this.f1123a;
+        C0187d8 c0187d8 = this.f1124a;
         if (c0187d8 != null) {
             codedOutputByteBufferNano.writeMessage(1, c0187d8);
         }
@@ -95,10 +95,10 @@ public final class C0443n8 extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                if (this.f1123a == null) {
-                    this.f1123a = new C0187d8();
+                if (this.f1124a == null) {
+                    this.f1124a = new C0187d8();
                 }
-                codedInputByteBufferNano.readMessage(this.f1123a);
+                codedInputByteBufferNano.readMessage(this.f1124a);
             } else if (readTag != 18) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;

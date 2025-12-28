@@ -4,9 +4,9 @@ package io.appmetrica.analytics.impl;
 public final class C0294hc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0320ic f1019a;
+    public final /* synthetic */ C0320ic f1020a;
 
     public C0294hc(C0320ic c0320ic) {
-        this.f1019a = c0320ic;
+        this.f1020a = c0320ic;
     }
 }

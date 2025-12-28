@@ -12,7 +12,7 @@ public final class Lk extends MessageNano {
     public static volatile Lk[] b;
 
     /* renamed from: a  reason: collision with root package name */
-    public Mk[] f672a;
+    public Mk[] f673a;
 
     public Lk() {
         a();
@@ -30,7 +30,7 @@ public final class Lk extends MessageNano {
     }
 
     public final Lk a() {
-        this.f672a = Mk.b();
+        this.f673a = Mk.b();
         this.cachedSize = -1;
         return this;
     }
@@ -38,11 +38,11 @@ public final class Lk extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        Mk[] mkArr = this.f672a;
+        Mk[] mkArr = this.f673a;
         if (mkArr != null && mkArr.length > 0) {
             int i = 0;
             while (true) {
-                Mk[] mkArr2 = this.f672a;
+                Mk[] mkArr2 = this.f673a;
                 if (i >= mkArr2.length) {
                     break;
                 }
@@ -58,11 +58,11 @@ public final class Lk extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        Mk[] mkArr = this.f672a;
+        Mk[] mkArr = this.f673a;
         if (mkArr != null && mkArr.length > 0) {
             int i = 0;
             while (true) {
-                Mk[] mkArr2 = this.f672a;
+                Mk[] mkArr2 = this.f673a;
                 if (i >= mkArr2.length) {
                     break;
                 }
@@ -89,7 +89,7 @@ public final class Lk extends MessageNano {
                 }
             } else {
                 int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 10);
-                Mk[] mkArr = this.f672a;
+                Mk[] mkArr = this.f673a;
                 int length = mkArr == null ? 0 : mkArr.length;
                 int i = repeatedFieldArrayLength + length;
                 Mk[] mkArr2 = new Mk[i];
@@ -106,7 +106,7 @@ public final class Lk extends MessageNano {
                 Mk mk2 = new Mk();
                 mkArr2[length] = mk2;
                 codedInputByteBufferNano.readMessage(mk2);
-                this.f672a = mkArr2;
+                this.f673a = mkArr2;
             }
         }
         return this;

@@ -3,8 +3,8 @@ package androidx.media3.exoplayer.mediacodec;
 import android.media.LoudnessCodecController;
 import android.media.MediaCodec;
 import android.os.Bundle;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.exoplayer.mediacodec.LoudnessCodecController;
+import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.MoreExecutors;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -62,7 +62,7 @@ public final class LoudnessCodecController {
     public void addMediaCodec(MediaCodec mediaCodec) {
         android.media.LoudnessCodecController loudnessCodecController = this.loudnessCodecController;
         if (loudnessCodecController == null || loudnessCodecController.addMediaCodec(mediaCodec)) {
-            Assertions.checkState(this.mediaCodecs.add(mediaCodec));
+            Preconditions.checkState(this.mediaCodecs.add(mediaCodec));
         }
     }
 

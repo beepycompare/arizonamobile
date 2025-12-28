@@ -2,7 +2,6 @@ package androidx.media3.exoplayer;
 
 import androidx.media3.common.Format;
 import androidx.media3.common.Timeline;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.exoplayer.metadata.MetadataRenderer;
 import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.exoplayer.source.SampleStream;
@@ -10,6 +9,7 @@ import androidx.media3.exoplayer.text.TextRenderer;
 import androidx.media3.exoplayer.trackselection.ExoTrackSelection;
 import androidx.media3.exoplayer.trackselection.TrackSelectorResult;
 import androidx.media3.exoplayer.video.VideoFrameMetadataListener;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.Objects;
 /* loaded from: classes.dex */
@@ -40,7 +40,7 @@ class RendererHolder {
 
     public void startPrewarming() {
         int i;
-        Assertions.checkState(!isPrewarming());
+        Preconditions.checkState(!isPrewarming());
         if (isRendererEnabled(this.primaryRenderer)) {
             i = 3;
         } else {
@@ -78,18 +78,18 @@ class RendererHolder {
     }
 
     public boolean hasReadPeriodToEnd(MediaPeriodHolder mediaPeriodHolder) {
-        return ((Renderer) Assertions.checkNotNull(getRendererReadingFromPeriod(mediaPeriodHolder))).hasReadStreamToEnd();
+        return ((Renderer) Preconditions.checkNotNull(getRendererReadingFromPeriod(mediaPeriodHolder))).hasReadStreamToEnd();
     }
 
     public void setCurrentStreamFinal(MediaPeriodHolder mediaPeriodHolder, long j) {
-        setCurrentStreamFinalInternal((Renderer) Assertions.checkNotNull(getRendererReadingFromPeriod(mediaPeriodHolder)), j);
+        setCurrentStreamFinalInternal((Renderer) Preconditions.checkNotNull(getRendererReadingFromPeriod(mediaPeriodHolder)), j);
     }
 
     public void maybeSetOldStreamToFinal(TrackSelectorResult trackSelectorResult, TrackSelectorResult trackSelectorResult2, long j) {
         int i;
         boolean isRendererEnabled = trackSelectorResult.isRendererEnabled(this.index);
         boolean isRendererEnabled2 = trackSelectorResult2.isRendererEnabled(this.index);
-        Renderer renderer = (this.secondaryRenderer == null || (i = this.prewarmingState) == 3 || (i == 0 && isRendererEnabled(this.primaryRenderer))) ? this.primaryRenderer : (Renderer) Assertions.checkNotNull(this.secondaryRenderer);
+        Renderer renderer = (this.secondaryRenderer == null || (i = this.prewarmingState) == 3 || (i == 0 && isRendererEnabled(this.primaryRenderer))) ? this.primaryRenderer : (Renderer) Preconditions.checkNotNull(this.secondaryRenderer);
         if (!isRendererEnabled || renderer.isCurrentStreamFinal()) {
             return;
         }
@@ -209,7 +209,7 @@ class RendererHolder {
     }
 
     public void maybeThrowStreamError(MediaPeriodHolder mediaPeriodHolder) throws IOException {
-        ((Renderer) Assertions.checkNotNull(getRendererReadingFromPeriod(mediaPeriodHolder))).maybeThrowStreamError();
+        ((Renderer) Preconditions.checkNotNull(getRendererReadingFromPeriod(mediaPeriodHolder))).maybeThrowStreamError();
     }
 
     public void start() throws ExoPlaybackException {
@@ -251,12 +251,12 @@ class RendererHolder {
             return;
         }
         this.secondaryRequiresReset = true;
-        ((Renderer) Assertions.checkNotNull(this.secondaryRenderer)).enable(rendererConfiguration, formats, sampleStream, j, z, z2, j2, j3, mediaPeriodId);
+        ((Renderer) Preconditions.checkNotNull(this.secondaryRenderer)).enable(rendererConfiguration, formats, sampleStream, j, z, z2, j2, j3, mediaPeriodId);
         defaultMediaClock.onRendererEnabled(this.secondaryRenderer);
     }
 
     public void handleMessage(int i, Object obj, MediaPeriodHolder mediaPeriodHolder) throws ExoPlaybackException {
-        ((Renderer) Assertions.checkNotNull(getRendererReadingFromPeriod(mediaPeriodHolder))).handleMessage(i, obj);
+        ((Renderer) Preconditions.checkNotNull(getRendererReadingFromPeriod(mediaPeriodHolder))).handleMessage(i, obj);
     }
 
     public void setScrubbingMode(ScrubbingModeParameters scrubbingModeParameters) throws ExoPlaybackException {
@@ -293,9 +293,9 @@ class RendererHolder {
 
     private void transferResources(boolean z) throws ExoPlaybackException {
         if (z) {
-            ((Renderer) Assertions.checkNotNull(this.secondaryRenderer)).handleMessage(17, this.primaryRenderer);
+            ((Renderer) Preconditions.checkNotNull(this.secondaryRenderer)).handleMessage(17, this.primaryRenderer);
         } else {
-            this.primaryRenderer.handleMessage(17, Assertions.checkNotNull(this.secondaryRenderer));
+            this.primaryRenderer.handleMessage(17, Preconditions.checkNotNull(this.secondaryRenderer));
         }
     }
 
@@ -304,7 +304,7 @@ class RendererHolder {
             int i = this.prewarmingState;
             boolean z = i == 4 || i == 2;
             int i2 = i == 4 ? 1 : 0;
-            disableRenderer(z ? this.primaryRenderer : (Renderer) Assertions.checkNotNull(this.secondaryRenderer), defaultMediaClock);
+            disableRenderer(z ? this.primaryRenderer : (Renderer) Preconditions.checkNotNull(this.secondaryRenderer), defaultMediaClock);
             maybeResetRenderer(z);
             this.prewarmingState = i2;
         }
@@ -323,13 +323,13 @@ class RendererHolder {
             if (sampleStream != renderer.getStream()) {
                 disableRenderer(renderer, defaultMediaClock);
             } else if (z) {
-                renderer.resetPosition(j);
+                renderer.resetPosition(j, true);
             }
         }
     }
 
     private void disableRenderer(Renderer renderer, DefaultMediaClock defaultMediaClock) {
-        Assertions.checkState(this.primaryRenderer == renderer || this.secondaryRenderer == renderer);
+        Preconditions.checkState(this.primaryRenderer == renderer || this.secondaryRenderer == renderer);
         if (isRendererEnabled(renderer)) {
             defaultMediaClock.onRendererDisabled(renderer);
             ensureStopped(renderer);
@@ -337,11 +337,16 @@ class RendererHolder {
         }
     }
 
-    public void resetPosition(MediaPeriodHolder mediaPeriodHolder, long j) throws ExoPlaybackException {
+    public void resetPosition(MediaPeriodHolder mediaPeriodHolder, long j, boolean z) throws ExoPlaybackException {
         Renderer rendererReadingFromPeriod = getRendererReadingFromPeriod(mediaPeriodHolder);
         if (rendererReadingFromPeriod != null) {
-            rendererReadingFromPeriod.resetPosition(j);
+            rendererReadingFromPeriod.resetPosition(j, z);
         }
+    }
+
+    public boolean supportsResetPositionWithoutKeyFrameReset(MediaPeriodHolder mediaPeriodHolder, long j) {
+        Renderer rendererReadingFromPeriod = getRendererReadingFromPeriod(mediaPeriodHolder);
+        return rendererReadingFromPeriod != null && rendererReadingFromPeriod.supportsResetPositionWithoutKeyFrameReset(j);
     }
 
     public void reset() {
@@ -362,7 +367,7 @@ class RendererHolder {
                 this.primaryRequiresReset = false;
             }
         } else if (this.secondaryRequiresReset) {
-            ((Renderer) Assertions.checkNotNull(this.secondaryRenderer)).reset();
+            ((Renderer) Preconditions.checkNotNull(this.secondaryRenderer)).reset();
             this.secondaryRequiresReset = false;
         }
     }
@@ -383,7 +388,7 @@ class RendererHolder {
         boolean isRendererEnabled = trackSelectorResult.isRendererEnabled(i);
         if (!isRendererEnabled || z) {
             if (!renderer.isCurrentStreamFinal()) {
-                renderer.replaceStream(getFormats(trackSelectorResult.selections[this.index]), (SampleStream) Assertions.checkNotNull(mediaPeriodHolder.sampleStreams[this.index]), mediaPeriodHolder.getStartPositionRendererTime(), mediaPeriodHolder.getRendererOffset(), mediaPeriodHolder.info.id);
+                renderer.replaceStream(getFormats(trackSelectorResult.selections[this.index]), (SampleStream) Preconditions.checkNotNull(mediaPeriodHolder.sampleStreams[this.index]), mediaPeriodHolder.getStartPositionRendererTime(), mediaPeriodHolder.getRendererOffset(), mediaPeriodHolder.info.id);
                 return 3;
             } else if (renderer.isEnded()) {
                 disableRenderer(renderer, defaultMediaClock);
@@ -402,7 +407,7 @@ class RendererHolder {
         int length = exoTrackSelection != null ? exoTrackSelection.length() : 0;
         Format[] formatArr = new Format[length];
         for (int i = 0; i < length; i++) {
-            formatArr[i] = ((ExoTrackSelection) Assertions.checkNotNull(exoTrackSelection)).getFormat(i);
+            formatArr[i] = ((ExoTrackSelection) Preconditions.checkNotNull(exoTrackSelection)).getFormat(i);
         }
         return formatArr;
     }
@@ -423,20 +428,19 @@ class RendererHolder {
         }
         int i = this.prewarmingState;
         if (i == 4 || i == 1) {
-            ((Renderer) Assertions.checkNotNull(this.secondaryRenderer)).handleMessage(1, obj);
+            ((Renderer) Preconditions.checkNotNull(this.secondaryRenderer)).handleMessage(1, obj);
         } else {
             this.primaryRenderer.handleMessage(1, obj);
         }
     }
 
     public void setVideoFrameMetadataListener(VideoFrameMetadataListener videoFrameMetadataListener) throws ExoPlaybackException {
-        if (getTrackType() != 2) {
-            return;
-        }
-        this.primaryRenderer.handleMessage(7, videoFrameMetadataListener);
-        Renderer renderer = this.secondaryRenderer;
-        if (renderer != null) {
-            renderer.handleMessage(7, videoFrameMetadataListener);
+        if (getTrackType() == 2 || getTrackType() == 4) {
+            this.primaryRenderer.handleMessage(7, videoFrameMetadataListener);
+            Renderer renderer = this.secondaryRenderer;
+            if (renderer != null) {
+                renderer.handleMessage(7, videoFrameMetadataListener);
+            }
         }
     }
 
@@ -456,7 +460,7 @@ class RendererHolder {
         if (i == 0 || i == 2 || i == 4) {
             return isRendererEnabled(this.primaryRenderer);
         }
-        return isRendererEnabled((Renderer) Assertions.checkNotNull(this.secondaryRenderer));
+        return isRendererEnabled((Renderer) Preconditions.checkNotNull(this.secondaryRenderer));
     }
 
     private static boolean isRendererEnabled(Renderer renderer) {

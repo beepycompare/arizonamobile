@@ -9,20 +9,20 @@ import java.util.Iterator;
 public final class O2 implements BiConsumer {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ P2 f711a;
+    public final /* synthetic */ P2 f712a;
 
     public O2(P2 p2) {
-        this.f711a = p2;
+        this.f712a = p2;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.backport.BiConsumer
     public final void consume(Object obj, Object obj2) {
         Context context = (Context) obj;
         Intent intent = (Intent) obj2;
-        synchronized (this.f711a) {
-            P2 p2 = this.f711a;
+        synchronized (this.f712a) {
+            P2 p2 = this.f712a;
             p2.b = intent;
-            Iterator it = p2.f727a.iterator();
+            Iterator it = p2.f728a.iterator();
             while (it.hasNext()) {
                 ((Consumer) it.next()).consume(intent);
             }

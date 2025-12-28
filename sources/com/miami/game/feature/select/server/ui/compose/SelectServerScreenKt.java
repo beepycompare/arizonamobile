@@ -273,7 +273,7 @@ public final class SelectServerScreenKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = startRestartGroup.consume(AndroidCompositionLocals_androidKt.getLocalContext());
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            SingletonAsyncImageKt.m9395AsyncImage10Xjiaw(ImageRequestsKt.transformations(new ImageRequest.Builder((Context) consume).data(Integer.valueOf(uiState.getBackGroundId())), new CoilBlurTransformation(0, 0, 3, null)).build(), null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, 1573296, 0, 1976);
+            SingletonAsyncImageKt.m9410AsyncImage10Xjiaw(ImageRequestsKt.transformations(new ImageRequest.Builder((Context) consume).data(Integer.valueOf(uiState.getBackGroundId())), new CoilBlurTransformation(0, 0, 3, null)).build(), null, SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), null, null, null, ContentScale.Companion.getCrop(), 0.0f, null, 0, false, startRestartGroup, 1573296, 0, 1976);
             Modifier m299backgroundbw27NRU$default = BackgroundKt.m299backgroundbw27NRU$default(SizeKt.fillMaxSize$default(Modifier.Companion, 0.0f, 1, null), ColorKt.Color(1711276032), null, 2, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
             MeasurePolicy maybeCachedBoxMeasurePolicy = BoxKt.maybeCachedBoxMeasurePolicy(Alignment.Companion.getTopStart(), false);
@@ -452,13 +452,13 @@ public final class SelectServerScreenKt {
                 long m5423copywmQWz5c$default = Color.m5423copywmQWz5c$default(Color.Companion.m5461getWhite0d7_KjU(), 0.8f, 0.0f, 0.0f, 0.0f, 14, null);
                 TextStyle bodyMedium = MaterialTheme.INSTANCE.getTypography(startRestartGroup, MaterialTheme.$stable).getBodyMedium();
                 float f2 = 32;
-                long m10169dpToSp8Feqmps = TypeKt.m10169dpToSp8Feqmps(Dp.m8258constructorimpl(f2), startRestartGroup, 6);
-                long m10169dpToSp8Feqmps2 = TypeKt.m10169dpToSp8Feqmps(Dp.m8258constructorimpl(f2), startRestartGroup, 6);
-                long m10169dpToSp8Feqmps3 = TypeKt.m10169dpToSp8Feqmps(Dp.m8258constructorimpl(1), startRestartGroup, 6);
-                TextUnitKt.m8465checkArithmeticR2X_6o(m10169dpToSp8Feqmps3);
+                long m10184dpToSp8Feqmps = TypeKt.m10184dpToSp8Feqmps(Dp.m8258constructorimpl(f2), startRestartGroup, 6);
+                long m10184dpToSp8Feqmps2 = TypeKt.m10184dpToSp8Feqmps(Dp.m8258constructorimpl(f2), startRestartGroup, 6);
+                long m10184dpToSp8Feqmps3 = TypeKt.m10184dpToSp8Feqmps(Dp.m8258constructorimpl(1), startRestartGroup, 6);
+                TextUnitKt.m8465checkArithmeticR2X_6o(m10184dpToSp8Feqmps3);
                 z = true;
                 str = "CC(remember):SelectServerScreen.kt#9igjgp";
-                TextKt.m3255TextNvy7gAk("НЕТ ИЗБРАННЫХ", null, m5423copywmQWz5c$default, null, m10169dpToSp8Feqmps, null, null, null, TextUnitKt.pack(TextUnit.m8450getRawTypeimpl(m10169dpToSp8Feqmps3), -TextUnit.m8452getValueimpl(m10169dpToSp8Feqmps3)), null, null, m10169dpToSp8Feqmps2, 0, false, 0, 0, null, bodyMedium, startRestartGroup, 390, 0, 128746);
+                TextKt.m3255TextNvy7gAk("НЕТ ИЗБРАННЫХ", null, m5423copywmQWz5c$default, null, m10184dpToSp8Feqmps, null, null, null, TextUnitKt.pack(TextUnit.m8450getRawTypeimpl(m10184dpToSp8Feqmps3), -TextUnit.m8452getValueimpl(m10184dpToSp8Feqmps3)), null, null, m10184dpToSp8Feqmps2, 0, false, 0, 0, null, bodyMedium, startRestartGroup, 390, 0, 128746);
                 startRestartGroup = startRestartGroup;
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
                 ComposerKt.sourceInformationMarkerEnd(startRestartGroup);

@@ -2,7 +2,6 @@ package androidx.media3.exoplayer.source;
 
 import android.net.Uri;
 import androidx.media3.common.DataReader;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.extractor.DefaultExtractorInput;
 import androidx.media3.extractor.Extractor;
 import androidx.media3.extractor.ExtractorInput;
@@ -12,6 +11,7 @@ import androidx.media3.extractor.PositionHolder;
 import androidx.media3.extractor.mp3.Mp3Extractor;
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.io.EOFException;
@@ -68,7 +68,7 @@ public final class BundledExtractorsAdapter implements ProgressiveMediaExtractor
                     if (this.extractor != null || defaultExtractorInput.getPosition() == j) {
                         z = true;
                     }
-                    Assertions.checkState(z);
+                    Preconditions.checkState(z);
                     defaultExtractorInput.resetPeekPosition();
                     throw th;
                 }
@@ -77,14 +77,14 @@ public final class BundledExtractorsAdapter implements ProgressiveMediaExtractor
                     if (extractor != null || defaultExtractorInput.getPosition() == j) {
                         z = true;
                     }
-                    Assertions.checkState(z);
+                    Preconditions.checkState(z);
                     defaultExtractorInput.resetPeekPosition();
                 } else {
                     builderWithExpectedSize.addAll((Iterable) extractor.getSniffFailureDetails());
                     if (this.extractor == null) {
                     }
                     boolean z2 = true;
-                    Assertions.checkState(z2);
+                    Preconditions.checkState(z2);
                     defaultExtractorInput.resetPeekPosition();
                     i++;
                 }
@@ -97,7 +97,7 @@ public final class BundledExtractorsAdapter implements ProgressiveMediaExtractor
                         simpleName = ((Extractor) obj).getUnderlyingImplementation().getClass().getSimpleName();
                         return simpleName;
                     }
-                })) + ") could read the stream.", (Uri) Assertions.checkNotNull(uri), builderWithExpectedSize.build());
+                })) + ") could read the stream.", (Uri) Preconditions.checkNotNull(uri), builderWithExpectedSize.build());
             }
         }
         this.extractor.init(extractorOutput);
@@ -136,11 +136,11 @@ public final class BundledExtractorsAdapter implements ProgressiveMediaExtractor
 
     @Override // androidx.media3.exoplayer.source.ProgressiveMediaExtractor
     public void seek(long j, long j2) {
-        ((Extractor) Assertions.checkNotNull(this.extractor)).seek(j, j2);
+        ((Extractor) Preconditions.checkNotNull(this.extractor)).seek(j, j2);
     }
 
     @Override // androidx.media3.exoplayer.source.ProgressiveMediaExtractor
     public int read(PositionHolder positionHolder) throws IOException {
-        return ((Extractor) Assertions.checkNotNull(this.extractor)).read((ExtractorInput) Assertions.checkNotNull(this.extractorInput), positionHolder);
+        return ((Extractor) Preconditions.checkNotNull(this.extractor)).read((ExtractorInput) Preconditions.checkNotNull(this.extractorInput), positionHolder);
     }
 }

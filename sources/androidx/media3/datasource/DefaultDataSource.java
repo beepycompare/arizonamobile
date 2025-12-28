@@ -2,11 +2,11 @@ package androidx.media3.datasource;
 
 import android.content.Context;
 import android.net.Uri;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
 import androidx.media3.datasource.DataSource;
 import androidx.media3.datasource.DefaultHttpDataSource;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -46,7 +46,7 @@ public final class DefaultDataSource implements DataSource {
 
         public Factory(Context context, DataSource.Factory factory) {
             this.context = context.getApplicationContext();
-            this.baseDataSourceFactory = (DataSource.Factory) Assertions.checkNotNull(factory);
+            this.baseDataSourceFactory = (DataSource.Factory) Preconditions.checkNotNull(factory);
         }
 
         public Factory setTransferListener(TransferListener transferListener) {
@@ -79,13 +79,13 @@ public final class DefaultDataSource implements DataSource {
 
     public DefaultDataSource(Context context, DataSource dataSource) {
         this.context = context.getApplicationContext();
-        this.baseDataSource = (DataSource) Assertions.checkNotNull(dataSource);
+        this.baseDataSource = (DataSource) Preconditions.checkNotNull(dataSource);
         this.transferListeners = new ArrayList();
     }
 
     @Override // androidx.media3.datasource.DataSource
     public void addTransferListener(TransferListener transferListener) {
-        Assertions.checkNotNull(transferListener);
+        Preconditions.checkNotNull(transferListener);
         this.baseDataSource.addTransferListener(transferListener);
         this.transferListeners.add(transferListener);
         maybeAddListenerToDataSource(this.fileDataSource, transferListener);
@@ -99,7 +99,7 @@ public final class DefaultDataSource implements DataSource {
 
     @Override // androidx.media3.datasource.DataSource
     public long open(DataSpec dataSpec) throws IOException {
-        Assertions.checkState(this.dataSource == null);
+        Preconditions.checkState(this.dataSource == null);
         String scheme = dataSpec.uri.getScheme();
         if (Util.isLocalFileUri(dataSpec.uri)) {
             String path = dataSpec.uri.getPath();
@@ -128,7 +128,7 @@ public final class DefaultDataSource implements DataSource {
 
     @Override // androidx.media3.common.DataReader
     public int read(byte[] bArr, int i, int i2) throws IOException {
-        return ((DataSource) Assertions.checkNotNull(this.dataSource)).read(bArr, i, i2);
+        return ((DataSource) Preconditions.checkNotNull(this.dataSource)).read(bArr, i, i2);
     }
 
     @Override // androidx.media3.datasource.DataSource

@@ -5,7 +5,6 @@ import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import androidx.compose.material3.internal.CalendarModelKt;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
 import java.text.SimpleDateFormat;
@@ -90,7 +89,7 @@ public final class MobilePhoneMainPage implements MobileController {
         bind.phoneMenuPager.setOrientation(0);
         bind.phoneMenuPagerIndicator.setViewPager(bind.phoneMenuPager);
         bind.phoneDate.setText(new SimpleDateFormat("dd.MM.yyyy", Locale.getDefault()).format(new Date()));
-        CountDownTimer start = new CountDownTimer(CalendarModelKt.MillisecondsIn24Hours, 60000L) { // from class: ru.mrlargha.feature.mobile.presentation.page.MobilePhoneMainPage.1
+        CountDownTimer start = new CountDownTimer(86400000L, 60000L) { // from class: ru.mrlargha.feature.mobile.presentation.page.MobilePhoneMainPage.1
             @Override // android.os.CountDownTimer
             public void onTick(long j) {
                 this.mpMainBinding.phoneTimeBar.setText(this.phoneBinding.phoneTopBarTime.getText());

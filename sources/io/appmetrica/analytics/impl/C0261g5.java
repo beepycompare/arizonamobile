@@ -8,18 +8,18 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class C0261g5 implements IExecutionPolicy {
 
     /* renamed from: a  reason: collision with root package name */
-    public final IExecutionPolicy[] f997a;
+    public final IExecutionPolicy[] f998a;
     public final String b;
 
     public C0261g5(IExecutionPolicy... iExecutionPolicyArr) {
-        this.f997a = iExecutionPolicyArr;
-        this.b = "Composite of {" + ArraysKt.joinToString$default(iExecutionPolicyArr, ", ", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, C0235f5.f981a, 30, (Object) null) + AbstractJsonLexerKt.END_OBJ;
+        this.f998a = iExecutionPolicyArr;
+        this.b = "Composite of {" + ArraysKt.joinToString$default(iExecutionPolicyArr, ", ", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, C0235f5.f982a, 30, (Object) null) + AbstractJsonLexerKt.END_OBJ;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.io.IExecutionPolicy
     public final boolean canBeExecuted() {
         IExecutionPolicy iExecutionPolicy;
-        IExecutionPolicy[] iExecutionPolicyArr = this.f997a;
+        IExecutionPolicy[] iExecutionPolicyArr = this.f998a;
         if (iExecutionPolicyArr.length == 0) {
             return false;
         }

@@ -3,10 +3,10 @@ package io.appmetrica.analytics.impl;
 public final class I7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Um f618a;
+    public final Um f619a;
 
     public I7(Um um) {
-        this.f618a = um;
+        this.f619a = um;
     }
 
     public I7() {

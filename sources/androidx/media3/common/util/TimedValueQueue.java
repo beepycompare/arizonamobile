@@ -1,5 +1,6 @@
 package androidx.media3.common.util;
 
+import com.google.common.base.Preconditions;
 import java.util.Arrays;
 /* loaded from: classes2.dex */
 public final class TimedValueQueue<V> {
@@ -61,7 +62,7 @@ public final class TimedValueQueue<V> {
     }
 
     private V popFirst() {
-        Assertions.checkState(this.size > 0);
+        Preconditions.checkState(this.size > 0);
         V[] vArr = this.values;
         int i = this.first;
         V v = vArr[i];

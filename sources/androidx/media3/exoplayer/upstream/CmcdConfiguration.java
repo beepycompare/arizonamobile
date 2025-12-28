@@ -2,8 +2,8 @@ package androidx.media3.exoplayer.upstream;
 
 import androidx.media3.common.C;
 import androidx.media3.common.MediaItem;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.exoplayer.upstream.CmcdConfiguration;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableListMultimap;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -110,9 +110,9 @@ public final class CmcdConfiguration {
 
     public CmcdConfiguration(String str, String str2, RequestConfig requestConfig, int i) {
         boolean z = false;
-        Assertions.checkArgument(str == null || str.length() <= 64);
-        Assertions.checkArgument((str2 == null || str2.length() <= 64) ? true : z);
-        Assertions.checkNotNull(requestConfig);
+        Preconditions.checkArgument(str == null || str.length() <= 64);
+        Preconditions.checkArgument((str2 == null || str2.length() <= 64) ? true : z);
+        Preconditions.checkNotNull(requestConfig);
         this.sessionId = str;
         this.contentId = str2;
         this.requestConfig = requestConfig;

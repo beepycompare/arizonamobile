@@ -39,7 +39,7 @@ public class DefaultRenderersFactory implements RenderersFactory {
     private static final String TAG = "DefaultRenderersFactory";
     private final DefaultMediaCodecAdapterFactory codecAdapterFactory;
     private final Context context;
-    private boolean enableAudioTrackPlaybackParams;
+    private boolean enableAudioOutputPlaybackParameters;
     private boolean enableDecoderFallback;
     private boolean enableFloatOutput;
     private boolean enableMediaCodecBufferDecodeOnlyFlag;
@@ -100,8 +100,13 @@ public class DefaultRenderersFactory implements RenderersFactory {
         return this;
     }
 
+    @Deprecated
     public final DefaultRenderersFactory setEnableAudioTrackPlaybackParams(boolean z) {
-        this.enableAudioTrackPlaybackParams = z;
+        return setEnableAudioOutputPlaybackParameters(z);
+    }
+
+    public final DefaultRenderersFactory setEnableAudioOutputPlaybackParameters(boolean z) {
+        this.enableAudioOutputPlaybackParameters = z;
         return this;
     }
 
@@ -135,7 +140,7 @@ public class DefaultRenderersFactory implements RenderersFactory {
         Handler handler2;
         ArrayList<Renderer> arrayList = new ArrayList<>();
         buildVideoRenderers(this.context, this.extensionRendererMode, this.mediaCodecSelector, this.enableDecoderFallback, handler, videoRendererEventListener, this.allowedVideoJoiningTimeMs, arrayList);
-        AudioSink buildAudioSink = buildAudioSink(this.context, this.enableFloatOutput, this.enableAudioTrackPlaybackParams);
+        AudioSink buildAudioSink = buildAudioSink(this.context, this.enableFloatOutput, this.enableAudioOutputPlaybackParameters);
         if (buildAudioSink != null) {
             handler2 = handler;
             buildAudioRenderers(this.context, this.extensionRendererMode, this.mediaCodecSelector, this.enableDecoderFallback, buildAudioSink, handler2, audioRendererEventListener, arrayList);
@@ -176,8 +181,8 @@ public class DefaultRenderersFactory implements RenderersFactory {
                     try {
                         int i3 = i2 + 1;
                         try {
-                            arrayList.add(i2, (Renderer) Class.forName("androidx.media3.decoder.av1.Libgav1VideoRenderer").getConstructor(Long.TYPE, Handler.class, VideoRendererEventListener.class, Integer.TYPE).newInstance(Long.valueOf(j), handler, videoRendererEventListener, 50));
-                            Log.i(TAG, "Loaded Libgav1VideoRenderer.");
+                            arrayList.add(i2, (Renderer) Class.forName("androidx.media3.decoder.av1.Libdav1dVideoRenderer").getConstructor(Long.TYPE, Handler.class, VideoRendererEventListener.class, Integer.TYPE).newInstance(Long.valueOf(j), handler, videoRendererEventListener, 50));
+                            Log.i(TAG, "Loaded Libdav1dVideoRenderer.");
                         } catch (ClassNotFoundException unused2) {
                             i2 = i3;
                             i3 = i2;
@@ -194,8 +199,8 @@ public class DefaultRenderersFactory implements RenderersFactory {
             }
             try {
                 int i32 = i2 + 1;
-                arrayList.add(i2, (Renderer) Class.forName("androidx.media3.decoder.av1.Libgav1VideoRenderer").getConstructor(Long.TYPE, Handler.class, VideoRendererEventListener.class, Integer.TYPE).newInstance(Long.valueOf(j), handler, videoRendererEventListener, 50));
-                Log.i(TAG, "Loaded Libgav1VideoRenderer.");
+                arrayList.add(i2, (Renderer) Class.forName("androidx.media3.decoder.av1.Libdav1dVideoRenderer").getConstructor(Long.TYPE, Handler.class, VideoRendererEventListener.class, Integer.TYPE).newInstance(Long.valueOf(j), handler, videoRendererEventListener, 50));
+                Log.i(TAG, "Loaded Libdav1dVideoRenderer.");
             } catch (ClassNotFoundException unused4) {
             }
             try {
@@ -368,7 +373,7 @@ public class DefaultRenderersFactory implements RenderersFactory {
     }
 
     protected AudioSink buildAudioSink(Context context, boolean z, boolean z2) {
-        return new DefaultAudioSink.Builder(context).setEnableFloatOutput(z).setEnableAudioTrackPlaybackParams(z2).build();
+        return new DefaultAudioSink.Builder(context).setEnableFloatOutput(z).setEnableAudioOutputPlaybackParameters(z2).build();
     }
 
     @Override // androidx.media3.exoplayer.RenderersFactory

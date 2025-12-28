@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <include android:id="@+id/costFieldPainting" android:layout_width="match_parent" android:layout_height="32dp" android:layout_weight="1" android:layout_marginStart="4dp" layout="@layout/item_info_cost"/>
+    <Button android:enabled="false" android:textSize="@dimen/_10sdp" android:textStyle="italic|bold" android:textColor="@color/white" android:id="@+id/btnPaintItem" android:background="@drawable/bg_success_chance_test" android:layout_width="match_parent" android:layout_height="32dp" android:text="покрасить" android:layout_weight="1" android:fontFamily="@font/pfdregular" android:layout_marginStart="4dp"/>
+</LinearLayout>

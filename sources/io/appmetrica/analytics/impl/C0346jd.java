@@ -7,16 +7,16 @@ import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
 public final class C0346jd extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0473od f1053a;
+    public final /* synthetic */ C0473od f1054a;
     public final /* synthetic */ ModuleEvent b;
 
     public C0346jd(C0473od c0473od, ModuleEvent moduleEvent) {
-        this.f1053a = c0473od;
+        this.f1054a = c0473od;
         this.b = moduleEvent;
     }
 
     @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
     public final void runSafety() {
-        C0473od.a(this.f1053a).reportEvent(this.b);
+        C0473od.a(this.f1054a).reportEvent(this.b);
     }
 }

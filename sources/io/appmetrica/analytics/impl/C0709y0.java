@@ -22,13 +22,13 @@ public final class C0709y0 implements Ua {
     public static volatile boolean g;
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1305a;
+    public final Context f1306a;
     public final C0534r0 b;
     public final FutureTask c;
     public final Ca d;
 
     public C0709y0(Context context) {
-        this.f1305a = context;
+        this.f1306a = context;
         C0534r0 c = C0157c4.l().c();
         this.b = c;
         this.d = c.a(context, C0157c4.l().g());
@@ -129,7 +129,7 @@ public final class C0709y0 implements Ua {
 
     public final void d(AppMetricaConfig appMetricaConfig) {
         f().b(appMetricaConfig);
-        C0157c4.l().c.a().execute(new RunnableC0685x1(this.f1305a));
+        C0157c4.l().c.a().execute(new RunnableC0685x1(this.f1306a));
     }
 
     public final String e() {
@@ -164,21 +164,21 @@ public final class C0709y0 implements Ua {
                 C0709y0.this.o();
             }
         };
-        s3.f768a.getClass();
-        new InterruptionSafeThread(runnable, "IAA-INIT_CORE-" + Ad.f492a.incrementAndGet()).start();
+        s3.f769a.getClass();
+        new InterruptionSafeThread(runnable, "IAA-INIT_CORE-" + Ad.f493a.incrementAndGet()).start();
     }
 
     public final void o() {
-        C0157c4.l().r.a(this.f1305a);
-        new W3(this.f1305a).a(this.f1305a);
-        C0157c4.l().a(this.f1305a).a();
+        C0157c4.l().r.a(this.f1306a);
+        new W3(this.f1306a).a(this.f1306a);
+        C0157c4.l().a(this.f1306a).a();
         this.c.run();
     }
 
     public final Da p() {
         Da da;
         C0534r0 c0534r0 = this.b;
-        Context context = this.f1305a;
+        Context context = this.f1306a;
         Ca ca = this.d;
         synchronized (c0534r0) {
             if (c0534r0.d == null) {
@@ -195,7 +195,7 @@ public final class C0709y0 implements Ua {
 
     public final void b(AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig) {
         f().a(appMetricaLibraryAdapterConfig);
-        C0157c4.l().c.a().execute(new RunnableC0685x1(this.f1305a));
+        C0157c4.l().c.a().execute(new RunnableC0685x1(this.f1306a));
     }
 
     public final Sa c(ReporterConfig reporterConfig) {

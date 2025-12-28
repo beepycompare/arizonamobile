@@ -1,7 +1,7 @@
 package androidx.media3.datasource;
 
 import android.net.Uri;
-import androidx.media3.common.util.Assertions;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
@@ -14,7 +14,7 @@ public final class StatsDataSource implements DataSource {
     private Map<String, List<String>> lastResponseHeaders = Collections.emptyMap();
 
     public StatsDataSource(DataSource dataSource) {
-        this.dataSource = (DataSource) Assertions.checkNotNull(dataSource);
+        this.dataSource = (DataSource) Preconditions.checkNotNull(dataSource);
     }
 
     public void resetBytesRead() {
@@ -35,7 +35,7 @@ public final class StatsDataSource implements DataSource {
 
     @Override // androidx.media3.datasource.DataSource
     public void addTransferListener(TransferListener transferListener) {
-        Assertions.checkNotNull(transferListener);
+        Preconditions.checkNotNull(transferListener);
         this.dataSource.addTransferListener(transferListener);
     }
 

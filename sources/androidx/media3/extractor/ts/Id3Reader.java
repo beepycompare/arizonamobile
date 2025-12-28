@@ -3,12 +3,12 @@ package androidx.media3.extractor.ts;
 import androidx.media3.common.C;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.extractor.ExtractorOutput;
 import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.ts.TsPayloadReader;
+import com.google.common.base.Preconditions;
 /* loaded from: classes3.dex */
 public final class Id3Reader implements ElementaryStreamReader {
     private static final String TAG = "Id3Reader";
@@ -51,7 +51,7 @@ public final class Id3Reader implements ElementaryStreamReader {
 
     @Override // androidx.media3.extractor.ts.ElementaryStreamReader
     public void consume(ParsableByteArray parsableByteArray) {
-        Assertions.checkStateNotNull(this.output);
+        Preconditions.checkNotNull(this.output);
         if (this.writingSample) {
             int bytesLeft = parsableByteArray.bytesLeft();
             int i = this.sampleBytesRead;
@@ -78,9 +78,9 @@ public final class Id3Reader implements ElementaryStreamReader {
     @Override // androidx.media3.extractor.ts.ElementaryStreamReader
     public void packetFinished(boolean z) {
         int i;
-        Assertions.checkStateNotNull(this.output);
+        Preconditions.checkNotNull(this.output);
         if (this.writingSample && (i = this.sampleSize) != 0 && this.sampleBytesRead == i) {
-            Assertions.checkState(this.sampleTimeUs != C.TIME_UNSET);
+            Preconditions.checkState(this.sampleTimeUs != C.TIME_UNSET);
             this.output.sampleMetadata(this.sampleTimeUs, 1, this.sampleSize, 0, null);
             this.writingSample = false;
         }

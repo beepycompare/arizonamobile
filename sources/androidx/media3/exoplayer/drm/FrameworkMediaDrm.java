@@ -15,13 +15,13 @@ import android.text.TextUtils;
 import androidx.media3.common.C;
 import androidx.media3.common.DrmInitData;
 import androidx.media3.common.MimeTypes;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.exoplayer.analytics.PlayerId;
 import androidx.media3.exoplayer.drm.ExoMediaDrm;
 import androidx.media3.extractor.mp4.PsshAtomUtil;
 import com.facebook.internal.NativeProtocol;
+import com.google.common.base.Preconditions;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.charset.StandardCharsets;
@@ -32,7 +32,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.UUID;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class FrameworkMediaDrm implements ExoMediaDrm {
     private static final String CENC_SCHEME_MIME_TYPE = "cenc";
     public static final ExoMediaDrm.Provider DEFAULT_PROVIDER = new ExoMediaDrm.Provider() { // from class: androidx.media3.exoplayer.drm.FrameworkMediaDrm$$ExternalSyntheticLambda0
@@ -79,8 +79,8 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
     }
 
     private FrameworkMediaDrm(UUID uuid) throws UnsupportedSchemeException {
-        Assertions.checkNotNull(uuid);
-        Assertions.checkArgument(!C.COMMON_PSSH_UUID.equals(uuid), "Use C.CLEARKEY_UUID instead");
+        Preconditions.checkNotNull(uuid);
+        Preconditions.checkArgument(!C.COMMON_PSSH_UUID.equals(uuid), "Use C.CLEARKEY_UUID instead");
         this.uuid = uuid;
         MediaDrm mediaDrm = new MediaDrm(adjustUuid(uuid));
         this.mediaDrm = mediaDrm;
@@ -95,14 +95,14 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
         this.mediaDrm.setOnEventListener(onEventListener == null ? null : new MediaDrm.OnEventListener() { // from class: androidx.media3.exoplayer.drm.FrameworkMediaDrm$$ExternalSyntheticLambda2
             @Override // android.media.MediaDrm.OnEventListener
             public final void onEvent(MediaDrm mediaDrm, byte[] bArr, int i, int i2, byte[] bArr2) {
-                FrameworkMediaDrm.this.m8974x5e84e274(onEventListener, mediaDrm, bArr, i, i2, bArr2);
+                FrameworkMediaDrm.this.m8981x5e84e274(onEventListener, mediaDrm, bArr, i, i2, bArr2);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setOnEventListener$1$androidx-media3-exoplayer-drm-FrameworkMediaDrm  reason: not valid java name */
-    public /* synthetic */ void m8974x5e84e274(ExoMediaDrm.OnEventListener onEventListener, MediaDrm mediaDrm, byte[] bArr, int i, int i2, byte[] bArr2) {
+    public /* synthetic */ void m8981x5e84e274(ExoMediaDrm.OnEventListener onEventListener, MediaDrm mediaDrm, byte[] bArr, int i, int i2, byte[] bArr2) {
         onEventListener.onEvent(this, bArr, i, i2, bArr2);
     }
 
@@ -111,14 +111,14 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
         this.mediaDrm.setOnKeyStatusChangeListener(onKeyStatusChangeListener == null ? null : new MediaDrm.OnKeyStatusChangeListener() { // from class: androidx.media3.exoplayer.drm.FrameworkMediaDrm$$ExternalSyntheticLambda3
             @Override // android.media.MediaDrm.OnKeyStatusChangeListener
             public final void onKeyStatusChange(MediaDrm mediaDrm, byte[] bArr, List list, boolean z) {
-                FrameworkMediaDrm.this.m8976xc78bb65c(onKeyStatusChangeListener, mediaDrm, bArr, list, z);
+                FrameworkMediaDrm.this.m8983xc78bb65c(onKeyStatusChangeListener, mediaDrm, bArr, list, z);
             }
         }, (Handler) null);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setOnKeyStatusChangeListener$2$androidx-media3-exoplayer-drm-FrameworkMediaDrm  reason: not valid java name */
-    public /* synthetic */ void m8976xc78bb65c(ExoMediaDrm.OnKeyStatusChangeListener onKeyStatusChangeListener, MediaDrm mediaDrm, byte[] bArr, List list, boolean z) {
+    public /* synthetic */ void m8983xc78bb65c(ExoMediaDrm.OnKeyStatusChangeListener onKeyStatusChangeListener, MediaDrm mediaDrm, byte[] bArr, List list, boolean z) {
         ArrayList arrayList = new ArrayList();
         Iterator it = list.iterator();
         while (it.hasNext()) {
@@ -133,14 +133,14 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
         this.mediaDrm.setOnExpirationUpdateListener(onExpirationUpdateListener == null ? null : new MediaDrm.OnExpirationUpdateListener() { // from class: androidx.media3.exoplayer.drm.FrameworkMediaDrm$$ExternalSyntheticLambda1
             @Override // android.media.MediaDrm.OnExpirationUpdateListener
             public final void onExpirationUpdate(MediaDrm mediaDrm, byte[] bArr, long j) {
-                FrameworkMediaDrm.this.m8975x3bcdcffc(onExpirationUpdateListener, mediaDrm, bArr, j);
+                FrameworkMediaDrm.this.m8982x3bcdcffc(onExpirationUpdateListener, mediaDrm, bArr, j);
             }
         }, (Handler) null);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setOnExpirationUpdateListener$3$androidx-media3-exoplayer-drm-FrameworkMediaDrm  reason: not valid java name */
-    public /* synthetic */ void m8975x3bcdcffc(ExoMediaDrm.OnExpirationUpdateListener onExpirationUpdateListener, MediaDrm mediaDrm, byte[] bArr, long j) {
+    public /* synthetic */ void m8982x3bcdcffc(ExoMediaDrm.OnExpirationUpdateListener onExpirationUpdateListener, MediaDrm mediaDrm, byte[] bArr, long j) {
         onExpirationUpdateListener.onExpirationUpdate(this, bArr, j);
     }
 
@@ -172,7 +172,7 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
         String str;
         if (list != null) {
             schemeData = getSchemeData(this.uuid, list);
-            bArr2 = adjustRequestInitData(this.uuid, (byte[]) Assertions.checkNotNull(schemeData.data));
+            bArr2 = adjustRequestInitData(this.uuid, (byte[]) Preconditions.checkNotNull(schemeData.data));
             str = adjustRequestMimeType(this.uuid, schemeData.mimeType);
         } else {
             schemeData = null;
@@ -264,7 +264,7 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
 
     @Override // androidx.media3.exoplayer.drm.ExoMediaDrm
     public synchronized void acquire() {
-        Assertions.checkState(this.referenceCount > 0);
+        Preconditions.checkState(this.referenceCount > 0);
         this.referenceCount++;
     }
 
@@ -348,7 +348,7 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
             int i = 0;
             for (int i2 = 0; i2 < list.size(); i2++) {
                 DrmInitData.SchemeData schemeData2 = list.get(i2);
-                byte[] bArr = (byte[]) Assertions.checkNotNull(schemeData2.data);
+                byte[] bArr = (byte[]) Preconditions.checkNotNull(schemeData2.data);
                 if (Objects.equals(schemeData2.mimeType, schemeData.mimeType) && Objects.equals(schemeData2.licenseServerUrl, schemeData.licenseServerUrl) && PsshAtomUtil.isPsshAtom(bArr)) {
                     i += bArr.length;
                 }
@@ -356,7 +356,7 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
             byte[] bArr2 = new byte[i];
             int i3 = 0;
             for (int i4 = 0; i4 < list.size(); i4++) {
-                byte[] bArr3 = (byte[]) Assertions.checkNotNull(list.get(i4).data);
+                byte[] bArr3 = (byte[]) Preconditions.checkNotNull(list.get(i4).data);
                 int length = bArr3.length;
                 System.arraycopy(bArr3, 0, bArr2, i3, length);
                 i3 += length;
@@ -365,7 +365,7 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
         }
         for (int i5 = 0; i5 < list.size(); i5++) {
             DrmInitData.SchemeData schemeData3 = list.get(i5);
-            if (PsshAtomUtil.parseVersion((byte[]) Assertions.checkNotNull(schemeData3.data)) == 1) {
+            if (PsshAtomUtil.parseVersion((byte[]) Preconditions.checkNotNull(schemeData3.data)) == 1) {
                 return schemeData3;
             }
         }
@@ -441,7 +441,7 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
         return allocate.array();
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private static class Api31 {
         private Api31() {
         }
@@ -455,7 +455,7 @@ public final class FrameworkMediaDrm implements ExoMediaDrm {
             if (logSessionId.equals(LogSessionId.LOG_SESSION_ID_NONE)) {
                 return;
             }
-            ((MediaDrm.PlaybackComponent) Assertions.checkNotNull(mediaDrm.getPlaybackComponent(bArr))).setLogSessionId(logSessionId);
+            ((MediaDrm.PlaybackComponent) Preconditions.checkNotNull(mediaDrm.getPlaybackComponent(bArr))).setLogSessionId(logSessionId);
         }
     }
 }

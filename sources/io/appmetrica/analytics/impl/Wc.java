@@ -6,19 +6,19 @@ import io.appmetrica.analytics.modulesapi.internal.service.event.ModuleEventServ
 public final class Wc implements ModuleEventServiceHandlerReporter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f835a;
+    public final boolean f836a;
     public final C0394l9 b;
     public final Q5 c;
 
     public Wc(boolean z, C0394l9 c0394l9, Q5 q5) {
-        this.f835a = z;
+        this.f836a = z;
         this.b = c0394l9;
         this.c = q5;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.event.ModuleEventServiceHandlerReporter
     public final boolean isMain() {
-        return this.f835a;
+        return this.f836a;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.event.ModuleEventServiceHandlerReporter

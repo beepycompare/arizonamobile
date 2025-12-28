@@ -1,10 +1,10 @@
 package androidx.media3.container;
 
 import androidx.media3.common.Metadata;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
 import com.google.common.base.Joiner;
+import com.google.common.base.Preconditions;
 import com.google.common.primitives.Ints;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -45,7 +45,7 @@ public final class MdtaMetadataEntry implements Metadata.Entry {
     }
 
     public List<Integer> getAuxiliaryTrackTypesFromMap() {
-        Assertions.checkState(this.key.equals(KEY_AUXILIARY_TRACKS_MAP), "Metadata is not an auxiliary tracks map");
+        Preconditions.checkState(this.key.equals(KEY_AUXILIARY_TRACKS_MAP), "Metadata is not an auxiliary tracks map");
         byte b = this.value[1];
         ArrayList arrayList = new ArrayList();
         for (int i = 0; i < b; i++) {
@@ -137,23 +137,23 @@ public final class MdtaMetadataEntry implements Metadata.Entry {
                 if (i == 23 && bArr.length == 4) {
                     r2 = true;
                 }
-                Assertions.checkArgument(r2);
+                Preconditions.checkArgument(r2);
                 return;
             case 1:
                 if (i == 75 && bArr.length == 1 && ((b = bArr[0]) == 0 || b == 1)) {
                     r2 = true;
                 }
-                Assertions.checkArgument(r2);
+                Preconditions.checkArgument(r2);
                 return;
             case 2:
             case 3:
                 if (i == 78 && bArr.length == 8) {
                     r2 = true;
                 }
-                Assertions.checkArgument(r2);
+                Preconditions.checkArgument(r2);
                 return;
             case 4:
-                Assertions.checkArgument(i == 0);
+                Preconditions.checkArgument(i == 0);
                 return;
             default:
                 return;

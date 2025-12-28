@@ -1,6 +1,6 @@
 package androidx.media3.exoplayer.upstream.experimental;
 
-import androidx.media3.common.util.Assertions;
+import com.google.common.base.Preconditions;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import java.util.ArrayDeque;
 import java.util.Iterator;
@@ -21,7 +21,7 @@ public class SlidingPercentileBandwidthStatistic implements BandwidthStatistic {
     }
 
     public SlidingPercentileBandwidthStatistic(int i, double d) {
-        Assertions.checkArgument(d >= FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE && d <= 1.0d);
+        Preconditions.checkArgument(d >= FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE && d <= 1.0d);
         this.maxSampleCount = i;
         this.percentile = d;
         this.samples = new ArrayDeque<>();

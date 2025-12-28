@@ -2,13 +2,13 @@ package androidx.media3.extractor.ts;
 
 import androidx.media3.common.C;
 import androidx.media3.common.Format;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.TimestampAdjuster;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.ExtractorOutput;
 import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.ts.TsPayloadReader;
+import com.google.common.base.Preconditions;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
 /* loaded from: classes3.dex */
 public final class PassthroughSectionPayloadReader implements SectionPayloadReader {
@@ -49,7 +49,7 @@ public final class PassthroughSectionPayloadReader implements SectionPayloadRead
 
     @EnsuresNonNull({"timestampAdjuster", "output"})
     private void assertInitialized() {
-        Assertions.checkStateNotNull(this.timestampAdjuster);
+        Preconditions.checkNotNull(this.timestampAdjuster);
         Util.castNonNull(this.output);
     }
 }

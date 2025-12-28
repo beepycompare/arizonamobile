@@ -170,12 +170,12 @@ public final class SettingsTopBarKt {
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance2 = RowScopeInstance.INSTANCE;
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, -782216321, "C45@1654L377,55@2075L42,54@2048L277,61@2342L28,64@2515L13,62@2387L159:SettingsTopBar.kt#1gr92h");
-            ScalingButtonKt.ScalingButton(onBack, null, ComposableSingletons$SettingsTopBarKt.INSTANCE.m10154getLambda$1729539213$settings_release(), startRestartGroup, ((i3 >> 9) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            ScalingButtonKt.ScalingButton(onBack, null, ComposableSingletons$SettingsTopBarKt.INSTANCE.m10169getLambda$1729539213$settings_release(), startRestartGroup, ((i3 >> 9) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             float f = 36;
             float f2 = 12;
             ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.settings_label, startRestartGroup, 0), (String) null, OffsetKt.m885offsetVpY3zN4$default(SizeKt.m962height3ABfNKs(Modifier.Companion, Dp.m8258constructorimpl(f)), Dp.m8258constructorimpl(-Dp.m8258constructorimpl(f2)), 0.0f, 2, null), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 25008, 104);
             SpacerKt.Spacer(SizeKt.m981width3ABfNKs(Modifier.Companion, Dp.m8258constructorimpl(6)), startRestartGroup, 6);
-            TextKt.m3255TextNvy7gAk("ВЕРСИЯ " + uiState.getVersion(), Modifier.Companion, Color.Companion.m5461getWhite0d7_KjU(), null, TypeKt.m10169dpToSp8Feqmps(Dp.m8258constructorimpl(11), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, startRestartGroup, 432, 0, 262120);
+            TextKt.m3255TextNvy7gAk("ВЕРСИЯ " + uiState.getVersion(), Modifier.Companion, Color.Companion.m5461getWhite0d7_KjU(), null, TypeKt.m10184dpToSp8Feqmps(Dp.m8258constructorimpl(11), startRestartGroup, 6), null, null, null, 0L, null, null, 0L, 0, false, 0, 0, null, null, startRestartGroup, 432, 0, 262120);
             startRestartGroup = startRestartGroup;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);

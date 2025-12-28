@@ -3,8 +3,8 @@ package androidx.media3.extractor;
 import androidx.media3.common.C;
 import androidx.media3.common.DataReader;
 import androidx.media3.common.Format;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ParsableByteArray;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
 /* loaded from: classes3.dex */
@@ -33,7 +33,7 @@ public final class SingleSampleExtractor implements Extractor {
 
     @Override // androidx.media3.extractor.Extractor
     public boolean sniff(ExtractorInput extractorInput) throws IOException {
-        Assertions.checkState((this.fileSignature == -1 || this.fileSignatureLength == -1) ? false : true);
+        Preconditions.checkState((this.fileSignature == -1 || this.fileSignatureLength == -1) ? false : true);
         ParsableByteArray parsableByteArray = new ParsableByteArray(this.fileSignatureLength);
         extractorInput.peekFully(parsableByteArray.getData(), 0, this.fileSignatureLength);
         return parsableByteArray.readUnsignedShort() == this.fileSignature;
@@ -67,7 +67,7 @@ public final class SingleSampleExtractor implements Extractor {
     }
 
     private void readSegment(ExtractorInput extractorInput) throws IOException {
-        int sampleData = ((TrackOutput) Assertions.checkNotNull(this.trackOutput)).sampleData((DataReader) extractorInput, 1024, true);
+        int sampleData = ((TrackOutput) Preconditions.checkNotNull(this.trackOutput)).sampleData((DataReader) extractorInput, 1024, true);
         if (sampleData == -1) {
             this.state = 2;
             this.trackOutput.sampleMetadata(0L, 1, this.size, 0, null);

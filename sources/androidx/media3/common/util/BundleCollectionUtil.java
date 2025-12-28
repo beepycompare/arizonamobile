@@ -3,6 +3,7 @@ package androidx.media3.common.util;
 import android.os.Bundle;
 import android.util.SparseArray;
 import com.google.common.base.Function;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ public final class BundleCollectionUtil {
     public static <T> ImmutableList<T> fromBundleList(Function<Bundle, T> function, List<Bundle> list) {
         ImmutableList.Builder builder = ImmutableList.builder();
         for (int i = 0; i < list.size(); i++) {
-            builder.add((ImmutableList.Builder) function.apply((Bundle) Assertions.checkNotNull(list.get(i))));
+            builder.add((ImmutableList.Builder) function.apply((Bundle) Preconditions.checkNotNull(list.get(i))));
         }
         return builder.build();
     }

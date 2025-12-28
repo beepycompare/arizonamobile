@@ -5,12 +5,12 @@ import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 public abstract class N2 implements Mn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f693a;
+    public final int f694a;
     public final String b;
     protected final PublicLogger c;
 
     public N2(int i, String str, PublicLogger publicLogger) {
-        this.f693a = i;
+        this.f694a = i;
         this.b = str;
         this.c = publicLogger;
     }

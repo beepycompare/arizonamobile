@@ -16,12 +16,12 @@ import androidx.media3.common.SimpleBasePlayer;
 import androidx.media3.common.Timeline;
 import androidx.media3.common.Tracks;
 import androidx.media3.common.text.CueGroup;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Clock;
 import androidx.media3.common.util.HandlerWrapper;
 import androidx.media3.common.util.ListenerSet;
 import androidx.media3.common.util.Size;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import com.google.common.base.Supplier;
 import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.AsyncFunction;
@@ -48,7 +48,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
     private State state;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ ListenableFuture lambda$handleReplaceMediaItems$31(ListenableFuture listenableFuture, Object obj) throws Exception {
+    public static /* synthetic */ ListenableFuture lambda$handleReplaceMediaItems$33(ListenableFuture listenableFuture, Object obj) throws Exception {
         return listenableFuture;
     }
 
@@ -68,6 +68,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         public final PositionSupplier adBufferedPositionMsSupplier;
         public final PositionSupplier adPositionMsSupplier;
         public final AudioAttributes audioAttributes;
+        public final int audioSessionId;
         public final Player.Commands availableCommands;
         public final PositionSupplier contentBufferedPositionMsSupplier;
         public final PositionSupplier contentPositionMsSupplier;
@@ -102,6 +103,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         public final Timeline timeline;
         public final PositionSupplier totalBufferedDurationMsSupplier;
         public final TrackSelectionParameters trackSelectionParameters;
+        public final float unmuteVolume;
         private final boolean usesDerivedMediaMetadata;
         public final VideoSize videoSize;
         public final float volume;
@@ -112,6 +114,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             private Long adPositionMs;
             private PositionSupplier adPositionMsSupplier;
             private AudioAttributes audioAttributes;
+            private int audioSessionId;
             private Player.Commands availableCommands;
             private PositionSupplier contentBufferedPositionMsSupplier;
             private Long contentPositionMs;
@@ -148,6 +151,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             private Timeline timeline;
             private PositionSupplier totalBufferedDurationMsSupplier;
             private TrackSelectionParameters trackSelectionParameters;
+            private float unmuteVolume;
             private VideoSize videoSize;
             private float volume;
 
@@ -167,7 +171,9 @@ public abstract class SimpleBasePlayer extends BasePlayer {
                 this.playbackParameters = PlaybackParameters.DEFAULT;
                 this.trackSelectionParameters = TrackSelectionParameters.DEFAULT;
                 this.audioAttributes = AudioAttributes.DEFAULT;
+                this.audioSessionId = 0;
                 this.volume = 1.0f;
+                this.unmuteVolume = 1.0f;
                 this.videoSize = VideoSize.UNKNOWN;
                 this.currentCues = CueGroup.EMPTY_TIME_ZERO;
                 this.deviceInfo = DeviceInfo.UNKNOWN;
@@ -212,7 +218,9 @@ public abstract class SimpleBasePlayer extends BasePlayer {
                 this.playbackParameters = state.playbackParameters;
                 this.trackSelectionParameters = state.trackSelectionParameters;
                 this.audioAttributes = state.audioAttributes;
+                this.audioSessionId = state.audioSessionId;
                 this.volume = state.volume;
+                this.unmuteVolume = state.unmuteVolume;
                 this.videoSize = state.videoSize;
                 this.currentCues = state.currentCues;
                 this.deviceInfo = state.deviceInfo;
@@ -315,9 +323,22 @@ public abstract class SimpleBasePlayer extends BasePlayer {
                 return this;
             }
 
+            public Builder setAudioSessionId(int i) {
+                this.audioSessionId = i;
+                return this;
+            }
+
             public Builder setVolume(float f) {
-                Assertions.checkArgument(f >= 0.0f && f <= 1.0f);
+                int i = (f > 0.0f ? 1 : (f == 0.0f ? 0 : -1));
+                Preconditions.checkArgument(i >= 0 && f <= 1.0f);
+                this.unmuteVolume = i != 0 ? f : this.volume;
                 this.volume = f;
+                return this;
+            }
+
+            public Builder setUnmuteVolume(float f) {
+                Preconditions.checkArgument(f >= 0.0f && f <= 1.0f);
+                this.unmuteVolume = f;
                 return this;
             }
 
@@ -337,7 +358,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             }
 
             public Builder setDeviceVolume(int i) {
-                Assertions.checkArgument(i >= 0);
+                Preconditions.checkArgument(i >= 0);
                 this.deviceVolume = i;
                 return this;
             }
@@ -365,7 +386,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             public Builder setPlaylist(List<MediaItemData> list) {
                 HashSet hashSet = new HashSet();
                 for (int i = 0; i < list.size(); i++) {
-                    Assertions.checkArgument(hashSet.add(list.get(i).uid), "Duplicate MediaItemData UID in playlist");
+                    Preconditions.checkArgument(hashSet.add(list.get(i).uid), "Duplicate MediaItemData UID in playlist");
                 }
                 this.playlist = ImmutableList.copyOf((Collection) list);
                 this.timeline = new PlaylistTimeline(this.playlist);
@@ -393,7 +414,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             }
 
             public Builder setCurrentAd(int i, int i2) {
-                Assertions.checkArgument((i == -1) == (i2 == -1));
+                Preconditions.checkArgument((i == -1) == (i2 == -1));
                 this.currentAdGroupIndex = i;
                 this.currentAdIndexInAdGroup = i2;
                 return this;
@@ -469,16 +490,16 @@ public abstract class SimpleBasePlayer extends BasePlayer {
                 if (i2 == -1) {
                     i = 0;
                 } else {
-                    Assertions.checkArgument(builder.currentMediaItemIndex < builder.timeline.getWindowCount(), "currentMediaItemIndex must be less than playlist.size()");
+                    Preconditions.checkArgument(builder.currentMediaItemIndex < builder.timeline.getWindowCount(), "currentMediaItemIndex must be less than playlist.size()");
                     i = i2;
                 }
                 if (builder.currentAdGroupIndex != -1) {
                     Timeline.Period period = new Timeline.Period();
                     builder.timeline.getPeriod(SimpleBasePlayer.getPeriodIndexFromWindowPosition(builder.timeline, i, builder.contentPositionMs != null ? builder.contentPositionMs.longValue() : builder.contentPositionMsSupplier.get(), new Timeline.Window(), period), period);
-                    Assertions.checkArgument(builder.currentAdGroupIndex < period.getAdGroupCount(), "PeriodData has less ad groups than adGroupIndex");
+                    Preconditions.checkArgument(builder.currentAdGroupIndex < period.getAdGroupCount(), "PeriodData has less ad groups than adGroupIndex");
                     int adCountInAdGroup = period.getAdCountInAdGroup(builder.currentAdGroupIndex);
                     if (adCountInAdGroup != -1) {
-                        Assertions.checkArgument(builder.currentAdIndexInAdGroup < adCountInAdGroup, "Ad group has less ads than adIndexInGroupIndex");
+                        Preconditions.checkArgument(builder.currentAdIndexInAdGroup < adCountInAdGroup, "Ad group has less ads than adIndexInGroupIndex");
                     }
                 }
                 if (builder.playlist != null) {
@@ -488,13 +509,13 @@ public abstract class SimpleBasePlayer extends BasePlayer {
                     tracks = tracks2;
                 }
                 if (mediaMetadata == null) {
-                    mediaMetadata = SimpleBasePlayer.getCombinedMediaMetadata(builder.timeline.getWindow(i, new Timeline.Window()).mediaItem, (Tracks) Assertions.checkNotNull(tracks));
+                    mediaMetadata = SimpleBasePlayer.getCombinedMediaMetadata(builder.timeline.getWindow(i, new Timeline.Window()).mediaItem, (Tracks) Preconditions.checkNotNull(tracks));
                     z = true;
                     if (builder.playerError != null) {
-                        Assertions.checkArgument(builder.playbackState == 1, "Player error only allowed in STATE_IDLE");
+                        Preconditions.checkArgument(builder.playbackState == 1, "Player error only allowed in STATE_IDLE");
                     }
                     if (builder.playbackState != 1 || builder.playbackState == 4) {
-                        Assertions.checkArgument(!builder.isLoading, "isLoading only allowed when not in STATE_IDLE or STATE_ENDED");
+                        Preconditions.checkArgument(!builder.isLoading, "isLoading only allowed when not in STATE_IDLE or STATE_ENDED");
                     }
                     PositionSupplier extrapolating = builder.contentPositionMs != null ? (builder.currentAdGroupIndex == -1 && builder.playWhenReady && builder.playbackState == 3 && builder.playbackSuppressionReason == 0 && builder.contentPositionMs.longValue() != C.TIME_UNSET) ? PositionSupplier.getExtrapolating(builder.contentPositionMs.longValue(), builder.playbackParameters.speed) : PositionSupplier.getConstant(builder.contentPositionMs.longValue()) : builder.contentPositionMsSupplier;
                     PositionSupplier extrapolating2 = builder.adPositionMs != null ? (builder.currentAdGroupIndex != -1 && builder.playWhenReady && builder.playbackState == 3 && builder.playbackSuppressionReason == 0) ? PositionSupplier.getExtrapolating(builder.adPositionMs.longValue(), 1.0f) : PositionSupplier.getConstant(builder.adPositionMs.longValue()) : builder.adPositionMsSupplier;
@@ -513,7 +534,9 @@ public abstract class SimpleBasePlayer extends BasePlayer {
                     this.playbackParameters = builder.playbackParameters;
                     this.trackSelectionParameters = builder.trackSelectionParameters;
                     this.audioAttributes = builder.audioAttributes;
+                    this.audioSessionId = builder.audioSessionId;
                     this.volume = builder.volume;
+                    this.unmuteVolume = builder.unmuteVolume;
                     this.videoSize = builder.videoSize;
                     this.currentCues = builder.currentCues;
                     this.deviceInfo = builder.deviceInfo;
@@ -523,7 +546,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
                     this.newlyRenderedFirstFrame = builder.newlyRenderedFirstFrame;
                     this.timedMetadata = builder.timedMetadata;
                     this.timeline = builder.timeline;
-                    this.currentTracks = (Tracks) Assertions.checkNotNull(tracks);
+                    this.currentTracks = (Tracks) Preconditions.checkNotNull(tracks);
                     this.currentMetadata = mediaMetadata;
                     this.playlistMetadata = builder.playlistMetadata;
                     this.currentMediaItemIndex = builder.currentMediaItemIndex;
@@ -540,8 +563,8 @@ public abstract class SimpleBasePlayer extends BasePlayer {
                     this.usesDerivedMediaMetadata = z;
                 }
             } else {
-                Assertions.checkArgument(builder.playbackState == 1 || builder.playbackState == 4, "Empty playlist only allowed in STATE_IDLE or STATE_ENDED");
-                Assertions.checkArgument(builder.currentAdGroupIndex == -1 && builder.currentAdIndexInAdGroup == -1, "Ads not allowed if playlist is empty");
+                Preconditions.checkArgument(builder.playbackState == 1 || builder.playbackState == 4, "Empty playlist only allowed in STATE_IDLE or STATE_ENDED");
+                Preconditions.checkArgument(builder.currentAdGroupIndex == -1 && builder.currentAdIndexInAdGroup == -1, "Ads not allowed if playlist is empty");
                 tracks = tracks == null ? Tracks.EMPTY : tracks;
                 if (mediaMetadata == null) {
                     mediaMetadata = MediaMetadata.EMPTY;
@@ -552,7 +575,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             }
             if (builder.playbackState != 1) {
             }
-            Assertions.checkArgument(!builder.isLoading, "isLoading only allowed when not in STATE_IDLE or STATE_ENDED");
+            Preconditions.checkArgument(!builder.isLoading, "isLoading only allowed when not in STATE_IDLE or STATE_ENDED");
             if (builder.contentPositionMs != null) {
             }
             if (builder.adPositionMs != null) {
@@ -572,7 +595,9 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             this.playbackParameters = builder.playbackParameters;
             this.trackSelectionParameters = builder.trackSelectionParameters;
             this.audioAttributes = builder.audioAttributes;
+            this.audioSessionId = builder.audioSessionId;
             this.volume = builder.volume;
+            this.unmuteVolume = builder.unmuteVolume;
             this.videoSize = builder.videoSize;
             this.currentCues = builder.currentCues;
             this.deviceInfo = builder.deviceInfo;
@@ -582,7 +607,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             this.newlyRenderedFirstFrame = builder.newlyRenderedFirstFrame;
             this.timedMetadata = builder.timedMetadata;
             this.timeline = builder.timeline;
-            this.currentTracks = (Tracks) Assertions.checkNotNull(tracks);
+            this.currentTracks = (Tracks) Preconditions.checkNotNull(tracks);
             this.currentMetadata = mediaMetadata;
             this.playlistMetadata = builder.playlistMetadata;
             this.currentMediaItemIndex = builder.currentMediaItemIndex;
@@ -623,7 +648,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             }
             if (obj instanceof State) {
                 State state = (State) obj;
-                return this.playWhenReady == state.playWhenReady && this.playWhenReadyChangeReason == state.playWhenReadyChangeReason && this.availableCommands.equals(state.availableCommands) && this.playbackState == state.playbackState && this.playbackSuppressionReason == state.playbackSuppressionReason && Objects.equals(this.playerError, state.playerError) && this.repeatMode == state.repeatMode && this.shuffleModeEnabled == state.shuffleModeEnabled && this.isLoading == state.isLoading && this.seekBackIncrementMs == state.seekBackIncrementMs && this.seekForwardIncrementMs == state.seekForwardIncrementMs && this.maxSeekToPreviousPositionMs == state.maxSeekToPreviousPositionMs && this.playbackParameters.equals(state.playbackParameters) && this.trackSelectionParameters.equals(state.trackSelectionParameters) && this.audioAttributes.equals(state.audioAttributes) && this.volume == state.volume && this.videoSize.equals(state.videoSize) && this.currentCues.equals(state.currentCues) && this.deviceInfo.equals(state.deviceInfo) && this.deviceVolume == state.deviceVolume && this.isDeviceMuted == state.isDeviceMuted && this.surfaceSize.equals(state.surfaceSize) && this.newlyRenderedFirstFrame == state.newlyRenderedFirstFrame && this.timedMetadata.equals(state.timedMetadata) && this.timeline.equals(state.timeline) && this.currentTracks.equals(state.currentTracks) && this.currentMetadata.equals(state.currentMetadata) && this.playlistMetadata.equals(state.playlistMetadata) && this.currentMediaItemIndex == state.currentMediaItemIndex && this.currentAdGroupIndex == state.currentAdGroupIndex && this.currentAdIndexInAdGroup == state.currentAdIndexInAdGroup && this.contentPositionMsSupplier.equals(state.contentPositionMsSupplier) && this.adPositionMsSupplier.equals(state.adPositionMsSupplier) && this.contentBufferedPositionMsSupplier.equals(state.contentBufferedPositionMsSupplier) && this.adBufferedPositionMsSupplier.equals(state.adBufferedPositionMsSupplier) && this.totalBufferedDurationMsSupplier.equals(state.totalBufferedDurationMsSupplier) && this.hasPositionDiscontinuity == state.hasPositionDiscontinuity && this.positionDiscontinuityReason == state.positionDiscontinuityReason && this.discontinuityPositionMs == state.discontinuityPositionMs;
+                return this.playWhenReady == state.playWhenReady && this.playWhenReadyChangeReason == state.playWhenReadyChangeReason && this.availableCommands.equals(state.availableCommands) && this.playbackState == state.playbackState && this.playbackSuppressionReason == state.playbackSuppressionReason && Objects.equals(this.playerError, state.playerError) && this.repeatMode == state.repeatMode && this.shuffleModeEnabled == state.shuffleModeEnabled && this.isLoading == state.isLoading && this.seekBackIncrementMs == state.seekBackIncrementMs && this.seekForwardIncrementMs == state.seekForwardIncrementMs && this.maxSeekToPreviousPositionMs == state.maxSeekToPreviousPositionMs && this.playbackParameters.equals(state.playbackParameters) && this.trackSelectionParameters.equals(state.trackSelectionParameters) && this.audioAttributes.equals(state.audioAttributes) && this.volume == state.volume && this.unmuteVolume == state.unmuteVolume && this.videoSize.equals(state.videoSize) && this.currentCues.equals(state.currentCues) && this.deviceInfo.equals(state.deviceInfo) && this.deviceVolume == state.deviceVolume && this.isDeviceMuted == state.isDeviceMuted && this.surfaceSize.equals(state.surfaceSize) && this.newlyRenderedFirstFrame == state.newlyRenderedFirstFrame && this.timedMetadata.equals(state.timedMetadata) && this.timeline.equals(state.timeline) && this.currentTracks.equals(state.currentTracks) && this.currentMetadata.equals(state.currentMetadata) && this.playlistMetadata.equals(state.playlistMetadata) && this.currentMediaItemIndex == state.currentMediaItemIndex && this.currentAdGroupIndex == state.currentAdGroupIndex && this.currentAdIndexInAdGroup == state.currentAdIndexInAdGroup && this.contentPositionMsSupplier.equals(state.contentPositionMsSupplier) && this.adPositionMsSupplier.equals(state.adPositionMsSupplier) && this.contentBufferedPositionMsSupplier.equals(state.contentBufferedPositionMsSupplier) && this.adBufferedPositionMsSupplier.equals(state.adBufferedPositionMsSupplier) && this.totalBufferedDurationMsSupplier.equals(state.totalBufferedDurationMsSupplier) && this.hasPositionDiscontinuity == state.hasPositionDiscontinuity && this.positionDiscontinuityReason == state.positionDiscontinuityReason && this.discontinuityPositionMs == state.discontinuityPositionMs;
             }
             return false;
         }
@@ -636,7 +661,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             long j2 = this.seekForwardIncrementMs;
             long j3 = this.maxSeekToPreviousPositionMs;
             long j4 = this.discontinuityPositionMs;
-            return ((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((hashCode + hashCode2) * 31) + this.repeatMode) * 31) + (this.shuffleModeEnabled ? 1 : 0)) * 31) + (this.isLoading ? 1 : 0)) * 31) + ((int) (j ^ (j >>> 32)))) * 31) + ((int) (j2 ^ (j2 >>> 32)))) * 31) + ((int) (j3 ^ (j3 >>> 32)))) * 31) + this.playbackParameters.hashCode()) * 31) + this.trackSelectionParameters.hashCode()) * 31) + this.audioAttributes.hashCode()) * 31) + Float.floatToRawIntBits(this.volume)) * 31) + this.videoSize.hashCode()) * 31) + this.currentCues.hashCode()) * 31) + this.deviceInfo.hashCode()) * 31) + this.deviceVolume) * 31) + (this.isDeviceMuted ? 1 : 0)) * 31) + this.surfaceSize.hashCode()) * 31) + (this.newlyRenderedFirstFrame ? 1 : 0)) * 31) + this.timedMetadata.hashCode()) * 31) + this.timeline.hashCode()) * 31) + this.currentTracks.hashCode()) * 31) + this.currentMetadata.hashCode()) * 31) + this.playlistMetadata.hashCode()) * 31) + this.currentMediaItemIndex) * 31) + this.currentAdGroupIndex) * 31) + this.currentAdIndexInAdGroup) * 31) + this.contentPositionMsSupplier.hashCode()) * 31) + this.adPositionMsSupplier.hashCode()) * 31) + this.contentBufferedPositionMsSupplier.hashCode()) * 31) + this.adBufferedPositionMsSupplier.hashCode()) * 31) + this.totalBufferedDurationMsSupplier.hashCode()) * 31) + (this.hasPositionDiscontinuity ? 1 : 0)) * 31) + this.positionDiscontinuityReason) * 31) + ((int) (j4 ^ (j4 >>> 32)));
+            return ((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((hashCode + hashCode2) * 31) + this.repeatMode) * 31) + (this.shuffleModeEnabled ? 1 : 0)) * 31) + (this.isLoading ? 1 : 0)) * 31) + ((int) (j ^ (j >>> 32)))) * 31) + ((int) (j2 ^ (j2 >>> 32)))) * 31) + ((int) (j3 ^ (j3 >>> 32)))) * 31) + this.playbackParameters.hashCode()) * 31) + this.trackSelectionParameters.hashCode()) * 31) + this.audioAttributes.hashCode()) * 31) + Float.floatToRawIntBits(this.volume)) * 31) + Float.floatToRawIntBits(this.unmuteVolume)) * 31) + this.videoSize.hashCode()) * 31) + this.currentCues.hashCode()) * 31) + this.deviceInfo.hashCode()) * 31) + this.deviceVolume) * 31) + (this.isDeviceMuted ? 1 : 0)) * 31) + this.surfaceSize.hashCode()) * 31) + (this.newlyRenderedFirstFrame ? 1 : 0)) * 31) + this.timedMetadata.hashCode()) * 31) + this.timeline.hashCode()) * 31) + this.currentTracks.hashCode()) * 31) + this.currentMetadata.hashCode()) * 31) + this.playlistMetadata.hashCode()) * 31) + this.currentMediaItemIndex) * 31) + this.currentAdGroupIndex) * 31) + this.currentAdIndexInAdGroup) * 31) + this.contentPositionMsSupplier.hashCode()) * 31) + this.adPositionMsSupplier.hashCode()) * 31) + this.contentBufferedPositionMsSupplier.hashCode()) * 31) + this.adBufferedPositionMsSupplier.hashCode()) * 31) + this.totalBufferedDurationMsSupplier.hashCode()) * 31) + (this.hasPositionDiscontinuity ? 1 : 0)) * 31) + this.positionDiscontinuityReason) * 31) + ((int) (j4 ^ (j4 >>> 32)));
         }
     }
 
@@ -707,7 +732,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
 
         @Override // androidx.media3.common.Timeline
         public Timeline.Period getPeriodByUid(Object obj, Timeline.Period period) {
-            return getPeriod(((Integer) Assertions.checkNotNull(this.periodIndexByUid.get(obj))).intValue(), period, true);
+            return getPeriod(((Integer) Preconditions.checkNotNull(this.periodIndexByUid.get(obj))).intValue(), period, true);
         }
 
         @Override // androidx.media3.common.Timeline
@@ -872,19 +897,19 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             }
 
             public Builder setDefaultPositionUs(long j) {
-                Assertions.checkArgument(j >= 0);
+                Preconditions.checkArgument(j >= 0);
                 this.defaultPositionUs = j;
                 return this;
             }
 
             public Builder setDurationUs(long j) {
-                Assertions.checkArgument(j == C.TIME_UNSET || j >= 0);
+                Preconditions.checkArgument(j == C.TIME_UNSET || j >= 0);
                 this.durationUs = j;
                 return this;
             }
 
             public Builder setPositionInFirstPeriodUs(long j) {
-                Assertions.checkArgument(j >= 0);
+                Preconditions.checkArgument(j >= 0);
                 this.positionInFirstPeriodUs = j;
                 return this;
             }
@@ -898,10 +923,10 @@ public abstract class SimpleBasePlayer extends BasePlayer {
                 int size = list.size();
                 int i = 0;
                 while (i < size - 1) {
-                    Assertions.checkArgument(list.get(i).durationUs != C.TIME_UNSET, "Periods other than last need a duration");
+                    Preconditions.checkArgument(list.get(i).durationUs != C.TIME_UNSET, "Periods other than last need a duration");
                     int i2 = i + 1;
                     for (int i3 = i2; i3 < size; i3++) {
-                        Assertions.checkArgument(!list.get(i).uid.equals(list.get(i3).uid), "Duplicate PeriodData UIDs in period list");
+                        Preconditions.checkArgument(!list.get(i).uid.equals(list.get(i3).uid), "Duplicate PeriodData UIDs in period list");
                     }
                     i = i2;
                 }
@@ -918,16 +943,16 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             int i = 0;
             if (builder.liveConfiguration != null) {
                 if (builder.presentationStartTimeMs != C.TIME_UNSET && builder.windowStartTimeMs != C.TIME_UNSET) {
-                    Assertions.checkArgument(builder.windowStartTimeMs >= builder.presentationStartTimeMs, "windowStartTimeMs can't be less than presentationStartTimeMs");
+                    Preconditions.checkArgument(builder.windowStartTimeMs >= builder.presentationStartTimeMs, "windowStartTimeMs can't be less than presentationStartTimeMs");
                 }
             } else {
-                Assertions.checkArgument(builder.presentationStartTimeMs == C.TIME_UNSET, "presentationStartTimeMs can only be set if liveConfiguration != null");
-                Assertions.checkArgument(builder.windowStartTimeMs == C.TIME_UNSET, "windowStartTimeMs can only be set if liveConfiguration != null");
-                Assertions.checkArgument(builder.elapsedRealtimeEpochOffsetMs == C.TIME_UNSET, "elapsedRealtimeEpochOffsetMs can only be set if liveConfiguration != null");
+                Preconditions.checkArgument(builder.presentationStartTimeMs == C.TIME_UNSET, "presentationStartTimeMs can only be set if liveConfiguration != null");
+                Preconditions.checkArgument(builder.windowStartTimeMs == C.TIME_UNSET, "windowStartTimeMs can only be set if liveConfiguration != null");
+                Preconditions.checkArgument(builder.elapsedRealtimeEpochOffsetMs == C.TIME_UNSET, "elapsedRealtimeEpochOffsetMs can only be set if liveConfiguration != null");
             }
             int size = builder.periods.size();
             if (builder.durationUs != C.TIME_UNSET) {
-                Assertions.checkArgument(builder.defaultPositionUs <= builder.durationUs, "defaultPositionUs can't be greater than durationUs");
+                Preconditions.checkArgument(builder.defaultPositionUs <= builder.durationUs, "defaultPositionUs can't be greater than durationUs");
             }
             this.uid = builder.uid;
             this.tracks = builder.tracks;
@@ -1000,7 +1025,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             ImmutableList.Builder builder = ImmutableList.builder();
             for (int i2 = window.firstPeriodIndex; i2 <= window.lastPeriodIndex; i2++) {
                 state.timeline.getPeriod(i2, period, true);
-                builder.add((ImmutableList.Builder) new PeriodData.Builder(Assertions.checkNotNull(period.uid)).setAdPlaybackState(period.adPlaybackState).setDurationUs(period.durationUs).setIsPlaceholder(period.isPlaceholder).build());
+                builder.add((ImmutableList.Builder) new PeriodData.Builder(Preconditions.checkNotNull(period.uid)).setAdPlaybackState(period.adPlaybackState).setDurationUs(period.durationUs).setIsPlaceholder(period.isPlaceholder).build());
             }
             return new Builder(window.uid).setDefaultPositionUs(window.defaultPositionUs).setDurationUs(window.durationUs).setElapsedRealtimeEpochOffsetMs(window.elapsedRealtimeEpochOffsetMs).setIsDynamic(window.isDynamic).setIsPlaceholder(window.isPlaceholder).setIsSeekable(window.isSeekable).setLiveConfiguration(window.liveConfiguration).setManifest(window.manifest).setMediaItem(window.mediaItem).setMediaMetadata(z ? state.currentMetadata : null).setPeriods(builder.build()).setPositionInFirstPeriodUs(window.positionInFirstPeriodUs).setPresentationStartTimeMs(window.presentationStartTimeMs).setTracks(z ? state.currentTracks : Tracks.EMPTY).setWindowStartTimeMs(window.windowStartTimeMs).build();
         }
@@ -1078,7 +1103,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             }
 
             public Builder setDurationUs(long j) {
-                Assertions.checkArgument(j == C.TIME_UNSET || j >= 0);
+                Preconditions.checkArgument(j == C.TIME_UNSET || j >= 0);
                 this.durationUs = j;
                 return this;
             }
@@ -1190,7 +1215,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         this.applicationHandler = clock.createHandler(looper, null);
         this.pendingOperations = new HashSet<>();
         this.period = new Timeline.Period();
-        this.listeners = new ListenerSet<>(looper, clock, new ListenerSet.IterationFinishedEvent() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda38
+        this.listeners = new ListenerSet<>(looper, clock, new ListenerSet.IterationFinishedEvent() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda40
             @Override // androidx.media3.common.util.ListenerSet.IterationFinishedEvent
             public final void invoke(Object obj, FlagSet flagSet) {
                 SimpleBasePlayer.this.m8879lambda$new$0$androidxmedia3commonSimpleBasePlayer((Player.Listener) obj, flagSet);
@@ -1206,7 +1231,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
 
     @Override // androidx.media3.common.Player
     public final void addListener(Player.Listener listener) {
-        this.listeners.add((Player.Listener) Assertions.checkNotNull(listener));
+        this.listeners.add((Player.Listener) Preconditions.checkNotNull(listener));
     }
 
     @Override // androidx.media3.common.Player
@@ -1231,7 +1256,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(1)) {
-            updateStateForPendingOperation(handleSetPlayWhenReady(z), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda0
+            updateStateForPendingOperation(handleSetPlayWhenReady(z), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda11
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -1266,10 +1291,10 @@ public abstract class SimpleBasePlayer extends BasePlayer {
 
     @RequiresNonNull({RemoteConfigConstants.ResponseFieldKey.STATE})
     private void setMediaItemsInternal(final List<MediaItem> list, final int i, final long j) {
-        Assertions.checkArgument(i == -1 || i >= 0);
+        Preconditions.checkArgument(i == -1 || i >= 0);
         final State state = this.state;
         if (shouldHandleCommand(20) || (list.size() == 1 && shouldHandleCommand(31))) {
-            updateStateForPendingOperation(handleSetMediaItems(list, i, j), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda28
+            updateStateForPendingOperation(handleSetMediaItems(list, i, j), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda30
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     return SimpleBasePlayer.this.m8883x396b5ff4(list, state, i, j);
@@ -1291,14 +1316,14 @@ public abstract class SimpleBasePlayer extends BasePlayer {
     @Override // androidx.media3.common.Player
     public final void addMediaItems(int i, final List<MediaItem> list) {
         verifyApplicationThreadAndInitState();
-        Assertions.checkArgument(i >= 0);
+        Preconditions.checkArgument(i >= 0);
         final State state = this.state;
         int windowCount = state.timeline.getWindowCount();
         if (!shouldHandleCommand(20) || list.isEmpty()) {
             return;
         }
         final int min = Math.min(i, windowCount);
-        updateStateForPendingOperation(handleAddMediaItems(min, list), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda34
+        updateStateForPendingOperation(handleAddMediaItems(min, list), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda36
             @Override // com.google.common.base.Supplier
             public final Object get() {
                 return SimpleBasePlayer.this.m8877lambda$addMediaItems$3$androidxmedia3commonSimpleBasePlayer(state, list, min);
@@ -1322,14 +1347,14 @@ public abstract class SimpleBasePlayer extends BasePlayer {
     @Override // androidx.media3.common.Player
     public final void moveMediaItems(final int i, int i2, int i3) {
         verifyApplicationThreadAndInitState();
-        Assertions.checkArgument(i >= 0 && i2 >= i && i3 >= 0);
+        Preconditions.checkArgument(i >= 0 && i2 >= i && i3 >= 0);
         final State state = this.state;
         int windowCount = state.timeline.getWindowCount();
         if (shouldHandleCommand(20) && windowCount != 0 && i < windowCount) {
             final int min = Math.min(i2, windowCount);
             final int min2 = Math.min(i3, windowCount - (min - i));
             if (i != min && min2 != i) {
-                updateStateForPendingOperation(handleMoveMediaItems(i, min, min2), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda48
+                updateStateForPendingOperation(handleMoveMediaItems(i, min, min2), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda50
                     @Override // com.google.common.base.Supplier
                     public final Object get() {
                         return SimpleBasePlayer.this.m8878lambda$moveMediaItems$4$androidxmedia3commonSimpleBasePlayer(state, i, min, min2);
@@ -1350,14 +1375,14 @@ public abstract class SimpleBasePlayer extends BasePlayer {
     @Override // androidx.media3.common.Player
     public final void replaceMediaItems(final int i, int i2, final List<MediaItem> list) {
         verifyApplicationThreadAndInitState();
-        Assertions.checkArgument(i >= 0 && i <= i2);
+        Preconditions.checkArgument(i >= 0 && i <= i2);
         final State state = this.state;
         int windowCount = state.timeline.getWindowCount();
         if (!shouldHandleCommand(20) || i > windowCount) {
             return;
         }
         final int min = Math.min(i2, windowCount);
-        updateStateForPendingOperation(handleReplaceMediaItems(i, min, list), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda27
+        updateStateForPendingOperation(handleReplaceMediaItems(i, min, list), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda28
             @Override // com.google.common.base.Supplier
             public final Object get() {
                 return SimpleBasePlayer.this.m8881x7bc5132c(state, list, min, i);
@@ -1389,13 +1414,13 @@ public abstract class SimpleBasePlayer extends BasePlayer {
     public final void removeMediaItems(final int i, int i2) {
         final int min;
         verifyApplicationThreadAndInitState();
-        Assertions.checkArgument(i >= 0 && i2 >= i);
+        Preconditions.checkArgument(i >= 0 && i2 >= i);
         final State state = this.state;
         int windowCount = state.timeline.getWindowCount();
         if (!shouldHandleCommand(20) || windowCount == 0 || i >= windowCount || i == (min = Math.min(i2, windowCount))) {
             return;
         }
-        updateStateForPendingOperation(handleRemoveMediaItems(i, min), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda52
+        updateStateForPendingOperation(handleRemoveMediaItems(i, min), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda54
             @Override // com.google.common.base.Supplier
             public final Object get() {
                 return SimpleBasePlayer.this.m8880x3b22ba57(state, i, min);
@@ -1416,7 +1441,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(2)) {
-            updateStateForPendingOperation(handlePrepare(), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda56
+            updateStateForPendingOperation(handlePrepare(), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda58
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -1450,7 +1475,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(15)) {
-            updateStateForPendingOperation(handleSetRepeatMode(i), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda40
+            updateStateForPendingOperation(handleSetRepeatMode(i), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda42
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -1472,7 +1497,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(14)) {
-            updateStateForPendingOperation(handleSetShuffleModeEnabled(z), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda35
+            updateStateForPendingOperation(handleSetShuffleModeEnabled(z), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda37
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -1498,11 +1523,11 @@ public abstract class SimpleBasePlayer extends BasePlayer {
     @Override // androidx.media3.common.BasePlayer
     protected final void seekTo(final int i, final long j, int i2, boolean z) {
         verifyApplicationThreadAndInitState();
-        Assertions.checkArgument(i == -1 || i >= 0);
+        Preconditions.checkArgument(i == -1 || i >= 0);
         final State state = this.state;
         if (shouldHandleCommand(i2)) {
             final boolean z2 = i == -1 || isPlayingAd() || (!state.timeline.isEmpty() && i >= state.timeline.getWindowCount());
-            updateStateForPendingOperation(handleSeek(i, j, i2), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda51
+            updateStateForPendingOperation(handleSeek(i, j, i2), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda53
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     return SimpleBasePlayer.this.m8882lambda$seekTo$10$androidxmedia3commonSimpleBasePlayer(z2, state, i, j);
@@ -1540,7 +1565,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(13)) {
-            updateStateForPendingOperation(handleSetPlaybackParameters(playbackParameters), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda58
+            updateStateForPendingOperation(handleSetPlaybackParameters(playbackParameters), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda60
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -1562,7 +1587,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(3)) {
-            updateStateForPendingOperation(handleStop(), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda54
+            updateStateForPendingOperation(handleStop(), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda57
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     return SimpleBasePlayer.this.m8884lambda$stop$12$androidxmedia3commonSimpleBasePlayer(state);
@@ -1582,7 +1607,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(32)) {
-            updateStateForPendingOperation(handleRelease(), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda43
+            updateStateForPendingOperation(handleRelease(), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda46
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     return SimpleBasePlayer.lambda$release$13(SimpleBasePlayer.State.this);
@@ -1611,7 +1636,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(29)) {
-            updateStateForPendingOperation(handleSetTrackSelectionParameters(trackSelectionParameters), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda60
+            updateStateForPendingOperation(handleSetTrackSelectionParameters(trackSelectionParameters), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda62
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -1639,7 +1664,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(19)) {
-            updateStateForPendingOperation(handleSetPlaylistMetadata(mediaMetadata), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda39
+            updateStateForPendingOperation(handleSetPlaylistMetadata(mediaMetadata), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda41
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -1736,11 +1761,17 @@ public abstract class SimpleBasePlayer extends BasePlayer {
     }
 
     @Override // androidx.media3.common.Player
+    public final int getAudioSessionId() {
+        verifyApplicationThreadAndInitState();
+        return this.state.audioSessionId;
+    }
+
+    @Override // androidx.media3.common.Player
     public final void setVolume(final float f) {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(24)) {
-            updateStateForPendingOperation(handleSetVolume(f), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda41
+            updateStateForPendingOperation(handleSetVolume(f, 0), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda43
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -1758,6 +1789,38 @@ public abstract class SimpleBasePlayer extends BasePlayer {
     }
 
     @Override // androidx.media3.common.Player
+    public final void mute() {
+        verifyApplicationThreadAndInitState();
+        final State state = this.state;
+        if (shouldHandleCommand(24) && this.state.volume != 0.0f) {
+            updateStateForPendingOperation(handleSetVolume(0.0f, 1), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda29
+                @Override // com.google.common.base.Supplier
+                public final Object get() {
+                    SimpleBasePlayer.State build;
+                    build = SimpleBasePlayer.State.this.buildUpon().setVolume(0.0f).build();
+                    return build;
+                }
+            });
+        }
+    }
+
+    @Override // androidx.media3.common.Player
+    public final void unmute() {
+        verifyApplicationThreadAndInitState();
+        final State state = this.state;
+        if (shouldHandleCommand(24) && this.state.volume == 0.0f) {
+            updateStateForPendingOperation(handleSetVolume(state.unmuteVolume, 2), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda0
+                @Override // com.google.common.base.Supplier
+                public final Object get() {
+                    SimpleBasePlayer.State build;
+                    build = r0.buildUpon().setVolume(SimpleBasePlayer.State.this.unmuteVolume).build();
+                    return build;
+                }
+            });
+        }
+    }
+
+    @Override // androidx.media3.common.Player
     public final void setVideoSurface(Surface surface) {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
@@ -1765,7 +1828,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             if (surface == null) {
                 clearVideoSurface();
             } else {
-                updateStateForPendingOperation(handleSetVideoOutput(surface), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda29
+                updateStateForPendingOperation(handleSetVideoOutput(surface), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda31
                     @Override // com.google.common.base.Supplier
                     public final Object get() {
                         SimpleBasePlayer.State build;
@@ -1785,7 +1848,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             if (surfaceHolder == null) {
                 clearVideoSurface();
             } else {
-                updateStateForPendingOperation(handleSetVideoOutput(surfaceHolder), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda42
+                updateStateForPendingOperation(handleSetVideoOutput(surfaceHolder), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda45
                     @Override // com.google.common.base.Supplier
                     public final Object get() {
                         SimpleBasePlayer.State build;
@@ -1805,7 +1868,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             if (surfaceView == null) {
                 clearVideoSurface();
             } else {
-                updateStateForPendingOperation(handleSetVideoOutput(surfaceView), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda45
+                updateStateForPendingOperation(handleSetVideoOutput(surfaceView), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda47
                     @Override // com.google.common.base.Supplier
                     public final Object get() {
                         SimpleBasePlayer.State build;
@@ -1832,7 +1895,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             } else {
                 size = Size.ZERO;
             }
-            updateStateForPendingOperation(handleSetVideoOutput(textureView), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda22
+            updateStateForPendingOperation(handleSetVideoOutput(textureView), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda33
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -1872,7 +1935,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(27)) {
-            updateStateForPendingOperation(handleClearVideoOutput(obj), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda47
+            updateStateForPendingOperation(handleClearVideoOutput(obj), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda49
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -1925,7 +1988,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(25)) {
-            updateStateForPendingOperation(handleSetDeviceVolume(i, 1), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda11
+            updateStateForPendingOperation(handleSetDeviceVolume(i, 1), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda22
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -1941,7 +2004,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(33)) {
-            updateStateForPendingOperation(handleSetDeviceVolume(i, i2), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda36
+            updateStateForPendingOperation(handleSetDeviceVolume(i, i2), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda38
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -1958,7 +2021,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(26)) {
-            updateStateForPendingOperation(handleIncreaseDeviceVolume(1), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda49
+            updateStateForPendingOperation(handleIncreaseDeviceVolume(1), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda51
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -1974,7 +2037,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(34)) {
-            updateStateForPendingOperation(handleIncreaseDeviceVolume(i), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda32
+            updateStateForPendingOperation(handleIncreaseDeviceVolume(i), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda35
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -1991,7 +2054,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(26)) {
-            updateStateForPendingOperation(handleDecreaseDeviceVolume(1), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda37
+            updateStateForPendingOperation(handleDecreaseDeviceVolume(1), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda39
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -2008,7 +2071,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(34)) {
-            updateStateForPendingOperation(handleDecreaseDeviceVolume(i), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda57
+            updateStateForPendingOperation(handleDecreaseDeviceVolume(i), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda59
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -2026,7 +2089,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(26)) {
-            updateStateForPendingOperation(handleSetDeviceMuted(z, 1), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda46
+            updateStateForPendingOperation(handleSetDeviceMuted(z, 1), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda48
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -2042,7 +2105,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(34)) {
-            updateStateForPendingOperation(handleSetDeviceMuted(z, i), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda59
+            updateStateForPendingOperation(handleSetDeviceMuted(z, i), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda61
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -2058,7 +2121,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         verifyApplicationThreadAndInitState();
         final State state = this.state;
         if (shouldHandleCommand(35)) {
-            updateStateForPendingOperation(handleSetAudioAttributes(audioAttributes, z), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda50
+            updateStateForPendingOperation(handleSetAudioAttributes(audioAttributes, z), new Supplier() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda52
                 @Override // com.google.common.base.Supplier
                 public final Object get() {
                     SimpleBasePlayer.State build;
@@ -2118,8 +2181,13 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         throw new IllegalStateException("Missing implementation to handle COMMAND_SET_PLAYLIST_METADATA");
     }
 
+    @Deprecated
     protected ListenableFuture<?> handleSetVolume(float f) {
         throw new IllegalStateException("Missing implementation to handle COMMAND_SET_VOLUME");
+    }
+
+    protected ListenableFuture<?> handleSetVolume(float f, int i) {
+        return handleSetVolume(f);
     }
 
     protected ListenableFuture<?> handleSetDeviceVolume(int i, int i2) {
@@ -2168,10 +2236,10 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             return handleAddMediaItems;
         }
         final ListenableFuture<?> handleRemoveMediaItems = handleRemoveMediaItems(i, i2);
-        return Util.transformFutureAsync(handleAddMediaItems, new AsyncFunction() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda53
+        return Util.transformFutureAsync(handleAddMediaItems, new AsyncFunction() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda56
             @Override // com.google.common.util.concurrent.AsyncFunction
             public final ListenableFuture apply(Object obj) {
-                return SimpleBasePlayer.lambda$handleReplaceMediaItems$31(ListenableFuture.this, obj);
+                return SimpleBasePlayer.lambda$handleReplaceMediaItems$33(ListenableFuture.this, obj);
             }
         });
     }
@@ -2209,7 +2277,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         final int mediaItemTransitionReason = getMediaItemTransitionReason(state2, state, positionDiscontinuityReason, z2, this.window);
         if (!equals) {
             final int timelineChangeReason = getTimelineChangeReason(state2.timeline, state.timeline, this.window);
-            this.listeners.queueEvent(0, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda33
+            this.listeners.queueEvent(0, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda44
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     Player.Listener listener = (Player.Listener) obj;
@@ -2220,16 +2288,16 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         if (positionDiscontinuityReason != -1) {
             final Player.PositionInfo positionInfo = getPositionInfo(state2, false, this.window, this.period);
             final Player.PositionInfo positionInfo2 = getPositionInfo(state, state.hasPositionDiscontinuity, this.window, this.period);
-            this.listeners.queueEvent(11, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda5
+            this.listeners.queueEvent(11, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda6
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
-                    SimpleBasePlayer.lambda$updateStateAndInformListeners$33(positionDiscontinuityReason, positionInfo, positionInfo2, (Player.Listener) obj);
+                    SimpleBasePlayer.lambda$updateStateAndInformListeners$35(positionDiscontinuityReason, positionInfo, positionInfo2, (Player.Listener) obj);
                 }
             });
         }
         if (mediaItemTransitionReason != -1) {
             final MediaItem mediaItem = state.timeline.isEmpty() ? null : state.timeline.getWindow(getCurrentMediaItemIndexInternal(state), this.window).mediaItem;
-            this.listeners.queueEvent(1, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda17
+            this.listeners.queueEvent(1, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda18
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onMediaItemTransition(MediaItem.this, mediaItemTransitionReason);
@@ -2237,14 +2305,14 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (!Objects.equals(state2.playerError, state.playerError)) {
-            this.listeners.queueEvent(10, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda19
+            this.listeners.queueEvent(10, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda20
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onPlayerErrorChanged(SimpleBasePlayer.State.this.playerError);
                 }
             });
             if (state.playerError != null) {
-                this.listeners.queueEvent(10, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda20
+                this.listeners.queueEvent(10, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda21
                     @Override // androidx.media3.common.util.ListenerSet.Event
                     public final void invoke(Object obj) {
                         ((Player.Listener) obj).onPlayerError((PlaybackException) Util.castNonNull(SimpleBasePlayer.State.this.playerError));
@@ -2253,7 +2321,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             }
         }
         if (!state2.trackSelectionParameters.equals(state.trackSelectionParameters)) {
-            this.listeners.queueEvent(19, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda21
+            this.listeners.queueEvent(19, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda23
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onTrackSelectionParametersChanged(SimpleBasePlayer.State.this.trackSelectionParameters);
@@ -2261,7 +2329,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (!state2.currentTracks.equals(state.currentTracks)) {
-            this.listeners.queueEvent(2, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda23
+            this.listeners.queueEvent(2, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda24
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onTracksChanged(SimpleBasePlayer.State.this.currentTracks);
@@ -2269,7 +2337,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (!state2.currentMetadata.equals(state.currentMetadata)) {
-            this.listeners.queueEvent(14, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda24
+            this.listeners.queueEvent(14, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda25
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onMediaMetadataChanged(SimpleBasePlayer.State.this.currentMetadata);
@@ -2277,15 +2345,15 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (state2.isLoading != state.isLoading) {
-            this.listeners.queueEvent(3, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda25
+            this.listeners.queueEvent(3, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda26
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
-                    SimpleBasePlayer.lambda$updateStateAndInformListeners$40(SimpleBasePlayer.State.this, (Player.Listener) obj);
+                    SimpleBasePlayer.lambda$updateStateAndInformListeners$42(SimpleBasePlayer.State.this, (Player.Listener) obj);
                 }
             });
         }
         if (z3 || z4) {
-            this.listeners.queueEvent(-1, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda26
+            this.listeners.queueEvent(-1, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda27
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onPlayerStateChanged(r0.playWhenReady, SimpleBasePlayer.State.this.playbackState);
@@ -2293,7 +2361,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (z4) {
-            this.listeners.queueEvent(4, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda44
+            this.listeners.queueEvent(4, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda55
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onPlaybackStateChanged(SimpleBasePlayer.State.this.playbackState);
@@ -2301,7 +2369,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (z3 || state2.playWhenReadyChangeReason != state.playWhenReadyChangeReason) {
-            this.listeners.queueEvent(5, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda55
+            this.listeners.queueEvent(5, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda63
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onPlayWhenReadyChanged(r0.playWhenReady, SimpleBasePlayer.State.this.playWhenReadyChangeReason);
@@ -2309,7 +2377,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (state2.playbackSuppressionReason != state.playbackSuppressionReason) {
-            this.listeners.queueEvent(6, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda61
+            this.listeners.queueEvent(6, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda64
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onPlaybackSuppressionReasonChanged(SimpleBasePlayer.State.this.playbackSuppressionReason);
@@ -2317,7 +2385,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (isPlaying(state2) != isPlaying(state)) {
-            this.listeners.queueEvent(7, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda62
+            this.listeners.queueEvent(7, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda65
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onIsPlayingChanged(SimpleBasePlayer.isPlaying(SimpleBasePlayer.State.this));
@@ -2325,7 +2393,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (!state2.playbackParameters.equals(state.playbackParameters)) {
-            this.listeners.queueEvent(12, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda63
+            this.listeners.queueEvent(12, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda66
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onPlaybackParametersChanged(SimpleBasePlayer.State.this.playbackParameters);
@@ -2333,7 +2401,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (state2.repeatMode != state.repeatMode) {
-            this.listeners.queueEvent(8, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda64
+            this.listeners.queueEvent(8, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda1
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onRepeatModeChanged(SimpleBasePlayer.State.this.repeatMode);
@@ -2341,7 +2409,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (state2.shuffleModeEnabled != state.shuffleModeEnabled) {
-            this.listeners.queueEvent(9, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda1
+            this.listeners.queueEvent(9, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda2
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onShuffleModeEnabledChanged(SimpleBasePlayer.State.this.shuffleModeEnabled);
@@ -2349,7 +2417,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (state2.seekBackIncrementMs != state.seekBackIncrementMs) {
-            this.listeners.queueEvent(16, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda2
+            this.listeners.queueEvent(16, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda3
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onSeekBackIncrementChanged(SimpleBasePlayer.State.this.seekBackIncrementMs);
@@ -2357,7 +2425,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (state2.seekForwardIncrementMs != state.seekForwardIncrementMs) {
-            this.listeners.queueEvent(17, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda3
+            this.listeners.queueEvent(17, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda4
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onSeekForwardIncrementChanged(SimpleBasePlayer.State.this.seekForwardIncrementMs);
@@ -2365,7 +2433,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (state2.maxSeekToPreviousPositionMs != state.maxSeekToPreviousPositionMs) {
-            this.listeners.queueEvent(18, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda4
+            this.listeners.queueEvent(18, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda5
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onMaxSeekToPreviousPositionChanged(SimpleBasePlayer.State.this.maxSeekToPreviousPositionMs);
@@ -2373,7 +2441,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (!state2.audioAttributes.equals(state.audioAttributes)) {
-            this.listeners.queueEvent(20, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda6
+            this.listeners.queueEvent(20, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda7
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onAudioAttributesChanged(SimpleBasePlayer.State.this.audioAttributes);
@@ -2381,7 +2449,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (!state2.videoSize.equals(state.videoSize)) {
-            this.listeners.queueEvent(25, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda7
+            this.listeners.queueEvent(25, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda8
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onVideoSizeChanged(SimpleBasePlayer.State.this.videoSize);
@@ -2389,7 +2457,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (!state2.deviceInfo.equals(state.deviceInfo)) {
-            this.listeners.queueEvent(29, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda8
+            this.listeners.queueEvent(29, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda9
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onDeviceInfoChanged(SimpleBasePlayer.State.this.deviceInfo);
@@ -2397,7 +2465,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (!state2.playlistMetadata.equals(state.playlistMetadata)) {
-            this.listeners.queueEvent(15, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda9
+            this.listeners.queueEvent(15, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda10
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onPlaylistMetadataChanged(SimpleBasePlayer.State.this.playlistMetadata);
@@ -2405,10 +2473,10 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (state.newlyRenderedFirstFrame) {
-            this.listeners.queueEvent(26, new SimpleBasePlayer$$ExternalSyntheticLambda10());
+            this.listeners.queueEvent(26, new SimpleBasePlayer$$ExternalSyntheticLambda12());
         }
         if (!state2.surfaceSize.equals(state.surfaceSize)) {
-            this.listeners.queueEvent(24, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda12
+            this.listeners.queueEvent(24, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda13
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onSurfaceSizeChanged(r0.surfaceSize.getWidth(), SimpleBasePlayer.State.this.surfaceSize.getHeight());
@@ -2416,7 +2484,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (state2.volume != state.volume) {
-            this.listeners.queueEvent(22, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda13
+            this.listeners.queueEvent(22, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda14
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onVolumeChanged(SimpleBasePlayer.State.this.volume);
@@ -2424,7 +2492,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (state2.deviceVolume != state.deviceVolume || state2.isDeviceMuted != state.isDeviceMuted) {
-            this.listeners.queueEvent(30, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda14
+            this.listeners.queueEvent(30, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda15
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onDeviceVolumeChanged(r0.deviceVolume, SimpleBasePlayer.State.this.isDeviceMuted);
@@ -2432,15 +2500,15 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (!state2.currentCues.equals(state.currentCues)) {
-            this.listeners.queueEvent(27, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda15
+            this.listeners.queueEvent(27, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda16
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
-                    SimpleBasePlayer.lambda$updateStateAndInformListeners$59(SimpleBasePlayer.State.this, (Player.Listener) obj);
+                    SimpleBasePlayer.lambda$updateStateAndInformListeners$61(SimpleBasePlayer.State.this, (Player.Listener) obj);
                 }
             });
         }
         if (!state2.timedMetadata.equals(state.timedMetadata) && state.timedMetadata.presentationTimeUs != C.TIME_UNSET) {
-            this.listeners.queueEvent(28, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda16
+            this.listeners.queueEvent(28, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda17
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onMetadata(SimpleBasePlayer.State.this.timedMetadata);
@@ -2448,7 +2516,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             });
         }
         if (!state2.availableCommands.equals(state.availableCommands)) {
-            this.listeners.queueEvent(13, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda18
+            this.listeners.queueEvent(13, new ListenerSet.Event() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda19
                 @Override // androidx.media3.common.util.ListenerSet.Event
                 public final void invoke(Object obj) {
                     ((Player.Listener) obj).onAvailableCommandsChanged(SimpleBasePlayer.State.this.availableCommands);
@@ -2459,19 +2527,19 @@ public abstract class SimpleBasePlayer extends BasePlayer {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void lambda$updateStateAndInformListeners$33(int i, Player.PositionInfo positionInfo, Player.PositionInfo positionInfo2, Player.Listener listener) {
+    public static /* synthetic */ void lambda$updateStateAndInformListeners$35(int i, Player.PositionInfo positionInfo, Player.PositionInfo positionInfo2, Player.Listener listener) {
         listener.onPositionDiscontinuity(i);
         listener.onPositionDiscontinuity(positionInfo, positionInfo2, i);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void lambda$updateStateAndInformListeners$40(State state, Player.Listener listener) {
+    public static /* synthetic */ void lambda$updateStateAndInformListeners$42(State state, Player.Listener listener) {
         listener.onLoadingChanged(state.isLoading);
         listener.onIsLoadingChanged(state.isLoading);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public static /* synthetic */ void lambda$updateStateAndInformListeners$59(State state, Player.Listener listener) {
+    public static /* synthetic */ void lambda$updateStateAndInformListeners$61(State state, Player.Listener listener) {
         listener.onCues(state.currentCues.cues);
         listener.onCues(state.currentCues);
     }
@@ -2497,12 +2565,12 @@ public abstract class SimpleBasePlayer extends BasePlayer {
         }
         this.pendingOperations.add(listenableFuture);
         updateStateAndInformListeners(getPlaceholderState(supplier.get()), z, z2);
-        listenableFuture.addListener(new Runnable() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda30
+        listenableFuture.addListener(new Runnable() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda32
             @Override // java.lang.Runnable
             public final void run() {
-                SimpleBasePlayer.this.m8885x9bf3217a(listenableFuture);
+                SimpleBasePlayer.this.m8885xb533777c(listenableFuture);
             }
-        }, new Executor() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda31
+        }, new Executor() { // from class: androidx.media3.common.SimpleBasePlayer$$ExternalSyntheticLambda34
             @Override // java.util.concurrent.Executor
             public final void execute(Runnable runnable) {
                 SimpleBasePlayer.this.postOrRunOnApplicationHandler(runnable);
@@ -2511,8 +2579,8 @@ public abstract class SimpleBasePlayer extends BasePlayer {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    /* renamed from: lambda$updateStateForPendingOperation$62$androidx-media3-common-SimpleBasePlayer  reason: not valid java name */
-    public /* synthetic */ void m8885x9bf3217a(ListenableFuture listenableFuture) {
+    /* renamed from: lambda$updateStateForPendingOperation$64$androidx-media3-common-SimpleBasePlayer  reason: not valid java name */
+    public /* synthetic */ void m8885xb533777c(ListenableFuture listenableFuture) {
         Util.castNonNull(this.state);
         this.pendingOperations.remove(listenableFuture);
         if (!this.pendingOperations.isEmpty() || this.released) {
@@ -2645,25 +2713,23 @@ public abstract class SimpleBasePlayer extends BasePlayer {
     }
 
     private static Player.PositionInfo getPositionInfo(State state, boolean z, Timeline.Window window, Timeline.Period period) {
-        MediaItem mediaItem;
         Object obj;
+        MediaItem mediaItem;
         Object obj2;
-        int i;
         long contentPositionMsInternal;
         long j;
         int currentMediaItemIndexInternal = getCurrentMediaItemIndexInternal(state);
+        int currentPeriodIndexInternal = getCurrentPeriodIndexInternal(state, window, period);
         if (state.timeline.isEmpty()) {
-            mediaItem = null;
             obj = null;
+            mediaItem = null;
             obj2 = null;
-            i = -1;
         } else {
-            int currentPeriodIndexInternal = getCurrentPeriodIndexInternal(state, window, period);
             Object obj3 = state.timeline.getPeriod(currentPeriodIndexInternal, period, true).uid;
-            obj = state.timeline.getWindow(currentMediaItemIndexInternal, window).uid;
+            Object obj4 = state.timeline.getWindow(currentMediaItemIndexInternal, window).uid;
             obj2 = obj3;
             mediaItem = window.mediaItem;
-            i = currentPeriodIndexInternal;
+            obj = obj4;
         }
         if (z) {
             j = state.discontinuityPositionMs;
@@ -2672,7 +2738,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             contentPositionMsInternal = getContentPositionMsInternal(state, window);
             j = state.currentAdGroupIndex != -1 ? state.adPositionMsSupplier.get() : contentPositionMsInternal;
         }
-        return new Player.PositionInfo(obj, currentMediaItemIndexInternal, mediaItem, obj2, i, j, contentPositionMsInternal, state.currentAdGroupIndex, state.currentAdIndexInAdGroup);
+        return new Player.PositionInfo(obj, currentMediaItemIndexInternal, mediaItem, obj2, currentPeriodIndexInternal, j, contentPositionMsInternal, state.currentAdGroupIndex, state.currentAdIndexInAdGroup);
     }
 
     private static int getMediaItemTransitionReason(State state, State state2, int i, boolean z, Timeline.Window window) {
@@ -2716,7 +2782,7 @@ public abstract class SimpleBasePlayer extends BasePlayer {
             }
             return -1;
         }
-        Object checkNotNull = Assertions.checkNotNull(timeline.getPeriod(timeline.getWindow(i, window).firstPeriodIndex, period, true).uid);
+        Object checkNotNull = Preconditions.checkNotNull(timeline.getPeriod(timeline.getWindow(i, window).firstPeriodIndex, period, true).uid);
         if (timeline2.getIndexOfPeriod(checkNotNull) == -1) {
             return -1;
         }

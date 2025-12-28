@@ -10,12 +10,12 @@ import io.appmetrica.analytics.coreutils.internal.encryption.AESEncrypter;
 public final class Om extends Sm {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f724a;
+    public final /* synthetic */ String f725a;
     public final /* synthetic */ ProtobufStateSerializer b;
     public final /* synthetic */ ProtobufConverter c;
 
     public Om(String str, ProtobufStateSerializer protobufStateSerializer, ProtobufConverter protobufConverter) {
-        this.f724a = str;
+        this.f725a = str;
         this.b = protobufStateSerializer;
         this.c = protobufConverter;
     }
@@ -39,7 +39,7 @@ public final class Om extends Sm {
     public final ProtobufStateStorage a(Context context, IBinaryDataHelper iBinaryDataHelper) {
         byte[] bArr;
         byte[] bArr2;
-        String str = this.f724a;
+        String str = this.f725a;
         ProtobufStateSerializer protobufStateSerializer = this.b;
         try {
             bArr = AbstractC0301hj.a(context.getPackageName());

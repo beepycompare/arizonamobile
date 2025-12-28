@@ -1,10 +1,10 @@
 package androidx.media3.exoplayer.upstream.experimental;
 
 import android.os.Handler;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Clock;
 import androidx.media3.datasource.DataSource;
 import androidx.media3.exoplayer.upstream.BandwidthMeter;
+import com.google.common.base.Preconditions;
 /* loaded from: classes3.dex */
 public class CombinedParallelSampleBandwidthEstimator implements BandwidthEstimator {
     private long bandwidthEstimate;
@@ -32,19 +32,19 @@ public class CombinedParallelSampleBandwidthEstimator implements BandwidthEstima
         private int minSamples;
 
         public Builder setBandwidthStatistic(BandwidthStatistic bandwidthStatistic) {
-            Assertions.checkNotNull(bandwidthStatistic);
+            Preconditions.checkNotNull(bandwidthStatistic);
             this.bandwidthStatistic = bandwidthStatistic;
             return this;
         }
 
         public Builder setMinSamples(int i) {
-            Assertions.checkArgument(i >= 0);
+            Preconditions.checkArgument(i >= 0);
             this.minSamples = i;
             return this;
         }
 
         public Builder setMinBytesTransferred(long j) {
-            Assertions.checkArgument(j >= 0);
+            Preconditions.checkArgument(j >= 0);
             this.minBytesTransferred = j;
             return this;
         }
@@ -96,7 +96,7 @@ public class CombinedParallelSampleBandwidthEstimator implements BandwidthEstima
 
     @Override // androidx.media3.exoplayer.upstream.experimental.BandwidthEstimator
     public void onTransferEnd(DataSource dataSource) {
-        Assertions.checkState(this.streamCount > 0);
+        Preconditions.checkState(this.streamCount > 0);
         int i = this.streamCount - 1;
         this.streamCount = i;
         if (i <= 0) {

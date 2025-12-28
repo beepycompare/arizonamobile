@@ -84,13 +84,13 @@ public final class BroadcastFrameClock implements MonotonicFrameClock {
             CancellableContinuation<? super R> cancellableContinuation = this.continuation;
             if (cancellableContinuation != null) {
                 Result.Companion companion = Result.Companion;
-                cancellableContinuation.resumeWith(Result.m10216constructorimpl(ResultKt.createFailure(th)));
+                cancellableContinuation.resumeWith(Result.m10244constructorimpl(ResultKt.createFailure(th)));
             }
         }
 
         public final void resume(long j) {
             CancellableContinuation<? super R> cancellableContinuation;
-            Object m10216constructorimpl;
+            Object m10244constructorimpl;
             Function1<? super Long, ? extends R> function1 = this.onFrame;
             if (function1 == null || (cancellableContinuation = this.continuation) == null) {
                 return;
@@ -98,12 +98,12 @@ public final class BroadcastFrameClock implements MonotonicFrameClock {
             try {
                 Result.Companion companion = Result.Companion;
                 FrameAwaiter<R> frameAwaiter = this;
-                m10216constructorimpl = Result.m10216constructorimpl(function1.invoke(Long.valueOf(j)));
+                m10244constructorimpl = Result.m10244constructorimpl(function1.invoke(Long.valueOf(j)));
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m10216constructorimpl = Result.m10216constructorimpl(ResultKt.createFailure(th));
+                m10244constructorimpl = Result.m10244constructorimpl(ResultKt.createFailure(th));
             }
-            cancellableContinuation.resumeWith(m10216constructorimpl);
+            cancellableContinuation.resumeWith(m10244constructorimpl);
         }
     }
 

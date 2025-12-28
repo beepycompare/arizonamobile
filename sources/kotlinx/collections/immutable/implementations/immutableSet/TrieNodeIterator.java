@@ -30,7 +30,7 @@ public final class TrieNodeIterator<E> {
     }
 
     public final void moveToNextCell() {
-        CommonFunctionsKt.m11716assert(hasNextCell());
+        CommonFunctionsKt.m11754assert(hasNextCell());
         this.index++;
     }
 
@@ -39,12 +39,12 @@ public final class TrieNodeIterator<E> {
     }
 
     public final E currentElement() {
-        CommonFunctionsKt.m11716assert(hasNextElement());
+        CommonFunctionsKt.m11754assert(hasNextElement());
         return (E) this.buffer[this.index];
     }
 
     public final E nextElement() {
-        CommonFunctionsKt.m11716assert(hasNextElement());
+        CommonFunctionsKt.m11754assert(hasNextElement());
         Object[] objArr = this.buffer;
         int i = this.index;
         this.index = i + 1;
@@ -56,7 +56,7 @@ public final class TrieNodeIterator<E> {
     }
 
     public final TrieNode<? extends E> currentNode() {
-        CommonFunctionsKt.m11716assert(hasNextNode());
+        CommonFunctionsKt.m11754assert(hasNextNode());
         Object obj = this.buffer[this.index];
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlinx.collections.immutable.implementations.immutableSet.TrieNode<E of kotlinx.collections.immutable.implementations.immutableSet.TrieNodeIterator>");
         return (TrieNode) obj;

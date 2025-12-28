@@ -26,11 +26,11 @@ public final class C0116af extends AbstractC0747zd implements Co {
     }
 
     public final long a(int i2) {
-        return this.f862a.getLong(e.b, i2);
+        return this.f863a.getLong(e.b, i2);
     }
 
     public final boolean b(boolean z) {
-        return this.f862a.getBoolean(f.b, z);
+        return this.f863a.getBoolean(f.b, z);
     }
 
     public final C0116af c(boolean z) {
@@ -42,7 +42,7 @@ public final class C0116af extends AbstractC0747zd implements Co {
     }
 
     public final boolean e() {
-        return this.f862a.getBoolean(d.b, false);
+        return this.f863a.getBoolean(d.b, false);
     }
 
     public final void f(boolean z) {
@@ -58,15 +58,15 @@ public final class C0116af extends AbstractC0747zd implements Co {
     }
 
     public final boolean i() {
-        return this.f862a.getBoolean(o.b, false);
+        return this.f863a.getBoolean(o.b, false);
     }
 
     public final boolean j() {
-        return this.f862a.getBoolean(p.b, false);
+        return this.f863a.getBoolean(p.b, false);
     }
 
     public final long a(long j2) {
-        return this.f862a.getLong(h.b, j2);
+        return this.f863a.getLong(h.b, j2);
     }
 
     public final C0116af b(long j2) {
@@ -86,12 +86,12 @@ public final class C0116af extends AbstractC0747zd implements Co {
     }
 
     public final long f() {
-        return this.f862a.getLong(r.b, 0L);
+        return this.f863a.getLong(r.b, 0L);
     }
 
     @Override // io.appmetrica.analytics.impl.Co
     public final String a() {
-        return this.f862a.getString(q.b, null);
+        return this.f863a.getString(q.b, null);
     }
 
     public final C0116af b(Ud ud, int i2) {
@@ -109,13 +109,13 @@ public final class C0116af extends AbstractC0747zd implements Co {
 
     @Override // io.appmetrica.analytics.impl.Ye
     public final Set<String> c() {
-        return this.f862a.a();
+        return this.f863a.a();
     }
 
     public final Boolean d() {
         Ze ze = g;
-        if (this.f862a.a(ze.b)) {
-            return Boolean.valueOf(this.f862a.getBoolean(ze.b, true));
+        if (this.f863a.a(ze.b)) {
+            return Boolean.valueOf(this.f863a.getBoolean(ze.b, true));
         }
         return null;
     }
@@ -131,7 +131,7 @@ public final class C0116af extends AbstractC0747zd implements Co {
     }
 
     public final boolean a(boolean z) {
-        return this.f862a.getBoolean(s.b, z);
+        return this.f863a.getBoolean(s.b, z);
     }
 
     public final int a(Ud ud, int i2) {
@@ -147,7 +147,7 @@ public final class C0116af extends AbstractC0747zd implements Co {
         if (ze == null) {
             return i2;
         }
-        return this.f862a.getInt(ze.b, i2);
+        return this.f863a.getInt(ze.b, i2);
     }
 
     public final C0116af b(Ud ud, long j2) {
@@ -176,6 +176,6 @@ public final class C0116af extends AbstractC0747zd implements Co {
         if (ze == null) {
             return j2;
         }
-        return this.f862a.getLong(ze.b, j2);
+        return this.f863a.getLong(ze.b, j2);
     }
 }

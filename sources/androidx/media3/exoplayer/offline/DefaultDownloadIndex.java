@@ -9,12 +9,12 @@ import android.net.Uri;
 import android.text.TextUtils;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.StreamKey;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.database.DatabaseIOException;
 import androidx.media3.database.DatabaseProvider;
 import androidx.media3.database.VersionTable;
 import androidx.media3.exoplayer.offline.DownloadRequest;
+import com.google.common.base.Preconditions;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.ArrayList;
 import java.util.List;
@@ -308,7 +308,7 @@ public final class DefaultDownloadIndex implements WritableDownloadIndex {
     /* JADX INFO: Access modifiers changed from: private */
     public static Download getDownloadForCurrentRow(Cursor cursor) {
         byte[] blob = cursor.getBlob(14);
-        DownloadRequest.Builder streamKeys = new DownloadRequest.Builder((String) Assertions.checkNotNull(cursor.getString(0)), Uri.parse((String) Assertions.checkNotNull(cursor.getString(2)))).setMimeType(cursor.getString(1)).setStreamKeys(decodeStreamKeys(cursor.getString(3)));
+        DownloadRequest.Builder streamKeys = new DownloadRequest.Builder((String) Preconditions.checkNotNull(cursor.getString(0)), Uri.parse((String) Preconditions.checkNotNull(cursor.getString(2)))).setMimeType(cursor.getString(1)).setStreamKeys(decodeStreamKeys(cursor.getString(3)));
         if (blob.length <= 0) {
             blob = null;
         }
@@ -321,7 +321,7 @@ public final class DefaultDownloadIndex implements WritableDownloadIndex {
     }
 
     private static Download getDownloadForCurrentRowV2(Cursor cursor) {
-        DownloadRequest build = new DownloadRequest.Builder((String) Assertions.checkNotNull(cursor.getString(0)), Uri.parse((String) Assertions.checkNotNull(cursor.getString(2)))).setMimeType(inferMimeType(cursor.getString(1))).setStreamKeys(decodeStreamKeys(cursor.getString(3))).setCustomCacheKey(cursor.getString(4)).setData(cursor.getBlob(5)).build();
+        DownloadRequest build = new DownloadRequest.Builder((String) Preconditions.checkNotNull(cursor.getString(0)), Uri.parse((String) Preconditions.checkNotNull(cursor.getString(2)))).setMimeType(inferMimeType(cursor.getString(1))).setStreamKeys(decodeStreamKeys(cursor.getString(3))).setCustomCacheKey(cursor.getString(4)).setData(cursor.getBlob(5)).build();
         DownloadProgress downloadProgress = new DownloadProgress();
         downloadProgress.bytesDownloaded = cursor.getLong(13);
         downloadProgress.percentDownloaded = cursor.getFloat(12);
@@ -334,7 +334,7 @@ public final class DefaultDownloadIndex implements WritableDownloadIndex {
         if (!TextUtils.isEmpty(str)) {
             for (String str2 : Util.split(str, StringUtils.COMMA)) {
                 String[] split = Util.split(str2, "\\.");
-                Assertions.checkState(split.length == 3);
+                Preconditions.checkState(split.length == 3);
                 arrayList.add(new StreamKey(Integer.parseInt(split[0]), Integer.parseInt(split[1]), Integer.parseInt(split[2])));
             }
         }

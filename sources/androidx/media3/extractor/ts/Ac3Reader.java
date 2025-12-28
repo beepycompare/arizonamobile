@@ -3,7 +3,6 @@ package androidx.media3.extractor.ts;
 import androidx.media3.common.C;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ParsableBitArray;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.extractor.Ac3Util;
@@ -11,6 +10,7 @@ import androidx.media3.extractor.ExtractorOutput;
 import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.ts.TsPayloadReader;
 import com.google.common.base.Ascii;
+import com.google.common.base.Preconditions;
 import java.util.Objects;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
 /* loaded from: classes3.dex */
@@ -75,7 +75,7 @@ public final class Ac3Reader implements ElementaryStreamReader {
 
     @Override // androidx.media3.extractor.ts.ElementaryStreamReader
     public void consume(ParsableByteArray parsableByteArray) {
-        Assertions.checkStateNotNull(this.output);
+        Preconditions.checkNotNull(this.output);
         while (parsableByteArray.bytesLeft() > 0) {
             int i = this.state;
             if (i != 0) {
@@ -86,7 +86,7 @@ public final class Ac3Reader implements ElementaryStreamReader {
                         int i2 = this.bytesRead + min;
                         this.bytesRead = i2;
                         if (i2 == this.sampleSize) {
-                            Assertions.checkState(this.timeUs != C.TIME_UNSET);
+                            Preconditions.checkState(this.timeUs != C.TIME_UNSET);
                             this.output.sampleMetadata(this.timeUs, 1, this.sampleSize, 0, null);
                             this.timeUs += this.sampleDurationUs;
                             this.state = 0;

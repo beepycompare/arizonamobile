@@ -1,4 +1,4 @@
 package dagger.internal;
-/* loaded from: classes4.dex */
+/* loaded from: classes.dex */
 public interface Factory<T> extends Provider<T> {
 }

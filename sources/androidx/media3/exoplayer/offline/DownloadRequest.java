@@ -7,8 +7,8 @@ import androidx.media3.common.C;
 import androidx.media3.common.MediaItem;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.StreamKey;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.io.IOException;
@@ -118,7 +118,7 @@ public final class DownloadRequest implements Parcelable {
     private DownloadRequest(String str, Uri uri, String str2, List<StreamKey> list, byte[] bArr, String str3, byte[] bArr2, ByteRange byteRange, TimeRange timeRange) {
         int inferContentTypeForUriAndMimeType = Util.inferContentTypeForUriAndMimeType(uri, str2);
         if (inferContentTypeForUriAndMimeType == 0 || inferContentTypeForUriAndMimeType == 2 || inferContentTypeForUriAndMimeType == 1) {
-            Assertions.checkArgument(str3 == null, "customCacheKey must be null for type: " + inferContentTypeForUriAndMimeType);
+            Preconditions.checkArgument(str3 == null, "customCacheKey must be null for type: %s", inferContentTypeForUriAndMimeType);
             this.byteRange = null;
             this.timeRange = timeRange;
         } else {
@@ -163,7 +163,7 @@ public final class DownloadRequest implements Parcelable {
 
     public DownloadRequest copyWithMergedRequest(DownloadRequest downloadRequest) {
         List emptyList;
-        Assertions.checkArgument(this.id.equals(downloadRequest.id));
+        Preconditions.checkArgument(this.id.equals(downloadRequest.id));
         if (this.streamKeys.isEmpty() || downloadRequest.streamKeys.isEmpty()) {
             emptyList = Collections.emptyList();
         } else {
@@ -251,11 +251,11 @@ public final class DownloadRequest implements Parcelable {
 
         ByteRange(long j, long j2) {
             boolean z = true;
-            Assertions.checkArgument(j >= 0);
+            Preconditions.checkArgument(j >= 0);
             if (j2 < 0 && j2 != -1) {
                 z = false;
             }
-            Assertions.checkArgument(z);
+            Preconditions.checkArgument(z);
             this.offset = j;
             this.length = j2;
         }
@@ -307,7 +307,7 @@ public final class DownloadRequest implements Parcelable {
         }
 
         TimeRange(long j, long j2) {
-            Assertions.checkArgument(j2 >= 0 || j2 == C.TIME_UNSET);
+            Preconditions.checkArgument(j2 >= 0 || j2 == C.TIME_UNSET);
             this.startPositionUs = j;
             this.durationUs = j2;
         }

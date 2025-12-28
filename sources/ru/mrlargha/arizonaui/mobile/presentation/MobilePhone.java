@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Toast;
-import androidx.compose.material3.internal.CalendarModelKt;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.core.app.NotificationCompat;
@@ -144,7 +143,7 @@ public final class MobilePhone extends SAMPUIElement implements MobileController
         HistoryManager.Companion.putPage(MobilePhonePage.MOBILE_PHONE_PAGE.getId(), this);
         HistoryManager.Companion.getOrCreatePage(MobilePhonePage.MAIN_PAGE.getId());
         bind.phoneTopBarTime.setText(new SimpleDateFormat("HH:mm", Locale.getDefault()).format(new Date()));
-        CountDownTimer start = new CountDownTimer(CalendarModelKt.MillisecondsIn24Hours, 60000L) { // from class: ru.mrlargha.arizonaui.mobile.presentation.MobilePhone.1
+        CountDownTimer start = new CountDownTimer(86400000L, 60000L) { // from class: ru.mrlargha.arizonaui.mobile.presentation.MobilePhone.1
             @Override // android.os.CountDownTimer
             public void onTick(long j) {
                 this.mobilePhoneBinding.phoneTopBarTime.setText(new SimpleDateFormat("HH:mm", Locale.getDefault()).format(new Date()));

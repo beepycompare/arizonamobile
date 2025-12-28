@@ -10,7 +10,7 @@ import java.util.Map;
 public final class E7 implements Ic {
 
     /* renamed from: a  reason: collision with root package name */
-    public Location f553a;
+    public Location f554a;
     public Boolean b;
     public Boolean c;
     public Boolean e;
@@ -44,7 +44,7 @@ public final class E7 implements Ic {
     }
 
     public final Location k() {
-        return this.f553a;
+        return this.f554a;
     }
 
     public final Boolean l() {
@@ -100,7 +100,7 @@ public final class E7 implements Ic {
 
     @Override // io.appmetrica.analytics.impl.Ic
     public final void a(Location location) {
-        this.f553a = location;
+        this.f554a = location;
     }
 
     @Override // io.appmetrica.analytics.impl.Ic
@@ -213,7 +213,7 @@ public final class E7 implements Ic {
         if (appMetricaConfig.locationTracking == null && mo.a(bool)) {
             newConfigBuilder.withLocationTracking(bool.booleanValue());
         }
-        Location location = this.f553a;
+        Location location = this.f554a;
         if (appMetricaConfig.location == null && mo.a(location)) {
             newConfigBuilder.withLocation(location);
         }
@@ -229,7 +229,7 @@ public final class E7 implements Ic {
             newConfigBuilder.withAdvIdentifiersTracking(bool3.booleanValue());
         }
         this.k = true;
-        this.f553a = null;
+        this.f554a = null;
         this.b = null;
         this.c = null;
         this.d = Boolean.FALSE;

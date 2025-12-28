@@ -55,7 +55,7 @@ final class OverlayController$overlayInfo$1 extends SuspendLambda implements Fun
             final Consumer<OverlayInfo> consumer = new Consumer() { // from class: androidx.window.embedding.OverlayController$overlayInfo$1$$ExternalSyntheticLambda0
                 @Override // androidx.core.util.Consumer
                 public final void accept(Object obj2) {
-                    ProducerScope.this.mo9159trySendJP2dKIU((OverlayInfo) obj2);
+                    ProducerScope.this.mo9174trySendJP2dKIU((OverlayInfo) obj2);
                 }
             };
             embeddingBackend = this.this$0.backend;

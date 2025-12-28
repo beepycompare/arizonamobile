@@ -2,12 +2,12 @@ package androidx.media3.exoplayer.source.chunk;
 
 import android.net.Uri;
 import androidx.media3.common.Format;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.datasource.DataSource;
 import androidx.media3.datasource.DataSpec;
 import androidx.media3.datasource.StatsDataSource;
 import androidx.media3.exoplayer.source.LoadEventInfo;
 import androidx.media3.exoplayer.upstream.Loader;
+import com.google.common.base.Preconditions;
 import java.util.List;
 import java.util.Map;
 /* loaded from: classes3.dex */
@@ -24,7 +24,7 @@ public abstract class Chunk implements Loader.Loadable {
 
     public Chunk(DataSource dataSource, DataSpec dataSpec, int i, Format format, int i2, Object obj, long j, long j2) {
         this.dataSource = new StatsDataSource(dataSource);
-        this.dataSpec = (DataSpec) Assertions.checkNotNull(dataSpec);
+        this.dataSpec = (DataSpec) Preconditions.checkNotNull(dataSpec);
         this.type = i;
         this.trackFormat = format;
         this.trackSelectionReason = i2;

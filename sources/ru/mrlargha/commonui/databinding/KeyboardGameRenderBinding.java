@@ -11,7 +11,7 @@ import android.widget.RelativeLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class KeyboardGameRenderBinding implements ViewBinding {
     public final Button mainButBinder;
     public final Button mainButInputNext;

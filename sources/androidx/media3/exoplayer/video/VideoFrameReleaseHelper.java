@@ -4,52 +4,47 @@ import android.content.Context;
 import android.hardware.display.DisplayManager;
 import android.os.Build;
 import android.os.Handler;
-import android.os.HandlerThread;
-import android.os.Message;
 import android.view.Choreographer;
 import android.view.Display;
 import android.view.Surface;
 import androidx.media3.common.C;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
+import androidx.media3.exoplayer.video.VideoFrameReleaseHelper;
+import com.google.common.base.Preconditions;
 /* loaded from: classes3.dex */
 public final class VideoFrameReleaseHelper {
     private static final long MAX_ALLOWED_ADJUSTMENT_NS = 20000000;
     private static final int MINIMUM_FRAMES_WITHOUT_SYNC_TO_CLEAR_SURFACE_FRAME_RATE = 30;
     private static final long MINIMUM_MATCHING_FRAME_DURATION_FOR_HIGH_CONFIDENCE_NS = 5000000000L;
-    private static final float MINIMUM_MEDIA_FRAME_RATE_CHANGE_FOR_UPDATE_HIGH_CONFIDENCE = 0.02f;
+    private static final float MINIMUM_MEDIA_FRAME_RATE_CHANGE_FOR_UPDATE_HIGH_CONFIDENCE = 0.1f;
     private static final float MINIMUM_MEDIA_FRAME_RATE_CHANGE_FOR_UPDATE_LOW_CONFIDENCE = 1.0f;
     private static final String TAG = "VideoFrameReleaseHelper";
     private static final long VSYNC_OFFSET_PERCENTAGE = 80;
-    private static final long VSYNC_SAMPLE_UPDATE_PERIOD_MS = 500;
-    private int changeFrameRateStrategy;
-    private final DisplayHelper displayHelper;
-    private float formatFrameRate;
+    public static final long VSYNC_SAMPLE_UPDATE_PERIOD_MS = 500;
+    private final Context context;
     private long frameIndex;
-    private final FixedFrameRateEstimator frameRateEstimator = new FixedFrameRateEstimator();
     private long lastAdjustedFrameIndex;
+    private long lastAdjustedPresentationTimeUs;
     private long lastAdjustedReleaseTimeNs;
+    private long lastVsyncHysteresisOffsetNs;
     private long pendingLastAdjustedFrameIndex;
     private long pendingLastAdjustedReleaseTimeNs;
-    private float playbackSpeed;
+    private long pendingLastPresentationTimeUs;
+    private long pendingVsyncHysteresisOffsetNs;
     private boolean started;
     private Surface surface;
     private float surfaceMediaFrameRate;
     private float surfacePlaybackFrameRate;
-    private long vsyncDurationNs;
-    private long vsyncOffsetNs;
-    private final VSyncSampler vsyncSampler;
+    private boolean vsyncSampleBuilt;
+    private VSyncSampler vsyncSampler;
+    private final FixedFrameRateEstimator frameRateEstimator = new FixedFrameRateEstimator();
+    private float formatFrameRate = -1.0f;
+    private float playbackSpeed = 1.0f;
+    private int changeFrameRateStrategy = 0;
 
     public VideoFrameReleaseHelper(Context context) {
-        DisplayHelper maybeBuildDisplayHelper = maybeBuildDisplayHelper(context);
-        this.displayHelper = maybeBuildDisplayHelper;
-        this.vsyncSampler = maybeBuildDisplayHelper != null ? VSyncSampler.getInstance() : null;
-        this.vsyncDurationNs = C.TIME_UNSET;
-        this.vsyncOffsetNs = C.TIME_UNSET;
-        this.formatFrameRate = -1.0f;
-        this.playbackSpeed = 1.0f;
-        this.changeFrameRateStrategy = 0;
+        this.context = context;
     }
 
     public void setChangeFrameRateStrategy(int i) {
@@ -63,9 +58,12 @@ public final class VideoFrameReleaseHelper {
     public void onStarted() {
         this.started = true;
         resetAdjustment();
-        if (this.displayHelper != null) {
-            ((VSyncSampler) Assertions.checkNotNull(this.vsyncSampler)).addObserver();
-            this.displayHelper.register();
+        if (!this.vsyncSampleBuilt) {
+            this.vsyncSampler = VSyncSampler.maybeBuildInstance(this.context);
+        }
+        VSyncSampler vSyncSampler = this.vsyncSampler;
+        if (vSyncSampler != null) {
+            vSyncSampler.register();
         }
         updateSurfacePlaybackFrameRate(false);
     }
@@ -85,7 +83,6 @@ public final class VideoFrameReleaseHelper {
 
     public void onPlaybackSpeed(float f) {
         this.playbackSpeed = f;
-        resetAdjustment();
         updateSurfacePlaybackFrameRate(false);
     }
 
@@ -100,6 +97,8 @@ public final class VideoFrameReleaseHelper {
         if (j2 != -1) {
             this.lastAdjustedFrameIndex = j2;
             this.lastAdjustedReleaseTimeNs = this.pendingLastAdjustedReleaseTimeNs;
+            this.lastAdjustedPresentationTimeUs = this.pendingLastPresentationTimeUs;
+            this.lastVsyncHysteresisOffsetNs = this.pendingVsyncHysteresisOffsetNs;
         }
         this.frameIndex++;
         this.frameRateEstimator.onNextFrame(j * 1000);
@@ -108,56 +107,70 @@ public final class VideoFrameReleaseHelper {
 
     public void onStopped() {
         this.started = false;
-        DisplayHelper displayHelper = this.displayHelper;
-        if (displayHelper != null) {
-            displayHelper.unregister();
-            ((VSyncSampler) Assertions.checkNotNull(this.vsyncSampler)).removeObserver();
+        VSyncSampler vSyncSampler = this.vsyncSampler;
+        if (vSyncSampler != null) {
+            vSyncSampler.unregister();
         }
         clearSurfaceFrameRate();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:19:0x004d  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0048  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public long adjustReleaseTime(long j) {
-        long j2;
-        VSyncSampler vSyncSampler;
+    public long adjustReleaseTime(long j, long j2) {
         long j3;
-        if (this.lastAdjustedFrameIndex != -1 && this.frameRateEstimator.isSynced()) {
-            long frameDurationNs = this.lastAdjustedReleaseTimeNs + (((float) (this.frameRateEstimator.getFrameDurationNs() * (this.frameIndex - this.lastAdjustedFrameIndex))) / this.playbackSpeed);
-            if (!adjustmentAllowed(j, frameDurationNs)) {
+        VSyncSampler vSyncSampler;
+        float f;
+        float f2;
+        if (this.lastAdjustedFrameIndex != -1) {
+            if (this.frameRateEstimator.isSynced()) {
+                f = (float) (this.frameRateEstimator.getFrameDurationNs() * (this.frameIndex - this.lastAdjustedFrameIndex));
+                f2 = this.playbackSpeed;
+            } else {
+                f = (float) ((j2 - this.lastAdjustedPresentationTimeUs) * 1000);
+                f2 = this.playbackSpeed;
+            }
+            long j4 = this.lastAdjustedReleaseTimeNs + (f / f2);
+            if (!adjustmentAllowed(j, j4)) {
                 resetAdjustment();
             } else {
-                j2 = frameDurationNs;
+                j3 = j4;
                 this.pendingLastAdjustedFrameIndex = this.frameIndex;
-                this.pendingLastAdjustedReleaseTimeNs = j2;
+                this.pendingLastAdjustedReleaseTimeNs = j3;
+                this.pendingLastPresentationTimeUs = j2;
                 vSyncSampler = this.vsyncSampler;
-                if (vSyncSampler != null && this.vsyncDurationNs != C.TIME_UNSET) {
-                    j3 = vSyncSampler.sampledVsyncTimeNs;
-                    if (j3 != C.TIME_UNSET) {
-                        return closestVsync(j2, j3, this.vsyncDurationNs) - this.vsyncOffsetNs;
+                if (vSyncSampler != null) {
+                    long j5 = vSyncSampler.sampledVsyncTimeNs;
+                    long j6 = this.vsyncSampler.vsyncDurationNs;
+                    if (j5 != C.TIME_UNSET && j6 != C.TIME_UNSET) {
+                        return findClosestVsyncAndUpdateHysteresis(j3, j5, j6) - ((j6 * VSYNC_OFFSET_PERCENTAGE) / 100);
                     }
                 }
-                return j2;
+                return j3;
             }
         }
-        j2 = j;
+        j3 = j;
         this.pendingLastAdjustedFrameIndex = this.frameIndex;
-        this.pendingLastAdjustedReleaseTimeNs = j2;
+        this.pendingLastAdjustedReleaseTimeNs = j3;
+        this.pendingLastPresentationTimeUs = j2;
         vSyncSampler = this.vsyncSampler;
         if (vSyncSampler != null) {
-            j3 = vSyncSampler.sampledVsyncTimeNs;
-            if (j3 != C.TIME_UNSET) {
-            }
         }
-        return j2;
+        return j3;
+    }
+
+    public void setVsyncData(long j, long j2) {
+        ((VSyncSampler) Preconditions.checkNotNull(this.vsyncSampler)).sampledVsyncTimeNs = j;
+        this.vsyncSampler.vsyncDurationNs = j2;
     }
 
     private void resetAdjustment() {
         this.frameIndex = 0L;
         this.lastAdjustedFrameIndex = -1L;
         this.pendingLastAdjustedFrameIndex = -1L;
+        this.lastVsyncHysteresisOffsetNs = 0L;
+        this.pendingVsyncHysteresisOffsetNs = 0L;
     }
 
     private static boolean adjustmentAllowed(long j, long j2) {
@@ -175,7 +188,7 @@ public final class VideoFrameReleaseHelper {
         }
         int i = (frameRate > (-1.0f) ? 1 : (frameRate == (-1.0f) ? 0 : -1));
         if (i != 0 && f != -1.0f) {
-            if (Math.abs(frameRate - this.surfaceMediaFrameRate) < ((!this.frameRateEstimator.isSynced() || this.frameRateEstimator.getMatchingFrameDurationSumNs() < MINIMUM_MATCHING_FRAME_DURATION_FOR_HIGH_CONFIDENCE_NS) ? 1.0f : MINIMUM_MEDIA_FRAME_RATE_CHANGE_FOR_UPDATE_HIGH_CONFIDENCE)) {
+            if (Math.abs(frameRate - this.surfaceMediaFrameRate) < ((!this.frameRateEstimator.isSynced() || this.frameRateEstimator.getMatchingFrameDurationSumNs() < MINIMUM_MATCHING_FRAME_DURATION_FOR_HIGH_CONFIDENCE_NS) ? 1.0f : 0.1f)) {
                 return;
             }
         } else if (i == 0 && this.frameRateEstimator.getFramesWithoutSyncCount() < 30) {
@@ -188,7 +201,7 @@ public final class VideoFrameReleaseHelper {
     private void updateSurfacePlaybackFrameRate(boolean z) {
         Surface surface;
         float f;
-        if (Build.VERSION.SDK_INT < 30 || (surface = this.surface) == null || this.changeFrameRateStrategy == Integer.MIN_VALUE) {
+        if (Build.VERSION.SDK_INT < 30 || (surface = this.surface) == null || this.changeFrameRateStrategy == Integer.MIN_VALUE || !surface.isValid()) {
             return;
         }
         if (this.started) {
@@ -199,57 +212,56 @@ public final class VideoFrameReleaseHelper {
                     return;
                 }
                 this.surfacePlaybackFrameRate = f;
-                Api30.setSurfaceFrameRate(surface, f);
+                Api30.setSurfaceFrameRate(this.surface, f);
             }
         }
         f = 0.0f;
         if (z) {
         }
         this.surfacePlaybackFrameRate = f;
-        Api30.setSurfaceFrameRate(surface, f);
+        Api30.setSurfaceFrameRate(this.surface, f);
     }
 
     private void clearSurfaceFrameRate() {
         Surface surface;
-        if (Build.VERSION.SDK_INT < 30 || (surface = this.surface) == null || this.changeFrameRateStrategy == Integer.MIN_VALUE || this.surfacePlaybackFrameRate == 0.0f) {
+        if (Build.VERSION.SDK_INT < 30 || (surface = this.surface) == null || this.changeFrameRateStrategy == Integer.MIN_VALUE || this.surfacePlaybackFrameRate == 0.0f || !surface.isValid()) {
             return;
         }
         this.surfacePlaybackFrameRate = 0.0f;
-        Api30.setSurfaceFrameRate(surface, 0.0f);
+        Api30.setSurfaceFrameRate(this.surface, 0.0f);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public void updateDefaultDisplayRefreshRateParams(Display display) {
-        if (display != null) {
-            long refreshRate = (long) (1.0E9d / display.getRefreshRate());
-            this.vsyncDurationNs = refreshRate;
-            this.vsyncOffsetNs = (refreshRate * VSYNC_OFFSET_PERCENTAGE) / 100;
-            return;
-        }
-        Log.w(TAG, "Unable to query display refresh rate");
-        this.vsyncDurationNs = C.TIME_UNSET;
-        this.vsyncOffsetNs = C.TIME_UNSET;
-    }
-
-    private static long closestVsync(long j, long j2, long j3) {
+    private long findClosestVsyncAndUpdateHysteresis(long j, long j2, long j3) {
         long j4;
         long j5 = j2 + (((j - j2) / j3) * j3);
         if (j <= j5) {
             j4 = j5 - j3;
         } else {
-            long j6 = j3 + j5;
             j4 = j5;
-            j5 = j6;
+            j5 += j3;
         }
-        return j5 - j < j - j4 ? j5 : j4;
-    }
-
-    private DisplayHelper maybeBuildDisplayHelper(Context context) {
-        DisplayManager displayManager;
-        if (context == null || (displayManager = (DisplayManager) context.getSystemService("display")) == null) {
-            return null;
+        long j6 = j5 - j;
+        long j7 = j - j4;
+        long abs = Math.abs(j6 - j7);
+        if (abs < j3 / 2) {
+            long j8 = j3 / 4;
+            if (abs < j8) {
+                long j9 = this.lastVsyncHysteresisOffsetNs;
+                if (j9 != 0) {
+                    this.pendingVsyncHysteresisOffsetNs = j9;
+                } else {
+                    if (j6 < j7) {
+                        j8 = -j8;
+                    }
+                    this.pendingVsyncHysteresisOffsetNs = j8;
+                }
+            } else {
+                this.pendingVsyncHysteresisOffsetNs = 0L;
+            }
+        } else {
+            this.pendingVsyncHysteresisOffsetNs = this.lastVsyncHysteresisOffsetNs;
         }
-        return new DisplayHelper(displayManager);
+        return j6 + this.pendingVsyncHysteresisOffsetNs < j7 ? j5 : j4;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -267,128 +279,158 @@ public final class VideoFrameReleaseHelper {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes3.dex */
-    public final class DisplayHelper implements DisplayManager.DisplayListener {
-        private final DisplayManager displayManager;
+    private static abstract class VSyncSampler implements DisplayManager.DisplayListener {
+        final Choreographer choreographer;
+        final DisplayManager displayManager;
+        volatile long sampledVsyncTimeNs;
+        volatile long vsyncDurationNs;
 
         @Override // android.hardware.display.DisplayManager.DisplayListener
-        public void onDisplayAdded(int i) {
-        }
-
-        @Override // android.hardware.display.DisplayManager.DisplayListener
-        public void onDisplayRemoved(int i) {
-        }
-
-        public DisplayHelper(DisplayManager displayManager) {
-            this.displayManager = displayManager;
-        }
-
-        public void register() {
-            this.displayManager.registerDisplayListener(this, Util.createHandlerForCurrentLooper());
-            VideoFrameReleaseHelper.this.updateDefaultDisplayRefreshRateParams(getDefaultDisplay());
-        }
-
-        public void unregister() {
-            this.displayManager.unregisterDisplayListener(this);
+        public final void onDisplayAdded(int i) {
         }
 
         @Override // android.hardware.display.DisplayManager.DisplayListener
-        public void onDisplayChanged(int i) {
-            if (i == 0) {
-                VideoFrameReleaseHelper.this.updateDefaultDisplayRefreshRateParams(getDefaultDisplay());
+        public final void onDisplayRemoved(int i) {
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static VSyncSampler maybeBuildInstance(Context context) {
+            DisplayManager displayManager = (DisplayManager) context.getSystemService("display");
+            if (displayManager == null) {
+                return null;
+            }
+            try {
+                Choreographer choreographer = Choreographer.getInstance();
+                if (Build.VERSION.SDK_INT >= 33) {
+                    return new VSyncSamplerV33(choreographer, displayManager);
+                }
+                return new VSyncSamplerBase(choreographer, displayManager);
+            } catch (RuntimeException e) {
+                Log.w(VideoFrameReleaseHelper.TAG, "Vsync sampling disabled due to platform error", e);
+                return null;
             }
         }
 
-        private Display getDefaultDisplay() {
-            return this.displayManager.getDisplay(0);
+        private VSyncSampler(Choreographer choreographer, DisplayManager displayManager) {
+            this.choreographer = choreographer;
+            this.displayManager = displayManager;
+            this.sampledVsyncTimeNs = C.TIME_UNSET;
+            this.vsyncDurationNs = C.TIME_UNSET;
+        }
+
+        void register() {
+            this.displayManager.registerDisplayListener(this, Util.createHandlerForCurrentLooper());
+        }
+
+        void unregister() {
+            this.displayManager.unregisterDisplayListener(this);
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes3.dex */
-    private static final class VSyncSampler implements Choreographer.FrameCallback, Handler.Callback {
-        private static final int CREATE_CHOREOGRAPHER = 1;
-        private static final VSyncSampler INSTANCE = new VSyncSampler();
-        private static final int MSG_ADD_OBSERVER = 2;
-        private static final int MSG_REMOVE_OBSERVER = 3;
-        private Choreographer choreographer;
-        private final HandlerThread choreographerOwnerThread;
-        private final Handler handler;
-        private int observerCount;
-        public volatile long sampledVsyncTimeNs = C.TIME_UNSET;
-
-        public static VSyncSampler getInstance() {
-            return INSTANCE;
+    public static final class VSyncSamplerBase extends VSyncSampler implements Choreographer.FrameCallback {
+        private VSyncSamplerBase(Choreographer choreographer, DisplayManager displayManager) {
+            super(choreographer, displayManager);
         }
 
-        private VSyncSampler() {
-            HandlerThread handlerThread = new HandlerThread("ExoPlayer:FrameReleaseChoreographer");
-            this.choreographerOwnerThread = handlerThread;
-            handlerThread.start();
-            Handler createHandler = Util.createHandler(handlerThread.getLooper(), this);
-            this.handler = createHandler;
-            createHandler.sendEmptyMessage(1);
+        @Override // androidx.media3.exoplayer.video.VideoFrameReleaseHelper.VSyncSampler
+        void register() {
+            super.register();
+            this.choreographer.postFrameCallback(this);
+            this.vsyncDurationNs = getVsyncDurationNsFromDefaultDisplay(this.displayManager);
         }
 
-        public void addObserver() {
-            this.handler.sendEmptyMessage(2);
-        }
-
-        public void removeObserver() {
-            this.handler.sendEmptyMessage(3);
+        @Override // androidx.media3.exoplayer.video.VideoFrameReleaseHelper.VSyncSampler
+        void unregister() {
+            super.unregister();
+            this.choreographer.removeFrameCallback(this);
+            this.sampledVsyncTimeNs = C.TIME_UNSET;
+            this.vsyncDurationNs = C.TIME_UNSET;
         }
 
         @Override // android.view.Choreographer.FrameCallback
         public void doFrame(long j) {
             this.sampledVsyncTimeNs = j;
-            ((Choreographer) Assertions.checkNotNull(this.choreographer)).postFrameCallbackDelayed(this, 500L);
+            this.choreographer.postFrameCallbackDelayed(this, 500L);
         }
 
-        @Override // android.os.Handler.Callback
-        public boolean handleMessage(Message message) {
-            int i = message.what;
-            if (i == 1) {
-                createChoreographerInstanceInternal();
-                return true;
-            } else if (i == 2) {
-                addObserverInternal();
-                return true;
-            } else if (i != 3) {
-                return false;
+        @Override // android.hardware.display.DisplayManager.DisplayListener
+        public void onDisplayChanged(int i) {
+            if (i == 0) {
+                this.choreographer.postFrameCallback(this);
+                this.vsyncDurationNs = getVsyncDurationNsFromDefaultDisplay(this.displayManager);
+            }
+        }
+
+        private static long getVsyncDurationNsFromDefaultDisplay(DisplayManager displayManager) {
+            Display display = displayManager.getDisplay(0);
+            if (display != null) {
+                return (long) (1.0E9d / display.getRefreshRate());
+            }
+            Log.w(VideoFrameReleaseHelper.TAG, "Unable to query display refresh rate");
+            return C.TIME_UNSET;
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* loaded from: classes3.dex */
+    public static final class VSyncSamplerV33 extends VSyncSampler implements Choreographer.VsyncCallback {
+        private final Handler handler;
+
+        private VSyncSamplerV33(Choreographer choreographer, DisplayManager displayManager) {
+            super(choreographer, displayManager);
+            this.handler = Util.createHandlerForCurrentLooper();
+        }
+
+        @Override // androidx.media3.exoplayer.video.VideoFrameReleaseHelper.VSyncSampler
+        void register() {
+            super.register();
+            this.choreographer.postVsyncCallback(this);
+        }
+
+        @Override // androidx.media3.exoplayer.video.VideoFrameReleaseHelper.VSyncSampler
+        void unregister() {
+            super.unregister();
+            this.handler.removeCallbacksAndMessages(null);
+            this.choreographer.removeVsyncCallback(this);
+            this.sampledVsyncTimeNs = C.TIME_UNSET;
+            this.vsyncDurationNs = C.TIME_UNSET;
+        }
+
+        public void onVsync(Choreographer.FrameData frameData) {
+            this.sampledVsyncTimeNs = frameData.getFrameTimeNanos();
+            Choreographer.FrameTimeline[] frameTimelines = frameData.getFrameTimelines();
+            int length = frameTimelines.length;
+            long j = C.TIME_UNSET;
+            if (length >= 2) {
+                long expectedPresentationTimeNanos = frameTimelines[1].getExpectedPresentationTimeNanos() - frameTimelines[0].getExpectedPresentationTimeNanos();
+                if (expectedPresentationTimeNanos != 0) {
+                    j = expectedPresentationTimeNanos;
+                }
+                this.vsyncDurationNs = j;
             } else {
-                removeObserverInternal();
-                return true;
+                this.vsyncDurationNs = C.TIME_UNSET;
             }
-        }
-
-        private void createChoreographerInstanceInternal() {
-            try {
-                this.choreographer = Choreographer.getInstance();
-            } catch (RuntimeException e) {
-                Log.w(VideoFrameReleaseHelper.TAG, "Vsync sampling disabled due to platform error", e);
-            }
-        }
-
-        private void addObserverInternal() {
-            Choreographer choreographer = this.choreographer;
-            if (choreographer != null) {
-                int i = this.observerCount + 1;
-                this.observerCount = i;
-                if (i == 1) {
-                    choreographer.postFrameCallback(this);
+            this.handler.postDelayed(new Runnable() { // from class: androidx.media3.exoplayer.video.VideoFrameReleaseHelper$VSyncSamplerV33$$ExternalSyntheticLambda0
+                @Override // java.lang.Runnable
+                public final void run() {
+                    VideoFrameReleaseHelper.VSyncSamplerV33.this.m9061x28d2bfdf();
                 }
-            }
+            }, 500L);
         }
 
-        private void removeObserverInternal() {
-            Choreographer choreographer = this.choreographer;
-            if (choreographer != null) {
-                int i = this.observerCount - 1;
-                this.observerCount = i;
-                if (i == 0) {
-                    choreographer.removeFrameCallback(this);
-                    this.sampledVsyncTimeNs = C.TIME_UNSET;
-                }
+        /* JADX INFO: Access modifiers changed from: package-private */
+        /* renamed from: lambda$onVsync$0$androidx-media3-exoplayer-video-VideoFrameReleaseHelper$VSyncSamplerV33  reason: not valid java name */
+        public /* synthetic */ void m9061x28d2bfdf() {
+            this.choreographer.postVsyncCallback(this);
+        }
+
+        @Override // android.hardware.display.DisplayManager.DisplayListener
+        public void onDisplayChanged(int i) {
+            if (i == 0) {
+                this.choreographer.postVsyncCallback(this);
             }
         }
     }

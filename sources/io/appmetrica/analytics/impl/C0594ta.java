@@ -11,7 +11,7 @@ public final class C0594ta extends D2 {
         int i = 0;
         if (str != null) {
             int length = str.length();
-            int i2 = this.f536a;
+            int i2 = this.f537a;
             if (length > i2) {
                 String substring = str.substring(0, i2);
                 i = str.getBytes().length - substring.getBytes().length;

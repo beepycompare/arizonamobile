@@ -5,7 +5,6 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
 import androidx.media3.database.DatabaseProvider;
@@ -15,6 +14,7 @@ import androidx.media3.datasource.cache.CacheDataSource;
 import androidx.media3.exoplayer.offline.Downloader;
 import androidx.media3.exoplayer.scheduler.Requirements;
 import androidx.media3.exoplayer.scheduler.RequirementsWatcher;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -143,7 +143,7 @@ public final class DownloadManager {
     }
 
     public void addListener(Listener listener) {
-        Assertions.checkNotNull(listener);
+        Preconditions.checkNotNull(listener);
         this.listeners.add(listener);
     }
 
@@ -174,7 +174,7 @@ public final class DownloadManager {
     }
 
     public void setMaxParallelDownloads(int i) {
-        Assertions.checkArgument(i > 0);
+        Preconditions.checkArgument(i > 0);
         if (this.maxParallelDownloads == i) {
             return;
         }
@@ -188,7 +188,7 @@ public final class DownloadManager {
     }
 
     public void setMinRetryCount(int i) {
-        Assertions.checkArgument(i >= 0);
+        Preconditions.checkArgument(i >= 0);
         if (this.minRetryCount == i) {
             return;
         }
@@ -645,7 +645,7 @@ public final class DownloadManager {
                 } else if (i3 == 1) {
                     syncStoppedDownload(task);
                 } else if (i3 == 2) {
-                    Assertions.checkNotNull(task);
+                    Preconditions.checkNotNull(task);
                     syncDownloadingDownload(task, download, i);
                 } else if (i3 == 5 || i3 == 7) {
                     syncRemovingDownload(task, download);
@@ -660,7 +660,7 @@ public final class DownloadManager {
 
         private void syncStoppedDownload(Task task) {
             if (task != null) {
-                Assertions.checkState(!task.isRemove);
+                Preconditions.checkState(!task.isRemove);
                 task.cancel(false);
             }
         }
@@ -681,13 +681,13 @@ public final class DownloadManager {
                 task2.start();
                 return task2;
             }
-            Assertions.checkState(!task.isRemove);
+            Preconditions.checkState(!task.isRemove);
             task.cancel(false);
             return task;
         }
 
         private void syncDownloadingDownload(Task task, Download download, int i) {
-            Assertions.checkState(!task.isRemove);
+            Preconditions.checkState(!task.isRemove);
             if (!canDownloadsRun() || i >= this.maxParallelDownloads) {
                 putDownloadWithState(download, 0, 0);
                 task.cancel(false);
@@ -710,7 +710,7 @@ public final class DownloadManager {
         }
 
         private void onContentLengthChanged(Task task, long j) {
-            Download download = (Download) Assertions.checkNotNull(getDownload(task.request.id, false));
+            Download download = (Download) Preconditions.checkNotNull(getDownload(task.request.id, false));
             if (j == download.contentLength || j == -1) {
                 return;
             }
@@ -738,13 +738,13 @@ public final class DownloadManager {
             if (exc != null) {
                 Log.e(DownloadManager.TAG, "Task failed: " + task.request + ", " + z, exc);
             }
-            Download download = (Download) Assertions.checkNotNull(getDownload(str, false));
+            Download download = (Download) Preconditions.checkNotNull(getDownload(str, false));
             int i2 = download.state;
             if (i2 == 2) {
-                Assertions.checkState(!z);
+                Preconditions.checkState(!z);
                 onDownloadTaskStopped(download, exc);
             } else if (i2 == 5 || i2 == 7) {
-                Assertions.checkState(z);
+                Preconditions.checkState(z);
                 onRemoveTaskStopped(download);
             } else {
                 throw new IllegalStateException();
@@ -797,12 +797,12 @@ public final class DownloadManager {
         }
 
         private Download putDownloadWithState(Download download, int i, int i2) {
-            Assertions.checkState((i == 3 || i == 4) ? false : true);
+            Preconditions.checkState((i == 3 || i == 4) ? false : true);
             return putDownload(copyDownloadWithState(download, i, i2));
         }
 
         private Download putDownload(Download download) {
-            Assertions.checkState((download.state == 3 || download.state == 4) ? false : true);
+            Preconditions.checkState((download.state == 3 || download.state == 4) ? false : true);
             int downloadIndex = getDownloadIndex(download.request.id);
             if (downloadIndex == -1) {
                 this.downloads.add(download);

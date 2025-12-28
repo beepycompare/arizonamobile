@@ -17,13 +17,14 @@ import androidx.media3.common.Tracks;
 import androidx.media3.common.VideoSize;
 import androidx.media3.common.text.Cue;
 import androidx.media3.common.text.CueGroup;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.exoplayer.DecoderCounters;
 import androidx.media3.exoplayer.DecoderReuseEvaluation;
 import androidx.media3.exoplayer.audio.AudioSink;
+import androidx.media3.exoplayer.drm.KeyRequestInfo;
 import androidx.media3.exoplayer.source.LoadEventInfo;
 import androidx.media3.exoplayer.source.MediaLoadData;
 import androidx.media3.exoplayer.source.MediaSource;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -32,7 +33,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.List;
 import java.util.Objects;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public interface AnalyticsListener {
     public static final int EVENT_AUDIO_ATTRIBUTES_CHANGED = 20;
     public static final int EVENT_AUDIO_CODEC_ERROR = 1029;
@@ -59,6 +60,7 @@ public interface AnalyticsListener {
     public static final int EVENT_DRM_SESSION_ACQUIRED = 1022;
     public static final int EVENT_DRM_SESSION_MANAGER_ERROR = 1024;
     public static final int EVENT_DRM_SESSION_RELEASED = 1027;
+    public static final int EVENT_DROPPED_SEEKS_WHILE_SCRUBBING = 1034;
     public static final int EVENT_DROPPED_VIDEO_FRAMES = 1018;
     public static final int EVENT_IS_LOADING_CHANGED = 3;
     public static final int EVENT_IS_PLAYING_CHANGED = 7;
@@ -103,7 +105,7 @@ public interface AnalyticsListener {
     @Target({ElementType.FIELD, ElementType.METHOD, ElementType.PARAMETER, ElementType.LOCAL_VARIABLE, ElementType.TYPE_USE})
     @Documented
     @Retention(RetentionPolicy.SOURCE)
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public @interface EventFlags {
     }
 
@@ -172,7 +174,11 @@ public interface AnalyticsListener {
     default void onDownstreamFormatChanged(EventTime eventTime, MediaLoadData mediaLoadData) {
     }
 
+    @Deprecated
     default void onDrmKeysLoaded(EventTime eventTime) {
+    }
+
+    default void onDrmKeysLoaded(EventTime eventTime, KeyRequestInfo keyRequestInfo) {
     }
 
     default void onDrmKeysRemoved(EventTime eventTime) {
@@ -192,6 +198,9 @@ public interface AnalyticsListener {
     }
 
     default void onDrmSessionReleased(EventTime eventTime) {
+    }
+
+    default void onDroppedSeeksWhileScrubbing(EventTime eventTime, int i) {
     }
 
     default void onDroppedVideoFrames(EventTime eventTime, int i, long j) {
@@ -348,7 +357,7 @@ public interface AnalyticsListener {
     default void onVolumeChanged(EventTime eventTime, float f) {
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static final class Events {
         private final SparseArray<EventTime> eventTimes;
         private final FlagSet flags;
@@ -358,13 +367,13 @@ public interface AnalyticsListener {
             SparseArray<EventTime> sparseArray2 = new SparseArray<>(flagSet.size());
             for (int i = 0; i < flagSet.size(); i++) {
                 int i2 = flagSet.get(i);
-                sparseArray2.append(i2, (EventTime) Assertions.checkNotNull(sparseArray.get(i2)));
+                sparseArray2.append(i2, (EventTime) Preconditions.checkNotNull(sparseArray.get(i2)));
             }
             this.eventTimes = sparseArray2;
         }
 
         public EventTime getEventTime(int i) {
-            return (EventTime) Assertions.checkNotNull(this.eventTimes.get(i));
+            return (EventTime) Preconditions.checkNotNull(this.eventTimes.get(i));
         }
 
         public boolean contains(int i) {
@@ -384,7 +393,7 @@ public interface AnalyticsListener {
         }
     }
 
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public static final class EventTime {
         public final MediaSource.MediaPeriodId currentMediaPeriodId;
         public final long currentPlaybackPositionMs;

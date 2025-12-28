@@ -18,7 +18,7 @@ public final class Ni extends MessageNano {
     public static volatile Ni[] q;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f706a;
+    public int f707a;
     public byte[] b;
     public byte[] c;
     public byte[] d;
@@ -46,7 +46,7 @@ public final class Ni extends MessageNano {
     }
 
     public final Ni a() {
-        this.f706a = 1;
+        this.f707a = 1;
         byte[] bArr = WireFormatNano.EMPTY_BYTES;
         this.b = bArr;
         this.c = bArr;
@@ -65,7 +65,7 @@ public final class Ni extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        int i = this.f706a;
+        int i = this.f707a;
         if (i != 1) {
             computeSerializedSize += CodedOutputByteBufferNano.computeUInt32Size(1, i);
         }
@@ -108,7 +108,7 @@ public final class Ni extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        int i = this.f706a;
+        int i = this.f707a;
         if (i != 1) {
             codedOutputByteBufferNano.writeUInt32(1, i);
         }
@@ -165,7 +165,7 @@ public final class Ni extends MessageNano {
                 case 0:
                     break;
                 case 8:
-                    this.f706a = codedInputByteBufferNano.readUInt32();
+                    this.f707a = codedInputByteBufferNano.readUInt32();
                     break;
                 case 26:
                     this.b = codedInputByteBufferNano.readBytes();

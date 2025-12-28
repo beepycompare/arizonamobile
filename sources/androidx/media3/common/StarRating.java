@@ -1,8 +1,8 @@
 package androidx.media3.common;
 
 import android.os.Bundle;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import java.util.Objects;
 /* loaded from: classes2.dex */
 public final class StarRating extends Rating {
@@ -14,15 +14,15 @@ public final class StarRating extends Rating {
     private final float starRating;
 
     public StarRating(int i) {
-        Assertions.checkArgument(i > 0, "maxStars must be a positive integer");
+        Preconditions.checkArgument(i > 0, "maxStars must be a positive integer");
         this.maxStars = i;
         this.starRating = -1.0f;
     }
 
     public StarRating(int i, float f) {
         boolean z = true;
-        Assertions.checkArgument(i > 0, "maxStars must be a positive integer");
-        Assertions.checkArgument((f < 0.0f || f > ((float) i)) ? false : z, "starRating is out of range [0, maxStars]");
+        Preconditions.checkArgument(i > 0, "maxStars must be a positive integer");
+        Preconditions.checkArgument((f < 0.0f || f > ((float) i)) ? false : z, "starRating is out of range [0, maxStars]");
         this.maxStars = i;
         this.starRating = f;
     }
@@ -62,7 +62,7 @@ public final class StarRating extends Rating {
     }
 
     public static StarRating fromBundle(Bundle bundle) {
-        Assertions.checkArgument(bundle.getInt(FIELD_RATING_TYPE, -1) == 2);
+        Preconditions.checkArgument(bundle.getInt(FIELD_RATING_TYPE, -1) == 2);
         int i = bundle.getInt(FIELD_MAX_STARS, 5);
         float f = bundle.getFloat(FIELD_STAR_RATING, -1.0f);
         if (f == -1.0f) {

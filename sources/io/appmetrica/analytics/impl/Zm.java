@@ -11,7 +11,7 @@ public final class Zm extends AbstractC0613u4 {
     @Override // io.appmetrica.analytics.impl.AbstractC0613u4
     public final void a(C0280go c0280go) {
         String str = (String) this.g.a((String) this.f);
-        c0280go.d.f1043a = str == null ? new byte[0] : str.getBytes();
+        c0280go.d.f1044a = str == null ? new byte[0] : str.getBytes();
     }
 
     public final Mn h() {

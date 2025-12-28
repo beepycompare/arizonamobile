@@ -1,6 +1,7 @@
 package androidx.media3.common.util;
 
 import androidx.media3.common.C;
+import com.google.common.base.Preconditions;
 import java.util.concurrent.TimeoutException;
 /* loaded from: classes2.dex */
 public final class TimestampAdjuster {
@@ -17,7 +18,7 @@ public final class TimestampAdjuster {
     }
 
     public synchronized void sharedInitializeOrWait(boolean z, long j, long j2) throws InterruptedException, TimeoutException {
-        Assertions.checkState(this.firstSampleTimestampUs == MODE_SHARED);
+        Preconditions.checkState(this.firstSampleTimestampUs == MODE_SHARED);
         if (isInitialized()) {
             return;
         }
@@ -30,7 +31,7 @@ public final class TimestampAdjuster {
                 if (j2 == 0) {
                     wait();
                 } else {
-                    Assertions.checkState(j4 > 0);
+                    Preconditions.checkState(j4 > 0);
                     long elapsedRealtime = android.os.SystemClock.elapsedRealtime();
                     wait(j4);
                     j3 += android.os.SystemClock.elapsedRealtime() - elapsedRealtime;
@@ -114,7 +115,7 @@ public final class TimestampAdjuster {
         if (!isInitialized()) {
             long j2 = this.firstSampleTimestampUs;
             if (j2 == MODE_SHARED) {
-                j2 = ((Long) Assertions.checkNotNull(this.nextSampleTimestampUs.get())).longValue();
+                j2 = ((Long) Preconditions.checkNotNull(this.nextSampleTimestampUs.get())).longValue();
             }
             this.timestampOffsetUs = j2 - j;
             notifyAll();

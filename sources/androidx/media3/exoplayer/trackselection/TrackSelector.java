@@ -4,13 +4,13 @@ import android.content.Context;
 import androidx.media3.common.AudioAttributes;
 import androidx.media3.common.Timeline;
 import androidx.media3.common.TrackSelectionParameters;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.exoplayer.ExoPlaybackException;
 import androidx.media3.exoplayer.Renderer;
 import androidx.media3.exoplayer.RendererCapabilities;
 import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.exoplayer.source.TrackGroupArray;
 import androidx.media3.exoplayer.upstream.BandwidthMeter;
+import com.google.common.base.Preconditions;
 /* loaded from: classes3.dex */
 public abstract class TrackSelector {
     private BandwidthMeter bandwidthMeter;
@@ -48,7 +48,7 @@ public abstract class TrackSelector {
     }
 
     public void init(InvalidationListener invalidationListener, BandwidthMeter bandwidthMeter) {
-        Assertions.checkState(this.listener == null);
+        Preconditions.checkState(this.listener == null);
         this.listener = invalidationListener;
         this.bandwidthMeter = bandwidthMeter;
     }
@@ -80,6 +80,6 @@ public abstract class TrackSelector {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final BandwidthMeter getBandwidthMeter() {
-        return (BandwidthMeter) Assertions.checkStateNotNull(this.bandwidthMeter);
+        return (BandwidthMeter) Preconditions.checkNotNull(this.bandwidthMeter);
     }
 }

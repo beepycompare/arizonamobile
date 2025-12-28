@@ -4,7 +4,6 @@ import androidx.media3.common.C;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.TrackGroup;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
 import androidx.media3.datasource.DataSource;
@@ -22,6 +21,7 @@ import androidx.media3.exoplayer.trackselection.ExoTrackSelection;
 import androidx.media3.exoplayer.upstream.LoadErrorHandlingPolicy;
 import androidx.media3.exoplayer.upstream.Loader;
 import androidx.media3.exoplayer.util.ReleasableExecutor;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -170,7 +170,7 @@ public final class SingleSampleMediaPeriod implements MediaPeriod, Loader.Callba
     @Override // androidx.media3.exoplayer.upstream.Loader.Callback
     public void onLoadCompleted(SourceLoadable sourceLoadable, long j, long j2) {
         this.sampleSize = (int) sourceLoadable.dataSource.getBytesRead();
-        this.sampleData = (byte[]) Assertions.checkNotNull(sourceLoadable.sampleData);
+        this.sampleData = (byte[]) Preconditions.checkNotNull(sourceLoadable.sampleData);
         this.loadingFinished = true;
         StatsDataSource statsDataSource = sourceLoadable.dataSource;
         LoadEventInfo loadEventInfo = new LoadEventInfo(sourceLoadable.loadTaskId, sourceLoadable.dataSpec, statsDataSource.getLastOpenedUri(), statsDataSource.getLastResponseHeaders(), j, j2, this.sampleSize);
@@ -257,7 +257,7 @@ public final class SingleSampleMediaPeriod implements MediaPeriod, Loader.Callba
                 this.streamState = 1;
                 return -5;
             } else if (SingleSampleMediaPeriod.this.loadingFinished) {
-                Assertions.checkNotNull(SingleSampleMediaPeriod.this.sampleData);
+                Preconditions.checkNotNull(SingleSampleMediaPeriod.this.sampleData);
                 decoderInputBuffer.addFlag(1);
                 decoderInputBuffer.timeUs = 0L;
                 if ((i & 4) == 0) {

@@ -4,7 +4,6 @@ import android.util.Pair;
 import androidx.media3.common.C;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
 import androidx.media3.container.NalUnitUtil;
@@ -12,6 +11,7 @@ import androidx.media3.extractor.ExtractorOutput;
 import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.ts.TsPayloadReader;
 import com.google.common.base.Ascii;
+import com.google.common.base.Preconditions;
 import java.util.Arrays;
 import java.util.Collections;
 /* loaded from: classes3.dex */
@@ -102,7 +102,7 @@ public final class H262Reader implements ElementaryStreamReader {
         long j;
         boolean z;
         int i2;
-        Assertions.checkStateNotNull(this.output);
+        Preconditions.checkNotNull(this.output);
         int position = parsableByteArray.getPosition();
         int limit = parsableByteArray.limit();
         byte[] data = parsableByteArray.getData();
@@ -121,7 +121,7 @@ public final class H262Reader implements ElementaryStreamReader {
                     this.csdBuffer.onData(data, position, findNalUnit);
                 }
                 if (this.csdBuffer.onStartCode(i4, i5 < 0 ? -i5 : 0)) {
-                    Pair<Format, Long> parseCsdBuffer = parseCsdBuffer(this.csdBuffer, (String) Assertions.checkNotNull(this.formatId), this.containerMimeType);
+                    Pair<Format, Long> parseCsdBuffer = parseCsdBuffer(this.csdBuffer, (String) Preconditions.checkNotNull(this.formatId), this.containerMimeType);
                     this.output.format((Format) parseCsdBuffer.first);
                     this.frameDurationUs = ((Long) parseCsdBuffer.second).longValue();
                     this.hasOutputFormat = true;
@@ -201,7 +201,7 @@ public final class H262Reader implements ElementaryStreamReader {
 
     @Override // androidx.media3.extractor.ts.ElementaryStreamReader
     public void packetFinished(boolean z) {
-        Assertions.checkStateNotNull(this.output);
+        Preconditions.checkNotNull(this.output);
         if (z) {
             boolean z2 = this.sampleIsKeyframe;
             this.output.sampleMetadata(this.sampleTimeUs, z2 ? 1 : 0, (int) (this.totalBytesWritten - this.samplePosition), 0, null);

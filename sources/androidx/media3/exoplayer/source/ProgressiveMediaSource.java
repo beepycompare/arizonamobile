@@ -6,7 +6,6 @@ import androidx.media3.common.C;
 import androidx.media3.common.Format;
 import androidx.media3.common.MediaItem;
 import androidx.media3.common.Timeline;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Consumer;
 import androidx.media3.common.util.Util;
 import androidx.media3.datasource.DataSource;
@@ -28,6 +27,7 @@ import androidx.media3.exoplayer.util.ReleasableExecutor;
 import androidx.media3.extractor.DefaultExtractorsFactory;
 import androidx.media3.extractor.ExtractorsFactory;
 import androidx.media3.extractor.SeekMap;
+import com.google.common.base.Preconditions;
 import com.google.common.base.Supplier;
 import java.util.Objects;
 import java.util.concurrent.Executor;
@@ -39,6 +39,7 @@ public final class ProgressiveMediaSource extends BaseMediaSource implements Pro
     private final Supplier<ReleasableExecutor> downloadExecutorSupplier;
     private final DrmSessionManager drmSessionManager;
     private Listener listener;
+    private final boolean loadOnlySelectedTracks;
     private final LoadErrorHandlingPolicy loadableLoadErrorHandlingPolicy;
     private MediaItem mediaItem;
     private final ProgressiveMediaExtractor.Factory progressiveMediaExtractorFactory;
@@ -66,6 +67,7 @@ public final class ProgressiveMediaSource extends BaseMediaSource implements Pro
         private Supplier<ReleasableExecutor> downloadExecutorSupplier;
         private DrmSessionManagerProvider drmSessionManagerProvider;
         private LoadErrorHandlingPolicy loadErrorHandlingPolicy;
+        private boolean loadOnlySelectedTracks;
         private ProgressiveMediaExtractor.Factory progressiveMediaExtractorFactory;
         private Format singleTrackFormat;
         private int singleTrackId;
@@ -102,7 +104,7 @@ public final class ProgressiveMediaSource extends BaseMediaSource implements Pro
 
         @Override // androidx.media3.exoplayer.source.MediaSource.Factory
         public Factory setLoadErrorHandlingPolicy(LoadErrorHandlingPolicy loadErrorHandlingPolicy) {
-            this.loadErrorHandlingPolicy = (LoadErrorHandlingPolicy) Assertions.checkNotNull(loadErrorHandlingPolicy, "MediaSource.Factory#setLoadErrorHandlingPolicy no longer handles null by instantiating a new DefaultLoadErrorHandlingPolicy. Explicitly construct and pass an instance in order to retain the old behavior.");
+            this.loadErrorHandlingPolicy = (LoadErrorHandlingPolicy) Preconditions.checkNotNull(loadErrorHandlingPolicy, "MediaSource.Factory#setLoadErrorHandlingPolicy no longer handles null by instantiating a new DefaultLoadErrorHandlingPolicy. Explicitly construct and pass an instance in order to retain the old behavior.");
             return this;
         }
 
@@ -114,13 +116,13 @@ public final class ProgressiveMediaSource extends BaseMediaSource implements Pro
         /* JADX INFO: Access modifiers changed from: package-private */
         public Factory enableLazyLoadingWithSingleTrack(int i, Format format) {
             this.singleTrackId = i;
-            this.singleTrackFormat = (Format) Assertions.checkNotNull(format);
+            this.singleTrackFormat = (Format) Preconditions.checkNotNull(format);
             return this;
         }
 
         @Override // androidx.media3.exoplayer.source.MediaSource.Factory
         public Factory setDrmSessionManagerProvider(DrmSessionManagerProvider drmSessionManagerProvider) {
-            this.drmSessionManagerProvider = (DrmSessionManagerProvider) Assertions.checkNotNull(drmSessionManagerProvider, "MediaSource.Factory#setDrmSessionManagerProvider no longer handles null by instantiating a new DefaultDrmSessionManagerProvider. Explicitly construct and pass an instance in order to retain the old behavior.");
+            this.drmSessionManagerProvider = (DrmSessionManagerProvider) Preconditions.checkNotNull(drmSessionManagerProvider, "MediaSource.Factory#setDrmSessionManagerProvider no longer handles null by instantiating a new DefaultDrmSessionManagerProvider. Explicitly construct and pass an instance in order to retain the old behavior.");
             return this;
         }
 
@@ -136,15 +138,21 @@ public final class ProgressiveMediaSource extends BaseMediaSource implements Pro
             return this;
         }
 
+        @Override // androidx.media3.exoplayer.source.MediaSource.Factory
         public MediaSource.Factory setDownloadExecutor(Supplier<ReleasableExecutor> supplier) {
             this.downloadExecutorSupplier = supplier;
             return this;
         }
 
+        public Factory setLoadOnlySelectedTracks(boolean z) {
+            this.loadOnlySelectedTracks = z;
+            return this;
+        }
+
         @Override // androidx.media3.exoplayer.source.MediaSource.Factory
         public ProgressiveMediaSource createMediaSource(MediaItem mediaItem) {
-            Assertions.checkNotNull(mediaItem.localConfiguration);
-            return new ProgressiveMediaSource(mediaItem, this.dataSourceFactory, this.progressiveMediaExtractorFactory, this.drmSessionManagerProvider.get(mediaItem), this.loadErrorHandlingPolicy, this.continueLoadingCheckIntervalBytes, this.singleTrackId, this.singleTrackFormat, this.downloadExecutorSupplier);
+            Preconditions.checkNotNull(mediaItem.localConfiguration);
+            return new ProgressiveMediaSource(mediaItem, this.dataSourceFactory, this.progressiveMediaExtractorFactory, this.drmSessionManagerProvider.get(mediaItem), this.loadErrorHandlingPolicy, this.continueLoadingCheckIntervalBytes, this.loadOnlySelectedTracks, this.singleTrackId, this.singleTrackFormat, this.downloadExecutorSupplier);
         }
 
         @Override // androidx.media3.exoplayer.source.MediaSource.Factory
@@ -153,13 +161,14 @@ public final class ProgressiveMediaSource extends BaseMediaSource implements Pro
         }
     }
 
-    private ProgressiveMediaSource(MediaItem mediaItem, DataSource.Factory factory, ProgressiveMediaExtractor.Factory factory2, DrmSessionManager drmSessionManager, LoadErrorHandlingPolicy loadErrorHandlingPolicy, int i, int i2, Format format, Supplier<ReleasableExecutor> supplier) {
+    private ProgressiveMediaSource(MediaItem mediaItem, DataSource.Factory factory, ProgressiveMediaExtractor.Factory factory2, DrmSessionManager drmSessionManager, LoadErrorHandlingPolicy loadErrorHandlingPolicy, int i, boolean z, int i2, Format format, Supplier<ReleasableExecutor> supplier) {
         this.mediaItem = mediaItem;
         this.dataSourceFactory = factory;
         this.progressiveMediaExtractorFactory = factory2;
         this.drmSessionManager = drmSessionManager;
         this.loadableLoadErrorHandlingPolicy = loadErrorHandlingPolicy;
         this.continueLoadingCheckIntervalBytes = i;
+        this.loadOnlySelectedTracks = z;
         this.singleTrackFormat = format;
         this.singleTrackId = i2;
         this.timelineIsPlaceholder = true;
@@ -187,7 +196,7 @@ public final class ProgressiveMediaSource extends BaseMediaSource implements Pro
     @Override // androidx.media3.exoplayer.source.BaseMediaSource
     protected void prepareSourceInternal(TransferListener transferListener) {
         this.transferListener = transferListener;
-        this.drmSessionManager.setPlayer((Looper) Assertions.checkNotNull(Looper.myLooper()), getPlayerId());
+        this.drmSessionManager.setPlayer((Looper) Preconditions.checkNotNull(Looper.myLooper()), getPlayerId());
         this.drmSessionManager.prepare();
         notifySourceInfoRefreshed();
     }
@@ -208,11 +217,12 @@ public final class ProgressiveMediaSource extends BaseMediaSource implements Pro
         MediaSourceEventListener.EventDispatcher createEventDispatcher = createEventDispatcher(mediaPeriodId);
         String str = localConfiguration.customCacheKey;
         int i = this.continueLoadingCheckIntervalBytes;
+        boolean z = this.loadOnlySelectedTracks;
         int i2 = this.singleTrackId;
         Format format = this.singleTrackFormat;
         long msToUs = Util.msToUs(localConfiguration.imageDurationMs);
         Supplier<ReleasableExecutor> supplier = this.downloadExecutorSupplier;
-        return new ProgressiveMediaPeriod(uri, createDataSource, createProgressiveMediaExtractor, drmSessionManager, createDrmEventDispatcher, loadErrorHandlingPolicy, createEventDispatcher, this, allocator, str, i, i2, format, msToUs, supplier != null ? supplier.get() : null);
+        return new ProgressiveMediaPeriod(uri, createDataSource, createProgressiveMediaExtractor, drmSessionManager, createDrmEventDispatcher, loadErrorHandlingPolicy, createEventDispatcher, this, allocator, str, i, z, i2, format, msToUs, supplier != null ? supplier.get() : null);
     }
 
     @Override // androidx.media3.exoplayer.source.MediaSource
@@ -254,7 +264,7 @@ public final class ProgressiveMediaSource extends BaseMediaSource implements Pro
     }
 
     private MediaItem.LocalConfiguration getLocalConfiguration() {
-        return (MediaItem.LocalConfiguration) Assertions.checkNotNull(getMediaItem().localConfiguration);
+        return (MediaItem.LocalConfiguration) Preconditions.checkNotNull(getMediaItem().localConfiguration);
     }
 
     private void notifySourceInfoRefreshed() {

@@ -1,11 +1,11 @@
 package androidx.media3.exoplayer.source;
 
 import androidx.media3.common.Timeline;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.exoplayer.AbstractConcatenatedTimeline;
 import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.exoplayer.source.ShuffleOrder;
 import androidx.media3.exoplayer.upstream.Allocator;
+import com.google.common.base.Preconditions;
 import java.util.HashMap;
 import java.util.Map;
 @Deprecated
@@ -26,7 +26,7 @@ public final class LoopingMediaSource extends WrappingMediaSource {
 
     public LoopingMediaSource(MediaSource mediaSource, int i) {
         super(new MaskingMediaSource(mediaSource, false));
-        Assertions.checkArgument(i > 0);
+        Preconditions.checkArgument(i > 0);
         this.loopCount = i;
         this.childMediaPeriodIdToMediaPeriodId = new HashMap();
         this.mediaPeriodToChildMediaPeriodId = new HashMap();
@@ -93,7 +93,7 @@ public final class LoopingMediaSource extends WrappingMediaSource {
             this.childWindowCount = timeline.getWindowCount();
             this.loopCount = i;
             if (periodCount > 0) {
-                Assertions.checkState(i <= Integer.MAX_VALUE / periodCount, "LoopingMediaSource contains too many periods");
+                Preconditions.checkState(i <= Integer.MAX_VALUE / periodCount, "LoopingMediaSource contains too many periods");
             }
         }
 

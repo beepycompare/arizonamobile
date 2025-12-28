@@ -24,7 +24,7 @@ public final class C0522qc extends Y4 implements Na, Ma {
         boolean optBoolean;
         yo yoVar = this.t;
         synchronized (yoVar) {
-            optBoolean = yoVar.f1322a.a().optBoolean("referrer_handled", false);
+            optBoolean = yoVar.f1323a.a().optBoolean("referrer_handled", false);
         }
         return optBoolean;
     }
@@ -44,7 +44,7 @@ public final class C0522qc extends Y4 implements Na, Ma {
     public final void a() {
         yo yoVar = this.t;
         synchronized (yoVar) {
-            zo zoVar = yoVar.f1322a;
+            zo zoVar = yoVar.f1323a;
             zoVar.a(zoVar.a().put("referrer_handled", true));
         }
     }

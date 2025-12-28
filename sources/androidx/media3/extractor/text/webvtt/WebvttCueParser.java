@@ -18,12 +18,12 @@ import androidx.media3.common.text.HorizontalTextInVerticalContextSpan;
 import androidx.media3.common.text.RubySpan;
 import androidx.media3.common.text.SpanUtil;
 import androidx.media3.common.text.VoiceSpan;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import androidx.media3.extractor.text.webvtt.WebvttCueParser;
+import com.google.common.base.Preconditions;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -45,7 +45,7 @@ public final class WebvttCueParser {
     private static final char CHAR_SEMI_COLON = ';';
     private static final char CHAR_SLASH = '/';
     private static final char CHAR_SPACE = ' ';
-    public static final Pattern CUE_HEADER_PATTERN = Pattern.compile("^(\\S+)\\s+-->\\s+(\\S+)((?:.|\\f)*)?$");
+    public static final Pattern CUE_HEADER_PATTERN = Pattern.compile("^(\\S+)\\s+-->\\s+(\\S+)((?:.|\\f)*+)?$");
     private static final Pattern CUE_SETTING_PATTERN = Pattern.compile("(\\S+?):(\\S+)");
     private static final Map<String, Integer> DEFAULT_BACKGROUND_COLORS;
     static final float DEFAULT_POSITION = 0.5f;
@@ -204,9 +204,9 @@ public final class WebvttCueParser {
     private static WebvttCueInfo parseCue(String str, Matcher matcher, ParsableByteArray parsableByteArray, List<WebvttCssStyle> list) {
         WebvttCueInfoBuilder webvttCueInfoBuilder = new WebvttCueInfoBuilder();
         try {
-            webvttCueInfoBuilder.startTimeUs = WebvttParserUtil.parseTimestampUs((String) Assertions.checkNotNull(matcher.group(1)));
-            webvttCueInfoBuilder.endTimeUs = WebvttParserUtil.parseTimestampUs((String) Assertions.checkNotNull(matcher.group(2)));
-            parseCueSettingsList((String) Assertions.checkNotNull(matcher.group(3)), webvttCueInfoBuilder);
+            webvttCueInfoBuilder.startTimeUs = WebvttParserUtil.parseTimestampUs((String) Preconditions.checkNotNull(matcher.group(1)));
+            webvttCueInfoBuilder.endTimeUs = WebvttParserUtil.parseTimestampUs((String) Preconditions.checkNotNull(matcher.group(2)));
+            parseCueSettingsList((String) Preconditions.checkNotNull(matcher.group(3)), webvttCueInfoBuilder);
             StringBuilder sb = new StringBuilder();
             String readLine = parsableByteArray.readLine();
             while (!TextUtils.isEmpty(readLine)) {
@@ -227,8 +227,8 @@ public final class WebvttCueParser {
     private static void parseCueSettingsList(String str, WebvttCueInfoBuilder webvttCueInfoBuilder) {
         Matcher matcher = CUE_SETTING_PATTERN.matcher(str);
         while (matcher.find()) {
-            String str2 = (String) Assertions.checkNotNull(matcher.group(1));
-            String str3 = (String) Assertions.checkNotNull(matcher.group(2));
+            String str2 = (String) Preconditions.checkNotNull(matcher.group(1));
+            String str3 = (String) Preconditions.checkNotNull(matcher.group(2));
             try {
                 if ("line".equals(str2)) {
                     parseLineAttribute(str3, webvttCueInfoBuilder);
@@ -753,7 +753,7 @@ public final class WebvttCueParser {
 
     private static String getTagName(String str) {
         String trim = str.trim();
-        Assertions.checkArgument(!trim.isEmpty());
+        Preconditions.checkArgument(!trim.isEmpty());
         return Util.splitAtFirst(trim, "[ \\.]")[0];
     }
 
@@ -901,7 +901,7 @@ public final class WebvttCueParser {
         public static StartTag buildStartTag(String str, int i) {
             String str2;
             String trim = str.trim();
-            Assertions.checkArgument(!trim.isEmpty());
+            Preconditions.checkArgument(!trim.isEmpty());
             int indexOf = trim.indexOf(" ");
             if (indexOf == -1) {
                 str2 = "";

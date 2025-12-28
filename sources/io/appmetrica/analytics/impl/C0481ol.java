@@ -14,19 +14,19 @@ public final class C0481ol implements InterfaceC0582sn {
     public static final long d = TimeUnit.SECONDS.toMillis(20);
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1151a;
+    public final Context f1152a;
     public final PermissionExtractor b;
     public final CachedDataProvider.CachedData c;
 
     public C0481ol(Context context) {
         long j = d;
         this.c = new CachedDataProvider.CachedData(j, j, "sim-info");
-        this.f1151a = context;
+        this.f1152a = context;
         this.b = C0470oa.k().j();
     }
 
     public final C0354jl b() {
-        return new C0354jl((Integer) SystemServiceUtils.accessSystemServiceByNameSafely(this.f1151a, "phone", "getting SimMcc", "TelephonyManager", new C0380kl()), (Integer) SystemServiceUtils.accessSystemServiceByNameSafely(this.f1151a, "phone", "getting SimMnc", "TelephonyManager", new C0406ll()), ((Boolean) SystemServiceUtils.accessSystemServiceByNameSafelyOrDefault(this.f1151a, "phone", "getting NetworkRoaming", "TelephonyManager", Boolean.FALSE, new C0456nl(this))).booleanValue(), (String) SystemServiceUtils.accessSystemServiceByNameSafely(this.f1151a, "phone", "getting SimOperatorName", "TelephonyManager", new C0431ml()));
+        return new C0354jl((Integer) SystemServiceUtils.accessSystemServiceByNameSafely(this.f1152a, "phone", "getting SimMcc", "TelephonyManager", new C0380kl()), (Integer) SystemServiceUtils.accessSystemServiceByNameSafely(this.f1152a, "phone", "getting SimMnc", "TelephonyManager", new C0406ll()), ((Boolean) SystemServiceUtils.accessSystemServiceByNameSafelyOrDefault(this.f1152a, "phone", "getting NetworkRoaming", "TelephonyManager", Boolean.FALSE, new C0456nl(this))).booleanValue(), (String) SystemServiceUtils.accessSystemServiceByNameSafely(this.f1152a, "phone", "getting SimOperatorName", "TelephonyManager", new C0431ml()));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:8:0x0017, code lost:
@@ -50,8 +50,8 @@ public final class C0481ol implements InterfaceC0582sn {
         ArrayList arrayList2 = new ArrayList();
         if (C0470oa.I.u.b().n.d) {
             if (AndroidUtils.isApiAchieved(23)) {
-                if (this.b.hasPermission(this.f1151a, "android.permission.READ_PHONE_STATE")) {
-                    arrayList2.addAll(C0506pl.a(this.f1151a));
+                if (this.b.hasPermission(this.f1152a, "android.permission.READ_PHONE_STATE")) {
+                    arrayList2.addAll(C0506pl.a(this.f1152a));
                 }
                 if (arrayList2.size() == 0) {
                     arrayList2.add(b());

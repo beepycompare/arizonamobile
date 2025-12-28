@@ -5,10 +5,10 @@ import io.appmetrica.analytics.modulesapi.internal.service.ServiceContext;
 public final class i {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ServiceContext f466a;
+    public final ServiceContext f467a;
     public final j b = new j();
 
     public i(ServiceContext serviceContext) {
-        this.f466a = serviceContext;
+        this.f467a = serviceContext;
     }
 }

@@ -2,7 +2,6 @@ package androidx.media3.extractor.text.ttml;
 
 import android.text.Layout;
 import androidx.media3.common.C;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ColorParser;
 import androidx.media3.common.util.Consumer;
 import androidx.media3.common.util.Log;
@@ -15,6 +14,7 @@ import androidx.media3.extractor.text.Subtitle;
 import androidx.media3.extractor.text.SubtitleDecoderException;
 import androidx.media3.extractor.text.SubtitleParser;
 import com.google.common.base.Ascii;
+import com.google.common.base.Preconditions;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -128,10 +128,10 @@ public final class TtmlParser implements SubtitleParser {
                     } else {
                         c = 15;
                         if (eventType == 4) {
-                            ((TtmlNode) Assertions.checkNotNull(ttmlNode)).addChild(TtmlNode.buildTextNode(newPullParser.getText()));
+                            ((TtmlNode) Preconditions.checkNotNull(ttmlNode)).addChild(TtmlNode.buildTextNode(newPullParser.getText()));
                         } else if (eventType == 3) {
                             if (newPullParser.getName().equals(TtmlNode.TAG_TT)) {
-                                ttmlSubtitle = new TtmlSubtitle((TtmlNode) Assertions.checkNotNull((TtmlNode) arrayDeque.peek()), hashMap, hashMap2, hashMap3);
+                                ttmlSubtitle = new TtmlSubtitle((TtmlNode) Preconditions.checkNotNull((TtmlNode) arrayDeque.peek()), hashMap, hashMap2, hashMap3);
                             }
                             arrayDeque.pop();
                         }
@@ -143,7 +143,7 @@ public final class TtmlParser implements SubtitleParser {
                 }
                 newPullParser.next();
             }
-            return (Subtitle) Assertions.checkNotNull(ttmlSubtitle);
+            return (Subtitle) Preconditions.checkNotNull(ttmlSubtitle);
         } catch (IOException e2) {
             throw new IllegalStateException("Unexpected error when reading input.", e2);
         } catch (XmlPullParserException e3) {
@@ -158,7 +158,7 @@ public final class TtmlParser implements SubtitleParser {
         String attributeValue2 = xmlPullParser.getAttributeValue(TTP, "frameRateMultiplier");
         if (attributeValue2 != null) {
             String[] split = Util.split(attributeValue2, " ");
-            Assertions.checkArgument(split.length == 2, "frameRateMultiplier doesn't have 2 parts");
+            Preconditions.checkArgument(split.length == 2, "frameRateMultiplier doesn't have 2 parts");
             f = Integer.parseInt(split[0]) / Integer.parseInt(split[1]);
         } else {
             f = 1.0f;
@@ -189,12 +189,12 @@ public final class TtmlParser implements SubtitleParser {
         }
         boolean z = true;
         try {
-            int parseInt = Integer.parseInt((String) Assertions.checkNotNull(matcher.group(1)));
-            int parseInt2 = Integer.parseInt((String) Assertions.checkNotNull(matcher.group(2)));
+            int parseInt = Integer.parseInt((String) Preconditions.checkNotNull(matcher.group(1)));
+            int parseInt2 = Integer.parseInt((String) Preconditions.checkNotNull(matcher.group(2)));
             if (parseInt == 0 || parseInt2 == 0) {
                 z = false;
             }
-            Assertions.checkArgument(z, "Invalid cell resolution " + parseInt + " " + parseInt2);
+            Preconditions.checkArgument(z, "Invalid cell resolution %s %s", parseInt, parseInt2);
             return parseInt2;
         } catch (NumberFormatException unused) {
             Log.w(TAG, "Ignoring malformed cell resolution: " + attributeValue);
@@ -213,7 +213,7 @@ public final class TtmlParser implements SubtitleParser {
             return null;
         }
         try {
-            return new TtsExtent(Integer.parseInt((String) Assertions.checkNotNull(matcher.group(1))), Integer.parseInt((String) Assertions.checkNotNull(matcher.group(2))));
+            return new TtsExtent(Integer.parseInt((String) Preconditions.checkNotNull(matcher.group(1))), Integer.parseInt((String) Preconditions.checkNotNull(matcher.group(2))));
         } catch (NumberFormatException unused) {
             Log.w(TAG, "Ignoring malformed tts extent: " + attributeValue);
             return null;
@@ -296,8 +296,8 @@ public final class TtmlParser implements SubtitleParser {
             Matcher matcher2 = PIXEL_COORDINATES.matcher(attributeValue5);
             if (matcher.matches()) {
                 try {
-                    f2 = Float.parseFloat((String) Assertions.checkNotNull(matcher.group(1))) / 100.0f;
-                    f = Float.parseFloat((String) Assertions.checkNotNull(matcher.group(2))) / 100.0f;
+                    f2 = Float.parseFloat((String) Preconditions.checkNotNull(matcher.group(1))) / 100.0f;
+                    f = Float.parseFloat((String) Preconditions.checkNotNull(matcher.group(2))) / 100.0f;
                 } catch (NumberFormatException unused) {
                     Log.w(TAG, "Ignoring region with malformed origin: " + attributeValue5);
                     return null;
@@ -310,9 +310,9 @@ public final class TtmlParser implements SubtitleParser {
                 return null;
             } else {
                 try {
-                    int parseInt = Integer.parseInt((String) Assertions.checkNotNull(matcher2.group(1)));
+                    int parseInt = Integer.parseInt((String) Preconditions.checkNotNull(matcher2.group(1)));
                     float f8 = parseInt / ttsExtent.width;
-                    float parseInt2 = Integer.parseInt((String) Assertions.checkNotNull(matcher2.group(2))) / ttsExtent.height;
+                    float parseInt2 = Integer.parseInt((String) Preconditions.checkNotNull(matcher2.group(2))) / ttsExtent.height;
                     f2 = f8;
                     f = parseInt2;
                 } catch (NumberFormatException unused2) {
@@ -334,8 +334,8 @@ public final class TtmlParser implements SubtitleParser {
             f3 = 1.0f;
             if (matcher3.matches()) {
                 try {
-                    f4 = Float.parseFloat((String) Assertions.checkNotNull(matcher3.group(1))) / 100.0f;
-                    parseFloat = Float.parseFloat((String) Assertions.checkNotNull(matcher3.group(2))) / 100.0f;
+                    f4 = Float.parseFloat((String) Preconditions.checkNotNull(matcher3.group(1))) / 100.0f;
+                    parseFloat = Float.parseFloat((String) Preconditions.checkNotNull(matcher3.group(2))) / 100.0f;
                 } catch (NumberFormatException unused3) {
                     Log.w(TAG, "Ignoring region with malformed extent: " + attributeValue5);
                     return null;
@@ -348,9 +348,9 @@ public final class TtmlParser implements SubtitleParser {
                 return null;
             } else {
                 try {
-                    int parseInt3 = Integer.parseInt((String) Assertions.checkNotNull(matcher4.group(1)));
+                    int parseInt3 = Integer.parseInt((String) Preconditions.checkNotNull(matcher4.group(1)));
                     float f9 = parseInt3 / ttsExtent.width;
-                    parseFloat = Integer.parseInt((String) Assertions.checkNotNull(matcher4.group(2))) / ttsExtent.height;
+                    parseFloat = Integer.parseInt((String) Preconditions.checkNotNull(matcher4.group(2))) / ttsExtent.height;
                     f4 = f9;
                 } catch (NumberFormatException unused4) {
                     Log.w(TAG, "Ignoring region with malformed extent: " + attributeValue5);
@@ -951,7 +951,7 @@ public final class TtmlParser implements SubtitleParser {
             throw new SubtitleDecoderException("Invalid number of entries for fontSize: " + split.length + ".");
         }
         if (matcher.matches()) {
-            String str2 = (String) Assertions.checkNotNull(matcher.group(3));
+            String str2 = (String) Preconditions.checkNotNull(matcher.group(3));
             str2.hashCode();
             char c = 65535;
             switch (str2.hashCode()) {
@@ -987,7 +987,7 @@ public final class TtmlParser implements SubtitleParser {
                 default:
                     throw new SubtitleDecoderException("Invalid unit for fontSize: '" + str2 + "'.");
             }
-            ttmlStyle.setFontSize(Float.parseFloat((String) Assertions.checkNotNull(matcher.group(1))));
+            ttmlStyle.setFontSize(Float.parseFloat((String) Preconditions.checkNotNull(matcher.group(1))));
             return;
         }
         throw new SubtitleDecoderException("Invalid expression for fontSize: '" + str + "'.");
@@ -1000,7 +1000,7 @@ public final class TtmlParser implements SubtitleParser {
             return Float.MAX_VALUE;
         }
         try {
-            return Math.min(100.0f, Math.max(-100.0f, Float.parseFloat((String) Assertions.checkNotNull(matcher.group(1)))));
+            return Math.min(100.0f, Math.max(-100.0f, Float.parseFloat((String) Preconditions.checkNotNull(matcher.group(1)))));
         } catch (NumberFormatException e) {
             Log.w(TAG, "Failed to parse shear: " + str, e);
             return Float.MAX_VALUE;
@@ -1022,7 +1022,7 @@ public final class TtmlParser implements SubtitleParser {
         Matcher matcher = CLOCK_TIME.matcher(str);
         char c = 4;
         if (matcher.matches()) {
-            double parseLong = (Long.parseLong((String) Assertions.checkNotNull(matcher.group(1))) * 3600) + (Long.parseLong((String) Assertions.checkNotNull(matcher.group(2))) * 60) + Long.parseLong((String) Assertions.checkNotNull(matcher.group(3)));
+            double parseLong = (Long.parseLong((String) Preconditions.checkNotNull(matcher.group(1))) * 3600) + (Long.parseLong((String) Preconditions.checkNotNull(matcher.group(2))) * 60) + Long.parseLong((String) Preconditions.checkNotNull(matcher.group(3)));
             String group3 = matcher.group(4);
             double d3 = FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE;
             double parseDouble = parseLong + (group3 != null ? Double.parseDouble(group3) : 0.0d) + (matcher.group(5) != null ? ((float) Long.parseLong(group)) / frameAndTickRate.effectiveFrameRate : 0.0d);
@@ -1033,8 +1033,8 @@ public final class TtmlParser implements SubtitleParser {
         }
         Matcher matcher2 = OFFSET_TIME.matcher(str);
         if (matcher2.matches()) {
-            double parseDouble2 = Double.parseDouble((String) Assertions.checkNotNull(matcher2.group(1)));
-            String str2 = (String) Assertions.checkNotNull(matcher2.group(2));
+            double parseDouble2 = Double.parseDouble((String) Preconditions.checkNotNull(matcher2.group(1)));
+            String str2 = (String) Preconditions.checkNotNull(matcher2.group(2));
             str2.hashCode();
             switch (str2.hashCode()) {
                 case 102:

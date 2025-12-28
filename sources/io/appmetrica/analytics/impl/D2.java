@@ -3,14 +3,14 @@ package io.appmetrica.analytics.impl;
 public abstract class D2 implements InterfaceC0619ua {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f536a;
+    public final int f537a;
 
     public D2(int i) {
-        this.f536a = i;
+        this.f537a = i;
     }
 
     public final int a() {
-        return this.f536a;
+        return this.f537a;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0619ua

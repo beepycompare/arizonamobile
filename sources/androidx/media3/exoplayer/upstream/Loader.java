@@ -5,12 +5,12 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.SystemClock;
 import androidx.media3.common.C;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Consumer;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.TraceUtil;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.util.ReleasableExecutor;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.concurrent.ExecutorService;
 /* loaded from: classes3.dex */
@@ -103,7 +103,7 @@ public final class Loader implements LoaderErrorThrower {
     public <T extends Loadable> long startLoading(T t, Callback<T> callback, int i) {
         this.fatalError = null;
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        new LoadTask((Looper) Assertions.checkStateNotNull(Looper.myLooper()), t, callback, i, elapsedRealtime).start(0L);
+        new LoadTask((Looper) Preconditions.checkNotNull(Looper.myLooper()), t, callback, i, elapsedRealtime).start(0L);
         return elapsedRealtime;
     }
 
@@ -112,7 +112,7 @@ public final class Loader implements LoaderErrorThrower {
     }
 
     public void cancelLoading() {
-        ((LoadTask) Assertions.checkStateNotNull(this.currentTask)).cancel(false);
+        ((LoadTask) Preconditions.checkNotNull(this.currentTask)).cancel(false);
     }
 
     public void release() {
@@ -184,7 +184,7 @@ public final class Loader implements LoaderErrorThrower {
         }
 
         public void start(long j) {
-            Assertions.checkState(Loader.this.currentTask == null);
+            Preconditions.checkState(Loader.this.currentTask == null);
             Loader.this.currentTask = this;
             if (j > 0) {
                 sendEmptyMessageDelayed(1, j);
@@ -215,7 +215,7 @@ public final class Loader implements LoaderErrorThrower {
             if (z) {
                 finish();
                 long elapsedRealtime = SystemClock.elapsedRealtime();
-                ((Callback) Assertions.checkNotNull(this.callback)).onLoadCanceled(this.loadable, elapsedRealtime, elapsedRealtime - this.startTimeMs, true);
+                ((Callback) Preconditions.checkNotNull(this.callback)).onLoadCanceled(this.loadable, elapsedRealtime, elapsedRealtime - this.startTimeMs, true);
                 this.callback = null;
             }
         }
@@ -286,7 +286,7 @@ public final class Loader implements LoaderErrorThrower {
                 finish();
                 long elapsedRealtime = SystemClock.elapsedRealtime();
                 long j = elapsedRealtime - this.startTimeMs;
-                Callback callback = (Callback) Assertions.checkNotNull(this.callback);
+                Callback callback = (Callback) Preconditions.checkNotNull(this.callback);
                 if (this.canceled) {
                     callback.onLoadCanceled(this.loadable, elapsedRealtime, j, false);
                     return;
@@ -328,9 +328,9 @@ public final class Loader implements LoaderErrorThrower {
 
         private void execute() {
             long elapsedRealtime = SystemClock.elapsedRealtime();
-            ((Callback) Assertions.checkNotNull(this.callback)).onLoadStarted(this.loadable, elapsedRealtime, elapsedRealtime - this.startTimeMs, this.errorCount);
+            ((Callback) Preconditions.checkNotNull(this.callback)).onLoadStarted(this.loadable, elapsedRealtime, elapsedRealtime - this.startTimeMs, this.errorCount);
             this.currentError = null;
-            Loader.this.downloadExecutor.execute((Runnable) Assertions.checkNotNull(Loader.this.currentTask));
+            Loader.this.downloadExecutor.execute((Runnable) Preconditions.checkNotNull(Loader.this.currentTask));
         }
 
         private void finish() {

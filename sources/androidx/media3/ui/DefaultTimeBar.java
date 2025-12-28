@@ -18,9 +18,9 @@ import android.view.ViewParent;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.media3.common.C;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.ui.TimeBar;
+import com.google.common.base.Preconditions;
 import java.util.Collections;
 import java.util.Formatter;
 import java.util.Iterator;
@@ -151,7 +151,7 @@ public class DefaultTimeBar extends View implements TimeBar {
                 Drawable drawable = obtainStyledAttributes.getDrawable(R.styleable.DefaultTimeBar_scrubber_drawable);
                 this.scrubberDrawable = drawable;
                 if (drawable != null) {
-                    setDrawableLayoutDirection(drawable);
+                    drawable.setLayoutDirection(getLayoutDirection());
                     dpToPx2 = Math.max(drawable.getMinimumHeight(), dpToPx2);
                 }
                 this.barHeight = obtainStyledAttributes.getDimensionPixelSize(R.styleable.DefaultTimeBar_bar_height, dpToPx);
@@ -198,7 +198,7 @@ public class DefaultTimeBar extends View implements TimeBar {
         this.stopScrubbingRunnable = new Runnable() { // from class: androidx.media3.ui.DefaultTimeBar$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                DefaultTimeBar.this.m9069lambda$new$0$androidxmedia3uiDefaultTimeBar();
+                DefaultTimeBar.this.m9084lambda$new$0$androidxmedia3uiDefaultTimeBar();
             }
         };
         Drawable drawable2 = this.scrubberDrawable;
@@ -213,7 +213,7 @@ public class DefaultTimeBar extends View implements TimeBar {
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: androidx.media3.ui.DefaultTimeBar$$ExternalSyntheticLambda1
             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
             public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                DefaultTimeBar.this.m9070lambda$new$1$androidxmedia3uiDefaultTimeBar(valueAnimator2);
+                DefaultTimeBar.this.m9085lambda$new$1$androidxmedia3uiDefaultTimeBar(valueAnimator2);
             }
         });
         this.duration = C.TIME_UNSET;
@@ -227,13 +227,13 @@ public class DefaultTimeBar extends View implements TimeBar {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$androidx-media3-ui-DefaultTimeBar  reason: not valid java name */
-    public /* synthetic */ void m9069lambda$new$0$androidxmedia3uiDefaultTimeBar() {
+    public /* synthetic */ void m9084lambda$new$0$androidxmedia3uiDefaultTimeBar() {
         stopScrubbing(false);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$1$androidx-media3-ui-DefaultTimeBar  reason: not valid java name */
-    public /* synthetic */ void m9070lambda$new$1$androidxmedia3uiDefaultTimeBar(ValueAnimator valueAnimator) {
+    public /* synthetic */ void m9085lambda$new$1$androidxmedia3uiDefaultTimeBar(ValueAnimator valueAnimator) {
         this.scrubberScale = ((Float) valueAnimator.getAnimatedValue()).floatValue();
         invalidate(this.seekBounds);
     }
@@ -307,7 +307,7 @@ public class DefaultTimeBar extends View implements TimeBar {
 
     @Override // androidx.media3.ui.TimeBar
     public void addListener(TimeBar.OnScrubListener onScrubListener) {
-        Assertions.checkNotNull(onScrubListener);
+        Preconditions.checkNotNull(onScrubListener);
         this.listeners.add(onScrubListener);
     }
 
@@ -318,14 +318,14 @@ public class DefaultTimeBar extends View implements TimeBar {
 
     @Override // androidx.media3.ui.TimeBar
     public void setKeyTimeIncrement(long j) {
-        Assertions.checkArgument(j > 0);
+        Preconditions.checkArgument(j > 0);
         this.keyCountIncrement = -1;
         this.keyTimeIncrement = j;
     }
 
     @Override // androidx.media3.ui.TimeBar
     public void setKeyCountIncrement(int i) {
-        Assertions.checkArgument(i > 0);
+        Preconditions.checkArgument(i > 0);
         this.keyCountIncrement = i;
         this.keyTimeIncrement = C.TIME_UNSET;
     }
@@ -376,7 +376,7 @@ public class DefaultTimeBar extends View implements TimeBar {
 
     @Override // androidx.media3.ui.TimeBar
     public void setAdGroupTimesMs(long[] jArr, boolean[] zArr, int i) {
-        Assertions.checkArgument(i == 0 || !(jArr == null || zArr == null));
+        Preconditions.checkArgument(i == 0 || !(jArr == null || zArr == null));
         this.adGroupCount = i;
         this.adGroupTimesMs = jArr;
         this.playedAdGroups = zArr;
@@ -546,7 +546,7 @@ public class DefaultTimeBar extends View implements TimeBar {
     @Override // android.view.View
     public void onRtlPropertiesChanged(int i) {
         Drawable drawable = this.scrubberDrawable;
-        if (drawable == null || !setDrawableLayoutDirection(drawable, i)) {
+        if (drawable == null || !drawable.setLayoutDirection(i)) {
             return;
         }
         invalidate();
@@ -714,8 +714,8 @@ public class DefaultTimeBar extends View implements TimeBar {
         if (this.adGroupCount == 0) {
             return;
         }
-        long[] jArr = (long[]) Assertions.checkNotNull(this.adGroupTimesMs);
-        boolean[] zArr = (boolean[]) Assertions.checkNotNull(this.playedAdGroups);
+        long[] jArr = (long[]) Preconditions.checkNotNull(this.adGroupTimesMs);
+        boolean[] zArr = (boolean[]) Preconditions.checkNotNull(this.playedAdGroups);
         int i4 = this.adMarkerWidth / 2;
         for (int i5 = 0; i5 < this.adGroupCount; i5++) {
             canvas.drawRect(this.progressBar.left + Math.min(this.progressBar.width() - this.adMarkerWidth, Math.max(0, ((int) ((this.progressBar.width() * Util.constrainValue(jArr[i5], 0L, this.duration)) / this.duration)) - i4)), centerY, min + this.adMarkerWidth, i, zArr[i5] ? this.playedAdMarkerPaint : this.adMarkerPaint);
@@ -776,13 +776,5 @@ public class DefaultTimeBar extends View implements TimeBar {
             return j2 / this.keyCountIncrement;
         }
         return j;
-    }
-
-    private boolean setDrawableLayoutDirection(Drawable drawable) {
-        return setDrawableLayoutDirection(drawable, getLayoutDirection());
-    }
-
-    private static boolean setDrawableLayoutDirection(Drawable drawable, int i) {
-        return drawable.setLayoutDirection(i);
     }
 }

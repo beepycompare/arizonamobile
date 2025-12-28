@@ -3,9 +3,9 @@ package io.appmetrica.analytics.impl;
 public final class Lc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f665a;
+    public final String f666a;
 
     public Lc(String str) {
-        this.f665a = str;
+        this.f666a = str;
     }
 }

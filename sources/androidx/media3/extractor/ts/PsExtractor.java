@@ -5,7 +5,6 @@ import androidx.core.view.InputDeviceCompat;
 import androidx.media3.common.C;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.ParserException;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ParsableBitArray;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.TimestampAdjuster;
@@ -16,6 +15,7 @@ import androidx.media3.extractor.ExtractorsFactory;
 import androidx.media3.extractor.PositionHolder;
 import androidx.media3.extractor.SeekMap;
 import androidx.media3.extractor.ts.TsPayloadReader;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
 /* loaded from: classes3.dex */
@@ -110,7 +110,7 @@ public final class PsExtractor implements Extractor {
     @Override // androidx.media3.extractor.Extractor
     public int read(ExtractorInput extractorInput, PositionHolder positionHolder) throws IOException {
         ElementaryStreamReader elementaryStreamReader;
-        Assertions.checkStateNotNull(this.output);
+        Preconditions.checkNotNull(this.output);
         long length = extractorInput.getLength();
         int i = (length > (-1L) ? 1 : (length == (-1L) ? 0 : -1));
         if (i != 0 && !this.durationReader.isDurationReadFinished()) {

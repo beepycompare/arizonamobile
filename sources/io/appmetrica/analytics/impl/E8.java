@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 public final class E8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Gc f554a = new Gc();
+    public final Gc f555a = new Gc();
     public final C0580sl b;
 
     public E8(C0580sl c0580sl) {

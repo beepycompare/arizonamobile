@@ -1,8 +1,8 @@
 package androidx.media3.datasource;
 
 import androidx.collection.SieveCacheKt;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 /* loaded from: classes2.dex */
@@ -15,7 +15,7 @@ public final class ByteArrayDataSink implements DataSink {
             this.stream = new ByteArrayOutputStream();
             return;
         }
-        Assertions.checkArgument(dataSpec.length <= SieveCacheKt.NodeLinkMask);
+        Preconditions.checkArgument(dataSpec.length <= SieveCacheKt.NodeLinkMask);
         this.stream = new ByteArrayOutputStream((int) dataSpec.length);
     }
 

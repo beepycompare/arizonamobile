@@ -1,7 +1,6 @@
 package androidx.media3.extractor.ogg;
 
 import androidx.media3.common.MimeTypes;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.ExtractorInput;
@@ -11,6 +10,7 @@ import androidx.media3.extractor.FlacSeekTableSeekMap;
 import androidx.media3.extractor.FlacStreamMetadata;
 import androidx.media3.extractor.SeekMap;
 import androidx.media3.extractor.ogg.StreamReader;
+import com.google.common.base.Preconditions;
 import java.util.Arrays;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNullIf;
 /* loaded from: classes3.dex */
@@ -68,7 +68,7 @@ final class FlacReader extends StreamReader {
                 flacOggSeeker.setFirstFrameOffset(j);
                 setupData.oggSeeker = this.flacOggSeeker;
             }
-            Assertions.checkNotNull(setupData.format);
+            Preconditions.checkNotNull(setupData.format);
             return false;
         } else {
             return true;
@@ -121,7 +121,7 @@ final class FlacReader extends StreamReader {
 
         @Override // androidx.media3.extractor.ogg.OggSeeker
         public SeekMap createSeekMap() {
-            Assertions.checkState(this.firstFrameOffset != -1);
+            Preconditions.checkState(this.firstFrameOffset != -1);
             return new FlacSeekTableSeekMap(this.streamMetadata, this.firstFrameOffset);
         }
     }

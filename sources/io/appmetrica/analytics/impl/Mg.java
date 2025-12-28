@@ -7,7 +7,7 @@ public final class Mg extends Sg {
 
     @Override // io.appmetrica.analytics.impl.Sg
     public final boolean a(Q5 q5) {
-        this.f776a.d();
+        this.f777a.d();
         return false;
     }
 }

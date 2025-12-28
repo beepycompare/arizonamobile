@@ -34,4 +34,8 @@ public final class LoadEventInfo {
         this.loadDurationMs = j3;
         this.bytesLoaded = j4;
     }
+
+    public LoadEventInfo copyWithTaskIdAndDurationMs(long j, long j2) {
+        return new LoadEventInfo(j, this.dataSpec, this.uri, this.responseHeaders, this.elapsedRealtimeMs, j2, this.bytesLoaded);
+    }
 }

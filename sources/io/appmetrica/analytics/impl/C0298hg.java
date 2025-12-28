@@ -7,7 +7,7 @@ import io.appmetrica.analytics.coreutils.internal.StringUtils;
 public final class C0298hg implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Zi f1021a;
+    public final Zi f1022a;
     public final C0594ta b;
     public final C0594ta c;
 
@@ -20,14 +20,14 @@ public final class C0298hg implements Converter {
     public final Ei fromModel(C0725yg c0725yg) {
         Ei ei;
         C0518q8 c0518q8 = new C0518q8();
-        Nn a2 = this.b.a(c0725yg.f1317a);
-        c0518q8.f1181a = StringUtils.getUTF8Bytes((String) a2.f708a);
+        Nn a2 = this.b.a(c0725yg.f1318a);
+        c0518q8.f1182a = StringUtils.getUTF8Bytes((String) a2.f709a);
         Nn a3 = this.c.a(c0725yg.b);
-        c0518q8.b = StringUtils.getUTF8Bytes((String) a3.f708a);
+        c0518q8.b = StringUtils.getUTF8Bytes((String) a3.f709a);
         C0198dj c0198dj = c0725yg.c;
         if (c0198dj != null) {
-            ei = this.f1021a.fromModel(c0198dj);
-            c0518q8.c = (C0542r8) ei.f560a;
+            ei = this.f1022a.fromModel(c0198dj);
+            c0518q8.c = (C0542r8) ei.f561a;
         } else {
             ei = null;
         }
@@ -41,7 +41,7 @@ public final class C0298hg implements Converter {
     }
 
     public C0298hg(Zi zi, C0594ta c0594ta, C0594ta c0594ta2) {
-        this.f1021a = zi;
+        this.f1022a = zi;
         this.b = c0594ta;
         this.c = c0594ta2;
     }

@@ -20,7 +20,7 @@ public final class C0452nh extends Sg {
     @Override // io.appmetrica.analytics.impl.Sg
     public final boolean a(Q5 q5) {
         Q5 a2;
-        Y4 y4 = this.f776a;
+        Y4 y4 = this.f777a;
         if (this.c.d()) {
             return false;
         }
@@ -31,9 +31,9 @@ public final class C0452nh extends Sg {
         }
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put("appInstaller", (String) WrapUtils.getOrDefault(this.d.getInstallerPackageName(y4.f857a, y4.b.f756a), ""));
+            jSONObject.put("appInstaller", (String) WrapUtils.getOrDefault(this.d.getInstallerPackageName(y4.f858a, y4.b.f757a), ""));
             C0624uf c0624uf = this.b;
-            c0624uf.h.a(c0624uf.f746a);
+            c0624uf.h.a(c0624uf.f747a);
             jSONObject.put("preloadInfo", ((C0549rf) c0624uf.c()).b());
         } catch (Throwable unused) {
         }
@@ -42,7 +42,7 @@ public final class C0452nh extends Sg {
         c0394l9.a(a2, Sk.a(c0394l9.c.b(a2), a2.i));
         yo yoVar = this.c;
         synchronized (yoVar) {
-            zo zoVar = yoVar.f1322a;
+            zo zoVar = yoVar.f1323a;
             zoVar.a(zoVar.a().put("init_event_done", true));
         }
         this.c.a(this.e.currentTimeMillis());

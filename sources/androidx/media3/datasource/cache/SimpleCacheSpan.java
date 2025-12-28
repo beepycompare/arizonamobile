@@ -1,8 +1,8 @@
 package androidx.media3.datasource.cache;
 
 import androidx.media3.common.C;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import java.io.File;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -43,7 +43,7 @@ public final class SimpleCacheSpan extends CacheSpan {
         }
         File file2 = file;
         Matcher matcher = CACHE_FILE_PATTERN_V3.matcher(name);
-        if (matcher.matches() && (keyForId = cachedContentIndex.getKeyForId(Integer.parseInt((String) Assertions.checkNotNull(matcher.group(1))))) != null) {
+        if (matcher.matches() && (keyForId = cachedContentIndex.getKeyForId(Integer.parseInt((String) Preconditions.checkNotNull(matcher.group(1))))) != null) {
             if (j == -1) {
                 j = file2.length();
             }
@@ -51,7 +51,7 @@ public final class SimpleCacheSpan extends CacheSpan {
             if (j3 == 0) {
                 return null;
             }
-            return new SimpleCacheSpan(keyForId, Long.parseLong((String) Assertions.checkNotNull(matcher.group(2))), j3, j2 == C.TIME_UNSET ? Long.parseLong((String) Assertions.checkNotNull(matcher.group(3))) : j2, file2);
+            return new SimpleCacheSpan(keyForId, Long.parseLong((String) Preconditions.checkNotNull(matcher.group(2))), j3, j2 == C.TIME_UNSET ? Long.parseLong((String) Preconditions.checkNotNull(matcher.group(3))) : j2, file2);
         }
         return null;
     }
@@ -61,15 +61,15 @@ public final class SimpleCacheSpan extends CacheSpan {
         String name = file.getName();
         Matcher matcher = CACHE_FILE_PATTERN_V2.matcher(name);
         if (matcher.matches()) {
-            str = Util.unescapeFileName((String) Assertions.checkNotNull(matcher.group(1)));
+            str = Util.unescapeFileName((String) Preconditions.checkNotNull(matcher.group(1)));
         } else {
             matcher = CACHE_FILE_PATTERN_V1.matcher(name);
-            str = matcher.matches() ? (String) Assertions.checkNotNull(matcher.group(1)) : null;
+            str = matcher.matches() ? (String) Preconditions.checkNotNull(matcher.group(1)) : null;
         }
         if (str == null) {
             return null;
         }
-        File cacheFile = getCacheFile((File) Assertions.checkStateNotNull(file.getParentFile()), cachedContentIndex.assignIdForKey(str), Long.parseLong((String) Assertions.checkNotNull(matcher.group(2))), Long.parseLong((String) Assertions.checkNotNull(matcher.group(3))));
+        File cacheFile = getCacheFile((File) Preconditions.checkNotNull(file.getParentFile()), cachedContentIndex.assignIdForKey(str), Long.parseLong((String) Preconditions.checkNotNull(matcher.group(2))), Long.parseLong((String) Preconditions.checkNotNull(matcher.group(3))));
         if (file.renameTo(cacheFile)) {
             return cacheFile;
         }
@@ -81,7 +81,7 @@ public final class SimpleCacheSpan extends CacheSpan {
     }
 
     public SimpleCacheSpan copyWithFileAndLastTouchTimestamp(File file, long j) {
-        Assertions.checkState(this.isCached);
+        Preconditions.checkState(this.isCached);
         return new SimpleCacheSpan(this.key, this.position, this.length, j, file);
     }
 }

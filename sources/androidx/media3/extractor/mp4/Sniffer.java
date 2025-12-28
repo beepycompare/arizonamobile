@@ -21,22 +21,24 @@ public final class Sniffer {
         return sniffInternal(extractorInput, false, z);
     }
 
+    /* JADX WARN: Multi-variable type inference failed */
     private static SniffFailure sniffInternal(ExtractorInput extractorInput, boolean z, boolean z2) throws IOException {
         SniffFailure sniffFailure;
         int i;
         long j;
         int i2;
         int i3;
+        long j2;
         int i4;
         int[] iArr;
         long length = extractorInput.getLength();
-        long j2 = -1;
+        long j3 = -1;
         int i5 = (length > (-1L) ? 1 : (length == (-1L) ? 0 : -1));
-        long j3 = PlaybackStateCompat.ACTION_SKIP_TO_QUEUE_ITEM;
+        long j4 = PlaybackStateCompat.ACTION_SKIP_TO_QUEUE_ITEM;
         if (i5 != 0 && length <= PlaybackStateCompat.ACTION_SKIP_TO_QUEUE_ITEM) {
-            j3 = length;
+            j4 = length;
         }
-        int i6 = (int) j3;
+        int i6 = (int) j4;
         ParsableByteArray parsableByteArray = new ParsableByteArray(64);
         int i7 = 0;
         int i8 = 0;
@@ -50,14 +52,14 @@ public final class Sniffer {
             long readUnsignedInt = parsableByteArray.readUnsignedInt();
             int readInt = parsableByteArray.readInt();
             if (readUnsignedInt == 1) {
-                j = j2;
+                j = j3;
                 extractorInput.peekFully(parsableByteArray.getData(), 8, 8);
                 i3 = 16;
                 parsableByteArray.setLimit(16);
                 readUnsignedInt = parsableByteArray.readLong();
                 i2 = i8;
             } else {
-                j = j2;
+                j = j3;
                 if (readUnsignedInt == 0) {
                     long length2 = extractorInput.getLength();
                     if (length2 != j) {
@@ -69,79 +71,92 @@ public final class Sniffer {
                 i2 = i8;
                 i3 = 8;
             }
-            long j4 = readUnsignedInt;
-            long j5 = i3;
-            if (j4 < j5) {
-                return new AtomSizeTooSmallSniffFailure(readInt, j4, i3);
+            long j5 = readUnsignedInt;
+            long j6 = i3;
+            if (j5 < j6) {
+                sniffFailure = null;
+                if (readInt != 1718773093 || i3 != 8) {
+                    return new AtomSizeTooSmallSniffFailure(readInt, j5, i3);
+                }
+                j5 = j6;
+            } else {
+                sniffFailure = null;
             }
             int i9 = i2 + i3;
-            sniffFailure = null;
             if (readInt == 1836019574) {
-                i6 += (int) j4;
+                i6 += (int) j5;
                 if (i5 != 0 && i6 > length) {
                     i6 = (int) length;
                 }
                 i8 = i9;
-                j2 = j;
+                j3 = j;
                 i7 = 0;
-            } else if (readInt == 1836019558 || readInt == 1836475768) {
-                i = 1;
-                break;
             } else {
-                if (readInt == 1835295092) {
-                    z3 = true;
-                }
-                long j6 = length;
-                if ((i9 + j4) - j5 >= i6) {
-                    i = 0;
+                if (readInt != 1953653099 && readInt != 1835297121 && readInt != 1835626086) {
+                    if (readInt != 1836019558 && readInt != 1836475768) {
+                        if (readInt == 1835295092) {
+                            z3 = true;
+                        }
+                        if (readInt != 1937007212 || j5 <= 1000000) {
+                            j2 = length;
+                            if ((i9 + j5) - j6 < i6) {
+                                int i10 = (int) (j5 - j6);
+                                i8 = i9 + i10;
+                                if (readInt != 1718909296) {
+                                    i4 = 0;
+                                    if (i10 != 0) {
+                                        extractorInput.advancePeekPosition(i10);
+                                    }
+                                } else if (i10 < 8) {
+                                    return new AtomSizeTooSmallSniffFailure(readInt, i10, 8);
+                                } else {
+                                    parsableByteArray.reset(i10);
+                                    i4 = 0;
+                                    extractorInput.peekFully(parsableByteArray.getData(), 0, i10);
+                                    int readInt2 = parsableByteArray.readInt();
+                                    if (isCompatibleBrand(readInt2, z2)) {
+                                        z3 = true;
+                                    }
+                                    parsableByteArray.skipBytes(4);
+                                    int bytesLeft = parsableByteArray.bytesLeft() / 4;
+                                    if (!z3 && bytesLeft > 0) {
+                                        iArr = new int[bytesLeft];
+                                        int i11 = 0;
+                                        while (true) {
+                                            if (i11 >= bytesLeft) {
+                                                z4 = z3;
+                                                break;
+                                            }
+                                            int readInt3 = parsableByteArray.readInt();
+                                            iArr[i11] = readInt3;
+                                            if (isCompatibleBrand(readInt3, z2)) {
+                                                break;
+                                            }
+                                            i11++;
+                                        }
+                                    } else {
+                                        z4 = z3;
+                                        iArr = sniffFailure;
+                                    }
+                                    if (!z4) {
+                                        return new UnsupportedBrandsSniffFailure(readInt2, iArr);
+                                    }
+                                    z3 = z4;
+                                }
+                            }
+                        }
+                        i = 0;
+                        break;
+                    }
+                    i = 1;
                     break;
                 }
-                int i10 = (int) (j4 - j5);
-                i8 = i9 + i10;
-                if (readInt != 1718909296) {
-                    i4 = 0;
-                    if (i10 != 0) {
-                        extractorInput.advancePeekPosition(i10);
-                    }
-                } else if (i10 < 8) {
-                    return new AtomSizeTooSmallSniffFailure(readInt, i10, 8);
-                } else {
-                    parsableByteArray.reset(i10);
-                    i4 = 0;
-                    extractorInput.peekFully(parsableByteArray.getData(), 0, i10);
-                    int readInt2 = parsableByteArray.readInt();
-                    if (isCompatibleBrand(readInt2, z2)) {
-                        z3 = true;
-                    }
-                    parsableByteArray.skipBytes(4);
-                    int bytesLeft = parsableByteArray.bytesLeft() / 4;
-                    if (!z3 && bytesLeft > 0) {
-                        iArr = new int[bytesLeft];
-                        int i11 = 0;
-                        while (true) {
-                            if (i11 >= bytesLeft) {
-                                z4 = z3;
-                                break;
-                            }
-                            int readInt3 = parsableByteArray.readInt();
-                            iArr[i11] = readInt3;
-                            if (isCompatibleBrand(readInt3, z2)) {
-                                break;
-                            }
-                            i11++;
-                        }
-                    } else {
-                        z4 = z3;
-                        iArr = null;
-                    }
-                    if (!z4) {
-                        return new UnsupportedBrandsSniffFailure(readInt2, iArr);
-                    }
-                    z3 = z4;
-                }
+                j2 = length;
+                i4 = 0;
+                i8 = i9;
                 i7 = i4;
-                j2 = j;
-                length = j6;
+                j3 = j;
+                length = j2;
             }
         }
         sniffFailure = null;

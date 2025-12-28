@@ -4,8 +4,8 @@ import android.os.Looper;
 import androidx.media3.common.C;
 import androidx.media3.common.IllegalSeekPositionException;
 import androidx.media3.common.Timeline;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Clock;
+import com.google.common.base.Preconditions;
 import java.util.concurrent.TimeoutException;
 /* loaded from: classes.dex */
 public final class PlayerMessage {
@@ -52,7 +52,7 @@ public final class PlayerMessage {
     }
 
     public PlayerMessage setType(int i) {
-        Assertions.checkState(!this.isSent);
+        Preconditions.checkState(!this.isSent);
         this.type = i;
         return this;
     }
@@ -62,7 +62,7 @@ public final class PlayerMessage {
     }
 
     public PlayerMessage setPayload(Object obj) {
-        Assertions.checkState(!this.isSent);
+        Preconditions.checkState(!this.isSent);
         this.payload = obj;
         return this;
     }
@@ -72,7 +72,7 @@ public final class PlayerMessage {
     }
 
     public PlayerMessage setLooper(Looper looper) {
-        Assertions.checkState(!this.isSent);
+        Preconditions.checkState(!this.isSent);
         this.looper = looper;
         return this;
     }
@@ -86,14 +86,14 @@ public final class PlayerMessage {
     }
 
     public PlayerMessage setPosition(long j) {
-        Assertions.checkState(!this.isSent);
+        Preconditions.checkState(!this.isSent);
         this.positionMs = j;
         return this;
     }
 
     public PlayerMessage setPosition(int i, long j) {
-        Assertions.checkState(!this.isSent);
-        Assertions.checkArgument(j != C.TIME_UNSET);
+        Preconditions.checkState(!this.isSent);
+        Preconditions.checkArgument(j != C.TIME_UNSET);
         if (i < 0 || (!this.timeline.isEmpty() && i >= this.timeline.getWindowCount())) {
             throw new IllegalSeekPositionException(this.timeline, i, j);
         }
@@ -107,7 +107,7 @@ public final class PlayerMessage {
     }
 
     public PlayerMessage setDeleteAfterDelivery(boolean z) {
-        Assertions.checkState(!this.isSent);
+        Preconditions.checkState(!this.isSent);
         this.deleteAfterDelivery = z;
         return this;
     }
@@ -117,9 +117,9 @@ public final class PlayerMessage {
     }
 
     public PlayerMessage send() {
-        Assertions.checkState(!this.isSent);
+        Preconditions.checkState(!this.isSent);
         if (this.positionMs == C.TIME_UNSET) {
-            Assertions.checkArgument(this.deleteAfterDelivery);
+            Preconditions.checkArgument(this.deleteAfterDelivery);
         }
         this.isSent = true;
         this.sender.sendMessage(this);
@@ -127,7 +127,7 @@ public final class PlayerMessage {
     }
 
     public synchronized PlayerMessage cancel() {
-        Assertions.checkState(this.isSent);
+        Preconditions.checkState(this.isSent);
         this.isCanceled = true;
         markAsProcessed(false);
         return this;
@@ -144,8 +144,8 @@ public final class PlayerMessage {
     }
 
     public synchronized boolean blockUntilDelivered() throws InterruptedException {
-        Assertions.checkState(this.isSent);
-        Assertions.checkState(this.looper.getThread() != Thread.currentThread());
+        Preconditions.checkState(this.isSent);
+        Preconditions.checkState(this.looper.getThread() != Thread.currentThread());
         while (!this.isProcessed) {
             wait();
         }
@@ -154,8 +154,8 @@ public final class PlayerMessage {
 
     public synchronized boolean blockUntilDelivered(long j) throws InterruptedException, TimeoutException {
         boolean z;
-        Assertions.checkState(this.isSent);
-        Assertions.checkState(this.looper.getThread() != Thread.currentThread());
+        Preconditions.checkState(this.isSent);
+        Preconditions.checkState(this.looper.getThread() != Thread.currentThread());
         long elapsedRealtime = this.clock.elapsedRealtime() + j;
         while (true) {
             z = this.isProcessed;

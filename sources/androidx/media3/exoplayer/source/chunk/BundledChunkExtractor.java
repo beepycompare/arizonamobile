@@ -5,12 +5,13 @@ import androidx.media3.common.C;
 import androidx.media3.common.DataReader;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.analytics.PlayerId;
+import androidx.media3.exoplayer.source.chunk.BundledChunkExtractor;
 import androidx.media3.exoplayer.source.chunk.ChunkExtractor;
 import androidx.media3.extractor.ChunkIndex;
+import androidx.media3.extractor.ChunkIndexProvider;
 import androidx.media3.extractor.DiscardingTrackOutput;
 import androidx.media3.extractor.Extractor;
 import androidx.media3.extractor.ExtractorInput;
@@ -25,6 +26,7 @@ import androidx.media3.extractor.png.PngExtractor;
 import androidx.media3.extractor.text.DefaultSubtitleParserFactory;
 import androidx.media3.extractor.text.SubtitleExtractor;
 import androidx.media3.extractor.text.SubtitleParser;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
@@ -33,15 +35,32 @@ public final class BundledChunkExtractor implements ExtractorOutput, ChunkExtrac
     @Deprecated
     public static final Factory FACTORY = new Factory();
     private static final PositionHolder POSITION_HOLDER = new PositionHolder();
-    private final SparseArray<BindingTrackOutput> bindingTrackOutputs = new SparseArray<>();
+    private final SparseArray<BindingTrackOutput> bindingTrackOutputs;
     private long endTimeUs;
     private final Extractor extractor;
     private boolean extractorInitialized;
     private final Format primaryTrackManifestFormat;
+    private final ManifestFormatMerger primaryTrackManifestFormatInfoMerger;
     private final int primaryTrackType;
     private Format[] sampleFormats;
     private SeekMap seekMap;
     private ChunkExtractor.TrackOutputProvider trackOutputProvider;
+
+    /* loaded from: classes3.dex */
+    public interface ManifestFormatMerger {
+        public static final ManifestFormatMerger DEFAULT = new ManifestFormatMerger() { // from class: androidx.media3.exoplayer.source.chunk.BundledChunkExtractor$ManifestFormatMerger$$ExternalSyntheticLambda0
+            @Override // androidx.media3.exoplayer.source.chunk.BundledChunkExtractor.ManifestFormatMerger
+            public final Format merge(Format format, Format format2) {
+                return BundledChunkExtractor.ManifestFormatMerger.lambda$static$0(format, format2);
+            }
+        };
+
+        Format merge(Format format, Format format2);
+
+        static /* synthetic */ Format lambda$static$0(Format format, Format format2) {
+            return format2 != null ? format.withManifestFormatInfo(format2) : format;
+        }
+    }
 
     /* loaded from: classes3.dex */
     public static final class Factory implements ChunkExtractor.Factory {
@@ -51,7 +70,7 @@ public final class BundledChunkExtractor implements ExtractorOutput, ChunkExtrac
 
         @Override // androidx.media3.exoplayer.source.chunk.ChunkExtractor.Factory
         public Factory setSubtitleParserFactory(SubtitleParser.Factory factory) {
-            this.subtitleParserFactory = (SubtitleParser.Factory) Assertions.checkNotNull(factory);
+            this.subtitleParserFactory = (SubtitleParser.Factory) Preconditions.checkNotNull(factory);
             return this;
         }
 
@@ -104,9 +123,15 @@ public final class BundledChunkExtractor implements ExtractorOutput, ChunkExtrac
     }
 
     public BundledChunkExtractor(Extractor extractor, int i, Format format) {
+        this(extractor, i, format, ManifestFormatMerger.DEFAULT);
+    }
+
+    public BundledChunkExtractor(Extractor extractor, int i, Format format, ManifestFormatMerger manifestFormatMerger) {
         this.extractor = extractor;
         this.primaryTrackType = i;
         this.primaryTrackManifestFormat = format;
+        this.bindingTrackOutputs = new SparseArray<>();
+        this.primaryTrackManifestFormatInfoMerger = manifestFormatMerger;
     }
 
     @Override // androidx.media3.exoplayer.source.chunk.ChunkExtractor
@@ -114,6 +139,9 @@ public final class BundledChunkExtractor implements ExtractorOutput, ChunkExtrac
         SeekMap seekMap = this.seekMap;
         if (seekMap instanceof ChunkIndex) {
             return (ChunkIndex) seekMap;
+        }
+        if (seekMap instanceof ChunkIndexProvider) {
+            return ((ChunkIndexProvider) seekMap).getChunkIndex();
         }
         return null;
     }
@@ -153,7 +181,7 @@ public final class BundledChunkExtractor implements ExtractorOutput, ChunkExtrac
     @Override // androidx.media3.exoplayer.source.chunk.ChunkExtractor
     public boolean read(ExtractorInput extractorInput) throws IOException {
         int read = this.extractor.read(extractorInput, POSITION_HOLDER);
-        Assertions.checkState(read != 1);
+        Preconditions.checkState(read != 1);
         return read == 0;
     }
 
@@ -161,10 +189,11 @@ public final class BundledChunkExtractor implements ExtractorOutput, ChunkExtrac
     public TrackOutput track(int i, int i2) {
         BindingTrackOutput bindingTrackOutput = this.bindingTrackOutputs.get(i);
         if (bindingTrackOutput == null) {
-            Assertions.checkState(this.sampleFormats == null);
-            bindingTrackOutput = new BindingTrackOutput(i, i2, i2 == this.primaryTrackType ? this.primaryTrackManifestFormat : null);
-            bindingTrackOutput.bind(this.trackOutputProvider, this.endTimeUs);
-            this.bindingTrackOutputs.put(i, bindingTrackOutput);
+            Preconditions.checkState(this.sampleFormats == null);
+            BindingTrackOutput bindingTrackOutput2 = new BindingTrackOutput(i, i2, i2 == this.primaryTrackType ? this.primaryTrackManifestFormat : null, this.primaryTrackManifestFormatInfoMerger);
+            bindingTrackOutput2.bind(this.trackOutputProvider, this.endTimeUs);
+            this.bindingTrackOutputs.put(i, bindingTrackOutput2);
+            return bindingTrackOutput2;
         }
         return bindingTrackOutput;
     }
@@ -173,7 +202,7 @@ public final class BundledChunkExtractor implements ExtractorOutput, ChunkExtrac
     public void endTracks() {
         Format[] formatArr = new Format[this.bindingTrackOutputs.size()];
         for (int i = 0; i < this.bindingTrackOutputs.size(); i++) {
-            formatArr[i] = (Format) Assertions.checkStateNotNull(this.bindingTrackOutputs.valueAt(i).sampleFormat);
+            formatArr[i] = (Format) Preconditions.checkNotNull(this.bindingTrackOutputs.valueAt(i).sampleFormat);
         }
         this.sampleFormats = formatArr;
     }
@@ -186,17 +215,20 @@ public final class BundledChunkExtractor implements ExtractorOutput, ChunkExtrac
     /* loaded from: classes3.dex */
     private static final class BindingTrackOutput implements TrackOutput {
         private long endTimeUs;
-        private final DiscardingTrackOutput fakeTrackOutput = new DiscardingTrackOutput();
+        private final DiscardingTrackOutput fakeTrackOutput;
         private final int id;
         private final Format manifestFormat;
+        private final ManifestFormatMerger manifestFormatMerger;
         public Format sampleFormat;
         private TrackOutput trackOutput;
         private final int type;
 
-        public BindingTrackOutput(int i, int i2, Format format) {
+        private BindingTrackOutput(int i, int i2, Format format, ManifestFormatMerger manifestFormatMerger) {
             this.id = i;
             this.type = i2;
             this.manifestFormat = format;
+            this.fakeTrackOutput = new DiscardingTrackOutput();
+            this.manifestFormatMerger = manifestFormatMerger;
         }
 
         public void bind(ChunkExtractor.TrackOutputProvider trackOutputProvider, long j) {
@@ -215,11 +247,7 @@ public final class BundledChunkExtractor implements ExtractorOutput, ChunkExtrac
 
         @Override // androidx.media3.extractor.TrackOutput
         public void format(Format format) {
-            Format format2 = this.manifestFormat;
-            if (format2 != null) {
-                format = format.withManifestFormatInfo(format2);
-            }
-            this.sampleFormat = format;
+            this.sampleFormat = this.manifestFormatMerger.merge(format, this.manifestFormat);
             ((TrackOutput) Util.castNonNull(this.trackOutput)).format(this.sampleFormat);
         }
 

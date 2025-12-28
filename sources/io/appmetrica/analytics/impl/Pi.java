@@ -6,7 +6,7 @@ import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 public final class Pi {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Revenue f734a;
+    public final Revenue f735a;
     public final Vm b;
     public final C0227en c;
     public final C0227en d;
@@ -14,7 +14,7 @@ public final class Pi {
 
     public Pi(Revenue revenue, PublicLogger publicLogger) {
         this.e = publicLogger;
-        this.f734a = revenue;
+        this.f735a = revenue;
         this.b = new Vm(30720, "revenue payload", publicLogger);
         this.c = new C0227en(new Vm(184320, "receipt data", publicLogger), "<truncated data was not sent, exceeded the limit of 180kb>");
         this.d = new C0227en(new Ym(1000, "receipt signature", publicLogger), "<truncated data was not sent, exceeded the limit of 180kb>");

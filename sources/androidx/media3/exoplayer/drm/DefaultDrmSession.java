@@ -9,7 +9,6 @@ import android.os.SystemClock;
 import android.util.Pair;
 import androidx.media3.common.C;
 import androidx.media3.common.DrmInitData;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Consumer;
 import androidx.media3.common.util.CopyOnWriteMultiset;
 import androidx.media3.common.util.Log;
@@ -19,9 +18,12 @@ import androidx.media3.exoplayer.analytics.PlayerId;
 import androidx.media3.exoplayer.drm.DrmSession;
 import androidx.media3.exoplayer.drm.DrmSessionEventListener;
 import androidx.media3.exoplayer.drm.ExoMediaDrm;
+import androidx.media3.exoplayer.drm.KeyRequestInfo;
+import androidx.media3.exoplayer.drm.MediaDrmCallback;
 import androidx.media3.exoplayer.source.LoadEventInfo;
 import androidx.media3.exoplayer.source.MediaLoadData;
 import androidx.media3.exoplayer.upstream.LoadErrorHandlingPolicy;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
@@ -32,7 +34,7 @@ import java.util.UUID;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNullIf;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
 /* JADX INFO: Access modifiers changed from: package-private */
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class DefaultDrmSession implements DrmSession {
     private static final int MAX_LICENSE_DURATION_TO_RENEW_SECONDS = 60;
     private static final int MSG_KEYS = 2;
@@ -41,9 +43,11 @@ public class DefaultDrmSession implements DrmSession {
     private final MediaDrmCallback callback;
     private CryptoConfig cryptoConfig;
     private ExoMediaDrm.KeyRequest currentKeyRequest;
+    private KeyRequestInfo.Builder currentKeyRequestInfo;
     private ExoMediaDrm.ProvisionRequest currentProvisionRequest;
     private final CopyOnWriteMultiset<DrmSessionEventListener.EventDispatcher> eventDispatchers;
     private final boolean isPlaceholderSession;
+    private final Object keyRequestInfoLock;
     private final HashMap<String, String> keyRequestParameters;
     private DrmSession.DrmSessionException lastException;
     private final LoadErrorHandlingPolicy loadErrorHandlingPolicy;
@@ -64,7 +68,7 @@ public class DefaultDrmSession implements DrmSession {
     private int state;
     private final UUID uuid;
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface ProvisioningManager {
         void onProvisionCompleted();
 
@@ -73,14 +77,14 @@ public class DefaultDrmSession implements DrmSession {
         void provisionRequired(DefaultDrmSession defaultDrmSession);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public interface ReferenceCountListener {
         void onReferenceCountDecremented(DefaultDrmSession defaultDrmSession, int i);
 
         void onReferenceCountIncremented(DefaultDrmSession defaultDrmSession, int i);
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class UnexpectedDrmSessionException extends IOException {
         public UnexpectedDrmSessionException(Throwable th) {
             super(th);
@@ -89,7 +93,7 @@ public class DefaultDrmSession implements DrmSession {
 
     public DefaultDrmSession(UUID uuid, ExoMediaDrm exoMediaDrm, ProvisioningManager provisioningManager, ReferenceCountListener referenceCountListener, List<DrmInitData.SchemeData> list, int i, boolean z, boolean z2, byte[] bArr, HashMap<String, String> hashMap, MediaDrmCallback mediaDrmCallback, Looper looper, LoadErrorHandlingPolicy loadErrorHandlingPolicy, PlayerId playerId) {
         if (i == 1 || i == 3) {
-            Assertions.checkNotNull(bArr);
+            Preconditions.checkNotNull(bArr);
         }
         this.uuid = uuid;
         this.provisioningManager = provisioningManager;
@@ -102,7 +106,7 @@ public class DefaultDrmSession implements DrmSession {
             this.offlineLicenseKeySetId = bArr;
             this.schemeDatas = null;
         } else {
-            this.schemeDatas = Collections.unmodifiableList((List) Assertions.checkNotNull(list));
+            this.schemeDatas = Collections.unmodifiableList((List) Preconditions.checkNotNull(list));
         }
         this.keyRequestParameters = hashMap;
         this.callback = mediaDrmCallback;
@@ -112,6 +116,7 @@ public class DefaultDrmSession implements DrmSession {
         this.state = 2;
         this.playbackLooper = looper;
         this.responseHandler = new ResponseHandler(looper);
+        this.keyRequestInfoLock = new Object();
     }
 
     public boolean hasSessionId(byte[] bArr) {
@@ -130,7 +135,7 @@ public class DefaultDrmSession implements DrmSession {
     /* JADX INFO: Access modifiers changed from: package-private */
     public void provision() {
         this.currentProvisionRequest = this.mediaDrm.getProvisionRequest();
-        ((RequestHandler) Util.castNonNull(this.requestHandler)).post(1, Assertions.checkNotNull(this.currentProvisionRequest), true);
+        ((RequestHandler) Util.castNonNull(this.requestHandler)).post(1, Preconditions.checkNotNull(this.currentProvisionRequest), true);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -197,7 +202,7 @@ public class DefaultDrmSession implements DrmSession {
     @Override // androidx.media3.exoplayer.drm.DrmSession
     public boolean requiresSecureDecoder(String str) {
         verifyPlaybackThread();
-        return this.mediaDrm.requiresSecureDecoder((byte[]) Assertions.checkStateNotNull(this.sessionId), str);
+        return this.mediaDrm.requiresSecureDecoder((byte[]) Preconditions.checkNotNull(this.sessionId), str);
     }
 
     @Override // androidx.media3.exoplayer.drm.DrmSession
@@ -213,7 +218,7 @@ public class DefaultDrmSession implements DrmSession {
         int i = this.referenceCount + 1;
         this.referenceCount = i;
         if (i == 1) {
-            Assertions.checkState(this.state == 2);
+            Preconditions.checkState(this.state == 2);
             HandlerThread handlerThread = new HandlerThread("ExoPlayer:DrmRequestHandler");
             this.requestHandlerThread = handlerThread;
             handlerThread.start();
@@ -247,6 +252,9 @@ public class DefaultDrmSession implements DrmSession {
             this.cryptoConfig = null;
             this.lastException = null;
             this.currentKeyRequest = null;
+            synchronized (this.keyRequestInfoLock) {
+                this.currentKeyRequestInfo = null;
+            }
             this.currentProvisionRequest = null;
             byte[] bArr = this.sessionId;
             if (bArr != null) {
@@ -285,7 +293,7 @@ public class DefaultDrmSession implements DrmSession {
                     ((DrmSessionEventListener.EventDispatcher) obj).drmSessionAcquired(r1);
                 }
             });
-            Assertions.checkNotNull(this.sessionId);
+            Preconditions.checkNotNull(this.sessionId);
             return true;
         } catch (NotProvisionedException unused) {
             this.provisioningManager.provisionRequired(this);
@@ -315,7 +323,7 @@ public class DefaultDrmSession implements DrmSession {
                     return;
                 }
                 try {
-                    this.mediaDrm.provideProvisionResponse((byte[]) obj2);
+                    this.mediaDrm.provideProvisionResponse(((MediaDrmCallback.Response) obj2).data);
                     this.provisioningManager.onProvisionCompleted();
                 } catch (Exception e) {
                     this.provisioningManager.onProvisionError(e, true);
@@ -338,8 +346,8 @@ public class DefaultDrmSession implements DrmSession {
                 }
             } else if (i != 3) {
             } else {
-                Assertions.checkNotNull(this.offlineLicenseKeySetId);
-                Assertions.checkNotNull(this.sessionId);
+                Preconditions.checkNotNull(this.offlineLicenseKeySetId);
+                Preconditions.checkNotNull(this.sessionId);
                 postKeyRequest(this.offlineLicenseKeySetId, 3, z);
             }
         } else if (this.offlineLicenseKeySetId == null) {
@@ -376,7 +384,7 @@ public class DefaultDrmSession implements DrmSession {
 
     private long getLicenseDurationRemainingSec() {
         if (C.WIDEVINE_UUID.equals(this.uuid)) {
-            Pair pair = (Pair) Assertions.checkNotNull(WidevineUtil.getLicenseDurationRemainingSec(this));
+            Pair pair = (Pair) Preconditions.checkNotNull(WidevineUtil.getLicenseDurationRemainingSec(this));
             return Math.min(((Long) pair.first).longValue(), ((Long) pair.second).longValue());
         }
         return Long.MAX_VALUE;
@@ -384,8 +392,16 @@ public class DefaultDrmSession implements DrmSession {
 
     private void postKeyRequest(byte[] bArr, int i, boolean z) {
         try {
+            synchronized (this.keyRequestInfoLock) {
+                KeyRequestInfo.Builder builder = new KeyRequestInfo.Builder();
+                this.currentKeyRequestInfo = builder;
+                List<DrmInitData.SchemeData> list = this.schemeDatas;
+                if (list != null) {
+                    builder.setSchemeDatas(list);
+                }
+            }
             this.currentKeyRequest = this.mediaDrm.getKeyRequest(bArr, this.schemeDatas, i, this.keyRequestParameters);
-            ((RequestHandler) Util.castNonNull(this.requestHandler)).post(2, Assertions.checkNotNull(this.currentKeyRequest), z);
+            ((RequestHandler) Util.castNonNull(this.requestHandler)).post(2, Preconditions.checkNotNull(this.currentKeyRequest), z);
         } catch (Exception | NoSuchMethodError e) {
             onKeysError(e, true);
         }
@@ -393,14 +409,19 @@ public class DefaultDrmSession implements DrmSession {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void onKeyResponse(Object obj, Object obj2) {
+        final KeyRequestInfo build;
         if (obj == this.currentKeyRequest && isOpen()) {
             this.currentKeyRequest = null;
+            synchronized (this.keyRequestInfoLock) {
+                build = ((KeyRequestInfo.Builder) Preconditions.checkNotNull(this.currentKeyRequestInfo)).build();
+                this.currentKeyRequestInfo = null;
+            }
             if ((obj2 instanceof Exception) || (obj2 instanceof NoSuchMethodError)) {
                 onKeysError((Throwable) obj2, false);
                 return;
             }
             try {
-                byte[] bArr = (byte[]) obj2;
+                byte[] bArr = ((MediaDrmCallback.Response) obj2).data;
                 if (this.mode == 3) {
                     this.mediaDrm.provideKeyResponse((byte[]) Util.castNonNull(this.offlineLicenseKeySetId), bArr);
                     dispatchEvent(new Consumer() { // from class: androidx.media3.exoplayer.drm.DefaultDrmSession$$ExternalSyntheticLambda1
@@ -420,7 +441,7 @@ public class DefaultDrmSession implements DrmSession {
                 dispatchEvent(new Consumer() { // from class: androidx.media3.exoplayer.drm.DefaultDrmSession$$ExternalSyntheticLambda2
                     @Override // androidx.media3.common.util.Consumer
                     public final void accept(Object obj3) {
-                        ((DrmSessionEventListener.EventDispatcher) obj3).drmKeysLoaded();
+                        ((DrmSessionEventListener.EventDispatcher) obj3).drmKeysLoaded(KeyRequestInfo.this);
                     }
                 });
             } catch (Exception | NoSuchMethodError e) {
@@ -485,7 +506,7 @@ public class DefaultDrmSession implements DrmSession {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public class ResponseHandler extends Handler {
         public ResponseHandler(Looper looper) {
             super(looper);
@@ -507,7 +528,7 @@ public class DefaultDrmSession implements DrmSession {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public class RequestHandler extends Handler {
         private boolean isReleased;
 
@@ -523,31 +544,37 @@ public class DefaultDrmSession implements DrmSession {
         /* JADX WARN: Type inference failed for: r1v0, types: [java.lang.Throwable, java.lang.Exception] */
         @Override // android.os.Handler
         public void handleMessage(Message message) {
-            byte[] bArr;
+            MediaDrmCallback.Response response;
             RequestTask requestTask = (RequestTask) message.obj;
             try {
                 int i = message.what;
                 if (i == 1) {
-                    bArr = DefaultDrmSession.this.callback.executeProvisionRequest(DefaultDrmSession.this.uuid, (ExoMediaDrm.ProvisionRequest) requestTask.request);
+                    response = DefaultDrmSession.this.callback.executeProvisionRequest(DefaultDrmSession.this.uuid, (ExoMediaDrm.ProvisionRequest) requestTask.request);
                 } else if (i == 2) {
-                    bArr = DefaultDrmSession.this.callback.executeKeyRequest(DefaultDrmSession.this.uuid, (ExoMediaDrm.KeyRequest) requestTask.request);
+                    MediaDrmCallback.Response executeKeyRequest = DefaultDrmSession.this.callback.executeKeyRequest(DefaultDrmSession.this.uuid, (ExoMediaDrm.KeyRequest) requestTask.request);
+                    synchronized (DefaultDrmSession.this.keyRequestInfoLock) {
+                        if (DefaultDrmSession.this.currentKeyRequestInfo != null && executeKeyRequest.loadEventInfo != null) {
+                            DefaultDrmSession.this.currentKeyRequestInfo.addLoadInfo(executeKeyRequest.loadEventInfo.copyWithTaskIdAndDurationMs(requestTask.taskId, SystemClock.elapsedRealtime() - requestTask.startTimeMs));
+                        }
+                    }
+                    response = executeKeyRequest;
                 } else {
                     throw new RuntimeException();
                 }
             } catch (MediaDrmCallbackException e) {
                 boolean maybeRetryRequest = maybeRetryRequest(message, e);
-                bArr = e;
+                response = e;
                 if (maybeRetryRequest) {
                     return;
                 }
             } catch (Exception e2) {
                 Log.w(DefaultDrmSession.TAG, "Key/provisioning request produced an unexpected exception. Not retrying.", e2);
-                bArr = e2;
+                response = e2;
             }
             DefaultDrmSession.this.loadErrorHandlingPolicy.onLoadTaskConcluded(requestTask.taskId);
             synchronized (this) {
                 if (!this.isReleased) {
-                    DefaultDrmSession.this.responseHandler.obtainMessage(message.what, Pair.create(requestTask.request, bArr)).sendToTarget();
+                    DefaultDrmSession.this.responseHandler.obtainMessage(message.what, Pair.create(requestTask.request, response)).sendToTarget();
                 }
             }
         }
@@ -571,6 +598,11 @@ public class DefaultDrmSession implements DrmSession {
                 if (retryDelayMsFor == C.TIME_UNSET) {
                     return false;
                 }
+                synchronized (DefaultDrmSession.this.keyRequestInfoLock) {
+                    if (DefaultDrmSession.this.currentKeyRequestInfo != null) {
+                        DefaultDrmSession.this.currentKeyRequestInfo.addLoadInfo(loadEventInfo);
+                    }
+                }
                 synchronized (this) {
                     if (this.isReleased) {
                         return false;
@@ -589,7 +621,7 @@ public class DefaultDrmSession implements DrmSession {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     public static final class RequestTask {
         public final boolean allowRetry;
         public int errorCount;

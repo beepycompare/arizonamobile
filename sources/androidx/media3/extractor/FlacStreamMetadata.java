@@ -110,7 +110,7 @@ public final class FlacStreamMetadata {
         this(i, i2, i3, i4, i5, i6, i7, j, (SeekTable) null, concatenateVorbisMetadata(arrayList, arrayList2));
     }
 
-    private FlacStreamMetadata(int i, int i2, int i3, int i4, int i5, int i6, int i7, long j, SeekTable seekTable, Metadata metadata) {
+    FlacStreamMetadata(int i, int i2, int i3, int i4, int i5, int i6, int i7, long j, SeekTable seekTable, Metadata metadata) {
         this.minBlockSizeSamples = i;
         this.maxBlockSizeSamples = i2;
         this.minFrameSize = i3;

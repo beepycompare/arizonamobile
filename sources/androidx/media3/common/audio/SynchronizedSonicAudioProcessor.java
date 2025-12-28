@@ -110,9 +110,9 @@ class SynchronizedSonicAudioProcessor implements AudioProcessor {
     }
 
     @Override // androidx.media3.common.audio.AudioProcessor
-    public final void flush() {
+    public final void flush(AudioProcessor.StreamMetadata streamMetadata) {
         synchronized (this.lock) {
-            this.sonicAudioProcessor.flush();
+            this.sonicAudioProcessor.flush(streamMetadata);
         }
     }
 

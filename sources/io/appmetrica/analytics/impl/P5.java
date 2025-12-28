@@ -19,7 +19,7 @@ public final class P5 implements Parcelable.Creator {
             while (true) {
                 if (i2 < length) {
                     enumC0444n9 = values[i2];
-                    if (enumC0444n9.f1124a == i) {
+                    if (enumC0444n9.f1125a == i) {
                         break;
                     }
                     i2++;
@@ -37,7 +37,7 @@ public final class P5 implements Parcelable.Creator {
         q5.e = readBundle.getInt("CounterReport.CustomType");
         q5.b = StringUtils.ifIsNullToDef(readBundle.getString("CounterReport.Value"), "");
         q5.c = readBundle.getString("CounterReport.Environment");
-        q5.f745a = readBundle.getString("CounterReport.Event");
+        q5.f746a = readBundle.getString("CounterReport.Event");
         q5.f = Q5.a(readBundle);
         q5.g = readBundle.getInt("CounterReport.TRUNCATED");
         q5.h = readBundle.getString("CounterReport.ProfileID");

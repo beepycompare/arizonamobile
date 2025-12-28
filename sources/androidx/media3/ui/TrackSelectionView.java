@@ -12,8 +12,8 @@ import androidx.media3.common.Format;
 import androidx.media3.common.TrackGroup;
 import androidx.media3.common.TrackSelectionOverride;
 import androidx.media3.common.Tracks;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.ui.TrackSelectionView;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -121,7 +121,7 @@ public class TrackSelectionView extends LinearLayout {
     }
 
     public void setTrackNameProvider(TrackNameProvider trackNameProvider) {
-        this.trackNameProvider = (TrackNameProvider) Assertions.checkNotNull(trackNameProvider);
+        this.trackNameProvider = (TrackNameProvider) Preconditions.checkNotNull(trackNameProvider);
         updateViews();
     }
 
@@ -209,7 +209,7 @@ public class TrackSelectionView extends LinearLayout {
                 CheckedTextView[] checkedTextViewArr = this.trackViews[i];
                 if (i2 < checkedTextViewArr.length) {
                     if (trackSelectionOverride != null) {
-                        this.trackViews[i][i2].setChecked(trackSelectionOverride.trackIndices.contains(Integer.valueOf(((TrackInfo) Assertions.checkNotNull(checkedTextViewArr[i2].getTag())).trackIndex)));
+                        this.trackViews[i][i2].setChecked(trackSelectionOverride.trackIndices.contains(Integer.valueOf(((TrackInfo) Preconditions.checkNotNull(checkedTextViewArr[i2].getTag())).trackIndex)));
                     } else {
                         checkedTextViewArr[i2].setChecked(false);
                     }
@@ -248,7 +248,7 @@ public class TrackSelectionView extends LinearLayout {
     private void onTrackViewClicked(View view) {
         boolean z = false;
         this.isDisabled = false;
-        TrackInfo trackInfo = (TrackInfo) Assertions.checkNotNull(view.getTag());
+        TrackInfo trackInfo = (TrackInfo) Preconditions.checkNotNull(view.getTag());
         TrackGroup mediaTrackGroup = trackInfo.trackGroup.getMediaTrackGroup();
         int i = trackInfo.trackIndex;
         TrackSelectionOverride trackSelectionOverride = this.overrides.get(mediaTrackGroup);

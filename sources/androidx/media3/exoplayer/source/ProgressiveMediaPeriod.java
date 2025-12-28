@@ -9,7 +9,6 @@ import androidx.media3.common.Metadata;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.ParserException;
 import androidx.media3.common.TrackGroup;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ConditionVariable;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.ParsableByteArray;
@@ -36,17 +35,23 @@ import androidx.media3.exoplayer.util.ReleasableExecutor;
 import androidx.media3.extractor.DiscardingTrackOutput;
 import androidx.media3.extractor.ExtractorOutput;
 import androidx.media3.extractor.ForwardingSeekMap;
+import androidx.media3.extractor.ForwardingTrackOutput;
 import androidx.media3.extractor.IndexSeekMap;
 import androidx.media3.extractor.PositionHolder;
 import androidx.media3.extractor.SeekMap;
 import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.metadata.icy.IcyHeaders;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.net.HttpHeaders;
 import java.io.IOException;
 import java.io.InterruptedIOException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicReference;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes3.dex */
@@ -56,6 +61,7 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
     private final Allocator allocator;
     private MediaPeriod.Callback callback;
     private final long continueLoadingCheckIntervalBytes;
+    private ControlledTrackOutput[] controlledTrackOutputs;
     private final String customCacheKey;
     private final DataSource dataSource;
     private int dataType;
@@ -74,6 +80,7 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
     private final Listener listener;
     private final ConditionVariable loadCondition;
     private final LoadErrorHandlingPolicy loadErrorHandlingPolicy;
+    private final boolean loadOnlySelectedTracks;
     private final Loader loader;
     private boolean loadingFinished;
     private final Runnable maybeFinishPrepareRunnable;
@@ -109,7 +116,7 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
     public void reevaluateBuffer(long j) {
     }
 
-    public ProgressiveMediaPeriod(Uri uri, DataSource dataSource, ProgressiveMediaExtractor progressiveMediaExtractor, DrmSessionManager drmSessionManager, DrmSessionEventListener.EventDispatcher eventDispatcher, LoadErrorHandlingPolicy loadErrorHandlingPolicy, MediaSourceEventListener.EventDispatcher eventDispatcher2, Listener listener, Allocator allocator, String str, int i, int i2, Format format, long j, ReleasableExecutor releasableExecutor) {
+    public ProgressiveMediaPeriod(Uri uri, DataSource dataSource, ProgressiveMediaExtractor progressiveMediaExtractor, DrmSessionManager drmSessionManager, DrmSessionEventListener.EventDispatcher eventDispatcher, LoadErrorHandlingPolicy loadErrorHandlingPolicy, MediaSourceEventListener.EventDispatcher eventDispatcher2, Listener listener, Allocator allocator, String str, int i, boolean z, int i2, Format format, long j, ReleasableExecutor releasableExecutor) {
         Loader loader;
         this.uri = uri;
         this.dataSource = dataSource;
@@ -121,6 +128,7 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
         this.allocator = allocator;
         this.customCacheKey = str;
         this.continueLoadingCheckIntervalBytes = i;
+        this.loadOnlySelectedTracks = z;
         this.singleTrackId = i2;
         this.singleTrackFormat = format;
         if (releasableExecutor != null) {
@@ -141,23 +149,24 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
         this.onContinueLoadingRequestedRunnable = new Runnable() { // from class: androidx.media3.exoplayer.source.ProgressiveMediaPeriod$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                ProgressiveMediaPeriod.this.m9005x97cae34d();
+                ProgressiveMediaPeriod.this.m9014x97cae34d();
             }
         };
         this.handler = Util.createHandlerForCurrentLooper();
         this.sampleQueueTrackIds = new TrackId[0];
         this.sampleQueues = new SampleQueue[0];
+        this.controlledTrackOutputs = new ControlledTrackOutput[0];
         this.pendingResetPositionUs = C.TIME_UNSET;
         this.dataType = 1;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$androidx-media3-exoplayer-source-ProgressiveMediaPeriod  reason: not valid java name */
-    public /* synthetic */ void m9005x97cae34d() {
+    public /* synthetic */ void m9014x97cae34d() {
         if (this.released) {
             return;
         }
-        ((MediaPeriod.Callback) Assertions.checkNotNull(this.callback)).onContinueLoadingRequested(this);
+        ((MediaPeriod.Callback) Preconditions.checkNotNull(this.callback)).onContinueLoadingRequested(this);
     }
 
     public void release() {
@@ -185,7 +194,7 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
         this.callback = callback;
         if (this.singleTrackFormat != null) {
             track(this.singleTrackId, 3).format(this.singleTrackFormat);
-            m9007x33ac0ff2(new IndexSeekMap(new long[]{0}, new long[]{0}, C.TIME_UNSET));
+            m9016x33ac0ff2(new IndexSeekMap(new long[]{0}, new long[]{0}, C.TIME_UNSET));
             endTracks();
             this.pendingResetPositionUs = j;
             return;
@@ -220,7 +229,7 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
             SampleStream sampleStream = sampleStreamArr[i3];
             if (sampleStream != null && (exoTrackSelectionArr[i3] == null || !zArr[i3])) {
                 int i4 = ((SampleStreamImpl) sampleStream).track;
-                Assertions.checkState(zArr3[i4]);
+                Preconditions.checkState(zArr3[i4]);
                 this.enabledTrackCount--;
                 zArr3[i4] = false;
                 sampleStreamArr[i3] = null;
@@ -229,19 +238,32 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
         boolean z = !this.seenFirstTrackSelection ? j == 0 || this.isSingleSample : i != 0;
         for (int i5 = 0; i5 < exoTrackSelectionArr.length; i5++) {
             if (sampleStreamArr[i5] == null && (exoTrackSelection = exoTrackSelectionArr[i5]) != null) {
-                Assertions.checkState(exoTrackSelection.length() == 1);
-                Assertions.checkState(exoTrackSelection.getIndexInTrackGroup(0) == 0);
+                Preconditions.checkState(exoTrackSelection.length() == 1);
+                Preconditions.checkState(exoTrackSelection.getIndexInTrackGroup(0) == 0);
                 int indexOf = trackGroupArray.indexOf(exoTrackSelection.getTrackGroup());
-                Assertions.checkState(!zArr3[indexOf]);
+                Preconditions.checkState(!zArr3[indexOf]);
                 this.enabledTrackCount++;
                 zArr3[indexOf] = true;
                 this.pendingInitialDiscontinuity = exoTrackSelection.getSelectedFormat().hasPrerollSamples | this.pendingInitialDiscontinuity;
                 sampleStreamArr[i5] = new SampleStreamImpl(indexOf);
                 zArr2[i5] = true;
-                if (!z) {
+                if (this.loadOnlySelectedTracks) {
+                    z |= this.seenFirstTrackSelection;
+                } else if (!z) {
                     SampleQueue sampleQueue = this.sampleQueues[indexOf];
                     z = (sampleQueue.getReadIndex() == 0 || sampleQueue.seekTo(j, true)) ? false : true;
                 }
+            }
+        }
+        if (this.loadOnlySelectedTracks) {
+            int i6 = 0;
+            while (true) {
+                ControlledTrackOutput[] controlledTrackOutputArr = this.controlledTrackOutputs;
+                if (i6 >= controlledTrackOutputArr.length) {
+                    break;
+                }
+                controlledTrackOutputArr[i6].updateSelectionState(zArr3[i6]);
+                i6++;
             }
         }
         if (this.enabledTrackCount == 0) {
@@ -479,7 +501,7 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
                 for (SampleQueue sampleQueue : this.sampleQueues) {
                     sampleQueue.reset();
                 }
-                ((MediaPeriod.Callback) Assertions.checkNotNull(this.callback)).onContinueLoadingRequested(this);
+                ((MediaPeriod.Callback) Preconditions.checkNotNull(this.callback)).onContinueLoadingRequested(this);
             }
         }
     }
@@ -513,7 +535,7 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
         this.loadErrorHandlingPolicy.onLoadTaskConcluded(extractingLoadable.loadTaskId);
         this.mediaSourceEventDispatcher.loadCompleted(loadEventInfo, 1, -1, null, 0, null, extractingLoadable.seekTimeUs, this.durationUs);
         this.loadingFinished = true;
-        ((MediaPeriod.Callback) Assertions.checkNotNull(this.callback)).onContinueLoadingRequested(this);
+        ((MediaPeriod.Callback) Preconditions.checkNotNull(this.callback)).onContinueLoadingRequested(this);
     }
 
     @Override // androidx.media3.exoplayer.upstream.Loader.Callback
@@ -529,7 +551,7 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
             sampleQueue.reset();
         }
         if (this.enabledTrackCount > 0) {
-            ((MediaPeriod.Callback) Assertions.checkNotNull(this.callback)).onContinueLoadingRequested(this);
+            ((MediaPeriod.Callback) Preconditions.checkNotNull(this.callback)).onContinueLoadingRequested(this);
         }
     }
 
@@ -577,7 +599,7 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
         this.handler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.ProgressiveMediaPeriod$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                ProgressiveMediaPeriod.this.m9007x33ac0ff2(seekMap);
+                ProgressiveMediaPeriod.this.m9016x33ac0ff2(seekMap);
             }
         });
     }
@@ -596,14 +618,14 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
         this.handler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.ProgressiveMediaPeriod$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                ProgressiveMediaPeriod.this.m9006xa2bd730d();
+                ProgressiveMediaPeriod.this.m9015xa2bd730d();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onLengthKnown$2$androidx-media3-exoplayer-source-ProgressiveMediaPeriod  reason: not valid java name */
-    public /* synthetic */ void m9006xa2bd730d() {
+    public /* synthetic */ void m9015xa2bd730d() {
         this.isLengthKnown = true;
     }
 
@@ -619,6 +641,7 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
             return new DiscardingTrackOutput();
         }
         SampleQueue createWithDrm = SampleQueue.createWithDrm(this.allocator, this.drmSessionManager, this.drmEventDispatcher);
+        ControlledTrackOutput controlledTrackOutput = new ControlledTrackOutput(createWithDrm);
         createWithDrm.setUpstreamFormatChangeListener(this);
         int i2 = length + 1;
         TrackId[] trackIdArr = (TrackId[]) Arrays.copyOf(this.sampleQueueTrackIds, i2);
@@ -627,12 +650,15 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
         SampleQueue[] sampleQueueArr = (SampleQueue[]) Arrays.copyOf(this.sampleQueues, i2);
         sampleQueueArr[length] = createWithDrm;
         this.sampleQueues = (SampleQueue[]) Util.castNonNullTypeArray(sampleQueueArr);
-        return createWithDrm;
+        ControlledTrackOutput[] controlledTrackOutputArr = (ControlledTrackOutput[]) Arrays.copyOf(this.controlledTrackOutputs, i2);
+        controlledTrackOutputArr[length] = controlledTrackOutput;
+        this.controlledTrackOutputs = (ControlledTrackOutput[]) Util.castNonNullTypeArray(controlledTrackOutputArr);
+        return controlledTrackOutput;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: setSeekMap */
-    public void m9007x33ac0ff2(SeekMap seekMap) {
+    public void m9016x33ac0ff2(SeekMap seekMap) {
         this.seekMap = this.icyHeaders == null ? seekMap : new SeekMap.Unseekable(C.TIME_UNSET);
         this.durationUs = seekMap.getDurationUs();
         boolean z = !this.isLengthKnown && seekMap.getDurationUs() == C.TIME_UNSET;
@@ -660,7 +686,7 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
         TrackGroup[] trackGroupArr = new TrackGroup[length];
         boolean[] zArr = new boolean[length];
         for (int i = 0; i < length; i++) {
-            Format format = (Format) Assertions.checkNotNull(this.sampleQueues[i].getUpstreamFormat());
+            Format format = (Format) Preconditions.checkNotNull(this.sampleQueues[i].getUpstreamFormat());
             String str = format.sampleMimeType;
             boolean isAudio = MimeTypes.isAudio(str);
             boolean z = isAudio || MimeTypes.isVideo(str);
@@ -693,20 +719,20 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
         }
         this.listener.onSourceInfoRefreshed(this.durationUs, this.seekMap, this.isLive);
         this.prepared = true;
-        ((MediaPeriod.Callback) Assertions.checkNotNull(this.callback)).onPrepared(this);
+        ((MediaPeriod.Callback) Preconditions.checkNotNull(this.callback)).onPrepared(this);
     }
 
     private void startLoading() {
         ExtractingLoadable extractingLoadable = new ExtractingLoadable(this.uri, this.dataSource, this.progressiveMediaExtractor, this, this.loadCondition);
         if (this.prepared) {
-            Assertions.checkState(isPendingReset());
+            Preconditions.checkState(isPendingReset());
             long j = this.durationUs;
             if (j != C.TIME_UNSET && this.pendingResetPositionUs > j) {
                 this.loadingFinished = true;
                 this.pendingResetPositionUs = C.TIME_UNSET;
                 return;
             }
-            extractingLoadable.setLoadPosition(((SeekMap) Assertions.checkNotNull(this.seekMap)).getSeekPoints(this.pendingResetPositionUs).first.position, this.pendingResetPositionUs);
+            extractingLoadable.setLoadPosition(((SeekMap) Preconditions.checkNotNull(this.seekMap)).getSeekPoints(this.pendingResetPositionUs).first.position, this.pendingResetPositionUs);
             for (SampleQueue sampleQueue : this.sampleQueues) {
                 sampleQueue.setStartTimeUs(this.pendingResetPositionUs);
             }
@@ -741,7 +767,7 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
         int length = this.sampleQueues.length;
         for (int i = 0; i < length; i++) {
             SampleQueue sampleQueue = this.sampleQueues[i];
-            if (sampleQueue.getReadIndex() != 0 || !z) {
+            if (this.controlledTrackOutputs[i].isSelected() && (sampleQueue.getReadIndex() != 0 || !z)) {
                 if (this.isSingleSample) {
                     seekTo = sampleQueue.seekTo(sampleQueue.getFirstIndex());
                 } else {
@@ -767,7 +793,7 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
     public long getLargestQueuedTimestampUs(boolean z) {
         long j = Long.MIN_VALUE;
         for (int i = 0; i < this.sampleQueues.length; i++) {
-            if (z || ((TrackState) Assertions.checkNotNull(this.trackState)).trackEnabledStates[i]) {
+            if (z || ((TrackState) Preconditions.checkNotNull(this.trackState)).trackEnabledStates[i]) {
                 j = Math.max(j, this.sampleQueues[i].getLargestQueuedTimestampUs());
             }
         }
@@ -780,9 +806,9 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
 
     @EnsuresNonNull({"trackState", "seekMap"})
     private void assertPrepared() {
-        Assertions.checkState(this.prepared);
-        Assertions.checkNotNull(this.trackState);
-        Assertions.checkNotNull(this.seekMap);
+        Preconditions.checkState(this.prepared);
+        Preconditions.checkNotNull(this.trackState);
+        Preconditions.checkNotNull(this.seekMap);
     }
 
     /* loaded from: classes3.dex */
@@ -829,7 +855,7 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
         private final PositionHolder positionHolder = new PositionHolder();
         private boolean pendingExtractorSeek = true;
         private final long loadTaskId = LoadEventInfo.getNewId();
-        private DataSpec dataSpec = buildDataSpec(0);
+        private DataSpec dataSpec = buildDataSpec(0, null);
 
         public ExtractingLoadable(Uri uri, DataSource dataSource, ProgressiveMediaExtractor progressiveMediaExtractor, ExtractorOutput extractorOutput, ConditionVariable conditionVariable) {
             this.uri = uri;
@@ -847,13 +873,16 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
         @Override // androidx.media3.exoplayer.upstream.Loader.Loadable
         public void load() throws IOException {
             int i = 0;
+            String str = null;
             while (i == 0 && !this.loadCanceled) {
                 try {
                     long j = this.positionHolder.position;
-                    DataSpec buildDataSpec = buildDataSpec(j);
+                    DataSpec buildDataSpec = buildDataSpec(j, str);
                     this.dataSpec = buildDataSpec;
                     long open = this.dataSource.open(buildDataSpec);
                     if (!this.loadCanceled) {
+                        List<String> list = this.dataSource.getResponseHeaders().get(HttpHeaders.ETAG);
+                        str = (list == null || list.isEmpty()) ? null : list.get(0);
                         if (open != -1) {
                             open += j;
                             ProgressiveMediaPeriod.this.onLengthKnown();
@@ -921,14 +950,18 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
                 max = this.seekTimeUs;
             }
             int bytesLeft = parsableByteArray.bytesLeft();
-            TrackOutput trackOutput = (TrackOutput) Assertions.checkNotNull(this.icyTrackOutput);
+            TrackOutput trackOutput = (TrackOutput) Preconditions.checkNotNull(this.icyTrackOutput);
             trackOutput.sampleData(parsableByteArray, bytesLeft);
             trackOutput.sampleMetadata(max, 1, bytesLeft, 0, null);
             this.seenIcyMetadata = true;
         }
 
-        private DataSpec buildDataSpec(long j) {
-            return new DataSpec.Builder().setUri(this.uri).setPosition(j).setKey(ProgressiveMediaPeriod.this.customCacheKey).setFlags(6).setHttpRequestHeaders(ProgressiveMediaPeriod.ICY_METADATA_HEADERS).build();
+        private DataSpec buildDataSpec(long j, String str) {
+            Map<String, String> map = ProgressiveMediaPeriod.ICY_METADATA_HEADERS;
+            if (str != null && !str.startsWith("W/")) {
+                map = ImmutableMap.builder().putAll(map).put(HttpHeaders.IF_RANGE, str).buildKeepingLast();
+            }
+            return new DataSpec.Builder().setUri(this.uri).setPosition(j).setKey(ProgressiveMediaPeriod.this.customCacheKey).setFlags(6).setHttpRequestHeaders(map).build();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -989,5 +1022,73 @@ public final class ProgressiveMediaPeriod implements MediaPeriod, ExtractorOutpu
         HashMap hashMap = new HashMap();
         hashMap.put(IcyHeaders.REQUEST_HEADER_ENABLE_METADATA_NAME, "1");
         return Collections.unmodifiableMap(hashMap);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* loaded from: classes3.dex */
+    public static class ControlledTrackOutput extends ForwardingTrackOutput {
+        private final DiscardingTrackOutput discardingTrackOutput;
+        private final AtomicReference<OutputMode> outputMode;
+        private final SampleQueue sampleQueue;
+
+        /* JADX INFO: Access modifiers changed from: package-private */
+        /* loaded from: classes3.dex */
+        public enum OutputMode {
+            PASS_THROUGH,
+            DISCARD_AFTER_NEXT_SAMPLE_METADATA,
+            DISCARDING
+        }
+
+        ControlledTrackOutput(SampleQueue sampleQueue) {
+            super(sampleQueue);
+            this.sampleQueue = sampleQueue;
+            this.discardingTrackOutput = new DiscardingTrackOutput();
+            this.outputMode = new AtomicReference<>(OutputMode.PASS_THROUGH);
+        }
+
+        @Override // androidx.media3.extractor.ForwardingTrackOutput, androidx.media3.extractor.TrackOutput
+        public int sampleData(DataReader dataReader, int i, boolean z) throws IOException {
+            return getCurrentOutput().sampleData(dataReader, i, z);
+        }
+
+        @Override // androidx.media3.extractor.ForwardingTrackOutput, androidx.media3.extractor.TrackOutput
+        public int sampleData(DataReader dataReader, int i, boolean z, int i2) throws IOException {
+            return getCurrentOutput().sampleData(dataReader, i, z, i2);
+        }
+
+        @Override // androidx.media3.extractor.ForwardingTrackOutput, androidx.media3.extractor.TrackOutput
+        public void sampleData(ParsableByteArray parsableByteArray, int i) {
+            getCurrentOutput().sampleData(parsableByteArray, i);
+        }
+
+        @Override // androidx.media3.extractor.ForwardingTrackOutput, androidx.media3.extractor.TrackOutput
+        public void sampleData(ParsableByteArray parsableByteArray, int i, int i2) {
+            getCurrentOutput().sampleData(parsableByteArray, i, i2);
+        }
+
+        @Override // androidx.media3.extractor.ForwardingTrackOutput, androidx.media3.extractor.TrackOutput
+        public void sampleMetadata(long j, int i, int i2, int i3, TrackOutput.CryptoData cryptoData) {
+            getCurrentOutput().sampleMetadata(j, i, i2, i3, cryptoData);
+            if (this.outputMode.get() == OutputMode.DISCARD_AFTER_NEXT_SAMPLE_METADATA) {
+                this.sampleQueue.reset();
+                this.outputMode.set(OutputMode.DISCARDING);
+            }
+        }
+
+        void updateSelectionState(boolean z) {
+            this.outputMode.set(z ? OutputMode.PASS_THROUGH : OutputMode.DISCARD_AFTER_NEXT_SAMPLE_METADATA);
+            if (z) {
+                return;
+            }
+            this.sampleQueue.discardToEnd();
+        }
+
+        boolean isSelected() {
+            return this.outputMode.get() == OutputMode.PASS_THROUGH;
+        }
+
+        private TrackOutput getCurrentOutput() {
+            return this.outputMode.get() == OutputMode.DISCARDING ? this.discardingTrackOutput : this.sampleQueue;
+        }
     }
 }

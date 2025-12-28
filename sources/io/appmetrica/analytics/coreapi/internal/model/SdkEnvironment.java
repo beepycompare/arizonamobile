@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class SdkEnvironment {
 
     /* renamed from: a  reason: collision with root package name */
-    private final AppVersionInfo f376a;
+    private final AppVersionInfo f377a;
     private final String b;
     private final ScreenInfo c;
     private final SdkInfo d;
@@ -17,7 +17,7 @@ public final class SdkEnvironment {
     private final List f;
 
     public SdkEnvironment(AppVersionInfo appVersionInfo, String str, ScreenInfo screenInfo, SdkInfo sdkInfo, String str2, List<String> list) {
-        this.f376a = appVersionInfo;
+        this.f377a = appVersionInfo;
         this.b = str;
         this.c = screenInfo;
         this.d = sdkInfo;
@@ -27,7 +27,7 @@ public final class SdkEnvironment {
 
     public static /* synthetic */ SdkEnvironment copy$default(SdkEnvironment sdkEnvironment, AppVersionInfo appVersionInfo, String str, ScreenInfo screenInfo, SdkInfo sdkInfo, String str2, List list, int i, Object obj) {
         if ((i & 1) != 0) {
-            appVersionInfo = sdkEnvironment.f376a;
+            appVersionInfo = sdkEnvironment.f377a;
         }
         if ((i & 2) != 0) {
             str = sdkEnvironment.b;
@@ -51,7 +51,7 @@ public final class SdkEnvironment {
     }
 
     public final AppVersionInfo component1() {
-        return this.f376a;
+        return this.f377a;
     }
 
     public final String component2() {
@@ -84,7 +84,7 @@ public final class SdkEnvironment {
         }
         if (obj instanceof SdkEnvironment) {
             SdkEnvironment sdkEnvironment = (SdkEnvironment) obj;
-            return Intrinsics.areEqual(this.f376a, sdkEnvironment.f376a) && Intrinsics.areEqual(this.b, sdkEnvironment.b) && Intrinsics.areEqual(this.c, sdkEnvironment.c) && Intrinsics.areEqual(this.d, sdkEnvironment.d) && Intrinsics.areEqual(this.e, sdkEnvironment.e) && Intrinsics.areEqual(this.f, sdkEnvironment.f);
+            return Intrinsics.areEqual(this.f377a, sdkEnvironment.f377a) && Intrinsics.areEqual(this.b, sdkEnvironment.b) && Intrinsics.areEqual(this.c, sdkEnvironment.c) && Intrinsics.areEqual(this.d, sdkEnvironment.d) && Intrinsics.areEqual(this.e, sdkEnvironment.e) && Intrinsics.areEqual(this.f, sdkEnvironment.f);
         }
         return false;
     }
@@ -94,7 +94,7 @@ public final class SdkEnvironment {
     }
 
     public final AppVersionInfo getAppVersionInfo() {
-        return this.f376a;
+        return this.f377a;
     }
 
     public final String getDeviceType() {
@@ -118,10 +118,10 @@ public final class SdkEnvironment {
         int hashCode2 = this.c.hashCode();
         int hashCode3 = this.d.hashCode();
         int hashCode4 = this.e.hashCode();
-        return this.f.hashCode() + ((hashCode4 + ((hashCode3 + ((hashCode2 + ((hashCode + (this.f376a.hashCode() * 31)) * 31)) * 31)) * 31)) * 31);
+        return this.f.hashCode() + ((hashCode4 + ((hashCode3 + ((hashCode2 + ((hashCode + (this.f377a.hashCode() * 31)) * 31)) * 31)) * 31)) * 31);
     }
 
     public String toString() {
-        return "SdkEnvironment(appVersionInfo=" + this.f376a + ", appFramework=" + this.b + ", screenInfo=" + this.c + ", sdkInfo=" + this.d + ", deviceType=" + this.e + ", locales=" + this.f + ')';
+        return "SdkEnvironment(appVersionInfo=" + this.f377a + ", appFramework=" + this.b + ", screenInfo=" + this.c + ", sdkInfo=" + this.d + ", deviceType=" + this.e + ", locales=" + this.f + ')';
     }
 }

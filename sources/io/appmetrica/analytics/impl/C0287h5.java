@@ -7,15 +7,15 @@ import kotlin.Pair;
 public final class C0287h5 implements Co {
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f1014a;
+    public final List f1015a;
 
     public C0287h5(List<? extends Pair<String, ? extends Co>> list) {
-        this.f1014a = list;
+        this.f1015a = list;
     }
 
     @Override // io.appmetrica.analytics.impl.Co
     public final String a() {
-        for (Pair pair : this.f1014a) {
+        for (Pair pair : this.f1015a) {
             String a2 = ((Co) pair.getSecond()).a();
             if (a2 != null && a2.length() > 0) {
                 return a2;
@@ -26,7 +26,7 @@ public final class C0287h5 implements Co {
 
     @Override // io.appmetrica.analytics.impl.Co
     public final void a(String str) {
-        for (Pair pair : this.f1014a) {
+        for (Pair pair : this.f1015a) {
             ((Co) pair.getSecond()).a(str);
         }
     }

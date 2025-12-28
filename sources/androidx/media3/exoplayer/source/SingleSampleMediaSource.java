@@ -5,7 +5,6 @@ import androidx.media3.common.Format;
 import androidx.media3.common.MediaItem;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.Timeline;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Consumer;
 import androidx.media3.datasource.DataSource;
 import androidx.media3.datasource.DataSpec;
@@ -17,6 +16,7 @@ import androidx.media3.exoplayer.upstream.DefaultLoadErrorHandlingPolicy;
 import androidx.media3.exoplayer.upstream.LoadErrorHandlingPolicy;
 import androidx.media3.exoplayer.util.ReleasableExecutor;
 import com.google.common.base.MoreObjects;
+import com.google.common.base.Preconditions;
 import com.google.common.base.Supplier;
 import com.google.common.collect.ImmutableList;
 import java.util.concurrent.Executor;
@@ -52,7 +52,7 @@ public final class SingleSampleMediaSource extends BaseMediaSource {
         private boolean treatLoadErrorsAsEndOfStream = true;
 
         public Factory(DataSource.Factory factory) {
-            this.dataSourceFactory = (DataSource.Factory) Assertions.checkNotNull(factory);
+            this.dataSourceFactory = (DataSource.Factory) Preconditions.checkNotNull(factory);
         }
 
         public Factory setTag(Object obj) {

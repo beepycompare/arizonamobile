@@ -1,6 +1,5 @@
 package com.miami.game.core.server;
 
-import androidx.compose.ui.spatial.RectListKt;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -15,7 +14,7 @@ import timber.log.Timber;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ServersInteractor.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.core.server.ServersInteractor$initial$1", f = "ServersInteractor.kt", i = {3, 4}, l = {58, 59, RectListKt.BitOffsetForGesturable, 67, 68}, m = "invokeSuspend", n = {"e", "e"}, s = {"L$0", "L$0"}, v = 1)
+@DebugMetadata(c = "com.miami.game.core.server.ServersInteractor$initial$1", f = "ServersInteractor.kt", i = {4, 5}, l = {58, 59, 61, 63, 68, 69}, m = "invokeSuspend", n = {"e", "e"}, s = {"L$0", "L$0"}, v = 1)
 /* loaded from: classes4.dex */
 public final class ServersInteractor$initial$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     Object L$0;
@@ -39,15 +38,17 @@ public final class ServersInteractor$initial$1 extends SuspendLambda implements 
         return ((ServersInteractor$initial$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x007f, code lost:
-        if (kotlinx.coroutines.BuildersKt.withContext(kotlinx.coroutines.Dispatchers.getMain(), new com.miami.game.core.server.ServersInteractor$initial$1.AnonymousClass1(r8.this$0, null), r8) != r0) goto L10;
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x0088, code lost:
+        if (kotlinx.coroutines.BuildersKt.withContext(kotlinx.coroutines.Dispatchers.getMain(), new com.miami.game.core.server.ServersInteractor$initial$1.AnonymousClass1(r5.this$0, null), r5) != r0) goto L8;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:30:0x00a5, code lost:
-        if (kotlinx.coroutines.DelayKt.delay(androidx.media3.common.C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS, r8) != r0) goto L16;
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x00af, code lost:
+        if (kotlinx.coroutines.DelayKt.delay(androidx.media3.common.C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS, r5) != r0) goto L11;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:33:0x00c6, code lost:
-        if (kotlinx.coroutines.BuildersKt.withContext(kotlinx.coroutines.Dispatchers.getMain(), new com.miami.game.core.server.ServersInteractor$initial$1.AnonymousClass2(r8.this$0, null), r8) == r0) goto L18;
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x00d1, code lost:
+        if (kotlinx.coroutines.BuildersKt.withContext(kotlinx.coroutines.Dispatchers.getMain(), new com.miami.game.core.server.ServersInteractor$initial$1.AnonymousClass2(r5.this$0, null), r5) == r0) goto L13;
      */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0059  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x006e  */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -56,57 +57,84 @@ public final class ServersInteractor$initial$1 extends SuspendLambda implements 
         Exception exc;
         Object serversDesktopList;
         Object serversMobileList;
+        Object serversVcList;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i = this.label;
         try {
         } catch (Exception e) {
             exc = e;
             Timber.Forest.tag("exception").d(exc.toString(), new Object[0]);
             this.L$0 = SpillingKt.nullOutSpilledVariable(exc);
-            this.label = 4;
+            this.label = 5;
         }
-        if (i == 0) {
-            ResultKt.throwOnFailure(obj);
-            this.label = 1;
-            serversDesktopList = this.this$0.getServersDesktopList(this);
-            if (serversDesktopList == coroutine_suspended) {
-                return coroutine_suspended;
-            }
-        } else if (i == 1) {
-            ResultKt.throwOnFailure(obj);
-        } else if (i == 2) {
-            ResultKt.throwOnFailure(obj);
-            this.this$0.getCurrentServer();
-            this.label = 3;
-        } else {
-            if (i == 3) {
+        switch (this.label) {
+            case 0:
                 ResultKt.throwOnFailure(obj);
-            } else if (i == 4) {
+                this.label = 1;
+                serversDesktopList = this.this$0.getServersDesktopList(this);
+                if (serversDesktopList == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                this.label = 2;
+                serversMobileList = this.this$0.getServersMobileList(this);
+                if (serversMobileList == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                this.this$0.getCurrentServer();
+                this.label = 3;
+                serversVcList = this.this$0.getServersVcList(this);
+                if (serversVcList == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                this.label = 4;
+                break;
+            case 1:
+                ResultKt.throwOnFailure(obj);
+                this.label = 2;
+                serversMobileList = this.this$0.getServersMobileList(this);
+                if (serversMobileList == coroutine_suspended) {
+                }
+                this.this$0.getCurrentServer();
+                this.label = 3;
+                serversVcList = this.this$0.getServersVcList(this);
+                if (serversVcList == coroutine_suspended) {
+                }
+                this.label = 4;
+                break;
+            case 2:
+                ResultKt.throwOnFailure(obj);
+                this.this$0.getCurrentServer();
+                this.label = 3;
+                serversVcList = this.this$0.getServersVcList(this);
+                if (serversVcList == coroutine_suspended) {
+                }
+                this.label = 4;
+                break;
+            case 3:
+                ResultKt.throwOnFailure(obj);
+                this.label = 4;
+                break;
+            case 4:
+                ResultKt.throwOnFailure(obj);
+                return Unit.INSTANCE;
+            case 5:
                 exc = (Exception) this.L$0;
                 ResultKt.throwOnFailure(obj);
                 this.L$0 = SpillingKt.nullOutSpilledVariable(exc);
-                this.label = 5;
-            } else if (i != 5) {
-                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-            } else {
+                this.label = 6;
+                break;
+            case 6:
                 Exception exc2 = (Exception) this.L$0;
                 ResultKt.throwOnFailure(obj);
-            }
-            return Unit.INSTANCE;
+                return Unit.INSTANCE;
+            default:
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
-        this.label = 2;
-        serversMobileList = this.this$0.getServersMobileList(this);
-        if (serversMobileList == coroutine_suspended) {
-            return coroutine_suspended;
-        }
-        this.this$0.getCurrentServer();
-        this.label = 3;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: ServersInteractor.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-    @DebugMetadata(c = "com.miami.game.core.server.ServersInteractor$initial$1$1", f = "ServersInteractor.kt", i = {}, l = {63}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+    @DebugMetadata(c = "com.miami.game.core.server.ServersInteractor$initial$1$1", f = "ServersInteractor.kt", i = {}, l = {64}, m = "invokeSuspend", n = {}, s = {}, v = 1)
     /* renamed from: com.miami.game.core.server.ServersInteractor$initial$1$1  reason: invalid class name */
     /* loaded from: classes4.dex */
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

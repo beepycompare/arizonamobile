@@ -1,8 +1,8 @@
 package androidx.media3.common.text;
 
 import android.os.Bundle;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 /* loaded from: classes2.dex */
 public final class VoiceSpan {
     private static final String FIELD_NAME = Util.intToStringMaxRadix(0);
@@ -19,6 +19,6 @@ public final class VoiceSpan {
     }
 
     public static VoiceSpan fromBundle(Bundle bundle) {
-        return new VoiceSpan((String) Assertions.checkNotNull(bundle.getString(FIELD_NAME)));
+        return new VoiceSpan((String) Preconditions.checkNotNull(bundle.getString(FIELD_NAME)));
     }
 }

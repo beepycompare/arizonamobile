@@ -1,9 +1,9 @@
 package androidx.media3.extractor.text.webvtt;
 
 import androidx.media3.common.text.Cue;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.text.Subtitle;
+import com.google.common.base.Preconditions;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -46,8 +46,8 @@ final class WebvttSubtitle implements Subtitle {
 
     @Override // androidx.media3.extractor.text.Subtitle
     public long getEventTime(int i) {
-        Assertions.checkArgument(i >= 0);
-        Assertions.checkArgument(i < this.sortedCueTimesUs.length);
+        Preconditions.checkArgument(i >= 0);
+        Preconditions.checkArgument(i < this.sortedCueTimesUs.length);
         return this.sortedCueTimesUs[i];
     }
 

@@ -1,6 +1,5 @@
 package okhttp3.internal.cache;
 
-import androidx.compose.material3.internal.CalendarModelKt;
 import com.google.common.net.HttpHeaders;
 import com.liulishuo.okdownload.core.breakpoint.BreakpointSQLiteKey;
 import java.util.Date;
@@ -132,7 +131,7 @@ public final class CacheStrategy {
                     if (j2 >= computeFreshnessLifetime) {
                         newBuilder.addHeader(HttpHeaders.WARNING, "110 HttpURLConnection \"Response is stale\"");
                     }
-                    if (cacheResponseAge > CalendarModelKt.MillisecondsIn24Hours && isFreshnessLifetimeHeuristic()) {
+                    if (cacheResponseAge > 86400000 && isFreshnessLifetimeHeuristic()) {
                         newBuilder.addHeader(HttpHeaders.WARNING, "113 HttpURLConnection \"Heuristic expiration\"");
                     }
                     return new CacheStrategy(null, newBuilder.build());

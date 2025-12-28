@@ -79,7 +79,7 @@ public final class SavedStateHandleSaverKt {
             pairArr = (Pair[]) arrayList.toArray(new Pair[0]);
         }
         Bundle bundleOf = BundleKt.bundleOf((Pair[]) Arrays.copyOf(pairArr, pairArr.length));
-        SavedStateWriter.m9280constructorimpl(bundleOf);
+        SavedStateWriter.m9295constructorimpl(bundleOf);
         return bundleOf;
     }
 

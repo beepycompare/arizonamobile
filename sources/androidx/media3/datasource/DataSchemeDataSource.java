@@ -3,8 +3,8 @@ package androidx.media3.datasource;
 import android.net.Uri;
 import android.util.Base64;
 import androidx.media3.common.ParserException;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.io.IOException;
 import java.net.URLDecoder;
@@ -27,7 +27,7 @@ public final class DataSchemeDataSource extends BaseDataSource {
         this.dataSpec = dataSpec;
         Uri normalizeScheme = dataSpec.uri.normalizeScheme();
         String scheme = normalizeScheme.getScheme();
-        Assertions.checkArgument("data".equals(scheme), "Unsupported scheme: " + scheme);
+        Preconditions.checkArgument("data".equals(scheme), "Unsupported scheme: %s", scheme);
         String[] split = Util.split(normalizeScheme.getSchemeSpecificPart(), StringUtils.COMMA);
         if (split.length != 2) {
             throw ParserException.createForMalformedDataOfUnknownType("Unexpected URI format: " + normalizeScheme, null);

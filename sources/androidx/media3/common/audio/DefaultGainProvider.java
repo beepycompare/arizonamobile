@@ -4,9 +4,9 @@ import android.util.Pair;
 import androidx.media3.common.C;
 import androidx.media3.common.audio.DefaultGainProvider;
 import androidx.media3.common.audio.GainProcessor;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import com.google.common.base.Function;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.Range;
 import com.google.common.collect.TreeRangeMap;
 import java.util.Map;
@@ -76,8 +76,8 @@ public final class DefaultGainProvider implements GainProcessor.GainProvider {
         }
 
         public Builder addFadeAt(final long j, final long j2, final FadeProvider fadeProvider) {
-            Assertions.checkArgument(j >= 0);
-            Assertions.checkArgument(j2 > 1);
+            Preconditions.checkArgument(j >= 0);
+            Preconditions.checkArgument(j2 > 1);
             this.gainMap.put(Range.closedOpen(Long.valueOf(j), Long.valueOf(j + j2)), new Function() { // from class: androidx.media3.common.audio.DefaultGainProvider$Builder$$ExternalSyntheticLambda1
                 @Override // com.google.common.base.Function
                 public final Object apply(Object obj) {
@@ -117,17 +117,17 @@ public final class DefaultGainProvider implements GainProcessor.GainProvider {
 
     @Override // androidx.media3.common.audio.GainProcessor.GainProvider
     public float getGainFactorAtSamplePosition(long j, int i) {
-        Assertions.checkState(i > 0);
-        Assertions.checkArgument(j >= 0);
-        float floatValue = ((Float) ((Function) Assertions.checkNotNull(this.gainMap.get(Long.valueOf(Util.sampleCountToDurationUs(j, i))))).apply(Pair.create(Long.valueOf(j), Integer.valueOf(i)))).floatValue();
+        Preconditions.checkState(i > 0);
+        Preconditions.checkArgument(j >= 0);
+        float floatValue = ((Float) ((Function) Preconditions.checkNotNull(this.gainMap.get(Long.valueOf(Util.sampleCountToDurationUs(j, i))))).apply(Pair.create(Long.valueOf(j), Integer.valueOf(i)))).floatValue();
         return floatValue == -3.4028235E38f ? this.defaultGain : floatValue;
     }
 
     @Override // androidx.media3.common.audio.GainProcessor.GainProvider
     public long isUnityUntil(long j, int i) {
-        Assertions.checkState(i > 0);
-        Assertions.checkArgument(j >= 0);
-        Map.Entry entry = (Map.Entry) Assertions.checkNotNull(this.gainMap.getEntry(Long.valueOf(Util.sampleCountToDurationUs(j, i))));
+        Preconditions.checkState(i > 0);
+        Preconditions.checkArgument(j >= 0);
+        Map.Entry entry = (Map.Entry) Preconditions.checkNotNull(this.gainMap.getEntry(Long.valueOf(Util.sampleCountToDurationUs(j, i))));
         float floatValue = ((Float) ((Function) entry.getValue()).apply(Pair.create(Long.valueOf(j), Integer.valueOf(i)))).floatValue();
         if (floatValue == 1.0f) {
             return j + 1;

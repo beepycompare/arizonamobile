@@ -10,7 +10,7 @@ public final class C0355jm {
     public C9 B;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f1058a;
+    public String f1059a;
     public List b;
     public String c;
     public String d;

@@ -1,8 +1,8 @@
 package androidx.media3.common;
 
 import android.os.Bundle;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 /* loaded from: classes2.dex */
 public final class PlaybackParameters {
     public final float pitch;
@@ -17,8 +17,8 @@ public final class PlaybackParameters {
     }
 
     public PlaybackParameters(float f, float f2) {
-        Assertions.checkArgument(f > 0.0f);
-        Assertions.checkArgument(f2 > 0.0f);
+        Preconditions.checkArgument(f > 0.0f);
+        Preconditions.checkArgument(f2 > 0.0f);
         this.speed = f;
         this.pitch = f2;
         this.scaledUsPerMs = Math.round(f * 1000.0f);

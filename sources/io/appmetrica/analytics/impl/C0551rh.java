@@ -8,8 +8,8 @@ public final class C0551rh extends Sg {
 
     @Override // io.appmetrica.analytics.impl.Sg
     public final boolean a(Q5 q5) {
-        ((C0390l5) this.f776a.p).e();
-        Sk sk = this.f776a.j;
+        ((C0390l5) this.f777a.p).e();
+        Sk sk = this.f777a.j;
         synchronized (sk) {
             Ek b = sk.b(q5);
             if (b.g) {

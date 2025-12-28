@@ -25,7 +25,7 @@ public final class Yg extends Sg {
                 enumC0214ea2 = EnumC0214ea.NON_FIRST_OCCURENCE;
             } else {
                 P8 p8 = n8.c;
-                if (p8.f729a) {
+                if (p8.f730a) {
                     enumC0214ea = EnumC0214ea.FIRST_OCCURRENCE;
                 } else {
                     enumC0214ea = EnumC0214ea.UNKNOWN;
@@ -34,13 +34,13 @@ public final class Yg extends Sg {
                     p8.b.add(Integer.valueOf(hashCode));
                     p8.d++;
                 } else {
-                    p8.f729a = false;
+                    p8.f730a = false;
                 }
                 S8 s8 = n8.b;
                 P8 p82 = n8.c;
                 IBinaryDataHelper iBinaryDataHelper = s8.c;
                 R8 r8 = s8.b;
-                s8.f772a.getClass();
+                s8.f773a.getClass();
                 iBinaryDataHelper.insert("event_hashes", r8.toByteArray((R8) Q8.a(p82)));
                 enumC0214ea2 = enumC0214ea;
             }

@@ -1,11 +1,10 @@
 package androidx.media3.common.audio;
 
 import androidx.media3.common.audio.AudioProcessor;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-import java.nio.ShortBuffer;
 /* loaded from: classes2.dex */
 public final class SonicAudioProcessor implements AudioProcessor {
     private static final float CLOSE_THRESHOLD = 1.0E-4f;
@@ -23,7 +22,6 @@ public final class SonicAudioProcessor implements AudioProcessor {
     private int pendingOutputSampleRate;
     private boolean pendingSonicRecreation;
     private float pitch;
-    private ShortBuffer shortBuffer;
     private final boolean shouldBeActiveWithDefaultParameters;
     private Sonic sonic;
     private float speed;
@@ -40,16 +38,14 @@ public final class SonicAudioProcessor implements AudioProcessor {
         this.pendingOutputAudioFormat = AudioProcessor.AudioFormat.NOT_SET;
         this.inputAudioFormat = AudioProcessor.AudioFormat.NOT_SET;
         this.outputAudioFormat = AudioProcessor.AudioFormat.NOT_SET;
-        ByteBuffer byteBuffer = EMPTY_BUFFER;
-        this.buffer = byteBuffer;
-        this.shortBuffer = byteBuffer.asShortBuffer();
+        this.buffer = EMPTY_BUFFER;
         this.outputBuffer = EMPTY_BUFFER;
         this.pendingOutputSampleRate = -1;
         this.shouldBeActiveWithDefaultParameters = z;
     }
 
     public void setSpeed(float f) {
-        Assertions.checkArgument(f > 0.0f);
+        Preconditions.checkArgument(f > 0.0f);
         if (this.speed != f) {
             this.speed = f;
             this.pendingSonicRecreation = true;
@@ -57,7 +53,7 @@ public final class SonicAudioProcessor implements AudioProcessor {
     }
 
     public void setPitch(float f) {
-        Assertions.checkArgument(f > 0.0f);
+        Preconditions.checkArgument(f > 0.0f);
         if (this.pitch != f) {
             this.pitch = f;
             this.pendingSonicRecreation = true;
@@ -65,13 +61,13 @@ public final class SonicAudioProcessor implements AudioProcessor {
     }
 
     public void setOutputSampleRateHz(int i) {
-        Assertions.checkArgument(i == -1 || i > 0);
+        Preconditions.checkArgument(i == -1 || i > 0);
         this.pendingOutputSampleRate = i;
     }
 
     public long getMediaDuration(long j) {
         if (this.outputBytes >= 1024) {
-            long pendingInputBytes = this.inputBytes - ((Sonic) Assertions.checkNotNull(this.sonic)).getPendingInputBytes();
+            long pendingInputBytes = this.inputBytes - ((Sonic) Preconditions.checkNotNull(this.sonic)).getPendingInputBytes();
             if (this.outputAudioFormat.sampleRate == this.inputAudioFormat.sampleRate) {
                 return Util.scaleLargeTimestamp(j, pendingInputBytes, this.outputBytes);
             }
@@ -82,7 +78,7 @@ public final class SonicAudioProcessor implements AudioProcessor {
 
     public long getPlayoutDuration(long j) {
         if (this.outputBytes >= 1024) {
-            long pendingInputBytes = this.inputBytes - ((Sonic) Assertions.checkNotNull(this.sonic)).getPendingInputBytes();
+            long pendingInputBytes = this.inputBytes - ((Sonic) Preconditions.checkNotNull(this.sonic)).getPendingInputBytes();
             if (this.outputAudioFormat.sampleRate == this.inputAudioFormat.sampleRate) {
                 return Util.scaleLargeTimestamp(j, this.outputBytes, pendingInputBytes);
             }
@@ -92,7 +88,7 @@ public final class SonicAudioProcessor implements AudioProcessor {
     }
 
     public long getProcessedInputBytes() {
-        return this.inputBytes - ((Sonic) Assertions.checkNotNull(this.sonic)).getPendingInputBytes();
+        return this.inputBytes - ((Sonic) Preconditions.checkNotNull(this.sonic)).getPendingInputBytes();
     }
 
     @Override // androidx.media3.common.audio.AudioProcessor
@@ -102,7 +98,7 @@ public final class SonicAudioProcessor implements AudioProcessor {
 
     @Override // androidx.media3.common.audio.AudioProcessor
     public AudioProcessor.AudioFormat configure(AudioProcessor.AudioFormat audioFormat) throws AudioProcessor.UnhandledAudioFormatException {
-        if (audioFormat.encoding != 2) {
+        if (audioFormat.encoding != 2 && audioFormat.encoding != 4) {
             throw new AudioProcessor.UnhandledAudioFormatException(audioFormat);
         }
         int i = this.pendingOutputSampleRate;
@@ -110,7 +106,7 @@ public final class SonicAudioProcessor implements AudioProcessor {
             i = audioFormat.sampleRate;
         }
         this.pendingInputAudioFormat = audioFormat;
-        AudioProcessor.AudioFormat audioFormat2 = new AudioProcessor.AudioFormat(i, audioFormat.channelCount, 2);
+        AudioProcessor.AudioFormat audioFormat2 = new AudioProcessor.AudioFormat(i, audioFormat.channelCount, audioFormat.encoding);
         this.pendingOutputAudioFormat = audioFormat2;
         this.pendingSonicRecreation = true;
         return audioFormat2;
@@ -131,11 +127,8 @@ public final class SonicAudioProcessor implements AudioProcessor {
     @Override // androidx.media3.common.audio.AudioProcessor
     public void queueInput(ByteBuffer byteBuffer) {
         if (byteBuffer.hasRemaining()) {
-            ShortBuffer asShortBuffer = byteBuffer.asShortBuffer();
-            int remaining = byteBuffer.remaining();
-            this.inputBytes += remaining;
-            ((Sonic) Assertions.checkNotNull(this.sonic)).queueInput(asShortBuffer);
-            byteBuffer.position(byteBuffer.position() + remaining);
+            this.inputBytes += byteBuffer.remaining();
+            ((Sonic) Preconditions.checkNotNull(this.sonic)).queueInput(byteBuffer);
         }
     }
 
@@ -154,16 +147,13 @@ public final class SonicAudioProcessor implements AudioProcessor {
         Sonic sonic = this.sonic;
         if (sonic != null && (outputSize = sonic.getOutputSize()) > 0) {
             if (this.buffer.capacity() < outputSize) {
-                ByteBuffer order = ByteBuffer.allocateDirect(outputSize).order(ByteOrder.nativeOrder());
-                this.buffer = order;
-                this.shortBuffer = order.asShortBuffer();
+                this.buffer = ByteBuffer.allocateDirect(outputSize).order(ByteOrder.nativeOrder());
             } else {
                 this.buffer.clear();
-                this.shortBuffer.clear();
             }
-            sonic.getOutput(this.shortBuffer);
+            sonic.getOutput(this.buffer);
+            this.buffer.flip();
             this.outputBytes += outputSize;
-            this.buffer.limit(outputSize);
             this.outputBuffer = this.buffer;
         }
         ByteBuffer byteBuffer = this.outputBuffer;
@@ -181,12 +171,12 @@ public final class SonicAudioProcessor implements AudioProcessor {
     }
 
     @Override // androidx.media3.common.audio.AudioProcessor
-    public void flush() {
+    public void flush(AudioProcessor.StreamMetadata streamMetadata) {
         if (isActive()) {
             this.inputAudioFormat = this.pendingInputAudioFormat;
             this.outputAudioFormat = this.pendingOutputAudioFormat;
             if (this.pendingSonicRecreation) {
-                this.sonic = new Sonic(this.inputAudioFormat.sampleRate, this.inputAudioFormat.channelCount, this.speed, this.pitch, this.outputAudioFormat.sampleRate);
+                this.sonic = new Sonic(this.inputAudioFormat.sampleRate, this.inputAudioFormat.channelCount, this.speed, this.pitch, this.outputAudioFormat.sampleRate, this.inputAudioFormat.encoding == 4);
             } else {
                 Sonic sonic = this.sonic;
                 if (sonic != null) {
@@ -208,9 +198,7 @@ public final class SonicAudioProcessor implements AudioProcessor {
         this.pendingOutputAudioFormat = AudioProcessor.AudioFormat.NOT_SET;
         this.inputAudioFormat = AudioProcessor.AudioFormat.NOT_SET;
         this.outputAudioFormat = AudioProcessor.AudioFormat.NOT_SET;
-        ByteBuffer byteBuffer = EMPTY_BUFFER;
-        this.buffer = byteBuffer;
-        this.shortBuffer = byteBuffer.asShortBuffer();
+        this.buffer = EMPTY_BUFFER;
         this.outputBuffer = EMPTY_BUFFER;
         this.pendingOutputSampleRate = -1;
         this.pendingSonicRecreation = false;

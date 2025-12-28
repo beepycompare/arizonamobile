@@ -8,7 +8,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.elements.radial_menu.PieSelector;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class SelectorElementBinding implements ViewBinding {
     public final ConstraintLayout layout;
     public final PieSelector pie;

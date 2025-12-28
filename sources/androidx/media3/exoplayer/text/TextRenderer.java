@@ -8,7 +8,6 @@ import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.text.Cue;
 import androidx.media3.common.text.CueGroup;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
 import androidx.media3.decoder.DecoderInputBuffer;
@@ -23,6 +22,7 @@ import androidx.media3.extractor.text.SubtitleDecoder;
 import androidx.media3.extractor.text.SubtitleDecoderException;
 import androidx.media3.extractor.text.SubtitleInputBuffer;
 import androidx.media3.extractor.text.SubtitleOutputBuffer;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -63,7 +63,7 @@ public final class TextRenderer extends BaseRenderer implements Handler.Callback
 
     public TextRenderer(TextOutput textOutput, Looper looper, SubtitleDecoderFactory subtitleDecoderFactory) {
         super(3);
-        this.output = (TextOutput) Assertions.checkNotNull(textOutput);
+        this.output = (TextOutput) Preconditions.checkNotNull(textOutput);
         this.outputHandler = looper == null ? null : Util.createHandler(looper, this);
         this.subtitleDecoderFactory = subtitleDecoderFactory;
         this.cueDecoder = new CueDecoder();
@@ -91,7 +91,7 @@ public final class TextRenderer extends BaseRenderer implements Handler.Callback
     }
 
     public void setFinalStreamEndPositionUs(long j) {
-        Assertions.checkState(isCurrentStreamFinal());
+        Preconditions.checkState(isCurrentStreamFinal());
         this.finalStreamEndPositionUs = j;
     }
 
@@ -120,7 +120,7 @@ public final class TextRenderer extends BaseRenderer implements Handler.Callback
     }
 
     @Override // androidx.media3.exoplayer.BaseRenderer
-    protected void onPositionReset(long j, boolean z) {
+    protected void onPositionReset(long j, boolean z, boolean z2) {
         this.lastRendererPositionUs = j;
         CuesResolver cuesResolver = this.cuesResolver;
         if (cuesResolver != null) {
@@ -139,7 +139,7 @@ public final class TextRenderer extends BaseRenderer implements Handler.Callback
             return;
         }
         releaseSubtitleBuffers();
-        SubtitleDecoder subtitleDecoder = (SubtitleDecoder) Assertions.checkNotNull(this.subtitleDecoder);
+        SubtitleDecoder subtitleDecoder = (SubtitleDecoder) Preconditions.checkNotNull(this.subtitleDecoder);
         subtitleDecoder.flush();
         subtitleDecoder.setOutputStartTimeUs(getLastResetPositionUs());
     }
@@ -156,8 +156,8 @@ public final class TextRenderer extends BaseRenderer implements Handler.Callback
         if (this.outputStreamEnded) {
             return;
         }
-        if (isCuesWithTiming((Format) Assertions.checkNotNull(this.streamFormat))) {
-            Assertions.checkNotNull(this.cuesResolver);
+        if (isCuesWithTiming((Format) Preconditions.checkNotNull(this.streamFormat))) {
+            Preconditions.checkNotNull(this.cuesResolver);
             renderFromCuesWithTiming(j);
             return;
         }
@@ -198,7 +198,7 @@ public final class TextRenderer extends BaseRenderer implements Handler.Callback
                 return false;
             }
             this.cueDecoderInputBuffer.flip();
-            ByteBuffer byteBuffer = (ByteBuffer) Assertions.checkNotNull(this.cueDecoderInputBuffer.data);
+            ByteBuffer byteBuffer = (ByteBuffer) Preconditions.checkNotNull(this.cueDecoderInputBuffer.data);
             CuesWithTiming decode = this.cueDecoder.decode(this.cueDecoderInputBuffer.timeUs, byteBuffer.array(), byteBuffer.arrayOffset(), byteBuffer.limit());
             this.cueDecoderInputBuffer.clear();
             return this.cuesResolver.addCues(decode, j);
@@ -210,9 +210,9 @@ public final class TextRenderer extends BaseRenderer implements Handler.Callback
         boolean z;
         this.lastRendererPositionUs = j;
         if (this.nextSubtitle == null) {
-            ((SubtitleDecoder) Assertions.checkNotNull(this.subtitleDecoder)).setPositionUs(j);
+            ((SubtitleDecoder) Preconditions.checkNotNull(this.subtitleDecoder)).setPositionUs(j);
             try {
-                this.nextSubtitle = ((SubtitleDecoder) Assertions.checkNotNull(this.subtitleDecoder)).dequeueOutputBuffer();
+                this.nextSubtitle = ((SubtitleDecoder) Preconditions.checkNotNull(this.subtitleDecoder)).dequeueOutputBuffer();
             } catch (SubtitleDecoderException e) {
                 handleDecoderError(e);
                 return;
@@ -255,7 +255,7 @@ public final class TextRenderer extends BaseRenderer implements Handler.Callback
             }
         }
         if (z) {
-            Assertions.checkNotNull(this.subtitle);
+            Preconditions.checkNotNull(this.subtitle);
             updateOutput(new CueGroup(this.subtitle.getCues(j), getPresentationTimeUs(getCurrentEventTimeUs(j))));
         }
         if (this.decoderReplacementState == 2) {
@@ -265,7 +265,7 @@ public final class TextRenderer extends BaseRenderer implements Handler.Callback
             try {
                 SubtitleInputBuffer subtitleInputBuffer = this.nextSubtitleInputBuffer;
                 if (subtitleInputBuffer == null) {
-                    subtitleInputBuffer = ((SubtitleDecoder) Assertions.checkNotNull(this.subtitleDecoder)).dequeueInputBuffer();
+                    subtitleInputBuffer = ((SubtitleDecoder) Preconditions.checkNotNull(this.subtitleDecoder)).dequeueInputBuffer();
                     if (subtitleInputBuffer == null) {
                         return;
                     }
@@ -273,7 +273,7 @@ public final class TextRenderer extends BaseRenderer implements Handler.Callback
                 }
                 if (this.decoderReplacementState == 1) {
                     subtitleInputBuffer.setFlags(4);
-                    ((SubtitleDecoder) Assertions.checkNotNull(this.subtitleDecoder)).queueInputBuffer(subtitleInputBuffer);
+                    ((SubtitleDecoder) Preconditions.checkNotNull(this.subtitleDecoder)).queueInputBuffer(subtitleInputBuffer);
                     this.nextSubtitleInputBuffer = null;
                     this.decoderReplacementState = 2;
                     return;
@@ -293,7 +293,7 @@ public final class TextRenderer extends BaseRenderer implements Handler.Callback
                         this.waitingForKeyFrame &= !subtitleInputBuffer.isKeyFrame();
                     }
                     if (!this.waitingForKeyFrame) {
-                        ((SubtitleDecoder) Assertions.checkNotNull(this.subtitleDecoder)).queueInputBuffer(subtitleInputBuffer);
+                        ((SubtitleDecoder) Preconditions.checkNotNull(this.subtitleDecoder)).queueInputBuffer(subtitleInputBuffer);
                         this.nextSubtitleInputBuffer = null;
                     }
                 } else if (readSource == -3) {
@@ -328,9 +328,9 @@ public final class TextRenderer extends BaseRenderer implements Handler.Callback
         if (format == null) {
             return true;
         }
-        if (!isCuesWithTiming((Format) Assertions.checkNotNull(format))) {
+        if (!isCuesWithTiming((Format) Preconditions.checkNotNull(format))) {
             return !this.outputStreamEnded && (!this.inputStreamEnded || hasEventsAfter(this.subtitle, this.lastRendererPositionUs) || hasEventsAfter(this.nextSubtitle, this.lastRendererPositionUs) || this.nextSubtitleInputBuffer == null);
-        } else if (((CuesResolver) Assertions.checkNotNull(this.cuesResolver)).getNextCueChangeTimeUs(this.lastRendererPositionUs) != Long.MIN_VALUE) {
+        } else if (((CuesResolver) Preconditions.checkNotNull(this.cuesResolver)).getNextCueChangeTimeUs(this.lastRendererPositionUs) != Long.MIN_VALUE) {
             return true;
         } else {
             try {
@@ -363,14 +363,14 @@ public final class TextRenderer extends BaseRenderer implements Handler.Callback
 
     private void releaseSubtitleDecoder() {
         releaseSubtitleBuffers();
-        ((SubtitleDecoder) Assertions.checkNotNull(this.subtitleDecoder)).release();
+        ((SubtitleDecoder) Preconditions.checkNotNull(this.subtitleDecoder)).release();
         this.subtitleDecoder = null;
         this.decoderReplacementState = 0;
     }
 
     private void initSubtitleDecoder() {
         this.waitingForKeyFrame = true;
-        SubtitleDecoder createDecoder = this.subtitleDecoderFactory.createDecoder((Format) Assertions.checkNotNull(this.streamFormat));
+        SubtitleDecoder createDecoder = this.subtitleDecoderFactory.createDecoder((Format) Preconditions.checkNotNull(this.streamFormat));
         this.subtitleDecoder = createDecoder;
         createDecoder.setOutputStartTimeUs(getLastResetPositionUs());
     }
@@ -384,7 +384,7 @@ public final class TextRenderer extends BaseRenderer implements Handler.Callback
         if (this.nextSubtitleEventIndex == -1) {
             return Long.MAX_VALUE;
         }
-        Assertions.checkNotNull(this.subtitle);
+        Preconditions.checkNotNull(this.subtitle);
         if (this.nextSubtitleEventIndex >= this.subtitle.getEventTimeCount()) {
             return Long.MAX_VALUE;
         }
@@ -440,13 +440,13 @@ public final class TextRenderer extends BaseRenderer implements Handler.Callback
 
     @SideEffectFree
     private long getPresentationTimeUs(long j) {
-        Assertions.checkState(j != C.TIME_UNSET);
+        Preconditions.checkState(j != C.TIME_UNSET);
         return j - getStreamOffsetUs();
     }
 
     @RequiresNonNull({"streamFormat"})
     private void assertLegacyDecodingEnabledIfRequired() {
-        Assertions.checkState(this.legacyDecodingEnabled || Objects.equals(this.streamFormat.sampleMimeType, MimeTypes.APPLICATION_CEA608) || Objects.equals(this.streamFormat.sampleMimeType, MimeTypes.APPLICATION_MP4CEA608) || Objects.equals(this.streamFormat.sampleMimeType, MimeTypes.APPLICATION_CEA708), "Legacy decoding is disabled, can't handle " + this.streamFormat.sampleMimeType + " samples (expected application/x-media3-cues).");
+        Preconditions.checkState(this.legacyDecodingEnabled || Objects.equals(this.streamFormat.sampleMimeType, MimeTypes.APPLICATION_CEA608) || Objects.equals(this.streamFormat.sampleMimeType, MimeTypes.APPLICATION_MP4CEA608) || Objects.equals(this.streamFormat.sampleMimeType, MimeTypes.APPLICATION_CEA708), "Legacy decoding is disabled, can't handle %s samples (expected %s).", this.streamFormat.sampleMimeType, MimeTypes.APPLICATION_MEDIA3_CUES);
     }
 
     @SideEffectFree

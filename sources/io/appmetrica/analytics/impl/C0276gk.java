@@ -4,7 +4,7 @@ package io.appmetrica.analytics.impl;
 public final class C0276gk implements Y6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1006a = "service_main.db";
+    public final String f1007a = "service_main.db";
     public final String b = "metrica_data.db";
 
     @Override // io.appmetrica.analytics.impl.Y6
@@ -14,6 +14,6 @@ public final class C0276gk implements Y6 {
 
     @Override // io.appmetrica.analytics.impl.Y6
     public final String b() {
-        return this.f1006a;
+        return this.f1007a;
     }
 }

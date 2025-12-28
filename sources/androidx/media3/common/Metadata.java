@@ -2,6 +2,9 @@ package androidx.media3.common;
 
 import androidx.media3.common.MediaMetadata;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Predicate;
+import com.google.common.base.Predicates;
+import com.google.common.collect.ImmutableList;
 import com.google.common.primitives.Longs;
 import java.util.Arrays;
 import java.util.List;
@@ -47,6 +50,53 @@ public final class Metadata {
 
     public Entry get(int i) {
         return this.entries[i];
+    }
+
+    public <T extends Entry> T getFirstEntryOfType(Class<T> cls) {
+        return (T) getFirstMatchingEntry(cls, Predicates.alwaysTrue());
+    }
+
+    public <T extends Entry> T getFirstMatchingEntry(Class<T> cls, Predicate<T> predicate) {
+        for (Entry entry : this.entries) {
+            T t = (T) entryIfMatches(entry, cls, predicate);
+            if (t != null) {
+                return t;
+            }
+        }
+        return null;
+    }
+
+    public <T extends Entry> ImmutableList<T> getEntriesOfType(Class<T> cls) {
+        Entry[] entryArr;
+        ImmutableList.Builder builder = ImmutableList.builder();
+        for (Entry entry : this.entries) {
+            if (cls.isAssignableFrom(entry.getClass())) {
+                builder.add((ImmutableList.Builder) cls.cast(entry));
+            }
+        }
+        return builder.build();
+    }
+
+    public <T extends Entry> ImmutableList<T> getMatchingEntries(Class<T> cls, Predicate<T> predicate) {
+        ImmutableList.Builder builder = ImmutableList.builder();
+        for (Entry entry : this.entries) {
+            Entry entryIfMatches = entryIfMatches(entry, cls, predicate);
+            if (entryIfMatches != null) {
+                builder.add((ImmutableList.Builder) entryIfMatches);
+            }
+        }
+        return builder.build();
+    }
+
+    private <T extends Entry> T entryIfMatches(Entry entry, Class<T> cls, Predicate<T> predicate) {
+        if (cls.isAssignableFrom(entry.getClass())) {
+            T cast = cls.cast(entry);
+            if (predicate.apply(cast)) {
+                return cast;
+            }
+            return null;
+        }
+        return null;
     }
 
     public Metadata copyWithAppendedEntriesFrom(Metadata metadata) {

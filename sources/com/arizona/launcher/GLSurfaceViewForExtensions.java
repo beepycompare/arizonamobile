@@ -32,7 +32,7 @@ public final class GLSurfaceViewForExtensions extends GLSurfaceView {
                 Intrinsics.checkNotNullParameter(gl, "gl");
             }
 
-            /* JADX WARN: Code restructure failed: missing block: B:17:0x0048, code lost:
+            /* JADX WARN: Code restructure failed: missing block: B:17:0x0047, code lost:
                 if (kotlin.text.StringsKt.contains$default((java.lang.CharSequence) r9, (java.lang.CharSequence) "adreno", false, 2, (java.lang.Object) null) != false) goto L12;
              */
             @Override // android.opengl.GLSurfaceView.Renderer

@@ -1,8 +1,8 @@
 package androidx.media3.exoplayer.upstream;
 
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.upstream.Allocator;
+import com.google.common.base.Preconditions;
 import java.util.Arrays;
 /* loaded from: classes3.dex */
 public final class DefaultAllocator implements Allocator {
@@ -20,8 +20,8 @@ public final class DefaultAllocator implements Allocator {
     }
 
     public DefaultAllocator(boolean z, int i, int i2) {
-        Assertions.checkArgument(i > 0);
-        Assertions.checkArgument(i2 >= 0);
+        Preconditions.checkArgument(i > 0);
+        Preconditions.checkArgument(i2 >= 0);
         this.trimOnReset = z;
         this.individualAllocationSize = i;
         this.availableCount = i2;
@@ -59,7 +59,7 @@ public final class DefaultAllocator implements Allocator {
             Allocation[] allocationArr = this.availableAllocations;
             int i2 = i - 1;
             this.availableCount = i2;
-            allocation = (Allocation) Assertions.checkNotNull(allocationArr[i2]);
+            allocation = (Allocation) Preconditions.checkNotNull(allocationArr[i2]);
             this.availableAllocations[this.availableCount] = null;
         } else {
             allocation = new Allocation(new byte[this.individualAllocationSize], 0);
@@ -106,11 +106,11 @@ public final class DefaultAllocator implements Allocator {
         if (this.initialAllocationBlock != null) {
             int i3 = i2 - 1;
             while (i <= i3) {
-                Allocation allocation = (Allocation) Assertions.checkNotNull(this.availableAllocations[i]);
+                Allocation allocation = (Allocation) Preconditions.checkNotNull(this.availableAllocations[i]);
                 if (allocation.data == this.initialAllocationBlock) {
                     i++;
                 } else {
-                    Allocation allocation2 = (Allocation) Assertions.checkNotNull(this.availableAllocations[i3]);
+                    Allocation allocation2 = (Allocation) Preconditions.checkNotNull(this.availableAllocations[i3]);
                     if (allocation2.data != this.initialAllocationBlock) {
                         i3--;
                     } else {

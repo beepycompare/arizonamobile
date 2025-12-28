@@ -9,7 +9,7 @@ import kotlin.collections.CollectionsKt;
 public final class J {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0116af f628a = C0470oa.k().y();
+    public final C0116af f629a = C0470oa.k().y();
     public final SavableToggle b;
     public final OuterStateToggle c;
     public final OuterStateToggle d;

@@ -2,10 +2,10 @@ package androidx.media3.exoplayer.audio;
 
 import androidx.media3.common.audio.AudioProcessor;
 import androidx.media3.common.audio.BaseAudioProcessor;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import java.nio.ByteBuffer;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class SilenceSkippingAudioProcessor extends BaseAudioProcessor {
     private static final int AVOID_TRUNCATION_FACTOR = 1000;
     public static final long DEFAULT_MAX_SILENCE_TO_KEEP_DURATION_US = 2000000;
@@ -57,7 +57,7 @@ public final class SilenceSkippingAudioProcessor extends BaseAudioProcessor {
         if (f >= 0.0f && f <= 1.0f) {
             z = true;
         }
-        Assertions.checkArgument(z);
+        Preconditions.checkArgument(z);
         this.minimumSilenceDurationUs = j;
         this.silenceRetentionRatio = f;
         this.maxSilenceToKeepDurationUs = j2;
@@ -151,7 +151,7 @@ public final class SilenceSkippingAudioProcessor extends BaseAudioProcessor {
         int i;
         int i2;
         boolean z = true;
-        Assertions.checkState(this.maybeSilenceBufferStartIndex < this.maybeSilenceBuffer.length);
+        Preconditions.checkState(this.maybeSilenceBufferStartIndex < this.maybeSilenceBuffer.length);
         int limit = byteBuffer.limit();
         int findNoisePosition = findNoisePosition(byteBuffer);
         int position = findNoisePosition - byteBuffer.position();
@@ -173,7 +173,7 @@ public final class SilenceSkippingAudioProcessor extends BaseAudioProcessor {
         byteBuffer.get(this.maybeSilenceBuffer, i2, min);
         int i6 = this.maybeSilenceBufferContentsSize + min;
         this.maybeSilenceBufferContentsSize = i6;
-        Assertions.checkState(i6 <= this.maybeSilenceBuffer.length);
+        Preconditions.checkState(i6 <= this.maybeSilenceBuffer.length);
         if (!z2 || position >= i) {
             z = false;
         }
@@ -197,7 +197,7 @@ public final class SilenceSkippingAudioProcessor extends BaseAudioProcessor {
                     outputSilence(i2, 3);
                     length = i2;
                 } else {
-                    Assertions.checkState(i2 >= bArr.length / 2);
+                    Preconditions.checkState(i2 >= bArr.length / 2);
                     length = this.maybeSilenceBuffer.length / 2;
                     outputSilence(length, 0);
                 }
@@ -214,8 +214,8 @@ public final class SilenceSkippingAudioProcessor extends BaseAudioProcessor {
                 calculateShortenedSilenceLength = calculateShortenedSilenceLength(length);
                 outputSilence(calculateShortenedSilenceLength, 1);
             }
-            Assertions.checkState(length % this.bytesPerFrame == 0, "bytesConsumed is not aligned to frame size: %s" + length);
-            Assertions.checkState(i2 >= calculateShortenedSilenceLength);
+            Preconditions.checkState(length % this.bytesPerFrame == 0, "bytesConsumed is not aligned to frame size: %s", length);
+            Preconditions.checkState(i2 >= calculateShortenedSilenceLength);
             this.maybeSilenceBufferContentsSize -= length;
             int i3 = this.maybeSilenceBufferStartIndex + length;
             this.maybeSilenceBufferStartIndex = i3;
@@ -227,7 +227,7 @@ public final class SilenceSkippingAudioProcessor extends BaseAudioProcessor {
 
     private int calculateShortenedSilenceLength(int i) {
         int durationUsToFrames = ((durationUsToFrames(this.maxSilenceToKeepDurationUs) - this.outputSilenceFramesSinceNoise) * this.bytesPerFrame) - (this.maybeSilenceBuffer.length / 2);
-        Assertions.checkState(durationUsToFrames >= 0);
+        Preconditions.checkState(durationUsToFrames >= 0);
         return alignToBytePerFrameBoundary(Math.min((i * this.silenceRetentionRatio) + 0.5f, durationUsToFrames));
     }
 
@@ -241,7 +241,7 @@ public final class SilenceSkippingAudioProcessor extends BaseAudioProcessor {
     }
 
     private void outputRange(byte[] bArr, int i, int i2) {
-        Assertions.checkArgument(i % this.bytesPerFrame == 0, "byteOutput size is not aligned to frame size " + i);
+        Preconditions.checkArgument(i % this.bytesPerFrame == 0, "byteOutput size is not aligned to frame size %s", i);
         modifyVolume(bArr, i, i2);
         replaceOutputBuffer(i).put(bArr, 0, i).flip();
     }
@@ -250,7 +250,7 @@ public final class SilenceSkippingAudioProcessor extends BaseAudioProcessor {
         if (i == 0) {
             return;
         }
-        Assertions.checkArgument(this.maybeSilenceBufferContentsSize >= i);
+        Preconditions.checkArgument(this.maybeSilenceBufferContentsSize >= i);
         if (i2 == 2) {
             int i3 = this.maybeSilenceBufferStartIndex;
             int i4 = this.maybeSilenceBufferContentsSize;
@@ -280,8 +280,8 @@ public final class SilenceSkippingAudioProcessor extends BaseAudioProcessor {
                 System.arraycopy(this.maybeSilenceBuffer, 0, this.contiguousOutputBuffer, length2, i - length2);
             }
         }
-        Assertions.checkArgument(i % this.bytesPerFrame == 0, "sizeToOutput is not aligned to frame size: " + i);
-        Assertions.checkState(this.maybeSilenceBufferStartIndex < this.maybeSilenceBuffer.length);
+        Preconditions.checkArgument(i % this.bytesPerFrame == 0, "sizeToOutput is not aligned to frame size: %s", i);
+        Preconditions.checkState(this.maybeSilenceBufferStartIndex < this.maybeSilenceBuffer.length);
         outputRange(this.contiguousOutputBuffer, i, i2);
     }
 

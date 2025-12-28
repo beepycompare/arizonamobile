@@ -1,9 +1,9 @@
 package androidx.media3.extractor;
 
 import androidx.media3.common.C;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.ParsableByteArray;
+import com.google.common.base.Preconditions;
 /* loaded from: classes3.dex */
 public final class CeaUtil {
     private static final int COUNTRY_CODE = 181;
@@ -54,7 +54,7 @@ public final class CeaUtil {
             for (TrackOutput trackOutput : trackOutputArr) {
                 parsableByteArray.setPosition(position);
                 trackOutput.sampleData(parsableByteArray, i);
-                Assertions.checkState(j != C.TIME_UNSET);
+                Preconditions.checkState(j != C.TIME_UNSET);
                 trackOutput.sampleMetadata(j, 1, i, 0, null);
             }
         }

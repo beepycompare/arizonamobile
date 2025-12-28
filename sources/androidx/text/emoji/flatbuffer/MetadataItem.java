@@ -4,6 +4,10 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 /* loaded from: classes3.dex */
 public final class MetadataItem extends Table {
+    public static void ValidateVersion() {
+        Constants.FLATBUFFERS_1_12_0();
+    }
+
     public static MetadataItem getRootAsMetadataItem(ByteBuffer byteBuffer) {
         return getRootAsMetadataItem(byteBuffer, new MetadataItem());
     }
@@ -14,8 +18,7 @@ public final class MetadataItem extends Table {
     }
 
     public void __init(int i, ByteBuffer byteBuffer) {
-        this.bb_pos = i;
-        this.bb = byteBuffer;
+        __reset(i, byteBuffer);
     }
 
     public MetadataItem __assign(int i, ByteBuffer byteBuffer) {
@@ -84,12 +87,28 @@ public final class MetadataItem extends Table {
         return 0;
     }
 
+    public IntVector codepointsVector() {
+        return codepointsVector(new IntVector());
+    }
+
+    public IntVector codepointsVector(IntVector intVector) {
+        int __offset = __offset(16);
+        if (__offset != 0) {
+            return intVector.__assign(__vector(__offset), this.bb);
+        }
+        return null;
+    }
+
     public ByteBuffer codepointsAsByteBuffer() {
         return __vector_as_bytebuffer(16, 4);
     }
 
+    public ByteBuffer codepointsInByteBuffer(ByteBuffer byteBuffer) {
+        return __vector_in_bytebuffer(byteBuffer, 16, 4);
+    }
+
     public static int createMetadataItem(FlatBufferBuilder flatBufferBuilder, int i, boolean z, short s, short s2, short s3, short s4, int i2) {
-        flatBufferBuilder.startObject(7);
+        flatBufferBuilder.startTable(7);
         addCodepoints(flatBufferBuilder, i2);
         addId(flatBufferBuilder, i);
         addHeight(flatBufferBuilder, s4);
@@ -101,7 +120,7 @@ public final class MetadataItem extends Table {
     }
 
     public static void startMetadataItem(FlatBufferBuilder flatBufferBuilder) {
-        flatBufferBuilder.startObject(7);
+        flatBufferBuilder.startTable(7);
     }
 
     public static void addId(FlatBufferBuilder flatBufferBuilder, int i) {
@@ -145,6 +164,22 @@ public final class MetadataItem extends Table {
     }
 
     public static int endMetadataItem(FlatBufferBuilder flatBufferBuilder) {
-        return flatBufferBuilder.endObject();
+        return flatBufferBuilder.endTable();
+    }
+
+    /* loaded from: classes3.dex */
+    public static final class Vector extends BaseVector {
+        public Vector __assign(int i, int i2, ByteBuffer byteBuffer) {
+            __reset(i, i2, byteBuffer);
+            return this;
+        }
+
+        public MetadataItem get(int i) {
+            return get(new MetadataItem(), i);
+        }
+
+        public MetadataItem get(MetadataItem metadataItem, int i) {
+            return metadataItem.__assign(MetadataItem.__indirect(__element(i), this.bb), this.bb);
+        }
     }
 }

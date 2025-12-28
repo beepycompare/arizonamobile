@@ -3,19 +3,21 @@ package androidx.media3.exoplayer.drm;
 import android.net.Uri;
 import android.text.TextUtils;
 import androidx.media3.common.C;
-import androidx.media3.common.util.Assertions;
-import androidx.media3.common.util.Util;
 import androidx.media3.datasource.DataSource;
 import androidx.media3.datasource.DataSpec;
 import androidx.media3.exoplayer.drm.ExoMediaDrm;
+import androidx.media3.exoplayer.drm.MediaDrmCallback;
 import coil3.util.UtilsKt;
 import com.android.internal.http.multipart.FilePart;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import java.util.Collections;
+import com.google.common.net.MediaType;
+import com.google.common.primitives.Bytes;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class HttpMediaDrmCallback implements MediaDrmCallback {
     private final DataSource.Factory dataSourceFactory;
     private final String defaultLicenseUrl;
@@ -27,7 +29,7 @@ public final class HttpMediaDrmCallback implements MediaDrmCallback {
     }
 
     public HttpMediaDrmCallback(String str, boolean z, DataSource.Factory factory) {
-        Assertions.checkArgument((z && TextUtils.isEmpty(str)) ? false : true);
+        Preconditions.checkArgument((z && TextUtils.isEmpty(str)) ? false : true);
         this.dataSourceFactory = factory;
         this.defaultLicenseUrl = str;
         this.forceDefaultLicenseUrl = z;
@@ -35,15 +37,15 @@ public final class HttpMediaDrmCallback implements MediaDrmCallback {
     }
 
     public void setKeyRequestProperty(String str, String str2) {
-        Assertions.checkNotNull(str);
-        Assertions.checkNotNull(str2);
+        Preconditions.checkNotNull(str);
+        Preconditions.checkNotNull(str2);
         synchronized (this.keyRequestProperties) {
             this.keyRequestProperties.put(str, str2);
         }
     }
 
     public void clearKeyRequestProperty(String str) {
-        Assertions.checkNotNull(str);
+        Preconditions.checkNotNull(str);
         synchronized (this.keyRequestProperties) {
             this.keyRequestProperties.remove(str);
         }
@@ -56,12 +58,13 @@ public final class HttpMediaDrmCallback implements MediaDrmCallback {
     }
 
     @Override // androidx.media3.exoplayer.drm.MediaDrmCallback
-    public byte[] executeProvisionRequest(UUID uuid, ExoMediaDrm.ProvisionRequest provisionRequest) throws MediaDrmCallbackException {
-        return DrmUtil.executePost(this.dataSourceFactory.createDataSource(), provisionRequest.getDefaultUrl() + "&signedRequest=" + Util.fromUtf8Bytes(provisionRequest.getData()), null, Collections.emptyMap());
+    public MediaDrmCallback.Response executeProvisionRequest(UUID uuid, ExoMediaDrm.ProvisionRequest provisionRequest) throws MediaDrmCallbackException {
+        byte[] concat = Bytes.concat("{\"signedRequest\":\"".getBytes(StandardCharsets.UTF_8), provisionRequest.getData(), "\"}".getBytes(StandardCharsets.UTF_8));
+        return DrmUtil.executePost(this.dataSourceFactory.createDataSource(), provisionRequest.getDefaultUrl(), concat, ImmutableMap.of("Content-Type", MediaType.JSON_UTF_8.toString(), "Content-Length", String.valueOf(concat.length)));
     }
 
     @Override // androidx.media3.exoplayer.drm.MediaDrmCallback
-    public byte[] executeKeyRequest(UUID uuid, ExoMediaDrm.KeyRequest keyRequest) throws MediaDrmCallbackException {
+    public MediaDrmCallback.Response executeKeyRequest(UUID uuid, ExoMediaDrm.KeyRequest keyRequest) throws MediaDrmCallbackException {
         String str;
         String licenseServerUrl = keyRequest.getLicenseServerUrl();
         if (this.forceDefaultLicenseUrl || TextUtils.isEmpty(licenseServerUrl)) {

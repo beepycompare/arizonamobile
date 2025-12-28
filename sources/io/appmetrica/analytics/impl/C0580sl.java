@@ -6,7 +6,7 @@ import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 public final class C0580sl {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Dc f1220a;
+    public final Dc f1221a;
     public final Cc b;
 
     public C0580sl(PublicLogger publicLogger, String str) {
@@ -15,14 +15,14 @@ public final class C0580sl {
 
     public final synchronized boolean a(Gc gc, String str, String str2) {
         int size = gc.size();
-        int i = this.f1220a.c.f1119a;
+        int i = this.f1221a.c.f1120a;
         if (size >= i && (i != gc.size() || !gc.containsKey(str))) {
-            Dc dc = this.f1220a;
-            dc.d.warning("The %s has reached the limit of %d items. Item with key %s will be ignored", dc.e, Integer.valueOf(dc.c.f1119a), str);
+            Dc dc = this.f1221a;
+            dc.d.warning("The %s has reached the limit of %d items. Item with key %s will be ignored", dc.e, Integer.valueOf(dc.c.f1120a), str);
             return false;
         }
         this.b.getClass();
-        int i2 = gc.f589a;
+        int i2 = gc.f590a;
         if (str2 != null) {
             i2 += str2.length();
         }
@@ -36,7 +36,7 @@ public final class C0580sl {
         }
         if (i2 > 4500) {
             Cc cc = this.b;
-            cc.b.warning("The %s has reached the total size limit that equals %d symbols. Item with key %s will be ignored", cc.f526a, 4500, str);
+            cc.b.warning("The %s has reached the total size limit that equals %d symbols. Item with key %s will be ignored", cc.f527a, 4500, str);
             return false;
         }
         gc.put(str, str2);
@@ -45,8 +45,8 @@ public final class C0580sl {
 
     public final boolean b(Gc gc, String str, String str2) {
         if (gc != null) {
-            String a2 = this.f1220a.f540a.a(str);
-            String a3 = this.f1220a.b.a(str2);
+            String a2 = this.f1221a.f541a.a(str);
+            String a3 = this.f1221a.b.a(str2);
             if (!gc.containsKey(a2)) {
                 if (a3 != null) {
                     return a(gc, a2, a3);
@@ -63,7 +63,7 @@ public final class C0580sl {
     }
 
     public C0580sl(Dc dc, Cc cc) {
-        this.f1220a = dc;
+        this.f1221a = dc;
         this.b = cc;
     }
 }

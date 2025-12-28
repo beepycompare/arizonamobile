@@ -8,11 +8,11 @@ import java.util.HashMap;
 public final class C0296he {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashMap f1020a;
+    public final HashMap f1021a;
 
     public C0296he() {
         HashMap hashMap = new HashMap();
-        this.f1020a = hashMap;
+        this.f1021a = hashMap;
         hashMap.put("google_aid", "g");
         hashMap.put("huawei_oaid", CmcdData.STREAMING_FORMAT_HLS);
         hashMap.put("sim_info", "si");
@@ -27,6 +27,6 @@ public final class C0296he {
     }
 
     public final String a(String str) {
-        return this.f1020a.containsKey(str) ? (String) this.f1020a.get(str) : str;
+        return this.f1021a.containsKey(str) ? (String) this.f1021a.get(str) : str;
     }
 }

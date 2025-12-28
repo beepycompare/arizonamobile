@@ -6,12 +6,12 @@ import org.json.JSONObject;
 public final class S9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f773a;
+    public final String f774a;
     public final int b;
     public final boolean c;
 
     public S9(JSONObject jSONObject) {
-        this.f773a = jSONObject.getString("name");
+        this.f774a = jSONObject.getString("name");
         this.c = jSONObject.getBoolean("required");
         this.b = jSONObject.optInt(NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, -1);
     }
@@ -25,8 +25,8 @@ public final class S9 {
             if (this.b != s9.b || this.c != s9.c) {
                 return false;
             }
-            String str = this.f773a;
-            String str2 = s9.f773a;
+            String str = this.f774a;
+            String str2 = s9.f774a;
             if (str != null) {
                 return str.equals(str2);
             }
@@ -38,12 +38,12 @@ public final class S9 {
     }
 
     public final int hashCode() {
-        String str = this.f773a;
+        String str = this.f774a;
         return ((((str != null ? str.hashCode() : 0) * 31) + this.b) * 31) + (this.c ? 1 : 0);
     }
 
     public S9(String str, int i, boolean z) {
-        this.f773a = str;
+        this.f774a = str;
         this.b = i;
         this.c = z;
     }

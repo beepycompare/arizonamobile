@@ -3,7 +3,6 @@ package androidx.media3.exoplayer.source.chunk;
 import androidx.media3.common.C;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
 import androidx.media3.decoder.DecoderInputBuffer;
@@ -23,6 +22,7 @@ import androidx.media3.exoplayer.upstream.Allocator;
 import androidx.media3.exoplayer.upstream.LoadErrorHandlingPolicy;
 import androidx.media3.exoplayer.upstream.Loader;
 import androidx.media3.exoplayer.util.ReleasableExecutor;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -125,7 +125,7 @@ public class ChunkSampleStream<T extends ChunkSource> implements SampleStream, S
     public ChunkSampleStream<T>.EmbeddedSampleStream selectEmbeddedTrack(long j, int i) {
         for (int i2 = 0; i2 < this.embeddedSampleQueues.length; i2++) {
             if (this.embeddedTrackTypes[i2] == i) {
-                Assertions.checkState(!this.embeddedTracksSelected[i2]);
+                Preconditions.checkState(!this.embeddedTracksSelected[i2]);
                 this.embeddedTracksSelected[i2] = true;
                 this.embeddedSampleQueues[i2].seekTo(j, true);
                 return new EmbeddedSampleStream(this, this.embeddedSampleQueues[i2], i2);
@@ -351,7 +351,7 @@ public class ChunkSampleStream<T extends ChunkSource> implements SampleStream, S
             if (z) {
                 loadErrorAction = Loader.DONT_RETRY;
                 if (isMediaChunk) {
-                    Assertions.checkState(discardUpstreamMediaChunksFromIndex(size) == chunk);
+                    Preconditions.checkState(discardUpstreamMediaChunksFromIndex(size) == chunk);
                     if (this.mediaChunks.isEmpty()) {
                         this.pendingResetPositionUs = this.lastSeekPositionUs;
                     }
@@ -461,7 +461,7 @@ public class ChunkSampleStream<T extends ChunkSource> implements SampleStream, S
             return;
         }
         if (this.loader.isLoading()) {
-            Chunk chunk = (Chunk) Assertions.checkNotNull(this.loadingChunk);
+            Chunk chunk = (Chunk) Preconditions.checkNotNull(this.loadingChunk);
             if (!(isMediaChunk(chunk) && haveReadFromMediaChunk(this.mediaChunks.size() - 1)) && this.chunkSource.shouldCancelLoad(j, chunk, this.readOnlyMediaChunks)) {
                 this.loader.cancelLoading();
                 if (isMediaChunk(chunk)) {
@@ -489,7 +489,7 @@ public class ChunkSampleStream<T extends ChunkSource> implements SampleStream, S
     public void discardUpstreamSamplesForClippedDuration(long j) {
         long j2;
         SampleQueue[] sampleQueueArr;
-        Assertions.checkState(!this.loader.isLoading());
+        Preconditions.checkState(!this.loader.isLoading());
         if (isPendingReset() || j == C.TIME_UNSET || this.mediaChunks.isEmpty()) {
             return;
         }
@@ -514,7 +514,7 @@ public class ChunkSampleStream<T extends ChunkSource> implements SampleStream, S
     }
 
     private void discardUpstream(int i) {
-        Assertions.checkState(!this.loader.isLoading());
+        Preconditions.checkState(!this.loader.isLoading());
         int size = this.mediaChunks.size();
         while (true) {
             if (i >= size) {
@@ -684,7 +684,7 @@ public class ChunkSampleStream<T extends ChunkSource> implements SampleStream, S
         }
 
         public void release() {
-            Assertions.checkState(ChunkSampleStream.this.embeddedTracksSelected[this.index]);
+            Preconditions.checkState(ChunkSampleStream.this.embeddedTracksSelected[this.index]);
             ChunkSampleStream.this.embeddedTracksSelected[this.index] = false;
         }
 

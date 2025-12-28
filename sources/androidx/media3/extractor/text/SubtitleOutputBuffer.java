@@ -1,8 +1,8 @@
 package androidx.media3.extractor.text;
 
 import androidx.media3.common.text.Cue;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.decoder.DecoderOutputBuffer;
+import com.google.common.base.Preconditions;
 import java.util.List;
 /* loaded from: classes3.dex */
 public abstract class SubtitleOutputBuffer extends DecoderOutputBuffer implements Subtitle {
@@ -20,22 +20,22 @@ public abstract class SubtitleOutputBuffer extends DecoderOutputBuffer implement
 
     @Override // androidx.media3.extractor.text.Subtitle
     public int getEventTimeCount() {
-        return ((Subtitle) Assertions.checkNotNull(this.subtitle)).getEventTimeCount();
+        return ((Subtitle) Preconditions.checkNotNull(this.subtitle)).getEventTimeCount();
     }
 
     @Override // androidx.media3.extractor.text.Subtitle
     public long getEventTime(int i) {
-        return ((Subtitle) Assertions.checkNotNull(this.subtitle)).getEventTime(i) + this.subsampleOffsetUs;
+        return ((Subtitle) Preconditions.checkNotNull(this.subtitle)).getEventTime(i) + this.subsampleOffsetUs;
     }
 
     @Override // androidx.media3.extractor.text.Subtitle
     public int getNextEventTimeIndex(long j) {
-        return ((Subtitle) Assertions.checkNotNull(this.subtitle)).getNextEventTimeIndex(j - this.subsampleOffsetUs);
+        return ((Subtitle) Preconditions.checkNotNull(this.subtitle)).getNextEventTimeIndex(j - this.subsampleOffsetUs);
     }
 
     @Override // androidx.media3.extractor.text.Subtitle
     public List<Cue> getCues(long j) {
-        return ((Subtitle) Assertions.checkNotNull(this.subtitle)).getCues(j - this.subsampleOffsetUs);
+        return ((Subtitle) Preconditions.checkNotNull(this.subtitle)).getCues(j - this.subsampleOffsetUs);
     }
 
     @Override // androidx.media3.decoder.DecoderOutputBuffer, androidx.media3.decoder.Buffer

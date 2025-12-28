@@ -1,10 +1,10 @@
 package androidx.media3.extractor.ogg;
 
 import androidx.media3.common.ParserException;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.extractor.ExtractorInput;
 import androidx.media3.extractor.ExtractorUtil;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 /* loaded from: classes3.dex */
 final class OggPageHeader {
@@ -44,7 +44,7 @@ final class OggPageHeader {
 
     public boolean skipToNextPage(ExtractorInput extractorInput, long j) throws IOException {
         int i;
-        Assertions.checkArgument(extractorInput.getPosition() == extractorInput.getPeekPosition());
+        Preconditions.checkArgument(extractorInput.getPosition() == extractorInput.getPeekPosition());
         this.scratch.reset(4);
         while (true) {
             i = (j > (-1L) ? 1 : (j == (-1L) ? 0 : -1));

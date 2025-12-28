@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
-import androidx.compose.material3.internal.CalendarModelKt;
 import androidx.core.app.NotificationCompat;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import com.facebook.Request;
@@ -805,7 +804,7 @@ public class AppEventsLogger {
                         Utility.queryAppSettings(str, true);
                     }
                 }
-            }, 0L, CalendarModelKt.MillisecondsIn24Hours);
+            }, 0L, 86400000L);
         }
     }
 

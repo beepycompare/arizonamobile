@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Lambda;
 public final class Y extends Lambda implements Function1<Unit, Integer> {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Y f1515a = new Y();
+    public static final Y f1516a = new Y();
 
     public Y() {
         super(1);

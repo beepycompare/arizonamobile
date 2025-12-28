@@ -5,20 +5,12 @@ import java.io.InputStream;
 import java.nio.BufferUnderflowException;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-import java.nio.CharBuffer;
-import java.nio.charset.CharacterCodingException;
-import java.nio.charset.Charset;
-import java.nio.charset.CharsetEncoder;
-import java.nio.charset.CoderResult;
 import java.util.Arrays;
 /* loaded from: classes3.dex */
 public class FlatBufferBuilder {
     static final /* synthetic */ boolean $assertionsDisabled = false;
-    static final Charset utf8charset = Charset.forName("UTF-8");
     ByteBuffer bb;
     ByteBufferFactory bb_factory;
-    ByteBuffer dst;
-    CharsetEncoder encoder;
     boolean finished;
     boolean force_defaults;
     int minalign;
@@ -26,17 +18,25 @@ public class FlatBufferBuilder {
     int num_vtables;
     int object_start;
     int space;
+    final Utf8 utf8;
     int vector_num_elems;
     int[] vtable;
     int vtable_in_use;
     int[] vtables;
 
     /* loaded from: classes3.dex */
-    public interface ByteBufferFactory {
-        ByteBuffer newByteBuffer(int i);
+    public static abstract class ByteBufferFactory {
+        public abstract ByteBuffer newByteBuffer(int i);
+
+        public void releaseByteBuffer(ByteBuffer byteBuffer) {
+        }
     }
 
     public FlatBufferBuilder(int i, ByteBufferFactory byteBufferFactory) {
+        this(i, byteBufferFactory, null, Utf8.getDefault());
+    }
+
+    public FlatBufferBuilder(int i, ByteBufferFactory byteBufferFactory, ByteBuffer byteBuffer, Utf8 utf8) {
         this.minalign = 1;
         this.vtable = null;
         this.vtable_in_use = 0;
@@ -46,15 +46,21 @@ public class FlatBufferBuilder {
         this.num_vtables = 0;
         this.vector_num_elems = 0;
         this.force_defaults = false;
-        this.encoder = utf8charset.newEncoder();
         i = i <= 0 ? 1 : i;
-        this.space = i;
         this.bb_factory = byteBufferFactory;
-        this.bb = byteBufferFactory.newByteBuffer(i);
+        if (byteBuffer != null) {
+            this.bb = byteBuffer;
+            byteBuffer.clear();
+            this.bb.order(ByteOrder.LITTLE_ENDIAN);
+        } else {
+            this.bb = byteBufferFactory.newByteBuffer(i);
+        }
+        this.utf8 = utf8;
+        this.space = this.bb.capacity();
     }
 
     public FlatBufferBuilder(int i) {
-        this(i, new HeapByteBufferFactory());
+        this(i, HeapByteBufferFactory.INSTANCE, null, Utf8.getDefault());
     }
 
     public FlatBufferBuilder() {
@@ -62,31 +68,11 @@ public class FlatBufferBuilder {
     }
 
     public FlatBufferBuilder(ByteBuffer byteBuffer, ByteBufferFactory byteBufferFactory) {
-        this.minalign = 1;
-        this.vtable = null;
-        this.vtable_in_use = 0;
-        this.nested = false;
-        this.finished = false;
-        this.vtables = new int[16];
-        this.num_vtables = 0;
-        this.vector_num_elems = 0;
-        this.force_defaults = false;
-        this.encoder = utf8charset.newEncoder();
-        init(byteBuffer, byteBufferFactory);
+        this(byteBuffer.capacity(), byteBufferFactory, byteBuffer, Utf8.getDefault());
     }
 
     public FlatBufferBuilder(ByteBuffer byteBuffer) {
-        this.minalign = 1;
-        this.vtable = null;
-        this.vtable_in_use = 0;
-        this.nested = false;
-        this.finished = false;
-        this.vtables = new int[16];
-        this.num_vtables = 0;
-        this.vector_num_elems = 0;
-        this.force_defaults = false;
-        this.encoder = utf8charset.newEncoder();
-        init(byteBuffer, new HeapByteBufferFactory());
+        this(byteBuffer, new HeapByteBufferFactory());
     }
 
     public FlatBufferBuilder init(ByteBuffer byteBuffer, ByteBufferFactory byteBufferFactory) {
@@ -106,11 +92,17 @@ public class FlatBufferBuilder {
     }
 
     /* loaded from: classes3.dex */
-    public static final class HeapByteBufferFactory implements ByteBufferFactory {
+    public static final class HeapByteBufferFactory extends ByteBufferFactory {
+        public static final HeapByteBufferFactory INSTANCE = new HeapByteBufferFactory();
+
         @Override // androidx.text.emoji.flatbuffer.FlatBufferBuilder.ByteBufferFactory
         public ByteBuffer newByteBuffer(int i) {
             return ByteBuffer.allocate(i).order(ByteOrder.LITTLE_ENDIAN);
         }
+    }
+
+    public static boolean isFieldPresent(Table table, int i) {
+        return table.__offset(i) != 0;
     }
 
     public void clear() {
@@ -140,10 +132,10 @@ public class FlatBufferBuilder {
         if (((-1073741824) & capacity) != 0) {
             throw new AssertionError("FlatBuffers: cannot grow buffer beyond 2 gigabytes.");
         }
-        int i = capacity << 1;
+        int i = capacity == 0 ? 1 : capacity << 1;
         byteBuffer.position(0);
         ByteBuffer newByteBuffer = byteBufferFactory.newByteBuffer(i);
-        newByteBuffer.position(i - capacity);
+        newByteBuffer.position(newByteBuffer.clear().capacity() - capacity);
         newByteBuffer.put(byteBuffer);
         return newByteBuffer;
     }
@@ -168,9 +160,13 @@ public class FlatBufferBuilder {
         int i3 = ((~((this.bb.capacity() - this.space) + i2)) + 1) & (i - 1);
         while (this.space < i3 + i + i2) {
             int capacity = this.bb.capacity();
-            ByteBuffer growByteBuffer = growByteBuffer(this.bb, this.bb_factory);
+            ByteBuffer byteBuffer = this.bb;
+            ByteBuffer growByteBuffer = growByteBuffer(byteBuffer, this.bb_factory);
             this.bb = growByteBuffer;
-            this.space += growByteBuffer.capacity() - capacity;
+            if (byteBuffer != growByteBuffer) {
+                this.bb_factory.releaseByteBuffer(byteBuffer);
+            }
+            this.space += this.bb.capacity() - capacity;
         }
         pad(i3);
     }
@@ -309,22 +305,15 @@ public class FlatBufferBuilder {
     }
 
     public int createString(CharSequence charSequence) {
-        int length = (int) (charSequence.length() * this.encoder.maxBytesPerChar());
-        ByteBuffer byteBuffer = this.dst;
-        if (byteBuffer == null || byteBuffer.capacity() < length) {
-            this.dst = ByteBuffer.allocate(Math.max(128, length));
-        }
-        this.dst.clear();
-        CoderResult encode = this.encoder.encode(charSequence instanceof CharBuffer ? (CharBuffer) charSequence : CharBuffer.wrap(charSequence), this.dst, true);
-        if (encode.isError()) {
-            try {
-                encode.throwException();
-            } catch (CharacterCodingException e) {
-                throw new Error(e);
-            }
-        }
-        this.dst.flip();
-        return createString(this.dst);
+        int encodedLength = this.utf8.encodedLength(charSequence);
+        addByte((byte) 0);
+        startVector(1, encodedLength, 1);
+        ByteBuffer byteBuffer = this.bb;
+        int i = this.space - encodedLength;
+        this.space = i;
+        byteBuffer.position(i);
+        this.utf8.encodeUtf8(charSequence, this.bb);
+        return endVector();
     }
 
     public int createString(ByteBuffer byteBuffer) {
@@ -350,6 +339,27 @@ public class FlatBufferBuilder {
         return endVector();
     }
 
+    public int createByteVector(byte[] bArr, int i, int i2) {
+        startVector(1, i2, 1);
+        ByteBuffer byteBuffer = this.bb;
+        int i3 = this.space - i2;
+        this.space = i3;
+        byteBuffer.position(i3);
+        this.bb.put(bArr, i, i2);
+        return endVector();
+    }
+
+    public int createByteVector(ByteBuffer byteBuffer) {
+        int remaining = byteBuffer.remaining();
+        startVector(1, remaining, 1);
+        ByteBuffer byteBuffer2 = this.bb;
+        int i = this.space - remaining;
+        this.space = i;
+        byteBuffer2.position(i);
+        this.bb.put(byteBuffer);
+        return endVector();
+    }
+
     public void finished() {
         if (!this.finished) {
             throw new AssertionError("FlatBuffers: you can only access the serialized buffer after it has been finished by FlatBufferBuilder.finish().");
@@ -368,7 +378,7 @@ public class FlatBufferBuilder {
         }
     }
 
-    public void startObject(int i) {
+    public void startTable(int i) {
         notNested();
         int[] iArr = this.vtable;
         if (iArr == null || iArr.length < i) {
@@ -447,10 +457,10 @@ public class FlatBufferBuilder {
         this.vtable[i] = offset();
     }
 
-    public int endObject() {
+    public int endTable() {
         int i;
         if (this.vtable == null || !this.nested) {
-            throw new AssertionError("FlatBuffers: endObject called without startObject");
+            throw new AssertionError("FlatBuffers: endTable called without startTable");
         }
         addInt(0);
         int offset = offset();
@@ -512,22 +522,41 @@ public class FlatBufferBuilder {
         }
     }
 
-    public void finish(int i) {
-        prep(this.minalign, 4);
+    protected void finish(int i, boolean z) {
+        prep(this.minalign, (z ? 4 : 0) + 4);
         addOffset(i);
+        if (z) {
+            addInt(this.bb.capacity() - this.space);
+        }
         this.bb.position(this.space);
         this.finished = true;
     }
 
-    public void finish(int i, String str) {
-        prep(this.minalign, 8);
+    public void finish(int i) {
+        finish(i, false);
+    }
+
+    public void finishSizePrefixed(int i) {
+        finish(i, true);
+    }
+
+    protected void finish(int i, String str, boolean z) {
+        prep(this.minalign, (z ? 4 : 0) + 8);
         if (str.length() != 4) {
             throw new AssertionError("FlatBuffers: file identifier must be length 4");
         }
         for (int i2 = 3; i2 >= 0; i2--) {
             addByte((byte) str.charAt(i2));
         }
-        finish(i);
+        finish(i, z);
+    }
+
+    public void finish(int i, String str) {
+        finish(i, str, false);
+    }
+
+    public void finishSizePrefixed(int i, String str) {
+        finish(i, str, true);
     }
 
     public FlatBufferBuilder forceDefaults(boolean z) {

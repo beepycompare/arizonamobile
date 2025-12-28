@@ -1,5 +1,5 @@
 package io.appmetrica.analytics;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public interface ExternalAttribution {
     byte[] toBytes();
 }

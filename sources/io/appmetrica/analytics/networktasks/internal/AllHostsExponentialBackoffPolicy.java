@@ -7,23 +7,23 @@ import kotlin.Metadata;
 public final class AllHostsExponentialBackoffPolicy implements ExponentialBackoffPolicy {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ExponentialBackoffDataHolder f1391a;
+    private final ExponentialBackoffDataHolder f1392a;
 
     public AllHostsExponentialBackoffPolicy(ExponentialBackoffDataHolder exponentialBackoffDataHolder) {
-        this.f1391a = exponentialBackoffDataHolder;
+        this.f1392a = exponentialBackoffDataHolder;
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.ExponentialBackoffPolicy
     public boolean canBeExecuted(RetryPolicyConfig retryPolicyConfig) {
-        return this.f1391a.wasLastAttemptLongAgoEnough(retryPolicyConfig);
+        return this.f1392a.wasLastAttemptLongAgoEnough(retryPolicyConfig);
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.ExponentialBackoffPolicy
     public void onAllHostsAttemptsFinished(boolean z) {
         if (z) {
-            this.f1391a.reset();
+            this.f1392a.reset();
         } else {
-            this.f1391a.updateLastAttemptInfo();
+            this.f1392a.updateLastAttemptInfo();
         }
     }
 

@@ -1,6 +1,6 @@
 package androidx.media3.extractor;
 
-import androidx.media3.common.util.Assertions;
+import com.google.common.base.Preconditions;
 /* loaded from: classes3.dex */
 public interface SeekMap {
     long getDurationUs();
@@ -49,8 +49,8 @@ public interface SeekMap {
         }
 
         public SeekPoints(SeekPoint seekPoint, SeekPoint seekPoint2) {
-            this.first = (SeekPoint) Assertions.checkNotNull(seekPoint);
-            this.second = (SeekPoint) Assertions.checkNotNull(seekPoint2);
+            this.first = (SeekPoint) Preconditions.checkNotNull(seekPoint);
+            this.second = (SeekPoint) Preconditions.checkNotNull(seekPoint2);
         }
 
         public String toString() {

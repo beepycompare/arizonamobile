@@ -16,7 +16,7 @@ import kotlin.collections.CollectionsKt;
 public final class C0377ki implements Ta {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1076a;
+    public final Context f1077a;
     public final Cf b;
     public final C0702xi c;
     public final Handler d;
@@ -29,7 +29,7 @@ public final class C0377ki implements Ta {
     public C0416m6 k;
 
     public C0377ki(Context context, Cf cf, C0702xi c0702xi, Handler handler, Pl pl) {
-        this.f1076a = context;
+        this.f1077a = context;
         this.b = cf;
         this.c = c0702xi;
         this.d = handler;
@@ -125,7 +125,7 @@ public final class C0377ki implements Ta {
             if (!this.i.contains(reporterConfig.apiKey)) {
                 this.e.i();
             }
-            Context context = this.f1076a;
+            Context context = this.f1077a;
             C0746zc c0746zc2 = new C0746zc(context, this.b, reporterConfig, this.c, new N9(context));
             c0746zc2.i = new C0496pb(this.d, c0746zc2);
             Pl pl = this.e;

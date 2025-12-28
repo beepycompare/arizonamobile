@@ -42,9 +42,9 @@ public final class RewardItemViewHolder extends RecyclerView.ViewHolder {
             itemRewardBinding.cvReward.setCardBackgroundColor(Color.parseColor("#EB8BD3"));
         } else if (i == 13) {
             if (this.isArizonaType) {
-                itemRewardBinding.cvReward.setCardBackgroundColor(Color.parseColor("#D68FFF"));
+                itemRewardBinding.cvReward.setCardBackgroundColor(Color.parseColor("#86E1FF"));
             } else {
-                itemRewardBinding.cvReward.setCardBackgroundColor(Color.parseColor("#CEFF2C"));
+                itemRewardBinding.cvReward.setCardBackgroundColor(Color.parseColor("#86E1FF"));
             }
         }
         if (this.isArizonaType) {

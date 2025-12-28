@@ -6,7 +6,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class C0414m4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f1100a;
+    public final boolean f1101a;
     public final boolean b;
     public final boolean c;
     public final boolean d;
@@ -20,8 +20,8 @@ public final class C0414m4 {
         boolean z4;
         boolean z5;
         Boolean bool;
-        z = c0363k4.f1065a;
-        this.f1100a = z;
+        z = c0363k4.f1066a;
+        this.f1101a = z;
         z2 = c0363k4.b;
         this.b = z2;
         z3 = c0363k4.c;
@@ -40,7 +40,7 @@ public final class C0414m4 {
         }
         if (obj != null && C0414m4.class == obj.getClass()) {
             C0414m4 c0414m4 = (C0414m4) obj;
-            if (this.f1100a != c0414m4.f1100a || this.b != c0414m4.b || this.c != c0414m4.c || this.d != c0414m4.d || this.e != c0414m4.e) {
+            if (this.f1101a != c0414m4.f1101a || this.b != c0414m4.b || this.c != c0414m4.c || this.d != c0414m4.d || this.e != c0414m4.e) {
                 return false;
             }
             Boolean bool = this.f;
@@ -56,12 +56,12 @@ public final class C0414m4 {
     }
 
     public final int hashCode() {
-        int i = (((((((((this.f1100a ? 1 : 0) * 31) + (this.b ? 1 : 0)) * 31) + (this.c ? 1 : 0)) * 31) + (this.d ? 1 : 0)) * 31) + (this.e ? 1 : 0)) * 31;
+        int i = (((((((((this.f1101a ? 1 : 0) * 31) + (this.b ? 1 : 0)) * 31) + (this.c ? 1 : 0)) * 31) + (this.d ? 1 : 0)) * 31) + (this.e ? 1 : 0)) * 31;
         Boolean bool = this.f;
         return i + (bool != null ? bool.hashCode() : 0);
     }
 
     public final String toString() {
-        return "CollectingFlags{permissionsCollectingEnabled=" + this.f1100a + ", featuresCollectingEnabled=" + this.b + ", googleAid=" + this.c + ", simInfo=" + this.d + ", huaweiOaid=" + this.e + ", sslPinning=" + this.f + AbstractJsonLexerKt.END_OBJ;
+        return "CollectingFlags{permissionsCollectingEnabled=" + this.f1101a + ", featuresCollectingEnabled=" + this.b + ", googleAid=" + this.c + ", simInfo=" + this.d + ", huaweiOaid=" + this.e + ", sslPinning=" + this.f + AbstractJsonLexerKt.END_OBJ;
     }
 }

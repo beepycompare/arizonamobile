@@ -4,7 +4,6 @@ import androidx.media3.common.C;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.StreamKey;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.decoder.DecoderInputBuffer;
 import androidx.media3.exoplayer.FormatHolder;
@@ -13,6 +12,7 @@ import androidx.media3.exoplayer.SeekParameters;
 import androidx.media3.exoplayer.source.ClippingMediaSource;
 import androidx.media3.exoplayer.source.MediaPeriod;
 import androidx.media3.exoplayer.trackselection.ExoTrackSelection;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.List;
 /* loaded from: classes3.dex */
@@ -184,12 +184,12 @@ public final class ClippingMediaPeriod implements MediaPeriod, MediaPeriod.Callb
         if (this.clippingError != null) {
             return;
         }
-        ((MediaPeriod.Callback) Assertions.checkNotNull(this.callback)).onPrepared(this);
+        ((MediaPeriod.Callback) Preconditions.checkNotNull(this.callback)).onPrepared(this);
     }
 
     @Override // androidx.media3.exoplayer.source.SequenceableLoader.Callback
     public void onContinueLoadingRequested(MediaPeriod mediaPeriod) {
-        ((MediaPeriod.Callback) Assertions.checkNotNull(this.callback)).onContinueLoadingRequested(this);
+        ((MediaPeriod.Callback) Preconditions.checkNotNull(this.callback)).onContinueLoadingRequested(this);
     }
 
     boolean isPendingInitialDiscontinuity() {
@@ -261,7 +261,7 @@ public final class ClippingMediaPeriod implements MediaPeriod, MediaPeriod.Callb
             long bufferedPositionUs = ClippingMediaPeriod.this.getBufferedPositionUs();
             int readData = this.childStream.readData(formatHolder, decoderInputBuffer, i);
             if (readData == -5) {
-                Format format = (Format) Assertions.checkNotNull(formatHolder.format);
+                Format format = (Format) Preconditions.checkNotNull(formatHolder.format);
                 if (format.encoderDelay != 0 || format.encoderPadding != 0) {
                     formatHolder.format = format.buildUpon().setEncoderDelay(ClippingMediaPeriod.this.startUs != 0 ? 0 : format.encoderDelay).setEncoderPadding(ClippingMediaPeriod.this.endUs == Long.MIN_VALUE ? format.encoderPadding : 0).build();
                 }

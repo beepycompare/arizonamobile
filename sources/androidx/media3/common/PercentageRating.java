@@ -1,8 +1,8 @@
 package androidx.media3.common;
 
 import android.os.Bundle;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import java.util.Objects;
 /* loaded from: classes2.dex */
 public final class PercentageRating extends Rating {
@@ -15,7 +15,7 @@ public final class PercentageRating extends Rating {
     }
 
     public PercentageRating(float f) {
-        Assertions.checkArgument(f >= 0.0f && f <= 100.0f, "percent must be in the range of [0, 100]");
+        Preconditions.checkArgument(f >= 0.0f && f <= 100.0f, "percent must be in the range of [0, 100]");
         this.percent = f;
     }
 
@@ -45,7 +45,7 @@ public final class PercentageRating extends Rating {
     }
 
     public static PercentageRating fromBundle(Bundle bundle) {
-        Assertions.checkArgument(bundle.getInt(FIELD_RATING_TYPE, -1) == 1);
+        Preconditions.checkArgument(bundle.getInt(FIELD_RATING_TYPE, -1) == 1);
         float f = bundle.getFloat(FIELD_PERCENT, -1.0f);
         return f == -1.0f ? new PercentageRating() : new PercentageRating(f);
     }

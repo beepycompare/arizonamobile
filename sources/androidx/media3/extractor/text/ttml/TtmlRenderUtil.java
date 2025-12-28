@@ -14,9 +14,9 @@ import androidx.media3.common.text.HorizontalTextInVerticalContextSpan;
 import androidx.media3.common.text.RubySpan;
 import androidx.media3.common.text.SpanUtil;
 import androidx.media3.common.text.TextEmphasisSpan;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import java.util.ArrayDeque;
 import java.util.Map;
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -80,7 +80,7 @@ public final class TtmlRenderUtil {
             SpanUtil.addOrReplaceSpan(spannable, new TypefaceSpan(ttmlStyle.getFontFamily()), i, i2, 33);
         }
         if (ttmlStyle.getTextEmphasis() != null) {
-            TextEmphasis textEmphasis = (TextEmphasis) Assertions.checkNotNull(ttmlStyle.getTextEmphasis());
+            TextEmphasis textEmphasis = (TextEmphasis) Preconditions.checkNotNull(ttmlStyle.getTextEmphasis());
             if (textEmphasis.markShape == -1) {
                 i4 = (i3 == 2 || i3 == 1) ? 3 : 1;
                 i5 = 1;

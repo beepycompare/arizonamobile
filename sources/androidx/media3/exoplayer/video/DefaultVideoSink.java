@@ -8,7 +8,6 @@ import androidx.media3.common.Effect;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.VideoSize;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Clock;
 import androidx.media3.common.util.Size;
 import androidx.media3.common.util.TimestampIterator;
@@ -16,6 +15,7 @@ import androidx.media3.exoplayer.ExoPlaybackException;
 import androidx.media3.exoplayer.video.DefaultVideoSink;
 import androidx.media3.exoplayer.video.VideoFrameRenderControl;
 import androidx.media3.exoplayer.video.VideoSink;
+import com.google.common.base.Preconditions;
 import java.util.ArrayDeque;
 import java.util.List;
 import java.util.Queue;
@@ -31,6 +31,7 @@ public final class DefaultVideoSink implements VideoSink {
     private final Queue<VideoSink.VideoFrameHandler> videoFrameHandlers;
     private VideoFrameMetadataListener videoFrameMetadataListener;
     private final VideoFrameReleaseControl videoFrameReleaseControl;
+    private final VideoFrameReleaseEarlyTimeForecaster videoFrameReleaseEarlyTimeForecaster;
     private final VideoFrameRenderControl videoFrameRenderControl;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -59,10 +60,11 @@ public final class DefaultVideoSink implements VideoSink {
     public void signalEndOfInput() {
     }
 
-    public DefaultVideoSink(VideoFrameReleaseControl videoFrameReleaseControl, Clock clock) {
+    public DefaultVideoSink(VideoFrameReleaseControl videoFrameReleaseControl, VideoFrameReleaseEarlyTimeForecaster videoFrameReleaseEarlyTimeForecaster, Clock clock) {
         this.videoFrameReleaseControl = videoFrameReleaseControl;
+        this.videoFrameReleaseEarlyTimeForecaster = videoFrameReleaseEarlyTimeForecaster;
         videoFrameReleaseControl.setClock(clock);
-        this.videoFrameRenderControl = new VideoFrameRenderControl(new FrameRendererImpl(), videoFrameReleaseControl);
+        this.videoFrameRenderControl = new VideoFrameRenderControl(new FrameRendererImpl(), videoFrameReleaseControl, videoFrameReleaseEarlyTimeForecaster);
         this.videoFrameHandlers = new ArrayDeque();
         this.inputFormat = new Format.Builder().build();
         this.streamStartPositionUs = C.TIME_UNSET;
@@ -83,11 +85,13 @@ public final class DefaultVideoSink implements VideoSink {
 
     @Override // androidx.media3.exoplayer.video.VideoSink
     public void startRendering() {
+        this.videoFrameReleaseEarlyTimeForecaster.reset();
         this.videoFrameReleaseControl.onStarted();
     }
 
     @Override // androidx.media3.exoplayer.video.VideoSink
     public void stopRendering() {
+        this.videoFrameReleaseEarlyTimeForecaster.reset();
         this.videoFrameReleaseControl.onStopped();
     }
 
@@ -107,6 +111,7 @@ public final class DefaultVideoSink implements VideoSink {
         if (z) {
             this.videoFrameReleaseControl.reset();
         }
+        this.videoFrameReleaseEarlyTimeForecaster.reset();
         this.videoFrameRenderControl.flush();
         this.videoFrameHandlers.clear();
     }
@@ -128,7 +133,7 @@ public final class DefaultVideoSink implements VideoSink {
 
     @Override // androidx.media3.exoplayer.video.VideoSink
     public Surface getInputSurface() {
-        return (Surface) Assertions.checkStateNotNull(this.outputSurface);
+        return (Surface) Preconditions.checkNotNull(this.outputSurface);
     }
 
     @Override // androidx.media3.exoplayer.video.VideoSink
@@ -170,7 +175,7 @@ public final class DefaultVideoSink implements VideoSink {
 
     @Override // androidx.media3.exoplayer.video.VideoSink
     public void onInputStreamChanged(int i, Format format, long j, int i2, List<Effect> list) {
-        Assertions.checkState(list.isEmpty());
+        Preconditions.checkState(list.isEmpty());
         if (format.width != this.inputFormat.width || format.height != this.inputFormat.height) {
             this.videoFrameRenderControl.onVideoSizeChanged(format.width, format.height);
         }
@@ -196,7 +201,7 @@ public final class DefaultVideoSink implements VideoSink {
         this.listenerExecutor.execute(new Runnable() { // from class: androidx.media3.exoplayer.video.DefaultVideoSink$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                DefaultVideoSink.this.m9042x5ef5fbd7();
+                DefaultVideoSink.this.m9055x5ef5fbd7();
             }
         });
         return true;
@@ -204,7 +209,7 @@ public final class DefaultVideoSink implements VideoSink {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$handleInputFrame$2$androidx-media3-exoplayer-video-DefaultVideoSink  reason: not valid java name */
-    public /* synthetic */ void m9042x5ef5fbd7() {
+    public /* synthetic */ void m9055x5ef5fbd7() {
         this.listener.onFrameAvailableForRendering();
     }
 
@@ -241,14 +246,14 @@ public final class DefaultVideoSink implements VideoSink {
             DefaultVideoSink.this.listenerExecutor.execute(new Runnable() { // from class: androidx.media3.exoplayer.video.DefaultVideoSink$FrameRendererImpl$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DefaultVideoSink.FrameRendererImpl.this.m9044x3f151f9(videoSize);
+                    DefaultVideoSink.FrameRendererImpl.this.m9057x3f151f9(videoSize);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onVideoSizeChanged$0$androidx-media3-exoplayer-video-DefaultVideoSink$FrameRendererImpl  reason: not valid java name */
-        public /* synthetic */ void m9044x3f151f9(VideoSize videoSize) {
+        public /* synthetic */ void m9057x3f151f9(VideoSize videoSize) {
             DefaultVideoSink.this.listener.onVideoSizeChanged(videoSize);
         }
 
@@ -258,7 +263,7 @@ public final class DefaultVideoSink implements VideoSink {
                 DefaultVideoSink.this.listenerExecutor.execute(new Runnable() { // from class: androidx.media3.exoplayer.video.DefaultVideoSink$FrameRendererImpl$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        DefaultVideoSink.FrameRendererImpl.this.m9045xaf98b1f2();
+                        DefaultVideoSink.FrameRendererImpl.this.m9058xaf98b1f2();
                     }
                 });
             }
@@ -272,7 +277,7 @@ public final class DefaultVideoSink implements VideoSink {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$renderFrame$1$androidx-media3-exoplayer-video-DefaultVideoSink$FrameRendererImpl  reason: not valid java name */
-        public /* synthetic */ void m9045xaf98b1f2() {
+        public /* synthetic */ void m9058xaf98b1f2() {
             DefaultVideoSink.this.listener.onFirstFrameRendered();
         }
 
@@ -281,7 +286,7 @@ public final class DefaultVideoSink implements VideoSink {
             DefaultVideoSink.this.listenerExecutor.execute(new Runnable() { // from class: androidx.media3.exoplayer.video.DefaultVideoSink$FrameRendererImpl$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DefaultVideoSink.FrameRendererImpl.this.m9043x29a4e3aa();
+                    DefaultVideoSink.FrameRendererImpl.this.m9056x29a4e3aa();
                 }
             });
             ((VideoSink.VideoFrameHandler) DefaultVideoSink.this.videoFrameHandlers.remove()).skip();
@@ -289,7 +294,7 @@ public final class DefaultVideoSink implements VideoSink {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$dropFrame$2$androidx-media3-exoplayer-video-DefaultVideoSink$FrameRendererImpl  reason: not valid java name */
-        public /* synthetic */ void m9043x29a4e3aa() {
+        public /* synthetic */ void m9056x29a4e3aa() {
             DefaultVideoSink.this.listener.onFrameDropped();
         }
     }

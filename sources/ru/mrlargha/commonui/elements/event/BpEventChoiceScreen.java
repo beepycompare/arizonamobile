@@ -1,29 +1,32 @@
 package ru.mrlargha.commonui.elements.event;
 
 import android.app.Activity;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
+import com.squareup.picasso.Picasso;
 import java.util.Set;
 import kotlin.Metadata;
 import kotlin.collections.SetsKt;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.text.StringsKt;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.databinding.BpEasterChoiceBinding;
 import ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController;
+import ru.mrlargha.commonui.utils.MapperKt;
 /* compiled from: BpEventChoice.kt */
-@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0004\u0018\u00002\u00020\u00012\u00020\u0002:\u0001\u0017B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0016J\u0018\u0010\u0012\u001a\u00020\u000f2\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u0006H\u0016J\b\u0010\u0016\u001a\u00020\u000fH\u0002R\u0016\u0010\t\u001a\n \u000b*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Lru/mrlargha/commonui/elements/event/BpEventChoiceScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/commonui/databinding/BpEasterChoiceBinding;", "setVisible", "", "visible", "", "onBackendMessage", "data", "", "subId", "setupNavigation", "Spawner", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000H\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u00012\u00020\u0002:\u0001\u001aB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0011H\u0016J\u0018\u0010\u0012\u001a\u00020\u000f2\u0006\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u0006H\u0016J\u000e\u0010\u0016\u001a\u00020\u000f2\u0006\u0010\u0013\u001a\u00020\u0014J\u000e\u0010\u0017\u001a\u00020\u000f2\u0006\u0010\u0013\u001a\u00020\u0018J\b\u0010\u0019\u001a\u00020\u000fH\u0002R\u0016\u0010\t\u001a\n \u000b*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001b"}, d2 = {"Lru/mrlargha/commonui/elements/event/BpEventChoiceScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/commonui/databinding/BpEasterChoiceBinding;", "setVisible", "", "visible", "", "onBackendMessage", "data", "", "subId", "isBpAvailable", "setImages", "Lru/mrlargha/commonui/elements/event/ChoiceData;", "setupNavigation", "Spawner", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class BpEventChoiceScreen extends SAMPUIElement implements InterfaceController {
     private final BpEasterChoiceBinding binding;
     private final View screen;
-
-    @Override // ru.mrlargha.commonui.core.SAMPUIElement
-    public void onBackendMessage(String data, int i) {
-        Intrinsics.checkNotNullParameter(data, "data");
-    }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public BpEventChoiceScreen(Activity targetActivity, int i) {
@@ -37,12 +40,53 @@ public final class BpEventChoiceScreen extends SAMPUIElement implements Interfac
         Intrinsics.checkNotNullExpressionValue(screen, "screen");
         addViewToConstraintLayout(screen, -1, -1);
         setupNavigation();
+        Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/systems/battlepass/selector/event.webp").into(bind.item1);
+        Picasso.get().load(FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/systems/battlepass/selector/main_disabled.webp").into(bind.item2);
     }
 
     @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController
     public void setVisible(boolean z) {
         this.binding.getRoot().setVisibility(z ? 0 : 8);
         this.binding.getRoot().setVisibility(z ? 0 : 8);
+    }
+
+    @Override // ru.mrlargha.commonui.core.SAMPUIElement
+    public void onBackendMessage(String data, int i) {
+        Intrinsics.checkNotNullParameter(data, "data");
+        try {
+            if (i != 0) {
+                if (i != 1) {
+                    return;
+                }
+                isBpAvailable(data);
+            } else if (MapperKt.isJsonValid(data)) {
+                setImages((ChoiceData) new GsonBuilder().setLenient().create().fromJson(data, (Class<Object>) ChoiceData.class));
+            } else {
+                throw new JsonParseException("Json is not valid");
+            }
+        } catch (Exception e) {
+            Log.d("bpEasterChoice", data + "  " + e.getMessage());
+            e.printStackTrace();
+            Toast.makeText(getTargetActivity().getApplicationContext(), "Ошибка в интерфейсе : " + getBackendID(), 1).show();
+            getNotifier().setUIElementVisible(getBackendID(), false);
+        }
+    }
+
+    public final void isBpAvailable(String data) {
+        Intrinsics.checkNotNullParameter(data, "data");
+        if (StringsKt.contains$default((CharSequence) data, (CharSequence) "1", false, 2, (Object) null)) {
+            this.binding.item2.setImageResource(R.drawable.bp_event_choice_item2);
+        }
+    }
+
+    public final void setImages(ChoiceData data) {
+        Intrinsics.checkNotNullParameter(data, "data");
+        Picasso picasso = Picasso.get();
+        String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+        picasso.load(resourceUrl$default + "projects/arizona-rp/systems/battlepass/selector/" + data.getEvent()).into(this.binding.item1);
+        Picasso picasso2 = Picasso.get();
+        String resourceUrl$default2 = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
+        picasso2.load(resourceUrl$default2 + "projects/arizona-rp/systems/battlepass/selector/" + data.getMain()).into(this.binding.item2);
     }
 
     private final void setupNavigation() {

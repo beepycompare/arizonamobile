@@ -2,9 +2,9 @@ package androidx.media3.exoplayer.upstream;
 
 import android.os.Handler;
 import androidx.media3.common.C;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.datasource.TransferListener;
 import androidx.media3.exoplayer.upstream.BandwidthMeter;
+import com.google.common.base.Preconditions;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 /* loaded from: classes3.dex */
@@ -30,8 +30,8 @@ public interface BandwidthMeter {
             private final CopyOnWriteArrayList<HandlerAndListener> listeners = new CopyOnWriteArrayList<>();
 
             public void addListener(Handler handler, EventListener eventListener) {
-                Assertions.checkNotNull(handler);
-                Assertions.checkNotNull(eventListener);
+                Preconditions.checkNotNull(handler);
+                Preconditions.checkNotNull(eventListener);
                 removeListener(eventListener);
                 this.listeners.add(new HandlerAndListener(handler, eventListener));
             }

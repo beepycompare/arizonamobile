@@ -11,7 +11,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.PowerManager;
 import androidx.core.app.NotificationCompat;
-import androidx.media3.common.util.Assertions;
+import com.google.common.base.Preconditions;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -102,7 +102,7 @@ public final class Requirements implements Parcelable {
 
     private int getNotMetNetworkRequirements(Context context) {
         if (isNetworkRequired()) {
-            ConnectivityManager connectivityManager = (ConnectivityManager) Assertions.checkNotNull(context.getSystemService("connectivity"));
+            ConnectivityManager connectivityManager = (ConnectivityManager) Preconditions.checkNotNull(context.getSystemService("connectivity"));
             NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
             if (activeNetworkInfo != null && activeNetworkInfo.isConnected() && isInternetConnectivityValidated(connectivityManager)) {
                 return (isUnmeteredNetworkRequired() && connectivityManager.isActiveNetworkMetered()) ? 2 : 0;
@@ -122,7 +122,7 @@ public final class Requirements implements Parcelable {
     }
 
     private boolean isDeviceIdle(Context context) {
-        return ((PowerManager) Assertions.checkNotNull(context.getSystemService("power"))).isDeviceIdleMode();
+        return ((PowerManager) Preconditions.checkNotNull(context.getSystemService("power"))).isDeviceIdleMode();
     }
 
     private boolean isStorageNotLow(Context context) {

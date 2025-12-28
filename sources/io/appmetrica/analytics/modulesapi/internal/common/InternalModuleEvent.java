@@ -15,7 +15,7 @@ public final class InternalModuleEvent {
     public static final Companion Companion = new Companion(null);
 
     /* renamed from: a  reason: collision with root package name */
-    private final int f1370a;
+    private final int f1371a;
     private final String b;
     private final String c;
     private final Integer d;
@@ -29,7 +29,7 @@ public final class InternalModuleEvent {
     public static final class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private final int f1371a;
+        private final int f1372a;
         private String b;
         private String c;
         private Integer d;
@@ -39,7 +39,7 @@ public final class InternalModuleEvent {
         private Map h;
 
         public Builder(int i) {
-            this.f1371a = i;
+            this.f1372a = i;
         }
 
         public InternalModuleEvent build() {
@@ -71,7 +71,7 @@ public final class InternalModuleEvent {
         }
 
         public final int getType$modules_api_release() {
-            return this.f1371a;
+            return this.f1372a;
         }
 
         public final String getValue() {
@@ -205,7 +205,7 @@ public final class InternalModuleEvent {
     }
 
     public final int getType() {
-        return this.f1370a;
+        return this.f1371a;
     }
 
     public final String getValue() {
@@ -213,11 +213,11 @@ public final class InternalModuleEvent {
     }
 
     public String toString() {
-        return "ModuleEvent{type=" + this.f1370a + ", name='" + this.b + "', value='" + this.c + "', serviceDataReporterType=" + this.d + ", category=" + this.e + ", environment=" + this.f + ", extras=" + this.g + ", attributes=" + this.h + AbstractJsonLexerKt.END_OBJ;
+        return "ModuleEvent{type=" + this.f1371a + ", name='" + this.b + "', value='" + this.c + "', serviceDataReporterType=" + this.d + ", category=" + this.e + ", environment=" + this.f + ", extras=" + this.g + ", attributes=" + this.h + AbstractJsonLexerKt.END_OBJ;
     }
 
     private InternalModuleEvent(Builder builder) {
-        this.f1370a = builder.getType$modules_api_release();
+        this.f1371a = builder.getType$modules_api_release();
         this.b = builder.getName();
         this.c = builder.getValue();
         this.d = builder.getServiceDataReporterType();

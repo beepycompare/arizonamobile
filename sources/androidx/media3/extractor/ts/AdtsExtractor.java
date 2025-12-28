@@ -3,7 +3,6 @@ package androidx.media3.extractor.ts;
 import androidx.media3.common.C;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.ParserException;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ParsableBitArray;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.extractor.ConstantBitrateSeekMap;
@@ -14,6 +13,7 @@ import androidx.media3.extractor.ExtractorsFactory;
 import androidx.media3.extractor.PositionHolder;
 import androidx.media3.extractor.SeekMap;
 import androidx.media3.extractor.ts.TsPayloadReader;
+import com.google.common.base.Preconditions;
 import java.io.EOFException;
 import java.io.IOException;
 import java.lang.annotation.Documented;
@@ -131,7 +131,7 @@ public final class AdtsExtractor implements Extractor {
 
     @Override // androidx.media3.extractor.Extractor
     public int read(ExtractorInput extractorInput, PositionHolder positionHolder) throws IOException {
-        Assertions.checkStateNotNull(this.extractorOutput);
+        Preconditions.checkNotNull(this.extractorOutput);
         long length = extractorInput.getLength();
         int i = this.flags;
         if ((i & 2) != 0 || ((i & 1) != 0 && length != -1)) {

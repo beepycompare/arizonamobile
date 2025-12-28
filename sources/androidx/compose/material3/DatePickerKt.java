@@ -28,7 +28,6 @@ import androidx.compose.foundation.lazy.LazyListStateKt;
 import androidx.compose.foundation.shape.RoundedCornerShapeKt;
 import androidx.compose.material3.internal.CalendarDate;
 import androidx.compose.material3.internal.CalendarModel;
-import androidx.compose.material3.internal.CalendarModelKt;
 import androidx.compose.material3.internal.CalendarModel_androidKt;
 import androidx.compose.material3.internal.CalendarMonth;
 import androidx.compose.material3.internal.Icons;
@@ -1875,7 +1874,7 @@ public final class DatePickerKt {
     }
 
     /* JADX WARN: Type inference failed for: r8v0 */
-    /* JADX WARN: Type inference failed for: r8v1, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r8v1, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r8v13 */
     public static final void WeekDays(final DatePickerColors datePickerColors, final CalendarModel calendarModel, Composer composer, final int i) {
         Composer composer2;
@@ -2251,7 +2250,7 @@ public final class DatePickerKt {
                         int daysFromStartOfWeekToFirstOfMonth = i15 - obj.getDaysFromStartOfWeekToFirstOfMonth();
                         str3 = str9;
                         i4 = i15;
-                        final long startUtcTimeMillis = obj.getStartUtcTimeMillis() + (daysFromStartOfWeekToFirstOfMonth * CalendarModelKt.MillisecondsIn24Hours);
+                        final long startUtcTimeMillis = obj.getStartUtcTimeMillis() + (daysFromStartOfWeekToFirstOfMonth * 86400000);
                         boolean z7 = startUtcTimeMillis == j;
                         if (l != null && startUtcTimeMillis == l.longValue()) {
                             i7 = i9;

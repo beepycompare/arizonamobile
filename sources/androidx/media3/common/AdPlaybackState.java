@@ -4,8 +4,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcelable;
 import androidx.media3.common.MediaItem;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -13,6 +13,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 /* loaded from: classes2.dex */
 public final class AdPlaybackState {
@@ -51,6 +52,7 @@ public final class AdPlaybackState {
         public final boolean isServerSideInserted;
         public final MediaItem[] mediaItems;
         public final int originalCount;
+        public final SkipInfo[] skipInfos;
         public final int[] states;
         public final long timeUs;
         @Deprecated
@@ -66,14 +68,16 @@ public final class AdPlaybackState {
         static final String FIELD_MEDIA_ITEMS = Util.intToStringMaxRadix(8);
         static final String FIELD_IDS = Util.intToStringMaxRadix(9);
         static final String FIELD_IS_PLACEHOLDER = Util.intToStringMaxRadix(10);
+        private static final String FIELD_SKIP_INFOS = Util.intToStringMaxRadix(11);
 
         public AdGroup(long j) {
-            this(j, -1, -1, new int[0], new MediaItem[0], new long[0], 0L, false, new String[0], false);
+            this(j, -1, -1, new int[0], new MediaItem[0], new long[0], 0L, false, new String[0], new SkipInfo[0], false);
         }
 
-        private AdGroup(long j, int i, int i2, int[] iArr, MediaItem[] mediaItemArr, long[] jArr, long j2, boolean z, String[] strArr, boolean z2) {
+        private AdGroup(long j, int i, int i2, int[] iArr, MediaItem[] mediaItemArr, long[] jArr, long j2, boolean z, String[] strArr, SkipInfo[] skipInfoArr, boolean z2) {
             int i3 = 0;
-            Assertions.checkArgument(iArr.length == mediaItemArr.length);
+            Preconditions.checkArgument(iArr.length == mediaItemArr.length);
+            Preconditions.checkArgument(iArr.length == skipInfoArr.length);
             this.timeUs = j;
             this.count = i;
             this.originalCount = i2;
@@ -87,10 +91,11 @@ public final class AdPlaybackState {
                 Uri[] uriArr = this.uris;
                 if (i3 < uriArr.length) {
                     MediaItem mediaItem = mediaItemArr[i3];
-                    uriArr[i3] = mediaItem == null ? null : ((MediaItem.LocalConfiguration) Assertions.checkNotNull(mediaItem.localConfiguration)).uri;
+                    uriArr[i3] = mediaItem == null ? null : ((MediaItem.LocalConfiguration) Preconditions.checkNotNull(mediaItem.localConfiguration)).uri;
                     i3++;
                 } else {
                     this.ids = strArr;
+                    this.skipInfos = skipInfoArr;
                     this.isPlaceholder = z2;
                     return;
                 }
@@ -145,7 +150,7 @@ public final class AdPlaybackState {
             }
             if (obj != null && getClass() == obj.getClass()) {
                 AdGroup adGroup = (AdGroup) obj;
-                if (this.timeUs == adGroup.timeUs && this.count == adGroup.count && this.originalCount == adGroup.originalCount && Arrays.equals(this.mediaItems, adGroup.mediaItems) && Arrays.equals(this.states, adGroup.states) && Arrays.equals(this.durationsUs, adGroup.durationsUs) && this.contentResumeOffsetUs == adGroup.contentResumeOffsetUs && this.isServerSideInserted == adGroup.isServerSideInserted && Arrays.equals(this.ids, adGroup.ids) && this.isPlaceholder == adGroup.isPlaceholder) {
+                if (this.timeUs == adGroup.timeUs && this.count == adGroup.count && this.originalCount == adGroup.originalCount && Arrays.equals(this.mediaItems, adGroup.mediaItems) && Arrays.equals(this.states, adGroup.states) && Arrays.equals(this.durationsUs, adGroup.durationsUs) && this.contentResumeOffsetUs == adGroup.contentResumeOffsetUs && this.isServerSideInserted == adGroup.isServerSideInserted && Arrays.equals(this.ids, adGroup.ids) && Arrays.equals(this.skipInfos, adGroup.skipInfos) && this.isPlaceholder == adGroup.isPlaceholder) {
                     return true;
                 }
             }
@@ -155,17 +160,17 @@ public final class AdPlaybackState {
         public int hashCode() {
             long j = this.timeUs;
             long j2 = this.contentResumeOffsetUs;
-            return (((((((((((((((((this.count * 31) + this.originalCount) * 31) + ((int) (j ^ (j >>> 32)))) * 31) + Arrays.hashCode(this.mediaItems)) * 31) + Arrays.hashCode(this.states)) * 31) + Arrays.hashCode(this.durationsUs)) * 31) + ((int) (j2 ^ (j2 >>> 32)))) * 31) + (this.isServerSideInserted ? 1 : 0)) * 31) + Arrays.hashCode(this.ids)) * 31) + (this.isPlaceholder ? 1 : 0);
+            return (((((((((((((((((((this.count * 31) + this.originalCount) * 31) + ((int) (j ^ (j >>> 32)))) * 31) + Arrays.hashCode(this.mediaItems)) * 31) + Arrays.hashCode(this.states)) * 31) + Arrays.hashCode(this.durationsUs)) * 31) + ((int) (j2 ^ (j2 >>> 32)))) * 31) + (this.isServerSideInserted ? 1 : 0)) * 31) + Arrays.hashCode(this.ids)) * 31) + Arrays.hashCode(this.skipInfos)) * 31) + (this.isPlaceholder ? 1 : 0);
         }
 
         public AdGroup withTimeUs(long j) {
-            return new AdGroup(j, this.count, this.originalCount, this.states, this.mediaItems, this.durationsUs, this.contentResumeOffsetUs, this.isServerSideInserted, this.ids, this.isPlaceholder);
+            return new AdGroup(j, this.count, this.originalCount, this.states, this.mediaItems, this.durationsUs, this.contentResumeOffsetUs, this.isServerSideInserted, this.ids, this.skipInfos, this.isPlaceholder);
         }
 
         public AdGroup withAdCount(int i) {
             int[] copyStatesWithSpaceForAdCount = copyStatesWithSpaceForAdCount(this.states, i);
             long[] copyDurationsUsWithSpaceForAdCount = copyDurationsUsWithSpaceForAdCount(this.durationsUs, i);
-            return new AdGroup(this.timeUs, i, this.originalCount, copyStatesWithSpaceForAdCount, (MediaItem[]) Arrays.copyOf(this.mediaItems, i), copyDurationsUsWithSpaceForAdCount, this.contentResumeOffsetUs, this.isServerSideInserted, (String[]) Arrays.copyOf(this.ids, i), this.isPlaceholder);
+            return new AdGroup(this.timeUs, i, this.originalCount, copyStatesWithSpaceForAdCount, (MediaItem[]) Arrays.copyOf(this.mediaItems, i), copyDurationsUsWithSpaceForAdCount, this.contentResumeOffsetUs, this.isServerSideInserted, (String[]) Arrays.copyOf(this.ids, i), copySkipInfosWithSpaceForAdCount(this.skipInfos, i), this.isPlaceholder);
         }
 
         @Deprecated
@@ -187,19 +192,24 @@ public final class AdPlaybackState {
             if (strArr.length != copyStatesWithSpaceForAdCount.length) {
                 strArr = (String[]) Arrays.copyOf(strArr, copyStatesWithSpaceForAdCount.length);
             }
-            return new AdGroup(this.timeUs, this.count, this.originalCount, copyStatesWithSpaceForAdCount, mediaItemArr, jArr2, this.contentResumeOffsetUs, this.isServerSideInserted, strArr, this.isPlaceholder);
+            String[] strArr2 = strArr;
+            SkipInfo[] skipInfoArr = this.skipInfos;
+            if (skipInfoArr.length != copyStatesWithSpaceForAdCount.length) {
+                skipInfoArr = copySkipInfosWithSpaceForAdCount(skipInfoArr, copyStatesWithSpaceForAdCount.length);
+            }
+            return new AdGroup(this.timeUs, this.count, this.originalCount, copyStatesWithSpaceForAdCount, mediaItemArr, jArr2, this.contentResumeOffsetUs, this.isServerSideInserted, strArr2, skipInfoArr, this.isPlaceholder);
         }
 
         public AdGroup withAdState(int i, int i2) {
             int i3 = this.count;
             boolean z = false;
-            Assertions.checkArgument(i3 == -1 || i2 < i3);
+            Preconditions.checkArgument(i3 == -1 || i2 < i3);
             int[] copyStatesWithSpaceForAdCount = copyStatesWithSpaceForAdCount(this.states, i2 + 1);
             int i4 = copyStatesWithSpaceForAdCount[i2];
             if (i4 == 0 || i4 == 1 || i4 == i) {
                 z = true;
             }
-            Assertions.checkArgument(z);
+            Preconditions.checkArgument(z);
             long[] jArr = this.durationsUs;
             if (jArr.length != copyStatesWithSpaceForAdCount.length) {
                 jArr = copyDurationsUsWithSpaceForAdCount(jArr, copyStatesWithSpaceForAdCount.length);
@@ -216,7 +226,11 @@ public final class AdPlaybackState {
             }
             String[] strArr2 = strArr;
             copyStatesWithSpaceForAdCount[i2] = i;
-            return new AdGroup(this.timeUs, this.count, this.originalCount, copyStatesWithSpaceForAdCount, mediaItemArr2, jArr2, this.contentResumeOffsetUs, this.isServerSideInserted, strArr2, this.isPlaceholder);
+            SkipInfo[] skipInfoArr = this.skipInfos;
+            if (skipInfoArr.length != copyStatesWithSpaceForAdCount.length) {
+                skipInfoArr = copySkipInfosWithSpaceForAdCount(skipInfoArr, copyStatesWithSpaceForAdCount.length);
+            }
+            return new AdGroup(this.timeUs, this.count, this.originalCount, copyStatesWithSpaceForAdCount, mediaItemArr2, jArr2, this.contentResumeOffsetUs, this.isServerSideInserted, strArr2, skipInfoArr, this.isPlaceholder);
         }
 
         public AdGroup withAdDurationsUs(long[] jArr) {
@@ -227,10 +241,27 @@ public final class AdPlaybackState {
             } else if (this.count != -1 && jArr.length > mediaItemArr.length) {
                 jArr = Arrays.copyOf(jArr, mediaItemArr.length);
             }
-            return new AdGroup(this.timeUs, this.count, this.originalCount, this.states, this.mediaItems, jArr, this.contentResumeOffsetUs, this.isServerSideInserted, this.ids, this.isPlaceholder);
+            return new AdGroup(this.timeUs, this.count, this.originalCount, this.states, this.mediaItems, jArr, this.contentResumeOffsetUs, this.isServerSideInserted, this.ids, this.skipInfos, this.isPlaceholder);
         }
 
         public AdGroup withAdId(String str, int i) {
+            int[] copyStatesWithSpaceForAdCount = copyStatesWithSpaceForAdCount(this.states, i + 1);
+            long[] jArr = this.durationsUs;
+            if (jArr.length != copyStatesWithSpaceForAdCount.length) {
+                jArr = copyDurationsUsWithSpaceForAdCount(jArr, copyStatesWithSpaceForAdCount.length);
+            }
+            long[] jArr2 = jArr;
+            MediaItem[] mediaItemArr = this.mediaItems;
+            if (mediaItemArr.length != copyStatesWithSpaceForAdCount.length) {
+                mediaItemArr = (MediaItem[]) Arrays.copyOf(mediaItemArr, copyStatesWithSpaceForAdCount.length);
+            }
+            MediaItem[] mediaItemArr2 = mediaItemArr;
+            String[] strArr = (String[]) Arrays.copyOf(this.ids, copyStatesWithSpaceForAdCount.length);
+            strArr[i] = str;
+            return new AdGroup(this.timeUs, this.count, this.originalCount, copyStatesWithSpaceForAdCount, mediaItemArr2, jArr2, this.contentResumeOffsetUs, this.isServerSideInserted, strArr, this.skipInfos, this.isPlaceholder);
+        }
+
+        public AdGroup withAdSkipInfo(SkipInfo skipInfo, int i) {
             int[] copyStatesWithSpaceForAdCount = copyStatesWithSpaceForAdCount(this.states, i + 1);
             long[] jArr = this.durationsUs;
             if (jArr.length != copyStatesWithSpaceForAdCount.length) {
@@ -247,20 +278,21 @@ public final class AdPlaybackState {
                 strArr = (String[]) Arrays.copyOf(strArr, copyStatesWithSpaceForAdCount.length);
             }
             String[] strArr2 = strArr;
-            strArr2[i] = str;
-            return new AdGroup(this.timeUs, this.count, this.originalCount, copyStatesWithSpaceForAdCount, mediaItemArr2, jArr2, this.contentResumeOffsetUs, this.isServerSideInserted, strArr2, this.isPlaceholder);
+            SkipInfo[] copySkipInfosWithSpaceForAdCount = copySkipInfosWithSpaceForAdCount(this.skipInfos, copyStatesWithSpaceForAdCount.length);
+            copySkipInfosWithSpaceForAdCount[i] = skipInfo;
+            return new AdGroup(this.timeUs, this.count, this.originalCount, copyStatesWithSpaceForAdCount, mediaItemArr2, jArr2, this.contentResumeOffsetUs, this.isServerSideInserted, strArr2, copySkipInfosWithSpaceForAdCount, this.isPlaceholder);
         }
 
         public AdGroup withContentResumeOffsetUs(long j) {
-            return new AdGroup(this.timeUs, this.count, this.originalCount, this.states, this.mediaItems, this.durationsUs, j, this.isServerSideInserted, this.ids, this.isPlaceholder);
+            return new AdGroup(this.timeUs, this.count, this.originalCount, this.states, this.mediaItems, this.durationsUs, j, this.isServerSideInserted, this.ids, this.skipInfos, this.isPlaceholder);
         }
 
         public AdGroup withIsServerSideInserted(boolean z) {
-            return new AdGroup(this.timeUs, this.count, this.originalCount, this.states, this.mediaItems, this.durationsUs, this.contentResumeOffsetUs, z, this.ids, this.isPlaceholder);
+            return new AdGroup(this.timeUs, this.count, this.originalCount, this.states, this.mediaItems, this.durationsUs, this.contentResumeOffsetUs, z, this.ids, this.skipInfos, this.isPlaceholder);
         }
 
         public AdGroup withOriginalAdCount(int i) {
-            return new AdGroup(this.timeUs, this.count, i, this.states, this.mediaItems, this.durationsUs, this.contentResumeOffsetUs, this.isServerSideInserted, this.ids, this.isPlaceholder);
+            return new AdGroup(this.timeUs, this.count, i, this.states, this.mediaItems, this.durationsUs, this.contentResumeOffsetUs, this.isServerSideInserted, this.ids, this.skipInfos, this.isPlaceholder);
         }
 
         public AdGroup withLastAdRemoved() {
@@ -273,12 +305,12 @@ public final class AdPlaybackState {
                 jArr = Arrays.copyOf(jArr, length);
             }
             long[] jArr2 = jArr;
-            return new AdGroup(this.timeUs, length, this.originalCount, copyOf, mediaItemArr, jArr2, Util.sum(jArr2), this.isServerSideInserted, (String[]) Arrays.copyOf(this.ids, length), this.isPlaceholder);
+            return new AdGroup(this.timeUs, length, this.originalCount, copyOf, mediaItemArr, jArr2, Util.sum(jArr2), this.isServerSideInserted, (String[]) Arrays.copyOf(this.ids, length), (SkipInfo[]) Arrays.copyOf(this.skipInfos, length), this.isPlaceholder);
         }
 
         public AdGroup withAllAdsSkipped() {
             if (this.count == -1) {
-                return new AdGroup(this.timeUs, 0, this.originalCount, new int[0], new MediaItem[0], new long[0], this.contentResumeOffsetUs, this.isServerSideInserted, this.ids, this.isPlaceholder);
+                return new AdGroup(this.timeUs, 0, this.originalCount, new int[0], new MediaItem[0], new long[0], this.contentResumeOffsetUs, this.isServerSideInserted, this.ids, this.skipInfos, this.isPlaceholder);
             }
             int[] iArr = this.states;
             int length = iArr.length;
@@ -289,7 +321,7 @@ public final class AdPlaybackState {
                     copyOf[i] = 2;
                 }
             }
-            return new AdGroup(this.timeUs, length, this.originalCount, copyOf, this.mediaItems, this.durationsUs, this.contentResumeOffsetUs, this.isServerSideInserted, this.ids, this.isPlaceholder);
+            return new AdGroup(this.timeUs, length, this.originalCount, copyOf, this.mediaItems, this.durationsUs, this.contentResumeOffsetUs, this.isServerSideInserted, this.ids, this.skipInfos, this.isPlaceholder);
         }
 
         public AdGroup withAllAdsReset() {
@@ -305,12 +337,12 @@ public final class AdPlaybackState {
                     copyOf[i] = this.mediaItems[i] == null ? 0 : 1;
                 }
             }
-            return new AdGroup(this.timeUs, length, this.originalCount, copyOf, this.mediaItems, this.durationsUs, this.contentResumeOffsetUs, this.isServerSideInserted, this.ids, this.isPlaceholder);
+            return new AdGroup(this.timeUs, length, this.originalCount, copyOf, this.mediaItems, this.durationsUs, this.contentResumeOffsetUs, this.isServerSideInserted, this.ids, this.skipInfos, this.isPlaceholder);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public AdGroup withIsPlaceholder(boolean z, boolean z2) {
-            return new AdGroup(this.timeUs, this.count, this.originalCount, this.states, this.mediaItems, this.durationsUs, this.contentResumeOffsetUs, z2, this.ids, z);
+            return new AdGroup(this.timeUs, this.count, this.originalCount, this.states, this.mediaItems, this.durationsUs, this.contentResumeOffsetUs, z2, this.ids, this.skipInfos, z);
         }
 
         public int getIndexOfAdId(String str) {
@@ -339,7 +371,8 @@ public final class AdPlaybackState {
             long j2 = this.contentResumeOffsetUs;
             boolean z = this.isServerSideInserted;
             String[] strArr = this.ids;
-            return new AdGroup(j, i, i2, copyOf, (MediaItem[]) Arrays.copyOf(mediaItemArr, mediaItemArr.length), copyOf2, j2, z, (String[]) Arrays.copyOf(strArr, strArr.length), this.isPlaceholder);
+            SkipInfo[] skipInfoArr = this.skipInfos;
+            return new AdGroup(j, i, i2, copyOf, (MediaItem[]) Arrays.copyOf(mediaItemArr, mediaItemArr.length), copyOf2, j2, z, (String[]) Arrays.copyOf(strArr, strArr.length), (SkipInfo[]) Arrays.copyOf(skipInfoArr, skipInfoArr.length), this.isPlaceholder);
         }
 
         private static int[] copyStatesWithSpaceForAdCount(int[] iArr, int i) {
@@ -358,6 +391,10 @@ public final class AdPlaybackState {
             return copyOf;
         }
 
+        private static SkipInfo[] copySkipInfosWithSpaceForAdCount(SkipInfo[] skipInfoArr, int i) {
+            return (SkipInfo[]) Arrays.copyOf(skipInfoArr, Math.max(i, skipInfoArr.length));
+        }
+
         public Bundle toBundle() {
             Bundle bundle = new Bundle();
             bundle.putLong(FIELD_TIME_US, this.timeUs);
@@ -370,11 +407,13 @@ public final class AdPlaybackState {
             bundle.putLong(FIELD_CONTENT_RESUME_OFFSET_US, this.contentResumeOffsetUs);
             bundle.putBoolean(FIELD_IS_SERVER_SIDE_INSERTED, this.isServerSideInserted);
             bundle.putStringArrayList(FIELD_IDS, new ArrayList<>(Arrays.asList(this.ids)));
+            bundle.putParcelableArrayList(FIELD_SKIP_INFOS, getSkipInfoArrayBundles());
             bundle.putBoolean(FIELD_IS_PLACEHOLDER, this.isPlaceholder);
             return bundle;
         }
 
         public static AdGroup fromBundle(Bundle bundle) {
+            SkipInfo[] skipInfosFromBundleArrays;
             long j = bundle.getLong(FIELD_TIME_US);
             int i = bundle.getInt(FIELD_COUNT);
             int i2 = bundle.getInt(FIELD_ORIGINAL_COUNT);
@@ -385,6 +424,7 @@ public final class AdPlaybackState {
             long j2 = bundle.getLong(FIELD_CONTENT_RESUME_OFFSET_US);
             boolean z = bundle.getBoolean(FIELD_IS_SERVER_SIDE_INSERTED);
             ArrayList<String> stringArrayList = bundle.getStringArrayList(FIELD_IDS);
+            ArrayList parcelableArrayList3 = bundle.getParcelableArrayList(FIELD_SKIP_INFOS);
             boolean z2 = bundle.getBoolean(FIELD_IS_PLACEHOLDER);
             if (intArray == null) {
                 intArray = new int[0];
@@ -397,7 +437,24 @@ public final class AdPlaybackState {
             if (stringArrayList != null) {
                 strArr = (String[]) stringArrayList.toArray(strArr);
             }
-            return new AdGroup(j, i, i2, intArray, mediaItemsFromBundleArrays, longArray, j2, z, strArr, z2);
+            if (parcelableArrayList3 == null) {
+                skipInfosFromBundleArrays = new SkipInfo[0];
+            } else {
+                skipInfosFromBundleArrays = getSkipInfosFromBundleArrays(parcelableArrayList3);
+            }
+            SkipInfo[] skipInfoArr = skipInfosFromBundleArrays;
+            return new AdGroup(j, i, i2, intArray, mediaItemsFromBundleArrays, longArray, j2, z, strArr, skipInfoArr, z2);
+        }
+
+        private ArrayList<Bundle> getSkipInfoArrayBundles() {
+            ArrayList<Bundle> arrayList = new ArrayList<>();
+            SkipInfo[] skipInfoArr = this.skipInfos;
+            int length = skipInfoArr.length;
+            for (int i = 0; i < length; i++) {
+                SkipInfo skipInfo = skipInfoArr[i];
+                arrayList.add(skipInfo == null ? null : skipInfo.toBundle());
+            }
+            return arrayList;
         }
 
         private ArrayList<Bundle> getMediaItemsArrayBundles() {
@@ -432,6 +489,62 @@ public final class AdPlaybackState {
             } else {
                 return new MediaItem[0];
             }
+        }
+
+        private static SkipInfo[] getSkipInfosFromBundleArrays(List<Bundle> list) {
+            SkipInfo[] skipInfoArr = new SkipInfo[list.size()];
+            for (int i = 0; i < list.size(); i++) {
+                Bundle bundle = list.get(i);
+                skipInfoArr[i] = bundle == null ? null : SkipInfo.fromBundle(bundle);
+            }
+            return skipInfoArr;
+        }
+    }
+
+    /* loaded from: classes2.dex */
+    public static final class SkipInfo {
+        public final String labelId;
+        public final long skipDurationUs;
+        public final long skipOffsetUs;
+        private static final String FIELD_SKIP_OFFSET_US = Util.intToStringMaxRadix(0);
+        private static final String FIELD_SKIP_DURATION_US = Util.intToStringMaxRadix(1);
+        private static final String FIELD_LABEL_ID = Util.intToStringMaxRadix(2);
+
+        public SkipInfo(long j, long j2, String str) {
+            int i = (j > C.TIME_UNSET ? 1 : (j == C.TIME_UNSET ? 0 : -1));
+            Preconditions.checkArgument((i == 0 && j2 == C.TIME_UNSET && str == null) ? false : true);
+            this.skipOffsetUs = i == 0 ? 0L : j;
+            this.skipDurationUs = j2;
+            this.labelId = str;
+        }
+
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (obj != null && getClass() == obj.getClass()) {
+                SkipInfo skipInfo = (SkipInfo) obj;
+                if (this.skipOffsetUs == skipInfo.skipOffsetUs && this.skipDurationUs == skipInfo.skipDurationUs && Objects.equals(this.labelId, skipInfo.labelId)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public int hashCode() {
+            return Objects.hash(Long.valueOf(this.skipOffsetUs), Long.valueOf(this.skipDurationUs), this.labelId);
+        }
+
+        public Bundle toBundle() {
+            Bundle bundle = new Bundle();
+            bundle.putLong(FIELD_SKIP_OFFSET_US, this.skipOffsetUs);
+            bundle.putLong(FIELD_SKIP_DURATION_US, this.skipDurationUs);
+            bundle.putString(FIELD_LABEL_ID, this.labelId);
+            return bundle;
+        }
+
+        public static SkipInfo fromBundle(Bundle bundle) {
+            return new SkipInfo(bundle.getLong(FIELD_SKIP_OFFSET_US), bundle.getLong(FIELD_SKIP_DURATION_US), bundle.getString(FIELD_LABEL_ID));
         }
     }
 
@@ -515,7 +628,7 @@ public final class AdPlaybackState {
     }
 
     public AdPlaybackState withAdCount(int i, int i2) {
-        Assertions.checkArgument(i2 > 0);
+        Preconditions.checkArgument(i2 > 0);
         int i3 = i - this.removedAdGroupCount;
         if (this.adGroups[i3].count == i2) {
             return this;
@@ -544,7 +657,7 @@ public final class AdPlaybackState {
         int i3 = i - this.removedAdGroupCount;
         AdGroup[] adGroupArr = this.adGroups;
         AdGroup[] adGroupArr2 = (AdGroup[]) Util.nullSafeArrayCopy(adGroupArr, adGroupArr.length);
-        Assertions.checkState(adGroupArr2[i3].isServerSideInserted || !(mediaItem.localConfiguration == null || mediaItem.localConfiguration.uri.equals(Uri.EMPTY)));
+        Preconditions.checkState(adGroupArr2[i3].isServerSideInserted || !(mediaItem.localConfiguration == null || mediaItem.localConfiguration.uri.equals(Uri.EMPTY)));
         adGroupArr2[i3] = adGroupArr2[i3].withAdMediaItem(mediaItem, i2);
         return new AdPlaybackState(this.adsId, adGroupArr2, this.adResumePositionUs, this.contentDurationUs, this.removedAdGroupCount);
     }
@@ -597,6 +710,14 @@ public final class AdPlaybackState {
         return new AdPlaybackState(this.adsId, adGroupArr2, this.adResumePositionUs, this.contentDurationUs, this.removedAdGroupCount);
     }
 
+    public AdPlaybackState withAdSkipInfo(int i, int i2, SkipInfo skipInfo) {
+        int i3 = i - this.removedAdGroupCount;
+        AdGroup[] adGroupArr = this.adGroups;
+        AdGroup[] adGroupArr2 = (AdGroup[]) Util.nullSafeArrayCopy(adGroupArr, adGroupArr.length);
+        adGroupArr2[i3] = adGroupArr2[i3].withAdSkipInfo(skipInfo, i2);
+        return new AdPlaybackState(this.adsId, adGroupArr2, this.adResumePositionUs, this.contentDurationUs, this.removedAdGroupCount);
+    }
+
     public AdPlaybackState withSkippedAdGroup(int i) {
         int i2 = i - this.removedAdGroupCount;
         AdGroup[] adGroupArr = this.adGroups;
@@ -607,7 +728,7 @@ public final class AdPlaybackState {
 
     public AdPlaybackState withAdDurationsUs(long[][] jArr) {
         int i = 0;
-        Assertions.checkArgument(jArr.length == this.adGroupCount);
+        Preconditions.checkArgument(jArr.length == this.adGroupCount);
         AdGroup[] adGroupArr = this.adGroups;
         AdGroup[] adGroupArr2 = (AdGroup[]) Util.nullSafeArrayCopy(adGroupArr, adGroupArr.length);
         while (true) {
@@ -643,7 +764,7 @@ public final class AdPlaybackState {
         if (i2 == i) {
             return this;
         }
-        Assertions.checkArgument(i > i2);
+        Preconditions.checkArgument(i > i2);
         int i3 = this.adGroupCount - i;
         AdGroup[] adGroupArr = new AdGroup[i3];
         System.arraycopy(this.adGroups, i - this.removedAdGroupCount, adGroupArr, 0, i3);
@@ -751,7 +872,7 @@ public final class AdPlaybackState {
         int i2 = 0;
         while (i2 < i) {
             AdGroup adGroup = adPlaybackState.adGroups[i2];
-            adGroupArr[i2] = new AdGroup(adGroup.timeUs, adGroup.count, adGroup.originalCount, Arrays.copyOf(adGroup.states, adGroup.states.length), (MediaItem[]) Arrays.copyOf(adGroup.mediaItems, adGroup.mediaItems.length), Arrays.copyOf(adGroup.durationsUs, adGroup.durationsUs.length), adGroup.contentResumeOffsetUs, adGroup.isServerSideInserted, adGroup.ids, adGroup.isPlaceholder);
+            adGroupArr[i2] = new AdGroup(adGroup.timeUs, adGroup.count, adGroup.originalCount, Arrays.copyOf(adGroup.states, adGroup.states.length), (MediaItem[]) Arrays.copyOf(adGroup.mediaItems, adGroup.mediaItems.length), Arrays.copyOf(adGroup.durationsUs, adGroup.durationsUs.length), adGroup.contentResumeOffsetUs, adGroup.isServerSideInserted, adGroup.ids, adGroup.skipInfos, adGroup.isPlaceholder);
             i2++;
             i = i;
         }

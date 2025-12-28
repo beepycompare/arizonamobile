@@ -3,10 +3,10 @@ package androidx.media3.container;
 import androidx.media3.common.ColorInfo;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.CodecSpecificDataUtil;
 import androidx.media3.common.util.Log;
 import com.google.common.base.Ascii;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.math.DoubleMath;
 import java.lang.reflect.Array;
@@ -404,7 +404,8 @@ public final class NalUnitUtil {
     }
 
     public static boolean isNalUnitSei(Format format, byte b) {
-        return ((Objects.equals(format.sampleMimeType, MimeTypes.VIDEO_H264) || MimeTypes.containsCodecsCorrespondingToMimeType(format.codecs, MimeTypes.VIDEO_H264)) && (b & Ascii.US) == 6) || ((Objects.equals(format.sampleMimeType, MimeTypes.VIDEO_H265) || MimeTypes.containsCodecsCorrespondingToMimeType(format.codecs, MimeTypes.VIDEO_H265)) && ((b & 126) >> 1) == 39);
+        String nalStructureMimeType = getNalStructureMimeType(format);
+        return (Objects.equals(nalStructureMimeType, MimeTypes.VIDEO_H264) && (b & Ascii.US) == 6) || (Objects.equals(nalStructureMimeType, MimeTypes.VIDEO_H265) && ((b & 126) >> 1) == 39);
     }
 
     public static int getNalUnitType(byte[] bArr, int i) {
@@ -412,10 +413,11 @@ public final class NalUnitUtil {
     }
 
     public static int numberOfBytesInNalUnitHeader(Format format) {
-        if (Objects.equals(format.sampleMimeType, MimeTypes.VIDEO_H264)) {
+        String nalStructureMimeType = getNalStructureMimeType(format);
+        if (Objects.equals(nalStructureMimeType, MimeTypes.VIDEO_H264)) {
             return 1;
         }
-        return (Objects.equals(format.sampleMimeType, MimeTypes.VIDEO_H265) || MimeTypes.containsCodecsCorrespondingToMimeType(format.codecs, MimeTypes.VIDEO_H265)) ? 2 : 0;
+        return Objects.equals(nalStructureMimeType, MimeTypes.VIDEO_H265) ? 2 : 0;
     }
 
     public static boolean isDependedOn(byte[] bArr, int i, int i2, Format format) {
@@ -1531,7 +1533,7 @@ public final class NalUnitUtil {
 
     public static int findNalUnit(byte[] bArr, int i, int i2, boolean[] zArr) {
         int i3 = i2 - i;
-        Assertions.checkState(i3 >= 0);
+        Preconditions.checkState(i3 >= 0);
         if (i3 == 0) {
             return i2;
         }
@@ -2037,6 +2039,18 @@ public final class NalUnitUtil {
                 iArr2 = iArr6;
             }
         }
+    }
+
+    private static String getNalStructureMimeType(Format format) {
+        if (Objects.equals(format.sampleMimeType, MimeTypes.VIDEO_DOLBY_VISION) && format.codecs != null) {
+            if (format.codecs.startsWith("dva1") || format.codecs.startsWith("dvav")) {
+                return MimeTypes.VIDEO_H264;
+            }
+            if (format.codecs.startsWith("dvh1") || format.codecs.startsWith("dvhe")) {
+                return MimeTypes.VIDEO_H265;
+            }
+        }
+        return format.sampleMimeType;
     }
 
     private NalUnitUtil() {

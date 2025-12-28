@@ -1,8 +1,8 @@
 package androidx.media3.exoplayer.source;
 
 import android.util.SparseArray;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Consumer;
+import com.google.common.base.Preconditions;
 /* loaded from: classes3.dex */
 final class SpannedData<V> {
     private int memoizedReadIndex;
@@ -47,13 +47,13 @@ final class SpannedData<V> {
 
     public void appendSpan(int i, V v) {
         if (this.memoizedReadIndex == -1) {
-            Assertions.checkState(this.spans.size() == 0);
+            Preconditions.checkState(this.spans.size() == 0);
             this.memoizedReadIndex = 0;
         }
         if (this.spans.size() > 0) {
             SparseArray<V> sparseArray = this.spans;
             int keyAt = sparseArray.keyAt(sparseArray.size() - 1);
-            Assertions.checkArgument(i >= keyAt);
+            Preconditions.checkArgument(i >= keyAt);
             if (keyAt == i) {
                 SparseArray<V> sparseArray2 = this.spans;
                 this.removeCallback.accept(sparseArray2.valueAt(sparseArray2.size() - 1));

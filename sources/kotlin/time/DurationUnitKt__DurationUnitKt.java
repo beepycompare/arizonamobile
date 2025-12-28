@@ -3,13 +3,14 @@ package kotlin.time;
 import androidx.media3.exoplayer.upstream.CmcdData;
 import kotlin.Metadata;
 import kotlin.jvm.internal.Intrinsics;
+import kotlin.ranges.RangesKt;
 /* compiled from: DurationUnit.kt */
-@Metadata(d1 = {"\u0000\u001a\n\u0000\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\f\n\u0000\n\u0002\u0010\u000b\n\u0000\u001a\f\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u0001\u001a\u0010\u0010\u0003\u001a\u00020\u00022\u0006\u0010\u0000\u001a\u00020\u0001H\u0001\u001a\u0018\u0010\u0004\u001a\u00020\u00022\u0006\u0010\u0005\u001a\u00020\u00062\u0006\u0010\u0007\u001a\u00020\bH\u0001¨\u0006\t"}, d2 = {"shortName", "", "Lkotlin/time/DurationUnit;", "durationUnitByShortName", "durationUnitByIsoChar", "isoChar", "", "isTimeComponent", "", "kotlin-stdlib"}, k = 5, mv = {2, 2, 0}, xi = 49, xs = "kotlin/time/DurationUnitKt")
+@Metadata(d1 = {"\u0000\u0018\n\u0000\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000e\n\u0000\u001a\u001a\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0004H\u0080\u0080\u0004\u001a\u001b\u0010\u0005\u001a\u00020\u0001*\u00020\u00012\u0006\u0010\u0006\u001a\u00020\u0001H\u0082\u0080\u0004¢\u0006\u0002\b\u0007\u001a\u000e\u0010\u000b\u001a\u00020\f*\u00020\u0004H\u0081\u0080\u0004\"\u0019\u0010\b\u001a\u00020\u0001*\u00020\u00048BX\u0082\u0084\b¢\u0006\u0006\u001a\u0004\b\t\u0010\n¨\u0006\r"}, d2 = {"convertDurationUnitToMilliseconds", "", "value", "unit", "Lkotlin/time/DurationUnit;", "multiplyNonNegativeWithoutOverflow", "other", "multiplyNonNegativeWithoutOverflow$DurationUnitKt__DurationUnitKt", "millisMultiplier", "getMillisMultiplier$DurationUnitKt__DurationUnitKt", "(Lkotlin/time/DurationUnit;)J", "shortName", "", "kotlin-stdlib"}, k = 5, mv = {2, 3, 0}, xi = 49, xs = "kotlin/time/DurationUnitKt")
 /* loaded from: classes5.dex */
 class DurationUnitKt__DurationUnitKt extends DurationUnitKt__DurationUnitJvmKt {
 
     /* compiled from: DurationUnit.kt */
-    @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
+    @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
     /* loaded from: classes5.dex */
     public static final /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
@@ -17,15 +18,15 @@ class DurationUnitKt__DurationUnitKt extends DurationUnitKt__DurationUnitJvmKt {
         static {
             int[] iArr = new int[DurationUnit.values().length];
             try {
-                iArr[DurationUnit.NANOSECONDS.ordinal()] = 1;
+                iArr[DurationUnit.DAYS.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                iArr[DurationUnit.MICROSECONDS.ordinal()] = 2;
+                iArr[DurationUnit.HOURS.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                iArr[DurationUnit.MILLISECONDS.ordinal()] = 3;
+                iArr[DurationUnit.MINUTES.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
@@ -33,92 +34,85 @@ class DurationUnitKt__DurationUnitKt extends DurationUnitKt__DurationUnitJvmKt {
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                iArr[DurationUnit.MINUTES.ordinal()] = 5;
+                iArr[DurationUnit.MILLISECONDS.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                iArr[DurationUnit.HOURS.ordinal()] = 6;
+                iArr[DurationUnit.NANOSECONDS.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                iArr[DurationUnit.DAYS.ordinal()] = 7;
+                iArr[DurationUnit.MICROSECONDS.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
             $EnumSwitchMapping$0 = iArr;
         }
     }
 
+    public static final long convertDurationUnitToMilliseconds(long j, DurationUnit unit) {
+        Intrinsics.checkNotNullParameter(unit, "unit");
+        return multiplyNonNegativeWithoutOverflow$DurationUnitKt__DurationUnitKt(j, getMillisMultiplier$DurationUnitKt__DurationUnitKt(unit));
+    }
+
+    private static final long multiplyNonNegativeWithoutOverflow$DurationUnitKt__DurationUnitKt(long j, long j2) {
+        if (j == 0) {
+            return 0L;
+        }
+        if (j == 1) {
+            return RangesKt.coerceAtMost(j2, 4611686018427387903L);
+        }
+        if (j2 == 1) {
+            return RangesKt.coerceAtMost(j, 4611686018427387903L);
+        }
+        int numberOfLeadingZeros = (128 - Long.numberOfLeadingZeros(j)) - Long.numberOfLeadingZeros(j2);
+        if (numberOfLeadingZeros < 63) {
+            return j * j2;
+        }
+        if (numberOfLeadingZeros > 63) {
+            return 4611686018427387903L;
+        }
+        return RangesKt.coerceAtMost(j * j2, 4611686018427387903L);
+    }
+
+    private static final long getMillisMultiplier$DurationUnitKt__DurationUnitKt(DurationUnit durationUnit) {
+        int i = WhenMappings.$EnumSwitchMapping$0[durationUnit.ordinal()];
+        if (i != 1) {
+            if (i != 2) {
+                if (i != 3) {
+                    if (i != 4) {
+                        if (i == 5) {
+                            return 1L;
+                        }
+                        throw new IllegalStateException(("Wrong unit for millisMultiplier: " + durationUnit).toString());
+                    }
+                    return 1000L;
+                }
+                return 60000L;
+            }
+            return DurationKt.MILLIS_IN_HOUR;
+        }
+        return 86400000L;
+    }
+
     public static final String shortName(DurationUnit durationUnit) {
         Intrinsics.checkNotNullParameter(durationUnit, "<this>");
         switch (WhenMappings.$EnumSwitchMapping$0[durationUnit.ordinal()]) {
             case 1:
-                return "ns";
+                return "d";
             case 2:
-                return "us";
+                return CmcdData.STREAMING_FORMAT_HLS;
             case 3:
-                return "ms";
+                return CmcdData.OBJECT_TYPE_MANIFEST;
             case 4:
                 return CmcdData.STREAMING_FORMAT_SS;
             case 5:
-                return CmcdData.OBJECT_TYPE_MANIFEST;
+                return "ms";
             case 6:
-                return CmcdData.STREAMING_FORMAT_HLS;
+                return "ns";
             case 7:
-                return "d";
+                return "us";
             default:
                 throw new IllegalStateException(("Unknown unit: " + durationUnit).toString());
-        }
-    }
-
-    public static final DurationUnit durationUnitByShortName(String shortName) {
-        Intrinsics.checkNotNullParameter(shortName, "shortName");
-        int hashCode = shortName.hashCode();
-        if (hashCode != 100) {
-            if (hashCode != 104) {
-                if (hashCode != 109) {
-                    if (hashCode != 115) {
-                        if (hashCode != 3494) {
-                            if (hashCode != 3525) {
-                                if (hashCode == 3742 && shortName.equals("us")) {
-                                    return DurationUnit.MICROSECONDS;
-                                }
-                            } else if (shortName.equals("ns")) {
-                                return DurationUnit.NANOSECONDS;
-                            }
-                        } else if (shortName.equals("ms")) {
-                            return DurationUnit.MILLISECONDS;
-                        }
-                    } else if (shortName.equals(CmcdData.STREAMING_FORMAT_SS)) {
-                        return DurationUnit.SECONDS;
-                    }
-                } else if (shortName.equals(CmcdData.OBJECT_TYPE_MANIFEST)) {
-                    return DurationUnit.MINUTES;
-                }
-            } else if (shortName.equals(CmcdData.STREAMING_FORMAT_HLS)) {
-                return DurationUnit.HOURS;
-            }
-        } else if (shortName.equals("d")) {
-            return DurationUnit.DAYS;
-        }
-        throw new IllegalArgumentException("Unknown duration unit short name: " + shortName);
-    }
-
-    public static final DurationUnit durationUnitByIsoChar(char c, boolean z) {
-        if (!z) {
-            if (c == 'D') {
-                return DurationUnit.DAYS;
-            }
-            throw new IllegalArgumentException("Invalid or unsupported duration ISO non-time unit: " + c);
-        } else if (c != 'H') {
-            if (c != 'M') {
-                if (c == 'S') {
-                    return DurationUnit.SECONDS;
-                }
-                throw new IllegalArgumentException("Invalid duration ISO time unit: " + c);
-            }
-            return DurationUnit.MINUTES;
-        } else {
-            return DurationUnit.HOURS;
         }
     }
 }

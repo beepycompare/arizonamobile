@@ -4,14 +4,14 @@ package io.appmetrica.analytics.impl;
 public final class C0399le implements Oa {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Na f1091a;
+    public final Na f1092a;
 
     public C0399le(Na na) {
-        this.f1091a = na;
+        this.f1092a = na;
     }
 
     @Override // io.appmetrica.analytics.impl.Oa
     public final boolean a(C0476og c0476og) {
-        return (c0476og == null || ((C0522qc) this.f1091a).D()) ? false : true;
+        return (c0476og == null || ((C0522qc) this.f1092a).D()) ? false : true;
     }
 }

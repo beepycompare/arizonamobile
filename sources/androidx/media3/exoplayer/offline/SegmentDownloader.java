@@ -5,7 +5,6 @@ import androidx.media3.common.C;
 import androidx.media3.common.MediaItem;
 import androidx.media3.common.PriorityTaskManager;
 import androidx.media3.common.StreamKey;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.RunnableFutureTask;
 import androidx.media3.common.util.Util;
 import androidx.media3.datasource.DataSource;
@@ -18,6 +17,7 @@ import androidx.media3.datasource.cache.ContentMetadata;
 import androidx.media3.exoplayer.offline.Downloader;
 import androidx.media3.exoplayer.offline.FilterableManifest;
 import androidx.media3.exoplayer.upstream.ParsingLoadable;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -108,7 +108,7 @@ public abstract class SegmentDownloader<M extends FilterableManifest<M>> impleme
     }
 
     public SegmentDownloader(MediaItem mediaItem, ParsingLoadable.Parser<M> parser, CacheDataSource.Factory factory, Executor executor, long j, long j2, long j3) {
-        Assertions.checkNotNull(mediaItem.localConfiguration);
+        Preconditions.checkNotNull(mediaItem.localConfiguration);
         this.manifestDataSpec = getCompressibleDataSpec(mediaItem.localConfiguration.uri);
         this.manifestParser = parser;
         this.streamKeys = new ArrayList<>(mediaItem.localConfiguration.streamKeys);
@@ -116,7 +116,7 @@ public abstract class SegmentDownloader<M extends FilterableManifest<M>> impleme
         this.executor = executor;
         this.startPositionUs = j2;
         this.durationUs = j3;
-        this.cache = (Cache) Assertions.checkNotNull(factory.getCache());
+        this.cache = (Cache) Preconditions.checkNotNull(factory.getCache());
         this.cacheKeyFactory = factory.getCacheKeyFactory();
         this.priorityTaskManager = factory.getUpstreamPriorityTaskManager();
         this.activeRunnables = new ArrayList<>();
@@ -200,7 +200,7 @@ public abstract class SegmentDownloader<M extends FilterableManifest<M>> impleme
                             removeActiveRunnable(size4);
                             arrayDeque2.addLast(segmentDownloadRunnable3);
                         } catch (ExecutionException e) {
-                            Throwable th = (Throwable) Assertions.checkNotNull(e.getCause());
+                            Throwable th = (Throwable) Preconditions.checkNotNull(e.getCause());
                             if (th instanceof PriorityTaskManager.PriorityTooLowException) {
                                 arrayDeque.addFirst(segmentDownloadRunnable3.segment);
                                 removeActiveRunnable(size4);
@@ -281,7 +281,7 @@ public abstract class SegmentDownloader<M extends FilterableManifest<M>> impleme
         r4 = move-exception;
      */
     /* JADX WARN: Code restructure failed: missing block: B:24:0x0043, code lost:
-        r0 = (java.lang.Throwable) androidx.media3.common.util.Assertions.checkNotNull(r4.getCause());
+        r0 = (java.lang.Throwable) com.google.common.base.Preconditions.checkNotNull(r4.getCause());
      */
     /* JADX WARN: Code restructure failed: missing block: B:25:0x004f, code lost:
         if ((r0 instanceof androidx.media3.common.PriorityTaskManager.PriorityTooLowException) == false) goto L34;
@@ -311,7 +311,7 @@ public abstract class SegmentDownloader<M extends FilterableManifest<M>> impleme
             try {
                 return runnableFutureTask.get();
             } catch (ExecutionException e) {
-                Throwable th = (Throwable) Assertions.checkNotNull(e.getCause());
+                Throwable th = (Throwable) Preconditions.checkNotNull(e.getCause());
                 if (th instanceof IOException) {
                     throw ((IOException) th);
                 }
@@ -368,7 +368,7 @@ public abstract class SegmentDownloader<M extends FilterableManifest<M>> impleme
                 list.set(i, segment);
                 i++;
             } else {
-                list.set(((Integer) Assertions.checkNotNull(num)).intValue(), new Segment(segment2.startTimeUs, segment2.dataSpec.subrange(0L, segment.dataSpec.length != -1 ? segment2.dataSpec.length + segment.dataSpec.length : -1L)));
+                list.set(((Integer) Preconditions.checkNotNull(num)).intValue(), new Segment(segment2.startTimeUs, segment2.dataSpec.subrange(0L, segment.dataSpec.length != -1 ? segment2.dataSpec.length + segment.dataSpec.length : -1L)));
             }
         }
         Util.removeRange(list, i, list.size());

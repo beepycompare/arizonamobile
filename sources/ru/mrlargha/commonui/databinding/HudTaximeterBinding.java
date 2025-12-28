@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class HudTaximeterBinding implements ViewBinding {
     public final HudCounterAccumulatedEnergyBinding accumulatedEnergy;
     public final HudCounterBaseJumpingBinding baseJumping;

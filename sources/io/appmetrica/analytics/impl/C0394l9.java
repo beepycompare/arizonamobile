@@ -10,7 +10,7 @@ import org.json.JSONObject;
 public final class C0394l9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Xe f1088a;
+    public final Xe f1089a;
     public final yo b;
     public final Sk c;
     public final M6 d;
@@ -24,7 +24,7 @@ public final class C0394l9 {
     public int l;
 
     public C0394l9(Xe xe, yo yoVar, Sk sk, M6 m6, C0333j0 c0333j0, I8 i8, Kk kk, int i, C0106a5 c0106a5, SystemTimeProvider systemTimeProvider) {
-        this.f1088a = xe;
+        this.f1089a = xe;
         this.b = yoVar;
         this.c = sk;
         this.d = m6;
@@ -44,7 +44,7 @@ public final class C0394l9 {
         Kk kk = this.f;
         kk.getClass();
         map.putAll(new HashMap(kk.b));
-        q5.c(this.f1088a.j());
+        q5.c(this.f1089a.j());
         q5.o = Integer.valueOf(this.b.b());
         C0308i0 a2 = this.g.a();
         I8 i8 = this.e;
@@ -55,20 +55,20 @@ public final class C0394l9 {
         int i = q5.d;
         yo yoVar = this.b;
         C0315i7 c0315i7 = new C0315i7(m6.g, uk, i, yoVar, a4, (C0402lh) m6.h.k.a(), a2);
-        Long valueOf = Long.valueOf(uk.f811a);
+        Long valueOf = Long.valueOf(uk.f812a);
         Wk wk = uk.d;
         Long valueOf2 = Long.valueOf(uk.b);
         EnumC0164cb a5 = EnumC0164cb.a(c0315i7.h.d);
         long j = 0;
         if (!AbstractC0693x9.g.contains(EnumC0164cb.a(i))) {
             synchronized (yoVar) {
-                JSONObject a6 = yoVar.f1322a.a();
+                JSONObject a6 = yoVar.f1323a.a();
                 optLong = a6.optLong("global_number", 0L);
-                yoVar.f1322a.a(a6.put("global_number", optLong + 1));
+                yoVar.f1323a.a(a6.put("global_number", optLong + 1));
             }
             j = optLong;
         }
         m6.a(m6.l.fromModel(new C0237f7(valueOf, wk, valueOf2, a5, Long.valueOf(j), Long.valueOf(uk.c), c0315i7.a())));
-        this.h.f888a.h();
+        this.h.f889a.h();
     }
 }

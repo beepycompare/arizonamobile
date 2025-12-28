@@ -11,7 +11,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class RewardsLayoutItemBinding implements ViewBinding {
     public final ConstraintLayout rewardsLayout;
     private final ConstraintLayout rootView;

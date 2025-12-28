@@ -16,12 +16,12 @@ import androidx.media3.common.MimeTypes;
 import androidx.media3.common.PlaybackException;
 import androidx.media3.common.PlaybackParameters;
 import androidx.media3.common.audio.AudioProcessor;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.CodecSpecificDataUtil;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.MediaFormatUtil;
 import androidx.media3.common.util.Util;
 import androidx.media3.decoder.DecoderInputBuffer;
+import androidx.media3.exoplayer.CodecParameters;
 import androidx.media3.exoplayer.DecoderReuseEvaluation;
 import androidx.media3.exoplayer.ExoPlaybackException;
 import androidx.media3.exoplayer.FormatHolder;
@@ -40,13 +40,14 @@ import androidx.media3.exoplayer.mediacodec.MediaCodecUtil;
 import androidx.media3.extractor.VorbisUtil;
 import com.google.android.gms.common.Scopes;
 import com.google.common.base.MoreObjects;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.util.List;
 import java.util.Objects;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public class MediaCodecAudioRenderer extends MediaCodecRenderer implements MediaClock {
     private static final String TAG = "MediaCodecAudioRenderer";
     private static final String VIVO_BITS_PER_SAMPLE_KEY = "v-bits-per-sample";
@@ -241,7 +242,7 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
 
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer
     protected long getDurationToProgressUs(long j, long j2, boolean z) {
-        boolean z2 = this.nextBufferToWritePresentationTimeUs != C.TIME_UNSET;
+        boolean z2 = this.audioSink.hasPendingData() && this.nextBufferToWritePresentationTimeUs != C.TIME_UNSET;
         if (!this.isStarted) {
             if (z2 || super.isEnded()) {
                 return 1000000L;
@@ -288,7 +289,7 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
 
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer
     protected DecoderReuseEvaluation onInputFormatChanged(FormatHolder formatHolder) throws ExoPlaybackException {
-        Format format = (Format) Assertions.checkNotNull(formatHolder.format);
+        Format format = (Format) Preconditions.checkNotNull(formatHolder.format);
         this.inputFormat = format;
         DecoderReuseEvaluation onInputFormatChanged = super.onInputFormatChanged(formatHolder);
         this.eventDispatcher.inputFormatChanged(format, onInputFormatChanged);
@@ -303,7 +304,7 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
         if (format2 != null) {
             format = format2;
         } else if (getCodec() != null) {
-            Assertions.checkNotNull(mediaFormat);
+            Preconditions.checkNotNull(mediaFormat);
             if (MimeTypes.AUDIO_RAW.equals(format.sampleMimeType)) {
                 pcmEncoding = format.pcmEncoding;
             } else if (mediaFormat.containsKey("pcm-encoding")) {
@@ -354,8 +355,8 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
     }
 
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer, androidx.media3.exoplayer.BaseRenderer
-    protected void onPositionReset(long j, boolean z) throws ExoPlaybackException {
-        super.onPositionReset(j, z);
+    protected void onPositionReset(long j, boolean z, boolean z2) throws ExoPlaybackException {
+        super.onPositionReset(j, z, z2);
         this.audioSink.flush();
         this.currentPositionUs = j;
         this.nextBufferToWritePresentationTimeUs = C.TIME_UNSET;
@@ -430,7 +431,7 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
 
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer, androidx.media3.exoplayer.Renderer
     public boolean isReady() {
-        return this.audioSink.hasPendingData() || super.isReady();
+        return this.audioSink.hasPendingData();
     }
 
     @Override // androidx.media3.exoplayer.MediaClock
@@ -466,10 +467,10 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
 
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer
     protected boolean processOutputBuffer(long j, long j2, MediaCodecAdapter mediaCodecAdapter, ByteBuffer byteBuffer, int i, int i2, int i3, long j3, boolean z, boolean z2, Format format) throws ExoPlaybackException {
-        Assertions.checkNotNull(byteBuffer);
+        Preconditions.checkNotNull(byteBuffer);
         this.nextBufferToWritePresentationTimeUs = C.TIME_UNSET;
         if (this.decryptOnlyCodecFormat != null && (i2 & 2) != 0) {
-            ((MediaCodecAdapter) Assertions.checkNotNull(mediaCodecAdapter)).releaseOutputBuffer(i, false);
+            ((MediaCodecAdapter) Preconditions.checkNotNull(mediaCodecAdapter)).releaseOutputBuffer(i, false);
             return true;
         } else if (z) {
             if (mediaCodecAdapter != null) {
@@ -498,6 +499,11 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
     }
 
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer
+    protected void onCodecParametersChanged(CodecParameters codecParameters) {
+        this.eventDispatcher.audioCodecParametersChanged(codecParameters);
+    }
+
+    @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer
     protected void renderToEndOfStream() throws ExoPlaybackException {
         try {
             this.audioSink.playToEndOfStream();
@@ -517,20 +523,24 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
     @Override // androidx.media3.exoplayer.mediacodec.MediaCodecRenderer, androidx.media3.exoplayer.BaseRenderer, androidx.media3.exoplayer.PlayerMessage.Target
     public void handleMessage(int i, Object obj) throws ExoPlaybackException {
         if (i == 2) {
-            this.audioSink.setVolume(((Float) Assertions.checkNotNull(obj)).floatValue());
+            this.audioSink.setVolume(((Float) Preconditions.checkNotNull(obj)).floatValue());
         } else if (i == 3) {
-            this.audioSink.setAudioAttributes((AudioAttributes) Assertions.checkNotNull((AudioAttributes) obj));
+            this.audioSink.setAudioAttributes((AudioAttributes) Preconditions.checkNotNull((AudioAttributes) obj));
         } else if (i == 6) {
-            this.audioSink.setAuxEffectInfo((AuxEffectInfo) Assertions.checkNotNull((AuxEffectInfo) obj));
+            this.audioSink.setAuxEffectInfo((AuxEffectInfo) Preconditions.checkNotNull((AuxEffectInfo) obj));
         } else if (i == 12) {
-            Api23.setAudioSinkPreferredDevice(this.audioSink, obj);
+            this.audioSink.setPreferredDevice((AudioDeviceInfo) obj);
         } else if (i == 16) {
-            this.rendererPriority = ((Integer) Assertions.checkNotNull(obj)).intValue();
+            this.rendererPriority = ((Integer) Preconditions.checkNotNull(obj)).intValue();
             updateCodecImportance();
         } else if (i == 9) {
-            this.audioSink.setSkipSilenceEnabled(((Boolean) Assertions.checkNotNull(obj)).booleanValue());
+            this.audioSink.setSkipSilenceEnabled(((Boolean) Preconditions.checkNotNull(obj)).booleanValue());
         } else if (i == 10) {
-            setAudioSessionId(((Integer) Assertions.checkNotNull(obj)).intValue());
+            setAudioSessionId(((Integer) Preconditions.checkNotNull(obj)).intValue());
+        } else if (i == 19) {
+            this.audioSink.setVirtualDeviceId(((Integer) Preconditions.checkNotNull(obj)).intValue());
+        } else if (i == 20) {
+            this.audioSink.setAudioOutputProvider((AudioOutputProvider) Preconditions.checkNotNull(obj));
         } else {
             super.handleMessage(i, obj);
         }
@@ -541,8 +551,8 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
         if (Build.VERSION.SDK_INT < 29 || decoderInputBuffer.format == null || !Objects.equals(decoderInputBuffer.format.sampleMimeType, MimeTypes.AUDIO_OPUS) || !isBypassEnabled()) {
             return;
         }
-        ByteBuffer byteBuffer = (ByteBuffer) Assertions.checkNotNull(decoderInputBuffer.supplementalData);
-        int i = ((Format) Assertions.checkNotNull(decoderInputBuffer.format)).encoderDelay;
+        ByteBuffer byteBuffer = (ByteBuffer) Preconditions.checkNotNull(decoderInputBuffer.supplementalData);
+        int i = ((Format) Preconditions.checkNotNull(decoderInputBuffer.format)).encoderDelay;
         if (byteBuffer.remaining() == 8) {
             this.audioSink.setOffloadDelayPadding(i, (int) ((byteBuffer.order(ByteOrder.LITTLE_ENDIAN).getLong() * 48000) / C.NANOS_PER_SECOND));
         }
@@ -596,6 +606,7 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
         if (Build.VERSION.SDK_INT >= 35) {
             mediaFormat.setInteger("importance", Math.max(0, -this.rendererPriority));
         }
+        applyCodecParametersToMediaFormat(mediaFormat);
         return mediaFormat;
     }
 
@@ -632,7 +643,7 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
         return str.equals("OMX.google.opus.decoder") || str.equals("c2.android.opus.decoder") || str.equals("OMX.google.vorbis.decoder") || str.equals("c2.android.vorbis.decoder");
     }
 
-    /* loaded from: classes2.dex */
+    /* loaded from: classes3.dex */
     private final class AudioSinkListener implements AudioSink.Listener {
         private AudioSinkListener() {
         }
@@ -705,16 +716,6 @@ public class MediaCodecAudioRenderer extends MediaCodecRenderer implements Media
                 MediaCodecAudioRenderer.this.loudnessCodecController.setAudioSessionId(i);
             }
             MediaCodecAudioRenderer.this.eventDispatcher.audioSessionIdChanged(i);
-        }
-    }
-
-    /* loaded from: classes2.dex */
-    private static final class Api23 {
-        private Api23() {
-        }
-
-        public static void setAudioSinkPreferredDevice(AudioSink audioSink, Object obj) {
-            audioSink.setPreferredDevice((AudioDeviceInfo) obj);
         }
     }
 }

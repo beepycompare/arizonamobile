@@ -7,7 +7,6 @@ import android.text.style.TypefaceSpan;
 import android.text.style.UnderlineSpan;
 import androidx.media3.common.C;
 import androidx.media3.common.text.Cue;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Consumer;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.ParsableByteArray;
@@ -15,6 +14,7 @@ import androidx.media3.common.util.Util;
 import androidx.media3.extractor.text.CuesWithTiming;
 import androidx.media3.extractor.text.SubtitleParser;
 import com.google.common.base.Ascii;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -96,13 +96,13 @@ public final class Tx3gParser implements SubtitleParser {
             int readInt = this.parsableByteArray.readInt();
             int readInt2 = this.parsableByteArray.readInt();
             if (readInt2 == TYPE_STYL) {
-                Assertions.checkArgument(this.parsableByteArray.bytesLeft() >= 2);
+                Preconditions.checkArgument(this.parsableByteArray.bytesLeft() >= 2);
                 int readUnsignedShort = this.parsableByteArray.readUnsignedShort();
                 for (int i3 = 0; i3 < readUnsignedShort; i3++) {
                     applyStyleRecord(this.parsableByteArray, spannableStringBuilder);
                 }
             } else if (readInt2 == TYPE_TBOX && this.customVerticalPlacement) {
-                Assertions.checkArgument(this.parsableByteArray.bytesLeft() >= 2);
+                Preconditions.checkArgument(this.parsableByteArray.bytesLeft() >= 2);
                 f = Util.constrainValue(this.parsableByteArray.readUnsignedShort() / this.calculatedVideoTrackHeight, 0.0f, 0.95f);
             }
             this.parsableByteArray.setPosition(position + readInt);
@@ -111,7 +111,7 @@ public final class Tx3gParser implements SubtitleParser {
     }
 
     private static String readSubtitleText(ParsableByteArray parsableByteArray) {
-        Assertions.checkArgument(parsableByteArray.bytesLeft() >= 2);
+        Preconditions.checkArgument(parsableByteArray.bytesLeft() >= 2);
         int readUnsignedShort = parsableByteArray.readUnsignedShort();
         if (readUnsignedShort == 0) {
             return "";
@@ -126,7 +126,7 @@ public final class Tx3gParser implements SubtitleParser {
     }
 
     private void applyStyleRecord(ParsableByteArray parsableByteArray, SpannableStringBuilder spannableStringBuilder) {
-        Assertions.checkArgument(parsableByteArray.bytesLeft() >= 12);
+        Preconditions.checkArgument(parsableByteArray.bytesLeft() >= 12);
         int readUnsignedShort = parsableByteArray.readUnsignedShort();
         int readUnsignedShort2 = parsableByteArray.readUnsignedShort();
         parsableByteArray.skipBytes(2);

@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
-/* loaded from: classes4.dex */
+/* loaded from: classes.dex */
 public final class DaggerCollections {
     private static final int MAX_POWER_OF_TWO = 1073741824;
 

@@ -7,11 +7,11 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class C0219ef implements R7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0549rf f968a;
+    public final C0549rf f969a;
     public final List<C0194df> b;
 
     public C0219ef(C0549rf c0549rf, List<C0194df> list) {
-        this.f968a = c0549rf;
+        this.f969a = c0549rf;
         this.b = list;
     }
 
@@ -22,14 +22,14 @@ public final class C0219ef implements R7 {
 
     @Override // io.appmetrica.analytics.impl.R7
     public final Object b() {
-        return this.f968a;
+        return this.f969a;
     }
 
     public final C0549rf c() {
-        return this.f968a;
+        return this.f969a;
     }
 
     public final String toString() {
-        return "PreloadInfoData{chosenPreloadInfo=" + this.f968a + ", candidates=" + this.b + AbstractJsonLexerKt.END_OBJ;
+        return "PreloadInfoData{chosenPreloadInfo=" + this.f969a + ", candidates=" + this.b + AbstractJsonLexerKt.END_OBJ;
     }
 }

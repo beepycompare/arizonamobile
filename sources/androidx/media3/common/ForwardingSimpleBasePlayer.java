@@ -180,8 +180,22 @@ public class ForwardingSimpleBasePlayer extends SimpleBasePlayer {
     }
 
     @Override // androidx.media3.common.SimpleBasePlayer
-    protected ListenableFuture<?> handleSetVolume(float f) {
+    protected final ListenableFuture<?> handleSetVolume(float f) {
         this.player.setVolume(f);
+        return Futures.immediateVoidFuture();
+    }
+
+    @Override // androidx.media3.common.SimpleBasePlayer
+    protected ListenableFuture<?> handleSetVolume(float f, int i) {
+        if (i == 0) {
+            this.player.setVolume(f);
+        } else if (i == 1) {
+            this.player.mute();
+        } else if (i == 2) {
+            this.player.unmute();
+        } else {
+            throw new IllegalStateException("Unknown volume operation type: " + i);
+        }
         return Futures.immediateVoidFuture();
     }
 
@@ -364,7 +378,7 @@ public class ForwardingSimpleBasePlayer extends SimpleBasePlayer {
         return Futures.immediateVoidFuture();
     }
 
-    @EnsuresNonNull({"player", "lastTimedMetadata", "playWhenReadyChangeReason", "pendingDiscontinuityReason", "livePositionSuppliers"})
+    @EnsuresNonNull({"this.player", "lastTimedMetadata", "playWhenReadyChangeReason", "pendingDiscontinuityReason", "livePositionSuppliers"})
     private void initializeForwardingState(Player player) {
         this.player = player;
         this.lastTimedMetadata = new Metadata((long) C.TIME_UNSET, new Metadata.Entry[0]);

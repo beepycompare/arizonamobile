@@ -6,11 +6,11 @@ import io.appmetrica.analytics.modulesapi.internal.client.ModuleServiceConfig;
 public final class X3 implements ModuleServiceConfig {
 
     /* renamed from: a  reason: collision with root package name */
-    public final SdkIdentifiers f842a;
+    public final SdkIdentifiers f843a;
     public final Object b;
 
     public X3(SdkIdentifiers sdkIdentifiers, Object obj) {
-        this.f842a = sdkIdentifiers;
+        this.f843a = sdkIdentifiers;
         this.b = obj;
     }
 
@@ -21,6 +21,6 @@ public final class X3 implements ModuleServiceConfig {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ModuleServiceConfig
     public final SdkIdentifiers getIdentifiers() {
-        return this.f842a;
+        return this.f843a;
     }
 }

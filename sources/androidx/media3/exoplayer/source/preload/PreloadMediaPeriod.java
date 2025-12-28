@@ -1,12 +1,12 @@
 package androidx.media3.exoplayer.source.preload;
 
-import androidx.media3.common.util.Assertions;
 import androidx.media3.exoplayer.LoadingInfo;
 import androidx.media3.exoplayer.SeekParameters;
 import androidx.media3.exoplayer.source.MediaPeriod;
 import androidx.media3.exoplayer.source.SampleStream;
 import androidx.media3.exoplayer.source.TrackGroupArray;
 import androidx.media3.exoplayer.trackselection.ExoTrackSelection;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.Objects;
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -49,13 +49,13 @@ public final class PreloadMediaPeriod implements MediaPeriod {
         this.mediaPeriod.prepare(new MediaPeriod.Callback() { // from class: androidx.media3.exoplayer.source.preload.PreloadMediaPeriod.1
             @Override // androidx.media3.exoplayer.source.SequenceableLoader.Callback
             public void onContinueLoadingRequested(MediaPeriod mediaPeriod) {
-                ((MediaPeriod.Callback) Assertions.checkNotNull(PreloadMediaPeriod.this.callback)).onContinueLoadingRequested(PreloadMediaPeriod.this);
+                ((MediaPeriod.Callback) Preconditions.checkNotNull(PreloadMediaPeriod.this.callback)).onContinueLoadingRequested(PreloadMediaPeriod.this);
             }
 
             @Override // androidx.media3.exoplayer.source.MediaPeriod.Callback
             public void onPrepared(MediaPeriod mediaPeriod) {
                 PreloadMediaPeriod.this.prepared = true;
-                ((MediaPeriod.Callback) Assertions.checkNotNull(PreloadMediaPeriod.this.callback)).onPrepared(PreloadMediaPeriod.this);
+                ((MediaPeriod.Callback) Preconditions.checkNotNull(PreloadMediaPeriod.this.callback)).onPrepared(PreloadMediaPeriod.this);
             }
         }, j);
     }
@@ -80,7 +80,7 @@ public final class PreloadMediaPeriod implements MediaPeriod {
         if (preloadTrackSelectionHolder == null) {
             return this.mediaPeriod.selectTracks(exoTrackSelectionArr, zArr, sampleStreamArr, zArr2, j);
         }
-        Assertions.checkState(sampleStreamArr.length == preloadTrackSelectionHolder.streams.length);
+        Preconditions.checkState(sampleStreamArr.length == preloadTrackSelectionHolder.streams.length);
         if (j != this.preloadTrackSelectionHolder.trackSelectionPositionUs) {
             for (int i = 0; i < this.preloadTrackSelectionHolder.streams.length; i++) {
                 if (this.preloadTrackSelectionHolder.streams[i] != null) {
@@ -91,7 +91,7 @@ public final class PreloadMediaPeriod implements MediaPeriod {
             this.preloadTrackSelectionHolder = null;
             return this.mediaPeriod.selectTracks(exoTrackSelectionArr, zArr, sampleStreamArr, zArr2, j);
         }
-        PreloadTrackSelectionHolder preloadTrackSelectionHolder2 = (PreloadTrackSelectionHolder) Assertions.checkNotNull(this.preloadTrackSelectionHolder);
+        PreloadTrackSelectionHolder preloadTrackSelectionHolder2 = (PreloadTrackSelectionHolder) Preconditions.checkNotNull(this.preloadTrackSelectionHolder);
         long j2 = preloadTrackSelectionHolder2.trackSelectionPositionUs;
         boolean[] zArr3 = preloadTrackSelectionHolder2.streamResetFlags;
         if (maybeUpdatePreloadTrackSelectionHolderForReselection(exoTrackSelectionArr, preloadTrackSelectionHolder2)) {
@@ -111,7 +111,7 @@ public final class PreloadMediaPeriod implements MediaPeriod {
     }
 
     private static boolean maybeUpdatePreloadTrackSelectionHolderForReselection(ExoTrackSelection[] exoTrackSelectionArr, PreloadTrackSelectionHolder preloadTrackSelectionHolder) {
-        ExoTrackSelection[] exoTrackSelectionArr2 = ((PreloadTrackSelectionHolder) Assertions.checkNotNull(preloadTrackSelectionHolder)).selections;
+        ExoTrackSelection[] exoTrackSelectionArr2 = ((PreloadTrackSelectionHolder) Preconditions.checkNotNull(preloadTrackSelectionHolder)).selections;
         boolean z = false;
         for (int i = 0; i < exoTrackSelectionArr.length; i++) {
             ExoTrackSelection exoTrackSelection = exoTrackSelectionArr[i];
@@ -203,7 +203,7 @@ public final class PreloadMediaPeriod implements MediaPeriod {
 
     public void maybeThrowStreamError() throws IOException {
         SampleStream[] sampleStreamArr;
-        Assertions.checkState(this.prepared);
+        Preconditions.checkState(this.prepared);
         PreloadTrackSelectionHolder preloadTrackSelectionHolder = this.preloadTrackSelectionHolder;
         if (preloadTrackSelectionHolder != null) {
             for (SampleStream sampleStream : preloadTrackSelectionHolder.streams) {

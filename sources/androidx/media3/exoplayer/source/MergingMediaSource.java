@@ -3,10 +3,10 @@ package androidx.media3.exoplayer.source;
 import androidx.media3.common.C;
 import androidx.media3.common.MediaItem;
 import androidx.media3.common.Timeline;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.datasource.TransferListener;
 import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.exoplayer.upstream.Allocator;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.MultimapBuilder;
 import java.io.IOException;
@@ -133,7 +133,7 @@ public final class MergingMediaSource extends CompositeMediaSource<Integer> {
         }
         MergingMediaPeriod mergingMediaPeriod = new MergingMediaPeriod(this.compositeSequenceableLoaderFactory, this.periodTimeOffsetsUs[indexOfPeriod], mediaPeriodArr);
         if (this.clipDurations) {
-            ClippingMediaPeriod clippingMediaPeriod = new ClippingMediaPeriod(mergingMediaPeriod, false, 0L, ((Long) Assertions.checkNotNull(this.clippedDurationsUs.get(mediaPeriodId.periodUid))).longValue());
+            ClippingMediaPeriod clippingMediaPeriod = new ClippingMediaPeriod(mergingMediaPeriod, false, 0L, ((Long) Preconditions.checkNotNull(this.clippedDurationsUs.get(mediaPeriodId.periodUid))).longValue());
             this.clippedMediaPeriods.put(mediaPeriodId.periodUid, clippingMediaPeriod);
             return clippingMediaPeriod;
         }
@@ -291,7 +291,7 @@ public final class MergingMediaSource extends CompositeMediaSource<Integer> {
             Timeline.Period period = new Timeline.Period();
             for (int i2 = 0; i2 < periodCount; i2++) {
                 timeline.getPeriod(i2, period, true);
-                long longValue = ((Long) Assertions.checkNotNull(map.get(period.uid))).longValue();
+                long longValue = ((Long) Preconditions.checkNotNull(map.get(period.uid))).longValue();
                 this.periodDurationsUs[i2] = longValue == Long.MIN_VALUE ? period.durationUs : longValue;
                 if (period.durationUs != C.TIME_UNSET) {
                     long[] jArr = this.windowDurationsUs;

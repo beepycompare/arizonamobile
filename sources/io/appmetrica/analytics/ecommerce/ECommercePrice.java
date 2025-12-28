@@ -6,15 +6,15 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public class ECommercePrice {
 
     /* renamed from: a  reason: collision with root package name */
-    private final ECommerceAmount f433a;
+    private final ECommerceAmount f434a;
     private List b;
 
     public ECommercePrice(ECommerceAmount eCommerceAmount) {
-        this.f433a = eCommerceAmount;
+        this.f434a = eCommerceAmount;
     }
 
     public ECommerceAmount getFiat() {
-        return this.f433a;
+        return this.f434a;
     }
 
     public List<ECommerceAmount> getInternalComponents() {
@@ -27,6 +27,6 @@ public class ECommercePrice {
     }
 
     public String toString() {
-        return "ECommercePrice{fiat=" + this.f433a + ", internalComponents=" + this.b + AbstractJsonLexerKt.END_OBJ;
+        return "ECommercePrice{fiat=" + this.f434a + ", internalComponents=" + this.b + AbstractJsonLexerKt.END_OBJ;
     }
 }

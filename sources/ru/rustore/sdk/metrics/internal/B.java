@@ -20,7 +20,7 @@ import org.json.JSONObject;
 public final class B {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0831w f1563a;
+    public final C0831w f1564a;
     public final C0832x b;
     public final C0834z c;
     public final A d;
@@ -29,7 +29,7 @@ public final class B {
     public static final class a extends Lambda implements Function1<String, CharSequence> {
 
         /* renamed from: a  reason: collision with root package name */
-        public static final a f1564a = new a();
+        public static final a f1565a = new a();
 
         public a() {
             super(1);
@@ -48,7 +48,7 @@ public final class B {
         Intrinsics.checkNotNullParameter(migrationDtoVer1Serializer, "migrationDtoVer1Serializer");
         Intrinsics.checkNotNullParameter(migrationDtoVer2Mapper, "migrationDtoVer2Mapper");
         Intrinsics.checkNotNullParameter(migrationDtoVer2Serializer, "migrationDtoVer2Serializer");
-        this.f1563a = migrationDtoVer1Factory;
+        this.f1564a = migrationDtoVer1Factory;
         this.b = migrationDtoVer1Serializer;
         this.c = migrationDtoVer2Mapper;
         this.d = migrationDtoVer2Serializer;
@@ -64,7 +64,7 @@ public final class B {
             int columnIndexOrThrow = rawQuery.getColumnIndexOrThrow(CommonUrlParts.UUID);
             int columnIndexOrThrow2 = rawQuery.getColumnIndexOrThrow("metrics_event");
             while (rawQuery.moveToNext()) {
-                C0831w c0831w = b.f1563a;
+                C0831w c0831w = b.f1564a;
                 String value = rawQuery.getString(columnIndexOrThrow);
                 Intrinsics.checkNotNullExpressionValue(value, "cursor.getString(uuidColumnIndex)");
                 Intrinsics.checkNotNullParameter(value, "value");
@@ -87,10 +87,10 @@ public final class B {
                 C0834z c0834z = b.c;
                 c0834z.getClass();
                 Intrinsics.checkNotNullParameter(dto, "dto");
-                String str = dto.f1618a;
+                String str = dto.f1619a;
                 String str2 = dto.b;
                 Map<String, String> map = dto.c;
-                c0834z.f1620a.getClass();
+                c0834z.f1621a.getClass();
                 C0833y dto2 = new C0833y(str, str2, map, System.currentTimeMillis());
                 b.b.getClass();
                 Intrinsics.checkNotNullParameter(dto, "dto");
@@ -106,7 +106,7 @@ public final class B {
                 byte[] bytes = jSONObject3.getBytes(Charsets.UTF_8);
                 Intrinsics.checkNotNullExpressionValue(bytes, "this as java.lang.String).getBytes(charset)");
                 Intrinsics.checkNotNullParameter(bytes, "<this>");
-                String joinToString$default = ArraysKt.joinToString$default(bytes, (CharSequence) "", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, (Function1) C0810a.f1591a, 30, (Object) null);
+                String joinToString$default = ArraysKt.joinToString$default(bytes, (CharSequence) "", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, (Function1) C0810a.f1592a, 30, (Object) null);
                 b.d.getClass();
                 Intrinsics.checkNotNullParameter(dto2, "dto");
                 JSONObject jSONObject4 = new JSONObject();
@@ -122,12 +122,12 @@ public final class B {
                 byte[] bytes2 = jSONObject6.getBytes(Charsets.UTF_8);
                 Intrinsics.checkNotNullExpressionValue(bytes2, "this as java.lang.String).getBytes(charset)");
                 Intrinsics.checkNotNullParameter(bytes2, "<this>");
-                arrayList2.add(dto.f1618a);
-                sb.append("\n                WHEN metrics_event = x'" + joinToString$default + "' THEN x'" + ArraysKt.joinToString$default(bytes2, (CharSequence) "", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, (Function1) C0810a.f1591a, 30, (Object) null) + "'\n            ");
+                arrayList2.add(dto.f1619a);
+                sb.append("\n                WHEN metrics_event = x'" + joinToString$default + "' THEN x'" + ArraysKt.joinToString$default(bytes2, (CharSequence) "", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, (Function1) C0810a.f1592a, 30, (Object) null) + "'\n            ");
                 i = 0;
                 b = this;
             }
-            sb.append("\n                END\n                WHERE uuid IN (" + CollectionsKt.joinToString$default(arrayList2, null, null, null, 0, null, a.f1564a, 31, null) + ")\n            ");
+            sb.append("\n                END\n                WHERE uuid IN (" + CollectionsKt.joinToString$default(arrayList2, null, null, null, 0, null, a.f1565a, 31, null) + ")\n            ");
             String sb2 = sb.toString();
             Intrinsics.checkNotNullExpressionValue(sb2, "updateQuery.toString()");
             db.execSQL(StringsKt.trimIndent(sb2));

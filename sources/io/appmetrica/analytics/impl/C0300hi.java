@@ -17,7 +17,7 @@ import java.util.Map;
 public final class C0300hi implements Sa {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0734z0 f1023a;
+    public final C0734z0 f1024a;
     public final Bh b;
     public final IHandlerExecutor c;
     public final Context d;
@@ -101,7 +101,7 @@ public final class C0300hi implements Sa {
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportEvent(String str) {
-        this.b.f509a.a(str);
+        this.b.f510a.a(str);
         this.f.getClass();
         this.c.execute(new RunnableC0248fi(this, str));
     }
@@ -182,7 +182,7 @@ public final class C0300hi implements Sa {
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportEvent(String str, String str2) {
-        this.b.f509a.a(str);
+        this.b.f510a.a(str);
         this.f.getClass();
         this.c.execute(new RunnableC0274gi(this, str, str2));
     }
@@ -214,7 +214,7 @@ public final class C0300hi implements Sa {
         this.c = C0157c4.l().g().a();
         this.d = context;
         this.b = bh;
-        this.f1023a = c0734z0;
+        this.f1024a = c0734z0;
         this.f = c0552ri;
         this.e = reporterConfig;
         this.g = pe;
@@ -222,7 +222,7 @@ public final class C0300hi implements Sa {
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportEvent(String str, Map<String, Object> map) {
-        this.b.f509a.a(str);
+        this.b.f510a.a(str);
         this.f.getClass();
         this.c.execute(new Hh(this, str, CollectionUtils.getListFromMap(map)));
     }

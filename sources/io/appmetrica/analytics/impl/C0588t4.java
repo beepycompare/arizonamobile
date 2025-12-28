@@ -12,6 +12,6 @@ public final class C0588t4 extends K2 {
             c0280go.c = new C0306ho();
             return c0280go;
         }
-        return this.f645a.a(c0228eo, ((Bd) interfaceC0335j2).a());
+        return this.f646a.a(c0228eo, ((Bd) interfaceC0335j2).a());
     }
 }

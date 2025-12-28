@@ -1,69 +1,127 @@
 package androidx.media3.exoplayer;
 
+import android.text.TextUtils;
 import androidx.media3.common.C;
+import androidx.media3.common.MediaItem;
 import androidx.media3.common.Timeline;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
+import androidx.media3.datasource.RawResourceDataSource;
 import androidx.media3.exoplayer.LoadControl;
 import androidx.media3.exoplayer.analytics.PlayerId;
 import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.exoplayer.source.TrackGroupArray;
 import androidx.media3.exoplayer.trackselection.ExoTrackSelection;
+import androidx.media3.exoplayer.upstream.Allocation;
 import androidx.media3.exoplayer.upstream.Allocator;
 import androidx.media3.exoplayer.upstream.DefaultAllocator;
+import androidx.media3.exoplayer.upstream.PlayerIdAwareAllocator;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 /* loaded from: classes.dex */
 public class DefaultLoadControl implements LoadControl {
     public static final int DEFAULT_AUDIO_BUFFER_SIZE = 13107200;
     public static final int DEFAULT_BACK_BUFFER_DURATION_MS = 0;
+    public static final int DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_FOR_LOCAL_PLAYBACK_MS = 1000;
     public static final int DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS = 2000;
+    public static final int DEFAULT_BUFFER_FOR_PLAYBACK_FOR_LOCAL_PLAYBACK_MS = 1000;
     public static final int DEFAULT_BUFFER_FOR_PLAYBACK_MS = 1000;
     public static final int DEFAULT_CAMERA_MOTION_BUFFER_SIZE = 131072;
     public static final int DEFAULT_IMAGE_BUFFER_SIZE = 26214400;
+    public static final int DEFAULT_MAX_BUFFER_FOR_LOCAL_PLAYBACK_MS = 50000;
     public static final int DEFAULT_MAX_BUFFER_MS = 50000;
+    public static final int DEFAULT_MAX_BUFFER_SIZE = 210239488;
     public static final int DEFAULT_METADATA_BUFFER_SIZE = 131072;
+    public static final int DEFAULT_MIN_BUFFER_FOR_LOCAL_PLAYBACK_MS = 1000;
     public static final int DEFAULT_MIN_BUFFER_MS = 50000;
     public static final int DEFAULT_MIN_BUFFER_SIZE = 13107200;
     public static final int DEFAULT_MUXED_BUFFER_SIZE = 144310272;
     public static final boolean DEFAULT_PRIORITIZE_TIME_OVER_SIZE_THRESHOLDS = false;
+    public static final boolean DEFAULT_PRIORITIZE_TIME_OVER_SIZE_THRESHOLDS_FOR_LOCAL_PLAYBACK = true;
     public static final boolean DEFAULT_RETAIN_BACK_BUFFER_FROM_KEYFRAME = false;
     public static final int DEFAULT_TARGET_BUFFER_BYTES = -1;
+    public static final int DEFAULT_TARGET_BUFFER_BYTES_FOR_PRELOAD = 144179200;
     public static final int DEFAULT_TEXT_BUFFER_SIZE = 131072;
     public static final int DEFAULT_VIDEO_BUFFER_SIZE = 131072000;
+    public static final int DEFAULT_VIDEO_BUFFER_SIZE_FOR_LOCAL_PLAYBACK = 19660800;
+    public static final ImmutableList<String> LOCAL_PLAYBACK_SCHEMES = ImmutableList.of("file", FirebaseAnalytics.Param.CONTENT, "data", "android.resource", RawResourceDataSource.RAW_RESOURCE_SCHEME, "asset");
     private final DefaultAllocator allocator;
     private final long backBufferDurationUs;
+    private final long bufferForPlaybackAfterRebufferForLocalPlaybackUs;
     private final long bufferForPlaybackAfterRebufferUs;
+    private final long bufferForPlaybackForLocalPlaybackUs;
     private final long bufferForPlaybackUs;
-    private final HashMap<PlayerId, PlayerLoadingState> loadingStates;
+    private final ConcurrentHashMap<PlayerId, PlayerLoadingState> loadingStates;
+    private final long maxBufferForLocalPlaybackUs;
     private final long maxBufferUs;
+    private final long minBufferForLocalPlaybackUs;
     private final long minBufferUs;
+    private final Timeline.Period period;
+    private final ImmutableMap<String, Integer> playerTargetBufferBytesOverwrites;
     private final boolean prioritizeTimeOverSizeThresholds;
+    private final boolean prioritizeTimeOverSizeThresholdsForLocalPlayback;
     private final boolean retainBackBufferFromKeyframe;
     private final int targetBufferBytesOverwrite;
     private long threadId;
+    private final Timeline.Window window;
+
+    @Deprecated
+    protected int calculateTargetBufferBytes(ExoTrackSelection[] exoTrackSelectionArr) {
+        return -1;
+    }
 
     /* loaded from: classes.dex */
     public static final class Builder {
         private DefaultAllocator allocator;
+        private int backBufferDurationMs;
+        private int bufferForPlaybackAfterRebufferForLocalPlaybackMs;
+        private int bufferForPlaybackAfterRebufferMs;
+        private int bufferForPlaybackForLocalPlaybackMs;
+        private int bufferForPlaybackMs;
         private boolean buildCalled;
-        private int minBufferMs = 50000;
-        private int maxBufferMs = 50000;
-        private int bufferForPlaybackMs = 1000;
-        private int bufferForPlaybackAfterRebufferMs = 2000;
-        private int targetBufferBytes = -1;
-        private boolean prioritizeTimeOverSizeThresholds = false;
-        private int backBufferDurationMs = 0;
-        private boolean retainBackBufferFromKeyframe = false;
+        private int maxBufferForLocalPlaybackMs;
+        private int maxBufferMs;
+        private int minBufferForLocalPlaybackMs;
+        private int minBufferMs;
+        private Boolean onlyGenericConfigurationMethodsCalled;
+        private final HashMap<String, Integer> playerTargetBufferBytes;
+        private boolean prioritizeTimeOverSizeThresholds;
+        private boolean prioritizeTimeOverSizeThresholdsForLocalPlayback;
+        private boolean retainBackBufferFromKeyframe;
+        private int targetBufferBytes;
+
+        public Builder() {
+            HashMap<String, Integer> hashMap = new HashMap<>();
+            this.playerTargetBufferBytes = hashMap;
+            hashMap.put(PlayerId.PRELOAD.name, Integer.valueOf((int) DefaultLoadControl.DEFAULT_TARGET_BUFFER_BYTES_FOR_PRELOAD));
+            this.minBufferMs = 50000;
+            this.minBufferForLocalPlaybackMs = 1000;
+            this.maxBufferMs = 50000;
+            this.maxBufferForLocalPlaybackMs = 50000;
+            this.bufferForPlaybackMs = 1000;
+            this.bufferForPlaybackForLocalPlaybackMs = 1000;
+            this.bufferForPlaybackAfterRebufferMs = 2000;
+            this.bufferForPlaybackAfterRebufferForLocalPlaybackMs = 1000;
+            this.targetBufferBytes = -1;
+            this.prioritizeTimeOverSizeThresholds = false;
+            this.prioritizeTimeOverSizeThresholdsForLocalPlayback = true;
+            this.backBufferDurationMs = 0;
+            this.retainBackBufferFromKeyframe = false;
+        }
 
         public Builder setAllocator(DefaultAllocator defaultAllocator) {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             this.allocator = defaultAllocator;
             return this;
         }
 
         public Builder setBufferDurationsMs(int i, int i2, int i3, int i4) {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             DefaultLoadControl.assertGreaterOrEqual(i3, 0, "bufferForPlaybackMs", "0");
             DefaultLoadControl.assertGreaterOrEqual(i4, 0, "bufferForPlaybackAfterRebufferMs", "0");
             DefaultLoadControl.assertGreaterOrEqual(i, i3, "minBufferMs", "bufferForPlaybackMs");
@@ -73,23 +131,84 @@ public class DefaultLoadControl implements LoadControl {
             this.maxBufferMs = i2;
             this.bufferForPlaybackMs = i3;
             this.bufferForPlaybackAfterRebufferMs = i4;
+            this.minBufferForLocalPlaybackMs = i;
+            this.maxBufferForLocalPlaybackMs = i2;
+            this.bufferForPlaybackForLocalPlaybackMs = i3;
+            this.bufferForPlaybackAfterRebufferForLocalPlaybackMs = i4;
+            if (this.onlyGenericConfigurationMethodsCalled == null) {
+                this.onlyGenericConfigurationMethodsCalled = true;
+            }
+            return this;
+        }
+
+        public Builder setBufferDurationsMsForStreaming(int i, int i2, int i3, int i4) {
+            Preconditions.checkState(!this.buildCalled);
+            DefaultLoadControl.assertGreaterOrEqual(i3, 0, "bufferForPlaybackMs", "0");
+            DefaultLoadControl.assertGreaterOrEqual(i4, 0, "bufferForPlaybackAfterRebufferMs", "0");
+            DefaultLoadControl.assertGreaterOrEqual(i, i3, "minBufferMs", "bufferForPlaybackMs");
+            DefaultLoadControl.assertGreaterOrEqual(i, i4, "minBufferMs", "bufferForPlaybackAfterRebufferMs");
+            DefaultLoadControl.assertGreaterOrEqual(i2, i, "maxBufferMs", "minBufferMs");
+            this.minBufferMs = i;
+            this.maxBufferMs = i2;
+            this.bufferForPlaybackMs = i3;
+            this.bufferForPlaybackAfterRebufferMs = i4;
+            this.onlyGenericConfigurationMethodsCalled = false;
+            return this;
+        }
+
+        public Builder setBufferDurationsMsForLocalPlayback(int i, int i2, int i3, int i4) {
+            Preconditions.checkState(!this.buildCalled);
+            DefaultLoadControl.assertGreaterOrEqual(i3, 0, "bufferForPlaybackMs", "0");
+            DefaultLoadControl.assertGreaterOrEqual(i4, 0, "bufferForPlaybackAfterRebufferMs", "0");
+            DefaultLoadControl.assertGreaterOrEqual(i, i3, "minBufferMs", "bufferForPlaybackMs");
+            DefaultLoadControl.assertGreaterOrEqual(i, i4, "minBufferMs", "bufferForPlaybackAfterRebufferMs");
+            DefaultLoadControl.assertGreaterOrEqual(i2, i, "maxBufferMs", "minBufferMs");
+            this.minBufferForLocalPlaybackMs = i;
+            this.maxBufferForLocalPlaybackMs = i2;
+            this.bufferForPlaybackForLocalPlaybackMs = i3;
+            this.bufferForPlaybackAfterRebufferForLocalPlaybackMs = i4;
+            this.onlyGenericConfigurationMethodsCalled = false;
             return this;
         }
 
         public Builder setTargetBufferBytes(int i) {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             this.targetBufferBytes = i;
             return this;
         }
 
+        public Builder setPlayerTargetBufferBytes(String str, int i) {
+            Preconditions.checkState(!this.buildCalled);
+            this.playerTargetBufferBytes.put(str, Integer.valueOf(i));
+            return this;
+        }
+
         public Builder setPrioritizeTimeOverSizeThresholds(boolean z) {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             this.prioritizeTimeOverSizeThresholds = z;
+            this.prioritizeTimeOverSizeThresholdsForLocalPlayback = z;
+            if (this.onlyGenericConfigurationMethodsCalled == null) {
+                this.onlyGenericConfigurationMethodsCalled = true;
+            }
+            return this;
+        }
+
+        public Builder setPrioritizeTimeOverSizeThresholdsForStreaming(boolean z) {
+            Preconditions.checkState(!this.buildCalled);
+            this.prioritizeTimeOverSizeThresholds = z;
+            this.onlyGenericConfigurationMethodsCalled = false;
+            return this;
+        }
+
+        public Builder setPrioritizeTimeOverSizeThresholdsForLocalPlayback(boolean z) {
+            Preconditions.checkState(!this.buildCalled);
+            this.prioritizeTimeOverSizeThresholdsForLocalPlayback = z;
+            this.onlyGenericConfigurationMethodsCalled = false;
             return this;
         }
 
         public Builder setBackBuffer(int i, boolean z) {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             DefaultLoadControl.assertGreaterOrEqual(i, 0, "backBufferDurationMs", "0");
             this.backBufferDurationMs = i;
             this.retainBackBufferFromKeyframe = z;
@@ -97,59 +216,87 @@ public class DefaultLoadControl implements LoadControl {
         }
 
         public DefaultLoadControl build() {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             this.buildCalled = true;
             if (this.allocator == null) {
                 this.allocator = new DefaultAllocator(true, 65536);
             }
-            return new DefaultLoadControl(this.allocator, this.minBufferMs, this.maxBufferMs, this.bufferForPlaybackMs, this.bufferForPlaybackAfterRebufferMs, this.targetBufferBytes, this.prioritizeTimeOverSizeThresholds, this.backBufferDurationMs, this.retainBackBufferFromKeyframe);
+            Boolean bool = this.onlyGenericConfigurationMethodsCalled;
+            if (bool != null && bool.booleanValue()) {
+                this.minBufferForLocalPlaybackMs = this.minBufferMs;
+                this.maxBufferForLocalPlaybackMs = this.maxBufferMs;
+                this.bufferForPlaybackForLocalPlaybackMs = this.bufferForPlaybackMs;
+                this.bufferForPlaybackAfterRebufferForLocalPlaybackMs = this.bufferForPlaybackAfterRebufferMs;
+                this.prioritizeTimeOverSizeThresholdsForLocalPlayback = this.prioritizeTimeOverSizeThresholds;
+            }
+            return new DefaultLoadControl(this.allocator, this.minBufferMs, this.minBufferForLocalPlaybackMs, this.maxBufferMs, this.maxBufferForLocalPlaybackMs, this.bufferForPlaybackMs, this.bufferForPlaybackForLocalPlaybackMs, this.bufferForPlaybackAfterRebufferMs, this.bufferForPlaybackAfterRebufferForLocalPlaybackMs, this.targetBufferBytes, this.prioritizeTimeOverSizeThresholds, this.prioritizeTimeOverSizeThresholdsForLocalPlayback, this.backBufferDurationMs, this.retainBackBufferFromKeyframe, this.playerTargetBufferBytes);
         }
     }
 
     public DefaultLoadControl() {
-        this(new DefaultAllocator(true, 65536), 50000, 50000, 1000, 2000, -1, false, 0, false);
+        this(new DefaultAllocator(true, 65536), 50000, 1000, 50000, 50000, 1000, 1000, 2000, 1000, -1, false, true, 0, false);
     }
 
-    protected DefaultLoadControl(DefaultAllocator defaultAllocator, int i, int i2, int i3, int i4, int i5, boolean z, int i6, boolean z2) {
-        assertGreaterOrEqual(i3, 0, "bufferForPlaybackMs", "0");
-        assertGreaterOrEqual(i4, 0, "bufferForPlaybackAfterRebufferMs", "0");
-        assertGreaterOrEqual(i, i3, "minBufferMs", "bufferForPlaybackMs");
-        assertGreaterOrEqual(i, i4, "minBufferMs", "bufferForPlaybackAfterRebufferMs");
-        assertGreaterOrEqual(i2, i, "maxBufferMs", "minBufferMs");
-        assertGreaterOrEqual(i6, 0, "backBufferDurationMs", "0");
+    protected DefaultLoadControl(DefaultAllocator defaultAllocator, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9, boolean z, boolean z2, int i10, boolean z3, Map<String, Integer> map) {
+        assertGreaterOrEqual(i5, 0, "bufferForPlaybackMs", "0");
+        assertGreaterOrEqual(i6, 0, "bufferForPlaybackForLocalPlaybackMs", "0");
+        assertGreaterOrEqual(i7, 0, "bufferForPlaybackAfterRebufferMs", "0");
+        assertGreaterOrEqual(i8, 0, "bufferForPlaybackAfterRebufferForLocalPlaybackMs", "0");
+        assertGreaterOrEqual(i, i5, "minBufferMs", "bufferForPlaybackMs");
+        assertGreaterOrEqual(i2, i6, "minBufferForLocalPlaybackMs", "bufferForPlaybackForLocalPlaybackMs");
+        assertGreaterOrEqual(i, i7, "minBufferMs", "bufferForPlaybackAfterRebufferMs");
+        assertGreaterOrEqual(i2, i8, "minBufferForLocalPlaybackMs", "bufferForPlaybackAfterRebufferForLocalPlaybackMs");
+        assertGreaterOrEqual(i3, i, "maxBufferMs", "minBufferMs");
+        assertGreaterOrEqual(i4, i2, "maxBufferForLocalPlaybackMs", "minBufferForLocalPlaybackMs");
+        assertGreaterOrEqual(i10, 0, "backBufferDurationMs", "0");
+        this.window = new Timeline.Window();
+        this.period = new Timeline.Period();
         this.allocator = defaultAllocator;
         this.minBufferUs = Util.msToUs(i);
-        this.maxBufferUs = Util.msToUs(i2);
-        this.bufferForPlaybackUs = Util.msToUs(i3);
-        this.bufferForPlaybackAfterRebufferUs = Util.msToUs(i4);
-        this.targetBufferBytesOverwrite = i5;
+        this.minBufferForLocalPlaybackUs = Util.msToUs(i2);
+        this.maxBufferUs = Util.msToUs(i3);
+        this.maxBufferForLocalPlaybackUs = Util.msToUs(i4);
+        this.bufferForPlaybackUs = Util.msToUs(i5);
+        this.bufferForPlaybackForLocalPlaybackUs = Util.msToUs(i6);
+        this.bufferForPlaybackAfterRebufferUs = Util.msToUs(i7);
+        this.bufferForPlaybackAfterRebufferForLocalPlaybackUs = Util.msToUs(i8);
+        this.targetBufferBytesOverwrite = i9;
         this.prioritizeTimeOverSizeThresholds = z;
-        this.backBufferDurationUs = Util.msToUs(i6);
-        this.retainBackBufferFromKeyframe = z2;
-        this.loadingStates = new HashMap<>();
+        this.prioritizeTimeOverSizeThresholdsForLocalPlayback = z2;
+        this.backBufferDurationUs = Util.msToUs(i10);
+        this.retainBackBufferFromKeyframe = z3;
+        this.loadingStates = new ConcurrentHashMap<>();
+        this.playerTargetBufferBytesOverwrites = ImmutableMap.copyOf((Map) map);
         this.threadId = -1L;
+    }
+
+    protected DefaultLoadControl(DefaultAllocator defaultAllocator, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8, int i9, boolean z, boolean z2, int i10, boolean z3) {
+        this(defaultAllocator, i, i2, i3, i4, i5, i6, i7, i8, i9, z, z2, i10, z3, ImmutableMap.of());
     }
 
     @Override // androidx.media3.exoplayer.LoadControl
     public void onPrepared(PlayerId playerId) {
         long id = Thread.currentThread().getId();
         long j = this.threadId;
-        Assertions.checkState(j == -1 || j == id, "Players that share the same LoadControl must share the same playback thread. See ExoPlayer.Builder.setPlaybackLooper(Looper).");
+        Preconditions.checkState(j == -1 || j == id, "Players that share the same LoadControl must share the same playback thread. See ExoPlayer.Builder.setPlaybackLooper(Looper).");
         this.threadId = id;
-        if (!this.loadingStates.containsKey(playerId)) {
+        PlayerLoadingState playerLoadingState = this.loadingStates.get(playerId);
+        if (playerLoadingState == null) {
             this.loadingStates.put(playerId, new PlayerLoadingState());
+        } else {
+            playerLoadingState.referenceCount++;
         }
         resetPlayerLoadingState(playerId);
     }
 
     @Override // androidx.media3.exoplayer.LoadControl
     public void onTracksSelected(LoadControl.Parameters parameters, TrackGroupArray trackGroupArray, ExoTrackSelection[] exoTrackSelectionArr) {
-        PlayerLoadingState playerLoadingState = (PlayerLoadingState) Assertions.checkNotNull(this.loadingStates.get(parameters.playerId));
-        int i = this.targetBufferBytesOverwrite;
-        if (i == -1) {
-            i = calculateTargetBufferBytes(exoTrackSelectionArr);
+        int targetBufferBytesOverwrite = getTargetBufferBytesOverwrite(parameters.playerId);
+        PlayerLoadingState playerLoadingState = (PlayerLoadingState) Preconditions.checkNotNull(this.loadingStates.get(parameters.playerId));
+        if (targetBufferBytesOverwrite == -1) {
+            targetBufferBytesOverwrite = calculateTargetBufferBytes(parameters, exoTrackSelectionArr);
         }
-        playerLoadingState.targetBufferBytes = i;
+        playerLoadingState.targetBufferBytes = targetBufferBytesOverwrite;
         updateAllocator();
     }
 
@@ -167,8 +314,8 @@ public class DefaultLoadControl implements LoadControl {
     }
 
     @Override // androidx.media3.exoplayer.LoadControl
-    public Allocator getAllocator() {
-        return this.allocator;
+    public Allocator getAllocator(PlayerId playerId) {
+        return new PlayerIdFilteringAllocatorImpl(playerId);
     }
 
     @Override // androidx.media3.exoplayer.LoadControl
@@ -183,22 +330,28 @@ public class DefaultLoadControl implements LoadControl {
 
     @Override // androidx.media3.exoplayer.LoadControl
     public boolean shouldContinueLoading(LoadControl.Parameters parameters) {
-        PlayerLoadingState playerLoadingState = (PlayerLoadingState) Assertions.checkNotNull(this.loadingStates.get(parameters.playerId));
+        PlayerId playerId = parameters.playerId;
+        PlayerLoadingState playerLoadingState = (PlayerLoadingState) Preconditions.checkNotNull(this.loadingStates.get(playerId));
         boolean z = true;
-        boolean z2 = this.allocator.getTotalBytesAllocated() >= calculateTotalTargetBufferBytes();
-        long j = this.minBufferUs;
-        if (parameters.playbackSpeed > 1.0f) {
-            j = Math.min(Util.getMediaDurationForPlayoutDuration(j, parameters.playbackSpeed), this.maxBufferUs);
+        boolean z2 = getTotalBufferBytesAllocated(playerId) >= getTargetBufferBytes(playerId);
+        if (playerId.equals(PlayerId.PRELOAD)) {
+            return !z2;
         }
-        if (parameters.bufferedDurationUs < Math.max(j, 500000L)) {
-            if (!this.prioritizeTimeOverSizeThresholds && z2) {
+        boolean isLocalPlayback = isLocalPlayback(parameters);
+        long minBufferUs = getMinBufferUs(isLocalPlayback);
+        long maxBufferUs = getMaxBufferUs(isLocalPlayback);
+        if (parameters.playbackSpeed > 1.0f) {
+            minBufferUs = Math.min(Util.getMediaDurationForPlayoutDuration(minBufferUs, parameters.playbackSpeed), maxBufferUs);
+        }
+        if (parameters.bufferedDurationUs < Math.max(minBufferUs, 500000L)) {
+            if (!prioritizeTimeOverSizeThresholds(isLocalPlayback) && z2) {
                 z = false;
             }
             playerLoadingState.isLoading = z;
             if (!playerLoadingState.isLoading && parameters.bufferedDurationUs < 500000) {
                 Log.w("DefaultLoadControl", "Target buffer size reached with less than 500ms of buffered media data.");
             }
-        } else if (parameters.bufferedDurationUs >= this.maxBufferUs || z2) {
+        } else if (parameters.bufferedDurationUs >= maxBufferUs || z2) {
             playerLoadingState.isLoading = false;
         }
         return playerLoadingState.isLoading;
@@ -206,19 +359,25 @@ public class DefaultLoadControl implements LoadControl {
 
     @Override // androidx.media3.exoplayer.LoadControl
     public boolean shouldStartPlayback(LoadControl.Parameters parameters) {
+        long bufferForPlaybackUs;
+        boolean isLocalPlayback = isLocalPlayback(parameters);
         long playoutDurationForMediaDuration = Util.getPlayoutDurationForMediaDuration(parameters.bufferedDurationUs, parameters.playbackSpeed);
-        long j = parameters.rebuffering ? this.bufferForPlaybackAfterRebufferUs : this.bufferForPlaybackUs;
-        if (parameters.targetLiveOffsetUs != C.TIME_UNSET) {
-            j = Math.min(parameters.targetLiveOffsetUs / 2, j);
+        if (parameters.rebuffering) {
+            bufferForPlaybackUs = getBufferForPlaybackAfterRebufferUs(isLocalPlayback);
+        } else {
+            bufferForPlaybackUs = getBufferForPlaybackUs(isLocalPlayback);
         }
-        if (j <= 0 || playoutDurationForMediaDuration >= j) {
+        if (parameters.targetLiveOffsetUs != C.TIME_UNSET) {
+            bufferForPlaybackUs = Math.min(parameters.targetLiveOffsetUs / 2, bufferForPlaybackUs);
+        }
+        if (bufferForPlaybackUs <= 0 || playoutDurationForMediaDuration >= bufferForPlaybackUs) {
             return true;
         }
-        return !this.prioritizeTimeOverSizeThresholds && this.allocator.getTotalBytesAllocated() >= calculateTotalTargetBufferBytes();
+        return !prioritizeTimeOverSizeThresholds(isLocalPlayback) && getTotalBufferBytesAllocated(parameters.playerId) >= getTargetBufferBytes(parameters.playerId);
     }
 
     @Override // androidx.media3.exoplayer.LoadControl
-    public boolean shouldContinuePreloading(Timeline timeline, MediaSource.MediaPeriodId mediaPeriodId, long j) {
+    public boolean shouldContinuePreloading(PlayerId playerId, Timeline timeline, MediaSource.MediaPeriodId mediaPeriodId, long j) {
         for (PlayerLoadingState playerLoadingState : this.loadingStates.values()) {
             if (playerLoadingState.isLoading) {
                 return false;
@@ -227,19 +386,19 @@ public class DefaultLoadControl implements LoadControl {
         return true;
     }
 
-    protected int calculateTargetBufferBytes(ExoTrackSelection[] exoTrackSelectionArr) {
+    protected int calculateTargetBufferBytes(LoadControl.Parameters parameters, ExoTrackSelection[] exoTrackSelectionArr) {
+        int calculateTargetBufferBytes = calculateTargetBufferBytes(exoTrackSelectionArr);
+        if (calculateTargetBufferBytes != -1) {
+            return calculateTargetBufferBytes;
+        }
+        boolean isLocalPlayback = isLocalPlayback(parameters);
         int i = 0;
         for (ExoTrackSelection exoTrackSelection : exoTrackSelectionArr) {
             if (exoTrackSelection != null) {
-                i += getDefaultBufferSize(exoTrackSelection.getTrackGroup().type);
+                i += getDefaultBufferSize(exoTrackSelection.getTrackGroup().type, isLocalPlayback);
             }
         }
-        return Math.max(13107200, i);
-    }
-
-    @Deprecated
-    protected final int calculateTargetBufferBytes(Renderer[] rendererArr, ExoTrackSelection[] exoTrackSelectionArr) {
-        return calculateTargetBufferBytes(exoTrackSelectionArr);
+        return Util.constrainValue(i, 13107200, (int) DEFAULT_MAX_BUFFER_SIZE);
     }
 
     int calculateTotalTargetBufferBytes() {
@@ -251,18 +410,31 @@ public class DefaultLoadControl implements LoadControl {
     }
 
     private void resetPlayerLoadingState(PlayerId playerId) {
-        PlayerLoadingState playerLoadingState = (PlayerLoadingState) Assertions.checkNotNull(this.loadingStates.get(playerId));
-        int i = this.targetBufferBytesOverwrite;
-        if (i == -1) {
-            i = 13107200;
+        PlayerLoadingState playerLoadingState = (PlayerLoadingState) Preconditions.checkNotNull(this.loadingStates.get(playerId));
+        int targetBufferBytesOverwrite = getTargetBufferBytesOverwrite(playerId);
+        if (targetBufferBytesOverwrite == -1) {
+            targetBufferBytesOverwrite = 13107200;
         }
-        playerLoadingState.targetBufferBytes = i;
+        playerLoadingState.targetBufferBytes = targetBufferBytesOverwrite;
         playerLoadingState.isLoading = false;
     }
 
+    private int getTargetBufferBytesOverwrite(PlayerId playerId) {
+        Integer num = this.playerTargetBufferBytesOverwrites.get(playerId.name);
+        if (num != null && num.intValue() != -1) {
+            return num.intValue();
+        }
+        return this.targetBufferBytesOverwrite;
+    }
+
     private void removePlayer(PlayerId playerId) {
-        if (this.loadingStates.remove(playerId) != null) {
-            updateAllocator();
+        PlayerLoadingState playerLoadingState = this.loadingStates.get(playerId);
+        if (playerLoadingState != null) {
+            playerLoadingState.referenceCount--;
+            if (playerLoadingState.referenceCount == 0) {
+                this.loadingStates.remove(playerId);
+                updateAllocator();
+            }
         }
     }
 
@@ -274,7 +446,7 @@ public class DefaultLoadControl implements LoadControl {
         }
     }
 
-    private static int getDefaultBufferSize(int i) {
+    private static int getDefaultBufferSize(int i, boolean z) {
         switch (i) {
             case -2:
                 return 0;
@@ -285,7 +457,7 @@ public class DefaultLoadControl implements LoadControl {
             case 1:
                 return 13107200;
             case 2:
-                return DEFAULT_VIDEO_BUFFER_SIZE;
+                return z ? DEFAULT_VIDEO_BUFFER_SIZE_FOR_LOCAL_PLAYBACK : DEFAULT_VIDEO_BUFFER_SIZE;
             case 3:
                 return 131072;
             case 4:
@@ -298,18 +470,137 @@ public class DefaultLoadControl implements LoadControl {
         }
     }
 
+    private boolean isLocalPlayback(LoadControl.Parameters parameters) {
+        MediaItem mediaItem = parameters.timeline.getWindow(parameters.timeline.getPeriodByUid(parameters.mediaPeriodId.periodUid, this.period).windowIndex, this.window).mediaItem;
+        if (mediaItem.localConfiguration == null) {
+            return false;
+        }
+        String scheme = mediaItem.localConfiguration.uri.getScheme();
+        return TextUtils.isEmpty(scheme) || LOCAL_PLAYBACK_SCHEMES.contains(scheme);
+    }
+
+    private long getMinBufferUs(boolean z) {
+        return z ? this.minBufferForLocalPlaybackUs : this.minBufferUs;
+    }
+
+    private long getMaxBufferUs(boolean z) {
+        return z ? this.maxBufferForLocalPlaybackUs : this.maxBufferUs;
+    }
+
+    private long getBufferForPlaybackUs(boolean z) {
+        return z ? this.bufferForPlaybackForLocalPlaybackUs : this.bufferForPlaybackUs;
+    }
+
+    private long getBufferForPlaybackAfterRebufferUs(boolean z) {
+        if (z) {
+            return this.bufferForPlaybackAfterRebufferForLocalPlaybackUs;
+        }
+        return this.bufferForPlaybackAfterRebufferUs;
+    }
+
+    private boolean prioritizeTimeOverSizeThresholds(boolean z) {
+        if (z) {
+            return this.prioritizeTimeOverSizeThresholdsForLocalPlayback;
+        }
+        return this.prioritizeTimeOverSizeThresholds;
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     public static void assertGreaterOrEqual(int i, int i2, String str, String str2) {
-        Assertions.checkArgument(i >= i2, str + " cannot be less than " + str2);
+        Preconditions.checkArgument(i >= i2, "%s cannot be less than %s", str, str2);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public int getTotalBufferBytesAllocated(PlayerId playerId) {
+        return ((PlayerLoadingState) Preconditions.checkNotNull(this.loadingStates.get(playerId))).getAllocatedCounts() * this.allocator.getIndividualAllocationLength();
+    }
+
+    private int getTargetBufferBytes(PlayerId playerId) {
+        return ((PlayerLoadingState) Preconditions.checkNotNull(this.loadingStates.get(playerId))).targetBufferBytes;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes.dex */
     public static class PlayerLoadingState {
+        private int allocatedCounts;
         public boolean isLoading;
+        public int referenceCount = 1;
         public int targetBufferBytes;
 
-        private PlayerLoadingState() {
+        public synchronized void increaseAllocatedCounts() {
+            this.allocatedCounts++;
+        }
+
+        public synchronized void decreaseAllocatedCounts() {
+            this.allocatedCounts--;
+        }
+
+        public synchronized int getAllocatedCounts() {
+            return this.allocatedCounts;
+        }
+    }
+
+    /* loaded from: classes.dex */
+    private final class PlayerIdFilteringAllocatorImpl implements PlayerIdAwareAllocator {
+        private final HashMap<Allocation, PlayerId> allocationPlayerIdMap = new HashMap<>();
+        private PlayerId playerId;
+
+        public PlayerIdFilteringAllocatorImpl(PlayerId playerId) {
+            this.playerId = playerId;
+        }
+
+        @Override // androidx.media3.exoplayer.upstream.PlayerIdAwareAllocator
+        public synchronized void setPlayerId(PlayerId playerId) {
+            this.playerId = playerId;
+        }
+
+        @Override // androidx.media3.exoplayer.upstream.Allocator
+        public synchronized Allocation allocate() {
+            Allocation allocate;
+            allocate = DefaultLoadControl.this.allocator.allocate();
+            this.allocationPlayerIdMap.put(allocate, this.playerId);
+            PlayerLoadingState playerLoadingState = (PlayerLoadingState) DefaultLoadControl.this.loadingStates.get(this.playerId);
+            if (playerLoadingState != null) {
+                playerLoadingState.increaseAllocatedCounts();
+            }
+            return allocate;
+        }
+
+        @Override // androidx.media3.exoplayer.upstream.Allocator
+        public synchronized void release(Allocation allocation) {
+            DefaultLoadControl.this.allocator.release(allocation);
+            releaseInternal(allocation);
+        }
+
+        @Override // androidx.media3.exoplayer.upstream.Allocator
+        public synchronized void release(Allocator.AllocationNode allocationNode) {
+            DefaultLoadControl.this.allocator.release(allocationNode);
+            while (allocationNode != null) {
+                releaseInternal(allocationNode.getAllocation());
+                allocationNode = allocationNode.next();
+            }
+        }
+
+        @Override // androidx.media3.exoplayer.upstream.Allocator
+        public synchronized void trim() {
+            DefaultLoadControl.this.allocator.trim();
+        }
+
+        @Override // androidx.media3.exoplayer.upstream.PlayerIdAwareAllocator, androidx.media3.exoplayer.upstream.Allocator
+        public synchronized int getTotalBytesAllocated() {
+            return DefaultLoadControl.this.getTotalBufferBytesAllocated(this.playerId);
+        }
+
+        @Override // androidx.media3.exoplayer.upstream.Allocator
+        public synchronized int getIndividualAllocationLength() {
+            return DefaultLoadControl.this.allocator.getIndividualAllocationLength();
+        }
+
+        private void releaseInternal(Allocation allocation) {
+            PlayerLoadingState playerLoadingState = (PlayerLoadingState) DefaultLoadControl.this.loadingStates.get((PlayerId) Preconditions.checkNotNull(this.allocationPlayerIdMap.remove(allocation)));
+            if (playerLoadingState != null) {
+                playerLoadingState.decreaseAllocatedCounts();
+            }
         }
     }
 }

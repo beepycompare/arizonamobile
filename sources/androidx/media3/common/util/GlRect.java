@@ -1,4 +1,6 @@
 package androidx.media3.common.util;
+
+import com.google.common.base.Preconditions;
 /* loaded from: classes2.dex */
 public final class GlRect {
     public int bottom;
@@ -11,7 +13,7 @@ public final class GlRect {
     }
 
     public GlRect(int i, int i2, int i3, int i4) {
-        Assertions.checkArgument(i <= i3 && i2 <= i4);
+        Preconditions.checkArgument(i <= i3 && i2 <= i4);
         this.left = i;
         this.bottom = i2;
         this.right = i3;

@@ -2,13 +2,13 @@ package androidx.media3.extractor.ts;
 
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.container.ReorderingBufferQueue;
 import androidx.media3.extractor.CeaUtil;
 import androidx.media3.extractor.ExtractorOutput;
 import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.ts.TsPayloadReader;
+import com.google.common.base.Preconditions;
 import java.util.List;
 /* loaded from: classes3.dex */
 public final class SeiReader {
@@ -18,7 +18,7 @@ public final class SeiReader {
     private final ReorderingBufferQueue reorderingBufferQueue = new ReorderingBufferQueue(new ReorderingBufferQueue.OutputConsumer() { // from class: androidx.media3.extractor.ts.SeiReader$$ExternalSyntheticLambda0
         @Override // androidx.media3.container.ReorderingBufferQueue.OutputConsumer
         public final void consume(long j, ParsableByteArray parsableByteArray) {
-            SeiReader.this.m9067lambda$new$0$androidxmedia3extractortsSeiReader(j, parsableByteArray);
+            SeiReader.this.m9082lambda$new$0$androidxmedia3extractortsSeiReader(j, parsableByteArray);
         }
     });
 
@@ -30,7 +30,7 @@ public final class SeiReader {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$androidx-media3-extractor-ts-SeiReader  reason: not valid java name */
-    public /* synthetic */ void m9067lambda$new$0$androidxmedia3extractortsSeiReader(long j, ParsableByteArray parsableByteArray) {
+    public /* synthetic */ void m9082lambda$new$0$androidxmedia3extractortsSeiReader(long j, ParsableByteArray parsableByteArray) {
         CeaUtil.consume(j, parsableByteArray, this.outputs);
     }
 
@@ -40,7 +40,7 @@ public final class SeiReader {
             TrackOutput track = extractorOutput.track(trackIdGenerator.getTrackId(), 3);
             Format format = this.closedCaptionFormats.get(i);
             String str = format.sampleMimeType;
-            Assertions.checkArgument(MimeTypes.APPLICATION_CEA608.equals(str) || MimeTypes.APPLICATION_CEA708.equals(str), "Invalid closed caption MIME type provided: " + str);
+            Preconditions.checkArgument(MimeTypes.APPLICATION_CEA608.equals(str) || MimeTypes.APPLICATION_CEA708.equals(str), "Invalid closed caption MIME type provided: %s", str);
             track.format(new Format.Builder().setId(format.id != null ? format.id : trackIdGenerator.getFormatId()).setContainerMimeType(this.containerMimeType).setSampleMimeType(str).setSelectionFlags(format.selectionFlags).setLanguage(format.language).setAccessibilityChannel(format.accessibilityChannel).setInitializationData(format.initializationData).build());
             this.outputs[i] = track;
         }

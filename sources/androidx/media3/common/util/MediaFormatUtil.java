@@ -1,6 +1,7 @@
 package androidx.media3.common.util;
 
 import android.media.MediaFormat;
+import android.os.Build;
 import androidx.media3.common.ColorInfo;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
@@ -26,12 +27,12 @@ public final class MediaFormatUtil {
     }
 
     private static boolean isValidColorTransfer(int i) {
-        return i == 1 || i == 3 || i == 6 || i == 7 || i == -1;
+        return i == 1 || i == 3 || i == 2 || i == 6 || i == 7 || i == -1;
     }
 
     public static Format createFormatFromMediaFormat(MediaFormat mediaFormat) {
         int i = 0;
-        Format.Builder pcmEncoding = new Format.Builder().setSampleMimeType(mediaFormat.getString("mime")).setLanguage(mediaFormat.getString("language")).setPeakBitrate(getInteger(mediaFormat, KEY_MAX_BIT_RATE, -1)).setAverageBitrate(getInteger(mediaFormat, "bitrate", -1)).setCodecs(getCodecString(mediaFormat)).setFrameRate(getFrameRate(mediaFormat, -1.0f)).setWidth(getInteger(mediaFormat, "width", -1)).setHeight(getInteger(mediaFormat, "height", -1)).setPixelWidthHeightRatio(getPixelWidthHeightRatio(mediaFormat, 1.0f)).setMaxInputSize(getInteger(mediaFormat, "max-input-size", -1)).setRotationDegrees(getInteger(mediaFormat, "rotation-degrees", 0)).setColorInfo(getColorInfo(mediaFormat)).setSampleRate(getInteger(mediaFormat, "sample-rate", -1)).setChannelCount(getInteger(mediaFormat, "channel-count", -1)).setPcmEncoding(getInteger(mediaFormat, "pcm-encoding", -1));
+        Format.Builder pcmEncoding = new Format.Builder().setSampleMimeType(mediaFormat.getString("mime")).setLanguage(mediaFormat.getString("language")).setPeakBitrate(getInteger(mediaFormat, KEY_MAX_BIT_RATE, -1)).setAverageBitrate(getInteger(mediaFormat, "bitrate", -1)).setCodecs(getCodecString(mediaFormat)).setFrameRate(getFloatFromIntOrFloat(mediaFormat, "frame-rate", -1.0f)).setWidth(getInteger(mediaFormat, "width", -1)).setHeight(getInteger(mediaFormat, "height", -1)).setPixelWidthHeightRatio(getPixelWidthHeightRatio(mediaFormat, 1.0f)).setMaxInputSize(getInteger(mediaFormat, "max-input-size", -1)).setRotationDegrees(getInteger(mediaFormat, "rotation-degrees", 0)).setColorInfo(getColorInfo(mediaFormat)).setSampleRate(getInteger(mediaFormat, "sample-rate", -1)).setChannelCount(getInteger(mediaFormat, "channel-count", -1)).setPcmEncoding(getInteger(mediaFormat, "pcm-encoding", -1));
         ImmutableList.Builder builder = new ImmutableList.Builder();
         while (true) {
             ByteBuffer byteBuffer = mediaFormat.getByteBuffer("csd-" + i);
@@ -56,6 +57,10 @@ public final class MediaFormatUtil {
         maybeSetInteger(mediaFormat, "bitrate", format.bitrate);
         maybeSetInteger(mediaFormat, KEY_MAX_BIT_RATE, format.peakBitrate);
         maybeSetInteger(mediaFormat, "channel-count", format.channelCount);
+        int audioTrackChannelConfig = Util.getAudioTrackChannelConfig(format.channelCount);
+        if (audioTrackChannelConfig != 0) {
+            mediaFormat.setInteger("channel-mask", audioTrackChannelConfig);
+        }
         maybeSetColorInfo(mediaFormat, format.colorInfo);
         maybeSetString(mediaFormat, "mime", format.sampleMimeType);
         maybeSetString(mediaFormat, "codecs-string", format.codecs);
@@ -157,6 +162,26 @@ public final class MediaFormatUtil {
         return mediaFormat.containsKey(str) ? mediaFormat.getString(str) : str2;
     }
 
+    public static float getFloatFromIntOrFloat(MediaFormat mediaFormat, String str, float f) {
+        int integer;
+        if (mediaFormat.containsKey(str)) {
+            if (Build.VERSION.SDK_INT >= 29) {
+                if (mediaFormat.getValueTypeForKey(str) == 3) {
+                    return mediaFormat.getFloat(str);
+                }
+                integer = mediaFormat.getInteger(str);
+            } else {
+                try {
+                    return mediaFormat.getFloat(str);
+                } catch (ClassCastException unused) {
+                    integer = mediaFormat.getInteger(str);
+                }
+            }
+            return integer;
+        }
+        return f;
+    }
+
     private static String getCodecString(MediaFormat mediaFormat) {
         if (Objects.equals(mediaFormat.getString("mime"), MimeTypes.VIDEO_H263) && mediaFormat.containsKey(Scopes.PROFILE) && mediaFormat.containsKey(FirebaseAnalytics.Param.LEVEL)) {
             return CodecSpecificDataUtil.buildH263CodecString(mediaFormat.getInteger(Scopes.PROFILE), mediaFormat.getInteger(FirebaseAnalytics.Param.LEVEL));
@@ -165,17 +190,6 @@ public final class MediaFormatUtil {
             return CodecSpecificDataUtil.buildDolbyVisionCodecString(CodecSpecificDataUtil.dolbyVisionConstantToProfileNumber(mediaFormat.getInteger(Scopes.PROFILE)), CodecSpecificDataUtil.dolbyVisionConstantToLevelNumber(mediaFormat.getInteger(FirebaseAnalytics.Param.LEVEL)));
         }
         return getString(mediaFormat, "codecs-string", null);
-    }
-
-    private static float getFrameRate(MediaFormat mediaFormat, float f) {
-        if (mediaFormat.containsKey("frame-rate")) {
-            try {
-                return mediaFormat.getFloat("frame-rate");
-            } catch (ClassCastException unused) {
-                return mediaFormat.getInteger("frame-rate");
-            }
-        }
-        return f;
     }
 
     private static float getPixelWidthHeightRatio(MediaFormat mediaFormat, float f) {

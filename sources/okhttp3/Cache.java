@@ -266,7 +266,7 @@ public final class Cache implements Closeable, Flushable {
 
     @Deprecated(level = DeprecationLevel.ERROR, message = "moved to val", replaceWith = @ReplaceWith(expression = "directory", imports = {}))
     /* renamed from: -deprecated_directory  reason: not valid java name */
-    public final File m11987deprecated_directory() {
+    public final File m12025deprecated_directory() {
         return this.cache.getDirectory().toFile();
     }
 

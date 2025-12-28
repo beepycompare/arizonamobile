@@ -9,8 +9,11 @@ import androidx.media3.common.ColorInfo;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.exoplayer.analytics.AnalyticsListener;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
+import java.nio.ByteBuffer;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -18,6 +21,7 @@ import java.util.regex.Pattern;
 /* loaded from: classes2.dex */
 public final class CodecSpecificDataUtil {
     private static final String CODEC_ID_AC4 = "ac-4";
+    private static final String CODEC_ID_APV1 = "apv1";
     private static final String CODEC_ID_AV01 = "av01";
     private static final String CODEC_ID_AVC1 = "avc1";
     private static final String CODEC_ID_AVC2 = "avc2";
@@ -28,6 +32,8 @@ public final class CodecSpecificDataUtil {
     private static final String CODEC_ID_MP4A = "mp4a";
     private static final String CODEC_ID_VP09 = "vp09";
     private static final int EXTENDED_PAR = 15;
+    private static final int OBU_IA_CODEC_CONFIG = 0;
+    private static final int OBU_IA_SEQUENCE_HEADER = 31;
     private static final int RECTANGULAR = 0;
     private static final String TAG = "CodecSpecificDataUtil";
     private static final int VISUAL_OBJECT_LAYER = 1;
@@ -292,12 +298,14 @@ public final class CodecSpecificDataUtil {
         return 1;
     }
 
-    public static Pair<Integer, Integer> parseAlacAudioSpecificConfig(byte[] bArr) {
+    public static int[] parseAlacAudioSpecificConfig(byte[] bArr) {
         ParsableByteArray parsableByteArray = new ParsableByteArray(bArr);
-        parsableByteArray.setPosition(9);
+        parsableByteArray.setPosition(5);
         int readUnsignedByte = parsableByteArray.readUnsignedByte();
+        parsableByteArray.setPosition(9);
+        int readUnsignedByte2 = parsableByteArray.readUnsignedByte();
         parsableByteArray.setPosition(20);
-        return Pair.create(Integer.valueOf(parsableByteArray.readUnsignedIntToInt()), Integer.valueOf(readUnsignedByte));
+        return new int[]{parsableByteArray.readUnsignedIntToInt(), readUnsignedByte2, readUnsignedByte};
     }
 
     public static List<byte[]> buildCea708InitializationData(boolean z) {
@@ -306,26 +314,46 @@ public final class CodecSpecificDataUtil {
 
     public static String buildIamfCodecString(byte[] bArr) {
         ParsableByteArray parsableByteArray = new ParsableByteArray(bArr);
-        parsableByteArray.skipLeb128();
-        parsableByteArray.skipBytes(4);
-        int readUnsignedByte = parsableByteArray.readUnsignedByte();
-        int readUnsignedByte2 = parsableByteArray.readUnsignedByte();
-        parsableByteArray.skipBytes(1);
-        parsableByteArray.skipLeb128();
-        parsableByteArray.skipLeb128();
-        String readString = parsableByteArray.readString(4);
-        if (readString.equals(CODEC_ID_MP4A)) {
-            parsableByteArray.skipLeb128();
-            parsableByteArray.skipBytes(2);
-            ParsableBitArray parsableBitArray = new ParsableBitArray();
-            parsableBitArray.reset(parsableByteArray);
-            int readBits = parsableBitArray.readBits(5);
-            if (readBits == 31) {
-                readBits = parsableBitArray.readBits(6) + 32;
+        String str = null;
+        String str2 = null;
+        while (parsableByteArray.bytesLeft() > 0 && (str == null || str2 == null)) {
+            int readUnsignedByte = parsableByteArray.readUnsignedByte();
+            int i = readUnsignedByte >> 3;
+            boolean z = (readUnsignedByte & 2) != 0;
+            boolean z2 = (readUnsignedByte & 1) != 0;
+            int readUnsignedLeb128ToInt = parsableByteArray.readUnsignedLeb128ToInt();
+            if (i > 4 && i < 24 && z) {
+                parsableByteArray.skipLeb128();
+                parsableByteArray.skipLeb128();
             }
-            readString = readString + ".40." + readBits;
+            if (z2) {
+                parsableByteArray.skipBytes(parsableByteArray.readUnsignedLeb128ToInt());
+            }
+            int position = parsableByteArray.getPosition() + readUnsignedLeb128ToInt;
+            if (i == 31) {
+                parsableByteArray.skipBytes(4);
+                str = Util.formatInvariant("iamf.%03X.%03X", Integer.valueOf(parsableByteArray.readUnsignedByte()), Integer.valueOf(parsableByteArray.readUnsignedByte()));
+            } else if (i == 0) {
+                parsableByteArray.skipLeb128();
+                str2 = parsableByteArray.readString(4);
+                if (str2.equals(CODEC_ID_MP4A)) {
+                    parsableByteArray.skipLeb128();
+                    parsableByteArray.skipBytes(2);
+                    ParsableBitArray parsableBitArray = new ParsableBitArray();
+                    parsableBitArray.reset(parsableByteArray);
+                    int readBits = parsableBitArray.readBits(5);
+                    if (readBits == 31) {
+                        readBits = parsableBitArray.readBits(6) + 32;
+                    }
+                    str2 = str2 + ".40." + readBits;
+                }
+            }
+            parsableByteArray.setPosition(position);
         }
-        return Util.formatInvariant("iamf.%03X.%03X.%s", Integer.valueOf(readUnsignedByte), Integer.valueOf(readUnsignedByte2), readString);
+        if (str == null || str2 == null) {
+            return null;
+        }
+        return str + "." + str2;
     }
 
     public static boolean parseCea708InitializationData(List<byte[]> list) {
@@ -334,6 +362,33 @@ public final class CodecSpecificDataUtil {
 
     public static ImmutableList<byte[]> buildVp9CodecPrivateInitializationData(byte b, byte b2, byte b3, byte b4) {
         return ImmutableList.of(new byte[]{1, 1, b, 2, 1, b2, 3, 1, b3, 4, 1, b4});
+    }
+
+    public static ByteBuffer getVorbisInitializationData(Format format) {
+        Preconditions.checkArgument(format.initializationData.size() > 1, "csd-0 and csd-1 must be present for Vorbis.");
+        byte[] bArr = format.initializationData.get(0);
+        byte[] bArr2 = format.initializationData.get(1);
+        int length = bArr.length;
+        int length2 = bArr2.length;
+        byte[] xiphLaceEnc = xiphLaceEnc(length);
+        byte[] xiphLaceEnc2 = xiphLaceEnc(23);
+        ByteBuffer allocate = ByteBuffer.allocate(xiphLaceEnc.length + 1 + xiphLaceEnc2.length + length + 23 + length2);
+        allocate.put((byte) 2);
+        allocate.put(xiphLaceEnc);
+        allocate.put(xiphLaceEnc2);
+        allocate.put(bArr);
+        allocate.put(new byte[]{3, 118, 111, 114, 98, 105, 115, 7, 0, 0, 0, 97, 110, 100, 114, 111, 105, 100, 0, 0, 0, 0, 1});
+        allocate.put(bArr2);
+        allocate.flip();
+        return allocate;
+    }
+
+    private static byte[] xiphLaceEnc(int i) {
+        int i2 = i / 255;
+        byte[] bArr = new byte[i2 + 1];
+        Arrays.fill(bArr, (byte) -1);
+        bArr[i2] = (byte) (i % 255);
+        return bArr;
     }
 
     public static byte[] buildDolbyVisionInitializationData(int i, int i2) {
@@ -386,7 +441,7 @@ public final class CodecSpecificDataUtil {
                 i2++;
             }
         }
-        Assertions.checkArgument(z, "Invalid input: VOL not found.");
+        Preconditions.checkArgument(z, "Invalid input: VOL not found.");
         ParsableBitArray parsableBitArray = new ParsableBitArray(bArr);
         parsableBitArray.skipBits((i2 + 4) * 8);
         parsableBitArray.skipBits(1);
@@ -406,22 +461,22 @@ public final class CodecSpecificDataUtil {
                 parsableBitArray.skipBits(79);
             }
         }
-        Assertions.checkArgument(parsableBitArray.readBits(2) == 0, "Only supports rectangular video object layer shape.");
-        Assertions.checkArgument(parsableBitArray.readBit());
+        Preconditions.checkArgument(parsableBitArray.readBits(2) == 0, "Only supports rectangular video object layer shape.");
+        Preconditions.checkArgument(parsableBitArray.readBit());
         int readBits = parsableBitArray.readBits(16);
-        Assertions.checkArgument(parsableBitArray.readBit());
+        Preconditions.checkArgument(parsableBitArray.readBit());
         if (parsableBitArray.readBit()) {
-            Assertions.checkArgument(readBits > 0);
+            Preconditions.checkArgument(readBits > 0);
             for (int i4 = readBits - 1; i4 > 0; i4 >>= 1) {
                 i++;
             }
             parsableBitArray.skipBits(i);
         }
-        Assertions.checkArgument(parsableBitArray.readBit());
+        Preconditions.checkArgument(parsableBitArray.readBit());
         int readBits2 = parsableBitArray.readBits(13);
-        Assertions.checkArgument(parsableBitArray.readBit());
+        Preconditions.checkArgument(parsableBitArray.readBit());
         int readBits3 = parsableBitArray.readBits(13);
-        Assertions.checkArgument(parsableBitArray.readBit());
+        Preconditions.checkArgument(parsableBitArray.readBit());
         parsableBitArray.skipBits(1);
         return Pair.create(Integer.valueOf(readBits2), Integer.valueOf(readBits3));
     }
@@ -442,6 +497,13 @@ public final class CodecSpecificDataUtil {
         return sb.toString();
     }
 
+    public static String buildApvCodecString(byte[] bArr) {
+        Preconditions.checkArgument(bArr.length >= 17, "Invalid APV CSD length: %s", bArr.length);
+        byte b = bArr[0];
+        Preconditions.checkArgument(b == 1, "Invalid APV CSD version: %s", (int) b);
+        return Util.formatInvariant("apv1.apvf%d.apvl%d.apvb%d", Integer.valueOf(bArr[5]), Integer.valueOf(bArr[6]), Integer.valueOf(bArr[7]));
+    }
+
     public static String buildH263CodecString(int i, int i2) {
         return Util.formatInvariant("s263.%d.%d", Integer.valueOf(i), Integer.valueOf(i2));
     }
@@ -457,7 +519,7 @@ public final class CodecSpecificDataUtil {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:49:0x009c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:53:0x00a9, code lost:
         if (r3.equals(androidx.media3.common.util.CodecSpecificDataUtil.CODEC_ID_AC4) == false) goto L11;
      */
     /*
@@ -477,65 +539,72 @@ public final class CodecSpecificDataUtil {
         switch (str.hashCode()) {
             case 2986313:
                 break;
+            case 3001066:
+                if (str.equals(CODEC_ID_APV1)) {
+                    c = 1;
+                    break;
+                }
+                c = 65535;
+                break;
             case 3004662:
                 if (str.equals(CODEC_ID_AV01)) {
-                    c = 1;
+                    c = 2;
                     break;
                 }
                 c = 65535;
                 break;
             case 3006243:
                 if (str.equals(CODEC_ID_AVC1)) {
-                    c = 2;
+                    c = 3;
                     break;
                 }
                 c = 65535;
                 break;
             case 3006244:
                 if (str.equals(CODEC_ID_AVC2)) {
-                    c = 3;
+                    c = 4;
                     break;
                 }
                 c = 65535;
                 break;
             case 3199032:
                 if (str.equals(CODEC_ID_HEV1)) {
-                    c = 4;
+                    c = 5;
                     break;
                 }
                 c = 65535;
                 break;
             case 3214780:
                 if (str.equals(CODEC_ID_HVC1)) {
-                    c = 5;
+                    c = 6;
                     break;
                 }
                 c = 65535;
                 break;
             case 3224753:
                 if (str.equals(CODEC_ID_IAMF)) {
-                    c = 6;
+                    c = 7;
                     break;
                 }
                 c = 65535;
                 break;
             case 3356560:
                 if (str.equals(CODEC_ID_MP4A)) {
-                    c = 7;
+                    c = '\b';
                     break;
                 }
                 c = 65535;
                 break;
             case 3475740:
                 if (str.equals(CODEC_ID_H263)) {
-                    c = '\b';
+                    c = '\t';
                     break;
                 }
                 c = 65535;
                 break;
             case 3624515:
                 if (str.equals(CODEC_ID_VP09)) {
-                    c = '\t';
+                    c = '\n';
                     break;
                 }
                 c = 65535;
@@ -548,20 +617,22 @@ public final class CodecSpecificDataUtil {
             case 0:
                 return getAc4CodecProfileAndLevel(format.codecs, split);
             case 1:
-                return getAv1ProfileAndLevel(format.codecs, split, format.colorInfo);
+                return getApvProfileAndLevel(format.codecs, split);
             case 2:
+                return getAv1ProfileAndLevel(format.codecs, split, format.colorInfo);
             case 3:
-                return getAvcProfileAndLevel(format.codecs, split);
             case 4:
+                return getAvcProfileAndLevel(format.codecs, split);
             case 5:
-                return getHevcProfileAndLevel(format.codecs, split, format.colorInfo);
             case 6:
-                return getIamfCodecProfileAndLevel(format.codecs, split);
+                return getHevcProfileAndLevel(format.codecs, split, format.colorInfo);
             case 7:
-                return getAacCodecProfileAndLevel(format.codecs, split);
+                return getIamfCodecProfileAndLevel(format.codecs, split);
             case '\b':
-                return getH263ProfileAndLevel(format.codecs, split);
+                return getAacCodecProfileAndLevel(format.codecs, split);
             case '\t':
+                return getH263ProfileAndLevel(format.codecs, split);
+            case '\n':
                 return getVp9ProfileAndLevel(format.codecs, split);
             default:
                 return null;
@@ -859,6 +930,35 @@ public final class CodecSpecificDataUtil {
             }
         } catch (NumberFormatException unused) {
             Log.w(TAG, "Ignoring malformed AV1 codec string: " + str);
+            return null;
+        }
+    }
+
+    private static Pair<Integer, Integer> getApvProfileAndLevel(String str, String[] strArr) {
+        int i;
+        if (strArr.length < 4) {
+            Log.w(TAG, "Ignoring malformed APV codec string: " + str);
+            return null;
+        }
+        try {
+            int parseInt = Integer.parseInt(strArr[1].substring(4));
+            int parseInt2 = Integer.parseInt(strArr[2].substring(4));
+            int parseInt3 = Integer.parseInt(strArr[3].substring(4));
+            if (parseInt == 33) {
+                i = 1;
+            } else if (parseInt != 44) {
+                Log.w(TAG, "Ignoring invalid APV profile: " + parseInt);
+                return null;
+            } else {
+                i = 8192;
+            }
+            int i2 = (parseInt2 / 30) * 2;
+            if (parseInt2 % 30 == 0) {
+                i2--;
+            }
+            return new Pair<>(Integer.valueOf(i), Integer.valueOf((1 << parseInt3) | (256 << (i2 - 1))));
+        } catch (NumberFormatException e) {
+            Log.w(TAG, "Ignoring malformed APV codec string: " + str, e);
             return null;
         }
     }

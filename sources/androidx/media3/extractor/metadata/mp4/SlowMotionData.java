@@ -1,9 +1,9 @@
 package androidx.media3.extractor.metadata.mp4;
 
 import androidx.media3.common.Metadata;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.metadata.mp4.SlowMotionData;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ComparisonChain;
 import java.util.Comparator;
 import java.util.List;
@@ -27,7 +27,7 @@ public final class SlowMotionData implements Metadata.Entry {
         public final long startTimeMs;
 
         public Segment(long j, long j2, int i) {
-            Assertions.checkArgument(j < j2);
+            Preconditions.checkArgument(j < j2);
             this.startTimeMs = j;
             this.endTimeMs = j2;
             this.speedDivisor = i;
@@ -57,7 +57,7 @@ public final class SlowMotionData implements Metadata.Entry {
 
     public SlowMotionData(List<Segment> list) {
         this.segments = list;
-        Assertions.checkArgument(!doSegmentsOverlap(list));
+        Preconditions.checkArgument(!doSegmentsOverlap(list));
     }
 
     public String toString() {

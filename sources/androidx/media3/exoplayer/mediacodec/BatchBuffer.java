@@ -1,7 +1,7 @@
 package androidx.media3.exoplayer.mediacodec;
 
-import androidx.media3.common.util.Assertions;
 import androidx.media3.decoder.DecoderInputBuffer;
+import com.google.common.base.Preconditions;
 import java.nio.ByteBuffer;
 /* loaded from: classes3.dex */
 final class BatchBuffer extends DecoderInputBuffer {
@@ -23,7 +23,7 @@ final class BatchBuffer extends DecoderInputBuffer {
     }
 
     public void setMaxSampleCount(int i) {
-        Assertions.checkArgument(i > 0);
+        Preconditions.checkArgument(i > 0);
         this.maxSampleCount = i;
     }
 
@@ -44,9 +44,9 @@ final class BatchBuffer extends DecoderInputBuffer {
     }
 
     public boolean append(DecoderInputBuffer decoderInputBuffer) {
-        Assertions.checkArgument(!decoderInputBuffer.isEncrypted());
-        Assertions.checkArgument(!decoderInputBuffer.hasSupplementalData());
-        Assertions.checkArgument(!decoderInputBuffer.isEndOfStream());
+        Preconditions.checkArgument(!decoderInputBuffer.isEncrypted());
+        Preconditions.checkArgument(!decoderInputBuffer.hasSupplementalData());
+        Preconditions.checkArgument(!decoderInputBuffer.isEndOfStream());
         if (canAppendSampleBuffer(decoderInputBuffer)) {
             int i = this.sampleCount;
             this.sampleCount = i + 1;

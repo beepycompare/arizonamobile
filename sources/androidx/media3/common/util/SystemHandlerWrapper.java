@@ -4,6 +4,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import androidx.media3.common.util.HandlerWrapper;
+import com.google.common.base.Preconditions;
 import java.util.ArrayList;
 import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -24,7 +25,7 @@ public final class SystemHandlerWrapper implements HandlerWrapper {
 
     @Override // androidx.media3.common.util.HandlerWrapper
     public boolean hasMessages(int i) {
-        Assertions.checkArgument(i != 0);
+        Preconditions.checkArgument(i != 0);
         return this.handler.hasMessages(i);
     }
 
@@ -70,8 +71,13 @@ public final class SystemHandlerWrapper implements HandlerWrapper {
 
     @Override // androidx.media3.common.util.HandlerWrapper
     public void removeMessages(int i) {
-        Assertions.checkArgument(i != 0);
+        Preconditions.checkArgument(i != 0);
         this.handler.removeMessages(i);
+    }
+
+    @Override // androidx.media3.common.util.HandlerWrapper
+    public void removeCallbacks(Runnable runnable) {
+        this.handler.removeCallbacks(runnable);
     }
 
     @Override // androidx.media3.common.util.HandlerWrapper
@@ -133,20 +139,20 @@ public final class SystemHandlerWrapper implements HandlerWrapper {
         }
 
         public boolean sendAtFrontOfQueue(Handler handler) {
-            boolean sendMessageAtFrontOfQueue = handler.sendMessageAtFrontOfQueue((Message) Assertions.checkNotNull(this.message));
+            boolean sendMessageAtFrontOfQueue = handler.sendMessageAtFrontOfQueue((Message) Preconditions.checkNotNull(this.message));
             recycle();
             return sendMessageAtFrontOfQueue;
         }
 
         @Override // androidx.media3.common.util.HandlerWrapper.Message
         public void sendToTarget() {
-            ((Message) Assertions.checkNotNull(this.message)).sendToTarget();
+            ((Message) Preconditions.checkNotNull(this.message)).sendToTarget();
             recycle();
         }
 
         @Override // androidx.media3.common.util.HandlerWrapper.Message
         public HandlerWrapper getTarget() {
-            return (HandlerWrapper) Assertions.checkNotNull(this.handler);
+            return (HandlerWrapper) Preconditions.checkNotNull(this.handler);
         }
 
         private void recycle() {

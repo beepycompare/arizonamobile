@@ -13,7 +13,7 @@ public final class Wi extends Sg {
         if (TextUtils.isEmpty(str)) {
             return false;
         }
-        this.f776a.c.j(str).b();
+        this.f777a.c.j(str).b();
         return false;
     }
 }

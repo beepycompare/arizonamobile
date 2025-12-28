@@ -9,33 +9,60 @@ import java.io.IOException;
 public final class Id3Peeker {
     private final ParsableByteArray scratch = new ParsableByteArray(10);
 
+    @Deprecated
     public Metadata peekId3Data(ExtractorInput extractorInput, Id3Decoder.FramePredicate framePredicate) throws IOException {
+        return peekId3Data(extractorInput, framePredicate, 0);
+    }
+
+    public Metadata peekId3Data(ExtractorInput extractorInput, Id3Decoder.FramePredicate framePredicate, int i) throws IOException {
         Metadata metadata = null;
-        int i = 0;
-        while (true) {
-            try {
-                extractorInput.peekFully(this.scratch.getData(), 0, 10);
-                this.scratch.setPosition(0);
-                if (this.scratch.readUnsignedInt24() != 4801587) {
-                    break;
-                }
-                this.scratch.skipBytes(3);
-                int readSynchSafeInt = this.scratch.readSynchSafeInt();
-                int i2 = readSynchSafeInt + 10;
-                if (metadata == null) {
-                    byte[] bArr = new byte[i2];
-                    System.arraycopy(this.scratch.getData(), 0, bArr, 0, 10);
-                    extractorInput.peekFully(bArr, 10, readSynchSafeInt);
-                    metadata = new Id3Decoder(framePredicate).decode(bArr, i2);
-                } else {
-                    extractorInput.advancePeekPosition(readSynchSafeInt);
-                }
-                i += i2;
-            } catch (EOFException unused) {
+        int i2 = 0;
+        while (peekId3HeaderIntoScratch(extractorInput, i)) {
+            int position = this.scratch.getPosition();
+            this.scratch.skipBytes(6);
+            int readSynchSafeInt = this.scratch.readSynchSafeInt();
+            int i3 = readSynchSafeInt + 10;
+            if (metadata == null) {
+                byte[] bArr = new byte[i3];
+                System.arraycopy(this.scratch.getData(), position, bArr, 0, 10);
+                extractorInput.peekFully(bArr, 10, readSynchSafeInt);
+                metadata = new Id3Decoder(framePredicate).decode(bArr, i3);
+            } else {
+                extractorInput.advancePeekPosition(readSynchSafeInt);
             }
+            i2 += i3;
         }
         extractorInput.resetPeekPosition();
-        extractorInput.advancePeekPosition(i);
+        extractorInput.advancePeekPosition(i2);
         return metadata;
+    }
+
+    private boolean peekId3HeaderIntoScratch(ExtractorInput extractorInput, int i) throws IOException {
+        int i2 = 0;
+        do {
+            int i3 = i2 % 10;
+            int i4 = i3 + 10;
+            if (i3 == 0 && i2 != 0) {
+                System.arraycopy(this.scratch.getData(), 10, this.scratch.getData(), 0, 9);
+            }
+            int i5 = i2 != 0 ? 1 : 10;
+            try {
+                extractorInput.peekFully(this.scratch.getData(), i4 - i5, i5);
+                this.scratch.setPosition(i3);
+                this.scratch.setLimit(i4);
+                if (this.scratch.peekUnsignedInt24() == 4801587) {
+                    return true;
+                }
+                if (MpegAudioUtil.getFrameSize(this.scratch.peekInt()) != -1) {
+                    return false;
+                }
+                if (i2 == 0) {
+                    this.scratch.ensureCapacity(20);
+                }
+                i2++;
+            } catch (EOFException unused) {
+            }
+        } while (i2 <= i);
+        return false;
     }
 }

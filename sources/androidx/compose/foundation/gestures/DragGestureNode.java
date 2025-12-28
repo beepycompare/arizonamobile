@@ -906,7 +906,7 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
                 startListeningForEvents();
             }
             this.previousPositionOnScreen = LayoutCoordinatesKt.positionOnScreen(DelegatableNodeKt.requireLayoutCoordinates(this));
-            requireChannel().mo9159trySendJP2dKIU(new DragEvent.DragStarted(m5183minusMKHz9U, null));
+            requireChannel().mo9174trySendJP2dKIU(new DragEvent.DragStarted(m5183minusMKHz9U, null));
         }
     }
 
@@ -918,7 +918,7 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
         }
         this.previousPositionOnScreen = positionOnScreen;
         VelocityTrackerKt.m6851addPointerInputChange0AR0LA0(requireVelocityTracker(), pointerInputChange, this.nodeOffset);
-        requireChannel().mo9159trySendJP2dKIU(new DragEvent.DragDelta(j, false, null));
+        requireChannel().mo9174trySendJP2dKIU(new DragEvent.DragDelta(j, false, null));
     }
 
     private final void sendDragStopped(PointerInputChange pointerInputChange) {
@@ -926,12 +926,12 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
         float maximumFlingVelocity = ((ViewConfiguration) CompositionLocalConsumerModifierNodeKt.currentValueOf(this, CompositionLocalsKt.getLocalViewConfiguration())).getMaximumFlingVelocity();
         long m6850calculateVelocityAH228Gc = requireVelocityTracker().m6850calculateVelocityAH228Gc(VelocityKt.Velocity(maximumFlingVelocity, maximumFlingVelocity));
         requireVelocityTracker().resetTracking();
-        requireChannel().mo9159trySendJP2dKIU(new DragEvent.DragStopped(DraggableKt.m568toValidVelocityTH1AsA0(m6850calculateVelocityAH228Gc), false, null));
+        requireChannel().mo9174trySendJP2dKIU(new DragEvent.DragStopped(DraggableKt.m568toValidVelocityTH1AsA0(m6850calculateVelocityAH228Gc), false, null));
         this.isListeningForPointerInputEvents = false;
     }
 
     private final void sendDragCancelled() {
-        requireChannel().mo9159trySendJP2dKIU(DragEvent.DragCancelled.INSTANCE);
+        requireChannel().mo9174trySendJP2dKIU(DragEvent.DragCancelled.INSTANCE);
     }
 
     public final void onDragEvent(DragEvent dragEvent) {
@@ -939,6 +939,6 @@ public abstract class DragGestureNode extends DelegatingNode implements PointerI
             this.isListeningForEvents = true;
             startListeningForEvents();
         }
-        requireChannel().mo9159trySendJP2dKIU(dragEvent);
+        requireChannel().mo9174trySendJP2dKIU(dragEvent);
     }
 }

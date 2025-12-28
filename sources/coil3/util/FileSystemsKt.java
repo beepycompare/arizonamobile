@@ -33,7 +33,7 @@ public final class FileSystemsKt {
     public static final Path createTempFile(FileSystem fileSystem) {
         Path resolve;
         do {
-            resolve = FileSystem.SYSTEM_TEMPORARY_DIRECTORY.resolve("tmp_" + ((Object) ULong.m10441toStringimpl(URandomKt.nextULong(Random.Default))));
+            resolve = FileSystem.SYSTEM_TEMPORARY_DIRECTORY.resolve("tmp_" + ((Object) ULong.m10469toStringimpl(URandomKt.nextULong(Random.Default))));
         } while (fileSystem.exists(resolve));
         createFile(fileSystem, resolve, true);
         return resolve;

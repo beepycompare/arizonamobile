@@ -3,16 +3,16 @@ package androidx.media3.exoplayer.source.ads;
 import androidx.media3.common.AdPlaybackState;
 import androidx.media3.common.C;
 import androidx.media3.common.Timeline;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.exoplayer.source.ForwardingTimeline;
+import com.google.common.base.Preconditions;
 /* loaded from: classes3.dex */
 public final class SinglePeriodAdTimeline extends ForwardingTimeline {
     private final AdPlaybackState adPlaybackState;
 
     public SinglePeriodAdTimeline(Timeline timeline, AdPlaybackState adPlaybackState) {
         super(timeline);
-        Assertions.checkState(timeline.getPeriodCount() == 1);
-        Assertions.checkState(timeline.getWindowCount() == 1);
+        Preconditions.checkState(timeline.getPeriodCount() == 1);
+        Preconditions.checkState(timeline.getWindowCount() == 1);
         this.adPlaybackState = adPlaybackState;
     }
 

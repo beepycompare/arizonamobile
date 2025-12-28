@@ -2,12 +2,12 @@ package androidx.media3.common;
 
 import android.content.Context;
 import android.os.Bundle;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.BundleCollectionUtil;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.trackselection.AdaptiveTrackSelection;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -51,15 +51,19 @@ public class TrackSelectionParameters {
     private static final String FIELD_MIN_VIDEO_FRAMERATE;
     private static final String FIELD_MIN_VIDEO_HEIGHT;
     private static final String FIELD_MIN_VIDEO_WIDTH;
+    private static final String FIELD_PREFERRED_AUDIO_LABELS;
     private static final String FIELD_PREFERRED_AUDIO_LANGUAGES;
     private static final String FIELD_PREFERRED_AUDIO_MIME_TYPES;
     private static final String FIELD_PREFERRED_AUDIO_ROLE_FLAGS;
+    private static final String FIELD_PREFERRED_TEXT_LABELS;
     private static final String FIELD_PREFERRED_TEXT_LANGUAGES;
     private static final String FIELD_PREFERRED_TEXT_ROLE_FLAGS;
+    private static final String FIELD_PREFERRED_VIDEO_LABELS;
     private static final String FIELD_PREFERRED_VIDEO_LANGUAGES;
     private static final String FIELD_PREFERRED_VIDEO_MIMETYPES;
     private static final String FIELD_PREFERRED_VIDEO_ROLE_FLAGS;
     private static final String FIELD_SELECTION_OVERRIDES;
+    private static final String FIELD_SELECT_TEXT_BY_DEFAULT;
     private static final String FIELD_SELECT_UNDETERMINED_TEXT_LANGUAGE;
     private static final String FIELD_USE_PREFERRED_TEXT_LANGUAGES_AND_ROLE_FLAGS_FROM_CAPTIONING_MANAGER;
     private static final String FIELD_VIEWPORT_HEIGHT;
@@ -83,14 +87,18 @@ public class TrackSelectionParameters {
     public final int minVideoHeight;
     public final int minVideoWidth;
     public final ImmutableMap<TrackGroup, TrackSelectionOverride> overrides;
+    public final ImmutableList<String> preferredAudioLabels;
     public final ImmutableList<String> preferredAudioLanguages;
     public final ImmutableList<String> preferredAudioMimeTypes;
     public final int preferredAudioRoleFlags;
+    public final ImmutableList<String> preferredTextLabels;
     public final ImmutableList<String> preferredTextLanguages;
     public final int preferredTextRoleFlags;
+    public final ImmutableList<String> preferredVideoLabels;
     public final ImmutableList<String> preferredVideoLanguages;
     public final ImmutableList<String> preferredVideoMimeTypes;
     public final int preferredVideoRoleFlags;
+    public final boolean selectTextByDefault;
     public final boolean selectUndeterminedTextLanguage;
     public final boolean usePreferredTextLanguagesAndRoleFlagsFromCaptioningManager;
     public final int viewportHeight;
@@ -117,14 +125,18 @@ public class TrackSelectionParameters {
         private int minVideoHeight;
         private int minVideoWidth;
         private HashMap<TrackGroup, TrackSelectionOverride> overrides;
+        private ImmutableList<String> preferredAudioLabels;
         private ImmutableList<String> preferredAudioLanguages;
         private ImmutableList<String> preferredAudioMimeTypes;
         private int preferredAudioRoleFlags;
+        private ImmutableList<String> preferredTextLabels;
         private ImmutableList<String> preferredTextLanguages;
         private int preferredTextRoleFlags;
+        private ImmutableList<String> preferredVideoLabels;
         private ImmutableList<String> preferredVideoLanguages;
         private ImmutableList<String> preferredVideoMimeTypes;
         private int preferredVideoRoleFlags;
+        private boolean selectTextByDefault;
         private boolean selectUndeterminedTextLanguage;
         private boolean usePreferredTextLanguagesAndRoleFlagsFromCaptioningManager;
         private int viewportHeight;
@@ -141,17 +153,21 @@ public class TrackSelectionParameters {
             this.isViewportSizeLimitedByPhysicalDisplaySize = true;
             this.viewportOrientationMayChange = true;
             this.preferredVideoMimeTypes = ImmutableList.of();
+            this.preferredVideoLabels = ImmutableList.of();
             this.preferredVideoLanguages = ImmutableList.of();
             this.preferredVideoRoleFlags = 0;
             this.preferredAudioLanguages = ImmutableList.of();
+            this.preferredAudioLabels = ImmutableList.of();
             this.preferredAudioRoleFlags = 0;
             this.maxAudioChannelCount = Integer.MAX_VALUE;
             this.maxAudioBitrate = Integer.MAX_VALUE;
             this.preferredAudioMimeTypes = ImmutableList.of();
             this.audioOffloadPreferences = AudioOffloadPreferences.DEFAULT;
+            this.selectTextByDefault = false;
             this.preferredTextLanguages = ImmutableList.of();
             this.preferredTextRoleFlags = 0;
             this.usePreferredTextLanguagesAndRoleFlagsFromCaptioningManager = true;
+            this.preferredTextLabels = ImmutableList.of();
             this.ignoredTextSelectionFlags = 0;
             this.selectUndeterminedTextLanguage = false;
             this.isPrioritizeImageOverVideoEnabled = false;
@@ -189,18 +205,22 @@ public class TrackSelectionParameters {
             this.isViewportSizeLimitedByPhysicalDisplaySize = this.viewportWidth == Integer.MAX_VALUE && i == Integer.MAX_VALUE && bundle.getBoolean(TrackSelectionParameters.FIELD_IS_VIEWPORT_SIZE_LIMITED_BY_PHYSICAL_DISPLAY_SIZE, TrackSelectionParameters.DEFAULT.isViewportSizeLimitedByPhysicalDisplaySize);
             this.viewportOrientationMayChange = bundle.getBoolean(TrackSelectionParameters.FIELD_VIEWPORT_ORIENTATION_MAY_CHANGE, TrackSelectionParameters.DEFAULT.viewportOrientationMayChange);
             this.preferredVideoMimeTypes = ImmutableList.copyOf((String[]) MoreObjects.firstNonNull(bundle.getStringArray(TrackSelectionParameters.FIELD_PREFERRED_VIDEO_MIMETYPES), new String[0]));
+            this.preferredVideoLabels = ImmutableList.copyOf((String[]) MoreObjects.firstNonNull(bundle.getStringArray(TrackSelectionParameters.FIELD_PREFERRED_VIDEO_LABELS), new String[0]));
             this.preferredVideoLanguages = ImmutableList.copyOf((String[]) MoreObjects.firstNonNull(bundle.getStringArray(TrackSelectionParameters.FIELD_PREFERRED_VIDEO_LANGUAGES), new String[0]));
             this.preferredVideoRoleFlags = bundle.getInt(TrackSelectionParameters.FIELD_PREFERRED_VIDEO_ROLE_FLAGS, TrackSelectionParameters.DEFAULT.preferredVideoRoleFlags);
             this.preferredAudioLanguages = normalizeLanguageCodes((String[]) MoreObjects.firstNonNull(bundle.getStringArray(TrackSelectionParameters.FIELD_PREFERRED_AUDIO_LANGUAGES), new String[0]));
+            this.preferredAudioLabels = ImmutableList.copyOf((String[]) MoreObjects.firstNonNull(bundle.getStringArray(TrackSelectionParameters.FIELD_PREFERRED_AUDIO_LABELS), new String[0]));
             this.preferredAudioRoleFlags = bundle.getInt(TrackSelectionParameters.FIELD_PREFERRED_AUDIO_ROLE_FLAGS, TrackSelectionParameters.DEFAULT.preferredAudioRoleFlags);
             this.maxAudioChannelCount = bundle.getInt(TrackSelectionParameters.FIELD_MAX_AUDIO_CHANNEL_COUNT, TrackSelectionParameters.DEFAULT.maxAudioChannelCount);
             this.maxAudioBitrate = bundle.getInt(TrackSelectionParameters.FIELD_MAX_AUDIO_BITRATE, TrackSelectionParameters.DEFAULT.maxAudioBitrate);
             this.preferredAudioMimeTypes = ImmutableList.copyOf((String[]) MoreObjects.firstNonNull(bundle.getStringArray(TrackSelectionParameters.FIELD_PREFERRED_AUDIO_MIME_TYPES), new String[0]));
             this.audioOffloadPreferences = getAudioOffloadPreferencesFromBundle(bundle);
+            this.selectTextByDefault = bundle.getBoolean(TrackSelectionParameters.FIELD_SELECT_TEXT_BY_DEFAULT, TrackSelectionParameters.DEFAULT.selectTextByDefault);
             this.preferredTextLanguages = normalizeLanguageCodes((String[]) MoreObjects.firstNonNull(bundle.getStringArray(TrackSelectionParameters.FIELD_PREFERRED_TEXT_LANGUAGES), new String[0]));
             this.preferredTextRoleFlags = bundle.getInt(TrackSelectionParameters.FIELD_PREFERRED_TEXT_ROLE_FLAGS, TrackSelectionParameters.DEFAULT.preferredTextRoleFlags);
             this.usePreferredTextLanguagesAndRoleFlagsFromCaptioningManager = (this.preferredTextLanguages.isEmpty() && this.preferredTextRoleFlags == 0 && bundle.getBoolean(TrackSelectionParameters.FIELD_USE_PREFERRED_TEXT_LANGUAGES_AND_ROLE_FLAGS_FROM_CAPTIONING_MANAGER, TrackSelectionParameters.DEFAULT.usePreferredTextLanguagesAndRoleFlagsFromCaptioningManager)) ? z : false;
             this.ignoredTextSelectionFlags = bundle.getInt(TrackSelectionParameters.FIELD_IGNORED_TEXT_SELECTION_FLAGS, TrackSelectionParameters.DEFAULT.ignoredTextSelectionFlags);
+            this.preferredTextLabels = ImmutableList.copyOf((String[]) MoreObjects.firstNonNull(bundle.getStringArray(TrackSelectionParameters.FIELD_PREFERRED_TEXT_LABELS), new String[0]));
             this.selectUndeterminedTextLanguage = bundle.getBoolean(TrackSelectionParameters.FIELD_SELECT_UNDETERMINED_TEXT_LANGUAGE, TrackSelectionParameters.DEFAULT.selectUndeterminedTextLanguage);
             this.isPrioritizeImageOverVideoEnabled = bundle.getBoolean(TrackSelectionParameters.FIELD_IS_PREFER_IMAGE_OVER_VIDEO_ENABLED, TrackSelectionParameters.DEFAULT.isPrioritizeImageOverVideoEnabled);
             this.forceLowestBitrate = bundle.getBoolean(TrackSelectionParameters.FIELD_FORCE_LOWEST_BITRATE, TrackSelectionParameters.DEFAULT.forceLowestBitrate);
@@ -236,7 +256,7 @@ public class TrackSelectionParameters {
             return new AudioOffloadPreferences.Builder().setAudioOffloadMode(bundle.getInt(TrackSelectionParameters.FIELD_AUDIO_OFFLOAD_MODE_PREFERENCE, AudioOffloadPreferences.DEFAULT.audioOffloadMode)).setIsGaplessSupportRequired(bundle.getBoolean(TrackSelectionParameters.FIELD_IS_GAPLESS_SUPPORT_REQUIRED, AudioOffloadPreferences.DEFAULT.isGaplessSupportRequired)).setIsSpeedChangeSupportRequired(bundle.getBoolean(TrackSelectionParameters.FIELD_IS_SPEED_CHANGE_SUPPORT_REQUIRED, AudioOffloadPreferences.DEFAULT.isSpeedChangeSupportRequired)).build();
         }
 
-        @EnsuresNonNull({"preferredVideoMimeTypes", "preferredVideoLanguages", "preferredAudioLanguages", "preferredAudioMimeTypes", "audioOffloadPreferences", "preferredTextLanguages", "overrides", "disabledTrackTypes"})
+        @EnsuresNonNull({"preferredVideoMimeTypes", "preferredVideoLanguages", "preferredAudioLanguages", "preferredAudioMimeTypes", "audioOffloadPreferences", "preferredTextLanguages", "overrides", "disabledTrackTypes", "preferredVideoLabels", "preferredAudioLabels", "preferredTextLabels"})
         private void init(TrackSelectionParameters trackSelectionParameters) {
             this.maxVideoWidth = trackSelectionParameters.maxVideoWidth;
             this.maxVideoHeight = trackSelectionParameters.maxVideoHeight;
@@ -250,18 +270,22 @@ public class TrackSelectionParameters {
             this.viewportHeight = trackSelectionParameters.viewportHeight;
             this.isViewportSizeLimitedByPhysicalDisplaySize = trackSelectionParameters.isViewportSizeLimitedByPhysicalDisplaySize;
             this.viewportOrientationMayChange = trackSelectionParameters.viewportOrientationMayChange;
+            this.preferredVideoLabels = trackSelectionParameters.preferredVideoLabels;
             this.preferredVideoMimeTypes = trackSelectionParameters.preferredVideoMimeTypes;
             this.preferredVideoLanguages = trackSelectionParameters.preferredVideoLanguages;
             this.preferredVideoRoleFlags = trackSelectionParameters.preferredVideoRoleFlags;
             this.preferredAudioLanguages = trackSelectionParameters.preferredAudioLanguages;
             this.preferredAudioRoleFlags = trackSelectionParameters.preferredAudioRoleFlags;
+            this.preferredAudioLabels = trackSelectionParameters.preferredAudioLabels;
             this.maxAudioChannelCount = trackSelectionParameters.maxAudioChannelCount;
             this.maxAudioBitrate = trackSelectionParameters.maxAudioBitrate;
             this.preferredAudioMimeTypes = trackSelectionParameters.preferredAudioMimeTypes;
             this.audioOffloadPreferences = trackSelectionParameters.audioOffloadPreferences;
+            this.selectTextByDefault = trackSelectionParameters.selectTextByDefault;
             this.preferredTextLanguages = trackSelectionParameters.preferredTextLanguages;
             this.preferredTextRoleFlags = trackSelectionParameters.preferredTextRoleFlags;
             this.usePreferredTextLanguagesAndRoleFlagsFromCaptioningManager = trackSelectionParameters.usePreferredTextLanguagesAndRoleFlagsFromCaptioningManager;
+            this.preferredTextLabels = trackSelectionParameters.preferredTextLabels;
             this.ignoredTextSelectionFlags = trackSelectionParameters.ignoredTextSelectionFlags;
             this.selectUndeterminedTextLanguage = trackSelectionParameters.selectUndeterminedTextLanguage;
             this.isPrioritizeImageOverVideoEnabled = trackSelectionParameters.isPrioritizeImageOverVideoEnabled;
@@ -360,6 +384,11 @@ public class TrackSelectionParameters {
             return this;
         }
 
+        public Builder setPreferredVideoLabels(String... strArr) {
+            this.preferredVideoLabels = ImmutableList.copyOf(strArr);
+            return this;
+        }
+
         public Builder setPreferredVideoRoleFlags(int i) {
             this.preferredVideoRoleFlags = i;
             return this;
@@ -376,6 +405,11 @@ public class TrackSelectionParameters {
 
         public Builder setPreferredAudioRoleFlags(int i) {
             this.preferredAudioRoleFlags = i;
+            return this;
+        }
+
+        public Builder setPreferredAudioLabels(String... strArr) {
+            this.preferredAudioLabels = ImmutableList.copyOf(strArr);
             return this;
         }
 
@@ -400,6 +434,11 @@ public class TrackSelectionParameters {
 
         public Builder setAudioOffloadPreferences(AudioOffloadPreferences audioOffloadPreferences) {
             this.audioOffloadPreferences = audioOffloadPreferences;
+            return this;
+        }
+
+        public Builder setSelectTextByDefault(boolean z) {
+            this.selectTextByDefault = z;
             return this;
         }
 
@@ -428,6 +467,11 @@ public class TrackSelectionParameters {
         public Builder setPreferredTextRoleFlags(int i) {
             this.preferredTextRoleFlags = i;
             this.usePreferredTextLanguagesAndRoleFlagsFromCaptioningManager = false;
+            return this;
+        }
+
+        public Builder setPreferredTextLabels(String... strArr) {
+            this.preferredTextLabels = ImmutableList.copyOf(strArr);
             return this;
         }
 
@@ -508,8 +552,8 @@ public class TrackSelectionParameters {
 
         private static ImmutableList<String> normalizeLanguageCodes(String[] strArr) {
             ImmutableList.Builder builder = ImmutableList.builder();
-            for (String str : (String[]) Assertions.checkNotNull(strArr)) {
-                builder.add((ImmutableList.Builder) Util.normalizeLanguageCode((String) Assertions.checkNotNull(str)));
+            for (String str : (String[]) Preconditions.checkNotNull(strArr)) {
+                builder.add((ImmutableList.Builder) Util.normalizeLanguageCode((String) Preconditions.checkNotNull(str)));
             }
             return builder.build();
         }
@@ -642,6 +686,10 @@ public class TrackSelectionParameters {
         FIELD_PREFERRED_VIDEO_LANGUAGES = Util.intToStringMaxRadix(32);
         FIELD_IS_VIEWPORT_SIZE_LIMITED_BY_PHYSICAL_DISPLAY_SIZE = Util.intToStringMaxRadix(33);
         FIELD_USE_PREFERRED_TEXT_LANGUAGES_AND_ROLE_FLAGS_FROM_CAPTIONING_MANAGER = Util.intToStringMaxRadix(34);
+        FIELD_SELECT_TEXT_BY_DEFAULT = Util.intToStringMaxRadix(35);
+        FIELD_PREFERRED_VIDEO_LABELS = Util.intToStringMaxRadix(36);
+        FIELD_PREFERRED_AUDIO_LABELS = Util.intToStringMaxRadix(37);
+        FIELD_PREFERRED_TEXT_LABELS = Util.intToStringMaxRadix(38);
     }
 
     @Deprecated
@@ -664,17 +712,21 @@ public class TrackSelectionParameters {
         this.isViewportSizeLimitedByPhysicalDisplaySize = builder.isViewportSizeLimitedByPhysicalDisplaySize;
         this.viewportOrientationMayChange = builder.viewportOrientationMayChange;
         this.preferredVideoMimeTypes = builder.preferredVideoMimeTypes;
+        this.preferredVideoLabels = builder.preferredVideoLabels;
         this.preferredVideoLanguages = builder.preferredVideoLanguages;
         this.preferredVideoRoleFlags = builder.preferredVideoRoleFlags;
         this.preferredAudioLanguages = builder.preferredAudioLanguages;
         this.preferredAudioRoleFlags = builder.preferredAudioRoleFlags;
         this.maxAudioChannelCount = builder.maxAudioChannelCount;
+        this.preferredAudioLabels = builder.preferredAudioLabels;
         this.maxAudioBitrate = builder.maxAudioBitrate;
         this.preferredAudioMimeTypes = builder.preferredAudioMimeTypes;
         this.audioOffloadPreferences = builder.audioOffloadPreferences;
+        this.selectTextByDefault = builder.selectTextByDefault;
         this.preferredTextLanguages = builder.preferredTextLanguages;
         this.preferredTextRoleFlags = builder.preferredTextRoleFlags;
         this.usePreferredTextLanguagesAndRoleFlagsFromCaptioningManager = builder.usePreferredTextLanguagesAndRoleFlagsFromCaptioningManager;
+        this.preferredTextLabels = builder.preferredTextLabels;
         this.ignoredTextSelectionFlags = builder.ignoredTextSelectionFlags;
         this.selectUndeterminedTextLanguage = builder.selectUndeterminedTextLanguage;
         this.isPrioritizeImageOverVideoEnabled = builder.isPrioritizeImageOverVideoEnabled;
@@ -694,7 +746,7 @@ public class TrackSelectionParameters {
         }
         if (obj != null && getClass() == obj.getClass()) {
             TrackSelectionParameters trackSelectionParameters = (TrackSelectionParameters) obj;
-            if (this.maxVideoWidth == trackSelectionParameters.maxVideoWidth && this.maxVideoHeight == trackSelectionParameters.maxVideoHeight && this.maxVideoFrameRate == trackSelectionParameters.maxVideoFrameRate && this.maxVideoBitrate == trackSelectionParameters.maxVideoBitrate && this.minVideoWidth == trackSelectionParameters.minVideoWidth && this.minVideoHeight == trackSelectionParameters.minVideoHeight && this.minVideoFrameRate == trackSelectionParameters.minVideoFrameRate && this.minVideoBitrate == trackSelectionParameters.minVideoBitrate && this.viewportOrientationMayChange == trackSelectionParameters.viewportOrientationMayChange && this.viewportWidth == trackSelectionParameters.viewportWidth && this.viewportHeight == trackSelectionParameters.viewportHeight && this.isViewportSizeLimitedByPhysicalDisplaySize == trackSelectionParameters.isViewportSizeLimitedByPhysicalDisplaySize && this.preferredVideoMimeTypes.equals(trackSelectionParameters.preferredVideoMimeTypes) && this.preferredVideoLanguages.equals(trackSelectionParameters.preferredVideoLanguages) && this.preferredVideoRoleFlags == trackSelectionParameters.preferredVideoRoleFlags && this.preferredAudioLanguages.equals(trackSelectionParameters.preferredAudioLanguages) && this.preferredAudioRoleFlags == trackSelectionParameters.preferredAudioRoleFlags && this.maxAudioChannelCount == trackSelectionParameters.maxAudioChannelCount && this.maxAudioBitrate == trackSelectionParameters.maxAudioBitrate && this.preferredAudioMimeTypes.equals(trackSelectionParameters.preferredAudioMimeTypes) && this.audioOffloadPreferences.equals(trackSelectionParameters.audioOffloadPreferences) && this.preferredTextLanguages.equals(trackSelectionParameters.preferredTextLanguages) && this.preferredTextRoleFlags == trackSelectionParameters.preferredTextRoleFlags && this.usePreferredTextLanguagesAndRoleFlagsFromCaptioningManager == trackSelectionParameters.usePreferredTextLanguagesAndRoleFlagsFromCaptioningManager && this.ignoredTextSelectionFlags == trackSelectionParameters.ignoredTextSelectionFlags && this.selectUndeterminedTextLanguage == trackSelectionParameters.selectUndeterminedTextLanguage && this.isPrioritizeImageOverVideoEnabled == trackSelectionParameters.isPrioritizeImageOverVideoEnabled && this.forceLowestBitrate == trackSelectionParameters.forceLowestBitrate && this.forceHighestSupportedBitrate == trackSelectionParameters.forceHighestSupportedBitrate && this.overrides.equals(trackSelectionParameters.overrides) && this.disabledTrackTypes.equals(trackSelectionParameters.disabledTrackTypes)) {
+            if (this.maxVideoWidth == trackSelectionParameters.maxVideoWidth && this.maxVideoHeight == trackSelectionParameters.maxVideoHeight && this.maxVideoFrameRate == trackSelectionParameters.maxVideoFrameRate && this.maxVideoBitrate == trackSelectionParameters.maxVideoBitrate && this.minVideoWidth == trackSelectionParameters.minVideoWidth && this.minVideoHeight == trackSelectionParameters.minVideoHeight && this.minVideoFrameRate == trackSelectionParameters.minVideoFrameRate && this.minVideoBitrate == trackSelectionParameters.minVideoBitrate && this.viewportOrientationMayChange == trackSelectionParameters.viewportOrientationMayChange && this.viewportWidth == trackSelectionParameters.viewportWidth && this.viewportHeight == trackSelectionParameters.viewportHeight && this.isViewportSizeLimitedByPhysicalDisplaySize == trackSelectionParameters.isViewportSizeLimitedByPhysicalDisplaySize && this.preferredVideoMimeTypes.equals(trackSelectionParameters.preferredVideoMimeTypes) && this.preferredVideoLabels.equals(trackSelectionParameters.preferredVideoLabels) && this.preferredVideoLanguages.equals(trackSelectionParameters.preferredVideoLanguages) && this.preferredVideoRoleFlags == trackSelectionParameters.preferredVideoRoleFlags && this.preferredAudioLanguages.equals(trackSelectionParameters.preferredAudioLanguages) && this.preferredAudioRoleFlags == trackSelectionParameters.preferredAudioRoleFlags && this.maxAudioChannelCount == trackSelectionParameters.maxAudioChannelCount && this.preferredAudioLabels.equals(trackSelectionParameters.preferredAudioLabels) && this.maxAudioBitrate == trackSelectionParameters.maxAudioBitrate && this.preferredAudioMimeTypes.equals(trackSelectionParameters.preferredAudioMimeTypes) && this.audioOffloadPreferences.equals(trackSelectionParameters.audioOffloadPreferences) && this.selectTextByDefault == trackSelectionParameters.selectTextByDefault && this.preferredTextLabels.equals(trackSelectionParameters.preferredTextLabels) && this.preferredTextLanguages.equals(trackSelectionParameters.preferredTextLanguages) && this.preferredTextRoleFlags == trackSelectionParameters.preferredTextRoleFlags && this.usePreferredTextLanguagesAndRoleFlagsFromCaptioningManager == trackSelectionParameters.usePreferredTextLanguagesAndRoleFlagsFromCaptioningManager && this.ignoredTextSelectionFlags == trackSelectionParameters.ignoredTextSelectionFlags && this.selectUndeterminedTextLanguage == trackSelectionParameters.selectUndeterminedTextLanguage && this.isPrioritizeImageOverVideoEnabled == trackSelectionParameters.isPrioritizeImageOverVideoEnabled && this.forceLowestBitrate == trackSelectionParameters.forceLowestBitrate && this.forceHighestSupportedBitrate == trackSelectionParameters.forceHighestSupportedBitrate && this.overrides.equals(trackSelectionParameters.overrides) && this.disabledTrackTypes.equals(trackSelectionParameters.disabledTrackTypes)) {
                 return true;
             }
         }
@@ -702,7 +754,7 @@ public class TrackSelectionParameters {
     }
 
     public int hashCode() {
-        return ((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((this.maxVideoWidth + 31) * 31) + this.maxVideoHeight) * 31) + this.maxVideoFrameRate) * 31) + this.maxVideoBitrate) * 31) + this.minVideoWidth) * 31) + this.minVideoHeight) * 31) + this.minVideoFrameRate) * 31) + this.minVideoBitrate) * 31) + (this.viewportOrientationMayChange ? 1 : 0)) * 31) + this.viewportWidth) * 31) + this.viewportHeight) * 31) + (this.isViewportSizeLimitedByPhysicalDisplaySize ? 1 : 0)) * 31) + this.preferredVideoMimeTypes.hashCode()) * 31) + this.preferredVideoLanguages.hashCode()) * 31) + this.preferredVideoRoleFlags) * 31) + this.preferredAudioLanguages.hashCode()) * 31) + this.preferredAudioRoleFlags) * 31) + this.maxAudioChannelCount) * 31) + this.maxAudioBitrate) * 31) + this.preferredAudioMimeTypes.hashCode()) * 31) + this.audioOffloadPreferences.hashCode()) * 31) + this.preferredTextLanguages.hashCode()) * 31) + this.preferredTextRoleFlags) * 31) + (this.usePreferredTextLanguagesAndRoleFlagsFromCaptioningManager ? 1 : 0)) * 31) + this.ignoredTextSelectionFlags) * 31) + (this.selectUndeterminedTextLanguage ? 1 : 0)) * 31) + (this.isPrioritizeImageOverVideoEnabled ? 1 : 0)) * 31) + (this.forceLowestBitrate ? 1 : 0)) * 31) + (this.forceHighestSupportedBitrate ? 1 : 0)) * 31) + this.overrides.hashCode()) * 31) + this.disabledTrackTypes.hashCode();
+        return ((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((this.maxVideoWidth + 31) * 31) + this.maxVideoHeight) * 31) + this.maxVideoFrameRate) * 31) + this.maxVideoBitrate) * 31) + this.minVideoWidth) * 31) + this.minVideoHeight) * 31) + this.minVideoFrameRate) * 31) + this.minVideoBitrate) * 31) + (this.viewportOrientationMayChange ? 1 : 0)) * 31) + this.viewportWidth) * 31) + this.viewportHeight) * 31) + (this.isViewportSizeLimitedByPhysicalDisplaySize ? 1 : 0)) * 31) + this.preferredVideoMimeTypes.hashCode()) * 31) + this.preferredVideoLabels.hashCode()) * 31) + this.preferredVideoLanguages.hashCode()) * 31) + this.preferredVideoRoleFlags) * 31) + this.preferredAudioLanguages.hashCode()) * 31) + this.preferredAudioRoleFlags) * 31) + this.maxAudioChannelCount) * 31) + this.preferredAudioLabels.hashCode()) * 31) + this.maxAudioBitrate) * 31) + this.preferredAudioMimeTypes.hashCode()) * 31) + this.audioOffloadPreferences.hashCode()) * 31) + (this.selectTextByDefault ? 1 : 0)) * 31) + this.preferredTextLanguages.hashCode()) * 31) + this.preferredTextRoleFlags) * 31) + (this.usePreferredTextLanguagesAndRoleFlagsFromCaptioningManager ? 1 : 0)) * 31) + this.preferredTextLabels.hashCode()) * 31) + this.ignoredTextSelectionFlags) * 31) + (this.selectUndeterminedTextLanguage ? 1 : 0)) * 31) + (this.isPrioritizeImageOverVideoEnabled ? 1 : 0)) * 31) + (this.forceLowestBitrate ? 1 : 0)) * 31) + (this.forceHighestSupportedBitrate ? 1 : 0)) * 31) + this.overrides.hashCode()) * 31) + this.disabledTrackTypes.hashCode();
     }
 
     public Bundle toBundle() {
@@ -721,15 +773,19 @@ public class TrackSelectionParameters {
         bundle.putBoolean(FIELD_VIEWPORT_ORIENTATION_MAY_CHANGE, this.viewportOrientationMayChange);
         bundle.putStringArray(FIELD_PREFERRED_VIDEO_MIMETYPES, (String[]) this.preferredVideoMimeTypes.toArray(new String[0]));
         bundle.putStringArray(FIELD_PREFERRED_VIDEO_LANGUAGES, (String[]) this.preferredVideoLanguages.toArray(new String[0]));
+        bundle.putStringArray(FIELD_PREFERRED_VIDEO_LABELS, (String[]) this.preferredVideoLabels.toArray(new String[0]));
         bundle.putInt(FIELD_PREFERRED_VIDEO_ROLE_FLAGS, this.preferredVideoRoleFlags);
         bundle.putStringArray(FIELD_PREFERRED_AUDIO_LANGUAGES, (String[]) this.preferredAudioLanguages.toArray(new String[0]));
         bundle.putInt(FIELD_PREFERRED_AUDIO_ROLE_FLAGS, this.preferredAudioRoleFlags);
         bundle.putInt(FIELD_MAX_AUDIO_CHANNEL_COUNT, this.maxAudioChannelCount);
         bundle.putInt(FIELD_MAX_AUDIO_BITRATE, this.maxAudioBitrate);
+        bundle.putStringArray(FIELD_PREFERRED_AUDIO_LABELS, (String[]) this.preferredAudioLabels.toArray(new String[0]));
         bundle.putStringArray(FIELD_PREFERRED_AUDIO_MIME_TYPES, (String[]) this.preferredAudioMimeTypes.toArray(new String[0]));
+        bundle.putBoolean(FIELD_SELECT_TEXT_BY_DEFAULT, this.selectTextByDefault);
         bundle.putStringArray(FIELD_PREFERRED_TEXT_LANGUAGES, (String[]) this.preferredTextLanguages.toArray(new String[0]));
         bundle.putInt(FIELD_PREFERRED_TEXT_ROLE_FLAGS, this.preferredTextRoleFlags);
         bundle.putBoolean(FIELD_USE_PREFERRED_TEXT_LANGUAGES_AND_ROLE_FLAGS_FROM_CAPTIONING_MANAGER, this.usePreferredTextLanguagesAndRoleFlagsFromCaptioningManager);
+        bundle.putStringArray(FIELD_PREFERRED_TEXT_LABELS, (String[]) this.preferredTextLabels.toArray(new String[0]));
         bundle.putInt(FIELD_IGNORED_TEXT_SELECTION_FLAGS, this.ignoredTextSelectionFlags);
         bundle.putBoolean(FIELD_SELECT_UNDETERMINED_TEXT_LANGUAGE, this.selectUndeterminedTextLanguage);
         bundle.putInt(FIELD_AUDIO_OFFLOAD_MODE_PREFERENCE, this.audioOffloadPreferences.audioOffloadMode);

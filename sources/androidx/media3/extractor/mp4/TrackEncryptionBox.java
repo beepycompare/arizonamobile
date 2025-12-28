@@ -1,9 +1,9 @@
 package androidx.media3.extractor.mp4;
 
 import androidx.media3.common.C;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.extractor.TrackOutput;
+import com.google.common.base.Preconditions;
 /* loaded from: classes3.dex */
 public final class TrackEncryptionBox {
     private static final String TAG = "TrackEncryptionBox";
@@ -14,7 +14,7 @@ public final class TrackEncryptionBox {
     public final String schemeType;
 
     public TrackEncryptionBox(boolean z, String str, int i, byte[] bArr, int i2, int i3, byte[] bArr2) {
-        Assertions.checkArgument((bArr2 == null) ^ (i == 0));
+        Preconditions.checkArgument((bArr2 == null) ^ (i == 0));
         this.isEncrypted = z;
         this.schemeType = str;
         this.perSampleIvSize = i;

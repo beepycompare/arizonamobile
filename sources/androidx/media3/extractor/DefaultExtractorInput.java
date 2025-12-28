@@ -2,8 +2,8 @@ package androidx.media3.extractor;
 
 import androidx.media3.common.DataReader;
 import androidx.media3.common.MediaLibraryInfo;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.InterruptedIOException;
@@ -166,7 +166,7 @@ public final class DefaultExtractorInput implements ExtractorInput {
 
     @Override // androidx.media3.extractor.ExtractorInput
     public <E extends Throwable> void setRetryPosition(long j, E e) throws Throwable {
-        Assertions.checkArgument(j >= 0);
+        Preconditions.checkArgument(j >= 0);
         this.position = j;
         throw e;
     }

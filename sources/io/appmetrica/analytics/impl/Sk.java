@@ -12,7 +12,7 @@ import org.json.JSONObject;
 public final class Sk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Y4 f778a;
+    public final Y4 f779a;
     public final Rk b;
     public final X4 c;
     public final AbstractC0255g d;
@@ -21,7 +21,7 @@ public final class Sk {
     public int g = 0;
 
     public Sk(Y4 y4, Rk rk, X4 x4, C0318ia c0318ia, A2 a2) {
-        this.f778a = y4;
+        this.f779a = y4;
         this.c = x4;
         this.d = c0318ia;
         this.e = a2;
@@ -39,15 +39,15 @@ public final class Sk {
             X4 x4 = this.c;
             Q5 a2 = Q5.a(q5, EnumC0164cb.EVENT_TYPE_ALIVE);
             Uk uk = new Uk();
-            uk.f811a = ek.d;
-            uk.d = ek.c.f608a;
+            uk.f812a = ek.d;
+            uk.d = ek.c.f609a;
             long andIncrement = ek.f.getAndIncrement();
             Vk vk = ek.b;
             vk.a(Vk.g, Long.valueOf(ek.f.get()));
             vk.b();
             uk.b = andIncrement;
             uk.c = TimeUnit.MILLISECONDS.toSeconds(Math.max(ek.i - ek.e, ek.j));
-            x4.f843a.n.a(a2, uk);
+            x4.f844a.n.a(a2, uk);
             if (ek.g) {
                 ek.g = false;
                 Vk vk2 = ek.b;
@@ -55,8 +55,8 @@ public final class Sk {
                 vk2.b();
             }
         }
-        PublicLogger publicLogger = this.f778a.m;
-        int ordinal = ek.c.f608a.ordinal();
+        PublicLogger publicLogger = this.f779a.m;
+        int ordinal = ek.c.f609a.ordinal();
         if (ordinal == 0) {
             publicLogger.info("Finish foreground session", new Object[0]);
         } else if (ordinal == 1) {
@@ -109,22 +109,22 @@ public final class Sk {
     }
 
     public final Ek a(Q5 q5) {
-        this.f778a.m.info("Start foreground session", new Object[0]);
+        this.f779a.m.info("Start foreground session", new Object[0]);
         long j = q5.i;
         AbstractC0255g abstractC0255g = this.d;
         Fk fk = new Fk(j, q5.j);
         abstractC0255g.getClass();
         Ek a2 = abstractC0255g.a(fk);
         this.g = 3;
-        ((C0390l5) this.f778a.p).e();
+        ((C0390l5) this.f779a.p).e();
         X4 x4 = this.c;
-        x4.f843a.n.a(Q5.a(q5, C0470oa.I.i()), a(a2, j));
+        x4.f844a.n.a(Q5.a(q5, C0470oa.I.i()), a(a2, j));
         return a2;
     }
 
     public static Uk a(Ek ek, long j) {
         Uk uk = new Uk();
-        uk.f811a = ek.d;
+        uk.f812a = ek.d;
         long andIncrement = ek.f.getAndIncrement();
         Vk vk = ek.b;
         vk.a(Vk.g, Long.valueOf(ek.f.get()));
@@ -135,7 +135,7 @@ public final class Sk {
         ek.j = j2;
         vk2.a(Vk.e, Long.valueOf(j2));
         uk.c = TimeUnit.MILLISECONDS.toSeconds(ek.j);
-        uk.d = ek.c.f608a;
+        uk.d = ek.c.f609a;
         return uk;
     }
 
@@ -170,24 +170,24 @@ public final class Sk {
             vk.b();
             return this.f;
         } else if (a2 != 2) {
-            this.f778a.m.info("Start background session", new Object[0]);
+            this.f779a.m.info("Start background session", new Object[0]);
             this.g = 2;
             long j2 = q5.i;
             AbstractC0255g abstractC0255g = this.e;
             Fk fk = new Fk(j2, q5.j);
             abstractC0255g.getClass();
             Ek a3 = abstractC0255g.a(fk);
-            if (this.f778a.t.c()) {
+            if (this.f779a.t.c()) {
                 X4 x4 = this.c;
-                x4.f843a.n.a(Q5.a(q5, C0470oa.I.i()), a(a3, q5.i));
+                x4.f844a.n.a(Q5.a(q5, C0470oa.I.i()), a(a3, q5.i));
             } else {
                 int i = q5.d;
                 EnumC0164cb enumC0164cb = EnumC0164cb.EVENT_TYPE_UNDEFINED;
                 if (i == 6145) {
                     X4 x42 = this.c;
-                    x42.f843a.n.a(q5, a(a3, j2));
+                    x42.f844a.n.a(q5, a(a3, j2));
                     X4 x43 = this.c;
-                    x43.f843a.n.a(Q5.a(q5, C0470oa.I.i()), a(a3, j2));
+                    x43.f844a.n.a(Q5.a(q5, C0470oa.I.i()), a(a3, j2));
                 }
             }
             this.f = a3;
@@ -209,7 +209,7 @@ public final class Sk {
             synchronized (ek) {
                 if (ek.h == null) {
                     try {
-                        String asString = ek.f562a.e.a(ek.d, ek.c.f608a).getAsString("report_request_parameters");
+                        String asString = ek.f563a.e.a(ek.d, ek.c.f609a).getAsString("report_request_parameters");
                         if (!TextUtils.isEmpty(asString)) {
                             ek.h = new Tk(new JSONObject(asString));
                         }
@@ -223,9 +223,9 @@ public final class Sk {
             z = false;
             break;
         }
-        C0402lh c0402lh = (C0402lh) ek.f562a.k.a();
+        C0402lh c0402lh = (C0402lh) ek.f563a.k.a();
         Boolean[] boolArr = new Boolean[7];
-        boolArr[0] = Boolean.valueOf(TextUtils.equals(c0402lh.getAnalyticsSdkVersionName(), tk.f794a));
+        boolArr[0] = Boolean.valueOf(TextUtils.equals(c0402lh.getAnalyticsSdkVersionName(), tk.f795a));
         boolArr[1] = Boolean.valueOf(TextUtils.equals(c0402lh.getAnalyticsSdkBuildNumber(), tk.b));
         boolArr[2] = Boolean.valueOf(TextUtils.equals(c0402lh.getAppVersion(), tk.c));
         boolArr[3] = Boolean.valueOf(TextUtils.equals(c0402lh.getAppBuildNumber(), tk.d));
@@ -250,12 +250,12 @@ public final class Sk {
         if (!z4) {
             TimeUnit timeUnit = TimeUnit.SECONDS;
             Hk hk = ek.c;
-            int i = ((C0402lh) ek.f562a.k.a()).f;
+            int i = ((C0402lh) ek.f563a.k.a()).f;
             Integer num = hk.d;
             if (num != null) {
                 i = num.intValue();
             }
-            if (j3 < timeUnit.toMillis(i) && j4 < timeUnit.toMillis(Ik.f625a)) {
+            if (j3 < timeUnit.toMillis(i) && j4 < timeUnit.toMillis(Ik.f626a)) {
                 z2 = false;
                 if (z3 || !z || z2) {
                     b(ek, q5);

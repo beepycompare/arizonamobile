@@ -5,7 +5,6 @@ import androidx.media3.common.C;
 import androidx.media3.common.ColorInfo;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.CodecSpecificDataUtil;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
@@ -14,6 +13,7 @@ import androidx.media3.container.ParsableNalUnitBitArray;
 import androidx.media3.extractor.ExtractorOutput;
 import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.ts.TsPayloadReader;
+import com.google.common.base.Preconditions;
 import java.util.ArrayList;
 import java.util.Arrays;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
@@ -184,7 +184,7 @@ public final class H264Reader implements ElementaryStreamReader {
 
     @EnsuresNonNull({"output", "sampleReader"})
     private void assertTracksCreated() {
-        Assertions.checkStateNotNull(this.output);
+        Preconditions.checkNotNull(this.output);
         Util.castNonNull(this.sampleReader);
     }
 
@@ -515,8 +515,8 @@ public final class H264Reader implements ElementaryStreamReader {
                 boolean z;
                 if (this.isComplete) {
                     if (sliceHeaderData.isComplete) {
-                        NalUnitUtil.SpsData spsData = (NalUnitUtil.SpsData) Assertions.checkStateNotNull(this.spsData);
-                        NalUnitUtil.SpsData spsData2 = (NalUnitUtil.SpsData) Assertions.checkStateNotNull(sliceHeaderData.spsData);
+                        NalUnitUtil.SpsData spsData = (NalUnitUtil.SpsData) Preconditions.checkNotNull(this.spsData);
+                        NalUnitUtil.SpsData spsData2 = (NalUnitUtil.SpsData) Preconditions.checkNotNull(sliceHeaderData.spsData);
                         return (this.frameNum == sliceHeaderData.frameNum && this.picParameterSetId == sliceHeaderData.picParameterSetId && this.fieldPicFlag == sliceHeaderData.fieldPicFlag && (!this.bottomFieldFlagPresent || !sliceHeaderData.bottomFieldFlagPresent || this.bottomFieldFlag == sliceHeaderData.bottomFieldFlag) && (((i = this.nalRefIdc) == (i2 = sliceHeaderData.nalRefIdc) || (i != 0 && i2 != 0)) && ((spsData.picOrderCountType != 0 || spsData2.picOrderCountType != 0 || (this.picOrderCntLsb == sliceHeaderData.picOrderCntLsb && this.deltaPicOrderCntBottom == sliceHeaderData.deltaPicOrderCntBottom)) && ((spsData.picOrderCountType != 1 || spsData2.picOrderCountType != 1 || (this.deltaPicOrderCnt0 == sliceHeaderData.deltaPicOrderCnt0 && this.deltaPicOrderCnt1 == sliceHeaderData.deltaPicOrderCnt1)) && (z = this.idrPicFlag) == sliceHeaderData.idrPicFlag && (!z || this.idrPicId == sliceHeaderData.idrPicId))))) ? false : true;
                     }
                     return true;

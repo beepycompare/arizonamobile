@@ -10,14 +10,14 @@ import java.util.Set;
 public final class Vg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f822a;
+    public final Context f823a;
     public final InterfaceC0148bl b;
     public final C0471ob c = new C0471ob();
     public final C0514q4 d = new C0514q4(new C0123am(), new C0489p4(), null);
     public final Consumer e;
 
     public Vg(Context context, final InterfaceC0210e6 interfaceC0210e6, final EnumC0164cb enumC0164cb, InterfaceC0148bl interfaceC0148bl) {
-        this.f822a = context;
+        this.f823a = context;
         this.b = interfaceC0148bl;
         this.e = new Consumer() { // from class: io.appmetrica.analytics.impl.Vg$$ExternalSyntheticLambda0
             @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
@@ -31,13 +31,13 @@ public final class Vg {
         String str = c0370kb.h;
         Q3 q3 = new Q3(str, c0370kb.e, c0370kb.f, c0370kb.g, c0370kb.i);
         String str2 = c0370kb.b;
-        byte[] bArr = c0370kb.f1071a;
+        byte[] bArr = c0370kb.f1072a;
         int i = c0370kb.c;
         HashMap hashMap = c0370kb.d;
         String str3 = c0370kb.j;
         PublicLogger orCreatePublicLogger = LoggerStorage.getOrCreatePublicLogger(str);
-        Set set = AbstractC0693x9.f1294a;
-        N3 n3 = new N3(bArr, str2, enumC0164cb.f926a, orCreatePublicLogger);
+        Set set = AbstractC0693x9.f1295a;
+        N3 n3 = new N3(bArr, str2, enumC0164cb.f927a, orCreatePublicLogger);
         n3.q = hashMap;
         n3.g = i;
         n3.c = str3;

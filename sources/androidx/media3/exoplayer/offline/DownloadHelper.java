@@ -13,7 +13,6 @@ import androidx.media3.common.TrackGroup;
 import androidx.media3.common.TrackSelectionOverride;
 import androidx.media3.common.TrackSelectionParameters;
 import androidx.media3.common.Tracks;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
 import androidx.media3.datasource.DataSource;
@@ -49,6 +48,7 @@ import androidx.media3.exoplayer.upstream.DefaultAllocator;
 import androidx.media3.exoplayer.util.ReleasableExecutor;
 import androidx.media3.extractor.ExtractorsFactory;
 import androidx.media3.extractor.SeekMap;
+import com.google.common.base.Preconditions;
 import com.google.common.base.Supplier;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.UnmodifiableIterator;
@@ -147,8 +147,8 @@ public final class DownloadHelper {
 
         public DownloadHelper create(MediaItem mediaItem) {
             RendererCapabilitiesList unreleaseableRendererCapabilitiesList;
-            boolean isProgressive = DownloadHelper.isProgressive((MediaItem.LocalConfiguration) Assertions.checkNotNull(mediaItem.localConfiguration));
-            Assertions.checkArgument(isProgressive || this.dataSourceFactory != null);
+            boolean isProgressive = DownloadHelper.isProgressive((MediaItem.LocalConfiguration) Preconditions.checkNotNull(mediaItem.localConfiguration));
+            Preconditions.checkArgument(isProgressive || this.dataSourceFactory != null);
             MediaSource createMediaSourceInternal = (isProgressive && this.dataSourceFactory == null) ? null : DownloadHelper.createMediaSourceInternal(mediaItem, (DataSource.Factory) Util.castNonNull(this.dataSourceFactory), this.drmSessionManager, this.loadExecutorSupplier);
             TrackSelectionParameters trackSelectionParameters = this.trackSelectionParameters;
             if (this.renderersFactory != null) {
@@ -185,7 +185,7 @@ public final class DownloadHelper {
 
     @Deprecated
     public static DownloadHelper forMediaItem(Context context, MediaItem mediaItem) {
-        Assertions.checkArgument(isProgressive((MediaItem.LocalConfiguration) Assertions.checkNotNull(mediaItem.localConfiguration)));
+        Preconditions.checkArgument(isProgressive((MediaItem.LocalConfiguration) Preconditions.checkNotNull(mediaItem.localConfiguration)));
         return new Factory().create(mediaItem);
     }
 
@@ -243,7 +243,7 @@ public final class DownloadHelper {
 
     public DownloadHelper(MediaItem mediaItem, MediaSource mediaSource, TrackSelectionParameters trackSelectionParameters, RendererCapabilitiesList rendererCapabilitiesList, boolean z) {
         int i;
-        this.localConfiguration = (MediaItem.LocalConfiguration) Assertions.checkNotNull(mediaItem.localConfiguration);
+        this.localConfiguration = (MediaItem.LocalConfiguration) Preconditions.checkNotNull(mediaItem.localConfiguration);
         this.mediaSource = mediaSource;
         if (mediaSource == null) {
             i = 0;
@@ -267,15 +267,15 @@ public final class DownloadHelper {
     }
 
     public void prepare(final Callback callback) {
-        Assertions.checkState(this.callback == null);
+        Preconditions.checkState(this.callback == null);
         this.callback = callback;
         if (this.mode != 0) {
-            this.mediaPreparer = new MediaPreparer((MediaSource) Assertions.checkNotNull(this.mediaSource), this);
+            this.mediaPreparer = new MediaPreparer((MediaSource) Preconditions.checkNotNull(this.mediaSource), this);
         } else {
             this.callbackHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.offline.DownloadHelper$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
-                    DownloadHelper.this.m8987xe2e8f097(callback);
+                    DownloadHelper.this.m8996xe2e8f097(callback);
                 }
             });
         }
@@ -283,7 +283,7 @@ public final class DownloadHelper {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$prepare$1$androidx-media3-exoplayer-offline-DownloadHelper  reason: not valid java name */
-    public /* synthetic */ void m8987xe2e8f097(Callback callback) {
+    public /* synthetic */ void m8996xe2e8f097(Callback callback) {
         callback.onPrepared(this, false);
     }
 
@@ -538,9 +538,9 @@ public final class DownloadHelper {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void onMediaPrepared() throws ExoPlaybackException {
-        Assertions.checkNotNull(this.mediaPreparer);
-        Assertions.checkNotNull(this.mediaPreparer.mediaPeriods);
-        Assertions.checkNotNull(this.mediaPreparer.timeline);
+        Preconditions.checkNotNull(this.mediaPreparer);
+        Preconditions.checkNotNull(this.mediaPreparer.mediaPeriods);
+        Preconditions.checkNotNull(this.mediaPreparer.timeline);
         int i = this.mode;
         final boolean z = false;
         if (i == 2) {
@@ -559,43 +559,43 @@ public final class DownloadHelper {
             for (int i4 = 0; i4 < length; i4++) {
                 this.trackGroupArrays[i4] = this.mediaPreparer.mediaPeriods[i4].getTrackGroups();
                 this.trackSelector.onSelectionActivated(runTrackSelection(i4).info);
-                this.mappedTrackInfos[i4] = (MappingTrackSelector.MappedTrackInfo) Assertions.checkNotNull(this.trackSelector.getCurrentMappedTrackInfo());
+                this.mappedTrackInfos[i4] = (MappingTrackSelector.MappedTrackInfo) Preconditions.checkNotNull(this.trackSelector.getCurrentMappedTrackInfo());
             }
             setPreparedWithNonProgressiveSourceAndTracksSelected();
             z = true;
         } else {
-            Assertions.checkState(i == 1);
-            Assertions.checkNotNull(this.mediaPreparer.seekMap);
+            Preconditions.checkState(i == 1);
+            Preconditions.checkNotNull(this.mediaPreparer.seekMap);
             setPreparedWithProgressiveSource();
         }
-        ((Handler) Assertions.checkNotNull(this.callbackHandler)).post(new Runnable() { // from class: androidx.media3.exoplayer.offline.DownloadHelper$$ExternalSyntheticLambda1
+        ((Handler) Preconditions.checkNotNull(this.callbackHandler)).post(new Runnable() { // from class: androidx.media3.exoplayer.offline.DownloadHelper$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                DownloadHelper.this.m8986x26f1c63b(z);
+                DownloadHelper.this.m8995x26f1c63b(z);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onMediaPrepared$2$androidx-media3-exoplayer-offline-DownloadHelper  reason: not valid java name */
-    public /* synthetic */ void m8986x26f1c63b(boolean z) {
-        ((Callback) Assertions.checkNotNull(this.callback)).onPrepared(this, z);
+    public /* synthetic */ void m8995x26f1c63b(boolean z) {
+        ((Callback) Preconditions.checkNotNull(this.callback)).onPrepared(this, z);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void onMediaPreparationFailed(final IOException iOException) {
-        ((Handler) Assertions.checkNotNull(this.callbackHandler)).post(new Runnable() { // from class: androidx.media3.exoplayer.offline.DownloadHelper$$ExternalSyntheticLambda2
+        ((Handler) Preconditions.checkNotNull(this.callbackHandler)).post(new Runnable() { // from class: androidx.media3.exoplayer.offline.DownloadHelper$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                DownloadHelper.this.m8985x83f2c593(iOException);
+                DownloadHelper.this.m8994x83f2c593(iOException);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onMediaPreparationFailed$3$androidx-media3-exoplayer-offline-DownloadHelper  reason: not valid java name */
-    public /* synthetic */ void m8985x83f2c593(IOException iOException) {
-        ((Callback) Assertions.checkNotNull(this.callback)).onPrepareError(this, iOException);
+    public /* synthetic */ void m8994x83f2c593(IOException iOException) {
+        ((Callback) Preconditions.checkNotNull(this.callback)).onPrepareError(this, iOException);
     }
 
     @RequiresNonNull({"trackGroupArrays", "mappedTrackInfos", "trackSelectionsByPeriodAndRenderer", "immutableTrackSelectionsByPeriodAndRenderer", "mediaPreparer", "mediaPreparer.timeline", "mediaPreparer.mediaPeriods"})
@@ -611,21 +611,21 @@ public final class DownloadHelper {
 
     @EnsuresNonNull({"mediaPreparer", "mediaPreparer.timeline", "mediaPreparer.mediaPeriods"})
     private void assertPreparedWithMedia() {
-        Assertions.checkState(this.mode != 0);
-        Assertions.checkState(this.isPreparedWithMedia);
+        Preconditions.checkState(this.mode != 0);
+        Preconditions.checkState(this.isPreparedWithMedia);
     }
 
     @EnsuresNonNull({"trackGroupArrays", "mappedTrackInfos", "trackSelectionsByPeriodAndRenderer", "immutableTrackSelectionsByPeriodAndRenderer", "mediaPreparer", "mediaPreparer.timeline", "mediaPreparer.mediaPeriods"})
     private void assertPreparedWithNonProgressiveSourceAndTracksSelected() {
-        Assertions.checkState(this.mode == 2);
-        Assertions.checkState(this.isPreparedWithMedia);
-        Assertions.checkState(this.areTracksSelected);
+        Preconditions.checkState(this.mode == 2);
+        Preconditions.checkState(this.isPreparedWithMedia);
+        Preconditions.checkState(this.areTracksSelected);
     }
 
     @EnsuresNonNull({"mediaPreparer", "mediaPreparer.timeline", "mediaPreparer.seekMap", "mediaPreparer.mediaPeriods"})
     private void assertPreparedWithProgressiveSource() {
-        Assertions.checkState(this.mode == 1);
-        Assertions.checkState(this.isPreparedWithMedia);
+        Preconditions.checkState(this.mode == 1);
+        Preconditions.checkState(this.isPreparedWithMedia);
     }
 
     @RequiresNonNull({"trackGroupArrays", "trackSelectionsByPeriodAndRenderer", "mediaPreparer", "mediaPreparer.timeline"})
@@ -670,26 +670,24 @@ public final class DownloadHelper {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static MediaSource createMediaSourceInternal(MediaItem mediaItem, DataSource.Factory factory, final DrmSessionManager drmSessionManager, Supplier<ReleasableExecutor> supplier) {
-        ProgressiveMediaSource.Factory factory2;
-        if (isProgressive((MediaItem.LocalConfiguration) Assertions.checkNotNull(mediaItem.localConfiguration))) {
-            ProgressiveMediaSource.Factory factory3 = new ProgressiveMediaSource.Factory(factory);
-            factory2 = factory3;
-            if (supplier != null) {
-                factory3.setDownloadExecutor(supplier);
-                factory2 = factory3;
-            }
+        MediaSource.Factory defaultMediaSourceFactory;
+        if (isProgressive((MediaItem.LocalConfiguration) Preconditions.checkNotNull(mediaItem.localConfiguration))) {
+            defaultMediaSourceFactory = new ProgressiveMediaSource.Factory(factory);
         } else {
-            factory2 = new DefaultMediaSourceFactory(factory, ExtractorsFactory.EMPTY);
+            defaultMediaSourceFactory = new DefaultMediaSourceFactory(factory, ExtractorsFactory.EMPTY);
+        }
+        if (supplier != null) {
+            defaultMediaSourceFactory.setDownloadExecutor(supplier);
         }
         if (drmSessionManager != null) {
-            factory2.setDrmSessionManagerProvider(new DrmSessionManagerProvider() { // from class: androidx.media3.exoplayer.offline.DownloadHelper$$ExternalSyntheticLambda0
+            defaultMediaSourceFactory.setDrmSessionManagerProvider(new DrmSessionManagerProvider() { // from class: androidx.media3.exoplayer.offline.DownloadHelper$$ExternalSyntheticLambda0
                 @Override // androidx.media3.exoplayer.drm.DrmSessionManagerProvider
                 public final DrmSessionManager get(MediaItem mediaItem2) {
                     return DownloadHelper.lambda$createMediaSourceInternal$4(DrmSessionManager.this, mediaItem2);
                 }
             });
         }
-        return factory2.createMediaSource(mediaItem);
+        return defaultMediaSourceFactory.createMediaSource(mediaItem);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

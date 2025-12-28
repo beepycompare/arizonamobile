@@ -26,7 +26,7 @@ public final class SmallPersistentVector<E> extends AbstractPersistentList<E> im
     public SmallPersistentVector(Object[] buffer) {
         Intrinsics.checkNotNullParameter(buffer, "buffer");
         this.buffer = buffer;
-        CommonFunctionsKt.m11716assert(buffer.length <= 32);
+        CommonFunctionsKt.m11754assert(buffer.length <= 32);
     }
 
     /* JADX WARN: Multi-variable type inference failed */

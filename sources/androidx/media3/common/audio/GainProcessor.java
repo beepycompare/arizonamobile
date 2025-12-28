@@ -2,7 +2,8 @@ package androidx.media3.common.audio;
 
 import androidx.media3.common.C;
 import androidx.media3.common.audio.AudioProcessor;
-import androidx.media3.common.util.Assertions;
+import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import java.nio.ByteBuffer;
 import java.util.Objects;
 /* loaded from: classes2.dex */
@@ -18,7 +19,7 @@ public final class GainProcessor extends BaseAudioProcessor {
     }
 
     public GainProcessor(GainProvider gainProvider) {
-        this.gainProvider = (GainProvider) Assertions.checkNotNull(gainProvider);
+        this.gainProvider = (GainProvider) Preconditions.checkNotNull(gainProvider);
     }
 
     @Override // androidx.media3.common.audio.BaseAudioProcessor
@@ -37,16 +38,16 @@ public final class GainProcessor extends BaseAudioProcessor {
 
     @Override // androidx.media3.common.audio.AudioProcessor
     public void queueInput(ByteBuffer byteBuffer) {
-        Assertions.checkState(!Objects.equals(this.inputAudioFormat, AudioProcessor.AudioFormat.NOT_SET), "Audio processor must be configured and flushed before calling queueInput().");
+        Preconditions.checkState(!Objects.equals(this.inputAudioFormat, AudioProcessor.AudioFormat.NOT_SET), "Audio processor must be configured and flushed before calling queueInput().");
         if (byteBuffer.hasRemaining()) {
-            Assertions.checkArgument(byteBuffer.remaining() % this.inputAudioFormat.bytesPerFrame == 0, "Queued an incomplete frame.");
+            Preconditions.checkArgument(byteBuffer.remaining() % this.inputAudioFormat.bytesPerFrame == 0, "Queued an incomplete frame.");
             ByteBuffer replaceOutputBuffer = replaceOutputBuffer(byteBuffer.remaining());
             while (byteBuffer.hasRemaining()) {
                 float gainFactorAtSamplePosition = this.gainProvider.getGainFactorAtSamplePosition(this.readFrames, this.inputAudioFormat.sampleRate);
                 if (gainFactorAtSamplePosition == 1.0f) {
                     int limit = byteBuffer.limit();
                     long isUnityUntil = this.gainProvider.isUnityUntil(this.readFrames, this.inputAudioFormat.sampleRate);
-                    Assertions.checkState(isUnityUntil != C.TIME_UNSET, "Expected a valid end boundary for unity region.");
+                    Preconditions.checkState(isUnityUntil != C.TIME_UNSET, "Expected a valid end boundary for unity region.");
                     if (isUnityUntil != Long.MIN_VALUE) {
                         byteBuffer.limit(Math.min(limit, ((int) ((isUnityUntil - this.readFrames) * this.inputAudioFormat.bytesPerFrame)) + byteBuffer.position()));
                     }
@@ -72,8 +73,8 @@ public final class GainProcessor extends BaseAudioProcessor {
     }
 
     @Override // androidx.media3.common.audio.BaseAudioProcessor
-    public void onFlush() {
-        this.readFrames = 0L;
+    public void onFlush(AudioProcessor.StreamMetadata streamMetadata) {
+        this.readFrames = Util.durationUsToSampleCount(streamMetadata.positionOffsetUs, this.inputAudioFormat.sampleRate);
     }
 
     @Override // androidx.media3.common.audio.BaseAudioProcessor

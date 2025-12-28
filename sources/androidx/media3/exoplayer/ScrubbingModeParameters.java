@@ -1,6 +1,6 @@
 package androidx.media3.exoplayer;
 
-import androidx.media3.common.util.Assertions;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableSet;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import java.util.Collection;
@@ -9,6 +9,7 @@ import java.util.Set;
 /* loaded from: classes.dex */
 public final class ScrubbingModeParameters {
     public static final ScrubbingModeParameters DEFAULT = new Builder().build();
+    public final boolean allowSkippingKeyFrameReset;
     public final boolean allowSkippingMediaCodecFlush;
     public final ImmutableSet<Integer> disabledTrackTypes;
     public final Double fractionalSeekToleranceAfter;
@@ -21,6 +22,7 @@ public final class ScrubbingModeParameters {
 
     /* loaded from: classes.dex */
     public static final class Builder {
+        private boolean allowSkippingKeyFrameReset;
         private boolean allowSkippingMediaCodecFlush;
         private ImmutableSet<Integer> disabledTrackTypes;
         private Double fractionalSeekToleranceAfter;
@@ -33,6 +35,7 @@ public final class ScrubbingModeParameters {
             this.disabledTrackTypes = ImmutableSet.of(1, 5);
             this.shouldIncreaseCodecOperatingRate = true;
             this.allowSkippingMediaCodecFlush = true;
+            this.allowSkippingKeyFrameReset = true;
             this.shouldEnableDynamicScheduling = true;
             this.useDecodeOnlyFlag = true;
         }
@@ -43,6 +46,7 @@ public final class ScrubbingModeParameters {
             this.fractionalSeekToleranceAfter = scrubbingModeParameters.fractionalSeekToleranceAfter;
             this.shouldIncreaseCodecOperatingRate = scrubbingModeParameters.shouldIncreaseCodecOperatingRate;
             this.allowSkippingMediaCodecFlush = scrubbingModeParameters.allowSkippingMediaCodecFlush;
+            this.allowSkippingKeyFrameReset = scrubbingModeParameters.allowSkippingKeyFrameReset;
             this.shouldEnableDynamicScheduling = scrubbingModeParameters.shouldEnableDynamicScheduling;
             this.useDecodeOnlyFlag = scrubbingModeParameters.useDecodeOnlyFlag;
         }
@@ -54,12 +58,12 @@ public final class ScrubbingModeParameters {
 
         public Builder setFractionalSeekTolerance(Double d, Double d2) {
             boolean z = true;
-            Assertions.checkArgument((d == null) == (d2 == null));
-            Assertions.checkArgument(d == null || (d.doubleValue() >= FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE && d.doubleValue() <= 1.0d));
+            Preconditions.checkArgument((d == null) == (d2 == null));
+            Preconditions.checkArgument(d == null || (d.doubleValue() >= FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE && d.doubleValue() <= 1.0d));
             if (d2 != null && (d2.doubleValue() < FirebaseRemoteConfig.DEFAULT_VALUE_FOR_DOUBLE || d2.doubleValue() > 1.0d)) {
                 z = false;
             }
-            Assertions.checkArgument(z);
+            Preconditions.checkArgument(z);
             this.fractionalSeekToleranceBefore = d;
             this.fractionalSeekToleranceAfter = d2;
             return this;
@@ -86,6 +90,11 @@ public final class ScrubbingModeParameters {
             return this;
         }
 
+        public Builder setAllowSkippingKeyFrameReset(boolean z) {
+            this.allowSkippingKeyFrameReset = z;
+            return this;
+        }
+
         public Builder setUseDecodeOnlyFlag(boolean z) {
             this.useDecodeOnlyFlag = z;
             return this;
@@ -103,6 +112,7 @@ public final class ScrubbingModeParameters {
         this.shouldIncreaseCodecOperatingRate = builder.shouldIncreaseCodecOperatingRate;
         this.isMediaCodecFlushEnabled = !builder.allowSkippingMediaCodecFlush;
         this.allowSkippingMediaCodecFlush = builder.allowSkippingMediaCodecFlush;
+        this.allowSkippingKeyFrameReset = builder.allowSkippingKeyFrameReset;
         this.shouldEnableDynamicScheduling = builder.shouldEnableDynamicScheduling;
         this.useDecodeOnlyFlag = builder.useDecodeOnlyFlag;
     }
@@ -114,12 +124,12 @@ public final class ScrubbingModeParameters {
     public boolean equals(Object obj) {
         if (obj instanceof ScrubbingModeParameters) {
             ScrubbingModeParameters scrubbingModeParameters = (ScrubbingModeParameters) obj;
-            return this.disabledTrackTypes.equals(scrubbingModeParameters.disabledTrackTypes) && this.allowSkippingMediaCodecFlush == scrubbingModeParameters.allowSkippingMediaCodecFlush && Objects.equals(this.fractionalSeekToleranceBefore, scrubbingModeParameters.fractionalSeekToleranceBefore) && Objects.equals(this.fractionalSeekToleranceAfter, scrubbingModeParameters.fractionalSeekToleranceAfter) && this.shouldIncreaseCodecOperatingRate == scrubbingModeParameters.shouldIncreaseCodecOperatingRate && this.shouldEnableDynamicScheduling == scrubbingModeParameters.shouldEnableDynamicScheduling && this.useDecodeOnlyFlag == scrubbingModeParameters.useDecodeOnlyFlag;
+            return this.disabledTrackTypes.equals(scrubbingModeParameters.disabledTrackTypes) && this.allowSkippingMediaCodecFlush == scrubbingModeParameters.allowSkippingMediaCodecFlush && this.allowSkippingKeyFrameReset == scrubbingModeParameters.allowSkippingKeyFrameReset && Objects.equals(this.fractionalSeekToleranceBefore, scrubbingModeParameters.fractionalSeekToleranceBefore) && Objects.equals(this.fractionalSeekToleranceAfter, scrubbingModeParameters.fractionalSeekToleranceAfter) && this.shouldIncreaseCodecOperatingRate == scrubbingModeParameters.shouldIncreaseCodecOperatingRate && this.shouldEnableDynamicScheduling == scrubbingModeParameters.shouldEnableDynamicScheduling && this.useDecodeOnlyFlag == scrubbingModeParameters.useDecodeOnlyFlag;
         }
         return false;
     }
 
     public int hashCode() {
-        return Objects.hash(this.disabledTrackTypes, this.fractionalSeekToleranceBefore, this.fractionalSeekToleranceAfter, Boolean.valueOf(this.shouldIncreaseCodecOperatingRate), Boolean.valueOf(this.allowSkippingMediaCodecFlush), Boolean.valueOf(this.shouldEnableDynamicScheduling), Boolean.valueOf(this.useDecodeOnlyFlag));
+        return Objects.hash(this.disabledTrackTypes, this.fractionalSeekToleranceBefore, this.fractionalSeekToleranceAfter, Boolean.valueOf(this.shouldIncreaseCodecOperatingRate), Boolean.valueOf(this.allowSkippingMediaCodecFlush), Boolean.valueOf(this.allowSkippingKeyFrameReset), Boolean.valueOf(this.shouldEnableDynamicScheduling), Boolean.valueOf(this.useDecodeOnlyFlag));
     }
 }

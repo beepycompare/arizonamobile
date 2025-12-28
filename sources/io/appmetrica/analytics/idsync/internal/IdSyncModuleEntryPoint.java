@@ -24,7 +24,7 @@ import kotlin.collections.MapsKt;
 public final class IdSyncModuleEntryPoint extends ModuleServiceEntryPoint<IdSyncConfig> implements RemoteConfigUpdateListener<IdSyncConfig> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final d f480a;
+    private final d f481a;
     private final c b;
     private h c;
     private final String d;
@@ -33,7 +33,7 @@ public final class IdSyncModuleEntryPoint extends ModuleServiceEntryPoint<IdSync
     /* JADX WARN: Type inference failed for: r0v2, types: [io.appmetrica.analytics.idsync.internal.IdSyncModuleEntryPoint$remoteConfigExtensionConfiguration$1] */
     public IdSyncModuleEntryPoint() {
         e eVar = new e();
-        this.f480a = new d(eVar);
+        this.f481a = new d(eVar);
         this.b = new c(eVar);
         this.d = "id-sync";
         this.e = new RemoteConfigExtensionConfiguration<IdSyncConfig>() { // from class: io.appmetrica.analytics.idsync.internal.IdSyncModuleEntryPoint$remoteConfigExtensionConfiguration$1
@@ -57,7 +57,7 @@ public final class IdSyncModuleEntryPoint extends ModuleServiceEntryPoint<IdSync
             @Override // io.appmetrica.analytics.modulesapi.internal.service.RemoteConfigExtensionConfiguration
             public Converter<IdSyncConfig, byte[]> getProtobufConverter() {
                 d dVar;
-                dVar = IdSyncModuleEntryPoint.this.f480a;
+                dVar = IdSyncModuleEntryPoint.this.f481a;
                 return dVar;
             }
 

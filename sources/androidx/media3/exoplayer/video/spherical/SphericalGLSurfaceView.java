@@ -14,11 +14,11 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.Surface;
 import android.view.WindowManager;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.GlUtil;
 import androidx.media3.exoplayer.video.VideoFrameMetadataListener;
 import androidx.media3.exoplayer.video.spherical.OrientationListener;
 import androidx.media3.exoplayer.video.spherical.TouchTracker;
+import com.google.common.base.Preconditions;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 import javax.microedition.khronos.egl.EGLConfig;
@@ -58,7 +58,7 @@ public final class SphericalGLSurfaceView extends GLSurfaceView {
         super(context, attributeSet);
         this.videoSurfaceListeners = new CopyOnWriteArrayList<>();
         this.mainHandler = new Handler(Looper.getMainLooper());
-        SensorManager sensorManager = (SensorManager) Assertions.checkNotNull(context.getSystemService("sensor"));
+        SensorManager sensorManager = (SensorManager) Preconditions.checkNotNull(context.getSystemService("sensor"));
         this.sensorManager = sensorManager;
         Sensor defaultSensor = sensorManager.getDefaultSensor(15);
         this.orientationSensor = defaultSensor == null ? sensorManager.getDefaultSensor(11) : defaultSensor;
@@ -67,7 +67,7 @@ public final class SphericalGLSurfaceView extends GLSurfaceView {
         Renderer renderer = new Renderer(sceneRenderer);
         TouchTracker touchTracker = new TouchTracker(context, renderer, PX_PER_DEGREES);
         this.touchTracker = touchTracker;
-        this.orientationListener = new OrientationListener(((WindowManager) Assertions.checkNotNull((WindowManager) context.getSystemService("window"))).getDefaultDisplay(), touchTracker, renderer);
+        this.orientationListener = new OrientationListener(((WindowManager) Preconditions.checkNotNull((WindowManager) context.getSystemService("window"))).getDefaultDisplay(), touchTracker, renderer);
         this.useSensorRotation = true;
         setEGLContextClientVersion(2);
         setRenderer(renderer);
@@ -123,14 +123,14 @@ public final class SphericalGLSurfaceView extends GLSurfaceView {
         this.mainHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.video.spherical.SphericalGLSurfaceView$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                SphericalGLSurfaceView.this.m9059x99583d2c();
+                SphericalGLSurfaceView.this.m9074x99583d2c();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onDetachedFromWindow$0$androidx-media3-exoplayer-video-spherical-SphericalGLSurfaceView  reason: not valid java name */
-    public /* synthetic */ void m9059x99583d2c() {
+    public /* synthetic */ void m9074x99583d2c() {
         Surface surface = this.surface;
         if (surface != null) {
             Iterator<VideoSurfaceListener> it = this.videoSurfaceListeners.iterator();
@@ -162,14 +162,14 @@ public final class SphericalGLSurfaceView extends GLSurfaceView {
         this.mainHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.video.spherical.SphericalGLSurfaceView$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                SphericalGLSurfaceView.this.m9060x24c550f4(surfaceTexture);
+                SphericalGLSurfaceView.this.m9075x24c550f4(surfaceTexture);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onSurfaceTextureAvailable$1$androidx-media3-exoplayer-video-spherical-SphericalGLSurfaceView  reason: not valid java name */
-    public /* synthetic */ void m9060x24c550f4(SurfaceTexture surfaceTexture) {
+    public /* synthetic */ void m9075x24c550f4(SurfaceTexture surfaceTexture) {
         SurfaceTexture surfaceTexture2 = this.surfaceTexture;
         Surface surface = this.surface;
         Surface surface2 = new Surface(surfaceTexture);

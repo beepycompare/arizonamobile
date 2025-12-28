@@ -5,15 +5,15 @@ import android.text.TextUtils;
 import androidx.media3.common.C;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import java.util.Locale;
 /* loaded from: classes3.dex */
 public class DefaultTrackNameProvider implements TrackNameProvider {
     private final Resources resources;
 
     public DefaultTrackNameProvider(Resources resources) {
-        this.resources = (Resources) Assertions.checkNotNull(resources);
+        this.resources = (Resources) Preconditions.checkNotNull(resources);
     }
 
     @Override // androidx.media3.ui.TrackNameProvider

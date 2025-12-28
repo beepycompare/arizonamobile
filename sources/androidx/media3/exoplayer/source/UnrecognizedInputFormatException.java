@@ -21,4 +21,10 @@ public class UnrecognizedInputFormatException extends ParserException {
         this.uri = uri;
         this.sniffFailures = ImmutableList.copyOf((Collection) list);
     }
+
+    @Override // androidx.media3.common.ParserException, java.lang.Throwable
+    public String getMessage() {
+        String message = super.getMessage();
+        return this.sniffFailures.isEmpty() ? message : message + "\nsniff failures: " + this.sniffFailures;
+    }
 }

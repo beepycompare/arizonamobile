@@ -26,7 +26,7 @@ public final class DefaultMediaCodecAdapterFactory implements MediaCodecAdapter.
     @Deprecated
     public DefaultMediaCodecAdapterFactory() {
         this.asynchronousMode = 0;
-        this.asyncCryptoFlagEnabled = false;
+        this.asyncCryptoFlagEnabled = true;
         this.context = null;
         this.callbackThreadSupplier = null;
         this.queueingThreadSupplier = null;
@@ -39,7 +39,7 @@ public final class DefaultMediaCodecAdapterFactory implements MediaCodecAdapter.
     public DefaultMediaCodecAdapterFactory(Context context, Supplier<HandlerThread> supplier, Supplier<HandlerThread> supplier2) {
         this.context = context;
         this.asynchronousMode = 0;
-        this.asyncCryptoFlagEnabled = false;
+        this.asyncCryptoFlagEnabled = true;
         this.callbackThreadSupplier = supplier;
         this.queueingThreadSupplier = supplier2;
     }

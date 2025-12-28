@@ -15,6 +15,11 @@ public final class ImagesKt {
                     return R.drawable.sertificate_ic_safe;
                 }
                 break;
+            case -1794204667:
+                if (name.equals("icon-police-bonus-tasks")) {
+                    return R.drawable.certificate_police_bonus_tasks;
+                }
+                break;
             case -1457036466:
                 if (name.equals("icon-transport-heart")) {
                     return R.drawable.sertificate_ic_hp;
@@ -30,9 +35,24 @@ public final class ImagesKt {
                     return R.drawable.sertificate_ic_speed;
                 }
                 break;
+            case -314059282:
+                if (name.equals("icon-police-bonus-arrest")) {
+                    return R.drawable.certificate_police_bonus_arrest;
+                }
+                break;
+            case 185382963:
+                if (name.equals("icon-police-bonus-salary")) {
+                    return R.drawable.certificate_police_bonus_salary;
+                }
+                break;
             case 280951689:
                 if (name.equals("icon-transport-container")) {
                     return R.drawable.sertificate_ic_container;
+                }
+                break;
+            case 1142879573:
+                if (name.equals("icon-police-bonus-deposit")) {
+                    return R.drawable.certificate_police_bonus_deposit;
                 }
                 break;
             case 1810418316:

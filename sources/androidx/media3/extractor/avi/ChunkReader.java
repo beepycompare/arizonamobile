@@ -1,12 +1,12 @@
 package androidx.media3.extractor.avi;
 
 import androidx.media3.common.DataReader;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.ExtractorInput;
 import androidx.media3.extractor.SeekMap;
 import androidx.media3.extractor.SeekPoint;
 import androidx.media3.extractor.TrackOutput;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.Arrays;
 /* JADX INFO: Access modifiers changed from: package-private */
@@ -38,7 +38,7 @@ public final class ChunkReader {
         if (trackType != 1 && trackType != 2) {
             z = false;
         }
-        Assertions.checkArgument(z);
+        Preconditions.checkArgument(z);
         this.chunkId = getChunkIdFourCc(i, trackType == 2 ? CHUNK_TYPE_VIDEO_COMPRESSED : CHUNK_TYPE_AUDIO);
         this.durationUs = aviStreamHeaderChunk.getDurationUs();
         this.trackOutput = trackOutput;

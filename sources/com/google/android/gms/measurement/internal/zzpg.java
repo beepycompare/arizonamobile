@@ -71,6 +71,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.zip.GZIPInputStream;
+import kotlin.time.DurationKt;
 import kotlinx.datetime.internal.DateCalculationsKt;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* compiled from: com.google.android.gms:play-services-measurement@@23.0.0 */
@@ -1229,7 +1230,7 @@ public final class zzpg implements zzjg {
         zzaW().zzg();
         zzu();
         if (this.zza > 0) {
-            long abs = 3600000 - Math.abs(zzaZ().elapsedRealtime() - this.zza);
+            long abs = DurationKt.MILLIS_IN_HOUR - Math.abs(zzaZ().elapsedRealtime() - this.zza);
             if (abs > 0) {
                 zzaV().zzk().zzb("Upload has been suspended. Will update scheduling later in approximately ms", Long.valueOf(abs));
                 zzk().zzb();
@@ -3811,7 +3812,7 @@ public final class zzpg implements zzjg {
                         z = false;
                     }
                     if (zzf != null) {
-                        long j6 = ((j / 3600000) + j2) * 3600000;
+                        long j6 = ((j / DurationKt.MILLIS_IN_HOUR) + j2) * DurationKt.MILLIS_IN_HOUR;
                         if (z) {
                             long j7 = j;
                             zzac(new zzpl("_fvt", j7, Long.valueOf(j6), "auto"), zzrVar);

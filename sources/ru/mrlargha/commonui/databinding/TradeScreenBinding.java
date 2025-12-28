@@ -18,7 +18,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class TradeScreenBinding implements ViewBinding {
     public final Button btnAccept;
     public final AppCompatImageView btnBack;

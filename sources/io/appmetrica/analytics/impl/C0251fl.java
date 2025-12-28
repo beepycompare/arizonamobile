@@ -7,7 +7,7 @@ import java.util.List;
 public final class C0251fl implements InterfaceC0161c8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Hf f992a;
+    public final Hf f993a;
     public final C0298hg b;
 
     public C0251fl() {
@@ -19,14 +19,14 @@ public final class C0251fl implements InterfaceC0161c8 {
     public final List<Ei> fromModel(C0225el c0225el) {
         Ei ei;
         C0642v8 c0642v8 = new C0642v8();
-        c0642v8.f1262a = 3;
+        c0642v8.f1263a = 3;
         c0642v8.d = new C0592t8();
-        Ei fromModel = this.f992a.fromModel(c0225el.f971a);
-        c0642v8.d.f1228a = (C0468o8) fromModel.f560a;
+        Ei fromModel = this.f993a.fromModel(c0225el.f972a);
+        c0642v8.d.f1229a = (C0468o8) fromModel.f561a;
         C0725yg c0725yg = c0225el.b;
         if (c0725yg != null) {
             ei = this.b.fromModel(c0725yg);
-            c0642v8.d.b = (C0518q8) ei.f560a;
+            c0642v8.d.b = (C0518q8) ei.f561a;
         } else {
             ei = null;
         }
@@ -40,7 +40,7 @@ public final class C0251fl implements InterfaceC0161c8 {
     }
 
     public C0251fl(Hf hf, C0298hg c0298hg) {
-        this.f992a = hf;
+        this.f993a = hf;
         this.b = c0298hg;
     }
 

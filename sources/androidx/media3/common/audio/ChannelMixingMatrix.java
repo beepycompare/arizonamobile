@@ -1,6 +1,6 @@
 package androidx.media3.common.audio;
 
-import androidx.media3.common.util.Assertions;
+import com.google.common.base.Preconditions;
 /* loaded from: classes2.dex */
 public final class ChannelMixingMatrix {
     private final float[] coefficients;
@@ -25,9 +25,9 @@ public final class ChannelMixingMatrix {
 
     public ChannelMixingMatrix(int i, int i2, float[] fArr) {
         boolean z = true;
-        Assertions.checkArgument(i > 0, "Input channel count must be positive.");
-        Assertions.checkArgument(i2 > 0, "Output channel count must be positive.");
-        Assertions.checkArgument(fArr.length == i * i2, "Coefficient array length is invalid.");
+        Preconditions.checkArgument(i > 0, "Input channel count must be positive.");
+        Preconditions.checkArgument(i2 > 0, "Output channel count must be positive.");
+        Preconditions.checkArgument(fArr.length == i * i2, "Coefficient array length is invalid.");
         this.inputChannelCount = i;
         this.outputChannelCount = i2;
         this.coefficients = checkCoefficientsValid(fArr);

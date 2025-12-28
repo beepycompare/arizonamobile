@@ -7,7 +7,7 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public class ECommerceScreen {
 
     /* renamed from: a  reason: collision with root package name */
-    private String f436a;
+    private String f437a;
     private List b;
     private String c;
     private Map d;
@@ -17,7 +17,7 @@ public class ECommerceScreen {
     }
 
     public String getName() {
-        return this.f436a;
+        return this.f437a;
     }
 
     public Map<String, String> getPayload() {
@@ -34,7 +34,7 @@ public class ECommerceScreen {
     }
 
     public ECommerceScreen setName(String str) {
-        this.f436a = str;
+        this.f437a = str;
         return this;
     }
 
@@ -49,6 +49,6 @@ public class ECommerceScreen {
     }
 
     public String toString() {
-        return "ECommerceScreen{name='" + this.f436a + "', categoriesPath=" + this.b + ", searchQuery='" + this.c + "', payload=" + this.d + AbstractJsonLexerKt.END_OBJ;
+        return "ECommerceScreen{name='" + this.f437a + "', categoriesPath=" + this.b + ", searchQuery='" + this.c + "', payload=" + this.d + AbstractJsonLexerKt.END_OBJ;
     }
 }

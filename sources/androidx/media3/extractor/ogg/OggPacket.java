@@ -1,9 +1,9 @@
 package androidx.media3.extractor.ogg;
 
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.extractor.ExtractorInput;
 import androidx.media3.extractor.ExtractorUtil;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.Arrays;
 /* loaded from: classes3.dex */
@@ -23,7 +23,7 @@ final class OggPacket {
 
     public boolean populate(ExtractorInput extractorInput) throws IOException {
         int i;
-        Assertions.checkState(extractorInput != null);
+        Preconditions.checkState(extractorInput != null);
         if (this.populated) {
             this.populated = false;
             this.packetArray.reset(0);

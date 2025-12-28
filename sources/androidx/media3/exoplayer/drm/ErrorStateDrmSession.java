@@ -1,13 +1,13 @@
 package androidx.media3.exoplayer.drm;
 
 import androidx.media3.common.C;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.decoder.CryptoConfig;
 import androidx.media3.exoplayer.drm.DrmSession;
 import androidx.media3.exoplayer.drm.DrmSessionEventListener;
+import com.google.common.base.Preconditions;
 import java.util.Map;
 import java.util.UUID;
-/* loaded from: classes2.dex */
+/* loaded from: classes3.dex */
 public final class ErrorStateDrmSession implements DrmSession {
     private final DrmSession.DrmSessionException error;
 
@@ -50,7 +50,7 @@ public final class ErrorStateDrmSession implements DrmSession {
     }
 
     public ErrorStateDrmSession(DrmSession.DrmSessionException drmSessionException) {
-        this.error = (DrmSession.DrmSessionException) Assertions.checkNotNull(drmSessionException);
+        this.error = (DrmSession.DrmSessionException) Preconditions.checkNotNull(drmSessionException);
     }
 
     @Override // androidx.media3.exoplayer.drm.DrmSession

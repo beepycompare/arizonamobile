@@ -33,26 +33,26 @@ public final class SingleOnErrorReturn$subscribe$wrappedObserver$1<T> implements
     /* JADX WARN: Multi-variable type inference failed */
     @Override // ru.rustore.sdk.reactive.single.SingleObserver
     public void onError(Throwable e) {
-        Object m10216constructorimpl;
+        Object m10244constructorimpl;
         Function1 function1;
         Intrinsics.checkNotNullParameter(e, "e");
         if (this.disposed.compareAndSet(false, true)) {
             try {
                 Result.Companion companion = Result.Companion;
                 function1 = ((SingleOnErrorReturn) this.this$0).mapper;
-                m10216constructorimpl = Result.m10216constructorimpl(function1.invoke(e));
+                m10244constructorimpl = Result.m10244constructorimpl(function1.invoke(e));
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m10216constructorimpl = Result.m10216constructorimpl(ResultKt.createFailure(th));
+                m10244constructorimpl = Result.m10244constructorimpl(ResultKt.createFailure(th));
             }
             SingleObserver<T> singleObserver = this.$downstream;
-            if (Result.m10223isSuccessimpl(m10216constructorimpl)) {
-                singleObserver.onSuccess(m10216constructorimpl);
+            if (Result.m10251isSuccessimpl(m10244constructorimpl)) {
+                singleObserver.onSuccess(m10244constructorimpl);
             }
             SingleObserver<T> singleObserver2 = this.$downstream;
-            Throwable m10219exceptionOrNullimpl = Result.m10219exceptionOrNullimpl(m10216constructorimpl);
-            if (m10219exceptionOrNullimpl != null) {
-                singleObserver2.onError(m10219exceptionOrNullimpl);
+            Throwable m10247exceptionOrNullimpl = Result.m10247exceptionOrNullimpl(m10244constructorimpl);
+            if (m10247exceptionOrNullimpl != null) {
+                singleObserver2.onError(m10247exceptionOrNullimpl);
             }
         }
     }

@@ -5,13 +5,13 @@ import android.os.Handler;
 import android.os.Message;
 import androidx.media3.common.MediaItem;
 import androidx.media3.common.Timeline;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.datasource.TransferListener;
 import androidx.media3.exoplayer.AbstractConcatenatedTimeline;
 import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.exoplayer.source.ShuffleOrder;
 import androidx.media3.exoplayer.upstream.Allocator;
+import com.google.common.base.Preconditions;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -69,7 +69,7 @@ public final class ConcatenatingMediaSource extends CompositeMediaSource<MediaSo
 
     public ConcatenatingMediaSource(boolean z, boolean z2, ShuffleOrder shuffleOrder, MediaSource... mediaSourceArr) {
         for (MediaSource mediaSource : mediaSourceArr) {
-            Assertions.checkNotNull(mediaSource);
+            Preconditions.checkNotNull(mediaSource);
         }
         this.shuffleOrder = shuffleOrder.getLength() > 0 ? shuffleOrder.cloneAndClear() : shuffleOrder;
         this.mediaSourceByMediaPeriod = new IdentityHashMap<>();
@@ -227,7 +227,7 @@ public final class ConcatenatingMediaSource extends CompositeMediaSource<MediaSo
 
     @Override // androidx.media3.exoplayer.source.MediaSource
     public void releasePeriod(MediaPeriod mediaPeriod) {
-        MediaSourceHolder mediaSourceHolder = (MediaSourceHolder) Assertions.checkNotNull(this.mediaSourceByMediaPeriod.remove(mediaPeriod));
+        MediaSourceHolder mediaSourceHolder = (MediaSourceHolder) Preconditions.checkNotNull(this.mediaSourceByMediaPeriod.remove(mediaPeriod));
         mediaSourceHolder.mediaSource.releasePeriod(mediaPeriod);
         mediaSourceHolder.activeMediaPeriodIds.remove(((MaskingMediaPeriod) mediaPeriod).id);
         if (!this.mediaSourceByMediaPeriod.isEmpty()) {
@@ -285,10 +285,10 @@ public final class ConcatenatingMediaSource extends CompositeMediaSource<MediaSo
     }
 
     private void addPublicMediaSources(int i, Collection<MediaSource> collection, Handler handler, Runnable runnable) {
-        Assertions.checkArgument((handler == null) == (runnable == null));
+        Preconditions.checkArgument((handler == null) == (runnable == null));
         Handler handler2 = this.playbackThreadHandler;
         for (MediaSource mediaSource : collection) {
-            Assertions.checkNotNull(mediaSource);
+            Preconditions.checkNotNull(mediaSource);
         }
         ArrayList arrayList = new ArrayList(collection.size());
         for (MediaSource mediaSource2 : collection) {
@@ -303,7 +303,7 @@ public final class ConcatenatingMediaSource extends CompositeMediaSource<MediaSo
     }
 
     private void removePublicMediaSources(int i, int i2, Handler handler, Runnable runnable) {
-        Assertions.checkArgument((handler == null) == (runnable == null));
+        Preconditions.checkArgument((handler == null) == (runnable == null));
         Handler handler2 = this.playbackThreadHandler;
         Util.removeRange(this.mediaSourcesPublic, i, i2);
         if (handler2 != null) {
@@ -315,7 +315,7 @@ public final class ConcatenatingMediaSource extends CompositeMediaSource<MediaSo
     }
 
     private void movePublicMediaSource(int i, int i2, Handler handler, Runnable runnable) {
-        Assertions.checkArgument((handler == null) == (runnable == null));
+        Preconditions.checkArgument((handler == null) == (runnable == null));
         Handler handler2 = this.playbackThreadHandler;
         List<MediaSourceHolder> list = this.mediaSourcesPublic;
         list.add(i2, list.remove(i));
@@ -328,7 +328,7 @@ public final class ConcatenatingMediaSource extends CompositeMediaSource<MediaSo
     }
 
     private void setPublicShuffleOrder(ShuffleOrder shuffleOrder, Handler handler, Runnable runnable) {
-        Assertions.checkArgument((handler == null) == (runnable == null));
+        Preconditions.checkArgument((handler == null) == (runnable == null));
         Handler handler2 = this.playbackThreadHandler;
         if (handler2 != null) {
             int size = getSize();
@@ -428,7 +428,7 @@ public final class ConcatenatingMediaSource extends CompositeMediaSource<MediaSo
     }
 
     private Handler getPlaybackThreadHandlerOnPlaybackThread() {
-        return (Handler) Assertions.checkNotNull(this.playbackThreadHandler);
+        return (Handler) Preconditions.checkNotNull(this.playbackThreadHandler);
     }
 
     private synchronized void dispatchOnCompletionActions(Set<HandlerAndRunnable> set) {

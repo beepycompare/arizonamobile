@@ -6,9 +6,9 @@ import androidx.media3.common.ColorInfo;
 import androidx.media3.common.Format;
 import androidx.media3.common.Player;
 import androidx.media3.common.VideoSize;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.exoplayer.DecoderCounters;
 import androidx.media3.exoplayer.ExoPlayer;
+import com.google.common.base.Preconditions;
 import java.util.Locale;
 /* loaded from: classes3.dex */
 public class DebugTextViewHelper {
@@ -19,7 +19,7 @@ public class DebugTextViewHelper {
     private final Updater updater;
 
     public DebugTextViewHelper(ExoPlayer exoPlayer, TextView textView) {
-        Assertions.checkArgument(exoPlayer.getApplicationLooper() == Looper.getMainLooper());
+        Preconditions.checkArgument(exoPlayer.getApplicationLooper() == Looper.getMainLooper());
         this.player = exoPlayer;
         this.textView = textView;
         this.updater = new Updater();

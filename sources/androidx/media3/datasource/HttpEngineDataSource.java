@@ -8,12 +8,12 @@ import android.net.http.UrlRequest;
 import android.net.http.UrlResponseInfo;
 import android.text.TextUtils;
 import androidx.media3.common.PlaybackException;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Clock;
 import androidx.media3.common.util.ConditionVariable;
 import androidx.media3.common.util.Util;
 import androidx.media3.datasource.HttpDataSource;
 import com.google.common.base.Ascii;
+import com.google.common.base.Preconditions;
 import com.google.common.base.Predicate;
 import com.google.common.net.HttpHeaders;
 import com.google.common.primitives.Longs;
@@ -80,7 +80,7 @@ public final class HttpEngineDataSource extends BaseDataSource implements HttpDa
         }
 
         public Factory(HttpEngine httpEngine, Executor executor) {
-            this.httpEngine = (HttpEngine) Assertions.checkNotNull(httpEngine);
+            this.httpEngine = (HttpEngine) Preconditions.checkNotNull(httpEngine);
             this.executor = executor;
         }
 
@@ -168,8 +168,8 @@ public final class HttpEngineDataSource extends BaseDataSource implements HttpDa
 
     HttpEngineDataSource(HttpEngine httpEngine, Executor executor, int i, int i2, int i3, boolean z, boolean z2, String str, HttpDataSource.RequestProperties requestProperties, Predicate<String> predicate, boolean z3) {
         super(true);
-        this.httpEngine = (HttpEngine) Assertions.checkNotNull(httpEngine);
-        this.executor = (Executor) Assertions.checkNotNull(executor);
+        this.httpEngine = (HttpEngine) Preconditions.checkNotNull(httpEngine);
+        this.executor = (Executor) Preconditions.checkNotNull(executor);
         this.requestPriority = i;
         this.connectTimeoutMs = i2;
         this.readTimeoutMs = i3;
@@ -231,8 +231,8 @@ public final class HttpEngineDataSource extends BaseDataSource implements HttpDa
     public long open(DataSpec dataSpec) throws HttpDataSource.HttpDataSourceException {
         byte[] bArr;
         String firstHeader;
-        Assertions.checkNotNull(dataSpec);
-        Assertions.checkState(!this.transferStarted);
+        Preconditions.checkNotNull(dataSpec);
+        Preconditions.checkState(!this.transferStarted);
         this.operation.close();
         resetConnectTimeout();
         this.currentDataSpec = dataSpec;
@@ -253,7 +253,7 @@ public final class HttpEngineDataSource extends BaseDataSource implements HttpDa
                 } else if (!blockUntilConnectTimeout) {
                     throw new OpenException(new SocketTimeoutException(), dataSpec, (int) PlaybackException.ERROR_CODE_IO_NETWORK_CONNECTION_TIMEOUT, buildRequestWrapper.getStatus());
                 } else {
-                    UrlResponseInfo urlResponseInfo = (UrlResponseInfo) Assertions.checkNotNull(this.responseInfo);
+                    UrlResponseInfo urlResponseInfo = (UrlResponseInfo) Preconditions.checkNotNull(this.responseInfo);
                     int httpStatusCode = urlResponseInfo.getHttpStatusCode();
                     Map asMap = urlResponseInfo.getHeaders().getAsMap();
                     long j = 0;
@@ -311,7 +311,7 @@ public final class HttpEngineDataSource extends BaseDataSource implements HttpDa
 
     @Override // androidx.media3.common.DataReader
     public int read(byte[] bArr, int i, int i2) throws HttpDataSource.HttpDataSourceException {
-        Assertions.checkState(this.transferStarted);
+        Preconditions.checkState(this.transferStarted);
         if (i2 == 0) {
             return 0;
         }
@@ -328,7 +328,7 @@ public final class HttpEngineDataSource extends BaseDataSource implements HttpDa
                 return -1;
             }
             orCreateReadBuffer.flip();
-            Assertions.checkState(orCreateReadBuffer.hasRemaining());
+            Preconditions.checkState(orCreateReadBuffer.hasRemaining());
         }
         long j = this.bytesRemaining;
         if (j == -1) {
@@ -346,7 +346,7 @@ public final class HttpEngineDataSource extends BaseDataSource implements HttpDa
 
     public int read(ByteBuffer byteBuffer) throws HttpDataSource.HttpDataSourceException {
         int copyByteBuffer;
-        Assertions.checkState(this.transferStarted);
+        Preconditions.checkState(this.transferStarted);
         if (!byteBuffer.isDirect()) {
             throw new IllegalArgumentException("Passed buffer is not a direct ByteBuffer");
         }
@@ -370,7 +370,7 @@ public final class HttpEngineDataSource extends BaseDataSource implements HttpDa
                 this.bytesRemaining = 0L;
                 return -1;
             }
-            Assertions.checkState(remaining > byteBuffer.remaining());
+            Preconditions.checkState(remaining > byteBuffer.remaining());
             int remaining2 = remaining - byteBuffer.remaining();
             long j2 = this.bytesRemaining;
             if (j2 != -1) {
@@ -479,7 +479,7 @@ public final class HttpEngineDataSource extends BaseDataSource implements HttpDa
                     throw new OpenException(dataSpec, 2008, 14);
                 }
                 orCreateReadBuffer.flip();
-                Assertions.checkState(orCreateReadBuffer.hasRemaining());
+                Preconditions.checkState(orCreateReadBuffer.hasRemaining());
                 int min = (int) Math.min(orCreateReadBuffer.remaining(), j);
                 orCreateReadBuffer.position(orCreateReadBuffer.position() + min);
                 j -= min;
@@ -630,7 +630,7 @@ public final class HttpEngineDataSource extends BaseDataSource implements HttpDa
             if (this.isClosed) {
                 return;
             }
-            DataSpec dataSpec = (DataSpec) Assertions.checkNotNull(HttpEngineDataSource.this.currentDataSpec);
+            DataSpec dataSpec = (DataSpec) Preconditions.checkNotNull(HttpEngineDataSource.this.currentDataSpec);
             int httpStatusCode = urlResponseInfo.getHttpStatusCode();
             if (dataSpec.httpMethod != 2 || (httpStatusCode != 307 && httpStatusCode != 308)) {
                 if (HttpEngineDataSource.this.resetTimeoutOnRedirects) {

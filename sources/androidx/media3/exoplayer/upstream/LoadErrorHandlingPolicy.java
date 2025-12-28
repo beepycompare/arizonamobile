@@ -1,8 +1,8 @@
 package androidx.media3.exoplayer.upstream;
 
-import androidx.media3.common.util.Assertions;
 import androidx.media3.exoplayer.source.LoadEventInfo;
 import androidx.media3.exoplayer.source.MediaLoadData;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -70,7 +70,7 @@ public interface LoadErrorHandlingPolicy {
         public final int type;
 
         public FallbackSelection(int i, long j) {
-            Assertions.checkArgument(j >= 0);
+            Preconditions.checkArgument(j >= 0);
             this.type = i;
             this.exclusionDurationMs = j;
         }

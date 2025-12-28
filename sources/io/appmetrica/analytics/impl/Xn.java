@@ -3,9 +3,9 @@ package io.appmetrica.analytics.impl;
 public abstract class Xn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ua f853a;
+    public final Ua f854a;
 
     public Xn(Ua ua) {
-        this.f853a = ua;
+        this.f854a = ua;
     }
 }

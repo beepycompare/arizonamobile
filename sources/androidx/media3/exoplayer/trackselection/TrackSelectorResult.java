@@ -1,8 +1,8 @@
 package androidx.media3.exoplayer.trackselection;
 
 import androidx.media3.common.Tracks;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.exoplayer.RendererConfiguration;
+import com.google.common.base.Preconditions;
 import java.util.Objects;
 /* loaded from: classes3.dex */
 public final class TrackSelectorResult {
@@ -18,7 +18,7 @@ public final class TrackSelectorResult {
     }
 
     public TrackSelectorResult(RendererConfiguration[] rendererConfigurationArr, ExoTrackSelection[] exoTrackSelectionArr, Tracks tracks, Object obj) {
-        Assertions.checkArgument(rendererConfigurationArr.length == exoTrackSelectionArr.length);
+        Preconditions.checkArgument(rendererConfigurationArr.length == exoTrackSelectionArr.length);
         this.rendererConfigurations = rendererConfigurationArr;
         this.selections = (ExoTrackSelection[]) exoTrackSelectionArr.clone();
         this.tracks = tracks;

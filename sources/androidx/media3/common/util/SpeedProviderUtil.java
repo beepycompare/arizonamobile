@@ -2,6 +2,7 @@ package androidx.media3.common.util;
 
 import androidx.media3.common.C;
 import androidx.media3.common.audio.SpeedProvider;
+import com.google.common.base.Preconditions;
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 /* loaded from: classes2.dex */
 public class SpeedProviderUtil {
@@ -16,6 +17,7 @@ public class SpeedProviderUtil {
             if (nextSpeedChangeTimeUs == C.TIME_UNSET) {
                 nextSpeedChangeTimeUs = Long.MAX_VALUE;
             }
+            Preconditions.checkState(nextSpeedChangeTimeUs > j2);
             d += (Math.min(nextSpeedChangeTimeUs, j) - j2) / speedProvider.getSpeed(j2);
             j2 = nextSpeedChangeTimeUs;
         }
@@ -23,14 +25,14 @@ public class SpeedProviderUtil {
     }
 
     public static float getSampleAlignedSpeed(SpeedProvider speedProvider, long j, int i) {
-        Assertions.checkArgument(j >= 0);
-        Assertions.checkArgument(i > 0);
+        Preconditions.checkArgument(j >= 0);
+        Preconditions.checkArgument(i > 0);
         return speedProvider.getSpeed(Util.sampleCountToDurationUs(j, i));
     }
 
     public static long getNextSpeedChangeSamplePosition(SpeedProvider speedProvider, long j, int i) {
-        Assertions.checkArgument(j >= 0);
-        Assertions.checkArgument(i > 0);
+        Preconditions.checkArgument(j >= 0);
+        Preconditions.checkArgument(i > 0);
         long nextSpeedChangeTimeUs = speedProvider.getNextSpeedChangeTimeUs(Util.sampleCountToDurationUs(j, i));
         if (nextSpeedChangeTimeUs == C.TIME_UNSET) {
             return -1L;

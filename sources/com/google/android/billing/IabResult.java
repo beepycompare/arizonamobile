@@ -1,5 +1,5 @@
 package com.google.android.billing;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public class IabResult {
     String mMessage;
     int mResponse;

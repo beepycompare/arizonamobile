@@ -17,7 +17,7 @@ import kotlin.collections.CollectionsKt;
 public final class Wd {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Wd f836a = new Wd();
+    public static final Wd f837a = new Wd();
     public static final LinkedHashMap b = new LinkedHashMap();
     public static final String c = UserAgent.getFor(BuildConfig.LIBRARY_PACKAGE_NAME, "7.14.0", "50145656");
 
@@ -36,6 +36,6 @@ public final class Wd {
         AESRSARequestBodyEncrypter aESRSARequestBodyEncrypter = new AESRSARequestBodyEncrypter();
         C0118ah c0118ah = new C0118ah(aESRSARequestBodyEncrypter);
         C0745zb c0745zb = new C0745zb(y4);
-        return new NetworkTask(new BlockingExecutor(), new C0515q5(y4.f857a), new AllHostsExponentialBackoffPolicy(f836a.a(Ud.REPORT)), new C0651vh(y4, c0118ah, c0745zb, new FullUrlFormer(c0118ah, c0745zb), new RequestDataHolder(), new ResponseDataHolder(new DefaultResponseValidityChecker()), y4.i(), y4.p(), y4.u(), aESRSARequestBodyEncrypter), CollectionsKt.listOf(new lo()), c);
+        return new NetworkTask(new BlockingExecutor(), new C0515q5(y4.f858a), new AllHostsExponentialBackoffPolicy(f837a.a(Ud.REPORT)), new C0651vh(y4, c0118ah, c0745zb, new FullUrlFormer(c0118ah, c0745zb), new RequestDataHolder(), new ResponseDataHolder(new DefaultResponseValidityChecker()), y4.i(), y4.p(), y4.u(), aESRSARequestBodyEncrypter), CollectionsKt.listOf(new lo()), c);
     }
 }

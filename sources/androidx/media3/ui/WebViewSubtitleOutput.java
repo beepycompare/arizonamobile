@@ -8,11 +8,11 @@ import android.view.MotionEvent;
 import android.webkit.WebView;
 import android.widget.FrameLayout;
 import androidx.media3.common.text.Cue;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.text.ttml.TtmlNode;
 import androidx.media3.ui.SpannedToHtmlConverter;
 import androidx.media3.ui.SubtitleView;
+import com.google.common.base.Preconditions;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -65,6 +65,7 @@ final class WebViewSubtitleOutput extends FrameLayout implements SubtitleView.Ou
         };
         this.webView = webView;
         webView.setBackgroundColor(0);
+        webView.getSettings().setAllowContentAccess(false);
         addView(canvasSubtitleOutput);
         addView(webView);
     }
@@ -197,7 +198,7 @@ final class WebViewSubtitleOutput extends FrameLayout implements SubtitleView.Ou
                     SpannedToHtmlConverter.HtmlAndCss convert = SpannedToHtmlConverter.convert(cue.text, getContext().getResources().getDisplayMetrics().density);
                     for (String str9 : hashMap.keySet()) {
                         String str10 = (String) hashMap.put(str9, (String) hashMap.get(str9));
-                        Assertions.checkState(str10 == null || str10.equals(hashMap.get(str9)));
+                        Preconditions.checkState(str10 == null || str10.equals(hashMap.get(str9)));
                     }
                     sb.append(Util.formatInvariant("<div style='position:absolute;z-index:%s;%s:%.2f%%;%s:%s;%s:%s;text-align:%s;writing-mode:%s;font-size:%s;background-color:%s;transform:translate(%s%%,%s%%)%s;'>", Integer.valueOf(i3), obj, Float.valueOf(f3), str2, str4, str8, str5, convertAlignmentToCss, convertVerticalTypeToCss, convertTextSizeToCss2, cssRgba2, Integer.valueOf(anchorTypeToTranslatePercent), Integer.valueOf(i), getBlockShearTransformFunction(cue))).append(Util.formatInvariant("<span class='%s'>", DEFAULT_BACKGROUND_CSS_CLASS));
                     if (cue.multiRowAlignment == null) {

@@ -2,18 +2,18 @@ package androidx.media3.exoplayer.analytics;
 
 import android.util.Base64;
 import androidx.media3.common.Timeline;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.analytics.AnalyticsListener;
 import androidx.media3.exoplayer.analytics.PlaybackSessionManager;
 import androidx.media3.exoplayer.source.MediaSource;
 import com.google.android.gms.common.internal.ServiceSpecificExtraArgs;
+import com.google.common.base.Preconditions;
 import com.google.common.base.Supplier;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Random;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
-/* loaded from: classes.dex */
+/* loaded from: classes2.dex */
 public final class DefaultPlaybackSessionManager implements PlaybackSessionManager {
     public static final Supplier<String> DEFAULT_SESSION_ID_GENERATOR = new Supplier() { // from class: androidx.media3.exoplayer.analytics.DefaultPlaybackSessionManager$$ExternalSyntheticLambda0
         @Override // com.google.common.base.Supplier
@@ -69,12 +69,12 @@ public final class DefaultPlaybackSessionManager implements PlaybackSessionManag
 
     @Override // androidx.media3.exoplayer.analytics.PlaybackSessionManager
     public synchronized void updateSessions(AnalyticsListener.EventTime eventTime) {
-        Assertions.checkNotNull(this.listener);
+        Preconditions.checkNotNull(this.listener);
         if (eventTime.timeline.isEmpty()) {
             return;
         }
         if (eventTime.mediaPeriodId != null) {
-            if (eventTime.mediaPeriodId.windowSequenceNumber < getMinWindowSequenceNumber()) {
+            if (eventTime.mediaPeriodId.windowSequenceNumber != -1 && eventTime.mediaPeriodId.windowSequenceNumber < getMinWindowSequenceNumber()) {
                 return;
             }
             SessionDescriptor sessionDescriptor = this.sessions.get(this.currentSessionId);
@@ -107,7 +107,7 @@ public final class DefaultPlaybackSessionManager implements PlaybackSessionManag
 
     @Override // androidx.media3.exoplayer.analytics.PlaybackSessionManager
     public synchronized void updateSessionsWithTimelineChange(AnalyticsListener.EventTime eventTime) {
-        Assertions.checkNotNull(this.listener);
+        Preconditions.checkNotNull(this.listener);
         Timeline timeline = this.currentTimeline;
         this.currentTimeline = eventTime.timeline;
         Iterator<SessionDescriptor> it = this.sessions.values().iterator();
@@ -115,10 +115,10 @@ public final class DefaultPlaybackSessionManager implements PlaybackSessionManag
             SessionDescriptor next = it.next();
             if (!next.tryResolvingToNewTimeline(timeline, this.currentTimeline) || next.isFinishedAtEventTime(eventTime)) {
                 it.remove();
+                if (next.sessionId.equals(this.currentSessionId)) {
+                    clearCurrentSession(next);
+                }
                 if (next.isCreated) {
-                    if (next.sessionId.equals(this.currentSessionId)) {
-                        clearCurrentSession(next);
-                    }
                     this.listener.onSessionFinished(eventTime, next.sessionId, false);
                 }
             }
@@ -128,20 +128,19 @@ public final class DefaultPlaybackSessionManager implements PlaybackSessionManag
 
     @Override // androidx.media3.exoplayer.analytics.PlaybackSessionManager
     public synchronized void updateSessionsWithDiscontinuity(AnalyticsListener.EventTime eventTime, int i) {
-        Assertions.checkNotNull(this.listener);
+        Preconditions.checkNotNull(this.listener);
         boolean z = i == 0;
         Iterator<SessionDescriptor> it = this.sessions.values().iterator();
         while (it.hasNext()) {
             SessionDescriptor next = it.next();
             if (next.isFinishedAtEventTime(eventTime)) {
                 it.remove();
+                boolean equals = next.sessionId.equals(this.currentSessionId);
+                if (equals) {
+                    clearCurrentSession(next);
+                }
                 if (next.isCreated) {
-                    boolean equals = next.sessionId.equals(this.currentSessionId);
-                    boolean z2 = z && equals && next.isActive;
-                    if (equals) {
-                        clearCurrentSession(next);
-                    }
-                    this.listener.onSessionFinished(eventTime, next.sessionId, z2);
+                    this.listener.onSessionFinished(eventTime, next.sessionId, z && equals && next.isActive);
                 }
             }
         }
@@ -158,7 +157,7 @@ public final class DefaultPlaybackSessionManager implements PlaybackSessionManag
         PlaybackSessionManager.Listener listener;
         String str = this.currentSessionId;
         if (str != null) {
-            clearCurrentSession((SessionDescriptor) Assertions.checkNotNull(this.sessions.get(str)));
+            clearCurrentSession((SessionDescriptor) Preconditions.checkNotNull(this.sessions.get(str)));
         }
         Iterator<SessionDescriptor> it = this.sessions.values().iterator();
         while (it.hasNext()) {
@@ -175,7 +174,7 @@ public final class DefaultPlaybackSessionManager implements PlaybackSessionManag
         if (eventTime.timeline.isEmpty()) {
             String str = this.currentSessionId;
             if (str != null) {
-                clearCurrentSession((SessionDescriptor) Assertions.checkNotNull(this.sessions.get(str)));
+                clearCurrentSession((SessionDescriptor) Preconditions.checkNotNull(this.sessions.get(str)));
                 return;
             }
             return;
@@ -194,7 +193,7 @@ public final class DefaultPlaybackSessionManager implements PlaybackSessionManag
     }
 
     private void clearCurrentSession(SessionDescriptor sessionDescriptor) {
-        if (sessionDescriptor.windowSequenceNumber != -1) {
+        if (sessionDescriptor.windowSequenceNumber != -1 && sessionDescriptor.isCreated) {
             this.lastRemovedCurrentWindowSequenceNumber = sessionDescriptor.windowSequenceNumber;
         }
         this.currentSessionId = null;
@@ -242,7 +241,7 @@ public final class DefaultPlaybackSessionManager implements PlaybackSessionManag
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* loaded from: classes.dex */
+    /* loaded from: classes2.dex */
     public final class SessionDescriptor {
         private MediaSource.MediaPeriodId adMediaPeriodId;
         private boolean isActive;
@@ -272,7 +271,7 @@ public final class DefaultPlaybackSessionManager implements PlaybackSessionManag
         }
 
         public boolean belongsToSession(int i, MediaSource.MediaPeriodId mediaPeriodId) {
-            return mediaPeriodId == null ? i == this.windowIndex : this.adMediaPeriodId == null ? !mediaPeriodId.isAd() && mediaPeriodId.windowSequenceNumber == this.windowSequenceNumber : mediaPeriodId.windowSequenceNumber == this.adMediaPeriodId.windowSequenceNumber && mediaPeriodId.adGroupIndex == this.adMediaPeriodId.adGroupIndex && mediaPeriodId.adIndexInAdGroup == this.adMediaPeriodId.adIndexInAdGroup;
+            return (mediaPeriodId == null || mediaPeriodId.windowSequenceNumber == -1) ? i == this.windowIndex : this.adMediaPeriodId == null ? !mediaPeriodId.isAd() && mediaPeriodId.windowSequenceNumber == this.windowSequenceNumber : mediaPeriodId.windowSequenceNumber == this.adMediaPeriodId.windowSequenceNumber && mediaPeriodId.adGroupIndex == this.adMediaPeriodId.adGroupIndex && mediaPeriodId.adIndexInAdGroup == this.adMediaPeriodId.adIndexInAdGroup;
         }
 
         public void maybeSetWindowSequenceNumber(int i, MediaSource.MediaPeriodId mediaPeriodId) {

@@ -1,11 +1,11 @@
 package androidx.media3.exoplayer.source;
 
 import android.net.Uri;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.datasource.DataSource;
 import androidx.media3.datasource.DataSpec;
 import androidx.media3.datasource.TransferListener;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
@@ -23,7 +23,7 @@ final class IcyDataSource implements DataSource {
     }
 
     public IcyDataSource(DataSource dataSource, int i, Listener listener) {
-        Assertions.checkArgument(i > 0);
+        Preconditions.checkArgument(i > 0);
         this.upstream = dataSource;
         this.metadataIntervalBytes = i;
         this.listener = listener;
@@ -33,7 +33,7 @@ final class IcyDataSource implements DataSource {
 
     @Override // androidx.media3.datasource.DataSource
     public void addTransferListener(TransferListener transferListener) {
-        Assertions.checkNotNull(transferListener);
+        Preconditions.checkNotNull(transferListener);
         this.upstream.addTransferListener(transferListener);
     }
 

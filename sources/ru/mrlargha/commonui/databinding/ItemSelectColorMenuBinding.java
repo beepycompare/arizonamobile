@@ -8,7 +8,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class ItemSelectColorMenuBinding implements ViewBinding {
     private final ConstraintLayout rootView;
     public final TextView tvMenuName;

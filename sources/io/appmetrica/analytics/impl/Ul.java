@@ -8,15 +8,15 @@ import io.appmetrica.analytics.internal.IdentifiersResult;
 public final class Ul {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Wl f812a = new Wl();
+    public final Wl f813a = new Wl();
 
     public final StartupParamsItem a(IdentifiersResult identifiersResult) {
         StartupParamsItemStatus startupParamsItemStatus;
         String str = identifiersResult.id;
-        Wl wl = this.f812a;
+        Wl wl = this.f813a;
         IdentifierStatus identifierStatus = identifiersResult.status;
         wl.getClass();
-        switch (Vl.f825a[identifierStatus.ordinal()]) {
+        switch (Vl.f826a[identifierStatus.ordinal()]) {
             case 1:
                 startupParamsItemStatus = StartupParamsItemStatus.OK;
                 break;

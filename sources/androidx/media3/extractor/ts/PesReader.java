@@ -2,13 +2,13 @@ package androidx.media3.extractor.ts;
 
 import androidx.media3.common.C;
 import androidx.media3.common.ParserException;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.ParsableBitArray;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.TimestampAdjuster;
 import androidx.media3.extractor.ExtractorOutput;
 import androidx.media3.extractor.ts.TsPayloadReader;
+import com.google.common.base.Preconditions;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
 /* loaded from: classes3.dex */
 public final class PesReader implements TsPayloadReader {
@@ -53,7 +53,7 @@ public final class PesReader implements TsPayloadReader {
 
     @Override // androidx.media3.extractor.ts.TsPayloadReader
     public void consume(ParsableByteArray parsableByteArray, int i) throws ParserException {
-        Assertions.checkStateNotNull(this.timestampAdjuster);
+        Preconditions.checkNotNull(this.timestampAdjuster);
         if ((i & 1) != 0) {
             int i2 = this.state;
             if (i2 != 0 && i2 != 1) {

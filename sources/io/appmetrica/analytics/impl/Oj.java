@@ -3,14 +3,14 @@ package io.appmetrica.analytics.impl;
 public final class Oj implements Ra {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f721a;
+    public final /* synthetic */ String f722a;
 
     public Oj(String str) {
-        this.f721a = str;
+        this.f722a = str;
     }
 
     @Override // io.appmetrica.analytics.impl.Ra
     public final void a(Sa sa) {
-        sa.reportEvent(this.f721a);
+        sa.reportEvent(this.f722a);
     }
 }

@@ -5,9 +5,9 @@ import android.media.MediaFormat;
 import android.os.Handler;
 import android.os.HandlerThread;
 import androidx.collection.CircularIntArray;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.mediacodec.MediaCodecAdapter;
+import com.google.common.base.Preconditions;
 import java.util.ArrayDeque;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes3.dex */
@@ -34,7 +34,7 @@ public final class AsynchronousMediaCodecCallback extends MediaCodec.Callback {
     }
 
     public void initialize(MediaCodec mediaCodec) {
-        Assertions.checkState(this.handler == null);
+        Preconditions.checkState(this.handler == null);
         this.callbackThread.start();
         Handler handler = new Handler(this.callbackThread.getLooper());
         mediaCodec.setCallback(this, handler);
@@ -46,6 +46,13 @@ public final class AsynchronousMediaCodecCallback extends MediaCodec.Callback {
             this.shutDown = true;
             this.callbackThread.quit();
             flushInternal();
+        }
+    }
+
+    public void useInputBuffer(Runnable runnable) {
+        synchronized (this.lock) {
+            maybeThrowException();
+            runnable.run();
         }
     }
 
@@ -74,7 +81,7 @@ public final class AsynchronousMediaCodecCallback extends MediaCodec.Callback {
             }
             int popFirst = this.availableOutputBuffers.popFirst();
             if (popFirst >= 0) {
-                Assertions.checkStateNotNull(this.currentFormat);
+                Preconditions.checkNotNull(this.currentFormat);
                 MediaCodec.BufferInfo remove = this.bufferInfos.remove();
                 bufferInfo.set(remove.offset, remove.size, remove.presentationTimeUs, remove.flags);
             } else if (popFirst == -2) {

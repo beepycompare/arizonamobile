@@ -7,10 +7,10 @@ import android.util.Pair;
 import androidx.media3.common.AdPlaybackState;
 import androidx.media3.common.MediaItem;
 import androidx.media3.common.Timeline;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.BundleCollectionUtil;
 import androidx.media3.common.util.Util;
 import com.google.common.base.Function;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -516,11 +516,11 @@ public abstract class Timeline {
     }
 
     public final Pair<Object, Long> getPeriodPositionUs(Window window, Period period, int i, long j) {
-        return (Pair) Assertions.checkNotNull(getPeriodPositionUs(window, period, i, j, 0L));
+        return (Pair) Preconditions.checkNotNull(getPeriodPositionUs(window, period, i, j, 0L));
     }
 
     public final Pair<Object, Long> getPeriodPositionUs(Window window, Period period, int i, long j, long j2) {
-        Assertions.checkIndex(i, 0, getWindowCount());
+        Preconditions.checkElementIndex(i, getWindowCount());
         getWindow(i, window, j2);
         if (j == C.TIME_UNSET) {
             j = window.getDefaultPositionUs();
@@ -542,7 +542,7 @@ public abstract class Timeline {
         if (period.durationUs != C.TIME_UNSET) {
             j3 = Math.min(j3, period.durationUs - 1);
         }
-        return Pair.create(Assertions.checkNotNull(period.uid), Long.valueOf(Math.max(0L, j3)));
+        return Pair.create(Preconditions.checkNotNull(period.uid), Long.valueOf(Math.max(0L, j3)));
     }
 
     public Period getPeriodByUid(Object obj, Period period) {
@@ -698,7 +698,7 @@ public abstract class Timeline {
         private final ImmutableList<Window> windows;
 
         public RemotableTimeline(ImmutableList<Window> immutableList, ImmutableList<Period> immutableList2, int[] iArr) {
-            Assertions.checkArgument(immutableList.size() == iArr.length);
+            Preconditions.checkArgument(immutableList.size() == iArr.length);
             this.windows = immutableList;
             this.periods = immutableList2;
             this.shuffledWindowIndices = iArr;

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.location.Location;
 import android.location.LocationManager;
 import android.util.Log;
-import androidx.compose.material3.internal.CalendarModelKt;
 import androidx.core.content.PermissionChecker;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import java.util.Calendar;
@@ -79,12 +78,12 @@ class TwilightManager {
         TwilightState twilightState = this.mTwilightState;
         long currentTimeMillis = System.currentTimeMillis();
         TwilightCalculator twilightCalculator = TwilightCalculator.getInstance();
-        twilightCalculator.calculateTwilight(currentTimeMillis - CalendarModelKt.MillisecondsIn24Hours, location.getLatitude(), location.getLongitude());
+        twilightCalculator.calculateTwilight(currentTimeMillis - 86400000, location.getLatitude(), location.getLongitude());
         twilightCalculator.calculateTwilight(currentTimeMillis, location.getLatitude(), location.getLongitude());
         boolean z = twilightCalculator.state == 1;
         long j2 = twilightCalculator.sunrise;
         long j3 = twilightCalculator.sunset;
-        twilightCalculator.calculateTwilight(currentTimeMillis + CalendarModelKt.MillisecondsIn24Hours, location.getLatitude(), location.getLongitude());
+        twilightCalculator.calculateTwilight(currentTimeMillis + 86400000, location.getLatitude(), location.getLongitude());
         long j4 = twilightCalculator.sunrise;
         if (j2 == -1 || j3 == -1) {
             j = currentTimeMillis + 43200000;

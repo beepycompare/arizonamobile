@@ -6,13 +6,13 @@ import kotlin.jvm.internal.Intrinsics;
 public final class J {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1574a;
+    public final String f1575a;
     public final byte[] b;
 
     public J(String uuid, byte[] serializedMetricsEvent) {
         Intrinsics.checkNotNullParameter(uuid, "uuid");
         Intrinsics.checkNotNullParameter(serializedMetricsEvent, "serializedMetricsEvent");
-        this.f1574a = uuid;
+        this.f1575a = uuid;
         this.b = serializedMetricsEvent;
     }
 
@@ -23,12 +23,12 @@ public final class J {
         if (Intrinsics.areEqual(J.class, obj != null ? obj.getClass() : null)) {
             Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type ru.rustore.sdk.metrics.internal.data.dto.PersistentMetricsEventDto");
             J j = (J) obj;
-            return Intrinsics.areEqual(this.f1574a, j.f1574a) && Arrays.equals(this.b, j.b);
+            return Intrinsics.areEqual(this.f1575a, j.f1575a) && Arrays.equals(this.b, j.b);
         }
         return false;
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(this.b) + (this.f1574a.hashCode() * 31);
+        return Arrays.hashCode(this.b) + (this.f1575a.hashCode() * 31);
     }
 }

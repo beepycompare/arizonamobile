@@ -9,21 +9,21 @@ import kotlin.io.FilesKt;
 public final class C0163ca implements Co {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f925a;
+    public final Context f926a;
     public final String b;
 
     public C0163ca(Context context, String str) {
-        this.f925a = context;
+        this.f926a = context;
         this.b = str;
     }
 
     @Override // io.appmetrica.analytics.impl.Co
     public final String a() {
         try {
-            File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f925a, this.b);
+            File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f926a, this.b);
             if (fileFromSdkStorage != null) {
                 fileFromSdkStorage.exists();
-                File fileFromAppStorage = FileUtils.getFileFromAppStorage(this.f925a, this.b);
+                File fileFromAppStorage = FileUtils.getFileFromAppStorage(this.f926a, this.b);
                 if (fileFromAppStorage != null) {
                     FileUtils.copyToNullable(fileFromAppStorage, fileFromSdkStorage);
                 }
@@ -38,7 +38,7 @@ public final class C0163ca implements Co {
     @Override // io.appmetrica.analytics.impl.Co
     public final void a(String str) {
         try {
-            File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f925a, this.b);
+            File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f926a, this.b);
             if (fileFromSdkStorage != null) {
                 FilesKt.writeText$default(fileFromSdkStorage, str, null, 2, null);
             }

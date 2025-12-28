@@ -6,10 +6,12 @@ import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.ParserException;
 import androidx.media3.common.util.ParsableBitArray;
+import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.RendererCapabilities;
 import androidx.window.core.layout.WindowSizeClass;
 import com.google.android.material.internal.ViewUtils;
+import java.io.IOException;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -367,6 +369,28 @@ public final class DtsUtil {
         ParsableBitArray normalizedFrame = getNormalizedFrame(bArr);
         normalizedFrame.skipBits(32);
         return parseUnsignedVarInt(normalizedFrame, UHD_HEADER_SIZE_LENGTH_TABLE, true) + 1;
+    }
+
+    public static boolean isSampleDtsHd(ExtractorInput extractorInput, int i) throws IOException {
+        ParsableByteArray parsableByteArray = new ParsableByteArray(i);
+        if (extractorInput.peekFully(parsableByteArray.getData(), 0, i, true)) {
+            extractorInput.resetPeekPosition();
+            if (getFrameType(parsableByteArray.peekInt()) != 1 || parsableByteArray.bytesLeft() < 10) {
+                return false;
+            }
+            byte[] bArr = new byte[10];
+            parsableByteArray.readBytes(bArr, 0, 10);
+            parsableByteArray.setPosition(0);
+            int dtsFrameSize = getDtsFrameSize(bArr);
+            if (dtsFrameSize > 0 && parsableByteArray.bytesLeft() >= dtsFrameSize + 4) {
+                parsableByteArray.skipBytes(dtsFrameSize);
+                if (getFrameType(parsableByteArray.readInt()) == 2) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        return false;
     }
 
     private static void checkCrc(byte[] bArr, int i) throws ParserException {

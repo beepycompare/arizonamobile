@@ -9,9 +9,11 @@ import androidx.media3.common.Player;
 import androidx.media3.common.text.Cue;
 import androidx.media3.common.text.CueGroup;
 import androidx.media3.common.util.Size;
+import java.util.IdentityHashMap;
 import java.util.List;
 /* loaded from: classes2.dex */
 public class ForwardingPlayer implements Player {
+    private final IdentityHashMap<Player.Listener, ForwardingListener> listeners = new IdentityHashMap<>();
     private final Player player;
 
     public ForwardingPlayer(Player player) {
@@ -25,12 +27,26 @@ public class ForwardingPlayer implements Player {
 
     @Override // androidx.media3.common.Player
     public void addListener(Player.Listener listener) {
-        this.player.addListener(new ForwardingListener(this, listener));
+        synchronized (this.listeners) {
+            ForwardingListener forwardingListener = this.listeners.get(listener);
+            if (forwardingListener == null) {
+                forwardingListener = new ForwardingListener(this, listener);
+            }
+            this.player.addListener(forwardingListener);
+            this.listeners.put(listener, forwardingListener);
+        }
     }
 
     @Override // androidx.media3.common.Player
     public void removeListener(Player.Listener listener) {
-        this.player.removeListener(new ForwardingListener(this, listener));
+        synchronized (this.listeners) {
+            ForwardingListener remove = this.listeners.remove(listener);
+            Player player = this.player;
+            if (remove != null) {
+                listener = remove;
+            }
+            player.removeListener(listener);
+        }
     }
 
     @Override // androidx.media3.common.Player
@@ -495,6 +511,11 @@ public class ForwardingPlayer implements Player {
     }
 
     @Override // androidx.media3.common.Player
+    public int getAudioSessionId() {
+        return this.player.getAudioSessionId();
+    }
+
+    @Override // androidx.media3.common.Player
     public void setVolume(float f) {
         this.player.setVolume(f);
     }
@@ -502,6 +523,16 @@ public class ForwardingPlayer implements Player {
     @Override // androidx.media3.common.Player
     public float getVolume() {
         return this.player.getVolume();
+    }
+
+    @Override // androidx.media3.common.Player
+    public void mute() {
+        this.player.mute();
+    }
+
+    @Override // androidx.media3.common.Player
+    public void unmute() {
+        this.player.unmute();
     }
 
     @Override // androidx.media3.common.Player
@@ -825,24 +856,6 @@ public class ForwardingPlayer implements Player {
         @Override // androidx.media3.common.Player.Listener
         public void onDeviceVolumeChanged(int i, boolean z) {
             this.listener.onDeviceVolumeChanged(i, z);
-        }
-
-        public boolean equals(Object obj) {
-            if (this == obj) {
-                return true;
-            }
-            if (obj instanceof ForwardingListener) {
-                ForwardingListener forwardingListener = (ForwardingListener) obj;
-                if (this.forwardingPlayer.equals(forwardingListener.forwardingPlayer)) {
-                    return this.listener.equals(forwardingListener.listener);
-                }
-                return false;
-            }
-            return false;
-        }
-
-        public int hashCode() {
-            return (this.forwardingPlayer.hashCode() * 31) + this.listener.hashCode();
         }
     }
 }

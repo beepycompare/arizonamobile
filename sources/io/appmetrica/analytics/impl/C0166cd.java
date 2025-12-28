@@ -6,11 +6,11 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0166cd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f928a;
+    public final String f929a;
     public final boolean b;
 
     public C0166cd(String str, boolean z) {
-        this.f928a = str;
+        this.f929a = str;
         this.b = z;
     }
 
@@ -20,14 +20,14 @@ public final class C0166cd {
         }
         if (obj instanceof C0166cd) {
             C0166cd c0166cd = (C0166cd) obj;
-            return Intrinsics.areEqual(this.f928a, c0166cd.f928a) && this.b == c0166cd.b;
+            return Intrinsics.areEqual(this.f929a, c0166cd.f929a) && this.b == c0166cd.b;
         }
         return false;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public final int hashCode() {
-        int hashCode = this.f928a.hashCode() * 31;
+        int hashCode = this.f929a.hashCode() * 31;
         boolean z = this.b;
         int i = z;
         if (z != 0) {
@@ -37,6 +37,6 @@ public final class C0166cd {
     }
 
     public final String toString() {
-        return "ModuleStatus(moduleName=" + this.f928a + ", loaded=" + this.b + ')';
+        return "ModuleStatus(moduleName=" + this.f929a + ", loaded=" + this.b + ')';
     }
 }

@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.os.Parcel;
 import android.os.RemoteException;
-import androidx.media3.common.util.Assertions;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import java.util.Collection;
 import java.util.List;
@@ -67,7 +67,7 @@ public final class BundleListRetriever extends Binder {
                     while (true) {
                         readInt = obtain2.readInt();
                         if (readInt == 1) {
-                            builder.add((ImmutableList.Builder) ((Bundle) Assertions.checkNotNull(obtain2.readBundle())));
+                            builder.add((ImmutableList.Builder) ((Bundle) Preconditions.checkNotNull(obtain2.readBundle())));
                             i++;
                         }
                     }

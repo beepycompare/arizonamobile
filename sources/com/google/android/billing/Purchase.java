@@ -3,7 +3,7 @@ package com.google.android.billing;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import org.json.JSONException;
 import org.json.JSONObject;
-/* loaded from: classes2.dex */
+/* loaded from: classes.dex */
 public class Purchase {
     String mDeveloperPayload;
     String mItemType;

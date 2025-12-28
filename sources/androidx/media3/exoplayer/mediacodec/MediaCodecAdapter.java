@@ -12,6 +12,7 @@ import androidx.media3.common.Format;
 import androidx.media3.decoder.CryptoInfo;
 import java.io.IOException;
 import java.nio.ByteBuffer;
+import java.util.List;
 /* loaded from: classes3.dex */
 public interface MediaCodecAdapter {
 
@@ -69,6 +70,10 @@ public interface MediaCodecAdapter {
 
     void setVideoScalingMode(int i);
 
+    void subscribeToVendorParameters(List<String> list);
+
+    void unsubscribeFromVendorParameters(List<String> list);
+
     /* loaded from: classes3.dex */
     public static final class Configuration {
         public final MediaCodecInfo codecInfo;
@@ -106,5 +111,9 @@ public interface MediaCodecAdapter {
         static Factory getDefault(Context context) {
             return new DefaultMediaCodecAdapterFactory(context);
         }
+    }
+
+    default void useInputBuffer(Runnable runnable) {
+        runnable.run();
     }
 }

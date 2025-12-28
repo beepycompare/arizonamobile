@@ -1,7 +1,7 @@
 package androidx.media3.common;
 
 import android.util.SparseBooleanArray;
-import androidx.media3.common.util.Assertions;
+import com.google.common.base.Preconditions;
 /* loaded from: classes2.dex */
 public final class FlagSet {
     private final SparseBooleanArray flags;
@@ -12,7 +12,7 @@ public final class FlagSet {
         private final SparseBooleanArray flags = new SparseBooleanArray();
 
         public Builder add(int i) {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             this.flags.append(i, true);
             return this;
         }
@@ -36,7 +36,7 @@ public final class FlagSet {
         }
 
         public Builder remove(int i) {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             this.flags.delete(i);
             return this;
         }
@@ -53,7 +53,7 @@ public final class FlagSet {
         }
 
         public FlagSet build() {
-            Assertions.checkState(!this.buildCalled);
+            Preconditions.checkState(!this.buildCalled);
             this.buildCalled = true;
             return new FlagSet(this.flags);
         }
@@ -76,12 +76,21 @@ public final class FlagSet {
         return false;
     }
 
+    public boolean containsAny(FlagSet flagSet) {
+        for (int i = 0; i < flagSet.size(); i++) {
+            if (contains(flagSet.get(i))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public int size() {
         return this.flags.size();
     }
 
     public int get(int i) {
-        Assertions.checkIndex(i, 0, size());
+        Preconditions.checkElementIndex(i, size());
         return this.flags.keyAt(i);
     }
 

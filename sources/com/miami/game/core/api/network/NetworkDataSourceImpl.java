@@ -20,7 +20,7 @@ import kotlin.enums.EnumEntries;
 import kotlin.enums.EnumEntriesKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: NetworkDataSourceImpl.kt */
-@Metadata(d1 = {"\u0000V\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0011\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001:\u0001\"B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u001e\u0010\u0012\u001a\n\u0012\u0004\u0012\u00020\u0014\u0018\u00010\u00132\u0006\u0010\u0015\u001a\u00020\tH\u0082@¢\u0006\u0002\u0010\u0016J\u0016\u0010\u0017\u001a\n\u0012\u0004\u0012\u00020\u0018\u0018\u00010\u0013H\u0082@¢\u0006\u0002\u0010\u0019J\u000e\u0010\u001a\u001a\u00020\u001bH\u0096@¢\u0006\u0002\u0010\u0019J\u0016\u0010\u001c\u001a\n\u0012\u0004\u0012\u00020\u0014\u0018\u00010\u0013H\u0096@¢\u0006\u0002\u0010\u0019J\u0016\u0010\u001d\u001a\n\u0012\u0004\u0012\u00020\u0014\u0018\u00010\u0013H\u0096@¢\u0006\u0002\u0010\u0019J\u0016\u0010\u001e\u001a\n\u0012\u0004\u0012\u00020\u0018\u0018\u00010\u0013H\u0096@¢\u0006\u0002\u0010\u0019J\u000e\u0010\u001f\u001a\u00020 H\u0096@¢\u0006\u0002\u0010\u0019J\b\u0010!\u001a\u00020 H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\t0\u000fX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0010R\u0016\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\t0\u000fX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0010¨\u0006#"}, d2 = {"Lcom/miami/game/core/api/network/NetworkDataSourceImpl;", "Lcom/miami/game/core/api/network/NetworkDataSource;", "connectionResolver", "Lcom/miami/game/core/connection/resolver/api/ConnectionResolver;", "retrofitFactory", "Lcom/miami/game/core/network/error_handler/CoroutineErrorHandlerRetrofitFactory;", "<init>", "(Lcom/miami/game/core/connection/resolver/api/ConnectionResolver;Lcom/miami/game/core/network/error_handler/CoroutineErrorHandlerRetrofitFactory;)V", "maxConnectionTrying", "", "tag", "", "apiService", "Lcom/miami/game/core/api/network/retrofit/NetworkApi;", "serverChannels", "", "[Ljava/lang/Integer;", "retryGetFromServer", "retryOrReturnNull", "", "Lcom/miami/game/core/api/model/response/servers/ServersApiModelItem;", "channelType", "(ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "retryOrReturnNullForNews", "Lcom/miami/game/core/api/model/response/news/NewsApiModelItem;", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getGameInfo", "Lcom/miami/game/core/api/model/response/game_info/GameInfoResponseApiModel;", "getServersMobile", "getServersDesktop", "getNews", "getHwVersion", "Lcom/miami/game/core/api/model/response/HwVersion;", "createDefaultHwVersion", "ChannelType", "api-network_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000V\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0011\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001:\u0001#B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u001e\u0010\u0012\u001a\n\u0012\u0004\u0012\u00020\u0014\u0018\u00010\u00132\u0006\u0010\u0015\u001a\u00020\tH\u0082@¢\u0006\u0002\u0010\u0016J\u0016\u0010\u0017\u001a\n\u0012\u0004\u0012\u00020\u0018\u0018\u00010\u0013H\u0082@¢\u0006\u0002\u0010\u0019J\u000e\u0010\u001a\u001a\u00020\u001bH\u0096@¢\u0006\u0002\u0010\u0019J\u0016\u0010\u001c\u001a\n\u0012\u0004\u0012\u00020\u0014\u0018\u00010\u0013H\u0096@¢\u0006\u0002\u0010\u0019J\u0016\u0010\u001d\u001a\n\u0012\u0004\u0012\u00020\u0014\u0018\u00010\u0013H\u0096@¢\u0006\u0002\u0010\u0019J\u0016\u0010\u001e\u001a\n\u0012\u0004\u0012\u00020\u0014\u0018\u00010\u0013H\u0096@¢\u0006\u0002\u0010\u0019J\u0016\u0010\u001f\u001a\n\u0012\u0004\u0012\u00020\u0018\u0018\u00010\u0013H\u0096@¢\u0006\u0002\u0010\u0019J\u000e\u0010 \u001a\u00020!H\u0096@¢\u0006\u0002\u0010\u0019J\b\u0010\"\u001a\u00020!H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\t0\u000fX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0010R\u0016\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\t0\u000fX\u0082\u0004¢\u0006\u0004\n\u0002\u0010\u0010¨\u0006$"}, d2 = {"Lcom/miami/game/core/api/network/NetworkDataSourceImpl;", "Lcom/miami/game/core/api/network/NetworkDataSource;", "connectionResolver", "Lcom/miami/game/core/connection/resolver/api/ConnectionResolver;", "retrofitFactory", "Lcom/miami/game/core/network/error_handler/CoroutineErrorHandlerRetrofitFactory;", "<init>", "(Lcom/miami/game/core/connection/resolver/api/ConnectionResolver;Lcom/miami/game/core/network/error_handler/CoroutineErrorHandlerRetrofitFactory;)V", "maxConnectionTrying", "", "tag", "", "apiService", "Lcom/miami/game/core/api/network/retrofit/NetworkApi;", "serverChannels", "", "[Ljava/lang/Integer;", "retryGetFromServer", "retryOrReturnNull", "", "Lcom/miami/game/core/api/model/response/servers/ServersApiModelItem;", "channelType", "(ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "retryOrReturnNullForNews", "Lcom/miami/game/core/api/model/response/news/NewsApiModelItem;", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getGameInfo", "Lcom/miami/game/core/api/model/response/game_info/GameInfoResponseApiModel;", "getServersMobile", "getServersDesktop", "getServersVc", "getNews", "getHwVersion", "Lcom/miami/game/core/api/model/response/HwVersion;", "createDefaultHwVersion", "ChannelType", "api-network_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class NetworkDataSourceImpl implements NetworkDataSource {
     private final NetworkApi apiService;
@@ -56,7 +56,7 @@ public final class NetworkDataSourceImpl implements NetworkDataSource {
     /* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
     /* JADX WARN: Unknown enum class pattern. Please report as an issue! */
     /* compiled from: NetworkDataSourceImpl.kt */
-    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0007\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007¨\u0006\b"}, d2 = {"Lcom/miami/game/core/api/network/NetworkDataSourceImpl$ChannelType;", "", "<init>", "(Ljava/lang/String;I)V", "GAME_INFO", "MOBILE", "PC", "NEWS", "api-network_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\b\b\u0086\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006j\u0002\b\u0007j\u0002\b\b¨\u0006\t"}, d2 = {"Lcom/miami/game/core/api/network/NetworkDataSourceImpl$ChannelType;", "", "<init>", "(Ljava/lang/String;I)V", "GAME_INFO", "MOBILE", "PC", "NEWS", "VC", "api-network_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes4.dex */
     public static final class ChannelType {
         private static final /* synthetic */ EnumEntries $ENTRIES;
@@ -65,9 +65,10 @@ public final class NetworkDataSourceImpl implements NetworkDataSource {
         public static final ChannelType MOBILE = new ChannelType("MOBILE", 1);
         public static final ChannelType PC = new ChannelType("PC", 2);
         public static final ChannelType NEWS = new ChannelType("NEWS", 3);
+        public static final ChannelType VC = new ChannelType("VC", 4);
 
         private static final /* synthetic */ ChannelType[] $values() {
-            return new ChannelType[]{GAME_INFO, MOBILE, PC, NEWS};
+            return new ChannelType[]{GAME_INFO, MOBILE, PC, NEWS, VC};
         }
 
         public static EnumEntries<ChannelType> getEntries() {
@@ -387,6 +388,114 @@ public final class NetworkDataSourceImpl implements NetworkDataSource {
         networkDataSourceImpl$getServersDesktop$1.I$0 = intValue22;
         networkDataSourceImpl$getServersDesktop$1.label = 2;
         servers = networkApi2.getServers(str32, networkDataSourceImpl$getServersDesktop$1);
+        if (servers != coroutine_suspended) {
+        }
+        return coroutine_suspended;
+    }
+
+    /* JADX WARN: Can't wrap try/catch for region: R(11:1|(2:3|(8:5|6|(1:(1:(1:(3:11|12|13)(2:15|16))(5:17|18|19|20|21))(1:27))(1:36)|28|29|30|(3:32|20|21)|26))|38|6|(0)(0)|28|29|30|(0)|26|(1:(0))) */
+    /* JADX WARN: Code restructure failed: missing block: B:23:0x006c, code lost:
+        if (r11 == r1) goto L26;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:32:0x00aa, code lost:
+        r4 = move-exception;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x00ab, code lost:
+        r2 = r11;
+        r11 = r4;
+        r4 = r2;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:35:0x00e1, code lost:
+        if (r11 == r1) goto L26;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0026  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0053  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x00a3  */
+    @Override // com.miami.game.core.api.network.NetworkDataSource
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public Object getServersVc(Continuation<? super List<ServersApiModelItem>> continuation) {
+        NetworkDataSourceImpl$getServersVc$1 networkDataSourceImpl$getServersVc$1;
+        Object coroutine_suspended;
+        int i;
+        int i2;
+        String str;
+        Object servers;
+        if (continuation instanceof NetworkDataSourceImpl$getServersVc$1) {
+            networkDataSourceImpl$getServersVc$1 = (NetworkDataSourceImpl$getServersVc$1) continuation;
+            if ((networkDataSourceImpl$getServersVc$1.label & Integer.MIN_VALUE) != 0) {
+                networkDataSourceImpl$getServersVc$1.label -= Integer.MIN_VALUE;
+                Object obj = networkDataSourceImpl$getServersVc$1.result;
+                coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                i = networkDataSourceImpl$getServersVc$1.label;
+                if (i != 0) {
+                    ResultKt.throwOnFailure(obj);
+                    ConnectionResolver connectionResolver = this.connectionResolver;
+                    int intValue = this.serverChannels[ChannelType.VC.ordinal()].intValue();
+                    networkDataSourceImpl$getServersVc$1.label = 1;
+                    obj = connectionResolver.getServerVcList(intValue, networkDataSourceImpl$getServersVc$1);
+                } else if (i == 1) {
+                    ResultKt.throwOnFailure(obj);
+                } else if (i != 2) {
+                    if (i == 3) {
+                        int i3 = networkDataSourceImpl$getServersVc$1.I$0;
+                        Exception exc = (Exception) networkDataSourceImpl$getServersVc$1.L$1;
+                        String str2 = (String) networkDataSourceImpl$getServersVc$1.L$0;
+                        ResultKt.throwOnFailure(obj);
+                        return (List) obj;
+                    }
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                } else {
+                    i2 = networkDataSourceImpl$getServersVc$1.I$0;
+                    str = (String) networkDataSourceImpl$getServersVc$1.L$0;
+                    try {
+                        ResultKt.throwOnFailure(obj);
+                        return (List) obj;
+                    } catch (Exception e) {
+                        Exception e2 = e;
+                        Log.e(this.tag, "getServersVc: Unexpected error while fetching servers: " + e2.getMessage());
+                        int ordinal = ChannelType.VC.ordinal();
+                        networkDataSourceImpl$getServersVc$1.L$0 = SpillingKt.nullOutSpilledVariable(str);
+                        networkDataSourceImpl$getServersVc$1.L$1 = SpillingKt.nullOutSpilledVariable(e2);
+                        networkDataSourceImpl$getServersVc$1.I$0 = i2;
+                        networkDataSourceImpl$getServersVc$1.label = 3;
+                        obj = retryOrReturnNull(ordinal, networkDataSourceImpl$getServersVc$1);
+                    }
+                }
+                Pair pair = (Pair) obj;
+                String str3 = (String) pair.component1();
+                int intValue2 = ((Number) pair.component2()).intValue();
+                this.serverChannels[ChannelType.VC.ordinal()] = Boxing.boxInt(intValue2);
+                NetworkApi networkApi = this.apiService;
+                networkDataSourceImpl$getServersVc$1.L$0 = SpillingKt.nullOutSpilledVariable(str3);
+                networkDataSourceImpl$getServersVc$1.I$0 = intValue2;
+                networkDataSourceImpl$getServersVc$1.label = 2;
+                servers = networkApi.getServers(str3, networkDataSourceImpl$getServersVc$1);
+                if (servers != coroutine_suspended) {
+                    i2 = intValue2;
+                    obj = servers;
+                    str = str3;
+                    return (List) obj;
+                }
+                return coroutine_suspended;
+            }
+        }
+        networkDataSourceImpl$getServersVc$1 = new NetworkDataSourceImpl$getServersVc$1(this, continuation);
+        Object obj2 = networkDataSourceImpl$getServersVc$1.result;
+        coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        i = networkDataSourceImpl$getServersVc$1.label;
+        if (i != 0) {
+        }
+        Pair pair2 = (Pair) obj2;
+        String str32 = (String) pair2.component1();
+        int intValue22 = ((Number) pair2.component2()).intValue();
+        this.serverChannels[ChannelType.VC.ordinal()] = Boxing.boxInt(intValue22);
+        NetworkApi networkApi2 = this.apiService;
+        networkDataSourceImpl$getServersVc$1.L$0 = SpillingKt.nullOutSpilledVariable(str32);
+        networkDataSourceImpl$getServersVc$1.I$0 = intValue22;
+        networkDataSourceImpl$getServersVc$1.label = 2;
+        servers = networkApi2.getServers(str32, networkDataSourceImpl$getServersVc$1);
         if (servers != coroutine_suspended) {
         }
         return coroutine_suspended;

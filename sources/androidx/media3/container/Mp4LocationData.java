@@ -1,7 +1,7 @@
 package androidx.media3.container;
 
 import androidx.media3.common.Metadata;
-import androidx.media3.common.util.Assertions;
+import com.google.common.base.Preconditions;
 import com.google.common.primitives.Floats;
 /* loaded from: classes2.dex */
 public final class Mp4LocationData implements Metadata.Entry {
@@ -9,7 +9,7 @@ public final class Mp4LocationData implements Metadata.Entry {
     public final float longitude;
 
     public Mp4LocationData(float f, float f2) {
-        Assertions.checkArgument(f >= -90.0f && f <= 90.0f && f2 >= -180.0f && f2 <= 180.0f, "Invalid latitude or longitude");
+        Preconditions.checkArgument(f >= -90.0f && f <= 90.0f && f2 >= -180.0f && f2 <= 180.0f, "Invalid latitude or longitude");
         this.latitude = f;
         this.longitude = f2;
     }

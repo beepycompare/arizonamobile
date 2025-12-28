@@ -8,11 +8,11 @@ import android.content.pm.ResolveInfo;
 import android.os.PowerManager;
 import androidx.media3.common.C;
 import androidx.media3.common.Player;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Clock;
 import androidx.media3.common.util.SystemClock;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.ts.TsExtractor;
+import com.google.common.base.Preconditions;
 import java.util.concurrent.TimeUnit;
 /* loaded from: classes3.dex */
 public final class WearUnsuitableOutputPlaybackSuppressionResolverListener implements Player.Listener {
@@ -40,7 +40,7 @@ public final class WearUnsuitableOutputPlaybackSuppressionResolverListener imple
 
     WearUnsuitableOutputPlaybackSuppressionResolverListener(Context context, long j, Clock clock) {
         PowerManager.WakeLock wakeLock;
-        Assertions.checkArgument(j >= 0);
+        Preconditions.checkArgument(j >= 0);
         Context applicationContext = context.getApplicationContext();
         this.applicationContext = applicationContext;
         this.autoResumeTimeoutAfterUnsuitableOutputSuppressionMs = j;

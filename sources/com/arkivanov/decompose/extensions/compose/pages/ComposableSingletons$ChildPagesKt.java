@@ -109,12 +109,12 @@ public final class ComposableSingletons$ChildPagesKt {
     });
 
     /* renamed from: getLambda-1$extensions_compose_release  reason: not valid java name */
-    public final Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m9689getLambda1$extensions_compose_release() {
+    public final Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m9704getLambda1$extensions_compose_release() {
         return f126lambda1;
     }
 
     /* renamed from: getLambda-2$extensions_compose_release  reason: not valid java name */
-    public final Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m9690getLambda2$extensions_compose_release() {
+    public final Function6<Modifier, PagerState, Function1<? super Integer, ? extends Object>, Function4<? super PagerScope, ? super Integer, ? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m9705getLambda2$extensions_compose_release() {
         return f127lambda2;
     }
 }

@@ -2,12 +2,12 @@ package androidx.media3.datasource.cache;
 
 import android.os.ConditionVariable;
 import androidx.media3.common.C;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
 import androidx.media3.database.DatabaseIOException;
 import androidx.media3.database.DatabaseProvider;
 import androidx.media3.datasource.cache.Cache;
+import com.google.common.base.Preconditions;
 import java.io.File;
 import java.io.IOException;
 import java.security.SecureRandom;
@@ -146,9 +146,9 @@ public final class SimpleCache implements Cache {
 
     @Override // androidx.media3.datasource.cache.Cache
     public synchronized NavigableSet<CacheSpan> addListener(String str, Cache.Listener listener) {
-        Assertions.checkState(!this.released);
-        Assertions.checkNotNull(str);
-        Assertions.checkNotNull(listener);
+        Preconditions.checkState(!this.released);
+        Preconditions.checkNotNull(str);
+        Preconditions.checkNotNull(listener);
         ArrayList<Cache.Listener> arrayList = this.listeners.get(str);
         if (arrayList == null) {
             arrayList = new ArrayList<>();
@@ -175,7 +175,7 @@ public final class SimpleCache implements Cache {
     @Override // androidx.media3.datasource.cache.Cache
     public synchronized NavigableSet<CacheSpan> getCachedSpans(String str) {
         TreeSet treeSet;
-        Assertions.checkState(!this.released);
+        Preconditions.checkState(!this.released);
         CachedContent cachedContent = this.contentIndex.get(str);
         if (cachedContent != null && !cachedContent.isEmpty()) {
             treeSet = new TreeSet((Collection) cachedContent.getSpans());
@@ -186,13 +186,13 @@ public final class SimpleCache implements Cache {
 
     @Override // androidx.media3.datasource.cache.Cache
     public synchronized Set<String> getKeys() {
-        Assertions.checkState(!this.released);
+        Preconditions.checkState(!this.released);
         return new HashSet(this.contentIndex.getKeys());
     }
 
     @Override // androidx.media3.datasource.cache.Cache
     public synchronized long getCacheSpace() {
-        Assertions.checkState(!this.released);
+        Preconditions.checkState(!this.released);
         return this.totalSpace;
     }
 
@@ -200,7 +200,7 @@ public final class SimpleCache implements Cache {
     public synchronized CacheSpan startReadWrite(String str, long j, long j2) throws InterruptedException, Cache.CacheException {
         try {
             try {
-                Assertions.checkState(!this.released);
+                Preconditions.checkState(!this.released);
                 checkInitialization();
                 while (true) {
                     CacheSpan startReadWriteNonBlocking = startReadWriteNonBlocking(str, j, j2);
@@ -229,7 +229,7 @@ public final class SimpleCache implements Cache {
     public synchronized CacheSpan startReadWriteNonBlocking(String str, long j, long j2) throws Cache.CacheException {
         try {
             try {
-                Assertions.checkState(!this.released);
+                Preconditions.checkState(!this.released);
                 checkInitialization();
                 SimpleCacheSpan span = getSpan(str, j, j2);
                 if (span.isCached) {
@@ -254,11 +254,11 @@ public final class SimpleCache implements Cache {
         Throwable th;
         try {
             try {
-                Assertions.checkState(!this.released);
+                Preconditions.checkState(!this.released);
                 checkInitialization();
                 CachedContent cachedContent = this.contentIndex.get(str);
-                Assertions.checkNotNull(cachedContent);
-                Assertions.checkState(cachedContent.isFullyLocked(j, j2));
+                Preconditions.checkNotNull(cachedContent);
+                Preconditions.checkState(cachedContent.isFullyLocked(j, j2));
                 if (!this.cacheDir.exists()) {
                     try {
                         createCacheDirectories(this.cacheDir);
@@ -287,21 +287,21 @@ public final class SimpleCache implements Cache {
     @Override // androidx.media3.datasource.cache.Cache
     public synchronized void commitFile(File file, long j) throws Cache.CacheException {
         boolean z = true;
-        Assertions.checkState(!this.released);
+        Preconditions.checkState(!this.released);
         if (file.exists()) {
             if (j == 0) {
                 file.delete();
                 return;
             }
-            SimpleCacheSpan simpleCacheSpan = (SimpleCacheSpan) Assertions.checkNotNull(SimpleCacheSpan.createCacheEntry(file, j, this.contentIndex));
-            CachedContent cachedContent = (CachedContent) Assertions.checkNotNull(this.contentIndex.get(simpleCacheSpan.key));
-            Assertions.checkState(cachedContent.isFullyLocked(simpleCacheSpan.position, simpleCacheSpan.length));
+            SimpleCacheSpan simpleCacheSpan = (SimpleCacheSpan) Preconditions.checkNotNull(SimpleCacheSpan.createCacheEntry(file, j, this.contentIndex));
+            CachedContent cachedContent = (CachedContent) Preconditions.checkNotNull(this.contentIndex.get(simpleCacheSpan.key));
+            Preconditions.checkState(cachedContent.isFullyLocked(simpleCacheSpan.position, simpleCacheSpan.length));
             long contentLength = ContentMetadata.getContentLength(cachedContent.getMetadata());
             if (contentLength != -1) {
                 if (simpleCacheSpan.position + simpleCacheSpan.length > contentLength) {
                     z = false;
                 }
-                Assertions.checkState(z);
+                Preconditions.checkState(z);
             }
             if (this.fileIndex != null) {
                 try {
@@ -322,8 +322,8 @@ public final class SimpleCache implements Cache {
 
     @Override // androidx.media3.datasource.cache.Cache
     public synchronized void releaseHoleSpan(CacheSpan cacheSpan) {
-        Assertions.checkState(!this.released);
-        CachedContent cachedContent = (CachedContent) Assertions.checkNotNull(this.contentIndex.get(cacheSpan.key));
+        Preconditions.checkState(!this.released);
+        CachedContent cachedContent = (CachedContent) Preconditions.checkNotNull(this.contentIndex.get(cacheSpan.key));
         cachedContent.unlockRange(cacheSpan.position);
         this.contentIndex.maybeRemove(cachedContent.key);
         notifyAll();
@@ -331,7 +331,7 @@ public final class SimpleCache implements Cache {
 
     @Override // androidx.media3.datasource.cache.Cache
     public synchronized void removeResource(String str) {
-        Assertions.checkState(!this.released);
+        Preconditions.checkState(!this.released);
         for (CacheSpan cacheSpan : getCachedSpans(str)) {
             removeSpanInternal(cacheSpan);
         }
@@ -339,7 +339,7 @@ public final class SimpleCache implements Cache {
 
     @Override // androidx.media3.datasource.cache.Cache
     public synchronized void removeSpan(CacheSpan cacheSpan) {
-        Assertions.checkState(!this.released);
+        Preconditions.checkState(!this.released);
         removeSpanInternal(cacheSpan);
     }
 
@@ -353,7 +353,7 @@ public final class SimpleCache implements Cache {
     public synchronized boolean isCached(String str, long j, long j2) {
         boolean z;
         z = true;
-        Assertions.checkState(!this.released);
+        Preconditions.checkState(!this.released);
         CachedContent cachedContent = this.contentIndex.get(str);
         if (cachedContent != null) {
         }
@@ -364,7 +364,7 @@ public final class SimpleCache implements Cache {
     @Override // androidx.media3.datasource.cache.Cache
     public synchronized long getCachedLength(String str, long j, long j2) {
         CachedContent cachedContent;
-        Assertions.checkState(!this.released);
+        Preconditions.checkState(!this.released);
         if (j2 == -1) {
             j2 = Long.MAX_VALUE;
         }
@@ -393,7 +393,7 @@ public final class SimpleCache implements Cache {
 
     @Override // androidx.media3.datasource.cache.Cache
     public synchronized void applyContentMetadataMutations(String str, ContentMetadataMutations contentMetadataMutations) throws Cache.CacheException {
-        Assertions.checkState(!this.released);
+        Preconditions.checkState(!this.released);
         checkInitialization();
         this.contentIndex.applyContentMetadataMutations(str, contentMetadataMutations);
         try {
@@ -405,7 +405,7 @@ public final class SimpleCache implements Cache {
 
     @Override // androidx.media3.datasource.cache.Cache
     public synchronized ContentMetadata getContentMetadata(String str) {
-        Assertions.checkState(!this.released);
+        Preconditions.checkState(!this.released);
         return this.contentIndex.getContentMetadata(str);
     }
 
@@ -498,7 +498,7 @@ public final class SimpleCache implements Cache {
     private SimpleCacheSpan touchSpan(String str, SimpleCacheSpan simpleCacheSpan) {
         boolean z;
         if (this.touchCacheSpans) {
-            String name = ((File) Assertions.checkNotNull(simpleCacheSpan.file)).getName();
+            String name = ((File) Preconditions.checkNotNull(simpleCacheSpan.file)).getName();
             long j = simpleCacheSpan.length;
             long currentTimeMillis = System.currentTimeMillis();
             CacheFileMetadataIndex cacheFileMetadataIndex = this.fileIndex;
@@ -512,7 +512,7 @@ public final class SimpleCache implements Cache {
             } else {
                 z = true;
             }
-            SimpleCacheSpan lastTouchTimestamp = ((CachedContent) Assertions.checkNotNull(this.contentIndex.get(str))).setLastTouchTimestamp(simpleCacheSpan, currentTimeMillis, z);
+            SimpleCacheSpan lastTouchTimestamp = ((CachedContent) Preconditions.checkNotNull(this.contentIndex.get(str))).setLastTouchTimestamp(simpleCacheSpan, currentTimeMillis, z);
             notifySpanTouched(simpleCacheSpan, lastTouchTimestamp);
             return lastTouchTimestamp;
         }
@@ -527,7 +527,7 @@ public final class SimpleCache implements Cache {
         }
         while (true) {
             span = cachedContent.getSpan(j, j2);
-            if (!span.isCached || ((File) Assertions.checkNotNull(span.file)).length() == span.length) {
+            if (!span.isCached || ((File) Preconditions.checkNotNull(span.file)).length() == span.length) {
                 break;
             }
             removeStaleSpans();
@@ -548,7 +548,7 @@ public final class SimpleCache implements Cache {
         }
         this.totalSpace -= cacheSpan.length;
         if (this.fileIndex != null) {
-            String name = ((File) Assertions.checkNotNull(cacheSpan.file)).getName();
+            String name = ((File) Preconditions.checkNotNull(cacheSpan.file)).getName();
             try {
                 this.fileIndex.remove(name);
             } catch (IOException unused) {
@@ -565,7 +565,7 @@ public final class SimpleCache implements Cache {
             Iterator<SimpleCacheSpan> it = cachedContent.getSpans().iterator();
             while (it.hasNext()) {
                 SimpleCacheSpan next = it.next();
-                if (((File) Assertions.checkNotNull(next.file)).length() != next.length) {
+                if (((File) Preconditions.checkNotNull(next.file)).length() != next.length) {
                     arrayList.add(next);
                 }
             }

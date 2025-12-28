@@ -83,7 +83,7 @@ public final class CalendarMonth {
         this.numberOfDays = i3;
         this.daysFromStartOfWeekToFirstOfMonth = i4;
         this.startUtcTimeMillis = j;
-        this.endUtcTimeMillis = (j + (i3 * CalendarModelKt.MillisecondsIn24Hours)) - 1;
+        this.endUtcTimeMillis = (j + (i3 * 86400000)) - 1;
     }
 
     public final int getYear() {

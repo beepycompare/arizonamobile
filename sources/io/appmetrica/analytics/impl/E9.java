@@ -3,10 +3,10 @@ package io.appmetrica.analytics.impl;
 public final class E9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final D9 f555a;
+    public final D9 f556a;
 
     public E9(D9 d9) {
-        this.f555a = d9;
+        this.f556a = d9;
     }
 
     public E9() {

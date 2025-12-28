@@ -4,8 +4,8 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class drawable {
-        public static int selector_arrow_ic = 0x7f080d95;
-        public static int selector_line_ic = 0x7f080d96;
+        public static int selector_arrow_ic = 0x7f080da6;
+        public static int selector_line_ic = 0x7f080da7;
 
         private drawable() {
         }
@@ -17,18 +17,18 @@ public final class R {
         public static int btn_decline = 0x7f0a0231;
         public static int btn_slide_left = 0x7f0a0252;
         public static int btn_slide_right = 0x7f0a0253;
-        public static int indicator = 0x7f0a06e6;
-        public static int line = 0x7f0a0809;
-        public static int money_container = 0x7f0a08d2;
-        public static int rv_indicators = 0x7f0a0c0d;
-        public static int rv_info = 0x7f0a0c0e;
-        public static int selector = 0x7f0a0c66;
-        public static int tv_confirm = 0x7f0a0ec1;
-        public static int tv_decline = 0x7f0a0ec8;
-        public static int tv_money = 0x7f0a0ee6;
-        public static int tv_name = 0x7f0a0ee9;
-        public static int tv_title = 0x7f0a0f16;
-        public static int tv_value = 0x7f0a0f1e;
+        public static int indicator = 0x7f0a06e8;
+        public static int line = 0x7f0a080c;
+        public static int money_container = 0x7f0a08d5;
+        public static int rv_indicators = 0x7f0a0c11;
+        public static int rv_info = 0x7f0a0c12;
+        public static int selector = 0x7f0a0c6a;
+        public static int tv_confirm = 0x7f0a0ec6;
+        public static int tv_decline = 0x7f0a0ecd;
+        public static int tv_money = 0x7f0a0eec;
+        public static int tv_name = 0x7f0a0eef;
+        public static int tv_title = 0x7f0a0f1c;
+        public static int tv_value = 0x7f0a0f24;
 
         private id() {
         }

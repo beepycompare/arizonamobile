@@ -4,7 +4,6 @@ import androidx.media3.common.C;
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.ParserException;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.ParsableBitArray;
 import androidx.media3.common.util.ParsableByteArray;
@@ -14,6 +13,7 @@ import androidx.media3.extractor.DiscardingTrackOutput;
 import androidx.media3.extractor.ExtractorOutput;
 import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.ts.TsPayloadReader;
+import com.google.common.base.Preconditions;
 import java.util.Arrays;
 import java.util.Collections;
 import org.checkerframework.checker.nullness.qual.EnsuresNonNull;
@@ -360,7 +360,7 @@ public final class AdtsReader implements ElementaryStreamReader {
         int i = this.bytesRead + min;
         this.bytesRead = i;
         if (i == this.sampleSize) {
-            Assertions.checkState(this.timeUs != C.TIME_UNSET);
+            Preconditions.checkState(this.timeUs != C.TIME_UNSET);
             this.currentOutput.sampleMetadata(this.timeUs, 1, this.sampleSize, 0, null);
             this.timeUs += this.currentSampleDuration;
             setFindingSampleState();
@@ -369,7 +369,7 @@ public final class AdtsReader implements ElementaryStreamReader {
 
     @EnsuresNonNull({"output", "currentOutput", "id3Output"})
     private void assertTracksCreated() {
-        Assertions.checkNotNull(this.output);
+        Preconditions.checkNotNull(this.output);
         Util.castNonNull(this.currentOutput);
         Util.castNonNull(this.id3Output);
     }

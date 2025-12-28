@@ -1,9 +1,9 @@
 package androidx.media3.container;
 
 import androidx.media3.common.C;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +27,7 @@ public final class ReorderingBufferQueue {
     }
 
     public void setMaxSize(int i) {
-        Assertions.checkState(i >= 0);
+        Preconditions.checkState(i >= 0);
         this.reorderingQueueSize = i;
         flushQueueDownToSize(i);
     }
@@ -37,9 +37,9 @@ public final class ReorderingBufferQueue {
     }
 
     public void add(long j, ParsableByteArray parsableByteArray) {
+        int i;
         BuffersWithTimestamp pop;
-        int i = this.reorderingQueueSize;
-        if (i == 0 || (i != -1 && this.pendingBuffers.size() >= this.reorderingQueueSize && j < ((BuffersWithTimestamp) Util.castNonNull(this.pendingBuffers.peek())).presentationTimeUs)) {
+        if (j == C.TIME_UNSET || (i = this.reorderingQueueSize) == 0 || (i != -1 && this.pendingBuffers.size() >= this.reorderingQueueSize && j < ((BuffersWithTimestamp) Util.castNonNull(this.pendingBuffers.peek())).presentationTimeUs)) {
             this.outputConsumer.consume(j, parsableByteArray);
             return;
         }
@@ -106,8 +106,8 @@ public final class ReorderingBufferQueue {
         public final List<ParsableByteArray> nalBuffers = new ArrayList();
 
         public void init(long j, ParsableByteArray parsableByteArray) {
-            Assertions.checkArgument(j != C.TIME_UNSET);
-            Assertions.checkState(this.nalBuffers.isEmpty());
+            Preconditions.checkArgument(j != C.TIME_UNSET);
+            Preconditions.checkState(this.nalBuffers.isEmpty());
             this.presentationTimeUs = j;
             this.nalBuffers.add(parsableByteArray);
         }

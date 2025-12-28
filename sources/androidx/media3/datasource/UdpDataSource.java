@@ -2,7 +2,7 @@ package androidx.media3.datasource;
 
 import android.net.Uri;
 import androidx.media3.common.PlaybackException;
-import androidx.media3.common.util.Assertions;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -52,7 +52,7 @@ public final class UdpDataSource extends BaseDataSource {
     public long open(DataSpec dataSpec) throws UdpDataSourceException {
         Uri uri = dataSpec.uri;
         this.uri = uri;
-        String str = (String) Assertions.checkNotNull(uri.getHost());
+        String str = (String) Preconditions.checkNotNull(uri.getHost());
         int port = this.uri.getPort();
         transferInitializing(dataSpec);
         try {
@@ -84,7 +84,7 @@ public final class UdpDataSource extends BaseDataSource {
         }
         if (this.packetRemaining == 0) {
             try {
-                ((DatagramSocket) Assertions.checkNotNull(this.socket)).receive(this.packet);
+                ((DatagramSocket) Preconditions.checkNotNull(this.socket)).receive(this.packet);
                 int length = this.packet.getLength();
                 this.packetRemaining = length;
                 bytesTransferred(length);
@@ -113,7 +113,7 @@ public final class UdpDataSource extends BaseDataSource {
         MulticastSocket multicastSocket = this.multicastSocket;
         if (multicastSocket != null) {
             try {
-                multicastSocket.leaveGroup((InetAddress) Assertions.checkNotNull(this.address));
+                multicastSocket.leaveGroup((InetAddress) Preconditions.checkNotNull(this.address));
             } catch (IOException unused) {
             }
             this.multicastSocket = null;

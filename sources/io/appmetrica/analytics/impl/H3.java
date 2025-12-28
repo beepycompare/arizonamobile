@@ -13,7 +13,7 @@ import org.json.JSONObject;
 public final class H3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public volatile D7 f598a = new D7();
+    public volatile D7 f599a = new D7();
 
     public static Location b(String str) {
         if (TextUtils.isEmpty(str)) {
@@ -138,7 +138,7 @@ public final class H3 {
             }
             if (jSONObject.has("additional_config")) {
                 try {
-                    D7 d7 = this.f598a;
+                    D7 d7 = this.f599a;
                     jSONObject.optJSONObject("additional_config");
                     d7.getClass();
                     return newConfigBuilder;

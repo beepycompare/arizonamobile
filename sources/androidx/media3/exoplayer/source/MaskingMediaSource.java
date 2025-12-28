@@ -5,9 +5,9 @@ import androidx.media3.common.AdPlaybackState;
 import androidx.media3.common.C;
 import androidx.media3.common.MediaItem;
 import androidx.media3.common.Timeline;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.exoplayer.upstream.Allocator;
+import com.google.common.base.Preconditions;
 import java.util.Objects;
 import org.checkerframework.checker.nullness.qual.RequiresNonNull;
 /* loaded from: classes3.dex */
@@ -148,7 +148,7 @@ public final class MaskingMediaSource extends WrappingMediaSource {
                         this.isPrepared = true;
                         refreshSourceInfo(this.timeline);
                         if (copyWithPeriodUid != null) {
-                            ((MaskingMediaPeriod) Assertions.checkNotNull(this.unpreparedMaskingMediaPeriod)).createPeriod(copyWithPeriodUid);
+                            ((MaskingMediaPeriod) Preconditions.checkNotNull(this.unpreparedMaskingMediaPeriod)).createPeriod(copyWithPeriodUid);
                             return;
                         }
                         return;

@@ -52,7 +52,9 @@ import com.google.android.gms.dynamite.descriptors.com.google.android.gms.measur
 import com.google.android.vending.expansion.downloader.Constants;
 import com.google.android.vending.expansion.downloader.impl.DownloaderService;
 import com.google.common.base.Ascii;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
+import com.google.common.io.BaseEncoding;
 import com.google.common.io.ByteStreams;
 import com.google.common.math.DoubleMath;
 import com.google.common.math.LongMath;
@@ -123,7 +125,7 @@ public final class Util {
     public static final String DEVICE_DEBUG_INFO = Build.DEVICE + ", " + Build.MODEL + ", " + Build.MANUFACTURER + ", " + Build.VERSION.SDK_INT;
     public static final byte[] EMPTY_BYTE_ARRAY = new byte[0];
     public static final long[] EMPTY_LONG_ARRAY = new long[0];
-    private static final Pattern XS_DATE_TIME_PATTERN = Pattern.compile("(\\d\\d\\d\\d)\\-(\\d\\d)\\-(\\d\\d)[Tt](\\d\\d):(\\d\\d):(\\d\\d)([\\.,](\\d+))?([Zz]|((\\+|\\-)(\\d?\\d):?(\\d\\d)))?");
+    private static final Pattern XS_DATE_TIME_PATTERN = Pattern.compile("(\\d\\d\\d\\d)\\-(\\d\\d)\\-(\\d\\d)[Tt ](\\d\\d):(\\d\\d):(\\d\\d)([\\.,](\\d+))?([Zz]|((\\+|\\-)(\\d?\\d):?(\\d\\d)))?");
     private static final Pattern XS_DURATION_PATTERN = Pattern.compile("^(-)?P(([0-9]*)Y)?(([0-9]*)M)?(([0-9]*)D)?(T(([0-9]*)H)?(([0-9]*)M)?(([0-9.]*)S)?)?$");
     private static final Pattern ESCAPED_CHARACTER_PATTERN = Pattern.compile("%([A-Fa-f0-9]{2})");
     private static final Pattern ISM_PATH_PATTERN = Pattern.compile("(?:.*\\.)?isml?(?:/(manifest(.*))?)?", 2);
@@ -133,11 +135,6 @@ public final class Util {
     private static final int[] CRC16_BYTES_MSBF = {0, 4129, 8258, 12387, 16516, 20645, 24774, 28903, 33032, 37161, 41290, 45419, 49548, 53677, 57806, 61935};
     private static final int ZLIB_INFLATE_HEADER = 120;
     private static final int[] CRC8_BYTES_MSBF = {0, 7, 14, 9, 28, 27, 18, 21, 56, 63, 54, 49, 36, 35, 42, 45, 112, 119, WebSocketProtocol.PAYLOAD_SHORT, 121, 108, 107, 98, 101, 72, 79, 70, 65, 84, 83, 90, 93, 224, 231, 238, 233, 252, 251, 242, 245, 216, 223, 214, 209, DownloaderService.STATUS_QUEUED_FOR_WIFI_OR_CELLULAR_PERMISSION, DownloaderService.STATUS_WAITING_FOR_NETWORK, ComposerKt.compositionLocalMapKey, 205, 144, 151, 158, BuiltInsProtoBuf.PROPERTY_SETTER_ANNOTATION_FIELD_NUMBER, 140, TsExtractor.TS_STREAM_TYPE_DTS_UHD, TsExtractor.TS_STREAM_TYPE_HDMV_DTS, 133, 168, 175, 166, 161, 180, 179, 186, PsExtractor.PRIVATE_STREAM_1, 199, 192, ComposerKt.providerKey, ComposerKt.referenceKey, 219, 220, 213, 210, 255, 248, 241, 246, 227, 228, 237, 234, 183, 176, 185, DownloaderService.STATUS_PENDING, 171, TsExtractor.TS_STREAM_TYPE_AC4, 165, 162, 143, TsExtractor.TS_STREAM_TYPE_DTS_HD, TsExtractor.TS_STREAM_TYPE_AC3, TsExtractor.TS_STREAM_TYPE_SPLICE_INFO, 147, 148, 157, 154, 39, 32, 41, 46, 59, 60, 53, 50, 31, 24, 17, 22, 3, 4, 13, 10, 87, 80, 89, 94, 75, 76, 69, 66, 111, 104, 97, 102, 115, 116, ComposerImplKt.nodeKey, 122, 137, 142, TsExtractor.TS_STREAM_TYPE_E_AC3, 128, 149, 146, ModuleDescriptor.MODULE_VERSION, 156, 177, 182, 191, 184, 173, 170, 163, 164, 249, 254, 247, 240, 229, 226, 235, 236, DownloaderService.STATUS_PAUSED_BY_APP, 198, ComposerKt.reuseKey, 200, 221, 218, 211, 212, 105, 110, 103, 96, 117, 114, 123, 124, 81, 86, 95, 88, 77, 74, 67, 68, 25, 30, 23, 16, 5, 2, 11, 12, 33, 38, 47, 40, 61, 58, 51, 52, 78, 73, 64, 71, 82, 85, 92, 91, 118, 113, ZLIB_INFLATE_HEADER, 127, 106, 109, 100, 99, 62, 57, 48, 55, 34, 37, 44, 43, 6, 1, 8, 15, 26, 29, 20, 19, 174, 169, 160, 167, 178, 181, TsExtractor.TS_PACKET_SIZE, 187, 150, 145, BuiltInsProtoBuf.PROPERTY_GETTER_ANNOTATION_FIELD_NUMBER, 159, TsExtractor.TS_STREAM_TYPE_DTS, 141, 132, 131, 222, 217, 208, 215, DownloaderService.STATUS_WAITING_TO_RETRY, DownloaderService.STATUS_QUEUED_FOR_WIFI, ComposerKt.providerMapsKey, ComposerKt.providerValuesKey, 230, 225, 232, 239, 250, 253, 244, 243};
-
-    public static long addWithOverflowDefault(long j, long j2, long j3) {
-        long j4 = j + j2;
-        return ((j ^ j4) & (j2 ^ j4)) < 0 ? j3 : j4;
-    }
 
     @EnsuresNonNull({"#1"})
     public static <T> T castNonNull(T t) {
@@ -324,11 +321,6 @@ public final class Util {
 
     private static boolean shouldEscapeCharacter(char c) {
         return c == '\"' || c == '%' || c == '*' || c == '/' || c == ':' || c == '<' || c == '\\' || c == '|' || c == '>' || c == '?';
-    }
-
-    public static long subtractWithOverflowDefault(long j, long j2, long j3) {
-        long j4 = j - j2;
-        return ((j ^ j4) & (j2 ^ j)) < 0 ? j3 : j4;
     }
 
     public static long toUnsignedLong(int i) {
@@ -560,13 +552,13 @@ public final class Util {
     }
 
     public static <T> T[] nullSafeArrayCopy(T[] tArr, int i) {
-        Assertions.checkArgument(i <= tArr.length);
+        Preconditions.checkArgument(i <= tArr.length);
         return (T[]) Arrays.copyOf(tArr, i);
     }
 
     public static <T> T[] nullSafeArrayCopyOfRange(T[] tArr, int i, int i2) {
-        Assertions.checkArgument(i >= 0);
-        Assertions.checkArgument(i2 <= tArr.length);
+        Preconditions.checkArgument(i >= 0);
+        Preconditions.checkArgument(i2 <= tArr.length);
         return (T[]) Arrays.copyOfRange(tArr, i, i2);
     }
 
@@ -583,7 +575,7 @@ public final class Util {
     }
 
     public static <T> void nullSafeListToArray(List<T> list, T[] tArr) {
-        Assertions.checkState(list.size() == tArr.length);
+        Preconditions.checkState(list.size() == tArr.length);
         list.toArray(tArr);
     }
 
@@ -592,7 +584,7 @@ public final class Util {
     }
 
     public static Handler createHandlerForCurrentLooper(Handler.Callback callback) {
-        return createHandler((Looper) Assertions.checkStateNotNull(Looper.myLooper()), callback);
+        return createHandler((Looper) Preconditions.checkNotNull(Looper.myLooper()), callback);
     }
 
     public static Handler createHandlerForCurrentOrMainLooper() {
@@ -615,6 +607,18 @@ public final class Util {
                 return true;
             }
             return handler.post(runnable);
+        }
+        return false;
+    }
+
+    public static boolean postOrRun(HandlerWrapper handlerWrapper, Runnable runnable) {
+        Looper looper = handlerWrapper.getLooper();
+        if (looper.getThread().isAlive()) {
+            if (looper == Looper.myLooper()) {
+                runnable.run();
+                return true;
+            }
+            return handlerWrapper.post(runnable);
         }
         return false;
     }
@@ -822,6 +826,16 @@ public final class Util {
         return Math.max(f2, Math.min(f, f3));
     }
 
+    public static long addWithOverflowDefault(long j, long j2, long j3) {
+        long saturatedAdd = LongMath.saturatedAdd(j, j2);
+        return ((saturatedAdd != Long.MIN_VALUE || j + j2 == Long.MIN_VALUE) && (saturatedAdd != Long.MAX_VALUE || j + j2 == Long.MAX_VALUE)) ? saturatedAdd : j3;
+    }
+
+    public static long subtractWithOverflowDefault(long j, long j2, long j3) {
+        long saturatedSubtract = LongMath.saturatedSubtract(j, j2);
+        return ((saturatedSubtract != Long.MIN_VALUE || j - j2 == Long.MIN_VALUE) && (saturatedSubtract != Long.MAX_VALUE || j - j2 == Long.MAX_VALUE)) ? saturatedSubtract : j3;
+    }
+
     public static int percentInt(long j, long j2) {
         long j3;
         long saturatedMultiply = LongMath.saturatedMultiply(j, 100L);
@@ -830,7 +844,7 @@ public final class Util {
         } else {
             j3 = j / (j2 / 100);
         }
-        return Ints.checkedCast(j3);
+        return Ints.saturatedCast(j3);
     }
 
     public static int linearSearch(int[] iArr, int i) {
@@ -1233,7 +1247,7 @@ public final class Util {
 
     public static int getIntegerCodeForString(String str) {
         int length = str.length();
-        Assertions.checkArgument(length <= 4);
+        Preconditions.checkArgument(length <= 4);
         int i = 0;
         for (int i2 = 0; i2 < length; i2++) {
             i = (i << 8) | str.charAt(i2);
@@ -1246,21 +1260,15 @@ public final class Util {
     }
 
     public static byte[] getBytesFromHexString(String str) {
-        int length = str.length() / 2;
-        byte[] bArr = new byte[length];
-        for (int i = 0; i < length; i++) {
-            int i2 = i * 2;
-            bArr[i] = (byte) ((Character.digit(str.charAt(i2), 16) << 4) + Character.digit(str.charAt(i2 + 1), 16));
-        }
-        return bArr;
+        return BaseEncoding.base16().ignoreCase().decode(str);
     }
 
     public static String toHexString(byte[] bArr) {
-        StringBuilder sb = new StringBuilder(bArr.length * 2);
-        for (int i = 0; i < bArr.length; i++) {
-            sb.append(Character.forDigit((bArr[i] >> 4) & 15, 16)).append(Character.forDigit(bArr[i] & Ascii.SI, 16));
-        }
-        return sb.toString();
+        return BaseEncoding.base16().lowerCase().encode(bArr);
+    }
+
+    public static String toFourccString(int i) {
+        return new String(Ints.toByteArray(i), StandardCharsets.US_ASCII);
     }
 
     public static String getUserAgent(Context context, String str) {
@@ -1270,7 +1278,7 @@ public final class Util {
         } catch (PackageManager.NameNotFoundException unused) {
             str2 = "?";
         }
-        return str + "/" + str2 + " (Linux;Android " + Build.VERSION.RELEASE + ") AndroidXMedia3/1.8.0";
+        return str + "/" + str2 + " (Linux;Android " + Build.VERSION.RELEASE + ") AndroidXMedia3/1.9.0";
     }
 
     public static int getCodecCountOfType(String str, int i) {
@@ -1366,10 +1374,11 @@ public final class Util {
     public static int getAudioTrackChannelConfig(int i) {
         if (i == 10) {
             return Build.VERSION.SDK_INT >= 32 ? 737532 : 6396;
-        } else if (i != 12) {
-            if (i == 24) {
-                return Build.VERSION.SDK_INT >= 32 ? 67108860 : 0;
-            }
+        } else if (i == 16) {
+            return Build.VERSION.SDK_INT >= 32 ? 205215996 : 0;
+        } else if (i == 24) {
+            return Build.VERSION.SDK_INT >= 32 ? 67108860 : 0;
+        } else {
             switch (i) {
                 case 1:
                     return 4;
@@ -1388,10 +1397,17 @@ public final class Util {
                 case 8:
                     return 6396;
                 default:
-                    return 0;
+                    switch (i) {
+                        case 12:
+                            return 743676;
+                        case 13:
+                            return Build.VERSION.SDK_INT >= 32 ? 30136348 : 0;
+                        case 14:
+                            return Build.VERSION.SDK_INT >= 32 ? 202070268 : 0;
+                        default:
+                            return 0;
+                    }
             }
-        } else {
-            return 743676;
         }
     }
 
@@ -1428,7 +1444,11 @@ public final class Util {
     }
 
     public static int generateAudioSessionIdV21(Context context) {
-        return AudioManagerCompat.getAudioManager(context).generateAudioSessionId();
+        int generateAudioSessionId = AudioManagerCompat.getAudioManager(context).generateAudioSessionId();
+        if (generateAudioSessionId != -1) {
+            return generateAudioSessionId;
+        }
+        return 0;
     }
 
     public static UUID getDrmUuid(String str) {
@@ -1489,7 +1509,7 @@ public final class Util {
             }
             int lastIndexOf = lastPathSegment.lastIndexOf(46);
             if (lastIndexOf < 0 || (inferContentTypeForExtension = inferContentTypeForExtension(lastPathSegment.substring(lastIndexOf + 1))) == 4) {
-                Matcher matcher = ISM_PATH_PATTERN.matcher((CharSequence) Assertions.checkNotNull(uri.getPath()));
+                Matcher matcher = ISM_PATH_PATTERN.matcher((CharSequence) Preconditions.checkNotNull(uri.getPath()));
                 if (matcher.matches()) {
                     String group = matcher.group(2);
                     if (group != null) {
@@ -1641,6 +1661,11 @@ public final class Util {
         return formatter.format("%s%02d:%02d", str, Long.valueOf(j3), Long.valueOf(j2)).toString();
     }
 
+    public static String getStringForTime(long j) {
+        StringBuilder sb = new StringBuilder();
+        return getStringForTime(sb, new Formatter(sb, Locale.getDefault()), j);
+    }
+
     public static String escapeFileName(String str) {
         int length = str.length();
         int i = 0;
@@ -1687,7 +1712,7 @@ public final class Util {
         StringBuilder sb = new StringBuilder(i4);
         Matcher matcher = ESCAPED_CHARACTER_PATTERN.matcher(str);
         while (i2 > 0 && matcher.find()) {
-            sb.append((CharSequence) str, i, matcher.start()).append((char) Integer.parseInt((String) Assertions.checkNotNull(matcher.group(1)), 16));
+            sb.append((CharSequence) str, i, matcher.start()).append((char) Integer.parseInt((String) Preconditions.checkNotNull(matcher.group(1)), 16));
             i = matcher.end();
             i2--;
         }
@@ -1730,7 +1755,7 @@ public final class Util {
     }
 
     public static File createTempFile(Context context, String str) throws IOException {
-        return File.createTempFile(str, null, (File) Assertions.checkNotNull(context.getCacheDir()));
+        return File.createTempFile(str, null, (File) Preconditions.checkNotNull(context.getCacheDir()));
     }
 
     public static int crc32(byte[] bArr, int i, int i2, int i3) {
@@ -1860,7 +1885,7 @@ public final class Util {
         DisplayManager displayManager = (DisplayManager) context.getSystemService("display");
         Display display = displayManager != null ? displayManager.getDisplay(0) : null;
         if (display == null) {
-            display = ((WindowManager) Assertions.checkNotNull((WindowManager) context.getSystemService("window"))).getDefaultDisplay();
+            display = ((WindowManager) Preconditions.checkNotNull((WindowManager) context.getSystemService("window"))).getDefaultDisplay();
         }
         return getCurrentDisplayModeSize(context, display);
     }
@@ -1892,7 +1917,7 @@ public final class Util {
             }
         }
         Point point = new Point();
-        getDisplaySizeV23(display, point);
+        getDisplaySize(display, point);
         return point;
     }
 
@@ -2087,8 +2112,8 @@ public final class Util {
     }
 
     public static void putInt24(ByteBuffer byteBuffer, int i) {
-        Assertions.checkArgument(((-16777216) & i) == 0 || (i & (-8388608)) == -8388608, "Value out of range of 24-bit integer: " + Integer.toHexString(i));
-        Assertions.checkArgument(byteBuffer.remaining() >= 3);
+        Preconditions.checkArgument(((-16777216) & i) == 0 || (i & (-8388608)) == -8388608, "Value out of range of 24-bit integer: %s", Integer.toHexString(i));
+        Preconditions.checkArgument(byteBuffer.remaining() >= 3);
         byteBuffer.put((byte) (byteBuffer.order() == ByteOrder.BIG_ENDIAN ? (i & 16711680) >> 16 : i & 255)).put((byte) ((65280 & i) >> 8)).put((byte) (byteBuffer.order() == ByteOrder.BIG_ENDIAN ? i & 255 : (i & 16711680) >> 16));
     }
 
@@ -2112,7 +2137,7 @@ public final class Util {
             String str2 = split[length - 1];
             boolean z = length >= 3 && "neg".equals(split[length - 2]);
             try {
-                i = Integer.parseInt((String) Assertions.checkNotNull(str2));
+                i = Integer.parseInt((String) Preconditions.checkNotNull(str2));
                 if (z) {
                     return -i;
                 }
@@ -2263,7 +2288,7 @@ public final class Util {
         }
     }
 
-    private static void getDisplaySizeV23(Display display, Point point) {
+    private static void getDisplaySize(Display display, Point point) {
         Display.Mode mode = display.getMode();
         point.x = mode.getPhysicalWidth();
         point.y = mode.getPhysicalHeight();
@@ -2317,7 +2342,7 @@ public final class Util {
     }
 
     private static boolean isTrafficRestricted(Uri uri) {
-        return "http".equals(uri.getScheme()) && !NetworkSecurityPolicy.getInstance().isCleartextTrafficPermitted((String) Assertions.checkNotNull(uri.getHost()));
+        return "http".equals(uri.getScheme()) && !NetworkSecurityPolicy.getInstance().isCleartextTrafficPermitted((String) Preconditions.checkNotNull(uri.getHost()));
     }
 
     private static String maybeReplaceLegacyLanguageTags(String str) {

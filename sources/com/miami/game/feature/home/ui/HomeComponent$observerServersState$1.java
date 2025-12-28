@@ -1,6 +1,8 @@
 package com.miami.game.feature.home.ui;
 
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
+import com.miami.game.core.build.config.BuildConfigRepository;
+import com.miami.game.core.server.model.ServerModel;
 import com.miami.game.core.server.model.ServersState;
 import com.miami.game.feature.home.ui.model.HomeUiAction;
 import com.miami.game.feature.home.ui.model.HomeUiState;
@@ -46,14 +48,62 @@ public final class HomeComponent$observerServersState$1 extends SuspendLambda im
     public final Object invokeSuspend(Object obj) {
         MutableStateFlow mutableStateFlow;
         Object value;
+        HomeUiState homeUiState;
+        BuildConfigRepository buildConfigRepository;
+        int i;
+        int i2;
+        BuildConfigRepository buildConfigRepository2;
         ServersState serversState = (ServersState) this.L$0;
         IntrinsicsKt.getCOROUTINE_SUSPENDED();
         if (this.label == 0) {
             ResultKt.throwOnFailure(obj);
             mutableStateFlow = this.this$0.stateStore;
+            HomeComponent homeComponent = this.this$0;
             do {
                 value = mutableStateFlow.getValue();
-            } while (!mutableStateFlow.compareAndSet(value, HomeUiState.copy$default((HomeUiState) value, 0, false, null, null, serversState.getCurrentServer(), null, null, null, null, null, null, false, false, false, serversState.getXDonate(), false, false, false, 245743, null)));
+                homeUiState = (HomeUiState) value;
+                int i3 = 0;
+                for (ServerModel serverModel : serversState.getServerListDesktop()) {
+                    Integer queue = serverModel.getQueue();
+                    i3 += queue != null ? queue.intValue() : 0;
+                }
+                int i4 = 0;
+                for (ServerModel serverModel2 : serversState.getServerListMobile()) {
+                    Integer queue2 = serverModel2.getQueue();
+                    i4 += queue2 != null ? queue2.intValue() : 0;
+                }
+                int i5 = i3 + i4;
+                buildConfigRepository = homeComponent.buildConfig;
+                if (buildConfigRepository.isArizona()) {
+                    int i6 = 0;
+                    for (ServerModel serverModel3 : serversState.getServerListVc()) {
+                        Integer queue3 = serverModel3.getQueue();
+                        i6 += queue3 != null ? queue3.intValue() : 0;
+                    }
+                    i5 += i6;
+                }
+                i = i5;
+                int i7 = 0;
+                for (ServerModel serverModel4 : serversState.getServerListDesktop()) {
+                    Integer online = serverModel4.getOnline();
+                    i7 += online != null ? online.intValue() : 0;
+                }
+                int i8 = 0;
+                for (ServerModel serverModel5 : serversState.getServerListMobile()) {
+                    Integer online2 = serverModel5.getOnline();
+                    i8 += online2 != null ? online2.intValue() : 0;
+                }
+                i2 = i7 + i8;
+                buildConfigRepository2 = homeComponent.buildConfig;
+                if (buildConfigRepository2.isArizona()) {
+                    int i9 = 0;
+                    for (ServerModel serverModel6 : serversState.getServerListVc()) {
+                        Integer online3 = serverModel6.getOnline();
+                        i9 += online3 != null ? online3.intValue() : 0;
+                    }
+                    i2 += i9;
+                }
+            } while (!mutableStateFlow.compareAndSet(value, HomeUiState.copy$default(homeUiState, 0, false, null, null, serversState.getCurrentServer(), null, null, null, null, null, null, false, false, false, serversState.getXDonate(), false, false, false, i, i2, 245743, null)));
             if (serversState.isError()) {
                 this.this$0.emitUiAction(HomeUiAction.NavigateToErrorDialog.INSTANCE);
             }

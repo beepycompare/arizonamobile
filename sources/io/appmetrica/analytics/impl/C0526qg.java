@@ -4,18 +4,18 @@ package io.appmetrica.analytics.impl;
 public class C0526qg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Oa f1186a;
+    public final Oa f1187a;
     public final InterfaceC0401lg b;
     public final Ma c;
 
     public C0526qg(Oa oa, InterfaceC0401lg interfaceC0401lg, Ma ma) {
-        this.f1186a = oa;
+        this.f1187a = oa;
         this.b = interfaceC0401lg;
         this.c = ma;
     }
 
     public final void a(C0476og c0476og) {
-        if (this.f1186a.a(c0476og)) {
+        if (this.f1187a.a(c0476og)) {
             this.b.a(c0476og);
             this.c.a();
         }
@@ -30,6 +30,6 @@ public class C0526qg {
     }
 
     public final Oa a() {
-        return this.f1186a;
+        return this.f1187a;
     }
 }

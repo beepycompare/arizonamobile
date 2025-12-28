@@ -29,6 +29,20 @@ final class XmpMotionPhotoDescriptionParser {
         }
     }
 
+    public static boolean isMotionPhotoXmp(String str) {
+        String[] strArr;
+        if (str == null) {
+            return false;
+        }
+        int length = MOTION_PHOTO_ATTRIBUTE_NAMES.length;
+        for (int i = 0; i < length; i++) {
+            if (str.contains(strArr[i] + "=\"1\"")) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     private static MotionPhotoDescription parseInternal(String str) throws XmlPullParserException, IOException {
         XmlPullParser newPullParser = XmlPullParserFactory.newInstance().newPullParser();
         newPullParser.setInput(new StringReader(str));

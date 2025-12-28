@@ -11,7 +11,7 @@ public final class EmojiTextViewHelper {
 
     public EmojiTextViewHelper(TextView textView) {
         Preconditions.checkNotNull(textView, "textView cannot be null");
-        this.mHelper = new HelperInternal19(textView);
+        this.mHelper = new HelperInternal(textView);
     }
 
     public void updateTransformationMethod() {
@@ -31,36 +31,15 @@ public final class EmojiTextViewHelper {
     }
 
     /* loaded from: classes2.dex */
-    static class HelperInternal {
-        InputFilter[] getFilters(InputFilter[] inputFilterArr) {
-            return inputFilterArr;
-        }
-
-        void setAllCaps(boolean z) {
-        }
-
-        void updateTransformationMethod() {
-        }
-
-        TransformationMethod wrapTransformationMethod(TransformationMethod transformationMethod) {
-            return transformationMethod;
-        }
-
-        HelperInternal() {
-        }
-    }
-
-    /* loaded from: classes2.dex */
-    private static class HelperInternal19 extends HelperInternal {
+    private static class HelperInternal {
         private final EmojiInputFilter mEmojiInputFilter;
         private final TextView mTextView;
 
-        HelperInternal19(TextView textView) {
+        HelperInternal(TextView textView) {
             this.mTextView = textView;
             this.mEmojiInputFilter = new EmojiInputFilter(textView);
         }
 
-        @Override // androidx.emoji.widget.EmojiTextViewHelper.HelperInternal
         void updateTransformationMethod() {
             TransformationMethod transformationMethod = this.mTextView.getTransformationMethod();
             if (transformationMethod == null || (transformationMethod instanceof PasswordTransformationMethod)) {
@@ -69,7 +48,6 @@ public final class EmojiTextViewHelper {
             this.mTextView.setTransformationMethod(wrapTransformationMethod(transformationMethod));
         }
 
-        @Override // androidx.emoji.widget.EmojiTextViewHelper.HelperInternal
         InputFilter[] getFilters(InputFilter[] inputFilterArr) {
             int length = inputFilterArr.length;
             for (InputFilter inputFilter : inputFilterArr) {
@@ -83,12 +61,10 @@ public final class EmojiTextViewHelper {
             return inputFilterArr2;
         }
 
-        @Override // androidx.emoji.widget.EmojiTextViewHelper.HelperInternal
         TransformationMethod wrapTransformationMethod(TransformationMethod transformationMethod) {
             return transformationMethod instanceof EmojiTransformationMethod ? transformationMethod : new EmojiTransformationMethod(transformationMethod);
         }
 
-        @Override // androidx.emoji.widget.EmojiTextViewHelper.HelperInternal
         void setAllCaps(boolean z) {
             if (z) {
                 updateTransformationMethod();

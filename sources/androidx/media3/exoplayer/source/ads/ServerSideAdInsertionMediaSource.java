@@ -9,7 +9,6 @@ import androidx.media3.common.MediaItem;
 import androidx.media3.common.StreamKey;
 import androidx.media3.common.Timeline;
 import androidx.media3.common.TrackGroup;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.datasource.TransferListener;
 import androidx.media3.decoder.DecoderInputBuffer;
@@ -17,6 +16,7 @@ import androidx.media3.exoplayer.FormatHolder;
 import androidx.media3.exoplayer.LoadingInfo;
 import androidx.media3.exoplayer.SeekParameters;
 import androidx.media3.exoplayer.drm.DrmSessionEventListener;
+import androidx.media3.exoplayer.drm.KeyRequestInfo;
 import androidx.media3.exoplayer.source.BaseMediaSource;
 import androidx.media3.exoplayer.source.EmptySampleStream;
 import androidx.media3.exoplayer.source.ForwardingTimeline;
@@ -29,6 +29,7 @@ import androidx.media3.exoplayer.source.SampleStream;
 import androidx.media3.exoplayer.source.TrackGroupArray;
 import androidx.media3.exoplayer.trackselection.ExoTrackSelection;
 import androidx.media3.exoplayer.upstream.Allocator;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
@@ -63,26 +64,26 @@ public final class ServerSideAdInsertionMediaSource extends BaseMediaSource impl
     }
 
     public void setAdPlaybackStates(final ImmutableMap<Object, AdPlaybackState> immutableMap, final Timeline timeline) {
-        Assertions.checkArgument(!immutableMap.isEmpty());
-        Object checkNotNull = Assertions.checkNotNull(immutableMap.values().asList().get(0).adsId);
+        Preconditions.checkArgument(!immutableMap.isEmpty());
+        Object checkNotNull = Preconditions.checkNotNull(immutableMap.values().asList().get(0).adsId);
         UnmodifiableIterator<Map.Entry<Object, AdPlaybackState>> it = immutableMap.entrySet().iterator();
         while (it.hasNext()) {
             Map.Entry<Object, AdPlaybackState> next = it.next();
             Object key = next.getKey();
             AdPlaybackState value = next.getValue();
-            Assertions.checkArgument(Objects.equals(checkNotNull, value.adsId));
+            Preconditions.checkArgument(Objects.equals(checkNotNull, value.adsId));
             AdPlaybackState adPlaybackState = this.adPlaybackStates.get(key);
             if (adPlaybackState != null) {
                 for (int i = value.removedAdGroupCount; i < value.adGroupCount; i++) {
                     AdPlaybackState.AdGroup adGroup = value.getAdGroup(i);
-                    Assertions.checkArgument(adGroup.isServerSideInserted);
+                    Preconditions.checkArgument(adGroup.isServerSideInserted);
                     if (i < adPlaybackState.adGroupCount && ServerSideAdInsertionUtil.getAdCountInGroup(value, i) < ServerSideAdInsertionUtil.getAdCountInGroup(adPlaybackState, i)) {
                         AdPlaybackState.AdGroup adGroup2 = value.getAdGroup(i + 1);
-                        Assertions.checkArgument(adGroup.contentResumeOffsetUs + adGroup2.contentResumeOffsetUs == adPlaybackState.getAdGroup(i).contentResumeOffsetUs);
-                        Assertions.checkArgument(adGroup.timeUs + adGroup.contentResumeOffsetUs == adGroup2.timeUs);
+                        Preconditions.checkArgument(adGroup.contentResumeOffsetUs + adGroup2.contentResumeOffsetUs == adPlaybackState.getAdGroup(i).contentResumeOffsetUs);
+                        Preconditions.checkArgument(adGroup.timeUs + adGroup.contentResumeOffsetUs == adGroup2.timeUs);
                     }
                     if (adGroup.timeUs == Long.MIN_VALUE) {
-                        Assertions.checkArgument(ServerSideAdInsertionUtil.getAdCountInGroup(value, i) == 0);
+                        Preconditions.checkArgument(ServerSideAdInsertionUtil.getAdCountInGroup(value, i) == 0);
                     }
                 }
             }
@@ -95,7 +96,7 @@ public final class ServerSideAdInsertionMediaSource extends BaseMediaSource impl
                 handler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.ads.ServerSideAdInsertionMediaSource$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ServerSideAdInsertionMediaSource.this.m9014x8b1696bf(immutableMap, timeline);
+                        ServerSideAdInsertionMediaSource.this.m9023x8b1696bf(immutableMap, timeline);
                     }
                 });
             }
@@ -104,7 +105,7 @@ public final class ServerSideAdInsertionMediaSource extends BaseMediaSource impl
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$setAdPlaybackStates$0$androidx-media3-exoplayer-source-ads-ServerSideAdInsertionMediaSource  reason: not valid java name */
-    public /* synthetic */ void m9014x8b1696bf(ImmutableMap immutableMap, Timeline timeline) {
+    public /* synthetic */ void m9023x8b1696bf(ImmutableMap immutableMap, Timeline timeline) {
         AdPlaybackState adPlaybackState;
         for (SharedMediaPeriod sharedMediaPeriod : this.mediaPeriods.values()) {
             AdPlaybackState adPlaybackState2 = (AdPlaybackState) immutableMap.get(sharedMediaPeriod.periodUid);
@@ -201,7 +202,7 @@ public final class ServerSideAdInsertionMediaSource extends BaseMediaSource impl
             sharedMediaPeriod = null;
         }
         if (sharedMediaPeriod == null && ((sharedMediaPeriod = (SharedMediaPeriod) Iterables.getLast(this.mediaPeriods.get((ListMultimap<Pair<Long, Object>, SharedMediaPeriod>) pair), null)) == null || !sharedMediaPeriod.canReuseMediaPeriod(mediaPeriodId, j))) {
-            AdPlaybackState adPlaybackState = (AdPlaybackState) Assertions.checkNotNull(this.adPlaybackStates.get(mediaPeriodId.periodUid));
+            AdPlaybackState adPlaybackState = (AdPlaybackState) Preconditions.checkNotNull(this.adPlaybackStates.get(mediaPeriodId.periodUid));
             SharedMediaPeriod sharedMediaPeriod3 = new SharedMediaPeriod(this.mediaSource.createPeriod(new MediaSource.MediaPeriodId(mediaPeriodId.periodUid, mediaPeriodId.windowSequenceNumber), allocator, ServerSideAdInsertionUtil.getStreamPositionUs(j, mediaPeriodId, adPlaybackState)), mediaPeriodId.periodUid, adPlaybackState);
             this.mediaPeriods.put(pair, sharedMediaPeriod3);
             sharedMediaPeriod = sharedMediaPeriod3;
@@ -239,12 +240,12 @@ public final class ServerSideAdInsertionMediaSource extends BaseMediaSource impl
     }
 
     @Override // androidx.media3.exoplayer.drm.DrmSessionEventListener
-    public void onDrmKeysLoaded(int i, MediaSource.MediaPeriodId mediaPeriodId) {
+    public void onDrmKeysLoaded(int i, MediaSource.MediaPeriodId mediaPeriodId, KeyRequestInfo keyRequestInfo) {
         MediaPeriodImpl mediaPeriodForEvent = getMediaPeriodForEvent(mediaPeriodId, null, false);
         if (mediaPeriodForEvent == null) {
-            this.drmEventDispatcherWithoutId.drmKeysLoaded();
+            this.drmEventDispatcherWithoutId.drmKeysLoaded(keyRequestInfo);
         } else {
-            mediaPeriodForEvent.drmEventDispatcher.drmKeysLoaded();
+            mediaPeriodForEvent.drmEventDispatcher.drmKeysLoaded(keyRequestInfo);
         }
     }
 
@@ -297,7 +298,7 @@ public final class ServerSideAdInsertionMediaSource extends BaseMediaSource impl
                 return;
             }
             mediaPeriodForEvent.sharedPeriod.onLoadStarted(loadEventInfo, mediaLoadData);
-            mediaPeriodForEvent.mediaSourceEventDispatcher.loadStarted(loadEventInfo, correctMediaLoadData(mediaPeriodForEvent, mediaLoadData, (AdPlaybackState) Assertions.checkNotNull(this.adPlaybackStates.get(mediaPeriodForEvent.mediaPeriodId.periodUid))), 0);
+            mediaPeriodForEvent.mediaSourceEventDispatcher.loadStarted(loadEventInfo, correctMediaLoadData(mediaPeriodForEvent, mediaLoadData, (AdPlaybackState) Preconditions.checkNotNull(this.adPlaybackStates.get(mediaPeriodForEvent.mediaPeriodId.periodUid))), 0);
         }
     }
 
@@ -309,7 +310,7 @@ public final class ServerSideAdInsertionMediaSource extends BaseMediaSource impl
             return;
         }
         mediaPeriodForEvent.sharedPeriod.onLoadFinished(loadEventInfo);
-        mediaPeriodForEvent.mediaSourceEventDispatcher.loadCompleted(loadEventInfo, correctMediaLoadData(mediaPeriodForEvent, mediaLoadData, (AdPlaybackState) Assertions.checkNotNull(this.adPlaybackStates.get(mediaPeriodForEvent.mediaPeriodId.periodUid))));
+        mediaPeriodForEvent.mediaSourceEventDispatcher.loadCompleted(loadEventInfo, correctMediaLoadData(mediaPeriodForEvent, mediaLoadData, (AdPlaybackState) Preconditions.checkNotNull(this.adPlaybackStates.get(mediaPeriodForEvent.mediaPeriodId.periodUid))));
     }
 
     @Override // androidx.media3.exoplayer.source.MediaSourceEventListener
@@ -320,7 +321,7 @@ public final class ServerSideAdInsertionMediaSource extends BaseMediaSource impl
             return;
         }
         mediaPeriodForEvent.sharedPeriod.onLoadFinished(loadEventInfo);
-        mediaPeriodForEvent.mediaSourceEventDispatcher.loadCanceled(loadEventInfo, correctMediaLoadData(mediaPeriodForEvent, mediaLoadData, (AdPlaybackState) Assertions.checkNotNull(this.adPlaybackStates.get(mediaPeriodForEvent.mediaPeriodId.periodUid))));
+        mediaPeriodForEvent.mediaSourceEventDispatcher.loadCanceled(loadEventInfo, correctMediaLoadData(mediaPeriodForEvent, mediaLoadData, (AdPlaybackState) Preconditions.checkNotNull(this.adPlaybackStates.get(mediaPeriodForEvent.mediaPeriodId.periodUid))));
     }
 
     @Override // androidx.media3.exoplayer.source.MediaSourceEventListener
@@ -333,7 +334,7 @@ public final class ServerSideAdInsertionMediaSource extends BaseMediaSource impl
         if (z) {
             mediaPeriodForEvent.sharedPeriod.onLoadFinished(loadEventInfo);
         }
-        mediaPeriodForEvent.mediaSourceEventDispatcher.loadError(loadEventInfo, correctMediaLoadData(mediaPeriodForEvent, mediaLoadData, (AdPlaybackState) Assertions.checkNotNull(this.adPlaybackStates.get(mediaPeriodForEvent.mediaPeriodId.periodUid))), iOException, z);
+        mediaPeriodForEvent.mediaSourceEventDispatcher.loadError(loadEventInfo, correctMediaLoadData(mediaPeriodForEvent, mediaLoadData, (AdPlaybackState) Preconditions.checkNotNull(this.adPlaybackStates.get(mediaPeriodForEvent.mediaPeriodId.periodUid))), iOException, z);
     }
 
     @Override // androidx.media3.exoplayer.source.MediaSourceEventListener
@@ -342,7 +343,7 @@ public final class ServerSideAdInsertionMediaSource extends BaseMediaSource impl
         if (mediaPeriodForEvent == null) {
             this.mediaSourceEventDispatcherWithoutId.upstreamDiscarded(mediaLoadData);
         } else {
-            mediaPeriodForEvent.mediaSourceEventDispatcher.upstreamDiscarded(correctMediaLoadData(mediaPeriodForEvent, mediaLoadData, (AdPlaybackState) Assertions.checkNotNull(this.adPlaybackStates.get(mediaPeriodForEvent.mediaPeriodId.periodUid))));
+            mediaPeriodForEvent.mediaSourceEventDispatcher.upstreamDiscarded(correctMediaLoadData(mediaPeriodForEvent, mediaLoadData, (AdPlaybackState) Preconditions.checkNotNull(this.adPlaybackStates.get(mediaPeriodForEvent.mediaPeriodId.periodUid))));
         }
     }
 
@@ -354,7 +355,7 @@ public final class ServerSideAdInsertionMediaSource extends BaseMediaSource impl
             return;
         }
         mediaPeriodForEvent.sharedPeriod.onDownstreamFormatChanged(mediaPeriodForEvent, mediaLoadData);
-        mediaPeriodForEvent.mediaSourceEventDispatcher.downstreamFormatChanged(correctMediaLoadData(mediaPeriodForEvent, mediaLoadData, (AdPlaybackState) Assertions.checkNotNull(this.adPlaybackStates.get(mediaPeriodForEvent.mediaPeriodId.periodUid))));
+        mediaPeriodForEvent.mediaSourceEventDispatcher.downstreamFormatChanged(correctMediaLoadData(mediaPeriodForEvent, mediaLoadData, (AdPlaybackState) Preconditions.checkNotNull(this.adPlaybackStates.get(mediaPeriodForEvent.mediaPeriodId.periodUid))));
     }
 
     private void releaseLastUsedMediaPeriod() {
@@ -678,7 +679,7 @@ public final class ServerSideAdInsertionMediaSource extends BaseMediaSource impl
             if (mediaPeriodImpl == null) {
                 return;
             }
-            ((MediaPeriod.Callback) Assertions.checkNotNull(mediaPeriodImpl.callback)).onContinueLoadingRequested(this.loadingPeriod);
+            ((MediaPeriod.Callback) Preconditions.checkNotNull(mediaPeriodImpl.callback)).onContinueLoadingRequested(this.loadingPeriod);
         }
 
         private long getStreamPositionUsWithNotYetStartedHandling(MediaPeriodImpl mediaPeriodImpl, long j) {
@@ -741,11 +742,11 @@ public final class ServerSideAdInsertionMediaSource extends BaseMediaSource impl
 
         public ServerSideAdInsertionTimeline(Timeline timeline, ImmutableMap<Object, AdPlaybackState> immutableMap) {
             super(timeline);
-            Assertions.checkState(timeline.getWindowCount() == 1);
+            Preconditions.checkState(timeline.getWindowCount() == 1);
             Timeline.Period period = new Timeline.Period();
             for (int i = 0; i < timeline.getPeriodCount(); i++) {
                 timeline.getPeriod(i, period, true);
-                Assertions.checkState(immutableMap.containsKey(Assertions.checkNotNull(period.uid)));
+                Preconditions.checkState(immutableMap.containsKey(Preconditions.checkNotNull(period.uid)));
             }
             this.adPlaybackStates = immutableMap;
         }
@@ -754,7 +755,7 @@ public final class ServerSideAdInsertionMediaSource extends BaseMediaSource impl
         public Timeline.Window getWindow(int i, Timeline.Window window, long j) {
             super.getWindow(i, window, j);
             Timeline.Period period = new Timeline.Period();
-            AdPlaybackState adPlaybackState = (AdPlaybackState) Assertions.checkNotNull(this.adPlaybackStates.get(Assertions.checkNotNull(getPeriod(window.firstPeriodIndex, period, true).uid)));
+            AdPlaybackState adPlaybackState = (AdPlaybackState) Preconditions.checkNotNull(this.adPlaybackStates.get(Preconditions.checkNotNull(getPeriod(window.firstPeriodIndex, period, true).uid)));
             long mediaPeriodPositionUsForContent = ServerSideAdInsertionUtil.getMediaPeriodPositionUsForContent(window.positionInFirstPeriodUs, -1, adPlaybackState);
             if (window.durationUs == C.TIME_UNSET) {
                 if (adPlaybackState.contentDurationUs != C.TIME_UNSET) {
@@ -764,7 +765,7 @@ public final class ServerSideAdInsertionMediaSource extends BaseMediaSource impl
                 Timeline.Period period2 = super.getPeriod(window.lastPeriodIndex, period, true);
                 long j2 = period2.positionInWindowUs;
                 Timeline.Period period3 = getPeriod(window.lastPeriodIndex, period);
-                window.durationUs = period3.positionInWindowUs + ServerSideAdInsertionUtil.getMediaPeriodPositionUsForContent(window.durationUs - j2, -1, (AdPlaybackState) Assertions.checkNotNull(this.adPlaybackStates.get(period2.uid)));
+                window.durationUs = period3.positionInWindowUs + ServerSideAdInsertionUtil.getMediaPeriodPositionUsForContent(window.durationUs - j2, -1, (AdPlaybackState) Preconditions.checkNotNull(this.adPlaybackStates.get(period2.uid)));
             }
             window.positionInFirstPeriodUs = mediaPeriodPositionUsForContent;
             return window;
@@ -774,7 +775,7 @@ public final class ServerSideAdInsertionMediaSource extends BaseMediaSource impl
         public Timeline.Period getPeriod(int i, Timeline.Period period, boolean z) {
             long mediaPeriodPositionUsForContent;
             super.getPeriod(i, period, true);
-            AdPlaybackState adPlaybackState = (AdPlaybackState) Assertions.checkNotNull(this.adPlaybackStates.get(period.uid));
+            AdPlaybackState adPlaybackState = (AdPlaybackState) Preconditions.checkNotNull(this.adPlaybackStates.get(period.uid));
             long j = period.durationUs;
             if (j == C.TIME_UNSET) {
                 mediaPeriodPositionUsForContent = adPlaybackState.contentDurationUs;
@@ -786,7 +787,7 @@ public final class ServerSideAdInsertionMediaSource extends BaseMediaSource impl
             long j3 = 0;
             for (int i2 = 0; i2 < i + 1; i2++) {
                 this.timeline.getPeriod(i2, period2, true);
-                AdPlaybackState adPlaybackState2 = (AdPlaybackState) Assertions.checkNotNull(this.adPlaybackStates.get(period2.uid));
+                AdPlaybackState adPlaybackState2 = (AdPlaybackState) Preconditions.checkNotNull(this.adPlaybackStates.get(period2.uid));
                 if (i2 == 0) {
                     j3 = -ServerSideAdInsertionUtil.getMediaPeriodPositionUsForContent(-period2.getPositionInWindowUs(), -1, adPlaybackState2);
                 }

@@ -6,7 +6,6 @@ import android.os.Message;
 import androidx.media3.common.C;
 import androidx.media3.common.Format;
 import androidx.media3.common.Metadata;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.BaseRenderer;
 import androidx.media3.exoplayer.FormatHolder;
@@ -14,6 +13,7 @@ import androidx.media3.exoplayer.RendererCapabilities;
 import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.extractor.metadata.MetadataDecoder;
 import androidx.media3.extractor.metadata.MetadataInputBuffer;
+import com.google.common.base.Preconditions;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
@@ -49,9 +49,9 @@ public final class MetadataRenderer extends BaseRenderer implements Handler.Call
 
     public MetadataRenderer(MetadataOutput metadataOutput, Looper looper, MetadataDecoderFactory metadataDecoderFactory, boolean z) {
         super(5);
-        this.output = (MetadataOutput) Assertions.checkNotNull(metadataOutput);
+        this.output = (MetadataOutput) Preconditions.checkNotNull(metadataOutput);
         this.outputHandler = looper == null ? null : Util.createHandler(looper, this);
-        this.decoderFactory = (MetadataDecoderFactory) Assertions.checkNotNull(metadataDecoderFactory);
+        this.decoderFactory = (MetadataDecoderFactory) Preconditions.checkNotNull(metadataDecoderFactory);
         this.outputMetadataEarly = z;
         this.buffer = new MetadataInputBuffer();
         this.outputStreamOffsetUs = C.TIME_UNSET;
@@ -82,7 +82,7 @@ public final class MetadataRenderer extends BaseRenderer implements Handler.Call
     }
 
     @Override // androidx.media3.exoplayer.BaseRenderer
-    protected void onPositionReset(long j, boolean z) {
+    protected void onPositionReset(long j, boolean z, boolean z2) {
         this.pendingMetadata = null;
         this.inputStreamEnded = false;
         this.outputStreamEnded = false;
@@ -102,7 +102,7 @@ public final class MetadataRenderer extends BaseRenderer implements Handler.Call
             Format wrappedMetadataFormat = metadata.get(i).getWrappedMetadataFormat();
             if (wrappedMetadataFormat != null && this.decoderFactory.supportsFormat(wrappedMetadataFormat)) {
                 MetadataDecoder createDecoder = this.decoderFactory.createDecoder(wrappedMetadataFormat);
-                byte[] bArr = (byte[]) Assertions.checkNotNull(metadata.get(i).getWrappedMetadataBytes());
+                byte[] bArr = (byte[]) Preconditions.checkNotNull(metadata.get(i).getWrappedMetadataBytes());
                 this.buffer.clear();
                 this.buffer.ensureSpaceForWrite(bArr.length);
                 ((ByteBuffer) Util.castNonNull(this.buffer.data)).put(bArr);
@@ -147,7 +147,7 @@ public final class MetadataRenderer extends BaseRenderer implements Handler.Call
         int readSource = readSource(formatHolder, this.buffer, 0);
         if (readSource != -4) {
             if (readSource == -5) {
-                this.subsampleOffsetUs = ((Format) Assertions.checkNotNull(formatHolder.format)).subsampleOffsetUs;
+                this.subsampleOffsetUs = ((Format) Preconditions.checkNotNull(formatHolder.format)).subsampleOffsetUs;
             }
         } else if (this.buffer.isEndOfStream()) {
             this.inputStreamEnded = true;
@@ -197,8 +197,8 @@ public final class MetadataRenderer extends BaseRenderer implements Handler.Call
 
     @SideEffectFree
     private long getPresentationTimeUs(long j) {
-        Assertions.checkState(j != C.TIME_UNSET);
-        Assertions.checkState(this.outputStreamOffsetUs != C.TIME_UNSET);
+        Preconditions.checkState(j != C.TIME_UNSET);
+        Preconditions.checkState(this.outputStreamOffsetUs != C.TIME_UNSET);
         return j - this.outputStreamOffsetUs;
     }
 }

@@ -7,10 +7,10 @@ import kotlin.jvm.internal.Intrinsics;
 public final class Y {
 
     /* renamed from: a  reason: collision with root package name */
-    public final SharedPreferences f1588a;
+    public final SharedPreferences f1589a;
 
     public Y(Context context) {
         Intrinsics.checkNotNullParameter(context, "context");
-        this.f1588a = context.getSharedPreferences("metrics_sdk_sp", 0);
+        this.f1589a = context.getSharedPreferences("metrics_sdk_sp", 0);
     }
 }

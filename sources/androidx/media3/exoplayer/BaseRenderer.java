@@ -2,13 +2,13 @@ package androidx.media3.exoplayer;
 
 import androidx.media3.common.Format;
 import androidx.media3.common.Timeline;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Clock;
 import androidx.media3.decoder.DecoderInputBuffer;
 import androidx.media3.exoplayer.RendererCapabilities;
 import androidx.media3.exoplayer.analytics.PlayerId;
 import androidx.media3.exoplayer.source.MediaSource;
 import androidx.media3.exoplayer.source.SampleStream;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.Objects;
 /* loaded from: classes.dex */
@@ -56,7 +56,7 @@ public abstract class BaseRenderer implements Renderer, RendererCapabilities {
     public void onInit() {
     }
 
-    protected void onPositionReset(long j, boolean z) throws ExoPlaybackException {
+    protected void onPositionReset(long j, boolean z, boolean z2) throws ExoPlaybackException {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -76,7 +76,8 @@ public abstract class BaseRenderer implements Renderer, RendererCapabilities {
     public void onStreamChanged(Format[] formatArr, long j, long j2, MediaSource.MediaPeriodId mediaPeriodId) throws ExoPlaybackException {
     }
 
-    protected void onTimelineChanged(Timeline timeline) {
+    /* JADX INFO: Access modifiers changed from: protected */
+    public void onTimelineChanged(Timeline timeline) {
     }
 
     @Override // androidx.media3.exoplayer.RendererCapabilities
@@ -108,25 +109,25 @@ public abstract class BaseRenderer implements Renderer, RendererCapabilities {
 
     @Override // androidx.media3.exoplayer.Renderer
     public final void enable(RendererConfiguration rendererConfiguration, Format[] formatArr, SampleStream sampleStream, long j, boolean z, boolean z2, long j2, long j3, MediaSource.MediaPeriodId mediaPeriodId) throws ExoPlaybackException {
-        Assertions.checkState(this.state == 0);
+        Preconditions.checkState(this.state == 0);
         this.configuration = rendererConfiguration;
         this.mediaPeriodId = mediaPeriodId;
         this.state = 1;
         onEnabled(z, z2);
         replaceStream(formatArr, sampleStream, j2, j3, mediaPeriodId);
-        resetPosition(j2, z);
+        resetPosition(j2, z, true);
     }
 
     @Override // androidx.media3.exoplayer.Renderer
     public final void start() throws ExoPlaybackException {
-        Assertions.checkState(this.state == 1);
+        Preconditions.checkState(this.state == 1);
         this.state = 2;
         onStarted();
     }
 
     @Override // androidx.media3.exoplayer.Renderer
     public final void replaceStream(Format[] formatArr, SampleStream sampleStream, long j, long j2, MediaSource.MediaPeriodId mediaPeriodId) throws ExoPlaybackException {
-        Assertions.checkState(!this.streamIsFinal);
+        Preconditions.checkState(!this.streamIsFinal);
         this.stream = sampleStream;
         this.mediaPeriodId = mediaPeriodId;
         if (this.readingPositionUs == Long.MIN_VALUE) {
@@ -164,7 +165,7 @@ public abstract class BaseRenderer implements Renderer, RendererCapabilities {
 
     @Override // androidx.media3.exoplayer.Renderer
     public final void maybeThrowStreamError() throws IOException {
-        ((SampleStream) Assertions.checkNotNull(this.stream)).maybeThrowError();
+        ((SampleStream) Preconditions.checkNotNull(this.stream)).maybeThrowError();
     }
 
     @Override // androidx.media3.exoplayer.Renderer
@@ -177,27 +178,30 @@ public abstract class BaseRenderer implements Renderer, RendererCapabilities {
     }
 
     @Override // androidx.media3.exoplayer.Renderer
-    public final void resetPosition(long j) throws ExoPlaybackException {
-        resetPosition(j, false);
+    public final void resetPosition(long j, boolean z) throws ExoPlaybackException {
+        resetPosition(j, false, z);
     }
 
-    private void resetPosition(long j, boolean z) throws ExoPlaybackException {
+    private void resetPosition(long j, boolean z, boolean z2) throws ExoPlaybackException {
         this.streamIsFinal = false;
         this.lastResetPositionUs = j;
         this.readingPositionUs = j;
-        onPositionReset(j, z);
+        if (!z2) {
+            z2 = skipSource(j) != 0;
+        }
+        onPositionReset(j, z, z2);
     }
 
     @Override // androidx.media3.exoplayer.Renderer
     public final void stop() {
-        Assertions.checkState(this.state == 2);
+        Preconditions.checkState(this.state == 2);
         this.state = 1;
         onStopped();
     }
 
     @Override // androidx.media3.exoplayer.Renderer
     public final void disable() {
-        Assertions.checkState(this.state == 1);
+        Preconditions.checkState(this.state == 1);
         this.formatHolder.clear();
         this.state = 0;
         this.stream = null;
@@ -209,14 +213,14 @@ public abstract class BaseRenderer implements Renderer, RendererCapabilities {
 
     @Override // androidx.media3.exoplayer.Renderer
     public final void reset() {
-        Assertions.checkState(this.state == 0);
+        Preconditions.checkState(this.state == 0);
         this.formatHolder.clear();
         onReset();
     }
 
     @Override // androidx.media3.exoplayer.Renderer
     public final void release() {
-        Assertions.checkState(this.state == 0);
+        Preconditions.checkState(this.state == 0);
         onRelease();
     }
 
@@ -252,12 +256,12 @@ public abstract class BaseRenderer implements Renderer, RendererCapabilities {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final Format[] getStreamFormats() {
-        return (Format[]) Assertions.checkNotNull(this.streamFormats);
+        return (Format[]) Preconditions.checkNotNull(this.streamFormats);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final RendererConfiguration getConfiguration() {
-        return (RendererConfiguration) Assertions.checkNotNull(this.configuration);
+        return (RendererConfiguration) Preconditions.checkNotNull(this.configuration);
     }
 
     protected final int getIndex() {
@@ -266,12 +270,12 @@ public abstract class BaseRenderer implements Renderer, RendererCapabilities {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final PlayerId getPlayerId() {
-        return (PlayerId) Assertions.checkNotNull(this.playerId);
+        return (PlayerId) Preconditions.checkNotNull(this.playerId);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final Clock getClock() {
-        return (Clock) Assertions.checkNotNull(this.clock);
+        return (Clock) Preconditions.checkNotNull(this.clock);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -279,7 +283,8 @@ public abstract class BaseRenderer implements Renderer, RendererCapabilities {
         return this.timeline;
     }
 
-    protected final MediaSource.MediaPeriodId getMediaPeriodId() {
+    /* JADX INFO: Access modifiers changed from: protected */
+    public final MediaSource.MediaPeriodId getMediaPeriodId() {
         return this.mediaPeriodId;
     }
 
@@ -307,10 +312,10 @@ public abstract class BaseRenderer implements Renderer, RendererCapabilities {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final int readSource(FormatHolder formatHolder, DecoderInputBuffer decoderInputBuffer, int i) {
-        int readData = ((SampleStream) Assertions.checkNotNull(this.stream)).readData(formatHolder, decoderInputBuffer, i);
+        int readData = ((SampleStream) Preconditions.checkNotNull(this.stream)).readData(formatHolder, decoderInputBuffer, i);
         if (readData != -4) {
             if (readData == -5) {
-                Format format = (Format) Assertions.checkNotNull(formatHolder.format);
+                Format format = (Format) Preconditions.checkNotNull(formatHolder.format);
                 if (format.subsampleOffsetUs != Long.MAX_VALUE) {
                     formatHolder.format = format.buildUpon().setSubsampleOffsetUs(format.subsampleOffsetUs + this.streamOffsetUs).build();
                 }
@@ -328,12 +333,12 @@ public abstract class BaseRenderer implements Renderer, RendererCapabilities {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public int skipSource(long j) {
-        return ((SampleStream) Assertions.checkNotNull(this.stream)).skipData(j - this.streamOffsetUs);
+        return ((SampleStream) Preconditions.checkNotNull(this.stream)).skipData(j - this.streamOffsetUs);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final boolean isSourceReady() {
-        return hasReadStreamToEnd() ? this.streamIsFinal : ((SampleStream) Assertions.checkNotNull(this.stream)).isReady();
+        return hasReadStreamToEnd() ? this.streamIsFinal : ((SampleStream) Preconditions.checkNotNull(this.stream)).isReady();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

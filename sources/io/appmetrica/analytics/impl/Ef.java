@@ -8,7 +8,7 @@ import kotlin.Unit;
 public final class Ef implements Df {
 
     /* renamed from: a  reason: collision with root package name */
-    private volatile String f558a;
+    private volatile String f559a;
 
     private final String b() {
         try {
@@ -25,15 +25,15 @@ public final class Ef implements Df {
 
     @Override // io.appmetrica.analytics.impl.Df
     public String a() {
-        if (this.f558a != null) {
-            return this.f558a;
+        if (this.f559a != null) {
+            return this.f559a;
         }
         synchronized (this) {
-            if (this.f558a == null) {
-                this.f558a = b();
+            if (this.f559a == null) {
+                this.f559a = b();
             }
             Unit unit = Unit.INSTANCE;
         }
-        return this.f558a;
+        return this.f559a;
     }
 }

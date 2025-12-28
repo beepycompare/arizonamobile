@@ -2,6 +2,7 @@ package androidx.media3.exoplayer.util;
 
 import android.os.SystemClock;
 import android.text.TextUtils;
+import androidx.compose.runtime.ComposerKt;
 import androidx.media3.common.AudioAttributes;
 import androidx.media3.common.C;
 import androidx.media3.common.Format;
@@ -19,17 +20,21 @@ import androidx.media3.exoplayer.DecoderCounters;
 import androidx.media3.exoplayer.DecoderReuseEvaluation;
 import androidx.media3.exoplayer.analytics.AnalyticsListener;
 import androidx.media3.exoplayer.audio.AudioSink;
+import androidx.media3.exoplayer.drm.KeyRequestInfo;
 import androidx.media3.exoplayer.source.LoadEventInfo;
 import androidx.media3.exoplayer.source.MediaLoadData;
 import androidx.media3.exoplayer.trackselection.MappingTrackSelector;
+import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableList;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.io.IOException;
 import java.text.NumberFormat;
+import java.util.ArrayList;
 import java.util.Locale;
 /* loaded from: classes3.dex */
 public class EventLogger implements AnalyticsListener {
+    private static final Joiner COMMA_JOINER = Joiner.on(", ");
     private static final String DEFAULT_TAG = "EventLogger";
     private static final int MAX_TIMELINE_ITEM_LINES = 3;
     private static final NumberFormat TIME_FORMAT;
@@ -329,7 +334,7 @@ public class EventLogger implements AnalyticsListener {
     }
 
     @Override // androidx.media3.exoplayer.analytics.AnalyticsListener
-    public void onDrmKeysLoaded(AnalyticsListener.EventTime eventTime) {
+    public void onDrmKeysLoaded(AnalyticsListener.EventTime eventTime, KeyRequestInfo keyRequestInfo) {
         logd(eventTime, "drmKeysLoaded");
     }
 
@@ -341,6 +346,11 @@ public class EventLogger implements AnalyticsListener {
     @Override // androidx.media3.exoplayer.analytics.AnalyticsListener
     public void onRendererReadyChanged(AnalyticsListener.EventTime eventTime, int i, int i2, boolean z) {
         logd(eventTime, "rendererReady", "rendererIndex=" + i + ", " + Util.getTrackTypeString(i2) + ", " + z);
+    }
+
+    @Override // androidx.media3.exoplayer.analytics.AnalyticsListener
+    public void onDroppedSeeksWhileScrubbing(AnalyticsListener.EventTime eventTime, int i) {
+        logd(eventTime, "droppedSeeksWhileScrubbing", Integer.toString(i));
     }
 
     protected void logd(String str) {
@@ -523,6 +533,114 @@ public class EventLogger implements AnalyticsListener {
     }
 
     private static String getAudioTrackConfigString(AudioSink.AudioTrackConfig audioTrackConfig) {
-        return audioTrackConfig.encoding + StringUtils.COMMA + audioTrackConfig.channelConfig + StringUtils.COMMA + audioTrackConfig.sampleRate + StringUtils.COMMA + audioTrackConfig.tunneling + StringUtils.COMMA + audioTrackConfig.offload + StringUtils.COMMA + audioTrackConfig.bufferSize;
+        ArrayList arrayList = new ArrayList();
+        if (audioTrackConfig.encoding != -1) {
+            arrayList.add("enc=" + encodingAsString(audioTrackConfig.encoding));
+        }
+        arrayList.add("channelConf=" + channelConfigAsString(audioTrackConfig.channelConfig));
+        arrayList.add("sampleRate=" + audioTrackConfig.sampleRate);
+        arrayList.add("bufferSize=" + audioTrackConfig.bufferSize);
+        if (audioTrackConfig.tunneling) {
+            arrayList.add("tunneling");
+        }
+        if (audioTrackConfig.offload) {
+            arrayList.add("offload");
+        }
+        return COMMA_JOINER.join(arrayList);
+    }
+
+    private static String encodingAsString(int i) {
+        if (i != 30) {
+            if (i != 268435456) {
+                if (i != 1073741824) {
+                    if (i != 1342177280) {
+                        if (i != 1610612736) {
+                            switch (i) {
+                                case 2:
+                                    return "pcm-16";
+                                case 3:
+                                    return "pcm-8";
+                                case 4:
+                                    return "pcm-float";
+                                case 5:
+                                    return "ac3";
+                                case 6:
+                                    return "eac3";
+                                case 7:
+                                    return "dts";
+                                case 8:
+                                    return "dts-hd";
+                                case 9:
+                                    return "mp3";
+                                case 10:
+                                    return "aac-lc";
+                                case 11:
+                                    return "aac-he-v1";
+                                case 12:
+                                    return "aac-he-v2";
+                                default:
+                                    switch (i) {
+                                        case 14:
+                                            return "truehd";
+                                        case 15:
+                                            return "aac-eld";
+                                        case 16:
+                                            return "aac-xhe";
+                                        case 17:
+                                            return "ac4";
+                                        case 18:
+                                            return "eac3-joc";
+                                        default:
+                                            switch (i) {
+                                                case 20:
+                                                    return "opus";
+                                                case 21:
+                                                    return "pcm-24";
+                                                case 22:
+                                                    return "pcm-32";
+                                                default:
+                                                    return String.valueOf(i);
+                                            }
+                                    }
+                            }
+                        }
+                        return "pcm-32be";
+                    }
+                    return "pcm-24be";
+                }
+                return "aac-er-bsac";
+            }
+            return "pcm-16be";
+        }
+        return "dts-uhd-p2";
+    }
+
+    private static String channelConfigAsString(int i) {
+        switch (i) {
+            case 4:
+                return "mono";
+            case 12:
+                return "stereo";
+            case ComposerKt.providerMapsKey /* 204 */:
+                return "quad";
+            case 252:
+                return "5.1";
+            case 6396:
+                return "7.1";
+            case 737532:
+                return "5.1.4";
+            case 743676:
+                return "7.1.4";
+            case 3145980:
+                return "5.1.2";
+            case 3152124:
+                return "7.1.2";
+            case 202070268:
+                return "9.1.4";
+            case 205215996:
+                return "9.1.6";
+            default:
+                return "0x" + Integer.toHexString(i);
+        }
     }
 }

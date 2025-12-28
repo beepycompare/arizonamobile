@@ -3,13 +3,13 @@ package androidx.media3.extractor.wav;
 import android.util.Pair;
 import androidx.collection.SieveCacheKt;
 import androidx.media3.common.ParserException;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.ExtractorInput;
 import androidx.media3.extractor.WavUtil;
 import com.google.common.base.Ascii;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.Arrays;
 /* loaded from: classes3.dex */
@@ -53,7 +53,7 @@ final class WavHeaderReader {
         byte[] bArr;
         ParsableByteArray parsableByteArray = new ParsableByteArray(16);
         ChunkHeader skipToChunk = skipToChunk(WavUtil.FMT_FOURCC, extractorInput, parsableByteArray);
-        Assertions.checkState(skipToChunk.size >= 16);
+        Preconditions.checkState(skipToChunk.size >= 16);
         extractorInput.peekFully(parsableByteArray.getData(), 0, 16);
         parsableByteArray.setPosition(0);
         int readLittleEndianUnsignedShort = parsableByteArray.readLittleEndianUnsignedShort();

@@ -9,14 +9,14 @@ import kotlin.Metadata;
 public final class K6 implements J6 {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Kg f647a;
+    private final Kg f648a;
 
     public K6(Kg kg) {
-        this.f647a = kg;
+        this.f648a = kg;
     }
 
     @Override // io.appmetrica.analytics.impl.J6
     public File a(Context context, String str) {
-        return new File(context.getNoBackupFilesDir(), this.f647a.a(str));
+        return new File(context.getNoBackupFilesDir(), this.f648a.a(str));
     }
 }

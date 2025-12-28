@@ -6,7 +6,6 @@ import android.os.CountDownTimer;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import androidx.compose.material3.internal.CalendarModelKt;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
 import java.util.Arrays;
@@ -107,7 +106,7 @@ public final class CallReceive implements MobileController {
     }
 
     private final void countDown() {
-        CountDownTimer countDownTimer = new CountDownTimer(CalendarModelKt.MillisecondsIn24Hours, this) { // from class: ru.mrlargha.feature.mobile.presentation.page.call.CallReceive$countDown$1
+        CountDownTimer countDownTimer = new CountDownTimer(86400000L, this) { // from class: ru.mrlargha.feature.mobile.presentation.page.call.CallReceive$countDown$1
             final /* synthetic */ long $day;
             final /* synthetic */ CallReceive this$0;
 

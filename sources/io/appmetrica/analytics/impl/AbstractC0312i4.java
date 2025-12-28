@@ -6,7 +6,7 @@ import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
 public abstract /* synthetic */ class AbstractC0312i4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int[] f1031a;
+    public static final /* synthetic */ int[] f1032a;
 
     static {
         int[] iArr = new int[CounterConfigurationReporterType.values().length];
@@ -17,6 +17,6 @@ public abstract /* synthetic */ class AbstractC0312i4 {
         iArr[CounterConfigurationReporterType.SELF_SDK.ordinal()] = 5;
         iArr[CounterConfigurationReporterType.MAIN.ordinal()] = 6;
         iArr[CounterConfigurationReporterType.CRASH.ordinal()] = 7;
-        f1031a = iArr;
+        f1032a = iArr;
     }
 }

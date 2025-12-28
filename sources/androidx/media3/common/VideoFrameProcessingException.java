@@ -19,7 +19,7 @@ public final class VideoFrameProcessingException extends Exception {
     }
 
     public VideoFrameProcessingException(String str, long j) {
-        super(str);
+        super(str + getPresentationTimeUsString(j));
         this.presentationTimeUs = j;
     }
 
@@ -28,7 +28,7 @@ public final class VideoFrameProcessingException extends Exception {
     }
 
     public VideoFrameProcessingException(String str, Throwable th, long j) {
-        super(str, th);
+        super(str + getPresentationTimeUsString(j), th);
         this.presentationTimeUs = j;
     }
 
@@ -37,7 +37,11 @@ public final class VideoFrameProcessingException extends Exception {
     }
 
     public VideoFrameProcessingException(Throwable th, long j) {
-        super(th);
+        super(getPresentationTimeUsString(j), th);
         this.presentationTimeUs = j;
+    }
+
+    private static String getPresentationTimeUsString(long j) {
+        return j == C.TIME_UNSET ? " @UNSET" : " @" + j;
     }
 }

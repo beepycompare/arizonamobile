@@ -7,7 +7,7 @@ import io.appmetrica.analytics.networktasks.internal.BaseRequestConfig;
 public abstract class AbstractC0490p5 implements InterfaceC0223ej {
 
     /* renamed from: a  reason: collision with root package name */
-    public BaseRequestConfig f1157a;
+    public BaseRequestConfig f1158a;
     public final BaseRequestConfig.RequestConfigLoader b;
     public M5 c;
 
@@ -26,17 +26,17 @@ public abstract class AbstractC0490p5 implements InterfaceC0223ej {
     }
 
     public final synchronized C0278gm c() {
-        return this.c.f680a;
+        return this.c.f681a;
     }
 
     public final void d() {
         synchronized (this) {
-            this.f1157a = null;
+            this.f1158a = null;
         }
     }
 
     public final synchronized void e() {
-        this.f1157a = null;
+        this.f1158a = null;
     }
 
     public synchronized void a(Object obj) {
@@ -52,9 +52,9 @@ public abstract class AbstractC0490p5 implements InterfaceC0223ej {
     }
 
     public final synchronized BaseRequestConfig a() {
-        if (this.f1157a == null) {
-            this.f1157a = this.b.load(this.c);
+        if (this.f1158a == null) {
+            this.f1158a = this.b.load(this.c);
         }
-        return this.f1157a;
+        return this.f1158a;
     }
 }

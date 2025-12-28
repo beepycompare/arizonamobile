@@ -9,7 +9,7 @@ public final class Og extends AbstractC0495pa {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0495pa
     public final void a(List<Sg> list) {
-        list.add(this.f1161a.l);
-        list.add(this.f1161a.b);
+        list.add(this.f1162a.l);
+        list.add(this.f1162a.b);
     }
 }

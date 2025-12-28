@@ -10,7 +10,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0160c7 implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0424me f923a;
+    public final C0424me f924a;
     public final C0366k7 b;
 
     public C0160c7() {
@@ -21,9 +21,9 @@ public final class C0160c7 implements ProtobufConverter {
     /* renamed from: a */
     public final C0442n7 fromModel(C0211e7 c0211e7) {
         C0442n7 c0442n7 = new C0442n7();
-        Integer num = c0211e7.f963a;
+        Integer num = c0211e7.f964a;
         if (num != null) {
-            c0442n7.f1122a = num.intValue();
+            c0442n7.f1123a = num.intValue();
         }
         String str = c0211e7.b;
         if (str != null) {
@@ -67,7 +67,7 @@ public final class C0160c7 implements ProtobufConverter {
         }
         J8 j8 = c0211e7.l;
         if (j8 != null) {
-            c0442n7.l = j8.f634a;
+            c0442n7.l = j8.f635a;
         }
         String str6 = c0211e7.m;
         if (str6 != null) {
@@ -75,15 +75,15 @@ public final class C0160c7 implements ProtobufConverter {
         }
         EnumC0214ea enumC0214ea = c0211e7.n;
         if (enumC0214ea != null) {
-            c0442n7.n = enumC0214ea.f966a;
+            c0442n7.n = enumC0214ea.f967a;
         }
         EnumC0444n9 enumC0444n9 = c0211e7.o;
         if (enumC0444n9 != null) {
-            c0442n7.o = enumC0444n9.f1124a;
+            c0442n7.o = enumC0444n9.f1125a;
         }
         Boolean bool = c0211e7.p;
         if (bool != null) {
-            c0442n7.p = this.f923a.fromModel(Boolean.valueOf(bool.booleanValue())).intValue();
+            c0442n7.p = this.f924a.fromModel(Boolean.valueOf(bool.booleanValue())).intValue();
         }
         Integer num4 = c0211e7.q;
         if (num4 != null) {
@@ -97,7 +97,7 @@ public final class C0160c7 implements ProtobufConverter {
     }
 
     public C0160c7(C0424me c0424me, C0366k7 c0366k7) {
-        this.f923a = c0424me;
+        this.f924a = c0424me;
         this.b = c0366k7;
     }
 
@@ -111,8 +111,8 @@ public final class C0160c7 implements ProtobufConverter {
         Long l;
         EnumC0444n9 enumC0444n9;
         C0442n7 c0442n72 = new C0442n7();
-        Integer valueOf = Integer.valueOf(c0442n7.f1122a);
-        Integer num = valueOf.intValue() != c0442n72.f1122a ? valueOf : null;
+        Integer valueOf = Integer.valueOf(c0442n7.f1123a);
+        Integer num = valueOf.intValue() != c0442n72.f1123a ? valueOf : null;
         String str = c0442n7.b;
         String str2 = !Intrinsics.areEqual(str, c0442n72.b) ? str : null;
         String str3 = c0442n7.c;
@@ -159,7 +159,7 @@ public final class C0160c7 implements ProtobufConverter {
                 if (i < length) {
                     enumC0444n9 = values[i];
                     l = valueOf3;
-                    if (enumC0444n9.f1124a == intValue) {
+                    if (enumC0444n9.f1125a == intValue) {
                         break;
                     }
                     i++;
@@ -174,7 +174,7 @@ public final class C0160c7 implements ProtobufConverter {
             l = valueOf3;
             enumC0444n9 = null;
         }
-        Boolean a4 = this.f923a.a(c0442n7.p);
+        Boolean a4 = this.f924a.a(c0442n7.p);
         Integer valueOf9 = Integer.valueOf(c0442n7.q);
         Integer num4 = valueOf9.intValue() != c0442n72.q ? valueOf9 : null;
         byte[] bArr = c0442n7.r;

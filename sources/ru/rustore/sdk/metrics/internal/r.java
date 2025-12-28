@@ -6,16 +6,16 @@ import kotlin.jvm.internal.Lambda;
 public final class r extends Lambda implements Function0<String> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Throwable f1615a;
+    public final /* synthetic */ Throwable f1616a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public r(Throwable th) {
         super(0);
-        this.f1615a = th;
+        this.f1616a = th;
     }
 
     @Override // kotlin.jvm.functions.Function0
     public final String invoke() {
-        return "Http request was failed with: " + this.f1615a;
+        return "Http request was failed with: " + this.f1616a;
     }
 }

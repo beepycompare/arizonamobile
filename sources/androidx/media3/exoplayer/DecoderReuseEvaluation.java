@@ -1,7 +1,8 @@
 package androidx.media3.exoplayer;
 
+import android.text.TextUtils;
 import androidx.media3.common.Format;
-import androidx.media3.common.util.Assertions;
+import com.google.common.base.Preconditions;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -50,10 +51,11 @@ public final class DecoderReuseEvaluation {
     }
 
     public DecoderReuseEvaluation(String str, Format format, Format format2, int i, int i2) {
-        Assertions.checkArgument(i == 0 || i2 == 0);
-        this.decoderName = Assertions.checkNotEmpty(str);
-        this.oldFormat = (Format) Assertions.checkNotNull(format);
-        this.newFormat = (Format) Assertions.checkNotNull(format2);
+        Preconditions.checkArgument(i == 0 || i2 == 0);
+        Preconditions.checkArgument(true ^ TextUtils.isEmpty(str));
+        this.decoderName = str;
+        this.oldFormat = (Format) Preconditions.checkNotNull(format);
+        this.newFormat = (Format) Preconditions.checkNotNull(format2);
         this.result = i;
         this.discardReasons = i2;
     }

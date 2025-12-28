@@ -1,21 +1,23 @@
 package androidx.media3.exoplayer.source.preload;
 
-import android.os.Handler;
 import android.os.Looper;
 import android.util.Pair;
 import androidx.media3.common.C;
 import androidx.media3.common.MediaItem;
 import androidx.media3.common.Timeline;
-import androidx.media3.common.util.Assertions;
+import androidx.media3.common.util.Clock;
+import androidx.media3.common.util.HandlerWrapper;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.ExoPlaybackException;
+import androidx.media3.exoplayer.LoadControl;
 import androidx.media3.exoplayer.LoadingInfo;
 import androidx.media3.exoplayer.RendererCapabilities;
 import androidx.media3.exoplayer.analytics.PlayerId;
 import androidx.media3.exoplayer.drm.DrmSessionManagerProvider;
 import androidx.media3.exoplayer.source.MediaPeriod;
 import androidx.media3.exoplayer.source.MediaSource;
+import androidx.media3.exoplayer.source.TrackGroupArray;
 import androidx.media3.exoplayer.source.WrappingMediaSource;
 import androidx.media3.exoplayer.source.preload.PreloadMediaSource;
 import androidx.media3.exoplayer.trackselection.TrackSelector;
@@ -24,23 +26,29 @@ import androidx.media3.exoplayer.upstream.Allocator;
 import androidx.media3.exoplayer.upstream.BandwidthMeter;
 import androidx.media3.exoplayer.upstream.CmcdConfiguration;
 import androidx.media3.exoplayer.upstream.LoadErrorHandlingPolicy;
+import androidx.media3.exoplayer.upstream.PlayerIdAwareAllocator;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.Arrays;
 /* loaded from: classes3.dex */
 public final class PreloadMediaSource extends WrappingMediaSource {
     private static final long CHECK_FOR_PRELOAD_ERROR_INTERVAL_MS = 100;
+    private static final int CONTINUE_LOADING_RETRY_COUNT = 10;
+    private static final long MAYBE_CONTINUE_LOADING_INTERVAL_MS = 100;
     private static final String TAG = "PreloadMediaSource";
     private final Allocator allocator;
     private final BandwidthMeter bandwidthMeter;
+    private final LoadControl loadControl;
     private boolean onSourcePreparedNotified;
     private boolean onUsedByPlayerNotified;
     private Pair<PreloadMediaPeriod, MediaSource.MediaPeriodId> playingPreloadedMediaPeriodAndId;
     private boolean preloadCalled;
     private final PreloadControl preloadControl;
-    private final Handler preloadHandler;
+    private final HandlerWrapper preloadHandler;
     private Pair<PreloadMediaPeriod, MediaPeriodKey> preloadingMediaPeriodAndKey;
     private boolean prepareChildSourceCalled;
-    private final Handler releaseHandler;
+    private final HandlerWrapper releaseHandler;
+    private boolean releasePreloadMediaSourceCalled;
     private final RendererCapabilities[] rendererCapabilities;
     private long startPositionUs;
     private Timeline timeline;
@@ -51,6 +59,10 @@ public final class PreloadMediaSource extends WrappingMediaSource {
         boolean onContinueLoadingRequested(PreloadMediaSource preloadMediaSource, long j);
 
         default void onLoadedToTheEndOfSource(PreloadMediaSource preloadMediaSource) {
+        }
+
+        default boolean onLoadingUnableToContinue(PreloadMediaSource preloadMediaSource) {
+            return false;
         }
 
         void onPreloadError(PreloadException preloadException, PreloadMediaSource preloadMediaSource);
@@ -64,21 +76,22 @@ public final class PreloadMediaSource extends WrappingMediaSource {
 
     /* loaded from: classes3.dex */
     public static final class Factory implements MediaSource.Factory {
-        private final Allocator allocator;
         private final BandwidthMeter bandwidthMeter;
+        private Clock clock = Clock.DEFAULT;
+        private final LoadControl loadControl;
         private final MediaSource.Factory mediaSourceFactory;
         private final PreloadControl preloadControl;
         private final Looper preloadLooper;
         private final RendererCapabilities[] rendererCapabilities;
         private final TrackSelector trackSelector;
 
-        public Factory(MediaSource.Factory factory, PreloadControl preloadControl, TrackSelector trackSelector, BandwidthMeter bandwidthMeter, RendererCapabilities[] rendererCapabilitiesArr, Allocator allocator, Looper looper) {
+        public Factory(MediaSource.Factory factory, PreloadControl preloadControl, TrackSelector trackSelector, BandwidthMeter bandwidthMeter, RendererCapabilities[] rendererCapabilitiesArr, LoadControl loadControl, Looper looper) {
             this.mediaSourceFactory = factory;
             this.preloadControl = preloadControl;
             this.trackSelector = trackSelector;
             this.bandwidthMeter = bandwidthMeter;
             this.rendererCapabilities = (RendererCapabilities[]) Arrays.copyOf(rendererCapabilitiesArr, rendererCapabilitiesArr.length);
-            this.allocator = allocator;
+            this.loadControl = loadControl;
             this.preloadLooper = looper;
         }
 
@@ -100,6 +113,11 @@ public final class PreloadMediaSource extends WrappingMediaSource {
             return this;
         }
 
+        public Factory setClock(Clock clock) {
+            this.clock = clock;
+            return this;
+        }
+
         @Override // androidx.media3.exoplayer.source.MediaSource.Factory
         public int[] getSupportedTypes() {
             return this.mediaSourceFactory.getSupportedTypes();
@@ -107,23 +125,24 @@ public final class PreloadMediaSource extends WrappingMediaSource {
 
         @Override // androidx.media3.exoplayer.source.MediaSource.Factory
         public PreloadMediaSource createMediaSource(MediaItem mediaItem) {
-            return new PreloadMediaSource(this.mediaSourceFactory.createMediaSource(mediaItem), this.preloadControl, this.trackSelector, this.bandwidthMeter, this.rendererCapabilities, this.allocator, this.preloadLooper);
+            return new PreloadMediaSource(this.mediaSourceFactory.createMediaSource(mediaItem), this.preloadControl, this.trackSelector, this.bandwidthMeter, this.rendererCapabilities, this.loadControl, this.preloadLooper, this.clock);
         }
 
         public PreloadMediaSource createMediaSource(MediaSource mediaSource) {
-            return new PreloadMediaSource(mediaSource, this.preloadControl, this.trackSelector, this.bandwidthMeter, this.rendererCapabilities, this.allocator, this.preloadLooper);
+            return new PreloadMediaSource(mediaSource, this.preloadControl, this.trackSelector, this.bandwidthMeter, this.rendererCapabilities, this.loadControl, this.preloadLooper, this.clock);
         }
     }
 
-    private PreloadMediaSource(MediaSource mediaSource, PreloadControl preloadControl, TrackSelector trackSelector, BandwidthMeter bandwidthMeter, RendererCapabilities[] rendererCapabilitiesArr, Allocator allocator, Looper looper) {
+    private PreloadMediaSource(MediaSource mediaSource, PreloadControl preloadControl, TrackSelector trackSelector, BandwidthMeter bandwidthMeter, RendererCapabilities[] rendererCapabilitiesArr, LoadControl loadControl, Looper looper, Clock clock) {
         super(mediaSource);
         this.preloadControl = preloadControl;
         this.trackSelector = trackSelector;
         this.bandwidthMeter = bandwidthMeter;
         this.rendererCapabilities = rendererCapabilitiesArr;
-        this.allocator = allocator;
-        this.preloadHandler = Util.createHandler(looper, null);
-        this.releaseHandler = Util.createHandler(looper, null);
+        this.loadControl = loadControl;
+        this.allocator = loadControl.getAllocator(PlayerId.PRELOAD);
+        this.preloadHandler = clock.createHandler(looper, null);
+        this.releaseHandler = clock.createHandler(looper, null);
         this.startPositionUs = C.TIME_UNSET;
     }
 
@@ -131,22 +150,23 @@ public final class PreloadMediaSource extends WrappingMediaSource {
         this.preloadHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreloadMediaSource$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                PreloadMediaSource.this.m9034xf99e9a56(j);
+                PreloadMediaSource.this.m9046xf99e9a56(j);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$preload$0$androidx-media3-exoplayer-source-preload-PreloadMediaSource  reason: not valid java name */
-    public /* synthetic */ void m9034xf99e9a56(long j) {
-        this.preloadCalled = true;
-        this.startPositionUs = j;
+    public /* synthetic */ void m9046xf99e9a56(long j) {
         this.onSourcePreparedNotified = false;
         if (isUsedByPlayer()) {
             onUsedByPlayer();
             return;
         }
-        setPlayerId(PlayerId.UNSET);
+        this.preloadCalled = true;
+        this.startPositionUs = j;
+        setPlayerId(PlayerId.PRELOAD);
+        this.loadControl.onPrepared(PlayerId.PRELOAD);
         prepareSourceInternal(this.bandwidthMeter.getTransferListener());
         checkForPreloadError();
     }
@@ -155,14 +175,14 @@ public final class PreloadMediaSource extends WrappingMediaSource {
         Util.postOrRun(this.preloadHandler, new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreloadMediaSource$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
-                PreloadMediaSource.this.m9032xcf4780db();
+                PreloadMediaSource.this.m9044xcf4780db();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$clear$1$androidx-media3-exoplayer-source-preload-PreloadMediaSource  reason: not valid java name */
-    public /* synthetic */ void m9032xcf4780db() {
+    public /* synthetic */ void m9044xcf4780db() {
         if (this.preloadingMediaPeriodAndKey != null) {
             this.mediaSource.releasePeriod(((PreloadMediaPeriod) this.preloadingMediaPeriodAndKey.first).mediaPeriod);
             this.preloadingMediaPeriodAndKey = null;
@@ -171,10 +191,11 @@ public final class PreloadMediaSource extends WrappingMediaSource {
 
     @Override // androidx.media3.exoplayer.source.WrappingMediaSource
     protected void prepareSourceInternal() {
-        Assertions.checkState(Looper.myLooper() == this.preloadHandler.getLooper());
+        Preconditions.checkState(Looper.myLooper() == this.preloadHandler.getLooper());
         if (isUsedByPlayer() && !this.onUsedByPlayerNotified) {
             onUsedByPlayer();
         }
+        maybeSetPlayerIdForAllocator();
         Timeline timeline = this.timeline;
         if (timeline != null) {
             onChildSourceInfoRefreshed(timeline);
@@ -192,14 +213,14 @@ public final class PreloadMediaSource extends WrappingMediaSource {
         this.preloadHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreloadMediaSource$$ExternalSyntheticLambda4
             @Override // java.lang.Runnable
             public final void run() {
-                PreloadMediaSource.this.m9033xd674fafd(timeline);
+                PreloadMediaSource.this.m9045xd674fafd(timeline);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onChildSourceInfoRefreshed$2$androidx-media3-exoplayer-source-preload-PreloadMediaSource  reason: not valid java name */
-    public /* synthetic */ void m9033xd674fafd(Timeline timeline) {
+    public /* synthetic */ void m9045xd674fafd(Timeline timeline) {
         if (isUsedByPlayer() || this.onSourcePreparedNotified) {
             return;
         }
@@ -217,7 +238,7 @@ public final class PreloadMediaSource extends WrappingMediaSource {
         MediaPeriodKey mediaPeriodKey = new MediaPeriodKey(mediaPeriodId, j);
         Pair<PreloadMediaPeriod, MediaPeriodKey> pair = this.preloadingMediaPeriodAndKey;
         if (pair != null && mediaPeriodKey.equals(pair.second)) {
-            PreloadMediaPeriod preloadMediaPeriod = (PreloadMediaPeriod) ((Pair) Assertions.checkNotNull(this.preloadingMediaPeriodAndKey)).first;
+            PreloadMediaPeriod preloadMediaPeriod = (PreloadMediaPeriod) ((Pair) Preconditions.checkNotNull(this.preloadingMediaPeriodAndKey)).first;
             if (isUsedByPlayer()) {
                 this.preloadingMediaPeriodAndKey = null;
                 this.playingPreloadedMediaPeriodAndId = new Pair<>(preloadMediaPeriod, mediaPeriodId);
@@ -225,7 +246,7 @@ public final class PreloadMediaSource extends WrappingMediaSource {
             return preloadMediaPeriod;
         }
         if (this.preloadingMediaPeriodAndKey != null) {
-            this.mediaSource.releasePeriod(((PreloadMediaPeriod) ((Pair) Assertions.checkNotNull(this.preloadingMediaPeriodAndKey)).first).mediaPeriod);
+            this.mediaSource.releasePeriod(((PreloadMediaPeriod) ((Pair) Preconditions.checkNotNull(this.preloadingMediaPeriodAndKey)).first).mediaPeriod);
             this.preloadingMediaPeriodAndKey = null;
         }
         PreloadMediaPeriod preloadMediaPeriod2 = new PreloadMediaPeriod(this.mediaSource.createPeriod(mediaPeriodId, allocator, j));
@@ -238,18 +259,18 @@ public final class PreloadMediaSource extends WrappingMediaSource {
     @Override // androidx.media3.exoplayer.source.WrappingMediaSource
     protected MediaSource.MediaPeriodId getMediaPeriodIdForChildMediaPeriodId(MediaSource.MediaPeriodId mediaPeriodId) {
         Pair<PreloadMediaPeriod, MediaSource.MediaPeriodId> pair = this.playingPreloadedMediaPeriodAndId;
-        return (pair == null || !mediaPeriodIdEqualsWithoutWindowSequenceNumber(mediaPeriodId, (MediaSource.MediaPeriodId) ((Pair) Assertions.checkNotNull(pair)).second)) ? mediaPeriodId : (MediaSource.MediaPeriodId) ((Pair) Assertions.checkNotNull(this.playingPreloadedMediaPeriodAndId)).second;
+        return (pair == null || !mediaPeriodIdEqualsWithoutWindowSequenceNumber(mediaPeriodId, (MediaSource.MediaPeriodId) ((Pair) Preconditions.checkNotNull(pair)).second)) ? mediaPeriodId : (MediaSource.MediaPeriodId) ((Pair) Preconditions.checkNotNull(this.playingPreloadedMediaPeriodAndId)).second;
     }
 
     @Override // androidx.media3.exoplayer.source.WrappingMediaSource, androidx.media3.exoplayer.source.MediaSource
     public void releasePeriod(MediaPeriod mediaPeriod) {
         PreloadMediaPeriod preloadMediaPeriod = (PreloadMediaPeriod) mediaPeriod;
         Pair<PreloadMediaPeriod, MediaPeriodKey> pair = this.preloadingMediaPeriodAndKey;
-        if (pair != null && preloadMediaPeriod == ((Pair) Assertions.checkNotNull(pair)).first) {
+        if (pair != null && preloadMediaPeriod == ((Pair) Preconditions.checkNotNull(pair)).first) {
             this.preloadingMediaPeriodAndKey = null;
         } else {
             Pair<PreloadMediaPeriod, MediaSource.MediaPeriodId> pair2 = this.playingPreloadedMediaPeriodAndId;
-            if (pair2 != null && preloadMediaPeriod == ((Pair) Assertions.checkNotNull(pair2)).first) {
+            if (pair2 != null && preloadMediaPeriod == ((Pair) Preconditions.checkNotNull(pair2)).first) {
                 this.playingPreloadedMediaPeriodAndId = null;
             }
         }
@@ -263,7 +284,9 @@ public final class PreloadMediaSource extends WrappingMediaSource {
             return;
         }
         this.onUsedByPlayerNotified = false;
-        if (this.preloadCalled) {
+        if (this.preloadCalled && !this.releasePreloadMediaSourceCalled) {
+            setPlayerId(PlayerId.PRELOAD);
+            maybeSetPlayerIdForAllocator();
             return;
         }
         this.timeline = null;
@@ -275,14 +298,18 @@ public final class PreloadMediaSource extends WrappingMediaSource {
         this.releaseHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreloadMediaSource$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                PreloadMediaSource.this.m9035xd9831bcd();
+                PreloadMediaSource.this.m9047xd9831bcd();
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$releasePreloadMediaSource$3$androidx-media3-exoplayer-source-preload-PreloadMediaSource  reason: not valid java name */
-    public /* synthetic */ void m9035xd9831bcd() {
+    public /* synthetic */ void m9047xd9831bcd() {
+        if (this.preloadCalled) {
+            this.loadControl.onReleased(PlayerId.PRELOAD);
+        }
+        this.releasePreloadMediaSourceCalled = true;
         this.preloadCalled = false;
         this.startPositionUs = C.TIME_UNSET;
         this.onSourcePreparedNotified = false;
@@ -324,7 +351,7 @@ public final class PreloadMediaSource extends WrappingMediaSource {
                 public final void run() {
                     PreloadMediaSource.this.checkForPreloadError();
                 }
-            }, CHECK_FOR_PRELOAD_ERROR_INTERVAL_MS);
+            }, 100L);
         } catch (IOException e) {
             this.preloadControl.onPreloadError(new PreloadException(getMediaItem(), null, e), this);
             stopPreloading();
@@ -341,9 +368,18 @@ public final class PreloadMediaSource extends WrappingMediaSource {
         return mediaPeriodId.periodUid.equals(mediaPeriodId2.periodUid) && mediaPeriodId.adGroupIndex == mediaPeriodId2.adGroupIndex && mediaPeriodId.adIndexInAdGroup == mediaPeriodId2.adIndexInAdGroup && mediaPeriodId.nextAdGroupIndex == mediaPeriodId2.nextAdGroupIndex;
     }
 
+    private void maybeSetPlayerIdForAllocator() {
+        Allocator allocator = this.allocator;
+        if (allocator instanceof PlayerIdAwareAllocator) {
+            ((PlayerIdAwareAllocator) allocator).setPlayerId(getPlayerId());
+        }
+    }
+
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes3.dex */
     public class PreloadMediaPeriodCallback implements MediaPeriod.Callback {
+        private int continueLoadingRetryCountBeforeCallingPreloadControlAgain = -1;
+        private Runnable maybeContinueLoadingRunnable;
         private final long periodStartPositionUs;
         private boolean prepared;
 
@@ -354,24 +390,26 @@ public final class PreloadMediaSource extends WrappingMediaSource {
         @Override // androidx.media3.exoplayer.source.MediaPeriod.Callback
         public void onPrepared(final MediaPeriod mediaPeriod) {
             this.prepared = true;
-            PreloadMediaSource.this.preloadHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreloadMediaSource$PreloadMediaPeriodCallback$$ExternalSyntheticLambda0
+            PreloadMediaSource.this.preloadHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreloadMediaSource$PreloadMediaPeriodCallback$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PreloadMediaSource.PreloadMediaPeriodCallback.this.m9037x5a2a8722(mediaPeriod);
+                    PreloadMediaSource.PreloadMediaPeriodCallback.this.m9050x5a2a8722(mediaPeriod);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onPrepared$0$androidx-media3-exoplayer-source-preload-PreloadMediaSource$PreloadMediaPeriodCallback  reason: not valid java name */
-        public /* synthetic */ void m9037x5a2a8722(MediaPeriod mediaPeriod) {
+        public /* synthetic */ void m9050x5a2a8722(MediaPeriod mediaPeriod) {
             TrackSelectorResult trackSelectorResult;
             if (PreloadMediaSource.this.isUsedByPlayer()) {
                 return;
             }
             PreloadMediaPeriod preloadMediaPeriod = (PreloadMediaPeriod) mediaPeriod;
+            TrackGroupArray trackGroups = preloadMediaPeriod.getTrackGroups();
+            MediaSource.MediaPeriodId mediaPeriodId = ((MediaPeriodKey) ((Pair) Preconditions.checkNotNull(PreloadMediaSource.this.preloadingMediaPeriodAndKey)).second).mediaPeriodId;
             try {
-                trackSelectorResult = PreloadMediaSource.this.trackSelector.selectTracks(PreloadMediaSource.this.rendererCapabilities, preloadMediaPeriod.getTrackGroups(), ((MediaPeriodKey) ((Pair) Assertions.checkNotNull(PreloadMediaSource.this.preloadingMediaPeriodAndKey)).second).mediaPeriodId, (Timeline) Assertions.checkNotNull(PreloadMediaSource.this.timeline));
+                trackSelectorResult = PreloadMediaSource.this.trackSelector.selectTracks(PreloadMediaSource.this.rendererCapabilities, trackGroups, mediaPeriodId, (Timeline) Preconditions.checkNotNull(PreloadMediaSource.this.timeline));
             } catch (ExoPlaybackException e) {
                 Log.e(PreloadMediaSource.TAG, "Failed to select tracks", e);
                 trackSelectorResult = null;
@@ -383,24 +421,26 @@ public final class PreloadMediaSource extends WrappingMediaSource {
             preloadMediaPeriod.selectTracksForPreloading(trackSelectorResult.selections, this.periodStartPositionUs);
             if (!PreloadMediaSource.this.preloadControl.onTracksSelected(PreloadMediaSource.this)) {
                 PreloadMediaSource.this.stopPreloading();
-            } else {
-                preloadMediaPeriod.continueLoading(new LoadingInfo.Builder().setPlaybackPositionUs(this.periodStartPositionUs).build());
+                return;
             }
+            PreloadMediaSource.this.loadControl.onTracksSelected(createLoadControlParameters(PreloadMediaSource.this.getPlayerId(), (Timeline) Preconditions.checkNotNull(PreloadMediaSource.this.timeline), mediaPeriodId, mediaPeriod.getBufferedPositionUs()), trackGroups, trackSelectorResult.selections);
+            this.continueLoadingRetryCountBeforeCallingPreloadControlAgain = -1;
+            m9048xe55d806f(preloadMediaPeriod, mediaPeriodId);
         }
 
         @Override // androidx.media3.exoplayer.source.SequenceableLoader.Callback
         public void onContinueLoadingRequested(final MediaPeriod mediaPeriod) {
-            PreloadMediaSource.this.preloadHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreloadMediaSource$PreloadMediaPeriodCallback$$ExternalSyntheticLambda1
+            PreloadMediaSource.this.preloadHandler.post(new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreloadMediaSource$PreloadMediaPeriodCallback$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PreloadMediaSource.PreloadMediaPeriodCallback.this.m9036xba37e565(mediaPeriod);
+                    PreloadMediaSource.PreloadMediaPeriodCallback.this.m9049xba37e565(mediaPeriod);
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$onContinueLoadingRequested$1$androidx-media3-exoplayer-source-preload-PreloadMediaSource$PreloadMediaPeriodCallback  reason: not valid java name */
-        public /* synthetic */ void m9036xba37e565(MediaPeriod mediaPeriod) {
+        public /* synthetic */ void m9049xba37e565(MediaPeriod mediaPeriod) {
             if (PreloadMediaSource.this.isUsedByPlayer()) {
                 return;
             }
@@ -416,7 +456,46 @@ public final class PreloadMediaSource extends WrappingMediaSource {
                     return;
                 }
             }
-            preloadMediaPeriod.continueLoading(new LoadingInfo.Builder().setPlaybackPositionUs(this.periodStartPositionUs).build());
+            this.continueLoadingRetryCountBeforeCallingPreloadControlAgain = -1;
+            m9048xe55d806f(preloadMediaPeriod, ((MediaPeriodKey) ((Pair) Preconditions.checkNotNull(PreloadMediaSource.this.preloadingMediaPeriodAndKey)).second).mediaPeriodId);
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        /* renamed from: maybeContinueLoading */
+        public void m9048xe55d806f(final MediaPeriod mediaPeriod, final MediaSource.MediaPeriodId mediaPeriodId) {
+            if (PreloadMediaSource.this.preloadingMediaPeriodAndKey == null || PreloadMediaSource.this.preloadingMediaPeriodAndKey.first != mediaPeriod) {
+                return;
+            }
+            if (this.maybeContinueLoadingRunnable != null) {
+                PreloadMediaSource.this.preloadHandler.removeCallbacks(this.maybeContinueLoadingRunnable);
+                this.maybeContinueLoadingRunnable = null;
+            }
+            if (PreloadMediaSource.this.loadControl.shouldContinueLoading(createLoadControlParameters(PreloadMediaSource.this.getPlayerId(), (Timeline) Preconditions.checkNotNull(PreloadMediaSource.this.timeline), mediaPeriodId, this.prepared ? mediaPeriod.getBufferedPositionUs() : 0L))) {
+                this.continueLoadingRetryCountBeforeCallingPreloadControlAgain = -1;
+                mediaPeriod.continueLoading(new LoadingInfo.Builder().setPlaybackPositionUs(this.periodStartPositionUs).build());
+                return;
+            }
+            int i = this.continueLoadingRetryCountBeforeCallingPreloadControlAgain;
+            if (i == -1 || i >= 10) {
+                if (PreloadMediaSource.this.preloadControl.onLoadingUnableToContinue(PreloadMediaSource.this)) {
+                    this.continueLoadingRetryCountBeforeCallingPreloadControlAgain = 0;
+                } else {
+                    this.continueLoadingRetryCountBeforeCallingPreloadControlAgain = -1;
+                }
+            } else {
+                this.continueLoadingRetryCountBeforeCallingPreloadControlAgain = i + 1;
+            }
+            this.maybeContinueLoadingRunnable = new Runnable() { // from class: androidx.media3.exoplayer.source.preload.PreloadMediaSource$PreloadMediaPeriodCallback$$ExternalSyntheticLambda0
+                @Override // java.lang.Runnable
+                public final void run() {
+                    PreloadMediaSource.PreloadMediaPeriodCallback.this.m9048xe55d806f(mediaPeriod, mediaPeriodId);
+                }
+            };
+            PreloadMediaSource.this.preloadHandler.postDelayed(this.maybeContinueLoadingRunnable, 100L);
+        }
+
+        private LoadControl.Parameters createLoadControlParameters(PlayerId playerId, Timeline timeline, MediaSource.MediaPeriodId mediaPeriodId, long j) {
+            return new LoadControl.Parameters(playerId, timeline, mediaPeriodId, 0L, j, 1.0f, false, false, C.TIME_UNSET, C.TIME_UNSET);
         }
     }
 

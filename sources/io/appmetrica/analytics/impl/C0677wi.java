@@ -23,14 +23,14 @@ public final class C0677wi extends C0433mn {
     @Override // io.appmetrica.analytics.impl.C0433mn
     public final void f() {
         this.b.a();
-        C0402lh c0402lh = (C0402lh) ((Y4) this.f1113a).k.a();
+        C0402lh c0402lh = (C0402lh) ((Y4) this.f1114a).k.a();
         if (c0402lh.k.a(c0402lh.j)) {
             String str = c0402lh.m;
             if (TextUtils.isEmpty(str) || "-1".equals(str)) {
                 return;
             }
             try {
-                a(Wd.a((Y4) this.f1113a));
+                a(Wd.a((Y4) this.f1114a));
             } catch (Throwable unused) {
             }
         }
@@ -46,8 +46,8 @@ public final class C0677wi extends C0433mn {
             return;
         }
         this.e.remove(this.d);
-        if (((C0402lh) ((Y4) this.f1113a).k.a()).g > 0) {
-            this.e.executeDelayed(this.d, TimeUnit.SECONDS.toMillis(((C0402lh) ((Y4) this.f1113a).k.a()).g));
+        if (((C0402lh) ((Y4) this.f1114a).k.a()).g > 0) {
+            this.e.executeDelayed(this.d, TimeUnit.SECONDS.toMillis(((C0402lh) ((Y4) this.f1114a).k.a()).g));
         }
     }
 }

@@ -7,35 +7,35 @@ import java.util.HashMap;
 public final class C0570sb extends InterruptionSafeThread {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0595tb f1214a;
+    public final /* synthetic */ C0595tb f1215a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C0570sb(C0595tb c0595tb, String str) {
         super(str);
-        this.f1214a = c0595tb;
+        this.f1215a = c0595tb;
     }
 
     @Override // java.lang.Thread, java.lang.Runnable
     public final void run() {
         HashMap hashMap;
-        synchronized (this.f1214a.f1229a) {
-            C0595tb.a(this.f1214a);
-            this.f1214a.e = true;
-            this.f1214a.f1229a.notifyAll();
+        synchronized (this.f1215a.f1230a) {
+            C0595tb.a(this.f1215a);
+            this.f1215a.e = true;
+            this.f1215a.f1230a.notifyAll();
         }
         while (isRunning()) {
             synchronized (this) {
-                if (this.f1214a.b.size() == 0) {
+                if (this.f1215a.b.size() == 0) {
                     try {
                         wait();
                     } catch (InterruptedException unused) {
                     }
                 }
-                hashMap = new HashMap(this.f1214a.b);
-                this.f1214a.b.clear();
+                hashMap = new HashMap(this.f1215a.b);
+                this.f1215a.b.clear();
             }
             if (hashMap.size() > 0) {
-                C0595tb.a(this.f1214a, hashMap);
+                C0595tb.a(this.f1215a, hashMap);
                 hashMap.clear();
             }
         }

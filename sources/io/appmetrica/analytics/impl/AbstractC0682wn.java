@@ -7,5 +7,5 @@ import java.util.List;
 public abstract class AbstractC0682wn {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final List f1285a = CollectionUtils.createSortedListWithoutRepetitions("id", "scope", "data", "timestamp");
+    public static final List f1286a = CollectionUtils.createSortedListWithoutRepetitions("id", "scope", "data", "timestamp");
 }

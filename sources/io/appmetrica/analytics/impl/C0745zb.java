@@ -8,11 +8,11 @@ import kotlin.LazyKt;
 public final class C0745zb implements ConfigProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Y4 f1329a;
+    public final Y4 f1330a;
     public final Lazy b = LazyKt.lazy(new C0720yb(this));
 
     public C0745zb(Y4 y4) {
-        this.f1329a = y4;
+        this.f1330a = y4;
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.ConfigProvider

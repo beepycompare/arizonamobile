@@ -1,10 +1,10 @@
 package androidx.media3.decoder;
 
 import androidx.media3.common.C;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.decoder.DecoderException;
 import androidx.media3.decoder.DecoderInputBuffer;
 import androidx.media3.decoder.DecoderOutputBuffer;
+import com.google.common.base.Preconditions;
 import java.util.ArrayDeque;
 /* loaded from: classes2.dex */
 public abstract class SimpleDecoder<I extends DecoderInputBuffer, O extends DecoderOutputBuffer, E extends DecoderException> implements Decoder<I, O, E> {
@@ -61,7 +61,7 @@ public abstract class SimpleDecoder<I extends DecoderInputBuffer, O extends Deco
 
     /* JADX INFO: Access modifiers changed from: protected */
     public final void setInitialInputBufferSize(int i) {
-        Assertions.checkState(this.availableInputBufferCount == this.availableInputBuffers.length);
+        Preconditions.checkState(this.availableInputBufferCount == this.availableInputBuffers.length);
         for (I i2 : this.availableInputBuffers) {
             i2.ensureSpaceForWrite(i);
         }
@@ -82,11 +82,11 @@ public abstract class SimpleDecoder<I extends DecoderInputBuffer, O extends Deco
         synchronized (this.lock) {
             if (this.availableInputBufferCount != this.availableInputBuffers.length && !this.flushed) {
                 z = false;
-                Assertions.checkState(z);
+                Preconditions.checkState(z);
                 this.outputStartTimeUs = j;
             }
             z = true;
-            Assertions.checkState(z);
+            Preconditions.checkState(z);
             this.outputStartTimeUs = j;
         }
     }
@@ -96,7 +96,7 @@ public abstract class SimpleDecoder<I extends DecoderInputBuffer, O extends Deco
         I i;
         synchronized (this.lock) {
             maybeThrowException();
-            Assertions.checkState(this.dequeuedInputBuffer == null);
+            Preconditions.checkState(this.dequeuedInputBuffer == null);
             int i2 = this.availableInputBufferCount;
             if (i2 == 0) {
                 i = null;
@@ -114,7 +114,7 @@ public abstract class SimpleDecoder<I extends DecoderInputBuffer, O extends Deco
     public final void queueInputBuffer(I i) throws DecoderException {
         synchronized (this.lock) {
             maybeThrowException();
-            Assertions.checkArgument(i == this.dequeuedInputBuffer);
+            Preconditions.checkArgument(i == this.dequeuedInputBuffer);
             this.queuedInputBuffers.addLast(i);
             maybeNotifyDecodeLoop();
             this.dequeuedInputBuffer = null;

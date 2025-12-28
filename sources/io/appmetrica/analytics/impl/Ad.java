@@ -7,14 +7,14 @@ import java.util.concurrent.atomic.AtomicInteger;
 public final class Ad implements ThreadFactory {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final AtomicInteger f492a = new AtomicInteger(0);
+    public static final AtomicInteger f493a = new AtomicInteger(0);
 
     public static int a() {
-        return f492a.incrementAndGet();
+        return f493a.incrementAndGet();
     }
 
     @Override // java.util.concurrent.ThreadFactory
     public final Thread newThread(Runnable runnable) {
-        return new InterruptionSafeThread(runnable, "null-" + f492a.incrementAndGet());
+        return new InterruptionSafeThread(runnable, "null-" + f493a.incrementAndGet());
     }
 }

@@ -19,10 +19,10 @@ import androidx.media3.common.C;
 import androidx.media3.common.MediaLibraryInfo;
 import androidx.media3.common.Player;
 import androidx.media3.common.Timeline;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.RepeatModeUtil;
 import androidx.media3.common.util.Util;
 import androidx.media3.ui.TimeBar;
+import com.google.common.base.Preconditions;
 import java.util.Arrays;
 import java.util.Formatter;
 import java.util.Iterator;
@@ -265,11 +265,11 @@ public class LegacyPlayerControlView extends FrameLayout {
 
     public void setPlayer(Player player) {
         boolean z = true;
-        Assertions.checkState(Looper.myLooper() == Looper.getMainLooper());
+        Preconditions.checkState(Looper.myLooper() == Looper.getMainLooper());
         if (player != null && player.getApplicationLooper() != Looper.getMainLooper()) {
             z = false;
         }
-        Assertions.checkArgument(z);
+        Preconditions.checkArgument(z);
         Player player2 = this.player;
         if (player2 == player) {
             return;
@@ -300,16 +300,16 @@ public class LegacyPlayerControlView extends FrameLayout {
             this.extraAdGroupTimesMs = new long[0];
             this.extraPlayedAdGroups = new boolean[0];
         } else {
-            boolean[] zArr2 = (boolean[]) Assertions.checkNotNull(zArr);
-            Assertions.checkArgument(jArr.length == zArr2.length);
+            Preconditions.checkNotNull(zArr);
+            Preconditions.checkArgument(jArr.length == zArr.length);
             this.extraAdGroupTimesMs = jArr;
-            this.extraPlayedAdGroups = zArr2;
+            this.extraPlayedAdGroups = zArr;
         }
         updateTimeline();
     }
 
     public void addVisibilityListener(VisibilityListener visibilityListener) {
-        Assertions.checkNotNull(visibilityListener);
+        Preconditions.checkNotNull(visibilityListener);
         this.visibilityListeners.add(visibilityListener);
     }
 
@@ -615,7 +615,7 @@ public class LegacyPlayerControlView extends FrameLayout {
                 long j3 = this.window.durationUs;
                 long j4 = C.TIME_UNSET;
                 if (j3 == C.TIME_UNSET) {
-                    Assertions.checkState(this.multiWindowTimeBar ^ z);
+                    Preconditions.checkState(this.multiWindowTimeBar ^ z);
                     break;
                 }
                 int i3 = this.window.firstPeriodIndex;

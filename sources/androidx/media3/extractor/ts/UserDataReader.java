@@ -2,13 +2,13 @@ package androidx.media3.extractor.ts;
 
 import androidx.media3.common.Format;
 import androidx.media3.common.MimeTypes;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.container.ReorderingBufferQueue;
 import androidx.media3.extractor.CeaUtil;
 import androidx.media3.extractor.ExtractorOutput;
 import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.ts.TsPayloadReader;
+import com.google.common.base.Preconditions;
 import java.util.List;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes3.dex */
@@ -26,7 +26,7 @@ public final class UserDataReader {
         ReorderingBufferQueue reorderingBufferQueue = new ReorderingBufferQueue(new ReorderingBufferQueue.OutputConsumer() { // from class: androidx.media3.extractor.ts.UserDataReader$$ExternalSyntheticLambda0
             @Override // androidx.media3.container.ReorderingBufferQueue.OutputConsumer
             public final void consume(long j, ParsableByteArray parsableByteArray) {
-                UserDataReader.this.m9068lambda$new$0$androidxmedia3extractortsUserDataReader(j, parsableByteArray);
+                UserDataReader.this.m9083lambda$new$0$androidxmedia3extractortsUserDataReader(j, parsableByteArray);
             }
         });
         this.reorderingBufferQueue = reorderingBufferQueue;
@@ -35,7 +35,7 @@ public final class UserDataReader {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$androidx-media3-extractor-ts-UserDataReader  reason: not valid java name */
-    public /* synthetic */ void m9068lambda$new$0$androidxmedia3extractortsUserDataReader(long j, ParsableByteArray parsableByteArray) {
+    public /* synthetic */ void m9083lambda$new$0$androidxmedia3extractortsUserDataReader(long j, ParsableByteArray parsableByteArray) {
         CeaUtil.consumeCcData(j, parsableByteArray, this.outputs);
     }
 
@@ -45,7 +45,7 @@ public final class UserDataReader {
             TrackOutput track = extractorOutput.track(trackIdGenerator.getTrackId(), 3);
             Format format = this.closedCaptionFormats.get(i);
             String str = format.sampleMimeType;
-            Assertions.checkArgument(MimeTypes.APPLICATION_CEA608.equals(str) || MimeTypes.APPLICATION_CEA708.equals(str), "Invalid closed caption MIME type provided: " + str);
+            Preconditions.checkArgument(MimeTypes.APPLICATION_CEA608.equals(str) || MimeTypes.APPLICATION_CEA708.equals(str), "Invalid closed caption MIME type provided: %s", str);
             track.format(new Format.Builder().setId(trackIdGenerator.getFormatId()).setContainerMimeType(this.containerMimeType).setSampleMimeType(str).setSelectionFlags(format.selectionFlags).setLanguage(format.language).setAccessibilityChannel(format.accessibilityChannel).setInitializationData(format.initializationData).build());
             this.outputs[i] = track;
         }

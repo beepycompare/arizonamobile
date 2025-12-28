@@ -5,7 +5,7 @@ import io.appmetrica.analytics.impl.mo;
 import java.math.BigDecimal;
 import java.util.Currency;
 import java.util.Map;
-/* loaded from: classes3.dex */
+/* loaded from: classes2.dex */
 public class AdRevenue {
     public final String adNetwork;
     public final String adPlacementId;
@@ -18,11 +18,11 @@ public class AdRevenue {
     public final Map<String, String> payload;
     public final String precision;
 
-    /* loaded from: classes3.dex */
+    /* loaded from: classes2.dex */
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private final BigDecimal f272a;
+        private final BigDecimal f273a;
         private final Currency b;
         private AdType c;
         private String d;
@@ -38,7 +38,7 @@ public class AdRevenue {
         }
 
         public AdRevenue build() {
-            return new AdRevenue(this.f272a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, 0);
+            return new AdRevenue(this.f273a, this.b, this.c, this.d, this.e, this.f, this.g, this.h, this.i, this.j, 0);
         }
 
         public Builder withAdNetwork(String str) {
@@ -82,7 +82,7 @@ public class AdRevenue {
         }
 
         private Builder(BigDecimal bigDecimal, Currency currency) {
-            this.f272a = bigDecimal;
+            this.f273a = bigDecimal;
             this.b = currency;
         }
     }

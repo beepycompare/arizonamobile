@@ -5,18 +5,19 @@ import android.text.Spanned;
 import android.text.TextUtils;
 import androidx.media3.common.C;
 import androidx.media3.common.text.Cue;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Consumer;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.extractor.text.CuesWithTiming;
 import androidx.media3.extractor.text.SubtitleParser;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import kotlin.time.DurationKt;
 /* loaded from: classes3.dex */
 public final class SubripParser implements SubtitleParser {
     private static final String ALIGN_BOTTOM_LEFT = "{\\an1}";
@@ -261,7 +262,7 @@ public final class SubripParser implements SubtitleParser {
 
     private static long parseTimecode(Matcher matcher, int i) {
         String group = matcher.group(i + 1);
-        long parseLong = (group != null ? Long.parseLong(group) * 3600000 : 0L) + (Long.parseLong((String) Assertions.checkNotNull(matcher.group(i + 2))) * 60000) + (Long.parseLong((String) Assertions.checkNotNull(matcher.group(i + 3))) * 1000);
+        long parseLong = (group != null ? Long.parseLong(group) * DurationKt.MILLIS_IN_HOUR : 0L) + (Long.parseLong((String) Preconditions.checkNotNull(matcher.group(i + 2))) * 60000) + (Long.parseLong((String) Preconditions.checkNotNull(matcher.group(i + 3))) * 1000);
         String group2 = matcher.group(i + 4);
         if (group2 != null) {
             parseLong += Long.parseLong(group2);

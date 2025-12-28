@@ -10,30 +10,30 @@ import kotlin.UShort;
 import kotlin.UnsignedKt;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: UStrings.kt */
-@Metadata(d1 = {"\u0000,\n\u0000\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0013\u001a\u001b\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\u0007¢\u0006\u0004\b\u0005\u0010\u0006\u001a\u001b\u0010\u0000\u001a\u00020\u0001*\u00020\u00072\u0006\u0010\u0003\u001a\u00020\u0004H\u0007¢\u0006\u0004\b\b\u0010\t\u001a\u001b\u0010\u0000\u001a\u00020\u0001*\u00020\n2\u0006\u0010\u0003\u001a\u00020\u0004H\u0007¢\u0006\u0004\b\u000b\u0010\f\u001a\u001b\u0010\u0000\u001a\u00020\u0001*\u00020\r2\u0006\u0010\u0003\u001a\u00020\u0004H\u0007¢\u0006\u0004\b\u000e\u0010\u000f\u001a\u0011\u0010\u0010\u001a\u00020\u0002*\u00020\u0001H\u0007¢\u0006\u0002\u0010\u0011\u001a\u0019\u0010\u0010\u001a\u00020\u0002*\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0004H\u0007¢\u0006\u0002\u0010\u0012\u001a\u0011\u0010\u0013\u001a\u00020\u0007*\u00020\u0001H\u0007¢\u0006\u0002\u0010\u0014\u001a\u0019\u0010\u0013\u001a\u00020\u0007*\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0004H\u0007¢\u0006\u0002\u0010\u0015\u001a\u0011\u0010\u0016\u001a\u00020\n*\u00020\u0001H\u0007¢\u0006\u0002\u0010\u0017\u001a\u0019\u0010\u0016\u001a\u00020\n*\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0004H\u0007¢\u0006\u0002\u0010\u0018\u001a\u0011\u0010\u0019\u001a\u00020\r*\u00020\u0001H\u0007¢\u0006\u0002\u0010\u001a\u001a\u0019\u0010\u0019\u001a\u00020\r*\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0004H\u0007¢\u0006\u0002\u0010\u001b\u001a\u000e\u0010\u001c\u001a\u0004\u0018\u00010\u0002*\u00020\u0001H\u0007\u001a\u0016\u0010\u001c\u001a\u0004\u0018\u00010\u0002*\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0004H\u0007\u001a\u000e\u0010\u001d\u001a\u0004\u0018\u00010\u0007*\u00020\u0001H\u0007\u001a\u0016\u0010\u001d\u001a\u0004\u0018\u00010\u0007*\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0004H\u0007\u001a\u000e\u0010\u001e\u001a\u0004\u0018\u00010\n*\u00020\u0001H\u0007\u001a\u0016\u0010\u001e\u001a\u0004\u0018\u00010\n*\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0004H\u0007\u001a\u000e\u0010\u001f\u001a\u0004\u0018\u00010\r*\u00020\u0001H\u0007\u001a\u0016\u0010\u001f\u001a\u0004\u0018\u00010\r*\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0004H\u0007¨\u0006 "}, d2 = {"toString", "", "Lkotlin/UByte;", "radix", "", "toString-LxnNnR4", "(BI)Ljava/lang/String;", "Lkotlin/UShort;", "toString-olVBNx4", "(SI)Ljava/lang/String;", "Lkotlin/UInt;", "toString-V7xB4Y4", "(II)Ljava/lang/String;", "Lkotlin/ULong;", "toString-JSWoG40", "(JI)Ljava/lang/String;", "toUByte", "(Ljava/lang/String;)B", "(Ljava/lang/String;I)B", "toUShort", "(Ljava/lang/String;)S", "(Ljava/lang/String;I)S", "toUInt", "(Ljava/lang/String;)I", "(Ljava/lang/String;I)I", "toULong", "(Ljava/lang/String;)J", "(Ljava/lang/String;I)J", "toUByteOrNull", "toUShortOrNull", "toUIntOrNull", "toULongOrNull", "kotlin-stdlib"}, k = 2, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000,\n\u0000\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0013\u001a\u001d\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0004H\u0087\u0080\u0004¢\u0006\u0004\b\u0005\u0010\u0006\u001a\u001d\u0010\u0000\u001a\u00020\u0001*\u00020\u00072\u0006\u0010\u0003\u001a\u00020\u0004H\u0087\u0080\u0004¢\u0006\u0004\b\b\u0010\t\u001a\u001d\u0010\u0000\u001a\u00020\u0001*\u00020\n2\u0006\u0010\u0003\u001a\u00020\u0004H\u0087\u0080\u0004¢\u0006\u0004\b\u000b\u0010\f\u001a\u001d\u0010\u0000\u001a\u00020\u0001*\u00020\r2\u0006\u0010\u0003\u001a\u00020\u0004H\u0087\u0080\u0004¢\u0006\u0004\b\u000e\u0010\u000f\u001a\u0013\u0010\u0010\u001a\u00020\u0002*\u00020\u0001H\u0087\u0080\u0004¢\u0006\u0002\u0010\u0011\u001a\u001b\u0010\u0010\u001a\u00020\u0002*\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0004H\u0087\u0080\u0004¢\u0006\u0002\u0010\u0012\u001a\u0013\u0010\u0013\u001a\u00020\u0007*\u00020\u0001H\u0087\u0080\u0004¢\u0006\u0002\u0010\u0014\u001a\u001b\u0010\u0013\u001a\u00020\u0007*\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0004H\u0087\u0080\u0004¢\u0006\u0002\u0010\u0015\u001a\u0013\u0010\u0016\u001a\u00020\n*\u00020\u0001H\u0087\u0080\u0004¢\u0006\u0002\u0010\u0017\u001a\u001b\u0010\u0016\u001a\u00020\n*\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0004H\u0087\u0080\u0004¢\u0006\u0002\u0010\u0018\u001a\u0013\u0010\u0019\u001a\u00020\r*\u00020\u0001H\u0087\u0080\u0004¢\u0006\u0002\u0010\u001a\u001a\u001b\u0010\u0019\u001a\u00020\r*\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0004H\u0087\u0080\u0004¢\u0006\u0002\u0010\u001b\u001a\u0010\u0010\u001c\u001a\u0004\u0018\u00010\u0002*\u00020\u0001H\u0087\u0080\u0004\u001a\u0018\u0010\u001c\u001a\u0004\u0018\u00010\u0002*\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0004H\u0087\u0080\u0004\u001a\u0010\u0010\u001d\u001a\u0004\u0018\u00010\u0007*\u00020\u0001H\u0087\u0080\u0004\u001a\u0018\u0010\u001d\u001a\u0004\u0018\u00010\u0007*\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0004H\u0087\u0080\u0004\u001a\u0010\u0010\u001e\u001a\u0004\u0018\u00010\n*\u00020\u0001H\u0087\u0080\u0004\u001a\u0018\u0010\u001e\u001a\u0004\u0018\u00010\n*\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0004H\u0087\u0080\u0004\u001a\u0010\u0010\u001f\u001a\u0004\u0018\u00010\r*\u00020\u0001H\u0087\u0080\u0004\u001a\u0018\u0010\u001f\u001a\u0004\u0018\u00010\r*\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0004H\u0087\u0080\u0004¨\u0006 "}, d2 = {"toString", "", "Lkotlin/UByte;", "radix", "", "toString-LxnNnR4", "(BI)Ljava/lang/String;", "Lkotlin/UShort;", "toString-olVBNx4", "(SI)Ljava/lang/String;", "Lkotlin/UInt;", "toString-V7xB4Y4", "(II)Ljava/lang/String;", "Lkotlin/ULong;", "toString-JSWoG40", "(JI)Ljava/lang/String;", "toUByte", "(Ljava/lang/String;)B", "(Ljava/lang/String;I)B", "toUShort", "(Ljava/lang/String;)S", "(Ljava/lang/String;I)S", "toUInt", "(Ljava/lang/String;)I", "(Ljava/lang/String;I)I", "toULong", "(Ljava/lang/String;)J", "(Ljava/lang/String;I)J", "toUByteOrNull", "toUShortOrNull", "toUIntOrNull", "toULongOrNull", "kotlin-stdlib"}, k = 2, mv = {2, 3, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class UStringsKt {
     /* renamed from: toString-LxnNnR4  reason: not valid java name */
-    public static final String m11560toStringLxnNnR4(byte b, int i) {
+    public static final String m11591toStringLxnNnR4(byte b, int i) {
         String num = Integer.toString(b & 255, CharsKt.checkRadix(i));
         Intrinsics.checkNotNullExpressionValue(num, "toString(...)");
         return num;
     }
 
     /* renamed from: toString-olVBNx4  reason: not valid java name */
-    public static final String m11562toStringolVBNx4(short s, int i) {
+    public static final String m11593toStringolVBNx4(short s, int i) {
         String num = Integer.toString(s & UShort.MAX_VALUE, CharsKt.checkRadix(i));
         Intrinsics.checkNotNullExpressionValue(num, "toString(...)");
         return num;
     }
 
     /* renamed from: toString-V7xB4Y4  reason: not valid java name */
-    public static final String m11561toStringV7xB4Y4(int i, int i2) {
+    public static final String m11592toStringV7xB4Y4(int i, int i2) {
         return UnsignedKt.ulongToString(i & 4294967295L, CharsKt.checkRadix(i2));
     }
 
     /* renamed from: toString-JSWoG40  reason: not valid java name */
-    public static final String m11559toStringJSWoG40(long j, int i) {
+    public static final String m11590toStringJSWoG40(long j, int i) {
         return UnsignedKt.ulongToString(j, CharsKt.checkRadix(i));
     }
 
@@ -41,7 +41,7 @@ public final class UStringsKt {
         Intrinsics.checkNotNullParameter(str, "<this>");
         UByte uByteOrNull = toUByteOrNull(str);
         if (uByteOrNull != null) {
-            return uByteOrNull.m10284unboximpl();
+            return uByteOrNull.m10312unboximpl();
         }
         StringsKt.numberFormatError(str);
         throw new KotlinNothingValueException();
@@ -51,7 +51,7 @@ public final class UStringsKt {
         Intrinsics.checkNotNullParameter(str, "<this>");
         UByte uByteOrNull = toUByteOrNull(str, i);
         if (uByteOrNull != null) {
-            return uByteOrNull.m10284unboximpl();
+            return uByteOrNull.m10312unboximpl();
         }
         StringsKt.numberFormatError(str);
         throw new KotlinNothingValueException();
@@ -61,7 +61,7 @@ public final class UStringsKt {
         Intrinsics.checkNotNullParameter(str, "<this>");
         UShort uShortOrNull = toUShortOrNull(str);
         if (uShortOrNull != null) {
-            return uShortOrNull.m10552unboximpl();
+            return uShortOrNull.m10580unboximpl();
         }
         StringsKt.numberFormatError(str);
         throw new KotlinNothingValueException();
@@ -71,7 +71,7 @@ public final class UStringsKt {
         Intrinsics.checkNotNullParameter(str, "<this>");
         UShort uShortOrNull = toUShortOrNull(str, i);
         if (uShortOrNull != null) {
-            return uShortOrNull.m10552unboximpl();
+            return uShortOrNull.m10580unboximpl();
         }
         StringsKt.numberFormatError(str);
         throw new KotlinNothingValueException();
@@ -81,7 +81,7 @@ public final class UStringsKt {
         Intrinsics.checkNotNullParameter(str, "<this>");
         UInt uIntOrNull = toUIntOrNull(str);
         if (uIntOrNull != null) {
-            return uIntOrNull.m10368unboximpl();
+            return uIntOrNull.m10396unboximpl();
         }
         StringsKt.numberFormatError(str);
         throw new KotlinNothingValueException();
@@ -91,7 +91,7 @@ public final class UStringsKt {
         Intrinsics.checkNotNullParameter(str, "<this>");
         UInt uIntOrNull = toUIntOrNull(str, i);
         if (uIntOrNull != null) {
-            return uIntOrNull.m10368unboximpl();
+            return uIntOrNull.m10396unboximpl();
         }
         StringsKt.numberFormatError(str);
         throw new KotlinNothingValueException();
@@ -101,7 +101,7 @@ public final class UStringsKt {
         Intrinsics.checkNotNullParameter(str, "<this>");
         ULong uLongOrNull = toULongOrNull(str);
         if (uLongOrNull != null) {
-            return uLongOrNull.m10447unboximpl();
+            return uLongOrNull.m10475unboximpl();
         }
         StringsKt.numberFormatError(str);
         throw new KotlinNothingValueException();
@@ -111,7 +111,7 @@ public final class UStringsKt {
         Intrinsics.checkNotNullParameter(str, "<this>");
         ULong uLongOrNull = toULongOrNull(str, i);
         if (uLongOrNull != null) {
-            return uLongOrNull.m10447unboximpl();
+            return uLongOrNull.m10475unboximpl();
         }
         StringsKt.numberFormatError(str);
         throw new KotlinNothingValueException();
@@ -127,12 +127,12 @@ public final class UStringsKt {
         Intrinsics.checkNotNullParameter(str, "<this>");
         UInt uIntOrNull = toUIntOrNull(str, i);
         if (uIntOrNull != null) {
-            int m10368unboximpl = uIntOrNull.m10368unboximpl();
-            compare = Integer.compare(m10368unboximpl ^ Integer.MIN_VALUE, UInt.m10316constructorimpl(255) ^ Integer.MIN_VALUE);
+            int m10396unboximpl = uIntOrNull.m10396unboximpl();
+            compare = Integer.compare(m10396unboximpl ^ Integer.MIN_VALUE, UInt.m10344constructorimpl(255) ^ Integer.MIN_VALUE);
             if (compare > 0) {
                 return null;
             }
-            return UByte.m10228boximpl(UByte.m10234constructorimpl((byte) m10368unboximpl));
+            return UByte.m10256boximpl(UByte.m10262constructorimpl((byte) m10396unboximpl));
         }
         return null;
     }
@@ -147,12 +147,12 @@ public final class UStringsKt {
         Intrinsics.checkNotNullParameter(str, "<this>");
         UInt uIntOrNull = toUIntOrNull(str, i);
         if (uIntOrNull != null) {
-            int m10368unboximpl = uIntOrNull.m10368unboximpl();
-            compare = Integer.compare(m10368unboximpl ^ Integer.MIN_VALUE, UInt.m10316constructorimpl(65535) ^ Integer.MIN_VALUE);
+            int m10396unboximpl = uIntOrNull.m10396unboximpl();
+            compare = Integer.compare(m10396unboximpl ^ Integer.MIN_VALUE, UInt.m10344constructorimpl(65535) ^ Integer.MIN_VALUE);
             if (compare > 0) {
                 return null;
             }
-            return UShort.m10496boximpl(UShort.m10502constructorimpl((short) m10368unboximpl));
+            return UShort.m10524boximpl(UShort.m10530constructorimpl((short) m10396unboximpl));
         }
         return null;
     }
@@ -183,7 +183,7 @@ public final class UStringsKt {
         } else {
             i2 = 0;
         }
-        int m10316constructorimpl = UInt.m10316constructorimpl(i);
+        int m10344constructorimpl = UInt.m10344constructorimpl(i);
         int i4 = 119304647;
         while (i2 < length) {
             int digitOf = CharsKt.digitOf(str.charAt(i2), i);
@@ -193,23 +193,23 @@ public final class UStringsKt {
             compare = Integer.compare(i3 ^ Integer.MIN_VALUE, i4 ^ Integer.MIN_VALUE);
             if (compare > 0) {
                 if (i4 == 119304647) {
-                    i4 = UByte$$ExternalSyntheticBackport0.m(-1, m10316constructorimpl);
+                    i4 = UByte$$ExternalSyntheticBackport0.m(-1, m10344constructorimpl);
                     compare3 = Integer.compare(i3 ^ Integer.MIN_VALUE, i4 ^ Integer.MIN_VALUE);
                     if (compare3 > 0) {
                     }
                 }
                 return null;
             }
-            int m10316constructorimpl2 = UInt.m10316constructorimpl(i3 * m10316constructorimpl);
-            int m10316constructorimpl3 = UInt.m10316constructorimpl(UInt.m10316constructorimpl(digitOf) + m10316constructorimpl2);
-            compare2 = Integer.compare(m10316constructorimpl3 ^ Integer.MIN_VALUE, m10316constructorimpl2 ^ Integer.MIN_VALUE);
+            int m10344constructorimpl2 = UInt.m10344constructorimpl(i3 * m10344constructorimpl);
+            int m10344constructorimpl3 = UInt.m10344constructorimpl(UInt.m10344constructorimpl(digitOf) + m10344constructorimpl2);
+            compare2 = Integer.compare(m10344constructorimpl3 ^ Integer.MIN_VALUE, m10344constructorimpl2 ^ Integer.MIN_VALUE);
             if (compare2 < 0) {
                 return null;
             }
             i2++;
-            i3 = m10316constructorimpl3;
+            i3 = m10344constructorimpl3;
         }
-        return UInt.m10310boximpl(i3);
+        return UInt.m10338boximpl(i3);
     }
 
     public static final ULong toULongOrNull(String str) {
@@ -236,7 +236,7 @@ public final class UStringsKt {
                 return null;
             }
         }
-        long m10395constructorimpl = ULong.m10395constructorimpl(i);
+        long m10423constructorimpl = ULong.m10423constructorimpl(i);
         long j = 0;
         long j2 = 512409557603043100L;
         while (i2 < length) {
@@ -246,22 +246,22 @@ public final class UStringsKt {
             compare = Long.compare(j ^ Long.MIN_VALUE, j2 ^ Long.MIN_VALUE);
             if (compare > 0) {
                 if (j2 == 512409557603043100L) {
-                    j2 = UByte$$ExternalSyntheticBackport0.m$1(-1L, m10395constructorimpl);
+                    j2 = UByte$$ExternalSyntheticBackport0.m$1(-1L, m10423constructorimpl);
                     compare3 = Long.compare(j ^ Long.MIN_VALUE, j2 ^ Long.MIN_VALUE);
                     if (compare3 > 0) {
                     }
                 }
                 return null;
             }
-            long m10395constructorimpl2 = ULong.m10395constructorimpl(j * m10395constructorimpl);
-            long m10395constructorimpl3 = ULong.m10395constructorimpl(ULong.m10395constructorimpl(UInt.m10316constructorimpl(digitOf) & 4294967295L) + m10395constructorimpl2);
-            compare2 = Long.compare(m10395constructorimpl3 ^ Long.MIN_VALUE, m10395constructorimpl2 ^ Long.MIN_VALUE);
+            long m10423constructorimpl2 = ULong.m10423constructorimpl(j * m10423constructorimpl);
+            long m10423constructorimpl3 = ULong.m10423constructorimpl(ULong.m10423constructorimpl(UInt.m10344constructorimpl(digitOf) & 4294967295L) + m10423constructorimpl2);
+            compare2 = Long.compare(m10423constructorimpl3 ^ Long.MIN_VALUE, m10423constructorimpl2 ^ Long.MIN_VALUE);
             if (compare2 < 0) {
                 return null;
             }
             i2++;
-            j = m10395constructorimpl3;
+            j = m10423constructorimpl3;
         }
-        return ULong.m10389boximpl(j);
+        return ULong.m10417boximpl(j);
     }
 }

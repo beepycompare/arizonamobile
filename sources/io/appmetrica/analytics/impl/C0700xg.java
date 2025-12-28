@@ -23,7 +23,7 @@ import org.json.JSONObject;
 public final class C0700xg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1297a;
+    public final Context f1298a;
     public final SafePackageManager b;
     public final Sa c;
     public final Ec d;
@@ -32,7 +32,7 @@ public final class C0700xg {
     public final String g;
 
     public C0700xg(Context context, SafePackageManager safePackageManager, Sa sa) {
-        this.f1297a = context;
+        this.f1298a = context;
         this.b = safePackageManager;
         this.c = sa;
         Ec ec = new Ec(0);
@@ -59,7 +59,7 @@ public final class C0700xg {
             return (C0476og) list.get(0);
         }
         SafePackageManager safePackageManager = this.b;
-        Context context = this.f1297a;
+        Context context = this.f1298a;
         PackageInfo packageInfo = safePackageManager.getPackageInfo(context, context.getPackageName(), 0);
         if (packageInfo != null) {
             long seconds = TimeUnit.MILLISECONDS.toSeconds(packageInfo.firstInstallTime);
@@ -106,9 +106,9 @@ public final class C0700xg {
         Iterator it3 = list.iterator();
         while (it3.hasNext()) {
             C0476og c0476og6 = (C0476og) it3.next();
-            arrayList.add(new JSONObject().put(Constants.REFERRER, c0476og6.f1147a).put("install_timestamp_seconds", c0476og6.c).put("click_timestamp_seconds", c0476og6.b).put("source", c0476og6.d.f1128a));
+            arrayList.add(new JSONObject().put(Constants.REFERRER, c0476og6.f1148a).put("install_timestamp_seconds", c0476og6.c).put("click_timestamp_seconds", c0476og6.b).put("source", c0476og6.d.f1129a));
         }
-        sa.reportEvent("several_filled_referrers", jSONObject.put("candidates", mo.a((Collection) arrayList) ? null : new JSONArray((Collection) arrayList)).put("chosen", new JSONObject().put(Constants.REFERRER, c0476og.f1147a).put("install_timestamp_seconds", c0476og.c).put("click_timestamp_seconds", c0476og.b).put("source", c0476og.d.f1128a)).putOpt("install_time", packageInfo != null ? Long.valueOf(packageInfo.firstInstallTime) : null).toString());
+        sa.reportEvent("several_filled_referrers", jSONObject.put("candidates", mo.a((Collection) arrayList) ? null : new JSONArray((Collection) arrayList)).put("chosen", new JSONObject().put(Constants.REFERRER, c0476og.f1148a).put("install_timestamp_seconds", c0476og.c).put("click_timestamp_seconds", c0476og.b).put("source", c0476og.d.f1129a)).putOpt("install_time", packageInfo != null ? Long.valueOf(packageInfo.firstInstallTime) : null).toString());
         return c0476og;
     }
 

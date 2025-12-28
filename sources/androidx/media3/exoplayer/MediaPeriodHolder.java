@@ -2,7 +2,6 @@ package androidx.media3.exoplayer;
 
 import androidx.media3.common.C;
 import androidx.media3.common.Timeline;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.exoplayer.source.ClippingMediaPeriod;
 import androidx.media3.exoplayer.source.EmptySampleStream;
@@ -14,6 +13,7 @@ import androidx.media3.exoplayer.trackselection.ExoTrackSelection;
 import androidx.media3.exoplayer.trackselection.TrackSelector;
 import androidx.media3.exoplayer.trackselection.TrackSelectorResult;
 import androidx.media3.exoplayer.upstream.Allocator;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
@@ -119,14 +119,14 @@ public final class MediaPeriodHolder {
     }
 
     public void reevaluateBuffer(long j) {
-        Assertions.checkState(isLoadingMediaPeriod());
+        Preconditions.checkState(isLoadingMediaPeriod());
         if (this.prepared) {
             this.mediaPeriod.reevaluateBuffer(toPeriodTime(j));
         }
     }
 
     public void continueLoading(LoadingInfo loadingInfo) {
-        Assertions.checkState(isLoadingMediaPeriod());
+        Preconditions.checkState(isLoadingMediaPeriod());
         this.mediaPeriod.continueLoading(loadingInfo);
     }
 
@@ -138,9 +138,9 @@ public final class MediaPeriodHolder {
                 if (selectTracks.selections[i] == null && this.rendererCapabilities[i].getTrackType() != -2) {
                     r3 = false;
                 }
-                Assertions.checkState(r3);
+                Preconditions.checkState(r3);
             } else {
-                Assertions.checkState(selectTracks.selections[i] == null);
+                Preconditions.checkState(selectTracks.selections[i] == null);
             }
         }
         for (ExoTrackSelection exoTrackSelection : selectTracks.selections) {
@@ -184,12 +184,12 @@ public final class MediaPeriodHolder {
                 return selectTracks;
             }
             if (sampleStreamArr[i2] != null) {
-                Assertions.checkState(trackSelectorResult.isRendererEnabled(i2));
+                Preconditions.checkState(trackSelectorResult.isRendererEnabled(i2));
                 if (this.rendererCapabilities[i2].getTrackType() != -2) {
                     this.hasEnabledTracks = true;
                 }
             } else {
-                Assertions.checkState(trackSelectorResult.selections[i2] == null);
+                Preconditions.checkState(trackSelectorResult.selections[i2] == null);
             }
             i2++;
         }

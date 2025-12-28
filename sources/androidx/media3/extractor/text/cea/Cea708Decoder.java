@@ -9,7 +9,6 @@ import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
 import android.text.style.UnderlineSpan;
 import androidx.media3.common.text.Cue;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.CodecSpecificDataUtil;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.ParsableBitArray;
@@ -19,6 +18,7 @@ import androidx.media3.extractor.text.SubtitleDecoderException;
 import androidx.media3.extractor.text.SubtitleInputBuffer;
 import androidx.media3.extractor.text.SubtitleOutputBuffer;
 import androidx.media3.extractor.text.cea.Cea708Decoder;
+import com.google.common.base.Preconditions;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -180,12 +180,12 @@ public final class Cea708Decoder extends CeaDecoder {
     @Override // androidx.media3.extractor.text.cea.CeaDecoder
     protected Subtitle createSubtitle() {
         this.lastCues = this.cues;
-        return new CeaSubtitle((List) Assertions.checkNotNull(this.cues));
+        return new CeaSubtitle((List) Preconditions.checkNotNull(this.cues));
     }
 
     @Override // androidx.media3.extractor.text.cea.CeaDecoder
     protected void decode(SubtitleInputBuffer subtitleInputBuffer) {
-        ByteBuffer byteBuffer = (ByteBuffer) Assertions.checkNotNull(subtitleInputBuffer.data);
+        ByteBuffer byteBuffer = (ByteBuffer) Preconditions.checkNotNull(subtitleInputBuffer.data);
         this.ccData.reset(byteBuffer.array(), byteBuffer.limit());
         while (this.ccData.bytesLeft() >= 3) {
             int readUnsignedByte = this.ccData.readUnsignedByte();
@@ -216,7 +216,7 @@ public final class Cea708Decoder extends CeaDecoder {
                         dtvCcPacket2.currentIndex = i5 + 1;
                         bArr[i5] = readUnsignedByte3;
                     } else {
-                        Assertions.checkArgument(i == 2);
+                        Preconditions.checkArgument(i == 2);
                         DtvCcPacket dtvCcPacket3 = this.currentDtvCcPacket;
                         if (dtvCcPacket3 == null) {
                             Log.e(TAG, "Encountered DTVCC_PACKET_DATA before DTVCC_PACKET_START");
@@ -1044,10 +1044,10 @@ public final class Cea708Decoder extends CeaDecoder {
         */
         public static int getArgbColorFromCeaColor(int i, int i2, int i3, int i4) {
             int i5;
-            Assertions.checkIndex(i, 0, 4);
-            Assertions.checkIndex(i2, 0, 4);
-            Assertions.checkIndex(i3, 0, 4);
-            Assertions.checkIndex(i4, 0, 4);
+            Preconditions.checkElementIndex(i, 4);
+            Preconditions.checkElementIndex(i2, 4);
+            Preconditions.checkElementIndex(i3, 4);
+            Preconditions.checkElementIndex(i4, 4);
             if (i4 != 0 && i4 != 1) {
                 if (i4 == 2) {
                     i5 = 127;

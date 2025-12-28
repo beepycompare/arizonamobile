@@ -3,13 +3,13 @@ package androidx.media3.extractor.ts;
 import androidx.media3.common.C;
 import androidx.media3.common.Format;
 import androidx.media3.common.ParserException;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.DtsUtil;
 import androidx.media3.extractor.ExtractorOutput;
 import androidx.media3.extractor.TrackOutput;
 import androidx.media3.extractor.ts.TsPayloadReader;
+import com.google.common.base.Preconditions;
 import com.google.common.primitives.Ints;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -78,7 +78,7 @@ public final class DtsReader implements ElementaryStreamReader {
 
     @Override // androidx.media3.extractor.ts.ElementaryStreamReader
     public void consume(ParsableByteArray parsableByteArray) throws ParserException {
-        Assertions.checkStateNotNull(this.output);
+        Preconditions.checkNotNull(this.output);
         while (parsableByteArray.bytesLeft() > 0) {
             switch (this.state) {
                 case 0:
@@ -158,7 +158,7 @@ public final class DtsReader implements ElementaryStreamReader {
                     int i4 = this.bytesRead + min;
                     this.bytesRead = i4;
                     if (i4 == this.sampleSize) {
-                        Assertions.checkState(this.timeUs != C.TIME_UNSET);
+                        Preconditions.checkState(this.timeUs != C.TIME_UNSET);
                         this.output.sampleMetadata(this.timeUs, this.frameType == 4 ? 0 : 1, this.sampleSize, 0, null);
                         this.timeUs += this.sampleDurationUs;
                         this.state = 0;

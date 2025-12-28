@@ -1,9 +1,9 @@
 package androidx.media3.extractor;
 
 import androidx.media3.common.C;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.SeekMap;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 /* loaded from: classes3.dex */
 public abstract class BinarySearchSeeker {
@@ -63,7 +63,7 @@ public abstract class BinarySearchSeeker {
 
     public int handlePendingSeek(ExtractorInput extractorInput, PositionHolder positionHolder) throws IOException {
         while (true) {
-            SeekOperationParams seekOperationParams = (SeekOperationParams) Assertions.checkStateNotNull(this.seekOperationParams);
+            SeekOperationParams seekOperationParams = (SeekOperationParams) Preconditions.checkNotNull(this.seekOperationParams);
             long floorBytePosition = seekOperationParams.getFloorBytePosition();
             long ceilingBytePosition = seekOperationParams.getCeilingBytePosition();
             long nextSearchBytePosition = seekOperationParams.getNextSearchBytePosition();

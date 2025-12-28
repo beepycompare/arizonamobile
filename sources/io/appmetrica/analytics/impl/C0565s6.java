@@ -9,7 +9,7 @@ public final class C0565s6 implements Df {
     public static final C0540r6 b = new C0540r6();
 
     /* renamed from: a  reason: collision with root package name */
-    public final Df f1211a;
+    public final Df f1212a;
 
     public C0565s6() {
         this(null, 1, null);
@@ -17,12 +17,12 @@ public final class C0565s6 implements Df {
 
     @Override // io.appmetrica.analytics.impl.Df
     public final String a() {
-        return this.f1211a.a();
+        return this.f1212a.a();
     }
 
     public final boolean b() {
         try {
-            String a2 = this.f1211a.a();
+            String a2 = this.f1212a.a();
             if (a2 != null && a2.length() > 0) {
                 return !StringsKt.contains$default((CharSequence) a2, (CharSequence) StringUtils.PROCESS_POSTFIX_DELIMITER, false, 2, (Object) null);
             }
@@ -33,12 +33,12 @@ public final class C0565s6 implements Df {
     }
 
     public C0565s6(Df df) {
-        this.f1211a = df;
+        this.f1212a = df;
     }
 
     public final boolean a(String str) {
         try {
-            String a2 = this.f1211a.a();
+            String a2 = this.f1212a.a();
             if (a2 != null && a2.length() > 0) {
                 if (StringsKt.endsWith$default(a2, StringUtils.PROCESS_POSTFIX_DELIMITER + str, false, 2, (Object) null)) {
                     return true;

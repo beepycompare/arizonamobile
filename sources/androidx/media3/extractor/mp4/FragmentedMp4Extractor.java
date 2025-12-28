@@ -10,7 +10,6 @@ import androidx.media3.common.Format;
 import androidx.media3.common.Metadata;
 import androidx.media3.common.MimeTypes;
 import androidx.media3.common.ParserException;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Log;
 import androidx.media3.common.util.ParsableByteArray;
 import androidx.media3.common.util.TimestampAdjuster;
@@ -37,6 +36,7 @@ import androidx.media3.extractor.text.SubtitleParser;
 import androidx.media3.extractor.text.SubtitleTranscodingExtractorOutput;
 import com.google.common.base.Ascii;
 import com.google.common.base.Function;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.lang.annotation.Documented;
@@ -234,7 +234,7 @@ public class FragmentedMp4Extractor implements Extractor {
         this.reorderingBufferQueue = new ReorderingBufferQueue(new ReorderingBufferQueue.OutputConsumer() { // from class: androidx.media3.extractor.mp4.FragmentedMp4Extractor$$ExternalSyntheticLambda3
             @Override // androidx.media3.container.ReorderingBufferQueue.OutputConsumer
             public final void consume(long j, ParsableByteArray parsableByteArray) {
-                FragmentedMp4Extractor.this.m9062x40e97494(j, parsableByteArray);
+                FragmentedMp4Extractor.this.m9077x40e97494(j, parsableByteArray);
             }
         });
         this.chunkIndexMerger = new ChunkIndexMerger();
@@ -243,7 +243,7 @@ public class FragmentedMp4Extractor implements Extractor {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$2$androidx-media3-extractor-mp4-FragmentedMp4Extractor  reason: not valid java name */
-    public /* synthetic */ void m9062x40e97494(long j, ParsableByteArray parsableByteArray) {
+    public /* synthetic */ void m9077x40e97494(long j, ParsableByteArray parsableByteArray) {
         CeaUtil.consume(j, parsableByteArray, this.ceaTrackOutputs);
     }
 
@@ -261,17 +261,14 @@ public class FragmentedMp4Extractor implements Extractor {
 
     @Override // androidx.media3.extractor.Extractor
     public void init(ExtractorOutput extractorOutput) {
-        if ((this.flags & 32) == 0) {
-            extractorOutput = new SubtitleTranscodingExtractorOutput(extractorOutput, this.subtitleParserFactory);
-        }
-        this.extractorOutput = extractorOutput;
+        this.extractorOutput = (this.flags & 32) == 0 ? new SubtitleTranscodingExtractorOutput(extractorOutput, this.subtitleParserFactory) : extractorOutput;
         enterReadingAtomHeaderState();
         initExtraTracks();
         Track track = this.sideloadedTrack;
         if (track != null) {
             Format.Builder buildUpon = track.format.buildUpon();
             buildUpon.setContainerMimeType(MimeTypeResolver.getContainerMimeType(this.sideloadedTrack.format));
-            this.trackBundles.put(0, new TrackBundle(this.extractorOutput.track(0, this.sideloadedTrack.type), new TrackSampleTable(this.sideloadedTrack, new long[0], new int[0], 0, new long[0], new int[0], 0L), new DefaultSampleValues(0, 0, 0, 0), buildUpon.build()));
+            this.trackBundles.put(0, new TrackBundle(this.extractorOutput.track(0, this.sideloadedTrack.type), new TrackSampleTable(this.sideloadedTrack, new long[0], new int[0], 0, new long[0], new int[0], new int[0], false, 0L, 0), new DefaultSampleValues(0, 0, 0, 0), buildUpon.build()));
             this.extractorOutput.endTracks();
         }
     }
@@ -349,16 +346,20 @@ public class FragmentedMp4Extractor implements Extractor {
         long j2 = this.atomSize;
         int i = this.atomHeaderBytesRead;
         if (j2 < i) {
-            throw ParserException.createForUnsupportedContainerFeature("Atom size less than header length (unsupported).");
+            if (this.atomType == 1718773093 && i == 8) {
+                this.atomSize = i;
+            } else {
+                throw ParserException.createForUnsupportedContainerFeature("Atom size less than header length (unsupported).");
+            }
         }
         if (this.seekPositionBeforeSidxProcessing != -1) {
             if (this.atomType == 1936286840) {
-                this.scratch.reset((int) j2);
+                this.scratch.reset((int) this.atomSize);
                 System.arraycopy(this.atomHeader.getData(), 0, this.scratch.getData(), 0, 8);
                 extractorInput.readFully(this.scratch.getData(), 8, (int) (this.atomSize - this.atomHeaderBytesRead));
                 this.chunkIndexMerger.add((ChunkIndex) parseSidx(new Mp4Box.LeafBox(Mp4Box.TYPE_sidx, this.scratch).data, extractorInput.getPeekPosition()).second);
             } else {
-                extractorInput.skipFully((int) (j2 - i), true);
+                extractorInput.skipFully((int) (this.atomSize - i), true);
             }
             enterReadingAtomHeaderState();
             return true;
@@ -480,9 +481,9 @@ public class FragmentedMp4Extractor implements Extractor {
         boolean z;
         char c = 1;
         char c2 = 0;
-        Assertions.checkState(this.sideloadedTrack == null, "Unexpected moov box.");
+        Preconditions.checkState(this.sideloadedTrack == null, "Unexpected moov box.");
         DrmInitData drmInitDataFromAtoms = getDrmInitDataFromAtoms(containerBox.leafChildren);
-        Mp4Box.ContainerBox containerBox2 = (Mp4Box.ContainerBox) Assertions.checkNotNull(containerBox.getContainerBoxOfType(Mp4Box.TYPE_mvex));
+        Mp4Box.ContainerBox containerBox2 = (Mp4Box.ContainerBox) Preconditions.checkNotNull(containerBox.getContainerBoxOfType(Mp4Box.TYPE_mvex));
         SparseArray<DefaultSampleValues> sparseArray = new SparseArray<>();
         int size = containerBox2.leafChildren.size();
         long j2 = C.TIME_UNSET;
@@ -505,7 +506,7 @@ public class FragmentedMp4Extractor implements Extractor {
             gaplessInfoHolder.setFromMetadata(metadata);
         }
         Metadata metadata2 = metadata;
-        Metadata metadata3 = new Metadata(BoxParser.parseMvhd(((Mp4Box.LeafBox) Assertions.checkNotNull(containerBox.getLeafBoxOfType(Mp4Box.TYPE_mvhd))).data));
+        Metadata metadata3 = new Metadata(BoxParser.parseMvhd(((Mp4Box.LeafBox) Preconditions.checkNotNull(containerBox.getLeafBoxOfType(Mp4Box.TYPE_mvhd))).data));
         if ((this.flags & 16) != 0) {
             j = j2;
             z = true;
@@ -518,7 +519,7 @@ public class FragmentedMp4Extractor implements Extractor {
             public final Object apply(Object obj) {
                 return FragmentedMp4Extractor.this.modifyTrack((Track) obj);
             }
-        });
+        }, false);
         int size2 = parseTraks.size();
         if (this.trackBundles.size() == 0) {
             String containerMimeType = MimeTypeResolver.getContainerMimeType(parseTraks);
@@ -550,7 +551,7 @@ public class FragmentedMp4Extractor implements Extractor {
             this.extractorOutput.endTracks();
             return;
         }
-        Assertions.checkState(this.trackBundles.size() == size2);
+        Preconditions.checkState(this.trackBundles.size() == size2);
         for (int i4 = 0; i4 < size2; i4++) {
             TrackSampleTable trackSampleTable2 = parseTraks.get(i4);
             Track track3 = trackSampleTable2.track;
@@ -562,7 +563,7 @@ public class FragmentedMp4Extractor implements Extractor {
         if (sparseArray.size() == 1) {
             return sparseArray.valueAt(0);
         }
-        return (DefaultSampleValues) Assertions.checkNotNull(sparseArray.get(i));
+        return (DefaultSampleValues) Preconditions.checkNotNull(sparseArray.get(i));
     }
 
     private void onMoofContainerAtomRead(Mp4Box.ContainerBox containerBox) throws ParserException {
@@ -630,8 +631,8 @@ public class FragmentedMp4Extractor implements Extractor {
         parsableByteArray.setPosition(8);
         int parseFullBoxVersion = BoxParser.parseFullBoxVersion(parsableByteArray.readInt());
         if (parseFullBoxVersion == 0) {
-            str = (String) Assertions.checkNotNull(parsableByteArray.readNullTerminatedString());
-            str2 = (String) Assertions.checkNotNull(parsableByteArray.readNullTerminatedString());
+            str = (String) Preconditions.checkNotNull(parsableByteArray.readNullTerminatedString());
+            str2 = (String) Preconditions.checkNotNull(parsableByteArray.readNullTerminatedString());
             long readUnsignedInt2 = parsableByteArray.readUnsignedInt();
             scaleLargeTimestamp = Util.scaleLargeTimestamp(parsableByteArray.readUnsignedInt(), 1000000L, readUnsignedInt2);
             long j2 = this.segmentIndexEarliestPresentationTimeUs;
@@ -644,8 +645,8 @@ public class FragmentedMp4Extractor implements Extractor {
             j = Util.scaleLargeTimestamp(parsableByteArray.readUnsignedLongToLong(), 1000000L, readUnsignedInt3);
             long scaleLargeTimestamp3 = Util.scaleLargeTimestamp(parsableByteArray.readUnsignedInt(), 1000L, readUnsignedInt3);
             long readUnsignedInt4 = parsableByteArray.readUnsignedInt();
-            str = (String) Assertions.checkNotNull(parsableByteArray.readNullTerminatedString());
-            str2 = (String) Assertions.checkNotNull(parsableByteArray.readNullTerminatedString());
+            str = (String) Preconditions.checkNotNull(parsableByteArray.readNullTerminatedString());
+            str2 = (String) Preconditions.checkNotNull(parsableByteArray.readNullTerminatedString());
             scaleLargeTimestamp2 = scaleLargeTimestamp3;
             readUnsignedInt = readUnsignedInt4;
             scaleLargeTimestamp = -9223372036854775807L;
@@ -708,7 +709,7 @@ public class FragmentedMp4Extractor implements Extractor {
     }
 
     private static void parseTraf(Mp4Box.ContainerBox containerBox, SparseArray<TrackBundle> sparseArray, boolean z, int i, byte[] bArr) throws ParserException {
-        TrackBundle parseTfhd = parseTfhd(((Mp4Box.LeafBox) Assertions.checkNotNull(containerBox.getLeafBoxOfType(Mp4Box.TYPE_tfhd))).data, sparseArray, z);
+        TrackBundle parseTfhd = parseTfhd(((Mp4Box.LeafBox) Preconditions.checkNotNull(containerBox.getLeafBoxOfType(Mp4Box.TYPE_tfhd))).data, sparseArray, z);
         if (parseTfhd == null) {
             return;
         }
@@ -726,10 +727,10 @@ public class FragmentedMp4Extractor implements Extractor {
             trackFragment.nextFragmentDecodeTimeIncludesMoov = z2;
         }
         parseTruns(containerBox, parseTfhd, i);
-        TrackEncryptionBox sampleDescriptionEncryptionBox = parseTfhd.moovSampleTable.track.getSampleDescriptionEncryptionBox(((DefaultSampleValues) Assertions.checkNotNull(trackFragment.header)).sampleDescriptionIndex);
+        TrackEncryptionBox sampleDescriptionEncryptionBox = parseTfhd.moovSampleTable.track.getSampleDescriptionEncryptionBox(((DefaultSampleValues) Preconditions.checkNotNull(trackFragment.header)).sampleDescriptionIndex);
         Mp4Box.LeafBox leafBoxOfType2 = containerBox.getLeafBoxOfType(Mp4Box.TYPE_saiz);
         if (leafBoxOfType2 != null) {
-            parseSaiz((TrackEncryptionBox) Assertions.checkNotNull(sampleDescriptionEncryptionBox), leafBoxOfType2.data, trackFragment);
+            parseSaiz((TrackEncryptionBox) Preconditions.checkNotNull(sampleDescriptionEncryptionBox), leafBoxOfType2.data, trackFragment);
         }
         Mp4Box.LeafBox leafBoxOfType3 = containerBox.getLeafBoxOfType(Mp4Box.TYPE_saio);
         if (leafBoxOfType3 != null) {

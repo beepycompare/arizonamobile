@@ -10,11 +10,11 @@ public final class C0538r4 extends AbstractC0563s4 {
 
     public final void a(EnumC0164cb enumC0164cb, List<Sg> list) {
         if (!AbstractC0693x9.h.contains(enumC0164cb)) {
-            list.add(this.f1209a.s);
+            list.add(this.f1210a.s);
         }
         if (AbstractC0693x9.b.contains(enumC0164cb)) {
             return;
         }
-        list.add(this.f1209a.c);
+        list.add(this.f1210a.c);
     }
 }

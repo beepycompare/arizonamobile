@@ -1,5 +1,6 @@
 package androidx.emoji.widget;
 
+import android.os.Handler;
 import android.text.InputFilter;
 import android.text.Selection;
 import android.text.Spannable;
@@ -41,16 +42,16 @@ final class EmojiInputFilter implements InputFilter {
         return charSequence;
     }
 
-    private EmojiCompat.InitCallback getInitCallback() {
+    EmojiCompat.InitCallback getInitCallback() {
         if (this.mInitCallback == null) {
             this.mInitCallback = new InitCallbackImpl(this.mTextView);
         }
         return this.mInitCallback;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes2.dex */
-    public static class InitCallbackImpl extends EmojiCompat.InitCallback {
+    public static class InitCallbackImpl extends EmojiCompat.InitCallback implements Runnable {
         private final Reference<TextView> mViewRef;
 
         InitCallbackImpl(TextView textView) {
@@ -59,17 +60,26 @@ final class EmojiInputFilter implements InputFilter {
 
         @Override // androidx.emoji.text.EmojiCompat.InitCallback
         public void onInitialized() {
+            Handler handler;
             super.onInitialized();
             TextView textView = this.mViewRef.get();
-            if (textView == null || !textView.isAttachedToWindow()) {
+            if (textView == null || (handler = textView.getHandler()) == null) {
                 return;
             }
-            CharSequence process = EmojiCompat.get().process(textView.getText());
-            int selectionStart = Selection.getSelectionStart(process);
-            int selectionEnd = Selection.getSelectionEnd(process);
-            textView.setText(process);
-            if (process instanceof Spannable) {
-                EmojiInputFilter.updateSelection((Spannable) process, selectionStart, selectionEnd);
+            handler.post(this);
+        }
+
+        @Override // java.lang.Runnable
+        public void run() {
+            TextView textView = this.mViewRef.get();
+            if (textView != null && textView.isAttachedToWindow()) {
+                CharSequence process = EmojiCompat.get().process(textView.getText());
+                int selectionStart = Selection.getSelectionStart(process);
+                int selectionEnd = Selection.getSelectionEnd(process);
+                textView.setText(process);
+                if (process instanceof Spannable) {
+                    EmojiInputFilter.updateSelection((Spannable) process, selectionStart, selectionEnd);
+                }
             }
         }
     }

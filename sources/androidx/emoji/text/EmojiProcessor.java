@@ -10,7 +10,6 @@ import android.text.method.MetaKeyKeyListener;
 import android.view.KeyEvent;
 import android.view.inputmethod.InputConnection;
 import androidx.core.graphics.PaintCompat;
-import androidx.core.util.Preconditions;
 import androidx.emoji.text.EmojiCompat;
 import androidx.emoji.text.MetadataRepo;
 import androidx.emoji.widget.SpannableBuilder;
@@ -22,7 +21,7 @@ public final class EmojiProcessor {
     private static final int ACTION_ADVANCE_END = 2;
     private static final int ACTION_FLUSH = 3;
     private final int[] mEmojiAsDefaultStyleExceptions;
-    private GlyphChecker mGlyphChecker = new GlyphChecker();
+    private EmojiCompat.GlyphChecker mGlyphChecker;
     private final MetadataRepo mMetadataRepo;
     private final EmojiCompat.SpanFactory mSpanFactory;
     private final boolean mUseEmojiAsDefaultStyle;
@@ -32,9 +31,10 @@ public final class EmojiProcessor {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public EmojiProcessor(MetadataRepo metadataRepo, EmojiCompat.SpanFactory spanFactory, boolean z, int[] iArr) {
+    public EmojiProcessor(MetadataRepo metadataRepo, EmojiCompat.SpanFactory spanFactory, EmojiCompat.GlyphChecker glyphChecker, boolean z, int[] iArr) {
         this.mSpanFactory = spanFactory;
         this.mMetadataRepo = metadataRepo;
+        this.mGlyphChecker = glyphChecker;
         this.mUseEmojiAsDefaultStyle = z;
         this.mEmojiAsDefaultStyleExceptions = iArr;
     }
@@ -268,15 +268,9 @@ public final class EmojiProcessor {
 
     private boolean hasGlyph(CharSequence charSequence, int i, int i2, EmojiMetadata emojiMetadata) {
         if (emojiMetadata.getHasGlyph() == 0) {
-            emojiMetadata.setHasGlyph(this.mGlyphChecker.hasGlyph(charSequence, i, i2));
+            emojiMetadata.setHasGlyph(this.mGlyphChecker.hasGlyph(charSequence, i, i2, emojiMetadata.getSdkAdded()));
         }
         return emojiMetadata.getHasGlyph() == 2;
-    }
-
-    /* JADX INFO: Access modifiers changed from: package-private */
-    public void setGlyphChecker(GlyphChecker glyphChecker) {
-        Preconditions.checkNotNull(glyphChecker);
-        this.mGlyphChecker = glyphChecker;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -459,18 +453,20 @@ public final class EmojiProcessor {
     }
 
     /* loaded from: classes2.dex */
-    public static class GlyphChecker {
+    public static class DefaultGlyphChecker implements EmojiCompat.GlyphChecker {
         private static final int PAINT_TEXT_SIZE = 10;
         private static final ThreadLocal<StringBuilder> sStringBuilder = new ThreadLocal<>();
         private final TextPaint mTextPaint;
 
-        GlyphChecker() {
+        /* JADX INFO: Access modifiers changed from: package-private */
+        public DefaultGlyphChecker() {
             TextPaint textPaint = new TextPaint();
             this.mTextPaint = textPaint;
             textPaint.setTextSize(10.0f);
         }
 
-        public boolean hasGlyph(CharSequence charSequence, int i, int i2) {
+        @Override // androidx.emoji.text.EmojiCompat.GlyphChecker
+        public boolean hasGlyph(CharSequence charSequence, int i, int i2, int i3) {
             StringBuilder stringBuilder = getStringBuilder();
             stringBuilder.setLength(0);
             while (i < i2) {

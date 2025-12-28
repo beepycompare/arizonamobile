@@ -5,8 +5,8 @@ import android.system.ErrnoException;
 import android.system.Os;
 import android.system.OsConstants;
 import androidx.media3.common.PlaybackException;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.Sets;
 import java.io.FileDescriptor;
 import java.io.FileInputStream;
@@ -27,7 +27,7 @@ public class FileDescriptorDataSource extends BaseDataSource {
 
     public FileDescriptorDataSource(FileDescriptor fileDescriptor, long j, long j2) {
         super(false);
-        this.fileDescriptor = (FileDescriptor) Assertions.checkNotNull(fileDescriptor);
+        this.fileDescriptor = (FileDescriptor) Preconditions.checkNotNull(fileDescriptor);
         this.offset = j;
         this.length = j2;
     }

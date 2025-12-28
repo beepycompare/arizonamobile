@@ -4,6 +4,8 @@ import androidx.media3.common.Metadata;
 import androidx.media3.common.util.Util;
 import androidx.media3.extractor.metadata.id3.CommentFrame;
 import androidx.media3.extractor.metadata.id3.InternalFrame;
+import com.google.common.base.Predicate;
+import com.google.common.collect.UnmodifiableIterator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 /* loaded from: classes3.dex */
@@ -15,23 +17,36 @@ public final class GaplessInfoHolder {
     public int encoderPadding = -1;
 
     public boolean setFromMetadata(Metadata metadata) {
-        for (int i = 0; i < metadata.length(); i++) {
-            Metadata.Entry entry = metadata.get(i);
-            if (entry instanceof CommentFrame) {
-                CommentFrame commentFrame = (CommentFrame) entry;
-                if (GAPLESS_DESCRIPTION.equals(commentFrame.description) && setFromComment(commentFrame.text)) {
-                    return true;
-                }
-            } else if (entry instanceof InternalFrame) {
-                InternalFrame internalFrame = (InternalFrame) entry;
-                if (GAPLESS_DOMAIN.equals(internalFrame.domain) && GAPLESS_DESCRIPTION.equals(internalFrame.description) && setFromComment(internalFrame.text)) {
-                    return true;
-                }
-            } else {
-                continue;
+        UnmodifiableIterator it = metadata.getMatchingEntries(CommentFrame.class, new Predicate() { // from class: androidx.media3.extractor.GaplessInfoHolder$$ExternalSyntheticLambda0
+            @Override // com.google.common.base.Predicate
+            public final boolean apply(Object obj) {
+                boolean equals;
+                equals = ((CommentFrame) obj).description.equals(GaplessInfoHolder.GAPLESS_DESCRIPTION);
+                return equals;
+            }
+        }).iterator();
+        while (it.hasNext()) {
+            if (setFromComment(((CommentFrame) it.next()).text)) {
+                return true;
+            }
+        }
+        UnmodifiableIterator it2 = metadata.getMatchingEntries(InternalFrame.class, new Predicate() { // from class: androidx.media3.extractor.GaplessInfoHolder$$ExternalSyntheticLambda1
+            @Override // com.google.common.base.Predicate
+            public final boolean apply(Object obj) {
+                return GaplessInfoHolder.lambda$setFromMetadata$1((InternalFrame) obj);
+            }
+        }).iterator();
+        while (it2.hasNext()) {
+            if (setFromComment(((InternalFrame) it2.next()).text)) {
+                return true;
             }
         }
         return false;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static /* synthetic */ boolean lambda$setFromMetadata$1(InternalFrame internalFrame) {
+        return internalFrame.domain.equals(GAPLESS_DOMAIN) && internalFrame.description.equals(GAPLESS_DESCRIPTION);
     }
 
     private boolean setFromComment(String str) {

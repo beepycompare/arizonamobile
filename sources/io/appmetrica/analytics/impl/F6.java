@@ -7,13 +7,13 @@ import java.util.HashSet;
 public final class F6 implements DataSendingRestrictionController {
 
     /* renamed from: a  reason: collision with root package name */
-    public final D6 f571a;
+    public final D6 f572a;
     public Boolean b;
     public final HashSet c = new HashSet();
     public final HashSet d = new HashSet();
 
     public F6(D6 d6) {
-        this.f571a = d6;
+        this.f572a = d6;
         this.b = ((E6) d6).a();
     }
 
@@ -21,8 +21,8 @@ public final class F6 implements DataSendingRestrictionController {
         if (mo.a(bool) || this.b == null) {
             Boolean valueOf = Boolean.valueOf(Boolean.FALSE.equals(bool));
             this.b = valueOf;
-            D6 d6 = this.f571a;
-            ((E6) d6).f552a.c(valueOf.booleanValue()).b();
+            D6 d6 = this.f572a;
+            ((E6) d6).f553a.c(valueOf.booleanValue()).b();
         }
     }
 

@@ -1,5 +1,6 @@
 package androidx.emoji.text;
 
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.Editable;
@@ -37,6 +38,7 @@ public class EmojiCompat {
     final int[] mEmojiAsDefaultStyleExceptions;
     private final int mEmojiSpanIndicatorColor;
     private final boolean mEmojiSpanIndicatorEnabled;
+    private final GlyphChecker mGlyphChecker;
     private final CompatInternal mHelper;
     private final Set<InitCallback> mInitCallbacks;
     private final ReadWriteLock mInitLock = new ReentrantReadWriteLock();
@@ -46,6 +48,11 @@ public class EmojiCompat {
     final MetadataRepoLoader mMetadataLoader;
     final boolean mReplaceAll;
     final boolean mUseEmojiAsDefaultStyle;
+
+    /* loaded from: classes2.dex */
+    public interface GlyphChecker {
+        boolean hasGlyph(CharSequence charSequence, int i, int i2, int i3);
+    }
 
     /* loaded from: classes2.dex */
     public static abstract class InitCallback {
@@ -91,12 +98,13 @@ public class EmojiCompat {
         this.mEmojiSpanIndicatorColor = config.mEmojiSpanIndicatorColor;
         this.mMetadataLoader = config.mMetadataLoader;
         this.mMetadataLoadStrategy = config.mMetadataLoadStrategy;
+        this.mGlyphChecker = config.mGlyphChecker;
         ArraySet arraySet = new ArraySet();
         this.mInitCallbacks = arraySet;
         if (config.mInitCallbacks != null && !config.mInitCallbacks.isEmpty()) {
             arraySet.addAll(config.mInitCallbacks);
         }
-        this.mHelper = new CompatInternal19(this);
+        this.mHelper = new CompatInternal(this);
         loadMetadata();
     }
 
@@ -123,10 +131,6 @@ public class EmojiCompat {
             sInstance = emojiCompat;
         }
         return sInstance;
-    }
-
-    void setGlyphChecker(EmojiProcessor.GlyphChecker glyphChecker) {
-        this.mHelper.setGlyphChecker(glyphChecker);
     }
 
     public static EmojiCompat get() {
@@ -309,8 +313,11 @@ public class EmojiCompat {
     }
 
     public void updateEditorInfoAttrs(EditorInfo editorInfo) {
-        if (!isInitialized() || editorInfo == null || editorInfo.extras == null) {
+        if (!isInitialized() || editorInfo == null) {
             return;
+        }
+        if (editorInfo.extras == null) {
+            editorInfo.extras = new Bundle();
         }
         this.mHelper.updateEditorInfoAttrs(editorInfo);
     }
@@ -337,6 +344,7 @@ public class EmojiCompat {
         boolean mUseEmojiAsDefaultStyle;
         int mEmojiSpanIndicatorColor = -16711936;
         int mMetadataLoadStrategy = 0;
+        GlyphChecker mGlyphChecker = new EmojiProcessor.DefaultGlyphChecker();
 
         /* JADX INFO: Access modifiers changed from: protected */
         public Config(MetadataRepoLoader metadataRepoLoader) {
@@ -402,6 +410,12 @@ public class EmojiCompat {
             return this;
         }
 
+        public Config setGlyphChecker(GlyphChecker glyphChecker) {
+            Preconditions.checkNotNull(glyphChecker, "GlyphChecker cannot be null");
+            this.mGlyphChecker = glyphChecker;
+            return this;
+        }
+
         /* JADX INFO: Access modifiers changed from: protected */
         public final MetadataRepoLoader getMetadataRepoLoader() {
             return this.mMetadataLoader;
@@ -450,61 +464,26 @@ public class EmojiCompat {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes2.dex */
-    public static class CompatInternal {
+    public static final class CompatInternal {
         final EmojiCompat mEmojiCompat;
-
-        boolean hasEmojiGlyph(CharSequence charSequence) {
-            return false;
-        }
-
-        boolean hasEmojiGlyph(CharSequence charSequence, int i) {
-            return false;
-        }
-
-        CharSequence process(CharSequence charSequence, int i, int i2, int i3, boolean z) {
-            return charSequence;
-        }
-
-        void setGlyphChecker(EmojiProcessor.GlyphChecker glyphChecker) {
-        }
-
-        void updateEditorInfoAttrs(EditorInfo editorInfo) {
-        }
+        private volatile MetadataRepo mMetadataRepo;
+        private volatile EmojiProcessor mProcessor;
 
         CompatInternal(EmojiCompat emojiCompat) {
             this.mEmojiCompat = emojiCompat;
         }
 
         void loadMetadata() {
-            this.mEmojiCompat.onMetadataLoadSuccess();
-        }
-
-        String getAssetSignature() {
-            return "";
-        }
-    }
-
-    /* loaded from: classes2.dex */
-    private static final class CompatInternal19 extends CompatInternal {
-        private volatile MetadataRepo mMetadataRepo;
-        private volatile EmojiProcessor mProcessor;
-
-        CompatInternal19(EmojiCompat emojiCompat) {
-            super(emojiCompat);
-        }
-
-        @Override // androidx.emoji.text.EmojiCompat.CompatInternal
-        void loadMetadata() {
             try {
-                this.mEmojiCompat.mMetadataLoader.load(new MetadataRepoLoaderCallback() { // from class: androidx.emoji.text.EmojiCompat.CompatInternal19.1
+                this.mEmojiCompat.mMetadataLoader.load(new MetadataRepoLoaderCallback() { // from class: androidx.emoji.text.EmojiCompat.CompatInternal.1
                     @Override // androidx.emoji.text.EmojiCompat.MetadataRepoLoaderCallback
                     public void onLoaded(MetadataRepo metadataRepo) {
-                        CompatInternal19.this.onMetadataLoadSuccess(metadataRepo);
+                        CompatInternal.this.onMetadataLoadSuccess(metadataRepo);
                     }
 
                     @Override // androidx.emoji.text.EmojiCompat.MetadataRepoLoaderCallback
                     public void onFailed(Throwable th) {
-                        CompatInternal19.this.mEmojiCompat.onMetadataLoadFailed(th);
+                        CompatInternal.this.mEmojiCompat.onMetadataLoadFailed(th);
                     }
                 });
             } catch (Throwable th) {
@@ -518,38 +497,28 @@ public class EmojiCompat {
                 return;
             }
             this.mMetadataRepo = metadataRepo;
-            this.mProcessor = new EmojiProcessor(this.mMetadataRepo, new SpanFactory(), this.mEmojiCompat.mUseEmojiAsDefaultStyle, this.mEmojiCompat.mEmojiAsDefaultStyleExceptions);
+            this.mProcessor = new EmojiProcessor(this.mMetadataRepo, new SpanFactory(), this.mEmojiCompat.mGlyphChecker, this.mEmojiCompat.mUseEmojiAsDefaultStyle, this.mEmojiCompat.mEmojiAsDefaultStyleExceptions);
             this.mEmojiCompat.onMetadataLoadSuccess();
         }
 
-        @Override // androidx.emoji.text.EmojiCompat.CompatInternal
         boolean hasEmojiGlyph(CharSequence charSequence) {
             return this.mProcessor.getEmojiMetadata(charSequence) != null;
         }
 
-        @Override // androidx.emoji.text.EmojiCompat.CompatInternal
         boolean hasEmojiGlyph(CharSequence charSequence, int i) {
             EmojiMetadata emojiMetadata = this.mProcessor.getEmojiMetadata(charSequence);
             return emojiMetadata != null && emojiMetadata.getCompatAdded() <= i;
         }
 
-        @Override // androidx.emoji.text.EmojiCompat.CompatInternal
         CharSequence process(CharSequence charSequence, int i, int i2, int i3, boolean z) {
             return this.mProcessor.process(charSequence, i, i2, i3, z);
         }
 
-        @Override // androidx.emoji.text.EmojiCompat.CompatInternal
         void updateEditorInfoAttrs(EditorInfo editorInfo) {
             editorInfo.extras.putInt("android.support.text.emoji.emojiCompat_metadataVersion", this.mMetadataRepo.getMetadataVersion());
             editorInfo.extras.putBoolean("android.support.text.emoji.emojiCompat_replaceAll", this.mEmojiCompat.mReplaceAll);
         }
 
-        @Override // androidx.emoji.text.EmojiCompat.CompatInternal
-        void setGlyphChecker(EmojiProcessor.GlyphChecker glyphChecker) {
-            this.mProcessor.setGlyphChecker(glyphChecker);
-        }
-
-        @Override // androidx.emoji.text.EmojiCompat.CompatInternal
         String getAssetSignature() {
             String sourceSha = this.mMetadataRepo.getMetadataList().sourceSha();
             return sourceSha == null ? "" : sourceSha;

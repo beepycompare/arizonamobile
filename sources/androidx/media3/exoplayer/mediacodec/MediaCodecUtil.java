@@ -250,7 +250,7 @@ public final class MediaCodecUtil {
         if (MimeTypes.AUDIO_E_AC3_JOC.equals(format.sampleMimeType)) {
             return MimeTypes.AUDIO_E_AC3;
         }
-        if (MimeTypes.VIDEO_DOLBY_VISION.equals(format.sampleMimeType) && (codecProfileAndLevel = getCodecProfileAndLevel(format)) != null) {
+        if (MimeTypes.VIDEO_DOLBY_VISION.equals(format.sampleMimeType) && (codecProfileAndLevel = CodecSpecificDataUtil.getCodecProfileAndLevel(format)) != null) {
             int intValue = ((Integer) codecProfileAndLevel.first).intValue();
             if (intValue == 16 || intValue == 256) {
                 return MimeTypes.VIDEO_H265;

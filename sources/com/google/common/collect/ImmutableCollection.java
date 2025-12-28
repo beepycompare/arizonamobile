@@ -181,8 +181,9 @@ public abstract class ImmutableCollection<E> extends AbstractCollection<E> imple
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes4.dex */
-    static abstract class ArrayBasedBuilder<E> extends Builder<E> {
+    public static abstract class ArrayBasedBuilder<E> extends Builder<E> {
         Object[] contents;
         boolean forceCopy;
         int size;

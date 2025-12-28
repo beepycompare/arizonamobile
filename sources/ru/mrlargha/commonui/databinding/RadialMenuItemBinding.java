@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class RadialMenuItemBinding implements ViewBinding {
     public final ImageView ivIcon;
     private final LinearLayout rootView;

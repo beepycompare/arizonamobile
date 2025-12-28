@@ -8,9 +8,9 @@ import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
 import android.os.Handler;
-import androidx.media3.common.util.Assertions;
 import androidx.media3.common.util.Util;
 import androidx.media3.exoplayer.scheduler.RequirementsWatcher;
+import com.google.common.base.Preconditions;
 /* loaded from: classes3.dex */
 public final class RequirementsWatcher {
     private final Context context;
@@ -56,7 +56,7 @@ public final class RequirementsWatcher {
     }
 
     public void stop() {
-        this.context.unregisterReceiver((BroadcastReceiver) Assertions.checkNotNull(this.receiver));
+        this.context.unregisterReceiver((BroadcastReceiver) Preconditions.checkNotNull(this.receiver));
         this.receiver = null;
         if (this.networkCallback != null) {
             unregisterNetworkCallbackV24();
@@ -70,11 +70,11 @@ public final class RequirementsWatcher {
     private void registerNetworkCallbackV24() {
         NetworkCallback networkCallback = new NetworkCallback();
         this.networkCallback = networkCallback;
-        ((ConnectivityManager) Assertions.checkNotNull((ConnectivityManager) this.context.getSystemService("connectivity"))).registerDefaultNetworkCallback(networkCallback);
+        ((ConnectivityManager) Preconditions.checkNotNull((ConnectivityManager) this.context.getSystemService("connectivity"))).registerDefaultNetworkCallback(networkCallback);
     }
 
     private void unregisterNetworkCallbackV24() {
-        ((ConnectivityManager) Assertions.checkNotNull((ConnectivityManager) this.context.getSystemService("connectivity"))).unregisterNetworkCallback((ConnectivityManager.NetworkCallback) Assertions.checkNotNull(this.networkCallback));
+        ((ConnectivityManager) Preconditions.checkNotNull((ConnectivityManager) this.context.getSystemService("connectivity"))).unregisterNetworkCallback((ConnectivityManager.NetworkCallback) Preconditions.checkNotNull(this.networkCallback));
         this.networkCallback = null;
     }
 
@@ -156,14 +156,14 @@ public final class RequirementsWatcher {
             RequirementsWatcher.this.handler.post(new Runnable() { // from class: androidx.media3.exoplayer.scheduler.RequirementsWatcher$NetworkCallback$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RequirementsWatcher.NetworkCallback.this.m8992xcc18be42();
+                    RequirementsWatcher.NetworkCallback.this.m9001xcc18be42();
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$postCheckRequirements$0$androidx-media3-exoplayer-scheduler-RequirementsWatcher$NetworkCallback  reason: not valid java name */
-        public /* synthetic */ void m8992xcc18be42() {
+        public /* synthetic */ void m9001xcc18be42() {
             if (RequirementsWatcher.this.networkCallback != null) {
                 RequirementsWatcher.this.checkRequirements();
             }
@@ -173,14 +173,14 @@ public final class RequirementsWatcher {
             RequirementsWatcher.this.handler.post(new Runnable() { // from class: androidx.media3.exoplayer.scheduler.RequirementsWatcher$NetworkCallback$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    RequirementsWatcher.NetworkCallback.this.m8993xfb2bca45();
+                    RequirementsWatcher.NetworkCallback.this.m9002xfb2bca45();
                 }
             });
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: lambda$postRecheckNotMetNetworkRequirements$1$androidx-media3-exoplayer-scheduler-RequirementsWatcher$NetworkCallback  reason: not valid java name */
-        public /* synthetic */ void m8993xfb2bca45() {
+        public /* synthetic */ void m9002xfb2bca45() {
             if (RequirementsWatcher.this.networkCallback != null) {
                 RequirementsWatcher.this.recheckNotMetNetworkRequirements();
             }

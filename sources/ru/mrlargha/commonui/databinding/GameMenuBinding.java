@@ -12,7 +12,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class GameMenuBinding implements ViewBinding {
     public final RelativeLayout elementAnimations;
     public final RelativeLayout elementAwards;

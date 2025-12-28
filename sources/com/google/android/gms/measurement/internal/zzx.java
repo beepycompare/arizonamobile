@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Pair;
 import com.google.firebase.messaging.Constants;
+import kotlin.time.DurationKt;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@23.0.0 */
 /* loaded from: classes4.dex */
 public final class zzx {
@@ -32,14 +33,14 @@ public final class zzx {
                 if (TextUtils.isEmpty(zza)) {
                     zzicVar.zzaV().zzc().zza("Cache still valid but referrer not found");
                 } else {
-                    long zza2 = zzicVar.zzd().zzs.zza() / 3600000;
+                    long zza2 = zzicVar.zzd().zzs.zza() / DurationKt.MILLIS_IN_HOUR;
                     Uri parse = Uri.parse(zza);
                     Bundle bundle2 = new Bundle();
                     Pair pair = new Pair(parse.getPath(), bundle2);
                     for (String str : parse.getQueryParameterNames()) {
                         bundle2.putString(str, parse.getQueryParameter(str));
                     }
-                    ((Bundle) pair.second).putLong("_cc", (zza2 - 1) * 3600000);
+                    ((Bundle) pair.second).putLong("_cc", (zza2 - 1) * DurationKt.MILLIS_IN_HOUR);
                     zzicVar.zzj().zzF(pair.first == null ? "app" : (String) pair.first, Constants.ScionAnalytics.EVENT_FIREBASE_CAMPAIGN, (Bundle) pair.second);
                 }
                 zzicVar.zzd().zzr.zzb(null);
