@@ -7,7 +7,7 @@ public final class R {
         public static int cvReward = 0x7f0a03dc;
         public static int ivReward = 0x7f0a0773;
         public static int parentLayout = 0x7f0a0a16;
-        public static int tvRewardDesc = 0x7f0a0e8c;
+        public static int tvRewardDesc = 0x7f0a0e8d;
 
         private id() {
         }

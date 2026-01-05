@@ -42,7 +42,7 @@ public final class R {
         public static int lottie_layer_name = 0x7f0a083c;
         public static int restart = 0x7f0a0b44;
         public static int reverse = 0x7f0a0b4a;
-        public static int software = 0x7f0a0cbf;
+        public static int software = 0x7f0a0cc0;
 
         private id() {
         }

@@ -21,18 +21,20 @@ public final class UserBattlepassBinding implements ViewBinding {
     public final LinearLayout linearLayout;
     public final ConstraintLayout parentLayout;
     private final ConstraintLayout rootView;
-    public final RecyclerView rvRewards;
+    public final RecyclerView rvRewardsGrid;
+    public final RecyclerView rvRewardsLinear;
     public final AppCompatTextView tvDescriptionText;
     public final AppCompatTextView tvTitleText;
 
-    private UserBattlepassBinding(ConstraintLayout rootView, AppCompatButton btnClose, Button btnGetInfo, AppCompatImageView ivMainImage, LinearLayout linearLayout, ConstraintLayout parentLayout, RecyclerView rvRewards, AppCompatTextView tvDescriptionText, AppCompatTextView tvTitleText) {
+    private UserBattlepassBinding(ConstraintLayout rootView, AppCompatButton btnClose, Button btnGetInfo, AppCompatImageView ivMainImage, LinearLayout linearLayout, ConstraintLayout parentLayout, RecyclerView rvRewardsGrid, RecyclerView rvRewardsLinear, AppCompatTextView tvDescriptionText, AppCompatTextView tvTitleText) {
         this.rootView = rootView;
         this.btnClose = btnClose;
         this.btnGetInfo = btnGetInfo;
         this.ivMainImage = ivMainImage;
         this.linearLayout = linearLayout;
         this.parentLayout = parentLayout;
-        this.rvRewards = rvRewards;
+        this.rvRewardsGrid = rvRewardsGrid;
+        this.rvRewardsLinear = rvRewardsLinear;
         this.tvDescriptionText = tvDescriptionText;
         this.tvTitleText = tvTitleText;
     }
@@ -68,16 +70,20 @@ public final class UserBattlepassBinding implements ViewBinding {
                     LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(rootView, i);
                     if (linearLayout != null) {
                         ConstraintLayout constraintLayout = (ConstraintLayout) rootView;
-                        i = R.id.rvRewards;
+                        i = R.id.rvRewardsGrid;
                         RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(rootView, i);
                         if (recyclerView != null) {
-                            i = R.id.tvDescriptionText;
-                            AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(rootView, i);
-                            if (appCompatTextView != null) {
-                                i = R.id.tvTitleText;
-                                AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(rootView, i);
-                                if (appCompatTextView2 != null) {
-                                    return new UserBattlepassBinding(constraintLayout, appCompatButton, button, appCompatImageView, linearLayout, constraintLayout, recyclerView, appCompatTextView, appCompatTextView2);
+                            i = R.id.rvRewardsLinear;
+                            RecyclerView recyclerView2 = (RecyclerView) ViewBindings.findChildViewById(rootView, i);
+                            if (recyclerView2 != null) {
+                                i = R.id.tvDescriptionText;
+                                AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(rootView, i);
+                                if (appCompatTextView != null) {
+                                    i = R.id.tvTitleText;
+                                    AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(rootView, i);
+                                    if (appCompatTextView2 != null) {
+                                        return new UserBattlepassBinding(constraintLayout, appCompatButton, button, appCompatImageView, linearLayout, constraintLayout, recyclerView, recyclerView2, appCompatTextView, appCompatTextView2);
+                                    }
                                 }
                             }
                         }

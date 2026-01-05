@@ -50,7 +50,8 @@ public final class UserBattlePass extends SAMPUIElement implements InterfaceCont
         this.isArizonaType = sharedPreferences.getBoolean("isArizonaType", false);
         constraintLayout.setClickable(true);
         addViewToConstraintLayout(constraintLayout, -1, -1);
-        bind.rvRewards.setAdapter(rewardItemAdapter);
+        bind.rvRewardsLinear.setAdapter(rewardItemAdapter);
+        bind.rvRewardsGrid.setAdapter(rewardItemAdapter);
         bind.btnGetInfo.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battle_pass_view.UserBattlePass$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -88,6 +89,13 @@ public final class UserBattlePass extends SAMPUIElement implements InterfaceCont
             this.binding.tvTitleText.setText(dataResponse.getHeaders());
             this.binding.tvDescriptionText.setText(dataResponse.getDesc());
             this.rewardItemAdapter.setType(dataResponse.getType());
+            if (dataResponse.getRewards() != null && dataResponse.getRewards().size() > 3) {
+                this.binding.rvRewardsLinear.setVisibility(8);
+                this.binding.rvRewardsGrid.setVisibility(0);
+            } else {
+                this.binding.rvRewardsLinear.setVisibility(0);
+                this.binding.rvRewardsGrid.setVisibility(8);
+            }
             this.rewardItemAdapter.submitList(dataResponse.getRewards());
             int type = dataResponse.getType();
             if (type == 1) {

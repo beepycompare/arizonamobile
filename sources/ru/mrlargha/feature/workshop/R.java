@@ -33,20 +33,20 @@ public final class R {
         public static int rvColors = 0x7f0a0be8;
         public static int rvMainInventory = 0x7f0a0bf0;
         public static int rvMenu = 0x7f0a0bf1;
-        public static int sharping_info_container = 0x7f0a0c7f;
-        public static int successChanceField = 0x7f0a0d31;
-        public static int topRightColor = 0x7f0a0e04;
-        public static int tvEndCount = 0x7f0a0e4c;
-        public static int tvLeftItemDescription = 0x7f0a0e6c;
-        public static int tvMainItemDescription = 0x7f0a0e73;
-        public static int tvRightItemDescription = 0x7f0a0e8d;
-        public static int tvScreenTitle = 0x7f0a0e8e;
-        public static int tvStartCount = 0x7f0a0e95;
-        public static int tvTitle = 0x7f0a0ea1;
-        public static int tvTitleDescription = 0x7f0a0ea2;
-        public static int tvTitleText = 0x7f0a0ea8;
-        public static int tv_info = 0x7f0a0ee5;
-        public static int viewLine = 0x7f0a0f67;
+        public static int sharping_info_container = 0x7f0a0c80;
+        public static int successChanceField = 0x7f0a0d32;
+        public static int topRightColor = 0x7f0a0e05;
+        public static int tvEndCount = 0x7f0a0e4d;
+        public static int tvLeftItemDescription = 0x7f0a0e6d;
+        public static int tvMainItemDescription = 0x7f0a0e74;
+        public static int tvRightItemDescription = 0x7f0a0e8e;
+        public static int tvScreenTitle = 0x7f0a0e8f;
+        public static int tvStartCount = 0x7f0a0e96;
+        public static int tvTitle = 0x7f0a0ea2;
+        public static int tvTitleDescription = 0x7f0a0ea3;
+        public static int tvTitleText = 0x7f0a0ea9;
+        public static int tv_info = 0x7f0a0ee6;
+        public static int viewLine = 0x7f0a0f69;
 
         private id() {
         }

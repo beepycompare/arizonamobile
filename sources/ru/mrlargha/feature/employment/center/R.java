@@ -73,19 +73,19 @@ public final class R {
         public static int main = 0x7f0a0840;
         public static int money = 0x7f0a08d4;
         public static int no_bonus = 0x7f0a09c8;
-        public static int rv_info = 0x7f0a0c12;
-        public static int salary = 0x7f0a0c21;
-        public static int salary_table = 0x7f0a0c22;
-        public static int text = 0x7f0a0d91;
-        public static int text1 = 0x7f0a0d92;
-        public static int text2 = 0x7f0a0d93;
-        public static int text_table = 0x7f0a0dc7;
-        public static int timer = 0x7f0a0de1;
-        public static int title = 0x7f0a0deb;
-        public static int topbar = 0x7f0a0e15;
-        public static int total = 0x7f0a0e16;
-        public static int total_bonus = 0x7f0a0e17;
-        public static int value = 0x7f0a0f51;
+        public static int rv_info = 0x7f0a0c13;
+        public static int salary = 0x7f0a0c22;
+        public static int salary_table = 0x7f0a0c23;
+        public static int text = 0x7f0a0d92;
+        public static int text1 = 0x7f0a0d93;
+        public static int text2 = 0x7f0a0d94;
+        public static int text_table = 0x7f0a0dc8;
+        public static int timer = 0x7f0a0de2;
+        public static int title = 0x7f0a0dec;
+        public static int topbar = 0x7f0a0e16;
+        public static int total = 0x7f0a0e17;
+        public static int total_bonus = 0x7f0a0e18;
+        public static int value = 0x7f0a0f53;
 
         private id() {
         }

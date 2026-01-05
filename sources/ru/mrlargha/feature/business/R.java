@@ -135,20 +135,20 @@ public final class R {
         public static int my_business_parent_stat_item = 0x7f0a0997;
         public static int open_biz_switch = 0x7f0a09f0;
         public static int parent_stat_rc = 0x7f0a0a1a;
-        public static int second_ic = 0x7f0a0c48;
-        public static int second_title = 0x7f0a0c58;
-        public static int second_value = 0x7f0a0c5a;
-        public static int second_value_left_line = 0x7f0a0c5b;
-        public static int third_ic = 0x7f0a0dd5;
-        public static int third_title = 0x7f0a0dd6;
-        public static int third_value = 0x7f0a0dd8;
-        public static int third_value_left_line = 0x7f0a0dd9;
-        public static int title = 0x7f0a0deb;
-        public static int title_container = 0x7f0a0df3;
-        public static int top_up_button = 0x7f0a0e13;
-        public static int top_up_n_withdraw_container = 0x7f0a0e14;
-        public static int value = 0x7f0a0f51;
-        public static int withdraw_button = 0x7f0a0f9e;
+        public static int second_ic = 0x7f0a0c49;
+        public static int second_title = 0x7f0a0c59;
+        public static int second_value = 0x7f0a0c5b;
+        public static int second_value_left_line = 0x7f0a0c5c;
+        public static int third_ic = 0x7f0a0dd6;
+        public static int third_title = 0x7f0a0dd7;
+        public static int third_value = 0x7f0a0dd9;
+        public static int third_value_left_line = 0x7f0a0dda;
+        public static int title = 0x7f0a0dec;
+        public static int title_container = 0x7f0a0df4;
+        public static int top_up_button = 0x7f0a0e14;
+        public static int top_up_n_withdraw_container = 0x7f0a0e15;
+        public static int value = 0x7f0a0f53;
+        public static int withdraw_button = 0x7f0a0fa0;
 
         private id() {
         }

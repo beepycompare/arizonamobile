@@ -17,6 +17,11 @@
                         <TextView android:textSize="@dimen/_7sdp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_4sdp" android:layout_marginTop="@dimen/_2sdp" android:layout_marginRight="@dimen/_4sdp" android:layout_marginBottom="@dimen/_2sdp" android:text="Сюжетное" android:fontFamily="@font/pfdindisplaypro_medium" android:layout_marginHorizontal="@dimen/_4sdp" android:layout_marginVertical="@dimen/_2sdp"/>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView android:id="@+id/type_newyear" android:layout_width="wrap_content" android:layout_height="wrap_content" app:cardBackgroundColor="#86e1ff">
+                    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <TextView android:textSize="@dimen/_7sdp" android:textColor="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_4sdp" android:layout_marginTop="@dimen/_2sdp" android:layout_marginRight="@dimen/_4sdp" android:layout_marginBottom="@dimen/_2sdp" android:text="�� Новогодний" android:fontFamily="@font/pfdindisplaypro_medium" android:layout_marginHorizontal="@dimen/_4sdp" android:layout_marginVertical="@dimen/_2sdp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
             </LinearLayout>
             <TextView android:textSize="@dimen/_8sdp" android:textColor="#b1b1b1" android:id="@+id/tv_description" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/_2sdp" android:text="Описание задания описание задания описание задания описание задания описание задания описание задания описание задания описание задания" android:maxLines="3" android:layout_weight="1" android:fontFamily="@font/pfdindisplaypro_regular"/>
             <LinearLayout android:orientation="vertical" android:id="@+id/progress_bar_container" android:layout_width="match_parent" android:layout_height="wrap_content">

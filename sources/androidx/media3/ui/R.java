@@ -291,12 +291,12 @@ public final class R {
         public static int never = 0x7f0a09bb;
         public static int none = 0x7f0a09cb;
         public static int off = 0x7f0a09df;
-        public static int spherical_gl_surface_view = 0x7f0a0cd1;
-        public static int surface_view = 0x7f0a0d40;
-        public static int texture_view = 0x7f0a0dd1;
-        public static int video_decoder_gl_surface_view = 0x7f0a0f60;
-        public static int when_playing = 0x7f0a0f96;
-        public static int zoom = 0x7f0a0fb1;
+        public static int spherical_gl_surface_view = 0x7f0a0cd2;
+        public static int surface_view = 0x7f0a0d41;
+        public static int texture_view = 0x7f0a0dd2;
+        public static int video_decoder_gl_surface_view = 0x7f0a0f62;
+        public static int when_playing = 0x7f0a0f98;
+        public static int zoom = 0x7f0a0fb3;
 
         private id() {
         }

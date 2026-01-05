@@ -183,10 +183,10 @@ public final class R {
         public static int right_bottom = 0x7f0a0b61;
         public static int right_middle = 0x7f0a0b6f;
         public static int right_top = 0x7f0a0b74;
-        public static int subdivide = 0x7f0a0d2e;
-        public static int top_middle = 0x7f0a0e0e;
-        public static int use_background_thread = 0x7f0a0f45;
-        public static int use_main_thread = 0x7f0a0f46;
+        public static int subdivide = 0x7f0a0d2f;
+        public static int top_middle = 0x7f0a0e0f;
+        public static int use_background_thread = 0x7f0a0f47;
+        public static int use_main_thread = 0x7f0a0f48;
 
         private id() {
         }

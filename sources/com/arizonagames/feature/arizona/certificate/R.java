@@ -42,14 +42,14 @@ public final class R {
         public static int quality_bg = 0x7f0a0acd;
         public static int quality_button = 0x7f0a0ace;
         public static int quality_text = 0x7f0a0ad0;
-        public static int sell_ic = 0x7f0a0c6c;
-        public static int sell_text = 0x7f0a0c6d;
-        public static int text_bonus = 0x7f0a0db0;
-        public static int title = 0x7f0a0deb;
-        public static int top_container = 0x7f0a0e08;
-        public static int transport_screen = 0x7f0a0e32;
-        public static int type = 0x7f0a0f2a;
-        public static int value = 0x7f0a0f51;
+        public static int sell_ic = 0x7f0a0c6d;
+        public static int sell_text = 0x7f0a0c6e;
+        public static int text_bonus = 0x7f0a0db1;
+        public static int title = 0x7f0a0dec;
+        public static int top_container = 0x7f0a0e09;
+        public static int transport_screen = 0x7f0a0e33;
+        public static int type = 0x7f0a0f2b;
+        public static int value = 0x7f0a0f53;
 
         private id() {
         }

@@ -43,16 +43,16 @@ public final class R {
         public static int price2_old = 0x7f0a0a8c;
         public static int rarity = 0x7f0a0ae0;
         public static int rich_level = 0x7f0a0b56;
-        public static int rv_newbie = 0x7f0a0c16;
-        public static int rv_rich = 0x7f0a0c1b;
-        public static int starter_pack = 0x7f0a0d11;
-        public static int time = 0x7f0a0dda;
-        public static int time_container = 0x7f0a0ddb;
-        public static int title = 0x7f0a0deb;
-        public static int tv_newbie_title = 0x7f0a0ef2;
-        public static int tv_rich_1 = 0x7f0a0f0d;
-        public static int tv_rich_2 = 0x7f0a0f0e;
-        public static int tv_title = 0x7f0a0f1c;
+        public static int rv_newbie = 0x7f0a0c17;
+        public static int rv_rich = 0x7f0a0c1c;
+        public static int starter_pack = 0x7f0a0d12;
+        public static int time = 0x7f0a0ddb;
+        public static int time_container = 0x7f0a0ddc;
+        public static int title = 0x7f0a0dec;
+        public static int tv_newbie_title = 0x7f0a0ef3;
+        public static int tv_rich_1 = 0x7f0a0f0e;
+        public static int tv_rich_2 = 0x7f0a0f0f;
+        public static int tv_title = 0x7f0a0f1d;
 
         private id() {
         }

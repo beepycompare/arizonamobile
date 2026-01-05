@@ -272,6 +272,9 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         } else if (workshopScreen.currentScreenType == 1) {
             workshopScreen.sendData(StringKt.toStringJson(0), 6);
         }
+        if (workshopScreen.currentScreenType == 2) {
+            workshopScreen.sendData(StringKt.toStringJson(0), 6);
+        }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -362,6 +365,13 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         if (i != 0) {
             if (i != 1) {
                 if (i == 2) {
+                    ImageView ivItemImage = this.binding.mainItemField.ivItemImage;
+                    Intrinsics.checkNotNullExpressionValue(ivItemImage, "ivItemImage");
+                    TextView tvMainItemDescription = this.binding.tvMainItemDescription;
+                    Intrinsics.checkNotNullExpressionValue(tvMainItemDescription, "tvMainItemDescription");
+                    TextView tvTitleText = this.binding.mainItemField.tvTitleText;
+                    Intrinsics.checkNotNullExpressionValue(tvTitleText, "tvTitleText");
+                    clearViewFromItem(ivItemImage, tvMainItemDescription, "предмет ", tvTitleText);
                     if (z && this.centerItemIndex != -1) {
                         this.centerItemIndex = -1;
                         sendData(StringKt.toStringJson(new FixingRequest(this.centerItemIndex)), 5);
@@ -369,13 +379,13 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
                     this.inventoryAdapter.setFixingScreen(true);
                 } else if (i != 3) {
                     if (i == 4) {
-                        ImageView ivItemImage = this.binding.mainItemField.ivItemImage;
-                        Intrinsics.checkNotNullExpressionValue(ivItemImage, "ivItemImage");
-                        TextView tvMainItemDescription = this.binding.tvMainItemDescription;
-                        Intrinsics.checkNotNullExpressionValue(tvMainItemDescription, "tvMainItemDescription");
-                        TextView tvTitleText = this.binding.mainItemField.tvTitleText;
-                        Intrinsics.checkNotNullExpressionValue(tvTitleText, "tvTitleText");
-                        clearViewFromItem(ivItemImage, tvMainItemDescription, "предмет ", tvTitleText);
+                        ImageView ivItemImage2 = this.binding.mainItemField.ivItemImage;
+                        Intrinsics.checkNotNullExpressionValue(ivItemImage2, "ivItemImage");
+                        TextView tvMainItemDescription2 = this.binding.tvMainItemDescription;
+                        Intrinsics.checkNotNullExpressionValue(tvMainItemDescription2, "tvMainItemDescription");
+                        TextView tvTitleText2 = this.binding.mainItemField.tvTitleText;
+                        Intrinsics.checkNotNullExpressionValue(tvTitleText2, "tvTitleText");
+                        clearViewFromItem(ivItemImage2, tvMainItemDescription2, "предмет ", tvTitleText2);
                     }
                 } else if (z && this.centerItemIndex != -1) {
                     this.centerItemIndex = -1;
@@ -1019,11 +1029,11 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         this.inventoryAdapter.submitList(this.inventoryItemList);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:44:0x0158, code lost:
-        if (r3 != 4) goto L45;
+    /* JADX WARN: Code restructure failed: missing block: B:45:0x015a, code lost:
+        if (r3 != 4) goto L46;
      */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x0258  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x025d  */
+    /* JADX WARN: Removed duplicated region for block: B:69:0x025a  */
+    /* JADX WARN: Removed duplicated region for block: B:70:0x025f  */
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1048,7 +1058,8 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         if (i == 1) {
             if (StringsKt.contains$default((CharSequence) data, (CharSequence) "\"success\":", false, 2, (Object) null)) {
                 enableStatusButtons(true);
-                if (this.currentScreenType == 4) {
+                int i2 = this.currentScreenType;
+                if (i2 == 4 || i2 == 2) {
                     this.currentMainItem = null;
                     this.currentRightItem = null;
                     WorkshopMenuAdapter workshopMenuAdapter = this.workShopMenuAdapter;
@@ -1119,10 +1130,10 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
             Object fromJson3 = GsonStore.INSTANCE.getGson().fromJson(data, (Class<Object>) CraftItemInfo.class);
             Intrinsics.checkNotNullExpressionValue(fromJson3, "fromJson(...)");
             CraftItemInfo craftItemInfo = (CraftItemInfo) fromJson3;
-            int i2 = this.currentScreenType;
-            if (i2 != 0) {
-                if (i2 != 1 && i2 != 2) {
-                    if (i2 != 3) {
+            int i3 = this.currentScreenType;
+            if (i3 != 0) {
+                if (i3 != 1 && i3 != 2) {
+                    if (i3 != 3) {
                     }
                 }
                 if (craftItemInfo.getAvailable() == 1) {
@@ -1241,15 +1252,15 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
             if (inventoryResponse2.getType() == ArizonaBlockType.BLOCK_TYPE_MENU.getId()) {
                 for (InventoryItem inventoryItem5 : inventoryResponse2.getItems()) {
                     Iterator<InventoryItem> it3 = this.inventoryItemList.iterator();
-                    int i3 = 0;
+                    int i4 = 0;
                     while (true) {
                         if (!it3.hasNext()) {
-                            i3 = -1;
+                            i4 = -1;
                             break;
                         } else if (it3.next().getSlot() == inventoryItem5.getSlot()) {
                             break;
                         } else {
-                            i3++;
+                            i4++;
                         }
                     }
                     Iterator<T> it4 = this.inventoryItemList.iterator();
@@ -1264,22 +1275,22 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
                         }
                     }
                     InventoryItem updateInventoryItem = UtilsKt.updateInventoryItem((InventoryItem) obj, inventoryItem5);
-                    if (i3 >= 0) {
+                    if (i4 >= 0) {
                         if (inventoryItem5.getItem() != null) {
                             List<InventoryItem> list = this.inventoryItemList;
                             if (updateInventoryItem == null) {
                                 updateInventoryItem = ConstantsKt.getEmptyInventoryItem();
                             }
-                            list.set(i3, updateInventoryItem);
+                            list.set(i4, updateInventoryItem);
                         } else {
-                            this.inventoryItemList.set(i3, inventoryItem5);
+                            this.inventoryItemList.set(i4, inventoryItem5);
                         }
                     }
                     if (this.isArizonaType && this.currentScreenType == 2 && (itemStrength = inventoryItem5.getItemStrength()) != null && itemStrength.intValue() == 100) {
                         this.binding.mainItemField.parentLayout.performClick();
                     }
                     this.inventoryAdapter.submitList(this.inventoryItemList);
-                    this.inventoryAdapter.notifyItemChanged(i3);
+                    this.inventoryAdapter.notifyItemChanged(i4);
                 }
             }
         }

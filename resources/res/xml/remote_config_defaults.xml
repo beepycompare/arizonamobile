@@ -93,7 +93,7 @@
     <entry>
         <key>reserve_sound
         </key>
-        <value>https://reserve-cdn.azsounds.cloud/
+        <value>https://reserve-cdn.azsounds.net/
         </value>
     </entry>
     <entry>
@@ -111,7 +111,7 @@
     <entry>
         <key>main_sound
         </key>
-        <value>https://cdn.azsounds.cloud/
+        <value>https://cdn.azsounds.net/
         </value>
     </entry>
 </defaults>

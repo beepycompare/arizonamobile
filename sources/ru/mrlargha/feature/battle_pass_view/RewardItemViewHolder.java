@@ -48,7 +48,7 @@ public final class RewardItemViewHolder extends RecyclerView.ViewHolder {
             }
         }
         if (this.isArizonaType) {
-            str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/systems/battle_pass_sound/image/";
+            str = FirebaseConfigHelper.INSTANCE.getResourceUrl(false) + "projects/arizona-rp/systems/battle_pass_sound/image/";
         } else {
             str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/systems/training/image/";
         }

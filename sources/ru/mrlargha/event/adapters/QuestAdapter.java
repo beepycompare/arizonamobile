@@ -109,11 +109,21 @@ public final class QuestAdapter extends RecyclerView.Adapter<PiratesTaskViewHold
         }
         binding.typeStory.setVisibility(8);
         binding.typeEveryday.setVisibility(8);
+        binding.typeNewyear.setVisibility(8);
         String type = questData.getType();
-        if (Intrinsics.areEqual(type, "everyday")) {
-            binding.typeEveryday.setVisibility(0);
-        } else if (Intrinsics.areEqual(type, "story")) {
-            binding.typeStory.setVisibility(0);
+        if (type != null) {
+            int hashCode2 = type.hashCode();
+            if (hashCode2 != 109770997) {
+                if (hashCode2 != 281966241) {
+                    if (hashCode2 == 1846305245 && type.equals("newyear")) {
+                        binding.typeNewyear.setVisibility(0);
+                    }
+                } else if (type.equals("everyday")) {
+                    binding.typeEveryday.setVisibility(0);
+                }
+            } else if (type.equals("story")) {
+                binding.typeStory.setVisibility(0);
+            }
         }
         if (questData.getProgress().getCurrent() == questData.getProgress().getMax()) {
             binding.completeTextContainer.setVisibility(0);

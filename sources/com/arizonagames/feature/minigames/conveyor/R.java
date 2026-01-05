@@ -109,10 +109,10 @@ public final class R {
         public static int iv_item = 0x7f0a079e;
         public static int left_container = 0x7f0a07e6;
         public static int left_item = 0x7f0a07ee;
-        public static int rv_boxes = 0x7f0a0c0d;
-        public static int rv_items = 0x7f0a0c14;
-        public static int top_elements_container = 0x7f0a0e0a;
-        public static int tv_hint = 0x7f0a0ee3;
+        public static int rv_boxes = 0x7f0a0c0e;
+        public static int rv_items = 0x7f0a0c15;
+        public static int top_elements_container = 0x7f0a0e0b;
+        public static int tv_hint = 0x7f0a0ee4;
 
         private id() {
         }

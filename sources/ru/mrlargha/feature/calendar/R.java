@@ -58,12 +58,12 @@ public final class R {
         public static int reward_name = 0x7f0a0b52;
         public static int rewards_rc = 0x7f0a0b55;
         public static int right_line = 0x7f0a0b6e;
-        public static int time_pgb = 0x7f0a0ddc;
-        public static int tip_container = 0x7f0a0dea;
-        public static int title = 0x7f0a0deb;
-        public static int top_line = 0x7f0a0e0d;
-        public static int top_prize_ic_line = 0x7f0a0e0f;
-        public static int tv_tips = 0x7f0a0f1b;
+        public static int time_pgb = 0x7f0a0ddd;
+        public static int tip_container = 0x7f0a0deb;
+        public static int title = 0x7f0a0dec;
+        public static int top_line = 0x7f0a0e0e;
+        public static int top_prize_ic_line = 0x7f0a0e10;
+        public static int tv_tips = 0x7f0a0f1c;
 
         private id() {
         }

@@ -51,7 +51,7 @@ public final class R {
         public static int consume_window_insets_tag = 0x7f0a038c;
         public static int hide_in_inspector_tag = 0x7f0a0655;
         public static int inspection_slot_table_set = 0x7f0a0706;
-        public static int wrapped_composition_tag = 0x7f0a0fa5;
+        public static int wrapped_composition_tag = 0x7f0a0fa7;
 
         private id() {
         }

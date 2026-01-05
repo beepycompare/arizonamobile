@@ -31,9 +31,10 @@ public final class EventTaskItemBinding implements ViewBinding {
     public final TextView tvName;
     public final TextView tvTaskCount;
     public final CardView typeEveryday;
+    public final CardView typeNewyear;
     public final CardView typeStory;
 
-    private EventTaskItemBinding(FrameLayout frameLayout, ImageView imageView, LinearLayout linearLayout, LinearLayout linearLayout2, LinearLayout linearLayout3, ImageView imageView2, ProgressBar progressBar, LinearLayout linearLayout4, RecyclerView recyclerView, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, CardView cardView, CardView cardView2) {
+    private EventTaskItemBinding(FrameLayout frameLayout, ImageView imageView, LinearLayout linearLayout, LinearLayout linearLayout2, LinearLayout linearLayout3, ImageView imageView2, ProgressBar progressBar, LinearLayout linearLayout4, RecyclerView recyclerView, TextView textView, TextView textView2, TextView textView3, TextView textView4, TextView textView5, TextView textView6, CardView cardView, CardView cardView2, CardView cardView3) {
         this.rootView = frameLayout;
         this.bgImg = imageView;
         this.btnGet = linearLayout;
@@ -50,7 +51,8 @@ public final class EventTaskItemBinding implements ViewBinding {
         this.tvName = textView5;
         this.tvTaskCount = textView6;
         this.typeEveryday = cardView;
-        this.typeStory = cardView2;
+        this.typeNewyear = cardView2;
+        this.typeStory = cardView3;
     }
 
     @Override // androidx.viewbinding.ViewBinding
@@ -116,10 +118,14 @@ public final class EventTaskItemBinding implements ViewBinding {
                                                                 i = R.id.type_everyday;
                                                                 CardView cardView = (CardView) ViewBindings.findChildViewById(view, i);
                                                                 if (cardView != null) {
-                                                                    i = R.id.type_story;
+                                                                    i = R.id.type_newyear;
                                                                     CardView cardView2 = (CardView) ViewBindings.findChildViewById(view, i);
                                                                     if (cardView2 != null) {
-                                                                        return new EventTaskItemBinding((FrameLayout) view, imageView, linearLayout, linearLayout2, linearLayout3, imageView2, progressBar, linearLayout4, recyclerView, textView, textView2, textView3, textView4, textView5, textView6, cardView, cardView2);
+                                                                        i = R.id.type_story;
+                                                                        CardView cardView3 = (CardView) ViewBindings.findChildViewById(view, i);
+                                                                        if (cardView3 != null) {
+                                                                            return new EventTaskItemBinding((FrameLayout) view, imageView, linearLayout, linearLayout2, linearLayout3, imageView2, progressBar, linearLayout4, recyclerView, textView, textView2, textView3, textView4, textView5, textView6, cardView, cardView2, cardView3);
+                                                                        }
                                                                     }
                                                                 }
                                                             }

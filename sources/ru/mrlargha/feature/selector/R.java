@@ -20,15 +20,15 @@ public final class R {
         public static int indicator = 0x7f0a06e8;
         public static int line = 0x7f0a080c;
         public static int money_container = 0x7f0a08d5;
-        public static int rv_indicators = 0x7f0a0c11;
-        public static int rv_info = 0x7f0a0c12;
-        public static int selector = 0x7f0a0c6a;
-        public static int tv_confirm = 0x7f0a0ec6;
-        public static int tv_decline = 0x7f0a0ecd;
-        public static int tv_money = 0x7f0a0eec;
-        public static int tv_name = 0x7f0a0eef;
-        public static int tv_title = 0x7f0a0f1c;
-        public static int tv_value = 0x7f0a0f24;
+        public static int rv_indicators = 0x7f0a0c12;
+        public static int rv_info = 0x7f0a0c13;
+        public static int selector = 0x7f0a0c6b;
+        public static int tv_confirm = 0x7f0a0ec7;
+        public static int tv_decline = 0x7f0a0ece;
+        public static int tv_money = 0x7f0a0eed;
+        public static int tv_name = 0x7f0a0ef0;
+        public static int tv_title = 0x7f0a0f1d;
+        public static int tv_value = 0x7f0a0f25;
 
         private id() {
         }

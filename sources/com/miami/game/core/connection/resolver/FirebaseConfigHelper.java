@@ -110,7 +110,7 @@ public final class FirebaseConfigHelper {
         String string;
         Intrinsics.checkNotNullParameter(url, "url");
         try {
-            Response execute = httpClient.newCall(new Request.Builder().url("https://" + extractHost(url) + "/ping.json").get().build()).execute();
+            Response execute = httpClient.newCall(new Request.Builder().url("https://" + extractHost(url) + "/ping.json").header("User-Agent", "Arizona Mobile").get().build()).execute();
             Response response = execute;
             if (response.isSuccessful() && (body = response.body()) != null && (string = body.string()) != null) {
                 boolean areEqual = Intrinsics.areEqual(new JSONObject(string).optString("hash"), "5aa4731d5d84e09e2f7e7141e560104f");

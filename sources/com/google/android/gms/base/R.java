@@ -70,8 +70,8 @@ public final class R {
         public static int icon_only = 0x7f0a06b7;
         public static int light = 0x7f0a080b;
         public static int none = 0x7f0a09cb;
-        public static int standard = 0x7f0a0d08;
-        public static int wide = 0x7f0a0f97;
+        public static int standard = 0x7f0a0d09;
+        public static int wide = 0x7f0a0f99;
 
         private id() {
         }

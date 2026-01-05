@@ -381,7 +381,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
             if (str == null) {
                 str = "unknown";
             }
-            Toast.makeText(getApplicationContext(), str + " v16.9.6 release", 1).show();
+            Toast.makeText(getApplicationContext(), str + " v16.9.8 release", 1).show();
             if (Build.VERSION.SDK_INT >= 26) {
                 if (!getFirstOpen()) {
                     Context applicationContext2 = getApplicationContext();
@@ -1641,7 +1641,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
 
     private final Job sendRequests(ComponentActivity componentActivity, String str, int i, RequestQueue requestQueue) {
         Job launch$default;
-        launch$default = BuildersKt__Builders_commonKt.launch$default(LifecycleOwnerKt.getLifecycleScope(componentActivity), Dispatchers.getIO(), null, new MainEntrench$sendRequests$1(i, str, requestQueue, null), 2, null);
+        launch$default = BuildersKt__Builders_commonKt.launch$default(LifecycleOwnerKt.getLifecycleScope(componentActivity), Dispatchers.getIO(), null, new MainEntrench$sendRequests$1(i, requestQueue, str, null), 2, null);
         return launch$default;
     }
 

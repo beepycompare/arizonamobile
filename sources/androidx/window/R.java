@@ -54,8 +54,8 @@ public final class R {
         public static int ltr = 0x7f0a083d;
         public static int never = 0x7f0a09bb;
         public static int rtl = 0x7f0a0be2;
-        public static int systemDefault = 0x7f0a0d49;
-        public static int topToBottom = 0x7f0a0e05;
+        public static int systemDefault = 0x7f0a0d4a;
+        public static int topToBottom = 0x7f0a0e06;
 
         private id() {
         }

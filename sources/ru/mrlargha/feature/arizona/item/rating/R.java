@@ -49,18 +49,18 @@ public final class R {
         public static int number = 0x7f0a09dd;
         public static int overlay = 0x7f0a0a09;
         public static int quality_button = 0x7f0a0ace;
-        public static int search = 0x7f0a0c30;
-        public static int search_not_found = 0x7f0a0c3c;
-        public static int search_text = 0x7f0a0c3f;
-        public static int text1 = 0x7f0a0d92;
-        public static int text2 = 0x7f0a0d93;
-        public static int text3 = 0x7f0a0d94;
-        public static int text4 = 0x7f0a0d95;
-        public static int text_bonus = 0x7f0a0db0;
-        public static int title = 0x7f0a0deb;
-        public static int top = 0x7f0a0dfd;
-        public static int topbar = 0x7f0a0e15;
-        public static int transport_screen = 0x7f0a0e32;
+        public static int search = 0x7f0a0c31;
+        public static int search_not_found = 0x7f0a0c3d;
+        public static int search_text = 0x7f0a0c40;
+        public static int text1 = 0x7f0a0d93;
+        public static int text2 = 0x7f0a0d94;
+        public static int text3 = 0x7f0a0d95;
+        public static int text4 = 0x7f0a0d96;
+        public static int text_bonus = 0x7f0a0db1;
+        public static int title = 0x7f0a0dec;
+        public static int top = 0x7f0a0dfe;
+        public static int topbar = 0x7f0a0e16;
+        public static int transport_screen = 0x7f0a0e33;
 
         private id() {
         }

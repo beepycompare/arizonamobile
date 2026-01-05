@@ -117,10 +117,10 @@ public final class R {
         public static int preferences_header = 0x7f0a0a71;
         public static int preferences_sliding_pane_layout = 0x7f0a0a72;
         public static int recycler_view = 0x7f0a0afd;
-        public static int seekbar = 0x7f0a0c60;
-        public static int seekbar_value = 0x7f0a0c61;
-        public static int spinner = 0x7f0a0cd2;
-        public static int switchWidget = 0x7f0a0d43;
+        public static int seekbar = 0x7f0a0c61;
+        public static int seekbar_value = 0x7f0a0c62;
+        public static int spinner = 0x7f0a0cd3;
+        public static int switchWidget = 0x7f0a0d44;
 
         private id() {
         }

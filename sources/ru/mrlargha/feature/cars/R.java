@@ -95,25 +95,25 @@ public final class R {
         public static int rarity_card = 0x7f0a0ae1;
         public static int rating_bnt = 0x7f0a0ae6;
         public static int rating_bnt1 = 0x7f0a0ae7;
-        public static int second_page = 0x7f0a0c4b;
-        public static int second_page_back_button = 0x7f0a0c4c;
-        public static int second_page_car_actions_rc = 0x7f0a0c4d;
-        public static int second_page_car_circle_info_rc = 0x7f0a0c4e;
-        public static int second_page_car_ic = 0x7f0a0c4f;
-        public static int second_page_car_params_rc = 0x7f0a0c50;
-        public static int second_page_car_switch_rc = 0x7f0a0c51;
-        public static int second_page_car_text_info_rc = 0x7f0a0c52;
-        public static int second_page_exit_button = 0x7f0a0c53;
-        public static int second_page_left_line = 0x7f0a0c54;
-        public static int second_page_right_line = 0x7f0a0c55;
-        public static int second_page_top_line = 0x7f0a0c56;
-        public static int slots_occupied = 0x7f0a0caf;
-        public static int slots_occupied_title = 0x7f0a0cb1;
-        public static int spawn_button = 0x7f0a0cc2;
-        public static int spawn_ic = 0x7f0a0cc3;
-        public static int spawn_title = 0x7f0a0cce;
-        public static int status_container = 0x7f0a0d1a;
-        public static int text_bonus = 0x7f0a0db0;
+        public static int second_page = 0x7f0a0c4c;
+        public static int second_page_back_button = 0x7f0a0c4d;
+        public static int second_page_car_actions_rc = 0x7f0a0c4e;
+        public static int second_page_car_circle_info_rc = 0x7f0a0c4f;
+        public static int second_page_car_ic = 0x7f0a0c50;
+        public static int second_page_car_params_rc = 0x7f0a0c51;
+        public static int second_page_car_switch_rc = 0x7f0a0c52;
+        public static int second_page_car_text_info_rc = 0x7f0a0c53;
+        public static int second_page_exit_button = 0x7f0a0c54;
+        public static int second_page_left_line = 0x7f0a0c55;
+        public static int second_page_right_line = 0x7f0a0c56;
+        public static int second_page_top_line = 0x7f0a0c57;
+        public static int slots_occupied = 0x7f0a0cb0;
+        public static int slots_occupied_title = 0x7f0a0cb2;
+        public static int spawn_button = 0x7f0a0cc3;
+        public static int spawn_ic = 0x7f0a0cc4;
+        public static int spawn_title = 0x7f0a0ccf;
+        public static int status_container = 0x7f0a0d1b;
+        public static int text_bonus = 0x7f0a0db1;
 
         private id() {
         }

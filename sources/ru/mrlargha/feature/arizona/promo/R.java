@@ -97,19 +97,19 @@ public final class R {
         public static int refs = 0x7f0a0b01;
         public static int refs_card = 0x7f0a0b02;
         public static int rv = 0x7f0a0be4;
-        public static int send_button = 0x7f0a0c70;
-        public static int starter_pack = 0x7f0a0d11;
-        public static int text = 0x7f0a0d91;
-        public static int text2 = 0x7f0a0d93;
-        public static int timer_container = 0x7f0a0de3;
-        public static int timer_ic = 0x7f0a0de4;
-        public static int timer_text = 0x7f0a0de6;
-        public static int timer_text2 = 0x7f0a0de7;
-        public static int title = 0x7f0a0deb;
-        public static int topbar = 0x7f0a0e15;
-        public static int upgrade = 0x7f0a0f39;
-        public static int view_after_level = 0x7f0a0f71;
-        public static int view_before_level = 0x7f0a0f72;
+        public static int send_button = 0x7f0a0c71;
+        public static int starter_pack = 0x7f0a0d12;
+        public static int text = 0x7f0a0d92;
+        public static int text2 = 0x7f0a0d94;
+        public static int timer_container = 0x7f0a0de4;
+        public static int timer_ic = 0x7f0a0de5;
+        public static int timer_text = 0x7f0a0de7;
+        public static int timer_text2 = 0x7f0a0de8;
+        public static int title = 0x7f0a0dec;
+        public static int topbar = 0x7f0a0e16;
+        public static int upgrade = 0x7f0a0f3b;
+        public static int view_after_level = 0x7f0a0f73;
+        public static int view_before_level = 0x7f0a0f74;
 
         private id() {
         }

@@ -5,9 +5,13 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.arizona.launcher.util.FlavorUtilKt;
+import java.util.Map;
 import kotlin.Metadata;
 import kotlin.ResultKt;
+import kotlin.TuplesKt;
 import kotlin.Unit;
+import kotlin.collections.MapsKt;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
@@ -18,7 +22,7 @@ import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.DelayKt;
 /* compiled from: MainEntrench.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.MainEntrench$sendRequests$1", f = "MainEntrench.kt", i = {0, 0, 0}, l = {1130}, m = "invokeSuspend", n = {"request", "it", "$i$a$-repeat-MainEntrench$sendRequests$1$1"}, s = {"L$2", "I$2", "I$3"}, v = 1)
+@DebugMetadata(c = "com.arizona.launcher.MainEntrench$sendRequests$1", f = "MainEntrench.kt", i = {0, 0, 0}, l = {1138}, m = "invokeSuspend", n = {"request", "it", "$i$a$-repeat-MainEntrench$sendRequests$1$1"}, s = {"L$2", "I$2", "I$3"}, v = 1)
 /* loaded from: classes3.dex */
 final class MainEntrench$sendRequests$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ int $iterations;
@@ -35,16 +39,16 @@ final class MainEntrench$sendRequests$1 extends SuspendLambda implements Functio
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public MainEntrench$sendRequests$1(int i, String str, RequestQueue requestQueue, Continuation<? super MainEntrench$sendRequests$1> continuation) {
+    public MainEntrench$sendRequests$1(int i, RequestQueue requestQueue, String str, Continuation<? super MainEntrench$sendRequests$1> continuation) {
         super(2, continuation);
         this.$iterations = i;
-        this.$url = str;
         this.$queue = requestQueue;
+        this.$url = str;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new MainEntrench$sendRequests$1(this.$iterations, this.$url, this.$queue, continuation);
+        return new MainEntrench$sendRequests$1(this.$iterations, this.$queue, this.$url, continuation);
     }
 
     @Override // kotlin.jvm.functions.Function2
@@ -60,18 +64,18 @@ final class MainEntrench$sendRequests$1 extends SuspendLambda implements Functio
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        String str;
-        int i;
         RequestQueue requestQueue;
+        int i;
+        final String str;
         int i2;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i3 = this.label;
         if (i3 == 0) {
             ResultKt.throwOnFailure(obj);
             int i4 = this.$iterations;
-            str = this.$url;
-            i = 0;
             requestQueue = this.$queue;
+            i = 0;
+            str = this.$url;
             i2 = i4;
             if (i < i2) {
             }
@@ -80,28 +84,35 @@ final class MainEntrench$sendRequests$1 extends SuspendLambda implements Functio
         } else {
             i = this.I$1;
             i2 = this.I$0;
-            StringRequest stringRequest = (StringRequest) this.L$2;
-            requestQueue = (RequestQueue) this.L$1;
-            str = (String) this.L$0;
+            MainEntrench$sendRequests$1$1$request$1 mainEntrench$sendRequests$1$1$request$1 = (MainEntrench$sendRequests$1$1$request$1) this.L$2;
+            str = (String) this.L$1;
+            requestQueue = (RequestQueue) this.L$0;
             ResultKt.throwOnFailure(obj);
             i++;
             if (i < i2) {
-                StringRequest stringRequest2 = new StringRequest(0, str, new Response.Listener() { // from class: com.arizona.launcher.MainEntrench$sendRequests$1$$ExternalSyntheticLambda0
+                final Response.Listener listener = new Response.Listener() { // from class: com.arizona.launcher.MainEntrench$sendRequests$1$$ExternalSyntheticLambda0
                     @Override // com.android.volley.Response.Listener
                     public final void onResponse(Object obj2) {
                         String str2 = (String) obj2;
                         Log.d("MainEntrench", "PRE-Check LOG – OK");
                     }
-                }, new Response.ErrorListener() { // from class: com.arizona.launcher.MainEntrench$sendRequests$1$$ExternalSyntheticLambda1
+                };
+                final Response.ErrorListener errorListener = new Response.ErrorListener() { // from class: com.arizona.launcher.MainEntrench$sendRequests$1$$ExternalSyntheticLambda1
                     @Override // com.android.volley.Response.ErrorListener
                     public final void onErrorResponse(VolleyError volleyError) {
                         Log.w("MainEntrench", "PRE-Check LOG – NOT OK");
                     }
-                });
-                requestQueue.add(stringRequest2);
-                this.L$0 = str;
-                this.L$1 = requestQueue;
-                this.L$2 = SpillingKt.nullOutSpilledVariable(stringRequest2);
+                };
+                StringRequest stringRequest = new StringRequest(str, listener, errorListener) { // from class: com.arizona.launcher.MainEntrench$sendRequests$1$1$request$1
+                    @Override // com.android.volley.Request
+                    public Map<String, String> getHeaders() {
+                        return MapsKt.mutableMapOf(TuplesKt.to("User-Agent", "Arizona Mobile: " + FlavorUtilKt.isArizona()));
+                    }
+                };
+                requestQueue.add(stringRequest);
+                this.L$0 = requestQueue;
+                this.L$1 = str;
+                this.L$2 = SpillingKt.nullOutSpilledVariable(stringRequest);
                 this.I$0 = i2;
                 this.I$1 = i;
                 this.I$2 = i;
