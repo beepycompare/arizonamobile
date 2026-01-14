@@ -1,10 +1,22 @@
 package io.appmetrica.analytics.impl;
-
-import android.content.Context;
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
 /* loaded from: classes5.dex */
-public final class A3 extends Q7 {
-    public A3(Context context, ProtobufStateStorage<C0587t3> protobufStateStorage, S7 s7, InterfaceC0177co interfaceC0177co, Jm jm, Vi vi, Ti ti, A6 a6, C0587t3 c0587t3, String str) {
-        super(context, protobufStateStorage, s7, interfaceC0177co, jm, vi, ti, a6, c0587t3);
+public final class A3 extends R7 {
+    @Override // io.appmetrica.analytics.impl.R7
+    public final boolean a(C0541r3 c0541r3, C0541r3 c0541r32) {
+        if (lo.a(c0541r32.f1200a)) {
+            return true;
+        }
+        if (lo.a(c0541r3.f1200a)) {
+            return false;
+        }
+        S7 s7 = c0541r3.b;
+        if (s7 == S7.c) {
+            if (((Number) this.f763a.a(s7)).intValue() >= ((Number) this.f763a.a(c0541r32.b)).intValue()) {
+                return true;
+            }
+        } else if (((Number) this.f763a.a(s7)).intValue() > ((Number) this.f763a.a(c0541r32.b)).intValue()) {
+            return true;
+        }
+        return false;
     }
 }

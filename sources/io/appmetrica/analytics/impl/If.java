@@ -1,37 +1,47 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import io.appmetrica.analytics.ecommerce.ECommerceProduct;
+import io.appmetrica.analytics.coreapi.internal.data.Converter;
+import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.List;
-import java.util.Map;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes5.dex */
-public final class If {
+public final class If implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f622a;
-    public final String b;
-    public final List c;
-    public final Map d;
-    public final Af e;
-    public final Af f;
-    public final List g;
+    public final C0548ra f629a;
 
-    public If(ECommerceProduct eCommerceProduct) {
-        this(eCommerceProduct.getSku(), eCommerceProduct.getName(), CollectionUtils.arrayListCopyOfNullableCollection(eCommerceProduct.getCategoriesPath()), CollectionUtils.mapCopyOfNullableMap(eCommerceProduct.getPayload()), eCommerceProduct.getActualPrice() == null ? null : new Af(eCommerceProduct.getActualPrice()), eCommerceProduct.getOriginalPrice() != null ? new Af(eCommerceProduct.getOriginalPrice()) : null, CollectionUtils.arrayListCopyOfNullableCollection(eCommerceProduct.getPromocodes()));
+    public If() {
+        this(new C0548ra(20, 100));
     }
 
-    public final String toString() {
-        return "ProductWrapper{sku='" + this.f622a + "', name='" + this.b + "', categoriesPath=" + this.c + ", payload=" + this.d + ", actualPrice=" + this.e + ", originalPrice=" + this.f + ", promocodes=" + this.g + AbstractJsonLexerKt.END_OBJ;
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final Di fromModel(List<String> list) {
+        Mn a2 = this.f629a.a((List<Object>) list);
+        List list2 = (List) a2.f700a;
+        C0472o8[] c0472o8Arr = new C0472o8[0];
+        if (list2 != null) {
+            c0472o8Arr = new C0472o8[list2.size()];
+            for (int i = 0; i < list2.size(); i++) {
+                C0472o8 c0472o8 = new C0472o8();
+                c0472o8Arr[i] = c0472o8;
+                c0472o8.f1150a = StringUtils.getUTF8Bytes((String) list2.get(i));
+            }
+        }
+        a2.b.getBytesTruncated();
+        return new Di(c0472o8Arr, a2.b);
     }
 
-    public If(String str, String str2, List list, Map map, Af af, Af af2, List list2) {
-        this.f622a = str;
-        this.b = str2;
-        this.c = list;
-        this.d = map;
-        this.e = af;
-        this.f = af2;
-        this.g = list2;
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        Di di = (Di) obj;
+        throw new UnsupportedOperationException();
+    }
+
+    public If(C0548ra c0548ra) {
+        this.f629a = c0548ra;
+    }
+
+    public final List<String> a(Di di) {
+        throw new UnsupportedOperationException();
     }
 }

@@ -1,21 +1,17 @@
 package io.appmetrica.analytics.impl;
-
-import android.database.sqlite.SQLiteDatabase;
-import io.appmetrica.analytics.coreapi.internal.db.DatabaseScript;
-import io.appmetrica.analytics.modulesapi.internal.common.TableDescription;
-import io.appmetrica.analytics.modulesapi.internal.service.ModuleServicesDatabase;
-import java.sql.SQLException;
 /* loaded from: classes5.dex */
-public final class W6 extends DatabaseScript {
-    @Override // io.appmetrica.analytics.coreapi.internal.db.DatabaseScript
-    public final void runScript(SQLiteDatabase sQLiteDatabase) throws SQLException {
-        sQLiteDatabase.execSQL("DROP TABLE IF EXISTS preferences");
-        sQLiteDatabase.execSQL("DROP TABLE IF EXISTS binary_data");
-        sQLiteDatabase.execSQL("DROP TABLE IF EXISTS temp_cache");
-        for (ModuleServicesDatabase moduleServicesDatabase : C0470oa.I.p().b()) {
-            for (TableDescription tableDescription : moduleServicesDatabase.getTables()) {
-                sQLiteDatabase.execSQL(tableDescription.getDropTableScript());
-            }
-        }
+public final class W6 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final O6 f838a = new O6();
+    public final P6 b = new P6();
+    public final S6 c = new S6();
+    public final T6 d = new T6();
+    public final U6 e = new U6();
+    public final V6 f = new V6();
+
+    public W6() {
+        new Q6();
+        new R6();
     }
 }

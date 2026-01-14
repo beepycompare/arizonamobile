@@ -1,35 +1,17 @@
 package io.appmetrica.analytics.impl;
-
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import kotlin.collections.CollectionsKt;
 /* loaded from: classes5.dex */
 public final class Tc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f790a = new ArrayList();
+    public final C0749zb f798a;
+    public final Xc b;
+    public final C0373k9 c;
+    public final boolean d;
 
-    public final synchronized List a() {
-        ArrayList arrayList;
-        ArrayList arrayList2 = this.f790a;
-        ArrayList arrayList3 = new ArrayList(CollectionsKt.collectionSizeOrDefault(arrayList2, 10));
-        Iterator it = arrayList2.iterator();
-        while (it.hasNext()) {
-            arrayList3.add(((Sc) it.next()).a());
-        }
-        arrayList = new ArrayList();
-        Iterator it2 = arrayList3.iterator();
-        while (it2.hasNext()) {
-            Object next = it2.next();
-            if (((String) next).length() > 0) {
-                arrayList.add(next);
-            }
-        }
-        return CollectionsKt.distinct(arrayList);
-    }
-
-    public final synchronized void a(Sc... scArr) {
-        CollectionsKt.addAll(this.f790a, scArr);
+    public Tc(X4 x4, String str) {
+        this.f798a = new C0749zb(x4.h());
+        this.b = new Xc(str, x4.h());
+        this.c = x4.l();
+        this.d = x4.b().d();
     }
 }

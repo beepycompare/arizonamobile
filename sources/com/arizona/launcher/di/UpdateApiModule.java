@@ -8,9 +8,14 @@ import dagger.Provides;
 import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import okhttp3.Interceptor;
+import okhttp3.OkHttpClient;
+import okhttp3.Response;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
+import ru.mrlargha.commonui.utils.UtilsKt;
+import ru.mrlargha.commonui.utils.ui.DefaultQueryInterceptor;
 /* compiled from: UpdateApiModule.kt */
 @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0007\u0018\u0000 \f2\u00020\u0001:\u0001\fB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0002J\b\u0010\b\u001a\u00020\tH\u0007J\b\u0010\n\u001a\u00020\u000bH\u0007¨\u0006\r"}, d2 = {"Lcom/arizona/launcher/di/UpdateApiModule;", "", "<init>", "()V", "getRetrofit", "Lretrofit2/Retrofit;", "url", "", "provideApi", "Lcom/arizona/launcher/data/repository/UpdateApi;", "provideSecondaryApi", "Lcom/arizona/launcher/data/repository/SecondaryUpdateApi;", "Companion", "app_arizonaRelease"}, k = 1, mv = {2, 2, 0}, xi = 48)
 @Module
@@ -24,7 +29,13 @@ public final class UpdateApiModule {
     private static final String SERVER_SECONDARY_URL_RODINA = "https://arz-mob.react-group.tech/game/release/";
 
     private final Retrofit getRetrofit(String str) {
-        Retrofit build = new Retrofit.Builder().baseUrl(str).addConverterFactory(GsonConverterFactory.create()).addCallAdapterFactory(RxJava2CallAdapterFactory.create()).build();
+        Retrofit build = new Retrofit.Builder().baseUrl(str).client(new OkHttpClient.Builder().addInterceptor(new Interceptor() { // from class: com.arizona.launcher.di.UpdateApiModule$getRetrofit$$inlined$-addInterceptor$1
+            @Override // okhttp3.Interceptor
+            public final Response intercept(Interceptor.Chain chain) {
+                Intrinsics.checkNotNullParameter(chain, "chain");
+                return chain.proceed(chain.request().newBuilder().addHeader("User-Agent", "Arizona Mobile: " + UtilsKt.isArizonaType()).build());
+            }
+        }).addInterceptor(new DefaultQueryInterceptor()).build()).addConverterFactory(GsonConverterFactory.create()).addCallAdapterFactory(RxJava2CallAdapterFactory.create()).build();
         Intrinsics.checkNotNullExpressionValue(build, "build(...)");
         return build;
     }

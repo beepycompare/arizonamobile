@@ -1,19 +1,12 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.reflection.ReflectionUtils;
-import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashServiceModule;
-import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashServiceModuleDummy;
+import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.AdRevenueConstants;
+import java.util.Map;
 /* loaded from: classes5.dex */
-public final class Pd {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final NativeCrashServiceModule f732a;
-    public final Jd b;
-
-    public Pd() {
-        ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
-        NativeCrashServiceModule nativeCrashServiceModule = (NativeCrashServiceModule) ReflectionUtils.loadAndInstantiateClassWithDefaultConstructor("io.appmetrica.analytics.ndkcrashes.NativeCrashServiceModuleImpl", NativeCrashServiceModule.class);
-        this.f732a = nativeCrashServiceModule == null ? new NativeCrashServiceModuleDummy() : nativeCrashServiceModule;
-        this.b = new Jd(new Od(this));
+public final class Pd implements InterfaceC0587t {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0587t
+    public final Map<String, String> a(Map<String, String> map) {
+        map.put(AdRevenueConstants.LAYER_KEY, "native");
+        return map;
     }
 }

@@ -1,39 +1,9 @@
 package io.appmetrica.analytics.impl;
+
+import java.util.concurrent.TimeUnit;
 /* loaded from: classes5.dex */
-public final class Hk {
+public abstract class Hk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Wk f609a;
-    public final Long b;
-    public final Long c;
-    public final Integer d;
-    public final Long e;
-    public final Boolean f;
-    public final Long g;
-    public final Long h;
-
-    public Hk(Gk gk) {
-        Wk wk;
-        Integer num;
-        Long l;
-        Long l2;
-        Long l3;
-        Boolean bool;
-        Long l4;
-        wk = gk.b;
-        this.f609a = wk;
-        num = gk.e;
-        this.d = num;
-        l = gk.c;
-        this.b = l;
-        l2 = gk.d;
-        this.c = l2;
-        l3 = gk.f;
-        this.e = l3;
-        bool = gk.g;
-        this.f = bool;
-        l4 = gk.h;
-        this.g = l4;
-        this.h = gk.f593a;
-    }
+    public static final long f618a = TimeUnit.DAYS.toSeconds(1);
 }

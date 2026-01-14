@@ -1,16 +1,17 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 /* loaded from: classes5.dex */
-public final class M2 implements InterfaceC0557rn {
+public abstract class M2 implements Ln {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0582sn f678a;
+    public final int f685a;
+    public final String b;
+    protected final PublicLogger c;
 
-    public M2(InterfaceC0582sn interfaceC0582sn) {
-        this.f678a = interfaceC0582sn;
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0557rn
-    public final void a(InterfaceC0533qn interfaceC0533qn) {
-        interfaceC0533qn.a(this.f678a.a());
+    public M2(int i, String str, PublicLogger publicLogger) {
+        this.f685a = i;
+        this.b = str;
+        this.c = publicLogger;
     }
 }

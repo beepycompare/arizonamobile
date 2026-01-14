@@ -1,20 +1,14 @@
 package io.appmetrica.analytics.impl;
+
+import android.text.TextUtils;
+import io.appmetrica.analytics.coreutils.internal.StringUtils;
 /* loaded from: classes5.dex */
-public final class Zm extends AbstractC0613u4 {
-    public final Mn g;
-
-    public Zm(String str, String str2, Mn mn, to toVar, K2 k2) {
-        super(0, str, str2, toVar, k2);
-        this.g = mn;
-    }
-
-    @Override // io.appmetrica.analytics.impl.AbstractC0613u4
-    public final void a(C0280go c0280go) {
-        String str = (String) this.g.a((String) this.f);
-        c0280go.d.f1044a = str == null ? new byte[0] : str.getBytes();
-    }
-
-    public final Mn h() {
-        return this.g;
+public final class Zm implements to {
+    @Override // io.appmetrica.analytics.impl.to
+    public final byte[] a(N8 n8, C0381kh c0381kh) {
+        if (!TextUtils.isEmpty(n8.b)) {
+            return StringUtils.getUTF8Bytes(n8.b);
+        }
+        return new byte[0];
     }
 }

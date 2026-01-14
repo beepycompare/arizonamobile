@@ -26,9 +26,9 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
     <ru.mrlargha.commonui.utils.ui.CustomCardView android:padding="@dimen/_10sdp" android:layout_width="@dimen/_120sdp" android:layout_height="@dimen/_120sdp" android:layout_marginTop="@dimen/_140sdp" app:backgroundMainColor="#0e1422" app:backgroundSecondColor="@color/transparent100" app:borderGradientAngle="90" app:borderMainColor="#ffffff" app:borderSecondColor="@color/transparent100" app:borderWidth="@dimen/_1sdp" app:corners="@dimen/_6sdp" app:gradientAngle="90">
-        <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
-            <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv_gamer_list" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_weight="1" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
-            <include android:id="@+id/user_rating" layout="@layout/hud_chicken_game_item"/>
-        </LinearLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv_gamer_list" android:layout_width="match_parent" android:layout_height="wrap_content" android:maxHeight="@dimen/_90sdp" app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+            <include android:id="@+id/user_rating" android:layout_width="match_parent" android:layout_height="wrap_content" app:layout_constraintTop_toBottomOf="@+id/rv_gamer_list" layout="@layout/hud_chicken_game_item"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ru.mrlargha.commonui.utils.ui.CustomCardView>
 </FrameLayout>

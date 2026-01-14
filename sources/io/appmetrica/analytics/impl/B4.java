@@ -1,17 +1,15 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
-public abstract class B4 {
+public final class B4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0713y4 f503a;
+    public final C0271ga f511a;
+    public final C0756zi b;
+    public final Zn c;
 
-    public B4(C0713y4 c0713y4) {
-        this.f503a = c0713y4;
+    public B4(C0692x4 c0692x4) {
+        this.f511a = new C0271ga(c0692x4);
+        this.b = new C0756zi(c0692x4);
+        this.c = new Zn(c0692x4, C0449na.k().h());
     }
-
-    public final C0713y4 a() {
-        return this.f503a;
-    }
-
-    public abstract boolean a(Q5 q5, C0638v4 c0638v4);
 }

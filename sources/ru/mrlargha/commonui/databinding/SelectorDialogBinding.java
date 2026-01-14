@@ -10,6 +10,7 @@ import androidx.constraintlayout.widget.Guideline;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
+import ru.mrlargha.commonui.utils.ui.CustomCardView;
 /* loaded from: classes5.dex */
 public final class SelectorDialogBinding implements ViewBinding {
     public final TextView btnClose;
@@ -19,7 +20,7 @@ public final class SelectorDialogBinding implements ViewBinding {
     public final TextView btnSecondItem;
     public final TextView btnSixthItem;
     public final TextView btnThirdItem;
-    public final ConstraintLayout dialogLayout;
+    public final CustomCardView dialogLayout;
     public final Guideline guidelineHor1;
     public final Guideline guidelineHor2;
     public final Guideline guidelineVer1;
@@ -31,7 +32,7 @@ public final class SelectorDialogBinding implements ViewBinding {
     public final TextView tvItemName;
     public final ImageView viewLine;
 
-    private SelectorDialogBinding(ConstraintLayout rootView, TextView btnClose, TextView btnFifthItem, TextView btnFirstItem, TextView btnFourthItem, TextView btnSecondItem, TextView btnSixthItem, TextView btnThirdItem, ConstraintLayout dialogLayout, Guideline guidelineHor1, Guideline guidelineHor2, Guideline guidelineVer1, Guideline guidelineVer2, ImageView ivItemBg, ConstraintLayout parentLayout, TextView tvItemDescription, TextView tvItemName, ImageView viewLine) {
+    private SelectorDialogBinding(ConstraintLayout rootView, TextView btnClose, TextView btnFifthItem, TextView btnFirstItem, TextView btnFourthItem, TextView btnSecondItem, TextView btnSixthItem, TextView btnThirdItem, CustomCardView dialogLayout, Guideline guidelineHor1, Guideline guidelineHor2, Guideline guidelineVer1, Guideline guidelineVer2, ImageView ivItemBg, ConstraintLayout parentLayout, TextView tvItemDescription, TextView tvItemName, ImageView viewLine) {
         this.rootView = rootView;
         this.btnClose = btnClose;
         this.btnFifthItem = btnFifthItem;
@@ -92,8 +93,8 @@ public final class SelectorDialogBinding implements ViewBinding {
                                 TextView textView7 = (TextView) ViewBindings.findChildViewById(rootView, i);
                                 if (textView7 != null) {
                                     i = R.id.dialogLayout;
-                                    ConstraintLayout constraintLayout = (ConstraintLayout) ViewBindings.findChildViewById(rootView, i);
-                                    if (constraintLayout != null) {
+                                    CustomCardView customCardView = (CustomCardView) ViewBindings.findChildViewById(rootView, i);
+                                    if (customCardView != null) {
                                         i = R.id.guidelineHor1;
                                         Guideline guideline = (Guideline) ViewBindings.findChildViewById(rootView, i);
                                         if (guideline != null) {
@@ -109,7 +110,7 @@ public final class SelectorDialogBinding implements ViewBinding {
                                                         i = R.id.ivItemBg;
                                                         ImageView imageView = (ImageView) ViewBindings.findChildViewById(rootView, i);
                                                         if (imageView != null) {
-                                                            ConstraintLayout constraintLayout2 = (ConstraintLayout) rootView;
+                                                            ConstraintLayout constraintLayout = (ConstraintLayout) rootView;
                                                             i = R.id.tvItemDescription;
                                                             TextView textView8 = (TextView) ViewBindings.findChildViewById(rootView, i);
                                                             if (textView8 != null) {
@@ -119,7 +120,7 @@ public final class SelectorDialogBinding implements ViewBinding {
                                                                     i = R.id.viewLine;
                                                                     ImageView imageView2 = (ImageView) ViewBindings.findChildViewById(rootView, i);
                                                                     if (imageView2 != null) {
-                                                                        return new SelectorDialogBinding(constraintLayout2, textView, textView2, textView3, textView4, textView5, textView6, textView7, constraintLayout, guideline, guideline2, guideline3, guideline4, imageView, constraintLayout2, textView8, textView9, imageView2);
+                                                                        return new SelectorDialogBinding(constraintLayout, textView, textView2, textView3, textView4, textView5, textView6, textView7, customCardView, guideline, guideline2, guideline3, guideline4, imageView, constraintLayout, textView8, textView9, imageView2);
                                                                     }
                                                                 }
                                                             }

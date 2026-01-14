@@ -5,40 +5,40 @@ import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 public final class W implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0732yn f827a;
+    public final C0711xn f832a;
 
-    public W(C0732yn c0732yn) {
-        this.f827a = c0732yn;
+    public W(C0711xn c0711xn) {
+        this.f832a = c0711xn;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final S5 fromModel(V v) {
-        S5 s5 = new S5();
-        C0707xn c0707xn = v.f814a;
-        if (c0707xn != null) {
-            s5.f771a = this.f827a.fromModel(c0707xn);
+    public final R5 fromModel(V v) {
+        R5 r5 = new R5();
+        C0686wn c0686wn = v.f818a;
+        if (c0686wn != null) {
+            r5.f762a = this.f832a.fromModel(c0686wn);
         }
-        s5.b = new C0133b6[v.b.size()];
+        r5.b = new C0112a6[v.b.size()];
         int i = 0;
-        for (C0707xn c0707xn2 : v.b) {
-            s5.b[i] = this.f827a.fromModel(c0707xn2);
+        for (C0686wn c0686wn2 : v.b) {
+            r5.b[i] = this.f832a.fromModel(c0686wn2);
             i++;
         }
         String str = v.c;
         if (str != null) {
-            s5.c = str;
+            r5.c = str;
         }
-        return s5;
+        return r5;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
-        S5 s5 = (S5) obj;
+        R5 r5 = (R5) obj;
         throw new UnsupportedOperationException();
     }
 
-    public final V a(S5 s5) {
+    public final V a(R5 r5) {
         throw new UnsupportedOperationException();
     }
 }

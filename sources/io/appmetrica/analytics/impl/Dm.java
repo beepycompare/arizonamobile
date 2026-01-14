@@ -1,26 +1,22 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 /* loaded from: classes5.dex */
-public final class Dm {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final int f548a;
-
-    public Dm(int i) {
-        this.f548a = i;
+public final class Dm implements ProtobufConverter {
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final C0635um fromModel(Cm cm) {
+        C0635um c0635um = new C0635um();
+        c0635um.f1262a = cm.f540a;
+        return c0635um;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        return (obj instanceof Dm) && this.f548a == ((Dm) obj).f548a;
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        return new Cm(((C0635um) obj).f1262a);
     }
 
-    public final int hashCode() {
-        return Integer.hashCode(this.f548a);
-    }
-
-    public final String toString() {
-        return "StartupUpdateConfig(intervalSeconds=" + this.f548a + ')';
+    public final Cm a(C0635um c0635um) {
+        return new Cm(c0635um.f1262a);
     }
 }

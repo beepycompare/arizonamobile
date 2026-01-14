@@ -1,23 +1,19 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.AdRevenue;
 /* loaded from: classes5.dex */
 public final class Yh implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ AdRevenue f865a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ C0300hi c;
+    public final /* synthetic */ Qn f870a;
+    public final /* synthetic */ C0279gi b;
 
-    public Yh(C0300hi c0300hi, AdRevenue adRevenue, boolean z) {
-        this.c = c0300hi;
-        this.f865a = adRevenue;
-        this.b = z;
+    public Yh(C0279gi c0279gi, Qn qn) {
+        this.b = c0279gi;
+        this.f870a = qn;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0300hi c0300hi = this.c;
-        C0300hi.a(c0300hi.f1024a, c0300hi.d, c0300hi.e).reportAdRevenue(this.f865a, this.b);
+        C0279gi c0279gi = this.b;
+        C0279gi.a(c0279gi.f1016a, c0279gi.d, c0279gi.e).a(this.f870a);
     }
 }

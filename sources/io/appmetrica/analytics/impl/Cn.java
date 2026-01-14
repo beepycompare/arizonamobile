@@ -1,16 +1,11 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.StringUtils;
-import java.util.Comparator;
+import java.util.Map;
 /* loaded from: classes5.dex */
-public final class Cn implements Comparator {
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        Thread thread = (Thread) obj;
-        Thread thread2 = (Thread) obj2;
-        if (thread == thread2) {
-            return 0;
-        }
-        return StringUtils.compare(thread.getName(), thread2.getName());
-    }
+public interface Cn {
+    Thread a();
+
+    StackTraceElement[] b();
+
+    Map c();
 }

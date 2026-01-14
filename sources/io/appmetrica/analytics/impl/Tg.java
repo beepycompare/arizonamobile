@@ -1,30 +1,23 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import android.os.Bundle;
-import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
+import io.appmetrica.analytics.IReporter;
+import java.util.HashMap;
 /* loaded from: classes5.dex */
-public final class Tg implements InterfaceC0210e6 {
+public final class Tg extends Rg {
+    public final IReporter b;
 
-    /* renamed from: a  reason: collision with root package name */
-    public final Context f792a;
-    public final C0131b4 b;
-    public final IHandlerExecutor c = C0470oa.k().w().d();
-
-    public Tg(Context context, C0131b4 c0131b4) {
-        this.f792a = context;
-        this.b = c0131b4;
+    public Tg(X4 x4, IReporter iReporter) {
+        super(x4);
+        this.b = iReporter;
     }
 
-    public final void a(Q5 q5, Bundle bundle) {
-        if (q5.m()) {
-            return;
-        }
-        this.c.execute(new RunnableC0427mh(this.f792a, q5, bundle, this.b));
-    }
-
-    public final void a(Q3 q3, Q5 q5, C0514q4 c0514q4) {
-        this.b.a(q3, c0514q4).a(q5, c0514q4);
-        this.b.a(q3.b, q3.c, q3.d);
+    @Override // io.appmetrica.analytics.impl.Rg
+    public final boolean a(P5 p5) {
+        Gc gc = (Gc) Gc.c.get(p5.d);
+        HashMap hashMap = new HashMap();
+        hashMap.put("type", gc.f595a);
+        hashMap.put("delivery_method", gc.b);
+        this.b.reportEvent("crash_saved", hashMap);
+        return false;
     }
 }

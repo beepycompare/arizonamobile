@@ -5,11 +5,11 @@ import io.appmetrica.analytics.idsync.internal.model.NetworkType;
 public abstract /* synthetic */ class w {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int[] f478a;
+    public static final /* synthetic */ int[] f483a;
 
     static {
         int[] iArr = new int[NetworkType.values().length];
         iArr[NetworkType.CELL.ordinal()] = 1;
-        f478a = iArr;
+        f483a = iArr;
     }
 }

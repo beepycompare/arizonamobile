@@ -1,86 +1,79 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.HashMap;
-import java.util.LinkedList;
+import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.InternalNano;
+import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
+import java.io.IOException;
 /* loaded from: classes5.dex */
-public final class Y8 extends Gf {
+public final class Y8 extends MessageNano {
+    public static volatile Y8[] c;
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0577si f860a;
-    public final HashMap b;
-    public final C0538r4 c;
+    public String f864a;
+    public String b;
 
-    public Y8(Y4 y4) {
-        C0577si c0577si = new C0577si(y4);
-        this.f860a = c0577si;
-        this.c = new C0538r4(c0577si);
-        this.b = a();
+    public Y8() {
+        a();
     }
 
-    public final HashMap a() {
-        HashMap hashMap = new HashMap();
-        hashMap.put(EnumC0164cb.EVENT_TYPE_ACTIVATION, new C0281h(this.f860a));
-        hashMap.put(EnumC0164cb.EVENT_TYPE_START, new Fl(this.f860a));
-        hashMap.put(EnumC0164cb.EVENT_TYPE_REGULAR, new Hg(this.f860a));
-        C0344jb c0344jb = new C0344jb(this.f860a);
-        hashMap.put(EnumC0164cb.EVENT_TYPE_EXCEPTION_USER_PROTOBUF, c0344jb);
-        hashMap.put(EnumC0164cb.EVENT_TYPE_EXCEPTION_USER_CUSTOM_PROTOBUF, c0344jb);
-        hashMap.put(EnumC0164cb.EVENT_TYPE_SEND_REFERRER, c0344jb);
-        hashMap.put(EnumC0164cb.EVENT_TYPE_CUSTOM_EVENT, c0344jb);
-        EnumC0164cb enumC0164cb = EnumC0164cb.EVENT_TYPE_SET_SESSION_EXTRA;
-        C0577si c0577si = this.f860a;
-        hashMap.put(enumC0164cb, new Al(c0577si, c0577si.t));
-        hashMap.put(EnumC0164cb.EVENT_TYPE_APP_OPEN, new Og(this.f860a));
-        hashMap.put(EnumC0164cb.EVENT_TYPE_PURGE_BUFFER, new Sf(this.f860a));
-        hashMap.put(EnumC0164cb.EVENT_TYPE_CURRENT_SESSION_NATIVE_CRASH_PROTOBUF, new C0590t6(this.f860a));
-        hashMap.put(EnumC0164cb.EVENT_TYPE_PREV_SESSION_NATIVE_CRASH_PROTOBUF, new C0674wf(this.f860a));
-        hashMap.put(EnumC0164cb.EVENT_TYPE_EXCEPTION_UNHANDLED_FROM_FILE, new Wn(this.f860a));
-        hashMap.put(EnumC0164cb.EVENT_TYPE_PREV_SESSION_EXCEPTION_UNHANDLED_FROM_FILE, new C0699xf(this.f860a));
-        hashMap.put(EnumC0164cb.EVENT_TYPE_EXCEPTION_UNHANDLED_PROTOBUF, new Vn(this.f860a));
-        hashMap.put(EnumC0164cb.EVENT_TYPE_ANR, c0344jb);
-        EnumC0164cb enumC0164cb2 = EnumC0164cb.EVENT_TYPE_APP_ENVIRONMENT_UPDATED;
-        C0577si c0577si2 = this.f860a;
-        hashMap.put(enumC0164cb2, new Al(c0577si2, c0577si2.e));
-        EnumC0164cb enumC0164cb3 = EnumC0164cb.EVENT_TYPE_APP_ENVIRONMENT_CLEARED;
-        C0577si c0577si3 = this.f860a;
-        hashMap.put(enumC0164cb3, new Al(c0577si3, c0577si3.f));
-        hashMap.put(EnumC0164cb.EVENT_TYPE_SEND_USER_PROFILE, c0344jb);
-        EnumC0164cb enumC0164cb4 = EnumC0164cb.EVENT_TYPE_SET_USER_PROFILE_ID;
-        C0577si c0577si4 = this.f860a;
-        hashMap.put(enumC0164cb4, new Al(c0577si4, c0577si4.k));
-        hashMap.put(EnumC0164cb.EVENT_TYPE_SEND_REVENUE_EVENT, c0344jb);
-        hashMap.put(EnumC0164cb.EVENT_TYPE_SEND_AD_REVENUE_EVENT, c0344jb);
-        hashMap.put(EnumC0164cb.EVENT_TYPE_CLEANUP, c0344jb);
-        hashMap.put(EnumC0164cb.EVENT_TYPE_SEND_ECOMMERCE_EVENT, c0344jb);
-        hashMap.put(EnumC0164cb.EVENT_TYPE_WEBVIEW_SYNC, c0344jb);
-        hashMap.put(EnumC0164cb.EVENT_CLIENT_EXTERNAL_ATTRIBUTION, new F9(this.f860a));
-        return hashMap;
-    }
-
-    public final C0577si b() {
-        return this.f860a;
-    }
-
-    public final void a(EnumC0164cb enumC0164cb, AbstractC0495pa abstractC0495pa) {
-        this.b.put(enumC0164cb, abstractC0495pa);
-    }
-
-    @Override // io.appmetrica.analytics.impl.Gf
-    public final X8 a(int i) {
-        LinkedList linkedList = new LinkedList();
-        EnumC0164cb a2 = EnumC0164cb.a(i);
-        C0538r4 c0538r4 = this.c;
-        if (c0538r4 != null) {
-            c0538r4.a(a2, linkedList);
+    public static Y8[] b() {
+        if (c == null) {
+            synchronized (InternalNano.LAZY_INIT_LOCK) {
+                if (c == null) {
+                    c = new Y8[0];
+                }
+            }
         }
-        AbstractC0495pa abstractC0495pa = (AbstractC0495pa) this.b.get(a2);
-        if (abstractC0495pa != null) {
-            abstractC0495pa.a(linkedList);
-        }
-        return new W8(linkedList);
+        return c;
     }
 
-    public final AbstractC0495pa a(EnumC0164cb enumC0164cb) {
-        return (AbstractC0495pa) this.b.get(enumC0164cb);
+    public final Y8 a() {
+        this.f864a = "";
+        this.b = "";
+        this.cachedSize = -1;
+        return this;
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final int computeSerializedSize() {
+        return CodedOutputByteBufferNano.computeStringSize(2, this.b) + CodedOutputByteBufferNano.computeStringSize(1, this.f864a) + super.computeSerializedSize();
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
+        codedOutputByteBufferNano.writeString(1, this.f864a);
+        codedOutputByteBufferNano.writeString(2, this.b);
+        super.writeTo(codedOutputByteBufferNano);
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    /* renamed from: a */
+    public final Y8 mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        while (true) {
+            int readTag = codedInputByteBufferNano.readTag();
+            if (readTag == 0) {
+                break;
+            } else if (readTag == 10) {
+                this.f864a = codedInputByteBufferNano.readString();
+            } else if (readTag != 18) {
+                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
+                    break;
+                }
+            } else {
+                this.b = codedInputByteBufferNano.readString();
+            }
+        }
+        return this;
+    }
+
+    public static Y8 b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        return new Y8().mergeFrom(codedInputByteBufferNano);
+    }
+
+    public static Y8 a(byte[] bArr) throws InvalidProtocolBufferNanoException {
+        return (Y8) MessageNano.mergeFrom(new Y8(), bArr);
     }
 }

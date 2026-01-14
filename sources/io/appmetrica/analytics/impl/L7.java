@@ -1,10 +1,98 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.DeferredDeeplinkListener;
+import io.appmetrica.analytics.DeferredDeeplinkParametersListener;
+import io.appmetrica.analytics.coreutils.internal.WrapUtils;
+import java.util.Map;
 /* loaded from: classes5.dex */
-public abstract /* synthetic */ class L7 {
-    public static /* synthetic */ int a(int i) {
-        if (i != 0) {
-            return i - 1;
+public final class L7 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final boolean f674a;
+    public DeferredDeeplinkListener b;
+    public DeferredDeeplinkParametersListener c;
+    public J7 d;
+
+    public L7(boolean z) {
+        this.f674a = z;
+    }
+
+    public final void a(int i) {
+        DeferredDeeplinkParametersListener.Error error;
+        DeferredDeeplinkListener.Error error2;
+        J7 j7 = this.d;
+        String str = j7 == null ? null : j7.c;
+        DeferredDeeplinkListener deferredDeeplinkListener = this.b;
+        if (deferredDeeplinkListener != null) {
+            if (i != 0) {
+                int i2 = i - 1;
+                if (i2 == 0) {
+                    error2 = DeferredDeeplinkListener.Error.NOT_A_FIRST_LAUNCH;
+                } else if (i2 == 1) {
+                    error2 = DeferredDeeplinkListener.Error.PARSE_ERROR;
+                } else if (i2 != 2) {
+                    error2 = DeferredDeeplinkListener.Error.UNKNOWN;
+                } else {
+                    error2 = DeferredDeeplinkListener.Error.NO_REFERRER;
+                }
+                deferredDeeplinkListener.onError(error2, (String) WrapUtils.getOrDefault(str, ""));
+                this.b = null;
+            } else {
+                throw null;
+            }
         }
-        throw null;
+        DeferredDeeplinkParametersListener deferredDeeplinkParametersListener = this.c;
+        if (deferredDeeplinkParametersListener != null) {
+            if (i != 0) {
+                int i3 = i - 1;
+                if (i3 == 0) {
+                    error = DeferredDeeplinkParametersListener.Error.NOT_A_FIRST_LAUNCH;
+                } else if (i3 == 1) {
+                    error = DeferredDeeplinkParametersListener.Error.PARSE_ERROR;
+                } else if (i3 != 2) {
+                    error = DeferredDeeplinkParametersListener.Error.UNKNOWN;
+                } else {
+                    error = DeferredDeeplinkParametersListener.Error.NO_REFERRER;
+                }
+                deferredDeeplinkParametersListener.onError(error, (String) WrapUtils.getOrDefault(str, ""));
+                this.c = null;
+                return;
+            }
+            throw null;
+        }
+    }
+
+    public final void a() {
+        J7 j7 = this.d;
+        if (j7 != null) {
+            String str = j7.b;
+            if (str != null) {
+                DeferredDeeplinkListener deferredDeeplinkListener = this.b;
+                if (deferredDeeplinkListener != null) {
+                    deferredDeeplinkListener.onDeeplinkLoaded(str);
+                    this.b = null;
+                }
+                if (!lo.a(this.d.f641a)) {
+                    Map<String, String> map = this.d.f641a;
+                    DeferredDeeplinkParametersListener deferredDeeplinkParametersListener = this.c;
+                    if (deferredDeeplinkParametersListener != null) {
+                        deferredDeeplinkParametersListener.onParametersLoaded(map);
+                        this.c = null;
+                        return;
+                    }
+                    return;
+                }
+                String str2 = this.d.c;
+                DeferredDeeplinkParametersListener deferredDeeplinkParametersListener2 = this.c;
+                if (deferredDeeplinkParametersListener2 != null) {
+                    deferredDeeplinkParametersListener2.onError(DeferredDeeplinkParametersListener.Error.PARSE_ERROR, (String) WrapUtils.getOrDefault(str2, ""));
+                    this.c = null;
+                }
+            } else if (j7.c != null) {
+                a(2);
+            } else {
+                a(3);
+            }
+        }
     }
 }

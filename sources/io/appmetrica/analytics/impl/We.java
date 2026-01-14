@@ -1,291 +1,200 @@
 package io.appmetrica.analytics.impl;
 
 import android.text.TextUtils;
-import com.google.android.vending.expansion.downloader.impl.DownloadsDB;
-import io.appmetrica.analytics.AppMetricaConfig;
-import io.appmetrica.analytics.coreapi.internal.identifiers.IdentifierStatus;
-import io.appmetrica.analytics.coreapi.internal.model.ScreenInfo;
-import io.appmetrica.analytics.coreutils.internal.parsing.JsonUtils;
-import io.appmetrica.analytics.internal.IdentifiersResult;
-import java.util.Collection;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import org.json.JSONArray;
 import org.json.JSONObject;
 /* loaded from: classes5.dex */
-public final class We extends AbstractC0747zd {
-    public static final Ze d = new Ze("UUID_RESULT", null);
-    public static final Ze e = new Ze("DEVICE_ID_RESULT", null);
-    public static final Ze f = new Ze("DEVICE_ID_HASH_RESULT", null);
-    public static final Ze g = new Ze("AD_URL_GET_RESULT", null);
-    public static final Ze h = new Ze("AD_URL_REPORT_RESULT", null);
-    public static final Ze i = new Ze("CUSTOM_HOSTS", null);
-    public static final Ze j = new Ze("SERVER_TIME_OFFSET", null);
-    public static final Ze k = new Ze("RESPONSE_CLIDS_RESULT", null);
-    public static final Ze l = new Ze("CUSTOM_SDK_HOSTS", null);
-    public static final Ze m = new Ze("CLIENT_CLIDS", null);
-    public static final Ze n = new Ze("DEFERRED_DEEP_LINK_WAS_CHECKED", null);
-    public static final Ze o = new Ze("API_LEVEL", null);
-    public static final Ze p = new Ze("NEXT_STARTUP_TIME", null);
-    public static final Ze q = new Ze("GAID", null);
-    public static final Ze r = new Ze("HOAID", null);
-    public static final Ze s = new Ze("YANDEX_ADV_ID", null);
-    public static final Ze t = new Ze("CLIENT_CLIDS_CHANGED_AFTER_LAST_IDENTIFIERS_UPDATE", null);
-    public static final Ze u = new Ze("SCREEN_INFO", null);
-    public static final Ze v = new Ze("SCREEN_SIZE_CHECKED_BY_DEPRECATED", null);
-    public static final Ze w = new Ze("FEATURES", null);
-    public static final Ze x = new Ze("APPMETRICA_CLIENT_CONFIG", null);
+public final class We extends AbstractC0726yd implements Bo {
+    public static final long d = 0;
+    public static final int e = -1;
+    public static final String f = "";
+    public static final String g = "";
+    public static final String r = "SESSION_";
+    public static final Ye h = new Ye("PERMISSIONS_CHECK_TIME", null);
+    public static final Ye i = new Ye("PROFILE_ID", null);
+    public static final Ye j = new Ye("APP_ENVIRONMENT", null);
+    public static final Ye k = new Ye("APP_ENVIRONMENT_REVISION", null);
+    public static final Ye l = new Ye("LAST_APP_VERSION_WITH_FEATURES", null);
+    public static final Ye m = new Ye("APPLICATION_FEATURES", null);
+    public static final Ye n = new Ye("CERTIFICATES_SHA1_FINGERPRINTS", null);
+    public static final Ye o = new Ye("VITAL_DATA", null);
+    public static final Ye p = new Ye("SENT_EXTERNAL_ATTRIBUTIONS", null);
+    public static final Ye q = new Ye("AUTO_COLLECTED_DATA_SUBSCRIBERS", null);
+    public static final Ye s = new Ye("MAIN_REPORTER_EVENTS_TRIGGER_CONDITION_MET", null);
 
-    public We(Ia ia) {
-        super(ia);
+    public We(Ha ha) {
+        super(ha);
     }
 
-    public final boolean a(boolean z) {
-        return this.f863a.getBoolean(t.b, z);
+    public final We a(C0313i0 c0313i0) {
+        synchronized (this) {
+            b(j.b, c0313i0.f1036a);
+            b(k.b, c0313i0.b);
+        }
+        return this;
     }
 
-    public final long b(long j2) {
-        return this.f863a.getLong(j.f877a, j2);
+    public final void b(boolean z) {
+        b(s.b, z);
     }
 
-    public final We c(IdentifiersResult identifiersResult) {
-        return a(l.b, identifiersResult);
+    @Override // io.appmetrica.analytics.impl.Xe
+    public final Set<String> c() {
+        return this.f854a.a();
     }
 
-    public final IdentifiersResult d() {
-        return h(g.b);
+    public final C0313i0 d() {
+        C0313i0 c0313i0;
+        synchronized (this) {
+            c0313i0 = new C0313i0(this.f854a.getString(j.b, "{}"), this.f854a.getLong(k.b, 0L));
+        }
+        return c0313i0;
     }
 
-    public final IdentifiersResult e() {
-        return h(h.b);
+    public final String e() {
+        return this.f854a.getString(m.b, "");
     }
 
-    public final We f(IdentifiersResult identifiersResult) {
-        return a(q.b, identifiersResult);
-    }
-
-    public final IdentifiersResult h() {
-        return h(l.b);
-    }
-
-    public final IdentifiersResult i() {
-        return h(f.b);
-    }
-
-    public final IdentifiersResult j() {
-        return h(e.b);
-    }
-
-    public final W9 k() {
-        String string = this.f863a.getString(w.b, null);
+    public final Map<String, Long> f() {
+        HashMap hashMap = new HashMap();
         try {
+            String string = this.f854a.getString(q.b, null);
             if (!TextUtils.isEmpty(string)) {
                 JSONObject jSONObject = new JSONObject(string);
-                return new W9(JsonUtils.optBooleanOrNull(jSONObject, "libSslEnabled"), IdentifierStatus.from(JsonUtils.optStringOrNull(jSONObject, DownloadsDB.DownloadColumns.STATUS)), JsonUtils.optStringOrNull(jSONObject, "ERROR_EXPLANATION"));
+                Iterator<String> keys = jSONObject.keys();
+                while (keys.hasNext()) {
+                    String next = keys.next();
+                    hashMap.put(next, Long.valueOf(jSONObject.getLong(next)));
+                }
             }
         } catch (Throwable unused) {
         }
-        return new W9(null, IdentifierStatus.UNKNOWN, null);
-    }
-
-    public final IdentifiersResult l() {
-        return h(q.b);
-    }
-
-    public final IdentifiersResult m() {
-        return h(r.b);
-    }
-
-    public final long n() {
-        return this.f863a.getLong(p.b, 0L);
-    }
-
-    public final IdentifiersResult o() {
-        return h(k.b);
-    }
-
-    public final ScreenInfo p() {
-        return AbstractC0293hb.e(this.f863a.getString(u.b, null));
-    }
-
-    public final IdentifiersResult q() {
-        return h(d.b);
-    }
-
-    public final IdentifiersResult r() {
-        return h(s.b);
-    }
-
-    public final boolean s() {
-        return this.f863a.getBoolean(n.b, false);
-    }
-
-    public final boolean t() {
-        return this.f863a.getBoolean(v.b, false);
-    }
-
-    public final We u() {
-        return (We) b(n.b, true);
-    }
-
-    public final void v() {
-        b(v.b, true);
+        return hashMap;
     }
 
     public final List<String> g() {
-        String string = this.f863a.getString(i.b, null);
-        if (TextUtils.isEmpty(string)) {
+        String str = n.b;
+        List emptyList = Collections.emptyList();
+        String[] strArr = emptyList == null ? null : (String[]) emptyList.toArray(new String[emptyList.size()]);
+        String string = this.f854a.getString(str, null);
+        if (!TextUtils.isEmpty(string)) {
+            try {
+                JSONArray jSONArray = new JSONArray(string);
+                strArr = new String[jSONArray.length()];
+                for (int i2 = 0; i2 < jSONArray.length(); i2++) {
+                    strArr[i2] = jSONArray.optString(i2);
+                }
+            } catch (Throwable unused) {
+            }
+        }
+        if (strArr == null) {
             return null;
         }
-        return AbstractC0293hb.b(string);
+        return Arrays.asList(strArr);
     }
 
-    public final long a(long j2) {
-        return this.f863a.getLong(o.b, j2);
+    public final int h() {
+        return this.f854a.getInt(l.b, -1);
     }
 
-    public final We b(IdentifiersResult identifiersResult) {
-        return a(h.b, identifiersResult);
+    public final long i() {
+        return this.f854a.getLong(h.b, 0L);
     }
 
-    public final We c(long j2) {
-        return (We) b(o.b, j2);
+    public final String j() {
+        return this.f854a.getString(i.b, null);
     }
 
-    public final We d(IdentifiersResult identifiersResult) {
-        return a(f.b, identifiersResult);
-    }
-
-    public final We e(IdentifiersResult identifiersResult) {
-        return a(e.b, identifiersResult);
-    }
-
-    public final AppMetricaConfig.Builder f() {
-        String string = this.f863a.getString(x.b, null);
-        if (string == null) {
-            return null;
-        }
-        return new H3().a(string);
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:14:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x002d  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final IdentifiersResult h(String str) {
-        IdentifiersResult identifiersResult;
-        String string;
+    public final Map<Integer, String> k() {
+        HashMap hashMap = new HashMap();
         try {
-            string = this.f863a.getString(str, null);
+            String string = this.f854a.getString(p.b, null);
+            if (string != null) {
+                JSONObject jSONObject = new JSONObject(string);
+                Iterator<String> keys = jSONObject.keys();
+                while (keys.hasNext()) {
+                    String next = keys.next();
+                    hashMap.put(Integer.valueOf(Integer.parseInt(next)), jSONObject.getString(next));
+                }
+            }
         } catch (Throwable unused) {
         }
-        if (string != null) {
-            JSONObject jSONObject = new JSONObject(string);
-            identifiersResult = new IdentifiersResult(JsonUtils.optStringOrNull(jSONObject, "ID"), IdentifierStatus.from(JsonUtils.optStringOrNull(jSONObject, DownloadsDB.DownloadColumns.STATUS)), JsonUtils.optStringOrNull(jSONObject, "ERROR_EXPLANATION"));
-            return identifiersResult != null ? new IdentifiersResult(null, IdentifierStatus.UNKNOWN, "no identifier in preferences") : identifiersResult;
+        return hashMap;
+    }
+
+    public final void b(Map<Integer, String> map) {
+        JSONObject jSONObject = new JSONObject();
+        for (Map.Entry<Integer, String> entry : map.entrySet()) {
+            try {
+                jSONObject.put(entry.getKey().toString(), entry.getValue());
+            } catch (Throwable unused) {
+            }
         }
-        identifiersResult = null;
-        if (identifiersResult != null) {
-        }
+        b(p.b, jSONObject.toString());
     }
 
-    public final We i(IdentifiersResult identifiersResult) {
-        return a(d.b, identifiersResult);
+    public final String h(String str) {
+        return this.f854a.getString(new Ye(r, str).b, "");
     }
 
-    public final We j(IdentifiersResult identifiersResult) {
-        return a(s.b, identifiersResult);
-    }
-
-    public final We g(IdentifiersResult identifiersResult) {
-        return a(r.b, identifiersResult);
-    }
-
-    public final We a(IdentifiersResult identifiersResult) {
-        return a(g.b, identifiersResult);
-    }
-
-    public final We b(boolean z) {
-        return (We) b(t.b, z);
-    }
-
-    public final We d(long j2) {
-        return (We) b(p.b, j2);
-    }
-
-    public final We e(long j2) {
-        return (We) b(j.b, j2);
-    }
-
-    public final String i(String str) {
-        return this.f863a.getString(m.b, str);
-    }
-
-    public final We j(String str) {
+    public final We i(String str) {
         return (We) b(m.b, str);
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0747zd
+    public final We j(String str) {
+        return (We) b(i.b, str);
+    }
+
+    public final We e(String str, String str2) {
+        return (We) b(new Ye(r, str).b, str2);
+    }
+
+    public final We a(long j2) {
+        return (We) b(h.b, j2);
+    }
+
+    @Override // io.appmetrica.analytics.impl.AbstractC0726yd
     public final String f(String str) {
-        return new Ze(str, null).b;
+        return new Ye(str, null).b;
+    }
+
+    public final We a(int i2) {
+        return (We) b(l.b, i2);
     }
 
     public final We a(List<String> list) {
-        return (We) b(i.b, mo.a((Collection) list) ? null : new JSONArray((Collection) list).toString());
+        return (We) a(n.b, list);
     }
 
-    public final We h(IdentifiersResult identifiersResult) {
-        return a(k.b, identifiersResult);
+    public final boolean a(boolean z) {
+        return this.f854a.getBoolean(s.b, z);
     }
 
-    public final We a(W9 w9) {
-        String str = w.b;
+    @Override // io.appmetrica.analytics.impl.Bo
+    public final String a() {
+        return this.f854a.getString(o.b, null);
+    }
+
+    @Override // io.appmetrica.analytics.impl.Bo
+    public final void a(String str) {
+        b(o.b, str);
+    }
+
+    public final void a(Map<String, Long> map) {
         JSONObject jSONObject = new JSONObject();
-        try {
-            jSONObject.putOpt("libSslEnabled", w9.f835a).put(DownloadsDB.DownloadColumns.STATUS, w9.b.getValue()).putOpt("ERROR_EXPLANATION", w9.c);
-        } catch (Throwable unused) {
-        }
-        return (We) b(str, jSONObject.toString());
-    }
-
-    @Override // io.appmetrica.analytics.impl.AbstractC0747zd
-    /* renamed from: k */
-    public final We g(String str) {
-        return (We) d(new Ze(str, null).b);
-    }
-
-    public final void a(ScreenInfo screenInfo) {
-        b(u.b, AbstractC0293hb.a(screenInfo));
-    }
-
-    public final void a(AppMetricaConfig appMetricaConfig) {
-        b(x.b, appMetricaConfig.toJson());
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:9:0x002a  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final We a(String str, IdentifiersResult identifiersResult) {
-        String jSONObject;
-        if (identifiersResult != null) {
+        for (Map.Entry<String, Long> entry : map.entrySet()) {
             try {
-                JSONObject jSONObject2 = new JSONObject();
-                try {
-                    jSONObject2.put("ID", identifiersResult.id).put(DownloadsDB.DownloadColumns.STATUS, identifiersResult.status.getValue()).put("ERROR_EXPLANATION", identifiersResult.errorExplanation);
-                } catch (Throwable unused) {
-                }
-                jSONObject = jSONObject2.toString();
-            } catch (Throwable unused2) {
+                jSONObject.put(entry.getKey(), entry.getValue());
+            } catch (Throwable unused) {
             }
-            if (jSONObject != null) {
-                b(str, jSONObject);
-            }
-            return this;
         }
-        jSONObject = null;
-        if (jSONObject != null) {
-        }
-        return this;
+        b(q.b, jSONObject.toString());
     }
 }

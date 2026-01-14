@@ -1,24 +1,23 @@
 package io.appmetrica.analytics.impl;
 
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
+import android.os.Bundle;
+import io.appmetrica.analytics.internal.IAppMetricaService;
 /* loaded from: classes5.dex */
-public final class Ei implements InterfaceC0156c3 {
+public final class Ei extends AbstractCallableC0705xh {
+    public final Bf e;
 
-    /* renamed from: a  reason: collision with root package name */
-    public final Object f561a;
-    public final InterfaceC0156c3 b;
-
-    public Ei(Object obj, InterfaceC0156c3 interfaceC0156c3) {
-        this.f561a = obj;
-        this.b = interfaceC0156c3;
+    public Ei(C0489p0 c0489p0, Zk zk, Bf bf) {
+        super(c0489p0, zk);
+        this.e = bf;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0156c3
-    public final int getBytesTruncated() {
-        return this.b.getBytesTruncated();
-    }
-
-    public final String toString() {
-        return "Result{result=" + this.f561a + ", metaInfo=" + this.b + AbstractJsonLexerKt.END_OBJ;
+    @Override // io.appmetrica.analytics.impl.AbstractCallableC0705xh
+    public final void a(IAppMetricaService iAppMetricaService) {
+        Bundle bundle = new Bundle();
+        Bf bf = this.e;
+        synchronized (bf) {
+            bundle.putParcelable("PROCESS_CFG_OBJ", bf);
+        }
+        iAppMetricaService.resumeUserSession(bundle);
     }
 }

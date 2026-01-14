@@ -1,27 +1,21 @@
 package io.appmetrica.analytics.impl;
-
-import java.util.List;
-import kotlin.collections.CollectionsKt;
 /* loaded from: classes5.dex */
-public final class O4 {
+public final class O4 implements InterfaceC0547r9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0714y5 f714a;
-    public final Fc b;
-    public final Fc c;
+    public final C0369k5 f721a;
 
-    public O4(M6 m6, Rg rg) {
-        C0623ue c0623ue = new C0623ue(m6);
-        this.f714a = new C0714y5(m6);
-        this.b = new Fc(c0623ue, new N4(rg));
-        this.c = new Fc(c0623ue, M4.f680a);
+    public O4(InterfaceC0647v9 interfaceC0647v9, L6 l6, Qg qg, Q4 q4) {
+        N4 n4 = new N4(l6, qg);
+        this.f721a = new C0369k5(interfaceC0647v9, n4.a(), n4.b(), q4);
     }
 
-    public final List<G8> a() {
-        return CollectionsKt.listOf((Object[]) new G8[]{this.f714a, this.b});
+    @Override // io.appmetrica.analytics.impl.InterfaceC0547r9
+    public final InterfaceC0523q9 a() {
+        return this.f721a;
     }
 
-    public final List<G8> b() {
-        return CollectionsKt.listOf(this.c);
+    public final C0369k5 b() {
+        return this.f721a;
     }
 }

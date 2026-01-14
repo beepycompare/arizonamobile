@@ -1,11 +1,17 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
+import io.appmetrica.analytics.internal.CounterConfiguration;
+import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
 /* loaded from: classes5.dex */
-public final class F4 extends G2 {
-    public F4(Gf gf, C0713y4 c0713y4) {
-        super(gf, c0713y4);
+public final class F4 extends Fh {
+    public F4(Bf bf) {
+        super(bf, new CounterConfiguration(), new D8(new C0559rl(LoggerStorage.getMainPublicOrAnonymousLogger(), "Crash Environment")));
+        b().setReporterType(CounterConfigurationReporterType.COMMUTATION);
     }
 
-    public final boolean a(Q5 q5, C0638v4 c0638v4) {
-        return a(q5, new E4(c0638v4));
+    @Override // io.appmetrica.analytics.impl.Fh
+    public final boolean f() {
+        return true;
     }
 }

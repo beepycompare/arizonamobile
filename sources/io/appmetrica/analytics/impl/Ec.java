@@ -1,29 +1,20 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.HashMap;
-import java.util.Map;
+import kotlin.jvm.functions.Function0;
 /* loaded from: classes5.dex */
-public class Ec {
+public final class Ec implements F8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Map f558a;
-    public final Object b;
+    public final InterfaceC0627ue f567a;
+    public final Function0 b;
 
-    public Ec(Object obj) {
-        this(new HashMap(), obj);
+    public Ec(InterfaceC0627ue interfaceC0627ue, Function0<Integer> function0) {
+        this.f567a = interfaceC0627ue;
+        this.b = function0;
     }
 
-    public final void a(Object obj, Object obj2) {
-        this.f558a.put(obj, obj2);
-    }
-
-    public Ec(HashMap hashMap, Object obj) {
-        this.f558a = hashMap;
-        this.b = obj;
-    }
-
-    public final Object a(Object obj) {
-        Object obj2 = this.f558a.get(obj);
-        return obj2 == null ? this.b : obj2;
+    @Override // io.appmetrica.analytics.impl.F8
+    public final boolean b() {
+        return ((C0602te) this.f567a).b.get() >= ((long) ((Number) this.b.invoke()).intValue());
     }
 }

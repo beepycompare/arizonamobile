@@ -1,14 +1,19 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.List;
+import io.appmetrica.analytics.coreutils.internal.toggle.SimpleThreadSafeToggle;
 /* loaded from: classes5.dex */
-public final class E3 implements Jm {
-    public final C0587t3 a(C0562s3 c0562s3, List<C0562s3> list) {
-        return new C0587t3(c0562s3, list);
+public final class E3 extends SimpleThreadSafeToggle {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Ze f561a;
+
+    public E3(Ze ze) {
+        super(ze.e(), "[ClientApiTrackingStatusToggle]");
+        this.f561a = ze;
     }
 
-    @Override // kotlin.jvm.functions.Function2
-    public final Object invoke(Object obj, Object obj2) {
-        return new C0587t3((C0562s3) obj, (List) obj2);
+    public final void a(boolean z) {
+        updateState(z);
+        this.f561a.f(z);
     }
 }

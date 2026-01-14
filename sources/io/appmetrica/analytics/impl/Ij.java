@@ -1,20 +1,18 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.AdRevenue;
+import java.util.Map;
 /* loaded from: classes5.dex */
-public final class Ij implements Ra {
+public final class Ij implements Qa {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ AdRevenue f625a;
-    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Map f633a;
 
-    public Ij(AdRevenue adRevenue, boolean z) {
-        this.f625a = adRevenue;
-        this.b = z;
+    public Ij(Map map) {
+        this.f633a = map;
     }
 
-    @Override // io.appmetrica.analytics.impl.Ra
-    public final void a(Sa sa) {
-        sa.reportAdRevenue(this.f625a, this.b);
+    @Override // io.appmetrica.analytics.impl.Qa
+    public final void a(Ra ra) {
+        ra.reportAnr(this.f633a);
     }
 }

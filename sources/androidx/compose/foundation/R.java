@@ -4,7 +4,7 @@ public final class R {
 
     /* loaded from: classes.dex */
     public static final class id {
-        public static int compose_prefetch_scheduler = 0x7f0a0384;
+        public static int compose_prefetch_scheduler = 0x7f0a0380;
 
         private id() {
         }

@@ -10,11 +10,10 @@ import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
-import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: FamilyScreen.kt */
 @Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001*\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "Lcom/arizonagames/feature/arizona/family/data/GangZoneItem;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "com.arizonagames.feature.arizona.family.FamilyScreen$requestTerritories$1$1$contextList$1", f = "FamilyScreen.kt", i = {}, l = {578}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@DebugMetadata(c = "com.arizonagames.feature.arizona.family.FamilyScreen$requestTerritories$1$1$contextList$1", f = "FamilyScreen.kt", i = {}, l = {550}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes3.dex */
 final class FamilyScreen$requestTerritories$1$1$contextList$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super List<? extends GangZoneItem>>, Object> {
     int label;
@@ -45,12 +44,10 @@ final class FamilyScreen$requestTerritories$1$1$contextList$1 extends SuspendLam
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         FamilyApi familyApi;
-        int i;
-        String token;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i2 = this.label;
-        if (i2 != 0) {
-            if (i2 == 1) {
+        int i = this.label;
+        if (i != 0) {
+            if (i == 1) {
                 ResultKt.throwOnFailure(obj);
                 return obj;
             }
@@ -58,14 +55,8 @@ final class FamilyScreen$requestTerritories$1$1$contextList$1 extends SuspendLam
         }
         ResultKt.throwOnFailure(obj);
         familyApi = this.this$0.api;
-        if (familyApi == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("api");
-            familyApi = null;
-        }
-        i = this.this$0.serverId;
-        token = this.this$0.getToken();
         this.label = 1;
-        Object gangZone$default = FamilyApi.getGangZone$default(familyApi, token, null, i, this, 2, null);
-        return gangZone$default == coroutine_suspended ? coroutine_suspended : gangZone$default;
+        Object gangZone = familyApi.getGangZone(this);
+        return gangZone == coroutine_suspended ? coroutine_suspended : gangZone;
     }
 }

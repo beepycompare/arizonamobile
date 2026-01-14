@@ -7,17 +7,17 @@ import kotlin.jvm.internal.Lambda;
 public final class D extends Lambda implements Function1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0558s f536a;
+    public final /* synthetic */ C0562s f541a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public D(C0558s c0558s) {
+    public D(C0562s c0562s) {
         super(1);
-        this.f536a = c0558s;
+        this.f541a = c0562s;
     }
 
     @Override // kotlin.jvm.functions.Function1
     public final Object invoke(Object obj) {
-        this.f536a.c = (byte[]) obj;
+        this.f541a.c = (byte[]) obj;
         return Unit.INSTANCE;
     }
 }

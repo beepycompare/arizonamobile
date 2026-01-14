@@ -1,34 +1,15 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.modulesapi.internal.common.ModulePreferences;
-import io.appmetrica.analytics.modulesapi.internal.service.event.ModuleEventServiceHandlerContext;
-import io.appmetrica.analytics.modulesapi.internal.service.event.ModuleEventServiceHandlerReporter;
 /* loaded from: classes5.dex */
-public final class Xc implements ModuleEventServiceHandlerContext {
+public final class Xc extends D2 {
+    public final String b;
 
-    /* renamed from: a  reason: collision with root package name */
-    public final ModulePreferences f848a;
-    public final ModulePreferences b;
-    public final ModuleEventServiceHandlerReporter c;
-
-    public Xc(ModulePreferences modulePreferences, ModulePreferences modulePreferences2, ModuleEventServiceHandlerReporter moduleEventServiceHandlerReporter) {
-        this.f848a = modulePreferences;
-        this.b = modulePreferences2;
-        this.c = moduleEventServiceHandlerReporter;
+    public Xc(String str, InterfaceC0634ul interfaceC0634ul) {
+        super(interfaceC0634ul);
+        this.b = str;
     }
 
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.event.ModuleEventServiceHandlerContext
-    public final ModuleEventServiceHandlerReporter getEventReporter() {
-        return this.c;
-    }
-
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.event.ModuleEventServiceHandlerContext
-    public final ModulePreferences getLegacyModulePreferences() {
-        return this.b;
-    }
-
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.event.ModuleEventServiceHandlerContext
-    public final ModulePreferences getModulePreferences() {
-        return this.f848a;
+    @Override // io.appmetrica.analytics.impl.D2
+    public final String a(String str) {
+        return str + '-' + this.b;
     }
 }

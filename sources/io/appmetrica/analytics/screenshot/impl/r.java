@@ -6,13 +6,13 @@ import kotlin.collections.ArraysKt;
 public final class r implements Converter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final O fromModel(C0773p c0773p) {
+    public final O fromModel(C0777p c0777p) {
         O o = new O();
-        o.f1444a = c0773p.f1474a;
-        Object[] array = c0773p.b.toArray(new String[0]);
+        o.f1453a = c0777p.f1483a;
+        Object[] array = c0777p.b.toArray(new String[0]);
         if (array != null) {
             o.c = (String[]) array;
-            o.b = c0773p.c;
+            o.b = c0777p.c;
             return o;
         }
         throw new NullPointerException("null cannot be cast to non-null type kotlin.Array<T of kotlin.collections.ArraysKt__ArraysJVMKt.toTypedArray>");
@@ -20,7 +20,7 @@ public final class r implements Converter {
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
-    public final C0773p toModel(O o) {
-        return new C0773p(o.f1444a, ArraysKt.toList(o.c), o.b);
+    public final C0777p toModel(O o) {
+        return new C0777p(o.f1453a, ArraysKt.toList(o.c), o.b);
     }
 }

@@ -1,99 +1,107 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.Handler;
-import android.os.Looper;
-import com.google.android.vending.expansion.downloader.Constants;
-import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
-import java.util.concurrent.Callable;
-import java.util.concurrent.Future;
-import java.util.concurrent.FutureTask;
-import java.util.concurrent.TimeUnit;
+import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.InternalNano;
+import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
+import java.io.IOException;
+import java.util.Arrays;
 /* loaded from: classes5.dex */
-public final class A9 implements IHandlerExecutor {
+public final class A9 extends MessageNano {
+    public static final int c = 0;
+    public static final int d = 1;
+    public static final int e = 2;
+    public static final int f = 3;
+    public static final int g = 4;
+    public static final int h = 5;
+    public static final int i = 6;
+    public static volatile A9[] j;
 
     /* renamed from: a  reason: collision with root package name */
-    public final Looper f491a;
-    public final Handler b;
-    public final HandlerThreadC0190db c;
+    public int f497a;
+    public byte[] b;
 
-    public A9(String str) {
-        this(a(str));
+    public A9() {
+        a();
     }
 
-    public static HandlerThreadC0190db a(String str) {
-        HandlerThreadC0190db handlerThreadC0190db = new HandlerThreadC0190db(str + Constants.FILENAME_SEQUENCE_SEPARATOR + Ad.f493a.incrementAndGet());
-        handlerThreadC0190db.start();
-        return handlerThreadC0190db;
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor, java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        this.b.post(runnable);
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor
-    public final void executeDelayed(Runnable runnable, long j) {
-        this.b.postDelayed(runnable, TimeUnit.MILLISECONDS.toMillis(j));
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor
-    public final Handler getHandler() {
-        return this.b;
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor
-    public final Looper getLooper() {
-        return this.f491a;
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.executors.IInterruptionSafeThread
-    public final boolean isRunning() {
-        boolean z;
-        HandlerThreadC0190db handlerThreadC0190db = this.c;
-        synchronized (handlerThreadC0190db) {
-            z = handlerThreadC0190db.f946a;
+    public static A9[] b() {
+        if (j == null) {
+            synchronized (InternalNano.LAZY_INIT_LOCK) {
+                if (j == null) {
+                    j = new A9[0];
+                }
+            }
         }
-        return z;
+        return j;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor
-    public final void remove(Runnable runnable) {
-        this.b.removeCallbacks(runnable);
+    public final A9 a() {
+        this.f497a = 0;
+        this.b = WireFormatNano.EMPTY_BYTES;
+        this.cachedSize = -1;
+        return this;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor
-    public final void removeAll() {
-        this.b.removeCallbacksAndMessages(null);
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.executors.IInterruptionSafeThread
-    public final void stopRunning() {
-        HandlerThreadC0190db handlerThreadC0190db = this.c;
-        synchronized (handlerThreadC0190db) {
-            handlerThreadC0190db.f946a = false;
-            handlerThreadC0190db.interrupt();
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final int computeSerializedSize() {
+        int computeSerializedSize = super.computeSerializedSize();
+        int i2 = this.f497a;
+        if (i2 != 0) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeInt32Size(1, i2);
         }
+        return !Arrays.equals(this.b, WireFormatNano.EMPTY_BYTES) ? CodedOutputByteBufferNano.computeBytesSize(2, this.b) + computeSerializedSize : computeSerializedSize;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor
-    public final <T> Future<T> submit(Callable<T> callable) {
-        FutureTask futureTask = new FutureTask(callable);
-        this.b.post(futureTask);
-        return futureTask;
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
+        int i2 = this.f497a;
+        if (i2 != 0) {
+            codedOutputByteBufferNano.writeInt32(1, i2);
+        }
+        if (!Arrays.equals(this.b, WireFormatNano.EMPTY_BYTES)) {
+            codedOutputByteBufferNano.writeBytes(2, this.b);
+        }
+        super.writeTo(codedOutputByteBufferNano);
     }
 
-    public A9(HandlerThreadC0190db handlerThreadC0190db) {
-        this(handlerThreadC0190db, handlerThreadC0190db.getLooper(), new Handler(handlerThreadC0190db.getLooper()));
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    /* renamed from: a */
+    public final A9 mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        while (true) {
+            int readTag = codedInputByteBufferNano.readTag();
+            if (readTag != 0) {
+                if (readTag == 8) {
+                    int readInt32 = codedInputByteBufferNano.readInt32();
+                    switch (readInt32) {
+                        case 0:
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                        case 5:
+                        case 6:
+                            this.f497a = readInt32;
+                            continue;
+                    }
+                } else if (readTag != 18) {
+                    if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
+                    }
+                } else {
+                    this.b = codedInputByteBufferNano.readBytes();
+                }
+            }
+        }
+        return this;
     }
 
-    public A9(HandlerThreadC0190db handlerThreadC0190db, Looper looper, Handler handler) {
-        this.c = handlerThreadC0190db;
-        this.f491a = looper;
-        this.b = handler;
+    public static A9 b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        return new A9().mergeFrom(codedInputByteBufferNano);
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor
-    public final void executeDelayed(Runnable runnable, long j, TimeUnit timeUnit) {
-        this.b.postDelayed(runnable, timeUnit.toMillis(j));
+    public static A9 a(byte[] bArr) throws InvalidProtocolBufferNanoException {
+        return (A9) MessageNano.mergeFrom(new A9(), bArr);
     }
 }

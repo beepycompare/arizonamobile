@@ -1,27 +1,16 @@
 package io.appmetrica.analytics.impl;
-
-import java.util.ArrayList;
 /* loaded from: classes5.dex */
-public final class D4 extends Gf {
+public final class D4 implements E2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C4 f538a;
+    public final /* synthetic */ C0617u4 f543a;
 
-    public D4(C0713y4 c0713y4) {
-        this.f538a = new C4(c0713y4);
+    public D4(C0617u4 c0617u4) {
+        this.f543a = c0617u4;
     }
 
-    @Override // io.appmetrica.analytics.impl.Gf
-    public final X8 a(int i) {
-        ArrayList arrayList = new ArrayList();
-        int ordinal = EnumC0164cb.a(i).ordinal();
-        if (ordinal == 12) {
-            arrayList.add(this.f538a.f520a);
-        } else if (ordinal == 14) {
-            arrayList.add(this.f538a.b);
-        } else if (ordinal == 34) {
-            arrayList.add(this.f538a.c);
-        }
-        return new W8(arrayList);
+    @Override // io.appmetrica.analytics.impl.E2
+    public final boolean a(Object obj, P5 p5) {
+        return ((A4) obj).a(p5, this.f543a);
     }
 }

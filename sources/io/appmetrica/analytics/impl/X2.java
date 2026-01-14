@@ -1,18 +1,12 @@
 package io.appmetrica.analytics.impl;
-
-import android.content.Context;
 /* loaded from: classes5.dex */
-public final class X2 extends Di {
-    public X2(Context context, String str) {
-        super(context, str, "bool");
+public final class X2 extends AbstractC0592t4 {
+    public X2(String str, boolean z, so soVar, J2 j2) {
+        super(3, str, Boolean.valueOf(z), soVar, j2);
     }
 
-    @Override // io.appmetrica.analytics.impl.Di
-    public final Object a(int i) {
-        return Boolean.valueOf(this.f545a.getResources().getBoolean(i));
-    }
-
-    public final Boolean b(int i) {
-        return Boolean.valueOf(this.f545a.getResources().getBoolean(i));
+    @Override // io.appmetrica.analytics.impl.AbstractC0592t4
+    public final void a(C0259fo c0259fo) {
+        c0259fo.d.d = ((Boolean) this.f).booleanValue();
     }
 }

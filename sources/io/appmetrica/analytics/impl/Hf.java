@@ -1,89 +1,37 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.Converter;
-import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
+import io.appmetrica.analytics.ecommerce.ECommerceProduct;
 import java.util.List;
 import java.util.Map;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes5.dex */
-public final class Hf implements Converter {
+public final class Hf {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0598te f606a;
-    public final C0724yf b;
-    public final C0413m3 c;
-    public final Jf d;
-    public final C0594ta e;
-    public final C0594ta f;
+    public final String f614a;
+    public final String b;
+    public final List c;
+    public final Map d;
+    public final C0753zf e;
+    public final C0753zf f;
+    public final List g;
 
-    public Hf() {
-        this(new C0598te(), new C0724yf(), new C0413m3(), new Jf(), new C0594ta(100), new C0594ta(1000));
+    public Hf(ECommerceProduct eCommerceProduct) {
+        this(eCommerceProduct.getSku(), eCommerceProduct.getName(), CollectionUtils.arrayListCopyOfNullableCollection(eCommerceProduct.getCategoriesPath()), CollectionUtils.mapCopyOfNullableMap(eCommerceProduct.getPayload()), eCommerceProduct.getActualPrice() == null ? null : new C0753zf(eCommerceProduct.getActualPrice()), eCommerceProduct.getOriginalPrice() != null ? new C0753zf(eCommerceProduct.getOriginalPrice()) : null, CollectionUtils.arrayListCopyOfNullableCollection(eCommerceProduct.getPromocodes()));
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final Ei fromModel(If r10) {
-        Ei ei;
-        Ei ei2;
-        Ei ei3;
-        Ei ei4;
-        C0468o8 c0468o8 = new C0468o8();
-        Nn a2 = this.e.a(r10.f622a);
-        c0468o8.f1142a = StringUtils.getUTF8Bytes((String) a2.f709a);
-        Nn a3 = this.f.a(r10.b);
-        c0468o8.b = StringUtils.getUTF8Bytes((String) a3.f709a);
-        List<String> list = r10.c;
-        Ei ei5 = null;
-        if (list != null) {
-            ei = this.c.fromModel(list);
-            c0468o8.c = (C0264g8) ei.f561a;
-        } else {
-            ei = null;
-        }
-        Map<String, String> map = r10.d;
-        if (map != null) {
-            ei2 = this.f606a.fromModel(map);
-            c0468o8.d = (C0418m8) ei2.f561a;
-        } else {
-            ei2 = null;
-        }
-        Af af = r10.e;
-        if (af != null) {
-            ei3 = this.b.fromModel(af);
-            c0468o8.e = (C0443n8) ei3.f561a;
-        } else {
-            ei3 = null;
-        }
-        Af af2 = r10.f;
-        if (af2 != null) {
-            ei4 = this.b.fromModel(af2);
-            c0468o8.f = (C0443n8) ei4.f561a;
-        } else {
-            ei4 = null;
-        }
-        List<String> list2 = r10.g;
-        if (list2 != null) {
-            ei5 = this.d.fromModel(list2);
-            c0468o8.g = (C0493p8[]) ei5.f561a;
-        }
-        return new Ei(c0468o8, new C0130b3(C0130b3.b(a2, a3, ei, ei2, ei3, ei4, ei5)));
+    public final String toString() {
+        return "ProductWrapper{sku='" + this.f614a + "', name='" + this.b + "', categoriesPath=" + this.c + ", payload=" + this.d + ", actualPrice=" + this.e + ", originalPrice=" + this.f + ", promocodes=" + this.g + AbstractJsonLexerKt.END_OBJ;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final Object toModel(Object obj) {
-        Ei ei = (Ei) obj;
-        throw new UnsupportedOperationException();
-    }
-
-    public Hf(C0598te c0598te, C0724yf c0724yf, C0413m3 c0413m3, Jf jf, C0594ta c0594ta, C0594ta c0594ta2) {
-        this.f606a = c0598te;
-        this.b = c0724yf;
-        this.c = c0413m3;
-        this.d = jf;
-        this.e = c0594ta;
-        this.f = c0594ta2;
-    }
-
-    public final If a(Ei ei) {
-        throw new UnsupportedOperationException();
+    public Hf(String str, String str2, List list, Map map, C0753zf c0753zf, C0753zf c0753zf2, List list2) {
+        this.f614a = str;
+        this.b = str2;
+        this.c = list;
+        this.d = map;
+        this.e = c0753zf;
+        this.f = c0753zf2;
+        this.g = list2;
     }
 }

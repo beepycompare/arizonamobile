@@ -13,7 +13,7 @@ import kotlin.jvm.internal.Lambda;
 public final class e0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1597a;
+    public final Context f1606a;
     public final Lazy b;
 
     /* loaded from: classes6.dex */
@@ -29,9 +29,9 @@ public final class e0 {
             e0 e0Var = e0.this;
             try {
                 Result.Companion companion = Result.Companion;
-                PackageManager packageManager = e0Var.f1597a.getPackageManager();
+                PackageManager packageManager = e0Var.f1606a.getPackageManager();
                 Intrinsics.checkNotNullExpressionValue(packageManager, "context.packageManager");
-                String packageName = e0Var.f1597a.getPackageName();
+                String packageName = e0Var.f1606a.getPackageName();
                 Intrinsics.checkNotNullExpressionValue(packageName, "context.packageName");
                 value = f0.a(packageManager, packageName).versionName;
             } catch (Throwable th) {
@@ -46,7 +46,7 @@ public final class e0 {
                     m10244constructorimpl = null;
                 }
                 d0 d0Var = (d0) m10244constructorimpl;
-                String str = d0Var != null ? d0Var.f1596a : null;
+                String str = d0Var != null ? d0Var.f1605a : null;
                 if (str != null) {
                     return new d0(str);
                 }
@@ -58,7 +58,7 @@ public final class e0 {
 
     public e0(Context context) {
         Intrinsics.checkNotNullParameter(context, "context");
-        this.f1597a = context;
+        this.f1606a = context;
         this.b = LazyKt.lazy(new a());
     }
 }

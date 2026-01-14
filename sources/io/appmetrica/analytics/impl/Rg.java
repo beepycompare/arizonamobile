@@ -1,7 +1,17 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
-public final class Rg extends H4 {
-    public Rg(C0350jh c0350jh, C0278gm c0278gm, C0273gh c0273gh) {
-        super(c0350jh, c0278gm, c0273gh);
+public abstract class Rg {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final X4 f768a;
+
+    public Rg(X4 x4) {
+        this.f768a = x4;
     }
+
+    public final X4 a() {
+        return this.f768a;
+    }
+
+    public abstract boolean a(P5 p5);
 }

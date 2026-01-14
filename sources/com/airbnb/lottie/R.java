@@ -36,13 +36,13 @@ public final class R {
     /* loaded from: classes3.dex */
     public static final class id {
         public static int automatic = 0x7f0a013f;
-        public static int disabled = 0x7f0a0420;
-        public static int enabled = 0x7f0a04bc;
-        public static int hardware = 0x7f0a0641;
-        public static int lottie_layer_name = 0x7f0a083c;
-        public static int restart = 0x7f0a0b44;
-        public static int reverse = 0x7f0a0b4a;
-        public static int software = 0x7f0a0cc0;
+        public static int disabled = 0x7f0a041c;
+        public static int enabled = 0x7f0a04b2;
+        public static int hardware = 0x7f0a0636;
+        public static int lottie_layer_name = 0x7f0a0830;
+        public static int restart = 0x7f0a0b35;
+        public static int reverse = 0x7f0a0b3b;
+        public static int software = 0x7f0a0cb1;
 
         private id() {
         }

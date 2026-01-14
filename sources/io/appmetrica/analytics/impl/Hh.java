@@ -1,24 +1,21 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import java.util.List;
 /* loaded from: classes5.dex */
 public final class Hh implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f607a;
-    public final /* synthetic */ List b;
-    public final /* synthetic */ C0300hi c;
+    public final /* synthetic */ String f615a;
+    public final /* synthetic */ Throwable b;
+    public final /* synthetic */ C0279gi c;
 
-    public Hh(C0300hi c0300hi, String str, List list) {
-        this.c = c0300hi;
-        this.f607a = str;
-        this.b = list;
+    public Hh(C0279gi c0279gi, String str, Throwable th) {
+        this.c = c0279gi;
+        this.f615a = str;
+        this.b = th;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0300hi c0300hi = this.c;
-        C0300hi.a(c0300hi.f1024a, c0300hi.d, c0300hi.e).reportEvent(this.f607a, CollectionUtils.getMapFromList(this.b));
+        C0279gi c0279gi = this.c;
+        C0279gi.a(c0279gi.f1016a, c0279gi.d, c0279gi.e).reportError(this.f615a, this.b);
     }
 }

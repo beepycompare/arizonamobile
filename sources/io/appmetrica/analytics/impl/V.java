@@ -8,12 +8,12 @@ import java.util.List;
 public final class V {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0707xn f814a;
+    public final C0686wn f818a;
     public final List b;
     public final String c;
 
-    public V(C0707xn c0707xn, ArrayList arrayList, String str) {
-        this.f814a = c0707xn;
+    public V(C0686wn c0686wn, ArrayList arrayList, String str) {
+        this.f818a = c0686wn;
         this.b = arrayList == null ? Collections.emptyList() : CollectionUtils.unmodifiableListCopy(arrayList);
         this.c = str;
     }

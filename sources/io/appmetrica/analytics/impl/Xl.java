@@ -1,195 +1,147 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
+import android.net.Uri;
 import android.text.TextUtils;
-import io.appmetrica.analytics.StartupParamsCallback;
-import io.appmetrica.analytics.coreapi.internal.identifiers.IdentifierStatus;
-import io.appmetrica.analytics.internal.IdentifiersResult;
+import com.adjust.sdk.Constants;
+import io.appmetrica.analytics.coreapi.internal.control.DataSendingRestrictionController;
+import io.appmetrica.analytics.coreapi.internal.identifiers.AdTrackingInfoResult;
+import io.appmetrica.analytics.coreapi.internal.identifiers.AdvertisingIdsHolder;
+import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
+import io.appmetrica.analytics.networktasks.internal.IParamsAppender;
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import kotlin.NoWhenBranchMatchedException;
-import kotlin.collections.CollectionsKt;
-import kotlin.jvm.internal.Intrinsics;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes5.dex */
-public final class Xl {
+public final class Xl implements IParamsAppender {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashSet f852a;
-    public final HashMap b;
-    public final Ul c;
-    public List d;
-    public HashMap e;
-    public long f;
-    public boolean g;
-    public long h;
-    public final We i;
-    public final P j;
-    public final D3 k;
-    public final C0715y6 l;
-    public final U9 m;
-    public final T9 n;
-    public final qo o;
+    public final C0275ge f858a;
+    public final InterfaceC0477od b;
+    public final Hb c = new Hb();
 
-    public Xl(Context context, We we) {
-        this(we, new P(), new D3(), C0157c4.l().a(context), new C0715y6(), new U9(), new T9(), new qo());
+    public Xl(C0275ge c0275ge, InterfaceC0477od interfaceC0477od) {
+        this.f858a = c0275ge;
+        this.b = interfaceC0477od;
     }
 
-    public final synchronized boolean a(List list) {
-        boolean z;
-        boolean z2;
-        boolean a2 = a(CollectionsKt.intersect(list, AbstractC0201dm.f955a));
-        Iterator it = list.iterator();
-        while (true) {
-            z = true;
-            if (!it.hasNext()) {
-                z2 = false;
-                break;
-            }
-            if (this.f852a.contains((String) it.next())) {
-                z2 = true;
-                break;
-            }
-        }
-        boolean z3 = AbstractC0201dm.b.currentTimeSeconds() > this.h;
-        if (a2 && !z2 && !z3) {
-            if (!this.g) {
-                z = false;
-            }
-        }
-        return z;
-    }
-
-    public final void b(IdentifiersResult identifiersResult) {
-        if (a(identifiersResult)) {
-            return;
-        }
-        this.b.put("appmetrica_clids", identifiersResult);
-    }
-
-    public final void c(IdentifiersResult identifiersResult) {
-        if (identifiersResult != null) {
-            qo qoVar = this.o;
-            String str = identifiersResult.id;
-            qoVar.getClass();
-            if (qo.a(str)) {
-                this.b.put(StartupParamsCallback.APPMETRICA_UUID, identifiersResult);
-            }
-        }
-    }
-
-    public final synchronized boolean b() {
-        return a(Arrays.asList("appmetrica_clids", StartupParamsCallback.APPMETRICA_DEVICE_ID_HASH, StartupParamsCallback.APPMETRICA_DEVICE_ID, "appmetrica_get_ad_url", "appmetrica_report_ad_url", StartupParamsCallback.APPMETRICA_UUID));
-    }
-
-    public final void c() {
-        W9 w9;
-        We d = this.i.i((IdentifiersResult) this.b.get(StartupParamsCallback.APPMETRICA_UUID)).e((IdentifiersResult) this.b.get(StartupParamsCallback.APPMETRICA_DEVICE_ID)).d((IdentifiersResult) this.b.get(StartupParamsCallback.APPMETRICA_DEVICE_ID_HASH)).a((IdentifiersResult) this.b.get("appmetrica_get_ad_url")).b((IdentifiersResult) this.b.get("appmetrica_report_ad_url")).e(this.f).h((IdentifiersResult) this.b.get("appmetrica_clids")).j(Gm.a((Map) this.e)).f((IdentifiersResult) this.b.get("appmetrica_google_adv_id")).g((IdentifiersResult) this.b.get("appmetrica_huawei_oaid")).j((IdentifiersResult) this.b.get("appmetrica_yandex_adv_id")).b(this.g).c(this.l.d).d(this.h);
-        U9 u9 = this.m;
-        synchronized (u9) {
-            w9 = u9.b;
-        }
-        d.a(w9).b();
-    }
-
-    public Xl(We we, P p, D3 d3, C0672wd c0672wd, C0715y6 c0715y6, U9 u9, T9 t9, qo qoVar) {
-        HashSet hashSet = new HashSet();
-        this.f852a = hashSet;
-        this.b = new HashMap();
-        this.c = new Ul();
-        hashSet.add("appmetrica_google_adv_id");
-        hashSet.add("appmetrica_huawei_oaid");
-        hashSet.add("appmetrica_yandex_adv_id");
-        this.i = we;
-        this.j = p;
-        this.k = d3;
-        this.l = c0715y6;
-        this.m = u9;
-        this.n = t9;
-        this.o = qoVar;
-        c(c0672wd.a());
-        a(StartupParamsCallback.APPMETRICA_DEVICE_ID, we.j());
-        a(StartupParamsCallback.APPMETRICA_DEVICE_ID_HASH, we.i());
-        a("appmetrica_get_ad_url", we.d());
-        a("appmetrica_report_ad_url", we.e());
-        b(we.o());
-        a("appmetrica_google_adv_id", we.l());
-        a("appmetrica_huawei_oaid", we.m());
-        a("appmetrica_yandex_adv_id", we.r());
-        c0715y6.a(we.h());
-        u9.a(we.k());
-        this.d = we.g();
-        String i = we.i((String) null);
-        this.e = i != null ? Gm.a(i) : null;
-        this.g = we.a(true);
-        this.f = we.b(0L);
-        this.h = we.n();
-        c();
-    }
-
-    public final boolean a() {
-        IdentifiersResult identifiersResult = (IdentifiersResult) this.b.get("appmetrica_clids");
-        if (!a(identifiersResult) && identifiersResult.id.isEmpty()) {
-            return mo.a((Map) this.e);
-        }
-        return true;
-    }
-
-    public static boolean a(IdentifiersResult identifiersResult) {
-        return identifiersResult == null || identifiersResult.id == null;
-    }
-
-    public final void a(String str, IdentifiersResult identifiersResult) {
-        if (identifiersResult == null || TextUtils.isEmpty(identifiersResult.id)) {
-            return;
-        }
-        this.b.put(str, identifiersResult);
-    }
-
-    public final synchronized boolean a(Collection collection) {
-        Boolean bool;
+    @Override // io.appmetrica.analytics.networktasks.internal.IParamsAppender
+    /* renamed from: a */
+    public final void appendParams(Uri.Builder builder, C0154bm c0154bm) {
         String str;
-        Iterator it = collection.iterator();
-        while (it.hasNext()) {
-            String str2 = (String) it.next();
-            IdentifiersResult identifiersResult = (IdentifiersResult) this.b.get(str2);
-            if (identifiersResult == null) {
-                identifiersResult = (IdentifiersResult) this.l.c.get(str2);
+        C0455ng c0455ng;
+        builder.path("analytics/startup");
+        builder.appendQueryParameter(this.f858a.a(CommonUrlParts.DEVICE_ID), c0154bm.getDeviceId());
+        a(builder, C0449na.I.h(), this.c);
+        builder.appendQueryParameter(this.f858a.a(CommonUrlParts.APP_SET_ID), c0154bm.getAppSetId());
+        builder.appendQueryParameter(this.f858a.a(CommonUrlParts.APP_SET_ID_SCOPE), c0154bm.getAppSetIdScope());
+        builder.appendQueryParameter(this.f858a.a(CommonUrlParts.APP_PLATFORM), c0154bm.getAppPlatform());
+        builder.appendQueryParameter(this.f858a.a(CommonUrlParts.PROTOCOL_VERSION), c0154bm.getProtocolVersion());
+        builder.appendQueryParameter(this.f858a.a(CommonUrlParts.ANALYTICS_SDK_VERSION_NAME), c0154bm.getAnalyticsSdkVersionName());
+        builder.appendQueryParameter(this.f858a.a(CommonUrlParts.MODEL), c0154bm.getModel());
+        builder.appendQueryParameter(this.f858a.a(CommonUrlParts.MANUFACTURER), c0154bm.getManufacturer());
+        builder.appendQueryParameter(this.f858a.a(CommonUrlParts.OS_VERSION), c0154bm.getOsVersion());
+        builder.appendQueryParameter(this.f858a.a(CommonUrlParts.SCREEN_WIDTH), String.valueOf(c0154bm.getScreenWidth()));
+        builder.appendQueryParameter(this.f858a.a(CommonUrlParts.SCREEN_HEIGHT), String.valueOf(c0154bm.getScreenHeight()));
+        builder.appendQueryParameter(this.f858a.a(CommonUrlParts.SCREEN_DPI), String.valueOf(c0154bm.getScreenDpi()));
+        builder.appendQueryParameter(this.f858a.a(CommonUrlParts.SCALE_FACTOR), String.valueOf(c0154bm.getScaleFactor()));
+        builder.appendQueryParameter(this.f858a.a(CommonUrlParts.LOCALE), c0154bm.getLocale());
+        builder.appendQueryParameter(this.f858a.a(CommonUrlParts.DEVICE_TYPE), c0154bm.getDeviceType());
+        builder.appendQueryParameter(this.f858a.a("queries"), String.valueOf(1));
+        builder.appendQueryParameter(this.f858a.a("query_hosts"), String.valueOf(2));
+        String a2 = this.f858a.a("features");
+        List<String> h = ((C0708xk) this.b).h();
+        String[] strArr = {this.f858a.a("permissions_collecting"), this.f858a.a("features_collecting"), this.f858a.a("google_aid"), this.f858a.a("huawei_oaid"), this.f858a.a("sim_info"), this.f858a.a("ssl_pinning")};
+        ArrayList arrayList = new ArrayList(h);
+        arrayList.addAll(Arrays.asList(strArr));
+        builder.appendQueryParameter(a2, StringUtils.wrapFeatures((String[]) arrayList.toArray(new String[0])));
+        builder.appendQueryParameter(this.f858a.a("app_id"), c0154bm.getPackageName());
+        builder.appendQueryParameter(this.f858a.a("app_debuggable"), ((N5) c0154bm).f706a);
+        if (c0154bm.l) {
+            String str2 = c0154bm.m;
+            if (!TextUtils.isEmpty(str2)) {
+                builder.appendQueryParameter(this.f858a.a("country_init"), str2);
             }
-            if (identifiersResult == null) {
-                W9 w9 = this.m.b;
-                if (!Intrinsics.areEqual(str2, "appmetrica_lib_ssl_enabled") || (bool = w9.f835a) == null) {
-                    identifiersResult = null;
-                } else {
-                    boolean booleanValue = bool.booleanValue();
-                    IdentifierStatus identifierStatus = w9.b;
-                    String str3 = w9.c;
-                    if (booleanValue) {
-                        str = "true";
-                    } else if (!booleanValue) {
-                        str = "false";
-                    } else {
-                        throw new NoWhenBranchMatchedException();
-                    }
-                    identifiersResult = new IdentifiersResult(str, identifierStatus, str3);
-                }
+        } else {
+            builder.appendQueryParameter(this.f858a.a("detect_locale"), String.valueOf(1));
+        }
+        C0541r3 c0541r3 = c0154bm.i;
+        if (!lo.a(c0541r3.f1200a)) {
+            builder.appendQueryParameter(this.f858a.a("distribution_customization"), String.valueOf(1));
+            builder.appendQueryParameter(this.f858a.a("clids_set"), Fm.a(c0541r3.f1200a));
+            int ordinal = c0541r3.b.ordinal();
+            if (ordinal == 1) {
+                str = "api";
+            } else if (ordinal == 2) {
+                str = "satellite";
+            } else if (ordinal != 3) {
+                str = "";
+            } else {
+                str = "retail";
             }
-            if ("appmetrica_clids".equals(str2)) {
-                if (this.g || a(identifiersResult) || (identifiersResult.id.isEmpty() && !mo.a((Map) this.e))) {
-                    return false;
+            builder.appendQueryParameter(this.f858a.a("clids_set_source"), str);
+            String str3 = c0154bm.f;
+            String str4 = c0154bm.g;
+            if (TextUtils.isEmpty(str3) && (c0455ng = c0154bm.o.b) != null) {
+                str3 = c0455ng.f1138a;
+                str4 = c0455ng.d.f1119a;
+            }
+            if (!TextUtils.isEmpty(str3)) {
+                builder.appendQueryParameter(this.f858a.a(Constants.INSTALL_REFERRER), str3);
+                if (str4 == null) {
+                    str4 = AbstractJsonLexerKt.NULL;
                 }
-            } else if ("appmetrica_lib_ssl_enabled".equals(str2)) {
-                if (identifiersResult == null) {
-                    return false;
-                }
-            } else if (identifiersResult == null || TextUtils.isEmpty(identifiersResult.id)) {
-                return false;
+                builder.appendQueryParameter(this.f858a.a("install_referrer_source"), str4);
             }
         }
-        return true;
+        String uuid = c0154bm.getUuid();
+        if (!TextUtils.isEmpty(uuid)) {
+            builder.appendQueryParameter(this.f858a.a(CommonUrlParts.UUID), uuid);
+        }
+        builder.appendQueryParameter(this.f858a.a("time"), String.valueOf(1));
+        builder.appendQueryParameter(this.f858a.a("stat_sending"), String.valueOf(1));
+        builder.appendQueryParameter(this.f858a.a("retry_policy"), String.valueOf(1));
+        builder.appendQueryParameter(this.f858a.a("cache_control"), String.valueOf(1));
+        builder.appendQueryParameter(this.f858a.a("permissions_collecting"), String.valueOf(1));
+        builder.appendQueryParameter(this.f858a.a("app_system_flag"), ((N5) c0154bm).b);
+        builder.appendQueryParameter(this.f858a.a("attribution"), String.valueOf(1));
+        builder.appendQueryParameter(this.f858a.a("startup_update"), String.valueOf(1));
+        builder.appendQueryParameter(this.f858a.a("external_attribution"), String.valueOf(1));
+        Map<String, Integer> d = ((C0708xk) this.b).d();
+        for (String str5 : d.keySet()) {
+            builder.appendQueryParameter(str5, String.valueOf(d.get(str5)));
+        }
+    }
+
+    public final void a(Uri.Builder builder, DataSendingRestrictionController dataSendingRestrictionController, Hb hb) {
+        hb.getClass();
+        AdvertisingIdsHolder identifiers = C0449na.I.c().getIdentifiers();
+        if (identifiers != null && !dataSendingRestrictionController.isRestrictedForSdk()) {
+            AdTrackingInfoResult google = identifiers.getGoogle();
+            if (!google.isValid()) {
+                builder.appendQueryParameter(this.f858a.a(CommonUrlParts.ADV_ID), "");
+            } else {
+                builder.appendQueryParameter(this.f858a.a(CommonUrlParts.ADV_ID), google.mAdTrackingInfo.advId);
+            }
+            AdTrackingInfoResult huawei = identifiers.getHuawei();
+            if (!huawei.isValid()) {
+                builder.appendQueryParameter(this.f858a.a(CommonUrlParts.HUAWEI_OAID), "");
+            } else {
+                builder.appendQueryParameter(this.f858a.a(CommonUrlParts.HUAWEI_OAID), huawei.mAdTrackingInfo.advId);
+            }
+            AdTrackingInfoResult yandex = identifiers.getYandex();
+            if (!yandex.isValid()) {
+                builder.appendQueryParameter(this.f858a.a(CommonUrlParts.YANDEX_ADV_ID), "");
+                return;
+            } else {
+                builder.appendQueryParameter(this.f858a.a(CommonUrlParts.YANDEX_ADV_ID), yandex.mAdTrackingInfo.advId);
+                return;
+            }
+        }
+        builder.appendQueryParameter(this.f858a.a(CommonUrlParts.ADV_ID), "");
+        builder.appendQueryParameter(this.f858a.a(CommonUrlParts.HUAWEI_OAID), "");
+        builder.appendQueryParameter(this.f858a.a(CommonUrlParts.YANDEX_ADV_ID), "");
     }
 }

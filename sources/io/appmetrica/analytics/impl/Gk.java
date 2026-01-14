@@ -3,17 +3,37 @@ package io.appmetrica.analytics.impl;
 public final class Gk {
 
     /* renamed from: a  reason: collision with root package name */
-    public Long f593a;
-    public final Wk b;
-    public Long c;
-    public Long d;
-    public final Integer e;
-    public Long f;
-    public Boolean g;
-    public Long h;
+    public final Vk f601a;
+    public final Long b;
+    public final Long c;
+    public final Integer d;
+    public final Long e;
+    public final Boolean f;
+    public final Long g;
+    public final Long h;
 
-    public Gk(Qk qk) {
-        this.b = qk.b();
-        this.e = qk.a();
+    public Gk(Fk fk) {
+        Vk vk;
+        Integer num;
+        Long l;
+        Long l2;
+        Long l3;
+        Boolean bool;
+        Long l4;
+        vk = fk.b;
+        this.f601a = vk;
+        num = fk.e;
+        this.d = num;
+        l = fk.c;
+        this.b = l;
+        l2 = fk.d;
+        this.c = l2;
+        l3 = fk.f;
+        this.e = l3;
+        bool = fk.g;
+        this.f = bool;
+        l4 = fk.h;
+        this.g = l4;
+        this.h = fk.f584a;
     }
 }

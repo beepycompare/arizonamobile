@@ -4,14 +4,14 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class drawable {
-        public static int filter_ic = 0x7f0808d1;
-        public static int rating_card_bg1 = 0x7f080d53;
-        public static int rating_card_bg2 = 0x7f080d54;
-        public static int rating_card_bg3 = 0x7f080d55;
-        public static int rating_ic_filter1 = 0x7f080d56;
-        public static int rating_ic_filter2 = 0x7f080d57;
-        public static int rating_ic_top = 0x7f080d58;
-        public static int search_not_found = 0x7f080d9b;
+        public static int filter_ic = 0x7f0808d0;
+        public static int rating_card_bg1 = 0x7f080d52;
+        public static int rating_card_bg2 = 0x7f080d53;
+        public static int rating_card_bg3 = 0x7f080d54;
+        public static int rating_ic_filter1 = 0x7f080d55;
+        public static int rating_ic_filter2 = 0x7f080d56;
+        public static int rating_ic_top = 0x7f080d57;
+        public static int search_not_found = 0x7f080d9a;
 
         private drawable() {
         }
@@ -29,38 +29,38 @@ public final class R {
         public static int card4 = 0x7f0a02bf;
         public static int card_bg = 0x7f0a02c1;
         public static int card_info = 0x7f0a02c5;
-        public static int close = 0x7f0a0369;
-        public static int edit_text = 0x7f0a049f;
-        public static int filter = 0x7f0a052c;
-        public static int filter1 = 0x7f0a052d;
-        public static int filter1ic = 0x7f0a052e;
-        public static int filter2 = 0x7f0a052f;
-        public static int filter2ic = 0x7f0a0530;
-        public static int filter_layout = 0x7f0a0532;
-        public static int filter_overlay = 0x7f0a0533;
-        public static int fullscreen = 0x7f0a0568;
-        public static int image = 0x7f0a06be;
-        public static int items_rv = 0x7f0a0743;
-        public static int label_bg = 0x7f0a07bc;
-        public static int label_text = 0x7f0a07bf;
-        public static int list = 0x7f0a081d;
-        public static int loader_bar = 0x7f0a0824;
-        public static int nick = 0x7f0a09c3;
-        public static int number = 0x7f0a09dd;
-        public static int overlay = 0x7f0a0a09;
-        public static int quality_button = 0x7f0a0ace;
-        public static int search = 0x7f0a0c31;
-        public static int search_not_found = 0x7f0a0c3d;
-        public static int search_text = 0x7f0a0c40;
-        public static int text1 = 0x7f0a0d93;
-        public static int text2 = 0x7f0a0d94;
-        public static int text3 = 0x7f0a0d95;
-        public static int text4 = 0x7f0a0d96;
-        public static int text_bonus = 0x7f0a0db1;
-        public static int title = 0x7f0a0dec;
-        public static int top = 0x7f0a0dfe;
-        public static int topbar = 0x7f0a0e16;
-        public static int transport_screen = 0x7f0a0e33;
+        public static int close = 0x7f0a0366;
+        public static int edit_text = 0x7f0a0495;
+        public static int filter = 0x7f0a0522;
+        public static int filter1 = 0x7f0a0523;
+        public static int filter1ic = 0x7f0a0524;
+        public static int filter2 = 0x7f0a0525;
+        public static int filter2ic = 0x7f0a0526;
+        public static int filter_layout = 0x7f0a0528;
+        public static int filter_overlay = 0x7f0a0529;
+        public static int fullscreen = 0x7f0a055d;
+        public static int image = 0x7f0a06b3;
+        public static int items_rv = 0x7f0a0737;
+        public static int label_bg = 0x7f0a07b0;
+        public static int label_text = 0x7f0a07b3;
+        public static int list = 0x7f0a0811;
+        public static int loader_bar = 0x7f0a0818;
+        public static int nick = 0x7f0a09b5;
+        public static int number = 0x7f0a09cf;
+        public static int overlay = 0x7f0a09fb;
+        public static int quality_button = 0x7f0a0ac0;
+        public static int search = 0x7f0a0c22;
+        public static int search_not_found = 0x7f0a0c2e;
+        public static int search_text = 0x7f0a0c31;
+        public static int text1 = 0x7f0a0d82;
+        public static int text2 = 0x7f0a0d83;
+        public static int text3 = 0x7f0a0d84;
+        public static int text4 = 0x7f0a0d85;
+        public static int text_bonus = 0x7f0a0da0;
+        public static int title = 0x7f0a0ddb;
+        public static int top = 0x7f0a0ded;
+        public static int topbar = 0x7f0a0e05;
+        public static int transport_screen = 0x7f0a0e22;
 
         private id() {
         }
@@ -68,11 +68,11 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class layout {
-        public static int rating_fullscreen_item = 0x7f0d021c;
-        public static int rating_item = 0x7f0d021d;
-        public static int rating_list = 0x7f0d021e;
-        public static int rating_screen = 0x7f0d021f;
-        public static int rating_topbar = 0x7f0d0220;
+        public static int rating_fullscreen_item = 0x7f0d021a;
+        public static int rating_item = 0x7f0d021b;
+        public static int rating_list = 0x7f0d021c;
+        public static int rating_screen = 0x7f0d021d;
+        public static int rating_topbar = 0x7f0d021e;
 
         private layout() {
         }

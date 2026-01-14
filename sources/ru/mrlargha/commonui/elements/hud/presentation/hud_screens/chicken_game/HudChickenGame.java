@@ -50,25 +50,7 @@ public final class HudChickenGame {
         HudChickenGameRatingAdapter hudChickenGameRatingAdapter = new HudChickenGameRatingAdapter();
         this.chickenGameAdapter = hudChickenGameRatingAdapter;
         chickenGame.rvGamerList.setAdapter(hudChickenGameRatingAdapter);
-        chickenGame.firstTools.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.chicken_game.HudChickenGame$$ExternalSyntheticLambda0
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                SAMPUIElement.notifyClick$default(HudChickenGame.this.notifier, 11, 0, null, 4, null);
-            }
-        });
-        chickenGame.secondTools.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.chicken_game.HudChickenGame$$ExternalSyntheticLambda1
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                SAMPUIElement.notifyClick$default(HudChickenGame.this.notifier, 11, 1, null, 4, null);
-            }
-        });
-        chickenGame.thirdTools.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.chicken_game.HudChickenGame$$ExternalSyntheticLambda2
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                SAMPUIElement.notifyClick$default(HudChickenGame.this.notifier, 11, 2, null, 4, null);
-            }
-        });
-        chickenGame.hudImposterGameTasks.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.chicken_game.HudChickenGame$$ExternalSyntheticLambda3
+        chickenGame.hudImposterGameTasks.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.chicken_game.HudChickenGame$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 SAMPUIElement.notifyClick$default(HudChickenGame.this.notifier, 12, 0, null, 4, null);
@@ -127,7 +109,7 @@ public final class HudChickenGame {
             if (i < 0) {
                 CollectionsKt.throwIndexOverflow();
             }
-            HudChickenGameToolsModel hudChickenGameToolsModel = (HudChickenGameToolsModel) obj;
+            final HudChickenGameToolsModel hudChickenGameToolsModel = (HudChickenGameToolsModel) obj;
             HudChickenGameToolsItemBinding hudChickenGameToolsItemBinding2 = (HudChickenGameToolsItemBinding) CollectionsKt.getOrNull(listOf, i);
             if (hudChickenGameToolsItemBinding2 != null) {
                 Picasso.get().load(FirebaseConfigHelper.INSTANCE.getResourceUrl(false) + "projects/rodina-rp/systems/pirate-event/chickengrad/bonuses/" + hudChickenGameToolsModel.getImage()).into(hudChickenGameToolsItemBinding2.ivItem);
@@ -147,9 +129,20 @@ public final class HudChickenGame {
                     CustomCardView.setBorder$default(hudImposterGameItem13, Color.parseColor("#B3FF1D38"), 0, null, 4, null);
                     hudChickenGameToolsItemBinding2.ivIc.setImageResource(R.drawable.hud_chicken_game_ic_lock);
                 }
+                hudChickenGameToolsItemBinding2.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.hud.presentation.hud_screens.chicken_game.HudChickenGame$$ExternalSyntheticLambda1
+                    @Override // android.view.View.OnClickListener
+                    public final void onClick(View view) {
+                        HudChickenGame.setToolsInfo$lambda$0$1$0$0(HudChickenGame.this, hudChickenGameToolsModel, view);
+                    }
+                });
             }
             i = i2;
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void setToolsInfo$lambda$0$1$0$0(HudChickenGame hudChickenGame, HudChickenGameToolsModel hudChickenGameToolsModel, View view) {
+        SAMPUIElement.notifyClick$default(hudChickenGame.notifier, 11, hudChickenGameToolsModel.getId(), null, 4, null);
     }
 
     public final void setKilledChicken(int i) {

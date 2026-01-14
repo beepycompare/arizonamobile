@@ -1,17 +1,25 @@
 package io.appmetrica.analytics.impl;
 
 import android.content.Context;
-import io.appmetrica.analytics.ICrashTransformer;
 /* loaded from: classes5.dex */
-public final class Ch extends AbstractC0365k6 {
-    public final Xn d;
+public final class Ch implements InterfaceC0265g4 {
 
-    public Ch(Context context, Xn xn, InterfaceC0339j6 interfaceC0339j6, ICrashTransformer iCrashTransformer) {
-        this(xn, interfaceC0339j6, iCrashTransformer, new N9(context));
+    /* renamed from: a  reason: collision with root package name */
+    public final Y4 f536a;
+
+    public Ch(Y4 y4) {
+        this.f536a = y4;
     }
 
-    public Ch(Xn xn, InterfaceC0339j6 interfaceC0339j6, ICrashTransformer iCrashTransformer, N9 n9) {
-        super(interfaceC0339j6, iCrashTransformer, n9);
-        this.d = xn;
+    @Override // io.appmetrica.analytics.impl.InterfaceC0265g4
+    /* renamed from: b */
+    public final Ag a(Context context, C0189d5 c0189d5, P3 p3, C0493p4 c0493p4) {
+        Bg bg;
+        Q4 q4 = new Q4(p3.b, p3.f736a);
+        Cg cg = new Cg(this.f536a);
+        synchronized (c0189d5) {
+            bg = (Bg) c0189d5.a(q4, c0493p4, cg, c0189d5.f953a);
+        }
+        return new Ag(context, bg);
     }
 }

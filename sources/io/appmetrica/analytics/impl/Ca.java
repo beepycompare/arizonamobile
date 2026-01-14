@@ -1,19 +1,70 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.Handler;
+import android.location.Location;
+import android.os.Bundle;
+import io.appmetrica.analytics.AdvIdentifiersResult;
 import io.appmetrica.analytics.AppMetricaConfig;
-import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
+import io.appmetrica.analytics.AppMetricaLibraryAdapterConfig;
+import io.appmetrica.analytics.DeferredDeeplinkListener;
+import io.appmetrica.analytics.DeferredDeeplinkParametersListener;
+import io.appmetrica.analytics.ReporterConfig;
+import io.appmetrica.analytics.StartupParamsCallback;
+import java.util.List;
+import java.util.Map;
 /* loaded from: classes5.dex */
-public interface Ca {
-    C0234f4 a();
+public interface Ca extends Hc, A6, Ta {
+    /* synthetic */ Sa a();
 
-    void a(AppMetricaConfig appMetricaConfig, Ua ua);
+    /* synthetic */ void a(int i, Bundle bundle);
 
-    Handler b();
+    @Override // io.appmetrica.analytics.impl.Hc
+    /* synthetic */ void a(Location location);
 
-    T1 c();
+    void a(AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig);
 
-    C0396lb d();
+    void a(DeferredDeeplinkListener deferredDeeplinkListener);
 
-    ICommonExecutor getDefaultExecutor();
+    void a(DeferredDeeplinkParametersListener deferredDeeplinkParametersListener);
+
+    void a(ReporterConfig reporterConfig);
+
+    void a(StartupParamsCallback startupParamsCallback, List<String> list);
+
+    @Override // io.appmetrica.analytics.impl.Hc
+    /* synthetic */ void a(String str);
+
+    @Override // io.appmetrica.analytics.impl.Hc
+    /* synthetic */ void a(String str, String str2);
+
+    @Override // io.appmetrica.analytics.impl.Hc
+    /* synthetic */ void a(boolean z);
+
+    @Override // io.appmetrica.analytics.impl.Hc
+    /* synthetic */ void a(boolean z, boolean z2);
+
+    void b(AppMetricaConfig appMetricaConfig);
+
+    Ra c(ReporterConfig reporterConfig);
+
+    @Override // io.appmetrica.analytics.impl.Hc
+    /* synthetic */ void clearAppEnvironment();
+
+    X9 d();
+
+    String e();
+
+    Map<String, String> g();
+
+    AdvIdentifiersResult h();
+
+    C0350jc i();
+
+    @Override // io.appmetrica.analytics.impl.Hc
+    /* synthetic */ void putAppEnvironmentValue(String str, String str2);
+
+    @Override // io.appmetrica.analytics.impl.Hc
+    /* synthetic */ void setDataSendingEnabled(boolean z);
+
+    @Override // io.appmetrica.analytics.impl.Hc
+    /* synthetic */ void setUserProfileID(String str);
 }

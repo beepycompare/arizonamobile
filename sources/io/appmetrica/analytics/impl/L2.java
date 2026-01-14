@@ -1,7 +1,16 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.coreapi.internal.io.SslSocketFactoryProvider;
 /* loaded from: classes5.dex */
-public interface L2 extends SslSocketFactoryProvider, InterfaceC0407lm {
-    /* synthetic */ void a(C0278gm c0278gm);
+public final class L2 implements InterfaceC0537qn {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final InterfaceC0561rn f669a;
+
+    public L2(InterfaceC0561rn interfaceC0561rn) {
+        this.f669a = interfaceC0561rn;
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0537qn
+    public final void a(InterfaceC0512pn interfaceC0512pn) {
+        interfaceC0512pn.a(this.f669a.a());
+    }
 }

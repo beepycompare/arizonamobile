@@ -9,30 +9,38 @@ import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
 import java.io.IOException;
 /* loaded from: classes5.dex */
 public final class Z5 extends MessageNano {
-    public static volatile Z5[] c;
+    public static volatile Z5[] g;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f871a;
+    public String f880a;
     public String b;
+    public int c;
+    public String d;
+    public boolean e;
+    public int f;
 
     public Z5() {
         a();
     }
 
     public static Z5[] b() {
-        if (c == null) {
+        if (g == null) {
             synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (c == null) {
-                    c = new Z5[0];
+                if (g == null) {
+                    g = new Z5[0];
                 }
             }
         }
-        return c;
+        return g;
     }
 
     public final Z5 a() {
-        this.f871a = 0;
+        this.f880a = "";
         this.b = "";
+        this.c = -1;
+        this.d = "";
+        this.e = false;
+        this.f = -1;
         this.cachedSize = -1;
         return this;
     }
@@ -40,21 +48,49 @@ public final class Z5 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        int i = this.f871a;
-        if (i != 0) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeInt32Size(1, i);
+        if (!this.f880a.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.f880a);
         }
-        return !this.b.equals("") ? CodedOutputByteBufferNano.computeStringSize(2, this.b) + computeSerializedSize : computeSerializedSize;
+        if (!this.b.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(2, this.b);
+        }
+        int i = this.c;
+        if (i != -1) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeSInt32Size(3, i);
+        }
+        if (!this.d.equals("")) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(4, this.d);
+        }
+        boolean z = this.e;
+        if (z) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeBoolSize(5, z);
+        }
+        int i2 = this.f;
+        return i2 != -1 ? CodedOutputByteBufferNano.computeSInt32Size(6, i2) + computeSerializedSize : computeSerializedSize;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        int i = this.f871a;
-        if (i != 0) {
-            codedOutputByteBufferNano.writeInt32(1, i);
+        if (!this.f880a.equals("")) {
+            codedOutputByteBufferNano.writeString(1, this.f880a);
         }
         if (!this.b.equals("")) {
             codedOutputByteBufferNano.writeString(2, this.b);
+        }
+        int i = this.c;
+        if (i != -1) {
+            codedOutputByteBufferNano.writeSInt32(3, i);
+        }
+        if (!this.d.equals("")) {
+            codedOutputByteBufferNano.writeString(4, this.d);
+        }
+        boolean z = this.e;
+        if (z) {
+            codedOutputByteBufferNano.writeBool(5, z);
+        }
+        int i2 = this.f;
+        if (i2 != -1) {
+            codedOutputByteBufferNano.writeSInt32(6, i2);
         }
         super.writeTo(codedOutputByteBufferNano);
     }
@@ -66,17 +102,22 @@ public final class Z5 extends MessageNano {
             int readTag = codedInputByteBufferNano.readTag();
             if (readTag == 0) {
                 break;
-            } else if (readTag == 8) {
-                int readInt32 = codedInputByteBufferNano.readInt32();
-                if (readInt32 == 0 || readInt32 == 1 || readInt32 == 3) {
-                    this.f871a = readInt32;
-                }
-            } else if (readTag != 18) {
+            } else if (readTag == 10) {
+                this.f880a = codedInputByteBufferNano.readString();
+            } else if (readTag == 18) {
+                this.b = codedInputByteBufferNano.readString();
+            } else if (readTag == 24) {
+                this.c = codedInputByteBufferNano.readSInt32();
+            } else if (readTag == 34) {
+                this.d = codedInputByteBufferNano.readString();
+            } else if (readTag == 40) {
+                this.e = codedInputByteBufferNano.readBool();
+            } else if (readTag != 48) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;
                 }
             } else {
-                this.b = codedInputByteBufferNano.readString();
+                this.f = codedInputByteBufferNano.readSInt32();
             }
         }
         return this;

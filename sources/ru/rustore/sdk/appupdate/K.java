@@ -15,7 +15,7 @@ import kotlin.jvm.internal.Lambda;
 public final class K {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1503a;
+    public final Context f1512a;
     public final Lazy b;
 
     /* loaded from: classes6.dex */
@@ -30,9 +30,9 @@ public final class K {
             K k = K.this;
             try {
                 Result.Companion companion = Result.Companion;
-                PackageManager packageManager = k.f1503a.getPackageManager();
+                PackageManager packageManager = k.f1512a.getPackageManager();
                 Intrinsics.checkNotNullExpressionValue(packageManager, "context.packageManager");
-                String packageName = k.f1503a.getPackageName();
+                String packageName = k.f1512a.getPackageName();
                 Intrinsics.checkNotNullExpressionValue(packageName, "context.packageName");
                 m10244constructorimpl = Result.m10244constructorimpl(K.a(k, packageManager, packageName).versionName);
             } catch (Throwable th) {
@@ -48,7 +48,7 @@ public final class K {
 
     public K(Context context) {
         Intrinsics.checkNotNullParameter(context, "context");
-        this.f1503a = context;
+        this.f1512a = context;
         this.b = LazyKt.lazy(new a());
     }
 

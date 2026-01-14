@@ -2,19 +2,20 @@ package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
 import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
+import java.util.ArrayList;
 /* loaded from: classes5.dex */
-public final class Ho implements Consumer {
+public final class Ho {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Throwable f613a;
-    public final /* synthetic */ String b = "WebView interface setup failed because of an exception.";
+    public final ArrayList f620a = new ArrayList();
+    public PublicLogger b;
 
-    public Ho(Throwable th) {
-        this.f613a = th;
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
-    public final void consume(Object obj) {
-        ((PublicLogger) obj).error(this.f613a, this.b, new Object[0]);
+    public final synchronized void a(Consumer consumer) {
+        PublicLogger publicLogger = this.b;
+        if (publicLogger == null) {
+            this.f620a.add(consumer);
+        } else {
+            consumer.consume(publicLogger);
+        }
     }
 }

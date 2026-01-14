@@ -1,70 +1,54 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
-import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
+import android.content.ContentValues;
 /* loaded from: classes5.dex */
 public final class N8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f699a;
-    public final S8 b;
-    public P8 c;
+    public final String f708a;
+    public String b;
+    public final Long c;
+    public final Long d;
+    public final Long e;
+    public final Long f;
+    public final C0320i7 g;
+    public final EnumC0143bb h;
+    public final Integer i;
+    public final String j;
+    public final Integer k;
+    public final Integer l;
+    public final String m;
+    public final String n;
+    public final I8 o;
+    public final EnumC0194da p;
+    public final EnumC0423m9 q;
+    public final Boolean r;
+    public final Integer s;
+    public final byte[] t;
 
-    public N8(S8 s8, int i) {
-        this.f699a = i;
-        this.b = s8;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:14:0x007a  */
-    /* JADX WARN: Removed duplicated region for block: B:19:? A[RETURN, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void a() {
-        P8 p8;
-        int i;
-        int i2;
-        byte[] bArr;
-        S8 s8 = this.b;
-        s8.getClass();
-        try {
-            bArr = s8.c.get("event_hashes");
-        } catch (Throwable unused) {
-            Q8 q8 = s8.f773a;
-            s8.b.getClass();
-            C0643v9 c0643v9 = new C0643v9();
-            q8.getClass();
-            p8 = new P8(c0643v9.f1264a, c0643v9.b, c0643v9.c, CollectionUtils.hashSetFromIntArray(c0643v9.d));
-        }
-        if (bArr != null && bArr.length != 0) {
-            Q8 q82 = s8.f773a;
-            C0643v9 state = s8.b.toState(bArr);
-            q82.getClass();
-            p8 = new P8(state.f1264a, state.b, state.c, CollectionUtils.hashSetFromIntArray(state.d));
-            this.c = p8;
-            i = p8.c;
-            i2 = this.f699a;
-            if (i == i2) {
-                p8.c = i2;
-                p8.d = 0;
-                S8 s82 = this.b;
-                IBinaryDataHelper iBinaryDataHelper = s82.c;
-                R8 r8 = s82.b;
-                s82.f773a.getClass();
-                iBinaryDataHelper.insert("event_hashes", r8.toByteArray((R8) Q8.a(p8)));
-                return;
-            }
-            return;
-        }
-        Q8 q83 = s8.f773a;
-        s8.b.getClass();
-        C0643v9 c0643v92 = new C0643v9();
-        q83.getClass();
-        p8 = new P8(c0643v92.f1264a, c0643v92.b, c0643v92.c, CollectionUtils.hashSetFromIntArray(c0643v92.d));
-        this.c = p8;
-        i = p8.c;
-        i2 = this.f699a;
-        if (i == i2) {
-        }
+    public N8(ContentValues contentValues) {
+        C0216e7 model = new C0242f7(null, 1, null).toModel(contentValues);
+        this.f708a = model.a().j();
+        this.b = model.a().p();
+        this.c = model.c();
+        this.d = model.b();
+        this.e = model.a().k();
+        this.f = model.d();
+        this.g = model.a().i();
+        this.h = model.e();
+        this.i = model.a().d();
+        this.j = model.a().f();
+        this.k = model.a().o();
+        this.l = model.a().c();
+        this.m = model.a().b();
+        this.n = model.a().m();
+        I8 e = model.a().e();
+        this.o = e == null ? I8.a(null) : e;
+        EnumC0194da h = model.a().h();
+        this.p = h == null ? EnumC0194da.a(null) : h;
+        this.q = model.a().n();
+        this.r = model.a().a();
+        this.s = model.a().l();
+        this.t = model.a().g();
     }
 }

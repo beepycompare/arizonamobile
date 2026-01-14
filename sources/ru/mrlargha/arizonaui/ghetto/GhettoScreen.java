@@ -1,7 +1,6 @@
 package ru.mrlargha.arizonaui.ghetto;
 
 import android.app.Activity;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -16,7 +15,6 @@ import android.widget.Toast;
 import androidx.core.graphics.ColorUtils;
 import com.davemorrissey.labs.subscaleview.ImageSource;
 import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView;
-import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -30,16 +28,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
-import kotlinx.coroutines.CoroutineExceptionHandler;
-import kotlinx.coroutines.CoroutineScope;
-import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
-import kotlinx.coroutines.Job;
-import kotlinx.coroutines.SupervisorKt;
-import okhttp3.OkHttpClient;
-import okhttp3.logging.HttpLoggingInterceptor;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 import ru.mrlargha.arizonaui.R;
 import ru.mrlargha.arizonaui.databinding.GhettoMainBinding;
 import ru.mrlargha.arizonaui.databinding.GhettoMapFrameBinding;
@@ -54,23 +43,19 @@ import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController;
 import ru.mrlargha.commonui.utils.MapperKt;
+import ru.mrlargha.commonui.utils.ui.ArizonaRetrofit;
 /* compiled from: GhettoScreen.kt */
-@Metadata(d1 = {"\u0000\u0092\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u00012\u00020\u0002:\u0002BCB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010(\u001a\u00020)2\u0006\u0010*\u001a\u00020+H\u0016J\u0018\u0010,\u001a\u00020)2\u0006\u0010-\u001a\u00020\u00162\u0006\u0010.\u001a\u00020\u0006H\u0016J\b\u0010/\u001a\u00020)H\u0002J\b\u00100\u001a\u00020)H\u0002J\b\u00101\u001a\u00020)H\u0002J\u0010\u00102\u001a\u00020)2\u0006\u0010-\u001a\u00020 H\u0002J\u0016\u00103\u001a\u00020)2\f\u0010-\u001a\b\u0012\u0004\u0012\u00020504H\u0002J\b\u00106\u001a\u00020)H\u0002J\u0010\u00107\u001a\u00020)2\u0006\u0010-\u001a\u000208H\u0002J\b\u00109\u001a\u00020)H\u0002J\b\u0010:\u001a\u00020)H\u0002J\u0010\u0010;\u001a\u00020)2\u0006\u0010<\u001a\u00020\u0006H\u0002J\u0010\u0010=\u001a\u00020)2\u0006\u0010>\u001a\u000208H\u0002J\u0010\u0010?\u001a\u00020)2\u0006\u0010@\u001a\u00020AH\u0002R\u0016\u0010\t\u001a\n \u000b*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0012\u001a\n \u000b*\u0004\u0018\u00010\u00130\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0006X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0019X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0019X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0019X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020 X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010!\u001a\u00020\u00168BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\"\u0010#R\u000e\u0010$\u001a\u00020%X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010&\u001a\u00020'X\u0082.¢\u0006\u0002\n\u0000¨\u0006D"}, d2 = {"Lru/mrlargha/arizonaui/ghetto/GhettoScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/arizonaui/databinding/GhettoMainBinding;", "handler", "Lkotlinx/coroutines/CoroutineExceptionHandler;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "sharedPref", "Landroid/content/SharedPreferences;", "serverId", "_token", "", "mapCells", "xMargin", "", "yMargin", "cellWidth", "cellHeight", "warsAdapter", "Lru/mrlargha/arizonaui/ghetto/WarsAdapter;", "bandInfo", "Lru/mrlargha/arizonaui/ghetto/data/BandInfo;", "token", "getToken", "()Ljava/lang/String;", "retrofit", "Lretrofit2/Retrofit;", "api", "Lru/mrlargha/arizonaui/ghetto/GhettoApi;", "setVisible", "", "visible", "", "onBackendMessage", "data", "subId", "initRetrofit", "setupNavigation", "loadMapRetrofit", "setBandInfo", "setUniqCells", "", "Lru/mrlargha/arizonaui/ghetto/data/UniqData;", "setMap", "setFrameMap", "Lru/mrlargha/arizonaui/ghetto/data/FrameMapData;", "requestTopTerritories", "requestCaptures", "requestCapturesCount", "fraction", "selectTerritoryItem", "item", "navigateTo", "nav", "Lru/mrlargha/arizonaui/ghetto/GhettoScreen$Navigation;", "Navigation", "Spawner", "ArizonaUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0080\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u00012\u00020\u0002:\u000289B\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010\u001e\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020!H\u0016J\u0018\u0010\"\u001a\u00020\u001f2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020\u0006H\u0016J\b\u0010&\u001a\u00020\u001fH\u0002J\b\u0010'\u001a\u00020\u001fH\u0002J\u0010\u0010(\u001a\u00020\u001f2\u0006\u0010#\u001a\u00020\u0017H\u0002J\u0016\u0010)\u001a\u00020\u001f2\f\u0010#\u001a\b\u0012\u0004\u0012\u00020+0*H\u0002J\b\u0010,\u001a\u00020\u001fH\u0002J\u0010\u0010-\u001a\u00020\u001f2\u0006\u0010#\u001a\u00020.H\u0002J\b\u0010/\u001a\u00020\u001fH\u0002J\b\u00100\u001a\u00020\u001fH\u0002J\u0010\u00101\u001a\u00020\u001f2\u0006\u00102\u001a\u00020\u0006H\u0002J\u0010\u00103\u001a\u00020\u001f2\u0006\u00104\u001a\u00020.H\u0002J\u0010\u00105\u001a\u00020\u001f2\u0006\u00106\u001a\u000207H\u0002R\u0016\u0010\t\u001a\n \u000b*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0006X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0010X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0010X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0010X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u0011\u0010\u0018\u001a\u00020\u0019¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u001bR\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006:"}, d2 = {"Lru/mrlargha/arizonaui/ghetto/GhettoScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/arizonaui/databinding/GhettoMainBinding;", "mapCells", "xMargin", "", "yMargin", "cellWidth", "cellHeight", "warsAdapter", "Lru/mrlargha/arizonaui/ghetto/WarsAdapter;", "bandInfo", "Lru/mrlargha/arizonaui/ghetto/data/BandInfo;", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/arizonaui/ghetto/GhettoApi;", "setVisible", "", "visible", "", "onBackendMessage", "data", "", "subId", "setupNavigation", "loadMapRetrofit", "setBandInfo", "setUniqCells", "", "Lru/mrlargha/arizonaui/ghetto/data/UniqData;", "setMap", "setFrameMap", "Lru/mrlargha/arizonaui/ghetto/data/FrameMapData;", "requestTopTerritories", "requestCaptures", "requestCapturesCount", "fraction", "selectTerritoryItem", "item", "navigateTo", "nav", "Lru/mrlargha/arizonaui/ghetto/GhettoScreen$Navigation;", "Navigation", "Spawner", "ArizonaUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes5.dex */
 public final class GhettoScreen extends SAMPUIElement implements InterfaceController {
-    private final String _token;
-    private GhettoApi api;
+    private final GhettoApi api;
     private BandInfo bandInfo;
     private final GhettoMainBinding binding;
     private final float cellHeight;
     private final float cellWidth;
-    private final CoroutineExceptionHandler handler;
+    private final ArizonaRetrofit client;
     private final int mapCells;
-    private Retrofit retrofit;
-    private final CoroutineScope scope;
     private final View screen;
-    private final int serverId;
-    private final SharedPreferences sharedPref;
     private final WarsAdapter warsAdapter;
     private final float xMargin;
     private final float yMargin;
@@ -104,13 +89,6 @@ public final class GhettoScreen extends SAMPUIElement implements InterfaceContro
         GhettoMainBinding bind = GhettoMainBinding.bind(screen);
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
         this.binding = bind;
-        GhettoScreen$special$$inlined$CoroutineExceptionHandler$1 ghettoScreen$special$$inlined$CoroutineExceptionHandler$1 = new GhettoScreen$special$$inlined$CoroutineExceptionHandler$1(CoroutineExceptionHandler.Key, targetActivity, i);
-        this.handler = ghettoScreen$special$$inlined$CoroutineExceptionHandler$1;
-        this.scope = CoroutineScopeKt.CoroutineScope(Dispatchers.getMain().plus(SupervisorKt.SupervisorJob((Job) null)).plus(ghettoScreen$special$$inlined$CoroutineExceptionHandler$1));
-        SharedPreferences sharedPreferences = targetActivity.getSharedPreferences("flavorType", 0);
-        this.sharedPref = sharedPreferences;
-        this.serverId = sharedPreferences.getInt("server_id", 0);
-        this._token = sharedPreferences.getString("api_token", "");
         this.mapCells = 10;
         this.xMargin = 187.0f;
         this.yMargin = 150.0f;
@@ -126,9 +104,11 @@ public final class GhettoScreen extends SAMPUIElement implements InterfaceContro
         });
         this.warsAdapter = warsAdapter;
         this.bandInfo = new BandInfo(-1, 0, 0, 0);
+        ArizonaRetrofit arizonaRetrofit = new ArizonaRetrofit(targetActivity, i);
+        this.client = arizonaRetrofit;
+        this.api = (GhettoApi) ArizonaRetrofit.create$default(arizonaRetrofit, GhettoApi.class, false, null, null, 14, null);
         Intrinsics.checkNotNullExpressionValue(screen, "screen");
         addViewToConstraintLayout(screen, -1, -1);
-        initRetrofit();
         bind.war.menuItemsRv.setAdapter(warsAdapter);
         navigateTo(Navigation.War);
         setupNavigation();
@@ -142,9 +122,8 @@ public final class GhettoScreen extends SAMPUIElement implements InterfaceContro
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public final String getToken() {
-        return "Bearer " + this._token;
+    public final ArizonaRetrofit getClient() {
+        return this.client;
     }
 
     @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController
@@ -169,23 +148,6 @@ public final class GhettoScreen extends SAMPUIElement implements InterfaceContro
             e.printStackTrace();
             Toast.makeText(getTargetActivity().getApplicationContext(), "Ошибка в интерфейсе : " + getBackendID(), 1).show();
         }
-    }
-
-    private final void initRetrofit() {
-        Retrofit retrofit = null;
-        HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor(null, 1, null);
-        httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-        Retrofit build = new Retrofit.Builder().baseUrl(FirebaseConfigHelper.INSTANCE.getServerApiUrl() + "client/ghetto/").client(new OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build()).addConverterFactory(GsonConverterFactory.create()).build();
-        Intrinsics.checkNotNullExpressionValue(build, "build(...)");
-        this.retrofit = build;
-        if (build == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("retrofit");
-        } else {
-            retrofit = build;
-        }
-        Object create = retrofit.create(GhettoApi.class);
-        Intrinsics.checkNotNullExpressionValue(create, "create(...)");
-        this.api = (GhettoApi) create;
     }
 
     private final void setupNavigation() {
@@ -259,7 +221,7 @@ public final class GhettoScreen extends SAMPUIElement implements InterfaceContro
     }
 
     private final void loadMapRetrofit() {
-        BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new GhettoScreen$loadMapRetrofit$1(this, null), 3, null);
+        BuildersKt__Builders_commonKt.launch$default(this.client.getScope(), Dispatchers.getMain(), null, new GhettoScreen$loadMapRetrofit$1(this, null), 2, null);
     }
 
     private final void setBandInfo(BandInfo bandInfo) {
@@ -443,15 +405,15 @@ public final class GhettoScreen extends SAMPUIElement implements InterfaceContro
     }
 
     private final void requestTopTerritories() {
-        BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new GhettoScreen$requestTopTerritories$1(this, null), 3, null);
+        BuildersKt__Builders_commonKt.launch$default(this.client.getScope(), Dispatchers.getMain(), null, new GhettoScreen$requestTopTerritories$1(this, null), 2, null);
     }
 
     private final void requestCaptures() {
-        BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new GhettoScreen$requestCaptures$1(this, null), 3, null);
+        BuildersKt__Builders_commonKt.launch$default(this.client.getScope(), Dispatchers.getMain(), null, new GhettoScreen$requestCaptures$1(this, null), 2, null);
     }
 
     private final void requestCapturesCount(int i) {
-        BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new GhettoScreen$requestCapturesCount$1(this, i, null), 3, null);
+        BuildersKt__Builders_commonKt.launch$default(this.client.getScope(), Dispatchers.getMain(), null, new GhettoScreen$requestCapturesCount$1(this, i, null), 2, null);
     }
 
     private final void selectTerritoryItem(FrameMapData frameMapData) {

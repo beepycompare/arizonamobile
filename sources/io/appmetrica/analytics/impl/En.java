@@ -1,48 +1,26 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.backport.BiFunction;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.TreeMap;
+import io.appmetrica.analytics.ValidationException;
 /* loaded from: classes5.dex */
-public final class En {
+public class En implements so {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Dn f565a;
-    public final BiFunction b;
-    public final Df c;
+    public final so f573a;
 
-    public En() {
-        this(new Bn(), new C0420ma(), C0157c4.l().n());
+    public En(so soVar) {
+        this.f573a = soVar;
     }
 
-    public final ArrayList a(Thread thread, Thread thread2) {
-        Map map;
-        ArrayList arrayList = new ArrayList();
-        TreeMap treeMap = new TreeMap(new Cn());
-        try {
-            map = this.f565a.c();
-        } catch (SecurityException unused) {
-            map = null;
+    @Override // io.appmetrica.analytics.impl.so
+    public final qo a(Object obj) {
+        qo a2 = this.f573a.a(obj);
+        if (a2.f1195a) {
+            return a2;
         }
-        if (map != null) {
-            treeMap.putAll(map);
-        }
-        if (thread2 != null) {
-            treeMap.remove(thread2);
-        }
-        for (Map.Entry entry : treeMap.entrySet()) {
-            Thread thread3 = (Thread) entry.getKey();
-            if (thread3 != thread && thread3 != thread2) {
-                arrayList.add((C0707xn) this.b.apply(thread3, (StackTraceElement[]) entry.getValue()));
-            }
-        }
-        return arrayList;
+        throw new ValidationException(a2.b);
     }
 
-    public En(Dn dn, C0420ma c0420ma, C0565s6 c0565s6) {
-        this.f565a = dn;
-        this.b = c0420ma;
-        this.c = c0565s6;
+    public final so a() {
+        return this.f573a;
     }
 }

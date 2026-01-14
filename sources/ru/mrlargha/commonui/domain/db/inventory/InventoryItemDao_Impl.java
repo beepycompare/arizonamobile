@@ -8,7 +8,7 @@ import androidx.room.util.DBUtil;
 import androidx.room.util.SQLiteStatementUtil;
 import androidx.sqlite.SQLiteConnection;
 import androidx.sqlite.SQLiteStatement;
-import io.appmetrica.analytics.impl.A2;
+import io.appmetrica.analytics.impl.C0740z2;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Metadata;
@@ -353,7 +353,7 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
             int columnIndexOrThrow4 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "text");
             int columnIndexOrThrow5 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "item_type");
             int columnIndexOrThrow6 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "amount");
-            int columnIndexOrThrow7 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, A2.g);
+            int columnIndexOrThrow7 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, C0740z2.g);
             int columnIndexOrThrow8 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "color");
             int columnIndexOrThrow9 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "bits");
             int columnIndexOrThrow10 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "available");
@@ -504,7 +504,7 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
             int columnIndexOrThrow4 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "text");
             int columnIndexOrThrow5 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "item_type");
             int columnIndexOrThrow6 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "amount");
-            int columnIndexOrThrow7 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, A2.g);
+            int columnIndexOrThrow7 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, C0740z2.g);
             int columnIndexOrThrow8 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "color");
             int columnIndexOrThrow9 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "bits");
             int columnIndexOrThrow10 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "available");
@@ -644,7 +644,7 @@ public final class InventoryItemDao_Impl implements InventoryItemDao {
             int columnIndexOrThrow4 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "text");
             int columnIndexOrThrow5 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "item_type");
             int columnIndexOrThrow6 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "amount");
-            int columnIndexOrThrow7 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, A2.g);
+            int columnIndexOrThrow7 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, C0740z2.g);
             int columnIndexOrThrow8 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "color");
             int columnIndexOrThrow9 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "bits");
             int columnIndexOrThrow10 = SQLiteStatementUtil.getColumnIndexOrThrow(prepare, "available");

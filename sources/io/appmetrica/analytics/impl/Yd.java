@@ -1,7 +1,21 @@
 package io.appmetrica.analytics.impl;
+
+import java.util.Collection;
 /* loaded from: classes5.dex */
-public final class Yd extends Kn {
-    public Yd() {
-        super(1, 0);
+public final class Yd implements so {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final String f867a;
+
+    public Yd(String str) {
+        this.f867a = str;
+    }
+
+    @Override // io.appmetrica.analytics.impl.so
+    public final qo a(Collection<Object> collection) {
+        if (lo.a((Collection) collection)) {
+            return new qo(this, false, this.f867a + " is null or empty.");
+        }
+        return new qo(this, true, "");
     }
 }

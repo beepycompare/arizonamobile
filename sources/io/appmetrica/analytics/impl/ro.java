@@ -1,14 +1,23 @@
 package io.appmetrica.analytics.impl;
+
+import android.text.TextUtils;
+import java.util.LinkedList;
+import java.util.List;
 /* loaded from: classes5.dex */
-public final class ro {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final boolean f1205a;
-    public final String b;
-
-    public ro(to toVar, boolean z, String str) {
-        toVar.getClass();
-        this.f1205a = z;
-        this.b = str;
+public final class ro implements so {
+    @Override // io.appmetrica.analytics.impl.so
+    public final qo a(List<qo> list) {
+        LinkedList linkedList = new LinkedList();
+        boolean z = true;
+        for (qo qoVar : list) {
+            if (!qoVar.f1195a) {
+                linkedList.add(qoVar.b);
+                z = false;
+            }
+        }
+        if (z) {
+            return new qo(this, true, "");
+        }
+        return new qo(this, false, TextUtils.join(", ", linkedList));
     }
 }

@@ -1,11 +1,40 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateSerializer;
+import io.appmetrica.analytics.coreapi.internal.data.StateSerializer;
 import io.appmetrica.analytics.coreutils.internal.encryption.AESEncrypter;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import java.io.IOException;
 /* loaded from: classes5.dex */
-public final class B8 extends C8 implements ProtobufStateSerializer {
-    public B8(ProtobufStateSerializer<MessageNano> protobufStateSerializer, AESEncrypter aESEncrypter) {
-        super(protobufStateSerializer, aESEncrypter);
+public class B8 implements StateSerializer {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final StateSerializer f515a;
+    public final AESEncrypter b;
+
+    public B8(StateSerializer<Object> stateSerializer, AESEncrypter aESEncrypter) {
+        this.f515a = stateSerializer;
+        this.b = aESEncrypter;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.StateSerializer
+    public final Object defaultValue() {
+        return this.f515a.defaultValue();
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.StateSerializer
+    public final byte[] toByteArray(Object obj) {
+        try {
+            return this.b.encrypt(this.f515a.toByteArray(obj));
+        } catch (Throwable unused) {
+            return new byte[0];
+        }
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.StateSerializer
+    public final Object toState(byte[] bArr) throws IOException {
+        try {
+            return this.f515a.toState(this.b.decrypt(bArr));
+        } catch (Throwable th) {
+            throw new IOException(th);
+        }
     }
 }

@@ -1,32 +1,56 @@
 package io.appmetrica.analytics.impl;
-/* loaded from: classes5.dex */
-public final class Xg extends Sg {
-    public final yo b;
 
-    public Xg(Y4 y4) {
-        this(y4, y4.u());
+import android.text.TextUtils;
+import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
+/* loaded from: classes5.dex */
+public final class Xg extends Rg {
+    public final M8 b;
+
+    public Xg(X4 x4) {
+        this(x4, x4.j());
     }
 
-    @Override // io.appmetrica.analytics.impl.Sg
-    public final boolean a(Q5 q5) {
-        Y4 y4 = this.f777a;
-        if (this.b.c()) {
-            return false;
-        }
-        if (!this.b.d()) {
-            C0394l9 c0394l9 = y4.n;
-            c0394l9.c.b(Q5.a(q5, EnumC0164cb.EVENT_TYPE_FIRST_ACTIVATION));
-        }
-        yo yoVar = this.b;
-        synchronized (yoVar) {
-            zo zoVar = yoVar.f1323a;
-            zoVar.a(zoVar.a().put("first_event_done", true));
+    @Override // io.appmetrica.analytics.impl.Rg
+    public final boolean a(P5 p5) {
+        EnumC0194da enumC0194da;
+        EnumC0194da enumC0194da2;
+        if (!TextUtils.isEmpty(p5.getName())) {
+            M8 m8 = this.b;
+            String name = p5.getName();
+            if (m8.c == null) {
+                m8.a();
+            }
+            int hashCode = name.hashCode();
+            if (m8.c.b.contains(Integer.valueOf(hashCode))) {
+                enumC0194da2 = EnumC0194da.NON_FIRST_OCCURENCE;
+            } else {
+                O8 o8 = m8.c;
+                if (o8.f722a) {
+                    enumC0194da = EnumC0194da.FIRST_OCCURRENCE;
+                } else {
+                    enumC0194da = EnumC0194da.UNKNOWN;
+                }
+                if (o8.d < 1000) {
+                    o8.b.add(Integer.valueOf(hashCode));
+                    o8.d++;
+                } else {
+                    o8.f722a = false;
+                }
+                R8 r8 = m8.b;
+                O8 o82 = m8.c;
+                IBinaryDataHelper iBinaryDataHelper = r8.c;
+                Q8 q8 = r8.b;
+                r8.f764a.getClass();
+                iBinaryDataHelper.insert("event_hashes", q8.toByteArray((Q8) P8.a(o82)));
+                enumC0194da2 = enumC0194da;
+            }
+            p5.k = enumC0194da2;
         }
         return false;
     }
 
-    public Xg(Y4 y4, yo yoVar) {
-        super(y4);
-        this.b = yoVar;
+    public Xg(X4 x4, M8 m8) {
+        super(x4);
+        this.b = m8;
     }
 }

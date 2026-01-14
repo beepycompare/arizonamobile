@@ -1,19 +1,19 @@
 package io.appmetrica.analytics.impl;
 
-import kotlin.Unit;
-import kotlin.jvm.functions.Function1;
-import kotlin.jvm.internal.FunctionReferenceImpl;
+import io.appmetrica.analytics.coreutils.internal.reflection.ReflectionUtils;
+import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashServiceModule;
+import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashServiceModuleDummy;
 /* loaded from: classes5.dex */
-public final /* synthetic */ class Od extends FunctionReferenceImpl implements Function1 {
-    public Od(Object obj) {
-        super(1, obj, Pd.class, "markCrashCompletedAndDeleteCompletedCrashes", "markCrashCompletedAndDeleteCompletedCrashes(Ljava/lang/String;)V", 0);
-    }
+public final class Od {
 
-    @Override // kotlin.jvm.functions.Function1
-    public final Object invoke(Object obj) {
-        Pd pd = (Pd) this.receiver;
-        pd.f732a.markCrashCompleted((String) obj);
-        pd.f732a.deleteCompletedCrashes();
-        return Unit.INSTANCE;
+    /* renamed from: a  reason: collision with root package name */
+    public final NativeCrashServiceModule f724a;
+    public final Id b;
+
+    public Od() {
+        ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
+        NativeCrashServiceModule nativeCrashServiceModule = (NativeCrashServiceModule) ReflectionUtils.loadAndInstantiateClassWithDefaultConstructor("io.appmetrica.analytics.ndkcrashes.NativeCrashServiceModuleImpl", NativeCrashServiceModule.class);
+        this.f724a = nativeCrashServiceModule == null ? new NativeCrashServiceModuleDummy() : nativeCrashServiceModule;
+        this.b = new Id(new Nd(this));
     }
 }

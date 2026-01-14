@@ -1,26 +1,34 @@
 package io.appmetrica.analytics.idsync.impl;
 
-import com.google.firebase.analytics.FirebaseAnalytics;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
+import io.appmetrica.analytics.modulesapi.internal.service.ServiceContext;
+import io.appmetrica.analytics.network.internal.NetworkClientBuilder;
+import io.appmetrica.analytics.networkapi.NetworkClientSettings;
+import io.appmetrica.analytics.networkapi.Request;
+import io.appmetrica.analytics.networkapi.Response;
+import kotlin.text.Charsets;
 /* loaded from: classes3.dex */
-public abstract /* synthetic */ class u {
-    public static /* synthetic */ String a(int i) {
-        if (i != 1) {
-            if (i != 2) {
-                if (i != 3) {
-                    if (i == 4) {
-                        return "failure";
-                    }
-                    throw null;
-                }
-                return "incompatible_precondition";
-            }
-            return FirebaseAnalytics.Param.SUCCESS;
-        }
-        return "none";
+public final class u {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final ServiceContext f482a;
+
+    public u(ServiceContext serviceContext) {
+        this.f482a = serviceContext;
     }
 
-    public static /* synthetic */ String b(int i) {
-        return i != 1 ? i != 2 ? i != 3 ? i != 4 ? AbstractJsonLexerKt.NULL : "FAILURE" : "INCOMPATIBLE_PRECONDITION" : "SUCCESS" : "NONE";
+    public final boolean a(String str, String str2) {
+        try {
+            Response execute = new NetworkClientBuilder().withSettings(new NetworkClientSettings.Builder().withSslSocketFactory(this.f482a.getNetworkContext().getSslSocketFactoryProvider().getSslSocketFactory()).withUseCaches(false).withInstanceFollowRedirects(true).withMaxResponseSize(10240).build()).build().newCall(new Request.Builder(str).withMethod(Request.Method.POST).withBody(str2.getBytes(Charsets.UTF_8)).addHeader("Content-Type", "application/json").build()).execute();
+            if (execute.isCompleted()) {
+                if (execute.getCode() != 200) {
+                    int code = execute.getCode();
+                    if (400 > code || code >= 500) {
+                    }
+                }
+                return true;
+            }
+        } catch (Exception unused) {
+        }
+        return false;
     }
 }

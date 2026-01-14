@@ -1,13 +1,14 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.Map;
+import java.util.List;
 /* loaded from: classes5.dex */
-public final class D3 {
-    public static boolean a(Map map, C0278gm c0278gm, A3 a3) {
-        Map map2 = ((C0562s3) a3.a(new C0562s3(map, T7.c))).f1209a;
-        if (mo.a(map2)) {
-            return true;
-        }
-        return map2.equals(Gm.a(c0278gm.m));
+public final class D3 implements Im {
+    public final C0566s3 a(C0541r3 c0541r3, List<C0541r3> list) {
+        return new C0566s3(c0541r3, list);
+    }
+
+    @Override // kotlin.jvm.functions.Function2
+    public final Object invoke(Object obj, Object obj2) {
+        return new C0566s3((C0541r3) obj, (List) obj2);
     }
 }

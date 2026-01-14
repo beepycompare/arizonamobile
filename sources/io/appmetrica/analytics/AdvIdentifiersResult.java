@@ -24,7 +24,6 @@ public class AdvIdentifiersResult {
         IDENTIFIER_PROVIDER_UNAVAILABLE,
         INVALID_ADV_ID,
         FEATURE_DISABLED,
-        NO_STARTUP,
         INTERNAL_ERROR,
         FORBIDDEN_BY_CLIENT_CONFIG
     }

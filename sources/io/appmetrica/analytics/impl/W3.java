@@ -1,33 +1,26 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import android.util.SparseArray;
+import io.appmetrica.analytics.coreapi.internal.identifiers.SdkIdentifiers;
+import io.appmetrica.analytics.modulesapi.internal.client.ModuleServiceConfig;
 /* loaded from: classes5.dex */
-public final class W3 extends Kc {
+public final class W3 implements ModuleServiceConfig {
 
     /* renamed from: a  reason: collision with root package name */
-    public final We f831a;
+    public final SdkIdentifiers f835a;
+    public final Object b;
 
-    public W3(Context context) {
-        this(new We(C0157c4.l().c(context).b(context)));
+    public W3(SdkIdentifiers sdkIdentifiers, Object obj) {
+        this.f835a = sdkIdentifiers;
+        this.b = obj;
     }
 
-    @Override // io.appmetrica.analytics.impl.Kc
-    public final void a(int i) {
-        this.f831a.c(i);
+    @Override // io.appmetrica.analytics.modulesapi.internal.client.ModuleServiceConfig
+    public final Object getFeaturesConfig() {
+        return this.b;
     }
 
-    @Override // io.appmetrica.analytics.impl.Kc
-    public final int b() {
-        return (int) this.f831a.a(-1L);
-    }
-
-    @Override // io.appmetrica.analytics.impl.Kc
-    public final SparseArray<Jc> c() {
-        return new SparseArray<>();
-    }
-
-    public W3(We we) {
-        this.f831a = we;
+    @Override // io.appmetrica.analytics.modulesapi.internal.client.ModuleServiceConfig
+    public final SdkIdentifiers getIdentifiers() {
+        return this.f835a;
     }
 }

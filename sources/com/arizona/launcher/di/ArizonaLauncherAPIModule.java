@@ -19,6 +19,7 @@ import okhttp3.Response;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
+import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: ArizonaLauncherAPIModule.kt */
 @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0007\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010\t\u001a\u00020\nH\u0007R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0006\u001a\n \b*\u0004\u0018\u00010\u00070\u0007X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u000b"}, d2 = {"Lcom/arizona/launcher/di/ArizonaLauncherAPIModule;", "", "<init>", "()V", "okHttpClient", "Lokhttp3/OkHttpClient;", "retrofit", "Lretrofit2/Retrofit;", "kotlin.jvm.PlatformType", "provideNotificationsApi", "Lcom/arizona/launcher/data/repository/notifications/NotificationsAPI;", "app_arizonaRelease"}, k = 1, mv = {2, 2, 0}, xi = 48)
 @Module
@@ -33,8 +34,8 @@ public final class ArizonaLauncherAPIModule {
             @Override // okhttp3.Interceptor
             public final Response intercept(Interceptor.Chain chain) {
                 Intrinsics.checkNotNullParameter(chain, "chain");
-                Request request = chain.request();
-                return chain.proceed(request.newBuilder().url(request.url().newBuilder().addQueryParameter("project", (String) FlavorUtilKt.rodinaOrArizona(new Function0<String>() { // from class: com.arizona.launcher.di.ArizonaLauncherAPIModule$okHttpClient$1$url$1
+                Request build2 = chain.request().newBuilder().addHeader("User-Agent", "Arizona Mobile: " + UtilsKt.isArizonaType()).build();
+                return chain.proceed(build2.newBuilder().url(build2.url().newBuilder().addQueryParameter("project", (String) FlavorUtilKt.rodinaOrArizona(new Function0<String>() { // from class: com.arizona.launcher.di.ArizonaLauncherAPIModule$okHttpClient$1$url$1
                     @Override // kotlin.jvm.functions.Function0
                     public final String invoke() {
                         return "rodina";

@@ -1,25 +1,11 @@
 package io.appmetrica.analytics.impl;
 
-import android.location.Location;
-import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
-import io.appmetrica.analytics.coreapi.internal.control.Toggle;
-import io.appmetrica.analytics.modulesapi.internal.service.ModuleLocationSourcesServiceController;
-import io.appmetrica.analytics.modulesapi.internal.service.ModuleServicesDatabase;
-import java.util.List;
-import java.util.Map;
+import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
+import io.appmetrica.analytics.modulesapi.internal.client.ModuleClientExecutorProvider;
 /* loaded from: classes5.dex */
-public interface Qc extends InterfaceC0498pd {
-    List<ModuleServicesDatabase> b();
-
-    /* synthetic */ Map c();
-
-    /* synthetic */ Map d();
-
-    List<Consumer<Location>> e();
-
-    ModuleLocationSourcesServiceController f();
-
-    Toggle g();
-
-    /* synthetic */ List h();
+public final class Qc implements ModuleClientExecutorProvider {
+    @Override // io.appmetrica.analytics.modulesapi.internal.client.ModuleClientExecutorProvider
+    public final IHandlerExecutor getDefaultExecutor() {
+        return C0136b4.l().c.a();
+    }
 }

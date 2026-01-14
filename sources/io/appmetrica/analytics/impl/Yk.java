@@ -1,17 +1,41 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import kotlin.text.Charsets;
 /* loaded from: classes5.dex */
-public final class Yk extends K2 {
-    public Yk(InterfaceC0361k2 interfaceC0361k2) {
-        super(interfaceC0361k2);
+public final class Yk {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final InterfaceC0366k2 f873a;
+
+    public Yk(InterfaceC0366k2 interfaceC0366k2) {
+        this.f873a = interfaceC0366k2;
     }
 
-    @Override // io.appmetrica.analytics.impl.K2
-    public final C0280go a(C0228eo c0228eo, C0280go c0280go, InterfaceC0335j2 interfaceC0335j2) {
-        if (c0280go == null || c0280go.c.b) {
-            C0280go a2 = ((Bd) interfaceC0335j2).a();
-            a2.c.f1028a = true;
-            return this.f646a.a(c0228eo, a2);
+    public final ArrayList a(Iterable iterable) {
+        String str;
+        String a2;
+        ArrayList arrayList = new ArrayList();
+        Iterator it = iterable.iterator();
+        while (it.hasNext()) {
+            String str2 = (String) it.next();
+            try {
+                a2 = this.f873a.a(str2);
+            } catch (NoSuchAlgorithmException unused) {
+            }
+            if (a2 == null || (str = StringUtils.toHexString(MessageDigest.getInstance("SHA-256").digest(a2.getBytes(Charsets.UTF_8)))) == null) {
+                PublicLogger.Companion.getAnonymousInstance().info("Input " + str2 + " is not a valid data", new Object[0]);
+                str = null;
+            }
+            if (str != null) {
+                arrayList.add(str);
+            }
         }
-        return null;
+        return arrayList;
     }
 }

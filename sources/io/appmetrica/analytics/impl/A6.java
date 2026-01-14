@@ -1,7 +1,7 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
+import android.os.Bundle;
 /* loaded from: classes5.dex */
 public interface A6 {
-    void a(Context context);
+    void a(int i, Bundle bundle);
 }

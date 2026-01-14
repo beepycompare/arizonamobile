@@ -1,31 +1,51 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.Set;
+import android.app.Activity;
+import android.location.Location;
+import io.appmetrica.analytics.AnrListener;
+import io.appmetrica.analytics.ExternalAttribution;
+import java.util.List;
 /* loaded from: classes5.dex */
-public interface Ia {
-    Ia a(int i, String str);
+public interface Ia extends Da, Hc {
+    void a(Activity activity);
 
-    Ia a(String str, float f);
+    @Override // io.appmetrica.analytics.impl.Hc
+    /* synthetic */ void a(Location location);
 
-    Ia a(String str, long j);
+    void a(AnrListener anrListener);
 
-    Ia a(String str, String str2);
+    void a(ExternalAttribution externalAttribution);
 
-    Ia a(String str, boolean z);
+    void a(Ho ho);
 
-    Set a();
+    void a(EnumC0438n enumC0438n);
 
-    boolean a(String str);
+    @Override // io.appmetrica.analytics.impl.Hc
+    /* synthetic */ void a(String str);
 
-    void b();
+    @Override // io.appmetrica.analytics.impl.Hc
+    /* synthetic */ void a(String str, String str2);
 
-    boolean getBoolean(String str, boolean z);
+    void a(String str, boolean z);
 
-    int getInt(String str, int i);
+    @Override // io.appmetrica.analytics.impl.Hc
+    /* synthetic */ void a(boolean z);
 
-    long getLong(String str, long j);
+    @Override // io.appmetrica.analytics.impl.Hc
+    /* synthetic */ void a(boolean z, boolean z2);
 
-    String getString(String str, String str2);
+    void b(Activity activity);
 
-    Ia remove(String str);
+    @Override // io.appmetrica.analytics.impl.Da
+    /* synthetic */ void b(String str);
+
+    @Override // io.appmetrica.analytics.impl.Da
+    /* synthetic */ void b(String str, String str2);
+
+    @Override // io.appmetrica.analytics.impl.Da
+    /* synthetic */ boolean b();
+
+    void c();
+
+    List<String> f();
 }

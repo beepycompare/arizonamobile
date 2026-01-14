@@ -1,18 +1,8 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
-public final class Lj implements Ra {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f672a;
-    public final /* synthetic */ String b;
-
-    public Lj(String str, String str2) {
-        this.f672a = str;
-        this.b = str2;
-    }
-
-    @Override // io.appmetrica.analytics.impl.Ra
-    public final void a(Sa sa) {
-        sa.putAppEnvironmentValue(this.f672a, this.b);
+public final class Lj implements Qa {
+    @Override // io.appmetrica.analytics.impl.Qa
+    public final void a(Ra ra) {
+        ra.clearAppEnvironment();
     }
 }

@@ -5,12 +5,12 @@ import java.util.List;
 public final class i0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f1464a;
+    public final boolean f1473a;
     public final List b;
     public final long c;
 
     public i0(boolean z, List list, long j) {
-        this.f1464a = z;
+        this.f1473a = z;
         this.b = list;
         this.c = j;
     }
@@ -20,7 +20,7 @@ public final class i0 {
     }
 
     public final boolean b() {
-        return this.f1464a;
+        return this.f1473a;
     }
 
     public final List c() {
@@ -28,10 +28,10 @@ public final class i0 {
     }
 
     public final String toString() {
-        return "ServiceSideContentObserverCaptorConfig(enabled=" + this.f1464a + ", mediaStoreColumnNames=" + this.b + ", detectWindowSeconds=" + this.c + ')';
+        return "ServiceSideContentObserverCaptorConfig(enabled=" + this.f1473a + ", mediaStoreColumnNames=" + this.b + ", detectWindowSeconds=" + this.c + ')';
     }
 
-    public i0(C0773p c0773p) {
-        this(c0773p.b(), c0773p.c(), c0773p.a());
+    public i0(C0777p c0777p) {
+        this(c0777p.b(), c0777p.c(), c0777p.a());
     }
 }

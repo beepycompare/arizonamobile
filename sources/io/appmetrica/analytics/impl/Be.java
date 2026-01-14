@@ -1,54 +1,46 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import com.google.android.vending.expansion.downloader.Constants;
-import io.appmetrica.analytics.coreutils.internal.io.FileUtils;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.util.Locale;
-import java.util.UUID;
+import kotlin.text.Regex;
 import kotlin.text.StringsKt;
 /* loaded from: classes5.dex */
-public final class Be {
+public final class Be implements InterfaceC0366k2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f509a;
-    public final po b;
-    public final qo c;
+    public final int f520a = 10;
+    public final int b = 13;
+    public final Regex c = new Regex("^[0-9()\\-+\\s]+$");
 
-    public Be(Context context) {
-        this(context, new po(), new qo());
-    }
-
+    @Override // io.appmetrica.analytics.impl.InterfaceC0366k2
     public final String a(String str) {
-        try {
-            this.c.getClass();
-            if (!qo.a(str)) {
-                this.b.getClass();
-                str = StringsKt.replace$default(UUID.randomUUID().toString(), Constants.FILENAME_SEQUENCE_SEPARATOR, "", false, 4, (Object) null).toLowerCase(Locale.US);
+        StringBuilder sb = new StringBuilder();
+        int length = str.length();
+        for (int i = 0; i < length; i++) {
+            char charAt = str.charAt(i);
+            if (Character.isDigit(charAt)) {
+                sb.append(charAt);
             }
-            File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f509a, "uuid.dat");
-            if (fileFromSdkStorage != null && str != null) {
-                Ka.a(str, new FileOutputStream(fileFromSdkStorage));
-            }
-            return str;
-        } catch (Throwable unused) {
+        }
+        String sb2 = sb.toString();
+        int length2 = sb2.length();
+        Character firstOrNull = StringsKt.firstOrNull(str);
+        Character firstOrNull2 = StringsKt.firstOrNull(sb2);
+        if (length2 < this.f520a || length2 > this.b || ((firstOrNull2 != null && firstOrNull2.charValue() == '0') || !this.c.matches(str))) {
             return null;
         }
-    }
-
-    public Be(Context context, po poVar, qo qoVar) {
-        this.f509a = context;
-        this.b = poVar;
-        this.c = qoVar;
-    }
-
-    public final void a() {
-        File fileFromAppStorage;
-        File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(this.f509a, "uuid.dat");
-        if (fileFromSdkStorage == null || fileFromSdkStorage.exists() || (fileFromAppStorage = FileUtils.getFileFromAppStorage(this.f509a, "uuid.dat")) == null || !fileFromAppStorage.exists()) {
-            return;
+        if (length2 == 10 && (firstOrNull == null || firstOrNull.charValue() != '+')) {
+            return "7".concat(sb2);
         }
-        FileUtils.copyToNullable(fileFromAppStorage, fileFromSdkStorage);
+        if (length2 == 11) {
+            if (firstOrNull != null && firstOrNull.charValue() == '+' && firstOrNull2 != null && firstOrNull2.charValue() == '8') {
+                return null;
+            }
+            if (firstOrNull2 != null && firstOrNull2.charValue() == '8') {
+                return "7" + sb2.substring(1);
+            }
+        }
+        if (length2 < 12 || firstOrNull == null || firstOrNull.charValue() != '+' || firstOrNull2 == null || firstOrNull2.charValue() != '7') {
+            return sb2;
+        }
+        return null;
     }
 }

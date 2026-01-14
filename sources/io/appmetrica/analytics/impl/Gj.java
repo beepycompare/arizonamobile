@@ -1,18 +1,18 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.ModuleEvent;
 /* loaded from: classes5.dex */
-public final class Gj implements Ra {
+public final class Gj implements Qa {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ ModuleEvent f592a;
+    public final /* synthetic */ String f600a;
+    public final /* synthetic */ byte[] b;
 
-    public Gj(ModuleEvent moduleEvent) {
-        this.f592a = moduleEvent;
+    public Gj(String str, byte[] bArr) {
+        this.f600a = str;
+        this.b = bArr;
     }
 
-    @Override // io.appmetrica.analytics.impl.Ra
-    public final void a(Sa sa) {
-        sa.reportEvent(this.f592a);
+    @Override // io.appmetrica.analytics.impl.Qa
+    public final void a(Ra ra) {
+        ra.setSessionExtra(this.f600a, this.b);
     }
 }

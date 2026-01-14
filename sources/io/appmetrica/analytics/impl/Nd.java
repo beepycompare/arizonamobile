@@ -1,21 +1,19 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.FunctionReferenceImpl;
 /* loaded from: classes5.dex */
-public final class Nd {
+public final /* synthetic */ class Nd extends FunctionReferenceImpl implements Function1 {
+    public Nd(Object obj) {
+        super(1, obj, Od.class, "markCrashCompletedAndDeleteCompletedCrashes", "markCrashCompletedAndDeleteCompletedCrashes(Ljava/lang/String;)V", 0);
+    }
 
-    /* renamed from: a  reason: collision with root package name */
-    public final Context f703a;
-    public final Tg b;
-    public final Sd c;
-    public final EnumC0164cb d;
-    public final C0137ba e = new C0137ba();
-    public final Fd f = new Fd();
-
-    public Nd(Context context, Tg tg, Sd sd, EnumC0164cb enumC0164cb) {
-        this.f703a = context;
-        this.b = tg;
-        this.c = sd;
-        this.d = enumC0164cb;
+    @Override // kotlin.jvm.functions.Function1
+    public final Object invoke(Object obj) {
+        Od od = (Od) this.receiver;
+        od.f724a.markCrashCompleted((String) obj);
+        od.f724a.deleteCompletedCrashes();
+        return Unit.INSTANCE;
     }
 }

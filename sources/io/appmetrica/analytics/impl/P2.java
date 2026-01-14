@@ -1,88 +1,32 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
-import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
-import java.util.ArrayList;
+import io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.BatteryInfo;
+import io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.ChargeType;
+import io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.ChargeTypeChangeListener;
+import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
 import java.util.Iterator;
 /* loaded from: classes5.dex */
-public final class P2 implements InterfaceC0430mk {
+public final class P2 extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f728a;
-    public Intent b;
-    public final Context c;
-    public final H5 d;
-    public final IHandlerExecutor e;
+    public final /* synthetic */ BatteryInfo f735a;
+    public final /* synthetic */ Q2 b;
 
-    public P2(Context context, IHandlerExecutor iHandlerExecutor) {
-        this(context, iHandlerExecutor, 0);
+    public P2(Q2 q2, BatteryInfo batteryInfo) {
+        this.b = q2;
+        this.f735a = batteryInfo;
     }
 
-    public final synchronized Intent a(Consumer<Intent> consumer) {
-        this.f728a.add(consumer);
-        return this.b;
-    }
-
-    public final void b() {
-        this.b = null;
-        H5 h5 = this.d;
-        Context context = this.c;
-        synchronized (h5) {
-            if (h5.b) {
-                try {
-                    context.unregisterReceiver(h5.f600a);
-                    h5.b = false;
-                } catch (Throwable unused) {
-                }
+    @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
+    public final void runSafety() {
+        R2 r2 = this.b.f748a;
+        ChargeType chargeType = this.f735a.chargeType;
+        ChargeType chargeType2 = R2.d;
+        synchronized (r2) {
+            Iterator it = r2.c.iterator();
+            while (it.hasNext()) {
+                ((ChargeTypeChangeListener) it.next()).onChargeTypeChanged(chargeType);
             }
         }
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0430mk
-    public final synchronized void onCreate() {
-        Intent a2 = a();
-        this.b = a2;
-        Iterator it = this.f728a.iterator();
-        while (it.hasNext()) {
-            ((Consumer) it.next()).consume(a2);
-        }
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0430mk
-    public final synchronized void onDestroy() {
-        this.b = null;
-        b();
-        Iterator it = this.f728a.iterator();
-        while (it.hasNext()) {
-            ((Consumer) it.next()).consume(null);
-        }
-    }
-
-    public P2(Context context, IHandlerExecutor iHandlerExecutor, int i) {
-        this.f728a = new ArrayList();
-        this.b = null;
-        this.c = context;
-        this.e = iHandlerExecutor;
-        this.d = G5.a(new C0611u2(new O2(this), iHandlerExecutor));
-    }
-
-    public final Intent a() {
-        Intent intent;
-        IntentFilter intentFilter = new IntentFilter("android.intent.action.BATTERY_CHANGED");
-        H5 h5 = this.d;
-        Context context = this.c;
-        IHandlerExecutor iHandlerExecutor = this.e;
-        synchronized (h5) {
-            intent = null;
-            try {
-                intent = context.registerReceiver(h5.f600a, intentFilter, null, iHandlerExecutor.getHandler());
-                h5.b = true;
-            } catch (Throwable unused) {
-            }
-        }
-        return intent;
     }
 }

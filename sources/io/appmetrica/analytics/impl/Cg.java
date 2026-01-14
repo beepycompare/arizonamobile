@@ -2,65 +2,22 @@ package io.appmetrica.analytics.impl;
 
 import android.content.Context;
 /* loaded from: classes5.dex */
-public final class Cg implements Rl, Ha {
+public final class Cg implements O7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f531a;
-    public final R4 b;
-    public final S4 c;
-    public final Bm d;
-    public final Qa e;
+    public final Y4 f535a;
 
-    public Cg(Context context, R4 r4, C0514q4 c0514q4, Z4 z4, S4 s4, Il il) {
-        this.f531a = context;
-        this.b = r4;
-        this.c = s4;
-        Bm a2 = il.a(context, r4, c0514q4.f1178a);
-        this.d = a2;
-        this.e = z4.a(context, r4, c0514q4.b, a2);
-        il.a(r4, this);
+    public Cg(Y4 y4) {
+        this.f535a = y4;
     }
 
-    public final R4 a() {
-        return this.b;
+    @Override // io.appmetrica.analytics.impl.O7
+    /* renamed from: b */
+    public final Bg a(Context context, Q4 q4, C0493p4 c0493p4) {
+        return new Bg(context, q4, c0493p4, this.f535a, new R4(), Hl.a());
     }
 
-    public final Context b() {
-        return this.f531a;
-    }
-
-    public final void a(InterfaceC0260g4 interfaceC0260g4) {
-        this.c.f770a.add(interfaceC0260g4);
-    }
-
-    public final void b(InterfaceC0260g4 interfaceC0260g4) {
-        this.c.f770a.remove(interfaceC0260g4);
-    }
-
-    @Override // io.appmetrica.analytics.impl.Rl
-    public final void a(C0278gm c0278gm) {
-        ((Y4) this.e).a(c0278gm);
-    }
-
-    @Override // io.appmetrica.analytics.impl.Rl
-    public final void a(Kl kl, C0278gm c0278gm) {
-        ((Y4) this.e).getClass();
-    }
-
-    @Override // io.appmetrica.analytics.impl.Ha
-    public final void a(C0514q4 c0514q4) {
-        this.d.a(c0514q4.f1178a);
-        this.e.a(c0514q4.b);
-    }
-
-    public final void a(Q5 q5, C0514q4 c0514q4) {
-        if (!AbstractC0693x9.c.contains(EnumC0164cb.a(q5.d))) {
-            this.e.a(c0514q4.b);
-        }
-        ((Y4) this.e).a(q5);
-    }
-
-    public Cg(Context context, R4 r4, C0514q4 c0514q4, Z4 z4) {
-        this(context, r4, c0514q4, z4, new S4(), Il.a());
+    public final Y4 a() {
+        return this.f535a;
     }
 }

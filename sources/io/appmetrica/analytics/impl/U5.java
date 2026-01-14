@@ -13,8 +13,8 @@ public final class U5 extends MessageNano {
     public static volatile U5[] c;
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f804a;
-    public byte[] b;
+    public byte[] f808a;
+    public Y5 b;
 
     public U5() {
         a();
@@ -32,9 +32,8 @@ public final class U5 extends MessageNano {
     }
 
     public final U5 a() {
-        byte[] bArr = WireFormatNano.EMPTY_BYTES;
-        this.f804a = bArr;
-        this.b = bArr;
+        this.f808a = WireFormatNano.EMPTY_BYTES;
+        this.b = null;
         this.cachedSize = -1;
         return this;
     }
@@ -42,23 +41,21 @@ public final class U5 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        byte[] bArr = this.f804a;
-        byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
-        if (!Arrays.equals(bArr, bArr2)) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f804a);
+        if (!Arrays.equals(this.f808a, WireFormatNano.EMPTY_BYTES)) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f808a);
         }
-        return !Arrays.equals(this.b, bArr2) ? CodedOutputByteBufferNano.computeBytesSize(2, this.b) + computeSerializedSize : computeSerializedSize;
+        Y5 y5 = this.b;
+        return y5 != null ? CodedOutputByteBufferNano.computeMessageSize(2, y5) + computeSerializedSize : computeSerializedSize;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        byte[] bArr = this.f804a;
-        byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
-        if (!Arrays.equals(bArr, bArr2)) {
-            codedOutputByteBufferNano.writeBytes(1, this.f804a);
+        if (!Arrays.equals(this.f808a, WireFormatNano.EMPTY_BYTES)) {
+            codedOutputByteBufferNano.writeBytes(1, this.f808a);
         }
-        if (!Arrays.equals(this.b, bArr2)) {
-            codedOutputByteBufferNano.writeBytes(2, this.b);
+        Y5 y5 = this.b;
+        if (y5 != null) {
+            codedOutputByteBufferNano.writeMessage(2, y5);
         }
         super.writeTo(codedOutputByteBufferNano);
     }
@@ -71,13 +68,16 @@ public final class U5 extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                this.f804a = codedInputByteBufferNano.readBytes();
+                this.f808a = codedInputByteBufferNano.readBytes();
             } else if (readTag != 18) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;
                 }
             } else {
-                this.b = codedInputByteBufferNano.readBytes();
+                if (this.b == null) {
+                    this.b = new Y5();
+                }
+                codedInputByteBufferNano.readMessage(this.b);
             }
         }
         return this;

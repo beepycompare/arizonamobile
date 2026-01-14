@@ -1,11 +1,11 @@
 package io.appmetrica.analytics.impl;
+
+import android.os.UserManager;
+import io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable;
 /* loaded from: classes5.dex */
-public abstract class Xn {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Ua f854a;
-
-    public Xn(Ua ua) {
-        this.f854a = ua;
+public final class Xn implements FunctionWithThrowable {
+    @Override // io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable
+    public final Object apply(Object obj) {
+        return Boolean.valueOf(((UserManager) obj).isUserUnlocked());
     }
 }

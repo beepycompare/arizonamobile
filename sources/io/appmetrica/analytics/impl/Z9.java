@@ -1,65 +1,51 @@
 package io.appmetrica.analytics.impl;
 
 import android.content.Context;
-import io.appmetrica.analytics.coreutils.internal.io.FileUtils;
-import java.io.Closeable;
-import java.io.File;
-import java.io.RandomAccessFile;
-import java.nio.channels.FileChannel;
-import java.nio.channels.FileLock;
+import java.util.HashMap;
+import kotlin.Unit;
+import kotlin.jvm.internal.Intrinsics;
+import kotlin.jvm.internal.Reflection;
 /* loaded from: classes5.dex */
 public final class Z9 {
+    public static volatile Z9 c;
 
     /* renamed from: a  reason: collision with root package name */
-    public final File f874a;
-    public FileLock b;
-    public RandomAccessFile c;
-    public FileChannel d;
-    public int e;
+    public final Context f883a;
+    public final HashMap b = new HashMap();
 
-    public Z9(Context context, String str) {
-        this(a(context, str));
+    public Z9(Context context) {
+        this.f883a = context;
     }
 
-    public final synchronized void a() {
-        RandomAccessFile randomAccessFile = new RandomAccessFile(this.f874a, "rw");
-        this.c = randomAccessFile;
-        FileChannel channel = randomAccessFile.getChannel();
-        this.d = channel;
-        if (this.e == 0) {
-            this.b = channel.lock();
+    public static final Z9 a(Context context) {
+        if (c == null) {
+            synchronized (Reflection.getOrCreateKotlinClass(Z9.class)) {
+                if (c == null) {
+                    c = new Z9(context);
+                }
+                Unit unit = Unit.INSTANCE;
+            }
         }
-        this.e++;
-    }
-
-    public final synchronized void b() {
-        this.f874a.getAbsolutePath();
-        int i = this.e - 1;
-        this.e = i;
-        if (i == 0) {
-            Ka.a(this.b);
+        Z9 z9 = c;
+        if (z9 == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("INSTANCE");
+            return null;
         }
-        mo.a((Closeable) this.c);
-        mo.a((Closeable) this.d);
-        this.c = null;
-        this.b = null;
-        this.d = null;
+        return z9;
     }
 
-    public Z9(String str) {
-        this(FileUtils.getFileFromPath(str + ".lock"));
-    }
-
-    public Z9(File file) {
-        this.e = 0;
-        this.f874a = file;
-    }
-
-    public static File a(Context context, String str) {
-        File fileFromSdkStorage = FileUtils.getFileFromSdkStorage(context, str + ".lock");
-        if (fileFromSdkStorage != null) {
-            return fileFromSdkStorage;
+    public final synchronized C0697x9 b(String str) {
+        Object obj;
+        HashMap hashMap = this.b;
+        obj = hashMap.get(str);
+        if (obj == null) {
+            obj = new C0697x9(this.f883a, str);
+            hashMap.put(str, obj);
         }
-        throw new IllegalStateException("Cannot create lock file");
+        return (C0697x9) obj;
+    }
+
+    public final synchronized void a(String str) {
+        this.b.remove(str);
     }
 }

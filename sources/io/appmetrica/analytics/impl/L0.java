@@ -8,26 +8,26 @@ import kotlin.jvm.internal.Intrinsics;
 public final class L0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final IHandlerExecutor f660a = C0157c4.l().g().a();
-    public final C0734z0 b;
-    public final Re c;
-    public final Ue d;
+    public final IHandlerExecutor f667a = C0136b4.l().g().a();
+    public final C0738z0 b;
+    public final Qe c;
+    public final Te d;
 
     public L0() {
-        C0734z0 c0734z0 = new C0734z0();
-        this.b = c0734z0;
-        this.c = new Re(c0734z0);
-        this.d = new Ue();
+        C0738z0 c0738z0 = new C0738z0();
+        this.b = c0738z0;
+        this.c = new Qe(c0738z0);
+        this.d = new Te();
     }
 
     public final void a(final PluginErrorDetails pluginErrorDetails) {
-        Re re = this.c;
-        re.f760a.a(null);
-        re.b.a(pluginErrorDetails);
-        Ue ue = this.d;
+        Qe qe = this.c;
+        qe.f752a.a(null);
+        qe.b.a(pluginErrorDetails);
+        Te te = this.d;
         Intrinsics.checkNotNull(pluginErrorDetails);
-        ue.getClass();
-        this.f660a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.L0$$ExternalSyntheticLambda1
+        te.getClass();
+        this.f667a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.L0$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
                 L0.a(L0.this, pluginErrorDetails);
@@ -36,14 +36,14 @@ public final class L0 {
     }
 
     public final void a(final PluginErrorDetails pluginErrorDetails, final String str) {
-        Re re = this.c;
-        re.f760a.a(null);
-        re.b.a(pluginErrorDetails);
-        if (re.d.a((Collection<Object>) (pluginErrorDetails != null ? pluginErrorDetails.getStacktrace() : null)).f1205a) {
-            Ue ue = this.d;
+        Qe qe = this.c;
+        qe.f752a.a(null);
+        qe.b.a(pluginErrorDetails);
+        if (qe.d.a((Collection<Object>) (pluginErrorDetails != null ? pluginErrorDetails.getStacktrace() : null)).f1195a) {
+            Te te = this.d;
             Intrinsics.checkNotNull(pluginErrorDetails);
-            ue.getClass();
-            this.f660a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.L0$$ExternalSyntheticLambda2
+            te.getClass();
+            this.f667a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.L0$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
                     L0.a(L0.this, pluginErrorDetails, str);
@@ -53,13 +53,13 @@ public final class L0 {
     }
 
     public final void a(final String str, final String str2, final PluginErrorDetails pluginErrorDetails) {
-        Re re = this.c;
-        re.f760a.a(null);
-        re.c.a(str);
-        Ue ue = this.d;
+        Qe qe = this.c;
+        qe.f752a.a(null);
+        qe.c.a(str);
+        Te te = this.d;
         Intrinsics.checkNotNull(str);
-        ue.getClass();
-        this.f660a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.L0$$ExternalSyntheticLambda0
+        te.getClass();
+        this.f667a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.L0$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
                 L0.a(L0.this, str, str2, pluginErrorDetails);
@@ -69,28 +69,28 @@ public final class L0 {
 
     public static final void a(L0 l0, PluginErrorDetails pluginErrorDetails, String str) {
         l0.b.getClass();
-        C0709y0 c0709y0 = C0709y0.e;
-        Intrinsics.checkNotNull(c0709y0);
-        C0371kc i = c0709y0.f().i();
+        C0713y0 c0713y0 = C0713y0.e;
+        Intrinsics.checkNotNull(c0713y0);
+        C0350jc i = c0713y0.f().i();
         Intrinsics.checkNotNull(i);
-        i.f1073a.getPluginExtension().reportError(pluginErrorDetails, str);
+        i.f1063a.getPluginExtension().reportError(pluginErrorDetails, str);
     }
 
     public static final void a(L0 l0, String str, String str2, PluginErrorDetails pluginErrorDetails) {
         l0.b.getClass();
-        C0709y0 c0709y0 = C0709y0.e;
-        Intrinsics.checkNotNull(c0709y0);
-        C0371kc i = c0709y0.f().i();
+        C0713y0 c0713y0 = C0713y0.e;
+        Intrinsics.checkNotNull(c0713y0);
+        C0350jc i = c0713y0.f().i();
         Intrinsics.checkNotNull(i);
-        i.f1073a.getPluginExtension().reportError(str, str2, pluginErrorDetails);
+        i.f1063a.getPluginExtension().reportError(str, str2, pluginErrorDetails);
     }
 
     public static final void a(L0 l0, PluginErrorDetails pluginErrorDetails) {
         l0.b.getClass();
-        C0709y0 c0709y0 = C0709y0.e;
-        Intrinsics.checkNotNull(c0709y0);
-        C0371kc i = c0709y0.f().i();
+        C0713y0 c0713y0 = C0713y0.e;
+        Intrinsics.checkNotNull(c0713y0);
+        C0350jc i = c0713y0.f().i();
         Intrinsics.checkNotNull(i);
-        i.f1073a.getPluginExtension().reportUnhandledException(pluginErrorDetails);
+        i.f1063a.getPluginExtension().reportUnhandledException(pluginErrorDetails);
     }
 }

@@ -1,10 +1,16 @@
 package io.appmetrica.analytics.impl;
 
-import kotlin.jvm.functions.Function0;
+import android.os.Parcel;
+import android.os.Parcelable;
 /* loaded from: classes5.dex */
-public final class Wa implements Function0 {
-    @Override // kotlin.jvm.functions.Function0
-    public final Object invoke() {
-        return C0470oa.I.f();
+public final class Wa implements Parcelable.Creator {
+    @Override // android.os.Parcelable.Creator
+    public final Object createFromParcel(Parcel parcel) {
+        return new Xa(parcel);
+    }
+
+    @Override // android.os.Parcelable.Creator
+    public final Object[] newArray(int i) {
+        return new Xa[i];
     }
 }

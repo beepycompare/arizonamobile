@@ -7,13 +7,13 @@ import kotlin.Metadata;
 public final class NativeCrashServiceConfig {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f1377a;
+    private final String f1380a;
 
     public NativeCrashServiceConfig(String str) {
-        this.f1377a = str;
+        this.f1380a = str;
     }
 
     public final String getNativeCrashFolder() {
-        return this.f1377a;
+        return this.f1380a;
     }
 }

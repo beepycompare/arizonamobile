@@ -1,12 +1,17 @@
 package io.appmetrica.analytics.impl;
-
-import android.content.Context;
-import io.appmetrica.analytics.appsetid.internal.AppSetIdListener;
-import io.appmetrica.analytics.appsetid.internal.IAppSetIdRetriever;
 /* loaded from: classes5.dex */
-public final class V7 implements IAppSetIdRetriever {
-    @Override // io.appmetrica.analytics.appsetid.internal.IAppSetIdRetriever
-    public final void retrieveAppSetId(Context context, AppSetIdListener appSetIdListener) {
-        appSetIdListener.onFailure(new IllegalStateException("No App Set ID library"));
+public final class V7 implements G8 {
+    @Override // io.appmetrica.analytics.impl.G8
+    public final byte[] a(byte[] bArr) {
+        return bArr;
+    }
+
+    @Override // io.appmetrica.analytics.impl.G8
+    public final C0746z8 a(P5 p5) {
+        return new C0746z8(p5, I8.NONE);
+    }
+
+    public final I8 a() {
+        return I8.NONE;
     }
 }

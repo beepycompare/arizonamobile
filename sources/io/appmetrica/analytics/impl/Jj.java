@@ -1,18 +1,16 @@
 package io.appmetrica.analytics.impl;
-
-import java.util.Map;
 /* loaded from: classes5.dex */
-public final class Jj implements Ra {
+public final class Jj implements Qa {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Map f642a;
+    public final /* synthetic */ V f647a;
 
-    public Jj(Map map) {
-        this.f642a = map;
+    public Jj(V v) {
+        this.f647a = v;
     }
 
-    @Override // io.appmetrica.analytics.impl.Ra
-    public final void a(Sa sa) {
-        sa.reportAnr(this.f642a);
+    @Override // io.appmetrica.analytics.impl.Qa
+    public final void a(Ra ra) {
+        ra.a(this.f647a);
     }
 }

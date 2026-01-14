@@ -13,7 +13,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
-import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.Metadata;
@@ -26,7 +25,7 @@ import ru.mrlargha.commonui.databinding.HudElementChickenChargeBinding;
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.ui.CustomCardView;
 /* compiled from: ChickenCharge.kt */
-@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u000e\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012J\u000e\u0010\u0013\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012J\u0016\u0010\u0014\u001a\u00020\u00102\f\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00170\u0016H\u0002J\b\u0010\u0018\u001a\u00020\u0010H\u0002J\u000e\u0010\u0019\u001a\u00020\u00102\u0006\u0010\u001a\u001a\u00020\u001bR\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001c"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/ChickenChargeElement;", "", "binding", "Lru/mrlargha/commonui/databinding/HudElementChickenChargeBinding;", "notifier", "Lru/mrlargha/commonui/core/SAMPUIElement;", "<init>", "(Lru/mrlargha/commonui/databinding/HudElementChickenChargeBinding;Lru/mrlargha/commonui/core/SAMPUIElement;)V", "getBinding", "()Lru/mrlargha/commonui/databinding/HudElementChickenChargeBinding;", "getNotifier", "()Lru/mrlargha/commonui/core/SAMPUIElement;", "animator1", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/PercentMover;", "animator2", "setVisibility", "", "data", "", "setInfo", "setData", "info", "", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/StageState;", "firstOpen", "setResult", CommonUrlParts.MODEL, "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/HudChickenChargeResult;", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000@\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u0018\u00002\u00020\u0001B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\u000e\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012J\u000e\u0010\u0013\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012J\u0016\u0010\u0014\u001a\u00020\u00102\f\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00170\u0016H\u0002J\b\u0010\u0018\u001a\u00020\u0010H\u0002J\u0014\u0010\u0019\u001a\u00020\u00102\f\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0016R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001b"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/ChickenChargeElement;", "", "binding", "Lru/mrlargha/commonui/databinding/HudElementChickenChargeBinding;", "notifier", "Lru/mrlargha/commonui/core/SAMPUIElement;", "<init>", "(Lru/mrlargha/commonui/databinding/HudElementChickenChargeBinding;Lru/mrlargha/commonui/core/SAMPUIElement;)V", "getBinding", "()Lru/mrlargha/commonui/databinding/HudElementChickenChargeBinding;", "getNotifier", "()Lru/mrlargha/commonui/core/SAMPUIElement;", "animator1", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/PercentMover;", "animator2", "setVisibility", "", "data", "", "setInfo", "setData", "info", "", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/StageState;", "firstOpen", "setResult", "Lru/mrlargha/commonui/elements/hud/presentation/hud_screens/chicken_charge/HudChickenChargeResult;", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class ChickenChargeElement {
     private final PercentMover animator1;
@@ -261,9 +260,13 @@ public final class ChickenChargeElement {
         finalContainer.setVisibility(8);
     }
 
-    public final void setResult(HudChickenChargeResult model) {
-        Intrinsics.checkNotNullParameter(model, "model");
+    public final void setResult(List<HudChickenChargeResult> data) {
+        Intrinsics.checkNotNullParameter(data, "data");
         HudElementChickenChargeBinding hudElementChickenChargeBinding = this.binding;
+        HudChickenChargeResult hudChickenChargeResult = (HudChickenChargeResult) CollectionsKt.getOrNull(data, 0);
+        if (hudChickenChargeResult == null) {
+            return;
+        }
         ImageView ivBg = hudElementChickenChargeBinding.ivBg;
         Intrinsics.checkNotNullExpressionValue(ivBg, "ivBg");
         ivBg.setVisibility(8);
@@ -282,8 +285,8 @@ public final class ChickenChargeElement {
         TextView tvYouWaiting = hudElementChickenChargeBinding.tvYouWaiting;
         Intrinsics.checkNotNullExpressionValue(tvYouWaiting, "tvYouWaiting");
         tvYouWaiting.setVisibility(8);
-        hudElementChickenChargeBinding.tvPercentSuccess.setText("Общий шанс успеха - " + model.getChance() + "%");
-        if (model.isSuccessful()) {
+        hudElementChickenChargeBinding.tvPercentSuccess.setText("Общий шанс успеха - " + hudChickenChargeResult.getChance() + "%");
+        if (hudChickenChargeResult.isSuccessful()) {
             hudElementChickenChargeBinding.tvResult.setText("УСПЕХ");
             hudElementChickenChargeBinding.tvResult.setTextColor(Color.parseColor("#BFFF64"));
             return;

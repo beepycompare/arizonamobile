@@ -5,18 +5,20 @@ import io.appmetrica.analytics.plugins.PluginErrorDetails;
 public final class Ne implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ PluginErrorDetails f704a;
+    public final /* synthetic */ String f710a;
     public final /* synthetic */ String b;
-    public final /* synthetic */ Pe c;
+    public final /* synthetic */ PluginErrorDetails c;
+    public final /* synthetic */ Oe d;
 
-    public Ne(Pe pe, PluginErrorDetails pluginErrorDetails, String str) {
-        this.c = pe;
-        this.f704a = pluginErrorDetails;
-        this.b = str;
+    public Ne(Oe oe, String str, String str2, PluginErrorDetails pluginErrorDetails) {
+        this.d = oe;
+        this.f710a = str;
+        this.b = str2;
+        this.c = pluginErrorDetails;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        ((Sa) this.c.d.get()).getPluginExtension().reportError(this.f704a, this.b);
+        ((Ra) this.d.d.get()).getPluginExtension().reportError(this.f710a, this.b, this.c);
     }
 }

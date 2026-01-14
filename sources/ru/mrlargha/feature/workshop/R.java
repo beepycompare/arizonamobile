@@ -9,44 +9,44 @@ public final class R {
         public static int btnPaintItem = 0x7f0a0208;
         public static int btnSharpenItem = 0x7f0a0210;
         public static int buttons_container = 0x7f0a02a0;
-        public static int costField = 0x7f0a03bf;
-        public static int costFieldPainting = 0x7f0a03c0;
-        public static int groupWorkbench = 0x7f0a0593;
-        public static int guidelineHor1 = 0x7f0a05f8;
-        public static int guidelineHor2 = 0x7f0a05f9;
-        public static int guidelineHor3 = 0x7f0a05fa;
-        public static int guidelineVer1 = 0x7f0a05fe;
-        public static int guidelineVer2 = 0x7f0a05ff;
-        public static int guidelineVer4 = 0x7f0a0601;
-        public static int info = 0x7f0a06e9;
-        public static int infoLayout = 0x7f0a06f1;
-        public static int info_containers = 0x7f0a06f5;
-        public static int ivBgSharpResult = 0x7f0a0748;
-        public static int ivItemImage = 0x7f0a0764;
-        public static int layoutFields = 0x7f0a07ce;
-        public static int leftItemField = 0x7f0a07e0;
-        public static int mainItemField = 0x7f0a0841;
-        public static int paint_buttons = 0x7f0a0a0f;
-        public static int parentLayout = 0x7f0a0a16;
-        public static int progressBar = 0x7f0a0aa3;
-        public static int rightItemField = 0x7f0a0b5f;
-        public static int rvColors = 0x7f0a0be8;
-        public static int rvMainInventory = 0x7f0a0bf0;
-        public static int rvMenu = 0x7f0a0bf1;
-        public static int sharping_info_container = 0x7f0a0c80;
-        public static int successChanceField = 0x7f0a0d32;
-        public static int topRightColor = 0x7f0a0e05;
-        public static int tvEndCount = 0x7f0a0e4d;
-        public static int tvLeftItemDescription = 0x7f0a0e6d;
-        public static int tvMainItemDescription = 0x7f0a0e74;
-        public static int tvRightItemDescription = 0x7f0a0e8e;
-        public static int tvScreenTitle = 0x7f0a0e8f;
-        public static int tvStartCount = 0x7f0a0e96;
-        public static int tvTitle = 0x7f0a0ea2;
-        public static int tvTitleDescription = 0x7f0a0ea3;
-        public static int tvTitleText = 0x7f0a0ea9;
-        public static int tv_info = 0x7f0a0ee6;
-        public static int viewLine = 0x7f0a0f69;
+        public static int costField = 0x7f0a03bb;
+        public static int costFieldPainting = 0x7f0a03bc;
+        public static int groupWorkbench = 0x7f0a0588;
+        public static int guidelineHor1 = 0x7f0a05ed;
+        public static int guidelineHor2 = 0x7f0a05ee;
+        public static int guidelineHor3 = 0x7f0a05ef;
+        public static int guidelineVer1 = 0x7f0a05f3;
+        public static int guidelineVer2 = 0x7f0a05f4;
+        public static int guidelineVer4 = 0x7f0a05f6;
+        public static int info = 0x7f0a06de;
+        public static int infoLayout = 0x7f0a06e6;
+        public static int info_containers = 0x7f0a06ea;
+        public static int ivBgSharpResult = 0x7f0a073c;
+        public static int ivItemImage = 0x7f0a0758;
+        public static int layoutFields = 0x7f0a07c2;
+        public static int leftItemField = 0x7f0a07d4;
+        public static int mainItemField = 0x7f0a0835;
+        public static int paint_buttons = 0x7f0a0a01;
+        public static int parentLayout = 0x7f0a0a08;
+        public static int progressBar = 0x7f0a0a95;
+        public static int rightItemField = 0x7f0a0b50;
+        public static int rvColors = 0x7f0a0bd9;
+        public static int rvMainInventory = 0x7f0a0be1;
+        public static int rvMenu = 0x7f0a0be2;
+        public static int sharping_info_container = 0x7f0a0c71;
+        public static int successChanceField = 0x7f0a0d21;
+        public static int topRightColor = 0x7f0a0df4;
+        public static int tvEndCount = 0x7f0a0e3c;
+        public static int tvLeftItemDescription = 0x7f0a0e5c;
+        public static int tvMainItemDescription = 0x7f0a0e63;
+        public static int tvRightItemDescription = 0x7f0a0e7d;
+        public static int tvScreenTitle = 0x7f0a0e7e;
+        public static int tvStartCount = 0x7f0a0e85;
+        public static int tvTitle = 0x7f0a0e91;
+        public static int tvTitleDescription = 0x7f0a0e92;
+        public static int tvTitleText = 0x7f0a0e98;
+        public static int tv_info = 0x7f0a0ed3;
+        public static int viewLine = 0x7f0a0f56;
 
         private id() {
         }
@@ -54,17 +54,17 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class layout {
-        public static int item_workshop = 0x7f0d0157;
-        public static int layout_item_fix = 0x7f0d0160;
-        public static int layout_item_paint = 0x7f0d0161;
-        public static int layout_item_sharp = 0x7f0d0162;
-        public static int potions_screen = 0x7f0d0200;
-        public static int workshop_buttons_container = 0x7f0d0268;
-        public static int workshop_chance_cost_info = 0x7f0d0269;
-        public static int workshop_cost_buttons = 0x7f0d026a;
-        public static int workshop_info = 0x7f0d026b;
-        public static int workshop_info_container = 0x7f0d026c;
-        public static int workshop_screen = 0x7f0d026d;
+        public static int item_workshop = 0x7f0d0155;
+        public static int layout_item_fix = 0x7f0d015e;
+        public static int layout_item_paint = 0x7f0d015f;
+        public static int layout_item_sharp = 0x7f0d0160;
+        public static int potions_screen = 0x7f0d01fe;
+        public static int workshop_buttons_container = 0x7f0d0266;
+        public static int workshop_chance_cost_info = 0x7f0d0267;
+        public static int workshop_cost_buttons = 0x7f0d0268;
+        public static int workshop_info = 0x7f0d0269;
+        public static int workshop_info_container = 0x7f0d026a;
+        public static int workshop_screen = 0x7f0d026b;
 
         private layout() {
         }

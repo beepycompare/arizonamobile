@@ -1,8 +1,22 @@
 package io.appmetrica.analytics.impl;
+
+import java.util.HashMap;
+import java.util.Map;
 /* loaded from: classes5.dex */
-public abstract class J7 {
+public final class J7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Long f634a = 30L;
-    public static final C0656vm b = new C0656vm();
+    public final Map f641a;
+    public final String b;
+    public final String c;
+
+    public J7(String str, HashMap hashMap, String str2) {
+        this.b = str;
+        this.f641a = hashMap;
+        this.c = str2;
+    }
+
+    public final String toString() {
+        return "DeferredDeeplinkState{mParameters=" + this.f641a + ", mDeeplink='" + this.b + "', mUnparsedReferrer='" + this.c + "'}";
+    }
 }

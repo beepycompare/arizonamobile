@@ -1,36 +1,36 @@
 package io.appmetrica.analytics.profile;
 
-import io.appmetrica.analytics.impl.C0588t4;
-import io.appmetrica.analytics.impl.C0615u6;
-import io.appmetrica.analytics.impl.Ci;
-import io.appmetrica.analytics.impl.InterfaceC0254fo;
-import io.appmetrica.analytics.impl.InterfaceC0361k2;
-import io.appmetrica.analytics.impl.Y2;
-import io.appmetrica.analytics.impl.Yk;
-import io.appmetrica.analytics.impl.to;
+import io.appmetrica.analytics.impl.Bi;
+import io.appmetrica.analytics.impl.C0567s4;
+import io.appmetrica.analytics.impl.C0594t6;
+import io.appmetrica.analytics.impl.InterfaceC0233eo;
+import io.appmetrica.analytics.impl.InterfaceC0340j2;
+import io.appmetrica.analytics.impl.X2;
+import io.appmetrica.analytics.impl.Xk;
+import io.appmetrica.analytics.impl.so;
 /* loaded from: classes5.dex */
 public class BooleanAttribute {
 
     /* renamed from: a  reason: collision with root package name */
-    private final C0615u6 f1414a;
+    private final C0594t6 f1423a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public BooleanAttribute(String str, to toVar, InterfaceC0361k2 interfaceC0361k2) {
-        this.f1414a = new C0615u6(str, toVar, interfaceC0361k2);
+    public BooleanAttribute(String str, so soVar, InterfaceC0340j2 interfaceC0340j2) {
+        this.f1423a = new C0594t6(str, soVar, interfaceC0340j2);
     }
 
-    public UserProfileUpdate<? extends InterfaceC0254fo> withValue(boolean z) {
-        C0615u6 c0615u6 = this.f1414a;
-        return new UserProfileUpdate<>(new Y2(c0615u6.c, z, c0615u6.f1242a, new C0588t4(c0615u6.b)));
+    public UserProfileUpdate<? extends InterfaceC0233eo> withValue(boolean z) {
+        C0594t6 c0594t6 = this.f1423a;
+        return new UserProfileUpdate<>(new X2(c0594t6.c, z, c0594t6.f1232a, new C0567s4(c0594t6.b)));
     }
 
-    public UserProfileUpdate<? extends InterfaceC0254fo> withValueIfUndefined(boolean z) {
-        C0615u6 c0615u6 = this.f1414a;
-        return new UserProfileUpdate<>(new Y2(c0615u6.c, z, c0615u6.f1242a, new Yk(c0615u6.b)));
+    public UserProfileUpdate<? extends InterfaceC0233eo> withValueIfUndefined(boolean z) {
+        C0594t6 c0594t6 = this.f1423a;
+        return new UserProfileUpdate<>(new X2(c0594t6.c, z, c0594t6.f1232a, new Xk(c0594t6.b)));
     }
 
-    public UserProfileUpdate<? extends InterfaceC0254fo> withValueReset() {
-        C0615u6 c0615u6 = this.f1414a;
-        return new UserProfileUpdate<>(new Ci(3, c0615u6.c, c0615u6.f1242a, c0615u6.b));
+    public UserProfileUpdate<? extends InterfaceC0233eo> withValueReset() {
+        C0594t6 c0594t6 = this.f1423a;
+        return new UserProfileUpdate<>(new Bi(3, c0594t6.c, c0594t6.f1232a, c0594t6.b));
     }
 }

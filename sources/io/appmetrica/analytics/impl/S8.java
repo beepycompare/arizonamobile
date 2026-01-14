@@ -1,22 +1,11 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
+import java.util.List;
 /* loaded from: classes5.dex */
-public final class S8 {
+public interface S8 {
+    void a();
 
-    /* renamed from: a  reason: collision with root package name */
-    public final Q8 f773a;
-    public final R8 b;
-    public final IBinaryDataHelper c;
+    void a(List list);
 
-    public S8(Context context, R4 r4) {
-        this(new R8(), new Q8(), C0470oa.k().B().a(context, r4));
-    }
-
-    public S8(R8 r8, Q8 q8, IBinaryDataHelper iBinaryDataHelper) {
-        this.b = r8;
-        this.f773a = q8;
-        this.c = iBinaryDataHelper;
-    }
+    void b(List list);
 }

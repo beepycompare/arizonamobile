@@ -1,22 +1,75 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.List;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
+import io.appmetrica.analytics.coreapi.internal.permission.PermissionState;
+import java.util.ArrayList;
 /* loaded from: classes5.dex */
-public final class U1 {
+public final class U1 implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f800a;
-    public final C0711y2 b;
-    public final List c;
+    public final C0640v2 f807a;
 
-    public U1(List list, C0711y2 c0711y2, List list2) {
-        this.f800a = list;
-        this.b = c0711y2;
-        this.c = list2;
+    public U1() {
+        this(new C0640v2());
     }
 
-    public final String toString() {
-        return "AppPermissionsState{mPermissionStateList=" + this.f800a + ", mBackgroundRestrictionsState=" + this.b + ", mAvailableProviders=" + this.c + AbstractJsonLexerKt.END_OBJ;
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final X1 fromModel(T1 t1) {
+        X1 x1 = new X1();
+        x1.f848a = new W1[t1.f791a.size()];
+        int i = 0;
+        int i2 = 0;
+        for (PermissionState permissionState : t1.f791a) {
+            W1[] w1Arr = x1.f848a;
+            W1 w1 = new W1();
+            w1.f834a = permissionState.name;
+            w1.b = permissionState.granted;
+            w1Arr[i2] = w1;
+            i2++;
+        }
+        C0690x2 c0690x2 = t1.b;
+        if (c0690x2 != null) {
+            x1.b = this.f807a.fromModel(c0690x2);
+        }
+        x1.c = new String[t1.c.size()];
+        for (String str : t1.c) {
+            x1.c[i] = str;
+            i++;
+        }
+        return x1;
+    }
+
+    public U1(C0640v2 c0640v2) {
+        this.f807a = c0640v2;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final T1 toModel(X1 x1) {
+        ArrayList arrayList = new ArrayList();
+        int i = 0;
+        int i2 = 0;
+        while (true) {
+            W1[] w1Arr = x1.f848a;
+            if (i2 >= w1Arr.length) {
+                break;
+            }
+            W1 w1 = w1Arr[i2];
+            arrayList.add(new PermissionState(w1.f834a, w1.b));
+            i2++;
+        }
+        V1 v1 = x1.b;
+        C0690x2 model = v1 != null ? this.f807a.toModel(v1) : null;
+        ArrayList arrayList2 = new ArrayList();
+        while (true) {
+            String[] strArr = x1.c;
+            if (i < strArr.length) {
+                arrayList2.add(strArr[i]);
+                i++;
+            } else {
+                return new T1(arrayList, model, arrayList2);
+            }
+        }
     }
 }

@@ -1,15 +1,23 @@
 package io.appmetrica.analytics.impl;
 
 import android.content.res.Configuration;
-import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
-import java.util.List;
-import kotlin.collections.CollectionsKt;
+import android.os.LocaleList;
+import java.util.ArrayList;
+import java.util.Locale;
 /* loaded from: classes5.dex */
-public final class Jb {
-    public static List a(Configuration configuration) {
-        if (AndroidUtils.isApiAchieved(24)) {
-            return Kb.a(configuration);
+public abstract class Jb {
+    public static final ArrayList a(Configuration configuration) {
+        ArrayList arrayList = new ArrayList();
+        LocaleList locales = configuration.getLocales();
+        if (locales != null) {
+            int size = locales.size();
+            for (int i = 0; i < size; i++) {
+                Locale locale = locales.get(i);
+                if (locale != null) {
+                    arrayList.add(Ge.a(locale));
+                }
+            }
         }
-        return CollectionsKt.listOf(He.a(configuration.locale));
+        return arrayList;
     }
 }

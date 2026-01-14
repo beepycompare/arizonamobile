@@ -73,14 +73,14 @@ public final class CertificateScreen extends SAMPUIElement {
         this.scene = (ItemScene) targetActivity;
         ArizonaRetrofit arizonaRetrofit = new ArizonaRetrofit(targetActivity, i);
         this.client = arizonaRetrofit;
-        this.api = (CertificateApi) ArizonaRetrofit.create$default(arizonaRetrofit, CertificateApi.class, false, new Function0() { // from class: com.arizonagames.feature.arizona.certificate.CertificateScreen$$ExternalSyntheticLambda0
+        this.api = (CertificateApi) ArizonaRetrofit.create$default(arizonaRetrofit, CertificateApi.class, false, null, new Function0() { // from class: com.arizonagames.feature.arizona.certificate.CertificateScreen$$ExternalSyntheticLambda0
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 Unit api$lambda$0;
                 api$lambda$0 = CertificateScreen.api$lambda$0(CertificateScreen.this, i);
                 return api$lambda$0;
             }
-        }, 2, null);
+        }, 6, null);
         this.qualityTypeList = CollectionsKt.emptyList();
         this.bonusType = CollectionsKt.emptyList();
         this.zoomMultipler = 1.0f;

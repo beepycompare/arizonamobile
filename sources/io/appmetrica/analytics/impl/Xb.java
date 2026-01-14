@@ -1,15 +1,24 @@
 package io.appmetrica.analytics.impl;
 
+import android.content.Context;
+import android.location.LocationListener;
+import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
+import io.appmetrica.analytics.coreapi.internal.system.PermissionExtractor;
+import io.appmetrica.analytics.locationapi.internal.LocationReceiver;
 import io.appmetrica.analytics.locationapi.internal.LocationReceiverProvider;
-import io.appmetrica.analytics.locationapi.internal.LocationReceiverProviderFactory;
 /* loaded from: classes5.dex */
-public final class Xb implements LocationReceiverProviderFactory {
+public final class Xb implements LocationReceiverProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Yb f847a = new Yb();
+    public final String f853a = "Location receiver stub";
 
-    @Override // io.appmetrica.analytics.locationapi.internal.LocationReceiverProviderFactory
-    public final LocationReceiverProvider getPassiveLocationReceiverProvider() {
-        return this.f847a;
+    @Override // io.appmetrica.analytics.locationapi.internal.Identifiable
+    public final String getIdentifier() {
+        return this.f853a;
+    }
+
+    @Override // io.appmetrica.analytics.locationapi.internal.LocationReceiverProvider
+    public final LocationReceiver getLocationReceiver(Context context, PermissionExtractor permissionExtractor, IHandlerExecutor iHandlerExecutor, LocationListener locationListener) {
+        return new Yb();
     }
 }

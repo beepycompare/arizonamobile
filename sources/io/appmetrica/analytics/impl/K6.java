@@ -1,22 +1,105 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import androidx.media3.exoplayer.upstream.CmcdData;
-import java.io.File;
-import kotlin.Metadata;
-@Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0001\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\n\u001a\u00020\b¢\u0006\u0004\b\u000b\u0010\fJ\u0018\u0010\u0007\u001a\u00020\u00062\u0006\u0010\u0003\u001a\u00020\u00022\u0006\u0010\u0005\u001a\u00020\u0004H\u0016R\u0014\u0010\n\u001a\u00020\b8\u0002X\u0082\u0004¢\u0006\u0006\n\u0004\b\u0007\u0010\t¨\u0006\r"}, d2 = {"Lio/appmetrica/analytics/impl/K6;", "Lio/appmetrica/analytics/impl/J6;", "Landroid/content/Context;", "context", "", "simpleName", "Ljava/io/File;", CmcdData.OBJECT_TYPE_AUDIO_ONLY, "Lio/appmetrica/analytics/impl/Kg;", "Lio/appmetrica/analytics/impl/Kg;", "relativePathFormer", "<init>", "(Lio/appmetrica/analytics/impl/Kg;)V", "analytics_binaryProdRelease"}, k = 1, mv = {1, 6, 0})
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
+import io.appmetrica.analytics.coreapi.internal.executors.InterruptionSafeThread;
+import java.util.ArrayList;
+import java.util.Iterator;
 /* loaded from: classes5.dex */
-public final class K6 implements J6 {
+public final class K6 extends InterruptionSafeThread {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Kg f648a;
+    public final X4 f655a;
+    public final /* synthetic */ L6 b;
 
-    public K6(Kg kg) {
-        this.f648a = kg;
+    public K6(L6 l6, X4 x4) {
+        this.b = l6;
+        this.f655a = x4;
     }
 
-    @Override // io.appmetrica.analytics.impl.J6
-    public File a(Context context, String str) {
-        return new File(context.getNoBackupFilesDir(), this.f648a.a(str));
+    public final synchronized void a(ArrayList arrayList) {
+        ArrayList arrayList2 = new ArrayList();
+        Iterator it = arrayList.iterator();
+        while (it.hasNext()) {
+            this.b.getClass();
+            arrayList2.add(Integer.valueOf(((ContentValues) it.next()).getAsInteger("type").intValue()));
+        }
+        Iterator it2 = this.b.j.iterator();
+        while (it2.hasNext()) {
+            ((S8) it2.next()).a(arrayList2);
+        }
+        ((C0369k5) this.f655a.p).e();
+    }
+
+    @Override // java.lang.Thread, java.lang.Runnable
+    public final void run() {
+        ArrayList arrayList;
+        int i;
+        while (isRunning()) {
+            try {
+                synchronized (this) {
+                    if (L6.a(this.b)) {
+                        wait();
+                    }
+                }
+            } catch (Throwable unused) {
+                stopRunning();
+            }
+            synchronized (this.b.e) {
+                arrayList = new ArrayList(this.b.f);
+                this.b.f.clear();
+            }
+            L6 l6 = this.b;
+            l6.getClass();
+            if (!arrayList.isEmpty()) {
+                long j = ((C0381kh) l6.h.k.a()).v;
+                l6.b.lock();
+                SQLiteDatabase sQLiteDatabase = null;
+                try {
+                    SQLiteDatabase writableDatabase = l6.c.getWritableDatabase();
+                    if (writableDatabase != null) {
+                        try {
+                            writableDatabase.beginTransaction();
+                            Iterator it = arrayList.iterator();
+                            while (it.hasNext()) {
+                                ContentValues contentValues = (ContentValues) it.next();
+                                writableDatabase.insertOrThrow("events", null, contentValues);
+                                l6.i.incrementAndGet();
+                                l6.a(contentValues, "Event saved to db");
+                            }
+                            if (l6.i.get() > j) {
+                                i = l6.a(writableDatabase);
+                                l6.i.addAndGet(-i);
+                            } else {
+                                i = 0;
+                            }
+                            writableDatabase.setTransactionSuccessful();
+                            if (i != 0) {
+                                Iterator it2 = l6.j.iterator();
+                                while (it2.hasNext()) {
+                                    ((S8) it2.next()).a();
+                                }
+                            }
+                        } catch (Throwable unused2) {
+                            sQLiteDatabase = writableDatabase;
+                            if (sQLiteDatabase != null) {
+                                sQLiteDatabase.endTransaction();
+                            }
+                            l6.b.unlock();
+                            a(arrayList);
+                        }
+                    }
+                    if (writableDatabase != null) {
+                        try {
+                            writableDatabase.endTransaction();
+                        } catch (Throwable unused3) {
+                        }
+                    }
+                } catch (Throwable unused4) {
+                }
+                l6.b.unlock();
+            }
+            a(arrayList);
+        }
     }
 }

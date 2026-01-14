@@ -5,37 +5,37 @@ import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
 import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
 import io.appmetrica.analytics.coreutils.internal.encryption.AESEncrypter;
 /* loaded from: classes5.dex */
-public final class Lm extends Sm {
-    @Override // io.appmetrica.analytics.impl.Sm
+public final class Lm extends Rm {
+    @Override // io.appmetrica.analytics.impl.Rm
     public final IBinaryDataHelper a(Context context) {
-        return C0470oa.I.B().b(context);
+        return C0449na.I.B().b(context);
     }
 
-    @Override // io.appmetrica.analytics.impl.Sm
+    @Override // io.appmetrica.analytics.impl.Rm
     public final IBinaryDataHelper b(Context context) {
         IBinaryDataHelper a2;
-        C0754zk B = C0470oa.I.B();
+        C0733yk B = C0449na.I.B();
         synchronized (B) {
             a2 = B.a(context);
         }
         return a2;
     }
 
-    @Override // io.appmetrica.analytics.impl.Sm
+    @Override // io.appmetrica.analytics.impl.Rm
     public final ProtobufStateStorage a(Context context, IBinaryDataHelper iBinaryDataHelper) {
         byte[] bArr;
         byte[] bArr2;
-        Z1 z1 = new Z1();
+        Cif cif = new Cif();
         try {
-            bArr = AbstractC0301hj.a(context.getPackageName());
+            bArr = AbstractC0280gj.a(context.getPackageName());
         } catch (Throwable unused) {
             bArr = new byte[16];
         }
         try {
-            bArr2 = AbstractC0301hj.a(new StringBuilder(context.getPackageName()).reverse().toString());
+            bArr2 = AbstractC0280gj.a(new StringBuilder(context.getPackageName()).reverse().toString());
         } catch (Throwable unused2) {
             bArr2 = new byte[16];
         }
-        return new Nf("app_permissions_state", iBinaryDataHelper, new B8(z1, new AESEncrypter(AESEncrypter.DEFAULT_ALGORITHM, bArr, bArr2)), new V1(new C0661w2()));
+        return new Mf("preload_info_data", iBinaryDataHelper, new A8(cif, new AESEncrypter(AESEncrypter.DEFAULT_ALGORITHM, bArr, bArr2)), new C0250ff());
     }
 }

@@ -10,40 +10,54 @@ import java.io.IOException;
 import java.util.Arrays;
 /* loaded from: classes5.dex */
 public final class Mi extends MessageNano {
-    public static final int f = 0;
-    public static final int g = 1;
-    public static final int h = 2;
-    public static volatile Mi[] i;
+    public static final int l = 0;
+    public static final int m = 1;
+    public static final int n = 2;
+    public static final int o = 1;
+    public static final int p = 2;
+    public static volatile Mi[] q;
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f690a;
-    public long b;
-    public int c;
+    public int f698a;
+    public byte[] b;
+    public byte[] c;
     public byte[] d;
-    public long e;
+    public Hi e;
+    public long f;
+    public boolean g;
+    public int h;
+    public int i;
+    public Li j;
+    public Ki k;
 
     public Mi() {
         a();
     }
 
     public static Mi[] b() {
-        if (i == null) {
+        if (q == null) {
             synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (i == null) {
-                    i = new Mi[0];
+                if (q == null) {
+                    q = new Mi[0];
                 }
             }
         }
-        return i;
+        return q;
     }
 
     public final Mi a() {
+        this.f698a = 1;
         byte[] bArr = WireFormatNano.EMPTY_BYTES;
-        this.f690a = bArr;
-        this.b = 0L;
-        this.c = 0;
+        this.b = bArr;
+        this.c = bArr;
         this.d = bArr;
-        this.e = 0L;
+        this.e = null;
+        this.f = 0L;
+        this.g = false;
+        this.h = 0;
+        this.i = 1;
+        this.j = null;
+        this.k = null;
         this.cachedSize = -1;
         return this;
     }
@@ -51,49 +65,95 @@ public final class Mi extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        byte[] bArr = this.f690a;
+        int i = this.f698a;
+        if (i != 1) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeUInt32Size(1, i);
+        }
+        int computeBytesSize = CodedOutputByteBufferNano.computeBytesSize(3, this.b) + computeSerializedSize;
+        byte[] bArr = this.c;
         byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
         if (!Arrays.equals(bArr, bArr2)) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f690a);
-        }
-        long j = this.b;
-        if (j != 0) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeUInt64Size(2, j);
-        }
-        int i2 = this.c;
-        if (i2 != 0) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeInt32Size(3, i2);
+            computeBytesSize += CodedOutputByteBufferNano.computeBytesSize(4, this.c);
         }
         if (!Arrays.equals(this.d, bArr2)) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(4, this.d);
+            computeBytesSize += CodedOutputByteBufferNano.computeBytesSize(5, this.d);
         }
-        long j2 = this.e;
-        return j2 != 0 ? CodedOutputByteBufferNano.computeUInt64Size(5, j2) + computeSerializedSize : computeSerializedSize;
+        Hi hi = this.e;
+        if (hi != null) {
+            computeBytesSize += CodedOutputByteBufferNano.computeMessageSize(6, hi);
+        }
+        long j = this.f;
+        if (j != 0) {
+            computeBytesSize += CodedOutputByteBufferNano.computeInt64Size(7, j);
+        }
+        boolean z = this.g;
+        if (z) {
+            computeBytesSize += CodedOutputByteBufferNano.computeBoolSize(8, z);
+        }
+        int i2 = this.h;
+        if (i2 != 0) {
+            computeBytesSize += CodedOutputByteBufferNano.computeInt32Size(9, i2);
+        }
+        int i3 = this.i;
+        if (i3 != 1) {
+            computeBytesSize += CodedOutputByteBufferNano.computeInt32Size(10, i3);
+        }
+        Li li = this.j;
+        if (li != null) {
+            computeBytesSize += CodedOutputByteBufferNano.computeMessageSize(11, li);
+        }
+        Ki ki = this.k;
+        return ki != null ? CodedOutputByteBufferNano.computeMessageSize(12, ki) + computeBytesSize : computeBytesSize;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        byte[] bArr = this.f690a;
+        int i = this.f698a;
+        if (i != 1) {
+            codedOutputByteBufferNano.writeUInt32(1, i);
+        }
+        codedOutputByteBufferNano.writeBytes(3, this.b);
+        byte[] bArr = this.c;
         byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
         if (!Arrays.equals(bArr, bArr2)) {
-            codedOutputByteBufferNano.writeBytes(1, this.f690a);
-        }
-        long j = this.b;
-        if (j != 0) {
-            codedOutputByteBufferNano.writeUInt64(2, j);
-        }
-        int i2 = this.c;
-        if (i2 != 0) {
-            codedOutputByteBufferNano.writeInt32(3, i2);
+            codedOutputByteBufferNano.writeBytes(4, this.c);
         }
         if (!Arrays.equals(this.d, bArr2)) {
-            codedOutputByteBufferNano.writeBytes(4, this.d);
+            codedOutputByteBufferNano.writeBytes(5, this.d);
         }
-        long j2 = this.e;
-        if (j2 != 0) {
-            codedOutputByteBufferNano.writeUInt64(5, j2);
+        Hi hi = this.e;
+        if (hi != null) {
+            codedOutputByteBufferNano.writeMessage(6, hi);
+        }
+        long j = this.f;
+        if (j != 0) {
+            codedOutputByteBufferNano.writeInt64(7, j);
+        }
+        boolean z = this.g;
+        if (z) {
+            codedOutputByteBufferNano.writeBool(8, z);
+        }
+        int i2 = this.h;
+        if (i2 != 0) {
+            codedOutputByteBufferNano.writeInt32(9, i2);
+        }
+        int i3 = this.i;
+        if (i3 != 1) {
+            codedOutputByteBufferNano.writeInt32(10, i3);
+        }
+        Li li = this.j;
+        if (li != null) {
+            codedOutputByteBufferNano.writeMessage(11, li);
+        }
+        Ki ki = this.k;
+        if (ki != null) {
+            codedOutputByteBufferNano.writeMessage(12, ki);
         }
         super.writeTo(codedOutputByteBufferNano);
+    }
+
+    public static Mi b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        return new Mi().mergeFrom(codedInputByteBufferNano);
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
@@ -101,32 +161,70 @@ public final class Mi extends MessageNano {
     public final Mi mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
         while (true) {
             int readTag = codedInputByteBufferNano.readTag();
-            if (readTag == 0) {
-                break;
-            } else if (readTag == 10) {
-                this.f690a = codedInputByteBufferNano.readBytes();
-            } else if (readTag == 16) {
-                this.b = codedInputByteBufferNano.readUInt64();
-            } else if (readTag == 24) {
-                int readInt32 = codedInputByteBufferNano.readInt32();
-                if (readInt32 == 0 || readInt32 == 1 || readInt32 == 2) {
-                    this.c = readInt32;
-                }
-            } else if (readTag == 34) {
-                this.d = codedInputByteBufferNano.readBytes();
-            } else if (readTag != 40) {
-                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
+            switch (readTag) {
+                case 0:
                     break;
-                }
-            } else {
-                this.e = codedInputByteBufferNano.readUInt64();
+                case 8:
+                    this.f698a = codedInputByteBufferNano.readUInt32();
+                    break;
+                case 26:
+                    this.b = codedInputByteBufferNano.readBytes();
+                    break;
+                case 34:
+                    this.c = codedInputByteBufferNano.readBytes();
+                    break;
+                case 42:
+                    this.d = codedInputByteBufferNano.readBytes();
+                    break;
+                case 50:
+                    if (this.e == null) {
+                        this.e = new Hi();
+                    }
+                    codedInputByteBufferNano.readMessage(this.e);
+                    break;
+                case 56:
+                    this.f = codedInputByteBufferNano.readInt64();
+                    break;
+                case 64:
+                    this.g = codedInputByteBufferNano.readBool();
+                    break;
+                case 72:
+                    int readInt32 = codedInputByteBufferNano.readInt32();
+                    if (readInt32 != 0 && readInt32 != 1 && readInt32 != 2) {
+                        break;
+                    } else {
+                        this.h = readInt32;
+                        break;
+                    }
+                case 80:
+                    int readInt322 = codedInputByteBufferNano.readInt32();
+                    if (readInt322 != 1 && readInt322 != 2) {
+                        break;
+                    } else {
+                        this.i = readInt322;
+                        break;
+                    }
+                case 90:
+                    if (this.j == null) {
+                        this.j = new Li();
+                    }
+                    codedInputByteBufferNano.readMessage(this.j);
+                    break;
+                case 98:
+                    if (this.k == null) {
+                        this.k = new Ki();
+                    }
+                    codedInputByteBufferNano.readMessage(this.k);
+                    break;
+                default:
+                    if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
+                        break;
+                    } else {
+                        break;
+                    }
             }
         }
         return this;
-    }
-
-    public static Mi b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        return new Mi().mergeFrom(codedInputByteBufferNano);
     }
 
     public static Mi a(byte[] bArr) throws InvalidProtocolBufferNanoException {

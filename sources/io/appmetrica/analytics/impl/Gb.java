@@ -1,32 +1,29 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.HashMap;
 /* loaded from: classes5.dex */
-public final class Gb {
+public final class Gb implements InterfaceC0340j2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final P2 f589a;
-    public final C0284h2 b;
-    public final ArrayList c;
+    public final C0418m4 f594a;
 
-    public Gb(P2 p2, C0284h2 c0284h2) {
-        ArrayList arrayList = new ArrayList();
-        this.c = arrayList;
-        this.f589a = p2;
-        arrayList.add(p2);
-        this.b = c0284h2;
-        arrayList.add(c0284h2);
+    public Gb(C0418m4 c0418m4) {
+        this.f594a = c0418m4;
     }
 
-    public final synchronized void a() {
-        Iterator it = this.c.iterator();
-        while (it.hasNext()) {
-            ((InterfaceC0430mk) it.next()).onCreate();
+    @Override // io.appmetrica.analytics.impl.InterfaceC0340j2
+    public final C0259fo a(Cdo cdo, C0259fo c0259fo) {
+        int i = cdo.b;
+        int i2 = this.f594a.f1110a;
+        if (i == i2) {
+            if (((C0259fo) ((HashMap) cdo.f965a.get(c0259fo.b)).get(new String(c0259fo.f1002a))) != null) {
+                ((HashMap) cdo.f965a.get(c0259fo.b)).put(new String(c0259fo.f1002a), c0259fo);
+                return c0259fo;
+            }
+        } else if (i < i2) {
+            ((HashMap) cdo.f965a.get(c0259fo.b)).put(new String(c0259fo.f1002a), c0259fo);
+            cdo.b++;
         }
-    }
-
-    public final synchronized void a(C0445na c0445na) {
-        this.c.add(c0445na);
+        return c0259fo;
     }
 }

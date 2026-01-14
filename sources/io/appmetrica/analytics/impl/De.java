@@ -1,19 +1,21 @@
 package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.coreapi.internal.system.NetworkType;
+import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
 /* loaded from: classes5.dex */
-public final class De extends Ec {
+public final class De extends Dc {
     public De(NetworkType networkType) {
         super(networkType);
         a(1, NetworkType.WIFI);
         a(0, NetworkType.CELL);
-        a(7, NetworkType.BLUETOOTH);
-        a(9, NetworkType.ETHERNET);
-        a(4, NetworkType.MOBILE_DUN);
-        a(5, NetworkType.MOBILE_HIPRI);
-        a(2, NetworkType.MOBILE_MMS);
-        a(3, NetworkType.MOBILE_SUPL);
-        a(6, NetworkType.WIMAX);
-        a(17, NetworkType.VPN);
+        a(3, NetworkType.ETHERNET);
+        a(2, NetworkType.BLUETOOTH);
+        a(4, NetworkType.VPN);
+        if (AndroidUtils.isApiAchieved(27)) {
+            a(6, NetworkType.LOWPAN);
+        }
+        if (AndroidUtils.isApiAchieved(26)) {
+            a(5, NetworkType.WIFI_AWARE);
+        }
     }
 }

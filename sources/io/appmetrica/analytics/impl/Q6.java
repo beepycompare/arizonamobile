@@ -7,9 +7,6 @@ import java.sql.SQLException;
 public final class Q6 extends DatabaseScript {
     @Override // io.appmetrica.analytics.coreapi.internal.db.DatabaseScript
     public final void runScript(SQLiteDatabase sQLiteDatabase) throws SQLException {
-        sQLiteDatabase.execSQL("DROP TABLE IF EXISTS events");
-        sQLiteDatabase.execSQL("DROP TABLE IF EXISTS sessions");
-        sQLiteDatabase.execSQL("DROP TABLE IF EXISTS preferences");
-        sQLiteDatabase.execSQL("DROP TABLE IF EXISTS binary_data");
+        sQLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS binary_data (data_key TEXT PRIMARY KEY,value BLOB)");
     }
 }

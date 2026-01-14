@@ -1,22 +1,22 @@
 package io.appmetrica.analytics.profile;
 
-import io.appmetrica.analytics.impl.C0545rb;
-import io.appmetrica.analytics.impl.C0615u6;
-import io.appmetrica.analytics.impl.Hb;
-import io.appmetrica.analytics.impl.InterfaceC0254fo;
-import io.appmetrica.analytics.impl.R5;
+import io.appmetrica.analytics.impl.C0525qb;
+import io.appmetrica.analytics.impl.C0594t6;
+import io.appmetrica.analytics.impl.Gb;
+import io.appmetrica.analytics.impl.InterfaceC0233eo;
+import io.appmetrica.analytics.impl.Q5;
 /* loaded from: classes5.dex */
 public final class CounterAttribute {
 
     /* renamed from: a  reason: collision with root package name */
-    private final C0615u6 f1415a;
+    private final C0594t6 f1424a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public CounterAttribute(String str, C0545rb c0545rb, Hb hb) {
-        this.f1415a = new C0615u6(str, c0545rb, hb);
+    public CounterAttribute(String str, C0525qb c0525qb, Gb gb) {
+        this.f1424a = new C0594t6(str, c0525qb, gb);
     }
 
-    public UserProfileUpdate<? extends InterfaceC0254fo> withDelta(double d) {
-        return new UserProfileUpdate<>(new R5(this.f1415a.c, d));
+    public UserProfileUpdate<? extends InterfaceC0233eo> withDelta(double d) {
+        return new UserProfileUpdate<>(new Q5(this.f1424a.c, d));
     }
 }

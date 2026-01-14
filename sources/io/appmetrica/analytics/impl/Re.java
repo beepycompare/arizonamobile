@@ -3,12 +3,7 @@ package io.appmetrica.analytics.impl;
 public final class Re {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0307i f760a;
-    public final Fn b = new Fn(new C0167ce("Error details"));
-    public final Fn c = new Fn(new C0115ae("Error identifier"));
-    public final Zd d = new Zd("Stacktrace");
-
-    public Re(C0734z0 c0734z0) {
-        this.f760a = new C0307i(c0734z0);
-    }
+    public final En f767a = new En(new C0146be("Error details"));
+    public final En b = new En(new Zd("Error identifier"));
+    public final Yd c = new Yd("Stacktrace");
 }

@@ -3,11 +3,17 @@ package io.appmetrica.analytics.impl;
 public final class Fk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final long f580a;
-    public final long b;
+    public Long f584a;
+    public final Vk b;
+    public Long c;
+    public Long d;
+    public final Integer e;
+    public Long f;
+    public Boolean g;
+    public Long h;
 
-    public Fk(long j, long j2) {
-        this.f580a = j;
-        this.b = j2;
+    public Fk(Pk pk) {
+        this.b = pk.b();
+        this.e = pk.a();
     }
 }

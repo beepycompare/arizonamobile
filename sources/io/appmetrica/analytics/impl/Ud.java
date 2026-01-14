@@ -1,10 +1,5 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
-public enum Ud {
-    REPORT,
-    /* JADX INFO: Fake field, exist only in values array */
-    LOCATION,
-    STARTUP,
-    /* JADX INFO: Fake field, exist only in values array */
-    DIAGNOSTIC
+public interface Ud {
+    C0193d9 a(Integer num, String str);
 }

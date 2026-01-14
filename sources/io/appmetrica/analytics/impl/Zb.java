@@ -1,13 +1,53 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.locationapi.internal.LocationReceiver;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
+import java.io.Closeable;
 /* loaded from: classes5.dex */
-public final class Zb implements LocationReceiver {
-    @Override // io.appmetrica.analytics.locationapi.internal.LocationReceiver
-    public final void startLocationUpdates() {
+public final class Zb implements InterfaceC0719y6 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Context f885a;
+    public final String b;
+    public final C0335in c;
+    public final Y9 d;
+    public Y6 e;
+
+    public Zb(Context context, String str, C0335in c0335in) {
+        this(context, str, new Y9(str), c0335in);
     }
 
-    @Override // io.appmetrica.analytics.locationapi.internal.LocationReceiver
-    public final void stopLocationUpdates() {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0719y6
+    public final synchronized SQLiteDatabase a() {
+        Y6 y6;
+        try {
+            this.d.a();
+            y6 = new Y6(this.f885a, this.b, this.c, PublicLogger.getAnonymousInstance());
+            this.e = y6;
+        } catch (Throwable unused) {
+            return null;
+        }
+        return y6.getWritableDatabase();
+    }
+
+    public Zb(Context context, String str, Y9 y9, C0335in c0335in) {
+        this.f885a = context;
+        this.b = str;
+        this.d = y9;
+        this.c = c0335in;
+    }
+
+    @Override // io.appmetrica.analytics.impl.InterfaceC0719y6
+    public final synchronized void a(SQLiteDatabase sQLiteDatabase) {
+        if (sQLiteDatabase != null) {
+            try {
+                sQLiteDatabase.close();
+            } catch (Throwable unused) {
+            }
+        }
+        lo.a((Closeable) this.e);
+        this.d.b();
+        this.e = null;
     }
 }

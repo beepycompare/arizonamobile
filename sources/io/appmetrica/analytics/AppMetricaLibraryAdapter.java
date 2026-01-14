@@ -2,11 +2,11 @@ package io.appmetrica.analytics;
 
 import android.content.Context;
 import io.appmetrica.analytics.coreutils.internal.ApiKeyUtils;
-import io.appmetrica.analytics.impl.C0101a0;
-import io.appmetrica.analytics.impl.C0127b0;
-import io.appmetrica.analytics.impl.C0157c4;
+import io.appmetrica.analytics.impl.Bb;
+import io.appmetrica.analytics.impl.C0106a0;
+import io.appmetrica.analytics.impl.C0132b0;
+import io.appmetrica.analytics.impl.C0136b4;
 import io.appmetrica.analytics.impl.Cb;
-import io.appmetrica.analytics.impl.Db;
 import io.appmetrica.analytics.impl.F0;
 import io.appmetrica.analytics.logger.appmetrica.internal.ImportantLogger;
 /* loaded from: classes2.dex */
@@ -17,12 +17,12 @@ public class AppMetricaLibraryAdapter {
 
     public static void activate(Context context) {
         F0 f0 = f277a;
-        if (f0.f568a.f526a.a(context).f1205a) {
-            Db db = f0.b;
+        if (f0.f576a.f517a.a(context).f1195a) {
+            Cb cb = f0.b;
             Context applicationContext = context.getApplicationContext();
-            db.getClass();
-            C0157c4.l().g.a(applicationContext);
-            C0157c4.l().b().a(applicationContext, AppMetricaLibraryAdapterConfig.newConfigBuilder().build());
+            cb.getClass();
+            C0136b4.l().g.a(applicationContext);
+            C0136b4.l().b().a(applicationContext, AppMetricaLibraryAdapterConfig.newConfigBuilder().build());
             return;
         }
         ImportantLogger.INSTANCE.info("[AppMetricaLibraryAdapterProxy]", "Activation failed due to context is null", new Object[0]);
@@ -34,7 +34,7 @@ public class AppMetricaLibraryAdapter {
 
     public static void setAdvIdentifiersTracking(boolean z) {
         F0 f0 = f277a;
-        if (f0.f568a.c.a((Void) null).f1205a) {
+        if (f0.f576a.c.a((Void) null).f1195a) {
             f0.b.getClass();
             ModulesFacade.setAdvIdentifiersTracking(z);
         }
@@ -48,25 +48,25 @@ public class AppMetricaLibraryAdapter {
         F0 f0 = f277a;
         f0.getClass();
         ImportantLogger.INSTANCE.info("[AppMetricaLibraryAdapterProxy]", "Subscribe for auto-collected data with api key: " + ApiKeyUtils.createPartialApiKey(str), new Object[0]);
-        Cb cb = f0.f568a;
-        if (cb.g.a(str).f1205a && cb.f526a.a(context).f1205a) {
+        Bb bb = f0.f576a;
+        if (bb.g.a(str).f1195a && bb.f517a.a(context).f1195a) {
             f0.b.getClass();
-            C0157c4.l().g.a(context);
-            C0127b0 b = C0157c4.l().b();
-            b.c.a().executeDelayed(new C0101a0(b, context), b.d);
+            C0136b4.l().g.a(context);
+            C0132b0 b = C0136b4.l().b();
+            b.c.a().executeDelayed(new C0106a0(b, context), b.d);
             ModulesFacade.subscribeForAutoCollectedData(context, str);
         }
     }
 
     public static void activate(Context context, AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig) {
         F0 f0 = f277a;
-        Cb cb = f0.f568a;
-        if (cb.f526a.a(context).f1205a && cb.b.a(appMetricaLibraryAdapterConfig).f1205a) {
-            Db db = f0.b;
+        Bb bb = f0.f576a;
+        if (bb.f517a.a(context).f1195a && bb.b.a(appMetricaLibraryAdapterConfig).f1195a) {
+            Cb cb = f0.b;
             Context applicationContext = context.getApplicationContext();
-            db.getClass();
-            C0157c4.l().g.a(applicationContext);
-            C0157c4.l().b().a(applicationContext, appMetricaLibraryAdapterConfig);
+            cb.getClass();
+            C0136b4.l().g.a(applicationContext);
+            C0136b4.l().b().a(applicationContext, appMetricaLibraryAdapterConfig);
             return;
         }
         ImportantLogger.INSTANCE.info("[AppMetricaLibraryAdapterProxy]", "Activation failed due to context is null or invalid config", new Object[0]);

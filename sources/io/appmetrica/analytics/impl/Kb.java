@@ -1,23 +1,21 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.res.Configuration;
-import android.os.LocaleList;
-import java.util.ArrayList;
-import java.util.Locale;
+import android.location.Location;
+import io.appmetrica.analytics.modulesapi.internal.service.LocationServiceApi;
 /* loaded from: classes5.dex */
-public abstract class Kb {
-    public static final ArrayList a(Configuration configuration) {
-        ArrayList arrayList = new ArrayList();
-        LocaleList locales = configuration.getLocales();
-        if (locales != null) {
-            int size = locales.size();
-            for (int i = 0; i < size; i++) {
-                Locale locale = locales.get(i);
-                if (locale != null) {
-                    arrayList.add(He.a(locale));
-                }
-            }
-        }
-        return arrayList;
-    }
+public interface Kb extends Nb, LocationServiceApi {
+    @Override // io.appmetrica.analytics.impl.Nb
+    /* synthetic */ void a(Location location);
+
+    @Override // io.appmetrica.analytics.impl.Nb
+    /* synthetic */ void a(Object obj);
+
+    @Override // io.appmetrica.analytics.impl.Nb
+    /* synthetic */ void a(boolean z);
+
+    @Override // io.appmetrica.analytics.impl.Nb
+    /* synthetic */ void b(Object obj);
+
+    @Override // io.appmetrica.analytics.impl.Nb
+    /* synthetic */ void init();
 }

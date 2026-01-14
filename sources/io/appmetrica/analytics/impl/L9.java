@@ -1,22 +1,23 @@
 package io.appmetrica.analytics.impl;
+
+import android.util.Base64;
 /* loaded from: classes5.dex */
-public abstract class L9 {
-    public static final String a(int i) {
-        switch (i) {
-            case 1:
-                return "APPSFLYER";
-            case 2:
-                return "ADJUST";
-            case 3:
-                return "KOCHAVA";
-            case 4:
-                return "TENJIN";
-            case 5:
-                return "AIRBRIDGE";
-            case 6:
-                return "SINGULAR";
-            default:
-                return "UNKNOWN";
+public final class L9 implements G8 {
+    @Override // io.appmetrica.analytics.impl.G8
+    public final C0746z8 a(P5 p5) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // io.appmetrica.analytics.impl.G8
+    public final byte[] a(byte[] bArr) {
+        try {
+            return Base64.decode(bArr, 0);
+        } catch (Throwable unused) {
+            return new byte[0];
         }
+    }
+
+    public final I8 a() {
+        return I8.EXTERNALLY_ENCRYPTED_EVENT_CRYPTER;
     }
 }

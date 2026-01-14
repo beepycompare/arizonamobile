@@ -1,8 +1,68 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.coreutils.internal.ApiKeyUtils;
 /* loaded from: classes5.dex */
-public final class Q4 implements InterfaceC0593t9 {
-    @Override // io.appmetrica.analytics.impl.InterfaceC0593t9
-    public final InterfaceC0568s9 a(InterfaceC0668w9 interfaceC0668w9, M6 m6, Rg rg, C0489p4 c0489p4, R4 r4, Xe xe) {
-        return new P4(interfaceC0668w9, m6, rg, r4);
+public class Q4 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final String f749a;
+    public final String b;
+
+    public Q4(String str, String str2) {
+        this.f749a = str;
+        this.b = str2;
+    }
+
+    public final String a() {
+        return ApiKeyUtils.createPartialApiKey(this.b);
+    }
+
+    public final String b() {
+        return this.b;
+    }
+
+    public final String c() {
+        return this.f749a;
+    }
+
+    public boolean d() {
+        return false;
+    }
+
+    public String e() {
+        return this.f749a + "_" + ApiKeyUtils.createPartialApiKey(this.b);
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && getClass() == obj.getClass()) {
+            Q4 q4 = (Q4) obj;
+            String str = this.f749a;
+            if (str == null ? q4.f749a != null : !str.equals(q4.f749a)) {
+                return false;
+            }
+            String str2 = this.b;
+            String str3 = q4.b;
+            if (str2 != null) {
+                return str2.equals(str3);
+            }
+            if (str3 == null) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        String str = this.f749a;
+        int hashCode = (str != null ? str.hashCode() : 0) * 31;
+        String str2 = this.b;
+        return hashCode + (str2 != null ? str2.hashCode() : 0);
+    }
+
+    public String toString() {
+        return this.f749a + "_" + this.b;
     }
 }

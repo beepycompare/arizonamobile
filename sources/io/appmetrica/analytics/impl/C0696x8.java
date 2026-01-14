@@ -1,0 +1,9 @@
+package io.appmetrica.analytics.impl;
+/* renamed from: io.appmetrica.analytics.impl.x8  reason: case insensitive filesystem */
+/* loaded from: classes5.dex */
+public final class C0696x8 implements to {
+    @Override // io.appmetrica.analytics.impl.to
+    public final byte[] a(N8 n8, C0381kh c0381kh) {
+        return new byte[0];
+    }
+}

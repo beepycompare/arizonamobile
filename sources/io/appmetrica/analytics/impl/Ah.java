@@ -3,9 +3,14 @@ package io.appmetrica.analytics.impl;
 public final class Ah {
 
     /* renamed from: a  reason: collision with root package name */
-    public C0489p4 f496a;
-
-    public Ah(C0489p4 c0489p4) {
-        this.f496a = c0489p4;
-    }
+    public final En f501a = new En(new Zd("Event name"));
+    public final En b = new En(new Zd("Error message"));
+    public final En c = new En(new Zd("Error identifier"));
+    public final En d = new En(new C0146be("Unhandled exception"));
+    public final En e = new En(new C0146be("Throwable"));
+    public final En f = new En(new C0146be("User profile"));
+    public final En g = new En(new C0146be("Revenue"));
+    public final En h = new En(new C0146be("AdRevenue"));
+    public final En i = new En(new C0146be("ECommerceEvent"));
+    public final En j = new En(new C0146be("ANR all threads"));
 }

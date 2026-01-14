@@ -1,17 +1,14 @@
 package io.appmetrica.analytics.impl;
-
-import android.os.Bundle;
-import android.os.ResultReceiver;
 /* loaded from: classes5.dex */
-public final class Ai extends B4 {
-    public Ai(C0713y4 c0713y4) {
-        super(c0713y4);
+public final class Ai extends J2 {
+    public Ai(InterfaceC0340j2 interfaceC0340j2) {
+        super(interfaceC0340j2);
     }
 
-    @Override // io.appmetrica.analytics.impl.B4
-    public final boolean a(Q5 q5, C0638v4 c0638v4) {
-        Bundle bundle = q5.m;
-        this.f503a.k.a(new C0688x4(bundle != null ? (ResultReceiver) bundle.getParcelable("io.appmetrica.analytics.impl.referrer.common.ReferrerResultReceiver") : null));
-        return false;
+    @Override // io.appmetrica.analytics.impl.J2
+    public final C0259fo a(Cdo cdo, C0259fo c0259fo, InterfaceC0315i2 interfaceC0315i2) {
+        C0259fo a2 = ((Ad) interfaceC0315i2).a();
+        a2.c.b = true;
+        return this.f638a.a(cdo, a2);
     }
 }

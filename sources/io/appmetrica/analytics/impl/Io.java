@@ -1,21 +1,15 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
-import java.util.ArrayList;
+import android.location.Location;
 /* loaded from: classes5.dex */
-public final class Io {
+public final class Io extends Location {
+    public static final /* synthetic */ int b = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f628a = new ArrayList();
-    public PublicLogger b;
+    public final String f634a;
 
-    public final synchronized void a(Consumer consumer) {
-        PublicLogger publicLogger = this.b;
-        if (publicLogger == null) {
-            this.f628a.add(consumer);
-        } else {
-            consumer.consume(publicLogger);
-        }
+    public Io(Location location, String str) {
+        super(location);
+        this.f634a = str;
     }
 }

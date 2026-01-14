@@ -1,135 +1,131 @@
 package io.appmetrica.analytics.idsync.impl;
 
-import androidx.media3.exoplayer.Renderer;
-import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
-import io.appmetrica.analytics.protobuf.nano.InternalNano;
-import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
-import java.io.IOException;
+import android.text.TextUtils;
+import io.appmetrica.analytics.coreapi.internal.identifiers.SdkIdentifiers;
+import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
+import io.appmetrica.analytics.idsync.internal.model.Preconditions;
+import io.appmetrica.analytics.idsync.internal.model.RequestConfig;
+import io.appmetrica.analytics.modulesapi.internal.service.ServiceContext;
+import io.appmetrica.analytics.network.internal.NetworkClientBuilder;
+import io.appmetrica.analytics.networkapi.NetworkClientSettings;
+import io.appmetrica.analytics.networkapi.Request;
+import io.appmetrica.analytics.networkapi.Response;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import kotlin.collections.CollectionsKt;
+import kotlin.text.StringsKt;
 /* loaded from: classes3.dex */
-public final class n extends MessageNano {
-    public static volatile n[] c;
+public final class n {
 
     /* renamed from: a  reason: collision with root package name */
-    public long f471a;
-    public m[] b;
+    public final ServiceContext f476a;
+    public final G b;
+    public SdkIdentifiers c;
+    public final SystemTimeProvider d = new SystemTimeProvider();
+    public final o e;
+    public final x f;
+    public final q g;
 
-    public n() {
-        a();
+    public n(ServiceContext serviceContext, G g, SdkIdentifiers sdkIdentifiers) {
+        this.f476a = serviceContext;
+        this.b = g;
+        this.c = sdkIdentifiers;
+        this.e = new o(serviceContext.getNetworkContext().getSslSocketFactoryProvider(), this);
+        this.f = new x(serviceContext);
+        this.g = new q(serviceContext);
     }
 
-    public static n[] b() {
-        if (c == null) {
-            synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (c == null) {
-                    c = new n[0];
-                }
+    public static final void a(D d, n nVar, RequestConfig requestConfig) {
+        if (d.b) {
+            G g = nVar.b;
+            String str = d.f460a;
+            g.d.put(str, new E(str, nVar.d.currentTimeMillis(), d.d ? 2 : 4));
+            g.f463a.putString(g.c, g.b.fromModel(CollectionsKt.toList(g.d.values())));
+            q qVar = nVar.g;
+            SdkIdentifiers sdkIdentifiers = nVar.c;
+            qVar.f479a.getClass();
+            String a2 = v.a(d);
+            t tVar = qVar.b;
+            tVar.getClass();
+            ArrayList arrayList = new ArrayList();
+            if (requestConfig.getReportEventEnabled()) {
+                arrayList.add(new p(tVar.f481a));
+            }
+            String reportUrl = requestConfig.getReportUrl();
+            if (reportUrl != null && !StringsKt.isBlank(reportUrl)) {
+                arrayList.add(new r(tVar.f481a, requestConfig.getReportUrl()));
+            }
+            Iterator it = arrayList.iterator();
+            while (it.hasNext()) {
+                ((s) it.next()).a(a2, sdkIdentifiers);
             }
         }
-        return c;
     }
 
-    public final n a() {
-        this.f471a = Renderer.DEFAULT_DURATION_TO_PROGRESS_US;
-        this.b = m.b();
-        this.cachedSize = -1;
-        return this;
+    public final SdkIdentifiers a() {
+        return this.c;
     }
 
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final int computeSerializedSize() {
-        int computeSerializedSize = super.computeSerializedSize();
-        long j = this.f471a;
-        if (j != Renderer.DEFAULT_DURATION_TO_PROGRESS_US) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeUInt64Size(1, j);
+    public final void a(SdkIdentifiers sdkIdentifiers) {
+        this.c = sdkIdentifiers;
+    }
+
+    public static final void a(n nVar, RequestConfig requestConfig) {
+        y c0098a;
+        x xVar = nVar.f;
+        Preconditions preconditions = requestConfig.getPreconditions();
+        xVar.getClass();
+        if (w.f483a[preconditions.getNetworkType().ordinal()] == 1) {
+            c0098a = new C0099b(xVar.f484a);
+        } else {
+            c0098a = new C0098a();
         }
-        m[] mVarArr = this.b;
-        if (mVarArr != null && mVarArr.length > 0) {
-            int i = 0;
-            while (true) {
-                m[] mVarArr2 = this.b;
-                if (i >= mVarArr2.length) {
-                    break;
-                }
-                m mVar = mVarArr2[i];
-                if (mVar != null) {
-                    computeSerializedSize = CodedOutputByteBufferNano.computeMessageSize(2, mVar) + computeSerializedSize;
-                }
-                i++;
+        if (c0098a.a()) {
+            o oVar = nVar.e;
+            oVar.getClass();
+            Request.Builder builder = new Request.Builder(requestConfig.getUrl());
+            for (Map.Entry<String, List<String>> entry : requestConfig.getHeaders().entrySet()) {
+                builder.addHeader(entry.getKey(), CollectionsKt.joinToString$default(entry.getValue(), ", ", null, null, 0, null, null, 62, null));
             }
+            Response execute = new NetworkClientBuilder().withSettings(new NetworkClientSettings.Builder().withSslSocketFactory(oVar.f477a.getSslSocketFactory()).withUseCaches(false).withInstanceFollowRedirects(true).withMaxResponseSize(102400).build()).build().newCall(builder.build()).execute();
+            oVar.b.a(new D(requestConfig.getType(), execute.isCompleted(), execute.getUrl(), requestConfig.getValidResponseCodes().contains(Integer.valueOf(execute.getCode())), execute.getCode(), execute.getResponseData(), execute.getHeaders()), requestConfig);
         }
-        return computeSerializedSize;
     }
 
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        long j = this.f471a;
-        if (j != Renderer.DEFAULT_DURATION_TO_PROGRESS_US) {
-            codedOutputByteBufferNano.writeUInt64(1, j);
-        }
-        m[] mVarArr = this.b;
-        if (mVarArr != null && mVarArr.length > 0) {
-            int i = 0;
-            while (true) {
-                m[] mVarArr2 = this.b;
-                if (i >= mVarArr2.length) {
-                    break;
-                }
-                m mVar = mVarArr2[i];
-                if (mVar != null) {
-                    codedOutputByteBufferNano.writeMessage(2, mVar);
-                }
-                i++;
+    public final void a(final D d, final RequestConfig requestConfig) {
+        this.f476a.getExecutorProvider().getModuleExecutor().execute(new Runnable() { // from class: io.appmetrica.analytics.idsync.impl.n$$ExternalSyntheticLambda1
+            @Override // java.lang.Runnable
+            public final void run() {
+                n.a(D.this, this, requestConfig);
             }
-        }
-        super.writeTo(codedOutputByteBufferNano);
+        });
     }
 
-    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
-    /* renamed from: a */
-    public final n mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        while (true) {
-            int readTag = codedInputByteBufferNano.readTag();
-            if (readTag == 0) {
-                break;
-            } else if (readTag == 8) {
-                this.f471a = codedInputByteBufferNano.readUInt64();
-            } else if (readTag != 18) {
-                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                    break;
-                }
+    public final void a(final RequestConfig requestConfig) {
+        long resendIntervalForValidResponse;
+        if (TextUtils.isEmpty(requestConfig.getType()) || TextUtils.isEmpty(requestConfig.getUrl()) || requestConfig.getValidResponseCodes().isEmpty()) {
+            return;
+        }
+        E e = (E) this.b.d.get(requestConfig.getType());
+        if (e != null) {
+            long currentTimeMillis = this.d.currentTimeMillis();
+            int a2 = A.a(e.c);
+            if (a2 != 1) {
+                resendIntervalForValidResponse = a2 != 3 ? 0L : requestConfig.getResendIntervalForInvalidResponse();
             } else {
-                int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 18);
-                m[] mVarArr = this.b;
-                int length = mVarArr == null ? 0 : mVarArr.length;
-                int i = repeatedFieldArrayLength + length;
-                m[] mVarArr2 = new m[i];
-                if (length != 0) {
-                    System.arraycopy(mVarArr, 0, mVarArr2, 0, length);
-                }
-                while (length < i - 1) {
-                    m mVar = new m();
-                    mVarArr2[length] = mVar;
-                    codedInputByteBufferNano.readMessage(mVar);
-                    codedInputByteBufferNano.readTag();
-                    length++;
-                }
-                m mVar2 = new m();
-                mVarArr2[length] = mVar2;
-                codedInputByteBufferNano.readMessage(mVar2);
-                this.b = mVarArr2;
+                resendIntervalForValidResponse = requestConfig.getResendIntervalForValidResponse();
+            }
+            if (currentTimeMillis - e.b < resendIntervalForValidResponse) {
+                return;
             }
         }
-        return this;
-    }
-
-    public static n b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
-        return new n().mergeFrom(codedInputByteBufferNano);
-    }
-
-    public static n a(byte[] bArr) throws InvalidProtocolBufferNanoException {
-        return (n) MessageNano.mergeFrom(new n(), bArr);
+        this.f476a.getExecutorProvider().getSupportIOExecutor().execute(new Runnable() { // from class: io.appmetrica.analytics.idsync.impl.n$$ExternalSyntheticLambda0
+            @Override // java.lang.Runnable
+            public final void run() {
+                n.a(n.this, requestConfig);
+            }
+        });
     }
 }

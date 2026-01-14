@@ -1,23 +1,19 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueProcessorsHolder;
+import io.appmetrica.analytics.coreapi.internal.identifiers.PlatformIdentifiers;
+import io.appmetrica.analytics.coreapi.internal.identifiers.SdkIdentifiers;
+import io.appmetrica.analytics.coreapi.internal.servicecomponents.SdkEnvironmentProvider;
+import io.appmetrica.analytics.networktasks.internal.BaseRequestConfig;
 /* loaded from: classes5.dex */
-public final class L5 implements K5 {
+public final class L5 extends BaseRequestConfig.DataSource {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0338j5 f663a;
+    public final C0257fm f672a;
+    public final SdkEnvironmentProvider b;
 
-    public L5(C0338j5 c0338j5) {
-        this.f663a = c0338j5;
-    }
-
-    @Override // io.appmetrica.analytics.impl.K5, io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueContext
-    public final C0338j5 getAdRevenueProcessorsHolder() {
-        return this.f663a;
-    }
-
-    @Override // io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueContext
-    public final ModuleAdRevenueProcessorsHolder getAdRevenueProcessorsHolder() {
-        return this.f663a;
+    public L5(C0257fm c0257fm, SdkEnvironmentProvider sdkEnvironmentProvider, PlatformIdentifiers platformIdentifiers, Object obj) {
+        super(new SdkIdentifiers(c0257fm.c(), c0257fm.a(), c0257fm.b()), sdkEnvironmentProvider, platformIdentifiers, obj);
+        this.f672a = c0257fm;
+        this.b = sdkEnvironmentProvider;
     }
 }

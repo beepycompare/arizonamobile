@@ -1,62 +1,59 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.ServiceConnection;
-import io.appmetrica.analytics.internal.AppMetricaService;
-import io.appmetrica.analytics.modulesapi.internal.service.ServiceWakeLock;
-import java.util.HashMap;
+import io.appmetrica.analytics.coreutils.internal.time.SystemTimeProvider;
+import java.util.concurrent.atomic.AtomicLong;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes5.dex */
-public final class Dk implements ServiceWakeLock {
+public final class Dk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f547a;
-    public final Ck b;
-    public final HashMap c = new HashMap();
+    public final X4 f555a;
+    public final Uk b;
+    public final Gk c;
+    public long d;
+    public long e;
+    public AtomicLong f;
+    public boolean g;
+    public volatile Sk h;
+    public long i;
+    public long j;
+    public final SystemTimeProvider k;
 
-    public Dk(Context context, Ck ck) {
-        this.f547a = context;
-        this.b = ck;
+    public Dk(X4 x4, Uk uk, Gk gk, SystemTimeProvider systemTimeProvider) {
+        this.f555a = x4;
+        this.b = uk;
+        this.c = gk;
+        this.k = systemTimeProvider;
+        a();
     }
 
-    public final String a(String str) {
-        return "io.appmetrica.analytics.ACTION_SERVICE_WAKELOCK." + str;
-    }
-
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceWakeLock
-    public final synchronized boolean acquireWakeLock(String str) {
-        if (this.c.get(str) == null) {
-            HashMap hashMap = this.c;
-            Ck ck = this.b;
-            Context context = this.f547a;
-            String a2 = a(str);
-            ck.f533a.getClass();
-            Intent intent = new Intent(context, AppMetricaService.class);
-            intent.setAction(a2);
-            Bk bk = new Bk();
-            try {
-                context.bindService(intent, bk, 1);
-            } catch (Throwable unused) {
-                bk = null;
-            }
-            hashMap.put(str, bk);
+    public final void a() {
+        Gk gk = this.c;
+        long elapsedRealtime = this.k.elapsedRealtime();
+        Long l = gk.c;
+        if (l != null) {
+            elapsedRealtime = l.longValue();
         }
-        return this.c.get(str) != null;
+        this.e = elapsedRealtime;
+        Long l2 = this.c.b;
+        this.d = l2 == null ? -1L : l2.longValue();
+        Long l3 = this.c.e;
+        this.f = new AtomicLong(l3 == null ? 0L : l3.longValue());
+        Boolean bool = this.c.f;
+        this.g = bool == null ? true : bool.booleanValue();
+        Long l4 = this.c.g;
+        long longValue = l4 != null ? l4.longValue() : 0L;
+        this.i = longValue;
+        Gk gk2 = this.c;
+        long j = longValue - this.e;
+        Long l5 = gk2.h;
+        if (l5 != null) {
+            j = l5.longValue();
+        }
+        this.j = j;
     }
 
-    @Override // io.appmetrica.analytics.modulesapi.internal.service.ServiceWakeLock
-    public final synchronized void releaseWakeLock(String str) {
-        ServiceConnection serviceConnection = (ServiceConnection) this.c.get(str);
-        if (serviceConnection != null) {
-            Ck ck = this.b;
-            a(str);
-            Context context = this.f547a;
-            ck.getClass();
-            try {
-                context.unbindService(serviceConnection);
-            } catch (Throwable unused) {
-            }
-            ServiceConnection serviceConnection2 = (ServiceConnection) this.c.remove(str);
-        }
+    public final String toString() {
+        return "Session{id=" + this.d + ", creationTime=" + this.e + ", currentReportId=" + this.f + ", sessionRequestParams=" + this.h + ", sleepStart=" + this.i + AbstractJsonLexerKt.END_OBJ;
     }
 }

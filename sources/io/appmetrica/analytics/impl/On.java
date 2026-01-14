@@ -1,20 +1,17 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.Bundle;
-import io.appmetrica.analytics.internal.IAppMetricaService;
+import android.util.SparseArray;
 /* loaded from: classes5.dex */
-public final class On extends AbstractCallableC0726yh {
-    public final int e;
-    public final Bundle f;
+public abstract class On {
 
-    public On(C0485p0 c0485p0, InterfaceC0122al interfaceC0122al, int i, Bundle bundle) {
-        super(c0485p0, interfaceC0122al);
-        this.e = i;
-        this.f = bundle;
-    }
+    /* renamed from: a  reason: collision with root package name */
+    public static final SparseArray f732a;
 
-    @Override // io.appmetrica.analytics.impl.AbstractCallableC0726yh
-    public final void a(IAppMetricaService iAppMetricaService) {
-        iAppMetricaService.reportData(this.e, this.f);
+    static {
+        SparseArray sparseArray = new SparseArray();
+        f732a = sparseArray;
+        sparseArray.put(0, "String");
+        sparseArray.put(1, "Number");
+        sparseArray.put(2, "Counter");
     }
 }

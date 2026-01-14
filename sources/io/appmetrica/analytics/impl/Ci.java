@@ -1,14 +1,31 @@
 package io.appmetrica.analytics.impl;
+
+import android.content.Context;
 /* loaded from: classes5.dex */
-public final class Ci extends Bd {
-    public Ci(int i, String str, to toVar, InterfaceC0361k2 interfaceC0361k2) {
-        super(i, str, toVar, new Bi(interfaceC0361k2));
+public abstract class Ci {
+
+    /* renamed from: a  reason: collision with root package name */
+    protected final Context f537a;
+    public final String b;
+    public final String c;
+
+    public Ci(Context context, String str, String str2) {
+        this.f537a = context;
+        this.b = str;
+        this.c = str2;
     }
 
-    @Override // io.appmetrica.analytics.impl.Bd, io.appmetrica.analytics.impl.InterfaceC0254fo
-    public final void a(C0228eo c0228eo) {
-        if (f()) {
-            this.d.a(c0228eo, null, this);
+    public final Object a() {
+        int identifier = this.f537a.getResources().getIdentifier(this.b, this.c, this.f537a.getPackageName());
+        if (identifier != 0) {
+            try {
+                return a(identifier);
+            } catch (Throwable unused) {
+                return null;
+            }
         }
+        return null;
     }
+
+    public abstract Object a(int i);
 }

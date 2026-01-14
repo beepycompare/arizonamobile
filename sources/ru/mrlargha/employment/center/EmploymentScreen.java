@@ -87,7 +87,7 @@ public final class EmploymentScreen extends SAMPUIElement implements InterfaceCo
         this.binding = bind;
         ArizonaRetrofit arizonaRetrofit = new ArizonaRetrofit(targetActivity, i);
         this.client = arizonaRetrofit;
-        this.api = (EmploymentApi) ArizonaRetrofit.create$default(arizonaRetrofit, EmploymentApi.class, false, null, 6, null);
+        this.api = (EmploymentApi) ArizonaRetrofit.create$default(arizonaRetrofit, EmploymentApi.class, false, null, null, 14, null);
         this.apiData = CollectionsKt.emptyList();
         this.mainData = new EmploymentData(0, 0, 0);
         this.jobsAdapter = new JobsAdapter(new Function1() { // from class: ru.mrlargha.employment.center.EmploymentScreen$$ExternalSyntheticLambda0

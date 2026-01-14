@@ -1,16 +1,16 @@
 package io.appmetrica.analytics;
 
 import android.content.Context;
-import io.appmetrica.analytics.impl.AbstractC0478oi;
-import io.appmetrica.analytics.impl.C0269gd;
-import io.appmetrica.analytics.impl.C0321id;
-import io.appmetrica.analytics.impl.C0346jd;
-import io.appmetrica.analytics.impl.C0372kd;
-import io.appmetrica.analytics.impl.C0398ld;
-import io.appmetrica.analytics.impl.C0423md;
-import io.appmetrica.analytics.impl.C0448nd;
-import io.appmetrica.analytics.impl.C0473od;
-import io.appmetrica.analytics.impl.C0734z0;
+import io.appmetrica.analytics.impl.AbstractC0457ni;
+import io.appmetrica.analytics.impl.C0248fd;
+import io.appmetrica.analytics.impl.C0300hd;
+import io.appmetrica.analytics.impl.C0326id;
+import io.appmetrica.analytics.impl.C0351jd;
+import io.appmetrica.analytics.impl.C0377kd;
+import io.appmetrica.analytics.impl.C0402ld;
+import io.appmetrica.analytics.impl.C0427md;
+import io.appmetrica.analytics.impl.C0452nd;
+import io.appmetrica.analytics.impl.C0738z0;
 /* loaded from: classes2.dex */
 public final class ModulesFacade {
     public static final int EXTERNAL_ATTRIBUTION_ADJUST = 2;
@@ -21,23 +21,23 @@ public final class ModulesFacade {
     public static final int EXTERNAL_ATTRIBUTION_TENJIN = 4;
 
     /* renamed from: a  reason: collision with root package name */
-    private static C0473od f284a = new C0473od();
+    private static C0452nd f284a = new C0452nd();
 
     public static IModuleReporter getModuleReporter(Context context, String str) {
-        C0473od c0473od = f284a;
-        C0269gd c0269gd = c0473od.b;
-        c0269gd.b.a(context);
-        c0269gd.d.a(str);
-        c0473od.c.f1266a.a(context.getApplicationContext().getApplicationContext());
-        return AbstractC0478oi.f1149a.a(context.getApplicationContext(), str);
+        C0452nd c0452nd = f284a;
+        C0248fd c0248fd = c0452nd.b;
+        c0248fd.b.a(context);
+        c0248fd.d.a(str);
+        c0452nd.c.f1256a.a(context.getApplicationContext().getApplicationContext());
+        return AbstractC0457ni.f1139a.a(context.getApplicationContext(), str);
     }
 
     public static boolean isActivatedForApp() {
-        C0473od c0473od = f284a;
-        c0473od.b.getClass();
-        c0473od.c.getClass();
-        c0473od.f1145a.getClass();
-        return C0734z0.a();
+        C0452nd c0452nd = f284a;
+        c0452nd.b.getClass();
+        c0452nd.c.getClass();
+        c0452nd.f1135a.getClass();
+        return C0738z0.a();
     }
 
     public static void reportAdRevenue(AdRevenue adRevenue) {
@@ -45,58 +45,58 @@ public final class ModulesFacade {
     }
 
     public static void reportEvent(ModuleEvent moduleEvent) {
-        C0473od c0473od = f284a;
-        c0473od.b.f1003a.a(null);
-        c0473od.c.getClass();
-        c0473od.d.execute(new C0346jd(c0473od, moduleEvent));
+        C0452nd c0452nd = f284a;
+        c0452nd.b.f994a.a(null);
+        c0452nd.c.getClass();
+        c0452nd.d.execute(new C0326id(c0452nd, moduleEvent));
     }
 
     public static void reportExternalAttribution(int i, String str) {
-        C0473od c0473od = f284a;
-        c0473od.b.getClass();
-        c0473od.c.getClass();
-        c0473od.d.execute(new C0372kd(c0473od, i, str));
+        C0452nd c0452nd = f284a;
+        c0452nd.b.getClass();
+        c0452nd.c.getClass();
+        c0452nd.d.execute(new C0351jd(c0452nd, i, str));
     }
 
     public static void sendEventsBuffer() {
-        C0473od c0473od = f284a;
-        c0473od.b.getClass();
-        c0473od.c.getClass();
+        C0452nd c0452nd = f284a;
+        c0452nd.b.getClass();
+        c0452nd.c.getClass();
         AppMetrica.sendEventsBuffer();
     }
 
     public static void setAdvIdentifiersTracking(boolean z) {
-        C0473od c0473od = f284a;
-        c0473od.b.getClass();
-        c0473od.c.getClass();
-        c0473od.d.execute(new C0398ld(c0473od, z));
+        C0452nd c0452nd = f284a;
+        c0452nd.b.getClass();
+        c0452nd.c.getClass();
+        c0452nd.d.execute(new C0377kd(c0452nd, z));
     }
 
-    public static void setProxy(C0473od c0473od) {
-        f284a = c0473od;
+    public static void setProxy(C0452nd c0452nd) {
+        f284a = c0452nd;
     }
 
     public static void setSessionExtra(String str, byte[] bArr) {
-        C0473od c0473od = f284a;
-        c0473od.b.c.a(str);
-        c0473od.c.getClass();
-        c0473od.d.execute(new C0423md(c0473od, str, bArr));
+        C0452nd c0452nd = f284a;
+        c0452nd.b.c.a(str);
+        c0452nd.c.getClass();
+        c0452nd.d.execute(new C0402ld(c0452nd, str, bArr));
     }
 
     public static void subscribeForAutoCollectedData(Context context, String str) {
-        C0473od c0473od = f284a;
-        C0269gd c0269gd = c0473od.b;
-        c0269gd.b.a(context);
-        c0269gd.d.a(str);
-        c0473od.c.f1266a.a(context.getApplicationContext());
-        c0473od.d.execute(new C0448nd(str));
+        C0452nd c0452nd = f284a;
+        C0248fd c0248fd = c0452nd.b;
+        c0248fd.b.a(context);
+        c0248fd.d.a(str);
+        c0452nd.c.f1256a.a(context.getApplicationContext());
+        c0452nd.d.execute(new C0427md(str));
     }
 
     public static void reportAdRevenue(AdRevenue adRevenue, Boolean bool) {
-        C0473od c0473od = f284a;
+        C0452nd c0452nd = f284a;
         boolean booleanValue = bool.booleanValue();
-        c0473od.b.getClass();
-        c0473od.c.getClass();
-        c0473od.d.execute(new C0321id(c0473od, adRevenue, booleanValue));
+        c0452nd.b.getClass();
+        c0452nd.c.getClass();
+        c0452nd.d.execute(new C0300hd(c0452nd, adRevenue, booleanValue));
     }
 }

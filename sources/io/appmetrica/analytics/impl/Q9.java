@@ -2,9 +2,17 @@ package io.appmetrica.analytics.impl;
 
 import android.content.pm.FeatureInfo;
 /* loaded from: classes5.dex */
-public final class Q9 extends R9 {
-    @Override // io.appmetrica.analytics.impl.R9
-    public final S9 b(FeatureInfo featureInfo) {
-        return new S9(featureInfo.name, -1, (featureInfo.flags & 1) != 0);
+public abstract class Q9 {
+    public final R9 a(FeatureInfo featureInfo) {
+        if (featureInfo.name == null) {
+            int i = featureInfo.reqGlEsVersion;
+            if (i == 0) {
+                return b(featureInfo);
+            }
+            return new R9("openGlFeature", i, (featureInfo.flags & 1) != 0);
+        }
+        return b(featureInfo);
     }
+
+    public abstract R9 b(FeatureInfo featureInfo);
 }

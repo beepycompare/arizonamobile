@@ -1,17 +1,16 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityEvent;
 /* loaded from: classes5.dex */
-public final class C5 {
+public abstract /* synthetic */ class C5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0739z5 f521a;
-    public final A5 b;
-    public final C0240fa c;
-    public final String d;
+    public static final /* synthetic */ int[] f531a;
 
-    public C5(InterfaceC0739z5 interfaceC0739z5, A5 a5, C0240fa c0240fa, String str) {
-        this.f521a = interfaceC0739z5;
-        this.b = a5;
-        this.c = c0240fa;
-        this.d = str;
+    static {
+        int[] iArr = new int[ActivityEvent.values().length];
+        iArr[ActivityEvent.RESUMED.ordinal()] = 1;
+        iArr[ActivityEvent.PAUSED.ordinal()] = 2;
+        f531a = iArr;
     }
 }

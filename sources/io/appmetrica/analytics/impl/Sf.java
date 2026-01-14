@@ -1,14 +1,12 @@
 package io.appmetrica.analytics.impl;
-
-import java.util.List;
 /* loaded from: classes5.dex */
-public final class Sf extends AbstractC0495pa {
-    public Sf(C0577si c0577si) {
-        super(c0577si);
-    }
-
-    @Override // io.appmetrica.analytics.impl.AbstractC0495pa
-    public final void a(List<Sg> list) {
-        list.add(this.f1162a.f1219a);
+public final class Sf implements so {
+    @Override // io.appmetrica.analytics.impl.so
+    public final qo a(Object obj) {
+        Integer num = (Integer) obj;
+        if (num != null && num.intValue() <= 0) {
+            return new qo(this, false, "Invalid quantity value " + num);
+        }
+        return new qo(this, true, "");
     }
 }

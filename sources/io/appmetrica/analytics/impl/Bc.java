@@ -1,11 +1,15 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.Map;
+import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 /* loaded from: classes5.dex */
-public final class Bc extends C2 {
-    public static final Ac b = new Ac();
+public final class Bc {
 
-    public Bc(K9 k9, Map<String, ? extends Object> map) {
-        super(Ac.a(b, k9, map));
+    /* renamed from: a  reason: collision with root package name */
+    public final String f518a;
+    public final PublicLogger b;
+
+    public Bc(String str, PublicLogger publicLogger) {
+        this.f518a = str;
+        this.b = publicLogger;
     }
 }

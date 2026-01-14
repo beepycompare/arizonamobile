@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 public class RequestDataHolder {
 
     /* renamed from: a  reason: collision with root package name */
-    private NetworkTask.Method f1406a = NetworkTask.Method.GET;
+    private NetworkTask.Method f1415a = NetworkTask.Method.GET;
     private final HashMap b = new HashMap();
     private byte[] c = null;
     private Long d;
@@ -28,7 +28,7 @@ public class RequestDataHolder {
     }
 
     public NetworkTask.Method getMethod() {
-        return this.f1406a;
+        return this.f1415a;
     }
 
     public byte[] getPostData() {
@@ -48,7 +48,7 @@ public class RequestDataHolder {
     }
 
     public void setPostData(byte[] bArr) {
-        this.f1406a = NetworkTask.Method.POST;
+        this.f1415a = NetworkTask.Method.POST;
         this.c = bArr;
     }
 }

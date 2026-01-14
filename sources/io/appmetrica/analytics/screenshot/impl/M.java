@@ -6,7 +6,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class M implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Y f1442a;
+    public final Y f1451a;
 
     public M() {
         this(null, 1, null);
@@ -16,14 +16,14 @@ public final class M implements Converter {
     /* renamed from: a */
     public final S fromModel(J j) {
         S s = new S();
-        s.f1447a = j.f1439a;
+        s.f1456a = j.f1448a;
         W w = j.b;
-        s.b = w != null ? this.f1442a.fromModel(w) : null;
+        s.b = w != null ? this.f1451a.fromModel(w) : null;
         return s;
     }
 
     public M(Y y) {
-        this.f1442a = y;
+        this.f1451a = y;
     }
 
     public /* synthetic */ M(Y y, int i, DefaultConstructorMarker defaultConstructorMarker) {
@@ -33,6 +33,6 @@ public final class M implements Converter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final J toModel(S s) {
-        return new J(s.f1447a, this.f1442a.toModel(s.b));
+        return new J(s.f1456a, this.f1451a.toModel(s.b));
     }
 }

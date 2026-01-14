@@ -1,15 +1,12 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.coreutils.internal.time.TimeProvider;
 /* loaded from: classes5.dex */
-public final class J9 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Y4 f636a;
-    public final TimeProvider b;
-
-    public J9(Y4 y4, TimeProvider timeProvider) {
-        this.f636a = y4;
-        this.b = timeProvider;
-    }
+public enum J9 {
+    /* JADX INFO: Fake field, exist only in values array */
+    UNKNOWN,
+    APPSFLYER,
+    ADJUST,
+    KOCHAVA,
+    TENJIN,
+    AIRBRIDGE,
+    SINGULAR
 }

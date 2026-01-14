@@ -1,41 +1,15 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import android.content.pm.PackageInfo;
-import io.appmetrica.analytics.coreapi.internal.permission.PermissionState;
-import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
-import java.util.ArrayList;
+import java.util.Map;
 /* loaded from: classes5.dex */
-public final class Qi {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Context f750a;
-    public final SafePackageManager b;
-
-    public Qi(Context context, SafePackageManager safePackageManager) {
-        this.f750a = context;
-        this.b = safePackageManager;
-    }
-
-    public final ArrayList a() {
-        ArrayList arrayList = new ArrayList();
-        SafePackageManager safePackageManager = this.b;
-        Context context = this.f750a;
-        PackageInfo packageInfo = safePackageManager.getPackageInfo(context, context.getPackageName(), 4096);
-        if (packageInfo != null) {
-            String[] strArr = packageInfo.requestedPermissions;
-            int[] iArr = packageInfo.requestedPermissionsFlags;
-            if (strArr != null) {
-                for (int i = 0; i < strArr.length; i++) {
-                    String str = strArr[i];
-                    if (iArr != null && iArr.length > i && (iArr[i] & 2) != 0) {
-                        arrayList.add(new PermissionState(str, true));
-                    } else {
-                        arrayList.add(new PermissionState(str, false));
-                    }
-                }
-            }
+public final class Qi implements InterfaceC0597t9 {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0597t9
+    public final Integer a(N8 n8) {
+        EnumC0143bb enumC0143bb = n8.h;
+        if (enumC0143bb == null) {
+            Map map = Pf.f739a;
+            return null;
         }
-        return arrayList;
+        return (Integer) Pf.c.get(enumC0143bb);
     }
 }

@@ -1,68 +1,98 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Intent;
-import com.google.firebase.analytics.FirebaseAnalytics;
-import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
-import io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.BatteryInfo;
-import io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.ChargeType;
-import io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.ChargeTypeChangeListener;
-import io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.ChargeTypeProvider;
-import java.util.ArrayList;
+import android.content.ContentValues;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
 /* loaded from: classes5.dex */
-public final class S2 implements ChargeTypeProvider {
-    public static final ChargeType d = ChargeType.UNKNOWN;
+public final class S2 implements IBinaryDataHelper {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ICommonExecutor f768a;
-    public volatile BatteryInfo b;
-    public final ArrayList c = new ArrayList();
+    public final InterfaceC0719y6 f776a;
+    public final String b;
 
-    public S2(ICommonExecutor iCommonExecutor, P2 p2) {
-        R2 r2 = new R2(this);
-        this.f768a = iCommonExecutor;
-        this.b = a(p2.a(r2));
+    public S2(InterfaceC0719y6 interfaceC0719y6, String str) {
+        this.f776a = interfaceC0719y6;
+        this.b = str;
     }
 
-    public static BatteryInfo a(Intent intent) {
-        ChargeType chargeType = d;
-        Integer num = null;
-        if (intent != null) {
-            int intExtra = intent.getIntExtra(FirebaseAnalytics.Param.LEVEL, -1);
-            int intExtra2 = intent.getIntExtra("scale", -1);
-            if (intExtra > 0 && intExtra2 > 0) {
-                num = Integer.valueOf((intExtra * 100) / intExtra2);
-            }
-            int intExtra3 = intent.getIntExtra("plugged", -1);
-            chargeType = ChargeType.NONE;
-            if (intExtra3 == 1) {
-                chargeType = ChargeType.AC;
-            } else if (intExtra3 == 2) {
-                chargeType = ChargeType.USB;
-            } else if (intExtra3 == 4) {
-                chargeType = ChargeType.WIRELESS;
-            }
+    @Override // io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper
+    public final byte[] get(String str) {
+        Cursor cursor;
+        SQLiteDatabase sQLiteDatabase;
+        try {
+            sQLiteDatabase = this.f776a.a();
+        } catch (Throwable unused) {
+            cursor = null;
+            sQLiteDatabase = null;
         }
-        return new BatteryInfo(num, chargeType);
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.ChargeTypeProvider
-    public final Integer getBatteryLevel() {
-        BatteryInfo batteryInfo = this.b;
-        if (batteryInfo == null) {
+        if (sQLiteDatabase != null) {
+            try {
+                cursor = sQLiteDatabase.query(this.b, null, "data_key = ?", new String[]{str}, null, null, null);
+                if (cursor != null) {
+                    try {
+                        if (cursor.getCount() == 1 && cursor.moveToFirst()) {
+                            byte[] blob = cursor.getBlob(cursor.getColumnIndexOrThrow("value"));
+                            lo.a(cursor);
+                            this.f776a.a(sQLiteDatabase);
+                            return blob;
+                        }
+                    } catch (Throwable unused2) {
+                    }
+                }
+                if (cursor != null) {
+                    cursor.getCount();
+                }
+            } catch (Throwable unused3) {
+            }
+            lo.a(cursor);
+            this.f776a.a(sQLiteDatabase);
             return null;
         }
-        return batteryInfo.batteryLevel;
+        cursor = null;
+        lo.a(cursor);
+        this.f776a.a(sQLiteDatabase);
+        return null;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.ChargeTypeProvider
-    public final ChargeType getChargeType() {
-        BatteryInfo batteryInfo = this.b;
-        return batteryInfo == null ? ChargeType.UNKNOWN : batteryInfo.chargeType;
+    @Override // io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper
+    public final void insert(String str, byte[] bArr) {
+        SQLiteDatabase sQLiteDatabase;
+        SQLiteDatabase sQLiteDatabase2 = null;
+        try {
+            sQLiteDatabase = this.f776a.a();
+            if (sQLiteDatabase != null) {
+                try {
+                    ContentValues contentValues = new ContentValues();
+                    contentValues.put("data_key", str);
+                    contentValues.put("value", bArr);
+                    sQLiteDatabase.insertWithOnConflict(this.b, null, contentValues, 5);
+                } catch (Throwable unused) {
+                    sQLiteDatabase2 = sQLiteDatabase;
+                    sQLiteDatabase = sQLiteDatabase2;
+                    this.f776a.a(sQLiteDatabase);
+                }
+            }
+        } catch (Throwable unused2) {
+        }
+        this.f776a.a(sQLiteDatabase);
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.ChargeTypeProvider
-    public final synchronized void registerChargeTypeListener(ChargeTypeChangeListener chargeTypeChangeListener) {
-        this.c.add(chargeTypeChangeListener);
-        chargeTypeChangeListener.onChargeTypeChanged(getChargeType());
+    @Override // io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper
+    public final void remove(String str) {
+        SQLiteDatabase sQLiteDatabase;
+        try {
+            sQLiteDatabase = this.f776a.a();
+            if (sQLiteDatabase != null) {
+                try {
+                    new ContentValues().put("data_key", str);
+                    sQLiteDatabase.delete(this.b, "data_key = ?", new String[]{str});
+                } catch (Throwable unused) {
+                }
+            }
+        } catch (Throwable unused2) {
+            sQLiteDatabase = null;
+        }
+        this.f776a.a(sQLiteDatabase);
     }
 }

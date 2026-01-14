@@ -1,6 +1,5 @@
 package ru.mrlargha.commonui.elements.employmentNote.presentation;
 
-import com.arizona.game.BuildConfig;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -17,7 +16,7 @@ import ru.mrlargha.commonui.elements.employmentNote.presentation.adapter.TaskAda
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: EmploymentTaskScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$initRetrofit$1", f = "EmploymentTaskScreen.kt", i = {}, l = {182, 183}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@DebugMetadata(c = "ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$initRetrofit$1", f = "EmploymentTaskScreen.kt", i = {}, l = {157, 158}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes6.dex */
 public final class EmploymentTaskScreen$initRetrofit$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     Object L$0;
@@ -41,13 +40,13 @@ public final class EmploymentTaskScreen$initRetrofit$1 extends SuspendLambda imp
         return ((EmploymentTaskScreen$initRetrofit$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x0062, code lost:
-        if (r14 == r0) goto L14;
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0039, code lost:
+        if (r7 == r0) goto L14;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x0084, code lost:
-        if (kotlinx.coroutines.BuildersKt.withContext(kotlinx.coroutines.Dispatchers.getMain(), new ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$initRetrofit$1.AnonymousClass1(r13.this$0, null), r13) == r0) goto L14;
+    /* JADX WARN: Code restructure failed: missing block: B:14:0x005b, code lost:
+        if (kotlinx.coroutines.BuildersKt.withContext(kotlinx.coroutines.Dispatchers.getMain(), new ru.mrlargha.commonui.elements.employmentNote.presentation.EmploymentTaskScreen$initRetrofit$1.AnonymousClass1(r6.this$0, null), r6) == r0) goto L14;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:23:0x0086, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x005d, code lost:
         return r0;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -57,31 +56,17 @@ public final class EmploymentTaskScreen$initRetrofit$1 extends SuspendLambda imp
     public final Object invokeSuspend(Object obj) {
         EmploymentTaskScreen.Companion companion;
         TaskApi taskApi;
-        TaskApi taskApi2;
-        String token;
-        int i;
-        boolean z;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i2 = this.label;
-        if (i2 == 0) {
+        int i = this.label;
+        if (i == 0) {
             ResultKt.throwOnFailure(obj);
             companion = EmploymentTaskScreen.Companion;
             taskApi = this.this$0.api;
-            if (taskApi == null) {
-                Intrinsics.throwUninitializedPropertyAccessException("api");
-                taskApi2 = null;
-            } else {
-                taskApi2 = taskApi;
-            }
-            token = this.this$0.getToken();
-            i = this.this$0.serverId;
-            z = this.this$0.isArizonaType;
-            String str = z ? BuildConfig.FLAVOR : "rodina";
             this.L$0 = companion;
             this.label = 1;
-            obj = TaskApi.get$default(taskApi2, token, str, i, null, this, 8, null);
-        } else if (i2 != 1) {
-            if (i2 == 2) {
+            obj = TaskApi.get$default(taskApi, null, this, 1, null);
+        } else if (i != 1) {
+            if (i == 2) {
                 ResultKt.throwOnFailure(obj);
                 return Unit.INSTANCE;
             }

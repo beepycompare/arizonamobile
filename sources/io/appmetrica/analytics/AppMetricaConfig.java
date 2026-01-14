@@ -3,12 +3,12 @@ package io.appmetrica.analytics;
 import android.location.Location;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import io.appmetrica.analytics.impl.C0282h0;
-import io.appmetrica.analytics.impl.C0465o5;
-import io.appmetrica.analytics.impl.D7;
-import io.appmetrica.analytics.impl.Fn;
-import io.appmetrica.analytics.impl.H3;
-import io.appmetrica.analytics.impl.mo;
+import io.appmetrica.analytics.impl.C0287h0;
+import io.appmetrica.analytics.impl.C0444n5;
+import io.appmetrica.analytics.impl.C7;
+import io.appmetrica.analytics.impl.En;
+import io.appmetrica.analytics.impl.G3;
+import io.appmetrica.analytics.impl.lo;
 import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.util.Collection;
@@ -52,13 +52,13 @@ public class AppMetricaConfig {
 
     /* loaded from: classes2.dex */
     public static class Builder {
-        private static final Fn D = new Fn(new C0282h0());
+        private static final En D = new En(new C0287h0());
         private Integer A;
         private List B;
         private final HashMap C;
 
         /* renamed from: a  reason: collision with root package name */
-        private final C0465o5 f276a;
+        private final C0444n5 f276a;
         private final String b;
         private String c;
         private Integer d;
@@ -239,7 +239,7 @@ public class AppMetricaConfig {
             this.x = new LinkedHashMap();
             this.C = new HashMap();
             D.a(str);
-            this.f276a = new C0465o5(str);
+            this.f276a = new C0444n5(str);
             this.b = str;
         }
     }
@@ -249,7 +249,7 @@ public class AppMetricaConfig {
     }
 
     public static AppMetricaConfig fromJson(String str) {
-        Builder a2 = new H3().a(str);
+        Builder a2 = new G3().a(str);
         if (a2 == null) {
             return null;
         }
@@ -271,13 +271,13 @@ public class AppMetricaConfig {
     public String toJson() {
         String str;
         List<String> list;
-        new D7();
+        new C7();
         try {
             JSONObject jSONObject = new JSONObject();
             jSONObject.put("apikey", this.apiKey);
             jSONObject.put("app_version", this.appVersion);
             jSONObject.put("session_timeout", this.sessionTimeout);
-            jSONObject.put(FirebaseAnalytics.Param.LOCATION, H3.a(this.location));
+            jSONObject.put(FirebaseAnalytics.Param.LOCATION, G3.a(this.location));
             PreloadInfo preloadInfo = this.preloadInfo;
             JSONArray jSONArray = null;
             if (preloadInfo != null) {
@@ -315,7 +315,7 @@ public class AppMetricaConfig {
                 jSONObject.put("anr_monitoring_timeout", this.anrMonitoringTimeout);
                 list = this.customHosts;
                 if (list != null) {
-                    if (!mo.a((Collection) list)) {
+                    if (!lo.a((Collection) list)) {
                         jSONArray = new JSONArray((Collection) list);
                     }
                     jSONObject.put("customHosts", jSONArray);

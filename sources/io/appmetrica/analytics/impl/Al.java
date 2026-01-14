@@ -1,17 +1,27 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.List;
+import android.content.Context;
+import javax.net.ssl.SSLSocketFactory;
 /* loaded from: classes5.dex */
-public final class Al extends AbstractC0495pa {
-    public final Sg b;
+public final class Al implements K2 {
 
-    public Al(C0577si c0577si, Sg sg) {
-        super(c0577si);
-        this.b = sg;
+    /* renamed from: a  reason: collision with root package name */
+    public final Context f503a;
+
+    public Al(Context context) {
+        this.f503a = context;
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0495pa
-    public final void a(List<Sg> list) {
-        list.add(this.b);
+    @Override // io.appmetrica.analytics.impl.K2, io.appmetrica.analytics.impl.InterfaceC0386km
+    public final void a(C0257fm c0257fm) {
+    }
+
+    public final Context b() {
+        return this.f503a;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.io.SslSocketFactoryProvider
+    public final SSLSocketFactory getSslSocketFactory() {
+        return null;
     }
 }

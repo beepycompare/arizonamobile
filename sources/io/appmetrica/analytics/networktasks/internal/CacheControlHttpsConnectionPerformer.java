@@ -2,7 +2,7 @@ package io.appmetrica.analytics.networktasks.internal;
 
 import com.google.common.net.HttpHeaders;
 import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
-import io.appmetrica.analytics.network.internal.Response;
+import io.appmetrica.analytics.networkapi.Response;
 import io.appmetrica.analytics.networktasks.impl.a;
 import java.util.List;
 import javax.net.ssl.SSLSocketFactory;
@@ -10,7 +10,7 @@ import javax.net.ssl.SSLSocketFactory;
 public class CacheControlHttpsConnectionPerformer {
 
     /* renamed from: a  reason: collision with root package name */
-    private final a f1395a;
+    private final a f1404a;
     private final SSLSocketFactory b;
 
     /* loaded from: classes5.dex */
@@ -32,7 +32,7 @@ public class CacheControlHttpsConnectionPerformer {
         Response a2;
         int code;
         try {
-            a aVar = this.f1395a;
+            a aVar = this.f1404a;
             String oldETag = client.getOldETag();
             SSLSocketFactory sSLSocketFactory = this.b;
             aVar.getClass();
@@ -51,7 +51,7 @@ public class CacheControlHttpsConnectionPerformer {
     }
 
     CacheControlHttpsConnectionPerformer(a aVar, SSLSocketFactory sSLSocketFactory) {
-        this.f1395a = aVar;
+        this.f1404a = aVar;
         this.b = sSLSocketFactory;
     }
 }

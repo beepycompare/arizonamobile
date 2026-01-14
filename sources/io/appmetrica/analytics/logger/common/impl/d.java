@@ -3,9 +3,9 @@ package io.appmetrica.analytics.logger.common.impl;
 public final class d {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1367a;
+    public final String f1370a;
 
     public d(String str) {
-        this.f1367a = str;
+        this.f1370a = str;
     }
 }

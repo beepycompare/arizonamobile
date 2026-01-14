@@ -1,22 +1,16 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
-public abstract class S7 {
+public enum S7 {
+    b("UNDEFINED"),
+    c("APP"),
+    d("SATELLITE"),
+    e("RETAIL");
+    
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ec f772a;
+    public final String f779a;
 
-    public S7() {
-        Ec ec = new Ec(0);
-        ec.a(T7.b, 0);
-        ec.a(T7.c, 1);
-        ec.a(T7.d, 2);
-        ec.a(T7.e, 3);
-        this.f772a = ec;
+    S7(String str) {
+        this.f779a = str;
     }
-
-    public final Ec a() {
-        return this.f772a;
-    }
-
-    public abstract boolean a(Object obj, Object obj2);
 }

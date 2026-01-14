@@ -726,9 +726,8 @@ public final class ViewPager2 extends ViewGroup {
             ViewPager2.this.mAccessibilityProvider.onLmInitializeAccessibilityNodeInfoForItem(view, accessibilityNodeInfoCompat);
         }
 
-        /* JADX INFO: Access modifiers changed from: protected */
         @Override // androidx.recyclerview.widget.LinearLayoutManager
-        public void calculateExtraLayoutSpace(RecyclerView.State state, int[] iArr) {
+        protected void calculateExtraLayoutSpace(RecyclerView.State state, int[] iArr) {
             int offscreenPageLimit = ViewPager2.this.getOffscreenPageLimit();
             if (offscreenPageLimit == -1) {
                 super.calculateExtraLayoutSpace(state, iArr);

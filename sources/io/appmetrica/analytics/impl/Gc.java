@@ -1,53 +1,31 @@
 package io.appmetrica.analytics.impl;
 
-import java.util.HashMap;
+import android.util.SparseArray;
 /* loaded from: classes5.dex */
-public final class Gc extends HashMap {
+public final class Gc {
+    public static final SparseArray c;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f590a;
+    public final String f595a;
+    public final String b;
 
-    public Gc() {
-        this.f590a = 0;
+    static {
+        SparseArray sparseArray = new SparseArray();
+        c = sparseArray;
+        EnumC0143bb enumC0143bb = EnumC0143bb.EVENT_TYPE_UNDEFINED;
+        sparseArray.put(5891, new Gc("jvm", "binder"));
+        EnumC0143bb enumC0143bb2 = EnumC0143bb.EVENT_TYPE_UNDEFINED;
+        sparseArray.put(5890, new Gc("jvm", "file"));
+        EnumC0143bb enumC0143bb3 = EnumC0143bb.EVENT_TYPE_UNDEFINED;
+        sparseArray.put(5889, new Gc("jvm", "file"));
+        EnumC0143bb enumC0143bb4 = EnumC0143bb.EVENT_TYPE_UNDEFINED;
+        sparseArray.put(5897, new Gc("jni_native", "file"));
+        EnumC0143bb enumC0143bb5 = EnumC0143bb.EVENT_TYPE_UNDEFINED;
+        sparseArray.put(5898, new Gc("jni_native", "file"));
     }
 
-    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
-    /* renamed from: a */
-    public final String put(String str, String str2) {
-        if (!containsKey(str)) {
-            if (str2 != null) {
-                this.f590a = str2.length() + str.length() + this.f590a;
-                return (String) super.put(str, str2);
-            }
-            return null;
-        }
-        if (str2 == null) {
-            if (containsKey(str)) {
-                String str3 = (String) get(str);
-                this.f590a -= str.length() + (str3 != null ? str3.length() : 0);
-            }
-            return (String) super.remove(str);
-        }
-        String str4 = (String) get(str);
-        this.f590a = (str2.length() - (str4 != null ? str4.length() : 0)) + this.f590a;
-        return (String) super.put(str, str2);
-    }
-
-    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
-    public final Object remove(Object obj) {
-        if (containsKey(obj)) {
-            String str = (String) get(obj);
-            this.f590a -= ((String) obj).length() + (str == null ? 0 : str.length());
-        }
-        return (String) super.remove(obj);
-    }
-
-    public Gc(String str) {
-        super(AbstractC0293hb.d(str));
-        this.f590a = 0;
-        for (String str2 : keySet()) {
-            String str3 = (String) get(str2);
-            this.f590a = str2.length() + (str3 == null ? 0 : str3.length()) + this.f590a;
-        }
+    public Gc(String str, String str2) {
+        this.f595a = str;
+        this.b = str2;
     }
 }

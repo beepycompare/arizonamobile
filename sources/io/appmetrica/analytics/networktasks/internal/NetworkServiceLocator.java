@@ -1,7 +1,9 @@
 package io.appmetrica.analytics.networktasks.internal;
 
+import android.content.Context;
 import androidx.media3.exoplayer.upstream.CmcdData;
 import io.appmetrica.analytics.coreapi.internal.io.IExecutionPolicy;
+import io.appmetrica.analytics.network.internal.NetworkClientServiceLocator;
 import kotlin.Metadata;
 import kotlin.Unit;
 import kotlin.jvm.JvmStatic;
@@ -14,9 +16,9 @@ public final class NetworkServiceLocator implements NetworkServiceLifecycleObser
     private static volatile NetworkServiceLocator b;
 
     /* renamed from: a  reason: collision with root package name */
-    private final NetworkCore f1401a;
+    private final NetworkCore f1410a;
 
-    @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001J\b\u0010\u0003\u001a\u00020\u0002H\u0007J\u0010\u0010\u0007\u001a\u00020\u00062\u0006\u0010\u0005\u001a\u00020\u0004H\u0007J\u0010\u0010\u0007\u001a\u00020\u00062\u0006\u0010\b\u001a\u00020\u0002H\u0007R\u0016\u0010\t\u001a\u00020\u00028\u0002@\u0002X\u0082.¢\u0006\u0006\n\u0004\b\t\u0010\n¨\u0006\u000b"}, d2 = {"Lio/appmetrica/analytics/networktasks/internal/NetworkServiceLocator$Companion;", "", "Lio/appmetrica/analytics/networktasks/internal/NetworkServiceLocator;", "getInstance", "Lio/appmetrica/analytics/coreapi/internal/io/IExecutionPolicy;", "executionPolicy", "", "init", "networkServiceLocator", "instance", "Lio/appmetrica/analytics/networktasks/internal/NetworkServiceLocator;", "network-tasks_release"}, k = 1, mv = {1, 6, 0})
+    @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001J\b\u0010\u0003\u001a\u00020\u0002H\u0007J\u0018\u0010\t\u001a\u00020\b2\u0006\u0010\u0005\u001a\u00020\u00042\u0006\u0010\u0007\u001a\u00020\u0006H\u0007J\u0010\u0010\t\u001a\u00020\b2\u0006\u0010\n\u001a\u00020\u0002H\u0007R\u0016\u0010\u000b\u001a\u00020\u00028\u0002@\u0002X\u0082.¢\u0006\u0006\n\u0004\b\u000b\u0010\f¨\u0006\r"}, d2 = {"Lio/appmetrica/analytics/networktasks/internal/NetworkServiceLocator$Companion;", "", "Lio/appmetrica/analytics/networktasks/internal/NetworkServiceLocator;", "getInstance", "Landroid/content/Context;", "context", "Lio/appmetrica/analytics/coreapi/internal/io/IExecutionPolicy;", "executionPolicy", "", "init", "networkServiceLocator", "instance", "Lio/appmetrica/analytics/networktasks/internal/NetworkServiceLocator;", "network-tasks_release"}, k = 1, mv = {1, 6, 0})
     /* loaded from: classes5.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -34,7 +36,7 @@ public final class NetworkServiceLocator implements NetworkServiceLifecycleObser
         }
 
         @JvmStatic
-        public final void init(IExecutionPolicy iExecutionPolicy) {
+        public final void init(Context context, IExecutionPolicy iExecutionPolicy) {
             if (NetworkServiceLocator.b == null) {
                 synchronized (NetworkServiceLocator.class) {
                     if (NetworkServiceLocator.b == null) {
@@ -43,6 +45,7 @@ public final class NetworkServiceLocator implements NetworkServiceLifecycleObser
                     Unit unit = Unit.INSTANCE;
                 }
             }
+            NetworkClientServiceLocator.init(context);
         }
 
         private Companion() {
@@ -58,7 +61,7 @@ public final class NetworkServiceLocator implements NetworkServiceLifecycleObser
         NetworkCore networkCore = new NetworkCore(iExecutionPolicy);
         networkCore.setName("IAA-NC");
         networkCore.start();
-        this.f1401a = networkCore;
+        this.f1410a = networkCore;
     }
 
     @JvmStatic
@@ -67,12 +70,12 @@ public final class NetworkServiceLocator implements NetworkServiceLifecycleObser
     }
 
     @JvmStatic
-    public static final void init(IExecutionPolicy iExecutionPolicy) {
-        Companion.init(iExecutionPolicy);
+    public static final void init(Context context, IExecutionPolicy iExecutionPolicy) {
+        Companion.init(context, iExecutionPolicy);
     }
 
     public final NetworkCore getNetworkCore() {
-        return this.f1401a;
+        return this.f1410a;
     }
 
     @Override // io.appmetrica.analytics.networktasks.internal.NetworkServiceLifecycleObserver
@@ -81,7 +84,7 @@ public final class NetworkServiceLocator implements NetworkServiceLifecycleObser
 
     @Override // io.appmetrica.analytics.networktasks.internal.NetworkServiceLifecycleObserver
     public void onDestroy() {
-        this.f1401a.stopTasks();
+        this.f1410a.stopTasks();
     }
 
     @JvmStatic

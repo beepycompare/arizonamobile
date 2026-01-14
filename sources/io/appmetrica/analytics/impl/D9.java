@@ -1,24 +1,15 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 /* loaded from: classes5.dex */
-public final class D9 implements ProtobufConverter {
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final C0556rm fromModel(C9 c9) {
-        C0556rm c0556rm = new C0556rm();
-        if (c9 != null) {
-            c0556rm.f1204a = c9.f525a;
-        }
-        return c0556rm;
+public final class D9 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final C9 f548a;
+
+    public D9(C9 c9) {
+        this.f548a = c9;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final Object toModel(Object obj) {
-        return new C9(((C0556rm) obj).f1204a);
-    }
-
-    public final C9 a(C0556rm c0556rm) {
-        return new C9(c0556rm.f1204a);
+    public D9() {
+        this(new C9());
     }
 }

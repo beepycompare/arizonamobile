@@ -1,27 +1,32 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import javax.net.ssl.SSLSocketFactory;
+import io.appmetrica.analytics.coreapi.internal.data.ListConverter;
+import java.util.List;
 /* loaded from: classes5.dex */
-public final class Bl implements L2 {
+public final class Bl implements ListConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f512a;
+    public final Cl f525a = new Cl();
 
-    public Bl(Context context) {
-        this.f512a = context;
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final Z5[] fromModel(List<Dl> list) {
+        Z5[] z5Arr = new Z5[list.size()];
+        int i = 0;
+        for (Dl dl : list) {
+            z5Arr[i] = this.f525a.fromModel(dl);
+            i++;
+        }
+        return z5Arr;
     }
 
-    @Override // io.appmetrica.analytics.impl.L2, io.appmetrica.analytics.impl.InterfaceC0407lm
-    public final void a(C0278gm c0278gm) {
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        Z5[] z5Arr = (Z5[]) obj;
+        throw new UnsupportedOperationException();
     }
 
-    public final Context b() {
-        return this.f512a;
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.io.SslSocketFactoryProvider
-    public final SSLSocketFactory getSslSocketFactory() {
-        return null;
+    public final List<Dl> a(Z5[] z5Arr) {
+        throw new UnsupportedOperationException();
     }
 }

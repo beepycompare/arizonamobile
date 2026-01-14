@@ -1,18 +1,18 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.AdRevenue;
+import io.appmetrica.analytics.plugins.PluginErrorDetails;
 /* loaded from: classes5.dex */
-public final class Bj implements Ra {
+public final class Bj implements Qa {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ AdRevenue f511a;
+    public final /* synthetic */ PluginErrorDetails f523a;
 
-    public Bj(AdRevenue adRevenue) {
-        this.f511a = adRevenue;
+    public Bj(PluginErrorDetails pluginErrorDetails) {
+        this.f523a = pluginErrorDetails;
     }
 
-    @Override // io.appmetrica.analytics.impl.Ra
-    public final void a(Sa sa) {
-        sa.reportAdRevenue(this.f511a);
+    @Override // io.appmetrica.analytics.impl.Qa
+    public final void a(Ra ra) {
+        ra.getPluginExtension().reportUnhandledException(this.f523a);
     }
 }

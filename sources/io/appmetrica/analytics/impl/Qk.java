@@ -1,29 +1,27 @@
 package io.appmetrica.analytics.impl;
+
+import okhttp3.internal.connection.RealConnection;
 /* loaded from: classes5.dex */
 public final class Qk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Wk f752a;
-    public final Integer b;
+    public final xo f755a;
 
-    public Qk(Pk pk) {
-        Wk wk;
-        Integer num;
-        wk = pk.f737a;
-        this.f752a = wk;
-        num = pk.b;
-        this.b = num;
+    public Qk(xo xoVar) {
+        this.f755a = xoVar;
     }
 
-    public static final Pk a(Wk wk) {
-        return new Pk(wk);
-    }
-
-    public final Wk b() {
-        return this.f752a;
-    }
-
-    public final Integer a() {
-        return this.b;
+    public final long a() {
+        long optLong;
+        xo xoVar = this.f755a;
+        synchronized (xoVar) {
+            optLong = xoVar.f1313a.a().optLong("session_id", -1L);
+        }
+        long j = RealConnection.IDLE_CONNECTION_HEALTHY_NS;
+        if (optLong >= RealConnection.IDLE_CONNECTION_HEALTHY_NS) {
+            j = 1 + optLong;
+        }
+        this.f755a.b(j);
+        return j;
     }
 }

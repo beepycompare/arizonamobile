@@ -1,85 +1,14 @@
 package io.appmetrica.analytics.impl;
 
 import android.content.Context;
-import android.os.Bundle;
-import io.appmetrica.analytics.coreapi.internal.identifiers.AdTrackingInfo;
-import io.appmetrica.analytics.coreapi.internal.identifiers.AdTrackingInfoResult;
-import io.appmetrica.analytics.coreapi.internal.identifiers.IdentifierStatus;
-import io.appmetrica.analytics.coreutils.internal.reflection.ReflectionUtils;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 /* loaded from: classes5.dex */
-public final class Ag implements K {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final String f495a;
-    public final C0750zg b;
-
-    public Ag(String str) {
-        this(str, new C0750zg());
+public final class Ag extends AbstractC0234f {
+    public Ag(Context context, Bg bg) {
+        super(context, bg);
     }
 
-    @Override // io.appmetrica.analytics.impl.K
-    public final AdTrackingInfoResult a(Context context) {
-        return a(context, new Yd());
-    }
-
-    public final AdTrackingInfoResult b(Context context) {
-        Method method = Class.forName("io.appmetrica.analytics.identifiers.internal.AdvIdentifiersProvider").getMethod("requestIdentifiers", Context.class, Bundle.class);
-        Bundle bundle = new Bundle();
-        bundle.putString("io.appmetrica.analytics.identifiers.extra.PROVIDER", this.f495a);
-        C0750zg c0750zg = this.b;
-        Object[] objArr = {context, bundle};
-        AdTrackingInfo adTrackingInfo = null;
-        Bundle bundle2 = (Bundle) method.invoke(null, objArr);
-        c0750zg.getClass();
-        if (bundle2 != null) {
-            Bundle bundle3 = bundle2.getBundle("io.appmetrica.analytics.identifiers.extra.TRACKING_INFO");
-            if (bundle3 != null) {
-                Object obj = AbstractC0664w5.f1278a.get(bundle3.getString("io.appmetrica.analytics.identifiers.extra.PROVIDER"));
-                if (obj != null) {
-                    adTrackingInfo = new AdTrackingInfo((AdTrackingInfo.Provider) obj, bundle3.getString("io.appmetrica.analytics.identifiers.extra.ID"), bundle3.containsKey("io.appmetrica.analytics.identifiers.extra.LIMITED") ? Boolean.valueOf(bundle3.getBoolean("io.appmetrica.analytics.identifiers.extra.LIMITED")) : null);
-                } else {
-                    throw new IllegalArgumentException(("Provider " + bundle3.getString("io.appmetrica.analytics.identifiers.extra.PROVIDER") + " is invalid").toString());
-                }
-            }
-            return new AdTrackingInfoResult(adTrackingInfo, IdentifierStatus.Companion.from(bundle2.getString("io.appmetrica.analytics.identifiers.extra.STATUS")), bundle2.getString("io.appmetrica.analytics.identifiers.extra.ERROR_MESSAGE"));
-        }
-        return null;
-    }
-
-    public Ag(String str, C0750zg c0750zg) {
-        this.f495a = str;
-        this.b = c0750zg;
-    }
-
-    @Override // io.appmetrica.analytics.impl.K
-    public final AdTrackingInfoResult a(Context context, Hi hi) {
-        AdTrackingInfoResult adTrackingInfoResult;
-        AdTrackingInfoResult adTrackingInfoResult2;
-        if (ReflectionUtils.detectClassExists("io.appmetrica.analytics.identifiers.internal.AdvIdentifiersProvider")) {
-            Kn kn = (Kn) hi;
-            kn.c = 0;
-            adTrackingInfoResult = null;
-            while (kn.b()) {
-                try {
-                    return b(context);
-                } catch (InvocationTargetException e) {
-                    adTrackingInfoResult2 = new AdTrackingInfoResult(null, IdentifierStatus.UNKNOWN, "exception while fetching " + this.f495a + " adv_id: " + (e.getTargetException() != null ? e.getTargetException().getMessage() : null));
-                    adTrackingInfoResult = adTrackingInfoResult2;
-                    try {
-                        Thread.sleep(((Kn) hi).b);
-                    } catch (InterruptedException unused) {
-                    }
-                } catch (Throwable th) {
-                    adTrackingInfoResult2 = new AdTrackingInfoResult(null, IdentifierStatus.UNKNOWN, "exception while fetching " + this.f495a + " adv_id: " + th.getMessage());
-                    adTrackingInfoResult = adTrackingInfoResult2;
-                    Thread.sleep(((Kn) hi).b);
-                }
-            }
-        } else {
-            adTrackingInfoResult = new AdTrackingInfoResult(null, IdentifierStatus.IDENTIFIER_PROVIDER_UNAVAILABLE, "Module io.appmetrica.analytics:analytics-identifiers does not exist");
-        }
-        return adTrackingInfoResult == null ? new AdTrackingInfoResult() : adTrackingInfoResult;
+    @Override // io.appmetrica.analytics.impl.AbstractC0234f
+    public final void b(P5 p5, C0493p4 c0493p4) {
+        this.b.a(p5, c0493p4);
     }
 }

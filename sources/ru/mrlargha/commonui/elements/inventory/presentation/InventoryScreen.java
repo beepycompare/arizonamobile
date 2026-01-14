@@ -451,7 +451,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         this.isArizonaType = z;
         ArizonaRetrofit arizonaRetrofit = new ArizonaRetrofit(targetActivity, i);
         this.client = arizonaRetrofit;
-        this.api = (InventoryApi) ArizonaRetrofit.create$default(arizonaRetrofit, InventoryApi.class, false, null, 6, null);
+        this.api = (InventoryApi) ArizonaRetrofit.create$default(arizonaRetrofit, InventoryApi.class, false, null, null, 14, null);
         addViewToConstraintLayout(constraintLayout, -1, -1);
         ImageView btnWallet = bind.personSection.btnWallet;
         Intrinsics.checkNotNullExpressionValue(btnWallet, "btnWallet");

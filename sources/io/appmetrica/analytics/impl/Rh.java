@@ -1,28 +1,21 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.ReporterConfig;
-import io.appmetrica.analytics.coreapi.internal.backport.Provider;
+import io.appmetrica.analytics.ecommerce.ECommerceEvent;
 /* loaded from: classes5.dex */
-public final class Rh implements Provider {
+public final class Rh implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0734z0 f761a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ ReporterConfig c;
+    public final /* synthetic */ ECommerceEvent f769a;
+    public final /* synthetic */ C0279gi b;
 
-    public Rh(C0734z0 c0734z0, Context context, ReporterConfig reporterConfig) {
-        this.f761a = c0734z0;
-        this.b = context;
-        this.c = reporterConfig;
+    public Rh(C0279gi c0279gi, ECommerceEvent eCommerceEvent) {
+        this.b = c0279gi;
+        this.f769a = eCommerceEvent;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.backport.Provider
-    public final Object get() {
-        C0734z0 c0734z0 = this.f761a;
-        Context context = this.b;
-        ReporterConfig reporterConfig = this.c;
-        c0734z0.getClass();
-        return C0709y0.a(context).f().c(reporterConfig);
+    @Override // java.lang.Runnable
+    public final void run() {
+        C0279gi c0279gi = this.b;
+        C0279gi.a(c0279gi.f1016a, c0279gi.d, c0279gi.e).reportECommerce(this.f769a);
     }
 }

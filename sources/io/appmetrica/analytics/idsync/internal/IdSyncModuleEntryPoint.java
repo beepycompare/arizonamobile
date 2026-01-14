@@ -2,9 +2,9 @@ package io.appmetrica.analytics.idsync.internal;
 
 import io.appmetrica.analytics.coreapi.internal.data.Converter;
 import io.appmetrica.analytics.coreapi.internal.data.JsonParser;
-import io.appmetrica.analytics.idsync.impl.c;
-import io.appmetrica.analytics.idsync.impl.d;
-import io.appmetrica.analytics.idsync.impl.e;
+import io.appmetrica.analytics.idsync.impl.C0100c;
+import io.appmetrica.analytics.idsync.impl.C0101d;
+import io.appmetrica.analytics.idsync.impl.C0102e;
 import io.appmetrica.analytics.idsync.impl.h;
 import io.appmetrica.analytics.idsync.internal.model.IdSyncConfig;
 import io.appmetrica.analytics.modulesapi.internal.service.ModuleRemoteConfig;
@@ -24,17 +24,17 @@ import kotlin.collections.MapsKt;
 public final class IdSyncModuleEntryPoint extends ModuleServiceEntryPoint<IdSyncConfig> implements RemoteConfigUpdateListener<IdSyncConfig> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final d f481a;
-    private final c b;
+    private final C0101d f485a;
+    private final C0100c b;
     private h c;
     private final String d;
     private final IdSyncModuleEntryPoint$remoteConfigExtensionConfiguration$1 e;
 
     /* JADX WARN: Type inference failed for: r0v2, types: [io.appmetrica.analytics.idsync.internal.IdSyncModuleEntryPoint$remoteConfigExtensionConfiguration$1] */
     public IdSyncModuleEntryPoint() {
-        e eVar = new e();
-        this.f481a = new d(eVar);
-        this.b = new c(eVar);
+        C0102e c0102e = new C0102e();
+        this.f485a = new C0101d(c0102e);
+        this.b = new C0100c(c0102e);
         this.d = "id-sync";
         this.e = new RemoteConfigExtensionConfiguration<IdSyncConfig>() { // from class: io.appmetrica.analytics.idsync.internal.IdSyncModuleEntryPoint$remoteConfigExtensionConfiguration$1
             @Override // io.appmetrica.analytics.modulesapi.internal.service.RemoteConfigExtensionConfiguration
@@ -49,16 +49,16 @@ public final class IdSyncModuleEntryPoint extends ModuleServiceEntryPoint<IdSync
 
             @Override // io.appmetrica.analytics.modulesapi.internal.service.RemoteConfigExtensionConfiguration
             public JsonParser<IdSyncConfig> getJsonParser() {
-                c cVar;
-                cVar = IdSyncModuleEntryPoint.this.b;
-                return cVar;
+                C0100c c0100c;
+                c0100c = IdSyncModuleEntryPoint.this.b;
+                return c0100c;
             }
 
             @Override // io.appmetrica.analytics.modulesapi.internal.service.RemoteConfigExtensionConfiguration
             public Converter<IdSyncConfig, byte[]> getProtobufConverter() {
-                d dVar;
-                dVar = IdSyncModuleEntryPoint.this.f481a;
-                return dVar;
+                C0101d c0101d;
+                c0101d = IdSyncModuleEntryPoint.this.f485a;
+                return c0101d;
             }
 
             @Override // io.appmetrica.analytics.modulesapi.internal.service.RemoteConfigExtensionConfiguration
@@ -82,11 +82,11 @@ public final class IdSyncModuleEntryPoint extends ModuleServiceEntryPoint<IdSync
     public void initServiceSide(ServiceContext serviceContext, ModuleRemoteConfig<IdSyncConfig> moduleRemoteConfig) {
         synchronized (this) {
             if (this.c == null) {
-                h hVar = new h(serviceContext);
+                h hVar = new h(serviceContext, moduleRemoteConfig.getIdentifiers());
                 this.c = hVar;
                 IdSyncConfig featuresConfig = moduleRemoteConfig.getFeaturesConfig();
                 if (featuresConfig != null) {
-                    hVar.b(featuresConfig);
+                    hVar.a(featuresConfig, moduleRemoteConfig.getIdentifiers());
                 }
             }
             Unit unit = Unit.INSTANCE;
@@ -98,7 +98,7 @@ public final class IdSyncModuleEntryPoint extends ModuleServiceEntryPoint<IdSync
         h hVar;
         IdSyncConfig featuresConfig = moduleRemoteConfig.getFeaturesConfig();
         if (featuresConfig != null && (hVar = this.c) != null) {
-            hVar.b(featuresConfig);
+            hVar.a(featuresConfig, moduleRemoteConfig.getIdentifiers());
         }
     }
 }

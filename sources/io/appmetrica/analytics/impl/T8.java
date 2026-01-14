@@ -1,11 +1,23 @@
 package io.appmetrica.analytics.impl;
-
-import java.util.List;
 /* loaded from: classes5.dex */
-public interface T8 {
-    void a();
+public final class T8 {
 
-    void a(List list);
+    /* renamed from: a  reason: collision with root package name */
+    public InterfaceC0701xd f796a;
+    public to b;
+    public InterfaceC0721y8 c;
+    public InterfaceC0597t9 d;
+    public Vb e;
+    public Ud f;
+    public final N9 g;
 
-    void b(List list);
+    public T8(U8 u8) {
+        this.f796a = U8.a(u8);
+        this.b = U8.b(u8);
+        this.c = U8.c(u8);
+        this.d = U8.d(u8);
+        this.e = U8.e(u8);
+        this.f = U8.f(u8);
+        this.g = U8.g(u8);
+    }
 }

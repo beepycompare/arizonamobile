@@ -1,11 +1,21 @@
 package io.appmetrica.analytics.impl;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import kotlin.collections.CollectionsKt;
 /* loaded from: classes5.dex */
-public final class Tn {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final C0421mb f797a;
-
-    public Tn(C0421mb c0421mb) {
-        this.f797a = c0421mb;
+public abstract class Tn {
+    public static final Qn a(Throwable th, V v, List list, String str, Boolean bool) {
+        ArrayList arrayList = null;
+        Gn a2 = th != null ? Hn.a(th, 1, 0) : null;
+        if (list != null) {
+            arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
+            Iterator it = list.iterator();
+            while (it.hasNext()) {
+                arrayList.add(new Dl((StackTraceElement) it.next()));
+            }
+        }
+        return new Qn(a2, v, arrayList, null, null, null, str, bool);
     }
 }

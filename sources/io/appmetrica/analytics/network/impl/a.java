@@ -1,22 +1,11 @@
 package io.appmetrica.analytics.network.impl;
 
-import javax.net.ssl.HttpsURLConnection;
-import kotlin.jvm.functions.Function0;
-import kotlin.jvm.internal.Lambda;
+import io.appmetrica.analytics.networkapi.Call;
+import io.appmetrica.analytics.networkapi.Response;
 /* loaded from: classes5.dex */
-public final class a extends Lambda implements Function0 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ HttpsURLConnection f1379a;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a(HttpsURLConnection httpsURLConnection) {
-        super(0);
-        this.f1379a = httpsURLConnection;
-    }
-
-    @Override // kotlin.jvm.functions.Function0
-    public final Object invoke() {
-        return this.f1379a.getInputStream();
+public final class a extends Call {
+    @Override // io.appmetrica.analytics.networkapi.Call
+    public final Response execute() {
+        return new Response.Builder(new IllegalStateException("This is dummy call")).build();
     }
 }

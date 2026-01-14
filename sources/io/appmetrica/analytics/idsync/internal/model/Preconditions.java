@@ -8,10 +8,10 @@ import kotlin.jvm.internal.Intrinsics;
 public final class Preconditions {
 
     /* renamed from: a  reason: collision with root package name */
-    private final NetworkType f485a;
+    private final NetworkType f489a;
 
     public Preconditions(NetworkType networkType) {
-        this.f485a = networkType;
+        this.f489a = networkType;
     }
 
     public boolean equals(Object obj) {
@@ -20,7 +20,7 @@ public final class Preconditions {
         }
         if (Intrinsics.areEqual(Preconditions.class, obj != null ? obj.getClass() : null)) {
             if (obj != null) {
-                return this.f485a == ((Preconditions) obj).f485a;
+                return this.f489a == ((Preconditions) obj).f489a;
             }
             throw new NullPointerException("null cannot be cast to non-null type io.appmetrica.analytics.idsync.internal.model.Preconditions");
         }
@@ -28,14 +28,14 @@ public final class Preconditions {
     }
 
     public final NetworkType getNetworkType() {
-        return this.f485a;
+        return this.f489a;
     }
 
     public int hashCode() {
-        return this.f485a.hashCode();
+        return this.f489a.hashCode();
     }
 
     public String toString() {
-        return "Preconditions(networkType=" + this.f485a + ')';
+        return "Preconditions(networkType=" + this.f489a + ')';
     }
 }

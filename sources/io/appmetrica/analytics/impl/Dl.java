@@ -1,29 +1,25 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
-import io.appmetrica.analytics.coreutils.internal.WrapUtils;
 /* loaded from: classes5.dex */
-public final class Dl implements ProtobufConverter {
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final C0107a6 fromModel(El el) {
-        C0107a6 c0107a6 = new C0107a6();
-        c0107a6.f890a = (String) WrapUtils.getOrDefault(el.f564a, c0107a6.f890a);
-        c0107a6.b = (String) WrapUtils.getOrDefault(el.b, c0107a6.b);
-        c0107a6.c = ((Integer) WrapUtils.getOrDefault(el.c, Integer.valueOf(c0107a6.c))).intValue();
-        c0107a6.f = ((Integer) WrapUtils.getOrDefault(el.d, Integer.valueOf(c0107a6.f))).intValue();
-        c0107a6.d = (String) WrapUtils.getOrDefault(el.e, c0107a6.d);
-        c0107a6.e = ((Boolean) WrapUtils.getOrDefault(el.f, Boolean.valueOf(c0107a6.e))).booleanValue();
-        return c0107a6;
+public final class Dl {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final String f556a;
+    public final String b;
+    public final Integer c;
+    public final Integer d;
+    public final String e;
+    public final Boolean f;
+
+    public Dl(String str, String str2, Integer num, Integer num2, String str3, Boolean bool) {
+        this.f556a = str;
+        this.b = str2;
+        this.c = num;
+        this.d = num2;
+        this.e = str3;
+        this.f = bool;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final Object toModel(Object obj) {
-        C0107a6 c0107a6 = (C0107a6) obj;
-        throw new UnsupportedOperationException();
-    }
-
-    public final El a(C0107a6 c0107a6) {
-        throw new UnsupportedOperationException();
+    public Dl(StackTraceElement stackTraceElement) {
+        this(stackTraceElement.getClassName(), stackTraceElement.getFileName(), Integer.valueOf(stackTraceElement.getLineNumber()), null, stackTraceElement.getMethodName(), Boolean.valueOf(stackTraceElement.isNativeMethod()));
     }
 }

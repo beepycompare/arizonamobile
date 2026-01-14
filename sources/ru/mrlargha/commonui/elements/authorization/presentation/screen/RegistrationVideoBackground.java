@@ -317,6 +317,7 @@ public final class RegistrationVideoBackground extends SAMPUIElement implements 
                 Intrinsics.checkNotNullExpressionValue(fromUri, "fromUri(...)");
                 this.player.setMediaItem(fromUri);
                 this.player.prepare();
+                this.player.setRepeatMode(1);
                 this.player.play();
                 return;
             }

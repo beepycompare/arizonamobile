@@ -1,41 +1,20 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.ecommerce.ECommerceAmount;
-import io.appmetrica.analytics.ecommerce.ECommercePrice;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
+import android.content.ContentValues;
+import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.os.ResultReceiver;
 /* loaded from: classes5.dex */
-public final class Af {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final Z f494a;
-    public final List b;
-
-    public Af(ECommercePrice eCommercePrice) {
-        this(new Z(eCommercePrice.getFiat()), a(eCommercePrice.getInternalComponents()));
+public final class Af implements Parcelable.Creator {
+    @Override // android.os.Parcelable.Creator
+    public final Object createFromParcel(Parcel parcel) {
+        Bundle readBundle = parcel.readBundle(B6.class.getClassLoader());
+        return new Bf((ContentValues) readBundle.getParcelable("CFG_KEY_PROCESS_ENVIRONMENT"), (ResultReceiver) readBundle.getParcelable("CFG_KEY_PROCESS_ENVIRONMENT_RECEIVER"));
     }
 
-    public static LinkedList a(List list) {
-        if (list != null) {
-            LinkedList linkedList = new LinkedList();
-            Iterator it = list.iterator();
-            while (it.hasNext()) {
-                ECommerceAmount eCommerceAmount = (ECommerceAmount) it.next();
-                linkedList.add(new Z(eCommerceAmount.getAmount(), eCommerceAmount.getUnit()));
-            }
-            return linkedList;
-        }
-        return null;
-    }
-
-    public final String toString() {
-        return "PriceWrapper{fiat=" + this.f494a + ", internalComponents=" + this.b + AbstractJsonLexerKt.END_OBJ;
-    }
-
-    public Af(Z z, LinkedList linkedList) {
-        this.f494a = z;
-        this.b = linkedList;
+    @Override // android.os.Parcelable.Creator
+    public final Object[] newArray(int i) {
+        return new Bf[i];
     }
 }

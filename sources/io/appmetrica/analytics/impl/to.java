@@ -1,5 +1,5 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
 public interface to {
-    ro a(Object obj);
+    byte[] a(N8 n8, C0381kh c0381kh);
 }

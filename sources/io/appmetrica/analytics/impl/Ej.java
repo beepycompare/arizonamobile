@@ -1,22 +1,19 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.plugins.PluginErrorDetails;
 /* loaded from: classes5.dex */
-public final class Ej implements Ra {
+public final class Ej implements Qa {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f562a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ PluginErrorDetails c;
+    public final /* synthetic */ Tj f570a;
 
-    public Ej(String str, String str2, PluginErrorDetails pluginErrorDetails) {
-        this.f562a = str;
-        this.b = str2;
-        this.c = pluginErrorDetails;
+    public Ej(Tj tj) {
+        this.f570a = tj;
     }
 
-    @Override // io.appmetrica.analytics.impl.Ra
-    public final void a(Sa sa) {
-        sa.getPluginExtension().reportError(this.f562a, this.b, this.c);
+    @Override // io.appmetrica.analytics.impl.Qa
+    public final void a(Ra ra) {
+        Sj a2 = ((C0222ed) this.f570a).a();
+        if (a2 != null) {
+            ra.reportEvent(a2.f785a, a2.b);
+        }
     }
 }

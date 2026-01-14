@@ -6,21 +6,21 @@ import io.appmetrica.analytics.ReporterConfig;
 public final class Uh implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ ReporterConfig f810a;
-    public final /* synthetic */ C0300hi b;
+    public final /* synthetic */ ReporterConfig f815a;
+    public final /* synthetic */ C0279gi b;
 
-    public Uh(C0300hi c0300hi, ReporterConfig reporterConfig) {
-        this.b = c0300hi;
-        this.f810a = reporterConfig;
+    public Uh(C0279gi c0279gi, ReporterConfig reporterConfig) {
+        this.b = c0279gi;
+        this.f815a = reporterConfig;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0300hi c0300hi = this.b;
-        ReporterConfig reporterConfig = this.f810a;
-        C0734z0 c0734z0 = c0300hi.f1024a;
-        Context context = c0300hi.d;
-        c0734z0.getClass();
-        C0709y0.a(context).f().a(reporterConfig);
+        C0279gi c0279gi = this.b;
+        ReporterConfig reporterConfig = this.f815a;
+        C0738z0 c0738z0 = c0279gi.f1016a;
+        Context context = c0279gi.d;
+        c0738z0.getClass();
+        C0713y0.a(context).f().a(reporterConfig);
     }
 }

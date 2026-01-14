@@ -1,13 +1,13 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
-public final class Mg extends Sg {
-    public Mg(Y4 y4) {
-        super(y4);
+public final class Mg extends Rg {
+    public Mg(X4 x4) {
+        super(x4);
     }
 
-    @Override // io.appmetrica.analytics.impl.Sg
-    public final boolean a(Q5 q5) {
-        this.f777a.d();
+    @Override // io.appmetrica.analytics.impl.Rg
+    public final boolean a(P5 p5) {
+        this.f768a.b(p5);
         return false;
     }
 }

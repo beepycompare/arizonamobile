@@ -1,44 +1,35 @@
 package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import kotlin.collections.CollectionsKt;
 /* loaded from: classes5.dex */
-public final class Xm implements InterfaceC0254fo {
+public final class Xm extends M2 {
+    public Xm(int i, String str) {
+        this(i, str, PublicLogger.getAnonymousInstance());
+    }
 
-    /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f853a;
+    public final int b() {
+        return this.f685a;
+    }
 
-    public Xm(String str, List<String> list, int i, Mn mn, to toVar, K2 k2) {
-        List take = CollectionsKt.take(CollectionsKt.toList(CollectionsKt.toSet(list)), i);
-        ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(take, 10));
-        int i2 = 0;
-        for (Object obj : take) {
-            int i3 = i2 + 1;
-            if (i2 < 0) {
-                CollectionsKt.throwIndexOverflow();
+    public Xm(int i, String str, PublicLogger publicLogger) {
+        super(i, str, publicLogger);
+    }
+
+    @Override // io.appmetrica.analytics.impl.Ln
+    public final String a(String str) {
+        if (str != null) {
+            int length = str.length();
+            int i = this.f685a;
+            if (length > i) {
+                String substring = str.substring(0, i);
+                this.c.warning("\"%s\" %s size exceeded limit of %d characters", this.b, str, Integer.valueOf(this.f685a));
+                return substring;
             }
-            arrayList.add(new Zm(str + '_' + i2, (String) obj, mn, toVar, k2));
-            i2 = i3;
         }
-        this.f853a = arrayList;
+        return str;
     }
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0254fo
-    public final void a(C0228eo c0228eo) {
-        Iterator it = this.f853a.iterator();
-        while (it.hasNext()) {
-            ((Zm) it.next()).a(c0228eo);
-        }
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0254fo
-    public final void a(PublicLogger publicLogger) {
-        Iterator it = this.f853a.iterator();
-        while (it.hasNext()) {
-            ((Zm) it.next()).e = publicLogger;
-        }
+    public final String a() {
+        return this.b;
     }
 }

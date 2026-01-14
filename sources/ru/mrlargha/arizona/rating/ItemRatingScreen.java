@@ -94,7 +94,7 @@ public final class ItemRatingScreen extends SAMPUIElement {
         this.scene = (ItemScene) targetActivity;
         ArizonaRetrofit arizonaRetrofit = new ArizonaRetrofit(targetActivity, i);
         this.client = arizonaRetrofit;
-        this.api = (RatingApi) ArizonaRetrofit.create$default(arizonaRetrofit, RatingApi.class, false, null, 6, null);
+        this.api = (RatingApi) ArizonaRetrofit.create$default(arizonaRetrofit, RatingApi.class, false, null, null, 14, null);
         this.qualityTypeList = CollectionsKt.emptyList();
         this.bonusType = CollectionsKt.emptyList();
         this.apiData = CollectionsKt.emptyList();

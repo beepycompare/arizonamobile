@@ -1,35 +1,20 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 /* loaded from: classes5.dex */
-public final class Ym extends N2 {
-    public Ym(int i, String str) {
-        this(i, str, PublicLogger.getAnonymousInstance());
+public final class Ym extends AbstractC0592t4 {
+    public final Ln g;
+
+    public Ym(String str, String str2, Ln ln, so soVar, J2 j2) {
+        super(0, str, str2, soVar, j2);
+        this.g = ln;
     }
 
-    public final int b() {
-        return this.f694a;
+    @Override // io.appmetrica.analytics.impl.AbstractC0592t4
+    public final void a(C0259fo c0259fo) {
+        String str = (String) this.g.a((String) this.f);
+        c0259fo.d.f1035a = str == null ? new byte[0] : str.getBytes();
     }
 
-    public Ym(int i, String str, PublicLogger publicLogger) {
-        super(i, str, publicLogger);
-    }
-
-    @Override // io.appmetrica.analytics.impl.Mn
-    public final String a(String str) {
-        if (str != null) {
-            int length = str.length();
-            int i = this.f694a;
-            if (length > i) {
-                String substring = str.substring(0, i);
-                this.c.warning("\"%s\" %s size exceeded limit of %d characters", this.b, str, Integer.valueOf(this.f694a));
-                return substring;
-            }
-        }
-        return str;
-    }
-
-    public final String a() {
-        return this.b;
+    public final Ln h() {
+        return this.g;
     }
 }

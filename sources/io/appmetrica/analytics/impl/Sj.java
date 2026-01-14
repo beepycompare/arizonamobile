@@ -1,14 +1,17 @@
 package io.appmetrica.analytics.impl;
-
-import io.appmetrica.analytics.coreutils.internal.WrapUtils;
 /* loaded from: classes5.dex */
-public final class Sj extends AbstractC0299hh {
-    public Sj(F6 f6) {
-        super(f6);
+public final class Sj {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final String f785a;
+    public final String b;
+
+    public Sj(String str, String str2) {
+        this.f785a = str;
+        this.b = str2;
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0299hh, io.appmetrica.analytics.impl.InterfaceC0324ih
-    public final boolean a(Boolean bool) {
-        return !this.f1023a.isRestrictedForSdk() && ((Boolean) WrapUtils.getOrDefault(bool, Boolean.TRUE)).booleanValue();
+    public final String toString() {
+        return "SelfReportingLazyEvent(eventName='" + this.f785a + "', eventValue='" + this.b + "')";
     }
 }

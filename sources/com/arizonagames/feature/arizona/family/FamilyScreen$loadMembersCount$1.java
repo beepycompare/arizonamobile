@@ -1,6 +1,8 @@
 package com.arizonagames.feature.arizona.family;
 
+import androidx.constraintlayout.core.motion.utils.TypedValues;
 import com.arizonagames.feature.arizona.family.data.FamilyData;
+import com.arizonagames.feature.arizona.family.data.FamilyMembersCount;
 import com.arizonagames.feature.arizona.family.databinding.FamilyMainBinding;
 import kotlin.Metadata;
 import kotlin.ResultKt;
@@ -17,7 +19,7 @@ import kotlinx.coroutines.Dispatchers;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: FamilyScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "com.arizonagames.feature.arizona.family.FamilyScreen$loadMembersCount$1", f = "FamilyScreen.kt", i = {0, 0}, l = {639}, m = "invokeSuspend", n = {"it", "$i$a$-let-FamilyScreen$loadMembersCount$1$1"}, s = {"L$1", "I$0"}, v = 1)
+@DebugMetadata(c = "com.arizonagames.feature.arizona.family.FamilyScreen$loadMembersCount$1", f = "FamilyScreen.kt", i = {0, 0}, l = {TypedValues.MotionType.TYPE_QUANTIZE_INTERPOLATOR_TYPE}, m = "invokeSuspend", n = {"it", "$i$a$-let-FamilyScreen$loadMembersCount$1$1"}, s = {"L$1", "I$0"}, v = 1)
 /* loaded from: classes3.dex */
 public final class FamilyScreen$loadMembersCount$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     int I$0;
@@ -73,9 +75,8 @@ public final class FamilyScreen$loadMembersCount$1 extends SuspendLambda impleme
             familyScreen = (FamilyScreen) this.L$0;
             ResultKt.throwOnFailure(obj);
         }
-        int intValue = ((Number) obj).intValue();
         familyMainBinding = familyScreen.binding;
-        familyMainBinding.topbar.textDevil.setText(intValue + " человек");
+        familyMainBinding.topbar.textDevil.setText(((FamilyMembersCount) obj).getCount() + " человек");
         return Unit.INSTANCE;
     }
 }

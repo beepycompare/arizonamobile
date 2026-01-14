@@ -8,12 +8,11 @@ import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
-import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineScope;
 import ru.mrlargha.arizonaui.ghetto.data.CaptureCount;
 /* compiled from: GhettoScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Lru/mrlargha/arizonaui/ghetto/data/CaptureCount;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.arizonaui.ghetto.GhettoScreen$requestCapturesCount$1$contextList$1", f = "GhettoScreen.kt", i = {}, l = {346}, m = "invokeSuspend", n = {}, s = {}, v = 1)
+@DebugMetadata(c = "ru.mrlargha.arizonaui.ghetto.GhettoScreen$requestCapturesCount$1$contextList$1", f = "GhettoScreen.kt", i = {}, l = {307}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes5.dex */
 final class GhettoScreen$requestCapturesCount$1$contextList$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super CaptureCount>, Object> {
     final /* synthetic */ int $fraction;
@@ -41,12 +40,10 @@ final class GhettoScreen$requestCapturesCount$1$contextList$1 extends SuspendLam
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         GhettoApi ghettoApi;
-        int i;
-        String token;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        int i2 = this.label;
-        if (i2 != 0) {
-            if (i2 == 1) {
+        int i = this.label;
+        if (i != 0) {
+            if (i == 1) {
                 ResultKt.throwOnFailure(obj);
                 return obj;
             }
@@ -54,14 +51,8 @@ final class GhettoScreen$requestCapturesCount$1$contextList$1 extends SuspendLam
         }
         ResultKt.throwOnFailure(obj);
         ghettoApi = this.this$0.api;
-        if (ghettoApi == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("api");
-            ghettoApi = null;
-        }
-        i = this.this$0.serverId;
-        token = this.this$0.getToken();
         this.label = 1;
-        Object captureCount$default = GhettoApi.getCaptureCount$default(ghettoApi, token, null, i, this.$fraction, this, 2, null);
-        return captureCount$default == coroutine_suspended ? coroutine_suspended : captureCount$default;
+        Object captureCount = ghettoApi.getCaptureCount(this.$fraction, this);
+        return captureCount == coroutine_suspended ? coroutine_suspended : captureCount;
     }
 }

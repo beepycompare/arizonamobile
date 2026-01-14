@@ -49,7 +49,6 @@ public final class RatingAdapter extends RecyclerView.Adapter<PiratesRatingViewH
         if (Intrinsics.areEqual(this.itemsList, items)) {
             return;
         }
-        this.itemsList.clear();
         this.itemsList.addAll(items);
         notifyDataSetChanged();
     }

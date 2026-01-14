@@ -5,19 +5,19 @@ import io.appmetrica.analytics.locationapi.internal.CacheArguments;
 public final class j implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ i f1348a;
+    public final /* synthetic */ i f1351a;
     public final /* synthetic */ k b;
 
     public j(k kVar, i iVar) {
         this.b = kVar;
-        this.f1348a = iVar;
+        this.f1351a = iVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         p pVar = this.b.c;
-        i iVar = this.f1348a;
-        pVar.f1354a = iVar;
+        i iVar = this.f1351a;
+        pVar.f1357a = iVar;
         CacheArguments cacheArguments = iVar.b;
         pVar.b.updateCacheControl(cacheArguments.getRefreshPeriod(), cacheArguments.getOutdatedTimeInterval());
     }

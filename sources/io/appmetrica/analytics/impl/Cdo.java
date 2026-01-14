@@ -1,15 +1,19 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.BuildConfig;
-import io.appmetrica.analytics.coreutils.internal.network.UserAgent;
+import android.util.SparseArray;
+import java.util.HashMap;
 /* renamed from: io.appmetrica.analytics.impl.do  reason: invalid class name */
 /* loaded from: classes5.dex */
 public final class Cdo {
+    public static final int[] c = {0, 1, 2, 3};
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f956a = UserAgent.getFor(BuildConfig.LIBRARY_PACKAGE_NAME, "7.14.0", "50145656");
+    public final SparseArray f965a = new SparseArray();
+    public int b = 0;
 
-    public final String a() {
-        return this.f956a;
+    public Cdo(int[] iArr) {
+        for (int i : iArr) {
+            this.f965a.put(i, new HashMap());
+        }
     }
 }

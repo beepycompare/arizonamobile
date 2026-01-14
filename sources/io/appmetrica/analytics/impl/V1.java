@@ -1,75 +1,102 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
-import io.appmetrica.analytics.coreapi.internal.permission.PermissionState;
-import java.util.ArrayList;
+import io.appmetrica.analytics.protobuf.nano.CodedInputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.CodedOutputByteBufferNano;
+import io.appmetrica.analytics.protobuf.nano.InternalNano;
+import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
+import java.io.IOException;
 /* loaded from: classes5.dex */
-public final class V1 implements ProtobufConverter {
+public final class V1 extends MessageNano {
+    public static final int c = 0;
+    public static final int d = 1;
+    public static final int e = 2;
+    public static final int f = 3;
+    public static final int g = 4;
+    public static final int h = 5;
+    public static final int i = 6;
+    public static final int j = -1;
+    public static final int k = 0;
+    public static final int l = 1;
+    public static volatile V1[] m;
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0661w2 f816a;
+    public int f820a;
+    public int b;
 
     public V1() {
-        this(new C0661w2());
+        a();
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final Y1 fromModel(U1 u1) {
-        Y1 y1 = new Y1();
-        y1.f857a = new X1[u1.f800a.size()];
-        int i = 0;
-        int i2 = 0;
-        for (PermissionState permissionState : u1.f800a) {
-            X1[] x1Arr = y1.f857a;
-            X1 x1 = new X1();
-            x1.f842a = permissionState.name;
-            x1.b = permissionState.granted;
-            x1Arr[i2] = x1;
-            i2++;
-        }
-        C0711y2 c0711y2 = u1.b;
-        if (c0711y2 != null) {
-            y1.b = this.f816a.fromModel(c0711y2);
-        }
-        y1.c = new String[u1.c.size()];
-        for (String str : u1.c) {
-            y1.c[i] = str;
-            i++;
-        }
-        return y1;
-    }
-
-    public V1(C0661w2 c0661w2) {
-        this.f816a = c0661w2;
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final U1 toModel(Y1 y1) {
-        ArrayList arrayList = new ArrayList();
-        int i = 0;
-        int i2 = 0;
-        while (true) {
-            X1[] x1Arr = y1.f857a;
-            if (i2 >= x1Arr.length) {
-                break;
-            }
-            X1 x1 = x1Arr[i2];
-            arrayList.add(new PermissionState(x1.f842a, x1.b));
-            i2++;
-        }
-        W1 w1 = y1.b;
-        C0711y2 model = w1 != null ? this.f816a.toModel(w1) : null;
-        ArrayList arrayList2 = new ArrayList();
-        while (true) {
-            String[] strArr = y1.c;
-            if (i < strArr.length) {
-                arrayList2.add(strArr[i]);
-                i++;
-            } else {
-                return new U1(arrayList, model, arrayList2);
+    public static V1[] b() {
+        if (m == null) {
+            synchronized (InternalNano.LAZY_INIT_LOCK) {
+                if (m == null) {
+                    m = new V1[0];
+                }
             }
         }
+        return m;
+    }
+
+    public final V1 a() {
+        this.f820a = 0;
+        this.b = -1;
+        this.cachedSize = -1;
+        return this;
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final int computeSerializedSize() {
+        return CodedOutputByteBufferNano.computeInt32Size(3, this.b) + CodedOutputByteBufferNano.computeInt32Size(2, this.f820a) + super.computeSerializedSize();
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
+        codedOutputByteBufferNano.writeInt32(2, this.f820a);
+        codedOutputByteBufferNano.writeInt32(3, this.b);
+        super.writeTo(codedOutputByteBufferNano);
+    }
+
+    @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
+    /* renamed from: a */
+    public final V1 mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        while (true) {
+            int readTag = codedInputByteBufferNano.readTag();
+            if (readTag != 0) {
+                if (readTag == 16) {
+                    int readInt32 = codedInputByteBufferNano.readInt32();
+                    switch (readInt32) {
+                        case 0:
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                        case 5:
+                        case 6:
+                            this.f820a = readInt32;
+                            continue;
+                    }
+                } else if (readTag != 24) {
+                    if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
+                    }
+                } else {
+                    int readInt322 = codedInputByteBufferNano.readInt32();
+                    if (readInt322 == -1 || readInt322 == 0 || readInt322 == 1) {
+                        this.b = readInt322;
+                    }
+                }
+            }
+        }
+        return this;
+    }
+
+    public static V1 b(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
+        return new V1().mergeFrom(codedInputByteBufferNano);
+    }
+
+    public static V1 a(byte[] bArr) throws InvalidProtocolBufferNanoException {
+        return (V1) MessageNano.mergeFrom(new V1(), bArr);
     }
 }

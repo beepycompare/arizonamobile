@@ -12,7 +12,7 @@ import com.google.firebase.encoders.config.EncoderConfig;
 import com.google.firebase.remoteconfig.RemoteConfigConstants;
 import com.google.firebase.remoteconfig.internal.ConfigContainer;
 import com.liulishuo.okdownload.core.breakpoint.BreakpointSQLiteKey;
-import io.appmetrica.analytics.impl.A2;
+import io.appmetrica.analytics.impl.C0740z2;
 import io.appmetrica.analytics.networktasks.internal.CommonUrlParts;
 import java.io.IOException;
 /* loaded from: classes4.dex */
@@ -285,7 +285,7 @@ public final class AutoCrashlyticsReportEncoder implements Configurator {
         private static final FieldDescriptor EXECUTION_DESCRIPTOR = FieldDescriptor.of("execution");
         private static final FieldDescriptor CUSTOMATTRIBUTES_DESCRIPTOR = FieldDescriptor.of("customAttributes");
         private static final FieldDescriptor INTERNALKEYS_DESCRIPTOR = FieldDescriptor.of("internalKeys");
-        private static final FieldDescriptor BACKGROUND_DESCRIPTOR = FieldDescriptor.of(A2.g);
+        private static final FieldDescriptor BACKGROUND_DESCRIPTOR = FieldDescriptor.of(C0740z2.g);
         private static final FieldDescriptor CURRENTPROCESSDETAILS_DESCRIPTOR = FieldDescriptor.of("currentProcessDetails");
         private static final FieldDescriptor APPPROCESSDETAILS_DESCRIPTOR = FieldDescriptor.of("appProcessDetails");
         private static final FieldDescriptor UIORIENTATION_DESCRIPTOR = FieldDescriptor.of("uiOrientation");

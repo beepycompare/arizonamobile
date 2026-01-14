@@ -9,53 +9,43 @@ import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
 import java.io.IOException;
 /* loaded from: classes5.dex */
 public final class W1 extends MessageNano {
-    public static final int c = 0;
-    public static final int d = 1;
-    public static final int e = 2;
-    public static final int f = 3;
-    public static final int g = 4;
-    public static final int h = 5;
-    public static final int i = 6;
-    public static final int j = -1;
-    public static final int k = 0;
-    public static final int l = 1;
-    public static volatile W1[] m;
+    public static volatile W1[] c;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f829a;
-    public int b;
+    public String f834a;
+    public boolean b;
 
     public W1() {
         a();
     }
 
     public static W1[] b() {
-        if (m == null) {
+        if (c == null) {
             synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (m == null) {
-                    m = new W1[0];
+                if (c == null) {
+                    c = new W1[0];
                 }
             }
         }
-        return m;
+        return c;
     }
 
     public final W1 a() {
-        this.f829a = 0;
-        this.b = -1;
+        this.f834a = "";
+        this.b = false;
         this.cachedSize = -1;
         return this;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
-        return CodedOutputByteBufferNano.computeInt32Size(3, this.b) + CodedOutputByteBufferNano.computeInt32Size(2, this.f829a) + super.computeSerializedSize();
+        return CodedOutputByteBufferNano.computeBoolSize(2, this.b) + CodedOutputByteBufferNano.computeStringSize(1, this.f834a) + super.computeSerializedSize();
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        codedOutputByteBufferNano.writeInt32(2, this.f829a);
-        codedOutputByteBufferNano.writeInt32(3, this.b);
+        codedOutputByteBufferNano.writeString(1, this.f834a);
+        codedOutputByteBufferNano.writeBool(2, this.b);
         super.writeTo(codedOutputByteBufferNano);
     }
 
@@ -64,29 +54,16 @@ public final class W1 extends MessageNano {
     public final W1 mergeFrom(CodedInputByteBufferNano codedInputByteBufferNano) throws IOException {
         while (true) {
             int readTag = codedInputByteBufferNano.readTag();
-            if (readTag != 0) {
-                if (readTag == 16) {
-                    int readInt32 = codedInputByteBufferNano.readInt32();
-                    switch (readInt32) {
-                        case 0:
-                        case 1:
-                        case 2:
-                        case 3:
-                        case 4:
-                        case 5:
-                        case 6:
-                            this.f829a = readInt32;
-                            continue;
-                    }
-                } else if (readTag != 24) {
-                    if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
-                    }
-                } else {
-                    int readInt322 = codedInputByteBufferNano.readInt32();
-                    if (readInt322 == -1 || readInt322 == 0 || readInt322 == 1) {
-                        this.b = readInt322;
-                    }
+            if (readTag == 0) {
+                break;
+            } else if (readTag == 10) {
+                this.f834a = codedInputByteBufferNano.readString();
+            } else if (readTag != 16) {
+                if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
+                    break;
                 }
+            } else {
+                this.b = codedInputByteBufferNano.readBool();
             }
         }
         return this;

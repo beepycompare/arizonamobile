@@ -1,34 +1,34 @@
 package io.appmetrica.analytics.profile;
 
-import io.appmetrica.analytics.impl.C0270ge;
-import io.appmetrica.analytics.impl.C0439n4;
-import io.appmetrica.analytics.impl.C0545rb;
-import io.appmetrica.analytics.impl.C0588t4;
-import io.appmetrica.analytics.impl.C0615u6;
-import io.appmetrica.analytics.impl.Ci;
-import io.appmetrica.analytics.impl.Hb;
-import io.appmetrica.analytics.impl.InterfaceC0254fo;
-import io.appmetrica.analytics.impl.Yk;
+import io.appmetrica.analytics.impl.Bi;
+import io.appmetrica.analytics.impl.C0249fe;
+import io.appmetrica.analytics.impl.C0418m4;
+import io.appmetrica.analytics.impl.C0525qb;
+import io.appmetrica.analytics.impl.C0567s4;
+import io.appmetrica.analytics.impl.C0594t6;
+import io.appmetrica.analytics.impl.Gb;
+import io.appmetrica.analytics.impl.InterfaceC0233eo;
+import io.appmetrica.analytics.impl.Xk;
 /* loaded from: classes5.dex */
 public final class NumberAttribute {
 
     /* renamed from: a  reason: collision with root package name */
-    private final C0615u6 f1421a;
+    private final C0594t6 f1430a;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public NumberAttribute(String str, C0545rb c0545rb, Hb hb) {
-        this.f1421a = new C0615u6(str, c0545rb, hb);
+    public NumberAttribute(String str, C0525qb c0525qb, Gb gb) {
+        this.f1430a = new C0594t6(str, c0525qb, gb);
     }
 
-    public UserProfileUpdate<? extends InterfaceC0254fo> withValue(double d) {
-        return new UserProfileUpdate<>(new C0270ge(this.f1421a.c, d, new C0545rb(), new C0588t4(new Hb(new C0439n4(100)))));
+    public UserProfileUpdate<? extends InterfaceC0233eo> withValue(double d) {
+        return new UserProfileUpdate<>(new C0249fe(this.f1430a.c, d, new C0525qb(), new C0567s4(new Gb(new C0418m4(100)))));
     }
 
-    public UserProfileUpdate<? extends InterfaceC0254fo> withValueIfUndefined(double d) {
-        return new UserProfileUpdate<>(new C0270ge(this.f1421a.c, d, new C0545rb(), new Yk(new Hb(new C0439n4(100)))));
+    public UserProfileUpdate<? extends InterfaceC0233eo> withValueIfUndefined(double d) {
+        return new UserProfileUpdate<>(new C0249fe(this.f1430a.c, d, new C0525qb(), new Xk(new Gb(new C0418m4(100)))));
     }
 
-    public UserProfileUpdate<? extends InterfaceC0254fo> withValueReset() {
-        return new UserProfileUpdate<>(new Ci(1, this.f1421a.c, new C0545rb(), new Hb(new C0439n4(100))));
+    public UserProfileUpdate<? extends InterfaceC0233eo> withValueReset() {
+        return new UserProfileUpdate<>(new Bi(1, this.f1430a.c, new C0525qb(), new Gb(new C0418m4(100))));
     }
 }

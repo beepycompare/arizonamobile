@@ -9,6 +9,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.miami.game.core.connection.resolver.FirebaseConfigHelper;
@@ -61,7 +62,6 @@ import ru.mrlargha.commonui.elements.donate.presentation.pages.DonateReplenishme
 import ru.mrlargha.commonui.elements.donate.utils.DonateUtilsKt;
 import ru.mrlargha.commonui.elements.donate.utils.ImageFader;
 import ru.mrlargha.commonui.utils.MapperKt;
-import ru.mrlargha.commonui.utils.ProjectType;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: DonateScreen.kt */
@@ -216,7 +216,7 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
     public void setVisibility(boolean z) {
         super.setVisibility(z);
         if (z) {
-            this.states = new DonateStates(getToken(), this.serverId, UtilsKt.getArizonaType(getTargetActivity()) ? ProjectType.ARIZONA : ProjectType.RODINA);
+            this.states = new DonateStates(getTargetActivity(), getBackendID());
             this.isHasUpdate = false;
             this.categoryAdapter.refreshSelectItem();
             initAdapters();
@@ -235,21 +235,27 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
     @Override // ru.mrlargha.commonui.core.SAMPUIElement
     public void onBackendMessage(String data, int i) {
         Intrinsics.checkNotNullParameter(data, "data");
-        if (i == DonateSubIds.UPDATE_CATEGORY_LIST.getSubIds()) {
-            DonateStates donateStates = this.states;
-            if (donateStates != null) {
-                donateStates.updateCategories((DonateCategoryModel) MapperKt.toModel(data, DonateCategoryModel.class));
-            }
-        } else if (i == DonateSubIds.UPDATE_ITEM_LIST.getSubIds()) {
-            if (data.length() > 0) {
-                DonateStates donateStates2 = this.states;
-                if (donateStates2 != null) {
-                    donateStates2.updateItems((DonateItemModel) MapperKt.toModel(data, DonateItemModel.class), this.isHasUpdate);
+        try {
+            if (i == DonateSubIds.UPDATE_CATEGORY_LIST.getSubIds()) {
+                DonateStates donateStates = this.states;
+                if (donateStates != null) {
+                    donateStates.updateCategories((DonateCategoryModel) MapperKt.toModel(data, DonateCategoryModel.class));
                 }
-                Log.e(DonateUtilsKt.DONATE_TAG, "data: updateData: " + ((DonateItemModel) MapperKt.toModel(data, DonateItemModel.class)).getKey());
+            } else if (i == DonateSubIds.UPDATE_ITEM_LIST.getSubIds()) {
+                if (data.length() > 0) {
+                    DonateStates donateStates2 = this.states;
+                    if (donateStates2 != null) {
+                        donateStates2.updateItems((DonateItemModel) MapperKt.toModel(data, DonateItemModel.class), this.isHasUpdate);
+                    }
+                    Log.e(DonateUtilsKt.DONATE_TAG, "data: updateData: " + ((DonateItemModel) MapperKt.toModel(data, DonateItemModel.class)).getKey());
+                }
+            } else if (i == DonateSubIds.GET_DOP_INFO.getSubIds()) {
+                initDopInfo((DonateScreenModel) MapperKt.toModel(data, DonateScreenModel.class));
             }
-        } else if (i == DonateSubIds.GET_DOP_INFO.getSubIds()) {
-            initDopInfo((DonateScreenModel) MapperKt.toModel(data, DonateScreenModel.class));
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.d("Exception", "onBackendMessage: " + e.getMessage());
+            Toast.makeText(getTargetActivity().getApplicationContext(), "Iid: " + getBackendID() + "; subId: " + i, 1).show();
         }
     }
 
@@ -411,7 +417,7 @@ public final class DonateScreen extends SAMPUIElement implements DonateOnItemCom
         this.isChangeCategory = true;
         getNotifier().clickedWrapper(getBackendID(), donateCategoryModelUi.getId(), 4);
         BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new DonateScreen$onCategoryClick$1$1(this, donateCategoryModelUi, null), 3, null);
-        int i = WhenMappings.$EnumSwitchMapping$0[donateCategoryModelUi.m12294getGridTemplateType().ordinal()];
+        int i = WhenMappings.$EnumSwitchMapping$0[donateCategoryModelUi.m12293getGridTemplateType().ordinal()];
         if (i == 1) {
             setPage(Pages.MAIN);
         } else if (i == 2) {

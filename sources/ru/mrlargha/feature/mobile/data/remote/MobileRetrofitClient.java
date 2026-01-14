@@ -17,7 +17,7 @@ public final class MobileRetrofitClient {
         Intrinsics.checkNotNullParameter(targetActivity, "targetActivity");
         ArizonaRetrofit arizonaRetrofit = new ArizonaRetrofit(targetActivity, i);
         this.retrofit = arizonaRetrofit;
-        this.rentApiService = (MobileRentApiService) ArizonaRetrofit.create$default(arizonaRetrofit, MobileRentApiService.class, TokenManagerKt.getServerId() == 0, null, 4, null);
+        this.rentApiService = (MobileRentApiService) ArizonaRetrofit.create$default(arizonaRetrofit, MobileRentApiService.class, TokenManagerKt.getServerId() == 0, null, null, 12, null);
     }
 
     public final ArizonaRetrofit getRetrofit() {

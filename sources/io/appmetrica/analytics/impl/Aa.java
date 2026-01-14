@@ -1,15 +1,21 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import android.database.Cursor;
+import io.appmetrica.analytics.coreapi.internal.identifiers.AdvertisingIdsHolder;
+import io.appmetrica.analytics.coreapi.internal.identifiers.SimpleAdvertisingIdGetter;
 /* loaded from: classes5.dex */
-public final class Aa {
+public interface Aa extends SimpleAdvertisingIdGetter, InterfaceC0386km {
+    AdvertisingIdsHolder a();
 
-    /* renamed from: a  reason: collision with root package name */
-    public final Context f492a;
-    public Cursor b;
+    AdvertisingIdsHolder a(Gi gi);
 
-    public Aa(Context context) {
-        this.f492a = context;
-    }
+    @Override // io.appmetrica.analytics.impl.InterfaceC0386km
+    /* synthetic */ void a(C0257fm c0257fm);
+
+    void b(boolean z);
+
+    void c(boolean z);
+
+    AdvertisingIdsHolder getIdentifiers();
+
+    void init();
 }

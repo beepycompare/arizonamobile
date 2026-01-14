@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Lambda;
 public final class Rb extends Lambda implements Function1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Rb f758a = new Rb();
+    public static final Rb f766a = new Rb();
 
     public Rb() {
         super(1);
@@ -16,7 +16,7 @@ public final class Rb extends Lambda implements Function1 {
 
     @Override // kotlin.jvm.functions.Function1
     public final Object invoke(Object obj) {
-        ((LocationControllerObserver) obj).startLocationTracking();
+        ((LocationControllerObserver) obj).stopLocationTracking();
         return Unit.INSTANCE;
     }
 }

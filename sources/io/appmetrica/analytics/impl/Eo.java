@@ -1,29 +1,15 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.toggle.SimpleThreadSafeToggle;
-import java.util.WeakHashMap;
+import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
+import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 /* loaded from: classes5.dex */
-public final class Eo extends SimpleThreadSafeToggle {
+public final class Eo implements Consumer {
 
     /* renamed from: a  reason: collision with root package name */
-    public final WeakHashMap f566a;
+    public final /* synthetic */ String f574a = "WebView interface setup is successful.";
 
-    public Eo() {
-        super(false, "[WakelocksToggle]");
-        this.f566a = new WeakHashMap();
-    }
-
-    public final synchronized void a(Object obj) {
-        this.f566a.put(obj, null);
-        if (this.f566a.size() == 1) {
-            updateState(true);
-        }
-    }
-
-    public final synchronized void b(Object obj) {
-        this.f566a.remove(obj);
-        if (this.f566a.isEmpty()) {
-            updateState(false);
-        }
+    @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
+    public final void consume(Object obj) {
+        ((PublicLogger) obj).info(this.f574a, new Object[0]);
     }
 }

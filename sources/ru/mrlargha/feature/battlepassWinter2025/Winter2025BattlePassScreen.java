@@ -357,7 +357,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
         this.project = UtilsKt.isArizonaType() ? BuildConfig.FLAVOR : "rodina";
         ArizonaRetrofit arizonaRetrofit = new ArizonaRetrofit(targetActivity, i);
         this.client = arizonaRetrofit;
-        this.api = (WinterBattlePassApi) ArizonaRetrofit.create$default(arizonaRetrofit, WinterBattlePassApi.class, false, null, 6, null);
+        this.api = (WinterBattlePassApi) ArizonaRetrofit.create$default(arizonaRetrofit, WinterBattlePassApi.class, false, null, null, 14, null);
         RoulettePrisesPicasso.INSTANCE.isArizona(UtilsKt.isArizonaType());
         addViewToConstraintLayout(constraintLayout, -1, -1);
         bind.battlepass2023Container.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda9

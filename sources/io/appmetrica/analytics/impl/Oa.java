@@ -1,5 +1,5 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
 public interface Oa {
-    boolean a(C0476og c0476og);
+    void a(InterfaceC0579sg interfaceC0579sg);
 }

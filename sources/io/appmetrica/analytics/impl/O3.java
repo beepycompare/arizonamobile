@@ -1,18 +1,11 @@
 package io.appmetrica.analytics.impl;
+
+import android.database.sqlite.SQLiteDatabase;
+import io.appmetrica.analytics.coreapi.internal.db.DatabaseScript;
 /* loaded from: classes5.dex */
-public final class O3 implements Y6 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final String f713a = "client.db";
-    public final String b = "metrica_client_data.db";
-
-    @Override // io.appmetrica.analytics.impl.Y6
-    public final String a() {
-        return this.b;
-    }
-
-    @Override // io.appmetrica.analytics.impl.Y6
-    public final String b() {
-        return this.f713a;
+public final class O3 extends DatabaseScript {
+    @Override // io.appmetrica.analytics.coreapi.internal.db.DatabaseScript
+    public final void runScript(SQLiteDatabase sQLiteDatabase) {
+        sQLiteDatabase.delete("preferences", "key = ?", new String[]{"NEXT_STARTUP_TIME"});
     }
 }

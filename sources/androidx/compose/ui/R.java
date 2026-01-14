@@ -47,11 +47,11 @@ public final class R {
         public static int accessibility_custom_action_9 = 0x7f0a0042;
         public static int androidx_compose_ui_view_composition_context = 0x7f0a00db;
         public static int auto_clear_focus_behavior_tag = 0x7f0a013c;
-        public static int compose_view_saveable_id_tag = 0x7f0a0385;
-        public static int consume_window_insets_tag = 0x7f0a038c;
-        public static int hide_in_inspector_tag = 0x7f0a0655;
-        public static int inspection_slot_table_set = 0x7f0a0706;
-        public static int wrapped_composition_tag = 0x7f0a0fa7;
+        public static int compose_view_saveable_id_tag = 0x7f0a0381;
+        public static int consume_window_insets_tag = 0x7f0a0388;
+        public static int hide_in_inspector_tag = 0x7f0a064a;
+        public static int inspection_slot_table_set = 0x7f0a06fb;
+        public static int wrapped_composition_tag = 0x7f0a0f94;
 
         private id() {
         }

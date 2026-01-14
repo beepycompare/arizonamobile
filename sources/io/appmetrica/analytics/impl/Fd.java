@@ -1,46 +1,67 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
-import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashSource;
-import java.util.Map;
-import kotlin.TuplesKt;
-import kotlin.collections.MapsKt;
+import io.appmetrica.analytics.coreapi.internal.backport.Function;
+import io.appmetrica.analytics.coreutils.internal.io.Base64Utils;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import java.io.Closeable;
+import java.io.File;
+import java.io.FileInputStream;
+import kotlin.io.ByteStreamsKt;
 /* loaded from: classes5.dex */
-public final class Fd implements ProtobufConverter {
+public final class Fd implements Function {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Ed f577a = new Ed();
-    public static final Map b = MapsKt.mapOf(TuplesKt.to(NativeCrashSource.UNKNOWN, 0), TuplesKt.to(NativeCrashSource.CRASHPAD, 3));
+    public final Hd f582a;
+    public final Ed b;
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public Fd(Hd hd, Ed ed) {
+        this.f582a = hd;
+        this.b = ed;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0020 A[Catch: all -> 0x0041, TryCatch #0 {all -> 0x0041, blocks: (B:3:0x0001, B:5:0x0007, B:8:0x0015, B:13:0x0020, B:21:0x002c, B:10:0x001a), top: B:25:0x0001 }] */
+    /* JADX WARN: Removed duplicated region for block: B:31:? A[RETURN, SYNTHETIC] */
+    @Override // io.appmetrica.analytics.coreapi.internal.backport.Function
     /* renamed from: a */
-    public final W5 fromModel(Ld ld) {
-        W5 w5 = new W5();
-        w5.f = 1;
-        V5 v5 = new V5();
-        v5.f817a = ld.f667a;
-        Z5 z5 = new Z5();
-        Integer num = (Integer) b.get(ld.b.f621a);
-        if (num != null) {
-            z5.f871a = num.intValue();
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final String apply(File file) {
+        byte[] bArr;
+        FileInputStream fileInputStream;
+        try {
+            String absolutePath = file.getAbsolutePath();
+            if (absolutePath != null) {
+                try {
+                    fileInputStream = new FileInputStream(new File(absolutePath));
+                } catch (Throwable unused) {
+                    fileInputStream = null;
+                }
+                try {
+                    bArr = ByteStreamsKt.readBytes(fileInputStream);
+                    lo.a((Closeable) fileInputStream);
+                } catch (Throwable unused2) {
+                    lo.a((Closeable) fileInputStream);
+                    bArr = null;
+                    if (bArr != null) {
+                    }
+                }
+                if (bArr != null) {
+                    if (bArr.length == 0) {
+                        bArr = null;
+                    }
+                    if (bArr != null) {
+                        return Base64Utils.compressBase64(MessageNano.toByteArray(this.b.fromModel(new Kd(bArr, this.f582a))));
+                    }
+                    return null;
+                }
+                return null;
+            }
+            bArr = null;
+            if (bArr != null) {
+            }
+        } catch (Throwable unused3) {
+            return null;
         }
-        String str = ld.b.b;
-        if (str == null) {
-            str = "";
-        }
-        z5.b = str;
-        v5.b = z5;
-        w5.g = v5;
-        return w5;
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final Object toModel(Object obj) {
-        W5 w5 = (W5) obj;
-        throw new UnsupportedOperationException();
-    }
-
-    public final Ld a(W5 w5) {
-        throw new UnsupportedOperationException();
     }
 }

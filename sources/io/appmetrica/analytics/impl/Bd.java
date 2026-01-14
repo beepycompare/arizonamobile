@@ -1,62 +1,22 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
+import io.appmetrica.analytics.coreutils.internal.reflection.ReflectionUtils;
+import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashClientModule;
+import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashClientModuleDummy;
 /* loaded from: classes5.dex */
-public abstract class Bd implements InterfaceC0254fo, InterfaceC0335j2 {
+public final class Bd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f508a;
-    public final int b;
-    public final to c;
-    public final K2 d;
-    public PublicLogger e = PublicLogger.getAnonymousInstance();
+    public final Bf f519a;
+    public final NativeCrashClientModule b;
+    public final I0 c;
+    public H0 d;
 
-    public Bd(int i, String str, to toVar, K2 k2) {
-        this.b = i;
-        this.f508a = str;
-        this.c = toVar;
-        this.d = k2;
-    }
-
-    public final C0280go a() {
-        C0280go c0280go = new C0280go();
-        c0280go.b = this.b;
-        c0280go.f1011a = this.f508a.getBytes();
-        c0280go.d = new C0331io();
-        c0280go.c = new C0306ho();
-        return c0280go;
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0254fo
-    public abstract /* synthetic */ void a(C0228eo c0228eo);
-
-    public final K2 b() {
-        return this.d;
-    }
-
-    public final String c() {
-        return this.f508a;
-    }
-
-    public final to d() {
-        return this.c;
-    }
-
-    public final int e() {
-        return this.b;
-    }
-
-    public final boolean f() {
-        ro a2 = this.c.a(this.f508a);
-        if (a2.f1205a) {
-            return true;
-        }
-        this.e.warning("Attribute " + this.f508a + " of type " + ((String) Pn.f740a.get(this.b)) + " is skipped because " + a2.b, new Object[0]);
-        return false;
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0254fo
-    public final void a(PublicLogger publicLogger) {
-        this.e = publicLogger;
+    public Bd(Bf bf) {
+        this.f519a = bf;
+        ReflectionUtils reflectionUtils = ReflectionUtils.INSTANCE;
+        NativeCrashClientModule nativeCrashClientModule = (NativeCrashClientModule) ReflectionUtils.loadAndInstantiateClassWithDefaultConstructor("io.appmetrica.analytics.ndkcrashes.NativeCrashClientModuleImpl", NativeCrashClientModule.class);
+        this.b = nativeCrashClientModule == null ? new NativeCrashClientModuleDummy() : nativeCrashClientModule;
+        this.c = new I0();
     }
 }

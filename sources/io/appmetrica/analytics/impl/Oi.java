@@ -1,29 +1,22 @@
 package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.Revenue;
-import java.util.Arrays;
-import java.util.List;
+import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 /* loaded from: classes5.dex */
-public final class Oi implements to {
+public final class Oi {
 
     /* renamed from: a  reason: collision with root package name */
-    public final so f721a = new so();
+    public final Revenue f727a;
+    public final Um b;
+    public final C0207dn c;
+    public final C0207dn d;
+    public final PublicLogger e;
 
-    @Override // io.appmetrica.analytics.impl.to
-    public final ro a(Revenue revenue) {
-        ro roVar;
-        so soVar = this.f721a;
-        ro[] roVarArr = new ro[1];
-        Tf tf = new Tf();
-        Integer num = revenue.quantity;
-        if (num != null && num.intValue() <= 0) {
-            roVar = new ro(tf, false, "Invalid quantity value " + num);
-        } else {
-            roVar = new ro(tf, true, "");
-        }
-        roVarArr[0] = roVar;
-        List<ro> asList = Arrays.asList(roVarArr);
-        soVar.getClass();
-        return soVar.a(asList);
+    public Oi(Revenue revenue, PublicLogger publicLogger) {
+        this.e = publicLogger;
+        this.f727a = revenue;
+        this.b = new Um(30720, "revenue payload", publicLogger);
+        this.c = new C0207dn(new Um(184320, "receipt data", publicLogger), "<truncated data was not sent, exceeded the limit of 180kb>");
+        this.d = new C0207dn(new Xm(1000, "receipt signature", publicLogger), "<truncated data was not sent, exceeded the limit of 180kb>");
     }
 }

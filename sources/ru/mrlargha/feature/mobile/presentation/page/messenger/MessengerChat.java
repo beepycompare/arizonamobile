@@ -29,12 +29,13 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.random.Random;
 import kotlin.text.Charsets;
+import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
+import okhttp3.Response;
 import okhttp3.logging.HttpLoggingInterceptor;
 import org.json.JSONObject;
 import retrofit2.Call;
 import retrofit2.Callback;
-import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import ru.mrlargha.arizonaui.mobile.presentation.MobilePhone;
@@ -43,6 +44,7 @@ import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.elements.CustomKeyboard;
 import ru.mrlargha.commonui.utils.DateConverter;
 import ru.mrlargha.commonui.utils.StringKt;
+import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.commonui.utils.recycle_view.PaginationScrollListener;
 import ru.mrlargha.feature.mobile.R;
 import ru.mrlargha.feature.mobile.databinding.MessengerChatLayoutBinding;
@@ -156,12 +158,18 @@ public final class MessengerChat implements MobileController {
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
         this.pageBinding = bind;
         Retrofit.Builder addConverterFactory = new Retrofit.Builder().baseUrl("http://messenger.arizona-five.com/messenger/").addConverterFactory(GsonConverterFactory.create());
-        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+        OkHttpClient.Builder addInterceptor = new OkHttpClient.Builder().addInterceptor(new Interceptor() { // from class: ru.mrlargha.feature.mobile.presentation.page.messenger.MessengerChat$special$$inlined$-addInterceptor$1
+            @Override // okhttp3.Interceptor
+            public final Response intercept(Interceptor.Chain chain) {
+                Intrinsics.checkNotNullParameter(chain, "chain");
+                return chain.proceed(chain.request().newBuilder().addHeader("User-Agent", "Arizona Mobile: " + UtilsKt.isArizonaType()).build());
+            }
+        });
         HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor(null, 1, null);
         httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-        builder.addInterceptor(httpLoggingInterceptor);
+        addInterceptor.addInterceptor(httpLoggingInterceptor);
         Unit unit = Unit.INSTANCE;
-        Retrofit build = addConverterFactory.client(builder.build()).build();
+        Retrofit build = addConverterFactory.client(addInterceptor.build()).build();
         Intrinsics.checkNotNullExpressionValue(build, "build(...)");
         this.retrofit = build;
         this.api = (MessagesApi) build.create(MessagesApi.class);
@@ -288,7 +296,7 @@ public final class MessengerChat implements MobileController {
     }
 
     private final void prepareInput() {
-        if (this.contactInfo.m12480isBlocked()) {
+        if (this.contactInfo.m12481isBlocked()) {
             showBlockContact();
         }
         final MessengerInputFieldLayoutBinding messengerInputFieldLayoutBinding = this.pageBinding.inputFieldChatLayout;
@@ -498,7 +506,7 @@ public final class MessengerChat implements MobileController {
         Intrinsics.checkNotNullExpressionValue(api, "api");
         MessagesApi.getChatMessages$default(api, this.token, String.valueOf(this.contactInfo.getId()), 0, this.paginationPage, 4, null).enqueue(new Callback<List<? extends ChatMessageApiResponse>>() { // from class: ru.mrlargha.feature.mobile.presentation.page.messenger.MessengerChat$loadNextPage$1
             @Override // retrofit2.Callback
-            public void onResponse(Call<List<? extends ChatMessageApiResponse>> call, Response<List<? extends ChatMessageApiResponse>> response) {
+            public void onResponse(Call<List<? extends ChatMessageApiResponse>> call, retrofit2.Response<List<? extends ChatMessageApiResponse>> response) {
                 MobilePhoneMessengerChatAdapter mobilePhoneMessengerChatAdapter;
                 Intrinsics.checkNotNullParameter(call, "call");
                 Intrinsics.checkNotNullParameter(response, "response");
@@ -548,7 +556,7 @@ public final class MessengerChat implements MobileController {
         Intrinsics.checkNotNullExpressionValue(api, "api");
         MessagesApi.getChatMessages$default(api, this.token, String.valueOf(this.contactInfo.getId()), 0, 0, 12, null).enqueue(new Callback<List<? extends ChatMessageApiResponse>>() { // from class: ru.mrlargha.feature.mobile.presentation.page.messenger.MessengerChat$requestMessages$1
             @Override // retrofit2.Callback
-            public void onResponse(Call<List<? extends ChatMessageApiResponse>> call, Response<List<? extends ChatMessageApiResponse>> response) {
+            public void onResponse(Call<List<? extends ChatMessageApiResponse>> call, retrofit2.Response<List<? extends ChatMessageApiResponse>> response) {
                 Activity activity;
                 MobilePhoneMessengerChatAdapter mobilePhoneMessengerChatAdapter;
                 Intrinsics.checkNotNullParameter(call, "call");
@@ -815,7 +823,7 @@ public final class MessengerChat implements MobileController {
             if (changeMenuItem != -1) {
                 this.startedMenuList.set(changeMenuItem, getBlockMenuItem());
             }
-            if (this.contactInfo.m12480isBlocked()) {
+            if (this.contactInfo.m12481isBlocked()) {
                 showBlockContact();
             } else {
                 showInputLayout();
@@ -882,7 +890,7 @@ public final class MessengerChat implements MobileController {
         Intrinsics.checkNotNullExpressionValue(api, "api");
         MessagesApi.getMessage$default(api, this.token, Integer.valueOf(i), 0, 0, 12, null).enqueue(new Callback<List<? extends ContactApiResponse>>() { // from class: ru.mrlargha.feature.mobile.presentation.page.messenger.MessengerChat$updateDialog$1
             @Override // retrofit2.Callback
-            public void onResponse(Call<List<? extends ContactApiResponse>> call, Response<List<? extends ContactApiResponse>> response) {
+            public void onResponse(Call<List<? extends ContactApiResponse>> call, retrofit2.Response<List<? extends ContactApiResponse>> response) {
                 ContactApiResponse contactApiResponse;
                 ContactInfo model;
                 ContactInfo contactInfo;

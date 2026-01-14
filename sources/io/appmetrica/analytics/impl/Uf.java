@@ -1,67 +1,30 @@
 package io.appmetrica.analytics.impl;
 
 import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
-import io.appmetrica.analytics.coreapi.internal.backport.Function;
 import java.io.File;
 /* loaded from: classes5.dex */
 public final class Uf implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final File f809a;
-    public final Function b;
-    public final Consumer c;
-    public final Consumer d;
-    public final C0111aa e;
-    public final InterfaceC0148bl f;
+    public final File f813a;
+    public final Consumer b;
 
-    public Uf(File file, Function function, Consumer consumer, Consumer consumer2, C0111aa c0111aa, InterfaceC0148bl interfaceC0148bl) {
-        this.f809a = file;
-        this.b = function;
-        this.c = consumer;
-        this.d = consumer2;
-        this.e = c0111aa;
-        this.f = interfaceC0148bl;
-    }
-
-    public static final void a(File file) {
+    public Uf(File file, C0267g6 c0267g6) {
+        this.f813a = file;
+        this.b = c0267g6;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        if (this.f809a.exists()) {
-            C0718y9 b = this.e.b(this.f809a.getName());
-            Consumer consumer = this.c;
+        File[] listFiles;
+        if (!this.f813a.exists() || !this.f813a.isDirectory() || (listFiles = this.f813a.listFiles()) == null || listFiles.length == 0) {
+            return;
+        }
+        for (File file : listFiles) {
             try {
-                b.f1313a.lock();
-                b.b.a();
+                this.b.consume(file);
             } catch (Throwable unused) {
             }
-            if (!this.f809a.exists()) {
-                consumer.consume(this.f809a);
-                b.c();
-                C0111aa c0111aa = this.e;
-                String name = this.f809a.getName();
-                synchronized (c0111aa) {
-                    c0111aa.b.remove(name);
-                }
-                return;
-            }
-            Object apply = this.b.apply(this.f809a);
-            if (apply != null) {
-                if (this.f.a(apply)) {
-                    this.d.consume(apply);
-                } else {
-                    consumer = new Consumer() { // from class: io.appmetrica.analytics.impl.Uf$$ExternalSyntheticLambda0
-                        @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
-                        public final void consume(Object obj) {
-                            Uf.a((File) obj);
-                        }
-                    };
-                }
-            }
-            consumer.consume(this.f809a);
-            b.c();
-            this.e.a(this.f809a.getName());
         }
     }
 }

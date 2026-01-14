@@ -1,21 +1,16 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.Looper;
-import java.util.Map;
+import io.appmetrica.analytics.coreutils.internal.StringUtils;
+import java.util.Comparator;
 /* loaded from: classes5.dex */
-public final class Bn implements Dn {
-    @Override // io.appmetrica.analytics.impl.Dn
-    public final Thread a() {
-        return Looper.getMainLooper().getThread();
-    }
-
-    @Override // io.appmetrica.analytics.impl.Dn
-    public final StackTraceElement[] b() {
-        return null;
-    }
-
-    @Override // io.appmetrica.analytics.impl.Dn
-    public final Map c() {
-        return Thread.getAllStackTraces();
+public final class Bn implements Comparator {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        Thread thread = (Thread) obj;
+        Thread thread2 = (Thread) obj2;
+        if (thread == thread2) {
+            return 0;
+        }
+        return StringUtils.compare(thread.getName(), thread2.getName());
     }
 }

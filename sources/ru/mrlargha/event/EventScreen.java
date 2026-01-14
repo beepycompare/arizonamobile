@@ -1,7 +1,6 @@
 package ru.mrlargha.event;
 
 import android.app.Activity;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.CountDownTimer;
@@ -35,15 +34,9 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
-import kotlinx.coroutines.CoroutineExceptionHandler;
-import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
-import kotlinx.coroutines.Job;
-import kotlinx.coroutines.SupervisorKt;
 import kotlinx.datetime.internal.DateCalculationsKt;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementAbstractSpawner;
 import ru.mrlargha.commonui.core.UIElementID;
@@ -51,6 +44,7 @@ import ru.mrlargha.commonui.elements.authorization.presentation.InterfaceControl
 import ru.mrlargha.commonui.utils.MapperKt;
 import ru.mrlargha.commonui.utils.TimeConverterKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
+import ru.mrlargha.commonui.utils.ui.ArizonaRetrofit;
 import ru.mrlargha.event.adapters.AwardsAdapter;
 import ru.mrlargha.event.adapters.QuestAdapter;
 import ru.mrlargha.event.adapters.ShopAdapter;
@@ -77,27 +71,24 @@ import ru.mrlargha.feature.event.databinding.PiratesShipUpgradeItemBinding;
 import ru.mrlargha.pirates.UtilKt;
 import ru.mrlargha.pirates.adapters.RatingAdapter;
 /* compiled from: EventScreen.kt */
-@Metadata(d1 = {"\u0000ú\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010%\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u00002\u00020\u00012\u00020\u0002:\u0003pqrB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u00103\u001a\u0002042\u0006\u00105\u001a\u00020\u0012H\u0016J\u0018\u00106\u001a\u0002042\u0006\u00107\u001a\u0002082\u0006\u00109\u001a\u00020\u0006H\u0016J\u0010\u0010:\u001a\u0002042\u0006\u00107\u001a\u00020;H\u0002J\u0016\u0010<\u001a\u0002042\f\u0010=\u001a\b\u0012\u0004\u0012\u00020>0\u001dH\u0002J\u0010\u0010?\u001a\u0002042\u0006\u0010@\u001a\u000208H\u0002J \u0010A\u001a\u0002042\u0006\u0010B\u001a\u00020C2\u0006\u00107\u001a\u00020D2\u0006\u0010E\u001a\u00020\u0006H\u0002J\b\u0010F\u001a\u000204H\u0002J\u0016\u0010G\u001a\u0002042\f\u0010=\u001a\b\u0012\u0004\u0012\u00020H0\u001dH\u0002J\u0010\u0010I\u001a\u0002042\u0006\u0010=\u001a\u00020 H\u0002J\u0016\u0010J\u001a\u0002042\f\u0010=\u001a\b\u0012\u0004\u0012\u00020K0\u001dH\u0002J\u0010\u0010L\u001a\u0002042\u0006\u0010=\u001a\u00020MH\u0002J\u0010\u0010N\u001a\u0002042\u0006\u0010=\u001a\u00020MH\u0002J\u0016\u0010O\u001a\u0002042\f\u0010=\u001a\b\u0012\u0004\u0012\u00020P0\u001dH\u0002J\u0016\u0010Q\u001a\u0002042\f\u0010=\u001a\b\u0012\u0004\u0012\u00020P0\u001dH\u0002J\u0016\u0010R\u001a\u0002042\f\u0010S\u001a\b\u0012\u0004\u0012\u00020\u00060\u001dH\u0002J\u0016\u0010T\u001a\u0002042\f\u0010U\u001a\b\u0012\u0004\u0012\u00020\u001e0\u001dH\u0002J\u0010\u0010V\u001a\u0002042\u0006\u0010W\u001a\u00020\u0006H\u0002J\u0018\u0010X\u001a\u0002042\u0006\u0010Y\u001a\u00020Z2\u0006\u0010[\u001a\u00020PH\u0002J\u0018\u0010\\\u001a\u0002042\u0006\u0010Y\u001a\u00020Z2\u0006\u0010[\u001a\u00020PH\u0002J\u000e\u0010]\u001a\u0002082\u0006\u0010^\u001a\u00020\u0006J\u0018\u0010_\u001a\u0002042\u0006\u0010Y\u001a\u00020`2\u0006\u0010a\u001a\u00020bH\u0002J\b\u0010c\u001a\u000204H\u0002J\b\u0010d\u001a\u000204H\u0002J\u0010\u0010e\u001a\u0002042\u0006\u0010[\u001a\u00020HH\u0002J\u0010\u0010f\u001a\u0002042\u0006\u0010[\u001a\u00020KH\u0002J\u0018\u0010g\u001a\u0002042\u0006\u0010h\u001a\u0002082\u0006\u0010Y\u001a\u00020\nH\u0002J\b\u0010i\u001a\u000204H\u0002J\b\u0010j\u001a\u000204H\u0002J\b\u0010k\u001a\u000204H\u0002J\b\u0010l\u001a\u000204H\u0002J\u0010\u0010m\u001a\u0002042\u0006\u0010n\u001a\u00020oH\u0002R\u0016\u0010\t\u001a\n \u000b*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u000f\u001a\n \u000b*\u0004\u0018\u00010\u00100\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u001c\u001a\b\u0012\u0004\u0012\u00020\u001e0\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001f\u001a\u0004\u0018\u00010 X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010!\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00060\"X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020$X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020&X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010'\u001a\u00020(¢\u0006\b\n\u0000\u001a\u0004\b)\u0010*R\u0011\u0010+\u001a\u00020,¢\u0006\b\n\u0000\u001a\u0004\b-\u0010.R\u000e\u0010/\u001a\u000200X\u0082.¢\u0006\u0002\n\u0000R\u000e\u00101\u001a\u000202X\u0082.¢\u0006\u0002\n\u0000¨\u0006s"}, d2 = {"Lru/mrlargha/event/EventScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/feature/event/databinding/EventScreenBinding;", "textSelectedColor", "sharedPref", "Landroid/content/SharedPreferences;", "isArizonaType", "", "questAdapter", "Lru/mrlargha/event/adapters/QuestAdapter;", "shopAdapter", "Lru/mrlargha/event/adapters/ShopAdapter;", "levelItemsAdapter", "Lru/mrlargha/event/adapters/AwardsAdapter;", "timersList", "", "Landroid/os/CountDownTimer;", "_bpUsualData", "", "Lru/mrlargha/event/data/AwardItemData;", "battlePassInfo", "Lru/mrlargha/event/data/MainInfo;", "eventPosition", "", "player", "Landroidx/media3/exoplayer/ExoPlayer;", "ratingAdapter", "Lru/mrlargha/pirates/adapters/RatingAdapter;", "exceptionHandler", "Lkotlinx/coroutines/CoroutineExceptionHandler;", "getExceptionHandler", "()Lkotlinx/coroutines/CoroutineExceptionHandler;", "scope", "Lkotlinx/coroutines/CoroutineScope;", "getScope", "()Lkotlinx/coroutines/CoroutineScope;", "retrofit", "Lretrofit2/Retrofit;", "api", "Lru/mrlargha/event/EventApi;", "setVisible", "", "visible", "onBackendMessage", "data", "", "subId", "setShipInfo", "Lru/mrlargha/event/data/ShipData;", "setRatingInfo", "info", "Lru/mrlargha/event/data/RatingData;", "setRatingTime", "time", "setShipUpgrade", "elementBinding", "Lru/mrlargha/feature/event/databinding/PiratesShipUpgradeItemBinding;", "Lru/mrlargha/event/data/ShipData$ShipComponent;", "stage", "setupRetrofit", "setListQuest", "Lru/mrlargha/event/data/QuestData;", "setMainPageInfo", "setShopInfo", "Lru/mrlargha/event/data/ShopItem;", "setShopResult", "Lru/mrlargha/event/data/ShopResult;", "setMainResult", "setListEvent", "Lru/mrlargha/event/data/EventData;", "updateListEvent", "updateBpAwards", "awardsStatusList", "updateLevelItems", "pairList", "onClaimItem", "position", "updateEvent", "view", "Lru/mrlargha/feature/event/databinding/EventEventsItemBinding;", "item", "setEvent", "formatSeconds", "seconds", "setPriseItem", "Lru/mrlargha/feature/event/databinding/EventPriseItemEventBinding;", "prise", "Lru/mrlargha/event/data/EasterItem;", "stopVideo", "setVideo", "onTaskItemClick", "onShopItemClick", "onPriseInfo", "text", "setupAdapters", "clearAdapters", "clearTimers", "setupNavigation", "navigateTo", "nav", "Lru/mrlargha/event/EventScreen$Navigation;", "EasterBites", "Navigation", "Spawner", "event_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000æ\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010%\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u00002\u00020\u00012\u00020\u0002:\u0003ijkB\u0017\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u0010\u0010-\u001a\u00020.2\u0006\u0010/\u001a\u000200H\u0016J\u0018\u00101\u001a\u00020.2\u0006\u00102\u001a\u00020$2\u0006\u00103\u001a\u00020\u0006H\u0016J\u0010\u00104\u001a\u00020.2\u0006\u00102\u001a\u000205H\u0002J\u0016\u00106\u001a\u00020.2\f\u00107\u001a\b\u0012\u0004\u0012\u0002080\u0019H\u0002J\u0010\u00109\u001a\u00020.2\u0006\u0010:\u001a\u00020$H\u0002J \u0010;\u001a\u00020.2\u0006\u0010<\u001a\u00020=2\u0006\u00102\u001a\u00020>2\u0006\u0010?\u001a\u00020\u0006H\u0002J\u0016\u0010@\u001a\u00020.2\f\u00107\u001a\b\u0012\u0004\u0012\u00020A0\u0019H\u0002J\u0010\u0010B\u001a\u00020.2\u0006\u00107\u001a\u00020\u001cH\u0002J\u0016\u0010C\u001a\u00020.2\f\u00107\u001a\b\u0012\u0004\u0012\u00020D0\u0019H\u0002J\u0010\u0010E\u001a\u00020.2\u0006\u00107\u001a\u00020FH\u0002J\u0010\u0010G\u001a\u00020.2\u0006\u00107\u001a\u00020FH\u0002J\u0016\u0010H\u001a\u00020.2\f\u00107\u001a\b\u0012\u0004\u0012\u00020I0\u0019H\u0002J\u0016\u0010J\u001a\u00020.2\f\u00107\u001a\b\u0012\u0004\u0012\u00020I0\u0019H\u0002J\u0016\u0010K\u001a\u00020.2\f\u0010L\u001a\b\u0012\u0004\u0012\u00020\u00060\u0019H\u0002J\u0016\u0010M\u001a\u00020.2\f\u0010N\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019H\u0002J\u0010\u0010O\u001a\u00020.2\u0006\u0010P\u001a\u00020\u0006H\u0002J\u0018\u0010Q\u001a\u00020.2\u0006\u0010R\u001a\u00020S2\u0006\u0010T\u001a\u00020IH\u0002J\u0018\u0010U\u001a\u00020.2\u0006\u0010R\u001a\u00020S2\u0006\u0010T\u001a\u00020IH\u0002J\u000e\u0010V\u001a\u00020$2\u0006\u0010W\u001a\u00020\u0006J\u0018\u0010X\u001a\u00020.2\u0006\u0010R\u001a\u00020Y2\u0006\u0010Z\u001a\u00020[H\u0002J\b\u0010\\\u001a\u00020.H\u0002J\b\u0010]\u001a\u00020.H\u0002J\u0010\u0010^\u001a\u00020.2\u0006\u0010T\u001a\u00020AH\u0002J\u0010\u0010_\u001a\u00020.2\u0006\u0010T\u001a\u00020DH\u0002J\u0018\u0010`\u001a\u00020.2\u0006\u0010a\u001a\u00020$2\u0006\u0010R\u001a\u00020\nH\u0002J\b\u0010b\u001a\u00020.H\u0002J\b\u0010c\u001a\u00020.H\u0002J\b\u0010d\u001a\u00020.H\u0002J\b\u0010e\u001a\u00020.H\u0002J\u0010\u0010f\u001a\u00020.2\u0006\u0010g\u001a\u00020hH\u0002R\u0016\u0010\t\u001a\n \u000b*\u0004\u0018\u00010\n0\nX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u0006X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00170\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001b\u001a\u0004\u0018\u00010\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u001d\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00060\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020 X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\"X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010#\u001a\u00020$¢\u0006\b\n\u0000\u001a\u0004\b%\u0010&R\u0011\u0010'\u001a\u00020(¢\u0006\b\n\u0000\u001a\u0004\b)\u0010*R\u000e\u0010+\u001a\u00020,X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006l"}, d2 = {"Lru/mrlargha/event/EventScreen;", "Lru/mrlargha/commonui/core/SAMPUIElement;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "screen", "Landroid/view/View;", "kotlin.jvm.PlatformType", "binding", "Lru/mrlargha/feature/event/databinding/EventScreenBinding;", "textSelectedColor", "questAdapter", "Lru/mrlargha/event/adapters/QuestAdapter;", "shopAdapter", "Lru/mrlargha/event/adapters/ShopAdapter;", "levelItemsAdapter", "Lru/mrlargha/event/adapters/AwardsAdapter;", "timersList", "", "Landroid/os/CountDownTimer;", "_bpUsualData", "", "Lru/mrlargha/event/data/AwardItemData;", "battlePassInfo", "Lru/mrlargha/event/data/MainInfo;", "eventPosition", "", "player", "Landroidx/media3/exoplayer/ExoPlayer;", "ratingAdapter", "Lru/mrlargha/pirates/adapters/RatingAdapter;", "url", "", "getUrl", "()Ljava/lang/String;", "client", "Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "getClient", "()Lru/mrlargha/commonui/utils/ui/ArizonaRetrofit;", "api", "Lru/mrlargha/event/EventApi;", "setVisible", "", "visible", "", "onBackendMessage", "data", "subId", "setShipInfo", "Lru/mrlargha/event/data/ShipData;", "setRatingInfo", "info", "Lru/mrlargha/event/data/RatingData;", "setRatingTime", "time", "setShipUpgrade", "elementBinding", "Lru/mrlargha/feature/event/databinding/PiratesShipUpgradeItemBinding;", "Lru/mrlargha/event/data/ShipData$ShipComponent;", "stage", "setListQuest", "Lru/mrlargha/event/data/QuestData;", "setMainPageInfo", "setShopInfo", "Lru/mrlargha/event/data/ShopItem;", "setShopResult", "Lru/mrlargha/event/data/ShopResult;", "setMainResult", "setListEvent", "Lru/mrlargha/event/data/EventData;", "updateListEvent", "updateBpAwards", "awardsStatusList", "updateLevelItems", "pairList", "onClaimItem", "position", "updateEvent", "view", "Lru/mrlargha/feature/event/databinding/EventEventsItemBinding;", "item", "setEvent", "formatSeconds", "seconds", "setPriseItem", "Lru/mrlargha/feature/event/databinding/EventPriseItemEventBinding;", "prise", "Lru/mrlargha/event/data/EasterItem;", "stopVideo", "setVideo", "onTaskItemClick", "onShopItemClick", "onPriseInfo", "text", "setupAdapters", "clearAdapters", "clearTimers", "setupNavigation", "navigateTo", "nav", "Lru/mrlargha/event/EventScreen$Navigation;", "EasterBites", "Navigation", "Spawner", "event_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class EventScreen extends SAMPUIElement implements InterfaceController {
     private List<AwardItemData> _bpUsualData;
-    private EventApi api;
+    private final EventApi api;
     private MainInfo battlePassInfo;
     private final EventScreenBinding binding;
+    private final ArizonaRetrofit client;
     private final Map<Integer, Integer> eventPosition;
-    private final CoroutineExceptionHandler exceptionHandler;
-    private final boolean isArizonaType;
     private final AwardsAdapter levelItemsAdapter;
     private ExoPlayer player;
     private final QuestAdapter questAdapter;
     private final RatingAdapter ratingAdapter;
-    private Retrofit retrofit;
-    private final CoroutineScope scope;
     private final View screen;
-    private final SharedPreferences sharedPref;
     private final ShopAdapter shopAdapter;
     private final int textSelectedColor;
     private final List<CountDownTimer> timersList;
+    private final String url;
 
     /* compiled from: EventScreen.kt */
     @Metadata(k = 3, mv = {2, 2, 0}, xi = 48)
@@ -162,6 +153,7 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public EventScreen(Activity targetActivity, int i) {
         super(targetActivity, i);
+        String str;
         Intrinsics.checkNotNullParameter(targetActivity, "targetActivity");
         View screen = targetActivity.getLayoutInflater().inflate(R.layout.event_screen, (ViewGroup) null);
         this.screen = screen;
@@ -169,11 +161,7 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
         this.binding = bind;
         this.textSelectedColor = Color.parseColor("#354463");
-        SharedPreferences sharedPreferences = targetActivity.getSharedPreferences("flavorType", 0);
-        this.sharedPref = sharedPreferences;
-        boolean z = sharedPreferences.getBoolean("isArizonaType", false);
-        this.isArizonaType = z;
-        this.questAdapter = new QuestAdapter(z, new Function1() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda15
+        this.questAdapter = new QuestAdapter(UtilsKt.isArizonaType(), new Function1() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda15
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit questAdapter$lambda$0;
@@ -188,7 +176,7 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
                 return questAdapter$lambda$1;
             }
         });
-        this.shopAdapter = new ShopAdapter(z, new Function1() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda17
+        this.shopAdapter = new ShopAdapter(UtilsKt.isArizonaType(), new Function1() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda17
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 Unit shopAdapter$lambda$0;
@@ -211,10 +199,16 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
         Intrinsics.checkNotNullExpressionValue(build, "build(...)");
         this.player = build;
         this.ratingAdapter = new RatingAdapter();
-        EventScreen$special$$inlined$CoroutineExceptionHandler$1 eventScreen$special$$inlined$CoroutineExceptionHandler$1 = new EventScreen$special$$inlined$CoroutineExceptionHandler$1(CoroutineExceptionHandler.Key);
-        this.exceptionHandler = eventScreen$special$$inlined$CoroutineExceptionHandler$1;
-        this.scope = CoroutineScopeKt.CoroutineScope(Dispatchers.getIO().plus(SupervisorKt.SupervisorJob$default((Job) null, 1, (Object) null)).plus(eventScreen$special$$inlined$CoroutineExceptionHandler$1));
-        setupRetrofit();
+        if (UtilsKt.isArizonaType()) {
+            str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/systems/event_battlepass/level/";
+        } else {
+            str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/systems/battlepass/";
+        }
+        String str2 = str;
+        this.url = str2;
+        ArizonaRetrofit arizonaRetrofit = new ArizonaRetrofit(targetActivity, i);
+        this.client = arizonaRetrofit;
+        this.api = (EventApi) ArizonaRetrofit.create$default(arizonaRetrofit, EventApi.class, false, str2, null, 10, null);
         Intrinsics.checkNotNullExpressionValue(screen, "screen");
         addViewToConstraintLayout(screen, -1, -1);
         setupNavigation();
@@ -249,12 +243,12 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
         return Unit.INSTANCE;
     }
 
-    public final CoroutineExceptionHandler getExceptionHandler() {
-        return this.exceptionHandler;
+    public final String getUrl() {
+        return this.url;
     }
 
-    public final CoroutineScope getScope() {
-        return this.scope;
+    public final ArizonaRetrofit getClient() {
+        return this.client;
     }
 
     @Override // ru.mrlargha.commonui.elements.authorization.presentation.InterfaceController
@@ -460,7 +454,7 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
             i2 = R.drawable.event_coin;
         } else {
             if (hashCode == 108864568 && image.equals("ruble")) {
-                i2 = this.isArizonaType ? R.drawable.pirates_dollar : R.drawable.pirates_ruble;
+                i2 = UtilsKt.isArizonaType() ? R.drawable.pirates_dollar : R.drawable.pirates_ruble;
             }
             i2 = R.drawable.event_coin;
         }
@@ -511,31 +505,6 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
         SAMPUIElement.notifyClick$default(eventScreen, shipComponent.getId(), 6, null, 4, null);
     }
 
-    private final void setupRetrofit() {
-        String str;
-        Retrofit retrofit = null;
-        if (this.isArizonaType) {
-            if (UtilsKt.isDebug()) {
-                str = "https://staging-cdn.azresources.cloud/projects/arizona-rp/systems/event_battlepass/level/";
-            } else {
-                str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/systems/event_battlepass/level/";
-            }
-        } else {
-            str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/systems/battlepass/";
-        }
-        Retrofit build = new Retrofit.Builder().baseUrl(str).addConverterFactory(GsonConverterFactory.create()).build();
-        Intrinsics.checkNotNullExpressionValue(build, "build(...)");
-        this.retrofit = build;
-        if (build == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("retrofit");
-        } else {
-            retrofit = build;
-        }
-        Object create = retrofit.create(EventApi.class);
-        Intrinsics.checkNotNullExpressionValue(create, "create(...)");
-        this.api = (EventApi) create;
-    }
-
     private final void setListQuest(List<QuestData> list) {
         this.questAdapter.addAllItems(list);
     }
@@ -564,7 +533,7 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
         eventShopSceenBinding.rvItems.setVisibility(8);
         eventShopSceenBinding.awardName.setText(shopResult.getName());
         eventShopSceenBinding.tvDescription.setText(shopResult.getCaption());
-        if (this.isArizonaType) {
+        if (UtilsKt.isArizonaType()) {
             Picasso picasso = Picasso.get();
             String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
             picasso.load(resourceUrl$default + "/projects/arizona-rp/systems/battlepass_holiday/shop_image/" + shopResult.getImage() + ".webp").into(eventShopSceenBinding.ivAward);
@@ -581,7 +550,7 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
         eventMainResultScreenBinding.getRoot().setVisibility(0);
         eventMainResultScreenBinding.awardName.setText(shopResult.getName());
         eventMainResultScreenBinding.tvDescription.setText(shopResult.getCaption());
-        if (this.isArizonaType) {
+        if (UtilsKt.isArizonaType()) {
             Picasso picasso = Picasso.get();
             String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
             picasso.load(resourceUrl$default + "/projects/arizona-rp/systems/battlepass_holiday/redwards/" + shopResult.getImage() + ".webp").into(eventMainResultScreenBinding.ivAward);
@@ -680,14 +649,14 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
     }
 
     private final void updateBpAwards(List<Integer> list) {
-        BuildersKt__Builders_commonKt.launch$default(this.scope, Dispatchers.getIO(), null, new EventScreen$updateBpAwards$1(this, list, null), 2, null);
+        BuildersKt__Builders_commonKt.launch$default(this.client.getScope(), Dispatchers.getIO(), null, new EventScreen$updateBpAwards$1(this, list, null), 2, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void updateLevelItems(List<AwardItemData> list) {
         AwardsAdapter awardsAdapter = this.levelItemsAdapter;
         MainInfo mainInfo = this.battlePassInfo;
-        awardsAdapter.setData(list, mainInfo != null ? mainInfo.getLevel() : 0, this.isArizonaType);
+        awardsAdapter.setData(list, mainInfo != null ? mainInfo.getLevel() : 0, UtilsKt.isArizonaType());
     }
 
     private final void onClaimItem(int i) {
@@ -1070,7 +1039,7 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
         }
         eventPriseItemEventBinding.bg.setBackgroundResource(i);
         eventPriseItemEventBinding.rarity.setBackgroundColor(Color.parseColor(str));
-        if (this.isArizonaType) {
+        if (UtilsKt.isArizonaType()) {
             Picasso picasso = Picasso.get();
             String resourceUrl$default = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null);
             picasso.load(resourceUrl$default + "/projects/arizona-rp/assets/images/donate/" + easterItem.getItemid() + ".webp").into(eventPriseItemEventBinding.imagePrise);
@@ -1189,6 +1158,7 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
 
     private final void clearAdapters() {
         this.questAdapter.clearList();
+        this.ratingAdapter.clearList();
     }
 
     private final void clearTimers() {
@@ -1247,7 +1217,7 @@ public final class EventScreen extends SAMPUIElement implements InterfaceControl
                 EventScreen.setupNavigation$lambda$0$7(EventScreen.this, view);
             }
         });
-        Picasso.get().load(FirebaseConfigHelper.INSTANCE.getResourceUrl(false) + (this.isArizonaType ? "/projects/arizona-rp/systems/battlepass/newyear-2026/preview.webp" : "/projects/rodina-rp/systems/pirate-event/preview.webp")).into(this.binding.main.ivVideo);
+        Picasso.get().load(FirebaseConfigHelper.INSTANCE.getResourceUrl(false) + (UtilsKt.isArizonaType() ? "/projects/arizona-rp/systems/battlepass/newyear-2026/preview.webp" : "/projects/rodina-rp/systems/pirate-event/preview.webp")).into(this.binding.main.ivVideo);
         this.binding.main.ivVideo.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.event.EventScreen$$ExternalSyntheticLambda12
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {

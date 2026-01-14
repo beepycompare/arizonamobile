@@ -1,5 +1,10 @@
 package io.appmetrica.analytics.impl;
+
+import kotlin.jvm.functions.Function0;
 /* loaded from: classes5.dex */
-public interface Va {
-    void a(Rn rn);
+public final class Va implements Function0 {
+    @Override // kotlin.jvm.functions.Function0
+    public final Object invoke() {
+        return C0449na.I.f();
+    }
 }

@@ -1,15 +1,11 @@
 package io.appmetrica.analytics.impl;
 
-import android.location.Location;
+import java.util.Map;
 /* loaded from: classes5.dex */
-public final class Jo extends Location {
-    public static final /* synthetic */ int b = 0;
-
-    /* renamed from: a  reason: collision with root package name */
-    public final String f643a;
-
-    public Jo(Location location, String str) {
-        super(location);
-        this.f643a = str;
+public final class Jo implements InterfaceC0587t {
+    @Override // io.appmetrica.analytics.impl.InterfaceC0587t
+    public final Map<String, String> a(Map<String, String> map) {
+        map.put("source", "yandex");
+        return map;
     }
 }

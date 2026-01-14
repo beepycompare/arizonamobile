@@ -1,40 +1,30 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.StateSerializer;
-import io.appmetrica.analytics.coreutils.internal.encryption.AESEncrypter;
-import java.io.IOException;
+import io.appmetrica.analytics.coreutils.internal.StringUtils;
 /* loaded from: classes5.dex */
-public class C8 implements StateSerializer {
+public final class C8 implements to {
 
     /* renamed from: a  reason: collision with root package name */
-    public final StateSerializer f524a;
-    public final AESEncrypter b;
+    public final H8 f532a;
 
-    public C8(StateSerializer<Object> stateSerializer, AESEncrypter aESEncrypter) {
-        this.f524a = stateSerializer;
-        this.b = aESEncrypter;
+    public C8() {
+        this(new H8());
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.StateSerializer
-    public final Object defaultValue() {
-        return this.f524a.defaultValue();
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.data.StateSerializer
-    public final byte[] toByteArray(Object obj) {
-        try {
-            return this.b.encrypt(this.f524a.toByteArray(obj));
-        } catch (Throwable unused) {
-            return new byte[0];
+    @Override // io.appmetrica.analytics.impl.to
+    public final byte[] a(N8 n8, C0381kh c0381kh) {
+        byte[] bArr;
+        String str = n8.b;
+        if (str != null) {
+            bArr = StringUtils.getUTF8Bytes(str);
+        } else {
+            bArr = new byte[0];
         }
+        H8 h8 = this.f532a;
+        return ((G8) h8.f612a.a(n8.o)).a(bArr);
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.StateSerializer
-    public final Object toState(byte[] bArr) throws IOException {
-        try {
-            return this.f524a.toState(this.b.decrypt(bArr));
-        } catch (Throwable th) {
-            throw new IOException(th);
-        }
+    public C8(H8 h8) {
+        this.f532a = h8;
     }
 }

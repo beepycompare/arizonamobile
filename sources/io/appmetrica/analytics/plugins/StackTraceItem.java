@@ -3,7 +3,7 @@ package io.appmetrica.analytics.plugins;
 public class StackTraceItem {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f1411a;
+    private final String f1420a;
     private final String b;
     private final Integer c;
     private final Integer d;
@@ -13,18 +13,18 @@ public class StackTraceItem {
     public static class Builder {
 
         /* renamed from: a  reason: collision with root package name */
-        private String f1412a;
+        private String f1421a;
         private String b;
         private Integer c;
         private Integer d;
         private String e;
 
         public StackTraceItem build() {
-            return new StackTraceItem(this.f1412a, this.b, this.c, this.d, this.e, 0);
+            return new StackTraceItem(this.f1421a, this.b, this.c, this.d, this.e, 0);
         }
 
         public Builder withClassName(String str) {
-            this.f1412a = str;
+            this.f1421a = str;
             return this;
         }
 
@@ -54,7 +54,7 @@ public class StackTraceItem {
     }
 
     public String getClassName() {
-        return this.f1411a;
+        return this.f1420a;
     }
 
     public Integer getColumn() {
@@ -74,7 +74,7 @@ public class StackTraceItem {
     }
 
     private StackTraceItem(String str, String str2, Integer num, Integer num2, String str3) {
-        this.f1411a = str;
+        this.f1420a = str;
         this.b = str2;
         this.c = num;
         this.d = num2;

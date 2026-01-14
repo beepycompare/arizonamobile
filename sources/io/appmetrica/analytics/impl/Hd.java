@@ -1,18 +1,15 @@
 package io.appmetrica.analytics.impl;
 
-import android.os.Process;
+import io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashSource;
 /* loaded from: classes5.dex */
-public final class Hd implements InterfaceC0148bl {
+public final class Hd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f604a;
+    public final NativeCrashSource f613a;
+    public final String b;
 
-    public Hd(int i) {
-        this.f604a = i;
-    }
-
-    @Override // io.appmetrica.analytics.impl.InterfaceC0148bl
-    public final boolean a(String str) {
-        return this.f604a != Process.myPid();
+    public Hd(NativeCrashSource nativeCrashSource, String str) {
+        this.f613a = nativeCrashSource;
+        this.b = str;
     }
 }

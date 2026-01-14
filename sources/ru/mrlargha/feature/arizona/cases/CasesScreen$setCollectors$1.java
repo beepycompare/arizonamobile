@@ -3,7 +3,7 @@ package ru.mrlargha.feature.arizona.cases;
 import android.app.Activity;
 import android.util.Log;
 import android.widget.Toast;
-import com.google.android.vending.expansion.downloader.impl.DownloaderService;
+import androidx.compose.runtime.ComposerKt;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -17,7 +17,6 @@ import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.Boxing;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
-import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
@@ -26,23 +25,19 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.flow.FlowCollector;
 import kotlinx.coroutines.flow.MutableStateFlow;
-import ru.mrlargha.commonui.elements.hud.presentation.models.ServerInfoItem;
 import ru.mrlargha.commonui.utils.StringKt;
-import ru.mrlargha.commonui.utils.UtilsKt;
 import ru.mrlargha.feature.arizona.cases.CasesScreen$setCollectors$1;
 import ru.mrlargha.feature.arizona.cases.data.local.CasesSharedPreference;
-import ru.mrlargha.feature.arizona.cases.data.remote.CasesRetrofitClient;
 import ru.mrlargha.feature.arizona.cases.data.remote.apiservices.CasesApiService;
 import ru.mrlargha.feature.arizona.cases.data.remote.models.CasesModel;
 import ru.mrlargha.feature.arizona.cases.data.remote.models.CasesPrizeModel;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CasesScreen.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.CasesScreen$setCollectors$1", f = "CasesScreen.kt", i = {0, 1}, l = {198, DownloaderService.STATUS_QUEUED_FOR_WIFI, 212}, m = "invokeSuspend", n = {"authModel", "authModel"}, s = {"L$0", "L$0"}, v = 1)
+@DebugMetadata(c = "ru.mrlargha.feature.arizona.cases.CasesScreen$setCollectors$1", f = "CasesScreen.kt", i = {}, l = {ComposerKt.providerKey, 200, 213}, m = "invokeSuspend", n = {}, s = {}, v = 1)
 /* loaded from: classes6.dex */
 public final class CasesScreen$setCollectors$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     Object L$0;
-    Object L$1;
     int label;
     final /* synthetic */ CasesScreen this$0;
 
@@ -63,11 +58,11 @@ public final class CasesScreen$setCollectors$1 extends SuspendLambda implements 
         return ((CasesScreen$setCollectors$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x0093, code lost:
-        if (r0.emit(r5, r18) == r2) goto L17;
+    /* JADX WARN: Code restructure failed: missing block: B:22:0x0055, code lost:
+        if (r1.emit(r8, r7) == r0) goto L16;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:30:0x00e9, code lost:
-        if (kotlinx.coroutines.flow.FlowKt.combine(r0, r4, new ru.mrlargha.feature.arizona.cases.CasesScreen$setCollectors$1.AnonymousClass1(null)).collect(new ru.mrlargha.feature.arizona.cases.CasesScreen$setCollectors$1.AnonymousClass2(r18.this$0), r18) == r2) goto L17;
+    /* JADX WARN: Code restructure failed: missing block: B:29:0x00a8, code lost:
+        if (kotlinx.coroutines.flow.FlowKt.combine(r8, r1, new ru.mrlargha.feature.arizona.cases.CasesScreen$setCollectors$1.AnonymousClass1(null)).collect(new ru.mrlargha.feature.arizona.cases.CasesScreen$setCollectors$1.AnonymousClass2(r7.this$0), r7) == r0) goto L16;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
@@ -77,11 +72,8 @@ public final class CasesScreen$setCollectors$1 extends SuspendLambda implements 
         Activity targetActivity;
         MutableStateFlow mutableStateFlow;
         MutableStateFlow mutableStateFlow2;
-        Activity targetActivity2;
         MutableStateFlow mutableStateFlow3;
-        Object cases$default;
-        ServerInfoItem serverInfoItem;
-        MutableStateFlow mutableStateFlow4;
+        CasesApiService casesApiService;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         try {
@@ -96,26 +88,17 @@ public final class CasesScreen$setCollectors$1 extends SuspendLambda implements 
         }
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            targetActivity2 = this.this$0.getTargetActivity();
-            ServerInfoItem serverId = UtilsKt.getServerId(targetActivity2);
             mutableStateFlow3 = this.this$0.casesState;
-            CasesApiService casesApiService = new CasesRetrofitClient(serverId.getToken()).getCasesApiService();
-            Intrinsics.checkNotNullExpressionValue(casesApiService, "<get-casesApiService>(...)");
-            this.L$0 = SpillingKt.nullOutSpilledVariable(serverId);
-            this.L$1 = mutableStateFlow3;
+            casesApiService = this.this$0.api;
+            this.L$0 = mutableStateFlow3;
             this.label = 1;
-            cases$default = CasesApiService.getCases$default(casesApiService, null, serverId.getServer(), null, this, 5, null);
-            if (cases$default == coroutine_suspended) {
+            obj = CasesApiService.getCases$default(casesApiService, null, this, 1, null);
+            if (obj == coroutine_suspended) {
                 return coroutine_suspended;
             }
-            serverInfoItem = serverId;
-            mutableStateFlow4 = mutableStateFlow3;
         } else if (i == 1) {
-            mutableStateFlow4 = (MutableStateFlow) this.L$1;
-            ServerInfoItem serverInfoItem2 = (ServerInfoItem) this.L$0;
+            mutableStateFlow3 = (MutableStateFlow) this.L$0;
             ResultKt.throwOnFailure(obj);
-            serverInfoItem = serverInfoItem2;
-            cases$default = obj;
         } else if (i != 2) {
             if (i == 3) {
                 ResultKt.throwOnFailure(obj);
@@ -123,16 +106,13 @@ public final class CasesScreen$setCollectors$1 extends SuspendLambda implements 
             }
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         } else {
-            ServerInfoItem serverInfoItem3 = (ServerInfoItem) this.L$0;
             ResultKt.throwOnFailure(obj);
             mutableStateFlow = this.this$0.casesState;
             mutableStateFlow2 = this.this$0.infoState;
             this.L$0 = null;
-            this.L$1 = null;
             this.label = 3;
         }
-        this.L$0 = SpillingKt.nullOutSpilledVariable(serverInfoItem);
-        this.L$1 = null;
+        this.L$0 = null;
         this.label = 2;
     }
 

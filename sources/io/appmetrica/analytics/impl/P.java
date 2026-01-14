@@ -10,28 +10,19 @@ public final class P {
         if (identifiersResult == null) {
             details = AdvIdentifiersResult.Details.INTERNAL_ERROR;
         } else {
-            switch (O.f710a[identifiersResult.status.ordinal()]) {
-                case 1:
-                    details = AdvIdentifiersResult.Details.OK;
-                    break;
-                case 2:
-                    details = AdvIdentifiersResult.Details.NO_STARTUP;
-                    break;
-                case 3:
-                    details = AdvIdentifiersResult.Details.FEATURE_DISABLED;
-                    break;
-                case 4:
-                    details = AdvIdentifiersResult.Details.IDENTIFIER_PROVIDER_UNAVAILABLE;
-                    break;
-                case 5:
-                    details = AdvIdentifiersResult.Details.INVALID_ADV_ID;
-                    break;
-                case 6:
-                    details = AdvIdentifiersResult.Details.FORBIDDEN_BY_CLIENT_CONFIG;
-                    break;
-                default:
-                    details = AdvIdentifiersResult.Details.INTERNAL_ERROR;
-                    break;
+            int i = O.f717a[identifiersResult.status.ordinal()];
+            if (i == 1) {
+                details = AdvIdentifiersResult.Details.OK;
+            } else if (i == 2) {
+                details = AdvIdentifiersResult.Details.FEATURE_DISABLED;
+            } else if (i == 3) {
+                details = AdvIdentifiersResult.Details.IDENTIFIER_PROVIDER_UNAVAILABLE;
+            } else if (i == 4) {
+                details = AdvIdentifiersResult.Details.INVALID_ADV_ID;
+            } else if (i != 5) {
+                details = AdvIdentifiersResult.Details.INTERNAL_ERROR;
+            } else {
+                details = AdvIdentifiersResult.Details.FORBIDDEN_BY_CLIENT_CONFIG;
             }
         }
         return new AdvIdentifiersResult.AdvId(str, details, identifiersResult != null ? identifiersResult.errorExplanation : null);

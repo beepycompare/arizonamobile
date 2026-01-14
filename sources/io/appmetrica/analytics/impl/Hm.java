@@ -1,29 +1,27 @@
 package io.appmetrica.analytics.impl;
 
-import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 /* loaded from: classes5.dex */
-public final class Hm {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final long f611a;
-
-    public Hm(long j) {
-        this.f611a = j;
+public final class Hm implements ProtobufConverter {
+    public final C0660vm a(Gm gm) {
+        C0660vm c0660vm = new C0660vm();
+        c0660vm.f1276a = gm.f603a;
+        return c0660vm;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        return obj != null && Hm.class == obj.getClass() && this.f611a == ((Hm) obj).f611a;
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object fromModel(Object obj) {
+        C0660vm c0660vm = new C0660vm();
+        c0660vm.f1276a = ((Gm) obj).f603a;
+        return c0660vm;
     }
 
-    public final int hashCode() {
-        long j = this.f611a;
-        return (int) (j ^ (j >>> 32));
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    public final Object toModel(Object obj) {
+        return new Gm(((C0660vm) obj).f1276a);
     }
 
-    public final String toString() {
-        return "StatSending{disabledReportingInterval=" + this.f611a + AbstractJsonLexerKt.END_OBJ;
+    public final Gm a(C0660vm c0660vm) {
+        return new Gm(c0660vm.f1276a);
     }
 }

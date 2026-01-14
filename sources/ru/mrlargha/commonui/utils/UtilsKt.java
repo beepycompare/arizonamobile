@@ -432,7 +432,7 @@ public final class UtilsKt {
             Context applicationContext = context.getApplicationContext();
             Intrinsics.checkNotNullExpressionValue(applicationContext, "getApplicationContext(...)");
             ArizonaRetrofit arizonaRetrofit = new ArizonaRetrofit(applicationContext, 0);
-            BuildersKt.launch$default(arizonaRetrofit.getScope(), Dispatchers.getIO(), null, new UtilsKt$checkItemsName$1((InventoryApi) ArizonaRetrofit.create$default(arizonaRetrofit, InventoryApi.class, false, null, 6, null), null), 2, null);
+            BuildersKt.launch$default(arizonaRetrofit.getScope(), Dispatchers.getIO(), null, new UtilsKt$checkItemsName$1((InventoryApi) ArizonaRetrofit.create$default(arizonaRetrofit, InventoryApi.class, false, null, null, 14, null), null), 2, null);
         }
     }
 

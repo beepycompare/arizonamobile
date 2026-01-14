@@ -7,6 +7,6 @@ import java.sql.SQLException;
 public final class T6 extends DatabaseScript {
     @Override // io.appmetrica.analytics.coreapi.internal.db.DatabaseScript
     public final void runScript(SQLiteDatabase sQLiteDatabase) throws SQLException {
-        sQLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS preferences (key TEXT PRIMARY KEY,value TEXT,type INTEGER)");
+        sQLiteDatabase.execSQL("DROP TABLE IF EXISTS preferences");
     }
 }

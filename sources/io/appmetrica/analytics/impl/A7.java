@@ -1,11 +1,15 @@
 package io.appmetrica.analytics.impl;
 
-import android.app.Activity;
-import android.app.Application;
-import android.os.Bundle;
+import io.appmetrica.analytics.coreapi.internal.permission.PermissionStrategy;
+import io.appmetrica.analytics.modulesapi.internal.common.AskForPermissionStrategyModuleProvider;
 /* loaded from: classes5.dex */
-public abstract class A7 implements Application.ActivityLifecycleCallbacks {
-    @Override // android.app.Application.ActivityLifecycleCallbacks
-    public final void onActivitySaveInstanceState(Activity activity, Bundle bundle) {
+public final class A7 implements AskForPermissionStrategyModuleProvider {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Wd f496a = new Wd();
+
+    @Override // io.appmetrica.analytics.modulesapi.internal.common.AskForPermissionStrategyModuleProvider
+    public final PermissionStrategy getAskForPermissionStrategy() {
+        return this.f496a;
     }
 }

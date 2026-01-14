@@ -1,19 +1,21 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.profile.UserProfile;
 /* loaded from: classes5.dex */
 public final class Nh implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f706a;
-    public final /* synthetic */ C0300hi b;
+    public final /* synthetic */ UserProfile f711a;
+    public final /* synthetic */ C0279gi b;
 
-    public Nh(C0300hi c0300hi, String str) {
-        this.b = c0300hi;
-        this.f706a = str;
+    public Nh(C0279gi c0279gi, UserProfile userProfile) {
+        this.b = c0279gi;
+        this.f711a = userProfile;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0300hi c0300hi = this.b;
-        C0300hi.a(c0300hi.f1024a, c0300hi.d, c0300hi.e).setUserProfileID(this.f706a);
+        C0279gi c0279gi = this.b;
+        C0279gi.a(c0279gi.f1016a, c0279gi.d, c0279gi.e).reportUserProfile(this.f711a);
     }
 }

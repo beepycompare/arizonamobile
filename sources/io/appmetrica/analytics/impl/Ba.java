@@ -1,21 +1,19 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.identifiers.AdvertisingIdsHolder;
-import io.appmetrica.analytics.coreapi.internal.identifiers.SimpleAdvertisingIdGetter;
+import android.os.Handler;
+import io.appmetrica.analytics.AppMetricaConfig;
+import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
 /* loaded from: classes5.dex */
-public interface Ba extends SimpleAdvertisingIdGetter, InterfaceC0407lm {
-    AdvertisingIdsHolder a();
+public interface Ba {
+    C0213e4 a();
 
-    AdvertisingIdsHolder a(Hi hi);
+    void a(AppMetricaConfig appMetricaConfig, Ta ta);
 
-    @Override // io.appmetrica.analytics.impl.InterfaceC0407lm
-    /* synthetic */ void a(C0278gm c0278gm);
+    Handler b();
 
-    void b(boolean z);
+    S1 c();
 
-    void c(boolean z);
+    C0375kb d();
 
-    AdvertisingIdsHolder getIdentifiers();
-
-    void init();
+    ICommonExecutor getDefaultExecutor();
 }

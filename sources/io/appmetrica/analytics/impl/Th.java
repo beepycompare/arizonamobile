@@ -1,19 +1,26 @@
 package io.appmetrica.analytics.impl;
+
+import android.content.Context;
+import io.appmetrica.analytics.ReporterConfig;
 /* loaded from: classes5.dex */
 public final class Th implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ boolean f793a;
-    public final /* synthetic */ C0300hi b;
+    public final /* synthetic */ ReporterConfig f801a;
+    public final /* synthetic */ C0279gi b;
 
-    public Th(C0300hi c0300hi, boolean z) {
-        this.b = c0300hi;
-        this.f793a = z;
+    public Th(C0279gi c0279gi, ReporterConfig reporterConfig) {
+        this.b = c0279gi;
+        this.f801a = reporterConfig;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0300hi c0300hi = this.b;
-        C0300hi.a(c0300hi.f1024a, c0300hi.d, c0300hi.e).setDataSendingEnabled(this.f793a);
+        C0279gi c0279gi = this.b;
+        ReporterConfig reporterConfig = this.f801a;
+        C0738z0 c0738z0 = c0279gi.f1016a;
+        Context context = c0279gi.d;
+        c0738z0.getClass();
+        C0713y0.a(context).f().a(reporterConfig);
     }
 }

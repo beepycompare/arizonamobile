@@ -1,27 +1,47 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.coreapi.internal.data.Converter;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import kotlin.Pair;
+import kotlin.TuplesKt;
+import kotlin.collections.CollectionsKt;
+import kotlin.collections.MapsKt;
+import kotlin.ranges.RangesKt;
 /* loaded from: classes5.dex */
-public enum J8 {
-    NONE(0),
-    EXTERNALLY_ENCRYPTED_EVENT_CRYPTER(1),
-    AES_VALUE_ENCRYPTION(2);
-    
-
-    /* renamed from: a  reason: collision with root package name */
-    public final int f635a;
-
-    J8(int i) {
-        this.f635a = i;
+public final class J8 implements Converter {
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final byte[] fromModel(Map<String, byte[]> map) {
+        L8 l8 = new L8();
+        K8[] k8Arr = new K8[map.size()];
+        int i = 0;
+        for (Object obj : map.entrySet()) {
+            int i2 = i + 1;
+            if (i < 0) {
+                CollectionsKt.throwIndexOverflow();
+            }
+            Map.Entry entry = (Map.Entry) obj;
+            K8 k8 = new K8();
+            k8.f656a = (String) entry.getKey();
+            k8.b = (byte[]) entry.getValue();
+            k8Arr[i] = k8;
+            i = i2;
+        }
+        l8.f675a = k8Arr;
+        return MessageNano.toByteArray(l8);
     }
 
-    public static J8 a(Integer num) {
-        J8[] values;
-        if (num != null) {
-            for (J8 j8 : values()) {
-                if (j8.f635a == num.intValue()) {
-                    return j8;
-                }
-            }
+    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
+    /* renamed from: a */
+    public final Map<String, byte[]> toModel(byte[] bArr) {
+        K8[] k8Arr = ((L8) MessageNano.mergeFrom(new L8(), bArr)).f675a;
+        LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(k8Arr.length), 16));
+        for (K8 k8 : k8Arr) {
+            Pair pair = TuplesKt.to(k8.f656a, k8.b);
+            linkedHashMap.put(pair.getFirst(), pair.getSecond());
         }
-        return NONE;
+        return linkedHashMap;
     }
 }

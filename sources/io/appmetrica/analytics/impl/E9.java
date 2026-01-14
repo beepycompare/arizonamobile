@@ -1,15 +1,15 @@
 package io.appmetrica.analytics.impl;
+
+import java.util.List;
 /* loaded from: classes5.dex */
-public final class E9 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final D9 f556a;
-
-    public E9(D9 d9) {
-        this.f556a = d9;
+public final class E9 extends C0324ib {
+    public E9(C0556ri c0556ri) {
+        super(c0556ri);
     }
 
-    public E9() {
-        this(new D9());
+    @Override // io.appmetrica.analytics.impl.C0324ib, io.appmetrica.analytics.impl.AbstractC0474oa
+    public final void a(List<Rg> list) {
+        list.add(this.f1152a.u);
+        super.a(list);
     }
 }

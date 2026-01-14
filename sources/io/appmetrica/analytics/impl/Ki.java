@@ -9,35 +9,32 @@ import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
 import java.io.IOException;
 /* loaded from: classes5.dex */
 public final class Ki extends MessageNano {
-    public static final int c = 0;
-    public static final int d = 1;
-    public static final int e = 2;
-    public static final int f = 3;
-    public static final int g = 4;
-    public static volatile Ki[] h;
+    public static volatile Ki[] d;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f654a;
-    public int b;
+    public boolean f662a;
+    public Ji b;
+    public Ii c;
 
     public Ki() {
         a();
     }
 
     public static Ki[] b() {
-        if (h == null) {
+        if (d == null) {
             synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (h == null) {
-                    h = new Ki[0];
+                if (d == null) {
+                    d = new Ki[0];
                 }
             }
         }
-        return h;
+        return d;
     }
 
     public final Ki a() {
-        this.f654a = 0;
-        this.b = 0;
+        this.f662a = false;
+        this.b = null;
+        this.c = null;
         this.cachedSize = -1;
         return this;
     }
@@ -45,23 +42,31 @@ public final class Ki extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        int i = this.f654a;
-        if (i != 0) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeUInt32Size(1, i);
+        boolean z = this.f662a;
+        if (z) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeBoolSize(1, z);
         }
-        int i2 = this.b;
-        return i2 != 0 ? CodedOutputByteBufferNano.computeInt32Size(2, i2) + computeSerializedSize : computeSerializedSize;
+        Ji ji = this.b;
+        if (ji != null) {
+            computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(2, ji);
+        }
+        Ii ii = this.c;
+        return ii != null ? CodedOutputByteBufferNano.computeMessageSize(3, ii) + computeSerializedSize : computeSerializedSize;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        int i = this.f654a;
-        if (i != 0) {
-            codedOutputByteBufferNano.writeUInt32(1, i);
+        boolean z = this.f662a;
+        if (z) {
+            codedOutputByteBufferNano.writeBool(1, z);
         }
-        int i2 = this.b;
-        if (i2 != 0) {
-            codedOutputByteBufferNano.writeInt32(2, i2);
+        Ji ji = this.b;
+        if (ji != null) {
+            codedOutputByteBufferNano.writeMessage(2, ji);
+        }
+        Ii ii = this.c;
+        if (ii != null) {
+            codedOutputByteBufferNano.writeMessage(3, ii);
         }
         super.writeTo(codedOutputByteBufferNano);
     }
@@ -74,16 +79,21 @@ public final class Ki extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 8) {
-                this.f654a = codedInputByteBufferNano.readUInt32();
-            } else if (readTag != 16) {
+                this.f662a = codedInputByteBufferNano.readBool();
+            } else if (readTag == 18) {
+                if (this.b == null) {
+                    this.b = new Ji();
+                }
+                codedInputByteBufferNano.readMessage(this.b);
+            } else if (readTag != 26) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;
                 }
             } else {
-                int readInt32 = codedInputByteBufferNano.readInt32();
-                if (readInt32 == 0 || readInt32 == 1 || readInt32 == 2 || readInt32 == 3 || readInt32 == 4) {
-                    this.b = readInt32;
+                if (this.c == null) {
+                    this.c = new Ii();
                 }
+                codedInputByteBufferNano.readMessage(this.c);
             }
         }
         return this;

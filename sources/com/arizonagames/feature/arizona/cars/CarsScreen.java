@@ -107,7 +107,7 @@ public final class CarsScreen extends SAMPUIElement {
         this.carInfoSecondScreen = new ArrayList();
         ArizonaRetrofit arizonaRetrofit = new ArizonaRetrofit(targetActivity, i);
         this.client = arizonaRetrofit;
-        this.api = (CarsApi) ArizonaRetrofit.create$default(arizonaRetrofit, CarsApi.class, false, null, 6, null);
+        this.api = (CarsApi) ArizonaRetrofit.create$default(arizonaRetrofit, CarsApi.class, false, null, null, 14, null);
         this.qualityTypeList = CollectionsKt.emptyList();
         this.bonusType = CollectionsKt.emptyList();
         this.bonuses = CollectionsKt.emptyList();

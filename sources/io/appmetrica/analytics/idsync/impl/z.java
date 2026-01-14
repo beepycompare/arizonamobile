@@ -1,37 +1,26 @@
 package io.appmetrica.analytics.idsync.impl;
 
-import kotlin.jvm.internal.Intrinsics;
+import com.google.firebase.analytics.FirebaseAnalytics;
+import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 /* loaded from: classes3.dex */
-public final class z {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final String f480a;
-    public final long b;
-    public final int c;
-
-    public z(String str, long j, int i) {
-        this.f480a = str;
-        this.b = j;
-        this.c = i;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+public abstract /* synthetic */ class z {
+    public static /* synthetic */ String a(int i) {
+        if (i != 1) {
+            if (i != 2) {
+                if (i != 3) {
+                    if (i == 4) {
+                        return "failure";
+                    }
+                    throw null;
+                }
+                return "incompatible_precondition";
+            }
+            return FirebaseAnalytics.Param.SUCCESS;
         }
-        if (obj instanceof z) {
-            z zVar = (z) obj;
-            return Intrinsics.areEqual(this.f480a, zVar.f480a) && this.b == zVar.b && this.c == zVar.c;
-        }
-        return false;
+        return "none";
     }
 
-    public final int hashCode() {
-        int hashCode = Long.hashCode(this.b);
-        return v.a(this.c) + ((hashCode + (this.f480a.hashCode() * 31)) * 31);
-    }
-
-    public final String toString() {
-        return "RequestState(type=" + this.f480a + ", lastAttempt=" + this.b + ", lastAttemptResult=" + u.b(this.c) + ')';
+    public static /* synthetic */ String b(int i) {
+        return i != 1 ? i != 2 ? i != 3 ? i != 4 ? AbstractJsonLexerKt.NULL : "FAILURE" : "INCOMPATIBLE_PRECONDITION" : "SUCCESS" : "NONE";
     }
 }

@@ -5,11 +5,21 @@ import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 public final class Cc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f527a;
-    public final PublicLogger b;
+    public final Xm f533a;
+    public final Xm b;
+    public final C0418m4 c;
+    public final PublicLogger d;
+    public final String e;
 
     public Cc(String str, PublicLogger publicLogger) {
-        this.f527a = str;
-        this.b = publicLogger;
+        this(new C0418m4(30), new Xm(50, str.concat("map key"), publicLogger), new Xm(4000, str.concat("map value"), publicLogger), str, publicLogger);
+    }
+
+    public Cc(C0418m4 c0418m4, Xm xm, Xm xm2, String str, PublicLogger publicLogger) {
+        this.c = c0418m4;
+        this.f533a = xm;
+        this.b = xm2;
+        this.e = str;
+        this.d = publicLogger;
     }
 }

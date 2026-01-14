@@ -1,23 +1,24 @@
 package io.appmetrica.analytics.impl;
 
-import android.util.Base64;
+import android.content.Context;
+import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
 /* loaded from: classes5.dex */
-public final class M9 implements H8 {
-    @Override // io.appmetrica.analytics.impl.H8
-    public final A8 a(Q5 q5) {
-        throw new UnsupportedOperationException();
+public final class M9 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Context f691a;
+    public final Vm b;
+    public final W2 c;
+    public final SafePackageManager d;
+
+    public M9(Context context, Vm vm, W2 w2, SafePackageManager safePackageManager) {
+        this.f691a = context;
+        this.b = vm;
+        this.c = w2;
+        this.d = safePackageManager;
     }
 
-    @Override // io.appmetrica.analytics.impl.H8
-    public final byte[] a(byte[] bArr) {
-        try {
-            return Base64.decode(bArr, 0);
-        } catch (Throwable unused) {
-            return new byte[0];
-        }
-    }
-
-    public final J8 a() {
-        return J8.EXTERNALLY_ENCRYPTED_EVENT_CRYPTER;
+    public M9(Context context) {
+        this(context, new Vm(context, "io.appmetrica.analytics.build_id"), new W2(context, "io.appmetrica.analytics.is_offline"), new SafePackageManager());
     }
 }

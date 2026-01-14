@@ -1,27 +1,22 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.data.BaseProtobufStateSerializer;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
-import java.io.IOException;
+import android.content.Context;
+import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
 /* loaded from: classes5.dex */
-public final class R8 extends BaseProtobufStateSerializer {
-    public final C0643v9 a() {
-        return new C0643v9();
+public final class R8 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final P8 f764a;
+    public final Q8 b;
+    public final IBinaryDataHelper c;
+
+    public R8(Context context, Q4 q4) {
+        this(new Q8(), new P8(), C0449na.k().B().a(context, q4));
     }
 
-    @Override // io.appmetrica.analytics.coreutils.internal.data.BaseProtobufStateSerializer, io.appmetrica.analytics.coreapi.internal.data.StateSerializer
-    public final MessageNano defaultValue() {
-        return new C0643v9();
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.data.StateSerializer
-    /* renamed from: a */
-    public final C0643v9 toState(byte[] bArr) throws IOException {
-        return (C0643v9) MessageNano.mergeFrom(new C0643v9(), bArr);
-    }
-
-    @Override // io.appmetrica.analytics.coreutils.internal.data.BaseProtobufStateSerializer, io.appmetrica.analytics.coreapi.internal.data.StateSerializer
-    public final Object defaultValue() {
-        return new C0643v9();
+    public R8(Q8 q8, P8 p8, IBinaryDataHelper iBinaryDataHelper) {
+        this.b = q8;
+        this.f764a = p8;
+        this.c = iBinaryDataHelper;
     }
 }

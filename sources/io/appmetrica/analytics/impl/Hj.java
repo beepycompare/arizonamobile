@@ -1,18 +1,20 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.AdRevenue;
 /* loaded from: classes5.dex */
-public final class Hj implements Ra {
+public final class Hj implements Qa {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f608a;
-    public final /* synthetic */ byte[] b;
+    public final /* synthetic */ AdRevenue f617a;
+    public final /* synthetic */ boolean b;
 
-    public Hj(String str, byte[] bArr) {
-        this.f608a = str;
-        this.b = bArr;
+    public Hj(AdRevenue adRevenue, boolean z) {
+        this.f617a = adRevenue;
+        this.b = z;
     }
 
-    @Override // io.appmetrica.analytics.impl.Ra
-    public final void a(Sa sa) {
-        sa.setSessionExtra(this.f608a, this.b);
+    @Override // io.appmetrica.analytics.impl.Qa
+    public final void a(Ra ra) {
+        ra.reportAdRevenue(this.f617a, this.b);
     }
 }

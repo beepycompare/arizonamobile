@@ -1,0 +1,14 @@
+package io.appmetrica.analytics.impl;
+/* renamed from: io.appmetrica.analytics.impl.u6  reason: case insensitive filesystem */
+/* loaded from: classes5.dex */
+public final class C0619u6 {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final Dg f1251a;
+    public final String b;
+
+    public C0619u6(Dg dg, String str) {
+        this.f1251a = dg;
+        this.b = str;
+    }
+}

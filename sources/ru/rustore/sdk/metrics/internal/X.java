@@ -10,7 +10,7 @@ public final class X {
     public static X d;
 
     /* renamed from: a  reason: collision with root package name */
-    public final U f1588a;
+    public final U f1597a;
     public final MetricsClient b;
 
     /* loaded from: classes6.dex */
@@ -32,8 +32,8 @@ public final class X {
     }
 
     /* loaded from: classes6.dex */
-    public static final class b implements InterfaceC0816g {
-        @Override // ru.rustore.sdk.metrics.internal.InterfaceC0816g
+    public static final class b implements InterfaceC0820g {
+        @Override // ru.rustore.sdk.metrics.internal.InterfaceC0820g
         public final void a(Function0<String> messageBuilder) {
             Intrinsics.checkNotNullParameter(messageBuilder, "messageBuilder");
         }
@@ -43,9 +43,9 @@ public final class X {
         Z z = new Z();
         b bVar = new b();
         Y y = new Y(context);
-        N n = new N(new I(new C0824o(context, new B(new C0831w(), new C0832x(), new C0834z(new a0()), new A())), bVar), new K(new C0828t(), new c0()), new L(new C0828t()), bVar);
-        U u = new U(n, new T(n, new S(new b0(y, new c0()), new C(context), new O(new C0827s(new C0811b(), new Q(), bVar)), new e0(context))));
-        this.f1588a = u;
-        this.b = new MetricsClient(new C0823n(u, new C0812c(n), new V(context, new C0813d(new C0815f(new C0814e()))), z, bVar));
+        N n = new N(new I(new C0828o(context, new B(new C0835w(), new C0836x(), new C0838z(new a0()), new A())), bVar), new K(new C0832t(), new c0()), new L(new C0832t()), bVar);
+        U u = new U(n, new T(n, new S(new b0(y, new c0()), new C(context), new O(new C0831s(new C0815b(), new Q(), bVar)), new e0(context))));
+        this.f1597a = u;
+        this.b = new MetricsClient(new C0827n(u, new C0816c(n), new V(context, new C0817d(new C0819f(new C0818e()))), z, bVar));
     }
 }

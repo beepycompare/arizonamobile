@@ -1,37 +1,23 @@
 package io.appmetrica.analytics.impl;
 
-import android.content.Context;
-import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
-import java.util.Map;
+import kotlinx.datetime.internal.DateCalculationsKt;
 /* loaded from: classes5.dex */
 public final class Ok {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f723a;
-    public final Jk b;
-    public final Nk c;
-    public final IBinaryDataHelper d;
+    public final Vk f729a;
+    public Integer b;
 
-    public Ok(Context context, R4 r4) {
-        r4.a();
-        this.f723a = "session_extras";
-        this.b = new Jk();
-        this.c = new Nk();
-        this.d = C0470oa.k().B().a(context, r4);
+    public Ok(Vk vk) {
+        this.f729a = vk;
     }
 
-    public final Map a() {
-        try {
-            byte[] bArr = this.d.get(this.f723a);
-            if (bArr != null) {
-                if (!(bArr.length == 0)) {
-                    return this.b.toModel(this.c.toState(bArr));
-                }
-            }
-        } catch (Throwable unused) {
-        }
-        Jk jk = this.b;
-        this.c.getClass();
-        return jk.toModel(new Lk());
+    public final Pk a() {
+        return new Pk(this);
+    }
+
+    public final Ok b() {
+        this.b = Integer.valueOf((int) DateCalculationsKt.SECONDS_PER_HOUR);
+        return this;
     }
 }

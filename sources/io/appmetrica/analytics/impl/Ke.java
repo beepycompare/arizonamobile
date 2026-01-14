@@ -1,39 +1,34 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.plugins.PluginErrorDetails;
-import io.appmetrica.analytics.plugins.StackTraceItem;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import kotlin.collections.CollectionsKt;
+import io.appmetrica.analytics.coreapi.internal.servicecomponents.ActivationBarrierCallback;
+import java.util.concurrent.TimeUnit;
 /* loaded from: classes5.dex */
-public final class Ke {
+public final class Ke implements InterfaceC0625uc, ActivationBarrierCallback {
 
     /* renamed from: a  reason: collision with root package name */
-    public final N9 f652a;
+    public final InterfaceC0547r9 f659a;
+    public final C0600tc b;
+    public final C0600tc c;
 
-    public Ke(N9 n9) {
-        this.f652a = n9;
+    public Ke(InterfaceC0547r9 interfaceC0547r9, Qg qg, C0468o4 c0468o4, We we) {
+        this.f659a = interfaceC0547r9;
+        C0600tc c0600tc = new C0600tc(qg, c0468o4, we);
+        this.b = c0600tc;
+        this.c = c0600tc;
+        if (c0600tc.b()) {
+            return;
+        }
+        C0449na.k().a().subscribe(TimeUnit.SECONDS.toMillis(I7.f625a.longValue()), C0449na.k().w().d(), this);
     }
 
-    public final Rn a(PluginErrorDetails pluginErrorDetails) {
-        ArrayList arrayList;
-        String exceptionClass = pluginErrorDetails.getExceptionClass();
-        String message = pluginErrorDetails.getMessage();
-        List<StackTraceItem> stacktrace = pluginErrorDetails.getStacktrace();
-        String platform = pluginErrorDetails.getPlatform();
-        String virtualMachineVersion = pluginErrorDetails.getVirtualMachineVersion();
-        Map<String, String> pluginEnvironment = pluginErrorDetails.getPluginEnvironment();
-        String str = (String) this.f652a.b.a();
-        Boolean bool = (Boolean) this.f652a.c.a();
-        if (stacktrace != null) {
-            arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(stacktrace, 10));
-            for (StackTraceItem stackTraceItem : stacktrace) {
-                arrayList.add(new El(stackTraceItem.getClassName(), stackTraceItem.getFileName(), stackTraceItem.getLine(), stackTraceItem.getColumn(), stackTraceItem.getMethodName(), null));
-            }
-        } else {
-            arrayList = null;
-        }
-        return new Rn(new Hn(exceptionClass, message, arrayList, null, null), null, null, platform, virtualMachineVersion, pluginEnvironment, str, bool);
+    @Override // io.appmetrica.analytics.impl.InterfaceC0625uc
+    public final F8 a() {
+        return this.c;
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.servicecomponents.ActivationBarrierCallback
+    public final void onWaitFinished() {
+        this.b.a();
+        ((C0369k5) this.f659a.a()).e();
     }
 }

@@ -1,46 +1,115 @@
 package io.appmetrica.analytics.impl;
 
 import android.content.Context;
-import io.appmetrica.analytics.coreapi.internal.backport.Consumer;
-import io.appmetrica.analytics.coreutils.internal.logger.LoggerStorage;
-import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
-import java.util.HashMap;
-import java.util.Set;
+import android.content.pm.FeatureInfo;
+import android.content.pm.PackageInfo;
+import android.text.TextUtils;
+import com.facebook.internal.NativeProtocol;
+import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
+import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
+import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import org.json.JSONArray;
+import org.json.JSONObject;
 /* loaded from: classes5.dex */
-public final class Vg {
+public final class Vg extends Rg {
+    public final SafePackageManager b;
 
-    /* renamed from: a  reason: collision with root package name */
-    public final Context f823a;
-    public final InterfaceC0148bl b;
-    public final C0471ob c = new C0471ob();
-    public final C0514q4 d = new C0514q4(new C0123am(), new C0489p4(), null);
-    public final Consumer e;
-
-    public Vg(Context context, final InterfaceC0210e6 interfaceC0210e6, final EnumC0164cb enumC0164cb, InterfaceC0148bl interfaceC0148bl) {
-        this.f823a = context;
-        this.b = interfaceC0148bl;
-        this.e = new Consumer() { // from class: io.appmetrica.analytics.impl.Vg$$ExternalSyntheticLambda0
-            @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
-            public final void consume(Object obj) {
-                Vg.a(EnumC0164cb.this, interfaceC0210e6, this, (C0370kb) obj);
-            }
-        };
+    public Vg(X4 x4) {
+        this(x4, new SafePackageManager());
     }
 
-    public static final void a(EnumC0164cb enumC0164cb, InterfaceC0210e6 interfaceC0210e6, Vg vg, C0370kb c0370kb) {
-        String str = c0370kb.h;
-        Q3 q3 = new Q3(str, c0370kb.e, c0370kb.f, c0370kb.g, c0370kb.i);
-        String str2 = c0370kb.b;
-        byte[] bArr = c0370kb.f1072a;
-        int i = c0370kb.c;
-        HashMap hashMap = c0370kb.d;
-        String str3 = c0370kb.j;
-        PublicLogger orCreatePublicLogger = LoggerStorage.getOrCreatePublicLogger(str);
-        Set set = AbstractC0693x9.f1295a;
-        N3 n3 = new N3(bArr, str2, enumC0164cb.f927a, orCreatePublicLogger);
-        n3.q = hashMap;
-        n3.g = i;
-        n3.c = str3;
-        ((Tg) interfaceC0210e6).a(q3, n3, vg.d);
+    /* JADX WARN: Removed duplicated region for block: B:17:0x004d A[Catch: all -> 0x00d1, TryCatch #0 {all -> 0x00d1, blocks: (B:15:0x0043, B:17:0x004d, B:18:0x005d, B:19:0x0066, B:21:0x006c, B:23:0x008f, B:24:0x0095, B:25:0x0099), top: B:28:0x0043 }] */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x005d A[Catch: all -> 0x00d1, TryCatch #0 {all -> 0x00d1, blocks: (B:15:0x0043, B:17:0x004d, B:18:0x005d, B:19:0x0066, B:21:0x006c, B:23:0x008f, B:24:0x0095, B:25:0x0099), top: B:28:0x0043 }] */
+    @Override // io.appmetrica.analytics.impl.Rg
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean a(P5 p5) {
+        HashSet hashSet;
+        ArrayList b;
+        X4 x4 = this.f768a;
+        if (x4.t.c() && x4.y()) {
+            We we = x4.c;
+            String e = this.f768a.c.e();
+            try {
+                if (!TextUtils.isEmpty(e)) {
+                    try {
+                        hashSet = new HashSet();
+                        JSONArray jSONArray = new JSONArray(e);
+                        for (int i = 0; i < jSONArray.length(); i++) {
+                            hashSet.add(new R9(jSONArray.getJSONObject(i)));
+                        }
+                    } catch (Throwable unused) {
+                        hashSet = null;
+                    }
+                    b = b();
+                    if (!CollectionUtils.areCollectionsEqual(hashSet, b)) {
+                        C0373k9 c0373k9 = x4.n;
+                        int i2 = c0373k9.j;
+                        c0373k9.l = i2;
+                        c0373k9.f1080a.a(i2).b();
+                    } else {
+                        JSONArray jSONArray2 = new JSONArray();
+                        Iterator it = b.iterator();
+                        while (it.hasNext()) {
+                            R9 r9 = (R9) it.next();
+                            r9.getClass();
+                            JSONObject put = new JSONObject().put("name", r9.f765a).put("required", r9.c);
+                            int i3 = r9.b;
+                            if (i3 != -1) {
+                                put.put(NativeProtocol.PLATFORM_PROVIDER_VERSION_COLUMN, i3);
+                            }
+                            jSONArray2.put(put);
+                        }
+                        P5 a2 = P5.a(p5, new JSONObject().put("features", jSONArray2).toString());
+                        C0373k9 c0373k92 = x4.n;
+                        c0373k92.a(a2, Rk.a(c0373k92.c.b(a2), a2.i));
+                        int i4 = c0373k92.j;
+                        c0373k92.l = i4;
+                        c0373k92.f1080a.a(i4).b();
+                        we.i(jSONArray2.toString());
+                    }
+                }
+                b = b();
+                if (!CollectionUtils.areCollectionsEqual(hashSet, b)) {
+                }
+            } catch (Throwable unused2) {
+            }
+            hashSet = null;
+        }
+        return false;
+    }
+
+    public final ArrayList b() {
+        Q9 p9;
+        FeatureInfo[] featureInfoArr;
+        try {
+            X4 x4 = this.f768a;
+            SafePackageManager safePackageManager = this.b;
+            Context context = x4.f849a;
+            PackageInfo packageInfo = safePackageManager.getPackageInfo(context, context.getPackageName(), 16384);
+            ArrayList arrayList = new ArrayList();
+            if (AndroidUtils.isApiAchieved(24)) {
+                p9 = new O9();
+            } else {
+                p9 = new P9();
+            }
+            if (packageInfo != null && (featureInfoArr = packageInfo.reqFeatures) != null) {
+                for (FeatureInfo featureInfo : featureInfoArr) {
+                    arrayList.add(p9.a(featureInfo));
+                }
+            }
+            return arrayList;
+        } catch (Throwable unused) {
+            return null;
+        }
+    }
+
+    public Vg(X4 x4, SafePackageManager safePackageManager) {
+        super(x4);
+        this.b = safePackageManager;
     }
 }

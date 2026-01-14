@@ -1,26 +1,37 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreutils.internal.data.BaseProtobufStateSerializer;
-import io.appmetrica.analytics.protobuf.nano.MessageNano;
+import android.content.Context;
+import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
+import java.util.Map;
 /* loaded from: classes5.dex */
-public final class Nk extends BaseProtobufStateSerializer {
-    public final Lk a() {
-        return new Lk();
+public final class Nk {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final String f714a;
+    public final Ik b;
+    public final Mk c;
+    public final IBinaryDataHelper d;
+
+    public Nk(Context context, Q4 q4) {
+        q4.a();
+        this.f714a = "session_extras";
+        this.b = new Ik();
+        this.c = new Mk();
+        this.d = C0449na.k().B().a(context, q4);
     }
 
-    @Override // io.appmetrica.analytics.coreutils.internal.data.BaseProtobufStateSerializer, io.appmetrica.analytics.coreapi.internal.data.StateSerializer
-    public final MessageNano defaultValue() {
-        return new Lk();
-    }
-
-    @Override // io.appmetrica.analytics.coreapi.internal.data.StateSerializer
-    /* renamed from: a */
-    public final Lk toState(byte[] bArr) {
-        return (Lk) MessageNano.mergeFrom(new Lk(), bArr);
-    }
-
-    @Override // io.appmetrica.analytics.coreutils.internal.data.BaseProtobufStateSerializer, io.appmetrica.analytics.coreapi.internal.data.StateSerializer
-    public final Object defaultValue() {
-        return new Lk();
+    public final Map a() {
+        try {
+            byte[] bArr = this.d.get(this.f714a);
+            if (bArr != null) {
+                if (!(bArr.length == 0)) {
+                    return this.b.toModel(this.c.toState(bArr));
+                }
+            }
+        } catch (Throwable unused) {
+        }
+        Ik ik = this.b;
+        this.c.getClass();
+        return ik.toModel(new Kk());
     }
 }

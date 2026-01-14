@@ -2,16 +2,14 @@ package io.appmetrica.analytics.impl;
 
 import java.util.List;
 /* loaded from: classes5.dex */
-public final class Vn extends AbstractC0495pa {
-    public Vn(C0577si c0577si) {
-        super(c0577si);
+public final class Vn extends AbstractC0474oa {
+    public Vn(C0556ri c0556ri) {
+        super(c0556ri);
     }
 
-    @Override // io.appmetrica.analytics.impl.AbstractC0495pa
-    public final void a(List<Sg> list) {
-        list.add(this.f1162a.f1219a);
-        list.add(this.f1162a.b);
-        list.add(this.f1162a.n);
-        list.add(this.f1162a.d);
+    @Override // io.appmetrica.analytics.impl.AbstractC0474oa
+    public final void a(List<Rg> list) {
+        list.add(this.f1152a.h);
+        list.add(this.f1152a.n);
     }
 }

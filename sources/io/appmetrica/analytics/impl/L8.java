@@ -7,33 +7,30 @@ import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
 import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
 import java.io.IOException;
-import java.util.Arrays;
 /* loaded from: classes5.dex */
 public final class L8 extends MessageNano {
-    public static volatile L8[] c;
+    public static volatile L8[] b;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f665a;
-    public byte[] b;
+    public K8[] f675a;
 
     public L8() {
         a();
     }
 
     public static L8[] b() {
-        if (c == null) {
+        if (b == null) {
             synchronized (InternalNano.LAZY_INIT_LOCK) {
-                if (c == null) {
-                    c = new L8[0];
+                if (b == null) {
+                    b = new L8[0];
                 }
             }
         }
-        return c;
+        return b;
     }
 
     public final L8 a() {
-        this.f665a = "";
-        this.b = WireFormatNano.EMPTY_BYTES;
+        this.f675a = K8.b();
         this.cachedSize = -1;
         return this;
     }
@@ -41,19 +38,40 @@ public final class L8 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        if (!this.f665a.equals("")) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeStringSize(1, this.f665a);
+        K8[] k8Arr = this.f675a;
+        if (k8Arr != null && k8Arr.length > 0) {
+            int i = 0;
+            while (true) {
+                K8[] k8Arr2 = this.f675a;
+                if (i >= k8Arr2.length) {
+                    break;
+                }
+                K8 k8 = k8Arr2[i];
+                if (k8 != null) {
+                    computeSerializedSize = CodedOutputByteBufferNano.computeMessageSize(1, k8) + computeSerializedSize;
+                }
+                i++;
+            }
         }
-        return !Arrays.equals(this.b, WireFormatNano.EMPTY_BYTES) ? CodedOutputByteBufferNano.computeBytesSize(2, this.b) + computeSerializedSize : computeSerializedSize;
+        return computeSerializedSize;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        if (!this.f665a.equals("")) {
-            codedOutputByteBufferNano.writeString(1, this.f665a);
-        }
-        if (!Arrays.equals(this.b, WireFormatNano.EMPTY_BYTES)) {
-            codedOutputByteBufferNano.writeBytes(2, this.b);
+        K8[] k8Arr = this.f675a;
+        if (k8Arr != null && k8Arr.length > 0) {
+            int i = 0;
+            while (true) {
+                K8[] k8Arr2 = this.f675a;
+                if (i >= k8Arr2.length) {
+                    break;
+                }
+                K8 k8 = k8Arr2[i];
+                if (k8 != null) {
+                    codedOutputByteBufferNano.writeMessage(1, k8);
+                }
+                i++;
+            }
         }
         super.writeTo(codedOutputByteBufferNano);
     }
@@ -65,14 +83,30 @@ public final class L8 extends MessageNano {
             int readTag = codedInputByteBufferNano.readTag();
             if (readTag == 0) {
                 break;
-            } else if (readTag == 10) {
-                this.f665a = codedInputByteBufferNano.readString();
-            } else if (readTag != 18) {
+            } else if (readTag != 10) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;
                 }
             } else {
-                this.b = codedInputByteBufferNano.readBytes();
+                int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 10);
+                K8[] k8Arr = this.f675a;
+                int length = k8Arr == null ? 0 : k8Arr.length;
+                int i = repeatedFieldArrayLength + length;
+                K8[] k8Arr2 = new K8[i];
+                if (length != 0) {
+                    System.arraycopy(k8Arr, 0, k8Arr2, 0, length);
+                }
+                while (length < i - 1) {
+                    K8 k8 = new K8();
+                    k8Arr2[length] = k8;
+                    codedInputByteBufferNano.readMessage(k8);
+                    codedInputByteBufferNano.readTag();
+                    length++;
+                }
+                K8 k82 = new K8();
+                k8Arr2[length] = k82;
+                codedInputByteBufferNano.readMessage(k82);
+                this.f675a = k8Arr2;
             }
         }
         return this;

@@ -1,0 +1,15 @@
+package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.coreutils.internal.WrapUtils;
+/* renamed from: io.appmetrica.analytics.impl.yh  reason: case insensitive filesystem */
+/* loaded from: classes5.dex */
+public final class C0730yh extends AbstractC0278gh {
+    public C0730yh(E6 e6) {
+        super(e6);
+    }
+
+    @Override // io.appmetrica.analytics.impl.AbstractC0278gh, io.appmetrica.analytics.impl.InterfaceC0304hh
+    public final boolean a(Boolean bool) {
+        return !this.f1015a.isRestrictedForSdk() && ((Boolean) WrapUtils.getOrDefault(bool, Boolean.TRUE)).booleanValue();
+    }
+}

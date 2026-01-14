@@ -1,19 +1,22 @@
 package io.appmetrica.analytics.impl;
+
+import io.appmetrica.analytics.coreutils.internal.collection.CollectionUtils;
+import java.util.List;
 /* loaded from: classes5.dex */
 public final class Zh implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Rn f879a;
-    public final /* synthetic */ C0300hi b;
+    public final /* synthetic */ List f890a;
+    public final /* synthetic */ C0279gi b;
 
-    public Zh(C0300hi c0300hi, Rn rn) {
-        this.b = c0300hi;
-        this.f879a = rn;
+    public Zh(C0279gi c0279gi, List list) {
+        this.b = c0279gi;
+        this.f890a = list;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        C0300hi c0300hi = this.b;
-        C0300hi.a(c0300hi.f1024a, c0300hi.d, c0300hi.e).a(this.f879a);
+        C0279gi c0279gi = this.b;
+        C0279gi.a(c0279gi.f1016a, c0279gi.d, c0279gi.e).reportAnr(CollectionUtils.getMapFromList(this.f890a));
     }
 }

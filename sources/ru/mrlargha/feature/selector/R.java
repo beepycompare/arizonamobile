@@ -4,8 +4,8 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class drawable {
-        public static int selector_arrow_ic = 0x7f080da6;
-        public static int selector_line_ic = 0x7f080da7;
+        public static int selector_arrow_ic = 0x7f080da5;
+        public static int selector_line_ic = 0x7f080da6;
 
         private drawable() {
         }
@@ -17,18 +17,18 @@ public final class R {
         public static int btn_decline = 0x7f0a0231;
         public static int btn_slide_left = 0x7f0a0252;
         public static int btn_slide_right = 0x7f0a0253;
-        public static int indicator = 0x7f0a06e8;
-        public static int line = 0x7f0a080c;
-        public static int money_container = 0x7f0a08d5;
-        public static int rv_indicators = 0x7f0a0c12;
-        public static int rv_info = 0x7f0a0c13;
-        public static int selector = 0x7f0a0c6b;
-        public static int tv_confirm = 0x7f0a0ec7;
-        public static int tv_decline = 0x7f0a0ece;
-        public static int tv_money = 0x7f0a0eed;
-        public static int tv_name = 0x7f0a0ef0;
-        public static int tv_title = 0x7f0a0f1d;
-        public static int tv_value = 0x7f0a0f25;
+        public static int indicator = 0x7f0a06dd;
+        public static int line = 0x7f0a0800;
+        public static int money_container = 0x7f0a08c7;
+        public static int rv_indicators = 0x7f0a0c03;
+        public static int rv_info = 0x7f0a0c04;
+        public static int selector = 0x7f0a0c5c;
+        public static int tv_confirm = 0x7f0a0eb4;
+        public static int tv_decline = 0x7f0a0ebb;
+        public static int tv_money = 0x7f0a0eda;
+        public static int tv_name = 0x7f0a0edd;
+        public static int tv_title = 0x7f0a0f0a;
+        public static int tv_value = 0x7f0a0f12;
 
         private id() {
         }
@@ -36,9 +36,9 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class layout {
-        public static int selector_additional_info_item = 0x7f0d0236;
-        public static int selector_indicator_item = 0x7f0d0239;
-        public static int selector_screen = 0x7f0d023a;
+        public static int selector_additional_info_item = 0x7f0d0234;
+        public static int selector_indicator_item = 0x7f0d0237;
+        public static int selector_screen = 0x7f0d0238;
 
         private layout() {
         }

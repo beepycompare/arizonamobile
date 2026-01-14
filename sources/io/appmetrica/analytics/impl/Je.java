@@ -1,37 +1,39 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.data.Converter;
-import java.nio.charset.Charset;
+import io.appmetrica.analytics.plugins.PluginErrorDetails;
+import io.appmetrica.analytics.plugins.StackTraceItem;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
-import kotlin.text.Charsets;
+import kotlin.collections.CollectionsKt;
 /* loaded from: classes5.dex */
-public final class Je implements Converter {
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    /* renamed from: a */
-    public final U5[] fromModel(Map<String, String> map) {
-        int size = map.size();
-        U5[] u5Arr = new U5[size];
-        int i = 0;
-        for (int i2 = 0; i2 < size; i2++) {
-            u5Arr[i2] = new U5();
-        }
-        for (Map.Entry<String, String> entry : map.entrySet()) {
-            U5 u5 = u5Arr[i];
-            Charset charset = Charsets.UTF_8;
-            u5.f804a = entry.getKey().getBytes(charset);
-            u5Arr[i].b = entry.getValue().getBytes(charset);
-            i++;
-        }
-        return u5Arr;
+public final class Je {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final M9 f644a;
+
+    public Je(M9 m9) {
+        this.f644a = m9;
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
-    public final Object toModel(Object obj) {
-        U5[] u5Arr = (U5[]) obj;
-        throw new UnsupportedOperationException();
-    }
-
-    public final Map<String, String> a(U5[] u5Arr) {
-        throw new UnsupportedOperationException();
+    public final Qn a(PluginErrorDetails pluginErrorDetails) {
+        ArrayList arrayList;
+        String exceptionClass = pluginErrorDetails.getExceptionClass();
+        String message = pluginErrorDetails.getMessage();
+        List<StackTraceItem> stacktrace = pluginErrorDetails.getStacktrace();
+        String platform = pluginErrorDetails.getPlatform();
+        String virtualMachineVersion = pluginErrorDetails.getVirtualMachineVersion();
+        Map<String, String> pluginEnvironment = pluginErrorDetails.getPluginEnvironment();
+        String str = (String) this.f644a.b.a();
+        Boolean bool = (Boolean) this.f644a.c.a();
+        if (stacktrace != null) {
+            arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(stacktrace, 10));
+            for (StackTraceItem stackTraceItem : stacktrace) {
+                arrayList.add(new Dl(stackTraceItem.getClassName(), stackTraceItem.getFileName(), stackTraceItem.getLine(), stackTraceItem.getColumn(), stackTraceItem.getMethodName(), null));
+            }
+        } else {
+            arrayList = null;
+        }
+        return new Qn(new Gn(exceptionClass, message, arrayList, null, null), null, null, platform, virtualMachineVersion, pluginEnvironment, str, bool);
     }
 }

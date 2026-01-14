@@ -1,26 +1,41 @@
 package io.appmetrica.analytics.impl;
 
-import android.app.Activity;
+import android.content.Context;
+import io.appmetrica.analytics.IReporter;
 import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityEvent;
-import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListener;
 /* loaded from: classes5.dex */
-public final class E5 implements ActivityLifecycleListener {
+public final class E5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ F5 f552a;
+    public final C0463o f562a;
+    public final IReporter b;
+    public Context c;
+    public final D5 d;
 
-    public E5(F5 f5) {
-        this.f552a = f5;
+    public E5(C0463o c0463o) {
+        this(c0463o, 0);
     }
 
-    @Override // io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListener
-    public final void onEvent(Activity activity, ActivityEvent activityEvent) {
-        int i = D5.f539a[activityEvent.ordinal()];
-        if (i == 1) {
-            this.f552a.b.resumeSession();
-        } else if (i != 2) {
-        } else {
-            this.f552a.b.pauseSession();
+    public final synchronized void a(Context context) {
+        if (this.c == null) {
+            Context applicationContext = context.getApplicationContext();
+            this.f562a.a(applicationContext);
+            this.f562a.registerListener(this.d, ActivityEvent.RESUMED, ActivityEvent.PAUSED);
+            this.c = applicationContext;
         }
+    }
+
+    public E5(C0463o c0463o, IReporter iReporter) {
+        this.f562a = c0463o;
+        this.b = iReporter;
+        this.d = new D5(this);
+    }
+
+    public /* synthetic */ E5(C0463o c0463o, int i) {
+        this(c0463o, AbstractC0689x1.a());
+    }
+
+    public final synchronized Context a() {
+        return this.c;
     }
 }

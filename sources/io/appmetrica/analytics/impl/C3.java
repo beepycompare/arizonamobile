@@ -1,21 +1,13 @@
 package io.appmetrica.analytics.impl;
+
+import java.util.Map;
 /* loaded from: classes5.dex */
-public final class C3 implements Ti {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final C0116af f519a;
-
-    public C3(C0116af c0116af) {
-        this.f519a = c0116af;
-    }
-
-    @Override // io.appmetrica.analytics.impl.Ti
-    public final boolean a() {
-        return this.f519a.j();
-    }
-
-    @Override // io.appmetrica.analytics.impl.Ti
-    public final void b() {
-        this.f519a.g().b();
+public final class C3 {
+    public static boolean a(Map map, C0257fm c0257fm, C0741z3 c0741z3) {
+        Map map2 = ((C0541r3) c0741z3.a(new C0541r3(map, S7.c))).f1200a;
+        if (lo.a(map2)) {
+            return true;
+        }
+        return map2.equals(Fm.a(c0257fm.m));
     }
 }

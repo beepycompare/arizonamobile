@@ -1,13 +1,11 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
-public abstract class W4 {
+public final class W4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Bm f832a;
+    public final /* synthetic */ X4 f836a;
 
-    public W4(Bm bm) {
-        this.f832a = bm;
+    public W4(X4 x4) {
+        this.f836a = x4;
     }
-
-    public abstract Ll a();
 }

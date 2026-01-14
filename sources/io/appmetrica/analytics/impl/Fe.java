@@ -1,21 +1,22 @@
 package io.appmetrica.analytics.impl;
 
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable;
 import io.appmetrica.analytics.coreapi.internal.system.NetworkType;
+import io.appmetrica.analytics.coreutils.internal.AndroidUtils;
 /* loaded from: classes5.dex */
-public final class Fe extends Ec {
-    public Fe(Integer num) {
-        super(num);
-        a(NetworkType.CELL, 0);
-        a(NetworkType.WIFI, 1);
-        a(NetworkType.BLUETOOTH, 3);
-        a(NetworkType.ETHERNET, 4);
-        a(NetworkType.MOBILE_DUN, 5);
-        a(NetworkType.MOBILE_HIPRI, 6);
-        a(NetworkType.MOBILE_MMS, 7);
-        a(NetworkType.MOBILE_SUPL, 8);
-        a(NetworkType.VPN, 9);
-        a(NetworkType.WIMAX, 10);
-        a(NetworkType.LOWPAN, 11);
-        a(NetworkType.WIFI_AWARE, 12);
+public final class Fe implements FunctionWithThrowable {
+    @Override // io.appmetrica.analytics.coreapi.internal.backport.FunctionWithThrowable
+    public final Object apply(Object obj) {
+        ConnectivityManager connectivityManager = (ConnectivityManager) obj;
+        if (AndroidUtils.isApiAchieved(23)) {
+            return Ge.a(connectivityManager);
+        }
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        if (activeNetworkInfo != null && activeNetworkInfo.isConnected()) {
+            return (NetworkType) Ge.f597a.a(Integer.valueOf(activeNetworkInfo.getType()));
+        }
+        return NetworkType.OFFLINE;
     }
 }

@@ -1,19 +1,46 @@
 package io.appmetrica.analytics.impl;
 
-import android.text.TextUtils;
-import android.util.Base64;
+import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateSerializer;
+import io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage;
+import io.appmetrica.analytics.protobuf.nano.MessageNano;
 /* loaded from: classes5.dex */
-public final class Mf implements uo, InterfaceC0742z8 {
-    @Override // io.appmetrica.analytics.impl.InterfaceC0742z8
-    public final int a(J8 j8) {
-        return 2;
+public final class Mf implements ProtobufStateStorage {
+
+    /* renamed from: a  reason: collision with root package name */
+    public final String f696a;
+    public final IBinaryDataHelper b;
+    public final ProtobufStateSerializer c;
+    public final ProtobufConverter d;
+
+    public Mf(String str, IBinaryDataHelper iBinaryDataHelper, ProtobufStateSerializer<MessageNano> protobufStateSerializer, ProtobufConverter<Object, MessageNano> protobufConverter) {
+        this.f696a = str;
+        this.b = iBinaryDataHelper;
+        this.c = protobufStateSerializer;
+        this.d = protobufConverter;
     }
 
-    @Override // io.appmetrica.analytics.impl.uo
-    public final byte[] a(O8 o8, C0402lh c0402lh) {
-        if (TextUtils.isEmpty(o8.b)) {
-            return new byte[0];
+    @Override // io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage
+    public final void delete() {
+        this.b.remove(this.f696a);
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage
+    public final Object read() {
+        try {
+            byte[] bArr = this.b.get(this.f696a);
+            if (bArr != null && bArr.length != 0) {
+                return this.d.toModel((MessageNano) this.c.toState(bArr));
+            }
+            return this.d.toModel((MessageNano) this.c.defaultValue());
+        } catch (Throwable unused) {
+            return this.d.toModel((MessageNano) this.c.defaultValue());
         }
-        return Base64.decode(o8.b, 0);
+    }
+
+    @Override // io.appmetrica.analytics.coreapi.internal.data.ProtobufStateStorage
+    public final void save(Object obj) {
+        this.b.insert(this.f696a, this.c.toByteArray((MessageNano) this.d.fromModel(obj)));
     }
 }

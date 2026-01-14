@@ -1,16 +1,11 @@
 package io.appmetrica.analytics.impl;
 /* loaded from: classes5.dex */
-public final class E4 implements F2 {
-
-    /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0638v4 f551a;
-
-    public E4(C0638v4 c0638v4) {
-        this.f551a = c0638v4;
+public final class E4 extends F2 {
+    public E4(Ff ff, C0692x4 c0692x4) {
+        super(ff, c0692x4);
     }
 
-    @Override // io.appmetrica.analytics.impl.F2
-    public final boolean a(Object obj, Q5 q5) {
-        return ((B4) obj).a(q5, this.f551a);
+    public final boolean a(P5 p5, C0617u4 c0617u4) {
+        return a(p5, new D4(c0617u4));
     }
 }

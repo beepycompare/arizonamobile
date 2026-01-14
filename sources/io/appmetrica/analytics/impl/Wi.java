@@ -1,19 +1,28 @@
 package io.appmetrica.analytics.impl;
 
-import android.text.TextUtils;
+import org.json.JSONObject;
 /* loaded from: classes5.dex */
-public final class Wi extends Sg {
-    public Wi(Y4 y4) {
-        super(y4);
+public final class Wi extends Rg {
+    public final C0603tf b;
+
+    public Wi(X4 x4) {
+        this(x4, C0449na.k().t());
     }
 
-    @Override // io.appmetrica.analytics.impl.Sg
-    public final boolean a(Q5 q5) {
-        String str = q5.h;
-        if (TextUtils.isEmpty(str)) {
-            return false;
+    @Override // io.appmetrica.analytics.impl.Rg
+    public final boolean a(P5 p5) {
+        JSONObject jSONObject;
+        try {
+            jSONObject = new JSONObject(p5.getValue()).optJSONObject("preloadInfo");
+        } catch (Throwable unused) {
+            jSONObject = null;
         }
-        this.f777a.c.j(str).b();
+        this.b.b(C0529qf.a(jSONObject));
         return false;
+    }
+
+    public Wi(X4 x4, C0603tf c0603tf) {
+        super(x4);
+        this.b = c0603tf;
     }
 }

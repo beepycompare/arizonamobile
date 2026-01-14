@@ -19,27 +19,27 @@ import ru.rustore.sdk.reactive.single.SingleEmitter;
 public final class C extends Lambda implements Function1<SingleEmitter<Integer>, Unit> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0801r f1495a;
+    public final /* synthetic */ C0805r f1504a;
     public final /* synthetic */ AppUpdateInfo b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public C(C0801r c0801r, AppUpdateInfo appUpdateInfo) {
+    public C(C0805r c0805r, AppUpdateInfo appUpdateInfo) {
         super(1);
-        this.f1495a = c0801r;
+        this.f1504a = c0805r;
         this.b = appUpdateInfo;
     }
 
     public final void a(final SingleEmitter<Integer> emitter) {
         Object m10244constructorimpl;
         Intrinsics.checkNotNullParameter(emitter, "emitter");
-        C0801r c0801r = this.f1495a;
+        C0805r c0805r = this.f1504a;
         AppUpdateInfo appUpdateInfo = this.b;
         try {
             Result.Companion companion = Result.Companion;
-            Context context = c0801r.f1553a;
+            Context context = c0805r.f1562a;
             Intent intent = new Intent("ru.vk.store.FlexibleAppUpdate");
-            c0801r.b.getClass();
-            intent.putExtras(C0798o.a(appUpdateInfo));
+            c0805r.b.getClass();
+            intent.putExtras(C0802o.a(appUpdateInfo));
             ContextExtensionKt.openActivityForResult(context, intent, new OnReceiveResultCallback() { // from class: ru.rustore.sdk.appupdate.C$$ExternalSyntheticLambda0
                 @Override // ru.rustore.sdk.activitylauncher.OnReceiveResultCallback
                 public final void onReceiveResult(ActivityLauncherResult activityLauncherResult, Bundle bundle) {

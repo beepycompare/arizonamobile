@@ -1,19 +1,45 @@
 package io.appmetrica.analytics.impl;
 
-import io.appmetrica.analytics.coreapi.internal.identifiers.PlatformIdentifiers;
-import io.appmetrica.analytics.coreapi.internal.identifiers.SdkIdentifiers;
-import io.appmetrica.analytics.coreapi.internal.servicecomponents.SdkEnvironmentProvider;
+import android.content.Context;
+import android.content.pm.ApplicationInfo;
+import android.text.TextUtils;
+import io.appmetrica.analytics.coreutils.internal.services.SafePackageManager;
 import io.appmetrica.analytics.networktasks.internal.BaseRequestConfig;
 /* loaded from: classes5.dex */
-public final class M5 extends BaseRequestConfig.DataSource {
+public abstract class M5 extends BaseRequestConfig.ComponentLoader {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0278gm f681a;
-    public final SdkEnvironmentProvider b;
+    public final SafePackageManager f687a;
 
-    public M5(C0278gm c0278gm, SdkEnvironmentProvider sdkEnvironmentProvider, PlatformIdentifiers platformIdentifiers, Object obj) {
-        super(new SdkIdentifiers(c0278gm.c(), c0278gm.a(), c0278gm.b()), sdkEnvironmentProvider, platformIdentifiers, obj);
-        this.f681a = c0278gm;
-        this.b = sdkEnvironmentProvider;
+    public M5(Context context, String str) {
+        this(context, str, new SafePackageManager());
+    }
+
+    @Override // io.appmetrica.analytics.networktasks.internal.BaseRequestConfig.ComponentLoader, io.appmetrica.analytics.networktasks.internal.BaseRequestConfig.RequestConfigLoader
+    /* renamed from: a */
+    public N5 load(L5 l5) {
+        N5 n5 = (N5) super.load((M5) l5);
+        String packageName = getContext().getPackageName();
+        ApplicationInfo applicationInfo = this.f687a.getApplicationInfo(getContext(), getPackageName(), 0);
+        if (applicationInfo != null) {
+            int i = applicationInfo.flags;
+            n5.f706a = (i & 2) != 0 ? "1" : "0";
+            n5.b = (i & 1) == 0 ? "0" : "1";
+        } else if (TextUtils.equals(packageName, getPackageName())) {
+            n5.f706a = (getContext().getApplicationInfo().flags & 2) != 0 ? "1" : "0";
+            n5.b = (getContext().getApplicationInfo().flags & 1) == 0 ? "0" : "1";
+        } else {
+            n5.f706a = "0";
+            n5.b = "0";
+        }
+        C0257fm c0257fm = l5.f672a;
+        n5.c = c0257fm;
+        n5.setRetryPolicyConfig(c0257fm.t);
+        return n5;
+    }
+
+    public M5(Context context, String str, SafePackageManager safePackageManager) {
+        super(context, str);
+        this.f687a = safePackageManager;
     }
 }

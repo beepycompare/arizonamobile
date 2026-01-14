@@ -7,6 +7,6 @@ import java.sql.SQLException;
 public final class R6 extends DatabaseScript {
     @Override // io.appmetrica.analytics.coreapi.internal.db.DatabaseScript
     public final void runScript(SQLiteDatabase sQLiteDatabase) throws SQLException {
-        sQLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS binary_data (data_key TEXT PRIMARY KEY,value BLOB)");
+        sQLiteDatabase.execSQL("DROP TABLE IF EXISTS binary_data");
     }
 }
