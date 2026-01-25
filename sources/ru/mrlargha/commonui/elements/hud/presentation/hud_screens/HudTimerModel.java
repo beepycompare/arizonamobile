@@ -87,7 +87,7 @@ final class HudTimerModel {
     }
 
     /* renamed from: getType  reason: collision with other method in class */
-    public final HudTimerType m12310getType() {
+    public final HudTimerType m12311getType() {
         String str = this.type;
         return Intrinsics.areEqual(str, HudTimerType.DANGER.getType()) ? HudTimerType.DANGER : Intrinsics.areEqual(str, HudTimerType.WARNING.getType()) ? HudTimerType.WARNING : HudTimerType.DEFAULT;
     }

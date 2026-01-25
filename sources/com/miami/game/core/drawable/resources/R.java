@@ -20,18 +20,18 @@ public final class R {
         public static int download_screen_sound_btn = 0x7f080726;
         public static int download_screen_sound_btn_off = 0x7f080727;
         public static int download_screen_support_btn = 0x7f080728;
-        public static int ic_btn_shop = 0x7f080a47;
-        public static int ic_launcher_background = 0x7f080a8a;
-        public static int ic_play_home_screen = 0x7f080aac;
-        public static int ic_play_home_screen_inactive = 0x7f080aad;
-        public static int ic_setting = 0x7f080abf;
-        public static int icon_close = 0x7f080aea;
-        public static int news_background = 0x7f080c1c;
-        public static int repair_game_btn = 0x7f080d6b;
-        public static int rodina_backgournd_home = 0x7f080d73;
-        public static int select_server_favorite_false = 0x7f080da2;
-        public static int select_server_favorite_true = 0x7f080da3;
-        public static int setup_image = 0x7f080db7;
+        public static int ic_btn_shop = 0x7f080a46;
+        public static int ic_launcher_background = 0x7f080a89;
+        public static int ic_play_home_screen = 0x7f080aab;
+        public static int ic_play_home_screen_inactive = 0x7f080aac;
+        public static int ic_setting = 0x7f080abe;
+        public static int icon_close = 0x7f080ae9;
+        public static int news_background = 0x7f080c1a;
+        public static int repair_game_btn = 0x7f080d69;
+        public static int rodina_backgournd_home = 0x7f080d71;
+        public static int select_server_favorite_false = 0x7f080da0;
+        public static int select_server_favorite_true = 0x7f080da1;
+        public static int setup_image = 0x7f080db5;
 
         private drawable() {
         }

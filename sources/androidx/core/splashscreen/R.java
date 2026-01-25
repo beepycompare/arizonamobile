@@ -34,7 +34,7 @@ public final class R {
     public static final class drawable {
         public static int compat_splash_screen = 0x7f0805ac;
         public static int compat_splash_screen_no_icon_background = 0x7f0805ad;
-        public static int icon_background = 0x7f080ae9;
+        public static int icon_background = 0x7f080ae8;
 
         private drawable() {
         }

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.core.content.ContextCompat;
@@ -76,13 +77,13 @@ public final class DriverOrders implements MobileController {
                 DriverOrders.this.sendFrontedMessage.clickedWrapper(UIElementID.ARIZONA_MOBILE_PHONE.getId(), i, 16);
             }
         });
-        bind.driverActionContainer.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.driver.DriverOrders$$ExternalSyntheticLambda0
+        bind.driverActionContainer.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.driver.DriverOrders$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 DriverOrders._init_$lambda$0(DriverOrders.this, view);
             }
         });
-        bind.mpDriverHeaderBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.driver.DriverOrders$$ExternalSyntheticLambda1
+        bind.mpDriverHeaderBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.driver.DriverOrders$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 DriverOrders._init_$lambda$1(DriverOrders.this, view);
@@ -121,6 +122,15 @@ public final class DriverOrders implements MobileController {
         this.driverOrdersBinding.driverOrderCount.setText(String.valueOf(workInfo.getOrdersCount()));
         this.driverOrdersBinding.driverPriorityName.setText(workInfo.getTariff());
         this.driverOrdersBinding.driverCarName.setText(workInfo.getCar());
+        this.driverOrdersBinding.driverCarName.setSelected(true);
+        final TextView textView = this.driverOrdersBinding.driverCarName;
+        textView.setSelected(true);
+        textView.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.driver.DriverOrders$$ExternalSyntheticLambda0
+            @Override // android.view.View.OnFocusChangeListener
+            public final void onFocusChange(View view, boolean z) {
+                textView.setSelected(true);
+            }
+        });
     }
 
     @Override // ru.mrlargha.feature.mobile.presentation.MobileController

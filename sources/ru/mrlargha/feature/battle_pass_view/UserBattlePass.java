@@ -88,6 +88,7 @@ public final class UserBattlePass extends SAMPUIElement implements InterfaceCont
             DataResponse dataResponse = (DataResponse) fromJson;
             this.binding.tvTitleText.setText(dataResponse.getHeaders());
             this.binding.tvDescriptionText.setText(dataResponse.getDesc());
+            this.binding.ivMainImage.setImageDrawable(ContextCompat.getDrawable(getTargetActivity(), ru.mrlargha.feature.battlepassWinter2025.R.drawable.battlepass_logo));
             this.rewardItemAdapter.setType(dataResponse.getType());
             if (dataResponse.getRewards() != null && dataResponse.getRewards().size() > 3) {
                 this.binding.rvRewardsLinear.setVisibility(8);
@@ -100,11 +101,8 @@ public final class UserBattlePass extends SAMPUIElement implements InterfaceCont
             int type = dataResponse.getType();
             if (type == 1) {
                 this.binding.tvTitleText.setTextColor(ContextCompat.getColor(getTargetActivity(), ru.mrlargha.feature.battlepassWinter2025.R.color.battlepass5));
-                this.binding.ivMainImage.setImageDrawable(ContextCompat.getDrawable(getTargetActivity(), ru.mrlargha.commonui.R.drawable.ic_battlepass_title_2));
             } else if (type == 2) {
                 this.binding.ivMainImage.setImageDrawable(ContextCompat.getDrawable(getTargetActivity(), ru.mrlargha.commonui.R.drawable.background_notify_other));
-            } else if (type == 3) {
-                this.binding.ivMainImage.setImageDrawable(ContextCompat.getDrawable(getTargetActivity(), ru.mrlargha.commonui.R.drawable.logo_path_of_dragon));
             } else if (type == 9) {
                 this.binding.ivMainImage.setImageDrawable(ContextCompat.getDrawable(getTargetActivity(), ru.mrlargha.commonui.R.drawable.item_ticket_gift));
             } else if (type != 13) {

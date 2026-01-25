@@ -23,34 +23,34 @@ public final class R {
         public static int arizona_mobile = 0x7f060024;
         public static int arizona_red = 0x7f060025;
         public static int arizona_second_accent = 0x7f060026;
-        public static int black = 0x7f06003a;
-        public static int colorAccent = 0x7f060054;
-        public static int colorPrimary = 0x7f060056;
-        public static int colorPrimaryDark = 0x7f060057;
-        public static int colorTabBackground = 0x7f060058;
-        public static int colorTabSelected = 0x7f060059;
-        public static int colorTextDisabled = 0x7f06005a;
-        public static int colorTextHigh = 0x7f06005b;
-        public static int colorTextMedium = 0x7f06005c;
-        public static int dark_blue = 0x7f060068;
-        public static int defaultBackground = 0x7f06006a;
-        public static int diamond_blue = 0x7f060091;
-        public static int evolve_color = 0x7f060098;
-        public static int favorite_color = 0x7f0600a0;
-        public static int gray_400 = 0x7f0600a5;
-        public static int gray_600 = 0x7f0600a6;
-        public static int gray_blue = 0x7f0600a7;
-        public static int gray_progress = 0x7f0600a8;
-        public static int gray_text = 0x7f0600aa;
-        public static int ic_launcher_background = 0x7f0600be;
-        public static int light_blue_400 = 0x7f0600bf;
-        public static int light_blue_600 = 0x7f0600c0;
-        public static int orange_accent = 0x7f060401;
-        public static int rodina_color = 0x7f060416;
-        public static int rodina_dark_red = 0x7f060417;
-        public static int rodina_red = 0x7f06041a;
-        public static int village_color = 0x7f060437;
-        public static int white = 0x7f060439;
+        public static int black = 0x7f06003d;
+        public static int colorAccent = 0x7f060057;
+        public static int colorPrimary = 0x7f060059;
+        public static int colorPrimaryDark = 0x7f06005a;
+        public static int colorTabBackground = 0x7f06005b;
+        public static int colorTabSelected = 0x7f06005c;
+        public static int colorTextDisabled = 0x7f06005d;
+        public static int colorTextHigh = 0x7f06005e;
+        public static int colorTextMedium = 0x7f06005f;
+        public static int dark_blue = 0x7f06006b;
+        public static int defaultBackground = 0x7f06006d;
+        public static int diamond_blue = 0x7f060094;
+        public static int evolve_color = 0x7f06009b;
+        public static int favorite_color = 0x7f0600a3;
+        public static int gray_400 = 0x7f0600a8;
+        public static int gray_600 = 0x7f0600a9;
+        public static int gray_blue = 0x7f0600aa;
+        public static int gray_progress = 0x7f0600ab;
+        public static int gray_text = 0x7f0600ad;
+        public static int ic_launcher_background = 0x7f0600c1;
+        public static int light_blue_400 = 0x7f0600c2;
+        public static int light_blue_600 = 0x7f0600c3;
+        public static int orange_accent = 0x7f060404;
+        public static int rodina_color = 0x7f060419;
+        public static int rodina_dark_red = 0x7f06041a;
+        public static int rodina_red = 0x7f06041d;
+        public static int village_color = 0x7f06043a;
+        public static int white = 0x7f06043c;
 
         private color() {
         }
@@ -59,8 +59,8 @@ public final class R {
     /* loaded from: classes3.dex */
     public static final class drawable {
         public static int arizona_backgournd_home = 0x7f08032a;
-        public static int ic_launcher_background = 0x7f080a8a;
-        public static int rodina_backgournd_home = 0x7f080d73;
+        public static int ic_launcher_background = 0x7f080a89;
+        public static int rodina_backgournd_home = 0x7f080d71;
 
         private drawable() {
         }

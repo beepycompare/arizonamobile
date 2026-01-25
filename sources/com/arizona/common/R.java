@@ -12,11 +12,11 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class color {
-        public static int gray_scale = 0x7f0600a9;
-        public static int progress_max_active = 0x7f06040b;
-        public static int progress_primary = 0x7f06040c;
-        public static int progress_secondary = 0x7f06040d;
-        public static int white = 0x7f060439;
+        public static int gray_scale = 0x7f0600ac;
+        public static int progress_max_active = 0x7f06040e;
+        public static int progress_primary = 0x7f06040f;
+        public static int progress_secondary = 0x7f060410;
+        public static int white = 0x7f06043c;
 
         private color() {
         }
@@ -33,7 +33,7 @@ public final class R {
     /* loaded from: classes3.dex */
     public static final class drawable {
         public static int avatar_error_placeholder = 0x7f080352;
-        public static int sample_skin_avatar_view = 0x7f080d94;
+        public static int sample_skin_avatar_view = 0x7f080d92;
 
         private drawable() {
         }

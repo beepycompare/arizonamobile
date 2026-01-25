@@ -441,7 +441,7 @@ public final class EmploymentScreen extends SAMPUIElement implements InterfaceCo
             employmentCenterMainBinding.label.setVisibility(8);
         }
         employmentCenterMainBinding.salary.setText(DonateUtilsKt.formatWithSpaces(job.getAvgHourSalary()));
-        this.binding.textTable.text.setText(ParseColoredTextKt.toColoredText$default(job.getDescriptionMobile(), 0, 1, null));
+        this.binding.textTable.text.setText(ParseColoredTextKt.toColoredText(job.getDescriptionMobile(), Color.parseColor("#80FFFFFF")));
         this.binding.textTable.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.employment.center.EmploymentScreen$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {

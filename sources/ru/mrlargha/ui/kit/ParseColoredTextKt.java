@@ -15,7 +15,7 @@ import kotlin.text.StringsKt;
 public final class ParseColoredTextKt {
     public static /* synthetic */ SpannableStringBuilder toColoredText$default(String str, int i, int i2, Object obj) {
         if ((i2 & 1) != 0) {
-            i = Color.parseColor("#80FFFFFF");
+            i = -1;
         }
         return toColoredText(str, i);
     }

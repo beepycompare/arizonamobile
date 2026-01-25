@@ -296,7 +296,7 @@ public final class MessengerChat implements MobileController {
     }
 
     private final void prepareInput() {
-        if (this.contactInfo.m12481isBlocked()) {
+        if (this.contactInfo.m12484isBlocked()) {
             showBlockContact();
         }
         final MessengerInputFieldLayoutBinding messengerInputFieldLayoutBinding = this.pageBinding.inputFieldChatLayout;
@@ -823,7 +823,7 @@ public final class MessengerChat implements MobileController {
             if (changeMenuItem != -1) {
                 this.startedMenuList.set(changeMenuItem, getBlockMenuItem());
             }
-            if (this.contactInfo.m12481isBlocked()) {
+            if (this.contactInfo.m12484isBlocked()) {
                 showBlockContact();
             } else {
                 showInputLayout();

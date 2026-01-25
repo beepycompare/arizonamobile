@@ -81,7 +81,7 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class color {
-        public static int preference_fallback_accent_color = 0x7f060402;
+        public static int preference_fallback_accent_color = 0x7f060405;
 
         private color() {
         }
@@ -104,7 +104,7 @@ public final class R {
     /* loaded from: classes3.dex */
     public static final class drawable {
         public static int ic_arrow_down_24dp = 0x7f080a1a;
-        public static int preference_list_divider_material = 0x7f080d1f;
+        public static int preference_list_divider_material = 0x7f080d1d;
 
         private drawable() {
         }

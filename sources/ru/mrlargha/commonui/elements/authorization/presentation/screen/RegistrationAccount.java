@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.CountDownTimer;
 import android.text.Editable;
+import android.text.InputFilter;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,9 @@ import java.lang.Character;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import kotlin.Metadata;
+import kotlin.Unit;
+import kotlin.collections.ArraysKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref;
@@ -42,7 +46,7 @@ import ru.mrlargha.commonui.elements.authorization.presentation.InterfaceManager
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: RegistrationAccount.kt */
-@Metadata(d1 = {"\u0000X\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0016\u0018\u0000 52\u00020\u0001:\u000245B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\f\u0010\u0019\u001a\u00020\u001a*\u00020\u001bH\u0002J \u0010\u001c\u001a\u00020\u001a2\u0006\u0010\u001d\u001a\u00020\u00152\u0006\u0010\u001e\u001a\u00020\u00152\u0006\u0010\u001f\u001a\u00020 H\u0002J\u000e\u0010!\u001a\u00020 2\u0006\u0010\"\u001a\u00020\u0015J\u000e\u0010#\u001a\u00020\u001a2\u0006\u0010$\u001a\u00020\u0015J\b\u0010%\u001a\u00020\u001aH\u0002J\b\u0010&\u001a\u00020\u001aH\u0002J\b\u0010'\u001a\u00020\u001aH\u0002J\b\u0010(\u001a\u00020\u001aH\u0002J\b\u0010)\u001a\u00020\u001aH\u0002J\b\u0010*\u001a\u00020\u001aH\u0002J\b\u0010+\u001a\u00020\u001aH\u0002J\b\u0010,\u001a\u00020\u001aH\u0002J\b\u0010-\u001a\u00020\u001aH\u0002J\b\u0010.\u001a\u00020\u001aH\u0002J\u0018\u0010\u001c\u001a\u00020\u001a2\u0006\u0010\u001d\u001a\u00020\u00152\u0006\u0010\u001e\u001a\u00020\u0015H\u0002J\n\u0010/\u001a\u0004\u0018\u00010\u0015H\u0002J\u0010\u00100\u001a\u00020\u001a2\u0006\u00101\u001a\u00020 H\u0002J\u0010\u00102\u001a\u00020\u001a2\u0006\u00103\u001a\u00020 H\u0016R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000¨\u00066"}, d2 = {"Lru/mrlargha/commonui/elements/authorization/presentation/screen/RegistrationAccount;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "registrationAccount", "Landroidx/constraintlayout/widget/ConstraintLayout;", "videoBinding", "Lru/mrlargha/commonui/databinding/BackgroundVideoBinding;", "notifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "registrationAccountBinding", "Lru/mrlargha/commonui/databinding/RegistrationAccountBinding;", "requestState", "Lru/mrlargha/commonui/elements/authorization/domain/RequestState;", "sharedPreferences", "Landroid/content/SharedPreferences;", "localUsername", "", "localSurname", "localPassword", "localInvite", "checkRaisingContent", "", "Landroid/widget/EditText;", "addRegData", HintConstants.AUTOFILL_HINT_USERNAME, HintConstants.AUTOFILL_HINT_PASSWORD, "rememberMe", "", "isCyrillic", CmcdData.STREAMING_FORMAT_SS, "onServerAccountResponse", "data", "enableUsernameError", "disableUsernameError", "enableSurnameError", "disableSurnameError", "enablePasswordError", "disablePasswordError", "enableInviteError", "disableInviteError", "enableRegistrationButton", "disableRegistrationButton", "getServerId", "setRegisteredState", RemoteConfigConstants.ResponseFieldKey.STATE, "setVisible", "visible", "ContainerData", "Companion", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000Z\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0016\u0018\u0000 62\u00020\u0001:\u000256B\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010\u0019\u001a\u00020\u001aH\u0002J\f\u0010\u001b\u001a\u00020\u001a*\u00020\u001cH\u0002J \u0010\u001d\u001a\u00020\u001a2\u0006\u0010\u001e\u001a\u00020\u00152\u0006\u0010\u001f\u001a\u00020\u00152\u0006\u0010 \u001a\u00020!H\u0002J\u000e\u0010\"\u001a\u00020!2\u0006\u0010#\u001a\u00020\u0015J\u000e\u0010$\u001a\u00020\u001a2\u0006\u0010%\u001a\u00020\u0015J\b\u0010&\u001a\u00020\u001aH\u0002J\b\u0010'\u001a\u00020\u001aH\u0002J\b\u0010(\u001a\u00020\u001aH\u0002J\b\u0010)\u001a\u00020\u001aH\u0002J\b\u0010*\u001a\u00020\u001aH\u0002J\b\u0010+\u001a\u00020\u001aH\u0002J\b\u0010,\u001a\u00020\u001aH\u0002J\b\u0010-\u001a\u00020\u001aH\u0002J\b\u0010.\u001a\u00020\u001aH\u0002J\b\u0010/\u001a\u00020\u001aH\u0002J\u0018\u0010\u001d\u001a\u00020\u001a2\u0006\u0010\u001e\u001a\u00020\u00152\u0006\u0010\u001f\u001a\u00020\u0015H\u0002J\n\u00100\u001a\u0004\u0018\u00010\u0015H\u0002J\u0010\u00101\u001a\u00020\u001a2\u0006\u00102\u001a\u00020!H\u0002J\u0010\u00103\u001a\u00020\u001a2\u0006\u00104\u001a\u00020!H\u0016R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000¨\u00067"}, d2 = {"Lru/mrlargha/commonui/elements/authorization/presentation/screen/RegistrationAccount;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "registrationAccount", "Landroidx/constraintlayout/widget/ConstraintLayout;", "videoBinding", "Lru/mrlargha/commonui/databinding/BackgroundVideoBinding;", "notifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "registrationAccountBinding", "Lru/mrlargha/commonui/databinding/RegistrationAccountBinding;", "requestState", "Lru/mrlargha/commonui/elements/authorization/domain/RequestState;", "sharedPreferences", "Landroid/content/SharedPreferences;", "localUsername", "", "localSurname", "localPassword", "localInvite", "setFilter", "", "checkRaisingContent", "Landroid/widget/EditText;", "addRegData", HintConstants.AUTOFILL_HINT_USERNAME, HintConstants.AUTOFILL_HINT_PASSWORD, "rememberMe", "", "isCyrillic", CmcdData.STREAMING_FORMAT_SS, "onServerAccountResponse", "data", "enableUsernameError", "disableUsernameError", "enableSurnameError", "disableSurnameError", "enablePasswordError", "disablePasswordError", "enableInviteError", "disableInviteError", "enableRegistrationButton", "disableRegistrationButton", "getServerId", "setRegisteredState", RemoteConfigConstants.ResponseFieldKey.STATE, "setVisible", "visible", "ContainerData", "Companion", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class RegistrationAccount implements InterfaceController {
     public static final Companion Companion = new Companion(null);
@@ -249,6 +253,7 @@ public final class RegistrationAccount implements InterfaceController {
                 RegistrationAccount._init_$lambda$7(view);
             }
         });
+        setFilter();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -322,6 +327,44 @@ public final class RegistrationAccount implements InterfaceController {
         ((RegistrationVideoBackground) orCreateInterface).selectVideoMode(RegistrationVideoModeType.VIDEO_AUTHORIZATION);
         registrationAccount.setVisible(false);
         ((Authorization) orCreateInterface2).setVisible(true);
+    }
+
+    private final void setFilter() {
+        RegistrationAccountBinding registrationAccountBinding = this.registrationAccountBinding;
+        EditText editText = registrationAccountBinding.registrationAccountUsernamePlaceholder;
+        InputFilter[] filters = editText.getFilters();
+        Intrinsics.checkNotNullExpressionValue(filters, "getFilters(...)");
+        editText.setFilters((InputFilter[]) ArraysKt.plus(filters, AuthorizationUtilsKt.getRuLettersFilter(new Function0() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationAccount$$ExternalSyntheticLambda4
+            @Override // kotlin.jvm.functions.Function0
+            public final Object invoke() {
+                Unit filter$lambda$0$0;
+                filter$lambda$0$0 = RegistrationAccount.setFilter$lambda$0$0(RegistrationAccount.this);
+                return filter$lambda$0$0;
+            }
+        })));
+        EditText editText2 = registrationAccountBinding.registrationAccountSurnamePlaceholder;
+        InputFilter[] filters2 = editText2.getFilters();
+        Intrinsics.checkNotNullExpressionValue(filters2, "getFilters(...)");
+        editText2.setFilters((InputFilter[]) ArraysKt.plus(filters2, AuthorizationUtilsKt.getRuLettersFilter(new Function0() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.RegistrationAccount$$ExternalSyntheticLambda5
+            @Override // kotlin.jvm.functions.Function0
+            public final Object invoke() {
+                Unit filter$lambda$0$1;
+                filter$lambda$0$1 = RegistrationAccount.setFilter$lambda$0$1(RegistrationAccount.this);
+                return filter$lambda$0$1;
+            }
+        })));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit setFilter$lambda$0$0(RegistrationAccount registrationAccount) {
+        AuthorizationUtilsKt.showErrorToast(registrationAccount.targetActivity, "Имя пользователя должно состоять только из латинских букв");
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit setFilter$lambda$0$1(RegistrationAccount registrationAccount) {
+        AuthorizationUtilsKt.showErrorToast(registrationAccount.targetActivity, "Фамилия пользователя должно состоять только из латинских букв");
+        return Unit.INSTANCE;
     }
 
     private final void checkRaisingContent(final EditText editText) {

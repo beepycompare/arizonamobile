@@ -19,7 +19,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import io.appmetrica.analytics.coreutils.internal.StringUtils;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
@@ -443,7 +442,7 @@ public final class SpotifyPage implements MobileController {
                 mobilePhoneSpotifyPageBinding.mpSpotifyTracklist.setLayoutManager(new GridLayoutManager((Context) this.mobileContext, 3, 1, false));
                 mobilePhoneSpotifyPageBinding.mpSpotifyTracklist.setAdapter(this.spotifyGenreAdapter);
             }
-            mobilePhoneSpotifyPageBinding.mpSpotifyZoom.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.spotify.SpotifyPage$$ExternalSyntheticLambda3
+            mobilePhoneSpotifyPageBinding.mpSpotifyZoom.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.spotify.SpotifyPage$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     SpotifyPage.spotifyState$lambda$0$0(SpotifyPage.this, view);
@@ -457,7 +456,7 @@ public final class SpotifyPage implements MobileController {
             mobilePhoneSpotifyPageBinding2.mpSpotifyBack.setVisibility(0);
             mobilePhoneSpotifyPageBinding2.mpSpotifySearchInputContainer.setVisibility(0);
             mobilePhoneSpotifyPageBinding2.mpSpotifyTracklist.setVisibility(0);
-            mobilePhoneSpotifyPageBinding2.mpSpotifyBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.spotify.SpotifyPage$$ExternalSyntheticLambda4
+            mobilePhoneSpotifyPageBinding2.mpSpotifyBack.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.spotify.SpotifyPage$$ExternalSyntheticLambda5
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     SpotifyPage.spotifyState$lambda$1$0(SpotifyPage.this, view);
@@ -469,13 +468,13 @@ public final class SpotifyPage implements MobileController {
             ViewGroup.LayoutParams layoutParams4 = mobilePhoneSpotifyPageBinding2.mpSpotifyFoundTrackListContainer.getLayoutParams();
             Intrinsics.checkNotNull(layoutParams4, "null cannot be cast to non-null type android.view.ViewGroup.LayoutParams");
             layoutParams4.height = ConverterKt.dpToPx(200, this.mobileContext);
-            mobilePhoneSpotifyPageBinding2.mpSpotifySearchClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.spotify.SpotifyPage$$ExternalSyntheticLambda5
+            mobilePhoneSpotifyPageBinding2.mpSpotifySearchClose.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.spotify.SpotifyPage$$ExternalSyntheticLambda6
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
                     SpotifyPage.spotifyState$lambda$1$1(MobilePhoneSpotifyPageBinding.this, view);
                 }
             });
-            mobilePhoneSpotifyPageBinding2.mpSpotifySearchInput.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.spotify.SpotifyPage$$ExternalSyntheticLambda6
+            mobilePhoneSpotifyPageBinding2.mpSpotifySearchInput.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.spotify.SpotifyPage$$ExternalSyntheticLambda7
                 @Override // android.widget.TextView.OnEditorActionListener
                 public final boolean onEditorAction(TextView textView, int i2, KeyEvent keyEvent) {
                     boolean spotifyState$lambda$1$2;
@@ -661,9 +660,8 @@ public final class SpotifyPage implements MobileController {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void addPlayedTrack(final int i, final int i2) {
+    public final void addPlayedTrack(int i, final int i2) {
         Exception exc;
-        final ArrayList arrayList;
         try {
             CountDownTimer countDownTimer = this.timer;
             if (countDownTimer != null) {
@@ -680,166 +678,87 @@ public final class SpotifyPage implements MobileController {
                 countDownTimer.cancel();
             }
             this.playingTrackId = Integer.valueOf(i);
-            arrayList = new ArrayList();
-        } catch (Exception e2) {
-            e = e2;
-        }
-        try {
-            if (!this.spotifyTrackListAdapter.getCurrentTrackList().isEmpty()) {
-                List<ArizonaSpotifyTrackResponse> currentTrackList = this.spotifyTrackListAdapter.getCurrentTrackList();
-                if (currentTrackList instanceof Collection) {
-                }
-                for (ArizonaSpotifyTrackResponse arizonaSpotifyTrackResponse : currentTrackList) {
-                    if (arizonaSpotifyTrackResponse.getId() == i) {
-                        for (Object obj : this.spotifyTrackListAdapter.getCurrentTrackList()) {
-                            if (((ArizonaSpotifyTrackResponse) obj).getId() == i) {
-                                final ArizonaSpotifyTrackResponse arizonaSpotifyTrackResponse2 = (ArizonaSpotifyTrackResponse) obj;
-                                final MobilePhoneSpotifyPageBinding mobilePhoneSpotifyPageBinding = this.spotifyPageBinding;
-                                mobilePhoneSpotifyPageBinding.mpSpotifySingerName.setText(arizonaSpotifyTrackResponse2.getArtistName());
-                                mobilePhoneSpotifyPageBinding.mpSpotifySongName.setText(arizonaSpotifyTrackResponse2.getSongName());
-                                mobilePhoneSpotifyPageBinding.mpSpotifySongLive.setVisibility(8);
-                                final double duration = 100.0d / arizonaSpotifyTrackResponse2.getDuration();
-                                playerInfoVisible(true);
-                                final Ref.IntRef intRef = new Ref.IntRef();
-                                mobilePhoneSpotifyPageBinding.mpSpotifySeekBar.setVisibility(0);
-                                final Ref.DoubleRef doubleRef = new Ref.DoubleRef();
-                                doubleRef.element = i2 * duration;
-                                mobilePhoneSpotifyPageBinding.mpSpotifySeekBar.setProgress((int) Math.floor(doubleRef.element));
-                                this.spotifyPageBinding.mpSpotifyPlay.setImageResource(R.drawable.spotify_play_off);
-                                this.currentTrackProgressInSec = i2;
-                                final long duration2 = (arizonaSpotifyTrackResponse2.getDuration() - i2) * 1000;
-                                CountDownTimer countDownTimer2 = new CountDownTimer(duration2) { // from class: ru.mrlargha.feature.mobile.presentation.page.spotify.SpotifyPage$addPlayedTrack$3$1
-                                    @Override // android.os.CountDownTimer
-                                    public void onTick(long j) {
-                                        SpotifyPage.this.currentTrackProgressInSec++;
-                                        intRef.element += 1000;
-                                        doubleRef.element += duration;
-                                        mobilePhoneSpotifyPageBinding.mpSpotifySongTime.setText(((((i2 * 1000) + intRef.element) / 1000) / 60) + StringUtils.PROCESS_POSTFIX_DELIMITER + ((((i2 * 1000) + intRef.element) / 1000) % 60));
-                                        mobilePhoneSpotifyPageBinding.mpSpotifySeekBar.setProgress((int) Math.floor(doubleRef.element));
-                                    }
-
-                                    @Override // android.os.CountDownTimer
-                                    public void onFinish() {
-                                        SpotifyPage.this.playerInfoVisible(false);
-                                        int indexOf = arrayList.indexOf(arizonaSpotifyTrackResponse2) + 1;
-                                        if (indexOf < arrayList.size()) {
-                                            mobilePhoneSpotifyPageBinding.mpSpotifySeekBar.setProgress(0);
-                                            IBackendNotifier iBackendNotifier = SpotifyPage.this.sendFrontedMessage;
-                                            int id = UIElementID.ARIZONA_MOBILE_PHONE.getId();
-                                            int id2 = arrayList.get(indexOf).getId();
-                                            int id3 = arrayList.get(indexOf).getId();
-                                            byte[] bytes = (id3 + ",0," + SpotifyPage.this.currentCategoryId).getBytes(Charsets.UTF_8);
-                                            Intrinsics.checkNotNullExpressionValue(bytes, "getBytes(...)");
-                                            iBackendNotifier.clickedWrapper(id, id2, 17, bytes);
-                                            SpotifyPage.Companion companion = SpotifyPage.Companion;
-                                            SpotifyPage.isTrackPlaying = true;
-                                            SpotifyPage.this.playingTrackId = Integer.valueOf(arrayList.get(indexOf).getId());
-                                            SpotifyPage.this.addPlayedTrack(arrayList.get(indexOf).getId(), 0);
-                                        }
-                                    }
-                                };
-                                this.timer = countDownTimer2;
-                                countDownTimer2.start();
-                                return;
-                            }
-                        }
-                        throw new NoSuchElementException("Collection contains no element matching the predicate.");
+            final ArrayList arrayList = new ArrayList();
+            try {
+                if (!this.spotifyTrackListAdapter.getCurrentTrackList().isEmpty()) {
+                    List<ArizonaSpotifyTrackResponse> currentTrackList = this.spotifyTrackListAdapter.getCurrentTrackList();
+                    if (currentTrackList instanceof Collection) {
                     }
-                }
-            }
-            this.api.getTrackListByFavourites(CollectionsKt.listOf(Integer.valueOf(i))).enqueue((Callback) new Callback<List<? extends ArizonaSpotifyTrackResponse>>() { // from class: ru.mrlargha.feature.mobile.presentation.page.spotify.SpotifyPage$addPlayedTrack$2
-                @Override // retrofit2.Callback
-                public void onResponse(Call<List<? extends ArizonaSpotifyTrackResponse>> call, Response<List<? extends ArizonaSpotifyTrackResponse>> response) {
-                    CountDownTimer countDownTimer3;
-                    Object obj2;
-                    Intrinsics.checkNotNullParameter(call, "call");
-                    Intrinsics.checkNotNullParameter(response, "response");
-                    List<? extends ArizonaSpotifyTrackResponse> body = response.body();
-                    if (body != null) {
-                        final SpotifyPage spotifyPage = SpotifyPage.this;
-                        int i3 = i;
-                        final int i4 = i2;
-                        final ArrayList<ArizonaSpotifyTrackResponse> arrayList2 = arrayList;
-                        Iterator<T> it = body.iterator();
-                        while (true) {
-                            countDownTimer3 = null;
-                            if (!it.hasNext()) {
-                                obj2 = null;
-                                break;
-                            }
-                            obj2 = it.next();
-                            if (((ArizonaSpotifyTrackResponse) obj2).getId() == i3) {
-                                break;
-                            }
-                        }
-                        final ArizonaSpotifyTrackResponse arizonaSpotifyTrackResponse3 = (ArizonaSpotifyTrackResponse) obj2;
-                        final MobilePhoneSpotifyPageBinding mobilePhoneSpotifyPageBinding2 = spotifyPage.spotifyPageBinding;
-                        mobilePhoneSpotifyPageBinding2.mpSpotifySingerName.setText(arizonaSpotifyTrackResponse3 != null ? arizonaSpotifyTrackResponse3.getArtistName() : null);
-                        mobilePhoneSpotifyPageBinding2.mpSpotifySongName.setText(arizonaSpotifyTrackResponse3 != null ? arizonaSpotifyTrackResponse3.getSongName() : null);
-                        mobilePhoneSpotifyPageBinding2.mpSpotifySongLive.setVisibility(8);
-                        Integer valueOf = arizonaSpotifyTrackResponse3 != null ? Integer.valueOf((arizonaSpotifyTrackResponse3.getDuration() - i4) * 1000) : null;
-                        final double duration3 = 100.0d / (arizonaSpotifyTrackResponse3 != null ? arizonaSpotifyTrackResponse3.getDuration() : 0);
-                        spotifyPage.playerInfoVisible(true);
-                        final Ref.IntRef intRef2 = new Ref.IntRef();
-                        mobilePhoneSpotifyPageBinding2.mpSpotifySeekBar.setVisibility(0);
-                        final Ref.DoubleRef doubleRef2 = new Ref.DoubleRef();
-                        doubleRef2.element = i4 * duration3;
-                        mobilePhoneSpotifyPageBinding2.mpSpotifySeekBar.setProgress((int) Math.floor(doubleRef2.element));
-                        spotifyPage.spotifyPageBinding.mpSpotifyPlay.setImageResource(R.drawable.spotify_play_off);
-                        spotifyPage.currentTrackProgressInSec = i4;
-                        final long intValue = valueOf != null ? valueOf.intValue() : 0L;
-                        spotifyPage.timer = new CountDownTimer(intValue) { // from class: ru.mrlargha.feature.mobile.presentation.page.spotify.SpotifyPage$addPlayedTrack$2$onResponse$1$1$1
-                            @Override // android.os.CountDownTimer
-                            public void onTick(long j) {
-                                SpotifyPage.this.currentTrackProgressInSec++;
-                                intRef2.element += 1000;
-                                doubleRef2.element += duration3;
-                                mobilePhoneSpotifyPageBinding2.mpSpotifySongTime.setText(((((i4 * 1000) + intRef2.element) / 1000) / 60) + StringUtils.PROCESS_POSTFIX_DELIMITER + ((((i4 * 1000) + intRef2.element) / 1000) % 60));
-                                mobilePhoneSpotifyPageBinding2.mpSpotifySeekBar.setProgress((int) Math.floor(doubleRef2.element));
-                            }
+                    for (ArizonaSpotifyTrackResponse arizonaSpotifyTrackResponse : currentTrackList) {
+                        if (arizonaSpotifyTrackResponse.getId() == i) {
+                            for (Object obj : this.spotifyTrackListAdapter.getCurrentTrackList()) {
+                                if (((ArizonaSpotifyTrackResponse) obj).getId() == i) {
+                                    final ArizonaSpotifyTrackResponse arizonaSpotifyTrackResponse2 = (ArizonaSpotifyTrackResponse) obj;
+                                    final MobilePhoneSpotifyPageBinding mobilePhoneSpotifyPageBinding = this.spotifyPageBinding;
+                                    mobilePhoneSpotifyPageBinding.mpSpotifySingerName.setText(arizonaSpotifyTrackResponse2.getArtistName());
+                                    mobilePhoneSpotifyPageBinding.mpSpotifySongName.setText(arizonaSpotifyTrackResponse2.getSongName());
+                                    final TextView textView = mobilePhoneSpotifyPageBinding.mpSpotifySongName;
+                                    textView.setSelected(true);
+                                    textView.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: ru.mrlargha.feature.mobile.presentation.page.spotify.SpotifyPage$$ExternalSyntheticLambda3
+                                        @Override // android.view.View.OnFocusChangeListener
+                                        public final void onFocusChange(View view, boolean z) {
+                                            textView.setSelected(true);
+                                        }
+                                    });
+                                    mobilePhoneSpotifyPageBinding.mpSpotifySongLive.setVisibility(8);
+                                    final double duration = 100.0d / arizonaSpotifyTrackResponse2.getDuration();
+                                    playerInfoVisible(true);
+                                    final Ref.IntRef intRef = new Ref.IntRef();
+                                    mobilePhoneSpotifyPageBinding.mpSpotifySeekBar.setVisibility(0);
+                                    final Ref.DoubleRef doubleRef = new Ref.DoubleRef();
+                                    doubleRef.element = i2 * duration;
+                                    mobilePhoneSpotifyPageBinding.mpSpotifySeekBar.setProgress((int) Math.floor(doubleRef.element));
+                                    this.spotifyPageBinding.mpSpotifyPlay.setImageResource(R.drawable.spotify_play_off);
+                                    this.currentTrackProgressInSec = i2;
+                                    final long duration2 = (arizonaSpotifyTrackResponse2.getDuration() - i2) * 1000;
+                                    CountDownTimer countDownTimer2 = new CountDownTimer(duration2) { // from class: ru.mrlargha.feature.mobile.presentation.page.spotify.SpotifyPage$addPlayedTrack$3$2
+                                        @Override // android.os.CountDownTimer
+                                        public void onTick(long j) {
+                                            SpotifyPage.this.currentTrackProgressInSec++;
+                                            intRef.element += 1000;
+                                            doubleRef.element += duration;
+                                            mobilePhoneSpotifyPageBinding.mpSpotifySongTime.setText(((((i2 * 1000) + intRef.element) / 1000) / 60) + StringUtils.PROCESS_POSTFIX_DELIMITER + ((((i2 * 1000) + intRef.element) / 1000) % 60));
+                                            mobilePhoneSpotifyPageBinding.mpSpotifySeekBar.setProgress((int) Math.floor(doubleRef.element));
+                                        }
 
-                            @Override // android.os.CountDownTimer
-                            public void onFinish() {
-                                SpotifyPage.this.playerInfoVisible(false);
-                                int indexOf = CollectionsKt.indexOf((List<? extends ArizonaSpotifyTrackResponse>) arrayList2, arizonaSpotifyTrackResponse3) + 1;
-                                if (indexOf < arrayList2.size()) {
-                                    mobilePhoneSpotifyPageBinding2.mpSpotifySeekBar.setProgress(0);
-                                    IBackendNotifier iBackendNotifier = SpotifyPage.this.sendFrontedMessage;
-                                    int id = UIElementID.ARIZONA_MOBILE_PHONE.getId();
-                                    int id2 = arrayList2.get(indexOf).getId();
-                                    int id3 = arrayList2.get(indexOf).getId();
-                                    byte[] bytes = (id3 + ",0," + SpotifyPage.this.currentCategoryId).getBytes(Charsets.UTF_8);
-                                    Intrinsics.checkNotNullExpressionValue(bytes, "getBytes(...)");
-                                    iBackendNotifier.clickedWrapper(id, id2, 17, bytes);
-                                    SpotifyPage.Companion companion = SpotifyPage.Companion;
-                                    SpotifyPage.isTrackPlaying = true;
-                                    SpotifyPage.this.playingTrackId = Integer.valueOf(arrayList2.get(indexOf).getId());
-                                    SpotifyPage.this.addPlayedTrack(arrayList2.get(indexOf).getId(), 0);
+                                        @Override // android.os.CountDownTimer
+                                        public void onFinish() {
+                                            SpotifyPage.this.playerInfoVisible(false);
+                                            int indexOf = arrayList.indexOf(arizonaSpotifyTrackResponse2) + 1;
+                                            if (indexOf < arrayList.size()) {
+                                                mobilePhoneSpotifyPageBinding.mpSpotifySeekBar.setProgress(0);
+                                                IBackendNotifier iBackendNotifier = SpotifyPage.this.sendFrontedMessage;
+                                                int id = UIElementID.ARIZONA_MOBILE_PHONE.getId();
+                                                int id2 = arrayList.get(indexOf).getId();
+                                                int id3 = arrayList.get(indexOf).getId();
+                                                byte[] bytes = (id3 + ",0," + SpotifyPage.this.currentCategoryId).getBytes(Charsets.UTF_8);
+                                                Intrinsics.checkNotNullExpressionValue(bytes, "getBytes(...)");
+                                                iBackendNotifier.clickedWrapper(id, id2, 17, bytes);
+                                                SpotifyPage.Companion companion = SpotifyPage.Companion;
+                                                SpotifyPage.isTrackPlaying = true;
+                                                SpotifyPage.this.playingTrackId = Integer.valueOf(arrayList.get(indexOf).getId());
+                                                SpotifyPage.this.addPlayedTrack(arrayList.get(indexOf).getId(), 0);
+                                            }
+                                        }
+                                    };
+                                    this.timer = countDownTimer2;
+                                    countDownTimer2.start();
+                                    return;
                                 }
                             }
-                        };
-                        CountDownTimer countDownTimer4 = spotifyPage.timer;
-                        if (countDownTimer4 == null) {
-                            Intrinsics.throwUninitializedPropertyAccessException("timer");
-                        } else {
-                            countDownTimer3 = countDownTimer4;
+                            throw new NoSuchElementException("Collection contains no element matching the predicate.");
                         }
-                        countDownTimer3.start();
                     }
                 }
-
-                @Override // retrofit2.Callback
-                public void onFailure(Call<List<? extends ArizonaSpotifyTrackResponse>> call, Throwable t) {
-                    Intrinsics.checkNotNullParameter(call, "call");
-                    Intrinsics.checkNotNullParameter(t, "t");
-                    Log.d("SpotifyPage", "error get track by id");
-                }
-            });
+                this.api.getTrackListByFavourites(CollectionsKt.listOf(Integer.valueOf(i))).enqueue(new SpotifyPage$addPlayedTrack$2(this, i, i2, arrayList));
+            } catch (Exception e2) {
+                e = e2;
+                exc = e;
+                exc.printStackTrace();
+                Log.d("SpotifyPage", "addPlayedTrack");
+            }
         } catch (Exception e3) {
             e = e3;
-            exc = e;
-            exc.printStackTrace();
-            Log.d("SpotifyPage", "addPlayedTrack");
         }
     }
 

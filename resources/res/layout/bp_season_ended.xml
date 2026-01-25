@@ -11,7 +11,7 @@
             </ScrollView>
             <View android:background="#0dffffff" android:layout_width="match_parent" android:layout_height="@dimen/_1sdp"/>
             <LinearLayout android:layout_width="match_parent" android:layout_height="@dimen/_20sdp" android:layout_margin="@dimen/_8sdp">
-                <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/btn_accept" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:backgroundMainColor="#fe5a11" app:backgroundSecondColor="#c62c08" app:corners="@dimen/_4sdp">
+                <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/btn_accept" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_weight="1" app:backgroundMainColor="#d279ff" app:backgroundSecondColor="#6a08c6" app:corners="@dimen/_4sdp">
                     <TextView android:textSize="@dimen/_7sdp" android:textColor="@color/white" android:layout_gravity="center" android:id="@+id/tv_accept" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Приинять" android:textAllCaps="true" android:fontFamily="@font/heading_now_66_bold"/>
                 </ru.mrlargha.commonui.utils.ui.CustomCardView>
                 <View android:layout_width="@dimen/_2sdp" android:layout_height="0dp"/>

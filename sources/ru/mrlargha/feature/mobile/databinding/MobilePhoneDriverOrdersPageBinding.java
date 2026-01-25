@@ -3,6 +3,7 @@ package ru.mrlargha.feature.mobile.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -30,13 +31,13 @@ public final class MobilePhoneDriverOrdersPageBinding implements ViewBinding {
     public final TextView driverPriorityName;
     public final TextView driverRate;
     public final AppCompatImageView driverStar;
-    public final ConstraintLayout mpDriverHeader;
+    public final FrameLayout mpDriverHeader;
     public final AppCompatImageView mpDriverHeaderBack;
     public final TextView mpDriverHeaderTitle;
     public final ConstraintLayout mpDriverOrdersPage;
     private final ConstraintLayout rootView;
 
-    private MobilePhoneDriverOrdersPageBinding(ConstraintLayout constraintLayout, ConstraintLayout constraintLayout2, TextView textView, TextView textView2, ConstraintLayout constraintLayout3, TextView textView3, AppCompatImageView appCompatImageView, ConstraintLayout constraintLayout4, TextView textView4, TextView textView5, TextView textView6, TextView textView7, ConstraintLayout constraintLayout5, RecyclerView recyclerView, TextView textView8, ConstraintLayout constraintLayout6, TextView textView9, TextView textView10, AppCompatImageView appCompatImageView2, ConstraintLayout constraintLayout7, AppCompatImageView appCompatImageView3, TextView textView11, ConstraintLayout constraintLayout8) {
+    private MobilePhoneDriverOrdersPageBinding(ConstraintLayout constraintLayout, ConstraintLayout constraintLayout2, TextView textView, TextView textView2, ConstraintLayout constraintLayout3, TextView textView3, AppCompatImageView appCompatImageView, ConstraintLayout constraintLayout4, TextView textView4, TextView textView5, TextView textView6, TextView textView7, ConstraintLayout constraintLayout5, RecyclerView recyclerView, TextView textView8, ConstraintLayout constraintLayout6, TextView textView9, TextView textView10, AppCompatImageView appCompatImageView2, FrameLayout frameLayout, AppCompatImageView appCompatImageView3, TextView textView11, ConstraintLayout constraintLayout7) {
         this.rootView = constraintLayout;
         this.driverActionContainer = constraintLayout2;
         this.driverAvailableOrders = textView;
@@ -56,10 +57,10 @@ public final class MobilePhoneDriverOrdersPageBinding implements ViewBinding {
         this.driverPriorityName = textView9;
         this.driverRate = textView10;
         this.driverStar = appCompatImageView2;
-        this.mpDriverHeader = constraintLayout7;
+        this.mpDriverHeader = frameLayout;
         this.mpDriverHeaderBack = appCompatImageView3;
         this.mpDriverHeaderTitle = textView11;
-        this.mpDriverOrdersPage = constraintLayout8;
+        this.mpDriverOrdersPage = constraintLayout7;
     }
 
     @Override // androidx.viewbinding.ViewBinding
@@ -135,16 +136,16 @@ public final class MobilePhoneDriverOrdersPageBinding implements ViewBinding {
                                                                             AppCompatImageView appCompatImageView2 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                                                                             if (appCompatImageView2 != null) {
                                                                                 i = R.id.mp_driver_header;
-                                                                                ConstraintLayout constraintLayout6 = (ConstraintLayout) ViewBindings.findChildViewById(view, i);
-                                                                                if (constraintLayout6 != null) {
+                                                                                FrameLayout frameLayout = (FrameLayout) ViewBindings.findChildViewById(view, i);
+                                                                                if (frameLayout != null) {
                                                                                     i = R.id.mp_driver_header_back;
                                                                                     AppCompatImageView appCompatImageView3 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                                                                                     if (appCompatImageView3 != null) {
                                                                                         i = R.id.mp_driver_header_title;
                                                                                         TextView textView11 = (TextView) ViewBindings.findChildViewById(view, i);
                                                                                         if (textView11 != null) {
-                                                                                            ConstraintLayout constraintLayout7 = (ConstraintLayout) view;
-                                                                                            return new MobilePhoneDriverOrdersPageBinding(constraintLayout7, constraintLayout, textView, textView2, constraintLayout2, textView3, appCompatImageView, constraintLayout3, textView4, textView5, textView6, textView7, constraintLayout4, recyclerView, textView8, constraintLayout5, textView9, textView10, appCompatImageView2, constraintLayout6, appCompatImageView3, textView11, constraintLayout7);
+                                                                                            ConstraintLayout constraintLayout6 = (ConstraintLayout) view;
+                                                                                            return new MobilePhoneDriverOrdersPageBinding(constraintLayout6, constraintLayout, textView, textView2, constraintLayout2, textView3, appCompatImageView, constraintLayout3, textView4, textView5, textView6, textView7, constraintLayout4, recyclerView, textView8, constraintLayout5, textView9, textView10, appCompatImageView2, frameLayout, appCompatImageView3, textView11, constraintLayout6);
                                                                                         }
                                                                                     }
                                                                                 }

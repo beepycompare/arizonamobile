@@ -4,14 +4,14 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class color {
-        public static int color3 = 0x7f060050;
-        public static int color4 = 0x7f060051;
-        public static int color5 = 0x7f060052;
-        public static int color6 = 0x7f060053;
-        public static int gradient = 0x7f0600a3;
-        public static int main = 0x7f06031f;
-        public static int main_transparent = 0x7f060320;
-        public static int secondary = 0x7f06041c;
+        public static int color3 = 0x7f060053;
+        public static int color4 = 0x7f060054;
+        public static int color5 = 0x7f060055;
+        public static int color6 = 0x7f060056;
+        public static int gradient = 0x7f0600a6;
+        public static int main = 0x7f060322;
+        public static int main_transparent = 0x7f060323;
+        public static int secondary = 0x7f06041f;
 
         private color() {
         }
@@ -70,21 +70,21 @@ public final class R {
         public static int event_task_item_bg_test = 0x7f080776;
         public static int event_task_progress_bar_bg = 0x7f080777;
         public static int event_video_poster = 0x7f080778;
-        public static int pirates_dollar = 0x7f080d12;
-        public static int pirates_rating = 0x7f080d13;
-        public static int pirates_ruble = 0x7f080d14;
-        public static int ship0 = 0x7f080dc1;
-        public static int ship1 = 0x7f080dc2;
-        public static int ship10 = 0x7f080dc3;
-        public static int ship11 = 0x7f080dc4;
-        public static int ship2 = 0x7f080dc5;
-        public static int ship3 = 0x7f080dc6;
-        public static int ship4 = 0x7f080dc7;
-        public static int ship5 = 0x7f080dc8;
-        public static int ship6 = 0x7f080dc9;
-        public static int ship7 = 0x7f080dca;
-        public static int ship8 = 0x7f080dcb;
-        public static int ship9 = 0x7f080dcc;
+        public static int pirates_dollar = 0x7f080d10;
+        public static int pirates_rating = 0x7f080d11;
+        public static int pirates_ruble = 0x7f080d12;
+        public static int ship0 = 0x7f080dbf;
+        public static int ship1 = 0x7f080dc0;
+        public static int ship10 = 0x7f080dc1;
+        public static int ship11 = 0x7f080dc2;
+        public static int ship2 = 0x7f080dc3;
+        public static int ship3 = 0x7f080dc4;
+        public static int ship4 = 0x7f080dc5;
+        public static int ship5 = 0x7f080dc6;
+        public static int ship6 = 0x7f080dc7;
+        public static int ship7 = 0x7f080dc8;
+        public static int ship8 = 0x7f080dc9;
+        public static int ship9 = 0x7f080dca;
 
         private drawable() {
         }

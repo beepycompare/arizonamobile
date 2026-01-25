@@ -86,15 +86,13 @@ public interface SelectionAdjustment {
 
         /* JADX INFO: Access modifiers changed from: private */
         public static final Selection Word$lambda$0(SelectionLayout selectionLayout) {
-            Selection adjustToBoundaries;
-            adjustToBoundaries = SelectionAdjustmentKt.adjustToBoundaries(selectionLayout, new BoundaryFunction() { // from class: androidx.compose.foundation.text.selection.SelectionAdjustment$Companion$Word$1$1
+            return SelectionAdjustmentKt.adjustToBoundaries(selectionLayout, new BoundaryFunction() { // from class: androidx.compose.foundation.text.selection.SelectionAdjustment$Companion$Word$1$1
                 @Override // androidx.compose.foundation.text.selection.BoundaryFunction
                 /* renamed from: getBoundary-fzxv0v0 */
                 public final long mo1827getBoundaryfzxv0v0(SelectableInfo selectableInfo, int i) {
                     return selectableInfo.getTextLayoutResult().m7673getWordBoundaryjx7JFs(i);
                 }
             });
-            return adjustToBoundaries;
         }
 
         public final SelectionAdjustment getParagraph() {
@@ -103,15 +101,13 @@ public interface SelectionAdjustment {
 
         /* JADX INFO: Access modifiers changed from: private */
         public static final Selection Paragraph$lambda$0(SelectionLayout selectionLayout) {
-            Selection adjustToBoundaries;
-            adjustToBoundaries = SelectionAdjustmentKt.adjustToBoundaries(selectionLayout, new BoundaryFunction() { // from class: androidx.compose.foundation.text.selection.SelectionAdjustment$Companion$Paragraph$1$1
+            return SelectionAdjustmentKt.adjustToBoundaries(selectionLayout, new BoundaryFunction() { // from class: androidx.compose.foundation.text.selection.SelectionAdjustment$Companion$Paragraph$1$1
                 @Override // androidx.compose.foundation.text.selection.BoundaryFunction
                 /* renamed from: getBoundary-fzxv0v0 */
                 public final long mo1827getBoundaryfzxv0v0(SelectableInfo selectableInfo, int i) {
                     return StringHelpersKt.getParagraphBoundary(selectableInfo.getInputText(), i);
                 }
             });
-            return adjustToBoundaries;
         }
 
         public final SelectionAdjustment getCharacterWithWordAccelerate() {

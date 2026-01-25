@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.CountDownTimer;
 import android.text.Editable;
+import android.text.InputFilter;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
@@ -27,7 +28,10 @@ import java.util.Map;
 import kotlin.Metadata;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.TuplesKt;
+import kotlin.Unit;
+import kotlin.collections.ArraysKt;
 import kotlin.collections.MapsKt;
+import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref;
@@ -48,7 +52,7 @@ import ru.mrlargha.commonui.elements.authorization.presentation.screen.Registrat
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: Authorization.kt */
-@Metadata(d1 = {"\u0000l\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0010$\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u001e\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u0000 K2\u00020\u0001:\u0001KB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010'\u001a\u00020(H\u0002J\b\u0010)\u001a\u00020(H\u0002J\f\u0010*\u001a\u00020(*\u00020+H\u0002J\u0016\u0010,\u001a\u00020(2\u0006\u0010-\u001a\u00020\u00052\u0006\u0010.\u001a\u00020\u001dJ\n\u0010/\u001a\u0004\u0018\u00010\u001dH\u0002J\b\u00100\u001a\u00020(H\u0002J\b\u00101\u001a\u00020(H\u0002J\b\u00102\u001a\u00020(H\u0002J\b\u00103\u001a\u00020(H\u0002J\b\u00104\u001a\u00020(H\u0002J\b\u00105\u001a\u00020(H\u0002J\b\u00106\u001a\u00020(H\u0002J\u0018\u00107\u001a\u00020(2\u0006\u00108\u001a\u00020\u00052\u0006\u00109\u001a\u00020\u001dH\u0002J\u0010\u0010:\u001a\u00020(2\u0006\u0010 \u001a\u00020\u001dH\u0002J\n\u0010;\u001a\u0004\u0018\u00010\u001dH\u0002J\u0012\u0010<\u001a\u00020(2\b\u0010!\u001a\u0004\u0018\u00010\u001dH\u0002J\n\u0010=\u001a\u0004\u0018\u00010\u001dH\u0002J\n\u0010>\u001a\u0004\u0018\u00010\u001dH\u0002J\n\u0010?\u001a\u0004\u0018\u00010\u001dH\u0002J\u0006\u0010@\u001a\u00020(J\u0010\u0010A\u001a\u00020(2\u0006\u0010B\u001a\u00020\u001bH\u0016J\b\u0010C\u001a\u00020(H\u0002J\b\u0010D\u001a\u00020\u001bH\u0002J\b\u0010E\u001a\u00020(H\u0002J \u0010F\u001a\u00020(2\u0006\u0010G\u001a\u00020\u001d2\u0006\u0010H\u001a\u00020\u001d2\u0006\u0010\"\u001a\u00020\u001bH\u0002J\n\u0010I\u001a\u0004\u0018\u00010JH\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0018\u001a\n \u0019*\u0004\u0018\u00010\u00170\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010 \u001a\u0004\u0018\u00010\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010!\u001a\u0004\u0018\u00010\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010#\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u001d0$X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010%\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u001d0$X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010&\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006L"}, d2 = {"Lru/mrlargha/commonui/elements/authorization/presentation/screen/Authorization;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "getTargetActivity", "()Landroid/app/Activity;", "getBackendID", "()I", "authorization", "Landroidx/constraintlayout/widget/ConstraintLayout;", "authorizationBinding", "Lru/mrlargha/commonui/databinding/AuthorizationBinding;", "videoBinding", "Lru/mrlargha/commonui/databinding/BackgroundVideoBinding;", "notifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "timer", "Landroid/os/CountDownTimer;", "sharedPreferences", "Landroid/content/SharedPreferences;", "sharedPref", "kotlin.jvm.PlatformType", "isArizonaType", "", "arizonaLogotypeUri", "", "rodinaLogotypeUri", "isLoginError", "localPassword", "localUsername", "rememberMe", "arizonaServers", "", "rodinaServers", "recoveryHandlerId", "restoreSavedCreds", "", "loginAction", "checkRaisingContent", "Landroid/widget/EditText;", "onServerMessage", "actionType", "data", "getPassword", "checkBoxEnabled", "checkboxDisable", "enableError", "disableError", "disableLoading", "enableLoginButton", "disableLoginButton", "installServerLogotype", "serverId", "logotypeUri", "setLocalPassword", "getLocalPassword", "setLocalUsername", "getLocalUsername", "getUsername", "getServerId", "hideLoader", "setVisible", "visible", "setRegisteredState", "getRegisteredState", "setRegistrationWindow", "addRegData", HintConstants.AUTOFILL_HINT_USERNAME, HintConstants.AUTOFILL_HINT_PASSWORD, "getUserAuthData", "Lru/mrlargha/commonui/elements/authorization/presentation/screen/RegistrationAccount$ContainerData;", "Companion", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000l\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0010$\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u001e\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u0000 L2\u00020\u0001:\u0001LB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005¢\u0006\u0004\b\u0006\u0010\u0007J\b\u0010'\u001a\u00020(H\u0002J\b\u0010)\u001a\u00020(H\u0002J\b\u0010*\u001a\u00020(H\u0002J\f\u0010+\u001a\u00020(*\u00020,H\u0002J\u0016\u0010-\u001a\u00020(2\u0006\u0010.\u001a\u00020\u00052\u0006\u0010/\u001a\u00020\u001dJ\n\u00100\u001a\u0004\u0018\u00010\u001dH\u0002J\b\u00101\u001a\u00020(H\u0002J\b\u00102\u001a\u00020(H\u0002J\b\u00103\u001a\u00020(H\u0002J\b\u00104\u001a\u00020(H\u0002J\b\u00105\u001a\u00020(H\u0002J\b\u00106\u001a\u00020(H\u0002J\b\u00107\u001a\u00020(H\u0002J\u0018\u00108\u001a\u00020(2\u0006\u00109\u001a\u00020\u00052\u0006\u0010:\u001a\u00020\u001dH\u0002J\u0010\u0010;\u001a\u00020(2\u0006\u0010 \u001a\u00020\u001dH\u0002J\n\u0010<\u001a\u0004\u0018\u00010\u001dH\u0002J\u0012\u0010=\u001a\u00020(2\b\u0010!\u001a\u0004\u0018\u00010\u001dH\u0002J\n\u0010>\u001a\u0004\u0018\u00010\u001dH\u0002J\n\u0010?\u001a\u0004\u0018\u00010\u001dH\u0002J\n\u0010@\u001a\u0004\u0018\u00010\u001dH\u0002J\u0006\u0010A\u001a\u00020(J\u0010\u0010B\u001a\u00020(2\u0006\u0010C\u001a\u00020\u001bH\u0016J\b\u0010D\u001a\u00020(H\u0002J\b\u0010E\u001a\u00020\u001bH\u0002J\b\u0010F\u001a\u00020(H\u0002J \u0010G\u001a\u00020(2\u0006\u0010H\u001a\u00020\u001d2\u0006\u0010I\u001a\u00020\u001d2\u0006\u0010\"\u001a\u00020\u001bH\u0002J\n\u0010J\u001a\u0004\u0018\u00010KH\u0002R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\u000bR\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0013X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082.¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0018\u001a\n \u0019*\u0004\u0018\u00010\u00170\u0017X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010 \u001a\u0004\u0018\u00010\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010!\u001a\u0004\u0018\u00010\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020\u001bX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010#\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u001d0$X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010%\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u001d0$X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010&\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006M"}, d2 = {"Lru/mrlargha/commonui/elements/authorization/presentation/screen/Authorization;", "Lru/mrlargha/commonui/elements/authorization/presentation/InterfaceController;", "targetActivity", "Landroid/app/Activity;", "backendID", "", "<init>", "(Landroid/app/Activity;I)V", "getTargetActivity", "()Landroid/app/Activity;", "getBackendID", "()I", "authorization", "Landroidx/constraintlayout/widget/ConstraintLayout;", "authorizationBinding", "Lru/mrlargha/commonui/databinding/AuthorizationBinding;", "videoBinding", "Lru/mrlargha/commonui/databinding/BackgroundVideoBinding;", "notifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "timer", "Landroid/os/CountDownTimer;", "sharedPreferences", "Landroid/content/SharedPreferences;", "sharedPref", "kotlin.jvm.PlatformType", "isArizonaType", "", "arizonaLogotypeUri", "", "rodinaLogotypeUri", "isLoginError", "localPassword", "localUsername", "rememberMe", "arizonaServers", "", "rodinaServers", "recoveryHandlerId", "setFilter", "", "restoreSavedCreds", "loginAction", "checkRaisingContent", "Landroid/widget/EditText;", "onServerMessage", "actionType", "data", "getPassword", "checkBoxEnabled", "checkboxDisable", "enableError", "disableError", "disableLoading", "enableLoginButton", "disableLoginButton", "installServerLogotype", "serverId", "logotypeUri", "setLocalPassword", "getLocalPassword", "setLocalUsername", "getLocalUsername", "getUsername", "getServerId", "hideLoader", "setVisible", "visible", "setRegisteredState", "getRegisteredState", "setRegistrationWindow", "addRegData", HintConstants.AUTOFILL_HINT_USERNAME, HintConstants.AUTOFILL_HINT_PASSWORD, "getUserAuthData", "Lru/mrlargha/commonui/elements/authorization/presentation/screen/RegistrationAccount$ContainerData;", "Companion", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class Authorization implements InterfaceController {
     public static final Companion Companion = new Companion(null);
@@ -119,13 +123,13 @@ public final class Authorization implements InterfaceController {
         constraintSet.connect(bind.auth.getId(), 3, this.videoBinding.video.getId(), 3);
         constraintSet.connect(bind.auth.getId(), 4, this.videoBinding.video.getId(), 4);
         constraintSet.applyTo(this.videoBinding.video);
-        bind.authForgotPassword.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda2
+        bind.authForgotPassword.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda4
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Authorization._init_$lambda$0(Authorization.this, view);
             }
         });
-        bind.auth.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda3
+        bind.auth.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Authorization._init_$lambda$1(view);
@@ -134,13 +138,13 @@ public final class Authorization implements InterfaceController {
         if (getUserAuthData() == null) {
             setRegistrationWindow();
         }
-        bind.authRememberCheckbox.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda4
+        bind.authRememberCheckbox.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Authorization._init_$lambda$2(Authorization.this, view);
             }
         });
-        bind.authLoginButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda5
+        bind.authLoginButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda7
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Authorization.this.loginAction();
@@ -155,7 +159,7 @@ public final class Authorization implements InterfaceController {
         EditText authPasswordEdit = bind.authPasswordEdit;
         Intrinsics.checkNotNullExpressionValue(authPasswordEdit, "authPasswordEdit");
         checkRaisingContent(authPasswordEdit);
-        bind.authUsernameEdit.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda6
+        bind.authUsernameEdit.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda8
             @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
             public final void onGlobalLayout() {
                 Authorization._init_$lambda$5(Authorization.this);
@@ -185,12 +189,13 @@ public final class Authorization implements InterfaceController {
                 Authorization.this.enableLoginButton();
             }
         });
-        bind.authAccountRegistrationButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda7
+        bind.authAccountRegistrationButton.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda9
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 Authorization._init_$lambda$7(Authorization.this, view);
             }
         });
+        setFilter();
     }
 
     public final int getBackendID() {
@@ -282,6 +287,44 @@ public final class Authorization implements InterfaceController {
             countDownTimer.cancel();
         }
         authorization.setRegistrationWindow();
+    }
+
+    private final void setFilter() {
+        AuthorizationBinding authorizationBinding = this.authorizationBinding;
+        EditText editText = authorizationBinding.authUsernameEdit;
+        InputFilter[] filters = editText.getFilters();
+        Intrinsics.checkNotNullExpressionValue(filters, "getFilters(...)");
+        editText.setFilters((InputFilter[]) ArraysKt.plus(filters, AuthorizationUtilsKt.getRuLettersFilter(new Function0() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda1
+            @Override // kotlin.jvm.functions.Function0
+            public final Object invoke() {
+                Unit filter$lambda$0$0;
+                filter$lambda$0$0 = Authorization.setFilter$lambda$0$0(Authorization.this);
+                return filter$lambda$0$0;
+            }
+        })));
+        EditText editText2 = authorizationBinding.authSurnameEdit;
+        InputFilter[] filters2 = editText2.getFilters();
+        Intrinsics.checkNotNullExpressionValue(filters2, "getFilters(...)");
+        editText2.setFilters((InputFilter[]) ArraysKt.plus(filters2, AuthorizationUtilsKt.getRuLettersFilter(new Function0() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda2
+            @Override // kotlin.jvm.functions.Function0
+            public final Object invoke() {
+                Unit filter$lambda$0$1;
+                filter$lambda$0$1 = Authorization.setFilter$lambda$0$1(Authorization.this);
+                return filter$lambda$0$1;
+            }
+        })));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit setFilter$lambda$0$0(Authorization authorization) {
+        AuthorizationUtilsKt.showErrorToast(authorization.targetActivity, "Имя пользователя должно состоять только из латинских букв");
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit setFilter$lambda$0$1(Authorization authorization) {
+        AuthorizationUtilsKt.showErrorToast(authorization.targetActivity, "Фамилия пользователя должно состоять только из латинских букв");
+        return Unit.INSTANCE;
     }
 
     /* JADX WARN: Type inference failed for: r0v13, types: [ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$restoreSavedCreds$1$1] */
@@ -514,7 +557,7 @@ public final class Authorization implements InterfaceController {
                         countDownTimer4.cancel();
                     }
                     this.authorizationBinding.loaderContainer.setVisibility(0);
-                    this.authorizationBinding.loaderContainer.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda1
+                    this.authorizationBinding.loaderContainer.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.authorization.presentation.screen.Authorization$$ExternalSyntheticLambda3
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
                             Authorization.onServerMessage$lambda$0(Authorization.this, view);

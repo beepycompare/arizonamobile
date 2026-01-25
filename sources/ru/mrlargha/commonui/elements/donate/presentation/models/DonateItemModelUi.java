@@ -440,7 +440,7 @@ public final class DonateItemModelUi {
     }
 
     /* renamed from: getBlockType  reason: collision with other method in class */
-    public final DonateBlockType m12294getBlockType() {
+    public final DonateBlockType m12295getBlockType() {
         Object obj;
         Iterator<E> it = DonateBlockType.getEntries().iterator();
         while (true) {

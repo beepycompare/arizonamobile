@@ -4,8 +4,8 @@ public final class R {
 
     /* loaded from: classes.dex */
     public static final class color {
-        public static int vector_tint_color = 0x7f060435;
-        public static int vector_tint_theme_color = 0x7f060436;
+        public static int vector_tint_color = 0x7f060438;
+        public static int vector_tint_theme_color = 0x7f060439;
 
         private color() {
         }

@@ -4,22 +4,22 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class drawable {
-        public static int starter_pack_bg = 0x7f080e3d;
-        public static int starter_pack_bg_arizona = 0x7f080e3e;
-        public static int starter_pack_bg_gradient = 0x7f080e3f;
-        public static int starter_pack_bg_gradient1 = 0x7f080e40;
-        public static int starter_pack_bg_gradient1_arizona = 0x7f080e41;
-        public static int starter_pack_bg_gradient_overlay = 0x7f080e42;
-        public static int starter_pack_close_ic = 0x7f080e43;
-        public static int starter_pack_close_stroke = 0x7f080e44;
-        public static int starter_pack_gradient_button1 = 0x7f080e45;
-        public static int starter_pack_gradient_button2 = 0x7f080e46;
-        public static int starter_pack_gradient_button2_arizona = 0x7f080e47;
-        public static int starter_pack_ic_timer = 0x7f080e48;
-        public static int starter_pack_image1 = 0x7f080e49;
-        public static int starter_pack_image2 = 0x7f080e4a;
-        public static int starter_pack_newbie_bg = 0x7f080e4b;
-        public static int starter_pack_rich_bg = 0x7f080e4c;
+        public static int starter_pack_bg = 0x7f080e3b;
+        public static int starter_pack_bg_arizona = 0x7f080e3c;
+        public static int starter_pack_bg_gradient = 0x7f080e3d;
+        public static int starter_pack_bg_gradient1 = 0x7f080e3e;
+        public static int starter_pack_bg_gradient1_arizona = 0x7f080e3f;
+        public static int starter_pack_bg_gradient_overlay = 0x7f080e40;
+        public static int starter_pack_close_ic = 0x7f080e41;
+        public static int starter_pack_close_stroke = 0x7f080e42;
+        public static int starter_pack_gradient_button1 = 0x7f080e43;
+        public static int starter_pack_gradient_button2 = 0x7f080e44;
+        public static int starter_pack_gradient_button2_arizona = 0x7f080e45;
+        public static int starter_pack_ic_timer = 0x7f080e46;
+        public static int starter_pack_image1 = 0x7f080e47;
+        public static int starter_pack_image2 = 0x7f080e48;
+        public static int starter_pack_newbie_bg = 0x7f080e49;
+        public static int starter_pack_rich_bg = 0x7f080e4a;
 
         private drawable() {
         }

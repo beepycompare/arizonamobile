@@ -57,7 +57,7 @@ public abstract class GTASAInternal extends WarMedia {
     @Override // com.wardrumstudios.utils.WarMedia, com.wardrumstudios.utils.WarGamepad, com.wardrumstudios.utils.WarBilling, com.wardrumstudios.utils.WarBase, com.nvidia.devtech.NvEventQueueActivity, android.app.Activity
     public void onCreate(Bundle paramBundle) {
         System.out.println("Build Type: release");
-        System.out.println("Version: v16.9.9");
+        System.out.println("Version: v17.0.0");
         this.HELLO_ID = 123324;
         this.appIntent = new Intent(this, GTASA.class);
         this.appTickerText = "GTA3 San Andreas";

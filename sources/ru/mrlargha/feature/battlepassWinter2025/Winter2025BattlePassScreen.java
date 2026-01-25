@@ -295,7 +295,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
         this.colorMaxProgress = color;
         int color2 = ContextCompat.getColor(activity, R.color.battlepass_stick_color);
         this.colorText = color2;
-        this.commonTasksAdapter = new CommonTasksAdapter(UtilsKt.isArizonaType(), color, new Function2() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda3
+        this.commonTasksAdapter = new CommonTasksAdapter(UtilsKt.isArizonaType(), ContextCompat.getColor(activity, R.color.battlepass13), new Function2() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda3
             @Override // kotlin.jvm.functions.Function2
             public final Object invoke(Object obj, Object obj2) {
                 Unit commonTasksAdapter$lambda$0;
@@ -303,7 +303,7 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
                 return commonTasksAdapter$lambda$0;
             }
         });
-        this.rewardsTasksAdapter = new RewardsTasksAdapter(UtilsKt.isArizonaType());
+        this.rewardsTasksAdapter = new RewardsTasksAdapter();
         this.levelItemsAdapter = new LevelItemsAdapter(color, color2, new Function0() { // from class: ru.mrlargha.feature.battlepassWinter2025.Winter2025BattlePassScreen$$ExternalSyntheticLambda4
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
@@ -1319,12 +1319,11 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
             winterBattlepassBuyPremiumLayoutBinding.premiumPlusDiscountText.setText(battlePassPremiumData2.getPrice() + " RUB");
             winterBattlepassBuyPremiumLayoutBinding.premiumPlusPriceText.setText(battlePassPremiumData2.getPriceWithDiscount() + " RUB");
         } else {
-            winterBattlepassBuyPremiumLayoutBinding.premiumPlusDiscountText.setVisibility(4);
+            winterBattlepassBuyPremiumLayoutBinding.premiumPlusDiscountText.setVisibility(8);
             winterBattlepassBuyPremiumLayoutBinding.premiumPlusDiscountPercentBox.setVisibility(4);
             winterBattlepassBuyPremiumLayoutBinding.premiumPlusPriceText.setText(battlePassPremiumData2.getPrice() + " RUB");
         }
         if (battlePassPremiumData.getStatus() == 1) {
-            winterBattlepassBuyPremiumLayoutBinding.premiumPriceButton.setForeground(ContextCompat.getDrawable(getTargetActivity(), R.drawable.bp_unselect_btn));
             winterBattlepassBuyPremiumLayoutBinding.premiumPriceButtonText.setText("Недоступно");
         } else {
             winterBattlepassBuyPremiumLayoutBinding.premiumPriceButton.setForeground(null);
@@ -1882,16 +1881,16 @@ public final class Winter2025BattlePassScreen extends SAMPUIElement {
         winterBattlepassLayoutBinding.welcomePrice1.timerContainer.setVisibility(8);
         winterBattlepassLayoutBinding.welcomePrice2.timerContainer.setVisibility(8);
         winterBattlepassLayoutBinding.welcomePrice3.timerContainer.setVisibility(8);
-        winterBattlepassLayoutBinding.welcomePrice1.oldPriseTitle.setText("Автомобиль: Advan Lambo");
-        winterBattlepassLayoutBinding.welcomePrice2.oldPriseTitle.setText("Скин: Оборотень");
-        winterBattlepassLayoutBinding.welcomePrice3.oldPriseTitle.setText("Автомобиль: Halloween Truck");
+        winterBattlepassLayoutBinding.welcomePrice1.oldPriseTitle.setText("Фура 'Зверя' Tier 1");
+        winterBattlepassLayoutBinding.welcomePrice2.oldPriseTitle.setText("Скин: Бо Джек");
+        winterBattlepassLayoutBinding.welcomePrice3.oldPriseTitle.setText("BMW M5 Mansory");
         winterBattlepassLayoutBinding.welcomePrice1.rarity.setBackgroundColor(Color.parseColor("#E500FF"));
         winterBattlepassLayoutBinding.welcomePrice3.rarity.setBackgroundColor(Color.parseColor("#FFBA00"));
         winterBattlepassLayoutBinding.welcomePrice2.rarity.setBackgroundColor(Color.parseColor("#FF3600"));
         winterBattlepassLayoutBinding.welcomePrice1.bg.setBackgroundResource(ru.mrlargha.commonui.R.drawable.rarity_red);
         winterBattlepassLayoutBinding.welcomePrice2.bg.setBackgroundResource(ru.mrlargha.commonui.R.drawable.rarity_gold);
         winterBattlepassLayoutBinding.welcomePrice3.bg.setBackgroundResource(ru.mrlargha.commonui.R.drawable.rarity_pink);
-        BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getMain()), null, null, new Winter2025BattlePassScreen$setWelcomeScreen$1$4(winterBattlepassLayoutBinding, this, null), 3, null);
+        BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getMain()), null, null, new Winter2025BattlePassScreen$setWelcomeScreen$1$4(winterBattlepassLayoutBinding, null), 3, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

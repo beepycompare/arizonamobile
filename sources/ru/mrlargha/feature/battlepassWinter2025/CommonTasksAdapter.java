@@ -97,12 +97,14 @@ public final class CommonTasksAdapter extends RecyclerView.Adapter<RodinaBattleP
             binding.progressInPercentText.setVisibility(8);
             binding.progressDoneContainer.setVisibility(0);
             binding.dayTaskProgressBar.setProgressTintList(ColorStateList.valueOf(this.colorMaxProgress));
-            binding.itemRewardDescription.setTextColor(this.colorMaxProgress);
+            binding.itemRewardDescription.setTextColor(-1);
+            binding.itemCount.setTextColor(this.colorMaxProgress);
         } else {
             binding.progressDoneContainer.setVisibility(8);
             binding.progressInPercentText.setVisibility(0);
             binding.progressInPercentText.setText(((int) ((commonTaskInfo2.validCurrentProgress() / commonTaskInfo2.getTotalProgress()) * 100)) + "%");
             binding.itemRewardDescription.setTextColor(-1);
+            binding.itemCount.setTextColor(-1);
         }
         BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getMain()), null, null, new CommonTasksAdapter$onBindViewHolder$1$1(this, commonTaskInfo2, binding, holder, null), 3, null);
         binding.getRoot().setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.feature.battlepassWinter2025.CommonTasksAdapter$$ExternalSyntheticLambda0

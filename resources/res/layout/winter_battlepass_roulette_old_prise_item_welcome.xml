@@ -3,7 +3,7 @@
     <FrameLayout android:id="@+id/bg" android:background="@drawable/winter_battlepass_roulette_bg_transparent_white" android:layout_width="@dimen/_40sdp" android:layout_height="@dimen/_40sdp" android:layout_marginBottom="@dimen/_3sdp">
         <FrameLayout android:layout_gravity="bottom" android:layout_width="match_parent" android:layout_height="match_parent"/>
         <View android:layout_gravity="bottom|center_horizontal" android:id="@+id/rarity" android:background="@color/yellow" android:layout_width="@dimen/_10sdp" android:layout_height="@dimen/_1sdp"/>
-        <ImageView android:id="@+id/imagePrise" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_margin="@dimen/_3sdp" android:src="@drawable/winter_battlepass_roulette_img_prise_just_dog"/>
+        <ImageView android:id="@+id/imagePrise" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_margin="@dimen/_3sdp" android:src="@drawable/image_placeholder"/>
         <FrameLayout android:layout_gravity="end|top" android:id="@+id/timer_container" android:background="@drawable/winter_battlepass_roulette_bg_transparent_dark_blue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/_1sdp">
             <TextView android:textSize="@dimen/_4sdp" android:textColor="@color/white" android:id="@+id/priseTimeStamp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/_4sdp" android:layout_marginTop="@dimen/_3sdp" android:layout_marginRight="@dimen/_4sdp" android:layout_marginBottom="@dimen/_3sdp" android:text="30 сек" android:layout_marginHorizontal="@dimen/_4sdp" android:layout_marginVertical="@dimen/_3sdp"/>
         </FrameLayout>

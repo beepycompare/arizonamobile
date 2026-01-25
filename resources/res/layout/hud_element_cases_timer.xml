@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/cases_timer" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent">
-    <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/main" android:layout_width="match_parent" android:layout_height="match_parent" app:backgroundMainColor="#b3040610" app:backgroundSecondColor="#628119" app:corners="@dimen/_6sdp">
+    <ru.mrlargha.commonui.utils.ui.CustomCardView android:id="@+id/main" android:layout_width="match_parent" android:layout_height="match_parent" app:backgroundMainColor="#b3040610" app:backgroundSecondColor="#0093d2" app:corners="@dimen/_6sdp">
         <ImageView android:id="@+id/image" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="fitEnd"/>
         <LinearLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_marginLeft="@dimen/_8sdp">
             <TextView android:textSize="@dimen/_6sdp" android:textColor="#ffffff" android:id="@+id/top_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="До получения кейса" android:textAllCaps="true" android:fontFamily="@font/heading_now_65_medium"/>

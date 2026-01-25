@@ -77,13 +77,13 @@ public final class R {
 
     /* loaded from: classes3.dex */
     public static final class color {
-        public static int exo_black_opacity_60 = 0x7f060099;
-        public static int exo_black_opacity_70 = 0x7f06009a;
-        public static int exo_bottom_bar_background = 0x7f06009b;
-        public static int exo_edit_mode_background_color = 0x7f06009c;
-        public static int exo_styled_error_message_background = 0x7f06009d;
-        public static int exo_white = 0x7f06009e;
-        public static int exo_white_opacity_70 = 0x7f06009f;
+        public static int exo_black_opacity_60 = 0x7f06009c;
+        public static int exo_black_opacity_70 = 0x7f06009d;
+        public static int exo_bottom_bar_background = 0x7f06009e;
+        public static int exo_edit_mode_background_color = 0x7f06009f;
+        public static int exo_styled_error_message_background = 0x7f0600a0;
+        public static int exo_white = 0x7f0600a1;
+        public static int exo_white_opacity_70 = 0x7f0600a2;
 
         private color() {
         }

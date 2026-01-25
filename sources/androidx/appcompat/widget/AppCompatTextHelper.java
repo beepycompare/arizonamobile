@@ -22,9 +22,8 @@ import androidx.core.view.inputmethod.EditorInfoCompat;
 import androidx.core.widget.TextViewCompat;
 import java.lang.ref.WeakReference;
 import java.util.Locale;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
-public class AppCompatTextHelper {
+class AppCompatTextHelper {
     private static final int MONOSPACE = 3;
     private static final int SANS = 1;
     private static final int SERIF = 2;
@@ -530,9 +529,8 @@ public class AppCompatTextHelper {
         EditorInfoCompat.setInitialSurroundingText(editorInfo, textView.getText());
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes.dex */
-    public static class Api26Impl {
+    static class Api26Impl {
         private Api26Impl() {
         }
 
@@ -553,9 +551,8 @@ public class AppCompatTextHelper {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes.dex */
-    public static class Api24Impl {
+    static class Api24Impl {
         private Api24Impl() {
         }
 
