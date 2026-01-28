@@ -22,10 +22,6 @@ public final class zzhg extends zzmf implements zznn {
         return (zzhf) zzh.zzck();
     }
 
-    public static /* synthetic */ zzhg zzn() {
-        return zzh;
-    }
-
     public final boolean zza() {
         return (this.zzb & 1) != 0;
     }

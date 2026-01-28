@@ -61,23 +61,43 @@ public final class ProductsAdapter extends RecyclerView.Adapter<ProductsViewHold
             if (i2 == 0) {
                 binding.title1.setText(item.getTitle());
                 binding.value1.setText(item.getValue());
+                binding.value1.setTextColor(-1);
+                String color = item.getColor();
+                if (color != null) {
+                    binding.value1.setTextColor(Color.parseColor(color));
+                }
             } else if (i2 == 1) {
                 binding.title2.setText(item.getTitle());
                 binding.value2.setText(item.getValue());
+                binding.value2.setTextColor(-1);
+                String color2 = item.getColor();
+                if (color2 != null) {
+                    binding.value2.setTextColor(Color.parseColor(color2));
+                }
             } else if (i2 == 2) {
                 binding.title3.setText(item.getTitle());
                 binding.value3.setText(item.getValue());
+                binding.value3.setTextColor(-1);
+                String color3 = item.getColor();
+                if (color3 != null) {
+                    binding.value3.setTextColor(Color.parseColor(color3));
+                }
             } else if (i2 == 3) {
                 binding.title4.setText(item.getTitle());
                 binding.value4.setText(item.getValue());
                 binding.value4.setTextColor(-1);
-                String color = item.getColor();
-                if (color != null) {
-                    binding.value4.setTextColor(Color.parseColor(color));
+                String color4 = item.getColor();
+                if (color4 != null) {
+                    binding.value4.setTextColor(Color.parseColor(color4));
                 }
             } else if (i2 == 4) {
                 binding.title5.setText(item.getTitle());
                 binding.value5.setText(item.getValue());
+                binding.value5.setTextColor(-1);
+                String color5 = item.getColor();
+                if (color5 != null) {
+                    binding.value5.setTextColor(Color.parseColor(color5));
+                }
             } else if (i2 == 5) {
                 String value = item.getValue();
                 if (value == null || value.length() == 0) {
@@ -88,6 +108,11 @@ public final class ProductsAdapter extends RecyclerView.Adapter<ProductsViewHold
                     binding.value6.setVisibility(0);
                     binding.title6.setText(item.getTitle());
                     binding.value6.setText(item.getValue());
+                    binding.value6.setTextColor(-1);
+                    String color6 = item.getColor();
+                    if (color6 != null) {
+                        binding.value6.setTextColor(Color.parseColor(color6));
+                    }
                 }
             }
             i2 = i3;
