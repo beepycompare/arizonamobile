@@ -18,18 +18,18 @@ import kotlin.text.StringsKt;
 public final class M7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final U f689a;
+    public final U f688a;
     public final C0108a2 b;
 
     public M7(U u, C0108a2 c0108a2) {
-        this.f689a = u;
+        this.f688a = u;
         this.b = c0108a2;
     }
 
     public final String a() {
         AdvertisingIdsHolder advertisingIdsHolder;
         byte[] bArr;
-        U u = this.f689a;
+        U u = this.f688a;
         Jn jn = new Jn(5, ServiceStarter.ERROR_UNKNOWN);
         synchronized (u) {
             try {

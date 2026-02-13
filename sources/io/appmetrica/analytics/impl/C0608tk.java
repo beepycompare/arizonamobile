@@ -10,7 +10,7 @@ public final class C0608tk {
         p5.d = serviceModuleCounterReport.getType();
         String name = serviceModuleCounterReport.getName();
         if (name != null) {
-            p5.f737a = name;
+            p5.f736a = name;
         }
         if (serviceModuleCounterReport.getValueBytes() == null && (value = serviceModuleCounterReport.getValue()) != null) {
             p5.b = value;

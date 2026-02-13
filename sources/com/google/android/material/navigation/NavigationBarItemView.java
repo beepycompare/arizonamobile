@@ -168,14 +168,14 @@ public abstract class NavigationBarItemView extends FrameLayout implements Navig
         linearLayout.addOnLayoutChangeListener(new View.OnLayoutChangeListener() { // from class: com.google.android.material.navigation.NavigationBarItemView$$ExternalSyntheticLambda0
             @Override // android.view.View.OnLayoutChangeListener
             public final void onLayoutChange(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
-                NavigationBarItemView.this.m9875xe6e25373(view, i, i2, i3, i4, i5, i6, i7, i8);
+                NavigationBarItemView.this.m9874xe6e25373(view, i, i2, i3, i4, i5, i6, i7, i8);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$com-google-android-material-navigation-NavigationBarItemView  reason: not valid java name */
-    public /* synthetic */ void m9875xe6e25373(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
+    public /* synthetic */ void m9874xe6e25373(View view, int i, int i2, int i3, int i4, int i5, int i6, int i7, int i8) {
         boolean z;
         if (this.icon.getVisibility() == 0) {
             tryUpdateBadgeBounds(this.icon);

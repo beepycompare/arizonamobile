@@ -40,7 +40,7 @@ public class MaterialButtonGroup extends LinearLayout {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$new$0$com-google-android-material-button-MaterialButtonGroup  reason: not valid java name */
-    public /* synthetic */ int m9819xa7af0300(MaterialButton materialButton, MaterialButton materialButton2) {
+    public /* synthetic */ int m9818xa7af0300(MaterialButton materialButton, MaterialButton materialButton2) {
         int compareTo = Boolean.valueOf(materialButton.isChecked()).compareTo(Boolean.valueOf(materialButton2.isChecked()));
         if (compareTo != 0) {
             return compareTo;
@@ -70,7 +70,7 @@ public class MaterialButtonGroup extends LinearLayout {
         this.childOrderComparator = new Comparator() { // from class: com.google.android.material.button.MaterialButtonGroup$$ExternalSyntheticLambda0
             @Override // java.util.Comparator
             public final int compare(Object obj, Object obj2) {
-                return MaterialButtonGroup.this.m9819xa7af0300((MaterialButton) obj, (MaterialButton) obj2);
+                return MaterialButtonGroup.this.m9818xa7af0300((MaterialButton) obj, (MaterialButton) obj2);
             }
         };
         this.childShapesDirty = true;

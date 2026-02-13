@@ -16,7 +16,7 @@ public final class C0244f9 extends MessageNano {
     public static volatile C0244f9[] g;
 
     /* renamed from: a  reason: collision with root package name */
-    public C0322i9 f992a;
+    public C0322i9 f991a;
     public String b;
     public int c;
 
@@ -36,7 +36,7 @@ public final class C0244f9 extends MessageNano {
     }
 
     public final C0244f9 a() {
-        this.f992a = null;
+        this.f991a = null;
         this.b = "";
         this.c = 0;
         this.cachedSize = -1;
@@ -46,7 +46,7 @@ public final class C0244f9 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        C0322i9 c0322i9 = this.f992a;
+        C0322i9 c0322i9 = this.f991a;
         if (c0322i9 != null) {
             computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(1, c0322i9);
         }
@@ -57,7 +57,7 @@ public final class C0244f9 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        C0322i9 c0322i9 = this.f992a;
+        C0322i9 c0322i9 = this.f991a;
         if (c0322i9 != null) {
             codedOutputByteBufferNano.writeMessage(1, c0322i9);
         }
@@ -77,10 +77,10 @@ public final class C0244f9 extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                if (this.f992a == null) {
-                    this.f992a = new C0322i9();
+                if (this.f991a == null) {
+                    this.f991a = new C0322i9();
                 }
-                codedInputByteBufferNano.readMessage(this.f992a);
+                codedInputByteBufferNano.readMessage(this.f991a);
             } else if (readTag == 18) {
                 this.b = codedInputByteBufferNano.readString();
             } else if (readTag != 40) {

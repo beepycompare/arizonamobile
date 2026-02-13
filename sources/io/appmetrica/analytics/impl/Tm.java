@@ -9,10 +9,10 @@ public final class Tm extends Ci {
 
     @Override // io.appmetrica.analytics.impl.Ci
     public final Object a(int i) {
-        return this.f537a.getResources().getStringArray(i);
+        return this.f536a.getResources().getStringArray(i);
     }
 
     public final String[] b(int i) {
-        return this.f537a.getResources().getStringArray(i);
+        return this.f536a.getResources().getStringArray(i);
     }
 }

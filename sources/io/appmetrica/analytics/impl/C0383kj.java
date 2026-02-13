@@ -7,15 +7,15 @@ import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
 public final class C0383kj {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1084a;
+    public final String f1083a;
     public final Context b;
     public final CounterConfigurationReporterType c;
     public final C0458nj d;
 
     public C0383kj(String str, Context context, CounterConfigurationReporterType counterConfigurationReporterType, C0458nj c0458nj) {
-        this.f1084a = str;
+        this.f1083a = str;
         this.b = context;
-        int i = AbstractC0357jj.f1068a[counterConfigurationReporterType.ordinal()];
+        int i = AbstractC0357jj.f1067a[counterConfigurationReporterType.ordinal()];
         if (i == 1) {
             this.c = CounterConfigurationReporterType.SELF_DIAGNOSTIC_MAIN;
         } else if (i != 2) {

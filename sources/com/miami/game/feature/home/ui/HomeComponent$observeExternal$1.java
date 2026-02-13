@@ -46,6 +46,7 @@ public final class HomeComponent$observeExternal$1 extends SuspendLambda impleme
     public final Object invokeSuspend(Object obj) {
         MutableStateFlow mutableStateFlow;
         Object value;
+        HomeUiState homeUiState;
         HomeExternalUiState homeExternalUiState = (HomeExternalUiState) this.L$0;
         IntrinsicsKt.getCOROUTINE_SUSPENDED();
         if (this.label != 0) {
@@ -54,10 +55,15 @@ public final class HomeComponent$observeExternal$1 extends SuspendLambda impleme
         ResultKt.throwOnFailure(obj);
         Timber.Forest.d("mainStateStore " + homeExternalUiState, new Object[0]);
         mutableStateFlow = this.this$0.stateStore;
+        HomeComponent homeComponent = this.this$0;
         do {
             value = mutableStateFlow.getValue();
+            homeUiState = (HomeUiState) value;
+            if (homeExternalUiState.isGameReady()) {
+                homeComponent.finishFirstDownload();
+            }
             Timber.Forest.d(homeExternalUiState.toString(), new Object[0]);
-        } while (!mutableStateFlow.compareAndSet(value, HomeUiState.copy$default((HomeUiState) value, 0, homeExternalUiState.isProgressDownload(), homeExternalUiState.getUpdateSize(), null, null, null, null, null, null, null, null, homeExternalUiState.isCheckingFiles(), false, homeExternalUiState.isUpdateNeeded(), 0, false, homeExternalUiState.isGameReady(), false, 0, 0, 972793, null)));
+        } while (!mutableStateFlow.compareAndSet(value, HomeUiState.copy$default(homeUiState, 0, homeExternalUiState.isProgressDownload(), homeExternalUiState.getUpdateSize(), null, null, null, null, null, null, null, null, homeExternalUiState.isCheckingFiles(), false, homeExternalUiState.isUpdateNeeded(), false, 0, false, homeExternalUiState.isGameReady(), false, 0, 0, 1955833, null)));
         return Unit.INSTANCE;
     }
 }

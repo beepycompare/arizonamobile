@@ -4,14 +4,14 @@ package io.appmetrica.analytics.impl;
 public final class C0632uj implements Qa {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f1260a;
+    public final /* synthetic */ String f1259a;
 
     public C0632uj(String str) {
-        this.f1260a = str;
+        this.f1259a = str;
     }
 
     @Override // io.appmetrica.analytics.impl.Qa
     public final void a(Ra ra) {
-        ra.setUserProfileID(this.f1260a);
+        ra.setUserProfileID(this.f1259a);
     }
 }

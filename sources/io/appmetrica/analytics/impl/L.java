@@ -6,16 +6,16 @@ import io.appmetrica.analytics.coreapi.internal.backport.Provider;
 public final class L implements Provider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Context f666a;
+    public final /* synthetic */ Context f665a;
     public final /* synthetic */ N b;
 
     public L(N n, Context context) {
         this.b = n;
-        this.f666a = context;
+        this.f665a = context;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.backport.Provider
     public final Object get() {
-        return this.b.f701a.a(this.f666a);
+        return this.b.f700a.a(this.f665a);
     }
 }

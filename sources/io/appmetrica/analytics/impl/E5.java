@@ -7,7 +7,7 @@ import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityEvent;
 public final class E5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0463o f562a;
+    public final C0463o f561a;
     public final IReporter b;
     public Context c;
     public final D5 d;
@@ -19,14 +19,14 @@ public final class E5 {
     public final synchronized void a(Context context) {
         if (this.c == null) {
             Context applicationContext = context.getApplicationContext();
-            this.f562a.a(applicationContext);
-            this.f562a.registerListener(this.d, ActivityEvent.RESUMED, ActivityEvent.PAUSED);
+            this.f561a.a(applicationContext);
+            this.f561a.registerListener(this.d, ActivityEvent.RESUMED, ActivityEvent.PAUSED);
             this.c = applicationContext;
         }
     }
 
     public E5(C0463o c0463o, IReporter iReporter) {
-        this.f562a = c0463o;
+        this.f561a = c0463o;
         this.b = iReporter;
         this.d = new D5(this);
     }

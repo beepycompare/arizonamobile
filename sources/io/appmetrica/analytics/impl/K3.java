@@ -12,7 +12,7 @@ import io.appmetrica.analytics.modulesapi.internal.common.InternalClientModuleFa
 public final class K3 implements H5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f652a;
+    public final Context f651a;
     public final K5 b = new K5(new C0318i5());
     public final C0188d4 c = new C0188d4(C0136b4.l().b(getContext()));
     public final C0117ab d = new C0117ab();
@@ -22,7 +22,7 @@ public final class K3 implements H5 {
     public final J3 h = new J3();
 
     public K3(Context context) {
-        this.f652a = context;
+        this.f651a = context;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext
@@ -47,7 +47,7 @@ public final class K3 implements H5 {
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext
     public final Context getContext() {
-        return this.f652a;
+        return this.f651a;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ClientContext

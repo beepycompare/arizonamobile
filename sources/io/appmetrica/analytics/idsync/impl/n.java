@@ -16,11 +16,11 @@ import java.util.List;
 import java.util.Map;
 import kotlin.collections.CollectionsKt;
 import kotlin.text.StringsKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class n {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ServiceContext f476a;
+    public final ServiceContext f475a;
     public final G b;
     public SdkIdentifiers c;
     public final SystemTimeProvider d = new SystemTimeProvider();
@@ -29,7 +29,7 @@ public final class n {
     public final q g;
 
     public n(ServiceContext serviceContext, G g, SdkIdentifiers sdkIdentifiers) {
-        this.f476a = serviceContext;
+        this.f475a = serviceContext;
         this.b = g;
         this.c = sdkIdentifiers;
         this.e = new o(serviceContext.getNetworkContext().getSslSocketFactoryProvider(), this);
@@ -40,22 +40,22 @@ public final class n {
     public static final void a(D d, n nVar, RequestConfig requestConfig) {
         if (d.b) {
             G g = nVar.b;
-            String str = d.f460a;
+            String str = d.f459a;
             g.d.put(str, new E(str, nVar.d.currentTimeMillis(), d.d ? 2 : 4));
-            g.f463a.putString(g.c, g.b.fromModel(CollectionsKt.toList(g.d.values())));
+            g.f462a.putString(g.c, g.b.fromModel(CollectionsKt.toList(g.d.values())));
             q qVar = nVar.g;
             SdkIdentifiers sdkIdentifiers = nVar.c;
-            qVar.f479a.getClass();
+            qVar.f478a.getClass();
             String a2 = v.a(d);
             t tVar = qVar.b;
             tVar.getClass();
             ArrayList arrayList = new ArrayList();
             if (requestConfig.getReportEventEnabled()) {
-                arrayList.add(new p(tVar.f481a));
+                arrayList.add(new p(tVar.f480a));
             }
             String reportUrl = requestConfig.getReportUrl();
             if (reportUrl != null && !StringsKt.isBlank(reportUrl)) {
-                arrayList.add(new r(tVar.f481a, requestConfig.getReportUrl()));
+                arrayList.add(new r(tVar.f480a, requestConfig.getReportUrl()));
             }
             Iterator it = arrayList.iterator();
             while (it.hasNext()) {
@@ -77,8 +77,8 @@ public final class n {
         x xVar = nVar.f;
         Preconditions preconditions = requestConfig.getPreconditions();
         xVar.getClass();
-        if (w.f483a[preconditions.getNetworkType().ordinal()] == 1) {
-            c0098a = new C0099b(xVar.f484a);
+        if (w.f482a[preconditions.getNetworkType().ordinal()] == 1) {
+            c0098a = new C0099b(xVar.f483a);
         } else {
             c0098a = new C0098a();
         }
@@ -89,13 +89,13 @@ public final class n {
             for (Map.Entry<String, List<String>> entry : requestConfig.getHeaders().entrySet()) {
                 builder.addHeader(entry.getKey(), CollectionsKt.joinToString$default(entry.getValue(), ", ", null, null, 0, null, null, 62, null));
             }
-            Response execute = new NetworkClientBuilder().withSettings(new NetworkClientSettings.Builder().withSslSocketFactory(oVar.f477a.getSslSocketFactory()).withUseCaches(false).withInstanceFollowRedirects(true).withMaxResponseSize(102400).build()).build().newCall(builder.build()).execute();
+            Response execute = new NetworkClientBuilder().withSettings(new NetworkClientSettings.Builder().withSslSocketFactory(oVar.f476a.getSslSocketFactory()).withUseCaches(false).withInstanceFollowRedirects(true).withMaxResponseSize(102400).build()).build().newCall(builder.build()).execute();
             oVar.b.a(new D(requestConfig.getType(), execute.isCompleted(), execute.getUrl(), requestConfig.getValidResponseCodes().contains(Integer.valueOf(execute.getCode())), execute.getCode(), execute.getResponseData(), execute.getHeaders()), requestConfig);
         }
     }
 
     public final void a(final D d, final RequestConfig requestConfig) {
-        this.f476a.getExecutorProvider().getModuleExecutor().execute(new Runnable() { // from class: io.appmetrica.analytics.idsync.impl.n$$ExternalSyntheticLambda1
+        this.f475a.getExecutorProvider().getModuleExecutor().execute(new Runnable() { // from class: io.appmetrica.analytics.idsync.impl.n$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
                 n.a(D.this, this, requestConfig);
@@ -121,7 +121,7 @@ public final class n {
                 return;
             }
         }
-        this.f476a.getExecutorProvider().getSupportIOExecutor().execute(new Runnable() { // from class: io.appmetrica.analytics.idsync.impl.n$$ExternalSyntheticLambda0
+        this.f475a.getExecutorProvider().getSupportIOExecutor().execute(new Runnable() { // from class: io.appmetrica.analytics.idsync.impl.n$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
                 n.a(n.this, requestConfig);

@@ -11,7 +11,7 @@ import java.util.Iterator;
 public final class O2 implements InterfaceC0409lk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f720a;
+    public final ArrayList f719a;
     public Intent b;
     public final Context c;
     public final G5 d;
@@ -22,7 +22,7 @@ public final class O2 implements InterfaceC0409lk {
     }
 
     public final synchronized Intent a(Consumer<Intent> consumer) {
-        this.f720a.add(consumer);
+        this.f719a.add(consumer);
         return this.b;
     }
 
@@ -33,7 +33,7 @@ public final class O2 implements InterfaceC0409lk {
         synchronized (g5) {
             if (g5.b) {
                 try {
-                    context.unregisterReceiver(g5.f592a);
+                    context.unregisterReceiver(g5.f591a);
                     g5.b = false;
                 } catch (Throwable unused) {
                 }
@@ -45,7 +45,7 @@ public final class O2 implements InterfaceC0409lk {
     public final synchronized void onCreate() {
         Intent a2 = a();
         this.b = a2;
-        Iterator it = this.f720a.iterator();
+        Iterator it = this.f719a.iterator();
         while (it.hasNext()) {
             ((Consumer) it.next()).consume(a2);
         }
@@ -55,14 +55,14 @@ public final class O2 implements InterfaceC0409lk {
     public final synchronized void onDestroy() {
         this.b = null;
         b();
-        Iterator it = this.f720a.iterator();
+        Iterator it = this.f719a.iterator();
         while (it.hasNext()) {
             ((Consumer) it.next()).consume(null);
         }
     }
 
     public O2(Context context, IHandlerExecutor iHandlerExecutor, int i) {
-        this.f720a = new ArrayList();
+        this.f719a = new ArrayList();
         this.b = null;
         this.c = context;
         this.e = iHandlerExecutor;
@@ -78,7 +78,7 @@ public final class O2 implements InterfaceC0409lk {
         synchronized (g5) {
             intent = null;
             try {
-                intent = context.registerReceiver(g5.f592a, intentFilter, null, iHandlerExecutor.getHandler());
+                intent = context.registerReceiver(g5.f591a, intentFilter, null, iHandlerExecutor.getHandler());
                 g5.b = true;
             } catch (Throwable unused) {
             }

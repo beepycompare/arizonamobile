@@ -87,7 +87,7 @@ public final class YearMonthFormatKt {
     public static final Unit ISO_YEAR_MONTH_delegate$lambda$1$lambda$0(DateTimeFormatBuilder.WithYearMonth build) {
         Intrinsics.checkNotNullParameter(build, "$this$build");
         DateTimeFormatBuilder.WithYearMonth.year$default(build, null, 1, null);
-        DateTimeFormatBuilderKt.m11886char(build, '-');
+        DateTimeFormatBuilderKt.m11885char(build, '-');
         DateTimeFormatBuilder.WithYearMonth.monthNumber$default(build, null, 1, null);
         return Unit.INSTANCE;
     }

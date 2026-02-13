@@ -8,22 +8,22 @@ import io.appmetrica.analytics.coreapi.internal.servicecomponents.batteryinfo.Ch
 public final class Q2 implements Consumer {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ R2 f748a;
+    public final /* synthetic */ R2 f747a;
 
     public Q2(R2 r2) {
-        this.f748a = r2;
+        this.f747a = r2;
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
     public final void consume(Object obj) {
         Intent intent = (Intent) obj;
-        BatteryInfo batteryInfo = this.f748a.b;
+        BatteryInfo batteryInfo = this.f747a.b;
         ChargeType chargeType = batteryInfo == null ? null : batteryInfo.chargeType;
-        this.f748a.getClass();
+        this.f747a.getClass();
         BatteryInfo a2 = R2.a(intent);
-        this.f748a.b = a2;
+        this.f747a.b = a2;
         if (chargeType != a2.chargeType) {
-            this.f748a.f759a.execute(new P2(this, a2));
+            this.f747a.f758a.execute(new P2(this, a2));
         }
     }
 }

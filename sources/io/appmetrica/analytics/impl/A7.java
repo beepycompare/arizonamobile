@@ -6,10 +6,10 @@ import io.appmetrica.analytics.modulesapi.internal.common.AskForPermissionStrate
 public final class A7 implements AskForPermissionStrategyModuleProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Wd f496a = new Wd();
+    public final Wd f495a = new Wd();
 
     @Override // io.appmetrica.analytics.modulesapi.internal.common.AskForPermissionStrategyModuleProvider
     public final PermissionStrategy getAskForPermissionStrategy() {
-        return this.f496a;
+        return this.f495a;
     }
 }

@@ -7,13 +7,13 @@ import kotlin.jvm.internal.Intrinsics;
 public abstract class AbstractC0428me {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f1117a = -1;
+    public final int f1116a = -1;
     public final int b = 0;
     public final int c = 1;
 
     public final int a(Boolean bool) {
         if (bool == null) {
-            return this.f1117a;
+            return this.f1116a;
         }
         if (Intrinsics.areEqual(bool, Boolean.FALSE)) {
             return this.b;

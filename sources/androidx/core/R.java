@@ -77,19 +77,19 @@ public final class R {
         public static int ic_call_answer_video_low = 0x7f080a52;
         public static int ic_call_decline = 0x7f080a53;
         public static int ic_call_decline_low = 0x7f080a54;
-        public static int notification_action_background = 0x7f080c22;
-        public static int notification_bg = 0x7f080c23;
-        public static int notification_bg_low = 0x7f080c24;
-        public static int notification_bg_low_normal = 0x7f080c25;
-        public static int notification_bg_low_pressed = 0x7f080c26;
-        public static int notification_bg_normal = 0x7f080c27;
-        public static int notification_bg_normal_pressed = 0x7f080c28;
-        public static int notification_icon_background = 0x7f080c29;
-        public static int notification_oversize_large_icon_bg = 0x7f080c2a;
-        public static int notification_template_icon_bg = 0x7f080c2b;
-        public static int notification_template_icon_low_bg = 0x7f080c2c;
-        public static int notification_tile_bg = 0x7f080c2e;
-        public static int notify_panel_notification_icon_bg = 0x7f080c30;
+        public static int notification_action_background = 0x7f080c23;
+        public static int notification_bg = 0x7f080c24;
+        public static int notification_bg_low = 0x7f080c25;
+        public static int notification_bg_low_normal = 0x7f080c26;
+        public static int notification_bg_low_pressed = 0x7f080c27;
+        public static int notification_bg_normal = 0x7f080c28;
+        public static int notification_bg_normal_pressed = 0x7f080c29;
+        public static int notification_icon_background = 0x7f080c2a;
+        public static int notification_oversize_large_icon_bg = 0x7f080c2b;
+        public static int notification_template_icon_bg = 0x7f080c2c;
+        public static int notification_template_icon_low_bg = 0x7f080c2d;
+        public static int notification_tile_bg = 0x7f080c2f;
+        public static int notify_panel_notification_icon_bg = 0x7f080c31;
 
         private drawable() {
         }

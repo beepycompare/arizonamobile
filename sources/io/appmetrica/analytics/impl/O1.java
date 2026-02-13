@@ -9,13 +9,13 @@ public final class O1 implements Thread.UncaughtExceptionHandler {
     public static final AtomicBoolean e = new AtomicBoolean();
 
     /* renamed from: a  reason: collision with root package name */
-    public final Fa f719a;
+    public final Fa f718a;
     public final C0544r6 b = C0136b4.l().n();
     public final C0470o6 c = new C0470o6();
     public final Dn d = new Dn();
 
     public O1(C0370k6 c0370k6) {
-        this.f719a = c0370k6;
+        this.f718a = c0370k6;
     }
 
     @Override // java.lang.Thread.UncaughtExceptionHandler
@@ -23,14 +23,14 @@ public final class O1 implements Thread.UncaughtExceptionHandler {
         StackTraceElement[] stackTraceElementArr;
         try {
             e.set(true);
-            Fa fa = this.f719a;
+            Fa fa = this.f718a;
             C0686wn apply = this.c.apply(thread);
             Dn dn = this.d;
-            Thread a2 = dn.f557a.a();
+            Thread a2 = dn.f556a.a();
             ArrayList a3 = dn.a(a2, thread);
             if (thread != a2) {
                 try {
-                    stackTraceElementArr = dn.f557a.b();
+                    stackTraceElementArr = dn.f556a.b();
                     if (stackTraceElementArr == null) {
                         try {
                             stackTraceElementArr = a2.getStackTrace();
@@ -42,7 +42,7 @@ public final class O1 implements Thread.UncaughtExceptionHandler {
                 }
                 a3.add(0, (C0686wn) dn.b.apply(a2, stackTraceElementArr));
             }
-            fa.a(th, new V(apply, a3, this.b.f1203a.a()));
+            fa.a(th, new V(apply, a3, this.b.f1202a.a()));
         } catch (Throwable th2) {
             LoggerStorage.getMainPublicOrAnonymousLogger().error(th2, th2.getMessage(), new Object[0]);
         }

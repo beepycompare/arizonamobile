@@ -57,7 +57,7 @@ public final class HomeComponent$prepareNews$1 extends SuspendLambda implements 
             do {
                 value = mutableStateFlow.getValue();
                 Timber.Forest.d(newsState.getNewsList().toString(), new Object[0]);
-            } while (!mutableStateFlow.compareAndSet(value, HomeUiState.copy$default((HomeUiState) value, 0, false, null, newsState.getNewsList(), null, null, null, null, null, null, null, false, false, false, 0, false, false, false, 0, 0, 1048567, null)));
+            } while (!mutableStateFlow.compareAndSet(value, HomeUiState.copy$default((HomeUiState) value, 0, false, null, newsState.getNewsList(), null, null, null, null, null, null, null, false, false, false, false, 0, false, false, false, 0, 0, 2097143, null)));
             return Unit.INSTANCE;
         }
         return Unit.INSTANCE;

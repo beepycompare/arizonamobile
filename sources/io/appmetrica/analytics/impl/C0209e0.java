@@ -6,25 +6,25 @@ import java.util.Map;
 public final class C0209e0 implements Cn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0235f0 f967a;
+    public final /* synthetic */ C0235f0 f966a;
 
     public C0209e0(C0235f0 c0235f0) {
-        this.f967a = c0235f0;
+        this.f966a = c0235f0;
     }
 
     @Override // io.appmetrica.analytics.impl.Cn
     public final Thread a() {
-        return this.f967a.b;
+        return this.f966a.b;
     }
 
     @Override // io.appmetrica.analytics.impl.Cn
     public final StackTraceElement[] b() {
-        C0235f0 c0235f0 = this.f967a;
-        return (StackTraceElement[]) c0235f0.f987a.get(c0235f0.b);
+        C0235f0 c0235f0 = this.f966a;
+        return (StackTraceElement[]) c0235f0.f986a.get(c0235f0.b);
     }
 
     @Override // io.appmetrica.analytics.impl.Cn
     public final Map<Thread, StackTraceElement[]> c() {
-        return this.f967a.f987a;
+        return this.f966a.f986a;
     }
 }

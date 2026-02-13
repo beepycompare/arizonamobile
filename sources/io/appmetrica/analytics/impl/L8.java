@@ -12,7 +12,7 @@ public final class L8 extends MessageNano {
     public static volatile L8[] b;
 
     /* renamed from: a  reason: collision with root package name */
-    public K8[] f675a;
+    public K8[] f674a;
 
     public L8() {
         a();
@@ -30,7 +30,7 @@ public final class L8 extends MessageNano {
     }
 
     public final L8 a() {
-        this.f675a = K8.b();
+        this.f674a = K8.b();
         this.cachedSize = -1;
         return this;
     }
@@ -38,11 +38,11 @@ public final class L8 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        K8[] k8Arr = this.f675a;
+        K8[] k8Arr = this.f674a;
         if (k8Arr != null && k8Arr.length > 0) {
             int i = 0;
             while (true) {
-                K8[] k8Arr2 = this.f675a;
+                K8[] k8Arr2 = this.f674a;
                 if (i >= k8Arr2.length) {
                     break;
                 }
@@ -58,11 +58,11 @@ public final class L8 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        K8[] k8Arr = this.f675a;
+        K8[] k8Arr = this.f674a;
         if (k8Arr != null && k8Arr.length > 0) {
             int i = 0;
             while (true) {
-                K8[] k8Arr2 = this.f675a;
+                K8[] k8Arr2 = this.f674a;
                 if (i >= k8Arr2.length) {
                     break;
                 }
@@ -89,7 +89,7 @@ public final class L8 extends MessageNano {
                 }
             } else {
                 int repeatedFieldArrayLength = WireFormatNano.getRepeatedFieldArrayLength(codedInputByteBufferNano, 10);
-                K8[] k8Arr = this.f675a;
+                K8[] k8Arr = this.f674a;
                 int length = k8Arr == null ? 0 : k8Arr.length;
                 int i = repeatedFieldArrayLength + length;
                 K8[] k8Arr2 = new K8[i];
@@ -106,7 +106,7 @@ public final class L8 extends MessageNano {
                 K8 k82 = new K8();
                 k8Arr2[length] = k82;
                 codedInputByteBufferNano.readMessage(k82);
-                this.f675a = k8Arr2;
+                this.f674a = k8Arr2;
             }
         }
         return this;

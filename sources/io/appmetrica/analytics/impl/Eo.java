@@ -6,10 +6,10 @@ import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 public final class Eo implements Consumer {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ String f574a = "WebView interface setup is successful.";
+    public final /* synthetic */ String f573a = "WebView interface setup is successful.";
 
     @Override // io.appmetrica.analytics.coreapi.internal.backport.Consumer
     public final void consume(Object obj) {
-        ((PublicLogger) obj).info(this.f574a, new Object[0]);
+        ((PublicLogger) obj).info(this.f573a, new Object[0]);
     }
 }

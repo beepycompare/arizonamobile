@@ -17,7 +17,7 @@ import java.util.Map;
 public final class C0279gi implements Ra {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0738z0 f1016a;
+    public final C0738z0 f1015a;
     public final Ah b;
     public final IHandlerExecutor c;
     public final Context d;
@@ -101,7 +101,7 @@ public final class C0279gi implements Ra {
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportEvent(String str) {
-        this.b.f501a.a(str);
+        this.b.f500a.a(str);
         this.f.getClass();
         this.c.execute(new RunnableC0227ei(this, str));
     }
@@ -182,7 +182,7 @@ public final class C0279gi implements Ra {
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportEvent(String str, String str2) {
-        this.b.f501a.a(str);
+        this.b.f500a.a(str);
         this.f.getClass();
         this.c.execute(new RunnableC0253fi(this, str, str2));
     }
@@ -214,7 +214,7 @@ public final class C0279gi implements Ra {
         this.c = C0136b4.l().g().a();
         this.d = context;
         this.b = ah;
-        this.f1016a = c0738z0;
+        this.f1015a = c0738z0;
         this.f = c0532qi;
         this.e = reporterConfig;
         this.g = oe;
@@ -222,7 +222,7 @@ public final class C0279gi implements Ra {
 
     @Override // io.appmetrica.analytics.IReporter
     public final void reportEvent(String str, Map<String, Object> map) {
-        this.b.f501a.a(str);
+        this.b.f500a.a(str);
         this.f.getClass();
         this.c.execute(new Gh(this, str, CollectionUtils.getListFromMap(map)));
     }

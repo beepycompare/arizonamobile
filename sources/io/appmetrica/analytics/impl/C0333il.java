@@ -4,13 +4,13 @@ package io.appmetrica.analytics.impl;
 public final class C0333il {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Integer f1049a;
+    public final Integer f1048a;
     public final Integer b;
     public final boolean c;
     public final String d;
 
     public C0333il(Integer num, Integer num2, boolean z, String str) {
-        this.f1049a = num;
+        this.f1048a = num;
         this.b = num2;
         this.c = z;
         this.d = str;

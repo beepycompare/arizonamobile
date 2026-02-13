@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class L0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final IHandlerExecutor f667a = C0136b4.l().g().a();
+    public final IHandlerExecutor f666a = C0136b4.l().g().a();
     public final C0738z0 b;
     public final Qe c;
     public final Te d;
@@ -22,12 +22,12 @@ public final class L0 {
 
     public final void a(final PluginErrorDetails pluginErrorDetails) {
         Qe qe = this.c;
-        qe.f752a.a(null);
+        qe.f751a.a(null);
         qe.b.a(pluginErrorDetails);
         Te te = this.d;
         Intrinsics.checkNotNull(pluginErrorDetails);
         te.getClass();
-        this.f667a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.L0$$ExternalSyntheticLambda1
+        this.f666a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.L0$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
                 L0.a(L0.this, pluginErrorDetails);
@@ -37,13 +37,13 @@ public final class L0 {
 
     public final void a(final PluginErrorDetails pluginErrorDetails, final String str) {
         Qe qe = this.c;
-        qe.f752a.a(null);
+        qe.f751a.a(null);
         qe.b.a(pluginErrorDetails);
-        if (qe.d.a((Collection<Object>) (pluginErrorDetails != null ? pluginErrorDetails.getStacktrace() : null)).f1195a) {
+        if (qe.d.a((Collection<Object>) (pluginErrorDetails != null ? pluginErrorDetails.getStacktrace() : null)).f1194a) {
             Te te = this.d;
             Intrinsics.checkNotNull(pluginErrorDetails);
             te.getClass();
-            this.f667a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.L0$$ExternalSyntheticLambda2
+            this.f666a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.L0$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
                     L0.a(L0.this, pluginErrorDetails, str);
@@ -54,12 +54,12 @@ public final class L0 {
 
     public final void a(final String str, final String str2, final PluginErrorDetails pluginErrorDetails) {
         Qe qe = this.c;
-        qe.f752a.a(null);
+        qe.f751a.a(null);
         qe.c.a(str);
         Te te = this.d;
         Intrinsics.checkNotNull(str);
         te.getClass();
-        this.f667a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.L0$$ExternalSyntheticLambda0
+        this.f666a.execute(new Runnable() { // from class: io.appmetrica.analytics.impl.L0$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
                 L0.a(L0.this, str, str2, pluginErrorDetails);
@@ -73,7 +73,7 @@ public final class L0 {
         Intrinsics.checkNotNull(c0713y0);
         C0350jc i = c0713y0.f().i();
         Intrinsics.checkNotNull(i);
-        i.f1063a.getPluginExtension().reportError(pluginErrorDetails, str);
+        i.f1062a.getPluginExtension().reportError(pluginErrorDetails, str);
     }
 
     public static final void a(L0 l0, String str, String str2, PluginErrorDetails pluginErrorDetails) {
@@ -82,7 +82,7 @@ public final class L0 {
         Intrinsics.checkNotNull(c0713y0);
         C0350jc i = c0713y0.f().i();
         Intrinsics.checkNotNull(i);
-        i.f1063a.getPluginExtension().reportError(str, str2, pluginErrorDetails);
+        i.f1062a.getPluginExtension().reportError(str, str2, pluginErrorDetails);
     }
 
     public static final void a(L0 l0, PluginErrorDetails pluginErrorDetails) {
@@ -91,6 +91,6 @@ public final class L0 {
         Intrinsics.checkNotNull(c0713y0);
         C0350jc i = c0713y0.f().i();
         Intrinsics.checkNotNull(i);
-        i.f1063a.getPluginExtension().reportUnhandledException(pluginErrorDetails);
+        i.f1062a.getPluginExtension().reportUnhandledException(pluginErrorDetails);
     }
 }

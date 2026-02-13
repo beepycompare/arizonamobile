@@ -15,7 +15,7 @@ public final class C0219ea {
     public static final C0219ea d = new C0219ea();
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0576sd f977a = new C0576sd();
+    public final C0576sd f976a = new C0576sd();
     public final ServiceComponentsInitializer b = AbstractC0152bk.a();
     public boolean c = false;
 
@@ -23,7 +23,7 @@ public final class C0219ea {
         C0145bd c0145bd;
         C0449na.a(context);
         this.b.onCreate(context);
-        this.f977a.getClass();
+        this.f976a.getClass();
         List<String> a2 = C0449na.I.s.a();
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(a2, 10));
         for (String str : a2) {
@@ -40,7 +40,7 @@ public final class C0219ea {
         new C0459nk(C0449na.I.D().d).a(context);
         wo woVar = C0449na.I.D().c;
         synchronized (woVar) {
-            woVar.f1294a.a();
+            woVar.f1293a.a();
         }
         C0449na.I.q().a();
         a().a(arrayList);
@@ -63,7 +63,7 @@ public final class C0219ea {
         if (c0384kk.b == null) {
             synchronized (c0384kk) {
                 if (c0384kk.b == null) {
-                    c0384kk.f1085a.getClass();
+                    c0384kk.f1084a.getClass();
                     HandlerThreadC0169cb a2 = C0747z9.a("IAA-SC");
                     c0384kk.b = new C0747z9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }

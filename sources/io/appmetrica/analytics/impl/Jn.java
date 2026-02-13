@@ -3,12 +3,12 @@ package io.appmetrica.analytics.impl;
 public class Jn implements Gi {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f650a;
+    public final int f649a;
     public final int b;
     public int c = 0;
 
     public Jn(int i, int i2) {
-        this.f650a = i;
+        this.f649a = i;
         this.b = i2;
     }
 
@@ -19,7 +19,7 @@ public class Jn implements Gi {
     public final boolean b() {
         int i = this.c;
         this.c = i + 1;
-        return i < this.f650a;
+        return i < this.f649a;
     }
 
     public final void c() {

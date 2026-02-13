@@ -6,14 +6,14 @@ import io.appmetrica.analytics.profile.UserProfile;
 public final class C0657vj implements Qa {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ UserProfile f1274a;
+    public final /* synthetic */ UserProfile f1273a;
 
     public C0657vj(UserProfile userProfile) {
-        this.f1274a = userProfile;
+        this.f1273a = userProfile;
     }
 
     @Override // io.appmetrica.analytics.impl.Qa
     public final void a(Ra ra) {
-        ra.reportUserProfile(this.f1274a);
+        ra.reportUserProfile(this.f1273a);
     }
 }

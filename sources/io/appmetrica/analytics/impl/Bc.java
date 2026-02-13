@@ -5,11 +5,11 @@ import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 public final class Bc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f518a;
+    public final String f517a;
     public final PublicLogger b;
 
     public Bc(String str, PublicLogger publicLogger) {
-        this.f518a = str;
+        this.f517a = str;
         this.b = publicLogger;
     }
 }

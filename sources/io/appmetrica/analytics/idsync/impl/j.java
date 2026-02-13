@@ -7,12 +7,12 @@ import io.appmetrica.analytics.protobuf.nano.InvalidProtocolBufferNanoException;
 import io.appmetrica.analytics.protobuf.nano.MessageNano;
 import io.appmetrica.analytics.protobuf.nano.WireFormatNano;
 import java.io.IOException;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class j extends MessageNano {
     public static volatile j[] b;
 
     /* renamed from: a  reason: collision with root package name */
-    public int f472a;
+    public int f471a;
 
     public j() {
         a();
@@ -30,7 +30,7 @@ public final class j extends MessageNano {
     }
 
     public final j a() {
-        this.f472a = 0;
+        this.f471a = 0;
         this.cachedSize = -1;
         return this;
     }
@@ -38,13 +38,13 @@ public final class j extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        int i = this.f472a;
+        int i = this.f471a;
         return i != 0 ? CodedOutputByteBufferNano.computeInt32Size(1, i) + computeSerializedSize : computeSerializedSize;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        int i = this.f472a;
+        int i = this.f471a;
         if (i != 0) {
             codedOutputByteBufferNano.writeInt32(1, i);
         }
@@ -65,7 +65,7 @@ public final class j extends MessageNano {
             } else {
                 int readInt32 = codedInputByteBufferNano.readInt32();
                 if (readInt32 == 0 || readInt32 == 1) {
-                    this.f472a = readInt32;
+                    this.f471a = readInt32;
                 }
             }
         }

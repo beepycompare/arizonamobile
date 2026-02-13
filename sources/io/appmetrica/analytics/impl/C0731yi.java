@@ -16,7 +16,7 @@ public final class C0731yi implements InterfaceC0204dk {
     public static final long g;
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0489p0 f1322a;
+    public final C0489p0 f1321a;
     public final Yj b;
     public final TimeProvider c;
     public final ICommonExecutor d;
@@ -28,7 +28,7 @@ public final class C0731yi implements InterfaceC0204dk {
     }
 
     public C0731yi(C0489p0 c0489p0, Yj yj, TimeProvider timeProvider) {
-        this.f1322a = c0489p0;
+        this.f1321a = c0489p0;
         this.b = yj;
         this.c = timeProvider;
         this.d = C0136b4.l().g().b();
@@ -39,7 +39,7 @@ public final class C0731yi implements InterfaceC0204dk {
         ICommonExecutor iCommonExecutor = this.d;
         if (c0655vh.b) {
             Yj yj = this.b;
-            pg = new C0164c6(yj.f872a, yj.b, yj.c, c0655vh);
+            pg = new C0164c6(yj.f871a, yj.b, yj.c, c0655vh);
         } else {
             Yj yj2 = this.b;
             pg = new Pg(yj2.b, yj2.c, c0655vh);
@@ -50,9 +50,9 @@ public final class C0731yi implements InterfaceC0204dk {
     public final void b(C0655vh c0655vh) {
         long uptimeMillis = this.c.uptimeMillis();
         Yj yj = this.b;
-        C0164c6 c0164c6 = new C0164c6(yj.f872a, yj.b, yj.c, c0655vh);
+        C0164c6 c0164c6 = new C0164c6(yj.f871a, yj.b, yj.c, c0655vh);
         long j = Intrinsics.areEqual(Looper.myLooper(), Looper.getMainLooper()) ? f : g;
-        if (this.f1322a.a()) {
+        if (this.f1321a.a()) {
             try {
                 this.d.submit(c0164c6).get(j, TimeUnit.MILLISECONDS);
             } catch (Throwable unused) {

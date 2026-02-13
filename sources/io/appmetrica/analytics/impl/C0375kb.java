@@ -11,7 +11,7 @@ import kotlin.collections.CollectionsKt;
 public final class C0375kb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0237f2 f1081a = new C0237f2();
+    public final C0237f2 f1080a = new C0237f2();
     public final C0370k6 b = new C0370k6();
     public C0761zn c;
     public boolean d;
@@ -21,7 +21,7 @@ public final class C0375kb {
         if (this.e) {
             return;
         }
-        CollectionsKt.addAll(this.b.f1077a, new Fa[]{this.f1081a.a(context, appMetricaConfig, ta)});
+        CollectionsKt.addAll(this.b.f1076a, new Fa[]{this.f1080a.a(context, appMetricaConfig, ta)});
         this.e = true;
     }
 
@@ -30,11 +30,11 @@ public final class C0375kb {
             return;
         }
         C0370k6 c0370k6 = this.b;
-        ArrayList arrayList = C0136b4.l().i.f1125a;
+        ArrayList arrayList = C0136b4.l().i.f1124a;
         ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(arrayList, 10));
         Iterator it = arrayList.iterator();
         if (!it.hasNext()) {
-            c0370k6.f1077a.addAll(arrayList2);
+            c0370k6.f1076a.addAll(arrayList2);
             this.d = true;
             return;
         }
@@ -49,16 +49,16 @@ public final class C0375kb {
         O1 o1 = new O1(this.b);
         this.c = new C0761zn(o1);
         C0736yn c0736yn = new C0736yn();
-        c0736yn.f1326a.add(o1);
+        c0736yn.f1325a.add(o1);
         Thread.UncaughtExceptionHandler defaultUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
         if (defaultUncaughtExceptionHandler != null) {
-            c0736yn.f1326a.add(defaultUncaughtExceptionHandler);
+            c0736yn.f1325a.add(defaultUncaughtExceptionHandler);
         }
         Thread.setDefaultUncaughtExceptionHandler(c0736yn);
     }
 
     public final synchronized void a() {
-        this.b.f1077a.clear();
+        this.b.f1076a.clear();
         this.d = false;
         this.e = false;
     }

@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Lambda;
 public final class C0214e5 extends Lambda implements Function1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final C0214e5 f972a = new C0214e5();
+    public static final C0214e5 f971a = new C0214e5();
 
     public C0214e5() {
         super(1);

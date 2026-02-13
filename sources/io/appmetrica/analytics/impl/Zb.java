@@ -8,7 +8,7 @@ import java.io.Closeable;
 public final class Zb implements InterfaceC0719y6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f885a;
+    public final Context f884a;
     public final String b;
     public final C0335in c;
     public final Y9 d;
@@ -23,7 +23,7 @@ public final class Zb implements InterfaceC0719y6 {
         Y6 y6;
         try {
             this.d.a();
-            y6 = new Y6(this.f885a, this.b, this.c, PublicLogger.getAnonymousInstance());
+            y6 = new Y6(this.f884a, this.b, this.c, PublicLogger.getAnonymousInstance());
             this.e = y6;
         } catch (Throwable unused) {
             return null;
@@ -32,7 +32,7 @@ public final class Zb implements InterfaceC0719y6 {
     }
 
     public Zb(Context context, String str, Y9 y9, C0335in c0335in) {
-        this.f885a = context;
+        this.f884a = context;
         this.b = str;
         this.d = y9;
         this.c = c0335in;

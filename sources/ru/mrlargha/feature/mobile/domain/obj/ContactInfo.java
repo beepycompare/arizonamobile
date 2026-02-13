@@ -379,7 +379,7 @@ public final class ContactInfo {
     }
 
     /* renamed from: isBlocked  reason: collision with other method in class */
-    public final boolean m12484isBlocked() {
+    public final boolean m12482isBlocked() {
         return isBlockedByMe() || isMeBlocked();
     }
 

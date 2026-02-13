@@ -25,7 +25,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0 implements Ca {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f528a;
+    public final Context f527a;
     public final Ba b;
     public final Ve c;
     public final Ol d;
@@ -40,7 +40,7 @@ public final class C0 implements Ca {
     public boolean m;
 
     public C0(Context context, Ba ba) {
-        this.f528a = context;
+        this.f527a = context;
         this.b = ba;
         Ve b = C0136b4.l().b(context);
         this.c = b;
@@ -102,7 +102,7 @@ public final class C0 implements Ca {
     public final Ia j() {
         C0350jc c0350jc = this.k;
         Intrinsics.checkNotNull(c0350jc);
-        return c0350jc.f1063a;
+        return c0350jc.f1062a;
     }
 
     public final C0356ji k() {
@@ -131,7 +131,7 @@ public final class C0 implements Ca {
         C0663w0 c0663w0 = c0414m0.b;
         c0663w0.getClass();
         AppMetricaConfig.Builder newConfigBuilder = AppMetricaConfig.newConfigBuilder("629a824d-c717-4ba5-bc0f-3f3968554d01");
-        if (c0663w0.f1278a.b() && Intrinsics.areEqual(c0663w0.b.f935a, Boolean.TRUE)) {
+        if (c0663w0.f1277a.b() && Intrinsics.areEqual(c0663w0.b.f934a, Boolean.TRUE)) {
             newConfigBuilder.handleFirstActivationAsUpdate(true);
         }
         Boolean bool2 = appMetricaLibraryAdapterConfig.advIdentifiersTracking;
@@ -140,7 +140,7 @@ public final class C0 implements Ca {
         }
         newConfigBuilder.withAdvIdentifiersTracking(bool2.booleanValue());
         AppMetricaConfig build = newConfigBuilder.build();
-        AppMetricaConfig.Builder f = c0414m0.f1106a.f();
+        AppMetricaConfig.Builder f = c0414m0.f1105a.f();
         if (f != null) {
             if (f.build().advIdentifiersTracking == null && (bool = build.advIdentifiersTracking) != null) {
                 f.withAdvIdentifiersTracking(bool.booleanValue());
@@ -200,7 +200,7 @@ public final class C0 implements Ca {
 
     @Override // io.appmetrica.analytics.impl.Ca
     public final void a(StartupParamsCallback startupParamsCallback, List<String> list) {
-        this.d.a(startupParamsCallback, list, AbstractC0272gb.c(this.f.f521a.getAsString("PROCESS_CFG_CLIDS")));
+        this.d.a(startupParamsCallback, list, AbstractC0272gb.c(this.f.f520a.getAsString("PROCESS_CFG_CLIDS")));
     }
 
     public final boolean a(PublicLogger publicLogger, AppMetricaConfig appMetricaConfig, InterfaceC0675wc interfaceC0675wc, boolean z) {
@@ -214,7 +214,7 @@ public final class C0 implements Ca {
             this.k = c0350jc;
             C0419m5 c0419m5 = this.j.b;
             synchronized (c0419m5) {
-                c0419m5.f1111a = a2;
+                c0419m5.f1110a = a2;
                 Iterator it = c0419m5.b.iterator();
                 while (it.hasNext()) {
                     ((InterfaceC0120ae) it.next()).consume(a2);
@@ -238,7 +238,7 @@ public final class C0 implements Ca {
             PublicLogger.Companion.getAnonymousInstance().setEnabled(false);
         }
         if (((Boolean) WrapUtils.getOrDefault(appMetricaConfig.crashReporting, bool2)).booleanValue()) {
-            this.b.d().a(this.f528a, appMetricaConfig, this);
+            this.b.d().a(this.f527a, appMetricaConfig, this);
             this.b.d().b();
             publicLogger.info("Register application crash handler", new Object[0]);
         } else {
@@ -251,8 +251,8 @@ public final class C0 implements Ca {
             Wk wk = this.j;
             synchronized (wk) {
                 if (wk.g) {
-                    wk.f843a.unregisterListener(wk.c, ActivityEvent.RESUMED);
-                    wk.f843a.unregisterListener(wk.d, ActivityEvent.PAUSED);
+                    wk.f842a.unregisterListener(wk.c, ActivityEvent.RESUMED);
+                    wk.f842a.unregisterListener(wk.d, ActivityEvent.PAUSED);
                     wk.g = false;
                 }
             }

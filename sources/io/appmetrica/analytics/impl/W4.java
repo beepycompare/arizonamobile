@@ -3,9 +3,9 @@ package io.appmetrica.analytics.impl;
 public final class W4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ X4 f836a;
+    public final /* synthetic */ X4 f835a;
 
     public W4(X4 x4) {
-        this.f836a = x4;
+        this.f835a = x4;
     }
 }

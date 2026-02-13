@@ -9,6 +9,6 @@ public final class Rf extends AbstractC0474oa {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0474oa
     public final void a(List<Rg> list) {
-        list.add(this.f1152a.f1210a);
+        list.add(this.f1151a.f1209a);
     }
 }

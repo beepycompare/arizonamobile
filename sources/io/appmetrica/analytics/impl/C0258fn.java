@@ -10,7 +10,7 @@ public final class C0258fn implements InterfaceC0587t {
     public final C0637v b;
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0612u f1001a = new C0612u();
+    public final C0612u f1000a = new C0612u();
     public final Lazy c = LazyKt.lazy(new C0232en(this));
 
     public C0258fn(Context context) {

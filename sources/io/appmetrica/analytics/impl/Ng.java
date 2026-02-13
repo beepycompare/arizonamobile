@@ -9,7 +9,7 @@ public final class Ng extends AbstractC0474oa {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0474oa
     public final void a(List<Rg> list) {
-        list.add(this.f1152a.l);
-        list.add(this.f1152a.b);
+        list.add(this.f1151a.l);
+        list.add(this.f1151a.b);
     }
 }

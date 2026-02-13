@@ -6,14 +6,14 @@ import java.util.HashMap;
 public final class C0620u7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashMap f1252a;
+    public final HashMap f1251a;
 
     public C0620u7() {
         HashMap hashMap = new HashMap();
-        this.f1252a = hashMap;
-        hashMap.put("events", AbstractC0568s5.f1218a);
-        hashMap.put("sessions", AbstractC0618u5.f1250a);
-        hashMap.put("preferences", InterfaceC0593t5.f1231a);
-        hashMap.put("binary_data", AbstractC0543r5.f1202a);
+        this.f1251a = hashMap;
+        hashMap.put("events", AbstractC0568s5.f1217a);
+        hashMap.put("sessions", AbstractC0618u5.f1249a);
+        hashMap.put("preferences", InterfaceC0593t5.f1230a);
+        hashMap.put("binary_data", AbstractC0543r5.f1201a);
     }
 }

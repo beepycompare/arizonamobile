@@ -30,6 +30,6 @@ public final class UnbiasedSelectBuilderImpl<R> extends UnbiasedSelectImplementa
 
     public final void handleBuilderException(Throwable th) {
         Result.Companion companion = Result.Companion;
-        this.cont.resumeWith(Result.m10244constructorimpl(ResultKt.createFailure(th)));
+        this.cont.resumeWith(Result.m10243constructorimpl(ResultKt.createFailure(th)));
     }
 }

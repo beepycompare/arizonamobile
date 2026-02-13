@@ -101,7 +101,7 @@ public final class Authorization implements InterfaceController {
         this.videoBinding = ((RegistrationVideoBackground) orCreateInterface).getMainBinding();
         Intrinsics.checkNotNull(targetActivity, "null cannot be cast to non-null type ru.mrlargha.commonui.core.IBackendNotifier");
         this.notifier = (IBackendNotifier) targetActivity;
-        SharedPreferences sharedPreferences = targetActivity.getSharedPreferences(SP_NAME, 0);
+        SharedPreferences sharedPreferences = targetActivity.getSharedPreferences("UI_ELEMENTS_SP", 0);
         Intrinsics.checkNotNullExpressionValue(sharedPreferences, "getSharedPreferences(...)");
         this.sharedPreferences = sharedPreferences;
         SharedPreferences sharedPreferences2 = targetActivity.getSharedPreferences("flavorType", 0);

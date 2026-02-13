@@ -5,11 +5,11 @@ import java.util.HashMap;
 public final class Pm {
 
     /* renamed from: a  reason: collision with root package name */
-    public final HashMap f744a;
+    public final HashMap f743a;
 
     public Pm() {
         HashMap hashMap = new HashMap();
-        this.f744a = hashMap;
+        this.f743a = hashMap;
         Jm jm = new Jm();
         Km km = new Km();
         Lm lm = new Lm();
@@ -21,6 +21,6 @@ public final class Pm {
     }
 
     public static Qm a(Class cls) {
-        return (Qm) Om.f731a.f744a.get(cls);
+        return (Qm) Om.f730a.f743a.get(cls);
     }
 }

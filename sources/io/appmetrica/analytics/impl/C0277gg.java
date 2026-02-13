@@ -7,7 +7,7 @@ import io.appmetrica.analytics.coreutils.internal.StringUtils;
 public final class C0277gg implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Yi f1014a;
+    public final Yi f1013a;
     public final C0573sa b;
     public final C0573sa c;
 
@@ -20,14 +20,14 @@ public final class C0277gg implements Converter {
     public final Di fromModel(C0704xg c0704xg) {
         Di di;
         C0497p8 c0497p8 = new C0497p8();
-        Mn a2 = this.b.a(c0704xg.f1308a);
-        c0497p8.f1172a = StringUtils.getUTF8Bytes((String) a2.f700a);
+        Mn a2 = this.b.a(c0704xg.f1307a);
+        c0497p8.f1171a = StringUtils.getUTF8Bytes((String) a2.f699a);
         Mn a3 = this.c.a(c0704xg.b);
-        c0497p8.b = StringUtils.getUTF8Bytes((String) a3.f700a);
+        c0497p8.b = StringUtils.getUTF8Bytes((String) a3.f699a);
         C0177cj c0177cj = c0704xg.c;
         if (c0177cj != null) {
-            di = this.f1014a.fromModel(c0177cj);
-            c0497p8.c = (C0522q8) di.f553a;
+            di = this.f1013a.fromModel(c0177cj);
+            c0497p8.c = (C0522q8) di.f552a;
         } else {
             di = null;
         }
@@ -41,7 +41,7 @@ public final class C0277gg implements Converter {
     }
 
     public C0277gg(Yi yi, C0573sa c0573sa, C0573sa c0573sa2) {
-        this.f1014a = yi;
+        this.f1013a = yi;
         this.b = c0573sa;
         this.c = c0573sa2;
     }

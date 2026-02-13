@@ -12,14 +12,14 @@ import java.util.concurrent.TimeUnit;
 public final class Lc implements InterfaceC0561rn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f677a;
+    public final Context f676a;
     public final PermissionResolutionStrategy b;
     public final CellularNetworkTypeExtractor c;
     public final CachedDataProvider.CachedData d;
 
     public Lc(Context context) {
         PermissionResolutionStrategy alwaysAllowPermissionStrategy;
-        this.f677a = context;
+        this.f676a = context;
         if (AndroidUtils.isApiAchieved(29)) {
             alwaysAllowPermissionStrategy = new SinglePermissionStrategy(C0449na.k().j(), "android.permission.READ_PHONE_STATE");
         } else {
@@ -38,7 +38,7 @@ public final class Lc implements InterfaceC0561rn {
         String str;
         kc = (Kc) this.d.getData();
         if (kc == null || this.d.shouldUpdateData()) {
-            if (this.b.hasNecessaryPermissions(this.f677a)) {
+            if (this.b.hasNecessaryPermissions(this.f676a)) {
                 str = this.c.getNetworkType();
             } else {
                 str = "unknown";

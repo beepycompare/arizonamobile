@@ -5,10 +5,10 @@ import kotlin.jvm.internal.Intrinsics;
 public final class O {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0831s f1589a;
+    public final C0831s f1588a;
 
     public O(C0831s metricsEventHttpClient) {
         Intrinsics.checkNotNullParameter(metricsEventHttpClient, "metricsEventHttpClient");
-        this.f1589a = metricsEventHttpClient;
+        this.f1588a = metricsEventHttpClient;
     }
 }

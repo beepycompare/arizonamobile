@@ -5,7 +5,7 @@ import io.appmetrica.analytics.coreapi.internal.identifiers.IdentifierStatus;
 public abstract /* synthetic */ class Ul {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final /* synthetic */ int[] f817a;
+    public static final /* synthetic */ int[] f816a;
 
     static {
         int[] iArr = new int[IdentifierStatus.values().length];
@@ -14,6 +14,6 @@ public abstract /* synthetic */ class Ul {
         iArr[IdentifierStatus.INVALID_ADV_ID.ordinal()] = 3;
         iArr[IdentifierStatus.FEATURE_DISABLED.ordinal()] = 4;
         iArr[IdentifierStatus.FORBIDDEN_BY_CLIENT_CONFIG.ordinal()] = 5;
-        f817a = iArr;
+        f816a = iArr;
     }
 }

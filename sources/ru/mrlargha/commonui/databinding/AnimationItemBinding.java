@@ -3,7 +3,7 @@ package ru.mrlargha.commonui.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.viewbinding.ViewBinding;
@@ -11,13 +11,13 @@ import androidx.viewbinding.ViewBindings;
 import ru.mrlargha.commonui.R;
 /* loaded from: classes5.dex */
 public final class AnimationItemBinding implements ViewBinding {
-    public final LinearLayout aiBackground;
+    public final FrameLayout aiBackground;
     public final AppCompatImageView aiFavorite;
     public final AppCompatImageView aiImage;
     public final TextView aiTittle;
-    private final LinearLayout rootView;
+    private final FrameLayout rootView;
 
-    private AnimationItemBinding(LinearLayout rootView, LinearLayout aiBackground, AppCompatImageView aiFavorite, AppCompatImageView aiImage, TextView aiTittle) {
+    private AnimationItemBinding(FrameLayout rootView, FrameLayout aiBackground, AppCompatImageView aiFavorite, AppCompatImageView aiImage, TextView aiTittle) {
         this.rootView = rootView;
         this.aiBackground = aiBackground;
         this.aiFavorite = aiFavorite;
@@ -26,7 +26,7 @@ public final class AnimationItemBinding implements ViewBinding {
     }
 
     @Override // androidx.viewbinding.ViewBinding
-    public LinearLayout getRoot() {
+    public FrameLayout getRoot() {
         return this.rootView;
     }
 
@@ -43,7 +43,7 @@ public final class AnimationItemBinding implements ViewBinding {
     }
 
     public static AnimationItemBinding bind(View rootView) {
-        LinearLayout linearLayout = (LinearLayout) rootView;
+        FrameLayout frameLayout = (FrameLayout) rootView;
         int i = R.id.ai_favorite;
         AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(rootView, i);
         if (appCompatImageView != null) {
@@ -53,7 +53,7 @@ public final class AnimationItemBinding implements ViewBinding {
                 i = R.id.ai_tittle;
                 TextView textView = (TextView) ViewBindings.findChildViewById(rootView, i);
                 if (textView != null) {
-                    return new AnimationItemBinding(linearLayout, linearLayout, appCompatImageView, appCompatImageView2, textView);
+                    return new AnimationItemBinding(frameLayout, frameLayout, appCompatImageView, appCompatImageView2, textView);
                 }
             }
         }

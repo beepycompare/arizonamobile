@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Lambda;
 public final class Qb extends Lambda implements Function1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Qb f750a = new Qb();
+    public static final Qb f749a = new Qb();
 
     public Qb() {
         super(1);

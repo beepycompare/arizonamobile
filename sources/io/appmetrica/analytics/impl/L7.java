@@ -8,13 +8,13 @@ import java.util.Map;
 public final class L7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f674a;
+    public final boolean f673a;
     public DeferredDeeplinkListener b;
     public DeferredDeeplinkParametersListener c;
     public J7 d;
 
     public L7(boolean z) {
-        this.f674a = z;
+        this.f673a = z;
     }
 
     public final void a(int i) {
@@ -72,8 +72,8 @@ public final class L7 {
                     deferredDeeplinkListener.onDeeplinkLoaded(str);
                     this.b = null;
                 }
-                if (!lo.a(this.d.f641a)) {
-                    Map<String, String> map = this.d.f641a;
+                if (!lo.a(this.d.f640a)) {
+                    Map<String, String> map = this.d.f640a;
                     DeferredDeeplinkParametersListener deferredDeeplinkParametersListener = this.c;
                     if (deferredDeeplinkParametersListener != null) {
                         deferredDeeplinkParametersListener.onParametersLoaded(map);

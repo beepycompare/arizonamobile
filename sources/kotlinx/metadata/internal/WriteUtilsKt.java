@@ -59,19 +59,19 @@ public final class WriteUtilsKt {
             newBuilder.setIntValue(((KmAnnotationArgument.BooleanValue) kmAnnotationArgument).getValue().booleanValue() ? 1L : 0L);
         } else if (kmAnnotationArgument instanceof KmAnnotationArgument.UByteValue) {
             newBuilder.setType(ProtoBuf.Annotation.Argument.Value.Type.BYTE);
-            newBuilder.setIntValue(((KmAnnotationArgument.UByteValue) kmAnnotationArgument).m11942getValuew2LRezQ() & 255);
+            newBuilder.setIntValue(((KmAnnotationArgument.UByteValue) kmAnnotationArgument).m11941getValuew2LRezQ() & 255);
             newBuilder.setFlags(Flags.IS_UNSIGNED.toFlags((Boolean) true));
         } else if (kmAnnotationArgument instanceof KmAnnotationArgument.UShortValue) {
             newBuilder.setType(ProtoBuf.Annotation.Argument.Value.Type.SHORT);
-            newBuilder.setIntValue(((KmAnnotationArgument.UShortValue) kmAnnotationArgument).m11954getValueMh2AYeg() & WebSocketProtocol.PAYLOAD_SHORT_MAX);
+            newBuilder.setIntValue(((KmAnnotationArgument.UShortValue) kmAnnotationArgument).m11953getValueMh2AYeg() & WebSocketProtocol.PAYLOAD_SHORT_MAX);
             newBuilder.setFlags(Flags.IS_UNSIGNED.toFlags((Boolean) true));
         } else if (kmAnnotationArgument instanceof KmAnnotationArgument.UIntValue) {
             newBuilder.setType(ProtoBuf.Annotation.Argument.Value.Type.INT);
-            newBuilder.setIntValue(((KmAnnotationArgument.UIntValue) kmAnnotationArgument).m11946getValuepVg5ArA() & 4294967295L);
+            newBuilder.setIntValue(((KmAnnotationArgument.UIntValue) kmAnnotationArgument).m11945getValuepVg5ArA() & 4294967295L);
             newBuilder.setFlags(Flags.IS_UNSIGNED.toFlags((Boolean) true));
         } else if (kmAnnotationArgument instanceof KmAnnotationArgument.ULongValue) {
             newBuilder.setType(ProtoBuf.Annotation.Argument.Value.Type.LONG);
-            newBuilder.setIntValue(((KmAnnotationArgument.ULongValue) kmAnnotationArgument).m11950getValuesVKNKU());
+            newBuilder.setIntValue(((KmAnnotationArgument.ULongValue) kmAnnotationArgument).m11949getValuesVKNKU());
             newBuilder.setFlags(Flags.IS_UNSIGNED.toFlags((Boolean) true));
         } else if (kmAnnotationArgument instanceof KmAnnotationArgument.StringValue) {
             newBuilder.setType(ProtoBuf.Annotation.Argument.Value.Type.STRING);

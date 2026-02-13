@@ -6,9 +6,9 @@ import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -30,6 +30,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.arizona.game.R;
 import com.arizona.launcher.UpdateService;
+import com.arizona.launcher.downloader.FilesChek;
 import com.arizona.launcher.util.FileServers;
 import com.google.android.vending.expansion.downloader.DownloaderServiceMarshaller;
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
@@ -45,30 +46,16 @@ import com.liulishuo.okdownload.core.listener.assist.Listener1Assist;
 import com.liulishuo.okdownload.kotlin.listener.DownloadListener1ExtensionKt;
 import dagger.hilt.android.AndroidEntryPoint;
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
 import java.lang.ref.WeakReference;
-import java.security.MessageDigest;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.Iterator;
-import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
 import kotlin.Metadata;
-import kotlin.Pair;
-import kotlin.ResultKt;
 import kotlin.Unit;
-import kotlin.collections.ArraysKt;
 import kotlin.collections.CollectionsKt;
-import kotlin.coroutines.Continuation;
-import kotlin.coroutines.intrinsics.IntrinsicsKt;
-import kotlin.coroutines.jvm.internal.Boxing;
-import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.enums.EnumEntries;
 import kotlin.enums.EnumEntriesKt;
 import kotlin.jvm.functions.Function0;
@@ -77,8 +64,6 @@ import kotlin.jvm.functions.Function3;
 import kotlin.jvm.functions.Function4;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import kotlin.text.StringsKt;
-import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.BuildersKt__BuildersKt;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.Dispatchers;
@@ -87,7 +72,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 /* compiled from: UpdateService.kt */
-@Metadata(d1 = {"\u0000Ý\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010%\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0012\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0006*\u0001#\b\u0007\u0018\u0000 r2\u00020\u0001:\u0005rstuvB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010%\u001a\u00020&H\u0016J\b\u0010'\u001a\u00020&H\u0002J\"\u0010(\u001a\u00020)2\b\u0010*\u001a\u0004\u0018\u00010+2\u0006\u0010,\u001a\u00020)2\u0006\u0010-\u001a\u00020)H\u0016J\b\u0010.\u001a\u00020&H\u0002J\b\u0010/\u001a\u000200H\u0002J\u0010\u00101\u001a\u0002022\u0006\u00103\u001a\u000200H\u0002J\b\u00104\u001a\u00020&H\u0002J\u0012\u00105\u001a\u0004\u0018\u0001062\u0006\u0010*\u001a\u00020+H\u0016J\u0010\u00107\u001a\u0002002\u0006\u0010*\u001a\u00020+H\u0016J\u0010\u00108\u001a\u00020&2\u0006\u0010*\u001a\u00020+H\u0016J\b\u00109\u001a\u00020&H\u0016J\u0012\u0010:\u001a\u00020&2\b\u0010;\u001a\u0004\u0018\u00010+H\u0016J\u000e\u0010<\u001a\u00020&2\u0006\u0010=\u001a\u00020\u0012J\b\u0010>\u001a\u000200H\u0002J\b\u0010?\u001a\u00020&H\u0002J\u0006\u0010@\u001a\u00020&J\b\u0010A\u001a\u00020&H\u0002J \u0010B\u001a\u0002002\u0006\u0010C\u001a\u0002002\u0006\u0010D\u001a\u0002002\u0006\u0010E\u001a\u000200H\u0002J\u0018\u0010F\u001a\u0012\u0012\u0004\u0012\u00020)0Gj\b\u0012\u0004\u0012\u00020)`HH\u0002J \u0010I\u001a\u00020&2\u0016\u0010J\u001a\u0012\u0012\u0004\u0012\u00020)0Gj\b\u0012\u0004\u0012\u00020)`HH\u0002J\b\u0010K\u001a\u00020&H\u0002J\u0010\u0010L\u001a\u00020&2\u0006\u00103\u001a\u000200H\u0002J\u0018\u0010M\u001a\u00020&2\u0006\u0010N\u001a\u00020O2\u0006\u0010P\u001a\u00020\u0014H\u0002J\b\u0010Q\u001a\u00020\u0012H\u0002J\u0010\u0010R\u001a\u00020&2\u0006\u0010S\u001a\u00020\bH\u0002J(\u0010T\u001a\u0014\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00120\u0011\u0012\u0004\u0012\u00020\u00140U2\u0006\u0010V\u001a\u00020\u001eH\u0082@¢\u0006\u0002\u0010WJ8\u0010X\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u00140U0\u00112\u0006\u0010Y\u001a\u00020\u001e2\u0006\u0010Z\u001a\u00020\u00122\u0006\u0010[\u001a\u00020\u0012H\u0082@¢\u0006\u0002\u0010\\JD\u0010]\u001a\u000e\u0012\u0004\u0012\u00020\u0012\u0012\u0004\u0012\u00020\u00120^2\u0006\u0010_\u001a\u00020\u001e2\u0006\u0010Z\u001a\u00020\u00122\u0006\u0010[\u001a\u00020\u00122\u0006\u0010C\u001a\u0002002\u0006\u0010`\u001a\u0002002\u0006\u0010E\u001a\u000200H\u0002J(\u0010a\u001a\u0002002\u0006\u0010b\u001a\u00020c2\u0006\u0010d\u001a\u00020e2\u0006\u0010C\u001a\u0002002\u0006\u0010E\u001a\u000200H\u0002J\u0018\u0010f\u001a\u00020\u00122\u0006\u0010g\u001a\u00020h2\u0006\u0010b\u001a\u00020cH\u0002J\f\u0010i\u001a\u00020\u0012*\u00020jH\u0002J\u0010\u0010k\u001a\u00020&2\u0006\u0010=\u001a\u00020\u0012H\u0002J\b\u0010l\u001a\u00020&H\u0002J\u0010\u0010n\u001a\u00020&2\u0006\u0010=\u001a\u00020\u0012H\u0002J\u001c\u0010o\u001a\u00020&2\u0006\u0010=\u001a\u00020\u00122\f\u0010p\u001a\b\u0012\u0004\u0012\u00020&0qR\u000e\u0010\u0004\u001a\u00020\u0005X\u0082.¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\t\u001a\b\u0012\u0004\u0012\u00020\n0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000b\u001a\u0004\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\r\u001a\u0004\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000e\u001a\u0004\u0018\u00010\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0019\u001a\u0004\u0018\u00010\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\"\u001a\u00020#X\u0082\u0004¢\u0006\u0004\n\u0002\u0010$R\u000e\u0010m\u001a\u00020)X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006w"}, d2 = {"Lcom/arizona/launcher/UpdateService;", "Landroid/app/Service;", "<init>", "()V", "updatePreferences", "Landroid/content/SharedPreferences;", "mUpdateStatus", "Ljava/util/concurrent/atomic/AtomicReference;", "Lcom/arizona/launcher/UpdateService$UpdateStatus;", "mGameStatus", "Lcom/arizona/launcher/UpdateService$GameStatus;", "mMessenger", "Landroid/os/Messenger;", "mActivityMessenger", "mInHandler", "Lcom/arizona/launcher/UpdateService$IncomingHandler;", "mUpdateFiles", "", "", "mUpdateFilesNeedSize", "", "mDownloadContext", "Lcom/liulishuo/okdownload/DownloadContext;", "mTotalLength", "mDownloadedLength", "mSpeedCalculator", "Lcom/liulishuo/okdownload/SpeedCalculator;", "mLastOperationStatus", "Lcom/arizona/launcher/UpdateService$Errno;", "mDataInfo", "Lorg/json/JSONArray;", "mainHandler", "Landroid/os/Handler;", "lastDownloadedBytes", "checkTimeoutRunnable", "com/arizona/launcher/UpdateService$checkTimeoutRunnable$1", "Lcom/arizona/launcher/UpdateService$checkTimeoutRunnable$1;", "onCreate", "", "createNotificationChannel", "onStartCommand", "", "intent", "Landroid/content/Intent;", DownloaderServiceMarshaller.PARAMS_FLAGS, "startId", "startForegroundService", "isAppInForeground", "", "createNotification", "Landroid/app/Notification;", "indeterminate", "stopForegroundService", "onBind", "Landroid/os/IBinder;", "onUnbind", "onRebind", "onDestroy", "onTaskRemoved", "rootIntent", "checkUpdate", "server", "isGameDataUpdateExists", "resetGameStatus", "updateGameData", "downloadGameData", "isAllFilesOk", "checkHash", "purgeExtraFiles", "forceFileEditDate", "notFinishedTaskIdList", "Ljava/util/ArrayList;", "Lkotlin/collections/ArrayList;", "saveDownloadTaskIdList", "list", "removeDownloadTaskIdList", "updateStatusInfoAndProgress", "calcSpeed", "task", "Lcom/liulishuo/okdownload/DownloadTask;", "currentOffset", "timeLeft", "setUpdateStatus", NotificationCompat.CATEGORY_STATUS, "checkGameDataUpdate", "Lkotlin/Pair;", "dataInfo", "(Lorg/json/JSONArray;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getFilesToDownload", "sources", "dir", "destDir", "(Lorg/json/JSONArray;Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getAllDamagedFiles", "", "fileSourceJson", "addExtraFilesToPurgeList", "checkSingleFile", "file", "Ljava/io/File;", "fileJson", "Lorg/json/JSONObject;", "getFileChecksum", "digest", "Ljava/security/MessageDigest;", "toHex", "", "checkLauncherUpdate", "notifyServerUnreachable", "retry", "startDownloadNewLauncherApk", "checkUpdateAndDownload", "onFinish", "Lkotlin/Function0;", "Companion", "Errno", "UpdateStatus", "GameStatus", "IncomingHandler", "app_arizonaRelease"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000·\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\b\u0006*\u0001%\b\u0007\u0018\u0000 Y2\u00020\u0001:\u0005YZ[\\]B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010'\u001a\u00020(H\u0016J\b\u0010)\u001a\u00020(H\u0002J\"\u0010*\u001a\u00020+2\b\u0010,\u001a\u0004\u0018\u00010-2\u0006\u0010.\u001a\u00020+2\u0006\u0010/\u001a\u00020+H\u0016J\b\u00100\u001a\u00020(H\u0002J\b\u00101\u001a\u000202H\u0002J\u0010\u00103\u001a\u0002042\u0006\u00105\u001a\u000202H\u0002J\b\u00106\u001a\u00020(H\u0002J\u0012\u00107\u001a\u0004\u0018\u0001082\u0006\u0010,\u001a\u00020-H\u0016J\u0010\u00109\u001a\u0002022\u0006\u0010,\u001a\u00020-H\u0016J\u0010\u0010:\u001a\u00020(2\u0006\u0010,\u001a\u00020-H\u0016J\b\u0010;\u001a\u00020(H\u0016J\u0012\u0010<\u001a\u00020(2\b\u0010=\u001a\u0004\u0018\u00010-H\u0016J\u000e\u0010>\u001a\u00020(2\u0006\u0010?\u001a\u00020\u0012J\b\u0010@\u001a\u000202H\u0002J\b\u0010A\u001a\u00020(H\u0002J\u0006\u0010B\u001a\u00020(J\b\u0010C\u001a\u00020(H\u0002J\u0018\u0010D\u001a\u0012\u0012\u0004\u0012\u00020+0Ej\b\u0012\u0004\u0012\u00020+`FH\u0002J \u0010G\u001a\u00020(2\u0016\u0010H\u001a\u0012\u0012\u0004\u0012\u00020+0Ej\b\u0012\u0004\u0012\u00020+`FH\u0002J\b\u0010I\u001a\u00020(H\u0002J\u0010\u0010J\u001a\u00020(2\u0006\u00105\u001a\u000202H\u0002J\u0018\u0010K\u001a\u00020(2\u0006\u0010L\u001a\u00020M2\u0006\u0010N\u001a\u00020\u0014H\u0002J\b\u0010O\u001a\u00020\u0012H\u0002J\u0010\u0010P\u001a\u00020(2\u0006\u0010Q\u001a\u00020\bH\u0002J\u0010\u0010R\u001a\u00020(2\u0006\u0010?\u001a\u00020\u0012H\u0002J\b\u0010S\u001a\u00020(H\u0002J\u0010\u0010U\u001a\u00020(2\u0006\u0010?\u001a\u00020\u0012H\u0002J\u001c\u0010V\u001a\u00020(2\u0006\u0010?\u001a\u00020\u00122\f\u0010W\u001a\b\u0012\u0004\u0012\u00020(0XR\u000e\u0010\u0004\u001a\u00020\u0005X\u0082.¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\t\u001a\b\u0012\u0004\u0012\u00020\n0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000b\u001a\u0004\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\r\u001a\u0004\u0018\u00010\fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u000e\u001a\u0004\u0018\u00010\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00120\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0019\u001a\u0004\u0018\u00010\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020#X\u0082.¢\u0006\u0002\n\u0000R\u0010\u0010$\u001a\u00020%X\u0082\u0004¢\u0006\u0004\n\u0002\u0010&R\u000e\u0010T\u001a\u00020+X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006^"}, d2 = {"Lcom/arizona/launcher/UpdateService;", "Landroid/app/Service;", "<init>", "()V", "updatePreferences", "Landroid/content/SharedPreferences;", "mUpdateStatus", "Ljava/util/concurrent/atomic/AtomicReference;", "Lcom/arizona/launcher/UpdateService$UpdateStatus;", "mGameStatus", "Lcom/arizona/launcher/UpdateService$GameStatus;", "mMessenger", "Landroid/os/Messenger;", "mActivityMessenger", "mInHandler", "Lcom/arizona/launcher/UpdateService$IncomingHandler;", "mUpdateFiles", "", "", "mUpdateFilesNeedSize", "", "mDownloadContext", "Lcom/liulishuo/okdownload/DownloadContext;", "mTotalLength", "mDownloadedLength", "mSpeedCalculator", "Lcom/liulishuo/okdownload/SpeedCalculator;", "mLastOperationStatus", "Lcom/arizona/launcher/UpdateService$Errno;", "mDataInfo", "Lorg/json/JSONArray;", "mainHandler", "Landroid/os/Handler;", "lastDownloadedBytes", "filesChek", "Lcom/arizona/launcher/downloader/FilesChek;", "checkTimeoutRunnable", "com/arizona/launcher/UpdateService$checkTimeoutRunnable$1", "Lcom/arizona/launcher/UpdateService$checkTimeoutRunnable$1;", "onCreate", "", "createNotificationChannel", "onStartCommand", "", "intent", "Landroid/content/Intent;", DownloaderServiceMarshaller.PARAMS_FLAGS, "startId", "startForegroundService", "isAppInForeground", "", "createNotification", "Landroid/app/Notification;", "indeterminate", "stopForegroundService", "onBind", "Landroid/os/IBinder;", "onUnbind", "onRebind", "onDestroy", "onTaskRemoved", "rootIntent", "checkUpdate", "server", "isGameDataUpdateExists", "resetGameStatus", "updateGameData", "downloadGameData", "notFinishedTaskIdList", "Ljava/util/ArrayList;", "Lkotlin/collections/ArrayList;", "saveDownloadTaskIdList", "list", "removeDownloadTaskIdList", "updateStatusInfoAndProgress", "calcSpeed", "task", "Lcom/liulishuo/okdownload/DownloadTask;", "currentOffset", "timeLeft", "setUpdateStatus", NotificationCompat.CATEGORY_STATUS, "checkLauncherUpdate", "notifyServerUnreachable", "retry", "startDownloadNewLauncherApk", "checkUpdateAndDownload", "onFinish", "Lkotlin/Function0;", "Companion", "Errno", "UpdateStatus", "GameStatus", "IncomingHandler", "app_arizonaRelease"}, k = 1, mv = {2, 2, 0}, xi = 48)
 @AndroidEntryPoint
 /* loaded from: classes3.dex */
 public final class UpdateService extends Hilt_UpdateService {
@@ -113,6 +98,7 @@ public final class UpdateService extends Hilt_UpdateService {
     public static final int UPDATE_LAUNCHER = 6;
     private static final String UPDATE_SERVICE_CHANNEL_ID = "UpdateServiceChannelID";
     public static final int UPDATE_STATUS = 4;
+    private FilesChek filesChek;
     private long lastDownloadedBytes;
     private Messenger mActivityMessenger;
     private DownloadContext mDownloadContext;
@@ -126,7 +112,6 @@ public final class UpdateService extends Hilt_UpdateService {
     private SharedPreferences updatePreferences;
     public static final Companion Companion = new Companion(null);
     public static final int $stable = 8;
-    private static final List<String> excludeFromCheck = CollectionsKt.listOf("settings.json");
     private AtomicReference<UpdateStatus> mUpdateStatus = new AtomicReference<>(UpdateStatus.Undefined);
     private AtomicReference<GameStatus> mGameStatus = new AtomicReference<>(GameStatus.Undefined);
     private List<String> mUpdateFiles = new ArrayList();
@@ -175,7 +160,7 @@ public final class UpdateService extends Hilt_UpdateService {
     };
 
     /* compiled from: UpdateService.kt */
-    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\f\n\u0002\u0010\t\n\u0002\b\u0007\n\u0002\u0010 \n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u0014\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u00050\u001eX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001f"}, d2 = {"Lcom/arizona/launcher/UpdateService$Companion;", "", "<init>", "()V", "TAG", "", "ACTION_START_FOREGROUND_SERVICE", "ACTION_STOP_FOREGROUND_SERVICE", "CHECK_UPDATE", "", "UPDATE_GAME_DATA", "CHECK_LAUNCHER_UPDATE", "UPDATE_STATUS", "GAME_STATUS", "UPDATE_LAUNCHER", "UPDATE_INFO", "FULL_CHECK", "CHECK_STATE_ERROR", "CHECK_AND_UPDATE", "BYTE_TO_KILOBYTE_DIVIDER", "CURRENT_PROGRESS", "TIMEOUT_DOWNLOADER", "", "NEED_UPDATE_MSG", "ERRNO_MSG", "UPDATE_SERVICE_CHANNEL_ID", "FOREGROUND_NOTIFICATION_ID", "PREFERENCE_FILE_KEY", "TASK_ID_LIST_KEY", "excludeFromCheck", "", "app_arizonaRelease"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000$\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\f\n\u0002\u0010\t\n\u0002\b\u0007\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\tX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\tX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u001d"}, d2 = {"Lcom/arizona/launcher/UpdateService$Companion;", "", "<init>", "()V", "TAG", "", "ACTION_START_FOREGROUND_SERVICE", "ACTION_STOP_FOREGROUND_SERVICE", "CHECK_UPDATE", "", "UPDATE_GAME_DATA", "CHECK_LAUNCHER_UPDATE", "UPDATE_STATUS", "GAME_STATUS", "UPDATE_LAUNCHER", "UPDATE_INFO", "FULL_CHECK", "CHECK_STATE_ERROR", "CHECK_AND_UPDATE", "BYTE_TO_KILOBYTE_DIVIDER", "CURRENT_PROGRESS", "TIMEOUT_DOWNLOADER", "", "NEED_UPDATE_MSG", "ERRNO_MSG", "UPDATE_SERVICE_CHANNEL_ID", "FOREGROUND_NOTIFICATION_ID", "PREFERENCE_FILE_KEY", "TASK_ID_LIST_KEY", "app_arizonaRelease"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
@@ -306,7 +291,8 @@ public final class UpdateService extends Hilt_UpdateService {
 
     @Override // com.arizona.launcher.Hilt_UpdateService, android.app.Service
     public void onCreate() {
-        LauncherBreakpointStoreOnSQLite launcherBreakpointStoreOnSQLite = new LauncherBreakpointStoreOnSQLite(this);
+        UpdateService updateService = this;
+        LauncherBreakpointStoreOnSQLite launcherBreakpointStoreOnSQLite = new LauncherBreakpointStoreOnSQLite(updateService);
         SharedPreferences sharedPreferences = getSharedPreferences("update_data", 0);
         Intrinsics.checkNotNullExpressionValue(sharedPreferences, "getSharedPreferences(...)");
         this.updatePreferences = sharedPreferences;
@@ -324,6 +310,14 @@ public final class UpdateService extends Hilt_UpdateService {
         Intrinsics.checkNotNullExpressionValue(looper, "getLooper(...)");
         this.mInHandler = new IncomingHandler(this, looper);
         this.mMessenger = new Messenger(this.mInHandler);
+        SharedPreferences sharedPreferences2 = this.updatePreferences;
+        if (sharedPreferences2 == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("updatePreferences");
+            sharedPreferences2 = null;
+        }
+        ContentResolver contentResolver = getContentResolver();
+        Intrinsics.checkNotNullExpressionValue(contentResolver, "getContentResolver(...)");
+        this.filesChek = new FilesChek(TAG, sharedPreferences2, contentResolver, updateService);
     }
 
     private final void createNotificationChannel() {
@@ -478,12 +472,12 @@ public final class UpdateService extends Hilt_UpdateService {
             stopForegroundService();
             return;
         }
-        StringRequest stringRequest = new StringRequest(0, server + UpdateJsonProvider.INSTANCE.getJsonName(this), new Response.Listener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda4
+        StringRequest stringRequest = new StringRequest(0, server + UpdateJsonProvider.INSTANCE.getJsonName(this), new Response.Listener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda3
             @Override // com.android.volley.Response.Listener
             public final void onResponse(Object obj) {
                 UpdateService.checkUpdate$lambda$0(UpdateService.this, (String) obj);
             }
-        }, new Response.ErrorListener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda5
+        }, new Response.ErrorListener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda4
             @Override // com.android.volley.Response.ErrorListener
             public final void onErrorResponse(VolleyError volleyError) {
                 UpdateService.checkUpdate$lambda$1(UpdateService.this, volleyError);
@@ -498,7 +492,7 @@ public final class UpdateService extends Hilt_UpdateService {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void checkUpdate$lambda$0(UpdateService updateService, final String str) {
         final JSONObject jSONObject = new JSONObject(str);
-        JSONArray jSONArray = (JSONArray) new Function1() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda1
+        JSONArray jSONArray = (JSONArray) new Function1() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda15
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 JSONArray checkUpdate$lambda$0$0;
@@ -670,21 +664,21 @@ public final class UpdateService extends Hilt_UpdateService {
         this.mainHandler.postDelayed(this.checkTimeoutRunnable, 5000L);
         DownloadContext downloadContext = this.mDownloadContext;
         if (downloadContext != null) {
-            downloadContext.start(DownloadListener1ExtensionKt.createListener1$default(null, null, new Function4() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda14
+            downloadContext.start(DownloadListener1ExtensionKt.createListener1$default(null, null, new Function4() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda12
                 @Override // kotlin.jvm.functions.Function4
                 public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4) {
                     Unit downloadGameData$lambda$0;
                     downloadGameData$lambda$0 = UpdateService.downloadGameData$lambda$0((DownloadTask) obj, ((Integer) obj2).intValue(), ((Long) obj3).longValue(), ((Long) obj4).longValue());
                     return downloadGameData$lambda$0;
                 }
-            }, new Function3() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda15
+            }, new Function3() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda13
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj, Object obj2, Object obj3) {
                     Unit downloadGameData$lambda$1;
                     downloadGameData$lambda$1 = UpdateService.downloadGameData$lambda$1(UpdateService.this, (DownloadTask) obj, ((Long) obj2).longValue(), ((Long) obj3).longValue());
                     return downloadGameData$lambda$1;
                 }
-            }, new Function4() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda16
+            }, new Function4() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda14
                 @Override // kotlin.jvm.functions.Function4
                 public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4) {
                     Unit downloadGameData$lambda$2;
@@ -763,7 +757,12 @@ public final class UpdateService extends Hilt_UpdateService {
         updateService.mainHandler.removeCallbacks(updateService.checkTimeoutRunnable);
         updateService.updateStatusInfoAndProgress(true);
         updateService.removeDownloadTaskIdList();
-        if (!updateService.isAllFilesOk(false, false, true)) {
+        FilesChek filesChek = updateService.filesChek;
+        if (filesChek == null) {
+            Intrinsics.throwUninitializedPropertyAccessException("filesChek");
+            filesChek = null;
+        }
+        if (!filesChek.isAllFilesOk(false, false, true, false, updateService.mDataInfo)) {
             updateService.resetGameStatus();
             updateService.updateStatusInfoAndProgress(true);
             updateService.setUpdateStatus(UpdateStatus.Undefined);
@@ -798,13 +797,6 @@ public final class UpdateService extends Hilt_UpdateService {
         }
         updateService.stopForegroundService();
         return Unit.INSTANCE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public final boolean isAllFilesOk(boolean z, boolean z2, boolean z3) {
-        Object runBlocking$default;
-        runBlocking$default = BuildersKt__BuildersKt.runBlocking$default(null, new UpdateService$isAllFilesOk$1(this, z, z2, z3, null), 1, null);
-        return ((Boolean) runBlocking$default).booleanValue();
     }
 
     private final ArrayList<Integer> notFinishedTaskIdList() {
@@ -941,282 +933,6 @@ public final class UpdateService extends Hilt_UpdateService {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x002a  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x003c  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0075  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object checkGameDataUpdate(JSONArray jSONArray, Continuation<? super Pair<? extends List<String>, Long>> continuation) {
-        UpdateService$checkGameDataUpdate$1 updateService$checkGameDataUpdate$1;
-        int i;
-        List list;
-        if (continuation instanceof UpdateService$checkGameDataUpdate$1) {
-            updateService$checkGameDataUpdate$1 = (UpdateService$checkGameDataUpdate$1) continuation;
-            if ((updateService$checkGameDataUpdate$1.label & Integer.MIN_VALUE) != 0) {
-                updateService$checkGameDataUpdate$1.label -= Integer.MIN_VALUE;
-                Object obj = updateService$checkGameDataUpdate$1.result;
-                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                i = updateService$checkGameDataUpdate$1.label;
-                if (i != 0) {
-                    ResultKt.throwOnFailure(obj);
-                    Log.i(TAG, "checkGameDataUpdate");
-                    updateService$checkGameDataUpdate$1.L$0 = SpillingKt.nullOutSpilledVariable(jSONArray);
-                    updateService$checkGameDataUpdate$1.label = 1;
-                    obj = getFilesToDownload(jSONArray, "", "", updateService$checkGameDataUpdate$1);
-                    if (obj == coroutine_suspended) {
-                        return coroutine_suspended;
-                    }
-                } else if (i != 1) {
-                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                } else {
-                    JSONArray jSONArray2 = (JSONArray) updateService$checkGameDataUpdate$1.L$0;
-                    ResultKt.throwOnFailure(obj);
-                }
-                long j = 0;
-                Pair pair = new Pair(new ArrayList(), Boxing.boxLong(0L));
-                for (Pair pair2 : (List) obj) {
-                    if (!excludeFromCheck.contains(CollectionsKt.last((List<? extends Object>) StringsKt.split$default((CharSequence) pair2.getFirst(), new String[]{"/"}, false, 0, 6, (Object) null)))) {
-                        ((List) pair.getFirst()).add(pair2.getFirst());
-                        j += ((Number) pair2.getSecond()).longValue();
-                    }
-                }
-                Pair copy$default = Pair.copy$default(pair, null, Boxing.boxLong(j), 1, null);
-                Log.d(TAG, "need download data (" + list.size() + ")) sum " + j);
-                return copy$default;
-            }
-        }
-        updateService$checkGameDataUpdate$1 = new UpdateService$checkGameDataUpdate$1(this, continuation);
-        Object obj2 = updateService$checkGameDataUpdate$1.result;
-        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        i = updateService$checkGameDataUpdate$1.label;
-        if (i != 0) {
-        }
-        long j2 = 0;
-        Pair pair3 = new Pair(new ArrayList(), Boxing.boxLong(0L));
-        while (r3.hasNext()) {
-        }
-        Pair copy$default2 = Pair.copy$default(pair3, null, Boxing.boxLong(j2), 1, null);
-        Log.d(TAG, "need download data (" + list.size() + ")) sum " + j2);
-        return copy$default2;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0042  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object getFilesToDownload(JSONArray jSONArray, String str, String str2, Continuation<? super List<Pair<String, Long>>> continuation) {
-        UpdateService$getFilesToDownload$1 updateService$getFilesToDownload$1;
-        int i;
-        if (continuation instanceof UpdateService$getFilesToDownload$1) {
-            updateService$getFilesToDownload$1 = (UpdateService$getFilesToDownload$1) continuation;
-            if ((updateService$getFilesToDownload$1.label & Integer.MIN_VALUE) != 0) {
-                updateService$getFilesToDownload$1.label -= Integer.MIN_VALUE;
-                Object obj = updateService$getFilesToDownload$1.result;
-                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-                i = updateService$getFilesToDownload$1.label;
-                if (i == 0) {
-                    if (i == 1) {
-                        List list = (List) updateService$getFilesToDownload$1.L$3;
-                        String str3 = (String) updateService$getFilesToDownload$1.L$2;
-                        String str4 = (String) updateService$getFilesToDownload$1.L$1;
-                        JSONArray jSONArray2 = (JSONArray) updateService$getFilesToDownload$1.L$0;
-                        ResultKt.throwOnFailure(obj);
-                        return list;
-                    }
-                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                }
-                ResultKt.throwOnFailure(obj);
-                ArrayList arrayList = new ArrayList();
-                updateService$getFilesToDownload$1.L$0 = SpillingKt.nullOutSpilledVariable(jSONArray);
-                updateService$getFilesToDownload$1.L$1 = SpillingKt.nullOutSpilledVariable(str);
-                updateService$getFilesToDownload$1.L$2 = SpillingKt.nullOutSpilledVariable(str2);
-                updateService$getFilesToDownload$1.L$3 = arrayList;
-                updateService$getFilesToDownload$1.label = 1;
-                return BuildersKt.withContext(Dispatchers.getIO(), new UpdateService$getFilesToDownload$2(jSONArray, this, str, str2, arrayList, null), updateService$getFilesToDownload$1) == coroutine_suspended ? coroutine_suspended : arrayList;
-            }
-        }
-        updateService$getFilesToDownload$1 = new UpdateService$getFilesToDownload$1(this, continuation);
-        Object obj2 = updateService$getFilesToDownload$1.result;
-        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        i = updateService$getFilesToDownload$1.label;
-        if (i == 0) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x005a, code lost:
-        if (r1 != null) goto L12;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Map<String, String> getAllDamagedFiles(JSONArray jSONArray, String str, String str2, boolean z, boolean z2, boolean z3) {
-        File externalFilesDir;
-        ArrayList arrayList;
-        File externalFilesDir2;
-        File[] listFiles = new File((getExternalFilesDir(null) != null ? externalFilesDir.getPath() : null) + str2 + "/" + str).listFiles();
-        if (listFiles != null) {
-            ArrayList arrayList2 = new ArrayList(listFiles.length);
-            for (File file : listFiles) {
-                arrayList2.add(file.getName());
-            }
-            arrayList = CollectionsKt.toMutableList((Collection) arrayList2);
-        }
-        arrayList = new ArrayList();
-        List list = arrayList;
-        LinkedHashMap linkedHashMap = new LinkedHashMap();
-        int length = jSONArray.length();
-        for (int i = 0; i < length; i++) {
-            JSONObject jSONObject = jSONArray.getJSONObject(i);
-            if (Intrinsics.areEqual(jSONObject.getString("type"), "dir")) {
-                JSONArray jSONArray2 = jSONObject.getJSONArray("data");
-                String string = jSONObject.getString("name");
-                Intrinsics.checkNotNull(jSONArray2);
-                linkedHashMap.putAll(getAllDamagedFiles(jSONArray2, str + "/" + string, str2, z, z2, z3));
-                list.remove(string);
-            } else {
-                if (Intrinsics.areEqual(jSONObject.getString("type"), "file")) {
-                    String string2 = jSONObject.getString("name");
-                    File file2 = new File((getExternalFilesDir(null) != null ? externalFilesDir2.getPath() : null) + str2 + str + "/" + string2);
-                    String string3 = jSONObject.getString("hash");
-                    list.remove(string2);
-                    if (!excludeFromCheck.contains(file2.getName())) {
-                        Intrinsics.checkNotNull(jSONObject);
-                        if (!checkSingleFile(file2, jSONObject, z, z3)) {
-                            linkedHashMap.put(str2 + str + "/" + string2, string3);
-                        }
-                    }
-                } else if (Intrinsics.areEqual(jSONObject.getString("type"), "res") && z2) {
-                    linkedHashMap.put(str2 + str + "/" + jSONObject.getString("name"), jSONObject.getString("hash"));
-                }
-            }
-        }
-        if (z2) {
-            Iterator it = list.iterator();
-            while (it.hasNext()) {
-                linkedHashMap.put(str2 + str + "/" + ((String) it.next()), "");
-            }
-        }
-        return linkedHashMap;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public final boolean checkSingleFile(File file, JSONObject jSONObject, boolean z, boolean z2) {
-        long length = file.getAbsoluteFile().length();
-        String name = file.getName();
-        long j = jSONObject.getLong("size");
-        String string = jSONObject.getString("hash");
-        long j2 = jSONObject.getLong("date_change") * 1000;
-        if (z2) {
-            SharedPreferences sharedPreferences = this.updatePreferences;
-            if (sharedPreferences == null) {
-                Intrinsics.throwUninitializedPropertyAccessException("updatePreferences");
-                sharedPreferences = null;
-            }
-            sharedPreferences.edit().putLong(file.getAbsolutePath(), j2).apply();
-        }
-        if (j == 0) {
-            try {
-                Log.d(TAG, "checkSingleFile: created new empty file " + name);
-                file.createNewFile();
-                SharedPreferences sharedPreferences2 = this.updatePreferences;
-                if (sharedPreferences2 == null) {
-                    Intrinsics.throwUninitializedPropertyAccessException("updatePreferences");
-                    sharedPreferences2 = null;
-                }
-                sharedPreferences2.edit().putLong(file.getAbsolutePath(), j2).apply();
-            } catch (IOException unused) {
-                Log.d(TAG, "checkSingleFile: cannot create " + file);
-            }
-            return true;
-        }
-        SharedPreferences sharedPreferences3 = this.updatePreferences;
-        if (sharedPreferences3 == null) {
-            Intrinsics.throwUninitializedPropertyAccessException("updatePreferences");
-            sharedPreferences3 = null;
-        }
-        long j3 = sharedPreferences3.getLong(file.getAbsolutePath(), 0L);
-        boolean z3 = j3 != j2;
-        if (!file.exists() || length != j) {
-            Log.v(TAG, name + " exists: " + file.exists() + ", device size: " + length + ", expected size " + j);
-            return false;
-        }
-        if (z3) {
-            Log.v(TAG, name + " date mismatch, current: " + j3 + ", expected: " + j2 + " ");
-        }
-        if (!z && !z3) {
-            Log.v(TAG, name + " - good");
-            return true;
-        }
-        MessageDigest messageDigest = MessageDigest.getInstance("MD5");
-        Intrinsics.checkNotNull(messageDigest);
-        String fileChecksum = getFileChecksum(messageDigest, file);
-        Log.v(TAG, "Hash of: " + file + " is: " + fileChecksum + ", expected: " + string);
-        boolean areEqual = Intrinsics.areEqual(fileChecksum, string);
-        if (areEqual && z3) {
-            SharedPreferences sharedPreferences4 = this.updatePreferences;
-            if (sharedPreferences4 == null) {
-                Intrinsics.throwUninitializedPropertyAccessException("updatePreferences");
-                sharedPreferences4 = null;
-            }
-            sharedPreferences4.edit().putLong(file.getAbsolutePath(), j2).apply();
-            Log.d(TAG, "Force date update after hash check, new file date: " + j3 + "}");
-        }
-        if (areEqual) {
-            Log.v(TAG, name + " - good, after hash check");
-            return areEqual;
-        }
-        Log.v(TAG, name + " - bad, after hash check");
-        return areEqual;
-    }
-
-    private final String getFileChecksum(MessageDigest messageDigest, File file) throws IOException {
-        try {
-            InputStream openInputStream = getContentResolver().openInputStream(Uri.fromFile(file));
-            if (openInputStream != null) {
-                byte[] bArr = new byte[1024];
-                while (true) {
-                    int read = openInputStream.read(bArr);
-                    if (read != -1) {
-                        messageDigest.update(bArr, 0, read);
-                    } else {
-                        openInputStream.close();
-                        byte[] digest = messageDigest.digest();
-                        Intrinsics.checkNotNullExpressionValue(digest, "digest(...)");
-                        return toHex(digest);
-                    }
-                }
-            } else {
-                return "";
-            }
-        } catch (Exception e) {
-            FirebaseCrashlytics.getInstance().recordException(e);
-            return "";
-        }
-    }
-
-    private final String toHex(byte[] bArr) {
-        return ArraysKt.joinToString$default(bArr, (CharSequence) "", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda11
-            @Override // kotlin.jvm.functions.Function1
-            public final Object invoke(Object obj) {
-                CharSequence hex$lambda$0;
-                hex$lambda$0 = UpdateService.toHex$lambda$0(((Byte) obj).byteValue());
-                return hex$lambda$0;
-            }
-        }, 30, (Object) null);
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final CharSequence toHex$lambda$0(byte b) {
-        String format = String.format("%02x", Arrays.copyOf(new Object[]{Byte.valueOf(b)}, 1));
-        Intrinsics.checkNotNullExpressionValue(format, "format(...)");
-        return format;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
     public final void checkLauncherUpdate(String str) {
         RequestQueue newRequestQueue = Volley.newRequestQueue(this);
         Intrinsics.checkNotNullExpressionValue(newRequestQueue, "newRequestQueue(...)");
@@ -1237,12 +953,12 @@ public final class UpdateService extends Hilt_UpdateService {
             return;
         }
         this.mLastOperationStatus = Errno.NoError;
-        StringRequest stringRequest = new StringRequest(0, str2, new Response.Listener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda6
+        StringRequest stringRequest = new StringRequest(0, str2, new Response.Listener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda5
             @Override // com.android.volley.Response.Listener
             public final void onResponse(Object obj) {
                 UpdateService.checkLauncherUpdate$lambda$0(UpdateService.this, (String) obj);
             }
-        }, new Response.ErrorListener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda7
+        }, new Response.ErrorListener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda6
             @Override // com.android.volley.Response.ErrorListener
             public final void onErrorResponse(VolleyError volleyError) {
                 UpdateService.this.notifyServerUnreachable();
@@ -1256,7 +972,7 @@ public final class UpdateService extends Hilt_UpdateService {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void checkLauncherUpdate$lambda$0(UpdateService updateService, String str) {
         try {
-            boolean z = new JSONObject(str).getInt("launcherVersion") > 1701;
+            boolean z = new JSONObject(str).getInt("launcherVersion") > 1703;
             Message obtain = Message.obtain(updateService.mInHandler, 3);
             obtain.getData().putBoolean(NEED_UPDATE_MSG, z);
             obtain.getData().putSerializable(ERRNO_MSG, updateService.mLastOperationStatus);
@@ -1330,14 +1046,14 @@ public final class UpdateService extends Hilt_UpdateService {
                     startDownloadNewLauncherApk$lambda$0 = UpdateService.startDownloadNewLauncherApk$lambda$0((DownloadTask) obj, ((Integer) obj2).intValue(), ((Long) obj3).longValue(), ((Long) obj4).longValue());
                     return startDownloadNewLauncherApk$lambda$0;
                 }
-            }, new Function3() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda8
+            }, new Function3() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda7
                 @Override // kotlin.jvm.functions.Function3
                 public final Object invoke(Object obj, Object obj2, Object obj3) {
                     Unit startDownloadNewLauncherApk$lambda$1;
                     startDownloadNewLauncherApk$lambda$1 = UpdateService.startDownloadNewLauncherApk$lambda$1(UpdateService.this, (DownloadTask) obj, ((Long) obj2).longValue(), ((Long) obj3).longValue());
                     return startDownloadNewLauncherApk$lambda$1;
                 }
-            }, new Function4() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda9
+            }, new Function4() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda8
                 @Override // kotlin.jvm.functions.Function4
                 public final Object invoke(Object obj, Object obj2, Object obj3, Object obj4) {
                     Unit startDownloadNewLauncherApk$lambda$2;
@@ -1385,7 +1101,7 @@ public final class UpdateService extends Hilt_UpdateService {
             }
             file.renameTo(file2);
         }
-        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda10
+        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda9
             @Override // java.lang.Runnable
             public final void run() {
                 UpdateService.startDownloadNewLauncherApk$lambda$2$0(UpdateService.this);
@@ -1423,6 +1139,8 @@ public final class UpdateService extends Hilt_UpdateService {
 
         @Override // android.os.Handler
         public void handleMessage(Message msg) {
+            FilesChek filesChek;
+            FilesChek filesChek2;
             Intrinsics.checkNotNullParameter(msg, "msg");
             final UpdateService updateService = this.activityRef.get();
             if (updateService != null) {
@@ -1484,7 +1202,15 @@ public final class UpdateService extends Hilt_UpdateService {
                             sharedPreferences = null;
                         }
                         sharedPreferences.edit().clear().apply();
-                        obtain4.getData().putBoolean(NotificationCompat.CATEGORY_STATUS, updateService.isAllFilesOk(true, true, false));
+                        Bundle data = obtain4.getData();
+                        FilesChek filesChek3 = updateService.filesChek;
+                        if (filesChek3 == null) {
+                            Intrinsics.throwUninitializedPropertyAccessException("filesChek");
+                            filesChek = null;
+                        } else {
+                            filesChek = filesChek3;
+                        }
+                        data.putBoolean(NotificationCompat.CATEGORY_STATUS, FilesChek.isAllFilesOk$default(filesChek, true, true, false, false, updateService.mDataInfo, 8, null));
                         BuildersKt__BuildersKt.runBlocking$default(null, new UpdateService$IncomingHandler$handleMessage$2(updateService, null), 1, null);
                         obtain4.replyTo = updateService.mMessenger;
                         Messenger messenger4 = updateService.mActivityMessenger;
@@ -1501,7 +1227,15 @@ public final class UpdateService extends Hilt_UpdateService {
                             sharedPreferences2 = null;
                         }
                         sharedPreferences2.edit().clear().apply();
-                        obtain5.getData().putBoolean(NotificationCompat.CATEGORY_STATUS, updateService.isAllFilesOk(true, true, false));
+                        Bundle data2 = obtain5.getData();
+                        FilesChek filesChek4 = updateService.filesChek;
+                        if (filesChek4 == null) {
+                            Intrinsics.throwUninitializedPropertyAccessException("filesChek");
+                            filesChek2 = null;
+                        } else {
+                            filesChek2 = filesChek4;
+                        }
+                        data2.putBoolean(NotificationCompat.CATEGORY_STATUS, FilesChek.isAllFilesOk$default(filesChek2, true, true, false, false, updateService.mDataInfo, 8, null));
                         BuildersKt__BuildersKt.runBlocking$default(null, new UpdateService$IncomingHandler$handleMessage$3(updateService, null), 1, null);
                         obtain5.replyTo = updateService.mMessenger;
                         Messenger messenger5 = updateService.mActivityMessenger;
@@ -1563,12 +1297,12 @@ public final class UpdateService extends Hilt_UpdateService {
             return;
         }
         Log.i(TAG, "checkUpdate: requesting server for update json");
-        StringRequest stringRequest = new StringRequest(0, server + UpdateJsonProvider.INSTANCE.getJsonName(this), new Response.Listener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda12
+        StringRequest stringRequest = new StringRequest(0, server + UpdateJsonProvider.INSTANCE.getJsonName(this), new Response.Listener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda10
             @Override // com.android.volley.Response.Listener
             public final void onResponse(Object obj) {
                 UpdateService.checkUpdateAndDownload$lambda$1(UpdateService.this, onFinish, (String) obj);
             }
-        }, new Response.ErrorListener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda13
+        }, new Response.ErrorListener() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda11
             @Override // com.android.volley.Response.ErrorListener
             public final void onErrorResponse(VolleyError volleyError) {
                 UpdateService.checkUpdateAndDownload$lambda$2(UpdateService.this, volleyError);
@@ -1583,7 +1317,7 @@ public final class UpdateService extends Hilt_UpdateService {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void checkUpdateAndDownload$lambda$1(UpdateService updateService, Function0 function0, final String str) {
         final JSONObject jSONObject = new JSONObject(str);
-        JSONArray jSONArray = (JSONArray) new Function1() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda3
+        JSONArray jSONArray = (JSONArray) new Function1() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda2
             @Override // kotlin.jvm.functions.Function1
             public final Object invoke(Object obj) {
                 JSONArray checkUpdateAndDownload$lambda$1$0;
@@ -1619,7 +1353,7 @@ public final class UpdateService extends Hilt_UpdateService {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void checkUpdateAndDownload$lambda$2(final UpdateService updateService, VolleyError volleyError) {
         FileServers.INSTANCE.currentServerIsUnreachable();
-        updateService.checkUpdateAndDownload(FileServers.INSTANCE.getCurrentServer(), new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda2
+        updateService.checkUpdateAndDownload(FileServers.INSTANCE.getCurrentServer(), new Function0() { // from class: com.arizona.launcher.UpdateService$$ExternalSyntheticLambda1
             @Override // kotlin.jvm.functions.Function0
             public final Object invoke() {
                 Unit checkUpdateAndDownload$lambda$2$0;

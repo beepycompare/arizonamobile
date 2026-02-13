@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 public abstract class P7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f738a;
+    public final Context f737a;
     public final ProtobufStateStorage b;
     public final R7 c;
     public final InterfaceC0156bo d;
@@ -19,7 +19,7 @@ public abstract class P7 {
     public Q7 i;
 
     public P7(Context context, ProtobufStateStorage protobufStateStorage, R7 r7, InterfaceC0156bo interfaceC0156bo, Im im, Ui ui, Si si, InterfaceC0744z6 interfaceC0744z6, Q7 q7) {
-        this.f738a = context;
+        this.f737a = context;
         this.b = protobufStateStorage;
         this.c = r7;
         this.d = interfaceC0156bo;
@@ -75,7 +75,7 @@ public abstract class P7 {
 
     public final T7 a(T7 t7) {
         T7 c;
-        this.h.a(this.f738a);
+        this.h.a(this.f737a);
         synchronized (this) {
             b(t7);
             c = c();
@@ -84,7 +84,7 @@ public abstract class P7 {
     }
 
     public final T7 b() {
-        this.h.a(this.f738a);
+        this.h.a(this.f737a);
         return c();
     }
 }

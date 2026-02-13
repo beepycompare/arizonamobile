@@ -721,10 +721,10 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
     /* JADX WARN: Code restructure failed: missing block: B:42:0x009b, code lost:
         if (r0.intValue() != r4) goto L35;
      */
-    /* JADX WARN: Removed duplicated region for block: B:129:0x01d5  */
-    /* JADX WARN: Removed duplicated region for block: B:137:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:140:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:82:0x0117  */
+    /* JADX WARN: Removed duplicated region for block: B:136:0x01ea  */
+    /* JADX WARN: Removed duplicated region for block: B:144:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:147:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:89:0x012c  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -785,8 +785,14 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
                                 if (item_type != null || item_type.intValue() != id8) {
                                     int id9 = ItemTypes.ITEM_TYPE_STRIPE.getId();
                                     if (item_type != null || item_type.intValue() != id9) {
-                                        int id10 = ItemTypes.ITEM_TYPE_COLORANT.getId();
+                                        int id10 = RodinaItemTypes.ITEM_TYPE_IMPROV_GUN.getId();
                                         if (item_type != null && item_type.intValue() == id10) {
+                                            updateMainField(inventoryItem);
+                                            this.currentMainItem = inventoryItem;
+                                            return;
+                                        }
+                                        int id11 = ItemTypes.ITEM_TYPE_COLORANT.getId();
+                                        if (item_type != null && item_type.intValue() == id11) {
                                             if (this.currentScreenType != 1) {
                                                 updateLeftField(inventoryItem);
                                                 this.leftItemIndex = inventoryItem.getSlot();
@@ -808,14 +814,14 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
                                             }
                                             return;
                                         }
-                                        int id11 = RodinaItemTypes.ITEM_TYPE_ENCHANT.getId();
-                                        if (item_type != null || item_type.intValue() != id11) {
-                                            int id12 = ItemTypes.ITEM_TYPE_ENCHANT.getId();
-                                            if (item_type != null || item_type.intValue() != id12) {
-                                                int id13 = ItemTypes.ITEM_TYPE_ARMOUR_SHARPENING.getId();
-                                                if (item_type != null || item_type.intValue() != id13) {
-                                                    int id14 = ItemTypes.ITEM_TYPE_SUPER_ENCHANTED.getId();
-                                                    if (item_type == null && item_type.intValue() == id14 && this.currentScreenType == 0) {
+                                        int id12 = RodinaItemTypes.ITEM_TYPE_ENCHANT.getId();
+                                        if (item_type != null || item_type.intValue() != id12) {
+                                            int id13 = ItemTypes.ITEM_TYPE_ENCHANT.getId();
+                                            if (item_type != null || item_type.intValue() != id13) {
+                                                int id14 = ItemTypes.ITEM_TYPE_ARMOUR_SHARPENING.getId();
+                                                if (item_type != null || item_type.intValue() != id14) {
+                                                    int id15 = ItemTypes.ITEM_TYPE_SUPER_ENCHANTED.getId();
+                                                    if (item_type == null && item_type.intValue() == id15 && this.currentScreenType == 0) {
                                                         inventoryItem2 = this.currentMainItem;
                                                         if (inventoryItem2 != null && (enchant = inventoryItem2.getEnchant()) != null) {
                                                             i = enchant.intValue();
@@ -867,21 +873,27 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         int id92 = ItemTypes.ITEM_TYPE_STRIPE.getId();
         if (item_type != null) {
         }
-        int id102 = ItemTypes.ITEM_TYPE_COLORANT.getId();
+        int id102 = RodinaItemTypes.ITEM_TYPE_IMPROV_GUN.getId();
+        if (item_type != null) {
+            updateMainField(inventoryItem);
+            this.currentMainItem = inventoryItem;
+            return;
+        }
+        int id112 = ItemTypes.ITEM_TYPE_COLORANT.getId();
         if (item_type != null) {
             if (this.currentScreenType != 1) {
             }
         }
-        int id112 = RodinaItemTypes.ITEM_TYPE_ENCHANT.getId();
+        int id122 = RodinaItemTypes.ITEM_TYPE_ENCHANT.getId();
         if (item_type != null) {
         }
-        int id122 = ItemTypes.ITEM_TYPE_ENCHANT.getId();
+        int id132 = ItemTypes.ITEM_TYPE_ENCHANT.getId();
         if (item_type != null) {
         }
-        int id132 = ItemTypes.ITEM_TYPE_ARMOUR_SHARPENING.getId();
+        int id142 = ItemTypes.ITEM_TYPE_ARMOUR_SHARPENING.getId();
         if (item_type != null) {
         }
-        int id142 = ItemTypes.ITEM_TYPE_SUPER_ENCHANTED.getId();
+        int id152 = ItemTypes.ITEM_TYPE_SUPER_ENCHANTED.getId();
         if (item_type == null) {
             return;
         }
@@ -1012,7 +1024,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         if (1 <= nextMultipleOfFive) {
             int i = 1;
             while (true) {
-                this.inventoryItemList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), ((InventoryItem) CollectionsKt.last((List<? extends Object>) this.inventoryItemList)).getSlot() + 1, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, false, true, null, null, 7340030, null));
+                this.inventoryItemList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), ((InventoryItem) CollectionsKt.last((List<? extends Object>) this.inventoryItemList)).getSlot() + 1, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, false, true, null, null, null, 15728638, null));
                 if (i == nextMultipleOfFive) {
                     break;
                 }
@@ -1022,7 +1034,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
         List<InventoryItem> list = this.inventoryItemList;
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
         for (InventoryItem inventoryItem : list) {
-            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, null, 8386047, null));
+            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, null, null, 16774655, null));
         }
         this.inventoryItemList = CollectionsKt.toMutableList((Collection) arrayList);
         this.inventoryAdapter.setArizona(this.isArizonaType);
@@ -1246,7 +1258,7 @@ public final class WorkshopScreen extends SAMPUIElement implements InterfaceCont
                     }
                 }
                 ItemsInfo itemsInfo2 = (ItemsInfo) obj3;
-                arrayList.add(InventoryItem.copy$default(inventoryItem4, 0, null, 0, null, valueOf, null, null, null, null, null, null, null, null, null, null, null, type2, itemsInfo2 != null ? Integer.valueOf(itemsInfo2.getAcs_slot()) : null, null, false, false, null, null, 8191983, null));
+                arrayList.add(InventoryItem.copy$default(inventoryItem4, 0, null, 0, null, valueOf, null, null, null, null, null, null, null, null, null, null, null, type2, itemsInfo2 != null ? Integer.valueOf(itemsInfo2.getAcs_slot()) : null, null, false, false, null, null, null, 16580591, null));
             }
             InventoryResponse inventoryResponse2 = new InventoryResponse(type, arrayList);
             if (inventoryResponse2.getType() == ArizonaBlockType.BLOCK_TYPE_MENU.getId()) {

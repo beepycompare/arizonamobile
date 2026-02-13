@@ -7,14 +7,14 @@ public final class E1 implements InterfaceC0204dk {
     public static final int c = 1;
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0563s0 f560a;
+    public final InterfaceC0563s0 f559a;
 
     public E1(InterfaceC0563s0 interfaceC0563s0) {
-        this.f560a = interfaceC0563s0;
+        this.f559a = interfaceC0563s0;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0204dk
     public final void reportData(int i, Bundle bundle) {
-        ((B1) this.f560a).a(bundle);
+        ((B1) this.f559a).a(bundle);
     }
 }

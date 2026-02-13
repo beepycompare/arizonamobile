@@ -94,7 +94,7 @@ public final class RegistrationVideoBackground extends SAMPUIElement implements 
         SharedPreferences sharedPreferences = targetActivity.getSharedPreferences("flavorType", 0);
         Intrinsics.checkNotNullExpressionValue(sharedPreferences, "getSharedPreferences(...)");
         this.sharedPref = sharedPreferences;
-        SharedPreferences sharedPreferences2 = targetActivity.getSharedPreferences("UI_ELEMENTS_SP", 0);
+        SharedPreferences sharedPreferences2 = targetActivity.getSharedPreferences(SAMPUIElement.SP_NAME, 0);
         Intrinsics.checkNotNullExpressionValue(sharedPreferences2, "getSharedPreferences(...)");
         this.sharedPreferencesUI = sharedPreferences2;
         ExoPlayer build = new ExoPlayer.Builder(targetActivity).build();

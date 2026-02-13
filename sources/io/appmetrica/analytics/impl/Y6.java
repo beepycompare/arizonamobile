@@ -11,14 +11,14 @@ import java.util.Collection;
 public final class Y6 extends SQLiteOpenHelper implements Closeable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f863a;
+    public final String f862a;
     public final PublicLogger b;
     public final C0335in c;
 
     public Y6(Context context, String str, C0335in c0335in, PublicLogger publicLogger) {
         super(context, str, (SQLiteDatabase.CursorFactory) null, AbstractC0668w5.b);
         this.c = c0335in;
-        this.f863a = str;
+        this.f862a = str;
         this.b = publicLogger;
     }
 
@@ -27,8 +27,8 @@ public final class Y6 extends SQLiteOpenHelper implements Closeable {
         try {
             return super.getReadableDatabase();
         } catch (Throwable th) {
-            this.b.error(th, "Could not get readable database %s due to an exception. AppMetrica SDK may behave unexpectedly.", this.f863a);
-            Qj qj = AbstractC0483oj.f1159a;
+            this.b.error(th, "Could not get readable database %s due to an exception. AppMetrica SDK may behave unexpectedly.", this.f862a);
+            Qj qj = AbstractC0483oj.f1158a;
             qj.getClass();
             qj.a(new C0508pj("db_read_error", th));
             return null;
@@ -40,8 +40,8 @@ public final class Y6 extends SQLiteOpenHelper implements Closeable {
         try {
             return super.getWritableDatabase();
         } catch (Throwable th) {
-            this.b.error(th, "Could not get writable database %s due to an exception. AppMetrica SDK may behave unexpectedly.", this.f863a);
-            Qj qj = AbstractC0483oj.f1159a;
+            this.b.error(th, "Could not get writable database %s due to an exception. AppMetrica SDK may behave unexpectedly.", this.f862a);
+            Qj qj = AbstractC0483oj.f1158a;
             qj.getClass();
             qj.a(new C0508pj("db_write_error", th));
             return null;
@@ -51,7 +51,7 @@ public final class Y6 extends SQLiteOpenHelper implements Closeable {
     @Override // android.database.sqlite.SQLiteOpenHelper
     public final void onCreate(SQLiteDatabase sQLiteDatabase) {
         try {
-            this.c.f1051a.runScript(sQLiteDatabase);
+            this.c.f1050a.runScript(sQLiteDatabase);
         } catch (Throwable unused) {
         }
     }
@@ -65,7 +65,7 @@ public final class Y6 extends SQLiteOpenHelper implements Closeable {
             } catch (Throwable unused) {
             }
             try {
-                c0335in.f1051a.runScript(sQLiteDatabase);
+                c0335in.f1050a.runScript(sQLiteDatabase);
                 return;
             } catch (Throwable unused2) {
                 return;
@@ -88,7 +88,7 @@ public final class Y6 extends SQLiteOpenHelper implements Closeable {
                 c0335in.b.runScript(sQLiteDatabase);
             } catch (Throwable unused) {
             }
-            c0335in.f1051a.runScript(sQLiteDatabase);
+            c0335in.f1050a.runScript(sQLiteDatabase);
         } catch (Throwable unused2) {
         }
     }
@@ -106,7 +106,7 @@ public final class Y6 extends SQLiteOpenHelper implements Closeable {
         if (i2 > i) {
             for (int i3 = i + 1; i3 <= i2; i3++) {
                 try {
-                    Collection<DatabaseScript> collection = (Collection) c0335in.c.f1173a.get(Integer.valueOf(i3));
+                    Collection<DatabaseScript> collection = (Collection) c0335in.c.f1172a.get(Integer.valueOf(i3));
                     if (collection != null) {
                         for (DatabaseScript databaseScript : collection) {
                             databaseScript.runScript(sQLiteDatabase);
@@ -122,7 +122,7 @@ public final class Y6 extends SQLiteOpenHelper implements Closeable {
                 } catch (Throwable unused2) {
                 }
                 try {
-                    c0335in.f1051a.runScript(sQLiteDatabase);
+                    c0335in.f1050a.runScript(sQLiteDatabase);
                     return;
                 } catch (Throwable unused3) {
                     return;

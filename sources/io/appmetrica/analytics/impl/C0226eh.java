@@ -8,7 +8,7 @@ public final class C0226eh extends Rg {
 
     @Override // io.appmetrica.analytics.impl.Rg
     public final boolean a(P5 p5) {
-        X4 x4 = this.f768a;
+        X4 x4 = this.f767a;
         synchronized (x4) {
             ((C0369k5) x4.p).d();
         }

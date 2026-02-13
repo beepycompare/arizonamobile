@@ -1,5 +1,8 @@
 package com.miami.game.core.privacy;
 
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.miami.game.core.local.repository.common.LocalRepository;
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -14,9 +17,10 @@ import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.Job;
 import kotlinx.coroutines.SupervisorKt;
+import timber.log.Timber;
 /* compiled from: privacyInteractor.kt */
 @Singleton
-@Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\b\u0007\u0018\u0000 \u000f2\u00020\u0001:\u0001\u000fB\u0011\b\u0007\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0006\u0010\n\u001a\u00020\u000bJ\u000e\u0010\f\u001a\u00020\rH\u0086@¢\u0006\u0002\u0010\u000eR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\t¨\u0006\u0010"}, d2 = {"Lcom/miami/game/core/privacy/privacyInteractor;", "", "localRepository", "Lcom/miami/game/core/local/repository/common/LocalRepository;", "<init>", "(Lcom/miami/game/core/local/repository/common/LocalRepository;)V", "scope", "Lkotlinx/coroutines/CoroutineScope;", "getScope", "()Lkotlinx/coroutines/CoroutineScope;", "acceptPrivacy", "", "isPrivacyAccepted", "", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "privacy_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0006\b\u0007\u0018\u0000 \u00122\u00020\u0001:\u0001\u0012B\u0011\b\u0007\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0006\u0010\n\u001a\u00020\u000bJ\u000e\u0010\f\u001a\u00020\rH\u0086@¢\u0006\u0002\u0010\u000eJ\u000e\u0010\u000f\u001a\u00020\rH\u0086@¢\u0006\u0002\u0010\u000eJ\u0006\u0010\u0010\u001a\u00020\u000bJ\u0006\u0010\u0011\u001a\u00020\u000bR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\t¨\u0006\u0013"}, d2 = {"Lcom/miami/game/core/privacy/privacyInteractor;", "", "localRepository", "Lcom/miami/game/core/local/repository/common/LocalRepository;", "<init>", "(Lcom/miami/game/core/local/repository/common/LocalRepository;)V", "scope", "Lkotlinx/coroutines/CoroutineScope;", "getScope", "()Lkotlinx/coroutines/CoroutineScope;", "acceptPrivacy", "", "isPrivacyAccepted", "", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "isFirstDownload", "startFirstDownload", "finishFirstDownload", "Companion", "privacy_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class privacyInteractor {
     public static final Companion Companion = new Companion(null);
@@ -41,6 +45,23 @@ public final class privacyInteractor {
 
     public final Object isPrivacyAccepted(Continuation<? super Boolean> continuation) {
         return Boxing.boxBoolean(this.localRepository.getContext().getSharedPreferences("SP_NAME", 0).getBoolean("firstOpen", false));
+    }
+
+    public final Object isFirstDownload(Continuation<? super Boolean> continuation) {
+        return Boxing.boxBoolean(this.localRepository.getContext().getSharedPreferences("SP_NAME", 0).getBoolean("firstDownload", false));
+    }
+
+    public final void startFirstDownload() {
+        BuildersKt__Builders_commonKt.launch$default(this.scope, null, null, new privacyInteractor$startFirstDownload$1(this, null), 3, null);
+    }
+
+    public final void finishFirstDownload() {
+        SharedPreferences sharedPreferences = this.localRepository.getContext().getSharedPreferences("SP_NAME", 0);
+        if (sharedPreferences.getBoolean("firstDownload", false)) {
+            Timber.Forest.d("finish_first_download", new Object[0]);
+            sharedPreferences.edit().putBoolean("firstDownload", false).apply();
+            FirebaseAnalytics.getInstance(this.localRepository.getContext()).logEvent("finish_first_download", new Bundle());
+        }
     }
 
     /* compiled from: privacyInteractor.kt */

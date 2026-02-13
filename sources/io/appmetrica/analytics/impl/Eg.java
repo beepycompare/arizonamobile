@@ -9,7 +9,7 @@ import java.util.List;
 public final class Eg implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Fn f569a;
+    public final Fn f568a;
     public final W b;
     public final C0293h6 c;
     public final Bl d;
@@ -24,12 +24,12 @@ public final class Eg implements ProtobufConverter {
     /* renamed from: a */
     public final X5 fromModel(Dg dg) {
         X5 x5 = new X5();
-        x5.f = StringUtils.correctIllFormedString((String) WrapUtils.getOrDefault(dg.f552a, x5.f));
+        x5.f = StringUtils.correctIllFormedString((String) WrapUtils.getOrDefault(dg.f551a, x5.f));
         Qn qn = dg.b;
         if (qn != null) {
-            Gn gn = qn.f756a;
+            Gn gn = qn.f755a;
             if (gn != null) {
-                x5.f850a = this.f569a.fromModel(gn);
+                x5.f849a = this.f568a.fromModel(gn);
             }
             V v = qn.b;
             if (v != null) {
@@ -61,7 +61,7 @@ public final class Eg implements ProtobufConverter {
     }
 
     public Eg(Fn fn, W w, C0293h6 c0293h6, Bl bl, He he, Ie ie) {
-        this.f569a = fn;
+        this.f568a = fn;
         this.b = w;
         this.c = c0293h6;
         this.d = bl;

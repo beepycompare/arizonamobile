@@ -4,18 +4,18 @@ package kotlin;
 /* loaded from: classes5.dex */
 public final class UByteKt {
     private static final byte toUByte(byte b) {
-        return UByte.m10262constructorimpl(b);
+        return UByte.m10261constructorimpl(b);
     }
 
     private static final byte toUByte(short s) {
-        return UByte.m10262constructorimpl((byte) s);
+        return UByte.m10261constructorimpl((byte) s);
     }
 
     private static final byte toUByte(int i) {
-        return UByte.m10262constructorimpl((byte) i);
+        return UByte.m10261constructorimpl((byte) i);
     }
 
     private static final byte toUByte(long j) {
-        return UByte.m10262constructorimpl((byte) j);
+        return UByte.m10261constructorimpl((byte) j);
     }
 }

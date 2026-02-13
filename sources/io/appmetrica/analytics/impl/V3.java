@@ -6,7 +6,7 @@ import android.util.SparseArray;
 public final class V3 extends Jc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ve f822a;
+    public final Ve f821a;
 
     public V3(Context context) {
         this(new Ve(C0136b4.l().c(context).b(context)));
@@ -14,12 +14,12 @@ public final class V3 extends Jc {
 
     @Override // io.appmetrica.analytics.impl.Jc
     public final void a(int i) {
-        this.f822a.c(i);
+        this.f821a.c(i);
     }
 
     @Override // io.appmetrica.analytics.impl.Jc
     public final int b() {
-        return (int) this.f822a.a(-1L);
+        return (int) this.f821a.a(-1L);
     }
 
     @Override // io.appmetrica.analytics.impl.Jc
@@ -28,6 +28,6 @@ public final class V3 extends Jc {
     }
 
     public V3(Ve ve) {
-        this.f822a = ve;
+        this.f821a = ve;
     }
 }

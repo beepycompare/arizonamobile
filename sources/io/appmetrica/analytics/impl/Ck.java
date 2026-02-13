@@ -10,12 +10,12 @@ import java.util.HashMap;
 public final class Ck implements ServiceWakeLock {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f539a;
+    public final Context f538a;
     public final Bk b;
     public final HashMap c = new HashMap();
 
     public Ck(Context context, Bk bk) {
-        this.f539a = context;
+        this.f538a = context;
         this.b = bk;
     }
 
@@ -28,9 +28,9 @@ public final class Ck implements ServiceWakeLock {
         if (this.c.get(str) == null) {
             HashMap hashMap = this.c;
             Bk bk = this.b;
-            Context context = this.f539a;
+            Context context = this.f538a;
             String a2 = a(str);
-            bk.f524a.getClass();
+            bk.f523a.getClass();
             Intent intent = new Intent(context, AppMetricaService.class);
             intent.setAction(a2);
             Ak ak = new Ak();
@@ -50,7 +50,7 @@ public final class Ck implements ServiceWakeLock {
         if (serviceConnection != null) {
             Bk bk = this.b;
             a(str);
-            Context context = this.f539a;
+            Context context = this.f538a;
             bk.getClass();
             try {
                 context.unbindService(serviceConnection);

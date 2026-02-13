@@ -32,8 +32,8 @@ class BroadcastCoroutine<E> extends AbstractCoroutine<Unit> implements ProducerS
 
     @Override // kotlinx.coroutines.channels.SendChannel
     /* renamed from: invokeOnClose */
-    public void mo11854invokeOnClose(Function1<? super Throwable, Unit> function1) {
-        this._channel.mo11854invokeOnClose(function1);
+    public void mo11853invokeOnClose(Function1<? super Throwable, Unit> function1) {
+        this._channel.mo11853invokeOnClose(function1);
     }
 
     @Override // kotlinx.coroutines.channels.SendChannel

@@ -1,6 +1,7 @@
 package com.arizona.launcher;
 
 import com.arizona.launcher.UpdateService;
+import com.arizona.launcher.downloader.FilesChek;
 import java.util.List;
 import kotlin.Metadata;
 import kotlin.Pair;
@@ -13,15 +14,15 @@ import kotlin.coroutines.jvm.internal.SpillingKt;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function2;
+import kotlin.jvm.internal.Intrinsics;
 import kotlinx.coroutines.BuildersKt__Builders_commonKt;
 import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.GlobalScope;
-import org.json.JSONArray;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: UpdateService.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "com.arizona.launcher.UpdateService$checkUpdateAndDownload$stringRequest$1$1", f = "UpdateService.kt", i = {1}, l = {1354, 1355}, m = "invokeSuspend", n = {"gameDataInfo"}, s = {"L$0"}, v = 1)
+@DebugMetadata(c = "com.arizona.launcher.UpdateService$checkUpdateAndDownload$stringRequest$1$1", f = "UpdateService.kt", i = {1}, l = {1101, 1102}, m = "invokeSuspend", n = {"gameDataInfo"}, s = {"L$0"}, v = 1)
 /* loaded from: classes3.dex */
 public final class UpdateService$checkUpdateAndDownload$stringRequest$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ Function0<Unit> $onFinish;
@@ -47,13 +48,13 @@ public final class UpdateService$checkUpdateAndDownload$stringRequest$1$1 extend
         return ((UpdateService$checkUpdateAndDownload$stringRequest$1$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x0034, code lost:
-        if (r8 == r0) goto L14;
+    /* JADX WARN: Code restructure failed: missing block: B:15:0x0048, code lost:
+        if (r12 == r0) goto L14;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:14:0x005a, code lost:
-        if (kotlinx.coroutines.BuildersKt.withContext(kotlinx.coroutines.Dispatchers.getMain(), new com.arizona.launcher.UpdateService$checkUpdateAndDownload$stringRequest$1$1.AnonymousClass1(r7.this$0, r8, r7.$onFinish, null), r7) == r0) goto L14;
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x006d, code lost:
+        if (kotlinx.coroutines.BuildersKt.withContext(kotlinx.coroutines.Dispatchers.getMain(), new com.arizona.launcher.UpdateService$checkUpdateAndDownload$stringRequest$1$1.AnonymousClass1(r11.this$0, r12, r11.$onFinish, null), r11) == r0) goto L14;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x005c, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x006f, code lost:
         return r0;
      */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
@@ -61,15 +62,20 @@ public final class UpdateService$checkUpdateAndDownload$stringRequest$1$1 extend
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
-        JSONArray jSONArray;
+        FilesChek filesChek;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            UpdateService updateService = this.this$0;
-            jSONArray = updateService.mDataInfo;
+            FilesChek filesChek2 = this.this$0.filesChek;
+            if (filesChek2 == null) {
+                Intrinsics.throwUninitializedPropertyAccessException("filesChek");
+                filesChek = null;
+            } else {
+                filesChek = filesChek2;
+            }
             this.label = 1;
-            obj = updateService.checkGameDataUpdate(jSONArray, this);
+            obj = FilesChek.checkGameDataUpdate$default(filesChek, this.this$0.mDataInfo, false, this, 2, null);
         } else if (i != 1) {
             if (i == 2) {
                 Pair pair = (Pair) this.L$0;

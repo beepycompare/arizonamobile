@@ -36,7 +36,7 @@ public final class CloudyBackground_androidKt {
 
     @FunctionKeyMeta(endOffset = 4051, key = -1688490395, startOffset = 3089)
     /* renamed from: cloudy-NpZTi58  reason: not valid java name */
-    public static final Modifier m10199cloudyNpZTi58(Modifier cloudy, Sky sky, int i, CloudyProgressive cloudyProgressive, long j, boolean z, boolean z2, Function1<? super CloudyState, Unit> function1, Composer composer, int i2, int i3) {
+    public static final Modifier m10198cloudyNpZTi58(Modifier cloudy, Sky sky, int i, CloudyProgressive cloudyProgressive, long j, boolean z, boolean z2, Function1<? super CloudyState, Unit> function1, Composer composer, int i2, int i3) {
         Function1<? super CloudyState, Unit> function12;
         Intrinsics.checkNotNullParameter(cloudy, "$this$cloudy");
         Intrinsics.checkNotNullParameter(sky, "sky");

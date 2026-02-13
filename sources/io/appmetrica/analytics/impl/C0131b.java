@@ -8,7 +8,7 @@ import io.appmetrica.analytics.coreutils.internal.encryption.AESEncrypter;
 public final class C0131b implements G8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final AESEncrypter f909a;
+    public final AESEncrypter f908a;
 
     public C0131b() {
         this(new C0105a(C0449na.k().g()));
@@ -21,7 +21,7 @@ public final class C0131b implements G8 {
         String value = p5.getValue();
         if (!TextUtils.isEmpty(value)) {
             try {
-                encrypt = this.f909a.encrypt(value.getBytes("UTF-8"));
+                encrypt = this.f908a.encrypt(value.getBytes("UTF-8"));
             } catch (Throwable unused) {
             }
             if (encrypt != null) {
@@ -40,7 +40,7 @@ public final class C0131b implements G8 {
     }
 
     public C0131b(AESEncrypter aESEncrypter) {
-        this.f909a = aESEncrypter;
+        this.f908a = aESEncrypter;
     }
 
     @Override // io.appmetrica.analytics.impl.G8
@@ -48,7 +48,7 @@ public final class C0131b implements G8 {
         byte[] bArr2 = new byte[0];
         if (bArr != null && bArr.length > 0) {
             try {
-                return this.f909a.decrypt(Base64.decode(bArr, 0));
+                return this.f908a.decrypt(Base64.decode(bArr, 0));
             } catch (Throwable unused) {
             }
         }

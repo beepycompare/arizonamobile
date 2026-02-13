@@ -14,6 +14,6 @@ public final class C0247fc extends Wn {
     }
 
     public final Ua a() {
-        return this.f846a.a().a(this.b);
+        return this.f845a.a().a(this.b);
     }
 }

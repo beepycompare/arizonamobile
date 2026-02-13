@@ -13,7 +13,7 @@ public final class o {
     public static byte[] a(ProductInfo productInfo) {
         String str;
         z zVar = new z();
-        zVar.f328a = productInfo.quantity;
+        zVar.f327a = productInfo.quantity;
         zVar.f = productInfo.priceMicros;
         try {
             str = Currency.getInstance(productInfo.priceCurrency).getCurrencyCode();
@@ -24,34 +24,34 @@ public final class o {
         zVar.b = str.getBytes(charset);
         zVar.c = productInfo.sku.getBytes(charset);
         u uVar = new u();
-        uVar.f323a = productInfo.purchaseOriginalJson.getBytes(charset);
+        uVar.f322a = productInfo.purchaseOriginalJson.getBytes(charset);
         uVar.b = productInfo.signature.getBytes(charset);
         zVar.e = uVar;
         zVar.g = true;
         zVar.h = 1;
-        int i = n.f317a[productInfo.type.ordinal()];
+        int i = n.f316a[productInfo.type.ordinal()];
         zVar.i = (i == 1 || i != 2) ? 1 : 2;
         y yVar = new y();
-        yVar.f327a = productInfo.purchaseToken.getBytes(charset);
+        yVar.f326a = productInfo.purchaseToken.getBytes(charset);
         yVar.b = TimeUnit.MILLISECONDS.toSeconds(productInfo.purchaseTime);
         zVar.j = yVar;
         if (productInfo.type == ProductType.SUBS) {
             x xVar = new x();
-            xVar.f326a = productInfo.autoRenewing;
+            xVar.f325a = productInfo.autoRenewing;
             Period period = productInfo.subscriptionPeriod;
             if (period != null) {
                 w wVar = new w();
-                wVar.f325a = period.number;
+                wVar.f324a = period.number;
                 int i2 = n.b[period.timeUnit.ordinal()];
                 wVar.b = i2 != 1 ? i2 != 2 ? i2 != 3 ? i2 != 4 ? 0 : 4 : 3 : 2 : 1;
                 xVar.b = wVar;
             }
             v vVar = new v();
-            vVar.f324a = productInfo.introductoryPriceMicros;
+            vVar.f323a = productInfo.introductoryPriceMicros;
             Period period2 = productInfo.introductoryPricePeriod;
             if (period2 != null) {
                 w wVar2 = new w();
-                wVar2.f325a = period2.number;
+                wVar2.f324a = period2.number;
                 int i3 = n.b[period2.timeUnit.ordinal()];
                 wVar2.b = i3 != 1 ? i3 != 2 ? i3 != 3 ? i3 != 4 ? 0 : 4 : 3 : 2 : 1;
                 vVar.b = wVar2;

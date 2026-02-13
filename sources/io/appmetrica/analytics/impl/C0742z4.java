@@ -4,7 +4,7 @@ package io.appmetrica.analytics.impl;
 public final class C0742z4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Fb f1329a;
+    public final Fb f1328a;
 
     public C0742z4() {
         this(C0449na.k().l());
@@ -15,12 +15,12 @@ public final class C0742z4 {
     }
 
     public C0742z4(Fb fb) {
-        this.f1329a = fb;
+        this.f1328a = fb;
     }
 
     public final C0412ln a(C0692x4 c0692x4, Am am) {
         C0412ln c0412ln = new C0412ln(c0692x4, new Ig(am));
-        Fb fb = this.f1329a;
+        Fb fb = this.f1328a;
         synchronized (fb) {
             fb.c.add(c0412ln);
         }

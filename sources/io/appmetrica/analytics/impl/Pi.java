@@ -9,18 +9,18 @@ import java.util.ArrayList;
 public final class Pi {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f741a;
+    public final Context f740a;
     public final SafePackageManager b;
 
     public Pi(Context context, SafePackageManager safePackageManager) {
-        this.f741a = context;
+        this.f740a = context;
         this.b = safePackageManager;
     }
 
     public final ArrayList a() {
         ArrayList arrayList = new ArrayList();
         SafePackageManager safePackageManager = this.b;
-        Context context = this.f741a;
+        Context context = this.f740a;
         PackageInfo packageInfo = safePackageManager.getPackageInfo(context, context.getPackageName(), 4096);
         if (packageInfo != null) {
             String[] strArr = packageInfo.requestedPermissions;

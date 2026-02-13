@@ -273,7 +273,7 @@ public final class InventoryPersonSection {
                 accessPages = new AccessPagesModel(3, 1);
             }
             if (inventoryItem.getSlot() == ((accessPages.getPage() - 1) * 6) + acs_slot) {
-                inventoryItem = InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, 7864319, null);
+                inventoryItem = InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, null, 16252927, null);
             }
             arrayList.add(inventoryItem);
         }

@@ -9,18 +9,18 @@ import java.util.Iterator;
 public final class P2 extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ BatteryInfo f735a;
+    public final /* synthetic */ BatteryInfo f734a;
     public final /* synthetic */ Q2 b;
 
     public P2(Q2 q2, BatteryInfo batteryInfo) {
         this.b = q2;
-        this.f735a = batteryInfo;
+        this.f734a = batteryInfo;
     }
 
     @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
     public final void runSafety() {
-        R2 r2 = this.b.f748a;
-        ChargeType chargeType = this.f735a.chargeType;
+        R2 r2 = this.b.f747a;
+        ChargeType chargeType = this.f734a.chargeType;
         ChargeType chargeType2 = R2.d;
         synchronized (r2) {
             Iterator it = r2.c.iterator();

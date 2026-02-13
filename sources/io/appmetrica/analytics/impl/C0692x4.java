@@ -12,7 +12,7 @@ import java.util.List;
 public final class C0692x4 implements Ea, Ql, Ga {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1299a;
+    public final Context f1298a;
     public final Q4 b;
     public final Am c;
     public final C0755zh d;
@@ -37,7 +37,7 @@ public final class C0692x4 implements Ea, Ql, Ga {
     @Override // io.appmetrica.analytics.impl.Ea
     public final void a(C0468o4 c0468o4) {
         C0755zh c0755zh = this.d;
-        c0755zh.f1336a = c0755zh.f1336a.mergeFrom(c0468o4);
+        c0755zh.f1335a = c0755zh.f1335a.mergeFrom(c0468o4);
     }
 
     @Override // io.appmetrica.analytics.impl.Ea
@@ -46,7 +46,7 @@ public final class C0692x4 implements Ea, Ql, Ga {
     }
 
     public final C0468o4 d() {
-        return this.d.f1336a;
+        return this.d.f1335a;
     }
 
     public final C0405lg e() {
@@ -55,20 +55,20 @@ public final class C0692x4 implements Ea, Ql, Ga {
 
     @Override // io.appmetrica.analytics.impl.Ea
     public final Context getContext() {
-        return this.f1299a;
+        return this.f1298a;
     }
 
     public C0692x4(Context context, Hl hl, Q4 q4, C0493p4 c0493p4, C0755zh c0755zh, C0405lg c0405lg, R4 r4, C0742z4 c0742z4, C0530qg c0530qg) {
         this.g = new ArrayList();
         this.l = new Object();
         Context applicationContext = context.getApplicationContext();
-        this.f1299a = applicationContext;
+        this.f1298a = applicationContext;
         this.b = q4;
         this.d = c0755zh;
         this.h = r4;
         this.e = C0742z4.a(this);
         b(c0493p4);
-        Am a2 = hl.a(applicationContext, q4, c0493p4.f1168a);
+        Am a2 = hl.a(applicationContext, q4, c0493p4.f1167a);
         this.c = a2;
         this.j = U3.a(a2, C0449na.k().c());
         this.f = c0742z4.a(this, a2);
@@ -78,12 +78,12 @@ public final class C0692x4 implements Ea, Ql, Ga {
     }
 
     public final synchronized void a(C0617u4 c0617u4) {
-        this.h.f761a.add(c0617u4);
+        this.h.f760a.add(c0617u4);
         B6.a(c0617u4.c, this.j.a(Fm.a(this.c.e().l)));
     }
 
     public final synchronized void b(C0617u4 c0617u4) {
-        this.h.f761a.remove(c0617u4);
+        this.h.f760a.remove(c0617u4);
     }
 
     @Override // io.appmetrica.analytics.impl.Ea
@@ -103,7 +103,7 @@ public final class C0692x4 implements Ea, Ql, Ga {
             Iterator it = this.g.iterator();
             while (it.hasNext()) {
                 Xa xa = (Xa) it.next();
-                B6.a(xa.f852a, jl, this.j.a(xa.c));
+                B6.a(xa.f851a, jl, this.j.a(xa.c));
             }
             this.g.clear();
         }
@@ -112,7 +112,7 @@ public final class C0692x4 implements Ea, Ql, Ga {
     @Override // io.appmetrica.analytics.impl.Ql
     public final void a(C0257fm c0257fm) {
         synchronized (this.l) {
-            Iterator it = this.h.f761a.iterator();
+            Iterator it = this.h.f760a.iterator();
             while (it.hasNext()) {
                 B6.a(((C0617u4) it.next()).c, this.j.a(Fm.a(c0257fm.l)));
             }
@@ -121,7 +121,7 @@ public final class C0692x4 implements Ea, Ql, Ga {
             while (it2.hasNext()) {
                 Xa xa = (Xa) it2.next();
                 if (AbstractC0180cm.a(c0257fm, xa.b, xa.c, new Va())) {
-                    B6.a(xa.f852a, this.j.a(xa.c));
+                    B6.a(xa.f851a, this.j.a(xa.c));
                 } else {
                     arrayList.add(xa);
                 }
@@ -141,7 +141,7 @@ public final class C0692x4 implements Ea, Ql, Ga {
         HashMap hashMap2 = new HashMap();
         if (xa != null) {
             list = xa.b;
-            resultReceiver = xa.f852a;
+            resultReceiver = xa.f851a;
             hashMap = xa.c;
         } else {
             resultReceiver = null;
@@ -177,7 +177,7 @@ public final class C0692x4 implements Ea, Ql, Ga {
 
     @Override // io.appmetrica.analytics.impl.Ga
     public final void a(C0493p4 c0493p4) {
-        this.c.a(c0493p4.f1168a);
+        this.c.a(c0493p4.f1167a);
         a(c0493p4.b);
     }
 }

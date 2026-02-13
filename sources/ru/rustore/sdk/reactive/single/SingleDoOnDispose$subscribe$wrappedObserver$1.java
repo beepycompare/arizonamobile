@@ -59,7 +59,7 @@ public final class SingleDoOnDispose$subscribe$wrappedObserver$1<T> implements S
 
     @Override // ru.rustore.sdk.reactive.core.Disposable
     public void dispose() {
-        Object m10244constructorimpl;
+        Object m10243constructorimpl;
         Function0 function0;
         if (this.disposed.compareAndSet(false, true)) {
             SingleDoOnDispose<T> singleDoOnDispose = this.this$0;
@@ -68,22 +68,22 @@ public final class SingleDoOnDispose$subscribe$wrappedObserver$1<T> implements S
                 SingleDoOnDispose$subscribe$wrappedObserver$1<T> singleDoOnDispose$subscribe$wrappedObserver$1 = this;
                 function0 = ((SingleDoOnDispose) singleDoOnDispose).onDispose;
                 function0.invoke();
-                m10244constructorimpl = Result.m10244constructorimpl(Unit.INSTANCE);
+                m10243constructorimpl = Result.m10243constructorimpl(Unit.INSTANCE);
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m10244constructorimpl = Result.m10244constructorimpl(ResultKt.createFailure(th));
+                m10243constructorimpl = Result.m10243constructorimpl(ResultKt.createFailure(th));
             }
             SingleObserver<T> singleObserver = this.$downstream;
-            Throwable m10247exceptionOrNullimpl = Result.m10247exceptionOrNullimpl(m10244constructorimpl);
-            if (m10247exceptionOrNullimpl != null) {
+            Throwable m10246exceptionOrNullimpl = Result.m10246exceptionOrNullimpl(m10243constructorimpl);
+            if (m10246exceptionOrNullimpl != null) {
                 Disposable andSet = this.upstreamDisposable.getAndSet(null);
                 if (andSet != null) {
                     andSet.dispose();
                 }
-                singleObserver.onError(m10247exceptionOrNullimpl);
+                singleObserver.onError(m10246exceptionOrNullimpl);
             }
-            if (Result.m10251isSuccessimpl(m10244constructorimpl)) {
-                Unit unit = (Unit) m10244constructorimpl;
+            if (Result.m10250isSuccessimpl(m10243constructorimpl)) {
+                Unit unit = (Unit) m10243constructorimpl;
                 Disposable andSet2 = this.upstreamDisposable.getAndSet(null);
                 if (andSet2 != null) {
                     andSet2.dispose();

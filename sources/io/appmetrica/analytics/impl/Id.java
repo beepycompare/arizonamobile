@@ -6,14 +6,14 @@ import kotlin.jvm.functions.Function1;
 public final class Id {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Function1 f628a;
+    public final Function1 f627a;
 
     public Id(Nd nd) {
-        this.f628a = nd;
+        this.f627a = nd;
     }
 
     public final Jd a(Context context, Sg sg) {
-        return new Jd(context, sg, this.f628a, new Rd() { // from class: io.appmetrica.analytics.impl.Id$$ExternalSyntheticLambda0
+        return new Jd(context, sg, this.f627a, new Rd() { // from class: io.appmetrica.analytics.impl.Id$$ExternalSyntheticLambda0
             @Override // io.appmetrica.analytics.impl.Rd
             public final InterfaceC0127al a(G0 g0) {
                 return Id.a(g0);
@@ -22,7 +22,7 @@ public final class Id {
     }
 
     public final Jd b(Context context, Sg sg) {
-        return new Jd(context, sg, this.f628a, new Rd() { // from class: io.appmetrica.analytics.impl.Id$$ExternalSyntheticLambda1
+        return new Jd(context, sg, this.f627a, new Rd() { // from class: io.appmetrica.analytics.impl.Id$$ExternalSyntheticLambda1
             @Override // io.appmetrica.analytics.impl.Rd
             public final InterfaceC0127al a(G0 g0) {
                 return Id.b(g0);

@@ -30,7 +30,7 @@ public final class C0164c6 extends Pg {
             return;
         }
         this.c = true;
-        String a2 = this.h.f1203a.a();
+        String a2 = this.h.f1202a.a();
         K1 k1 = this.i;
         Context context = this.f;
         k1.getClass();
@@ -38,7 +38,7 @@ public final class C0164c6 extends Pg {
         if (Intrinsics.areEqual(a2, serviceInfo != null ? serviceInfo.processName : null)) {
             this.j.a(this.g);
         } else {
-            this.f1309a.c();
+            this.f1308a.c();
             this.c = false;
             super.a();
         }

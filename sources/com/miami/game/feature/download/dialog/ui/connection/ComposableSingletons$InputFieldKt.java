@@ -25,7 +25,7 @@ public final class ComposableSingletons$InputFieldKt {
     });
 
     /* renamed from: getLambda$-1682333503$dialogs_release  reason: not valid java name */
-    public final Function3<Function2<? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m10086getLambda$1682333503$dialogs_release() {
+    public final Function3<Function2<? super Composer, ? super Integer, Unit>, Composer, Integer, Unit> m10085getLambda$1682333503$dialogs_release() {
         return f133lambda$1682333503;
     }
 

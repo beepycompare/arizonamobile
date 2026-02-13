@@ -12,11 +12,11 @@ import kotlin.Metadata;
 public final class AppLovinClientModuleEntryPoint extends ModuleClientEntryPoint<Object> {
 
     /* renamed from: a  reason: collision with root package name */
-    private final String f295a = "ad-revenue-applovin-v12";
+    private final String f294a = "ad-revenue-applovin-v12";
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ModuleClientEntryPoint
     public String getIdentifier() {
-        return this.f295a;
+        return this.f294a;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.ModuleClientEntryPoint

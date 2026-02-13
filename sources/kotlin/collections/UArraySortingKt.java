@@ -13,24 +13,24 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes5.dex */
 public final class UArraySortingKt {
     /* renamed from: partition-4UcCI2c  reason: not valid java name */
-    private static final int m10709partition4UcCI2c(byte[] bArr, int i, int i2) {
+    private static final int m10708partition4UcCI2c(byte[] bArr, int i, int i2) {
         int i3;
-        byte m10325getw2LRezQ = UByteArray.m10325getw2LRezQ(bArr, (i + i2) / 2);
+        byte m10324getw2LRezQ = UByteArray.m10324getw2LRezQ(bArr, (i + i2) / 2);
         while (i <= i2) {
             while (true) {
-                i3 = m10325getw2LRezQ & 255;
-                if (Intrinsics.compare(UByteArray.m10325getw2LRezQ(bArr, i) & 255, i3) >= 0) {
+                i3 = m10324getw2LRezQ & 255;
+                if (Intrinsics.compare(UByteArray.m10324getw2LRezQ(bArr, i) & 255, i3) >= 0) {
                     break;
                 }
                 i++;
             }
-            while (Intrinsics.compare(UByteArray.m10325getw2LRezQ(bArr, i2) & 255, i3) > 0) {
+            while (Intrinsics.compare(UByteArray.m10324getw2LRezQ(bArr, i2) & 255, i3) > 0) {
                 i2--;
             }
             if (i <= i2) {
-                byte m10325getw2LRezQ2 = UByteArray.m10325getw2LRezQ(bArr, i);
-                UByteArray.m10330setVurrAj0(bArr, i, UByteArray.m10325getw2LRezQ(bArr, i2));
-                UByteArray.m10330setVurrAj0(bArr, i2, m10325getw2LRezQ2);
+                byte m10324getw2LRezQ2 = UByteArray.m10324getw2LRezQ(bArr, i);
+                UByteArray.m10329setVurrAj0(bArr, i, UByteArray.m10324getw2LRezQ(bArr, i2));
+                UByteArray.m10329setVurrAj0(bArr, i2, m10324getw2LRezQ2);
                 i++;
                 i2--;
             }
@@ -39,37 +39,37 @@ public final class UArraySortingKt {
     }
 
     /* renamed from: quickSort-4UcCI2c  reason: not valid java name */
-    private static final void m10713quickSort4UcCI2c(byte[] bArr, int i, int i2) {
-        int m10709partition4UcCI2c = m10709partition4UcCI2c(bArr, i, i2);
-        int i3 = m10709partition4UcCI2c - 1;
+    private static final void m10712quickSort4UcCI2c(byte[] bArr, int i, int i2) {
+        int m10708partition4UcCI2c = m10708partition4UcCI2c(bArr, i, i2);
+        int i3 = m10708partition4UcCI2c - 1;
         if (i < i3) {
-            m10713quickSort4UcCI2c(bArr, i, i3);
+            m10712quickSort4UcCI2c(bArr, i, i3);
         }
-        if (m10709partition4UcCI2c < i2) {
-            m10713quickSort4UcCI2c(bArr, m10709partition4UcCI2c, i2);
+        if (m10708partition4UcCI2c < i2) {
+            m10712quickSort4UcCI2c(bArr, m10708partition4UcCI2c, i2);
         }
     }
 
     /* renamed from: partition-Aa5vz7o  reason: not valid java name */
-    private static final int m10710partitionAa5vz7o(short[] sArr, int i, int i2) {
+    private static final int m10709partitionAa5vz7o(short[] sArr, int i, int i2) {
         int i3;
-        short m10588getMh2AYeg = UShortArray.m10588getMh2AYeg(sArr, (i + i2) / 2);
+        short m10587getMh2AYeg = UShortArray.m10587getMh2AYeg(sArr, (i + i2) / 2);
         while (i <= i2) {
             while (true) {
-                int m10588getMh2AYeg2 = UShortArray.m10588getMh2AYeg(sArr, i) & UShort.MAX_VALUE;
-                i3 = m10588getMh2AYeg & UShort.MAX_VALUE;
-                if (Intrinsics.compare(m10588getMh2AYeg2, i3) >= 0) {
+                int m10587getMh2AYeg2 = UShortArray.m10587getMh2AYeg(sArr, i) & UShort.MAX_VALUE;
+                i3 = m10587getMh2AYeg & UShort.MAX_VALUE;
+                if (Intrinsics.compare(m10587getMh2AYeg2, i3) >= 0) {
                     break;
                 }
                 i++;
             }
-            while (Intrinsics.compare(UShortArray.m10588getMh2AYeg(sArr, i2) & UShort.MAX_VALUE, i3) > 0) {
+            while (Intrinsics.compare(UShortArray.m10587getMh2AYeg(sArr, i2) & UShort.MAX_VALUE, i3) > 0) {
                 i2--;
             }
             if (i <= i2) {
-                short m10588getMh2AYeg3 = UShortArray.m10588getMh2AYeg(sArr, i);
-                UShortArray.m10593set01HTLdE(sArr, i, UShortArray.m10588getMh2AYeg(sArr, i2));
-                UShortArray.m10593set01HTLdE(sArr, i2, m10588getMh2AYeg3);
+                short m10587getMh2AYeg3 = UShortArray.m10587getMh2AYeg(sArr, i);
+                UShortArray.m10592set01HTLdE(sArr, i, UShortArray.m10587getMh2AYeg(sArr, i2));
+                UShortArray.m10592set01HTLdE(sArr, i2, m10587getMh2AYeg3);
                 i++;
                 i2--;
             }
@@ -78,14 +78,14 @@ public final class UArraySortingKt {
     }
 
     /* renamed from: quickSort-Aa5vz7o  reason: not valid java name */
-    private static final void m10714quickSortAa5vz7o(short[] sArr, int i, int i2) {
-        int m10710partitionAa5vz7o = m10710partitionAa5vz7o(sArr, i, i2);
-        int i3 = m10710partitionAa5vz7o - 1;
+    private static final void m10713quickSortAa5vz7o(short[] sArr, int i, int i2) {
+        int m10709partitionAa5vz7o = m10709partitionAa5vz7o(sArr, i, i2);
+        int i3 = m10709partitionAa5vz7o - 1;
         if (i < i3) {
-            m10714quickSortAa5vz7o(sArr, i, i3);
+            m10713quickSortAa5vz7o(sArr, i, i3);
         }
-        if (m10710partitionAa5vz7o < i2) {
-            m10714quickSortAa5vz7o(sArr, m10710partitionAa5vz7o, i2);
+        if (m10709partitionAa5vz7o < i2) {
+            m10713quickSortAa5vz7o(sArr, m10709partitionAa5vz7o, i2);
         }
     }
 
@@ -95,10 +95,10 @@ public final class UArraySortingKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private static final int m10711partitionoBK06Vg(int[] iArr, int i, int i2) {
+    private static final int m10710partitionoBK06Vg(int[] iArr, int i, int i2) {
         int compare;
         int compare2;
-        int m10404getpVg5ArA = UIntArray.m10404getpVg5ArA(iArr, (i + i2) / 2);
+        int m10403getpVg5ArA = UIntArray.m10403getpVg5ArA(iArr, (i + i2) / 2);
         while (i <= i2) {
             while (compare < 0) {
                 i++;
@@ -107,9 +107,9 @@ public final class UArraySortingKt {
                 i2--;
             }
             if (i <= i2) {
-                int m10404getpVg5ArA2 = UIntArray.m10404getpVg5ArA(iArr, i);
-                UIntArray.m10409setVXSXFK8(iArr, i, UIntArray.m10404getpVg5ArA(iArr, i2));
-                UIntArray.m10409setVXSXFK8(iArr, i2, m10404getpVg5ArA2);
+                int m10403getpVg5ArA2 = UIntArray.m10403getpVg5ArA(iArr, i);
+                UIntArray.m10408setVXSXFK8(iArr, i, UIntArray.m10403getpVg5ArA(iArr, i2));
+                UIntArray.m10408setVXSXFK8(iArr, i2, m10403getpVg5ArA2);
                 i++;
                 i2--;
             }
@@ -118,14 +118,14 @@ public final class UArraySortingKt {
     }
 
     /* renamed from: quickSort-oBK06Vg  reason: not valid java name */
-    private static final void m10715quickSortoBK06Vg(int[] iArr, int i, int i2) {
-        int m10711partitionoBK06Vg = m10711partitionoBK06Vg(iArr, i, i2);
-        int i3 = m10711partitionoBK06Vg - 1;
+    private static final void m10714quickSortoBK06Vg(int[] iArr, int i, int i2) {
+        int m10710partitionoBK06Vg = m10710partitionoBK06Vg(iArr, i, i2);
+        int i3 = m10710partitionoBK06Vg - 1;
         if (i < i3) {
-            m10715quickSortoBK06Vg(iArr, i, i3);
+            m10714quickSortoBK06Vg(iArr, i, i3);
         }
-        if (m10711partitionoBK06Vg < i2) {
-            m10715quickSortoBK06Vg(iArr, m10711partitionoBK06Vg, i2);
+        if (m10710partitionoBK06Vg < i2) {
+            m10714quickSortoBK06Vg(iArr, m10710partitionoBK06Vg, i2);
         }
     }
 
@@ -135,10 +135,10 @@ public final class UArraySortingKt {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    private static final int m10708partitionnroSd4(long[] jArr, int i, int i2) {
+    private static final int m10707partitionnroSd4(long[] jArr, int i, int i2) {
         int compare;
         int compare2;
-        long m10483getsVKNKU = ULongArray.m10483getsVKNKU(jArr, (i + i2) / 2);
+        long m10482getsVKNKU = ULongArray.m10482getsVKNKU(jArr, (i + i2) / 2);
         while (i <= i2) {
             while (compare < 0) {
                 i++;
@@ -147,9 +147,9 @@ public final class UArraySortingKt {
                 i2--;
             }
             if (i <= i2) {
-                long m10483getsVKNKU2 = ULongArray.m10483getsVKNKU(jArr, i);
-                ULongArray.m10488setk8EXiF4(jArr, i, ULongArray.m10483getsVKNKU(jArr, i2));
-                ULongArray.m10488setk8EXiF4(jArr, i2, m10483getsVKNKU2);
+                long m10482getsVKNKU2 = ULongArray.m10482getsVKNKU(jArr, i);
+                ULongArray.m10487setk8EXiF4(jArr, i, ULongArray.m10482getsVKNKU(jArr, i2));
+                ULongArray.m10487setk8EXiF4(jArr, i2, m10482getsVKNKU2);
                 i++;
                 i2--;
             }
@@ -158,38 +158,38 @@ public final class UArraySortingKt {
     }
 
     /* renamed from: quickSort--nroSd4  reason: not valid java name */
-    private static final void m10712quickSortnroSd4(long[] jArr, int i, int i2) {
-        int m10708partitionnroSd4 = m10708partitionnroSd4(jArr, i, i2);
-        int i3 = m10708partitionnroSd4 - 1;
+    private static final void m10711quickSortnroSd4(long[] jArr, int i, int i2) {
+        int m10707partitionnroSd4 = m10707partitionnroSd4(jArr, i, i2);
+        int i3 = m10707partitionnroSd4 - 1;
         if (i < i3) {
-            m10712quickSortnroSd4(jArr, i, i3);
+            m10711quickSortnroSd4(jArr, i, i3);
         }
-        if (m10708partitionnroSd4 < i2) {
-            m10712quickSortnroSd4(jArr, m10708partitionnroSd4, i2);
+        if (m10707partitionnroSd4 < i2) {
+            m10711quickSortnroSd4(jArr, m10707partitionnroSd4, i2);
         }
     }
 
     /* renamed from: sortArray-4UcCI2c  reason: not valid java name */
-    public static final void m10717sortArray4UcCI2c(byte[] bArr, int i, int i2) {
+    public static final void m10716sortArray4UcCI2c(byte[] bArr, int i, int i2) {
         Intrinsics.checkNotNullParameter(bArr, "$v$c$kotlin-UByteArray$-array$0");
-        m10713quickSort4UcCI2c(bArr, i, i2 - 1);
+        m10712quickSort4UcCI2c(bArr, i, i2 - 1);
     }
 
     /* renamed from: sortArray-Aa5vz7o  reason: not valid java name */
-    public static final void m10718sortArrayAa5vz7o(short[] sArr, int i, int i2) {
+    public static final void m10717sortArrayAa5vz7o(short[] sArr, int i, int i2) {
         Intrinsics.checkNotNullParameter(sArr, "$v$c$kotlin-UShortArray$-array$0");
-        m10714quickSortAa5vz7o(sArr, i, i2 - 1);
+        m10713quickSortAa5vz7o(sArr, i, i2 - 1);
     }
 
     /* renamed from: sortArray-oBK06Vg  reason: not valid java name */
-    public static final void m10719sortArrayoBK06Vg(int[] iArr, int i, int i2) {
+    public static final void m10718sortArrayoBK06Vg(int[] iArr, int i, int i2) {
         Intrinsics.checkNotNullParameter(iArr, "$v$c$kotlin-UIntArray$-array$0");
-        m10715quickSortoBK06Vg(iArr, i, i2 - 1);
+        m10714quickSortoBK06Vg(iArr, i, i2 - 1);
     }
 
     /* renamed from: sortArray--nroSd4  reason: not valid java name */
-    public static final void m10716sortArraynroSd4(long[] jArr, int i, int i2) {
+    public static final void m10715sortArraynroSd4(long[] jArr, int i, int i2) {
         Intrinsics.checkNotNullParameter(jArr, "$v$c$kotlin-ULongArray$-array$0");
-        m10712quickSortnroSd4(jArr, i, i2 - 1);
+        m10711quickSortnroSd4(jArr, i, i2 - 1);
     }
 }

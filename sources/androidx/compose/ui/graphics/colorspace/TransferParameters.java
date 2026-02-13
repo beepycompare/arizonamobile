@@ -11,7 +11,7 @@ public final class TransferParameters {
     public static final int $stable = 0;
 
     /* renamed from: a  reason: collision with root package name */
-    private final double f162a;
+    private final double f161a;
     private final double b;
     private final double c;
     private final double d;
@@ -24,7 +24,7 @@ public final class TransferParameters {
     }
 
     public final double component2() {
-        return this.f162a;
+        return this.f161a;
     }
 
     public final double component3() {
@@ -57,23 +57,23 @@ public final class TransferParameters {
         }
         if (obj instanceof TransferParameters) {
             TransferParameters transferParameters = (TransferParameters) obj;
-            return Double.compare(this.gamma, transferParameters.gamma) == 0 && Double.compare(this.f162a, transferParameters.f162a) == 0 && Double.compare(this.b, transferParameters.b) == 0 && Double.compare(this.c, transferParameters.c) == 0 && Double.compare(this.d, transferParameters.d) == 0 && Double.compare(this.e, transferParameters.e) == 0 && Double.compare(this.f, transferParameters.f) == 0;
+            return Double.compare(this.gamma, transferParameters.gamma) == 0 && Double.compare(this.f161a, transferParameters.f161a) == 0 && Double.compare(this.b, transferParameters.b) == 0 && Double.compare(this.c, transferParameters.c) == 0 && Double.compare(this.d, transferParameters.d) == 0 && Double.compare(this.e, transferParameters.e) == 0 && Double.compare(this.f, transferParameters.f) == 0;
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((((((Double.hashCode(this.gamma) * 31) + Double.hashCode(this.f162a)) * 31) + Double.hashCode(this.b)) * 31) + Double.hashCode(this.c)) * 31) + Double.hashCode(this.d)) * 31) + Double.hashCode(this.e)) * 31) + Double.hashCode(this.f);
+        return (((((((((((Double.hashCode(this.gamma) * 31) + Double.hashCode(this.f161a)) * 31) + Double.hashCode(this.b)) * 31) + Double.hashCode(this.c)) * 31) + Double.hashCode(this.d)) * 31) + Double.hashCode(this.e)) * 31) + Double.hashCode(this.f);
     }
 
     public String toString() {
-        return "TransferParameters(gamma=" + this.gamma + ", a=" + this.f162a + ", b=" + this.b + ", c=" + this.c + ", d=" + this.d + ", e=" + this.e + ", f=" + this.f + ')';
+        return "TransferParameters(gamma=" + this.gamma + ", a=" + this.f161a + ", b=" + this.b + ", c=" + this.c + ", d=" + this.d + ", e=" + this.e + ", f=" + this.f + ')';
     }
 
     public TransferParameters(double d, double d2, double d3, double d4, double d5, double d6, double d7) {
         boolean isSpecialG;
         this.gamma = d;
-        this.f162a = d2;
+        this.f161a = d2;
         this.b = d3;
         this.c = d4;
         this.d = d5;
@@ -116,7 +116,7 @@ public final class TransferParameters {
     }
 
     public final double getA() {
-        return this.f162a;
+        return this.f161a;
     }
 
     public final double getB() {

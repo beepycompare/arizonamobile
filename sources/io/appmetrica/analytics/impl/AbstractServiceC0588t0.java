@@ -10,11 +10,11 @@ import kotlin.jvm.internal.Intrinsics;
 public abstract class AbstractServiceC0588t0 extends Service {
 
     /* renamed from: a  reason: collision with root package name */
-    public L1 f1228a;
+    public L1 f1227a;
 
     @Override // android.app.Service
     public IBinder onBind(Intent intent) {
-        L1 l1 = this.f1228a;
+        L1 l1 = this.f1227a;
         if (l1 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("serviceDelegate");
             l1 = null;
@@ -25,7 +25,7 @@ public abstract class AbstractServiceC0588t0 extends Service {
     @Override // android.app.Service, android.content.ComponentCallbacks
     public void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
-        L1 l1 = this.f1228a;
+        L1 l1 = this.f1227a;
         if (l1 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("serviceDelegate");
             l1 = null;
@@ -36,10 +36,10 @@ public abstract class AbstractServiceC0588t0 extends Service {
     @Override // android.app.Service
     public void onCreate() {
         super.onCreate();
-        if (this.f1228a == null) {
-            this.f1228a = new L1(this, new C0613u0(this));
+        if (this.f1227a == null) {
+            this.f1227a = new L1(this, new C0613u0(this));
         }
-        L1 l1 = this.f1228a;
+        L1 l1 = this.f1227a;
         if (l1 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("serviceDelegate");
             l1 = null;
@@ -50,7 +50,7 @@ public abstract class AbstractServiceC0588t0 extends Service {
     @Override // android.app.Service
     public void onDestroy() {
         super.onDestroy();
-        L1 l1 = this.f1228a;
+        L1 l1 = this.f1227a;
         if (l1 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("serviceDelegate");
             l1 = null;
@@ -61,7 +61,7 @@ public abstract class AbstractServiceC0588t0 extends Service {
     @Override // android.app.Service
     public void onRebind(Intent intent) {
         super.onRebind(intent);
-        L1 l1 = this.f1228a;
+        L1 l1 = this.f1227a;
         if (l1 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("serviceDelegate");
             l1 = null;
@@ -71,7 +71,7 @@ public abstract class AbstractServiceC0588t0 extends Service {
 
     @Override // android.app.Service
     public int onStartCommand(Intent intent, int i, int i2) {
-        L1 l1 = this.f1228a;
+        L1 l1 = this.f1227a;
         if (l1 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("serviceDelegate");
             l1 = null;
@@ -81,7 +81,7 @@ public abstract class AbstractServiceC0588t0 extends Service {
 
     @Override // android.app.Service
     public boolean onUnbind(Intent intent) {
-        L1 l1 = this.f1228a;
+        L1 l1 = this.f1227a;
         if (l1 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("serviceDelegate");
             l1 = null;

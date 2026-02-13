@@ -11,7 +11,7 @@ public final class C0348ja implements Vb {
         if ((c0320i7 != null ? c0320i7.b : null) != null && c0320i7.c != null) {
             z8 = new Z8();
             z8.b = c0320i7.b.doubleValue();
-            z8.f882a = c0320i7.c.doubleValue();
+            z8.f881a = c0320i7.c.doubleValue();
             Integer num = c0320i7.d;
             if (num != null) {
                 z8.g = num.intValue();

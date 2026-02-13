@@ -13,7 +13,7 @@ import org.json.JSONObject;
 public final class Rl implements NetworkResponseHandler {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Yl f771a;
+    public final Yl f770a;
     public final V2 b;
 
     public Rl() {
@@ -33,7 +33,7 @@ public final class Rl implements NetworkResponseHandler {
                 responseData = this.b.a(responseDataHolder.getResponseData());
             }
             if (responseData != null) {
-                Yl yl = this.f771a;
+                Yl yl = this.f770a;
                 yl.getClass();
                 C0206dm c0206dm = new C0206dm();
                 try {
@@ -50,12 +50,12 @@ public final class Rl implements NetworkResponseHandler {
                     c0206dm.h = str2;
                     c0206dm.i = str;
                     yl.a(c0206dm, c0246fb);
-                    c0206dm.f963a = TextUtils.isEmpty(c0206dm.i) ? 1 : 2;
+                    c0206dm.f962a = TextUtils.isEmpty(c0206dm.i) ? 1 : 2;
                 } catch (Throwable unused) {
                     c0206dm = new C0206dm();
-                    c0206dm.f963a = 1;
+                    c0206dm.f962a = 1;
                 }
-                if (2 == c0206dm.f963a) {
+                if (2 == c0206dm.f962a) {
                     return c0206dm;
                 }
             }
@@ -64,7 +64,7 @@ public final class Rl implements NetworkResponseHandler {
     }
 
     public Rl(Yl yl, V2 v2) {
-        this.f771a = yl;
+        this.f770a = yl;
         this.b = v2;
     }
 }

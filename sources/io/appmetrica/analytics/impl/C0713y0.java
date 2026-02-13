@@ -22,13 +22,13 @@ public final class C0713y0 implements Ta {
     public static volatile boolean g;
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1315a;
+    public final Context f1314a;
     public final C0538r0 b;
     public final FutureTask c;
     public final Ba d;
 
     public C0713y0(Context context) {
-        this.f1315a = context;
+        this.f1314a = context;
         C0538r0 c = C0136b4.l().c();
         this.b = c;
         this.d = c.a(context, C0136b4.l().g());
@@ -129,7 +129,7 @@ public final class C0713y0 implements Ta {
 
     public final void d(AppMetricaConfig appMetricaConfig) {
         f().b(appMetricaConfig);
-        C0136b4.l().c.a().execute(new RunnableC0664w1(this.f1315a));
+        C0136b4.l().c.a().execute(new RunnableC0664w1(this.f1314a));
     }
 
     public final String e() {
@@ -164,21 +164,21 @@ public final class C0713y0 implements Ta {
                 C0713y0.this.o();
             }
         };
-        r3.f760a.getClass();
-        new InterruptionSafeThread(runnable, "IAA-INIT_CORE-" + ThreadFactoryC0751zd.f1333a.incrementAndGet()).start();
+        r3.f759a.getClass();
+        new InterruptionSafeThread(runnable, "IAA-INIT_CORE-" + ThreadFactoryC0751zd.f1332a.incrementAndGet()).start();
     }
 
     public final void o() {
-        C0136b4.l().r.a(this.f1315a);
-        new V3(this.f1315a).a(this.f1315a);
-        C0136b4.l().a(this.f1315a).a();
+        C0136b4.l().r.a(this.f1314a);
+        new V3(this.f1314a).a(this.f1314a);
+        C0136b4.l().a(this.f1314a).a();
         this.c.run();
     }
 
     public final Ca p() {
         Ca ca;
         C0538r0 c0538r0 = this.b;
-        Context context = this.f1315a;
+        Context context = this.f1314a;
         Ba ba = this.d;
         synchronized (c0538r0) {
             if (c0538r0.d == null) {
@@ -195,7 +195,7 @@ public final class C0713y0 implements Ta {
 
     public final void b(AppMetricaLibraryAdapterConfig appMetricaLibraryAdapterConfig) {
         f().a(appMetricaLibraryAdapterConfig);
-        C0136b4.l().c.a().execute(new RunnableC0664w1(this.f1315a));
+        C0136b4.l().c.a().execute(new RunnableC0664w1(this.f1314a));
     }
 
     public final Ra c(ReporterConfig reporterConfig) {

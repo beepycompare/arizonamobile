@@ -5,9 +5,9 @@ import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 public final class Mc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ProtobufConverter f693a;
+    public final ProtobufConverter f692a;
 
     public Mc(Rn rn) {
-        this.f693a = rn;
+        this.f692a = rn;
     }
 }

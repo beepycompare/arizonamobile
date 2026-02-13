@@ -8,7 +8,7 @@ import java.util.List;
 public final class Fn implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Bl f586a;
+    public final Bl f585a;
 
     public Fn() {
         this(new Bl());
@@ -18,11 +18,11 @@ public final class Fn implements ProtobufConverter {
     /* renamed from: a */
     public final C0138b6 fromModel(Gn gn) {
         C0138b6 c0138b6 = new C0138b6();
-        c0138b6.f914a = (String) WrapUtils.getOrDefault(gn.f604a, "");
+        c0138b6.f913a = (String) WrapUtils.getOrDefault(gn.f603a, "");
         c0138b6.b = StringUtils.correctIllFormedString((String) WrapUtils.getOrDefault(gn.b, ""));
         List<Dl> list = gn.c;
         if (list != null) {
-            c0138b6.c = this.f586a.fromModel(list);
+            c0138b6.c = this.f585a.fromModel(list);
         }
         Gn gn2 = gn.d;
         if (gn2 != null) {
@@ -49,7 +49,7 @@ public final class Fn implements ProtobufConverter {
     }
 
     public Fn(Bl bl) {
-        this.f586a = bl;
+        this.f585a = bl;
     }
 
     public final Gn a(C0138b6 c0138b6) {

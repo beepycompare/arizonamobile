@@ -41,7 +41,7 @@ public final class ConnectionHolder {
             return unit;
         }
     };
-    private static SettingsData settingsData = new SettingsData(0, 0, false, false, false, false, false, false, null, null, null, 2047, null);
+    private static SettingsData settingsData = new SettingsData(0, 0.0f, false, false, false, false, false, false, null, null, null, 2047, null);
     private static ServerModel selectedServer = new ServerModel(0, null, null, null, false, 31, null);
     public static final int $stable = 8;
 

@@ -70,21 +70,21 @@ public final class R {
         public static int event_task_item_bg_test = 0x7f080776;
         public static int event_task_progress_bar_bg = 0x7f080777;
         public static int event_video_poster = 0x7f080778;
-        public static int pirates_dollar = 0x7f080d10;
-        public static int pirates_rating = 0x7f080d11;
-        public static int pirates_ruble = 0x7f080d12;
-        public static int ship0 = 0x7f080dbf;
-        public static int ship1 = 0x7f080dc0;
-        public static int ship10 = 0x7f080dc1;
-        public static int ship11 = 0x7f080dc2;
-        public static int ship2 = 0x7f080dc3;
-        public static int ship3 = 0x7f080dc4;
-        public static int ship4 = 0x7f080dc5;
-        public static int ship5 = 0x7f080dc6;
-        public static int ship6 = 0x7f080dc7;
-        public static int ship7 = 0x7f080dc8;
-        public static int ship8 = 0x7f080dc9;
-        public static int ship9 = 0x7f080dca;
+        public static int pirates_dollar = 0x7f080d11;
+        public static int pirates_rating = 0x7f080d12;
+        public static int pirates_ruble = 0x7f080d13;
+        public static int ship0 = 0x7f080dc0;
+        public static int ship1 = 0x7f080dc1;
+        public static int ship10 = 0x7f080dc2;
+        public static int ship11 = 0x7f080dc3;
+        public static int ship2 = 0x7f080dc4;
+        public static int ship3 = 0x7f080dc5;
+        public static int ship4 = 0x7f080dc6;
+        public static int ship5 = 0x7f080dc7;
+        public static int ship6 = 0x7f080dc8;
+        public static int ship7 = 0x7f080dc9;
+        public static int ship8 = 0x7f080dca;
+        public static int ship9 = 0x7f080dcb;
 
         private drawable() {
         }

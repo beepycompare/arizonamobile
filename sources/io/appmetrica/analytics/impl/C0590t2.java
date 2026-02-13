@@ -10,11 +10,11 @@ import io.appmetrica.analytics.coreapi.internal.executors.ICommonExecutor;
 public final class C0590t2 extends BroadcastReceiver {
 
     /* renamed from: a  reason: collision with root package name */
-    public final BiConsumer f1230a;
+    public final BiConsumer f1229a;
     public final ICommonExecutor b;
 
     public C0590t2(N2 n2, ICommonExecutor iCommonExecutor) {
-        this.f1230a = n2;
+        this.f1229a = n2;
         this.b = iCommonExecutor;
     }
 

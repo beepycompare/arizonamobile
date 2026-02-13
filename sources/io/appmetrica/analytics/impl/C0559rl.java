@@ -6,7 +6,7 @@ import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 public final class C0559rl {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Cc f1212a;
+    public final Cc f1211a;
     public final Bc b;
 
     public C0559rl(PublicLogger publicLogger, String str) {
@@ -15,14 +15,14 @@ public final class C0559rl {
 
     public final synchronized boolean a(Fc fc, String str, String str2) {
         int size = fc.size();
-        int i = this.f1212a.c.f1110a;
+        int i = this.f1211a.c.f1109a;
         if (size >= i && (i != fc.size() || !fc.containsKey(str))) {
-            Cc cc = this.f1212a;
-            cc.d.warning("The %s has reached the limit of %d items. Item with key %s will be ignored", cc.e, Integer.valueOf(cc.c.f1110a), str);
+            Cc cc = this.f1211a;
+            cc.d.warning("The %s has reached the limit of %d items. Item with key %s will be ignored", cc.e, Integer.valueOf(cc.c.f1109a), str);
             return false;
         }
         this.b.getClass();
-        int i2 = fc.f581a;
+        int i2 = fc.f580a;
         if (str2 != null) {
             i2 += str2.length();
         }
@@ -36,7 +36,7 @@ public final class C0559rl {
         }
         if (i2 > 4500) {
             Bc bc = this.b;
-            bc.b.warning("The %s has reached the total size limit that equals %d symbols. Item with key %s will be ignored", bc.f518a, 4500, str);
+            bc.b.warning("The %s has reached the total size limit that equals %d symbols. Item with key %s will be ignored", bc.f517a, 4500, str);
             return false;
         }
         fc.put(str, str2);
@@ -45,8 +45,8 @@ public final class C0559rl {
 
     public final boolean b(Fc fc, String str, String str2) {
         if (fc != null) {
-            String a2 = this.f1212a.f533a.a(str);
-            String a3 = this.f1212a.b.a(str2);
+            String a2 = this.f1211a.f532a.a(str);
+            String a3 = this.f1211a.b.a(str2);
             if (!fc.containsKey(a2)) {
                 if (a3 != null) {
                     return a(fc, a2, a3);
@@ -63,7 +63,7 @@ public final class C0559rl {
     }
 
     public C0559rl(Cc cc, Bc bc) {
-        this.f1212a = cc;
+        this.f1211a = cc;
         this.b = bc;
     }
 }

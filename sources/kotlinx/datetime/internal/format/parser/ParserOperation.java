@@ -6,5 +6,5 @@ import kotlin.Metadata;
 /* loaded from: classes5.dex */
 public interface ParserOperation<Output> {
     /* renamed from: consume-FANa98k */
-    Object mo11908consumeFANa98k(Output output, CharSequence charSequence, int i);
+    Object mo11907consumeFANa98k(Output output, CharSequence charSequence, int i);
 }

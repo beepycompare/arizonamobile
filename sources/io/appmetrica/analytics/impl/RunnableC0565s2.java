@@ -7,18 +7,18 @@ import android.content.Intent;
 public final class RunnableC0565s2 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Context f1216a;
+    public final /* synthetic */ Context f1215a;
     public final /* synthetic */ Intent b;
     public final /* synthetic */ C0590t2 c;
 
     public RunnableC0565s2(C0590t2 c0590t2, Context context, Intent intent) {
         this.c = c0590t2;
-        this.f1216a = context;
+        this.f1215a = context;
         this.b = intent;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        this.c.f1230a.consume(this.f1216a, this.b);
+        this.c.f1229a.consume(this.f1215a, this.b);
     }
 }

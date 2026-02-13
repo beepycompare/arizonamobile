@@ -15,7 +15,7 @@ public final class Tg extends Rg {
     public final boolean a(P5 p5) {
         Gc gc = (Gc) Gc.c.get(p5.d);
         HashMap hashMap = new HashMap();
-        hashMap.put("type", gc.f595a);
+        hashMap.put("type", gc.f594a);
         hashMap.put("delivery_method", gc.b);
         this.b.reportEvent("crash_saved", hashMap);
         return false;

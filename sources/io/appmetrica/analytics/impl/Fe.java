@@ -15,7 +15,7 @@ public final class Fe implements FunctionWithThrowable {
         }
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
         if (activeNetworkInfo != null && activeNetworkInfo.isConnected()) {
-            return (NetworkType) Ge.f597a.a(Integer.valueOf(activeNetworkInfo.getType()));
+            return (NetworkType) Ge.f596a.a(Integer.valueOf(activeNetworkInfo.getType()));
         }
         return NetworkType.OFFLINE;
     }

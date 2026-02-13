@@ -18,14 +18,14 @@ import kotlin.text.Charsets;
 public final class E {
 
     /* renamed from: a  reason: collision with root package name */
-    public final AdRevenue f559a;
+    public final AdRevenue f558a;
     public final boolean b;
     public final InterfaceC0587t c;
     public final Xm d;
     public final Um e;
 
     public E(AdRevenue adRevenue, boolean z, C0258fn c0258fn, PublicLogger publicLogger) {
-        this.f559a = adRevenue;
+        this.f558a = adRevenue;
         this.b = z;
         this.c = c0258fn;
         this.d = new Xm(100, "ad revenue strings", publicLogger);
@@ -36,7 +36,7 @@ public final class E {
         Map linkedHashMap;
         C0562s c0562s = new C0562s();
         int i = 0;
-        for (Pair pair : CollectionsKt.listOf((Object[]) new Pair[]{TuplesKt.to(this.f559a.adNetwork, new C0687x(c0562s)), TuplesKt.to(this.f559a.adPlacementId, new C0712y(c0562s)), TuplesKt.to(this.f559a.adPlacementName, new C0737z(c0562s)), TuplesKt.to(this.f559a.adUnitId, new A(c0562s)), TuplesKt.to(this.f559a.adUnitName, new B(c0562s)), TuplesKt.to(this.f559a.precision, new C(c0562s)), TuplesKt.to(this.f559a.currency.getCurrencyCode(), new D(c0562s))})) {
+        for (Pair pair : CollectionsKt.listOf((Object[]) new Pair[]{TuplesKt.to(this.f558a.adNetwork, new C0687x(c0562s)), TuplesKt.to(this.f558a.adPlacementId, new C0712y(c0562s)), TuplesKt.to(this.f558a.adPlacementName, new C0737z(c0562s)), TuplesKt.to(this.f558a.adUnitId, new A(c0562s)), TuplesKt.to(this.f558a.adUnitName, new B(c0562s)), TuplesKt.to(this.f558a.precision, new C(c0562s)), TuplesKt.to(this.f558a.currency.getCurrencyCode(), new D(c0562s))})) {
             String str = (String) pair.getFirst();
             Xm xm = this.d;
             xm.getClass();
@@ -46,15 +46,15 @@ public final class E {
             ((Function1) pair.getSecond()).invoke(stringToBytesForProtobuf2);
             i += stringToBytesForProtobuf.length - stringToBytesForProtobuf2.length;
         }
-        Integer num = (Integer) F.f575a.get(this.f559a.adType);
+        Integer num = (Integer) F.f574a.get(this.f558a.adType);
         c0562s.d = num != null ? num.intValue() : 0;
         r rVar = new r();
-        BigDecimal bigDecimal = this.f559a.adRevenue;
-        BigInteger bigInteger = AbstractC0695x7.f1302a;
+        BigDecimal bigDecimal = this.f558a.adRevenue;
+        BigInteger bigInteger = AbstractC0695x7.f1301a;
         int i2 = -bigDecimal.scale();
         BigInteger unscaledValue = bigDecimal.unscaledValue();
         while (true) {
-            if (unscaledValue.compareTo(AbstractC0695x7.f1302a) <= 0 && unscaledValue.compareTo(AbstractC0695x7.b) >= 0) {
+            if (unscaledValue.compareTo(AbstractC0695x7.f1301a) <= 0 && unscaledValue.compareTo(AbstractC0695x7.b) >= 0) {
                 break;
             }
             unscaledValue = unscaledValue.divide(BigInteger.TEN);
@@ -63,10 +63,10 @@ public final class E {
         Pair pair2 = TuplesKt.to(Long.valueOf(unscaledValue.longValue()), Integer.valueOf(i2));
         long longValue = ((Number) pair2.getFirst()).longValue();
         int intValue = ((Number) pair2.getSecond()).intValue();
-        rVar.f1196a = longValue;
+        rVar.f1195a = longValue;
         rVar.b = intValue;
         c0562s.b = rVar;
-        Map<String, String> map = this.f559a.payload;
+        Map<String, String> map = this.f558a.payload;
         InterfaceC0587t interfaceC0587t = this.c;
         if (map == null || (linkedHashMap = MapsKt.toMutableMap(map)) == null) {
             linkedHashMap = new LinkedHashMap();
@@ -78,7 +78,7 @@ public final class E {
         c0562s.k = stringToBytesForProtobuf3;
         int length = (StringUtils.stringToBytesForProtobuf(b).length - stringToBytesForProtobuf3.length) + i;
         if (this.b) {
-            c0562s.f1214a = "autocollected".getBytes(Charsets.UTF_8);
+            c0562s.f1213a = "autocollected".getBytes(Charsets.UTF_8);
         }
         return TuplesKt.to(MessageNano.toByteArray(c0562s), Integer.valueOf(length));
     }

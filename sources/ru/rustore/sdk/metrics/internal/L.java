@@ -7,17 +7,17 @@ import ru.rustore.sdk.metrics.MetricsEvent;
 public final class L {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0832t f1586a;
+    public final C0832t f1585a;
 
     public L(C0832t metricsEventSerializer) {
         Intrinsics.checkNotNullParameter(metricsEventSerializer, "metricsEventSerializer");
-        this.f1586a = metricsEventSerializer;
+        this.f1585a = metricsEventSerializer;
     }
 
     public final J a(D model) {
         Intrinsics.checkNotNullParameter(model, "model");
-        String str = model.f1576a;
-        C0832t c0832t = this.f1586a;
+        String str = model.f1575a;
+        C0832t c0832t = this.f1585a;
         MetricsEvent metricsEvent = model.b;
         c0832t.getClass();
         byte[] bytes = C0832t.a(metricsEvent).getBytes(Charsets.UTF_8);

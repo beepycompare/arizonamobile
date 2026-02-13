@@ -13,11 +13,11 @@ public final class C0451nc extends Q4 {
 
     @Override // io.appmetrica.analytics.impl.Q4
     public final String e() {
-        return this.f749a;
+        return this.f748a;
     }
 
     @Override // io.appmetrica.analytics.impl.Q4
     public final String toString() {
-        return this.f749a;
+        return this.f748a;
     }
 }

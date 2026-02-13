@@ -3,12 +3,12 @@ package ru.mrlargha.feature.battlepassWinter2025.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -43,7 +43,7 @@ public final class WinterBattlepassTasksLayoutBinding implements ViewBinding {
     private final LinearLayout rootView;
     public final LinearLayout taskContainerListIsEmpty;
     public final LinearLayout taskInfo;
-    public final FrameLayout taskInfoBlur;
+    public final ConstraintLayout taskInfoBlur;
     public final TextView taskInfoDesc;
     public final LinearLayout taskInfoPremiumLockContainer;
     public final ProgressBar taskInfoProgressBar;
@@ -51,7 +51,7 @@ public final class WinterBattlepassTasksLayoutBinding implements ViewBinding {
     public final RecyclerView taskItemsRewardsList;
     public final TextView tasksTimeText;
 
-    private WinterBattlepassTasksLayoutBinding(LinearLayout linearLayout, LinearLayout linearLayout2, TextView textView, RelativeLayout relativeLayout, TextView textView2, RelativeLayout relativeLayout2, TextView textView3, RelativeLayout relativeLayout3, TextView textView4, RelativeLayout relativeLayout4, TextView textView5, RelativeLayout relativeLayout5, ImageView imageView, RecyclerView recyclerView, LinearLayout linearLayout3, RelativeLayout relativeLayout6, TextView textView6, LinearLayout linearLayout4, TextView textView7, TextView textView8, LinearLayout linearLayout5, LinearProgressIndicator linearProgressIndicator, TextView textView9, LinearLayout linearLayout6, TextView textView10, LinearLayout linearLayout7, LinearLayout linearLayout8, FrameLayout frameLayout, TextView textView11, LinearLayout linearLayout9, ProgressBar progressBar, TextView textView12, RecyclerView recyclerView2, TextView textView13) {
+    private WinterBattlepassTasksLayoutBinding(LinearLayout linearLayout, LinearLayout linearLayout2, TextView textView, RelativeLayout relativeLayout, TextView textView2, RelativeLayout relativeLayout2, TextView textView3, RelativeLayout relativeLayout3, TextView textView4, RelativeLayout relativeLayout4, TextView textView5, RelativeLayout relativeLayout5, ImageView imageView, RecyclerView recyclerView, LinearLayout linearLayout3, RelativeLayout relativeLayout6, TextView textView6, LinearLayout linearLayout4, TextView textView7, TextView textView8, LinearLayout linearLayout5, LinearProgressIndicator linearProgressIndicator, TextView textView9, LinearLayout linearLayout6, TextView textView10, LinearLayout linearLayout7, LinearLayout linearLayout8, ConstraintLayout constraintLayout, TextView textView11, LinearLayout linearLayout9, ProgressBar progressBar, TextView textView12, RecyclerView recyclerView2, TextView textView13) {
         this.rootView = linearLayout;
         this.azBattlepassLayoutTasksContainer = linearLayout2;
         this.btnBuyPremiumLock = textView;
@@ -79,7 +79,7 @@ public final class WinterBattlepassTasksLayoutBinding implements ViewBinding {
         this.remainingTimeText = textView10;
         this.taskContainerListIsEmpty = linearLayout7;
         this.taskInfo = linearLayout8;
-        this.taskInfoBlur = frameLayout;
+        this.taskInfoBlur = constraintLayout;
         this.taskInfoDesc = textView11;
         this.taskInfoPremiumLockContainer = linearLayout9;
         this.taskInfoProgressBar = progressBar;
@@ -183,8 +183,8 @@ public final class WinterBattlepassTasksLayoutBinding implements ViewBinding {
                                                                                                         LinearLayout linearLayout7 = (LinearLayout) ViewBindings.findChildViewById(view, i);
                                                                                                         if (linearLayout7 != null) {
                                                                                                             i = R.id.task_info_blur;
-                                                                                                            FrameLayout frameLayout = (FrameLayout) ViewBindings.findChildViewById(view, i);
-                                                                                                            if (frameLayout != null) {
+                                                                                                            ConstraintLayout constraintLayout = (ConstraintLayout) ViewBindings.findChildViewById(view, i);
+                                                                                                            if (constraintLayout != null) {
                                                                                                                 i = R.id.task_info_desc;
                                                                                                                 TextView textView11 = (TextView) ViewBindings.findChildViewById(view, i);
                                                                                                                 if (textView11 != null) {
@@ -203,7 +203,7 @@ public final class WinterBattlepassTasksLayoutBinding implements ViewBinding {
                                                                                                                                     i = R.id.tasks_time_text;
                                                                                                                                     TextView textView13 = (TextView) ViewBindings.findChildViewById(view, i);
                                                                                                                                     if (textView13 != null) {
-                                                                                                                                        return new WinterBattlepassTasksLayoutBinding(linearLayout, linearLayout, textView, relativeLayout, textView2, relativeLayout2, textView3, relativeLayout3, textView4, relativeLayout4, textView5, relativeLayout5, imageView, recyclerView, linearLayout2, relativeLayout6, textView6, linearLayout3, textView7, textView8, linearLayout4, linearProgressIndicator, textView9, linearLayout5, textView10, linearLayout6, linearLayout7, frameLayout, textView11, linearLayout8, progressBar, textView12, recyclerView2, textView13);
+                                                                                                                                        return new WinterBattlepassTasksLayoutBinding(linearLayout, linearLayout, textView, relativeLayout, textView2, relativeLayout2, textView3, relativeLayout3, textView4, relativeLayout4, textView5, relativeLayout5, imageView, recyclerView, linearLayout2, relativeLayout6, textView6, linearLayout3, textView7, textView8, linearLayout4, linearProgressIndicator, textView9, linearLayout5, textView10, linearLayout6, linearLayout7, constraintLayout, textView11, linearLayout8, progressBar, textView12, recyclerView2, textView13);
                                                                                                                                     }
                                                                                                                                 }
                                                                                                                             }

@@ -16,7 +16,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class U implements Aa {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f805a;
+    public final Context f804a;
     public final ICommonExecutor b;
     public FutureTask i;
     public final J j;
@@ -31,13 +31,13 @@ public final class U implements Aa {
     public G l = new G(4, 4, 4);
 
     public U(Context context, ICommonExecutor iCommonExecutor, C0257fm c0257fm) {
-        this.f805a = context;
+        this.f804a = context;
         this.b = iCommonExecutor;
         this.j = new J(c0257fm);
     }
 
     public static final Void e(U u) {
-        u.k = new AdvertisingIdsHolder(u.a(u.l.f588a, new Q(u)), u.a(u.l.b, new S(u)), u.a(u.l.c, new T(u, new Xd())));
+        u.k = new AdvertisingIdsHolder(u.a(u.l.f587a, new Q(u)), u.a(u.l.b, new S(u)), u.a(u.l.c, new T(u, new Xd())));
         return null;
     }
 
@@ -130,7 +130,7 @@ public final class U implements Aa {
     public static final Void a(boolean z, G g, U u, Gi gi) {
         if (z || !Intrinsics.areEqual(g, u.l)) {
             AdvertisingIdsHolder advertisingIdsHolder = u.k;
-            AdTrackingInfoResult a2 = u.a(g.f588a, new Q(u));
+            AdTrackingInfoResult a2 = u.a(g.f587a, new Q(u));
             AdTrackingInfoResult google = advertisingIdsHolder.getGoogle();
             IdentifierStatus identifierStatus = a2.mStatus;
             IdentifierStatus identifierStatus2 = IdentifierStatus.UNKNOWN;

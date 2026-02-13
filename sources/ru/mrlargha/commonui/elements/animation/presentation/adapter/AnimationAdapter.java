@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
+import android.widget.FrameLayout;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,6 +23,7 @@ import ru.mrlargha.commonui.core.IBackendNotifier;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.commonui.elements.animation.domain.obj.Animation;
 import ru.mrlargha.commonui.elements.animation.domain.obj.AnimationFavourites;
+import ru.mrlargha.commonui.utils.UtilsKt;
 /* compiled from: AnimationAdapter.kt */
 @Metadata(d1 = {"\u0000l\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\b\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00020\u0001:\u0001)B\u000f\u0012\u0006\u0010\u0003\u001a\u00020\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\u000e\u0010\u0017\u001a\u00020\u00182\u0006\u0010\u000f\u001a\u00020\u0010J\u0018\u0010\u0019\u001a\u00020\u00022\u0006\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001dH\u0016J\u0018\u0010\u001e\u001a\u00020\u00182\u0006\u0010\u001f\u001a\u00020\u00022\u0006\u0010 \u001a\u00020\u001dH\u0016J\u0010\u0010!\u001a\u00020\u00182\u0006\u0010\u001f\u001a\u00020\u0002H\u0016J\b\u0010\"\u001a\u00020\u001dH\u0016J\u000e\u0010#\u001a\u00020\u00182\u0006\u0010$\u001a\u00020%J\u0014\u0010&\u001a\u00020\u00182\f\u0010'\u001a\b\u0012\u0004\u0012\u00020\u000b0(R\u000e\u0010\u0007\u001a\u00020\bX\u0082.¢\u0006\u0002\n\u0000R\u001e\u0010\t\u001a\u0012\u0012\u0004\u0012\u00020\u000b0\nj\b\u0012\u0004\u0012\u00020\u000b`\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082.¢\u0006\u0002\n\u0000R\u0016\u0010\u0011\u001a\n \u0013*\u0004\u0018\u00010\u00120\u0012X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0014\u001a\u00020\u0015¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0016¨\u0006*"}, d2 = {"Lru/mrlargha/commonui/elements/animation/presentation/adapter/AnimationAdapter;", "Landroidx/recyclerview/widget/RecyclerView$Adapter;", "Lru/mrlargha/commonui/elements/animation/presentation/adapter/AnimationHolder;", "targetActivity", "Landroid/app/Activity;", "<init>", "(Landroid/app/Activity;)V", "context", "Landroid/content/Context;", "animationList", "Ljava/util/ArrayList;", "Lru/mrlargha/commonui/elements/animation/domain/obj/Animation;", "Lkotlin/collections/ArrayList;", "sendServerEvent", "Lru/mrlargha/commonui/core/IBackendNotifier;", "onAnimationClickListener", "Lru/mrlargha/commonui/elements/animation/presentation/adapter/AnimationAdapter$OnAnimationClickListener;", "sharedPref", "Landroid/content/SharedPreferences;", "kotlin.jvm.PlatformType", "isArizonaType", "", "()Z", "setOnAnimationClickListener", "", "onCreateViewHolder", "parent", "Landroid/view/ViewGroup;", "viewType", "", "onBindViewHolder", "holder", "position", "onViewRecycled", "getItemCount", "changeFavouriteStatus", "animationFavourites", "Lru/mrlargha/commonui/elements/animation/domain/obj/AnimationFavourites;", "addAnimations", "data", "", "OnAnimationClickListener", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes6.dex */
@@ -75,12 +76,15 @@ public final class AnimationAdapter extends RecyclerView.Adapter<AnimationHolder
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
-    public void onBindViewHolder(final AnimationHolder holder, final int i) {
-        Animation animation;
+    public void onBindViewHolder(final AnimationHolder holder, int i) {
         String str;
         Intrinsics.checkNotNullParameter(holder, "holder");
+        final Animation animation = (Animation) CollectionsKt.getOrNull(this.animationList, i);
+        if (animation == null) {
+            return;
+        }
         Context context = null;
-        if (this.animationList.get(i).getFavorited() == 1) {
+        if (animation.getFavorited() == 1) {
             AppCompatImageView appCompatImageView = holder.getAnimationItemBinding().aiFavorite;
             Context context2 = this.context;
             if (context2 == null) {
@@ -97,41 +101,52 @@ public final class AnimationAdapter extends RecyclerView.Adapter<AnimationHolder
             }
             appCompatImageView2.setImageDrawable(ContextCompat.getDrawable(context3, R.drawable.ic_favorites_disabled));
         }
-        Animation animation2 = this.animationList.get(i);
-        Intrinsics.checkNotNullExpressionValue(animation2, "get(...)");
-        holder.getAnimationItemBinding().aiTittle.setText(animation2.getName() + " (" + animation.getId() + ")");
+        holder.getAnimationItemBinding().aiTittle.setText(animation.getName() + " (" + animation.getId() + ")");
         if (this.isArizonaType) {
-            str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/animation/img/animations/" + this.animationList.get(i).getImage();
+            str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/arizona-rp/assets/images/animation/img/animations/";
+        } else if (animation.getAddition() == 1) {
+            str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/systems/animation_pirate/";
         } else {
-            str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/assets/images/animation/img/animations/" + this.animationList.get(i).getImage();
+            str = FirebaseConfigHelper.getResourceUrl$default(FirebaseConfigHelper.INSTANCE, false, 1, null) + "projects/rodina-rp/assets/images/animation/img/animations/";
         }
-        Picasso.get().load(str).into(holder.getAnimationItemBinding().aiImage);
-        if (!this.animationList.get(i).isEnabled()) {
-            LinearLayout linearLayout = holder.getAnimationItemBinding().aiBackground;
+        if (animation.getAddition() == 1) {
+            holder.getAnimationItemBinding().aiFavorite.setVisibility(8);
+        } else {
+            holder.getAnimationItemBinding().aiFavorite.setVisibility(0);
+        }
+        if (animation.getImageHover().length() > 0) {
+            AppCompatImageView aiImage = holder.getAnimationItemBinding().aiImage;
+            Intrinsics.checkNotNullExpressionValue(aiImage, "aiImage");
+            UtilsKt.gifLoadFromCdn(aiImage, str + animation.getImageHover(), str + animation.getImage());
+        } else {
+            Picasso.get().load(str).into(holder.getAnimationItemBinding().aiImage);
+        }
+        if (!animation.isEnabled()) {
+            FrameLayout frameLayout = holder.getAnimationItemBinding().aiBackground;
             Context context4 = this.context;
             if (context4 == null) {
                 Intrinsics.throwUninitializedPropertyAccessException("context");
             } else {
                 context = context4;
             }
-            linearLayout.setBackground(ContextCompat.getDrawable(context, R.drawable.ic_item_bg));
+            frameLayout.setBackground(ContextCompat.getDrawable(context, R.drawable.ic_item_bg));
         }
         holder.getAnimationItemBinding().aiBackground.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.animation.presentation.adapter.AnimationAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AnimationAdapter.onBindViewHolder$lambda$0(AnimationAdapter.this, i, holder, view);
+                AnimationAdapter.onBindViewHolder$lambda$0(AnimationAdapter.this, animation, holder, view);
             }
         });
         holder.getAnimationItemBinding().aiFavorite.setOnClickListener(new View.OnClickListener() { // from class: ru.mrlargha.commonui.elements.animation.presentation.adapter.AnimationAdapter$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
-                AnimationAdapter.onBindViewHolder$lambda$1(AnimationAdapter.this, i, view);
+                AnimationAdapter.onBindViewHolder$lambda$1(Animation.this, this, view);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$0(AnimationAdapter animationAdapter, int i, AnimationHolder animationHolder, View view) {
+    public static final void onBindViewHolder$lambda$0(AnimationAdapter animationAdapter, Animation animation, AnimationHolder animationHolder, View view) {
         OnAnimationClickListener onAnimationClickListener;
         Object obj;
         Iterator<T> it = animationAdapter.animationList.iterator();
@@ -146,36 +161,34 @@ public final class AnimationAdapter extends RecyclerView.Adapter<AnimationHolder
                 break;
             }
         }
-        Animation animation = (Animation) obj;
-        if (animation != null) {
-            animation.setEnabled(false);
-            animationAdapter.notifyItemChanged(animationAdapter.animationList.indexOf(animation));
+        Animation animation2 = (Animation) obj;
+        if (animation2 != null) {
+            animation2.setEnabled(false);
+            animationAdapter.notifyItemChanged(animationAdapter.animationList.indexOf(animation2));
         }
-        animationAdapter.animationList.get(i).setEnabled(true);
-        LinearLayout linearLayout = animationHolder.getAnimationItemBinding().aiBackground;
+        animation.setEnabled(true);
+        FrameLayout frameLayout = animationHolder.getAnimationItemBinding().aiBackground;
         Context context = animationAdapter.context;
         if (context == null) {
             Intrinsics.throwUninitializedPropertyAccessException("context");
             context = null;
         }
-        linearLayout.setBackground(ContextCompat.getDrawable(context, R.drawable.ic_animation_item_enabled_bg));
+        frameLayout.setBackground(ContextCompat.getDrawable(context, R.drawable.ic_animation_item_enabled_bg));
         OnAnimationClickListener onAnimationClickListener2 = animationAdapter.onAnimationClickListener;
         if (onAnimationClickListener2 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("onAnimationClickListener");
         } else {
             onAnimationClickListener = onAnimationClickListener2;
         }
-        Animation animation2 = animationAdapter.animationList.get(i);
-        Intrinsics.checkNotNullExpressionValue(animation2, "get(...)");
-        onAnimationClickListener.callback(animation2);
+        onAnimationClickListener.callback(animation);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onBindViewHolder$lambda$1(AnimationAdapter animationAdapter, int i, View view) {
-        if (animationAdapter.animationList.get(i).getFavorited() == 0) {
-            animationAdapter.sendServerEvent.clickedWrapper(UIElementID.ANIMATION_MENU.getId(), animationAdapter.animationList.get(i).getId(), 2);
+    public static final void onBindViewHolder$lambda$1(Animation animation, AnimationAdapter animationAdapter, View view) {
+        if (animation.getFavorited() == 0) {
+            animationAdapter.sendServerEvent.clickedWrapper(UIElementID.ANIMATION_MENU.getId(), animation.getId(), 2);
         } else {
-            animationAdapter.sendServerEvent.clickedWrapper(UIElementID.ANIMATION_MENU.getId(), animationAdapter.animationList.get(i).getId(), 3);
+            animationAdapter.sendServerEvent.clickedWrapper(UIElementID.ANIMATION_MENU.getId(), animation.getId(), 3);
         }
     }
 
@@ -191,14 +204,14 @@ public final class AnimationAdapter extends RecyclerView.Adapter<AnimationHolder
             context = null;
         }
         appCompatImageView.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_favorites_disabled));
-        LinearLayout linearLayout = holder.getAnimationItemBinding().aiBackground;
+        FrameLayout frameLayout = holder.getAnimationItemBinding().aiBackground;
         Context context3 = this.context;
         if (context3 == null) {
             Intrinsics.throwUninitializedPropertyAccessException("context");
         } else {
             context2 = context3;
         }
-        linearLayout.setBackground(ContextCompat.getDrawable(context2, R.drawable.ic_item_bg));
+        frameLayout.setBackground(ContextCompat.getDrawable(context2, R.drawable.ic_item_bg));
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -226,7 +239,16 @@ public final class AnimationAdapter extends RecyclerView.Adapter<AnimationHolder
     public final void addAnimations(List<Animation> data) {
         Intrinsics.checkNotNullParameter(data, "data");
         this.animationList.clear();
-        this.animationList.addAll(data);
+        ArrayList<Animation> arrayList = this.animationList;
+        ArrayList arrayList2 = new ArrayList();
+        for (Object obj : data) {
+            Animation animation = (Animation) obj;
+            Integer available = animation.getAvailable();
+            if ((available != null && available.intValue() == 1) || animation.getAvailable() == null) {
+                arrayList2.add(obj);
+            }
+        }
+        arrayList.addAll(arrayList2);
         notifyDataSetChanged();
     }
 }

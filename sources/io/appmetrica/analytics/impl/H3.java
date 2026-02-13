@@ -9,11 +9,11 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public class H3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Bf f608a;
+    public final Bf f607a;
     public final CounterConfiguration b;
 
     public H3(Bf bf, CounterConfiguration counterConfiguration) {
-        this.f608a = bf;
+        this.f607a = bf;
         this.b = counterConfiguration;
     }
 
@@ -27,7 +27,7 @@ public class H3 {
             } catch (Throwable unused) {
             }
             fromBundle = CounterConfiguration.fromBundle(bundle);
-            if (fromBundle == null && bf != null && context.getPackageName().equals(bf.f521a.getAsString("PROCESS_CFG_PACKAGE_NAME")) && bf.f521a.getAsInteger("PROCESS_CFG_SDK_API_LEVEL").intValue() == AppMetrica.getLibraryApiLevel()) {
+            if (fromBundle == null && bf != null && context.getPackageName().equals(bf.f520a.getAsString("PROCESS_CFG_PACKAGE_NAME")) && bf.f520a.getAsInteger("PROCESS_CFG_SDK_API_LEVEL").intValue() == AppMetrica.getLibraryApiLevel()) {
                 return new H3(bf, fromBundle);
             }
             return null;
@@ -44,10 +44,10 @@ public class H3 {
     }
 
     public final String toString() {
-        return "ClientConfiguration{mProcessConfiguration=" + this.f608a + ", mCounterConfiguration=" + this.b + AbstractJsonLexerKt.END_OBJ;
+        return "ClientConfiguration{mProcessConfiguration=" + this.f607a + ", mCounterConfiguration=" + this.b + AbstractJsonLexerKt.END_OBJ;
     }
 
     public final Bf a() {
-        return this.f608a;
+        return this.f607a;
     }
 }

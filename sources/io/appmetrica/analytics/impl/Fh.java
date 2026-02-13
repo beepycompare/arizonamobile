@@ -17,7 +17,7 @@ public class Fh extends H3 {
     public final Bundle c() {
         Bundle bundle = new Bundle();
         this.b.toBundle(bundle);
-        Bf bf = this.f608a;
+        Bf bf = this.f607a;
         synchronized (bf) {
             bundle.putParcelable("PROCESS_CFG_OBJ", bf);
         }
@@ -27,7 +27,7 @@ public class Fh extends H3 {
     public final synchronized String d() {
         D8 d8;
         d8 = this.c;
-        return d8.f547a.isEmpty() ? null : new JSONObject(d8.f547a).toString();
+        return d8.f546a.isEmpty() ? null : new JSONObject(d8.f546a).toString();
     }
 
     public final synchronized String e() {

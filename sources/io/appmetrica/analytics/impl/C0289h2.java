@@ -14,12 +14,12 @@ public final class C0289h2 extends Rg {
 
     @Override // io.appmetrica.analytics.impl.Rg
     public final boolean a(P5 p5) {
-        X4 x4 = this.f768a;
+        X4 x4 = this.f767a;
         if (!this.b.c() && !this.b.d()) {
             if (((C0381kh) x4.k.a()).e) {
                 this.c.b();
             }
-            M8 m8 = this.f768a.l;
+            M8 m8 = this.f767a.l;
             if (m8.c == null) {
                 m8.a();
             }
@@ -28,11 +28,11 @@ public final class C0289h2 extends Rg {
             o8.b = new HashSet();
             o8.d = 0;
             O8 o82 = m8.c;
-            o82.f722a = true;
+            o82.f721a = true;
             R8 r8 = m8.b;
             IBinaryDataHelper iBinaryDataHelper = r8.c;
             Q8 q8 = r8.b;
-            r8.f764a.getClass();
+            r8.f763a.getClass();
             iBinaryDataHelper.insert("event_hashes", q8.toByteArray((Q8) P8.a(o82)));
         }
         return false;

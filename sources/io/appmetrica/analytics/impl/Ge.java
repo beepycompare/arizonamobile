@@ -12,13 +12,13 @@ import java.util.Locale;
 public abstract class Ge {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Ce f597a;
+    public static final Ce f596a;
     public static final De b;
     public static final Ee c;
 
     static {
         NetworkType networkType = NetworkType.UNDEFINED;
-        f597a = new Ce(networkType);
+        f596a = new Ce(networkType);
         b = new De(networkType);
         c = new Ee(2);
     }
@@ -46,7 +46,7 @@ public abstract class Ge {
         }
         NetworkCapabilities networkCapabilities = connectivityManager.getNetworkCapabilities(activeNetwork);
         if (networkCapabilities != null) {
-            for (Integer num : b.f550a.keySet()) {
+            for (Integer num : b.f549a.keySet()) {
                 if (networkCapabilities.hasTransport(num.intValue())) {
                     return (NetworkType) b.a(num);
                 }

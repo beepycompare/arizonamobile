@@ -7,7 +7,7 @@ import io.appmetrica.analytics.coreapi.internal.executors.IHandlerExecutor;
 public final class R3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Q3 f760a;
+    public final Q3 f759a;
     public volatile C0747z9 b;
     public volatile C0747z9 c;
 
@@ -19,7 +19,7 @@ public final class R3 {
         if (this.b == null) {
             synchronized (this) {
                 if (this.b == null) {
-                    this.f760a.getClass();
+                    this.f759a.getClass();
                     HandlerThreadC0169cb a2 = C0747z9.a("IAA-CDE");
                     this.b = new C0747z9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }
@@ -32,7 +32,7 @@ public final class R3 {
         if (this.c == null) {
             synchronized (this) {
                 if (this.c == null) {
-                    this.f760a.getClass();
+                    this.f759a.getClass();
                     HandlerThreadC0169cb a2 = C0747z9.a("IAA-CRS");
                     this.c = new C0747z9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }
@@ -42,6 +42,6 @@ public final class R3 {
     }
 
     public R3(Q3 q3) {
-        this.f760a = q3;
+        this.f759a = q3;
     }
 }

@@ -399,7 +399,7 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
             this.editText.post(new Runnable() { // from class: com.google.android.material.textfield.TextInputLayout$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    TextInputLayout.this.m9916xa47602b9();
+                    TextInputLayout.this.m9915xa47602b9();
                 }
             });
         }
@@ -407,7 +407,7 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$onGlobalLayout$1$com-google-android-material-textfield-TextInputLayout  reason: not valid java name */
-    public /* synthetic */ void m9916xa47602b9() {
+    public /* synthetic */ void m9915xa47602b9() {
         this.editText.requestLayout();
     }
 
@@ -2004,7 +2004,7 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
                 f = StaticLayoutBuilderCompat.obtain(this.placeholderText, textPaint, i).setIsRtl(getLayoutDirection() == 1).setIncludePad(true).setLineSpacing(this.placeholderTextView.getLineSpacingExtra(), this.placeholderTextView.getLineSpacingMultiplier()).setStaticLayoutBuilderConfigurer(new StaticLayoutBuilderConfigurer() { // from class: com.google.android.material.textfield.TextInputLayout$$ExternalSyntheticLambda2
                     @Override // com.google.android.material.internal.StaticLayoutBuilderConfigurer
                     public final void configure(StaticLayout.Builder builder) {
-                        TextInputLayout.this.m9917xd6b8ec95(builder);
+                        TextInputLayout.this.m9916xd6b8ec95(builder);
                     }
                 }).build().getHeight() + (this.boxBackgroundMode == 1 ? this.collapsingTextHelper.getCollapsedTextHeight() + this.boxCollapsedPaddingTopPx + this.extraSpaceBetweenPlaceholderAndHint : 0.0f);
             } catch (StaticLayoutBuilderCompat.StaticLayoutBuilderCompatException e) {
@@ -2019,7 +2019,7 @@ public class TextInputLayout extends LinearLayout implements ViewTreeObserver.On
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: lambda$updateEditTextHeight$2$com-google-android-material-textfield-TextInputLayout  reason: not valid java name */
-    public /* synthetic */ void m9917xd6b8ec95(StaticLayout.Builder builder) {
+    public /* synthetic */ void m9916xd6b8ec95(StaticLayout.Builder builder) {
         builder.setBreakStrategy(this.placeholderTextView.getBreakStrategy());
     }
 

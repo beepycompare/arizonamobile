@@ -6,7 +6,7 @@ import io.appmetrica.analytics.coreapi.internal.data.Converter;
 public final class C0341j3 implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Gf f1055a;
+    public final Gf f1054a;
     public final C0645v7 b;
     public final C0703xf c;
     public final C0277gg d;
@@ -20,15 +20,15 @@ public final class C0341j3 implements Converter {
     public final Di fromModel(C0367k3 c0367k3) {
         Di di;
         C0217e8 c0217e8 = new C0217e8();
-        Di fromModel = this.f1055a.fromModel(c0367k3.f1074a);
-        c0217e8.f975a = (C0447n8) fromModel.f553a;
+        Di fromModel = this.f1054a.fromModel(c0367k3.f1073a);
+        c0217e8.f974a = (C0447n8) fromModel.f552a;
         c0217e8.c = this.b.fromModel(c0367k3.b);
         Di fromModel2 = this.c.fromModel(c0367k3.c);
-        c0217e8.d = (C0422m8) fromModel2.f553a;
+        c0217e8.d = (C0422m8) fromModel2.f552a;
         C0704xg c0704xg = c0367k3.d;
         if (c0704xg != null) {
             di = this.d.fromModel(c0704xg);
-            c0217e8.b = (C0497p8) di.f553a;
+            c0217e8.b = (C0497p8) di.f552a;
         } else {
             di = null;
         }
@@ -42,7 +42,7 @@ public final class C0341j3 implements Converter {
     }
 
     public C0341j3(Gf gf, C0645v7 c0645v7, C0703xf c0703xf, C0277gg c0277gg) {
-        this.f1055a = gf;
+        this.f1054a = gf;
         this.b = c0645v7;
         this.c = c0703xf;
         this.d = c0277gg;

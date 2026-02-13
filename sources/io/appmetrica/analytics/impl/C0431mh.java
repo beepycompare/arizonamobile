@@ -20,7 +20,7 @@ public final class C0431mh extends Rg {
     @Override // io.appmetrica.analytics.impl.Rg
     public final boolean a(P5 p5) {
         P5 a2;
-        X4 x4 = this.f768a;
+        X4 x4 = this.f767a;
         if (this.c.d()) {
             return false;
         }
@@ -31,9 +31,9 @@ public final class C0431mh extends Rg {
         }
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put("appInstaller", (String) WrapUtils.getOrDefault(this.d.getInstallerPackageName(x4.f849a, x4.b.f749a), ""));
+            jSONObject.put("appInstaller", (String) WrapUtils.getOrDefault(this.d.getInstallerPackageName(x4.f848a, x4.b.f748a), ""));
             C0603tf c0603tf = this.b;
-            c0603tf.h.a(c0603tf.f738a);
+            c0603tf.h.a(c0603tf.f737a);
             jSONObject.put("preloadInfo", ((C0529qf) c0603tf.c()).b());
         } catch (Throwable unused) {
         }
@@ -42,7 +42,7 @@ public final class C0431mh extends Rg {
         c0373k9.a(a2, Rk.a(c0373k9.c.b(a2), a2.i));
         xo xoVar = this.c;
         synchronized (xoVar) {
-            yo yoVar = xoVar.f1313a;
+            yo yoVar = xoVar.f1312a;
             yoVar.a(yoVar.a().put("init_event_done", true));
         }
         this.c.a(this.e.currentTimeMillis());

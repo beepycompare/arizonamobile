@@ -6,13 +6,13 @@ import android.app.Service;
 public final class C0613u0 implements InterfaceC0739z1 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Service f1245a;
+    public final Service f1244a;
 
     public C0613u0(Service service) {
-        this.f1245a = service;
+        this.f1244a = service;
     }
 
     public final void a(int i) {
-        this.f1245a.stopSelf(i);
+        this.f1244a.stopSelf(i);
     }
 }

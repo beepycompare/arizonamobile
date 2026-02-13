@@ -6,14 +6,14 @@ import io.appmetrica.analytics.ecommerce.ECommerceEvent;
 public final class C0707xj implements Qa {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ ECommerceEvent f1310a;
+    public final /* synthetic */ ECommerceEvent f1309a;
 
     public C0707xj(ECommerceEvent eCommerceEvent) {
-        this.f1310a = eCommerceEvent;
+        this.f1309a = eCommerceEvent;
     }
 
     @Override // io.appmetrica.analytics.impl.Qa
     public final void a(Ra ra) {
-        ra.reportECommerce(this.f1310a);
+        ra.reportECommerce(this.f1309a);
     }
 }

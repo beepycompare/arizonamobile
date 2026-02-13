@@ -39,33 +39,16 @@ final class HomeComponent$observeSettings$1 extends SuspendLambda implements Fun
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        int i;
         SettingState settingState = (SettingState) this.L$0;
         IntrinsicsKt.getCOROUTINE_SUSPENDED();
         if (this.label != 0) {
             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
         ResultKt.throwOnFailure(obj);
-        int pageSize = settingState.getPageSize();
-        int i2 = 1;
-        int i3 = pageSize != 5 ? pageSize != 8 ? 2 : 1 : 0;
+        ConnectionHolder connectionHolder = ConnectionHolder.INSTANCE;
+        SettingsData settingsData = ConnectionHolder.INSTANCE.getSettingsData();
         float chatFontSize = settingState.getChatFontSize();
-        if (chatFontSize == 0.1f) {
-            i = 0;
-        } else {
-            if (chatFontSize != 0.5f) {
-                if (chatFontSize != 1.0f) {
-                    if (chatFontSize == 1.5f) {
-                        i2 = 3;
-                    } else if (chatFontSize == 2.0f) {
-                        i2 = 4;
-                    }
-                }
-                i = 2;
-            }
-            i = i2;
-        }
-        ConnectionHolder.INSTANCE.setSettingsData(SettingsData.copy$default(ConnectionHolder.INSTANCE.getSettingsData(), i3, i, settingState.getCustomKeyBoard(), settingState.getStreamerMode(), settingState.getShowChatTime(), false, settingState.getShowFps(), settingState.getFullScreen(), null, null, null, 1824, null));
+        connectionHolder.setSettingsData(SettingsData.copy$default(settingsData, settingState.getPageSize(), chatFontSize, settingState.getCustomKeyBoard(), settingState.getStreamerMode(), settingState.getShowChatTime(), false, settingState.getShowFps(), settingState.getFullScreen(), null, null, null, 1824, null));
         return Unit.INSTANCE;
     }
 }

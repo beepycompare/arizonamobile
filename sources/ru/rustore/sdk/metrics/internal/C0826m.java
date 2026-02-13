@@ -14,33 +14,33 @@ import ru.rustore.sdk.reactive.single.SingleSubscribeOnKt;
 public final class C0826m extends Lambda implements Function0<Unit> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0827n f1614a;
+    public final /* synthetic */ C0827n f1613a;
     public final /* synthetic */ MetricsEvent b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C0826m(C0827n c0827n, MetricsEvent metricsEvent) {
         super(0);
-        this.f1614a = c0827n;
+        this.f1613a = c0827n;
         this.b = metricsEvent;
     }
 
     @Override // kotlin.jvm.functions.Function0
     public final Unit invoke() {
-        C0827n c0827n = this.f1614a;
+        C0827n c0827n = this.f1613a;
         if (!c0827n.f) {
             SingleSubscribeKt.subscribe(SingleSubscribeOnKt.subscribeOn(Single.Companion.from(new C0821h(c0827n)), Dispatchers.INSTANCE.getIo()), new C0823j(c0827n), new C0825l(c0827n));
             c0827n.c.a();
             c0827n.f = true;
         }
-        C0816c c0816c = this.f1614a.b;
+        C0816c c0816c = this.f1613a.b;
         MetricsEvent metricsEvent = this.b;
         c0816c.getClass();
         Intrinsics.checkNotNullParameter(metricsEvent, "metricsEvent");
-        N n = c0816c.f1603a;
+        N n = c0816c.f1602a;
         n.getClass();
         Intrinsics.checkNotNullParameter(metricsEvent, "metricsEvent");
         n.d.a(new M(metricsEvent));
-        n.f1588a.a(n.b.a(metricsEvent));
+        n.f1587a.a(n.b.a(metricsEvent));
         return Unit.INSTANCE;
     }
 }

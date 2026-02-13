@@ -4,23 +4,23 @@ import io.appmetrica.analytics.coreapi.internal.data.ProtobufConverter;
 import io.appmetrica.analytics.idsync.internal.model.IdSyncConfig;
 import java.util.ArrayList;
 /* renamed from: io.appmetrica.analytics.idsync.impl.e  reason: case insensitive filesystem */
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class C0102e implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C f467a = new C();
+    public final C f466a = new C();
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final m fromModel(IdSyncConfig idSyncConfig) {
         m mVar = new m();
-        mVar.f475a = idSyncConfig.getEnabled();
+        mVar.f474a = idSyncConfig.getEnabled();
         l lVar = new l();
-        lVar.f474a = idSyncConfig.getLaunchDelay();
+        lVar.f473a = idSyncConfig.getLaunchDelay();
         int size = idSyncConfig.getRequests().size();
         k[] kVarArr = new k[size];
         for (int i = 0; i < size; i++) {
-            kVarArr[i] = this.f467a.fromModel(idSyncConfig.getRequests().get(i));
+            kVarArr[i] = this.f466a.fromModel(idSyncConfig.getRequests().get(i));
         }
         lVar.b = kVarArr;
         mVar.b = lVar;
@@ -34,12 +34,12 @@ public final class C0102e implements ProtobufConverter {
         if (lVar == null) {
             lVar = new l();
         }
-        boolean z = mVar.f475a;
-        long j = lVar.f474a;
+        boolean z = mVar.f474a;
+        long j = lVar.f473a;
         k[] kVarArr = lVar.b;
         ArrayList arrayList = new ArrayList(kVarArr.length);
         for (k kVar : kVarArr) {
-            arrayList.add(this.f467a.toModel(kVar));
+            arrayList.add(this.f466a.toModel(kVar));
         }
         return new IdSyncConfig(z, j, arrayList);
     }

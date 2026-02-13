@@ -3,11 +3,11 @@ package io.appmetrica.analytics.impl;
 public final class Kd {
 
     /* renamed from: a  reason: collision with root package name */
-    public final byte[] f658a;
+    public final byte[] f657a;
     public final Hd b;
 
     public Kd(byte[] bArr, Hd hd) {
-        this.f658a = bArr;
+        this.f657a = bArr;
         this.b = hd;
     }
 }

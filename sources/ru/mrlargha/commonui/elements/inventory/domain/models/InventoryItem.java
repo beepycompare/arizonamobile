@@ -7,7 +7,7 @@ import kotlin.Metadata;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: InventoryItem.kt */
-@Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\t\n\u0002\u0010\t\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\bA\b\u0086\b\u0018\u00002\u00020\u0001Bå\u0001\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\u0010\u0004\u001a\u0004\u0018\u00010\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0003\u0012\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007\u0012\b\u0010\b\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\t\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\n\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u000b\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\f\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\r\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u000e\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u000f\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u0010\u001a\u0004\u0018\u00010\u0011\u0012\b\u0010\u0012\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u0013\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u0014\u001a\u0004\u0018\u00010\u0003\u0012\u0006\u0010\u0015\u001a\u00020\u0003\u0012\b\u0010\u0016\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u0017\u001a\u0004\u0018\u00010\u0018\u0012\u0006\u0010\u0019\u001a\u00020\u001a\u0012\u0006\u0010\u001b\u001a\u00020\u001a\u0012\b\u0010\u001c\u001a\u0004\u0018\u00010\u0007\u0012\n\b\u0002\u0010\u001d\u001a\u0004\u0018\u00010\u0003¢\u0006\u0004\b\u001e\u0010\u001fJ\t\u0010>\u001a\u00020\u0003HÆ\u0003J\u0010\u0010?\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010#J\t\u0010@\u001a\u00020\u0003HÆ\u0003J\u000b\u0010A\u001a\u0004\u0018\u00010\u0007HÆ\u0003J\u0010\u0010B\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010#J\u0010\u0010C\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010#J\u0010\u0010D\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010#J\u0010\u0010E\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010#J\u0010\u0010F\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010#J\u0010\u0010G\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010#J\u0010\u0010H\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010#J\u0010\u0010I\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010#J\u0010\u0010J\u001a\u0004\u0018\u00010\u0011HÆ\u0003¢\u0006\u0002\u00103J\u0010\u0010K\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010#J\u0010\u0010L\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010#J\u0010\u0010M\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010#J\t\u0010N\u001a\u00020\u0003HÆ\u0003J\u0010\u0010O\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010#J\u000b\u0010P\u001a\u0004\u0018\u00010\u0018HÆ\u0003J\t\u0010Q\u001a\u00020\u001aHÆ\u0003J\t\u0010R\u001a\u00020\u001aHÆ\u0003J\u000b\u0010S\u001a\u0004\u0018\u00010\u0007HÆ\u0003J\u0010\u0010T\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010#J\u0098\u0002\u0010U\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00032\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u00072\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\t\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\n\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u000b\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\f\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\r\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u000e\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u000f\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0010\u001a\u0004\u0018\u00010\u00112\n\b\u0002\u0010\u0012\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0013\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0014\u001a\u0004\u0018\u00010\u00032\b\b\u0002\u0010\u0015\u001a\u00020\u00032\n\b\u0002\u0010\u0016\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0017\u001a\u0004\u0018\u00010\u00182\b\b\u0002\u0010\u0019\u001a\u00020\u001a2\b\b\u0002\u0010\u001b\u001a\u00020\u001a2\n\b\u0002\u0010\u001c\u001a\u0004\u0018\u00010\u00072\n\b\u0002\u0010\u001d\u001a\u0004\u0018\u00010\u0003HÆ\u0001¢\u0006\u0002\u0010VJ\u0013\u0010W\u001a\u00020\u001a2\b\u0010X\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010Y\u001a\u00020\u0003HÖ\u0001J\t\u0010Z\u001a\u00020\u0007HÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b \u0010!R\u0015\u0010\u0004\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010$\u001a\u0004\b\"\u0010#R\u0011\u0010\u0005\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b%\u0010!R\u0013\u0010\u0006\u001a\u0004\u0018\u00010\u0007¢\u0006\b\n\u0000\u001a\u0004\b&\u0010'R\u0015\u0010\b\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010$\u001a\u0004\b(\u0010#R\u001e\u0010\t\u001a\u0004\u0018\u00010\u0003X\u0086\u000e¢\u0006\u0010\n\u0002\u0010$\u001a\u0004\b)\u0010#\"\u0004\b*\u0010+R\u0015\u0010\n\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010$\u001a\u0004\b,\u0010#R\u0015\u0010\u000b\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010$\u001a\u0004\b-\u0010#R\u0015\u0010\f\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010$\u001a\u0004\b.\u0010#R\u0015\u0010\r\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010$\u001a\u0004\b/\u0010#R\u0015\u0010\u000e\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010$\u001a\u0004\b0\u0010#R\u0015\u0010\u000f\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010$\u001a\u0004\b1\u0010#R\u0015\u0010\u0010\u001a\u0004\u0018\u00010\u0011¢\u0006\n\n\u0002\u00104\u001a\u0004\b2\u00103R\u001a\u0010\u0012\u001a\u0004\u0018\u00010\u00038\u0006X\u0087\u0004¢\u0006\n\n\u0002\u0010$\u001a\u0004\b5\u0010#R\u001a\u0010\u0013\u001a\u0004\u0018\u00010\u00038\u0006X\u0087\u0004¢\u0006\n\n\u0002\u0010$\u001a\u0004\b\u0013\u0010#R\u001a\u0010\u0014\u001a\u0004\u0018\u00010\u00038\u0006X\u0087\u0004¢\u0006\n\n\u0002\u0010$\u001a\u0004\b6\u0010#R\u0011\u0010\u0015\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b7\u0010!R\u0015\u0010\u0016\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010$\u001a\u0004\b8\u0010#R\u0013\u0010\u0017\u001a\u0004\u0018\u00010\u0018¢\u0006\b\n\u0000\u001a\u0004\b9\u0010:R\u0011\u0010\u0019\u001a\u00020\u001a¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010;R\u0011\u0010\u001b\u001a\u00020\u001a¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010;R\u0013\u0010\u001c\u001a\u0004\u0018\u00010\u0007¢\u0006\b\n\u0000\u001a\u0004\b<\u0010'R\u0015\u0010\u001d\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010$\u001a\u0004\b=\u0010#¨\u0006["}, d2 = {"Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "", "slot", "", "item", "id", "text", "", "item_type", "amount", C0740z2.g, "color", "bits", "available", "enchant", "blackout", "time", "", "itemStrength", "isActive", "breaks", "inventoryType", "acsSlot", "photoBitmap", "Landroid/graphics/Bitmap;", "isColored", "", "isLocked", "effect", "quality", "<init>", "(ILjava/lang/Integer;ILjava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Long;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;ILjava/lang/Integer;Landroid/graphics/Bitmap;ZZLjava/lang/String;Ljava/lang/Integer;)V", "getSlot", "()I", "getItem", "()Ljava/lang/Integer;", "Ljava/lang/Integer;", "getId", "getText", "()Ljava/lang/String;", "getItem_type", "getAmount", "setAmount", "(Ljava/lang/Integer;)V", "getBackground", "getColor", "getBits", "getAvailable", "getEnchant", "getBlackout", "getTime", "()Ljava/lang/Long;", "Ljava/lang/Long;", "getItemStrength", "getBreaks", "getInventoryType", "getAcsSlot", "getPhotoBitmap", "()Landroid/graphics/Bitmap;", "()Z", "getEffect", "getQuality", "component1", "component2", "component3", "component4", "component5", "component6", "component7", "component8", "component9", "component10", "component11", "component12", "component13", "component14", "component15", "component16", "component17", "component18", "component19", "component20", "component21", "component22", "component23", "copy", "(ILjava/lang/Integer;ILjava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Long;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;ILjava/lang/Integer;Landroid/graphics/Bitmap;ZZLjava/lang/String;Ljava/lang/Integer;)Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "equals", "other", "hashCode", "toString", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\t\n\u0002\u0010\t\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\bD\b\u0086\b\u0018\u00002\u00020\u0001Bï\u0001\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\u0010\u0004\u001a\u0004\u0018\u00010\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0003\u0012\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007\u0012\b\u0010\b\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\t\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\n\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u000b\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\f\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\r\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u000e\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u000f\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u0010\u001a\u0004\u0018\u00010\u0011\u0012\b\u0010\u0012\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u0013\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u0014\u001a\u0004\u0018\u00010\u0003\u0012\u0006\u0010\u0015\u001a\u00020\u0003\u0012\b\u0010\u0016\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u0017\u001a\u0004\u0018\u00010\u0018\u0012\u0006\u0010\u0019\u001a\u00020\u001a\u0012\u0006\u0010\u001b\u001a\u00020\u001a\u0012\b\u0010\u001c\u001a\u0004\u0018\u00010\u0007\u0012\b\u0010\u001d\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u001e\u001a\u0004\u0018\u00010\u0003¢\u0006\u0004\b\u001f\u0010 J\t\u0010@\u001a\u00020\u0003HÆ\u0003J\u0010\u0010A\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010$J\t\u0010B\u001a\u00020\u0003HÆ\u0003J\u000b\u0010C\u001a\u0004\u0018\u00010\u0007HÆ\u0003J\u0010\u0010D\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010$J\u0010\u0010E\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010$J\u0010\u0010F\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010$J\u0010\u0010G\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010$J\u0010\u0010H\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010$J\u0010\u0010I\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010$J\u0010\u0010J\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010$J\u0010\u0010K\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010$J\u0010\u0010L\u001a\u0004\u0018\u00010\u0011HÆ\u0003¢\u0006\u0002\u00104J\u0010\u0010M\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010$J\u0010\u0010N\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010$J\u0010\u0010O\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010$J\t\u0010P\u001a\u00020\u0003HÆ\u0003J\u0010\u0010Q\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010$J\u000b\u0010R\u001a\u0004\u0018\u00010\u0018HÆ\u0003J\t\u0010S\u001a\u00020\u001aHÆ\u0003J\t\u0010T\u001a\u00020\u001aHÆ\u0003J\u000b\u0010U\u001a\u0004\u0018\u00010\u0007HÆ\u0003J\u0010\u0010V\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010$J\u0010\u0010W\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010$J¤\u0002\u0010X\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00032\b\b\u0002\u0010\u0005\u001a\u00020\u00032\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u00072\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\t\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\n\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u000b\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\f\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\r\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u000e\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u000f\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0010\u001a\u0004\u0018\u00010\u00112\n\b\u0002\u0010\u0012\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0013\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0014\u001a\u0004\u0018\u00010\u00032\b\b\u0002\u0010\u0015\u001a\u00020\u00032\n\b\u0002\u0010\u0016\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0017\u001a\u0004\u0018\u00010\u00182\b\b\u0002\u0010\u0019\u001a\u00020\u001a2\b\b\u0002\u0010\u001b\u001a\u00020\u001a2\n\b\u0002\u0010\u001c\u001a\u0004\u0018\u00010\u00072\n\b\u0002\u0010\u001d\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u001e\u001a\u0004\u0018\u00010\u0003HÆ\u0001¢\u0006\u0002\u0010YJ\u0013\u0010Z\u001a\u00020\u001a2\b\u0010[\u001a\u0004\u0018\u00010\u0001HÖ\u0003J\t\u0010\\\u001a\u00020\u0003HÖ\u0001J\t\u0010]\u001a\u00020\u0007HÖ\u0001R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\"R\u0015\u0010\u0004\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010%\u001a\u0004\b#\u0010$R\u0011\u0010\u0005\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b&\u0010\"R\u0013\u0010\u0006\u001a\u0004\u0018\u00010\u0007¢\u0006\b\n\u0000\u001a\u0004\b'\u0010(R\u0015\u0010\b\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010%\u001a\u0004\b)\u0010$R\u001e\u0010\t\u001a\u0004\u0018\u00010\u0003X\u0086\u000e¢\u0006\u0010\n\u0002\u0010%\u001a\u0004\b*\u0010$\"\u0004\b+\u0010,R\u0015\u0010\n\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010%\u001a\u0004\b-\u0010$R\u0015\u0010\u000b\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010%\u001a\u0004\b.\u0010$R\u0015\u0010\f\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010%\u001a\u0004\b/\u0010$R\u0015\u0010\r\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010%\u001a\u0004\b0\u0010$R\u0015\u0010\u000e\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010%\u001a\u0004\b1\u0010$R\u0015\u0010\u000f\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010%\u001a\u0004\b2\u0010$R\u0015\u0010\u0010\u001a\u0004\u0018\u00010\u0011¢\u0006\n\n\u0002\u00105\u001a\u0004\b3\u00104R\u001a\u0010\u0012\u001a\u0004\u0018\u00010\u00038\u0006X\u0087\u0004¢\u0006\n\n\u0002\u0010%\u001a\u0004\b6\u0010$R\u001a\u0010\u0013\u001a\u0004\u0018\u00010\u00038\u0006X\u0087\u0004¢\u0006\n\n\u0002\u0010%\u001a\u0004\b\u0013\u0010$R\u001a\u0010\u0014\u001a\u0004\u0018\u00010\u00038\u0006X\u0087\u0004¢\u0006\n\n\u0002\u0010%\u001a\u0004\b7\u0010$R\u0011\u0010\u0015\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b8\u0010\"R\u0015\u0010\u0016\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010%\u001a\u0004\b9\u0010$R\u0013\u0010\u0017\u001a\u0004\u0018\u00010\u0018¢\u0006\b\n\u0000\u001a\u0004\b:\u0010;R\u0011\u0010\u0019\u001a\u00020\u001a¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010<R\u0011\u0010\u001b\u001a\u00020\u001a¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010<R\u0013\u0010\u001c\u001a\u0004\u0018\u00010\u0007¢\u0006\b\n\u0000\u001a\u0004\b=\u0010(R\u0015\u0010\u001d\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010%\u001a\u0004\b>\u0010$R\u0015\u0010\u001e\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010%\u001a\u0004\b?\u0010$¨\u0006^"}, d2 = {"Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "", "slot", "", "item", "id", "text", "", "item_type", "amount", C0740z2.g, "color", "bits", "available", "enchant", "blackout", "time", "", "itemStrength", "isActive", "breaks", "inventoryType", "acsSlot", "photoBitmap", "Landroid/graphics/Bitmap;", "isColored", "", "isLocked", "effect", "effectType", "quality", "<init>", "(ILjava/lang/Integer;ILjava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Long;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;ILjava/lang/Integer;Landroid/graphics/Bitmap;ZZLjava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;)V", "getSlot", "()I", "getItem", "()Ljava/lang/Integer;", "Ljava/lang/Integer;", "getId", "getText", "()Ljava/lang/String;", "getItem_type", "getAmount", "setAmount", "(Ljava/lang/Integer;)V", "getBackground", "getColor", "getBits", "getAvailable", "getEnchant", "getBlackout", "getTime", "()Ljava/lang/Long;", "Ljava/lang/Long;", "getItemStrength", "getBreaks", "getInventoryType", "getAcsSlot", "getPhotoBitmap", "()Landroid/graphics/Bitmap;", "()Z", "getEffect", "getEffectType", "getQuality", "component1", "component2", "component3", "component4", "component5", "component6", "component7", "component8", "component9", "component10", "component11", "component12", "component13", "component14", "component15", "component16", "component17", "component18", "component19", "component20", "component21", "component22", "component23", "component24", "copy", "(ILjava/lang/Integer;ILjava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Long;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;ILjava/lang/Integer;Landroid/graphics/Bitmap;ZZLjava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;)Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "equals", "other", "hashCode", "toString", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class InventoryItem {
     private final Integer acsSlot;
@@ -20,6 +20,7 @@ public final class InventoryItem {
     private final Integer breaks;
     private final Integer color;
     private final String effect;
+    private final Integer effectType;
     private final Integer enchant;
     private final int id;
     private final int inventoryType;
@@ -37,40 +38,41 @@ public final class InventoryItem {
     private final String text;
     private final Long time;
 
-    public static /* synthetic */ InventoryItem copy$default(InventoryItem inventoryItem, int i, Integer num, int i2, String str, Integer num2, Integer num3, Integer num4, Integer num5, Integer num6, Integer num7, Integer num8, Integer num9, Long l, Integer num10, Integer num11, Integer num12, int i3, Integer num13, Bitmap bitmap, boolean z, boolean z2, String str2, Integer num14, int i4, Object obj) {
-        Integer num15;
-        String str3;
+    public static /* synthetic */ InventoryItem copy$default(InventoryItem inventoryItem, int i, Integer num, int i2, String str, Integer num2, Integer num3, Integer num4, Integer num5, Integer num6, Integer num7, Integer num8, Integer num9, Long l, Integer num10, Integer num11, Integer num12, int i3, Integer num13, Bitmap bitmap, boolean z, boolean z2, String str2, Integer num14, Integer num15, int i4, Object obj) {
+        Integer num16;
+        Integer num17;
         int i5 = (i4 & 1) != 0 ? inventoryItem.slot : i;
-        Integer num16 = (i4 & 2) != 0 ? inventoryItem.item : num;
+        Integer num18 = (i4 & 2) != 0 ? inventoryItem.item : num;
         int i6 = (i4 & 4) != 0 ? inventoryItem.id : i2;
-        String str4 = (i4 & 8) != 0 ? inventoryItem.text : str;
-        Integer num17 = (i4 & 16) != 0 ? inventoryItem.item_type : num2;
-        Integer num18 = (i4 & 32) != 0 ? inventoryItem.amount : num3;
-        Integer num19 = (i4 & 64) != 0 ? inventoryItem.background : num4;
-        Integer num20 = (i4 & 128) != 0 ? inventoryItem.color : num5;
-        Integer num21 = (i4 & 256) != 0 ? inventoryItem.bits : num6;
-        Integer num22 = (i4 & 512) != 0 ? inventoryItem.available : num7;
-        Integer num23 = (i4 & 1024) != 0 ? inventoryItem.enchant : num8;
-        Integer num24 = (i4 & 2048) != 0 ? inventoryItem.blackout : num9;
+        String str3 = (i4 & 8) != 0 ? inventoryItem.text : str;
+        Integer num19 = (i4 & 16) != 0 ? inventoryItem.item_type : num2;
+        Integer num20 = (i4 & 32) != 0 ? inventoryItem.amount : num3;
+        Integer num21 = (i4 & 64) != 0 ? inventoryItem.background : num4;
+        Integer num22 = (i4 & 128) != 0 ? inventoryItem.color : num5;
+        Integer num23 = (i4 & 256) != 0 ? inventoryItem.bits : num6;
+        Integer num24 = (i4 & 512) != 0 ? inventoryItem.available : num7;
+        Integer num25 = (i4 & 1024) != 0 ? inventoryItem.enchant : num8;
+        Integer num26 = (i4 & 2048) != 0 ? inventoryItem.blackout : num9;
         Long l2 = (i4 & 4096) != 0 ? inventoryItem.time : l;
-        Integer num25 = (i4 & 8192) != 0 ? inventoryItem.itemStrength : num10;
+        Integer num27 = (i4 & 8192) != 0 ? inventoryItem.itemStrength : num10;
         int i7 = i5;
-        Integer num26 = (i4 & 16384) != 0 ? inventoryItem.isActive : num11;
-        Integer num27 = (i4 & 32768) != 0 ? inventoryItem.breaks : num12;
+        Integer num28 = (i4 & 16384) != 0 ? inventoryItem.isActive : num11;
+        Integer num29 = (i4 & 32768) != 0 ? inventoryItem.breaks : num12;
         int i8 = (i4 & 65536) != 0 ? inventoryItem.inventoryType : i3;
-        Integer num28 = (i4 & 131072) != 0 ? inventoryItem.acsSlot : num13;
+        Integer num30 = (i4 & 131072) != 0 ? inventoryItem.acsSlot : num13;
         Bitmap bitmap2 = (i4 & 262144) != 0 ? inventoryItem.photoBitmap : bitmap;
         boolean z3 = (i4 & 524288) != 0 ? inventoryItem.isColored : z;
         boolean z4 = (i4 & 1048576) != 0 ? inventoryItem.isLocked : z2;
-        String str5 = (i4 & 2097152) != 0 ? inventoryItem.effect : str2;
-        if ((i4 & 4194304) != 0) {
-            str3 = str5;
-            num15 = inventoryItem.quality;
+        String str4 = (i4 & 2097152) != 0 ? inventoryItem.effect : str2;
+        Integer num31 = (i4 & 4194304) != 0 ? inventoryItem.effectType : num14;
+        if ((i4 & 8388608) != 0) {
+            num17 = num31;
+            num16 = inventoryItem.quality;
         } else {
-            num15 = num14;
-            str3 = str5;
+            num16 = num15;
+            num17 = num31;
         }
-        return inventoryItem.copy(i7, num16, i6, str4, num17, num18, num19, num20, num21, num22, num23, num24, l2, num25, num26, num27, i8, num28, bitmap2, z3, z4, str3, num15);
+        return inventoryItem.copy(i7, num18, i6, str3, num19, num20, num21, num22, num23, num24, num25, num26, l2, num27, num28, num29, i8, num30, bitmap2, z3, z4, str4, num17, num16);
     }
 
     public final int component1() {
@@ -134,6 +136,10 @@ public final class InventoryItem {
     }
 
     public final Integer component23() {
+        return this.effectType;
+    }
+
+    public final Integer component24() {
         return this.quality;
     }
 
@@ -165,8 +171,8 @@ public final class InventoryItem {
         return this.bits;
     }
 
-    public final InventoryItem copy(int i, Integer num, int i2, String str, Integer num2, Integer num3, Integer num4, Integer num5, Integer num6, Integer num7, Integer num8, Integer num9, Long l, Integer num10, Integer num11, Integer num12, int i3, Integer num13, Bitmap bitmap, boolean z, boolean z2, String str2, Integer num14) {
-        return new InventoryItem(i, num, i2, str, num2, num3, num4, num5, num6, num7, num8, num9, l, num10, num11, num12, i3, num13, bitmap, z, z2, str2, num14);
+    public final InventoryItem copy(int i, Integer num, int i2, String str, Integer num2, Integer num3, Integer num4, Integer num5, Integer num6, Integer num7, Integer num8, Integer num9, Long l, Integer num10, Integer num11, Integer num12, int i3, Integer num13, Bitmap bitmap, boolean z, boolean z2, String str2, Integer num14, Integer num15) {
+        return new InventoryItem(i, num, i2, str, num2, num3, num4, num5, num6, num7, num8, num9, l, num10, num11, num12, i3, num13, bitmap, z, z2, str2, num14, num15);
     }
 
     public boolean equals(Object obj) {
@@ -175,7 +181,7 @@ public final class InventoryItem {
         }
         if (obj instanceof InventoryItem) {
             InventoryItem inventoryItem = (InventoryItem) obj;
-            return this.slot == inventoryItem.slot && Intrinsics.areEqual(this.item, inventoryItem.item) && this.id == inventoryItem.id && Intrinsics.areEqual(this.text, inventoryItem.text) && Intrinsics.areEqual(this.item_type, inventoryItem.item_type) && Intrinsics.areEqual(this.amount, inventoryItem.amount) && Intrinsics.areEqual(this.background, inventoryItem.background) && Intrinsics.areEqual(this.color, inventoryItem.color) && Intrinsics.areEqual(this.bits, inventoryItem.bits) && Intrinsics.areEqual(this.available, inventoryItem.available) && Intrinsics.areEqual(this.enchant, inventoryItem.enchant) && Intrinsics.areEqual(this.blackout, inventoryItem.blackout) && Intrinsics.areEqual(this.time, inventoryItem.time) && Intrinsics.areEqual(this.itemStrength, inventoryItem.itemStrength) && Intrinsics.areEqual(this.isActive, inventoryItem.isActive) && Intrinsics.areEqual(this.breaks, inventoryItem.breaks) && this.inventoryType == inventoryItem.inventoryType && Intrinsics.areEqual(this.acsSlot, inventoryItem.acsSlot) && Intrinsics.areEqual(this.photoBitmap, inventoryItem.photoBitmap) && this.isColored == inventoryItem.isColored && this.isLocked == inventoryItem.isLocked && Intrinsics.areEqual(this.effect, inventoryItem.effect) && Intrinsics.areEqual(this.quality, inventoryItem.quality);
+            return this.slot == inventoryItem.slot && Intrinsics.areEqual(this.item, inventoryItem.item) && this.id == inventoryItem.id && Intrinsics.areEqual(this.text, inventoryItem.text) && Intrinsics.areEqual(this.item_type, inventoryItem.item_type) && Intrinsics.areEqual(this.amount, inventoryItem.amount) && Intrinsics.areEqual(this.background, inventoryItem.background) && Intrinsics.areEqual(this.color, inventoryItem.color) && Intrinsics.areEqual(this.bits, inventoryItem.bits) && Intrinsics.areEqual(this.available, inventoryItem.available) && Intrinsics.areEqual(this.enchant, inventoryItem.enchant) && Intrinsics.areEqual(this.blackout, inventoryItem.blackout) && Intrinsics.areEqual(this.time, inventoryItem.time) && Intrinsics.areEqual(this.itemStrength, inventoryItem.itemStrength) && Intrinsics.areEqual(this.isActive, inventoryItem.isActive) && Intrinsics.areEqual(this.breaks, inventoryItem.breaks) && this.inventoryType == inventoryItem.inventoryType && Intrinsics.areEqual(this.acsSlot, inventoryItem.acsSlot) && Intrinsics.areEqual(this.photoBitmap, inventoryItem.photoBitmap) && this.isColored == inventoryItem.isColored && this.isLocked == inventoryItem.isLocked && Intrinsics.areEqual(this.effect, inventoryItem.effect) && Intrinsics.areEqual(this.effectType, inventoryItem.effectType) && Intrinsics.areEqual(this.quality, inventoryItem.quality);
         }
         return false;
     }
@@ -216,8 +222,10 @@ public final class InventoryItem {
         int hashCode17 = (((((hashCode16 + (bitmap == null ? 0 : bitmap.hashCode())) * 31) + Boolean.hashCode(this.isColored)) * 31) + Boolean.hashCode(this.isLocked)) * 31;
         String str2 = this.effect;
         int hashCode18 = (hashCode17 + (str2 == null ? 0 : str2.hashCode())) * 31;
-        Integer num14 = this.quality;
-        return hashCode18 + (num14 != null ? num14.hashCode() : 0);
+        Integer num14 = this.effectType;
+        int hashCode19 = (hashCode18 + (num14 == null ? 0 : num14.hashCode())) * 31;
+        Integer num15 = this.quality;
+        return hashCode19 + (num15 != null ? num15.hashCode() : 0);
     }
 
     public String toString() {
@@ -243,10 +251,11 @@ public final class InventoryItem {
         boolean z = this.isColored;
         boolean z2 = this.isLocked;
         String str2 = this.effect;
-        return "InventoryItem(slot=" + i + ", item=" + num + ", id=" + i2 + ", text=" + str + ", item_type=" + num2 + ", amount=" + num3 + ", background=" + num4 + ", color=" + num5 + ", bits=" + num6 + ", available=" + num7 + ", enchant=" + num8 + ", blackout=" + num9 + ", time=" + l + ", itemStrength=" + num10 + ", isActive=" + num11 + ", breaks=" + num12 + ", inventoryType=" + i3 + ", acsSlot=" + num13 + ", photoBitmap=" + bitmap + ", isColored=" + z + ", isLocked=" + z2 + ", effect=" + str2 + ", quality=" + this.quality + ")";
+        Integer num14 = this.effectType;
+        return "InventoryItem(slot=" + i + ", item=" + num + ", id=" + i2 + ", text=" + str + ", item_type=" + num2 + ", amount=" + num3 + ", background=" + num4 + ", color=" + num5 + ", bits=" + num6 + ", available=" + num7 + ", enchant=" + num8 + ", blackout=" + num9 + ", time=" + l + ", itemStrength=" + num10 + ", isActive=" + num11 + ", breaks=" + num12 + ", inventoryType=" + i3 + ", acsSlot=" + num13 + ", photoBitmap=" + bitmap + ", isColored=" + z + ", isLocked=" + z2 + ", effect=" + str2 + ", effectType=" + num14 + ", quality=" + this.quality + ")";
     }
 
-    public InventoryItem(int i, Integer num, int i2, String str, Integer num2, Integer num3, Integer num4, Integer num5, Integer num6, Integer num7, Integer num8, Integer num9, Long l, Integer num10, Integer num11, Integer num12, int i3, Integer num13, Bitmap bitmap, boolean z, boolean z2, String str2, Integer num14) {
+    public InventoryItem(int i, Integer num, int i2, String str, Integer num2, Integer num3, Integer num4, Integer num5, Integer num6, Integer num7, Integer num8, Integer num9, Long l, Integer num10, Integer num11, Integer num12, int i3, Integer num13, Bitmap bitmap, boolean z, boolean z2, String str2, Integer num14, Integer num15) {
         this.slot = i;
         this.item = num;
         this.id = i2;
@@ -269,11 +278,12 @@ public final class InventoryItem {
         this.isColored = z;
         this.isLocked = z2;
         this.effect = str2;
-        this.quality = num14;
+        this.effectType = num14;
+        this.quality = num15;
     }
 
-    public /* synthetic */ InventoryItem(int i, Integer num, int i2, String str, Integer num2, Integer num3, Integer num4, Integer num5, Integer num6, Integer num7, Integer num8, Integer num9, Long l, Integer num10, Integer num11, Integer num12, int i3, Integer num13, Bitmap bitmap, boolean z, boolean z2, String str2, Integer num14, int i4, DefaultConstructorMarker defaultConstructorMarker) {
-        this(i, num, i2, str, num2, num3, num4, num5, num6, num7, num8, num9, l, num10, num11, num12, i3, num13, bitmap, z, z2, str2, (i4 & 4194304) != 0 ? null : num14);
+    public /* synthetic */ InventoryItem(int i, Integer num, int i2, String str, Integer num2, Integer num3, Integer num4, Integer num5, Integer num6, Integer num7, Integer num8, Integer num9, Long l, Integer num10, Integer num11, Integer num12, int i3, Integer num13, Bitmap bitmap, boolean z, boolean z2, String str2, Integer num14, Integer num15, int i4, DefaultConstructorMarker defaultConstructorMarker) {
+        this(i, num, i2, str, num2, num3, num4, num5, num6, num7, num8, num9, l, num10, num11, num12, i3, num13, bitmap, z, z2, str2, num14, (i4 & 8388608) != 0 ? null : num15);
     }
 
     public final int getSlot() {
@@ -366,6 +376,10 @@ public final class InventoryItem {
 
     public final String getEffect() {
         return this.effect;
+    }
+
+    public final Integer getEffectType() {
+        return this.effectType;
     }
 
     public final Integer getQuality() {

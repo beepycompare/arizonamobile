@@ -9,8 +9,8 @@ public final class Xk extends J2 {
     public final C0259fo a(Cdo cdo, C0259fo c0259fo, InterfaceC0315i2 interfaceC0315i2) {
         if (c0259fo == null || c0259fo.c.b) {
             C0259fo a2 = ((Ad) interfaceC0315i2).a();
-            a2.c.f1020a = true;
-            return this.f638a.a(cdo, a2);
+            a2.c.f1019a = true;
+            return this.f637a.a(cdo, a2);
         }
         return null;
     }

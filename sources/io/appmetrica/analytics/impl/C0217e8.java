@@ -13,7 +13,7 @@ public final class C0217e8 extends MessageNano {
     public static volatile C0217e8[] e;
 
     /* renamed from: a  reason: collision with root package name */
-    public C0447n8 f975a;
+    public C0447n8 f974a;
     public C0497p8 b;
     public C0269g8 c;
     public C0422m8 d;
@@ -34,7 +34,7 @@ public final class C0217e8 extends MessageNano {
     }
 
     public final C0217e8 a() {
-        this.f975a = null;
+        this.f974a = null;
         this.b = null;
         this.c = null;
         this.d = null;
@@ -45,7 +45,7 @@ public final class C0217e8 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        C0447n8 c0447n8 = this.f975a;
+        C0447n8 c0447n8 = this.f974a;
         if (c0447n8 != null) {
             computeSerializedSize += CodedOutputByteBufferNano.computeMessageSize(1, c0447n8);
         }
@@ -63,7 +63,7 @@ public final class C0217e8 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        C0447n8 c0447n8 = this.f975a;
+        C0447n8 c0447n8 = this.f974a;
         if (c0447n8 != null) {
             codedOutputByteBufferNano.writeMessage(1, c0447n8);
         }
@@ -90,10 +90,10 @@ public final class C0217e8 extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                if (this.f975a == null) {
-                    this.f975a = new C0447n8();
+                if (this.f974a == null) {
+                    this.f974a = new C0447n8();
                 }
-                codedInputByteBufferNano.readMessage(this.f975a);
+                codedInputByteBufferNano.readMessage(this.f974a);
             } else if (readTag == 18) {
                 if (this.b == null) {
                     this.b = new C0497p8();

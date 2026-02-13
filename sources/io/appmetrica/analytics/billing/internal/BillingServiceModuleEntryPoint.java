@@ -24,14 +24,14 @@ import kotlin.collections.MapsKt;
 public final class BillingServiceModuleEntryPoint extends ModuleServiceEntryPoint<RemoteBillingConfig> {
 
     /* renamed from: a  reason: collision with root package name */
-    private m f329a;
+    private m f328a;
     private final q b = new q(null, null, 3, null);
     private final p c = new p(null, 1, null);
     private final BillingServiceModuleEntryPoint$configUpdateListener$1 d = new RemoteConfigUpdateListener<RemoteBillingConfig>() { // from class: io.appmetrica.analytics.billing.internal.BillingServiceModuleEntryPoint$configUpdateListener$1
         @Override // io.appmetrica.analytics.modulesapi.internal.service.RemoteConfigUpdateListener
         public void onRemoteConfigUpdated(ModuleRemoteConfig<RemoteBillingConfig> moduleRemoteConfig) {
             m mVar;
-            mVar = BillingServiceModuleEntryPoint.this.f329a;
+            mVar = BillingServiceModuleEntryPoint.this.f328a;
             if (mVar != null) {
                 RemoteBillingConfig featuresConfig = moduleRemoteConfig.getFeaturesConfig();
                 mVar.a(featuresConfig != null ? new B(featuresConfig.getEnabled(), new A(featuresConfig.getConfig())) : null);
@@ -87,6 +87,6 @@ public final class BillingServiceModuleEntryPoint extends ModuleServiceEntryPoin
         RemoteBillingConfig featuresConfig = moduleRemoteConfig.getFeaturesConfig();
         m mVar = new m(serviceContext, featuresConfig != null ? new B(featuresConfig.getEnabled(), new A(featuresConfig.getConfig())) : null);
         serviceContext.getServiceModuleReporterComponentLifecycle().subscribe(mVar);
-        this.f329a = mVar;
+        this.f328a = mVar;
     }
 }

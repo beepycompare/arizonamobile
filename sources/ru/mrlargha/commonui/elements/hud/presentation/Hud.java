@@ -143,9 +143,11 @@ public final class Hud extends SAMPUIElement {
     private int xPayDay;
 
     /* compiled from: Hud.kt */
-    @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\bf\u0018\u00002\u00020\u0001J\u0010\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H&J\u0010\u0010\u0006\u001a\u00020\u00032\u0006\u0010\u0007\u001a\u00020\bH&¨\u0006\tÀ\u0006\u0003"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/Hud$HudListener;", "", "hudUpdateMoney", "", "money", "", "hudSetTimer", "seconds", "", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u0007\n\u0000\bf\u0018\u00002\u00020\u0001J\u0010\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H&J\u0010\u0010\u0006\u001a\u00020\u00032\u0006\u0010\u0007\u001a\u00020\bH&J\u0010\u0010\t\u001a\u00020\u00032\u0006\u0010\n\u001a\u00020\u000bH&¨\u0006\fÀ\u0006\u0003"}, d2 = {"Lru/mrlargha/commonui/elements/hud/presentation/Hud$HudListener;", "", "hudUpdateMoney", "", "money", "", "hudSetTimer", "seconds", "", "hudScale", "scale", "", "CommonUI_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
     /* loaded from: classes6.dex */
     public interface HudListener {
+        void hudScale(float f);
+
         void hudSetTimer(int i);
 
         void hudUpdateMoney(long j);
@@ -214,6 +216,10 @@ public final class Hud extends SAMPUIElement {
         Intrinsics.checkNotNullExpressionValue(chargeChiken, "chargeChiken");
         this.chargeElement = new ChickenChargeElement(chargeChiken, hud);
         this.chickenGame = new HudChickenGame(bind, hud, hudListener);
+        if ((targetActivity.getResources().getConfiguration().screenLayout & 15) >= 3) {
+            hudListener.hudScale(0.7f);
+            bind.topQuestButtonLine.setGuidelinePercent(0.23f);
+        }
         if (ru.mrlargha.commonui.utils.UtilsKt.isArizonaType()) {
             bind.hudMoneyIcon.setImageResource(R.drawable.hud_dollar_icon);
         }
@@ -849,9 +855,9 @@ public final class Hud extends SAMPUIElement {
                 Intrinsics.checkNotNullExpressionValue(trainSettings, "trainSettings");
                 ConstraintLayout constraintLayout = trainSettings;
                 if (!(Integer.parseInt(data) == 1)) {
-                    r2 = 8;
+                    r4 = 8;
                 }
-                constraintLayout.setVisibility(r2);
+                constraintLayout.setVisibility(r4);
             } else if (i == 6) {
                 if (Integer.parseInt(data) == 1) {
                     this.binding.ivDoorsState.setImageResource(R.drawable.ic_switch_on);
@@ -964,23 +970,13 @@ public final class Hud extends SAMPUIElement {
                         Intrinsics.checkNotNullExpressionValue(unreadMeassageContainer, "unreadMeassageContainer");
                         unreadMeassageContainer.setVisibility(0);
                         this.binding.tvMessageCount.setText(String.valueOf(unreadMessageModel.getUnreadMessengerMessages()));
-                        return;
+                    } else {
+                        FrameLayout unreadMeassageContainer2 = this.binding.unreadMeassageContainer;
+                        Intrinsics.checkNotNullExpressionValue(unreadMeassageContainer2, "unreadMeassageContainer");
+                        unreadMeassageContainer2.setVisibility(8);
                     }
-                    FrameLayout unreadMeassageContainer2 = this.binding.unreadMeassageContainer;
-                    Intrinsics.checkNotNullExpressionValue(unreadMeassageContainer2, "unreadMeassageContainer");
-                    unreadMeassageContainer2.setVisibility(8);
-                } else if (i == BackendHudIds.UNREAD_MESSAGE_COUNT.getSubId()) {
-                    UnreadMessageModel unreadMessageModel2 = (UnreadMessageModel) MapperKt.toModel(data, UnreadMessageModel.class);
-                    if (unreadMessageModel2.getUnreadMessengerMessages() > 0) {
-                        FrameLayout unreadMeassageContainer3 = this.binding.unreadMeassageContainer;
-                        Intrinsics.checkNotNullExpressionValue(unreadMeassageContainer3, "unreadMeassageContainer");
-                        unreadMeassageContainer3.setVisibility(0);
-                        this.binding.tvMessageCount.setText(String.valueOf(unreadMessageModel2.getUnreadMessengerMessages()));
-                        return;
-                    }
-                    FrameLayout unreadMeassageContainer4 = this.binding.unreadMeassageContainer;
-                    Intrinsics.checkNotNullExpressionValue(unreadMeassageContainer4, "unreadMeassageContainer");
-                    unreadMeassageContainer4.setVisibility(8);
+                    getSharedPreferences().edit().putInt("UNREAD_MESSAGE", unreadMessageModel.getUnreadMessengerMessages()).apply();
+                    Log.d(getCLASS_TAG(), "onBackendMessage: unreade message in shared pref: " + getSharedPreferences().getInt("UNREAD_MESSAGE", 0));
                 } else if (i == BackendHudIds.UPDATE_MONEY.getSubId()) {
                     updateMoney(Long.parseLong(data));
                     Activity targetActivity = getTargetActivity();

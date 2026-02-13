@@ -6,18 +6,18 @@ import io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable;
 public final class C0351jd extends SafeRunnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0452nd f1064a;
+    public final /* synthetic */ C0452nd f1063a;
     public final /* synthetic */ int b;
     public final /* synthetic */ String c;
 
     public C0351jd(C0452nd c0452nd, int i, String str) {
-        this.f1064a = c0452nd;
+        this.f1063a = c0452nd;
         this.b = i;
         this.c = str;
     }
 
     @Override // io.appmetrica.analytics.coreutils.internal.executors.SafeRunnable
     public final void runSafety() {
-        C0452nd.a(this.f1064a).a(new F9(this.b, this.c));
+        C0452nd.a(this.f1063a).a(new F9(this.b, this.c));
     }
 }

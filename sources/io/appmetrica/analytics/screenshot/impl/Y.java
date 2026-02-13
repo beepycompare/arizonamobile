@@ -6,7 +6,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class Y implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0768g f1460a;
+    public final C0768g f1459a;
     public final c0 b;
     public final r c;
 
@@ -18,8 +18,8 @@ public final class Y implements Converter {
     /* renamed from: a */
     public final Q fromModel(W w) {
         Q q = new Q();
-        C0766e c0766e = w.f1458a;
-        q.f1455a = c0766e != null ? this.f1460a.fromModel(c0766e) : null;
+        C0766e c0766e = w.f1457a;
+        q.f1454a = c0766e != null ? this.f1459a.fromModel(c0766e) : null;
         a0 a0Var = w.b;
         q.b = a0Var != null ? this.b.fromModel(a0Var) : null;
         C0777p c0777p = w.c;
@@ -28,7 +28,7 @@ public final class Y implements Converter {
     }
 
     public Y(C0768g c0768g, c0 c0Var, r rVar) {
-        this.f1460a = c0768g;
+        this.f1459a = c0768g;
         this.b = c0Var;
         this.c = rVar;
     }
@@ -42,17 +42,17 @@ public final class Y implements Converter {
     public final W toModel(Q q) {
         C0766e c0766e;
         a0 a0Var;
-        N n = q.f1455a;
+        N n = q.f1454a;
         if (n != null) {
-            this.f1460a.getClass();
-            c0766e = new C0766e(n.f1452a);
+            this.f1459a.getClass();
+            c0766e = new C0766e(n.f1451a);
         } else {
             c0766e = null;
         }
         P p = q.b;
         if (p != null) {
             this.b.getClass();
-            a0Var = new a0(p.f1454a, p.b);
+            a0Var = new a0(p.f1453a, p.b);
         } else {
             a0Var = null;
         }

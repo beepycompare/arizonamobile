@@ -43,15 +43,15 @@ public final class C0648va extends C2 {
                 Mn a2 = this.b.a((String) entry.getKey());
                 Mn a3 = this.c.a((String) entry.getValue());
                 int utf8BytesLength = StringUtils.getUtf8BytesLength((String) entry.getValue()) + StringUtils.getUtf8BytesLength((String) entry.getKey());
-                int utf8BytesLength2 = StringUtils.getUtf8BytesLength((String) a3.f700a) + StringUtils.getUtf8BytesLength((String) a2.f700a);
-                if (z || utf8BytesLength2 + i4 > this.f529a) {
+                int utf8BytesLength2 = StringUtils.getUtf8BytesLength((String) a3.f699a) + StringUtils.getUtf8BytesLength((String) a2.f699a);
+                if (z || utf8BytesLength2 + i4 > this.f528a) {
                     i3++;
                     i += utf8BytesLength;
                     z = true;
                 } else {
                     i = a3.b.getBytesTruncated() + a2.b.getBytesTruncated() + i;
-                    int utf8BytesLength3 = StringUtils.getUtf8BytesLength((String) a3.f700a) + StringUtils.getUtf8BytesLength((String) a2.f700a) + i4;
-                    hashMap.put((String) a2.f700a, (String) a3.f700a);
+                    int utf8BytesLength3 = StringUtils.getUtf8BytesLength((String) a3.f699a) + StringUtils.getUtf8BytesLength((String) a2.f699a) + i4;
+                    hashMap.put((String) a2.f699a, (String) a3.f699a);
                     i4 = utf8BytesLength3;
                 }
                 i2++;

@@ -6,7 +6,7 @@ import java.util.List;
 public final class p {
 
     /* renamed from: a  reason: collision with root package name */
-    public i f1357a;
+    public i f1356a;
     public final m b;
     public final h c;
     public final List d;
@@ -14,7 +14,7 @@ public final class p {
 
     public p(List list, i iVar) {
         this.d = list;
-        this.f1357a = iVar;
+        this.f1356a = iVar;
         m mVar = new m();
         this.b = mVar;
         this.c = new h(mVar);

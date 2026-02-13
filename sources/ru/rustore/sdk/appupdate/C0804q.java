@@ -11,19 +11,19 @@ import ru.rustore.sdk.reactive.single.SingleEmitter;
 public final class C0804q extends Lambda implements Function1<RuStoreException, Unit> {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ SingleEmitter<Object> f1561a;
+    public final /* synthetic */ SingleEmitter<Object> f1560a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C0804q(SingleEmitter<Object> singleEmitter) {
         super(1);
-        this.f1561a = singleEmitter;
+        this.f1560a = singleEmitter;
     }
 
     @Override // kotlin.jvm.functions.Function1
     public final Unit invoke(RuStoreException ruStoreException) {
         RuStoreException error = ruStoreException;
         Intrinsics.checkNotNullParameter(error, "error");
-        this.f1561a.error(error);
+        this.f1560a.error(error);
         return Unit.INSTANCE;
     }
 }

@@ -103,7 +103,7 @@ public final class HomeComponent$observerServersState$1 extends SuspendLambda im
                     }
                     i2 += i9;
                 }
-            } while (!mutableStateFlow.compareAndSet(value, HomeUiState.copy$default(homeUiState, 0, false, null, null, serversState.getCurrentServer(), null, null, null, null, null, null, false, false, false, serversState.getXDonate(), false, false, false, i, i2, 245743, null)));
+            } while (!mutableStateFlow.compareAndSet(value, HomeUiState.copy$default(homeUiState, 0, false, null, null, serversState.getCurrentServer(), null, null, null, null, null, null, false, false, false, false, serversState.getXDonate(), false, false, false, i, i2, 491503, null)));
             if (serversState.isError()) {
                 this.this$0.emitUiAction(HomeUiAction.NavigateToErrorDialog.INSTANCE);
             }

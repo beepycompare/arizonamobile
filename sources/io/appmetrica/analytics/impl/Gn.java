@@ -6,14 +6,14 @@ import java.util.List;
 public final class Gn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f604a;
+    public final String f603a;
     public final String b;
     public final List c;
     public final Gn d;
     public final List e;
 
     public Gn(String str, String str2, ArrayList arrayList, Gn gn, ArrayList arrayList2) {
-        this.f604a = str;
+        this.f603a = str;
         this.b = str2;
         this.c = arrayList;
         this.d = gn;

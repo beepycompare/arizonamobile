@@ -22,58 +22,55 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
 public final class ComposableSingletons$SettingsBottomBarKt {
     public static final ComposableSingletons$SettingsBottomBarKt INSTANCE = new ComposableSingletons$SettingsBottomBarKt();
-
-    /* renamed from: lambda$-13006014  reason: not valid java name */
-    private static Function3<BoxScope, Composer, Integer, Unit> f145lambda$13006014 = ComposableLambdaKt.composableLambdaInstance(-13006014, false, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$SettingsBottomBarKt$$ExternalSyntheticLambda0
+    private static Function3<BoxScope, Composer, Integer, Unit> lambda$631972942 = ComposableLambdaKt.composableLambdaInstance(631972942, false, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$SettingsBottomBarKt$$ExternalSyntheticLambda0
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
-            Unit lambda__13006014$lambda$0;
-            lambda__13006014$lambda$0 = ComposableSingletons$SettingsBottomBarKt.lambda__13006014$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-            return lambda__13006014$lambda$0;
+            Unit lambda_631972942$lambda$0;
+            lambda_631972942$lambda$0 = ComposableSingletons$SettingsBottomBarKt.lambda_631972942$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
+            return lambda_631972942$lambda$0;
         }
     });
-    private static Function3<BoxScope, Composer, Integer, Unit> lambda$983320313 = ComposableLambdaKt.composableLambdaInstance(983320313, false, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$SettingsBottomBarKt$$ExternalSyntheticLambda1
+    private static Function3<BoxScope, Composer, Integer, Unit> lambda$124095881 = ComposableLambdaKt.composableLambdaInstance(124095881, false, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$SettingsBottomBarKt$$ExternalSyntheticLambda1
         @Override // kotlin.jvm.functions.Function3
         public final Object invoke(Object obj, Object obj2, Object obj3) {
-            Unit lambda_983320313$lambda$0;
-            lambda_983320313$lambda$0 = ComposableSingletons$SettingsBottomBarKt.lambda_983320313$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-            return lambda_983320313$lambda$0;
-        }
-    });
-
-    /* renamed from: lambda$-473092742  reason: not valid java name */
-    private static Function3<BoxScope, Composer, Integer, Unit> f146lambda$473092742 = ComposableLambdaKt.composableLambdaInstance(-473092742, false, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$SettingsBottomBarKt$$ExternalSyntheticLambda2
-        @Override // kotlin.jvm.functions.Function3
-        public final Object invoke(Object obj, Object obj2, Object obj3) {
-            Unit lambda__473092742$lambda$0;
-            lambda__473092742$lambda$0 = ComposableSingletons$SettingsBottomBarKt.lambda__473092742$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
-            return lambda__473092742$lambda$0;
+            Unit lambda_124095881$lambda$0;
+            lambda_124095881$lambda$0 = ComposableSingletons$SettingsBottomBarKt.lambda_124095881$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
+            return lambda_124095881$lambda$0;
         }
     });
 
-    /* renamed from: getLambda$-13006014$settings_release  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m10166getLambda$13006014$settings_release() {
-        return f145lambda$13006014;
+    /* renamed from: lambda$-1935939771  reason: not valid java name */
+    private static Function3<BoxScope, Composer, Integer, Unit> f145lambda$1935939771 = ComposableLambdaKt.composableLambdaInstance(-1935939771, false, new Function3() { // from class: com.miami.game.feature.settings.ui.compose.ComposableSingletons$SettingsBottomBarKt$$ExternalSyntheticLambda2
+        @Override // kotlin.jvm.functions.Function3
+        public final Object invoke(Object obj, Object obj2, Object obj3) {
+            Unit lambda__1935939771$lambda$0;
+            lambda__1935939771$lambda$0 = ComposableSingletons$SettingsBottomBarKt.lambda__1935939771$lambda$0((BoxScope) obj, (Composer) obj2, ((Integer) obj3).intValue());
+            return lambda__1935939771$lambda$0;
+        }
+    });
+
+    /* renamed from: getLambda$-1935939771$settings_release  reason: not valid java name */
+    public final Function3<BoxScope, Composer, Integer, Unit> m10164getLambda$1935939771$settings_release() {
+        return f145lambda$1935939771;
     }
 
-    /* renamed from: getLambda$-473092742$settings_release  reason: not valid java name */
-    public final Function3<BoxScope, Composer, Integer, Unit> m10167getLambda$473092742$settings_release() {
-        return f146lambda$473092742;
+    public final Function3<BoxScope, Composer, Integer, Unit> getLambda$124095881$settings_release() {
+        return lambda$124095881;
     }
 
-    public final Function3<BoxScope, Composer, Integer, Unit> getLambda$983320313$settings_release() {
-        return lambda$983320313;
+    public final Function3<BoxScope, Composer, Integer, Unit> getLambda$631972942$settings_release() {
+        return lambda$631972942;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit lambda__13006014$lambda$0(BoxScope ScalingButton, Composer composer, int i) {
+    public static final Unit lambda_631972942$lambda$0(BoxScope ScalingButton, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
-        ComposerKt.sourceInformation(composer, "C57@2070L38,56@2029L232:SettingsBottomBar.kt#1gr92h");
+        ComposerKt.sourceInformation(composer, "C59@2183L38,58@2142L232:SettingsBottomBar.kt#1gr92h");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-13006014, i, -1, "com.miami.game.feature.settings.ui.compose.ComposableSingletons$SettingsBottomBarKt.lambda$-13006014.<anonymous> (SettingsBottomBar.kt:56)");
+                ComposerKt.traceEventStart(631972942, i, -1, "com.miami.game.feature.settings.ui.compose.ComposableSingletons$SettingsBottomBarKt.lambda$631972942.<anonymous> (SettingsBottomBar.kt:58)");
             }
             ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.bug_report, composer, 0), (String) null, SizeKt.fillMaxHeight$default(Modifier.Companion, 0.0f, 1, null), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, composer, Painter.$stable | 25008, 104);
             if (ComposerKt.isTraceInProgress()) {
@@ -84,14 +81,14 @@ public final class ComposableSingletons$SettingsBottomBarKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit lambda_983320313$lambda$0(BoxScope ScalingButton, Composer composer, int i) {
-        Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
-        ComposerKt.sourceInformation(composer, "C64@2386L38,63@2345L232:SettingsBottomBar.kt#1gr92h");
+    public static final Unit lambda_124095881$lambda$0(BoxScope ScalingButtonLong, Composer composer, int i) {
+        Intrinsics.checkNotNullParameter(ScalingButtonLong, "$this$ScalingButtonLong");
+        ComposerKt.sourceInformation(composer, "C66@2520L38,65@2479L232:SettingsBottomBar.kt#1gr92h");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(983320313, i, -1, "com.miami.game.feature.settings.ui.compose.ComposableSingletons$SettingsBottomBarKt.lambda$983320313.<anonymous> (SettingsBottomBar.kt:63)");
+                ComposerKt.traceEventStart(124095881, i, -1, "com.miami.game.feature.settings.ui.compose.ComposableSingletons$SettingsBottomBarKt.lambda$124095881.<anonymous> (SettingsBottomBar.kt:65)");
             }
             ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.share_logs, composer, 0), (String) null, SizeKt.fillMaxHeight$default(Modifier.Companion, 0.0f, 1, null), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, composer, Painter.$stable | 25008, 104);
             if (ComposerKt.isTraceInProgress()) {
@@ -102,14 +99,14 @@ public final class ComposableSingletons$SettingsBottomBarKt {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit lambda__473092742$lambda$0(BoxScope ScalingButton, Composer composer, int i) {
+    public static final Unit lambda__1935939771$lambda$0(BoxScope ScalingButton, Composer composer, int i) {
         Intrinsics.checkNotNullParameter(ScalingButton, "$this$ScalingButton");
-        ComposerKt.sourceInformation(composer, "C71@2706L42,70@2665L236:SettingsBottomBar.kt#1gr92h");
+        ComposerKt.sourceInformation(composer, "C73@2840L42,72@2799L236:SettingsBottomBar.kt#1gr92h");
         if (!composer.shouldExecute((i & 17) != 16, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(-473092742, i, -1, "com.miami.game.feature.settings.ui.compose.ComposableSingletons$SettingsBottomBarKt.lambda$-473092742.<anonymous> (SettingsBottomBar.kt:70)");
+                ComposerKt.traceEventStart(-1935939771, i, -1, "com.miami.game.feature.settings.ui.compose.ComposableSingletons$SettingsBottomBarKt.lambda$-1935939771.<anonymous> (SettingsBottomBar.kt:72)");
             }
             ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.privacy_policy, composer, 0), (String) null, SizeKt.fillMaxHeight$default(Modifier.Companion, 0.0f, 1, null), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, composer, Painter.$stable | 25008, 104);
             if (ComposerKt.isTraceInProgress()) {

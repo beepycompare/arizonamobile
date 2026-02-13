@@ -1,8 +1,6 @@
 package com.miami.game.core.server;
 
-import com.miami.game.core.local.repository.common.LocalRepository;
 import com.miami.game.core.server.model.ServerModel;
-import com.miami.game.core.server.model.ServersState;
 import kotlin.Metadata;
 import kotlin.ResultKt;
 import kotlin.Unit;
@@ -12,7 +10,6 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
-import kotlinx.coroutines.flow.MutableStateFlow;
 import kotlinx.metadata.internal.metadata.builtins.BuiltInsProtoBuf;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ServersInteractor.kt */
@@ -44,16 +41,14 @@ public final class ServersInteractor$selectServer$1 extends SuspendLambda implem
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
-        LocalRepository localRepository;
-        MutableStateFlow mutableStateFlow;
-        Object value;
+        Object selectServerInternal;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            localRepository = this.this$0.localRepository;
             this.label = 1;
-            if (localRepository.save2(ServersInteractor.CURRENT_SERVER_KEY, (String) this.$serverModel, (Continuation<? super Unit>) this) == coroutine_suspended) {
+            selectServerInternal = this.this$0.selectServerInternal(this.$serverModel, this);
+            if (selectServerInternal == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {
@@ -61,11 +56,6 @@ public final class ServersInteractor$selectServer$1 extends SuspendLambda implem
         } else {
             ResultKt.throwOnFailure(obj);
         }
-        mutableStateFlow = this.this$0.stateStore;
-        ServerModel serverModel = this.$serverModel;
-        do {
-            value = mutableStateFlow.getValue();
-        } while (!mutableStateFlow.compareAndSet(value, ServersState.copy$default((ServersState) value, serverModel, null, null, null, null, null, false, 0, 254, null)));
         return Unit.INSTANCE;
     }
 }

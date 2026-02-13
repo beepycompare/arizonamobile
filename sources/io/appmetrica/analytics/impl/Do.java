@@ -6,23 +6,23 @@ import java.util.WeakHashMap;
 public final class Do extends SimpleThreadSafeToggle {
 
     /* renamed from: a  reason: collision with root package name */
-    public final WeakHashMap f558a;
+    public final WeakHashMap f557a;
 
     public Do() {
         super(false, "[WakelocksToggle]");
-        this.f558a = new WeakHashMap();
+        this.f557a = new WeakHashMap();
     }
 
     public final synchronized void a(Object obj) {
-        this.f558a.put(obj, null);
-        if (this.f558a.size() == 1) {
+        this.f557a.put(obj, null);
+        if (this.f557a.size() == 1) {
             updateState(true);
         }
     }
 
     public final synchronized void b(Object obj) {
-        this.f558a.remove(obj);
-        if (this.f558a.isEmpty()) {
+        this.f557a.remove(obj);
+        if (this.f557a.isEmpty()) {
             updateState(false);
         }
     }

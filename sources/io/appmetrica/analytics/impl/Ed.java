@@ -9,7 +9,7 @@ import kotlin.collections.MapsKt;
 public final class Ed implements ProtobufConverter {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Dd f568a = new Dd();
+    public static final Dd f567a = new Dd();
     public static final Map b = MapsKt.mapOf(TuplesKt.to(NativeCrashSource.UNKNOWN, 0), TuplesKt.to(NativeCrashSource.CRASHPAD, 3));
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
@@ -18,11 +18,11 @@ public final class Ed implements ProtobufConverter {
         V5 v5 = new V5();
         v5.f = 1;
         U5 u5 = new U5();
-        u5.f808a = kd.f658a;
+        u5.f807a = kd.f657a;
         Y5 y5 = new Y5();
-        Integer num = (Integer) b.get(kd.b.f613a);
+        Integer num = (Integer) b.get(kd.b.f612a);
         if (num != null) {
-            y5.f862a = num.intValue();
+            y5.f861a = num.intValue();
         }
         String str = kd.b.b;
         if (str == null) {

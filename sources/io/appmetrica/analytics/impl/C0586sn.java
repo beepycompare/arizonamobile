@@ -13,12 +13,12 @@ import kotlin.collections.CollectionsKt;
 public final class C0586sn implements TempCacheStorage {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0719y6 f1227a;
+    public final InterfaceC0719y6 f1226a;
     public final String b;
     public final SystemTimeProvider c = new SystemTimeProvider();
 
     public C0586sn(InterfaceC0719y6 interfaceC0719y6, String str) {
-        this.f1227a = interfaceC0719y6;
+        this.f1226a = interfaceC0719y6;
         this.b = str;
     }
 
@@ -34,7 +34,7 @@ public final class C0586sn implements TempCacheStorage {
         ArrayList arrayList = new ArrayList();
         Cursor cursor2 = null;
         try {
-            sQLiteDatabase = this.f1227a.a();
+            sQLiteDatabase = this.f1226a.a();
             sQLiteDatabase2 = sQLiteDatabase;
         } catch (Throwable unused) {
             cursor = null;
@@ -59,7 +59,7 @@ public final class C0586sn implements TempCacheStorage {
                             cursor2 = cursor;
                             sQLiteDatabase2 = sQLiteDatabase;
                             lo.a(cursor2);
-                            this.f1227a.a(sQLiteDatabase2);
+                            this.f1226a.a(sQLiteDatabase2);
                             return arrayList;
                         }
                     }
@@ -71,7 +71,7 @@ public final class C0586sn implements TempCacheStorage {
             sQLiteDatabase2 = sQLiteDatabase;
         }
         lo.a(cursor2);
-        this.f1227a.a(sQLiteDatabase2);
+        this.f1226a.a(sQLiteDatabase2);
         return arrayList;
     }
 
@@ -80,7 +80,7 @@ public final class C0586sn implements TempCacheStorage {
         SQLiteDatabase sQLiteDatabase;
         SQLiteDatabase sQLiteDatabase2 = null;
         try {
-            sQLiteDatabase = this.f1227a.a();
+            sQLiteDatabase = this.f1226a.a();
             if (sQLiteDatabase != null) {
                 try {
                     ContentValues contentValues = new ContentValues();
@@ -88,18 +88,18 @@ public final class C0586sn implements TempCacheStorage {
                     contentValues.put("timestamp", Long.valueOf(j));
                     contentValues.put("data", bArr);
                     long insertOrThrow = sQLiteDatabase.insertOrThrow(this.b, null, contentValues);
-                    this.f1227a.a(sQLiteDatabase);
+                    this.f1226a.a(sQLiteDatabase);
                     return insertOrThrow;
                 } catch (Throwable unused) {
                     sQLiteDatabase2 = sQLiteDatabase;
                     sQLiteDatabase = sQLiteDatabase2;
-                    this.f1227a.a(sQLiteDatabase);
+                    this.f1226a.a(sQLiteDatabase);
                     return -1L;
                 }
             }
         } catch (Throwable unused2) {
         }
-        this.f1227a.a(sQLiteDatabase);
+        this.f1226a.a(sQLiteDatabase);
         return -1L;
     }
 
@@ -121,7 +121,7 @@ public final class C0586sn implements TempCacheStorage {
     public final void a(String str, String[] strArr) {
         SQLiteDatabase sQLiteDatabase;
         try {
-            sQLiteDatabase = this.f1227a.a();
+            sQLiteDatabase = this.f1226a.a();
             if (sQLiteDatabase != null) {
                 try {
                     sQLiteDatabase.delete(this.b, str, strArr);
@@ -131,6 +131,6 @@ public final class C0586sn implements TempCacheStorage {
         } catch (Throwable unused2) {
             sQLiteDatabase = null;
         }
-        this.f1227a.a(sQLiteDatabase);
+        this.f1226a.a(sQLiteDatabase);
     }
 }

@@ -13,6 +13,6 @@ public final class C0443n4 extends C0109a3 {
 
     @Override // io.appmetrica.analytics.impl.C0109a3
     public final String toString() {
-        return "CollectionTrimInfo{itemsDropped=" + this.b + ", bytesTruncated=" + this.f897a + AbstractJsonLexerKt.END_OBJ;
+        return "CollectionTrimInfo{itemsDropped=" + this.b + ", bytesTruncated=" + this.f896a + AbstractJsonLexerKt.END_OBJ;
     }
 }

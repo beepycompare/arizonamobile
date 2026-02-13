@@ -6,10 +6,10 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0771j {
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f1474a;
+    public final boolean f1473a;
 
     public C0771j(boolean z) {
-        this.f1474a = z;
+        this.f1473a = z;
     }
 
     public final boolean equals(Object obj) {
@@ -18,7 +18,7 @@ public final class C0771j {
         }
         if (Intrinsics.areEqual(C0771j.class, obj != null ? obj.getClass() : null)) {
             if (obj != null) {
-                return this.f1474a == ((C0771j) obj).f1474a;
+                return this.f1473a == ((C0771j) obj).f1473a;
             }
             throw new NullPointerException("null cannot be cast to non-null type io.appmetrica.analytics.screenshot.impl.config.client.model.ClientSideApiCaptorConfig");
         }
@@ -26,11 +26,11 @@ public final class C0771j {
     }
 
     public final int hashCode() {
-        return Boolean.hashCode(this.f1474a);
+        return Boolean.hashCode(this.f1473a);
     }
 
     public final String toString() {
-        return "ClientSideApiCaptorConfig(enabled=" + this.f1474a + ')';
+        return "ClientSideApiCaptorConfig(enabled=" + this.f1473a + ')';
     }
 
     public C0771j(C0786z c0786z) {

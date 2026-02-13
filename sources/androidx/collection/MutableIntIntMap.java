@@ -216,7 +216,7 @@ public final class MutableIntIntMap extends IntIntMap {
     public final void adjustStorage$collection() {
         int compare;
         if (this._capacity > 8) {
-            compare = Long.compare(ULong.m10423constructorimpl(ULong.m10423constructorimpl(this._size) * 32) ^ Long.MIN_VALUE, ULong.m10423constructorimpl(ULong.m10423constructorimpl(this._capacity) * 25) ^ Long.MIN_VALUE);
+            compare = Long.compare(ULong.m10422constructorimpl(ULong.m10422constructorimpl(this._size) * 32) ^ Long.MIN_VALUE, ULong.m10422constructorimpl(ULong.m10422constructorimpl(this._capacity) * 25) ^ Long.MIN_VALUE);
             if (compare <= 0) {
                 dropDeletes$collection();
                 return;

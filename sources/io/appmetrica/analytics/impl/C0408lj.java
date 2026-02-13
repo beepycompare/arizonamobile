@@ -8,9 +8,9 @@ public final class C0408lj implements InterfaceC0265g4 {
     /* renamed from: b */
     public final C0306hj a(Context context, C0189d5 c0189d5, P3 p3, C0493p4 c0493p4) {
         Bg bg;
-        Q4 q4 = new Q4(p3.b, p3.f736a);
+        Q4 q4 = new Q4(p3.b, p3.f735a);
         synchronized (c0189d5) {
-            bg = (Bg) c0189d5.f953a.get(q4.toString());
+            bg = (Bg) c0189d5.f952a.get(q4.toString());
         }
         return new C0306hj(bg);
     }

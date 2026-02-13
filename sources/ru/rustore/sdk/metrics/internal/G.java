@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Lambda;
 public final class G extends Lambda implements Function1<J, CharSequence> {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final G f1579a = new G();
+    public static final G f1578a = new G();
 
     public G() {
         super(1);
@@ -17,6 +17,6 @@ public final class G extends Lambda implements Function1<J, CharSequence> {
     public final CharSequence invoke(J j) {
         J it = j;
         Intrinsics.checkNotNullParameter(it, "it");
-        return "'" + it.f1584a + '\'';
+        return "'" + it.f1583a + '\'';
     }
 }

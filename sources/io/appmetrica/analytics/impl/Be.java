@@ -6,7 +6,7 @@ import kotlin.text.StringsKt;
 public final class Be implements InterfaceC0366k2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f520a = 10;
+    public final int f519a = 10;
     public final int b = 13;
     public final Regex c = new Regex("^[0-9()\\-+\\s]+$");
 
@@ -24,7 +24,7 @@ public final class Be implements InterfaceC0366k2 {
         int length2 = sb2.length();
         Character firstOrNull = StringsKt.firstOrNull(str);
         Character firstOrNull2 = StringsKt.firstOrNull(sb2);
-        if (length2 < this.f520a || length2 > this.b || ((firstOrNull2 != null && firstOrNull2.charValue() == '0') || !this.c.matches(str))) {
+        if (length2 < this.f519a || length2 > this.b || ((firstOrNull2 != null && firstOrNull2.charValue() == '0') || !this.c.matches(str))) {
             return null;
         }
         if (length2 == 10 && (firstOrNull == null || firstOrNull.charValue() != '+')) {

@@ -9,19 +9,19 @@ import kotlin.jvm.internal.Lambda;
 public final class C0232en extends Lambda implements Function0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0258fn f985a;
+    public final /* synthetic */ C0258fn f984a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public C0232en(C0258fn c0258fn) {
         super(0);
-        this.f985a = c0258fn;
+        this.f984a = c0258fn;
     }
 
     @Override // kotlin.jvm.functions.Function0
     public final Object invoke() {
         HashMap hashMap = new HashMap();
-        C0258fn c0258fn = this.f985a;
-        String a2 = c0258fn.f1001a.a();
+        C0258fn c0258fn = this.f984a;
+        String a2 = c0258fn.f1000a.a();
         if (a2 != null) {
             String str = (String) hashMap.put(AdRevenueConstants.NATIVE_SUPPORTED_SOURCES_KEY, a2);
         }

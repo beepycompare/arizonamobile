@@ -10,7 +10,7 @@ import kotlin.collections.CollectionsKt;
 public final class C0170cc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Qg f937a;
+    public final Qg f936a;
     public final InterfaceC0547r9 b;
     public final C0468o4 c;
     public final We d;
@@ -19,7 +19,7 @@ public final class C0170cc {
     public final Lazy g = LazyKt.lazy(new C0144bc(this));
 
     public C0170cc(L6 l6, Qg qg, InterfaceC0547r9 interfaceC0547r9, C0468o4 c0468o4, We we) {
-        this.f937a = qg;
+        this.f936a = qg;
         this.b = interfaceC0547r9;
         this.c = c0468o4;
         this.d = we;

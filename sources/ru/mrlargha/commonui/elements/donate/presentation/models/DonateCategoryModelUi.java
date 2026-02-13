@@ -209,7 +209,7 @@ public final class DonateCategoryModelUi {
     }
 
     /* renamed from: getGridTemplateType  reason: collision with other method in class */
-    public final GridTemplateType m12294getGridTemplateType() {
+    public final GridTemplateType m12292getGridTemplateType() {
         Object obj;
         if (this.id == 0) {
             return GridTemplateType.MAIN;

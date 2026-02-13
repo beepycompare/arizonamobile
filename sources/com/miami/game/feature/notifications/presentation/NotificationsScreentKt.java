@@ -215,11 +215,11 @@ public final class NotificationsScreentKt {
                     long m5423copywmQWz5c$default = Color.m5423copywmQWz5c$default(Color.Companion.m5461getWhite0d7_KjU(), 0.8f, 0.0f, 0.0f, 0.0f, 14, null);
                     TextStyle bodyMedium = MaterialTheme.INSTANCE.getTypography(composer2, MaterialTheme.$stable).getBodyMedium();
                     float f = 32;
-                    long m10184dpToSp8Feqmps = TypeKt.m10184dpToSp8Feqmps(Dp.m8258constructorimpl(f), composer2, 6);
-                    long m10184dpToSp8Feqmps2 = TypeKt.m10184dpToSp8Feqmps(Dp.m8258constructorimpl(f), composer2, 6);
-                    long m10184dpToSp8Feqmps3 = TypeKt.m10184dpToSp8Feqmps(Dp.m8258constructorimpl(1), composer2, 6);
-                    TextUnitKt.m8465checkArithmeticR2X_6o(m10184dpToSp8Feqmps3);
-                    TextKt.m3255TextNvy7gAk("НЕТ УВЕДОМЛЕНИЙ", null, m5423copywmQWz5c$default, null, m10184dpToSp8Feqmps, null, null, null, TextUnitKt.pack(TextUnit.m8450getRawTypeimpl(m10184dpToSp8Feqmps3), -TextUnit.m8452getValueimpl(m10184dpToSp8Feqmps3)), null, null, m10184dpToSp8Feqmps2, 0, false, 0, 0, null, bodyMedium, composer2, 390, 0, 128746);
+                    long m10183dpToSp8Feqmps = TypeKt.m10183dpToSp8Feqmps(Dp.m8258constructorimpl(f), composer2, 6);
+                    long m10183dpToSp8Feqmps2 = TypeKt.m10183dpToSp8Feqmps(Dp.m8258constructorimpl(f), composer2, 6);
+                    long m10183dpToSp8Feqmps3 = TypeKt.m10183dpToSp8Feqmps(Dp.m8258constructorimpl(1), composer2, 6);
+                    TextUnitKt.m8465checkArithmeticR2X_6o(m10183dpToSp8Feqmps3);
+                    TextKt.m3255TextNvy7gAk("НЕТ УВЕДОМЛЕНИЙ", null, m5423copywmQWz5c$default, null, m10183dpToSp8Feqmps, null, null, null, TextUnitKt.pack(TextUnit.m8450getRawTypeimpl(m10183dpToSp8Feqmps3), -TextUnit.m8452getValueimpl(m10183dpToSp8Feqmps3)), null, null, m10183dpToSp8Feqmps2, 0, false, 0, 0, null, bodyMedium, composer2, 390, 0, 128746);
                     composer2 = composer2;
                     ComposerKt.sourceInformationMarkerEnd(composer2);
                     ComposerKt.sourceInformationMarkerEnd(composer2);
@@ -259,7 +259,7 @@ public final class NotificationsScreentKt {
                     ComposerKt.sourceInformationMarkerStart(composer2, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
                     BoxScopeInstance boxScopeInstance3 = BoxScopeInstance.INSTANCE;
                     ComposerKt.sourceInformationMarkerStart(composer2, -1167154385, "C99@4154L21:NotificationsScreent.kt#21zkme");
-                    AnimatedLoadingKt.m10064AnimatedLoadinguFdPcIQ(true, 0.0f, null, composer2, 6, 6);
+                    AnimatedLoadingKt.m10063AnimatedLoadinguFdPcIQ(true, 0.0f, null, composer2, 6, 6);
                     ComposerKt.sourceInformationMarkerEnd(composer2);
                     ComposerKt.sourceInformationMarkerEnd(composer2);
                     composer2.endNode();
@@ -502,7 +502,7 @@ public final class NotificationsScreentKt {
                 startRestartGroup.updateRememberedValue(rememberedValue);
             }
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
-            ScalingButtonKt.ScalingButton((Function0) rememberedValue, null, ComposableSingletons$NotificationsScreentKt.INSTANCE.m10149getLambda$556808038$notifications_release(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            ScalingButtonKt.ScalingButton((Function0) rememberedValue, null, ComposableSingletons$NotificationsScreentKt.INSTANCE.m10148getLambda$556808038$notifications_release(), startRestartGroup, RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ImageKt.Image(PainterResources_androidKt.painterResource(R.drawable.notification_topbar_label, startRestartGroup, 0), (String) null, OffsetKt.m885offsetVpY3zN4$default(SizeKt.m962height3ABfNKs(Modifier.Companion, Dp.m8258constructorimpl(30)), Dp.m8258constructorimpl(-Dp.m8258constructorimpl(12)), 0.0f, 2, null), (Alignment) null, ContentScale.Companion.getFillHeight(), 0.0f, (ColorFilter) null, startRestartGroup, Painter.$stable | 25008, 104);
             startRestartGroup = startRestartGroup;
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);

@@ -13,7 +13,7 @@ import io.appmetrica.analytics.networktasks.internal.RequestBodyEncrypter;
 public final class Zg implements IParamsAppender {
 
     /* renamed from: a  reason: collision with root package name */
-    public final AdvIdWithLimitedAppender f889a;
+    public final AdvIdWithLimitedAppender f888a;
     public final NetworkTaskForSendingDataParamsAppender b;
     public C0396l7 c;
     public final Hb d;
@@ -28,7 +28,7 @@ public final class Zg implements IParamsAppender {
     }
 
     public Zg(AdvIdWithLimitedAppender advIdWithLimitedAppender, NetworkTaskForSendingDataParamsAppender networkTaskForSendingDataParamsAppender, Hb hb) {
-        this.f889a = advIdWithLimitedAppender;
+        this.f888a = advIdWithLimitedAppender;
         this.b = networkTaskForSendingDataParamsAppender;
         this.d = hb;
     }
@@ -44,7 +44,7 @@ public final class Zg implements IParamsAppender {
         this.b.appendEncryptedData(builder);
         C0396l7 c0396l7 = this.c;
         if (c0396l7 != null) {
-            builder.appendQueryParameter(CommonUrlParts.DEVICE_ID, StringUtils.ifIsEmptyToDef(c0396l7.f1094a, c0381kh.getDeviceId()));
+            builder.appendQueryParameter(CommonUrlParts.DEVICE_ID, StringUtils.ifIsEmptyToDef(c0396l7.f1093a, c0381kh.getDeviceId()));
             builder.appendQueryParameter(CommonUrlParts.UUID, StringUtils.ifIsEmptyToDef(this.c.b, c0381kh.getUuid()));
             a(builder, CommonUrlParts.ANALYTICS_SDK_VERSION_NAME, this.c.c);
             builder.appendQueryParameter(CommonUrlParts.APP_VERSION, StringUtils.ifIsEmptyToDef(this.c.f, c0381kh.getAppVersion()));
@@ -72,7 +72,7 @@ public final class Zg implements IParamsAppender {
         a(builder, "clids_set", (String) WrapUtils.getOrDefault(c0381kh.p, ""));
         builder.appendQueryParameter(CommonUrlParts.APP_SET_ID, c0381kh.getAppSetId());
         builder.appendQueryParameter(CommonUrlParts.APP_SET_ID_SCOPE, c0381kh.getAppSetIdScope());
-        AdvIdWithLimitedAppender advIdWithLimitedAppender = this.f889a;
+        AdvIdWithLimitedAppender advIdWithLimitedAppender = this.f888a;
         this.d.getClass();
         advIdWithLimitedAppender.appendParams(builder, C0449na.I.c().getIdentifiers());
         builder.appendQueryParameter(CommonUrlParts.REQUEST_ID, String.valueOf(this.e));

@@ -6,7 +6,7 @@ import io.appmetrica.analytics.coreapi.internal.data.IBinaryDataHelper;
 public final class R8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final P8 f764a;
+    public final P8 f763a;
     public final Q8 b;
     public final IBinaryDataHelper c;
 
@@ -16,7 +16,7 @@ public final class R8 {
 
     public R8(Q8 q8, P8 p8, IBinaryDataHelper iBinaryDataHelper) {
         this.b = q8;
-        this.f764a = p8;
+        this.f763a = p8;
         this.c = iBinaryDataHelper;
     }
 }

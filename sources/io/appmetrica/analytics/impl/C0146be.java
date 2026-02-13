@@ -4,21 +4,21 @@ package io.appmetrica.analytics.impl;
 public final class C0146be implements so {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f921a;
+    public final String f920a;
 
     public C0146be(String str) {
-        this.f921a = str;
+        this.f920a = str;
     }
 
     @Override // io.appmetrica.analytics.impl.so
     public final qo a(Object obj) {
         if (obj == null) {
-            return new qo(this, false, this.f921a + " is null.");
+            return new qo(this, false, this.f920a + " is null.");
         }
         return new qo(this, true, "");
     }
 
     public final String a() {
-        return this.f921a;
+        return this.f920a;
     }
 }

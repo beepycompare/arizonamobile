@@ -2,7 +2,7 @@ package io.appmetrica.analytics.idsync.impl;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
 import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public abstract /* synthetic */ class z {
     public static /* synthetic */ String a(int i) {
         if (i != 1) {

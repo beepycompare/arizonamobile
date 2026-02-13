@@ -41,7 +41,7 @@ public final class C0299hc extends I2 implements Ia {
         if (c0389l0.b) {
             clearAppEnvironment();
         }
-        List<String> list = c0389l0.f1087a;
+        List<String> list = c0389l0.f1086a;
         if (!CollectionUtils.isNullOrEmpty(list)) {
             this.b.b.addAutoCollectedDataSubscribers(list);
         }
@@ -51,8 +51,8 @@ public final class C0299hc extends I2 implements Ia {
         this.c.info("native crash reporting enabled: %b", Boolean.valueOf(booleanValue));
         if (booleanValue) {
             Bd bd = this.p.c;
-            Context context = this.f622a;
-            bd.d = new H0(this.b.b.getApiKey(), bd.f519a.f521a.getAsString("PROCESS_CFG_PACKAGE_NAME"), CounterConfigurationReporterType.MAIN, bd.f519a.f521a.getAsInteger("PROCESS_CFG_PROCESS_ID").intValue(), bd.f519a.f521a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID"), this.b.d());
+            Context context = this.f621a;
+            bd.d = new H0(this.b.b.getApiKey(), bd.f518a.f520a.getAsString("PROCESS_CFG_PACKAGE_NAME"), CounterConfigurationReporterType.MAIN, bd.f518a.f520a.getAsInteger("PROCESS_CFG_PROCESS_ID").intValue(), bd.f518a.f520a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID"), this.b.d());
             File nativeCrashDirectory = FileUtils.getNativeCrashDirectory(context);
             H0 h0 = null;
             String absolutePath = nativeCrashDirectory != null ? nativeCrashDirectory.getAbsolutePath() : null;
@@ -72,13 +72,13 @@ public final class C0299hc extends I2 implements Ia {
         C0325ic c0325ic = this.q;
         synchronized (c0325ic) {
             Integer num = appMetricaConfig.anrMonitoringTimeout;
-            c0325ic.f1044a = num != null ? num.intValue() : 5;
+            c0325ic.f1043a = num != null ? num.intValue() : 5;
             Boolean bool = appMetricaConfig.anrMonitoring;
             if (bool == null) {
                 bool = Boolean.FALSE;
             }
             if (bool.booleanValue()) {
-                c0325ic.b.a(c0325ic.f1044a);
+                c0325ic.b.a(c0325ic.f1043a);
             } else {
                 c0325ic.b.b();
             }
@@ -93,7 +93,7 @@ public final class C0299hc extends I2 implements Ia {
             C0211e2 c0211e2 = this.p.g;
             synchronized (c0211e2) {
                 c0211e2.getClass();
-                for (C0186d2 c0186d2 : c0211e2.f969a) {
+                for (C0186d2 c0186d2 : c0211e2.f968a) {
                     if (!c0186d2.d) {
                         c0186d2.d = true;
                         c0186d2.b.executeDelayed(c0186d2.e, c0186d2.c);
@@ -107,13 +107,13 @@ public final class C0299hc extends I2 implements Ia {
     public final void c() {
         C0325ic c0325ic = this.q;
         synchronized (c0325ic) {
-            c0325ic.b.a(c0325ic.f1044a);
+            c0325ic.b.a(c0325ic.f1043a);
         }
     }
 
     @Override // io.appmetrica.analytics.impl.Ia
     public final List<String> f() {
-        return this.b.f608a.b();
+        return this.b.f607a.b();
     }
 
     @Override // io.appmetrica.analytics.impl.I2
@@ -129,7 +129,7 @@ public final class C0299hc extends I2 implements Ia {
 
     public final void l() {
         C0681wi c0681wi = this.h;
-        c0681wi.c.a(this.b.f608a);
+        c0681wi.c.a(this.b.f607a);
         C0211e2 c0211e2 = this.p.g;
         C0273gc c0273gc = new C0273gc(this);
         long longValue = r.longValue();
@@ -143,7 +143,7 @@ public final class C0299hc extends I2 implements Ia {
         this.c.info("App opened via deeplink: " + WrapUtils.wrapToTag(str), new Object[0]);
         C0681wi c0681wi = this.h;
         PublicLogger publicLogger = this.c;
-        Set set = AbstractC0672w9.f1285a;
+        Set set = AbstractC0672w9.f1284a;
         HashMap hashMap = new HashMap();
         hashMap.put("type", TtmlNode.TEXT_EMPHASIS_MARK_OPEN);
         hashMap.put("link", str);
@@ -161,7 +161,7 @@ public final class C0299hc extends I2 implements Ia {
         if (enumC0438n == EnumC0438n.b) {
             this.c.info("Enable activity auto tracking", new Object[0]);
         } else {
-            this.c.warning("Could not enable activity auto tracking. " + enumC0438n.f1126a, new Object[0]);
+            this.c.warning("Could not enable activity auto tracking. " + enumC0438n.f1125a, new Object[0]);
         }
     }
 
@@ -173,12 +173,12 @@ public final class C0299hc extends I2 implements Ia {
             C0211e2 c0211e2 = this.p.g;
             synchronized (c0211e2) {
                 c0211e2.getClass();
-                for (C0186d2 c0186d2 : c0211e2.f969a) {
+                for (C0186d2 c0186d2 : c0211e2.f968a) {
                     if (c0186d2.d) {
                         c0186d2.d = false;
                         c0186d2.b.remove(c0186d2.e);
-                        C0299hc c0299hc = c0186d2.f950a.f1012a;
-                        c0299hc.h.c.b(c0299hc.b.f608a);
+                        C0299hc c0299hc = c0186d2.f949a.f1011a;
+                        c0299hc.h.c.b(c0299hc.b.f607a);
                     }
                 }
             }
@@ -208,11 +208,11 @@ public final class C0299hc extends I2 implements Ia {
         synchronized (ho) {
             ho.b = publicLogger;
         }
-        Iterator it = ho.f620a.iterator();
+        Iterator it = ho.f619a.iterator();
         while (it.hasNext()) {
             ((Consumer) it.next()).consume(publicLogger);
         }
-        ho.f620a.clear();
+        ho.f619a.clear();
     }
 
     @Override // io.appmetrica.analytics.impl.Ia
@@ -226,7 +226,7 @@ public final class C0299hc extends I2 implements Ia {
         C0681wi c0681wi = this.h;
         byte[] bytes = externalAttribution.toBytes();
         PublicLogger publicLogger = this.c;
-        Set set = AbstractC0672w9.f1285a;
+        Set set = AbstractC0672w9.f1284a;
         EnumC0143bb enumC0143bb = EnumC0143bb.EVENT_TYPE_UNDEFINED;
         M3 m3 = new M3(bytes, "", 42, publicLogger);
         Fh fh = this.b;
@@ -241,7 +241,7 @@ public final class C0299hc extends I2 implements Ia {
         String d = this.b.d();
         H0 h0 = bd.d;
         if (h0 != null) {
-            H0 h02 = new H0(h0.f606a, h0.b, h0.c, h0.d, h0.e, d);
+            H0 h02 = new H0(h0.f605a, h0.b, h0.c, h0.d, h0.e, d);
             bd.d = h02;
             NativeCrashClientModule nativeCrashClientModule = bd.b;
             bd.c.getClass();

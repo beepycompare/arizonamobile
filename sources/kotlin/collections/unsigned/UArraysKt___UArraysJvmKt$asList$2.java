@@ -13,30 +13,30 @@ import kotlin.collections.ArraysKt;
 public final class UArraysKt___UArraysJvmKt$asList$2 extends AbstractList<ULong> implements RandomAccess {
 
     /* renamed from: $$v$c$kotlin-ULongArray$-$this$asList$0  reason: not valid java name */
-    final /* synthetic */ long[] f152$$v$c$kotlinULongArray$$this$asList$0;
+    final /* synthetic */ long[] f151$$v$c$kotlinULongArray$$this$asList$0;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public UArraysKt___UArraysJvmKt$asList$2(long[] jArr) {
-        this.f152$$v$c$kotlinULongArray$$this$asList$0 = jArr;
+        this.f151$$v$c$kotlinULongArray$$this$asList$0 = jArr;
     }
 
     @Override // kotlin.collections.AbstractCollection, java.util.Collection, java.util.List
     public final /* bridge */ boolean contains(Object obj) {
         if (obj instanceof ULong) {
-            return m10765containsVKZWuLQ(((ULong) obj).m10475unboximpl());
+            return m10764containsVKZWuLQ(((ULong) obj).m10474unboximpl());
         }
         return false;
     }
 
     @Override // kotlin.collections.AbstractList, java.util.List
     public /* bridge */ /* synthetic */ Object get(int i) {
-        return ULong.m10417boximpl(m10766getsVKNKU(i));
+        return ULong.m10416boximpl(m10765getsVKNKU(i));
     }
 
     @Override // kotlin.collections.AbstractList, java.util.List
     public final /* bridge */ int indexOf(Object obj) {
         if (obj instanceof ULong) {
-            return m10767indexOfVKZWuLQ(((ULong) obj).m10475unboximpl());
+            return m10766indexOfVKZWuLQ(((ULong) obj).m10474unboximpl());
         }
         return -1;
     }
@@ -44,38 +44,38 @@ public final class UArraysKt___UArraysJvmKt$asList$2 extends AbstractList<ULong>
     @Override // kotlin.collections.AbstractList, java.util.List
     public final /* bridge */ int lastIndexOf(Object obj) {
         if (obj instanceof ULong) {
-            return m10768lastIndexOfVKZWuLQ(((ULong) obj).m10475unboximpl());
+            return m10767lastIndexOfVKZWuLQ(((ULong) obj).m10474unboximpl());
         }
         return -1;
     }
 
     @Override // kotlin.collections.AbstractList, kotlin.collections.AbstractCollection
     public int getSize() {
-        return ULongArray.m10484getSizeimpl(this.f152$$v$c$kotlinULongArray$$this$asList$0);
+        return ULongArray.m10483getSizeimpl(this.f151$$v$c$kotlinULongArray$$this$asList$0);
     }
 
     @Override // kotlin.collections.AbstractCollection, java.util.Collection
     public boolean isEmpty() {
-        return ULongArray.m10486isEmptyimpl(this.f152$$v$c$kotlinULongArray$$this$asList$0);
+        return ULongArray.m10485isEmptyimpl(this.f151$$v$c$kotlinULongArray$$this$asList$0);
     }
 
     /* renamed from: contains-VKZWuLQ  reason: not valid java name */
-    public boolean m10765containsVKZWuLQ(long j) {
-        return ULongArray.m10479containsVKZWuLQ(this.f152$$v$c$kotlinULongArray$$this$asList$0, j);
+    public boolean m10764containsVKZWuLQ(long j) {
+        return ULongArray.m10478containsVKZWuLQ(this.f151$$v$c$kotlinULongArray$$this$asList$0, j);
     }
 
     /* renamed from: get-s-VKNKU  reason: not valid java name */
-    public long m10766getsVKNKU(int i) {
-        return ULongArray.m10483getsVKNKU(this.f152$$v$c$kotlinULongArray$$this$asList$0, i);
+    public long m10765getsVKNKU(int i) {
+        return ULongArray.m10482getsVKNKU(this.f151$$v$c$kotlinULongArray$$this$asList$0, i);
     }
 
     /* renamed from: indexOf-VKZWuLQ  reason: not valid java name */
-    public int m10767indexOfVKZWuLQ(long j) {
-        return ArraysKt.indexOf(this.f152$$v$c$kotlinULongArray$$this$asList$0, j);
+    public int m10766indexOfVKZWuLQ(long j) {
+        return ArraysKt.indexOf(this.f151$$v$c$kotlinULongArray$$this$asList$0, j);
     }
 
     /* renamed from: lastIndexOf-VKZWuLQ  reason: not valid java name */
-    public int m10768lastIndexOfVKZWuLQ(long j) {
-        return ArraysKt.lastIndexOf(this.f152$$v$c$kotlinULongArray$$this$asList$0, j);
+    public int m10767lastIndexOfVKZWuLQ(long j) {
+        return ArraysKt.lastIndexOf(this.f151$$v$c$kotlinULongArray$$this$asList$0, j);
     }
 }

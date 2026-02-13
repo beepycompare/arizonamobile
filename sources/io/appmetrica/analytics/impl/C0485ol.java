@@ -18,7 +18,7 @@ import kotlin.jvm.JvmStatic;
 public final class C0485ol {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final C0485ol f1161a = new C0485ol();
+    public static final C0485ol f1160a = new C0485ol();
 
     private C0485ol() {
     }

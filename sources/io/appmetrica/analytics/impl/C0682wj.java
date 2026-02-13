@@ -6,14 +6,14 @@ import io.appmetrica.analytics.Revenue;
 public final class C0682wj implements Qa {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Revenue f1290a;
+    public final /* synthetic */ Revenue f1289a;
 
     public C0682wj(Revenue revenue) {
-        this.f1290a = revenue;
+        this.f1289a = revenue;
     }
 
     @Override // io.appmetrica.analytics.impl.Qa
     public final void a(Ra ra) {
-        ra.reportRevenue(this.f1290a);
+        ra.reportRevenue(this.f1289a);
     }
 }

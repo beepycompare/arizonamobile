@@ -6,11 +6,11 @@ import kotlinx.serialization.json.internal.AbstractJsonLexerKt;
 public final class C0690x2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final EnumC0665w2 f1297a;
+    public final EnumC0665w2 f1296a;
     public final Boolean b;
 
     public C0690x2(EnumC0665w2 enumC0665w2, Boolean bool) {
-        this.f1297a = enumC0665w2;
+        this.f1296a = enumC0665w2;
         this.b = bool;
     }
 
@@ -20,7 +20,7 @@ public final class C0690x2 {
         }
         if (obj != null && C0690x2.class == obj.getClass()) {
             C0690x2 c0690x2 = (C0690x2) obj;
-            if (this.f1297a != c0690x2.f1297a) {
+            if (this.f1296a != c0690x2.f1296a) {
                 return false;
             }
             Boolean bool = this.b;
@@ -35,13 +35,13 @@ public final class C0690x2 {
     }
 
     public final int hashCode() {
-        EnumC0665w2 enumC0665w2 = this.f1297a;
+        EnumC0665w2 enumC0665w2 = this.f1296a;
         int hashCode = (enumC0665w2 != null ? enumC0665w2.hashCode() : 0) * 31;
         Boolean bool = this.b;
         return hashCode + (bool != null ? bool.hashCode() : 0);
     }
 
     public final String toString() {
-        return "BackgroundRestrictionsState{mAppStandByBucket=" + this.f1297a + ", mBackgroundRestricted=" + this.b + AbstractJsonLexerKt.END_OBJ;
+        return "BackgroundRestrictionsState{mAppStandByBucket=" + this.f1296a + ", mBackgroundRestricted=" + this.b + AbstractJsonLexerKt.END_OBJ;
     }
 }

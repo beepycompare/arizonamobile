@@ -24,22 +24,22 @@ public final class J8 implements Converter {
             }
             Map.Entry entry = (Map.Entry) obj;
             K8 k8 = new K8();
-            k8.f656a = (String) entry.getKey();
+            k8.f655a = (String) entry.getKey();
             k8.b = (byte[]) entry.getValue();
             k8Arr[i] = k8;
             i = i2;
         }
-        l8.f675a = k8Arr;
+        l8.f674a = k8Arr;
         return MessageNano.toByteArray(l8);
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final Map<String, byte[]> toModel(byte[] bArr) {
-        K8[] k8Arr = ((L8) MessageNano.mergeFrom(new L8(), bArr)).f675a;
+        K8[] k8Arr = ((L8) MessageNano.mergeFrom(new L8(), bArr)).f674a;
         LinkedHashMap linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(k8Arr.length), 16));
         for (K8 k8 : k8Arr) {
-            Pair pair = TuplesKt.to(k8.f656a, k8.b);
+            Pair pair = TuplesKt.to(k8.f655a, k8.b);
             linkedHashMap.put(pair.getFirst(), pair.getSecond());
         }
         return linkedHashMap;

@@ -8,7 +8,7 @@ public final class Xm extends M2 {
     }
 
     public final int b() {
-        return this.f685a;
+        return this.f684a;
     }
 
     public Xm(int i, String str, PublicLogger publicLogger) {
@@ -19,10 +19,10 @@ public final class Xm extends M2 {
     public final String a(String str) {
         if (str != null) {
             int length = str.length();
-            int i = this.f685a;
+            int i = this.f684a;
             if (length > i) {
                 String substring = str.substring(0, i);
-                this.c.warning("\"%s\" %s size exceeded limit of %d characters", this.b, str, Integer.valueOf(this.f685a));
+                this.c.warning("\"%s\" %s size exceeded limit of %d characters", this.b, str, Integer.valueOf(this.f684a));
                 return substring;
             }
         }

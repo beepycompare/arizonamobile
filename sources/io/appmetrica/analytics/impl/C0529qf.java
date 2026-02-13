@@ -9,14 +9,14 @@ import org.json.JSONObject;
 public final class C0529qf implements T7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1190a;
+    public final String f1189a;
     public final JSONObject b;
     public final boolean c;
     public final boolean d;
     public final S7 e;
 
     public C0529qf(String str, JSONObject jSONObject, boolean z, boolean z2, S7 s7) {
-        this.f1190a = str;
+        this.f1189a = str;
         this.b = jSONObject;
         this.c = z;
         this.d = z2;
@@ -32,7 +32,7 @@ public final class C0529qf implements T7 {
         if (this.c) {
             JSONObject jSONObject = new JSONObject();
             try {
-                jSONObject.put("trackingId", this.f1190a);
+                jSONObject.put("trackingId", this.f1189a);
                 if (this.b.length() > 0) {
                     jSONObject.put("additionalParams", this.b);
                 }
@@ -46,18 +46,18 @@ public final class C0529qf implements T7 {
     public final JSONObject c() {
         JSONObject jSONObject = new JSONObject();
         try {
-            jSONObject.put("trackingId", this.f1190a);
+            jSONObject.put("trackingId", this.f1189a);
             jSONObject.put("additionalParams", this.b);
             jSONObject.put("wasSet", this.c);
             jSONObject.put("autoTracking", this.d);
-            jSONObject.put("source", this.e.f779a);
+            jSONObject.put("source", this.e.f778a);
         } catch (Throwable unused) {
         }
         return jSONObject;
     }
 
     public final String toString() {
-        return "PreloadInfoState{trackingId='" + this.f1190a + "', additionalParameters=" + this.b + ", wasSet=" + this.c + ", autoTrackingEnabled=" + this.d + ", source=" + this.e + AbstractJsonLexerKt.END_OBJ;
+        return "PreloadInfoState{trackingId='" + this.f1189a + "', additionalParameters=" + this.b + ", wasSet=" + this.c + ", autoTrackingEnabled=" + this.d + ", source=" + this.e + AbstractJsonLexerKt.END_OBJ;
     }
 
     public static C0529qf a(JSONObject jSONObject) {
@@ -76,7 +76,7 @@ public final class C0529qf implements T7 {
                 break;
             }
             s7 = values[i];
-            if (Intrinsics.areEqual(s7.f779a, optStringOrNull2)) {
+            if (Intrinsics.areEqual(s7.f778a, optStringOrNull2)) {
                 break;
             }
             i++;

@@ -17,7 +17,7 @@ public final class DefaultIoScheduler extends ExecutorCoroutineDispatcher implem
     public static final DefaultIoScheduler INSTANCE = new DefaultIoScheduler();
 
     /* renamed from: default  reason: not valid java name */
-    private static final CoroutineDispatcher f156default;
+    private static final CoroutineDispatcher f155default;
 
     private DefaultIoScheduler() {
     }
@@ -25,7 +25,7 @@ public final class DefaultIoScheduler extends ExecutorCoroutineDispatcher implem
     static {
         int systemProp$default;
         systemProp$default = SystemPropsKt__SystemProps_commonKt.systemProp$default(DispatchersKt.IO_PARALLELISM_PROPERTY_NAME, RangesKt.coerceAtLeast(64, SystemPropsKt.getAVAILABLE_PROCESSORS()), 0, 0, 12, (Object) null);
-        f156default = CoroutineDispatcher.limitedParallelism$default(UnlimitedIoScheduler.INSTANCE, systemProp$default, null, 2, null);
+        f155default = CoroutineDispatcher.limitedParallelism$default(UnlimitedIoScheduler.INSTANCE, systemProp$default, null, 2, null);
     }
 
     @Override // kotlinx.coroutines.ExecutorCoroutineDispatcher
@@ -35,7 +35,7 @@ public final class DefaultIoScheduler extends ExecutorCoroutineDispatcher implem
 
     @Override // java.util.concurrent.Executor
     public void execute(Runnable runnable) {
-        mo11838dispatch(EmptyCoroutineContext.INSTANCE, runnable);
+        mo11837dispatch(EmptyCoroutineContext.INSTANCE, runnable);
     }
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
@@ -45,13 +45,13 @@ public final class DefaultIoScheduler extends ExecutorCoroutineDispatcher implem
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public void mo11838dispatch(CoroutineContext coroutineContext, Runnable runnable) {
-        f156default.mo11838dispatch(coroutineContext, runnable);
+    public void mo11837dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+        f155default.mo11837dispatch(coroutineContext, runnable);
     }
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     public void dispatchYield(CoroutineContext coroutineContext, Runnable runnable) {
-        f156default.dispatchYield(coroutineContext, runnable);
+        f155default.dispatchYield(coroutineContext, runnable);
     }
 
     @Override // kotlinx.coroutines.ExecutorCoroutineDispatcher, java.io.Closeable, java.lang.AutoCloseable

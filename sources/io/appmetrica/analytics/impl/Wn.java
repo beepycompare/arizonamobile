@@ -3,9 +3,9 @@ package io.appmetrica.analytics.impl;
 public abstract class Wn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ta f846a;
+    public final Ta f845a;
 
     public Wn(Ta ta) {
-        this.f846a = ta;
+        this.f845a = ta;
     }
 }

@@ -7,25 +7,25 @@ import io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorPr
 public final class C0624ub implements LastKnownLocationExtractorProviderFactory {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0649vb f1255a = new C0649vb();
+    public final C0649vb f1254a = new C0649vb();
 
     @Override // io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProviderFactory
     public final LastKnownLocationExtractorProvider getGplLastKnownLocationExtractorProvider() {
-        return this.f1255a;
+        return this.f1254a;
     }
 
     @Override // io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProviderFactory
     public final LastKnownLocationExtractorProvider getGpsLastKnownLocationExtractorProvider() {
-        return this.f1255a;
+        return this.f1254a;
     }
 
     @Override // io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProviderFactory
     public final LastKnownLocationExtractorProvider getNetworkLastKnownLocationExtractorProvider() {
-        return this.f1255a;
+        return this.f1254a;
     }
 
     @Override // io.appmetrica.analytics.locationapi.internal.LastKnownLocationExtractorProviderFactory
     public final LastKnownLocationExtractorProvider getPassiveLastKnownLocationExtractorProvider() {
-        return this.f1255a;
+        return this.f1254a;
     }
 }

@@ -13,12 +13,12 @@ public abstract class AbstractCallableC0705xh implements Callable {
     public static final C0680wh d = new C0680wh();
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0489p0 f1309a;
+    public final C0489p0 f1308a;
     public final Zk b;
     public boolean c;
 
     public AbstractCallableC0705xh(C0489p0 c0489p0, Zk zk) {
-        this.f1309a = c0489p0;
+        this.f1308a = c0489p0;
         this.b = zk;
     }
 
@@ -28,23 +28,23 @@ public abstract class AbstractCallableC0705xh implements Callable {
     }
 
     public final C0489p0 b() {
-        return this.f1309a;
+        return this.f1308a;
     }
 
     public boolean c() {
-        C0489p0 c0489p0 = this.f1309a;
+        C0489p0 c0489p0 = this.f1308a;
         synchronized (c0489p0) {
             if (c0489p0.d == null) {
                 c0489p0.e = new CountDownLatch(1);
-                Intent a2 = c0489p0.h.a(c0489p0.f1165a);
+                Intent a2 = c0489p0.h.a(c0489p0.f1164a);
                 try {
-                    c0489p0.g.b(c0489p0.f1165a);
-                    c0489p0.f1165a.bindService(a2, c0489p0.j, 1);
+                    c0489p0.g.b(c0489p0.f1164a);
+                    c0489p0.f1164a.bindService(a2, c0489p0.j, 1);
                 } catch (Throwable unused) {
                 }
             }
         }
-        this.f1309a.a(5000L);
+        this.f1308a.a(5000L);
         return true;
     }
 
@@ -71,7 +71,7 @@ public abstract class AbstractCallableC0705xh implements Callable {
             this.c = true;
             int i = 0;
             do {
-                C0489p0 c0489p0 = this.f1309a;
+                C0489p0 c0489p0 = this.f1308a;
                 synchronized (c0489p0) {
                     iAppMetricaService = c0489p0.d;
                 }
@@ -80,7 +80,7 @@ public abstract class AbstractCallableC0705xh implements Callable {
                         a(iAppMetricaService);
                         Zk zk = this.b;
                         if (zk == null || ((C0330ii) zk).a()) {
-                            this.f1309a.c();
+                            this.f1308a.c();
                             return;
                         }
                         return;

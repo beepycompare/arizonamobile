@@ -88,7 +88,7 @@ public final class RegistrationAccount implements InterfaceController {
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
         this.registrationAccountBinding = bind;
         this.requestState = RequestState.INIT;
-        SharedPreferences sharedPreferences = targetActivity.getSharedPreferences(SP_NAME, 0);
+        SharedPreferences sharedPreferences = targetActivity.getSharedPreferences("UI_ELEMENTS_SP", 0);
         Intrinsics.checkNotNullExpressionValue(sharedPreferences, "getSharedPreferences(...)");
         this.sharedPreferences = sharedPreferences;
         this.localUsername = "";

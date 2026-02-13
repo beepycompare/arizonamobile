@@ -8,11 +8,11 @@ import io.appmetrica.analytics.internal.CounterConfigurationReporterType;
 public final class C0420m6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0681wi f1112a;
+    public final C0681wi f1111a;
     public final Fh b;
 
     public C0420m6(Bf bf, D8 d8, C0681wi c0681wi, AppMetricaConfig appMetricaConfig) {
-        this.f1112a = c0681wi;
+        this.f1111a = c0681wi;
         this.b = new Fh(bf, new CounterConfiguration(appMetricaConfig, CounterConfigurationReporterType.CRASH), d8, appMetricaConfig.userProfileID);
     }
 

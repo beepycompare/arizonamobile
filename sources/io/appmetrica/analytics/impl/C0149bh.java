@@ -24,20 +24,20 @@ public final class C0149bh extends Rg {
 
     @Override // io.appmetrica.analytics.impl.Rg
     public final boolean a(P5 p5) {
-        X4 x4 = this.f768a;
+        X4 x4 = this.f767a;
         x4.b.toString();
         if (x4.t.c() && x4.x()) {
             T1 t1 = (T1) this.c.read();
-            List list = t1.f791a;
+            List list = t1.f790a;
             C0690x2 c0690x2 = t1.b;
             C0715y2 c0715y2 = this.d;
             c0715y2.getClass();
             T1 t12 = null;
-            C0690x2 a2 = AndroidUtils.isApiAchieved(28) ? C0615u2.a(c0715y2.f1317a, c0715y2.b) : null;
+            C0690x2 a2 = AndroidUtils.isApiAchieved(28) ? C0615u2.a(c0715y2.f1316a, c0715y2.b) : null;
             List list2 = t1.c;
-            List list3 = (List) SystemServiceUtils.accessSystemServiceSafelyOrDefault(this.f.f1199a, "getting available providers", "location manager", Collections.emptyList(), new C0516q2());
+            List list3 = (List) SystemServiceUtils.accessSystemServiceSafelyOrDefault(this.f.f1198a, "getting available providers", "location manager", Collections.emptyList(), new C0516q2());
             C0677we c0677we = this.b;
-            Context context = this.f768a.f849a;
+            Context context = this.f767a.f848a;
             c0677we.getClass();
             ArrayList a3 = new Pi(context, new SafePackageManager()).a();
             if (CollectionUtils.areCollectionsEqual(a3, list)) {
@@ -52,21 +52,21 @@ public final class C0149bh extends Rg {
             if (t12 == null) {
                 if (x4.A()) {
                     C0373k9 c0373k9 = x4.n;
-                    P5 a4 = P5.a(p5, t1.f791a, t1.b, this.e, t1.c);
+                    P5 a4 = P5.a(p5, t1.f790a, t1.b, this.e, t1.c);
                     c0373k9.a(a4, Rk.a(c0373k9.c.b(a4), a4.i));
                     long currentTimeSeconds = c0373k9.i.currentTimeSeconds();
                     c0373k9.k = currentTimeSeconds;
-                    c0373k9.f1080a.a(currentTimeSeconds).b();
+                    c0373k9.f1079a.a(currentTimeSeconds).b();
                     return false;
                 }
                 return false;
             }
             C0373k9 c0373k92 = x4.n;
-            P5 a5 = P5.a(p5, t12.f791a, t12.b, this.e, t12.c);
+            P5 a5 = P5.a(p5, t12.f790a, t12.b, this.e, t12.c);
             c0373k92.a(a5, Rk.a(c0373k92.c.b(a5), a5.i));
             long currentTimeSeconds2 = c0373k92.i.currentTimeSeconds();
             c0373k92.k = currentTimeSeconds2;
-            c0373k92.f1080a.a(currentTimeSeconds2).b();
+            c0373k92.f1079a.a(currentTimeSeconds2).b();
             this.c.save(t12);
             return false;
         }

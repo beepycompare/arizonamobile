@@ -16,17 +16,17 @@ import kotlin.jvm.internal.Reflection;
 public final class Jd implements NativeCrashHandler {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Function1 f643a;
+    public final Function1 f642a;
     public final IHandlerExecutor b = C0449na.k().w().d();
     public final Md c;
 
     public Jd(Context context, Sg sg, Function1<? super String, Unit> function1, Rd rd, EnumC0143bb enumC0143bb, String str) {
-        this.f643a = function1;
+        this.f642a = function1;
         this.c = new Md(context, sg, rd, enumC0143bb);
     }
 
     public static final void a(Jd jd, NativeCrash nativeCrash, File file) {
-        jd.f643a.invoke(nativeCrash.getUuid());
+        jd.f642a.invoke(nativeCrash.getUuid());
     }
 
     @Override // io.appmetrica.analytics.ndkcrashesapi.internal.NativeCrashHandler
@@ -46,7 +46,7 @@ public final class Jd implements NativeCrashHandler {
             g0 = null;
         }
         if (g0 != null) {
-            LoggerStorage.getOrCreatePublicLogger(g0.f.f606a).info("Detected native crash with uuid = " + g0.c, new Object[0]);
+            LoggerStorage.getOrCreatePublicLogger(g0.f.f605a).info("Detected native crash with uuid = " + g0.c, new Object[0]);
             IHandlerExecutor iHandlerExecutor = this.b;
             Md md = this.c;
             Consumer consumer = new Consumer() { // from class: io.appmetrica.analytics.impl.Jd$$ExternalSyntheticLambda0
@@ -56,13 +56,13 @@ public final class Jd implements NativeCrashHandler {
                 }
             };
             md.getClass();
-            Fd fd = new Fd(new Hd(g0.f589a, g0.b), md.f);
+            Fd fd = new Fd(new Hd(g0.f588a, g0.b), md.f);
             Cd cd = new Cd(md.b, g0.f, new Ld(g0, md.d));
             C0116aa c0116aa = md.e;
             String str = g0.d;
             c0116aa.getClass();
             File file = new File(str);
-            Context context = md.f694a;
+            Context context = md.f693a;
             if (Z9.c == null) {
                 synchronized (Reflection.getOrCreateKotlinClass(Z9.class)) {
                     if (Z9.c == null) {
@@ -81,6 +81,6 @@ public final class Jd implements NativeCrashHandler {
             iHandlerExecutor.execute(new Tf(file, fd, consumer, cd, z9, md.c.a(g0)));
             return;
         }
-        this.f643a.invoke(nativeCrash.getUuid());
+        this.f642a.invoke(nativeCrash.getUuid());
     }
 }

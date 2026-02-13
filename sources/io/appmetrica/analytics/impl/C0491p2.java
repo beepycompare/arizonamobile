@@ -9,14 +9,14 @@ import java.util.concurrent.TimeUnit;
 public final class C0491p2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final We f1167a;
+    public final We f1166a;
     public final long b;
     public final long c;
     public final SystemTimeProvider d;
     public final Map e;
 
     public C0491p2(Q4 q4, We we) {
-        this.f1167a = we;
+        this.f1166a = we;
         q4.b();
         this.b = TimeUnit.MINUTES.toMillis(1L);
         this.c = TimeUnit.DAYS.toMillis(7L);

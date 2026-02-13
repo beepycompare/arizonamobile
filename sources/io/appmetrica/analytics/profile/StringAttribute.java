@@ -14,27 +14,27 @@ import io.appmetrica.analytics.impl.so;
 public class StringAttribute {
 
     /* renamed from: a  reason: collision with root package name */
-    private final Ln f1431a;
+    private final Ln f1430a;
     private final C0594t6 b;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public StringAttribute(String str, Xm xm, so soVar, InterfaceC0340j2 interfaceC0340j2) {
         this.b = new C0594t6(str, soVar, interfaceC0340j2);
-        this.f1431a = xm;
+        this.f1430a = xm;
     }
 
     public UserProfileUpdate<? extends InterfaceC0233eo> withValue(String str) {
         C0594t6 c0594t6 = this.b;
-        return new UserProfileUpdate<>(new Ym(c0594t6.c, str, this.f1431a, c0594t6.f1232a, new C0567s4(c0594t6.b)));
+        return new UserProfileUpdate<>(new Ym(c0594t6.c, str, this.f1430a, c0594t6.f1231a, new C0567s4(c0594t6.b)));
     }
 
     public UserProfileUpdate<? extends InterfaceC0233eo> withValueIfUndefined(String str) {
         C0594t6 c0594t6 = this.b;
-        return new UserProfileUpdate<>(new Ym(c0594t6.c, str, this.f1431a, c0594t6.f1232a, new Xk(c0594t6.b)));
+        return new UserProfileUpdate<>(new Ym(c0594t6.c, str, this.f1430a, c0594t6.f1231a, new Xk(c0594t6.b)));
     }
 
     public UserProfileUpdate<? extends InterfaceC0233eo> withValueReset() {
         C0594t6 c0594t6 = this.b;
-        return new UserProfileUpdate<>(new Bi(0, c0594t6.c, c0594t6.f1232a, c0594t6.b));
+        return new UserProfileUpdate<>(new Bi(0, c0594t6.c, c0594t6.f1231a, c0594t6.b));
     }
 }

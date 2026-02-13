@@ -13,7 +13,7 @@ import kotlin.jvm.internal.Lambda;
 public final class e0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1606a;
+    public final Context f1605a;
     public final Lazy b;
 
     /* loaded from: classes6.dex */
@@ -24,29 +24,29 @@ public final class e0 {
 
         @Override // kotlin.jvm.functions.Function0
         public final d0 invoke() {
-            Object m10244constructorimpl;
+            Object m10243constructorimpl;
             String value;
             e0 e0Var = e0.this;
             try {
                 Result.Companion companion = Result.Companion;
-                PackageManager packageManager = e0Var.f1606a.getPackageManager();
+                PackageManager packageManager = e0Var.f1605a.getPackageManager();
                 Intrinsics.checkNotNullExpressionValue(packageManager, "context.packageManager");
-                String packageName = e0Var.f1606a.getPackageName();
+                String packageName = e0Var.f1605a.getPackageName();
                 Intrinsics.checkNotNullExpressionValue(packageName, "context.packageName");
                 value = f0.a(packageManager, packageName).versionName;
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m10244constructorimpl = Result.m10244constructorimpl(ResultKt.createFailure(th));
+                m10243constructorimpl = Result.m10243constructorimpl(ResultKt.createFailure(th));
             }
             if (value != null) {
                 Intrinsics.checkNotNullExpressionValue(value, "requireNotNull(context.p…packageName).versionName)");
                 Intrinsics.checkNotNullParameter(value, "value");
-                m10244constructorimpl = Result.m10244constructorimpl(new d0(value));
-                if (Result.m10250isFailureimpl(m10244constructorimpl)) {
-                    m10244constructorimpl = null;
+                m10243constructorimpl = Result.m10243constructorimpl(new d0(value));
+                if (Result.m10249isFailureimpl(m10243constructorimpl)) {
+                    m10243constructorimpl = null;
                 }
-                d0 d0Var = (d0) m10244constructorimpl;
-                String str = d0Var != null ? d0Var.f1605a : null;
+                d0 d0Var = (d0) m10243constructorimpl;
+                String str = d0Var != null ? d0Var.f1604a : null;
                 if (str != null) {
                     return new d0(str);
                 }
@@ -58,7 +58,7 @@ public final class e0 {
 
     public e0(Context context) {
         Intrinsics.checkNotNullParameter(context, "context");
-        this.f1606a = context;
+        this.f1605a = context;
         this.b = LazyKt.lazy(new a());
     }
 }

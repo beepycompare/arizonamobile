@@ -9,12 +9,12 @@ import java.util.Iterator;
 public final class K6 extends InterruptionSafeThread {
 
     /* renamed from: a  reason: collision with root package name */
-    public final X4 f655a;
+    public final X4 f654a;
     public final /* synthetic */ L6 b;
 
     public K6(L6 l6, X4 x4) {
         this.b = l6;
-        this.f655a = x4;
+        this.f654a = x4;
     }
 
     public final synchronized void a(ArrayList arrayList) {
@@ -28,7 +28,7 @@ public final class K6 extends InterruptionSafeThread {
         while (it2.hasNext()) {
             ((S8) it2.next()).a(arrayList2);
         }
-        ((C0369k5) this.f655a.p).e();
+        ((C0369k5) this.f654a.p).e();
     }
 
     @Override // java.lang.Thread, java.lang.Runnable

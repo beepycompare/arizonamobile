@@ -5,11 +5,11 @@ import io.appmetrica.analytics.modulesapi.internal.service.RemoteConfigMetaInfo;
 public final class Kg implements RemoteConfigMetaInfo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final long f660a;
+    public final long f659a;
     public final long b;
 
     public Kg(long j, long j2) {
-        this.f660a = j;
+        this.f659a = j;
         this.b = j2;
     }
 
@@ -27,14 +27,14 @@ public final class Kg implements RemoteConfigMetaInfo {
         }
         if (obj instanceof Kg) {
             Kg kg = (Kg) obj;
-            return this.f660a == kg.f660a && this.b == kg.b;
+            return this.f659a == kg.f659a && this.b == kg.b;
         }
         return false;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.RemoteConfigMetaInfo
     public final long getFirstSendTime() {
-        return this.f660a;
+        return this.f659a;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.service.RemoteConfigMetaInfo
@@ -43,20 +43,20 @@ public final class Kg implements RemoteConfigMetaInfo {
     }
 
     public final int hashCode() {
-        return Long.hashCode(this.b) + (Long.hashCode(this.f660a) * 31);
+        return Long.hashCode(this.b) + (Long.hashCode(this.f659a) * 31);
     }
 
     public final String toString() {
-        return "RemoteConfigMetaInfoModel(firstSendTime=" + this.f660a + ", lastUpdateTime=" + this.b + ')';
+        return "RemoteConfigMetaInfoModel(firstSendTime=" + this.f659a + ", lastUpdateTime=" + this.b + ')';
     }
 
     public final long a() {
-        return this.f660a;
+        return this.f659a;
     }
 
     public static Kg a(Kg kg, long j, long j2, int i, Object obj) {
         if ((i & 1) != 0) {
-            j = kg.f660a;
+            j = kg.f659a;
         }
         if ((i & 2) != 0) {
             j2 = kg.b;

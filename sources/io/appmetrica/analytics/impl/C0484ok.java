@@ -13,12 +13,12 @@ import io.appmetrica.analytics.protobuf.nano.MessageNano;
 public final class C0484ok implements Ic {
 
     /* renamed from: a  reason: collision with root package name */
-    public final wo f1160a;
+    public final wo f1159a;
     public final String b = "startup_state";
     public final AESEncrypter c;
 
     public C0484ok(wo woVar) {
-        this.f1160a = woVar;
+        this.f1159a = woVar;
         C0105a c0105a = new C0105a(C0449na.k().g());
         this.c = new AESEncrypter(AESEncrypter.DEFAULT_ALGORITHM, c0105a.b(), c0105a.a());
     }
@@ -26,7 +26,7 @@ public final class C0484ok implements Ic {
     public static void a(wo woVar, C0334im c0334im, Ab ab) {
         String optStringOrNull;
         synchronized (woVar) {
-            optStringOrNull = JsonUtils.optStringOrNull(woVar.f1294a.a(), "device_id");
+            optStringOrNull = JsonUtils.optStringOrNull(woVar.f1293a.a(), "device_id");
         }
         if (TextUtils.isEmpty(optStringOrNull)) {
             if (!TextUtils.isEmpty(ab.d)) {
@@ -35,10 +35,10 @@ public final class C0484ok implements Ic {
             if (!TextUtils.isEmpty(ab.e)) {
                 woVar.b(ab.e);
             }
-            if (TextUtils.isEmpty(ab.f498a)) {
+            if (TextUtils.isEmpty(ab.f497a)) {
                 return;
             }
-            c0334im.f1050a = ab.f498a;
+            c0334im.f1049a = ab.f497a;
         }
     }
 
@@ -50,7 +50,7 @@ public final class C0484ok implements Ic {
                 Ab a2 = a(readableDatabase);
                 C0334im c0334im = new C0334im(new C0393l4(new C0342j4()));
                 if (a2 != null) {
-                    a(this.f1160a, c0334im, a2);
+                    a(this.f1159a, c0334im, a2);
                     c0334im.p = a2.c;
                     c0334im.r = a2.b;
                 }

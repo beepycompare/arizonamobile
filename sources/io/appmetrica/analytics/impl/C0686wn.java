@@ -8,7 +8,7 @@ import java.util.List;
 public final class C0686wn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1293a;
+    public final String f1292a;
     public final int b;
     public final long c;
     public final String d;
@@ -16,7 +16,7 @@ public final class C0686wn {
     public final List f;
 
     public C0686wn(String str, int i, long j, String str2, Integer num, List list) {
-        this.f1293a = str;
+        this.f1292a = str;
         this.b = i;
         this.c = j;
         this.d = str2;

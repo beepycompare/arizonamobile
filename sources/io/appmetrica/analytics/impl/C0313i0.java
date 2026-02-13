@@ -4,11 +4,11 @@ package io.appmetrica.analytics.impl;
 public final class C0313i0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1036a;
+    public final String f1035a;
     public final long b;
 
     public C0313i0(String str, long j) {
-        this.f1036a = str;
+        this.f1035a = str;
         this.b = j;
     }
 
@@ -21,8 +21,8 @@ public final class C0313i0 {
             if (this.b != c0313i0.b) {
                 return false;
             }
-            String str = this.f1036a;
-            String str2 = c0313i0.f1036a;
+            String str = this.f1035a;
+            String str2 = c0313i0.f1035a;
             if (str == null ? str2 == null : str.equals(str2)) {
                 return true;
             }
@@ -31,7 +31,7 @@ public final class C0313i0 {
     }
 
     public final int hashCode() {
-        String str = this.f1036a;
+        String str = this.f1035a;
         int hashCode = str != null ? str.hashCode() : 0;
         long j = this.b;
         return (hashCode * 31) + ((int) (j ^ (j >>> 32)));

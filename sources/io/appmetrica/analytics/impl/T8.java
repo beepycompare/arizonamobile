@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 public final class T8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public InterfaceC0701xd f796a;
+    public InterfaceC0701xd f795a;
     public to b;
     public InterfaceC0721y8 c;
     public InterfaceC0597t9 d;
@@ -12,7 +12,7 @@ public final class T8 {
     public final N9 g;
 
     public T8(U8 u8) {
-        this.f796a = U8.a(u8);
+        this.f795a = U8.a(u8);
         this.b = U8.b(u8);
         this.c = U8.c(u8);
         this.d = U8.d(u8);

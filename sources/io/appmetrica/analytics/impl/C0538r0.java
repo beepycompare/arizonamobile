@@ -7,7 +7,7 @@ import io.appmetrica.analytics.logger.appmetrica.internal.ImportantLogger;
 public final class C0538r0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Yn f1197a;
+    public final Yn f1196a;
     public volatile Boolean b;
     public Ba c;
     public Ca d;
@@ -28,7 +28,7 @@ public final class C0538r0 {
     }
 
     public C0538r0(Yn yn) {
-        this.f1197a = yn;
+        this.f1196a = yn;
     }
 
     public final boolean a(Context context) {
@@ -37,7 +37,7 @@ public final class C0538r0 {
             synchronized (this) {
                 bool = this.b;
                 if (bool == null) {
-                    this.f1197a.getClass();
+                    this.f1196a.getClass();
                     Boolean valueOf = Boolean.valueOf(!Yn.a(context));
                     this.b = valueOf;
                     if (valueOf.booleanValue()) {

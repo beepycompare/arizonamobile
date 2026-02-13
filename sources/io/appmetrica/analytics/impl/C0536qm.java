@@ -13,7 +13,7 @@ public final class C0536qm extends MessageNano {
     public static volatile C0536qm[] b;
 
     /* renamed from: a  reason: collision with root package name */
-    public long f1194a;
+    public long f1193a;
 
     public C0536qm() {
         a();
@@ -31,7 +31,7 @@ public final class C0536qm extends MessageNano {
     }
 
     public final C0536qm a() {
-        this.f1194a = 864000000L;
+        this.f1193a = 864000000L;
         this.cachedSize = -1;
         return this;
     }
@@ -39,13 +39,13 @@ public final class C0536qm extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        long j = this.f1194a;
+        long j = this.f1193a;
         return j != 864000000 ? CodedOutputByteBufferNano.computeInt64Size(1, j) + computeSerializedSize : computeSerializedSize;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        long j = this.f1194a;
+        long j = this.f1193a;
         if (j != 864000000) {
             codedOutputByteBufferNano.writeInt64(1, j);
         }
@@ -64,7 +64,7 @@ public final class C0536qm extends MessageNano {
                     break;
                 }
             } else {
-                this.f1194a = codedInputByteBufferNano.readInt64();
+                this.f1193a = codedInputByteBufferNano.readInt64();
             }
         }
         return this;

@@ -6,7 +6,7 @@ import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import androidx.appcompat.widget.AppCompatImageView;
+import android.widget.ImageView;
 import androidx.constraintlayout.core.motion.utils.TypedValues;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import kotlin.Metadata;
@@ -259,7 +259,7 @@ public final class ArizonaSnackbar extends SAMPUIElement {
                 arizonaSnackbarBinding.snackTitle.setVisibility(8);
             }
             Styles style = Styles.Companion.getStyle(snackbarModel.getStyleInt());
-            AppCompatImageView appCompatImageView = arizonaSnackbarBinding.snackbarBg;
+            ImageView imageView = arizonaSnackbarBinding.snackbarBg;
             int i2 = WhenMappings.$EnumSwitchMapping$0[style.ordinal()];
             if (i2 == 1) {
                 i = R.drawable.info_snackbar_bg;
@@ -270,7 +270,7 @@ public final class ArizonaSnackbar extends SAMPUIElement {
             } else {
                 i = R.drawable.error_snackbar_bg;
             }
-            appCompatImageView.setImageResource(i);
+            imageView.setImageResource(i);
             this.handler.postDelayed(new Runnable() { // from class: ru.mrlargha.commonui.elements.ArizonaSnackbar$showSnackbar$$inlined$postDelayed$default$1
                 @Override // java.lang.Runnable
                 public final void run() {

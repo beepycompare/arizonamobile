@@ -8,11 +8,11 @@ import org.json.JSONArray;
 public final class C0612u implements InterfaceC0662w {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1244a = "yandex";
+    public final String f1243a = "yandex";
 
     public final String a() {
         try {
-            return new JSONArray((Collection) CollectionsKt.plus((Collection) CollectionsKt.listOf(this.f1244a), (Iterable) C0136b4.l().m().d)).toString();
+            return new JSONArray((Collection) CollectionsKt.plus((Collection) CollectionsKt.listOf(this.f1243a), (Iterable) C0136b4.l().m().d)).toString();
         } catch (Throwable unused) {
             return null;
         }

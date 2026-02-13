@@ -34,24 +34,23 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: SettingsBottomBar.kt */
-@Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\u001a7\u0010\u0000\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\f\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00010\u0003H\u0007¢\u0006\u0002\u0010\u0006¨\u0006\u0007"}, d2 = {"SettingsBottomBar", "", "onBugsReport", "Lkotlin/Function0;", "onShareLogs", "onPrivacyPolicy", "(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "settings_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\u001aE\u0010\u0000\u001a\u00020\u00012\f\u0010\u0002\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\f\u0010\u0005\u001a\b\u0012\u0004\u0012\u00020\u00010\u00032\f\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00010\u0003H\u0007¢\u0006\u0002\u0010\u0007¨\u0006\b"}, d2 = {"SettingsBottomBar", "", "onBugsReport", "Lkotlin/Function0;", "onShareLogs", "onPrivacyPolicy", "onLongShareLogs", "(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/Composer;I)V", "settings_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes4.dex */
 public final class SettingsBottomBarKt {
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit SettingsBottomBar$lambda$1(Function0 function0, Function0 function02, Function0 function03, int i, Composer composer, int i2) {
-        SettingsBottomBar(function0, function02, function03, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
+    public static final Unit SettingsBottomBar$lambda$1(Function0 function0, Function0 function02, Function0 function03, Function0 function04, int i, Composer composer, int i2) {
+        SettingsBottomBar(function0, function02, function03, function04, composer, RecomposeScopeImplKt.updateChangedFlags(i | 1));
         return Unit.INSTANCE;
     }
 
-    public static final void SettingsBottomBar(Function0<Unit> onBugsReport, final Function0<Unit> onShareLogs, Function0<Unit> onPrivacyPolicy, Composer composer, final int i) {
+    public static final void SettingsBottomBar(final Function0<Unit> onBugsReport, final Function0<Unit> onShareLogs, final Function0<Unit> onPrivacyPolicy, final Function0<Unit> onLongShareLogs, Composer composer, final int i) {
         int i2;
-        final Function0<Unit> function0;
-        final Function0<Unit> function02;
         Intrinsics.checkNotNullParameter(onBugsReport, "onBugsReport");
         Intrinsics.checkNotNullParameter(onShareLogs, "onShareLogs");
         Intrinsics.checkNotNullParameter(onPrivacyPolicy, "onPrivacyPolicy");
-        Composer startRestartGroup = composer.startRestartGroup(943966847);
-        ComposerKt.sourceInformation(startRestartGroup, "C(SettingsBottomBar)N(onBugsReport,onShareLogs,onPrivacyPolicy)32@1311L1782:SettingsBottomBar.kt#1gr92h");
+        Intrinsics.checkNotNullParameter(onLongShareLogs, "onLongShareLogs");
+        Composer startRestartGroup = composer.startRestartGroup(-592364725);
+        ComposerKt.sourceInformation(startRestartGroup, "C(SettingsBottomBar)N(onBugsReport,onShareLogs,onPrivacyPolicy,onLongShareLogs)34@1424L1803:SettingsBottomBar.kt#1gr92h");
         if ((i & 6) == 0) {
             i2 = (startRestartGroup.changedInstance(onBugsReport) ? 4 : 2) | i;
         } else {
@@ -63,14 +62,15 @@ public final class SettingsBottomBarKt {
         if ((i & RendererCapabilities.DECODER_SUPPORT_MASK) == 0) {
             i2 |= startRestartGroup.changedInstance(onPrivacyPolicy) ? 256 : 128;
         }
+        if ((i & 3072) == 0) {
+            i2 |= startRestartGroup.changedInstance(onLongShareLogs) ? 2048 : 1024;
+        }
         int i3 = i2;
-        if (!startRestartGroup.shouldExecute((i3 & 147) != 146, i3 & 1)) {
-            function0 = onBugsReport;
-            function02 = onPrivacyPolicy;
+        if (!startRestartGroup.shouldExecute((i3 & 1171) != 1170, i3 & 1)) {
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(943966847, i3, -1, "com.miami.game.feature.settings.ui.compose.SettingsBottomBar (SettingsBottomBar.kt:31)");
+                ComposerKt.traceEventStart(-592364725, i3, -1, "com.miami.game.feature.settings.ui.compose.SettingsBottomBar (SettingsBottomBar.kt:33)");
             }
             Modifier background$default = BackgroundKt.background$default(SizeKt.fillMaxWidth$default(OffsetKt.m885offsetVpY3zN4$default(Modifier.Companion, 0.0f, Dp.m8258constructorimpl(8), 1, null), 0.0f, 1, null), Brush.Companion.m5379verticalGradient8A3gB4$default(Brush.Companion, CollectionsKt.listOf((Object[]) new Color[]{Color.m5414boximpl(Color.m5423copywmQWz5c$default(Color.Companion.m5450getBlack0d7_KjU(), 0.5f, 0.0f, 0.0f, 0.0f, 14, null)), Color.m5414boximpl(Color.Companion.m5459getTransparent0d7_KjU())}), 0.0f, 0.0f, 0, 14, (Object) null), null, 0.0f, 6, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1042775818, "CC(Box)N(modifier,contentAlignment,propagateMinConstraints,content)71@3424L131:Box.kt#2w3rfo");
@@ -98,7 +98,7 @@ public final class SettingsBottomBarKt {
             Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1833054614, "C72@3469L9:Box.kt#2w3rfo");
             BoxScopeInstance boxScopeInstance = BoxScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 952786830, "C45@1663L1281,79@2953L134:SettingsBottomBar.kt#1gr92h");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 712928589, "C47@1776L1302,81@3087L134:SettingsBottomBar.kt#1gr92h");
             Modifier fillMaxWidth$default = SizeKt.fillMaxWidth$default(Modifier.Companion, 0.0f, 1, null);
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
             MeasurePolicy rowMeasurePolicy = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.getCenter(), Alignment.Companion.getTop(), startRestartGroup, 6);
@@ -125,7 +125,7 @@ public final class SettingsBottomBarKt {
             Updater.m4681setimpl(m4673constructorimpl2, materializeModifier2, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance = RowScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 60742637, "C50@1801L1133:SettingsBottomBar.kt#1gr92h");
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1776449196, "C52@1914L1154:SettingsBottomBar.kt#1gr92h");
             Modifier m962height3ABfNKs = SizeKt.m962height3ABfNKs(Modifier.Companion, Dp.m8258constructorimpl(76));
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 844473419, "CC(Row)N(modifier,horizontalArrangement,verticalAlignment,content)99@5125L58,100@5188L131:Row.kt#2w3rfo");
             MeasurePolicy rowMeasurePolicy2 = RowKt.rowMeasurePolicy(Arrangement.INSTANCE.m783spacedBy0680j_4(Dp.m8258constructorimpl(-Dp.m8258constructorimpl(28))), Alignment.Companion.getTop(), startRestartGroup, 6);
@@ -152,12 +152,12 @@ public final class SettingsBottomBarKt {
             Updater.m4681setimpl(m4673constructorimpl3, materializeModifier3, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 1456264949, "C101@5233L9:Row.kt#2w3rfo");
             RowScopeInstance rowScopeInstance2 = RowScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(startRestartGroup, -1974234326, "C55@1979L300,62@2296L299,69@2612L307:SettingsBottomBar.kt#1gr92h");
-            ScalingButtonKt.ScalingButton(onBugsReport, null, ComposableSingletons$SettingsBottomBarKt.INSTANCE.m10166getLambda$13006014$settings_release(), startRestartGroup, (i3 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
-            function0 = onBugsReport;
-            ScalingButtonKt.ScalingButton(onShareLogs, null, ComposableSingletons$SettingsBottomBarKt.INSTANCE.getLambda$983320313$settings_release(), startRestartGroup, ((i3 >> 3) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
-            function02 = onPrivacyPolicy;
-            ScalingButtonKt.ScalingButton(function02, null, ComposableSingletons$SettingsBottomBarKt.INSTANCE.m10167getLambda$473092742$settings_release(), startRestartGroup, ((i3 >> 6) & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            ComposerKt.sourceInformationMarkerStart(startRestartGroup, 167246569, "C57@2092L300,64@2409L320,71@2746L307:SettingsBottomBar.kt#1gr92h");
+            ScalingButtonKt.ScalingButton(onBugsReport, null, ComposableSingletons$SettingsBottomBarKt.INSTANCE.getLambda$631972942$settings_release(), startRestartGroup, (i3 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
+            int i4 = i3 >> 6;
+            ScalingButtonKt.ScalingButtonLong(onShareLogs, onLongShareLogs, null, ComposableSingletons$SettingsBottomBarKt.INSTANCE.getLambda$124095881$settings_release(), startRestartGroup, ((i3 >> 3) & 14) | 3072 | (i4 & 112), 4);
+            startRestartGroup = startRestartGroup;
+            ScalingButtonKt.ScalingButton(onPrivacyPolicy, null, ComposableSingletons$SettingsBottomBarKt.INSTANCE.m10164getLambda$1935939771$settings_release(), startRestartGroup, (i4 & 14) | RendererCapabilities.DECODER_SUPPORT_MASK, 2);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             ComposerKt.sourceInformationMarkerEnd(startRestartGroup);
             startRestartGroup.endNode();
@@ -187,7 +187,7 @@ public final class SettingsBottomBarKt {
                 @Override // kotlin.jvm.functions.Function2
                 public final Object invoke(Object obj, Object obj2) {
                     Unit SettingsBottomBar$lambda$1;
-                    SettingsBottomBar$lambda$1 = SettingsBottomBarKt.SettingsBottomBar$lambda$1(Function0.this, onShareLogs, function02, i, (Composer) obj, ((Integer) obj2).intValue());
+                    SettingsBottomBar$lambda$1 = SettingsBottomBarKt.SettingsBottomBar$lambda$1(Function0.this, onShareLogs, onPrivacyPolicy, onLongShareLogs, i, (Composer) obj, ((Integer) obj2).intValue());
                     return SettingsBottomBar$lambda$1;
                 }
             });

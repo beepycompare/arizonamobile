@@ -8,18 +8,18 @@ import java.util.Map;
 public final class C0395l6 implements Ua {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0420m6 f1093a;
+    public final C0420m6 f1092a;
     public final Fh b;
 
     public C0395l6(C0420m6 c0420m6) {
-        this.f1093a = c0420m6;
+        this.f1092a = c0420m6;
         this.b = c0420m6.a();
         C0136b4.l().getClass();
     }
 
     @Override // io.appmetrica.analytics.impl.Ua
     public final void a(Qn qn) {
-        C0681wi c0681wi = this.f1093a.f1112a;
+        C0681wi c0681wi = this.f1092a.f1111a;
         C0655vh a2 = c0681wi.a(qn, this.b);
         Fh fh = a2.e;
         Pl pl = c0681wi.e;
@@ -41,7 +41,7 @@ public final class C0395l6 implements Ua {
                 String value = entry.getValue();
                 synchronized (fh) {
                     D8 d8 = fh.c;
-                    d8.b.b(d8.f547a, key, value);
+                    d8.b.b(d8.f546a, key, value);
                 }
             }
         }

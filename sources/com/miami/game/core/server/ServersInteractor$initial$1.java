@@ -14,7 +14,7 @@ import timber.log.Timber;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ServersInteractor.kt */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 2, 0}, xi = 48)
-@DebugMetadata(c = "com.miami.game.core.server.ServersInteractor$initial$1", f = "ServersInteractor.kt", i = {4, 5}, l = {58, 59, 61, 63, 68, 69}, m = "invokeSuspend", n = {"e", "e"}, s = {"L$0", "L$0"}, v = 1)
+@DebugMetadata(c = "com.miami.game.core.server.ServersInteractor$initial$1", f = "ServersInteractor.kt", i = {5, 6}, l = {58, 59, 60, 61, 63, 68, 69}, m = "invokeSuspend", n = {"e", "e"}, s = {"L$0", "L$0"}, v = 1)
 /* loaded from: classes4.dex */
 public final class ServersInteractor$initial$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     Object L$0;
@@ -38,25 +38,27 @@ public final class ServersInteractor$initial$1 extends SuspendLambda implements 
         return ((ServersInteractor$initial$1) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:26:0x0088, code lost:
-        if (kotlinx.coroutines.BuildersKt.withContext(kotlinx.coroutines.Dispatchers.getMain(), new com.miami.game.core.server.ServersInteractor$initial$1.AnonymousClass1(r5.this$0, null), r5) != r0) goto L8;
+    /* JADX WARN: Code restructure failed: missing block: B:30:0x0097, code lost:
+        if (kotlinx.coroutines.BuildersKt.withContext(kotlinx.coroutines.Dispatchers.getMain(), new com.miami.game.core.server.ServersInteractor$initial$1.AnonymousClass1(r5.this$0, null), r5) == r0) goto L13;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x00af, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:33:0x00be, code lost:
         if (kotlinx.coroutines.DelayKt.delay(androidx.media3.common.C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS, r5) != r0) goto L11;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:32:0x00d1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:36:0x00e0, code lost:
         if (kotlinx.coroutines.BuildersKt.withContext(kotlinx.coroutines.Dispatchers.getMain(), new com.miami.game.core.server.ServersInteractor$initial$1.AnonymousClass2(r5.this$0, null), r5) == r0) goto L13;
      */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0059  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x006e  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x005d  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x006d  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x007d  */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final Object invokeSuspend(Object obj) {
         Exception exc;
-        Object serversDesktopList;
         Object serversMobileList;
+        Object serversDesktopList;
+        Object currentServer;
         Object serversVcList;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         try {
@@ -64,65 +66,83 @@ public final class ServersInteractor$initial$1 extends SuspendLambda implements 
             exc = e;
             Timber.Forest.tag("exception").d(exc.toString(), new Object[0]);
             this.L$0 = SpillingKt.nullOutSpilledVariable(exc);
-            this.label = 5;
+            this.label = 6;
         }
         switch (this.label) {
             case 0:
                 ResultKt.throwOnFailure(obj);
                 this.label = 1;
+                serversMobileList = this.this$0.getServersMobileList(this);
+                if (serversMobileList == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                this.label = 2;
                 serversDesktopList = this.this$0.getServersDesktopList(this);
                 if (serversDesktopList == coroutine_suspended) {
                     return coroutine_suspended;
                 }
-                this.label = 2;
-                serversMobileList = this.this$0.getServersMobileList(this);
-                if (serversMobileList == coroutine_suspended) {
+                this.label = 3;
+                currentServer = this.this$0.getCurrentServer(this);
+                if (currentServer == coroutine_suspended) {
                     return coroutine_suspended;
                 }
-                this.this$0.getCurrentServer();
-                this.label = 3;
+                this.label = 4;
                 serversVcList = this.this$0.getServersVcList(this);
                 if (serversVcList == coroutine_suspended) {
                     return coroutine_suspended;
                 }
-                this.label = 4;
+                this.label = 5;
                 break;
             case 1:
                 ResultKt.throwOnFailure(obj);
                 this.label = 2;
-                serversMobileList = this.this$0.getServersMobileList(this);
-                if (serversMobileList == coroutine_suspended) {
+                serversDesktopList = this.this$0.getServersDesktopList(this);
+                if (serversDesktopList == coroutine_suspended) {
                 }
-                this.this$0.getCurrentServer();
                 this.label = 3;
+                currentServer = this.this$0.getCurrentServer(this);
+                if (currentServer == coroutine_suspended) {
+                }
+                this.label = 4;
                 serversVcList = this.this$0.getServersVcList(this);
                 if (serversVcList == coroutine_suspended) {
                 }
-                this.label = 4;
+                this.label = 5;
                 break;
             case 2:
                 ResultKt.throwOnFailure(obj);
-                this.this$0.getCurrentServer();
                 this.label = 3;
+                currentServer = this.this$0.getCurrentServer(this);
+                if (currentServer == coroutine_suspended) {
+                }
+                this.label = 4;
                 serversVcList = this.this$0.getServersVcList(this);
                 if (serversVcList == coroutine_suspended) {
                 }
-                this.label = 4;
+                this.label = 5;
                 break;
             case 3:
                 ResultKt.throwOnFailure(obj);
                 this.label = 4;
+                serversVcList = this.this$0.getServersVcList(this);
+                if (serversVcList == coroutine_suspended) {
+                }
+                this.label = 5;
                 break;
             case 4:
                 ResultKt.throwOnFailure(obj);
-                return Unit.INSTANCE;
+                this.label = 5;
+                break;
             case 5:
+                ResultKt.throwOnFailure(obj);
+                return Unit.INSTANCE;
+            case 6:
                 exc = (Exception) this.L$0;
                 ResultKt.throwOnFailure(obj);
                 this.L$0 = SpillingKt.nullOutSpilledVariable(exc);
-                this.label = 6;
+                this.label = 7;
                 break;
-            case 6:
+            case 7:
                 Exception exc2 = (Exception) this.L$0;
                 ResultKt.throwOnFailure(obj);
                 return Unit.INSTANCE;

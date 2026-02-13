@@ -6,7 +6,7 @@ import android.util.Base64;
 public final class C0161c3 implements to {
 
     /* renamed from: a  reason: collision with root package name */
-    public final H8 f929a;
+    public final H8 f928a;
 
     public C0161c3() {
         this(new H8());
@@ -22,11 +22,11 @@ public final class C0161c3 implements to {
             } catch (Throwable unused) {
             }
         }
-        H8 h8 = this.f929a;
-        return ((G8) h8.f612a.a(n8.o)).a(bArr);
+        H8 h8 = this.f928a;
+        return ((G8) h8.f611a.a(n8.o)).a(bArr);
     }
 
     public C0161c3(H8 h8) {
-        this.f929a = h8;
+        this.f928a = h8;
     }
 }

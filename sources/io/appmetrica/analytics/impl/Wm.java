@@ -9,7 +9,7 @@ import kotlin.collections.CollectionsKt;
 public final class Wm implements InterfaceC0233eo {
 
     /* renamed from: a  reason: collision with root package name */
-    public final ArrayList f845a;
+    public final ArrayList f844a;
 
     public Wm(String str, List<String> list, int i, Ln ln, so soVar, J2 j2) {
         List take = CollectionsKt.take(CollectionsKt.toList(CollectionsKt.toSet(list)), i);
@@ -23,12 +23,12 @@ public final class Wm implements InterfaceC0233eo {
             arrayList.add(new Ym(str + '_' + i2, (String) obj, ln, soVar, j2));
             i2 = i3;
         }
-        this.f845a = arrayList;
+        this.f844a = arrayList;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0233eo
     public final void a(Cdo cdo) {
-        Iterator it = this.f845a.iterator();
+        Iterator it = this.f844a.iterator();
         while (it.hasNext()) {
             ((Ym) it.next()).a(cdo);
         }
@@ -36,7 +36,7 @@ public final class Wm implements InterfaceC0233eo {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0233eo
     public final void a(PublicLogger publicLogger) {
-        Iterator it = this.f845a.iterator();
+        Iterator it = this.f844a.iterator();
         while (it.hasNext()) {
             ((Ym) it.next()).e = publicLogger;
         }

@@ -21,22 +21,22 @@ public final class ModulesFacade {
     public static final int EXTERNAL_ATTRIBUTION_TENJIN = 4;
 
     /* renamed from: a  reason: collision with root package name */
-    private static C0452nd f284a = new C0452nd();
+    private static C0452nd f283a = new C0452nd();
 
     public static IModuleReporter getModuleReporter(Context context, String str) {
-        C0452nd c0452nd = f284a;
+        C0452nd c0452nd = f283a;
         C0248fd c0248fd = c0452nd.b;
         c0248fd.b.a(context);
         c0248fd.d.a(str);
-        c0452nd.c.f1256a.a(context.getApplicationContext().getApplicationContext());
-        return AbstractC0457ni.f1139a.a(context.getApplicationContext(), str);
+        c0452nd.c.f1255a.a(context.getApplicationContext().getApplicationContext());
+        return AbstractC0457ni.f1138a.a(context.getApplicationContext(), str);
     }
 
     public static boolean isActivatedForApp() {
-        C0452nd c0452nd = f284a;
+        C0452nd c0452nd = f283a;
         c0452nd.b.getClass();
         c0452nd.c.getClass();
-        c0452nd.f1135a.getClass();
+        c0452nd.f1134a.getClass();
         return C0738z0.a();
     }
 
@@ -45,55 +45,55 @@ public final class ModulesFacade {
     }
 
     public static void reportEvent(ModuleEvent moduleEvent) {
-        C0452nd c0452nd = f284a;
-        c0452nd.b.f994a.a(null);
+        C0452nd c0452nd = f283a;
+        c0452nd.b.f993a.a(null);
         c0452nd.c.getClass();
         c0452nd.d.execute(new C0326id(c0452nd, moduleEvent));
     }
 
     public static void reportExternalAttribution(int i, String str) {
-        C0452nd c0452nd = f284a;
+        C0452nd c0452nd = f283a;
         c0452nd.b.getClass();
         c0452nd.c.getClass();
         c0452nd.d.execute(new C0351jd(c0452nd, i, str));
     }
 
     public static void sendEventsBuffer() {
-        C0452nd c0452nd = f284a;
+        C0452nd c0452nd = f283a;
         c0452nd.b.getClass();
         c0452nd.c.getClass();
         AppMetrica.sendEventsBuffer();
     }
 
     public static void setAdvIdentifiersTracking(boolean z) {
-        C0452nd c0452nd = f284a;
+        C0452nd c0452nd = f283a;
         c0452nd.b.getClass();
         c0452nd.c.getClass();
         c0452nd.d.execute(new C0377kd(c0452nd, z));
     }
 
     public static void setProxy(C0452nd c0452nd) {
-        f284a = c0452nd;
+        f283a = c0452nd;
     }
 
     public static void setSessionExtra(String str, byte[] bArr) {
-        C0452nd c0452nd = f284a;
+        C0452nd c0452nd = f283a;
         c0452nd.b.c.a(str);
         c0452nd.c.getClass();
         c0452nd.d.execute(new C0402ld(c0452nd, str, bArr));
     }
 
     public static void subscribeForAutoCollectedData(Context context, String str) {
-        C0452nd c0452nd = f284a;
+        C0452nd c0452nd = f283a;
         C0248fd c0248fd = c0452nd.b;
         c0248fd.b.a(context);
         c0248fd.d.a(str);
-        c0452nd.c.f1256a.a(context.getApplicationContext());
+        c0452nd.c.f1255a.a(context.getApplicationContext());
         c0452nd.d.execute(new C0427md(str));
     }
 
     public static void reportAdRevenue(AdRevenue adRevenue, Boolean bool) {
-        C0452nd c0452nd = f284a;
+        C0452nd c0452nd = f283a;
         boolean booleanValue = bool.booleanValue();
         c0452nd.b.getClass();
         c0452nd.c.getClass();

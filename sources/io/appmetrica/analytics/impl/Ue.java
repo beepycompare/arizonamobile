@@ -6,12 +6,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class Ue implements Rc {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f812a;
+    public final Context f811a;
     public final String b;
     public final String c;
 
     public Ue(Context context, String str, String str2) {
-        this.f812a = context;
+        this.f811a = context;
         this.b = str;
         this.c = str2;
     }
@@ -26,23 +26,23 @@ public final class Ue implements Rc {
         }
         if (obj instanceof Ue) {
             Ue ue = (Ue) obj;
-            return Intrinsics.areEqual(this.f812a, ue.f812a) && Intrinsics.areEqual(this.b, ue.b) && Intrinsics.areEqual(this.c, ue.c);
+            return Intrinsics.areEqual(this.f811a, ue.f811a) && Intrinsics.areEqual(this.b, ue.b) && Intrinsics.areEqual(this.c, ue.c);
         }
         return false;
     }
 
     public final int hashCode() {
         int hashCode = this.b.hashCode();
-        return this.c.hashCode() + ((hashCode + (this.f812a.hashCode() * 31)) * 31);
+        return this.c.hashCode() + ((hashCode + (this.f811a.hashCode() * 31)) * 31);
     }
 
     public final String toString() {
-        return "PreferencesBasedModuleEntryPoint(context=" + this.f812a + ", prefName=" + this.b + ", prefValueName=" + this.c + ')';
+        return "PreferencesBasedModuleEntryPoint(context=" + this.f811a + ", prefName=" + this.b + ", prefValueName=" + this.c + ')';
     }
 
     public static Ue a(Ue ue, Context context, String str, String str2, int i, Object obj) {
         if ((i & 1) != 0) {
-            context = ue.f812a;
+            context = ue.f811a;
         }
         if ((i & 2) != 0) {
             str = ue.b;
@@ -56,7 +56,7 @@ public final class Ue implements Rc {
 
     @Override // io.appmetrica.analytics.impl.Rc
     public final String a() {
-        String string = this.f812a.getSharedPreferences(this.b, 0).getString(this.c, "");
+        String string = this.f811a.getSharedPreferences(this.b, 0).getString(this.c, "");
         return string == null ? "" : string;
     }
 }

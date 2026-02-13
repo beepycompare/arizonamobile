@@ -8,13 +8,13 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public final class C0369k5 implements InterfaceC0523q9 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final InterfaceC0647v9 f1076a;
+    public final InterfaceC0647v9 f1075a;
     public final List b;
     public final List c;
     public final AtomicBoolean d;
 
     public C0369k5(InterfaceC0647v9 interfaceC0647v9, List<? extends F8> list, List<? extends F8> list2, Q4 q4) {
-        this.f1076a = interfaceC0647v9;
+        this.f1075a = interfaceC0647v9;
         this.b = list;
         this.c = list2;
         Objects.toString(q4);
@@ -60,19 +60,19 @@ public final class C0369k5 implements InterfaceC0523q9 {
                     }
                 }
             }
-            ((C0412ln) this.f1076a).c();
+            ((C0412ln) this.f1075a).c();
         }
     }
 
     public final void e() {
         if (this.d.get() && a()) {
-            ((C0412ln) this.f1076a).c();
+            ((C0412ln) this.f1075a).c();
         }
     }
 
     public final void f() {
         if (this.d.get() && a()) {
-            ((C0412ln) this.f1076a).b();
+            ((C0412ln) this.f1075a).b();
         }
     }
 }

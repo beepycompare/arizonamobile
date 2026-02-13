@@ -3,5 +3,5 @@ package io.appmetrica.analytics.impl;
 public abstract class Om {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Pm f731a = new Pm();
+    public static final Pm f730a = new Pm();
 }

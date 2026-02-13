@@ -1,6 +1,7 @@
 package ru.mrlargha.feature.mobile.presentation.page;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
@@ -17,6 +18,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import ru.mrlargha.arizonaui.mobile.presentation.MobilePhone;
 import ru.mrlargha.commonui.core.IBackendNotifier;
+import ru.mrlargha.commonui.core.SAMPUIElement;
 import ru.mrlargha.commonui.core.UIElementID;
 import ru.mrlargha.feature.mobile.R;
 import ru.mrlargha.feature.mobile.databinding.MobilePhoneBinding;
@@ -28,7 +30,7 @@ import ru.mrlargha.feature.mobile.presentation.HistoryManager;
 import ru.mrlargha.feature.mobile.presentation.MobileController;
 import ru.mrlargha.feature.mobile.presentation.adapter.ViewPageAdapter;
 /* compiled from: MobilePhoneMainPage.kt */
-@Metadata(d1 = {"\u0000P\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\u0019\u001a\u00020\u001aJ\b\u0010\u001b\u001a\u00020\u001aH\u0016J\b\u0010\u001c\u001a\u00020\u001aH\u0016R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u00100\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0011\u001a\u00020\u0012¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001d"}, d2 = {"Lru/mrlargha/feature/mobile/presentation/page/MobilePhoneMainPage;", "Lru/mrlargha/feature/mobile/presentation/MobileController;", "<init>", "()V", "mobilePhone", "Lru/mrlargha/arizonaui/mobile/presentation/MobilePhone;", "context", "Landroid/app/Activity;", "phoneBinding", "Lru/mrlargha/feature/mobile/databinding/MobilePhoneBinding;", "sendFrontedMessage", "Lru/mrlargha/commonui/core/IBackendNotifier;", "timer", "Landroid/os/CountDownTimer;", "menus", "", "Lru/mrlargha/feature/mobile/domain/obj/MobilePhoneCarousel;", "mpMain", "Landroidx/constraintlayout/widget/ConstraintLayout;", "getMpMain", "()Landroidx/constraintlayout/widget/ConstraintLayout;", "mpMainBinding", "Lru/mrlargha/feature/mobile/databinding/MobilePhoneMainPageBinding;", "viewPagerAdapter", "Lru/mrlargha/feature/mobile/presentation/adapter/ViewPageAdapter;", "onApplicationOpened", "", "renderPage", "removePage", "mobile_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000V\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\u001b\u001a\u00020\u001cJ\b\u0010\u001d\u001a\u00020\u001cH\u0016J\b\u0010\u001e\u001a\u00020\u001cH\u0016R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\tX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\n\u001a\u00020\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u00100\u000fX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\u0011\u001a\u00020\u0012¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0018X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001f"}, d2 = {"Lru/mrlargha/feature/mobile/presentation/page/MobilePhoneMainPage;", "Lru/mrlargha/feature/mobile/presentation/MobileController;", "<init>", "()V", "mobilePhone", "Lru/mrlargha/arizonaui/mobile/presentation/MobilePhone;", "context", "Landroid/app/Activity;", "phoneBinding", "Lru/mrlargha/feature/mobile/databinding/MobilePhoneBinding;", "sendFrontedMessage", "Lru/mrlargha/commonui/core/IBackendNotifier;", "timer", "Landroid/os/CountDownTimer;", "menus", "", "Lru/mrlargha/feature/mobile/domain/obj/MobilePhoneCarousel;", "mpMain", "Landroidx/constraintlayout/widget/ConstraintLayout;", "getMpMain", "()Landroidx/constraintlayout/widget/ConstraintLayout;", "mpMainBinding", "Lru/mrlargha/feature/mobile/databinding/MobilePhoneMainPageBinding;", "sharedPreferences", "Landroid/content/SharedPreferences;", "viewPagerAdapter", "Lru/mrlargha/feature/mobile/presentation/adapter/ViewPageAdapter;", "onApplicationOpened", "", "renderPage", "removePage", "mobile_release"}, k = 1, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class MobilePhoneMainPage implements MobileController {
     private final Activity context;
@@ -38,6 +40,7 @@ public final class MobilePhoneMainPage implements MobileController {
     private final MobilePhoneMainPageBinding mpMainBinding;
     private final MobilePhoneBinding phoneBinding;
     private final IBackendNotifier sendFrontedMessage;
+    private final SharedPreferences sharedPreferences;
     private final CountDownTimer timer;
     private final ViewPageAdapter viewPagerAdapter;
 
@@ -73,7 +76,10 @@ public final class MobilePhoneMainPage implements MobileController {
         MobilePhoneMainPageBinding bind = MobilePhoneMainPageBinding.bind(constraintLayout);
         Intrinsics.checkNotNullExpressionValue(bind, "bind(...)");
         this.mpMainBinding = bind;
-        ViewPageAdapter viewPageAdapter = new ViewPageAdapter(context, listOf);
+        SharedPreferences sharedPreferences = context.getSharedPreferences(SAMPUIElement.SP_NAME, 0);
+        Intrinsics.checkNotNullExpressionValue(sharedPreferences, "getSharedPreferences(...)");
+        this.sharedPreferences = sharedPreferences;
+        ViewPageAdapter viewPageAdapter = new ViewPageAdapter(context, listOf, sharedPreferences.getInt("UNREAD_MESSAGE", 0));
         this.viewPagerAdapter = viewPageAdapter;
         Log.d("text", ": Main page created");
         HistoryManager.Companion.push(MobilePhonePage.MAIN_PAGE.getId());

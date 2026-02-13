@@ -3,14 +3,14 @@ package io.appmetrica.analytics.impl;
 public final class Jj implements Qa {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ V f647a;
+    public final /* synthetic */ V f646a;
 
     public Jj(V v) {
-        this.f647a = v;
+        this.f646a = v;
     }
 
     @Override // io.appmetrica.analytics.impl.Qa
     public final void a(Ra ra) {
-        ra.a(this.f647a);
+        ra.a(this.f646a);
     }
 }

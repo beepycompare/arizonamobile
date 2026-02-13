@@ -8,18 +8,18 @@ public abstract class Xe {
     public static final String c = "Xe";
 
     /* renamed from: a  reason: collision with root package name */
-    public final Ha f854a;
+    public final Ha f853a;
     public final String b;
 
     public Xe(Ha ha, String str) {
-        this.f854a = ha;
+        this.f853a = ha;
         this.b = str;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public final <T extends Xe> T a(String str, float f) {
         synchronized (this) {
-            this.f854a.a(str, f);
+            this.f853a.a(str, f);
         }
         return this;
     }
@@ -27,7 +27,7 @@ public abstract class Xe {
     /* JADX WARN: Multi-variable type inference failed */
     public final <T extends Xe> T b(String str, String str2) {
         synchronized (this) {
-            this.f854a.a(str, str2);
+            this.f853a.a(str, str2);
         }
         return this;
     }
@@ -39,13 +39,13 @@ public abstract class Xe {
     /* JADX WARN: Multi-variable type inference failed */
     public final <T extends Xe> T d(String str) {
         synchronized (this) {
-            this.f854a.remove(str);
+            this.f853a.remove(str);
         }
         return this;
     }
 
     public Set<String> c() {
-        return this.f854a.a();
+        return this.f853a.a();
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -60,14 +60,14 @@ public abstract class Xe {
         } catch (Throwable unused) {
             str2 = null;
         }
-        this.f854a.a(str, str2);
+        this.f853a.a(str, str2);
         return this;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public final <T extends Xe> T b(String str, long j) {
         synchronized (this) {
-            this.f854a.a(str, j);
+            this.f853a.a(str, j);
         }
         return this;
     }
@@ -75,7 +75,7 @@ public abstract class Xe {
     /* JADX WARN: Multi-variable type inference failed */
     public final <T extends Xe> T b(String str, int i) {
         synchronized (this) {
-            this.f854a.a(i, str);
+            this.f853a.a(i, str);
         }
         return this;
     }
@@ -83,7 +83,7 @@ public abstract class Xe {
     /* JADX WARN: Multi-variable type inference failed */
     public final <T extends Xe> T b(String str, boolean z) {
         synchronized (this) {
-            this.f854a.a(str, z);
+            this.f853a.a(str, z);
         }
         return this;
     }
@@ -93,28 +93,28 @@ public abstract class Xe {
     }
 
     public final long a(String str, long j) {
-        return this.f854a.getLong(str, j);
+        return this.f853a.getLong(str, j);
     }
 
     public final int a(String str, int i) {
-        return this.f854a.getInt(str, i);
+        return this.f853a.getInt(str, i);
     }
 
     public final String a(String str, String str2) {
-        return this.f854a.getString(str, str2);
+        return this.f853a.getString(str, str2);
     }
 
     public final void b() {
         synchronized (this) {
-            this.f854a.b();
+            this.f853a.b();
         }
     }
 
     public final boolean a(String str, boolean z) {
-        return this.f854a.getBoolean(str, z);
+        return this.f853a.getBoolean(str, z);
     }
 
     public final boolean b(String str) {
-        return this.f854a.a(str);
+        return this.f853a.a(str);
     }
 }

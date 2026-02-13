@@ -12,23 +12,23 @@ import org.json.JSONObject;
 public final class C0601td {
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f1237a;
+    public final List f1236a;
     public final long b;
 
     public C0601td(List list, long j) {
-        this.f1237a = list;
+        this.f1236a = list;
         this.b = j;
     }
 
     public final String a() {
         try {
             JSONObject jSONObject = new JSONObject();
-            List<C0145bd> list = this.f1237a;
+            List<C0145bd> list = this.f1236a;
             ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
             for (C0145bd c0145bd : list) {
                 c0145bd.getClass();
                 JSONObject jSONObject2 = new JSONObject();
-                jSONObject2.put("moduleName", c0145bd.f920a);
+                jSONObject2.put("moduleName", c0145bd.f919a);
                 jSONObject2.put("loaded", c0145bd.b);
                 arrayList.add(jSONObject2);
             }
@@ -46,16 +46,16 @@ public final class C0601td {
         }
         if (obj instanceof C0601td) {
             C0601td c0601td = (C0601td) obj;
-            return Intrinsics.areEqual(this.f1237a, c0601td.f1237a) && this.b == c0601td.b;
+            return Intrinsics.areEqual(this.f1236a, c0601td.f1236a) && this.b == c0601td.b;
         }
         return false;
     }
 
     public final int hashCode() {
-        return Long.hashCode(this.b) + (this.f1237a.hashCode() * 31);
+        return Long.hashCode(this.b) + (this.f1236a.hashCode() * 31);
     }
 
     public final String toString() {
-        return "ModulesStatus(modulesStatus=" + this.f1237a + ", lastSendTime=" + this.b + ')';
+        return "ModulesStatus(modulesStatus=" + this.f1236a + ", lastSendTime=" + this.b + ')';
     }
 }

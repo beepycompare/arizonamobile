@@ -7,7 +7,7 @@ import io.appmetrica.analytics.coreapi.internal.lifecycle.ActivityLifecycleListe
 public final class Wk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0463o f843a;
+    public final C0463o f842a;
     public final C0419m5 b;
     public final ActivityLifecycleListener c;
     public final ActivityLifecycleListener d;
@@ -49,7 +49,7 @@ public final class Wk {
 
     public Wk(C0463o c0463o, C0413m c0413m, C0419m5 c0419m5, C0513q c0513q) {
         this.g = false;
-        this.f843a = c0463o;
+        this.f842a = c0463o;
         this.f = c0413m;
         this.b = c0419m5;
         this.e = c0513q;
@@ -81,10 +81,10 @@ public final class Wk {
 
     public final synchronized EnumC0438n a() {
         if (!this.g) {
-            this.f843a.registerListener(this.c, ActivityEvent.RESUMED);
-            this.f843a.registerListener(this.d, ActivityEvent.PAUSED);
+            this.f842a.registerListener(this.c, ActivityEvent.RESUMED);
+            this.f842a.registerListener(this.d, ActivityEvent.PAUSED);
             this.g = true;
         }
-        return this.f843a.b;
+        return this.f842a.b;
     }
 }

@@ -13,7 +13,7 @@ public final class u extends MessageNano {
     public static volatile u[] c;
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f323a;
+    public byte[] f322a;
     public byte[] b;
 
     public u() {
@@ -33,7 +33,7 @@ public final class u extends MessageNano {
 
     public final u a() {
         byte[] bArr = WireFormatNano.EMPTY_BYTES;
-        this.f323a = bArr;
+        this.f322a = bArr;
         this.b = bArr;
         this.cachedSize = -1;
         return this;
@@ -42,20 +42,20 @@ public final class u extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        byte[] bArr = this.f323a;
+        byte[] bArr = this.f322a;
         byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
         if (!Arrays.equals(bArr, bArr2)) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f323a);
+            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f322a);
         }
         return !Arrays.equals(this.b, bArr2) ? CodedOutputByteBufferNano.computeBytesSize(2, this.b) + computeSerializedSize : computeSerializedSize;
     }
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        byte[] bArr = this.f323a;
+        byte[] bArr = this.f322a;
         byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
         if (!Arrays.equals(bArr, bArr2)) {
-            codedOutputByteBufferNano.writeBytes(1, this.f323a);
+            codedOutputByteBufferNano.writeBytes(1, this.f322a);
         }
         if (!Arrays.equals(this.b, bArr2)) {
             codedOutputByteBufferNano.writeBytes(2, this.b);
@@ -71,7 +71,7 @@ public final class u extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                this.f323a = codedInputByteBufferNano.readBytes();
+                this.f322a = codedInputByteBufferNano.readBytes();
             } else if (readTag != 18) {
                 if (!WireFormatNano.parseUnknownField(codedInputByteBufferNano, readTag)) {
                     break;

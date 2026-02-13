@@ -8,13 +8,13 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 public final class C0540r2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final LocationManager f1199a;
+    public final LocationManager f1198a;
 
     public C0540r2(Context context) {
         this((LocationManager) context.getSystemService(FirebaseAnalytics.Param.LOCATION));
     }
 
     public C0540r2(LocationManager locationManager) {
-        this.f1199a = locationManager;
+        this.f1198a = locationManager;
     }
 }

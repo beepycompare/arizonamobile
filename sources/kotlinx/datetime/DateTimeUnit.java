@@ -117,7 +117,7 @@ public abstract class DateTimeUnit {
         }
 
         /* renamed from: getDuration-UwyO8pc  reason: not valid java name */
-        public final long m11868getDurationUwyO8pc() {
+        public final long m11867getDurationUwyO8pc() {
             Duration.Companion companion = Duration.Companion;
             return DurationKt.toDuration(this.nanoseconds, DurationUnit.NANOSECONDS);
         }

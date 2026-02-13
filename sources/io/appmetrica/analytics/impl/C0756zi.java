@@ -12,7 +12,7 @@ public final class C0756zi extends A4 {
     @Override // io.appmetrica.analytics.impl.A4
     public final boolean a(P5 p5, C0617u4 c0617u4) {
         Bundle bundle = p5.m;
-        this.f494a.k.a(new C0667w4(bundle != null ? (ResultReceiver) bundle.getParcelable("io.appmetrica.analytics.impl.referrer.common.ReferrerResultReceiver") : null));
+        this.f493a.k.a(new C0667w4(bundle != null ? (ResultReceiver) bundle.getParcelable("io.appmetrica.analytics.impl.referrer.common.ReferrerResultReceiver") : null));
         return false;
     }
 }

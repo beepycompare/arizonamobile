@@ -91,7 +91,7 @@ final class CombineKt$zipImpl$1$1 extends SuspendLambda implements Function2<Cor
             ReceiveChannel produce$default = ProduceKt.produce$default(coroutineScope, null, 0, new CombineKt$zipImpl$1$1$second$1(this.$flow2, null), 3, null);
             Job$default = JobKt__JobKt.Job$default((Job) null, 1, (Object) null);
             Intrinsics.checkNotNull(produce$default, "null cannot be cast to non-null type kotlinx.coroutines.channels.SendChannel<*>");
-            ((SendChannel) produce$default).mo11854invokeOnClose(new Function1<Throwable, Unit>() { // from class: kotlinx.coroutines.flow.internal.CombineKt$zipImpl$1$1.1
+            ((SendChannel) produce$default).mo11853invokeOnClose(new Function1<Throwable, Unit>() { // from class: kotlinx.coroutines.flow.internal.CombineKt$zipImpl$1$1.1
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Throwable th) {
                     invoke2(th);
@@ -285,17 +285,17 @@ final class CombineKt$zipImpl$1$1 extends SuspendLambda implements Function2<Cor
                     Code decompiled incorrectly, please refer to instructions dump.
                 */
                 public final Object invokeSuspend(Object obj) {
-                    Object mo11777receiveCatchingJP2dKIU;
+                    Object mo11776receiveCatchingJP2dKIU;
                     FlowCollector flowCollector;
                     Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
                     int i = this.label;
                     if (i == 0) {
                         ResultKt.throwOnFailure(obj);
                         this.label = 1;
-                        mo11777receiveCatchingJP2dKIU = this.$second.mo11777receiveCatchingJP2dKIU(this);
+                        mo11776receiveCatchingJP2dKIU = this.$second.mo11776receiveCatchingJP2dKIU(this);
                     } else if (i == 1) {
                         ResultKt.throwOnFailure(obj);
-                        mo11777receiveCatchingJP2dKIU = ((ChannelResult) obj).m11797unboximpl();
+                        mo11776receiveCatchingJP2dKIU = ((ChannelResult) obj).m11796unboximpl();
                     } else if (i != 2) {
                         if (i == 3) {
                             ResultKt.throwOnFailure(obj);
@@ -309,22 +309,22 @@ final class CombineKt$zipImpl$1$1 extends SuspendLambda implements Function2<Cor
                         this.label = 3;
                     }
                     CompletableJob completableJob = this.$collectJob;
-                    if (mo11777receiveCatchingJP2dKIU instanceof ChannelResult.Failed) {
-                        Throwable m11789exceptionOrNullimpl = ChannelResult.m11789exceptionOrNullimpl(mo11777receiveCatchingJP2dKIU);
-                        if (m11789exceptionOrNullimpl == null) {
+                    if (mo11776receiveCatchingJP2dKIU instanceof ChannelResult.Failed) {
+                        Throwable m11788exceptionOrNullimpl = ChannelResult.m11788exceptionOrNullimpl(mo11776receiveCatchingJP2dKIU);
+                        if (m11788exceptionOrNullimpl == null) {
                             throw new AbortFlowException(completableJob);
                         }
-                        throw m11789exceptionOrNullimpl;
+                        throw m11788exceptionOrNullimpl;
                     }
                     FlowCollector flowCollector2 = this.$this_unsafeFlow;
                     Function3<T1, T2, Continuation<? super R>, Object> function3 = this.$transform;
                     T1 t1 = this.$value;
-                    if (mo11777receiveCatchingJP2dKIU == NullSurrogateKt.NULL) {
-                        mo11777receiveCatchingJP2dKIU = null;
+                    if (mo11776receiveCatchingJP2dKIU == NullSurrogateKt.NULL) {
+                        mo11776receiveCatchingJP2dKIU = null;
                     }
                     this.L$0 = flowCollector2;
                     this.label = 2;
-                    obj = function3.invoke(t1, mo11777receiveCatchingJP2dKIU, this);
+                    obj = function3.invoke(t1, mo11776receiveCatchingJP2dKIU, this);
                     flowCollector = flowCollector2;
                 }
             }

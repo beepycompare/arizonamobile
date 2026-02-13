@@ -7,13 +7,13 @@ import io.appmetrica.analytics.logger.appmetrica.internal.PublicLogger;
 public final class C0111a5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f899a;
+    public final String f898a;
 
     public C0111a5(String str) {
-        this.f899a = str;
+        this.f898a = str;
     }
 
     public final PublicLogger a() {
-        return LoggerStorage.getOrCreatePublicLogger(this.f899a);
+        return LoggerStorage.getOrCreatePublicLogger(this.f898a);
     }
 }

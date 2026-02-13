@@ -11,13 +11,13 @@ public final class Uk {
     public static final String i = "SESSION_IS_ALIVE_REPORT_NEEDED";
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f816a;
+    public final String f815a;
     protected final We b;
     public C0246fb c;
 
     public Uk(We we, String str) {
         this.b = we;
-        this.f816a = str;
+        this.f815a = str;
         C0246fb c0246fb = new C0246fb();
         try {
             String h2 = we.h(str);
@@ -80,7 +80,7 @@ public final class Uk {
     }
 
     public final void b() {
-        this.b.e(this.f816a, this.c.toString());
+        this.b.e(this.f815a, this.c.toString());
         this.b.b();
     }
 

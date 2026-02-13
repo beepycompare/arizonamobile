@@ -7,14 +7,14 @@ import io.appmetrica.analytics.coreutils.internal.services.UtilityServiceProvide
 public final class C0362jo implements InterfaceC0386km {
 
     /* renamed from: a  reason: collision with root package name */
-    public final UtilityServiceProvider f1070a;
+    public final UtilityServiceProvider f1069a;
 
     public C0362jo(UtilityServiceProvider utilityServiceProvider) {
-        this.f1070a = utilityServiceProvider;
+        this.f1069a = utilityServiceProvider;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0386km
     public final void a(C0257fm c0257fm) {
-        this.f1070a.updateConfiguration(new UtilityServiceConfiguration(c0257fm.v, c0257fm.u));
+        this.f1069a.updateConfiguration(new UtilityServiceConfiguration(c0257fm.v, c0257fm.u));
     }
 }

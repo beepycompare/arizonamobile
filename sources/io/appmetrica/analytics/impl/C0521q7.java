@@ -9,23 +9,23 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 public final class C0521q7 implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0496p7 f1186a;
+    public final C0496p7 f1185a;
 
     public C0521q7() {
         this(null, 1, null);
     }
 
     public final byte[] a(C0545r7 c0545r7) {
-        return MessageNano.toByteArray(this.f1186a.fromModel(c0545r7));
+        return MessageNano.toByteArray(this.f1185a.fromModel(c0545r7));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object fromModel(Object obj) {
-        return MessageNano.toByteArray(this.f1186a.fromModel((C0545r7) obj));
+        return MessageNano.toByteArray(this.f1185a.fromModel((C0545r7) obj));
     }
 
     public C0521q7(C0496p7 c0496p7) {
-        this.f1186a = c0496p7;
+        this.f1185a = c0496p7;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:4:0x000d, code lost:
@@ -46,7 +46,7 @@ public final class C0521q7 implements Converter {
             }
         }
         c0471o7 = new C0471o7();
-        return this.f1186a.toModel(c0471o7);
+        return this.f1185a.toModel(c0471o7);
     }
 
     public /* synthetic */ C0521q7(C0496p7 c0496p7, int i, DefaultConstructorMarker defaultConstructorMarker) {

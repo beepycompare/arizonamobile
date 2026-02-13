@@ -26,7 +26,7 @@ public final class C0270g9 extends MessageNano {
     public static volatile C0270g9[] q;
 
     /* renamed from: a  reason: collision with root package name */
-    public long f1011a;
+    public long f1010a;
     public C0244f9 b;
     public C0218e9[] c;
 
@@ -46,7 +46,7 @@ public final class C0270g9 extends MessageNano {
     }
 
     public final C0270g9 a() {
-        this.f1011a = 0L;
+        this.f1010a = 0L;
         this.b = null;
         this.c = C0218e9.b();
         this.cachedSize = -1;
@@ -55,7 +55,7 @@ public final class C0270g9 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
-        int computeUInt64Size = CodedOutputByteBufferNano.computeUInt64Size(1, this.f1011a) + super.computeSerializedSize();
+        int computeUInt64Size = CodedOutputByteBufferNano.computeUInt64Size(1, this.f1010a) + super.computeSerializedSize();
         C0244f9 c0244f9 = this.b;
         if (c0244f9 != null) {
             computeUInt64Size += CodedOutputByteBufferNano.computeMessageSize(2, c0244f9);
@@ -80,7 +80,7 @@ public final class C0270g9 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        codedOutputByteBufferNano.writeUInt64(1, this.f1011a);
+        codedOutputByteBufferNano.writeUInt64(1, this.f1010a);
         C0244f9 c0244f9 = this.b;
         if (c0244f9 != null) {
             codedOutputByteBufferNano.writeMessage(2, c0244f9);
@@ -111,7 +111,7 @@ public final class C0270g9 extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 8) {
-                this.f1011a = codedInputByteBufferNano.readUInt64();
+                this.f1010a = codedInputByteBufferNano.readUInt64();
             } else if (readTag == 18) {
                 if (this.b == null) {
                     this.b = new C0244f9();

@@ -9,7 +9,7 @@ import java.util.Map;
 public final class C0577se implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0648va f1223a;
+    public final C0648va f1222a;
 
     public C0577se() {
         this(new C0648va((int) CacheDataSink.DEFAULT_BUFFER_SIZE, 100, 1000));
@@ -18,22 +18,22 @@ public final class C0577se implements Converter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final Di fromModel(Map<String, String> map) {
-        Mn a2 = this.f1223a.a(map);
+        Mn a2 = this.f1222a.a(map);
         C0397l8 c0397l8 = new C0397l8();
         c0397l8.b = ((C0443n4) a2.b).b;
-        Map map2 = (Map) a2.f700a;
+        Map map2 = (Map) a2.f699a;
         if (map2 != null) {
-            c0397l8.f1095a = new C0372k8[map2.size()];
+            c0397l8.f1094a = new C0372k8[map2.size()];
             int i = 0;
             for (Map.Entry entry : map2.entrySet()) {
-                c0397l8.f1095a[i] = new C0372k8();
-                c0397l8.f1095a[i].f1079a = StringUtils.getUTF8Bytes((String) entry.getKey());
-                c0397l8.f1095a[i].b = StringUtils.getUTF8Bytes((String) entry.getValue());
+                c0397l8.f1094a[i] = new C0372k8();
+                c0397l8.f1094a[i].f1078a = StringUtils.getUTF8Bytes((String) entry.getKey());
+                c0397l8.f1094a[i].b = StringUtils.getUTF8Bytes((String) entry.getValue());
                 i++;
             }
         }
         InterfaceC0135b3 interfaceC0135b3 = a2.b;
-        int i2 = ((C0443n4) interfaceC0135b3).f897a;
+        int i2 = ((C0443n4) interfaceC0135b3).f896a;
         return new Di(c0397l8, interfaceC0135b3);
     }
 
@@ -44,7 +44,7 @@ public final class C0577se implements Converter {
     }
 
     public C0577se(C0648va c0648va) {
-        this.f1223a = c0648va;
+        this.f1222a = c0648va;
     }
 
     public final Map<String, String> a(Di di) {

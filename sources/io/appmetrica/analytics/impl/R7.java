@@ -3,7 +3,7 @@ package io.appmetrica.analytics.impl;
 public abstract class R7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Dc f763a;
+    public final Dc f762a;
 
     public R7() {
         Dc dc = new Dc(0);
@@ -11,11 +11,11 @@ public abstract class R7 {
         dc.a(S7.c, 1);
         dc.a(S7.d, 2);
         dc.a(S7.e, 3);
-        this.f763a = dc;
+        this.f762a = dc;
     }
 
     public final Dc a() {
-        return this.f763a;
+        return this.f762a;
     }
 
     public abstract boolean a(Object obj, Object obj2);

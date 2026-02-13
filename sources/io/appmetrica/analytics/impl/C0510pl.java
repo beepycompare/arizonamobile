@@ -11,7 +11,7 @@ import kotlin.jvm.JvmStatic;
 public final class C0510pl {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final C0510pl f1180a = new C0510pl();
+    public static final C0510pl f1179a = new C0510pl();
 
     private C0510pl() {
     }

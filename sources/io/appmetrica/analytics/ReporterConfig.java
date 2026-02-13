@@ -24,7 +24,7 @@ public class ReporterConfig {
         private static final En l = new En(new C0287h0());
 
         /* renamed from: a  reason: collision with root package name */
-        private final C0444n5 f287a;
+        private final C0444n5 f286a;
         private final String b;
         private Integer c;
         private Boolean d;
@@ -75,7 +75,7 @@ public class ReporterConfig {
         }
 
         public Builder withMaxReportsInDatabaseCount(int i) {
-            this.f = Integer.valueOf(this.f287a.a(i));
+            this.f = Integer.valueOf(this.f286a.a(i));
             return this;
         }
 
@@ -93,7 +93,7 @@ public class ReporterConfig {
             this.j = new HashMap();
             this.k = new HashMap();
             l.a(str);
-            this.f287a = new C0444n5(str);
+            this.f286a = new C0444n5(str);
             this.b = str;
         }
     }

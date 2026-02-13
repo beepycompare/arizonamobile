@@ -7,12 +7,12 @@ import java.util.Map;
 import kotlin.text.Charsets;
 import org.json.JSONArray;
 import org.json.JSONObject;
-/* loaded from: classes3.dex */
+/* loaded from: classes5.dex */
 public final class v {
     public static String a(D d) {
         String encodeToString;
         JSONObject jSONObject = new JSONObject();
-        jSONObject.put("type", d.f460a);
+        jSONObject.put("type", d.f459a);
         jSONObject.put("url", d.c);
         jSONObject.put("responseCode", d.e);
         byte[] bArr = d.f;

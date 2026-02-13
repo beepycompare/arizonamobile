@@ -3,5 +3,5 @@ package io.appmetrica.analytics.impl;
 public abstract class H2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Ni f607a = new Ni();
+    public static final Ni f606a = new Ni();
 }

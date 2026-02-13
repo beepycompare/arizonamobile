@@ -8,7 +8,7 @@ import java.util.HashMap;
 public final class C0384kk {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0358jk f1085a;
+    public final C0358jk f1084a;
     public volatile C0747z9 b;
     public volatile C0747z9 c;
     public volatile C0747z9 d;
@@ -25,7 +25,7 @@ public final class C0384kk {
         if (this.g == null) {
             synchronized (this) {
                 if (this.g == null) {
-                    this.f1085a.getClass();
+                    this.f1084a.getClass();
                     HandlerThreadC0169cb a2 = C0747z9.a("IAA-SDE");
                     this.g = new C0747z9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }
@@ -38,7 +38,7 @@ public final class C0384kk {
         if (this.d == null) {
             synchronized (this) {
                 if (this.d == null) {
-                    this.f1085a.getClass();
+                    this.f1084a.getClass();
                     HandlerThreadC0169cb a2 = C0747z9.a("IAA-SMH-1");
                     this.d = new C0747z9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }
@@ -51,7 +51,7 @@ public final class C0384kk {
         if (this.e == null) {
             synchronized (this) {
                 if (this.e == null) {
-                    this.f1085a.getClass();
+                    this.f1084a.getClass();
                     HandlerThreadC0169cb a2 = C0747z9.a("IAA-SNTPE");
                     this.e = new C0747z9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }
@@ -64,7 +64,7 @@ public final class C0384kk {
         if (this.c == null) {
             synchronized (this) {
                 if (this.c == null) {
-                    this.f1085a.getClass();
+                    this.f1084a.getClass();
                     HandlerThreadC0169cb a2 = C0747z9.a("IAA-STE");
                     this.c = new C0747z9(a2, a2.getLooper(), new Handler(a2.getLooper()));
                 }
@@ -75,6 +75,6 @@ public final class C0384kk {
 
     public C0384kk(C0358jk c0358jk) {
         new HashMap();
-        this.f1085a = c0358jk;
+        this.f1084a = c0358jk;
     }
 }

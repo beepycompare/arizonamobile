@@ -6,12 +6,12 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0774m {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0771j f1480a;
+    public final C0771j f1479a;
     public final C0775n b;
     public final C0772k c;
 
     public C0774m(C0771j c0771j, C0775n c0775n, C0772k c0772k) {
-        this.f1480a = c0771j;
+        this.f1479a = c0771j;
         this.b = c0775n;
         this.c = c0772k;
     }
@@ -23,7 +23,7 @@ public final class C0774m {
         if (Intrinsics.areEqual(C0774m.class, obj != null ? obj.getClass() : null)) {
             if (obj != null) {
                 C0774m c0774m = (C0774m) obj;
-                return Intrinsics.areEqual(this.f1480a, c0774m.f1480a) && Intrinsics.areEqual(this.b, c0774m.b) && Intrinsics.areEqual(this.c, c0774m.c);
+                return Intrinsics.areEqual(this.f1479a, c0774m.f1479a) && Intrinsics.areEqual(this.b, c0774m.b) && Intrinsics.areEqual(this.c, c0774m.c);
             }
             throw new NullPointerException("null cannot be cast to non-null type io.appmetrica.analytics.screenshot.impl.config.client.model.ClientSideScreenshotConfig");
         }
@@ -31,7 +31,7 @@ public final class C0774m {
     }
 
     public final int hashCode() {
-        C0771j c0771j = this.f1480a;
+        C0771j c0771j = this.f1479a;
         int hashCode = (c0771j != null ? c0771j.hashCode() : 0) * 31;
         C0775n c0775n = this.b;
         int hashCode2 = (hashCode + (c0775n != null ? c0775n.hashCode() : 0)) * 31;
@@ -40,7 +40,7 @@ public final class C0774m {
     }
 
     public final String toString() {
-        return "ClientSideScreenshotConfig(apiCaptorConfig=" + this.f1480a + ", serviceCaptorConfig=" + this.b + ", contentObserverCaptorConfig=" + this.c + ')';
+        return "ClientSideScreenshotConfig(apiCaptorConfig=" + this.f1479a + ", serviceCaptorConfig=" + this.b + ", contentObserverCaptorConfig=" + this.c + ')';
     }
 
     /* JADX WARN: Illegal instructions before constructor call */

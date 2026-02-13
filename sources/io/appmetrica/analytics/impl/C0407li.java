@@ -6,15 +6,15 @@ import java.util.Map;
 public final class C0407li implements so {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Map f1102a;
+    public final Map f1101a;
 
     public C0407li(Map<String, ?> map) {
-        this.f1102a = map;
+        this.f1101a = map;
     }
 
     @Override // io.appmetrica.analytics.impl.so
     public final qo a(String str) {
-        if (this.f1102a.containsKey(str)) {
+        if (this.f1101a.containsKey(str)) {
             return new qo(this, false, String.format("Failed to activate AppMetrica with provided apiKey ApiKey %s has already been used by another reporter.", str));
         }
         return new qo(this, true, "");

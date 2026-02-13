@@ -9,7 +9,7 @@ public final class U8 {
     public static final U8 i;
 
     /* renamed from: a */
-    public final InterfaceC0701xd f809a;
+    public final InterfaceC0701xd f808a;
     public final to b;
     public final InterfaceC0721y8 c;
     public final InterfaceC0597t9 d;
@@ -39,7 +39,7 @@ public final class U8 {
         Vb vb;
         Ud ud;
         N9 n9;
-        interfaceC0701xd = t8.f796a;
+        interfaceC0701xd = t8.f795a;
         toVar = t8.b;
         interfaceC0721y8 = t8.c;
         interfaceC0597t9 = t8.d;
@@ -58,7 +58,7 @@ public final class U8 {
         if (a3 != null) {
             c0218e9.f = a3;
         }
-        String a4 = this.f809a.a(n8.f708a);
+        String a4 = this.f808a.a(n8.f707a);
         if (a4 != null) {
             c0218e9.d = a4;
         }
@@ -73,7 +73,7 @@ public final class U8 {
         }
         Long l = n8.c;
         if (l != null) {
-            c0218e9.f976a = l.longValue();
+            c0218e9.f975a = l.longValue();
         }
         Long l2 = n8.d;
         if (l2 != null) {
@@ -93,7 +93,7 @@ public final class U8 {
         }
         c0218e9.j = this.c.a(n8.o);
         C0320i7 c0320i7 = n8.g;
-        c0218e9.k = c0320i7 != null ? new C0293h6().a(c0320i7.f1040a) : -1;
+        c0218e9.k = c0320i7 != null ? new C0293h6().a(c0320i7.f1039a) : -1;
         String str2 = n8.n;
         if (str2 != null) {
             c0218e9.l = str2.getBytes();
@@ -127,7 +127,7 @@ public final class U8 {
     }
 
     public U8(InterfaceC0701xd interfaceC0701xd, to toVar, InterfaceC0721y8 interfaceC0721y8, InterfaceC0597t9 interfaceC0597t9, Vb vb, Ud ud, N9 n9) {
-        this.f809a = interfaceC0701xd;
+        this.f808a = interfaceC0701xd;
         this.b = toVar;
         this.c = interfaceC0721y8;
         this.d = interfaceC0597t9;

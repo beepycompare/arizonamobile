@@ -7,10 +7,10 @@ import android.database.Cursor;
 public final class C0748za {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f1332a;
+    public final Context f1331a;
     public Cursor b;
 
     public C0748za(Context context) {
-        this.f1332a = context;
+        this.f1331a = context;
     }
 }

@@ -138,6 +138,7 @@ import kotlinx.coroutines.flow.MutableStateFlow;
 import org.json.JSONObject;
 import ru.mrlargha.commonui.utils.StringKt;
 import ru.mrlargha.commonui.utils.UtilsKt;
+import ru.mrlargha.commonui.utils.metrics.MetricsFunsKt;
 import ru.mrlargha.huawei.CheckHuaweiVersionImpl;
 import ru.rustore.sdk.appupdate.manager.factory.RuStoreAppUpdateManagerFactory;
 import ru.rustore.sdk.appupdate.model.AppUpdateInfo;
@@ -381,7 +382,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
             if (str == null) {
                 str = "unknown";
             }
-            Toast.makeText(getApplicationContext(), str + " v17.0.1 release", 1).show();
+            Toast.makeText(getApplicationContext(), str + " v17.0.3 release", 1).show();
             if (Build.VERSION.SDK_INT >= 26) {
                 if (!getFirstOpen()) {
                     Context applicationContext2 = getApplicationContext();
@@ -470,12 +471,12 @@ public final class MainEntrench extends Hilt_MainEntrench {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit onCreate$lambda$5(final MainEntrench mainEntrench, final MainComponent mainComponent, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C249@9551L269,249@9532L288:MainEntrench.kt#5ji0rp");
+        ComposerKt.sourceInformation(composer, "C250@9610L269,250@9591L288:MainEntrench.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(1553775207, i, -1, "com.arizona.launcher.MainEntrench.onCreate.<anonymous> (MainEntrench.kt:249)");
+                ComposerKt.traceEventStart(1553775207, i, -1, "com.arizona.launcher.MainEntrench.onCreate.<anonymous> (MainEntrench.kt:250)");
             }
             ThemeKt.MyApplicationTheme(false, false, ComposableLambdaKt.rememberComposableLambda(783987227, true, new Function2() { // from class: com.arizona.launcher.MainEntrench$$ExternalSyntheticLambda15
                 @Override // kotlin.jvm.functions.Function2
@@ -494,12 +495,12 @@ public final class MainEntrench extends Hilt_MainEntrench {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final Unit onCreate$lambda$5$0(MainEntrench mainEntrench, MainComponent mainComponent, Composer composer, int i) {
-        ComposerKt.sourceInformation(composer, "C250@9569L237:MainEntrench.kt#5ji0rp");
+        ComposerKt.sourceInformation(composer, "C251@9628L237:MainEntrench.kt#5ji0rp");
         if (!composer.shouldExecute((i & 3) != 2, i & 1)) {
             composer.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(783987227, i, -1, "com.arizona.launcher.MainEntrench.onCreate.<anonymous>.<anonymous> (MainEntrench.kt:250)");
+                ComposerKt.traceEventStart(783987227, i, -1, "com.arizona.launcher.MainEntrench.onCreate.<anonymous>.<anonymous> (MainEntrench.kt:251)");
             }
             ComposerKt.sourceInformationMarkerStart(composer, 1341605231, "CC(Column)N(modifier,verticalArrangement,horizontalAlignment,content)87@4443L61,88@4509L134:Column.kt#2w3rfo");
             MeasurePolicy columnMeasurePolicy = ColumnKt.columnMeasurePolicy(Arrangement.INSTANCE.getTop(), Alignment.Companion.getStart(), composer, 0);
@@ -526,7 +527,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
             Updater.m4681setimpl(m4673constructorimpl, materializeModifier, ComposeUiNode.Companion.getSetModifier());
             ComposerKt.sourceInformationMarkerStart(composer, 2093002350, "C89@4557L9:Column.kt#2w3rfo");
             ColumnScopeInstance columnScopeInstance = ColumnScopeInstance.INSTANCE;
-            ComposerKt.sourceInformationMarkerStart(composer, 1707295508, "C251@9598L8,255@9723L43,253@9628L160:MainEntrench.kt#5ji0rp");
+            ComposerKt.sourceInformationMarkerStart(composer, 1707295508, "C252@9657L8,256@9782L43,254@9687L160:MainEntrench.kt#5ji0rp");
             mainEntrench.GLView(composer, 0);
             MainRouteKt.MainRoute(mainComponent, AndroidWindowSizeClass_androidKt.calculateWindowSizeClass(mainEntrench, composer, 0), composer, MainComponent.$stable);
             ComposerKt.sourceInformationMarkerEnd(composer);
@@ -553,13 +554,13 @@ public final class MainEntrench extends Hilt_MainEntrench {
     /* JADX WARN: Type inference failed for: r0v7 */
     public final void GLView(Composer composer, final int i) {
         Composer startRestartGroup = composer.startRestartGroup(163249873);
-        ComposerKt.sourceInformation(startRestartGroup, "C(GLView)277@10228L7,278@10285L7,280@10315L48,282@10406L464,282@10373L497,297@10915L10,296@10880L150:MainEntrench.kt#5ji0rp");
+        ComposerKt.sourceInformation(startRestartGroup, "C(GLView)278@10287L7,279@10344L7,281@10374L48,283@10465L464,283@10432L497,298@10974L10,297@10939L150:MainEntrench.kt#5ji0rp");
         int i2 = i & 1;
         if (!startRestartGroup.shouldExecute(i2 != 0, i2)) {
             startRestartGroup.skipToGroupEnd();
         } else {
             if (ComposerKt.isTraceInProgress()) {
-                ComposerKt.traceEventStart(163249873, i, -1, "com.arizona.launcher.MainEntrench.GLView (MainEntrench.kt:276)");
+                ComposerKt.traceEventStart(163249873, i, -1, "com.arizona.launcher.MainEntrench.GLView (MainEntrench.kt:277)");
             }
             ComposerKt.sourceInformationMarkerStart(startRestartGroup, 2023513938, "CC(<get-current>):CompositionLocal.kt#9igjgp");
             Object consume = startRestartGroup.consume(AndroidCompositionLocals_androidKt.getLocalContext());
@@ -848,7 +849,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
         SharedPreferences.Editor edit = sharedPreferences.edit();
         UtilsKt.set_isArizonaType(FlavorUtilKt.isArizona());
         UtilsKt.set_isDebug(false);
-        FirebaseConfigHelper.INSTANCE.setDebug(false, FlavorUtilKt.isArizona());
+        FirebaseConfigHelper.INSTANCE.setDebug(false, FlavorUtilKt.isArizona(), sharedPreferences);
         if (FlavorUtilKt.isArizona()) {
             edit.putBoolean("isArizonaType", true);
         } else {
@@ -916,8 +917,10 @@ public final class MainEntrench extends Hilt_MainEntrench {
             Log.d("REFERRER_TAG", "KEY_INSTALL_VERSION - " + installReferrer.getInstallVersion());
             String installReferrer2 = installReferrer.getInstallReferrer();
             Intrinsics.checkNotNullExpressionValue(installReferrer2, "getInstallReferrer(...)");
-            Log.d("REFERRER_TAG", "referrerUrl - " + installReferrer2);
-            sharedPreferences.edit().putString("referrerUrl", installReferrer2).apply();
+            String normalReferrer = MetricsFunsKt.toNormalReferrer(installReferrer2);
+            Log.d("REFERRER_TAG", "referrerUrlraw - " + installReferrer2);
+            Log.d("REFERRER_TAG", "referrerUrl - " + normalReferrer);
+            sharedPreferences.edit().putString("referrerUrl", normalReferrer).apply();
             InstallReferrerClient installReferrerClient3 = this.referrerClient;
             if (installReferrerClient3 == null) {
                 Intrinsics.throwUninitializedPropertyAccessException("referrerClient");
@@ -1587,7 +1590,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
         JSONObject put = new JSONObject().put("server", new JSONObject().put("id", defaultSharedPreferences != null ? Integer.valueOf(defaultSharedPreferences.getInt(SettingsConstants.PROJECT_ID, 0)) : null).put("serverid", 0));
         JSONObject put2 = new JSONObject().put("ip", ConnectionHolder.INSTANCE.getSettingsData().getIp());
         Integer intOrNull = StringsKt.toIntOrNull(ConnectionHolder.INSTANCE.getSettingsData().getPort());
-        bufferedWriter.write(jSONObject.put("client", put.put("test", put2.put("port", intOrNull != null ? intOrNull.intValue() : 1).put("pass", ConnectionHolder.INSTANCE.getSettingsData().getPassword()))).put("launcher", new JSONObject().put(SettingsConstants.NICKNAME, getMainViewModel().getPlayerNick()).put(SettingsConstants.CHAT_PAGE_SIZE, ConnectionHolder.INSTANCE.getSettingsData().getPageSize()).put(SettingsConstants.CHAT_FONT_SIZE, ConnectionHolder.INSTANCE.getSettingsData().getChatFontSize()).put(SettingsConstants.CHAT_PRINT_TIMESTAMP, ConnectionHolder.INSTANCE.getSettingsData().getShowChatTime()).put(SettingsConstants.AMBIENT_SOUNDS, ConnectionHolder.INSTANCE.getSettingsData().getAmbientSounds()).put(SettingsConstants.STREAMER_MODE, ConnectionHolder.INSTANCE.getSettingsData().getStreamerMode()).put(SettingsConstants.IS_HEAD_MOVING, defaultSharedPreferences != null ? Boolean.valueOf(defaultSharedPreferences.getBoolean(SettingsConstants.IS_HEAD_MOVING, false)) : null)).toString());
+        bufferedWriter.write(jSONObject.put("client", put.put("test", put2.put("port", intOrNull != null ? intOrNull.intValue() : 1).put("pass", ConnectionHolder.INSTANCE.getSettingsData().getPassword()))).put("launcher", new JSONObject().put(SettingsConstants.NICKNAME, getMainViewModel().getPlayerNick()).put(SettingsConstants.CHAT_PAGE_SIZE, ConnectionHolder.INSTANCE.getSettingsData().getPageSize()).put(SettingsConstants.CHAT_FONT_SIZE, Float.valueOf(ConnectionHolder.INSTANCE.getSettingsData().getChatFontSize())).put(SettingsConstants.CHAT_PRINT_TIMESTAMP, ConnectionHolder.INSTANCE.getSettingsData().getShowChatTime()).put(SettingsConstants.AMBIENT_SOUNDS, ConnectionHolder.INSTANCE.getSettingsData().getAmbientSounds()).put(SettingsConstants.STREAMER_MODE, ConnectionHolder.INSTANCE.getSettingsData().getStreamerMode()).put(SettingsConstants.IS_HEAD_MOVING, defaultSharedPreferences != null ? Boolean.valueOf(defaultSharedPreferences.getBoolean(SettingsConstants.IS_HEAD_MOVING, false)) : null)).toString());
         bufferedWriter.close();
         LogcatHelper.Companion companion = LogcatHelper.Companion;
         Context applicationContext = getApplicationContext();
@@ -1683,7 +1686,7 @@ public final class MainEntrench extends Hilt_MainEntrench {
         }
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
         try {
-            bufferedWriter.write(new JSONObject().put("client", new JSONObject().put("server", new JSONObject().put("id", serverType2.getBackendLaunchCode()).put("serverid", ConnectionHolder.INSTANCE.getSelectedServer().getNumber()))).put("launcher", new JSONObject().put(SettingsConstants.NICKNAME, getMainViewModel().getPlayerNick()).put(SettingsConstants.CHAT_PAGE_SIZE, ConnectionHolder.INSTANCE.getSettingsData().getPageSize()).put(SettingsConstants.CHAT_FONT_SIZE, ConnectionHolder.INSTANCE.getSettingsData().getChatFontSize()).put(SettingsConstants.CHAT_PRINT_TIMESTAMP, ConnectionHolder.INSTANCE.getSettingsData().getShowChatTime()).put(SettingsConstants.AMBIENT_SOUNDS, ConnectionHolder.INSTANCE.getSettingsData().getAmbientSounds()).put(SettingsConstants.STREAMER_MODE, ConnectionHolder.INSTANCE.getSettingsData().getStreamerMode()).put(SettingsConstants.IS_HEAD_MOVING, defaultSharedPreferences != null ? Boolean.valueOf(defaultSharedPreferences.getBoolean(SettingsConstants.IS_HEAD_MOVING, false)) : null)).toString());
+            bufferedWriter.write(new JSONObject().put("client", new JSONObject().put("server", new JSONObject().put("id", serverType2.getBackendLaunchCode()).put("serverid", ConnectionHolder.INSTANCE.getSelectedServer().getNumber()))).put("launcher", new JSONObject().put(SettingsConstants.NICKNAME, getMainViewModel().getPlayerNick()).put(SettingsConstants.CHAT_PAGE_SIZE, ConnectionHolder.INSTANCE.getSettingsData().getPageSize()).put(SettingsConstants.CHAT_FONT_SIZE, Float.valueOf(ConnectionHolder.INSTANCE.getSettingsData().getChatFontSize())).put(SettingsConstants.CHAT_PRINT_TIMESTAMP, ConnectionHolder.INSTANCE.getSettingsData().getShowChatTime()).put(SettingsConstants.AMBIENT_SOUNDS, ConnectionHolder.INSTANCE.getSettingsData().getAmbientSounds()).put(SettingsConstants.STREAMER_MODE, ConnectionHolder.INSTANCE.getSettingsData().getStreamerMode()).put(SettingsConstants.IS_HEAD_MOVING, defaultSharedPreferences != null ? Boolean.valueOf(defaultSharedPreferences.getBoolean(SettingsConstants.IS_HEAD_MOVING, false)) : null)).toString());
             bufferedWriter.close();
         } catch (Exception e2) {
             e2.printStackTrace();

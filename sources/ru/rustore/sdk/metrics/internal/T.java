@@ -21,21 +21,21 @@ import ru.rustore.sdk.metrics.internal.W;
 public final class T {
 
     /* renamed from: a  reason: collision with root package name */
-    public final N f1592a;
+    public final N f1591a;
     public final S b;
 
     public T(N persistentMetricsEventRepository, S remoteMetricsEventRepository) {
         Intrinsics.checkNotNullParameter(persistentMetricsEventRepository, "persistentMetricsEventRepository");
         Intrinsics.checkNotNullParameter(remoteMetricsEventRepository, "remoteMetricsEventRepository");
-        this.f1592a = persistentMetricsEventRepository;
+        this.f1591a = persistentMetricsEventRepository;
         this.b = remoteMetricsEventRepository;
     }
 
     public final W a() {
         String str;
         String a2;
-        N n = this.f1592a;
-        I i = n.f1588a;
+        N n = this.f1591a;
+        I i = n.f1587a;
         i.getClass();
         String trimIndent = StringsKt.trimIndent("\n            SELECT * FROM metrics_event_table\n            LIMIT 10\n        ");
         ArrayList arrayList = new ArrayList();
@@ -60,8 +60,8 @@ public final class T {
             for (J dto : list) {
                 l.getClass();
                 Intrinsics.checkNotNullParameter(dto, "dto");
-                String str2 = dto.f1584a;
-                C0832t c0832t = l.f1586a;
+                String str2 = dto.f1583a;
+                C0832t c0832t = l.f1585a;
                 String jsonString = StringsKt.decodeToString(dto.b);
                 c0832t.getClass();
                 Intrinsics.checkNotNullParameter(jsonString, "jsonString");
@@ -81,16 +81,16 @@ public final class T {
                 values.add(new D(str2, new MetricsEvent(string, MapsKt.toMap(arrayList2), jSONObject.getLong("time"))));
             }
             if (values.isEmpty()) {
-                return W.a.f1595a;
+                return W.a.f1594a;
             }
             S s = this.b;
             s.getClass();
             Intrinsics.checkNotNullParameter(values, "values");
-            String value2 = s.b.f1575a.getPackageName();
+            String value2 = s.b.f1574a.getPackageName();
             Intrinsics.checkNotNullExpressionValue(value2, "context.packageName");
             Intrinsics.checkNotNullParameter(value2, "value");
-            b0 b0Var = s.f1591a;
-            SharedPreferences sharedPreferences = b0Var.f1602a.f1598a;
+            b0 b0Var = s.f1590a;
+            SharedPreferences sharedPreferences = b0Var.f1601a.f1597a;
             Intrinsics.checkNotNullExpressionValue(sharedPreferences, "sharedPreferences");
             String value3 = sharedPreferences.getString("USER_ID_KEY", null);
             if (value3 != null) {
@@ -100,7 +100,7 @@ public final class T {
             }
             if (value3 == null) {
                 synchronized (b0.c) {
-                    SharedPreferences sharedPreferences2 = b0Var.f1602a.f1598a;
+                    SharedPreferences sharedPreferences2 = b0Var.f1601a.f1597a;
                     Intrinsics.checkNotNullExpressionValue(sharedPreferences2, "sharedPreferences");
                     String value4 = sharedPreferences2.getString("USER_ID_KEY", null);
                     if (value4 != null) {
@@ -115,17 +115,17 @@ public final class T {
                 str = value3;
             }
             d0 d0Var = (d0) s.d.b.getValue();
-            String str3 = d0Var != null ? d0Var.f1605a : null;
+            String str3 = d0Var != null ? d0Var.f1604a : null;
             ArrayList values2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(values, 10));
             Iterator it = values.iterator();
             while (it.hasNext()) {
                 D d = (D) it.next();
-                values2.add(new P(value2, d.f1576a, str, str3, d.b));
+                values2.add(new P(value2, d.f1575a, str, str3, d.b));
             }
             O o = s.c;
             o.getClass();
             Intrinsics.checkNotNullParameter(values2, "values");
-            o.f1589a.b(values2);
+            o.f1588a.b(values2);
             return new W.b(values);
         } finally {
         }

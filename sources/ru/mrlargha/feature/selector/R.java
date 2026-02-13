@@ -4,8 +4,8 @@ public final class R {
 
     /* loaded from: classes6.dex */
     public static final class drawable {
-        public static int selector_arrow_ic = 0x7f080da3;
-        public static int selector_line_ic = 0x7f080da4;
+        public static int selector_arrow_ic = 0x7f080da4;
+        public static int selector_line_ic = 0x7f080da5;
 
         private drawable() {
         }

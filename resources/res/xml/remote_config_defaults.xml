@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <defaults>
     <entry>
-        <key>main_hud_ping
+        <key>launcher_background
         </key>
-        <value>https://arizona-ping.react.group/
-        </value>
-    </entry>
-    <entry>
-        <key>reserve_hud_ping
-        </key>
-        <value>https://arz-reserve.samp-dl.com/
+        <value>/assets/images/mobile_launcher/background.webp
         </value>
     </entry>
     <entry>
@@ -28,6 +22,12 @@
         <key>server_api
         </key>
         <value>https://server-api.arizona.games/
+        </value>
+    </entry>
+    <entry>
+        <key>main_hud_ping
+        </key>
+        <value>https://arizona-ping.react.group/
         </value>
     </entry>
     <entry>
@@ -82,6 +82,12 @@
         <key>reserve_server_api
         </key>
         <value>https://reserve-server-api.arizona.games/
+        </value>
+    </entry>
+    <entry>
+        <key>reserve_hud_ping
+        </key>
+        <value>https://arz-reserve.samp-dl.com/
         </value>
     </entry>
     <entry>

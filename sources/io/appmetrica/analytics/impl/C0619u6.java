@@ -4,11 +4,11 @@ package io.appmetrica.analytics.impl;
 public final class C0619u6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Dg f1251a;
+    public final Dg f1250a;
     public final String b;
 
     public C0619u6(Dg dg, String str) {
-        this.f1251a = dg;
+        this.f1250a = dg;
         this.b = str;
     }
 }

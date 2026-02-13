@@ -11,12 +11,12 @@ import kotlin.collections.CollectionsKt;
 public final class Z6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final I6 f881a;
+    public final I6 f880a;
     public final List b;
     public final boolean c;
 
     public Z6(I6 i6, ArrayList arrayList, boolean z) {
-        this.f881a = i6;
+        this.f880a = i6;
         this.b = arrayList;
         this.c = z;
     }
@@ -24,7 +24,7 @@ public final class Z6 {
     public final String a(Context context, X6 x6) {
         File parentFile;
         try {
-            File a2 = this.f881a.a(context, x6.b());
+            File a2 = this.f880a.a(context, x6.b());
             if (!a2.exists() && (parentFile = a2.getParentFile()) != null && (parentFile.exists() || parentFile.mkdirs())) {
                 a(context, x6.a(), a2);
             }

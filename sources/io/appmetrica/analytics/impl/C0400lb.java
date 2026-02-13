@@ -7,7 +7,7 @@ import io.appmetrica.analytics.protobuf.nano.MessageNano;
 public final class C0400lb implements Converter {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Mc f1097a;
+    public final Mc f1096a;
 
     public C0400lb() {
         this(new Mc(new Rn()));
@@ -16,7 +16,7 @@ public final class C0400lb implements Converter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     /* renamed from: a */
     public final byte[] fromModel(Qn qn) {
-        return MessageNano.toByteArray((MessageNano) this.f1097a.f693a.fromModel(qn));
+        return MessageNano.toByteArray((MessageNano) this.f1096a.f692a.fromModel(qn));
     }
 
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
@@ -26,7 +26,7 @@ public final class C0400lb implements Converter {
     }
 
     public C0400lb(Mc mc) {
-        this.f1097a = mc;
+        this.f1096a = mc;
     }
 
     public final Qn a(byte[] bArr) {

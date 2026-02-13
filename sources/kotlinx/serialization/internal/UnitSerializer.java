@@ -15,7 +15,7 @@ public final class UnitSerializer implements KSerializer<Unit> {
     private final /* synthetic */ ObjectSerializer<Unit> $$delegate_0 = new ObjectSerializer<>("kotlin.Unit", Unit.INSTANCE);
 
     /* renamed from: deserialize  reason: collision with other method in class */
-    public void m12002deserialize(Decoder decoder) {
+    public void m12001deserialize(Decoder decoder) {
         Intrinsics.checkNotNullParameter(decoder, "decoder");
         this.$$delegate_0.deserialize(decoder);
     }
@@ -37,7 +37,7 @@ public final class UnitSerializer implements KSerializer<Unit> {
 
     @Override // kotlinx.serialization.DeserializationStrategy
     public /* bridge */ /* synthetic */ Object deserialize(Decoder decoder) {
-        m12002deserialize(decoder);
+        m12001deserialize(decoder);
         return Unit.INSTANCE;
     }
 }

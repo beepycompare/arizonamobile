@@ -8,7 +8,7 @@ public final class C0727ye implements ProtobufConverter {
     /* renamed from: a */
     public final C0610tm fromModel(C0702xe c0702xe) {
         C0610tm c0610tm = new C0610tm();
-        c0610tm.f1242a = c0702xe.f1306a;
+        c0610tm.f1241a = c0702xe.f1305a;
         c0610tm.b = c0702xe.b;
         return c0610tm;
     }
@@ -16,10 +16,10 @@ public final class C0727ye implements ProtobufConverter {
     @Override // io.appmetrica.analytics.coreapi.internal.data.Converter
     public final Object toModel(Object obj) {
         C0610tm c0610tm = (C0610tm) obj;
-        return new C0702xe(c0610tm.f1242a, c0610tm.b);
+        return new C0702xe(c0610tm.f1241a, c0610tm.b);
     }
 
     public final C0702xe a(C0610tm c0610tm) {
-        return new C0702xe(c0610tm.f1242a, c0610tm.b);
+        return new C0702xe(c0610tm.f1241a, c0610tm.b);
     }
 }

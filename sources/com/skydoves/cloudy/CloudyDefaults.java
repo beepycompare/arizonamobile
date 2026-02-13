@@ -18,7 +18,7 @@ public final class CloudyDefaults {
     }
 
     /* renamed from: getDefaultScrimColor-0d7_KjU  reason: not valid java name */
-    public final long m10200getDefaultScrimColor0d7_KjU() {
+    public final long m10199getDefaultScrimColor0d7_KjU() {
         return DefaultScrimColor;
     }
 }

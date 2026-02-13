@@ -11,13 +11,13 @@ public final class R {
         public static int btn_notification_count = 0x7f0804f1;
         public static int btn_telegram = 0x7f0804f9;
         public static int btn_vk = 0x7f0804ff;
-        public static int messenger_ic = 0x7f080b49;
-        public static int news_item_arrow = 0x7f080c1d;
-        public static int online_ic = 0x7f080c69;
-        public static int queue_ic = 0x7f080d3c;
-        public static int server_button_arrow = 0x7f080db0;
-        public static int shop_notificaiotns_bg = 0x7f080dd0;
-        public static int update_home_screen = 0x7f080e68;
+        public static int messenger_ic = 0x7f080b4a;
+        public static int news_item_arrow = 0x7f080c1e;
+        public static int online_ic = 0x7f080c6a;
+        public static int queue_ic = 0x7f080d3d;
+        public static int server_button_arrow = 0x7f080db1;
+        public static int shop_notificaiotns_bg = 0x7f080dd1;
+        public static int update_home_screen = 0x7f080e69;
 
         private drawable() {
         }

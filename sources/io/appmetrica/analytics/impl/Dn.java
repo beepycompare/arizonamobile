@@ -8,7 +8,7 @@ import java.util.TreeMap;
 public final class Dn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Cn f557a;
+    public final Cn f556a;
     public final BiFunction b;
     public final Cf c;
 
@@ -21,7 +21,7 @@ public final class Dn {
         ArrayList arrayList = new ArrayList();
         TreeMap treeMap = new TreeMap(new Bn());
         try {
-            map = this.f557a.c();
+            map = this.f556a.c();
         } catch (SecurityException unused) {
             map = null;
         }
@@ -41,7 +41,7 @@ public final class Dn {
     }
 
     public Dn(Cn cn, C0399la c0399la, C0544r6 c0544r6) {
-        this.f557a = cn;
+        this.f556a = cn;
         this.b = c0399la;
         this.c = c0544r6;
     }

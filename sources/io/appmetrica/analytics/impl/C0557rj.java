@@ -4,14 +4,14 @@ package io.appmetrica.analytics.impl;
 public final class C0557rj implements Qa {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ Throwable f1211a;
+    public final /* synthetic */ Throwable f1210a;
 
     public C0557rj(Throwable th) {
-        this.f1211a = th;
+        this.f1210a = th;
     }
 
     @Override // io.appmetrica.analytics.impl.Qa
     public final void a(Ra ra) {
-        ra.reportUnhandledException(this.f1211a);
+        ra.reportUnhandledException(this.f1210a);
     }
 }

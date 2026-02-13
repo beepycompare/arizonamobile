@@ -11,7 +11,7 @@ public final class Ym extends AbstractC0592t4 {
     @Override // io.appmetrica.analytics.impl.AbstractC0592t4
     public final void a(C0259fo c0259fo) {
         String str = (String) this.g.a((String) this.f);
-        c0259fo.d.f1035a = str == null ? new byte[0] : str.getBytes();
+        c0259fo.d.f1034a = str == null ? new byte[0] : str.getBytes();
     }
 
     public final Ln h() {

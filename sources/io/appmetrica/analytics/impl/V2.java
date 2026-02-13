@@ -7,7 +7,7 @@ import java.util.Arrays;
 public final class V2 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final U2 f821a;
+    public final U2 f820a;
     public final GZIPCompressor b;
 
     public V2() {
@@ -17,7 +17,7 @@ public final class V2 {
     public final byte[] a(byte[] bArr) {
         try {
             byte[] copyOfRange = Arrays.copyOfRange(bArr, 0, 16);
-            U2 u2 = this.f821a;
+            U2 u2 = this.f820a;
             byte[] bytes = "hBnBQbZrmjPXEWVJ".getBytes();
             u2.getClass();
             AESEncrypter aESEncrypter = new AESEncrypter(AESEncrypter.DEFAULT_ALGORITHM, bytes, copyOfRange);
@@ -30,7 +30,7 @@ public final class V2 {
     }
 
     public V2(U2 u2, GZIPCompressor gZIPCompressor) {
-        this.f821a = u2;
+        this.f820a = u2;
         this.b = gZIPCompressor;
     }
 }

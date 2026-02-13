@@ -6,16 +6,16 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public final class a implements AdRevenueCollector {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ IronSourceV9ClientModuleEntryPoint f303a;
+    public final /* synthetic */ IronSourceV9ClientModuleEntryPoint f302a;
 
     public a(IronSourceV9ClientModuleEntryPoint ironSourceV9ClientModuleEntryPoint) {
-        this.f303a = ironSourceV9ClientModuleEntryPoint;
+        this.f302a = ironSourceV9ClientModuleEntryPoint;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.adrevenue.AdRevenueCollector
     public final boolean getEnabled() {
         AtomicBoolean atomicBoolean;
-        atomicBoolean = this.f303a.b;
+        atomicBoolean = this.f302a.b;
         return atomicBoolean.get();
     }
 

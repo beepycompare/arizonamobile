@@ -139,7 +139,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
 
     @Override // kotlinx.coroutines.Delay
     /* renamed from: scheduleResumeAfterDelay */
-    public void mo11839scheduleResumeAfterDelay(long j, CancellableContinuation<? super Unit> cancellableContinuation) {
+    public void mo11838scheduleResumeAfterDelay(long j, CancellableContinuation<? super Unit> cancellableContinuation) {
         long delayToNanos = EventLoop_commonKt.delayToNanos(j);
         if (delayToNanos < 4611686018427387903L) {
             AbstractTimeSource abstractTimeSource = AbstractTimeSourceKt.timeSource;
@@ -179,7 +179,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public final void mo11838dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+    public final void mo11837dispatch(CoroutineContext coroutineContext, Runnable runnable) {
         enqueue(runnable);
     }
 

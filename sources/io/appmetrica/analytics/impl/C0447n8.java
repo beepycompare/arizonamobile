@@ -14,7 +14,7 @@ public final class C0447n8 extends MessageNano {
     public static volatile C0447n8[] h;
 
     /* renamed from: a  reason: collision with root package name */
-    public byte[] f1132a;
+    public byte[] f1131a;
     public byte[] b;
     public C0243f8 c;
     public C0397l8 d;
@@ -39,7 +39,7 @@ public final class C0447n8 extends MessageNano {
 
     public final C0447n8 a() {
         byte[] bArr = WireFormatNano.EMPTY_BYTES;
-        this.f1132a = bArr;
+        this.f1131a = bArr;
         this.b = bArr;
         this.c = null;
         this.d = null;
@@ -53,10 +53,10 @@ public final class C0447n8 extends MessageNano {
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final int computeSerializedSize() {
         int computeSerializedSize = super.computeSerializedSize();
-        byte[] bArr = this.f1132a;
+        byte[] bArr = this.f1131a;
         byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
         if (!Arrays.equals(bArr, bArr2)) {
-            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f1132a);
+            computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(1, this.f1131a);
         }
         if (!Arrays.equals(this.b, bArr2)) {
             computeSerializedSize += CodedOutputByteBufferNano.computeBytesSize(2, this.b);
@@ -97,10 +97,10 @@ public final class C0447n8 extends MessageNano {
 
     @Override // io.appmetrica.analytics.protobuf.nano.MessageNano
     public final void writeTo(CodedOutputByteBufferNano codedOutputByteBufferNano) throws IOException {
-        byte[] bArr = this.f1132a;
+        byte[] bArr = this.f1131a;
         byte[] bArr2 = WireFormatNano.EMPTY_BYTES;
         if (!Arrays.equals(bArr, bArr2)) {
-            codedOutputByteBufferNano.writeBytes(1, this.f1132a);
+            codedOutputByteBufferNano.writeBytes(1, this.f1131a);
         }
         if (!Arrays.equals(this.b, bArr2)) {
             codedOutputByteBufferNano.writeBytes(2, this.b);
@@ -147,7 +147,7 @@ public final class C0447n8 extends MessageNano {
             if (readTag == 0) {
                 break;
             } else if (readTag == 10) {
-                this.f1132a = codedInputByteBufferNano.readBytes();
+                this.f1131a = codedInputByteBufferNano.readBytes();
             } else if (readTag == 18) {
                 this.b = codedInputByteBufferNano.readBytes();
             } else if (readTag == 26) {

@@ -5,19 +5,19 @@ import io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdReve
 public final class K5 implements J5 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0318i5 f654a;
+    public final C0318i5 f653a;
 
     public K5(C0318i5 c0318i5) {
-        this.f654a = c0318i5;
+        this.f653a = c0318i5;
     }
 
     @Override // io.appmetrica.analytics.impl.J5, io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueContext
     public final C0318i5 getAdRevenueProcessorsHolder() {
-        return this.f654a;
+        return this.f653a;
     }
 
     @Override // io.appmetrica.analytics.modulesapi.internal.client.adrevenue.ModuleAdRevenueContext
     public final ModuleAdRevenueProcessorsHolder getAdRevenueProcessorsHolder() {
-        return this.f654a;
+        return this.f653a;
     }
 }

@@ -9,14 +9,14 @@ import org.json.JSONObject;
 public final class C0628uf {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0529qf f1257a;
+    public final C0529qf f1256a;
 
     public C0628uf(PreloadInfo preloadInfo, PublicLogger publicLogger, boolean z) {
         if (preloadInfo != null) {
             if (TextUtils.isEmpty(preloadInfo.getTrackingId())) {
                 publicLogger.error("Required field \"PreloadInfo.trackingId\" is empty!\nThis preload info will be skipped.", new Object[0]);
             } else {
-                this.f1257a = new C0529qf(preloadInfo.getTrackingId(), new JSONObject(preloadInfo.getAdditionalParams()), true, z, S7.c);
+                this.f1256a = new C0529qf(preloadInfo.getTrackingId(), new JSONObject(preloadInfo.getAdditionalParams()), true, z, S7.c);
             }
         }
     }

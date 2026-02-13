@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 public final class C0108a2 implements AppSetIdProvider {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f896a;
+    public final Context f895a;
     public final IAppSetIdRetriever b;
     public volatile AppSetId c;
     public CountDownLatch d;
@@ -20,7 +20,7 @@ public final class C0108a2 implements AppSetIdProvider {
     public final Z1 f;
 
     public C0108a2(Context context, IAppSetIdRetriever iAppSetIdRetriever) {
-        this.f896a = context;
+        this.f895a = context;
         this.b = iAppSetIdRetriever;
         this.d = new CountDownLatch(1);
         this.e = 20L;
@@ -33,7 +33,7 @@ public final class C0108a2 implements AppSetIdProvider {
         if (this.c == null) {
             try {
                 this.d = new CountDownLatch(1);
-                this.b.retrieveAppSetId(this.f896a, this.f);
+                this.b.retrieveAppSetId(this.f895a, this.f);
                 this.d.await(this.e, TimeUnit.SECONDS);
             } catch (Throwable unused) {
             }

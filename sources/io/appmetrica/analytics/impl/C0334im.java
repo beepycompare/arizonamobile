@@ -10,7 +10,7 @@ public final class C0334im {
     public B9 B;
 
     /* renamed from: a  reason: collision with root package name */
-    public String f1050a;
+    public String f1049a;
     public List b;
     public String c;
     public String d;

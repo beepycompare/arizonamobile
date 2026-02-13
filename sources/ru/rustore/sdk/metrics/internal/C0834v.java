@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Intrinsics;
 public final class C0834v {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f1628a;
+    public final String f1627a;
     public final String b;
     public final Map<String, String> c;
 
@@ -19,7 +19,7 @@ public final class C0834v {
         Intrinsics.checkNotNullParameter(uuid, "uuid");
         Intrinsics.checkNotNullParameter(eventName, "eventName");
         Intrinsics.checkNotNullParameter(eventData, "eventData");
-        this.f1628a = uuid;
+        this.f1627a = uuid;
         this.b = eventName;
         this.c = eventData;
     }
@@ -30,17 +30,17 @@ public final class C0834v {
         }
         if (obj instanceof C0834v) {
             C0834v c0834v = (C0834v) obj;
-            return Intrinsics.areEqual(this.f1628a, c0834v.f1628a) && Intrinsics.areEqual(this.b, c0834v.b) && Intrinsics.areEqual(this.c, c0834v.c);
+            return Intrinsics.areEqual(this.f1627a, c0834v.f1627a) && Intrinsics.areEqual(this.b, c0834v.b) && Intrinsics.areEqual(this.c, c0834v.c);
         }
         return false;
     }
 
     public final int hashCode() {
         int hashCode = this.b.hashCode();
-        return this.c.hashCode() + ((hashCode + (this.f1628a.hashCode() * 31)) * 31);
+        return this.c.hashCode() + ((hashCode + (this.f1627a.hashCode() * 31)) * 31);
     }
 
     public final String toString() {
-        return "MigrationDtoVer1(uuid=" + ((Object) ("MetricsEventUuid(value=" + this.f1628a + ')')) + ", eventName=" + this.b + ", eventData=" + this.c + ')';
+        return "MigrationDtoVer1(uuid=" + ((Object) ("MetricsEventUuid(value=" + this.f1627a + ')')) + ", eventName=" + this.b + ", eventData=" + this.c + ')';
     }
 }

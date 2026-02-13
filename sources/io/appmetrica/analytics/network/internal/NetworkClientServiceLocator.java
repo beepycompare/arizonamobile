@@ -8,10 +8,10 @@ public class NetworkClientServiceLocator {
     private static volatile NetworkClientServiceLocator b;
 
     /* renamed from: a  reason: collision with root package name */
-    private final Bundle f1382a;
+    private final Bundle f1381a;
 
     NetworkClientServiceLocator(Bundle bundle) {
-        this.f1382a = bundle;
+        this.f1381a = bundle;
     }
 
     public static NetworkClientServiceLocator getInstance() {
@@ -23,7 +23,7 @@ public class NetworkClientServiceLocator {
     }
 
     public Bundle getApplicationMetaData() {
-        return this.f1382a;
+        return this.f1381a;
     }
 
     public static void init(Context context, SafePackageManager safePackageManager) {

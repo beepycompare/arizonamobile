@@ -6,7 +6,7 @@ import kotlinx.metadata.internal.metadata.jvm.deserialization.JvmProtoBufUtil;
 public final class H4 implements X6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f609a;
+    public final String f608a;
     public final String b;
 
     public H4(Q4 q4) {
@@ -16,7 +16,7 @@ public final class H4 implements X6 {
         } else {
             b = q4.b();
         }
-        this.f609a = String.format("component_%s.db", Arrays.copyOf(new Object[]{b}, 1));
+        this.f608a = String.format("component_%s.db", Arrays.copyOf(new Object[]{b}, 1));
         this.b = "db_metrica_" + q4;
     }
 
@@ -27,6 +27,6 @@ public final class H4 implements X6 {
 
     @Override // io.appmetrica.analytics.impl.X6
     public final String b() {
-        return this.f609a;
+        return this.f608a;
     }
 }

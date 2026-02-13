@@ -9,9 +9,9 @@ public final class Un extends AbstractC0474oa {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0474oa
     public final void a(List<Rg> list) {
-        list.add(this.f1152a.f1210a);
-        list.add(this.f1152a.b);
-        list.add(this.f1152a.n);
-        list.add(this.f1152a.d);
+        list.add(this.f1151a.f1209a);
+        list.add(this.f1151a.b);
+        list.add(this.f1151a.n);
+        list.add(this.f1151a.d);
     }
 }

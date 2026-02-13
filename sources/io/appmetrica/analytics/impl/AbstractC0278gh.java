@@ -7,10 +7,10 @@ import io.appmetrica.analytics.coreutils.internal.WrapUtils;
 public abstract class AbstractC0278gh implements InterfaceC0304hh {
 
     /* renamed from: a  reason: collision with root package name */
-    protected final DataSendingRestrictionController f1015a;
+    protected final DataSendingRestrictionController f1014a;
 
     public AbstractC0278gh(DataSendingRestrictionController dataSendingRestrictionController) {
-        this.f1015a = dataSendingRestrictionController;
+        this.f1014a = dataSendingRestrictionController;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0304hh

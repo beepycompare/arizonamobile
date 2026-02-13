@@ -24,7 +24,7 @@ public final class Ol implements Pl {
     public static final Map k = Collections.unmodifiableMap(new Ll());
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f730a;
+    public final List f729a;
     public final C0681wi b;
     public final Wl c;
     public final Handler d;
@@ -171,7 +171,7 @@ public final class Ol implements Pl {
             v9 = t9.b;
         }
         s9.getClass();
-        Boolean bool = v9.f826a;
+        Boolean bool = v9.f825a;
         return new X9();
     }
 
@@ -208,13 +208,13 @@ public final class Ol implements Pl {
         synchronized (this.g) {
             if (!this.j || this.c.b()) {
                 this.j = true;
-                a(this.f730a, this.f, this.i, false);
+                a(this.f729a, this.f, this.i, false);
             }
         }
     }
 
     public Ol(C0681wi c0681wi, Wl wl, Handler handler) {
-        this.f730a = Arrays.asList(StartupParamsCallback.APPMETRICA_UUID, StartupParamsCallback.APPMETRICA_DEVICE_ID, StartupParamsCallback.APPMETRICA_DEVICE_ID_HASH, "appmetrica_get_ad_url", "appmetrica_report_ad_url", "appmetrica_clids");
+        this.f729a = Arrays.asList(StartupParamsCallback.APPMETRICA_UUID, StartupParamsCallback.APPMETRICA_DEVICE_ID, StartupParamsCallback.APPMETRICA_DEVICE_ID_HASH, "appmetrica_get_ad_url", "appmetrica_report_ad_url", "appmetrica_clids");
         this.g = new Object();
         this.h = new WeakHashMap();
         this.j = false;
@@ -240,10 +240,10 @@ public final class Ol implements Pl {
         bundle.putParcelable("io.appmetrica.analytics.impl.IdentifiersData", new Xa(b6, list, map, z));
         EnumC0143bb enumC0143bb = EnumC0143bb.EVENT_TYPE_UNDEFINED;
         PublicLogger anonymousInstance = PublicLogger.getAnonymousInstance();
-        Set set = AbstractC0672w9.f1285a;
+        Set set = AbstractC0672w9.f1284a;
         M3 m3 = new M3("", "", 1536, 0, anonymousInstance);
         m3.m = bundle;
-        F4 f4 = c0681wi.f1289a;
+        F4 f4 = c0681wi.f1288a;
         c0681wi.a(C0681wi.a(m3, f4), f4, 1, (Map) null);
     }
 

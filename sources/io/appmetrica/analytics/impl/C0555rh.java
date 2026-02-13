@@ -10,18 +10,18 @@ import java.util.Map;
 public final class C0555rh implements InterfaceC0512pn {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ C0347j9 f1209a;
+    public final /* synthetic */ C0347j9 f1208a;
     public final /* synthetic */ C0630uh b;
 
     public C0555rh(C0630uh c0630uh, C0347j9 c0347j9) {
         this.b = c0630uh;
-        this.f1209a = c0347j9;
+        this.f1208a = c0347j9;
     }
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0512pn
     public final void a(Object obj) {
         List list = (List) obj;
-        C0347j9 c0347j9 = this.f1209a;
+        C0347j9 c0347j9 = this.f1208a;
         if (lo.a((Collection) list)) {
             return;
         }
@@ -29,11 +29,11 @@ public final class C0555rh implements InterfaceC0512pn {
         for (int i = 0; i < list.size(); i++) {
             C0333il c0333il = (C0333il) list.get(i);
             C0296h9[] c0296h9Arr = c0347j9.d;
-            Map map = Pf.f739a;
+            Map map = Pf.f738a;
             C0296h9 c0296h9 = new C0296h9();
-            Integer num = c0333il.f1049a;
+            Integer num = c0333il.f1048a;
             if (num != null) {
-                c0296h9.f1027a = num.intValue();
+                c0296h9.f1026a = num.intValue();
             }
             Integer num2 = c0333il.b;
             if (num2 != null) {

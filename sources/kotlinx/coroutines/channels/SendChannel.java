@@ -19,7 +19,7 @@ public interface SendChannel<E> {
     SelectClause2<E, SendChannel<E>> getOnSend();
 
     /* renamed from: invokeOnClose */
-    void mo11854invokeOnClose(Function1<? super Throwable, Unit> function1);
+    void mo11853invokeOnClose(Function1<? super Throwable, Unit> function1);
 
     boolean isClosedForSend();
 
@@ -52,14 +52,14 @@ public interface SendChannel<E> {
         @Deprecated(level = DeprecationLevel.ERROR, message = "Deprecated in the favour of 'trySend' method", replaceWith = @ReplaceWith(expression = "trySend(element).isSuccess", imports = {}))
         public static <E> boolean offer(SendChannel<? super E> sendChannel, E e) {
             Object mo9174trySendJP2dKIU = sendChannel.mo9174trySendJP2dKIU(e);
-            if (ChannelResult.m11795isSuccessimpl(mo9174trySendJP2dKIU)) {
+            if (ChannelResult.m11794isSuccessimpl(mo9174trySendJP2dKIU)) {
                 return true;
             }
-            Throwable m11789exceptionOrNullimpl = ChannelResult.m11789exceptionOrNullimpl(mo9174trySendJP2dKIU);
-            if (m11789exceptionOrNullimpl == null) {
+            Throwable m11788exceptionOrNullimpl = ChannelResult.m11788exceptionOrNullimpl(mo9174trySendJP2dKIU);
+            if (m11788exceptionOrNullimpl == null) {
                 return false;
             }
-            throw StackTraceRecoveryKt.recoverStackTrace(m11789exceptionOrNullimpl);
+            throw StackTraceRecoveryKt.recoverStackTrace(m11788exceptionOrNullimpl);
         }
     }
 }

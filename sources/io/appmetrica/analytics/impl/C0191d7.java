@@ -4,7 +4,7 @@ package io.appmetrica.analytics.impl;
 public final class C0191d7 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Integer f954a;
+    public final Integer f953a;
     public final String b;
     public final String c;
     public final Long d;
@@ -24,7 +24,7 @@ public final class C0191d7 {
     public final byte[] r;
 
     public C0191d7(Integer num, String str, String str2, Long l, C0320i7 c0320i7, String str3, String str4, Long l2, Integer num2, Integer num3, String str5, I8 i8, String str6, EnumC0194da enumC0194da, EnumC0423m9 enumC0423m9, Boolean bool, Integer num4, byte[] bArr) {
-        this.f954a = num;
+        this.f953a = num;
         this.b = str;
         this.c = str2;
         this.d = l;
@@ -57,7 +57,7 @@ public final class C0191d7 {
     }
 
     public final Integer d() {
-        return this.f954a;
+        return this.f953a;
     }
 
     public final I8 e() {

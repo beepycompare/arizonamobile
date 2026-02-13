@@ -10,6 +10,6 @@ public final class C0730yh extends AbstractC0278gh {
 
     @Override // io.appmetrica.analytics.impl.AbstractC0278gh, io.appmetrica.analytics.impl.InterfaceC0304hh
     public final boolean a(Boolean bool) {
-        return !this.f1015a.isRestrictedForSdk() && ((Boolean) WrapUtils.getOrDefault(bool, Boolean.TRUE)).booleanValue();
+        return !this.f1014a.isRestrictedForSdk() && ((Boolean) WrapUtils.getOrDefault(bool, Boolean.TRUE)).booleanValue();
     }
 }

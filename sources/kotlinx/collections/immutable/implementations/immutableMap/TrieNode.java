@@ -364,10 +364,10 @@ public final class TrieNode<K, V> {
 
     /* JADX WARN: Multi-variable type inference failed */
     private final TrieNode<K, V> mutableCollisionPutAll(TrieNode<K, V> trieNode, DeltaCounter deltaCounter, MutabilityOwnership mutabilityOwnership) {
-        CommonFunctionsKt.m11754assert(this.nodeMap == 0);
-        CommonFunctionsKt.m11754assert(this.dataMap == 0);
-        CommonFunctionsKt.m11754assert(trieNode.nodeMap == 0);
-        CommonFunctionsKt.m11754assert(trieNode.dataMap == 0);
+        CommonFunctionsKt.m11753assert(this.nodeMap == 0);
+        CommonFunctionsKt.m11753assert(this.dataMap == 0);
+        CommonFunctionsKt.m11753assert(trieNode.nodeMap == 0);
+        CommonFunctionsKt.m11753assert(trieNode.dataMap == 0);
         Object[] objArr = this.buffer;
         Object[] copyOf = Arrays.copyOf(objArr, objArr.length + trieNode.buffer.length);
         Intrinsics.checkNotNullExpressionValue(copyOf, "copyOf(...)");

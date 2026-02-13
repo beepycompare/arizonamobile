@@ -72,7 +72,7 @@ public final class SpringIndicatorType extends IndicatorType {
 
     @Override // com.tbuonomo.viewpagerdotsindicator.compose.type.IndicatorType
     /* renamed from: IndicatorTypeComposable--jt2gSs */
-    public void mo10223IndicatorTypeComposablejt2gSs(final Function0<Float> globalOffsetProvider, final Modifier modifier, final int i, final float f, final Function1<? super Integer, Unit> function1, Composer composer, final int i2) {
+    public void mo10222IndicatorTypeComposablejt2gSs(final Function0<Float> globalOffsetProvider, final Modifier modifier, final int i, final float f, final Function1<? super Integer, Unit> function1, Composer composer, final int i2) {
         int i3;
         final MutableState mutableState;
         final MutableState mutableState2;
@@ -355,17 +355,17 @@ public final class SpringIndicatorType extends IndicatorType {
 
                         @Override // kotlin.jvm.functions.Function0
                         public /* bridge */ /* synthetic */ Dp invoke() {
-                            return Dp.m8256boximpl(m10229invokeD9Ej5fM());
+                            return Dp.m8256boximpl(m10228invokeD9Ej5fM());
                         }
 
                         /* renamed from: invoke-D9Ej5fM  reason: not valid java name */
-                        public final float m10229invokeD9Ej5fM() {
+                        public final float m10228invokeD9Ej5fM() {
                             DotGraphic dotGraphic3;
                             DotGraphic dotGraphic4;
                             dotGraphic3 = SpringIndicatorType.this.dotsGraphic;
-                            float m10222getSizeD9Ej5fM = dotGraphic3.m10222getSizeD9Ej5fM();
+                            float m10221getSizeD9Ej5fM = dotGraphic3.m10221getSizeD9Ej5fM();
                             dotGraphic4 = SpringIndicatorType.this.selectorDotGraphic;
-                            return Dp.m8258constructorimpl(Dp.m8258constructorimpl(m10222getSizeD9Ej5fM - dotGraphic4.m10222getSizeD9Ej5fM()) / 2);
+                            return Dp.m8258constructorimpl(Dp.m8258constructorimpl(m10221getSizeD9Ej5fM - dotGraphic4.m10221getSizeD9Ej5fM()) / 2);
                         }
                     });
                     composer2.updateRememberedValue(rememberedValue4);
@@ -391,15 +391,15 @@ public final class SpringIndicatorType extends IndicatorType {
 
                         @Override // kotlin.jvm.functions.Function0
                         public /* bridge */ /* synthetic */ Dp invoke() {
-                            return Dp.m8256boximpl(m10230invokeD9Ej5fM());
+                            return Dp.m8256boximpl(m10229invokeD9Ej5fM());
                         }
 
                         /* renamed from: invoke-D9Ej5fM  reason: not valid java name */
-                        public final float m10230invokeD9Ej5fM() {
+                        public final float m10229invokeD9Ej5fM() {
                             float IndicatorTypeComposable__jt2gSs$lambda$1;
                             float IndicatorTypeComposable__jt2gSs$lambda$4;
                             float IndicatorTypeComposable__jt2gSs$lambda$11$lambda$8;
-                            float m10228computeSelectorDotPositionDptILSbM;
+                            float m10227computeSelectorDotPositionDptILSbM;
                             SpringIndicatorType springIndicatorType2 = SpringIndicatorType.this;
                             IndicatorTypeComposable__jt2gSs$lambda$1 = SpringIndicatorType.IndicatorTypeComposable__jt2gSs$lambda$1(mutableState6);
                             IndicatorTypeComposable__jt2gSs$lambda$4 = SpringIndicatorType.IndicatorTypeComposable__jt2gSs$lambda$4(mutableState5);
@@ -407,8 +407,8 @@ public final class SpringIndicatorType extends IndicatorType {
                             float floatValue = globalOffsetProvider.invoke().floatValue();
                             float f2 = density;
                             IndicatorTypeComposable__jt2gSs$lambda$11$lambda$8 = SpringIndicatorType.IndicatorTypeComposable__jt2gSs$lambda$11$lambda$8(state);
-                            m10228computeSelectorDotPositionDptILSbM = springIndicatorType2.m10228computeSelectorDotPositionDptILSbM(IndicatorTypeComposable__jt2gSs$lambda$1, IndicatorTypeComposable__jt2gSs$lambda$4, i8, floatValue, f2, IndicatorTypeComposable__jt2gSs$lambda$11$lambda$8);
-                            return m10228computeSelectorDotPositionDptILSbM;
+                            m10227computeSelectorDotPositionDptILSbM = springIndicatorType2.m10227computeSelectorDotPositionDptILSbM(IndicatorTypeComposable__jt2gSs$lambda$1, IndicatorTypeComposable__jt2gSs$lambda$4, i8, floatValue, f2, IndicatorTypeComposable__jt2gSs$lambda$11$lambda$8);
+                            return m10227computeSelectorDotPositionDptILSbM;
                         }
                     });
                     composer2.updateRememberedValue(rememberedValue5);
@@ -446,7 +446,7 @@ public final class SpringIndicatorType extends IndicatorType {
                 }
 
                 public final void invoke(Composer composer3, int i8) {
-                    SpringIndicatorType.this.mo10223IndicatorTypeComposablejt2gSs(globalOffsetProvider, modifier, i, f, function1, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
+                    SpringIndicatorType.this.mo10222IndicatorTypeComposablejt2gSs(globalOffsetProvider, modifier, i, f, function1, composer3, RecomposeScopeImplKt.updateChangedFlags(i2 | 1));
                 }
             });
         }
@@ -474,7 +474,7 @@ public final class SpringIndicatorType extends IndicatorType {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: computeSelectorDotPositionDp-tI-LSbM  reason: not valid java name */
-    public final float m10228computeSelectorDotPositionDptILSbM(float f, float f2, int i, float f3, float f4, float f5) {
+    public final float m10227computeSelectorDotPositionDptILSbM(float f, float f2, int i, float f3, float f4, float f5) {
         return Dp.m8258constructorimpl(Dp.m8258constructorimpl((f + (((f2 - f) / (i - 1)) * f3)) / f4) + f5);
     }
 

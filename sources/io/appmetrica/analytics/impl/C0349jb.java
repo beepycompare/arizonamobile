@@ -14,7 +14,7 @@ import org.json.JSONObject;
 public final class C0349jb {
 
     /* renamed from: a  reason: collision with root package name */
-    public final byte[] f1062a;
+    public final byte[] f1061a;
     public final String b;
     public final int c;
     public final HashMap d;
@@ -28,7 +28,7 @@ public final class C0349jb {
     public C0349jb(String str) throws JSONException {
         JSONObject jSONObject = new JSONObject(str);
         JSONObject jSONObject2 = jSONObject.getJSONObject(NotificationCompat.CATEGORY_EVENT);
-        this.f1062a = Base64.decode(jSONObject2.getString("jvm_crash"), 0);
+        this.f1061a = Base64.decode(jSONObject2.getString("jvm_crash"), 0);
         this.b = jSONObject2.getString("name");
         this.c = jSONObject2.getInt("bytes_truncated");
         this.j = JsonUtils.optStringOrNull(jSONObject2, "environment");
@@ -63,7 +63,7 @@ public final class C0349jb {
     }
 
     public final byte[] c() {
-        return this.f1062a;
+        return this.f1061a;
     }
 
     public final String d() {
@@ -99,7 +99,7 @@ public final class C0349jb {
         for (Map.Entry entry : this.d.entrySet()) {
             hashMap.put(((L3) entry.getKey()).name(), (Integer) entry.getValue());
         }
-        return new JSONObject().put("process_configuration", new JSONObject().put("pid", this.f).put("psid", this.g).put("package_name", this.e)).put("reporter_configuration", new JSONObject().put("api_key", this.h).put("reporter_type", this.i.getStringValue())).put(NotificationCompat.CATEGORY_EVENT, new JSONObject().put("jvm_crash", Base64.encodeToString(this.f1062a, 0)).put("name", this.b).put("bytes_truncated", this.c).put("trimmed_fields", AbstractC0272gb.b(hashMap)).putOpt("environment", this.j)).toString();
+        return new JSONObject().put("process_configuration", new JSONObject().put("pid", this.f).put("psid", this.g).put("package_name", this.e)).put("reporter_configuration", new JSONObject().put("api_key", this.h).put("reporter_type", this.i.getStringValue())).put(NotificationCompat.CATEGORY_EVENT, new JSONObject().put("jvm_crash", Base64.encodeToString(this.f1061a, 0)).put("name", this.b).put("bytes_truncated", this.c).put("trimmed_fields", AbstractC0272gb.b(hashMap)).putOpt("environment", this.j)).toString();
     }
 
     public static CounterConfigurationReporterType a(JSONObject jSONObject) {
@@ -110,7 +110,7 @@ public final class C0349jb {
     }
 
     public C0349jb(P5 p5, H3 h3, HashMap<L3, Integer> hashMap) {
-        this.f1062a = p5.getValueBytes();
+        this.f1061a = p5.getValueBytes();
         this.b = p5.getName();
         this.c = p5.getBytesTruncated();
         if (hashMap != null) {

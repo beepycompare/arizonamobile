@@ -10,7 +10,7 @@ import java.util.Map;
 public abstract class Pf {
 
     /* renamed from: a  reason: collision with root package name */
-    public static final Map f739a;
+    public static final Map f738a;
     public static final SparseArray b;
     public static final Map c;
     public static final Map d;
@@ -21,7 +21,7 @@ public abstract class Pf {
         hashMap.put(vk, 0);
         Vk vk2 = Vk.BACKGROUND;
         hashMap.put(vk2, 1);
-        f739a = Collections.unmodifiableMap(hashMap);
+        f738a = Collections.unmodifiableMap(hashMap);
         SparseArray sparseArray = new SparseArray();
         sparseArray.put(0, vk);
         sparseArray.put(1, vk2);
@@ -98,7 +98,7 @@ public abstract class Pf {
         a5.b = pn;
         U8 u84 = new U8(a5);
         T8 a6 = U8.a();
-        a6.f796a = c0671w8;
+        a6.f795a = c0671w8;
         U8 u85 = new U8(a6);
         T8 a7 = U8.a();
         a7.b = new uo(new C8());
@@ -108,7 +108,7 @@ public abstract class Pf {
         a8.b = new Nf();
         hashMap3.put(enumC0143bb3, new U8(a8));
         T8 a9 = U8.a();
-        a9.f796a = c0671w8;
+        a9.f795a = c0671w8;
         a9.b = c0696x8;
         a9.e = new W7();
         a9.f = new X7();
@@ -122,7 +122,7 @@ public abstract class Pf {
         hashMap3.put(enumC0143bb7, u83);
         hashMap3.put(enumC0143bb8, u83);
         T8 a10 = U8.a();
-        a10.f796a = new C0671w8();
+        a10.f795a = new C0671w8();
         a10.b = c0161c3;
         hashMap3.put(enumC0143bb14, new U8(a10));
         EnumC0143bb enumC0143bb25 = EnumC0143bb.EVENT_TYPE_CUSTOM_EVENT;
@@ -147,7 +147,7 @@ public abstract class Pf {
     public static C0322i9 a(Long l, Long l2, Boolean bool) {
         C0322i9 c0322i9 = new C0322i9();
         if (l != null) {
-            c0322i9.f1042a = l.longValue();
+            c0322i9.f1041a = l.longValue();
             c0322i9.b = ((GregorianCalendar) Calendar.getInstance()).getTimeZone().getOffset(l.longValue() * 1000) / 1000;
         }
         if (l2 != null) {

@@ -10,7 +10,7 @@ public final class Um extends M2 {
     }
 
     public final int b() {
-        return this.f685a;
+        return this.f684a;
     }
 
     public Um(int i, String str, PublicLogger publicLogger) {
@@ -29,11 +29,11 @@ public final class Um extends M2 {
         try {
             byte[] bytes = str.getBytes("UTF-8");
             int length = bytes.length;
-            int i = this.f685a;
+            int i = this.f684a;
             if (length > i) {
                 String str2 = new String(bytes, 0, i, "UTF-8");
                 try {
-                    this.c.warning("\"%s\" %s exceeded limit of %d bytes", this.b, str, Integer.valueOf(this.f685a));
+                    this.c.warning("\"%s\" %s exceeded limit of %d bytes", this.b, str, Integer.valueOf(this.f684a));
                 } catch (UnsupportedEncodingException unused) {
                 }
                 return str2;

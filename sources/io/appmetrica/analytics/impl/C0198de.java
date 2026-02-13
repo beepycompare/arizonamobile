@@ -33,7 +33,7 @@ public final class C0198de {
             default:
                 throw new NoWhenBranchMatchedException();
         }
-        a9.f497a = i;
+        a9.f496a = i;
         return a9;
     }
 }

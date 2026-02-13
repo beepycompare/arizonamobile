@@ -5,7 +5,7 @@ import android.content.Context;
 public final class Md {
 
     /* renamed from: a  reason: collision with root package name */
-    public final Context f694a;
+    public final Context f693a;
     public final Sg b;
     public final Rd c;
     public final EnumC0143bb d;
@@ -13,7 +13,7 @@ public final class Md {
     public final Ed f = new Ed();
 
     public Md(Context context, Sg sg, Rd rd, EnumC0143bb enumC0143bb) {
-        this.f694a = context;
+        this.f693a = context;
         this.b = sg;
         this.c = rd;
         this.d = enumC0143bb;

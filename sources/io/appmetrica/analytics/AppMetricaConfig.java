@@ -58,7 +58,7 @@ public class AppMetricaConfig {
         private final HashMap C;
 
         /* renamed from: a  reason: collision with root package name */
-        private final C0444n5 f276a;
+        private final C0444n5 f275a;
         private final String b;
         private String c;
         private Integer d;
@@ -200,7 +200,7 @@ public class AppMetricaConfig {
         }
 
         public Builder withMaxReportsInDatabaseCount(int i) {
-            this.n = Integer.valueOf(this.f276a.a(i));
+            this.n = Integer.valueOf(this.f275a.a(i));
             return this;
         }
 
@@ -239,7 +239,7 @@ public class AppMetricaConfig {
             this.x = new LinkedHashMap();
             this.C = new HashMap();
             D.a(str);
-            this.f276a = new C0444n5(str);
+            this.f275a = new C0444n5(str);
             this.b = str;
         }
     }

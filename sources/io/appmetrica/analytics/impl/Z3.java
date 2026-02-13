@@ -3,12 +3,12 @@ package io.appmetrica.analytics.impl;
 public final class Z3 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f878a;
+    public final String f877a;
     public final Integer b;
     public final String c;
 
     public Z3(String str, Integer num, String str2) {
-        this.f878a = str;
+        this.f877a = str;
         this.b = num;
         this.c = str2;
     }
@@ -19,7 +19,7 @@ public final class Z3 {
         }
         if (obj != null && Z3.class == obj.getClass()) {
             Z3 z3 = (Z3) obj;
-            if (!this.f878a.equals(z3.f878a)) {
+            if (!this.f877a.equals(z3.f877a)) {
                 return false;
             }
             Integer num = this.b;
@@ -39,7 +39,7 @@ public final class Z3 {
     }
 
     public final int hashCode() {
-        int hashCode = this.f878a.hashCode() * 31;
+        int hashCode = this.f877a.hashCode() * 31;
         Integer num = this.b;
         int hashCode2 = (hashCode + (num != null ? num.hashCode() : 0)) * 31;
         String str = this.c;

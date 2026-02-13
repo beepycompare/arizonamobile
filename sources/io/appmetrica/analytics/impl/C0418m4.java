@@ -4,9 +4,9 @@ package io.appmetrica.analytics.impl;
 public final class C0418m4 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final int f1110a;
+    public final int f1109a;
 
     public C0418m4(int i) {
-        this.f1110a = i;
+        this.f1109a = i;
     }
 }

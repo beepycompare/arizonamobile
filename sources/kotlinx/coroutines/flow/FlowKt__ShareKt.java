@@ -108,9 +108,9 @@ public final /* synthetic */ class FlowKt__ShareKt {
                 } else {
                     ResultKt.throwOnFailure(obj);
                 }
-                Object m10253unboximpl = ((Result) obj).m10253unboximpl();
-                ResultKt.throwOnFailure(m10253unboximpl);
-                return m10253unboximpl;
+                Object m10252unboximpl = ((Result) obj).m10252unboximpl();
+                ResultKt.throwOnFailure(m10252unboximpl);
+                return m10252unboximpl;
             }
         }
         flowKt__ShareKt$stateIn$1 = new FlowKt__ShareKt$stateIn$1(continuation);
@@ -119,9 +119,9 @@ public final /* synthetic */ class FlowKt__ShareKt {
         i = flowKt__ShareKt$stateIn$1.label;
         if (i != 0) {
         }
-        Object m10253unboximpl2 = ((Result) obj2).m10253unboximpl();
-        ResultKt.throwOnFailure(m10253unboximpl2);
-        return m10253unboximpl2;
+        Object m10252unboximpl2 = ((Result) obj2).m10252unboximpl();
+        ResultKt.throwOnFailure(m10252unboximpl2);
+        return m10252unboximpl2;
     }
 
     private static final <T> void launchSharingDeferred$FlowKt__ShareKt(CoroutineScope coroutineScope, CoroutineContext coroutineContext, Flow<? extends T> flow, CompletableDeferred<Result<StateFlow<T>>> completableDeferred) {

@@ -155,9 +155,9 @@ public final class SerializersCacheKt {
         Intrinsics.checkNotNullParameter(clazz, "clazz");
         Intrinsics.checkNotNullParameter(types, "types");
         if (!z) {
-            return PARAMETRIZED_SERIALIZERS_CACHE.mo11961getgIAlus(clazz, types);
+            return PARAMETRIZED_SERIALIZERS_CACHE.mo11960getgIAlus(clazz, types);
         }
-        return PARAMETRIZED_SERIALIZERS_CACHE_NULLABLE.mo11961getgIAlus(clazz, types);
+        return PARAMETRIZED_SERIALIZERS_CACHE_NULLABLE.mo11960getgIAlus(clazz, types);
     }
 
     public static final PolymorphicSerializer<? extends Object> polymorphicIfInterface(KClass<?> kClass) {

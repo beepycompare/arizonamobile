@@ -13,7 +13,7 @@ import java.util.Set;
 public final class C0354jg implements InterfaceC0251fg {
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f1066a;
+    public final boolean f1065a;
     public final C0681wi b;
     public final Ve c;
     public final L7 d;
@@ -25,7 +25,7 @@ public final class C0354jg implements InterfaceC0251fg {
     }
 
     public final void a() {
-        if (this.f1066a) {
+        if (this.f1065a) {
             return;
         }
         C0681wi c0681wi = this.b;
@@ -34,11 +34,11 @@ public final class C0354jg implements InterfaceC0251fg {
         Bundle bundle = new Bundle();
         bundle.putParcelable("io.appmetrica.analytics.impl.referrer.common.ReferrerResultReceiver", resultReceiverC0604tg);
         PublicLogger anonymousInstance = PublicLogger.getAnonymousInstance();
-        Set set = AbstractC0672w9.f1285a;
+        Set set = AbstractC0672w9.f1284a;
         EnumC0143bb enumC0143bb = EnumC0143bb.EVENT_TYPE_UNDEFINED;
         M3 m3 = new M3("", "", InputDeviceCompat.SOURCE_TOUCHSCREEN, 0, anonymousInstance);
         m3.m = bundle;
-        F4 f4 = c0681wi.f1289a;
+        F4 f4 = c0681wi.f1288a;
         c0681wi.a(C0681wi.a(m3, f4), f4, 1, (Map) null);
     }
 
@@ -49,7 +49,7 @@ public final class C0354jg implements InterfaceC0251fg {
     public C0354jg(C0681wi c0681wi, Ve ve, Handler handler, boolean z, L7 l7, C0554rg c0554rg) {
         this.b = c0681wi;
         this.c = ve;
-        this.f1066a = z;
+        this.f1065a = z;
         this.d = l7;
         this.e = c0554rg;
         this.f = handler;
@@ -57,8 +57,8 @@ public final class C0354jg implements InterfaceC0251fg {
 
     @Override // io.appmetrica.analytics.impl.InterfaceC0251fg
     public final void a(C0455ng c0455ng) {
-        String str = c0455ng == null ? null : c0455ng.f1138a;
-        if (this.f1066a) {
+        String str = c0455ng == null ? null : c0455ng.f1137a;
+        if (this.f1065a) {
             return;
         }
         synchronized (this) {
@@ -72,7 +72,7 @@ public final class C0354jg implements InterfaceC0251fg {
     public final synchronized void a(DeferredDeeplinkParametersListener deferredDeeplinkParametersListener) {
         L7 l7 = this.d;
         l7.c = deferredDeeplinkParametersListener;
-        if (l7.f674a) {
+        if (l7.f673a) {
             l7.a(1);
         } else {
             l7.a();
@@ -83,7 +83,7 @@ public final class C0354jg implements InterfaceC0251fg {
     public final synchronized void a(DeferredDeeplinkListener deferredDeeplinkListener) {
         L7 l7 = this.d;
         l7.b = deferredDeeplinkListener;
-        if (l7.f674a) {
+        if (l7.f673a) {
             l7.a(1);
         } else {
             l7.a();

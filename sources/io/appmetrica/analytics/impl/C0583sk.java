@@ -23,8 +23,8 @@ public final class C0583sk implements Ic {
         });
         C0733yk B = C0449na.I.B();
         synchronized (B) {
-            C0113a7 c0113a7 = B.f1324a;
-            y6 = new Y6(context, new Z6(c0113a7.f901a, c0113a7.b, false).a(context, c0558rk), c0335in, PublicLogger.getAnonymousInstance());
+            C0113a7 c0113a7 = B.f1323a;
+            y6 = new Y6(context, new Z6(c0113a7.f900a, c0113a7.b, false).a(context, c0558rk), c0335in, PublicLogger.getAnonymousInstance());
         }
         byte[] bArr = new S2(new C0535ql(y6), "binary_data").get("auto_inapp_collecting_info_data");
         if (bArr != null) {

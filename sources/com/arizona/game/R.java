@@ -60,7 +60,7 @@ public final class R {
     public static final class drawable {
         public static int arizona_backgournd_home = 0x7f08032a;
         public static int ic_launcher_background = 0x7f080a89;
-        public static int rodina_backgournd_home = 0x7f080d71;
+        public static int rodina_backgournd_home = 0x7f080d72;
 
         private drawable() {
         }

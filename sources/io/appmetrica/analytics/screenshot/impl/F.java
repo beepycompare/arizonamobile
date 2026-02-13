@@ -7,18 +7,18 @@ public final class F implements Parcelable {
     public static final E CREATOR = new E();
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0786z f1445a;
+    public final C0786z f1444a;
     public final H b;
     public final B c;
 
     public F(C0786z c0786z, H h, B b) {
-        this.f1445a = c0786z;
+        this.f1444a = c0786z;
         this.b = h;
         this.c = b;
     }
 
     public final C0786z a() {
-        return this.f1445a;
+        return this.f1444a;
     }
 
     public final B b() {
@@ -35,12 +35,12 @@ public final class F implements Parcelable {
     }
 
     public final String toString() {
-        return "ParcelableScreenshotConfig(apiCaptorConfig=" + this.f1445a + ", serviceCaptorConfig=" + this.b + ", contentObserverCaptorConfig=" + this.c + ')';
+        return "ParcelableScreenshotConfig(apiCaptorConfig=" + this.f1444a + ", serviceCaptorConfig=" + this.b + ", contentObserverCaptorConfig=" + this.c + ')';
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i) {
-        parcel.writeParcelable(this.f1445a, i);
+        parcel.writeParcelable(this.f1444a, i);
         parcel.writeParcelable(this.b, i);
         parcel.writeParcelable(this.c, i);
     }

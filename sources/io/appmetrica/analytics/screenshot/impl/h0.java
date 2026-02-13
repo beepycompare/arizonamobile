@@ -3,18 +3,18 @@ package io.appmetrica.analytics.screenshot.impl;
 public final class h0 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final boolean f1472a;
+    public final boolean f1471a;
 
     public h0(boolean z) {
-        this.f1472a = z;
+        this.f1471a = z;
     }
 
     public final boolean a() {
-        return this.f1472a;
+        return this.f1471a;
     }
 
     public final String toString() {
-        return "ServiceSideApiCaptorConfig(enabled=" + this.f1472a + ')';
+        return "ServiceSideApiCaptorConfig(enabled=" + this.f1471a + ')';
     }
 
     public h0(C0766e c0766e) {

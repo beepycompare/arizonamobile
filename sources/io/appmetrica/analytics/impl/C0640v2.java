@@ -8,23 +8,23 @@ public final class C0640v2 implements ProtobufConverter {
     /* renamed from: a */
     public final V1 fromModel(C0690x2 c0690x2) {
         V1 v1 = new V1();
-        EnumC0665w2 enumC0665w2 = c0690x2.f1297a;
+        EnumC0665w2 enumC0665w2 = c0690x2.f1296a;
         if (enumC0665w2 != null) {
             int ordinal = enumC0665w2.ordinal();
             if (ordinal == 0) {
-                v1.f820a = 6;
+                v1.f819a = 6;
             } else if (ordinal == 1) {
-                v1.f820a = 1;
+                v1.f819a = 1;
             } else if (ordinal == 2) {
-                v1.f820a = 2;
+                v1.f819a = 2;
             } else if (ordinal == 3) {
-                v1.f820a = 3;
+                v1.f819a = 3;
             } else if (ordinal == 4) {
-                v1.f820a = 4;
+                v1.f819a = 4;
             } else if (ordinal != 5) {
-                v1.f820a = 0;
+                v1.f819a = 0;
             } else {
-                v1.f820a = 5;
+                v1.f819a = 5;
             }
         }
         Boolean bool = c0690x2.b;
@@ -43,7 +43,7 @@ public final class C0640v2 implements ProtobufConverter {
     public final C0690x2 toModel(V1 v1) {
         EnumC0665w2 enumC0665w2;
         Boolean bool = null;
-        switch (v1.f820a) {
+        switch (v1.f819a) {
             case 1:
                 enumC0665w2 = EnumC0665w2.ACTIVE;
                 break;

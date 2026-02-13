@@ -1316,7 +1316,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(intRange, 10));
         Iterator<Integer> it = intRange.iterator();
         while (it.hasNext()) {
-            arrayList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), slot + ((IntIterator) it).nextInt(), null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, false, true, null, null, 7340030, null));
+            arrayList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), slot + ((IntIterator) it).nextInt(), null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, false, true, null, null, null, 15728638, null));
         }
         list.addAll(arrayList);
         this.vehicleTechnicalList = list;
@@ -1329,7 +1329,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(intRange, 10));
         Iterator<Integer> it = intRange.iterator();
         while (it.hasNext()) {
-            arrayList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), slot + ((IntIterator) it).nextInt(), null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, false, true, null, null, 7340030, null));
+            arrayList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), slot + ((IntIterator) it).nextInt(), null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, false, true, null, null, null, 15728638, null));
         }
         list.addAll(arrayList);
         this.vehicleVisualList = list;
@@ -1544,7 +1544,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                 List<InventoryItem> accessoriesList = guardInfo.getAccessoriesList();
                 ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(accessoriesList, 10));
                 for (InventoryItem inventoryItem : accessoriesList) {
-                    arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, 1, null, null, null, null, 0, null, null, false, false, null, null, 8386559, null));
+                    arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, 1, null, null, null, null, 0, null, null, false, false, null, null, null, 16775167, null));
                 }
                 this.guardSubInventoryAdapter.submitList(CollectionsKt.toList(arrayList));
             } else {
@@ -1577,7 +1577,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         List<InventoryItem> list = this.mainInventoryList;
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
         for (InventoryItem inventoryItem : list) {
-            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, null, 8386047, null));
+            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, null, null, 16774655, null));
         }
         List<InventoryItem> mutableList = CollectionsKt.toMutableList((Collection) arrayList);
         this.mainInventoryList = mutableList;
@@ -1585,14 +1585,14 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         List<InventoryItem> subCaseArmorSkinList = getSubCaseArmorSkinList();
         ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(subCaseArmorSkinList, 10));
         for (InventoryItem inventoryItem2 : subCaseArmorSkinList) {
-            arrayList2.add(InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, null, 8386047, null));
+            arrayList2.add(InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, null, null, 16774655, null));
         }
         setSubCaseArmorSkinList(CollectionsKt.toMutableList((Collection) arrayList2));
         this.person.initSub(CollectionsKt.toList(getSubCaseArmorSkinList()));
         List<InventoryItem> subUpgradesList = getSubUpgradesList();
         ArrayList arrayList3 = new ArrayList(CollectionsKt.collectionSizeOrDefault(subUpgradesList, 10));
         for (InventoryItem inventoryItem3 : subUpgradesList) {
-            arrayList3.add(InventoryItem.copy$default(inventoryItem3, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, null, 8386047, null));
+            arrayList3.add(InventoryItem.copy$default(inventoryItem3, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, null, null, 16774655, null));
         }
         setSubUpgradesList(CollectionsKt.toMutableList((Collection) arrayList3));
         getUpgradesInventoryAdapter().submitList(CollectionsKt.toList(getSubUpgradesList()));
@@ -1600,7 +1600,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         List<InventoryItem> walletInventoryList = getWalletInventoryList();
         ArrayList arrayList4 = new ArrayList(CollectionsKt.collectionSizeOrDefault(walletInventoryList, 10));
         for (InventoryItem inventoryItem4 : walletInventoryList) {
-            arrayList4.add(InventoryItem.copy$default(inventoryItem4, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, null, 8386047, null));
+            arrayList4.add(InventoryItem.copy$default(inventoryItem4, 0, null, 0, null, null, null, null, null, null, 1, null, 0, null, null, null, null, 0, null, null, false, false, null, null, null, 16774655, null));
         }
         setWalletInventoryList(CollectionsKt.toMutableList((Collection) arrayList4));
         getWalletInventoryAdapter().submitList(CollectionsKt.toList(getWalletInventoryList()));
@@ -1989,7 +1989,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                             }
                         }
                         ItemsInfo itemsInfo = (ItemsInfo) obj4;
-                        arrayList8.add(InventoryItem.copy$default(inventoryItem4, 0, null, 0, null, itemsInfo != null ? Integer.valueOf(itemsInfo.getType()) : null, null, null, null, null, null, null, null, null, null, null, null, inventoryEditResponse.getType(), itemsInfo != null ? Integer.valueOf(itemsInfo.getAcs_slot()) : null, null, false, false, itemsInfo != null ? itemsInfo.getEffect() : null, null, 6094831, null));
+                        arrayList8.add(InventoryItem.copy$default(inventoryItem4, 0, null, 0, null, itemsInfo != null ? Integer.valueOf(itemsInfo.getType()) : null, null, null, null, null, null, null, null, null, null, null, null, inventoryEditResponse.getType(), itemsInfo != null ? Integer.valueOf(itemsInfo.getAcs_slot()) : null, null, false, false, itemsInfo != null ? itemsInfo.getEffect() : null, null, null, 14483439, null));
                     }
                     arrayList = arrayList8;
                 } else {
@@ -2538,7 +2538,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                 if (this.guardInfoList.isEmpty()) {
                     InventoryItem inventoryItem21 = this.selectedInventoryItem;
                     if (inventoryItem21 != null) {
-                        new SelectorDialog(getTargetActivity(), BaseInventory.Companion.getCurrentBackendId(), InventoryItem.copy$default(inventoryItem21, 0, null, 0, null, null, null, null, null, Integer.valueOf(showDialogInfo.getBits()), null, null, null, null, null, null, null, 0, null, null, false, false, null, null, 8388351, null), 0);
+                        new SelectorDialog(getTargetActivity(), BaseInventory.Companion.getCurrentBackendId(), InventoryItem.copy$default(inventoryItem21, 0, null, 0, null, null, null, null, null, Integer.valueOf(showDialogInfo.getBits()), null, null, null, null, null, null, null, 0, null, null, false, false, null, null, null, 16776959, null), 0);
                         return;
                     }
                     return;
@@ -2547,7 +2547,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                 if (inventoryItem22 != null) {
                     Activity targetActivity = getTargetActivity();
                     int currentBackendId = BaseInventory.Companion.getCurrentBackendId();
-                    InventoryItem copy$default = InventoryItem.copy$default(inventoryItem22, 0, null, 0, null, null, null, null, null, Integer.valueOf(showDialogInfo.getBits()), null, null, null, null, null, null, null, 0, null, null, false, false, null, null, 8388351, null);
+                    InventoryItem copy$default = InventoryItem.copy$default(inventoryItem22, 0, null, 0, null, null, null, null, null, Integer.valueOf(showDialogInfo.getBits()), null, null, null, null, null, null, null, 0, null, null, false, false, null, null, null, 16776959, null);
                     GuardInfo guardInfo6 = (GuardInfo) CollectionsKt.getOrNull(this.guardInfoList, this.guardNumber);
                     if (guardInfo6 != null && (id = guardInfo6.getId()) != null) {
                         r14 = id.intValue();
@@ -2878,7 +2878,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(intRange, 10));
         Iterator<Integer> it = intRange.iterator();
         while (it.hasNext()) {
-            arrayList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), slot + ((IntIterator) it).nextInt(), null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, false, true, null, null, 7340030, null));
+            arrayList.add(InventoryItem.copy$default(ConstantsKt.getEmptyInventoryItem(), slot + ((IntIterator) it).nextInt(), null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, false, true, null, null, null, 15728638, null));
         }
         this.mainInventoryList.addAll(arrayList);
         initObservers();
@@ -2901,7 +2901,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
             if (itemsInfo != null) {
                 str = itemsInfo.getEffect();
             }
-            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, valueOf, null, null, null, null, null, null, null, null, null, null, null, type, valueOf2, null, false, false, str, null, 6094831, null));
+            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, valueOf, null, null, null, null, null, null, null, null, null, null, null, type, valueOf2, null, false, false, str, null, null, 14483439, null));
         }
         return arrayList;
     }
@@ -3007,7 +3007,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
             ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(accessoriesList, 10));
             for (InventoryItem inventoryItem : accessoriesList) {
                 if (inventoryItem.getInventoryType() == ArizonaBlockType.BLOCK_TYPE_ACTOR_WEAPON.getId() || inventoryItem.getInventoryType() == RodinaBlockType.BLOCK_TYPE_ACTOR_WEAPON.getId()) {
-                    inventoryItem = InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, 7864319, null);
+                    inventoryItem = InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, null, 16252927, null);
                 }
                 arrayList.add(inventoryItem);
             }
@@ -3033,7 +3033,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(subUpgradesList, 10));
         for (InventoryItem inventoryItem2 : subUpgradesList) {
             if (inventoryItem != null && inventoryItem2.getSlot() == inventoryItem.getSlot()) {
-                inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, 7864319, null);
+                inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, null, 16252927, null);
             }
             arrayList.add(inventoryItem2);
         }
@@ -3048,7 +3048,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
             int slot = inventoryItem2.getSlot();
             Integer acsSlot = inventoryItem.getAcsSlot();
             if (acsSlot != null && slot == acsSlot.intValue() && (inventoryItem2.getInventoryType() == ArizonaBlockType.BLOCK_TYPE_IMPROV.getId() || inventoryItem2.getInventoryType() == RodinaBlockType.BLOCK_TYPE_IMPROV.getId())) {
-                inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, 7864319, null);
+                inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, null, 16252927, null);
             }
             arrayList.add(inventoryItem2);
         }
@@ -3060,14 +3060,14 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         List<InventoryItem> subSkinList = getSubSkinList();
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(subSkinList, 10));
         for (InventoryItem inventoryItem : subSkinList) {
-            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, 7864319, null));
+            arrayList.add(InventoryItem.copy$default(inventoryItem, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, null, 16252927, null));
         }
         setSubSkinList(CollectionsKt.toMutableList((Collection) arrayList));
         List<InventoryItem> subCaseArmorSkinList = getSubCaseArmorSkinList();
         ArrayList arrayList2 = new ArrayList(CollectionsKt.collectionSizeOrDefault(subCaseArmorSkinList, 10));
         for (InventoryItem inventoryItem2 : subCaseArmorSkinList) {
             if (inventoryItem2.getInventoryType() == ArizonaBlockType.BLOCK_TYPE_SKIN.getId() || inventoryItem2.getInventoryType() == RodinaBlockType.BLOCK_TYPE_SKIN.getId()) {
-                inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, 7864319, null);
+                inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, null, 16252927, null);
             }
             arrayList2.add(inventoryItem2);
         }
@@ -3089,7 +3089,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                 }
                 InventoryItem inventoryItem2 = (InventoryItem) obj;
                 if (i == 0) {
-                    inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, 7864319, null);
+                    inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, null, 16252927, null);
                 }
                 arrayList.add(inventoryItem2);
                 i = i2;
@@ -3107,7 +3107,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                     }
                     InventoryItem inventoryItem3 = (InventoryItem) obj2;
                     if (i == 1) {
-                        inventoryItem3 = InventoryItem.copy$default(inventoryItem3, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, 7864319, null);
+                        inventoryItem3 = InventoryItem.copy$default(inventoryItem3, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, null, 16252927, null);
                     }
                     arrayList2.add(inventoryItem3);
                     i = i3;
@@ -3125,7 +3125,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
                         }
                         InventoryItem inventoryItem4 = (InventoryItem) obj3;
                         if (i == 2) {
-                            inventoryItem4 = InventoryItem.copy$default(inventoryItem4, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, 7864319, null);
+                            inventoryItem4 = InventoryItem.copy$default(inventoryItem4, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, null, 16252927, null);
                         }
                         arrayList3.add(inventoryItem4);
                         i = i4;
@@ -3155,7 +3155,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
         for (InventoryItem inventoryItem2 : list) {
             if (inventoryItem != null && inventoryItem2.getSlot() == inventoryItem.getSlot()) {
-                inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, 7864319, null);
+                inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, null, 16252927, null);
             }
             arrayList.add(inventoryItem2);
         }
@@ -3182,7 +3182,7 @@ public final class InventoryScreen extends BaseInventory implements InterfaceCon
         ArrayList arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(list, 10));
         for (InventoryItem inventoryItem2 : list) {
             if (inventoryItem != null && inventoryItem2.getSlot() == inventoryItem.getSlot()) {
-                inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, 7864319, null);
+                inventoryItem2 = InventoryItem.copy$default(inventoryItem2, 0, null, 0, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, null, z, false, null, null, null, 16252927, null);
             }
             arrayList.add(inventoryItem2);
         }

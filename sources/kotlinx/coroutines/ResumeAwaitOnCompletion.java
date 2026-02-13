@@ -29,10 +29,10 @@ public final class ResumeAwaitOnCompletion<T> extends JobNode {
         }
         if (state$kotlinx_coroutines_core instanceof CompletedExceptionally) {
             Result.Companion companion = Result.Companion;
-            this.continuation.resumeWith(Result.m10244constructorimpl(ResultKt.createFailure(((CompletedExceptionally) state$kotlinx_coroutines_core).cause)));
+            this.continuation.resumeWith(Result.m10243constructorimpl(ResultKt.createFailure(((CompletedExceptionally) state$kotlinx_coroutines_core).cause)));
             return;
         }
         Result.Companion companion2 = Result.Companion;
-        this.continuation.resumeWith(Result.m10244constructorimpl(JobSupportKt.unboxState(state$kotlinx_coroutines_core)));
+        this.continuation.resumeWith(Result.m10243constructorimpl(JobSupportKt.unboxState(state$kotlinx_coroutines_core)));
     }
 }

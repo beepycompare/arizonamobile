@@ -22,12 +22,12 @@ import okhttp3.RequestBody;
 public final class c extends Call {
 
     /* renamed from: a  reason: collision with root package name */
-    public final OkHttpClient f1394a;
+    public final OkHttpClient f1393a;
     public final Request b;
     public final NetworkClientSettings c;
 
     public c(OkHttpClient okHttpClient, Request request, NetworkClientSettings networkClientSettings) {
-        this.f1394a = okHttpClient;
+        this.f1393a = okHttpClient;
         this.b = request;
         this.c = networkClientSettings;
     }
@@ -52,7 +52,7 @@ public final class c extends Call {
     @Override // io.appmetrica.analytics.networkapi.Call
     public final Response execute() {
         try {
-            okhttp3.Response execute = this.f1394a.newCall(a(this.b)).execute();
+            okhttp3.Response execute = this.f1393a.newCall(a(this.b)).execute();
             return new Response.Builder(true, execute.code(), InputStreamUtils.INSTANCE.readSafelyApprox(this.c.getMaxResponseSize(), new b(execute))).withHeaders(a(execute.headers())).withUrl(execute.request().url().toString()).build();
         } catch (Throwable th) {
             return new Response.Builder(th).build();
@@ -61,7 +61,7 @@ public final class c extends Call {
 
     public static okhttp3.Request a(Request request) {
         Request.Builder url = new Request.Builder().url(request.getUrl());
-        int i = a.f1392a[request.getMethod().ordinal()];
+        int i = a.f1391a[request.getMethod().ordinal()];
         if (i == 1) {
             url.get();
         } else if (i == 2) {

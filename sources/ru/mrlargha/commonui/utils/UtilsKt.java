@@ -23,6 +23,7 @@ import androidx.core.content.ContextCompat;
 import androidx.exifinterface.media.ExifInterface;
 import androidx.media3.exoplayer.upstream.CmcdData;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.RequestBuilder;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
@@ -56,7 +57,6 @@ import kotlinx.coroutines.Dispatchers;
 import ru.mrlargha.commonui.R;
 import ru.mrlargha.commonui.core.IBackendNotifier;
 import ru.mrlargha.commonui.elements.hud.presentation.models.ServerInfoItem;
-import ru.mrlargha.commonui.elements.hud.presentation.models.SharedPreferenceKeys;
 import ru.mrlargha.commonui.elements.inventory.domain.ChangeFromSlot;
 import ru.mrlargha.commonui.elements.inventory.domain.ChangeToSlot;
 import ru.mrlargha.commonui.elements.inventory.domain.InventoryApi;
@@ -64,7 +64,7 @@ import ru.mrlargha.commonui.elements.inventory.domain.InventorySendRequest;
 import ru.mrlargha.commonui.elements.inventory.domain.models.InventoryItem;
 import ru.mrlargha.commonui.utils.ui.ArizonaRetrofit;
 /* compiled from: Utils.kt */
-@Metadata(d1 = {"\u0000ª\u0001\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\n\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\t\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a\u0012\u0010\u0018\u001a\u00020\u0019*\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001c\u001a\n\u0010\u001d\u001a\u00020\u001e*\u00020\u001f\u001a\n\u0010 \u001a\u00020\u001c*\u00020\u001f\u001a\"\u0010!\u001a\u0004\u0018\u00010\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020\u001c2\b\b\u0002\u0010&\u001a\u00020$\u001a\"\u0010!\u001a\u0004\u0018\u00010\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020$2\b\b\u0002\u0010&\u001a\u00020$\u001a\u0018\u0010!\u001a\u0004\u0018\u00010\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020$\u001a\u0018\u0010(\u001a\u0004\u0018\u00010\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020$\u001a\u0012\u0010)\u001a\u0004\u0018\u00010\"2\u0006\u0010*\u001a\u00020+H\u0002\u001a \u0010,\u001a\u00020\u001c2\u0006\u0010-\u001a\u00020\u001c2\u0006\u0010.\u001a\u00020\u001c2\u0006\u0010/\u001a\u00020\u001cH\u0002\u001aM\u00100\u001a\u0002H1\"\u0004\b\u0000\u00101*\u0002H12\u0017\u00102\u001a\u0013\u0012\u0004\u0012\u0002H1\u0012\u0004\u0012\u00020\u000e03¢\u0006\u0002\b42\u0017\u00105\u001a\u0013\u0012\u0004\u0012\u0002H1\u0012\u0004\u0012\u00020\u001903¢\u0006\u0002\b4H\u0086\bø\u0001\u0000¢\u0006\u0002\u00106\u001a\u0016\u00107\u001a\u00020\"2\u0006\u00108\u001a\u0002092\u0006\u0010:\u001a\u00020\u001c\u001a\u0018\u0010;\u001a\u00020\u000e2\u0006\u0010<\u001a\u00020=2\u0006\u0010>\u001a\u00020?H\u0007\u001a\u000e\u0010@\u001a\u00020$2\u0006\u0010A\u001a\u00020$\u001a\u000e\u0010B\u001a\u00020\u001c2\u0006\u0010C\u001a\u00020\u001c\u001a\u0018\u0010D\u001a\u0004\u0018\u00010$2\u0006\u00108\u001a\u0002092\u0006\u0010E\u001a\u00020$\u001a\u000e\u0010F\u001a\u00020\u001c2\u0006\u0010G\u001a\u00020\u001c\u001a\u0014\u0010H\u001a\b\u0012\u0004\u0012\u00020$0\u00012\u0006\u0010I\u001a\u00020\u001f\u001a\u001e\u0010J\u001a\u00020\u00192\u0006\u0010>\u001a\u00020\u001a2\u0006\u0010K\u001a\u00020\u001c2\u0006\u0010I\u001a\u00020\u001f\u001a\u001e\u0010J\u001a\u00020\u00192\u0006\u0010>\u001a\u00020L2\u0006\u0010K\u001a\u00020\u001c2\u0006\u0010I\u001a\u00020\u001f\u001a\u000e\u0010M\u001a\u00020$2\u0006\u0010N\u001a\u00020$\u001a\u0016\u0010O\u001a\u00020\u00192\u0006\u0010P\u001a\u00020Q2\u0006\u0010R\u001a\u00020\"\u001a\u0016\u0010S\u001a\u00020\u00192\u0006\u0010P\u001a\u00020Q2\u0006\u00108\u001a\u000209\u001a\u0016\u0010T\u001a\u00020\u00192\u0006\u00108\u001a\u0002092\u0006\u0010U\u001a\u00020\u000e\u001a\"\u0010V\u001a\u00020\u00192\u0006\u00108\u001a\u0002092\u0006\u0010W\u001a\u00020\u001c2\n\b\u0002\u0010X\u001a\u0004\u0018\u00010Y\u001a&\u0010Z\u001a\u00020\u00192\u0006\u0010[\u001a\u00020\\2\u0006\u0010]\u001a\u00020\u001c2\u0006\u0010^\u001a\u00020=2\u0006\u0010_\u001a\u00020=\u001a\u001a\u0010`\u001a\u0004\u0018\u00010=2\b\u0010a\u001a\u0004\u0018\u00010=2\u0006\u0010b\u001a\u00020=\u001a\u000e\u0010c\u001a\u00020$2\u0006\u0010d\u001a\u00020$\u001a\u000e\u0010e\u001a\u00020$2\u0006\u0010%\u001a\u00020\u001c\u001a\u000e\u0010f\u001a\u00020$2\u0006\u0010%\u001a\u00020\u001c\u001a\u0006\u0010g\u001a\u00020$\u001a\u0012\u0010h\u001a\u00020$2\b\u0010i\u001a\u0004\u0018\u00010$H\u0002\u001a\u000e\u0010j\u001a\u00020\u000e2\u0006\u00108\u001a\u000209\u001a\u000e\u0010k\u001a\u00020l2\u0006\u00108\u001a\u000209\u001a\u000e\u0010m\u001a\u00020$2\u0006\u0010n\u001a\u00020\u001c\u001a\u000e\u0010o\u001a\u00020$2\u0006\u0010p\u001a\u00020q\u001a\u001a\u0010r\u001a\u00020\u0019*\u00020\u001a2\u0006\u0010s\u001a\u00020$2\u0006\u0010C\u001a\u00020\u001c\u001a\n\u0010t\u001a\u00020u*\u000209\u001a&\u0010v\u001a\u00020\u00192\u0006\u0010P\u001a\u00020Q2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020$H\u0086@¢\u0006\u0002\u0010w\" \u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0003\u0010\u0004\"\u0004\b\u0005\u0010\u0006\"\u001c\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\t\u0010\n\"\u0004\b\u000b\u0010\f\"\u001a\u0010\r\u001a\u00020\u000eX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000f\u0010\u0010\"\u0004\b\u0011\u0010\u0012\"\u0011\u0010\u0013\u001a\u00020\u000e8F¢\u0006\u0006\u001a\u0004\b\u0013\u0010\u0010\"\u001a\u0010\u0014\u001a\u00020\u000eX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0015\u0010\u0010\"\u0004\b\u0016\u0010\u0012\"\u0011\u0010\u0017\u001a\u00020\u000e8F¢\u0006\u0006\u001a\u0004\b\u0017\u0010\u0010\"\u000e\u0010'\u001a\u00020\u001cX\u0082T¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006x"}, d2 = {"itemsName", "", "Lru/mrlargha/commonui/utils/ItemsInfo;", "getItemsName", "()Ljava/util/List;", "setItemsName", "(Ljava/util/List;)V", "zipFileIcons", "Ljava/util/zip/ZipFile;", "getZipFileIcons", "()Ljava/util/zip/ZipFile;", "setZipFileIcons", "(Ljava/util/zip/ZipFile;)V", "_isArizonaType", "", "get_isArizonaType", "()Z", "set_isArizonaType", "(Z)V", "isArizonaType", "_isDebug", "get_isDebug", "set_isDebug", "isDebug", "setTextTimeFormat", "", "Landroid/widget/TextView;", "time", "", "getAnimationScale", "", "Landroid/app/Activity;", "getKeyboardHeightOrNull", "getIconFromArchive", "Landroid/graphics/Bitmap;", "folderName", "", "item", "gearsIconName", "MAX_DIM", "getIconFromArchiveWithFormat", "getBitmapFromEntry", "entry", "Ljava/util/zip/ZipEntry;", "calculateInSampleSizeToMax", "srcW", "srcH", "maxDim", "applyIf", ExifInterface.GPS_DIRECTION_TRUE, "predicate", "Lkotlin/Function1;", "Lkotlin/ExtensionFunctionType;", "block", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "getBitmapFromVectorDrawable", "context", "Landroid/content/Context;", "drawableId", "setDragClick", "itemVal", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "view", "Landroid/view/View;", "updateJsonString", "jsonString", "getColorTint", "color", "getJsonFromAssets", "fileName", "nextMultipleOfFive", "x", "getItemsDescription", "targetActivity", "setDrawableEnd", "viewInt", "Landroid/widget/EditText;", "deleteSvgWord", "svg", "setImage", "imageView", "Landroid/widget/ImageView;", "bitmap", "setNotLoadedImage", "checkItemsName", "isArizona", "getItemsJson", "type", "dir", "Ljava/io/File;", "sendData", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "backendID", "fromItem", "toItem", "updateInventoryItem", "originalItem", "newItem", "convertPngToWebp", "png", "defineArzMenuText", "defineRodMenuText", "getDeviceName", "capitalize", CmcdData.STREAMING_FORMAT_SS, "getArizonaType", "getServerId", "Lru/mrlargha/commonui/elements/hud/presentation/models/ServerInfoItem;", "formatNumberWithSpaces", "number", "formatTime", "millisUntilFinished", "", "setColoredTextBeforeDot", "fullText", "getBaseShredPref", "Landroid/content/SharedPreferences;", "loadGifFromZipAsync", "(Landroid/widget/ImageView;Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "CommonUI_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
+@Metadata(d1 = {"\u0000ª\u0001\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\n\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000f\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\t\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\b\u001a\u0012\u0010\u0018\u001a\u00020\u0019*\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001c\u001a\n\u0010\u001d\u001a\u00020\u001e*\u00020\u001f\u001a\n\u0010 \u001a\u00020\u001c*\u00020\u001f\u001a\"\u0010!\u001a\u0004\u0018\u00010\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020\u001c2\b\b\u0002\u0010&\u001a\u00020$\u001a\"\u0010!\u001a\u0004\u0018\u00010\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020$2\b\b\u0002\u0010&\u001a\u00020$\u001a\u0018\u0010!\u001a\u0004\u0018\u00010\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020$\u001a\u0018\u0010(\u001a\u0004\u0018\u00010\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020$\u001a\u0012\u0010)\u001a\u0004\u0018\u00010\"2\u0006\u0010*\u001a\u00020+H\u0002\u001a \u0010,\u001a\u00020\u001c2\u0006\u0010-\u001a\u00020\u001c2\u0006\u0010.\u001a\u00020\u001c2\u0006\u0010/\u001a\u00020\u001cH\u0002\u001aM\u00100\u001a\u0002H1\"\u0004\b\u0000\u00101*\u0002H12\u0017\u00102\u001a\u0013\u0012\u0004\u0012\u0002H1\u0012\u0004\u0012\u00020\u000e03¢\u0006\u0002\b42\u0017\u00105\u001a\u0013\u0012\u0004\u0012\u0002H1\u0012\u0004\u0012\u00020\u001903¢\u0006\u0002\b4H\u0086\bø\u0001\u0000¢\u0006\u0002\u00106\u001a\u0016\u00107\u001a\u00020\"2\u0006\u00108\u001a\u0002092\u0006\u0010:\u001a\u00020\u001c\u001a\u0018\u0010;\u001a\u00020\u000e2\u0006\u0010<\u001a\u00020=2\u0006\u0010>\u001a\u00020?H\u0007\u001a\u000e\u0010@\u001a\u00020$2\u0006\u0010A\u001a\u00020$\u001a\u000e\u0010B\u001a\u00020\u001c2\u0006\u0010C\u001a\u00020\u001c\u001a\u0018\u0010D\u001a\u0004\u0018\u00010$2\u0006\u00108\u001a\u0002092\u0006\u0010E\u001a\u00020$\u001a\u000e\u0010F\u001a\u00020\u001c2\u0006\u0010G\u001a\u00020\u001c\u001a\u0014\u0010H\u001a\b\u0012\u0004\u0012\u00020$0\u00012\u0006\u0010I\u001a\u00020\u001f\u001a\u001e\u0010J\u001a\u00020\u00192\u0006\u0010>\u001a\u00020\u001a2\u0006\u0010K\u001a\u00020\u001c2\u0006\u0010I\u001a\u00020\u001f\u001a\u001e\u0010J\u001a\u00020\u00192\u0006\u0010>\u001a\u00020L2\u0006\u0010K\u001a\u00020\u001c2\u0006\u0010I\u001a\u00020\u001f\u001a\u000e\u0010M\u001a\u00020$2\u0006\u0010N\u001a\u00020$\u001a\u0016\u0010O\u001a\u00020\u00192\u0006\u0010P\u001a\u00020Q2\u0006\u0010R\u001a\u00020\"\u001a\u0016\u0010S\u001a\u00020\u00192\u0006\u0010P\u001a\u00020Q2\u0006\u00108\u001a\u000209\u001a\u0016\u0010T\u001a\u00020\u00192\u0006\u00108\u001a\u0002092\u0006\u0010U\u001a\u00020\u000e\u001a\"\u0010V\u001a\u00020\u00192\u0006\u00108\u001a\u0002092\u0006\u0010W\u001a\u00020\u001c2\n\b\u0002\u0010X\u001a\u0004\u0018\u00010Y\u001a&\u0010Z\u001a\u00020\u00192\u0006\u0010[\u001a\u00020\\2\u0006\u0010]\u001a\u00020\u001c2\u0006\u0010^\u001a\u00020=2\u0006\u0010_\u001a\u00020=\u001a\u001a\u0010`\u001a\u0004\u0018\u00010=2\b\u0010a\u001a\u0004\u0018\u00010=2\u0006\u0010b\u001a\u00020=\u001a\u000e\u0010c\u001a\u00020$2\u0006\u0010d\u001a\u00020$\u001a\u000e\u0010e\u001a\u00020$2\u0006\u0010%\u001a\u00020\u001c\u001a\u000e\u0010f\u001a\u00020$2\u0006\u0010%\u001a\u00020\u001c\u001a\u0006\u0010g\u001a\u00020$\u001a\u0012\u0010h\u001a\u00020$2\b\u0010i\u001a\u0004\u0018\u00010$H\u0002\u001a\u000e\u0010j\u001a\u00020\u000e2\u0006\u00108\u001a\u000209\u001a\u000e\u0010k\u001a\u00020l2\u0006\u00108\u001a\u000209\u001a\u000e\u0010m\u001a\u00020$2\u0006\u0010n\u001a\u00020\u001c\u001a\u000e\u0010o\u001a\u00020$2\u0006\u0010p\u001a\u00020q\u001a\u001a\u0010r\u001a\u00020\u0019*\u00020\u001a2\u0006\u0010s\u001a\u00020$2\u0006\u0010C\u001a\u00020\u001c\u001a\n\u0010t\u001a\u00020u*\u000209\u001a&\u0010v\u001a\u00020\u00192\u0006\u0010P\u001a\u00020Q2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020$H\u0086@¢\u0006\u0002\u0010w\u001a\u001c\u0010x\u001a\u00020\u0019*\u00020Q2\u0006\u0010y\u001a\u00020$2\b\b\u0002\u0010z\u001a\u00020$\u001a*\u0010{\u001a\u00020\u0019*\u00020Q2\u0006\u0010P\u001a\u00020Q2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020$H\u0086@¢\u0006\u0002\u0010|\" \u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0003\u0010\u0004\"\u0004\b\u0005\u0010\u0006\"\u001c\u0010\u0007\u001a\u0004\u0018\u00010\bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\t\u0010\n\"\u0004\b\u000b\u0010\f\"\u001a\u0010\r\u001a\u00020\u000eX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000f\u0010\u0010\"\u0004\b\u0011\u0010\u0012\"\u0011\u0010\u0013\u001a\u00020\u000e8F¢\u0006\u0006\u001a\u0004\b\u0013\u0010\u0010\"\u001a\u0010\u0014\u001a\u00020\u000eX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0015\u0010\u0010\"\u0004\b\u0016\u0010\u0012\"\u0011\u0010\u0017\u001a\u00020\u000e8F¢\u0006\u0006\u001a\u0004\b\u0017\u0010\u0010\"\u000e\u0010'\u001a\u00020\u001cX\u0082T¢\u0006\u0002\n\u0000\u0082\u0002\u0007\n\u0005\b\u009920\u0001¨\u0006}"}, d2 = {"itemsName", "", "Lru/mrlargha/commonui/utils/ItemsInfo;", "getItemsName", "()Ljava/util/List;", "setItemsName", "(Ljava/util/List;)V", "zipFileIcons", "Ljava/util/zip/ZipFile;", "getZipFileIcons", "()Ljava/util/zip/ZipFile;", "setZipFileIcons", "(Ljava/util/zip/ZipFile;)V", "_isArizonaType", "", "get_isArizonaType", "()Z", "set_isArizonaType", "(Z)V", "isArizonaType", "_isDebug", "get_isDebug", "set_isDebug", "isDebug", "setTextTimeFormat", "", "Landroid/widget/TextView;", "time", "", "getAnimationScale", "", "Landroid/app/Activity;", "getKeyboardHeightOrNull", "getIconFromArchive", "Landroid/graphics/Bitmap;", "folderName", "", "item", "gearsIconName", "MAX_DIM", "getIconFromArchiveWithFormat", "getBitmapFromEntry", "entry", "Ljava/util/zip/ZipEntry;", "calculateInSampleSizeToMax", "srcW", "srcH", "maxDim", "applyIf", ExifInterface.GPS_DIRECTION_TRUE, "predicate", "Lkotlin/Function1;", "Lkotlin/ExtensionFunctionType;", "block", "(Ljava/lang/Object;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;", "getBitmapFromVectorDrawable", "context", "Landroid/content/Context;", "drawableId", "setDragClick", "itemVal", "Lru/mrlargha/commonui/elements/inventory/domain/models/InventoryItem;", "view", "Landroid/view/View;", "updateJsonString", "jsonString", "getColorTint", "color", "getJsonFromAssets", "fileName", "nextMultipleOfFive", "x", "getItemsDescription", "targetActivity", "setDrawableEnd", "viewInt", "Landroid/widget/EditText;", "deleteSvgWord", "svg", "setImage", "imageView", "Landroid/widget/ImageView;", "bitmap", "setNotLoadedImage", "checkItemsName", "isArizona", "getItemsJson", "type", "dir", "Ljava/io/File;", "sendData", "frontendNotifier", "Lru/mrlargha/commonui/core/IBackendNotifier;", "backendID", "fromItem", "toItem", "updateInventoryItem", "originalItem", "newItem", "convertPngToWebp", "png", "defineArzMenuText", "defineRodMenuText", "getDeviceName", "capitalize", CmcdData.STREAMING_FORMAT_SS, "getArizonaType", "getServerId", "Lru/mrlargha/commonui/elements/hud/presentation/models/ServerInfoItem;", "formatNumberWithSpaces", "number", "formatTime", "millisUntilFinished", "", "setColoredTextBeforeDot", "fullText", "getBaseShredPref", "Landroid/content/SharedPreferences;", "loadGifFromZipAsync", "(Landroid/widget/ImageView;Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "gifLoadFromCdn", "url", "fallbackImage", "gifGetFromZipAcync", "(Landroid/widget/ImageView;Landroid/widget/ImageView;Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "CommonUI_release"}, k = 2, mv = {2, 2, 0}, xi = 48)
 /* loaded from: classes6.dex */
 public final class UtilsKt {
     private static final int MAX_DIM = 1024;
@@ -565,7 +565,7 @@ public final class UtilsKt {
             if (effect == null) {
                 effect = inventoryItem.getEffect();
             }
-            return InventoryItem.copy$default(inventoryItem, slot, num, id, str, num2, num3, background, num4, num5, num6, num7, num8, l, num9, num10, num11, inventoryType, num12, bitmap, false, false, effect, null, 5767168, null);
+            return InventoryItem.copy$default(inventoryItem, slot, num, id, str, num2, num3, background, num4, num5, num6, num7, num8, l, num9, num10, num11, inventoryType, num12, bitmap, false, false, effect, null, null, 14155776, null);
         }
         return null;
     }
@@ -619,9 +619,9 @@ public final class UtilsKt {
     public static final ServerInfoItem getServerId(Context context) {
         Intrinsics.checkNotNullParameter(context, "context");
         SharedPreferences baseShredPref = getBaseShredPref(context);
-        int i = baseShredPref.getInt(SharedPreferenceKeys.SERVER_ID.getKeyName(), 0);
-        String string = baseShredPref.getString(SharedPreferenceKeys.API_TOKEN.getKeyName(), "");
-        return new ServerInfoItem(string != null ? string : "", i, baseShredPref.getInt(SharedPreferenceKeys.ACCOUNT_ID.getKeyName(), 0));
+        int i = baseShredPref.getInt(ru.mrlargha.commonui.elements.hud.presentation.models.SharedPreferenceKeys.SERVER_ID.getKeyName(), 0);
+        String string = baseShredPref.getString(ru.mrlargha.commonui.elements.hud.presentation.models.SharedPreferenceKeys.API_TOKEN.getKeyName(), "");
+        return new ServerInfoItem(string != null ? string : "", i, baseShredPref.getInt(ru.mrlargha.commonui.elements.hud.presentation.models.SharedPreferenceKeys.ACCOUNT_ID.getKeyName(), 0));
     }
 
     public static final String formatNumberWithSpaces(int i) {
@@ -711,6 +711,80 @@ public final class UtilsKt {
         Object obj2 = utilsKt$loadGifFromZipAsync$1.result;
         Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         i = utilsKt$loadGifFromZipAsync$1.label;
+        if (i != 0) {
+        }
+        bArr = (byte[]) obj2;
+        if (bArr != null) {
+        }
+    }
+
+    public static /* synthetic */ void gifLoadFromCdn$default(ImageView imageView, String str, String str2, int i, Object obj) {
+        if ((i & 2) != 0) {
+            str2 = "";
+        }
+        gifLoadFromCdn(imageView, str, str2);
+    }
+
+    public static final void gifLoadFromCdn(ImageView imageView, String url, String fallbackImage) {
+        Intrinsics.checkNotNullParameter(imageView, "<this>");
+        Intrinsics.checkNotNullParameter(url, "url");
+        Intrinsics.checkNotNullParameter(fallbackImage, "fallbackImage");
+        ImageView imageView2 = imageView;
+        RequestBuilder<Drawable> load = Glide.with(imageView2).load(fallbackImage);
+        Intrinsics.checkNotNullExpressionValue(load, "load(...)");
+        Glide.with(imageView2).asGif().load(url).placeholder(R.drawable.loading_gif).error((Object) load).into(imageView);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0043  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0075  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0078  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final Object gifGetFromZipAcync(ImageView imageView, ImageView imageView2, String str, String str2, Continuation<? super Unit> continuation) {
+        UtilsKt$gifGetFromZipAcync$1 utilsKt$gifGetFromZipAcync$1;
+        int i;
+        byte[] bArr;
+        if (continuation instanceof UtilsKt$gifGetFromZipAcync$1) {
+            utilsKt$gifGetFromZipAcync$1 = (UtilsKt$gifGetFromZipAcync$1) continuation;
+            if ((utilsKt$gifGetFromZipAcync$1.label & Integer.MIN_VALUE) != 0) {
+                utilsKt$gifGetFromZipAcync$1.label -= Integer.MIN_VALUE;
+                Object obj = utilsKt$gifGetFromZipAcync$1.result;
+                Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+                i = utilsKt$gifGetFromZipAcync$1.label;
+                if (i != 0) {
+                    ResultKt.throwOnFailure(obj);
+                    utilsKt$gifGetFromZipAcync$1.L$0 = SpillingKt.nullOutSpilledVariable(imageView);
+                    utilsKt$gifGetFromZipAcync$1.L$1 = imageView2;
+                    utilsKt$gifGetFromZipAcync$1.L$2 = SpillingKt.nullOutSpilledVariable(str);
+                    utilsKt$gifGetFromZipAcync$1.L$3 = SpillingKt.nullOutSpilledVariable(str2);
+                    utilsKt$gifGetFromZipAcync$1.label = 1;
+                    obj = BuildersKt.withContext(Dispatchers.getIO(), new UtilsKt$gifGetFromZipAcync$bytes$1(str, str2, null), utilsKt$gifGetFromZipAcync$1);
+                    if (obj == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                } else if (i != 1) {
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                } else {
+                    String str3 = (String) utilsKt$gifGetFromZipAcync$1.L$3;
+                    String str4 = (String) utilsKt$gifGetFromZipAcync$1.L$2;
+                    imageView2 = (ImageView) utilsKt$gifGetFromZipAcync$1.L$1;
+                    ImageView imageView3 = (ImageView) utilsKt$gifGetFromZipAcync$1.L$0;
+                    ResultKt.throwOnFailure(obj);
+                }
+                bArr = (byte[]) obj;
+                if (bArr != null) {
+                    return Unit.INSTANCE;
+                }
+                Glide.with(imageView2).asGif().load(bArr).diskCacheStrategy(DiskCacheStrategy.DATA).into(imageView2);
+                return Unit.INSTANCE;
+            }
+        }
+        utilsKt$gifGetFromZipAcync$1 = new UtilsKt$gifGetFromZipAcync$1(continuation);
+        Object obj2 = utilsKt$gifGetFromZipAcync$1.result;
+        Object coroutine_suspended2 = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        i = utilsKt$gifGetFromZipAcync$1.label;
         if (i != 0) {
         }
         bArr = (byte[]) obj2;

@@ -13,7 +13,7 @@ import java.io.PrintWriter;
 public final class C0445n6 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final C0116aa f1130a;
+    public final C0116aa f1129a;
     public final C0241f6 b;
     public final Context c;
     public final Z9 d;
@@ -50,13 +50,13 @@ public final class C0445n6 {
                     }
                     mkdir = crashesDirectory.mkdir();
                 }
-                str = c0655vh.e.f608a.f521a.getAsInteger("PROCESS_CFG_PROCESS_ID") + Constants.FILENAME_SEQUENCE_SEPARATOR + bf.f521a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID");
+                str = c0655vh.e.f607a.f520a.getAsInteger("PROCESS_CFG_PROCESS_ID") + Constants.FILENAME_SEQUENCE_SEPARATOR + bf.f520a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID");
                 b = this.d.b(str);
-                b.f1303a.lock();
+                b.f1302a.lock();
                 b.b.a();
-                this.f1130a.getClass();
+                this.f1129a.getClass();
                 printWriter = new PrintWriter(new BufferedOutputStream(new FileOutputStream(new File(crashesDirectory, str))));
-                printWriter.write(new C0349jb(c0655vh.f1273a, c0655vh.e, c0655vh.d).k());
+                printWriter.write(new C0349jb(c0655vh.f1272a, c0655vh.e, c0655vh.d).k());
                 lo.a((Closeable) printWriter);
                 b.c();
                 z9 = this.d;
@@ -66,7 +66,7 @@ public final class C0445n6 {
                 return;
             }
             mkdir = crashesDirectory.mkdir();
-            printWriter.write(new C0349jb(c0655vh.f1273a, c0655vh.e, c0655vh.d).k());
+            printWriter.write(new C0349jb(c0655vh.f1272a, c0655vh.e, c0655vh.d).k());
             lo.a((Closeable) printWriter);
             b.c();
             z9 = this.d;
@@ -81,17 +81,17 @@ public final class C0445n6 {
         if (!mkdir) {
             return;
         }
-        str = c0655vh.e.f608a.f521a.getAsInteger("PROCESS_CFG_PROCESS_ID") + Constants.FILENAME_SEQUENCE_SEPARATOR + bf.f521a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID");
+        str = c0655vh.e.f607a.f520a.getAsInteger("PROCESS_CFG_PROCESS_ID") + Constants.FILENAME_SEQUENCE_SEPARATOR + bf.f520a.getAsString("PROCESS_CFG_PROCESS_SESSION_ID");
         b = this.d.b(str);
-        b.f1303a.lock();
+        b.f1302a.lock();
         b.b.a();
-        this.f1130a.getClass();
+        this.f1129a.getClass();
         printWriter = new PrintWriter(new BufferedOutputStream(new FileOutputStream(new File(crashesDirectory, str))));
     }
 
     public C0445n6(Context context, C0116aa c0116aa, C0241f6 c0241f6, Z9 z9) {
         this.c = context;
-        this.f1130a = c0116aa;
+        this.f1129a = c0116aa;
         this.b = c0241f6;
         this.d = z9;
     }

@@ -5,7 +5,7 @@ import android.content.ContentValues;
 public final class N8 {
 
     /* renamed from: a  reason: collision with root package name */
-    public final String f708a;
+    public final String f707a;
     public String b;
     public final Long c;
     public final Long d;
@@ -28,7 +28,7 @@ public final class N8 {
 
     public N8(ContentValues contentValues) {
         C0216e7 model = new C0242f7(null, 1, null).toModel(contentValues);
-        this.f708a = model.a().j();
+        this.f707a = model.a().j();
         this.b = model.a().p();
         this.c = model.c();
         this.d = model.b();

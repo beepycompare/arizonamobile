@@ -5,16 +5,16 @@ import io.appmetrica.analytics.AdRevenue;
 public final class Hj implements Qa {
 
     /* renamed from: a  reason: collision with root package name */
-    public final /* synthetic */ AdRevenue f617a;
+    public final /* synthetic */ AdRevenue f616a;
     public final /* synthetic */ boolean b;
 
     public Hj(AdRevenue adRevenue, boolean z) {
-        this.f617a = adRevenue;
+        this.f616a = adRevenue;
         this.b = z;
     }
 
     @Override // io.appmetrica.analytics.impl.Qa
     public final void a(Ra ra) {
-        ra.reportAdRevenue(this.f617a, this.b);
+        ra.reportAdRevenue(this.f616a, this.b);
     }
 }

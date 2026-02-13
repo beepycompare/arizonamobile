@@ -9,16 +9,16 @@ import java.util.concurrent.TimeUnit;
 public final class I5 implements Runnable {
 
     /* renamed from: a  reason: collision with root package name */
-    public final List f624a;
+    public final List f623a;
     public final IHandlerExecutor b = C0449na.k().w().a();
     public final WaitForActivationDelayBarrier c = C0449na.k().a();
 
     public I5(List list) {
-        this.f624a = list;
+        this.f623a = list;
     }
 
     public static final void a(I5 i5) {
-        for (Runnable runnable : i5.f624a) {
+        for (Runnable runnable : i5.f623a) {
             runnable.run();
         }
     }
